@@ -1,0 +1,20 @@
+version: "2"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=development
+    container_name: edx.pubfe
+    image: edxapp/publisher-frontend:latest
+    volumes:
+      - .:/edx/app:delegated
+      - notused:/edx/app/node_modules
+    ports:
+      - "18400:18400"
+    environment:
+      - NODE_ENV=development
+
+volumes:
+  notused:

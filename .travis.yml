@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- 8.9.3
+cache:
+  directories:
+  - "~/.npm"
+notifications:
+  email:
+    recipients:
+    - discovery-squad@edx.org
+    on_success: never
+    on_failure: always
+before_install:
+- npm install -g npm
+- npm install -g greenkeeper-lockfile@1.14.0
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+script:
+- make validate-no-uncommitted-package-lock-changes
+- npm run lint
+- npm run test
+- npm run build
+- npm run is-es5
