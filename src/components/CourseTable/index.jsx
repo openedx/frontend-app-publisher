@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-class CourseTable extends Component {
-  render() {
-    return (
-      <h2>Hello Publisher!</h2>
-    );
-  }
+function CourseTable() {
+  return (
+    <h2>Hello Publisher!</h2>
+  );
 }
 
 export default CourseTable;
