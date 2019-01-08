@@ -30,3 +30,7 @@ restart-detached:
 
 validate-no-uncommitted-package-lock-changes:
 	git diff --exit-code package-lock.json
+
+test:
+	make up-detached
+	docker exec -it edx.pubfe npm test
