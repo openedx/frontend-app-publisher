@@ -12,6 +12,6 @@ describe('CourseTable', () => {
 
   it('should render with the expected "Hello Publisher" text', () => {
     const component = shallow(<CourseTable />);
-    expect(component.text()).toEqual('Hello Publisher!');
+    expect(component.find('h2').text()).toEqual('Hello, welcome to Publisher! You are logged in.');
   });
 });

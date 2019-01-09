@@ -17,8 +17,13 @@ Run the following commands to get started with the Publisher Development environ
     develop against. 
     
     * The most recent stable version of Docker should work.
-    
-2. Run the following docker-compose commands to get started.
+
+2. This application requires a edx-platform instance for authentication. For local development
+   you will need to setup a local instance of the edX Docker Devstack
+    * https://github.com/edx/devstack
+    * Follow the instructions on this repo to get the local environment up and running.
+
+3. Run the following docker-compose commands to get started.
 
     This command will build the Docker container for the Publisher Frontend.  
 
@@ -37,7 +42,7 @@ Run the following commands to get started with the Publisher Development environ
     At the end of these commands the web application should be running. You should be able to view it 
     in a web browser at `localhost:18400`.
     
-3. When you are done working run the following command to stop the docker container.
+4. When you are done working run the following command to stop the docker container.
 
     ```
     make down

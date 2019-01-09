@@ -19,11 +19,44 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Hello Publisher!",
+      "children": Array [
+        <h2>
+          Hello, welcome to Publisher! You are logged in.
+        </h2>,
+        <button
+          onClick={[Function]}
+        >
+          Logout
+        </button>,
+      ],
     },
     "ref": null,
-    "rendered": "Hello Publisher!",
-    "type": "h2",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Hello, welcome to Publisher! You are logged in.",
+        },
+        "ref": null,
+        "rendered": "Hello, welcome to Publisher! You are logged in.",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Logout",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Logout",
+        "type": "button",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -31,11 +64,44 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Hello Publisher!",
+        "children": Array [
+          <h2>
+            Hello, welcome to Publisher! You are logged in.
+          </h2>,
+          <button
+            onClick={[Function]}
+          >
+            Logout
+          </button>,
+        ],
       },
       "ref": null,
-      "rendered": "Hello Publisher!",
-      "type": "h2",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Hello, welcome to Publisher! You are logged in.",
+          },
+          "ref": null,
+          "rendered": "Hello, welcome to Publisher! You are logged in.",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Logout",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Logout",
+          "type": "button",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
