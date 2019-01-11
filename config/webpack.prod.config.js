@@ -46,7 +46,6 @@ module.exports = Merge.smart(commonConfig, {
               loader: 'css-loader', // translates CSS into CommonJS
               options: {
                 sourceMap: true,
-                minimize: true,
               },
             },
             {
