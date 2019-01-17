@@ -5,10 +5,10 @@ build:
 	docker-compose build
 
 up: ## bring up cookie-cutter container
-	docker-compose up
-
-up-detached: ## bring up cookie-cutter container in detached mode
 	docker-compose up -d
+
+up-attached: ## bring up cookie-cutter container in attached mode
+	docker-compose up
 
 logs: ## show logs for cookie-cutter container
 	docker-compose logs -f
