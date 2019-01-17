@@ -24,9 +24,9 @@ restart:
 	make down
 	make up
 
-restart-detached:
+restart-attached:
 	make down
-	make up-detached
+	make up-attached
 
 validate-no-uncommitted-package-lock-changes:
 	git diff --exit-code package-lock.json
