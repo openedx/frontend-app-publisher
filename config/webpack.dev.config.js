@@ -64,6 +64,28 @@ module.exports = Merge.smart(commonConfig, {
         test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.(jpe?g|png|gif|ico)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              optimizationlevel: 7,
+              mozjpeg: {
+                progressive: true,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   // Specify additional processing or side-effects done on the Webpack output bundles as a whole.
@@ -83,6 +105,21 @@ module.exports = Merge.smart(commonConfig, {
       REFRESH_ACCESS_TOKEN_ENDPOINT: 'http://localhost:18000/login',
       ACCESS_TOKEN_COOKIE_NAME: 'edx-jwt-cookie-header-payload',
       USER_INFO_COOKIE_NAME: 'edx-user-info',
+      SITE_NAME: 'edX',
+      MARKETING_SITE_BASE_URL: 'http://localhost:18000',
+      SUPPORT_URL: 'http://localhost:18000/support',
+      CONTACT_URL: 'http://localhost:18000/contact',
+      OPEN_SOURCE_URL: 'http://localhost:18000/openedx',
+      TERMS_OF_SERVICE_URL: 'http://localhost:18000/terms-of-service',
+      PRIVACY_POLICY_URL: 'http://localhost:18000/privacy-policy',
+      FACEBOOK_URL: 'https://www.facebook.com',
+      TWITTER_URL: 'https://twitter.com',
+      YOU_TUBE_URL: 'https://www.youtube.com',
+      LINKED_IN_URL: 'https://www.linkedin.com',
+      GOOGLE_PLUS_URL: 'https://plus.google.com',
+      REDDIT_URL: 'https://www.reddit.com',
+      APPLE_APP_STORE_URL: 'https://www.apple.com/ios/app-store/',
+      GOOGLE_PLAY_URL: 'https://play.google.com/store',
     }),
     // when the --hot option is not passed in as part of the command
     // the HotModuleReplacementPlugin has to be specified in the Webpack configuration
