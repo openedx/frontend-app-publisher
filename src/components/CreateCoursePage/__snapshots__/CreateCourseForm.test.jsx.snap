@@ -1,0 +1,349 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateCourseForm renders html correctly while submitting 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReduxForm
+    handleSubmit={[Function]}
+    initialValues={
+      Object {
+        "courseEnrollmentTrack": "",
+        "courseNumber": "",
+        "courseOrg": "",
+        "coursePrice": "",
+        "courseTitle": "",
+      }
+    }
+    organizations={
+      Array [
+        Object {
+          "key": "edx",
+          "name": "edX",
+        },
+        Object {
+          "key": "edx2",
+          "name": "edX2",
+        },
+      ]
+    }
+    submitting={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "destroyOnUnmount": true,
+      "enableReinitialize": false,
+      "forceUnregisterOnUnmount": false,
+      "form": "create-course-form",
+      "getFormState": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "courseEnrollmentTrack": "",
+        "courseNumber": "",
+        "courseOrg": "",
+        "coursePrice": "",
+        "courseTitle": "",
+      },
+      "keepDirtyOnReinitialize": false,
+      "organizations": Array [
+        Object {
+          "key": "edx",
+          "name": "edX",
+        },
+        Object {
+          "key": "edx2",
+          "name": "edX2",
+        },
+      ],
+      "persistentSubmitErrors": false,
+      "pure": true,
+      "shouldAsyncValidate": [Function],
+      "shouldError": [Function],
+      "shouldValidate": [Function],
+      "shouldWarn": [Function],
+      "submitting": true,
+      "touchOnBlur": true,
+      "touchOnChange": false,
+      "updateUnregisteredFields": false,
+    },
+    "ref": [Function],
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "destroyOnUnmount": true,
+        "enableReinitialize": false,
+        "forceUnregisterOnUnmount": false,
+        "form": "create-course-form",
+        "getFormState": [Function],
+        "handleSubmit": [Function],
+        "initialValues": Object {
+          "courseEnrollmentTrack": "",
+          "courseNumber": "",
+          "courseOrg": "",
+          "coursePrice": "",
+          "courseTitle": "",
+        },
+        "keepDirtyOnReinitialize": false,
+        "organizations": Array [
+          Object {
+            "key": "edx",
+            "name": "edX",
+          },
+          Object {
+            "key": "edx2",
+            "name": "edX2",
+          },
+        ],
+        "persistentSubmitErrors": false,
+        "pure": true,
+        "shouldAsyncValidate": [Function],
+        "shouldError": [Function],
+        "shouldValidate": [Function],
+        "shouldWarn": [Function],
+        "submitting": true,
+        "touchOnBlur": true,
+        "touchOnChange": false,
+        "updateUnregisteredFields": false,
+      },
+      "ref": [Function],
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`CreateCourseForm renders html correctly with data 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReduxForm
+    handleSubmit={[Function]}
+    initialValues={
+      Object {
+        "courseEnrollmentTrack": "verified",
+        "courseNumber": "edx101",
+        "courseOrg": "edx",
+        "coursePrice": 100,
+        "courseTitle": "Hello",
+      }
+    }
+    organizations={
+      Array [
+        Object {
+          "key": "edx",
+          "name": "edX",
+        },
+        Object {
+          "key": "edx2",
+          "name": "edX2",
+        },
+      ]
+    }
+    pristine={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "destroyOnUnmount": true,
+      "enableReinitialize": false,
+      "forceUnregisterOnUnmount": false,
+      "form": "create-course-form",
+      "getFormState": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "courseEnrollmentTrack": "verified",
+        "courseNumber": "edx101",
+        "courseOrg": "edx",
+        "coursePrice": 100,
+        "courseTitle": "Hello",
+      },
+      "keepDirtyOnReinitialize": false,
+      "organizations": Array [
+        Object {
+          "key": "edx",
+          "name": "edX",
+        },
+        Object {
+          "key": "edx2",
+          "name": "edX2",
+        },
+      ],
+      "persistentSubmitErrors": false,
+      "pristine": true,
+      "pure": true,
+      "shouldAsyncValidate": [Function],
+      "shouldError": [Function],
+      "shouldValidate": [Function],
+      "shouldWarn": [Function],
+      "touchOnBlur": true,
+      "touchOnChange": false,
+      "updateUnregisteredFields": false,
+    },
+    "ref": [Function],
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "destroyOnUnmount": true,
+        "enableReinitialize": false,
+        "forceUnregisterOnUnmount": false,
+        "form": "create-course-form",
+        "getFormState": [Function],
+        "handleSubmit": [Function],
+        "initialValues": Object {
+          "courseEnrollmentTrack": "verified",
+          "courseNumber": "edx101",
+          "courseOrg": "edx",
+          "coursePrice": 100,
+          "courseTitle": "Hello",
+        },
+        "keepDirtyOnReinitialize": false,
+        "organizations": Array [
+          Object {
+            "key": "edx",
+            "name": "edX",
+          },
+          Object {
+            "key": "edx2",
+            "name": "edX2",
+          },
+        ],
+        "persistentSubmitErrors": false,
+        "pristine": true,
+        "pure": true,
+        "shouldAsyncValidate": [Function],
+        "shouldError": [Function],
+        "shouldValidate": [Function],
+        "shouldWarn": [Function],
+        "touchOnBlur": true,
+        "touchOnChange": false,
+        "updateUnregisteredFields": false,
+      },
+      "ref": [Function],
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReduxForm />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "destroyOnUnmount": true,
+      "enableReinitialize": false,
+      "forceUnregisterOnUnmount": false,
+      "form": "create-course-form",
+      "getFormState": [Function],
+      "initialValues": undefined,
+      "keepDirtyOnReinitialize": false,
+      "persistentSubmitErrors": false,
+      "pure": true,
+      "shouldAsyncValidate": [Function],
+      "shouldError": [Function],
+      "shouldValidate": [Function],
+      "shouldWarn": [Function],
+      "touchOnBlur": true,
+      "touchOnChange": false,
+      "updateUnregisteredFields": false,
+    },
+    "ref": [Function],
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "destroyOnUnmount": true,
+        "enableReinitialize": false,
+        "forceUnregisterOnUnmount": false,
+        "form": "create-course-form",
+        "getFormState": [Function],
+        "initialValues": undefined,
+        "keepDirtyOnReinitialize": false,
+        "persistentSubmitErrors": false,
+        "pure": true,
+        "shouldAsyncValidate": [Function],
+        "shouldError": [Function],
+        "shouldValidate": [Function],
+        "shouldWarn": [Function],
+        "touchOnBlur": true,
+        "touchOnChange": false,
+        "updateUnregisteredFields": false,
+      },
+      "ref": [Function],
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

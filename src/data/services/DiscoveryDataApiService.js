@@ -26,6 +26,16 @@ class DiscoveryDataApiService {
     return apiClient.get(`${url}`, {
       params: queryParams,
     });
+
+  static fetchOrganizations() {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/organizations/`;
+    return apiClient.get(url);
+  }
+
+  static createCourse(data) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/`;
+    // POST to Course endpoint to create
+    return apiClient.post(url, data);
   }
 }
 

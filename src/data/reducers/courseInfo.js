@@ -2,12 +2,16 @@ import {
   FAIL_COURSE_INFO,
   RECEIVE_COURSE_INFO,
   REQUEST_COURSE_INFO,
+  CREATE_COURSE,
+  CREATE_COURSE_SUCCESS,
+  CREATE_COURSE_FAIL,
 } from '../constants/courseInfo';
 
 
 const initialState = {
   data: {},
   isFetching: false,
+  courseCreated: false,
   error: null,
 };
 
@@ -30,6 +34,27 @@ function courseInfo(state = initialState, action) {
         data: {},
         isFetching: true,
         error: null,
+      });
+    case CREATE_COURSE:
+      return Object.assign({}, state, {
+        data: {},
+        courseCreated: false,
+        isFetching: false,
+        error: null,
+      });
+    case CREATE_COURSE_SUCCESS:
+      return Object.assign({}, state, {
+        data: action.data,
+        courseCreated: true,
+        isFetching: false,
+        error: null,
+      });
+    case CREATE_COURSE_FAIL:
+      return Object.assign({}, state, {
+        data: {},
+        courseCreated: false,
+        isFetching: false,
+        error: action.error,
       });
     default:
       return state;

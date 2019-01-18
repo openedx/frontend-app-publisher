@@ -13,6 +13,7 @@ import Header from './components/Header';
 import FooterLogo from '../assets/edx-footer.png';
 import './App.scss';
 import CourseDashboard from './containers/CourseDashboard';
+import CreateCourse from './containers/CreateCourse';
 
 import apiClient from './data/apiClient';
 import CourseView from './containers/CourseView';
@@ -24,6 +25,12 @@ const App = () => (
         <Header />
         <main>
           <Switch>
+            <PrivateRoute
+              path="/courses/new"
+              component={CreateCourse}
+              authenticatedAPIClient={apiClient}
+              redirect={`${process.env.BASE_URL}`}
+            />
             <PrivateRoute
               path="/"
               exact

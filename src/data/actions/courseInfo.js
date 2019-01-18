@@ -3,10 +3,13 @@ import {
   RECEIVE_COURSE_INFO,
   REQUEST_COURSE_INFO,
   UUID_REGEX,
+  CREATE_COURSE,
+  CREATE_COURSE_SUCCESS,
+  CREATE_COURSE_FAIL,
 } from '../constants/courseInfo';
 
-import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
+import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
 export function failCourseInfo(id, error) {
   return { type: FAIL_COURSE_INFO, id, error };
@@ -18,6 +21,20 @@ export function receiveCourseInfo(id, data) {
 
 export function requestCourseInfo(id) {
   return { type: REQUEST_COURSE_INFO, id };
+}
+
+export function createNewCourse(courseData) {
+  return {
+    type: CREATE_COURSE, courseData,
+  };
+}
+
+export function courseCreateSuccess(data) {
+  return { type: CREATE_COURSE_SUCCESS, data };
+}
+
+export function courseCreateFail(error) {
+  return { type: CREATE_COURSE_FAIL, error };
 }
 
 export function fetchCourseInfo(id) {
@@ -47,6 +64,21 @@ export function fetchCourseInfo(id) {
           id,
           `Could not get course information. ${error.toString()}`,
         ));
+      });
+  };
+}
+
+export function createCourse(courseData) {
+  return (dispatch) => {
+    dispatch(createNewCourse(courseData));
+    // Send create course POST
+    return DiscoveryDataApiService.createCourse(courseData)
+      .then((response) => {
+        const course = response.data;
+        dispatch(courseCreateSuccess(course));
+      })
+      .catch((error) => {
+        dispatch(courseCreateFail(`Course create failed, please try again or contact support. Error( ${error.response.data} )`));
       });
   };
 }
