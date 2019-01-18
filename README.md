@@ -55,13 +55,7 @@ Run the following commands to get started with the Publisher Development environ
 
 Currently we are using Jest and Enzyme for our testing
 
-1.  Start the Docker container and shell into the container
-
-    ```
-    make up shell
-    ```
-
-2. Run the tests using npm within the shell
+1.  The following command will ensure the container is up and then exec into it and run the tests using npm. Output will show up in your terminal.
 
     ```
     make test

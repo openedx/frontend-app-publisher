@@ -20,17 +20,12 @@ npm-install-%: ## install specified % npm package on the cookie-cutter container
 	docker exec npm install $* --save-dev
 	git add package.json
 
-restart:
-	make down
-	make up
+restart: down up
 
-restart-attached:
-	make down
-	make up-attached
+restart-attached: down up-attached
 
 validate-no-uncommitted-package-lock-changes:
 	git diff --exit-code package-lock.json
 
-test:
-	make up-detached
+test: up
 	docker exec -it edx.pubfe npm test
