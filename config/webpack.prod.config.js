@@ -118,6 +118,7 @@ module.exports = Merge.smart(commonConfig, {
       NODE_ENV: 'production',
       BASE_URL: null,
       LMS_BASE_URL: null,
+      DISCOVERY_API_BASE_URL: null,
       LOGIN_URL: null,
       LOGOUT_URL: null,
       CSRF_TOKEN_API_PATH: null,
