@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
+import { reducer as formReducer } from 'redux-form';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -11,4 +12,5 @@ export default history => combineReducers({
   // The authentication state is added as initialState when
   // creating the store in data/store.js.
   authentication: identityReducer,
+  form: formReducer,
 });
