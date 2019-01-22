@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CourseTable should render correctly in "debug" mode 1`] = `
+exports[`CourseTable shows a table 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CourseTable
-    debug={true}
-  />,
+  Symbol(enzyme.__unrendered__): <CourseTable />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -18,91 +16,77 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <h2>
-          Hello, welcome to Publisher! You are logged in.
-        </h2>,
-        <button
-          onClick={[Function]}
-        >
-          Logout
-        </button>,
+      "className": "courses",
+      "columns": Array [
+        Object {
+          "columnSortable": true,
+          "key": "title",
+          "label": "Course Name",
+        },
+        Object {
+          "columnSortable": true,
+          "key": "key",
+          "label": "Course Number",
+        },
+        Object {
+          "columnSortable": false,
+          "key": "owners",
+          "label": "Owner",
+        },
+        Object {
+          "columnSortable": true,
+          "key": "modified",
+          "label": "Modified",
+        },
       ],
+      "fetchMethod": [Function],
+      "formatData": [Function],
+      "id": "courses",
+      "tableSortable": true,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Hello, welcome to Publisher! You are logged in.",
-        },
-        "ref": null,
-        "rendered": "Hello, welcome to Publisher! You are logged in.",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Logout",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Logout",
-        "type": "button",
-      },
-    ],
-    "type": "div",
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <h2>
-            Hello, welcome to Publisher! You are logged in.
-          </h2>,
-          <button
-            onClick={[Function]}
-          >
-            Logout
-          </button>,
+        "className": "courses",
+        "columns": Array [
+          Object {
+            "columnSortable": true,
+            "key": "title",
+            "label": "Course Name",
+          },
+          Object {
+            "columnSortable": true,
+            "key": "key",
+            "label": "Course Number",
+          },
+          Object {
+            "columnSortable": false,
+            "key": "owners",
+            "label": "Owner",
+          },
+          Object {
+            "columnSortable": true,
+            "key": "modified",
+            "label": "Modified",
+          },
         ],
+        "fetchMethod": [Function],
+        "formatData": [Function],
+        "id": "courses",
+        "tableSortable": true,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Hello, welcome to Publisher! You are logged in.",
-          },
-          "ref": null,
-          "rendered": "Hello, welcome to Publisher! You are logged in.",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Logout",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Logout",
-          "type": "button",
-        },
-      ],
-      "type": "div",
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
