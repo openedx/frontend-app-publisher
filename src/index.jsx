@@ -15,6 +15,7 @@ import './App.scss';
 import CourseDashboard from './containers/CourseDashboard';
 
 import apiClient from './data/apiClient';
+import CourseView from './containers/CourseView';
 
 const App = () => (
   <Provider store={store}>
@@ -25,7 +26,17 @@ const App = () => (
           <Switch>
             <PrivateRoute
               path="/"
+              exact
               component={CourseDashboard}
+              authenticatedAPIClient={apiClient}
+              redirect={`${process.env.BASE_URL}`}
+            />
+            <PrivateRoute
+              path="/courses/:id"
+              exact
+              render={({ match }) => (
+                <CourseView id={match.params.id} />
+              )}
               authenticatedAPIClient={apiClient}
               redirect={`${process.env.BASE_URL}`}
             />
