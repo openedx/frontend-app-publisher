@@ -40,7 +40,7 @@ describe('courseInfo reducer', () => {
 
   it('course info receive works', () => {
     initialState.isFetching = true;
-    expect(courseInfo(initialState, actions.receiveCourseInfo('test', { key: 'DemoX+TestCourse' })))
+    expect(courseInfo(initialState, actions.requestCourseInfoSuccess('test', { key: 'DemoX+TestCourse' })))
       .toEqual({
         data: { key: 'DemoX+TestCourse' },
         isFetching: false,
@@ -50,7 +50,7 @@ describe('courseInfo reducer', () => {
 
   it('course info fail works', () => {
     initialState.isFetching = true;
-    expect(courseInfo(initialState, actions.failCourseInfo('test', 'failure')))
+    expect(courseInfo(initialState, actions.requestCourseInfoFail('test', 'failure')))
       .toEqual({
         data: {},
         isFetching: false,
@@ -64,7 +64,34 @@ describe('courseInfo reducer', () => {
   });
 
   it('course create receive works', () => {
-    expect(courseInfo(initialState, actions.courseCreateSuccess(courseData)))
+    expect(courseInfo(initialState, actions.createCourseSuccess(courseData)))
+      .toEqual({
+        data: courseData,
+        error: null,
+        isFetching: false,
+      });
+  });
+
+  it('course create fail works', () => {
+    expect(courseInfo(initialState, actions.createCourseFail('failure')))
+      .toEqual({
+        data: {},
+        error: 'failure',
+        isFetching: false,
+      });
+  });
+
+  it('course edit request works', () => {
+    expect(courseInfo(initialState, actions.editCourseInfo(courseData)))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        error: null,
+      });
+  });
+
+  it('course edit receive works', () => {
+    expect(courseInfo(initialState, actions.editCourseSuccess(courseData)))
       .toEqual({
         data: courseData,
         isFetching: false,
@@ -72,8 +99,8 @@ describe('courseInfo reducer', () => {
       });
   });
 
-  it('course create fail works', () => {
-    expect(courseInfo(initialState, actions.courseCreateFail('failure')))
+  it('course edit fail works', () => {
+    expect(courseInfo(initialState, actions.editCourseFail('failure')))
       .toEqual({
         data: {},
         isFetching: false,

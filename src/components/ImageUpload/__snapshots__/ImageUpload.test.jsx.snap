@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageUpload shows an image upload with no prior image 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ImageUpload
+    id="image-no-prior"
+    input={
+      Object {
+        "onChange": [Function],
+        "value": null,
+      }
+    }
+    label="Course Image: *"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <label
+          className="col-12"
+          htmlFor="image-no-prior"
+        >
+          Course Image: *
+        </label>,
+        "  ",
+        <img
+          alt=""
+          src={null}
+        />,
+        <input
+          accept="image/*"
+          id="image-no-prior"
+          onChange={[Function]}
+          type="file"
+        />,
+      ],
+      "className": "form-group",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Course Image: *",
+          "className": "col-12",
+          "htmlFor": "image-no-prior",
+        },
+        "ref": null,
+        "rendered": "Course Image: *",
+        "type": "label",
+      },
+      "  ",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "",
+          "src": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "accept": "image/*",
+          "id": "image-no-prior",
+          "onChange": [Function],
+          "type": "file",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label
+            className="col-12"
+            htmlFor="image-no-prior"
+          >
+            Course Image: *
+          </label>,
+          "  ",
+          <img
+            alt=""
+            src={null}
+          />,
+          <input
+            accept="image/*"
+            id="image-no-prior"
+            onChange={[Function]}
+            type="file"
+          />,
+        ],
+        "className": "form-group",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Course Image: *",
+            "className": "col-12",
+            "htmlFor": "image-no-prior",
+          },
+          "ref": null,
+          "rendered": "Course Image: *",
+          "type": "label",
+        },
+        "  ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "",
+            "src": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "accept": "image/*",
+            "id": "image-no-prior",
+            "onChange": [Function],
+            "type": "file",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`ImageUpload shows an image upload with prior image 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ImageUpload
+    id="image-with-prior"
+    input={
+      Object {
+        "onChange": [Function],
+        "value": "http://www.image.uploaded.source/view/image",
+      }
+    }
+    label={
+      <strong>
+        Course Image: *
+      </strong>
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <label
+          className="col-12"
+          htmlFor="image-with-prior"
+        >
+          <strong>
+            Course Image: *
+          </strong>
+        </label>,
+        "  ",
+        <img
+          alt=""
+          src="http://www.image.uploaded.source/view/image"
+        />,
+        <input
+          accept="image/*"
+          id="image-with-prior"
+          onChange={[Function]}
+          type="file"
+        />,
+      ],
+      "className": "form-group",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <strong>
+            Course Image: *
+          </strong>,
+          "className": "col-12",
+          "htmlFor": "image-with-prior",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Course Image: *",
+          },
+          "ref": null,
+          "rendered": "Course Image: *",
+          "type": "strong",
+        },
+        "type": "label",
+      },
+      "  ",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "",
+          "src": "http://www.image.uploaded.source/view/image",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "accept": "image/*",
+          "id": "image-with-prior",
+          "onChange": [Function],
+          "type": "file",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label
+            className="col-12"
+            htmlFor="image-with-prior"
+          >
+            <strong>
+              Course Image: *
+            </strong>
+          </label>,
+          "  ",
+          <img
+            alt=""
+            src="http://www.image.uploaded.source/view/image"
+          />,
+          <input
+            accept="image/*"
+            id="image-with-prior"
+            onChange={[Function]}
+            type="file"
+          />,
+        ],
+        "className": "form-group",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <strong>
+              Course Image: *
+            </strong>,
+            "className": "col-12",
+            "htmlFor": "image-with-prior",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Course Image: *",
+            },
+            "ref": null,
+            "rendered": "Course Image: *",
+            "type": "strong",
+          },
+          "type": "label",
+        },
+        "  ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "",
+            "src": "http://www.image.uploaded.source/view/image",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "accept": "image/*",
+            "id": "image-with-prior",
+            "onChange": [Function],
+            "type": "file",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

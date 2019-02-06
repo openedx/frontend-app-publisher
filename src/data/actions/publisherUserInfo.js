@@ -1,35 +1,41 @@
 import {
-  FAIL_USER_ORGANIZATIONS,
-  RECEIVE_USER_ORGANIZATIONS,
+  REQUEST_USER_ORGANIZATIONS_FAIL,
+  REQUEST_USER_ORGANIZATIONS_SUCCESS,
   REQUEST_USER_ORGANIZATIONS,
 } from '../constants/publisherUserInfo';
 
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
-export function failUserOrganizations(error) {
-  return { type: FAIL_USER_ORGANIZATIONS, error };
+function requestUserOrganizationsFail(error) {
+  return { type: REQUEST_USER_ORGANIZATIONS_FAIL, error };
 }
 
-export function receiveUserOrganizations(data) {
-  return { type: RECEIVE_USER_ORGANIZATIONS, data };
+function requestUserOrganizationsSuccess(data) {
+  return { type: REQUEST_USER_ORGANIZATIONS_SUCCESS, data };
 }
 
-export function requestUserOrganizations() {
+function requestUserOrganizations() {
   return { type: REQUEST_USER_ORGANIZATIONS };
 }
 
-export function fetchOrganizations() {
+function fetchOrganizations() {
   return (dispatch) => {
     dispatch(requestUserOrganizations());
 
     return DiscoveryDataApiService.fetchOrganizations()
       .then((response) => {
         const organizations = response.data.results;
-        dispatch(receiveUserOrganizations(organizations));
+        dispatch(requestUserOrganizationsSuccess(organizations));
       })
       .catch((error) => {
-        dispatch(failUserOrganizations(`Unable to retrieve user Organizations, please contact support: Error( ${error.toString()} )`));
+        dispatch(requestUserOrganizationsFail(`Unable to retrieve user Organizations, please contact support: Error( ${error.toString()} )`));
       });
   };
 }
 
+export {
+  requestUserOrganizationsFail,
+  requestUserOrganizationsSuccess,
+  requestUserOrganizations,
+  fetchOrganizations,
+};

@@ -26,7 +26,7 @@ describe('publisherUserInfo reducer', () => {
   });
 
   it('request organizations failed', () => {
-    expect(publisherUserInfo(oldState, actions.failUserOrganizations('failed')))
+    expect(publisherUserInfo(oldState, actions.requestUserOrganizationsFail('failed')))
       .toEqual({
         organizations: [],
         isFetching: false,
@@ -59,7 +59,7 @@ describe('publisherUserInfo reducer', () => {
         marketing_url: null,
       },
     ];
-    expect(publisherUserInfo(oldState, actions.receiveUserOrganizations(organizations)))
+    expect(publisherUserInfo(oldState, actions.requestUserOrganizationsSuccess(organizations)))
       .toEqual({
         organizations,
         isFetching: false,

@@ -5,7 +5,8 @@ import { Hyperlink } from '@edx/paragon';
 import EdxLogo from '../../../assets/edx-sm.png';
 import './Header.scss';
 
-export default class Header extends React.Component {
+
+class Header extends React.Component {
   renderLogo() {
     return (
       <img src={EdxLogo} alt="edX logo" height="30" width="60" />
@@ -30,3 +31,5 @@ export default class Header extends React.Component {
     );
   }
 }
+
+export default Header;

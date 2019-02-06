@@ -24,7 +24,7 @@ class CreateCoursePage extends React.Component {
       mode: options.courseEnrollmentTrack,
       price: options.coursePrice,
     };
-    this.props.createCourse(courseData);
+    return this.props.createCourse(courseData);
   }
 
   render() {

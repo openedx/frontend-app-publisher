@@ -1,10 +1,13 @@
 import {
-  FAIL_COURSE_INFO,
-  RECEIVE_COURSE_INFO,
   REQUEST_COURSE_INFO,
+  REQUEST_COURSE_INFO_SUCCESS,
+  REQUEST_COURSE_INFO_FAIL,
   CREATE_COURSE,
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
+  EDIT_COURSE_INFO,
+  EDIT_COURSE_SUCCESS,
+  EDIT_COURSE_FAIL,
 } from '../constants/courseInfo';
 
 
@@ -16,13 +19,13 @@ const initialState = {
 
 function courseInfo(state = initialState, action) {
   switch (action.type) {
-    case FAIL_COURSE_INFO:
+    case REQUEST_COURSE_INFO_FAIL:
       return Object.assign({}, state, {
         data: {},
         isFetching: false,
         error: action.error,
       });
-    case RECEIVE_COURSE_INFO:
+    case REQUEST_COURSE_INFO_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
         isFetching: false,
@@ -47,6 +50,18 @@ function courseInfo(state = initialState, action) {
     case CREATE_COURSE_FAIL:
       return Object.assign({}, state, {
         data: {},
+        error: action.error,
+      });
+    case EDIT_COURSE_INFO:
+      return Object.assign({}, state, {
+        error: null,
+      });
+    case EDIT_COURSE_SUCCESS:
+      return Object.assign({}, state, {
+        data: action.data,
+      });
+    case EDIT_COURSE_FAIL:
+      return Object.assign({}, state, {
         error: action.error,
       });
     default:

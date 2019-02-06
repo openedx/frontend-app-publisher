@@ -34,18 +34,18 @@ describe('publisherUserInfo fetch organizations actions', () => {
   });
   it('should succeed', () => {
     const expectedAction = {
-      type: types.RECEIVE_USER_ORGANIZATIONS,
+      type: types.REQUEST_USER_ORGANIZATIONS_SUCCESS,
       data: testData,
     };
-    expect(actions.receiveUserOrganizations(testData)).toEqual(expectedAction);
+    expect(actions.requestUserOrganizationsSuccess(testData)).toEqual(expectedAction);
   });
   it('should fail', () => {
     const error = 'Test error';
     const expectedAction = {
-      type: types.FAIL_USER_ORGANIZATIONS,
+      type: types.REQUEST_USER_ORGANIZATIONS_FAIL,
       error,
     };
-    expect(actions.failUserOrganizations(error)).toEqual(expectedAction);
+    expect(actions.requestUserOrganizationsFail(error)).toEqual(expectedAction);
   });
 
   it('handles fetch success', () => {
@@ -58,7 +58,7 @@ describe('publisherUserInfo fetch organizations actions', () => {
 
     const expectedActions = [
       actions.requestUserOrganizations(),
-      actions.receiveUserOrganizations([testData]),
+      actions.requestUserOrganizationsSuccess([testData]),
     ];
     const store = mockStore();
 
@@ -76,7 +76,7 @@ describe('publisherUserInfo fetch organizations actions', () => {
 
     const expectedActions = [
       actions.requestUserOrganizations(),
-      actions.failUserOrganizations(expectedError),
+      actions.requestUserOrganizationsFail(expectedError),
     ];
     const store = mockStore();
 
