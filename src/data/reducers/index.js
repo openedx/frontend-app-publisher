@@ -3,6 +3,7 @@ import { connectRouter } from 'connected-react-router';
 import { reducer as formReducer } from 'redux-form';
 
 import courseInfo from './courseInfo';
+import table from './table';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -16,4 +17,5 @@ export default history => combineReducers({
   authentication: identityReducer,
   courseInfo,
   form: formReducer,
+  table,
 });
