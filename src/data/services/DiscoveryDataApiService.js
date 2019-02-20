@@ -26,6 +26,7 @@ class DiscoveryDataApiService {
     return apiClient.get(`${url}`, {
       params: queryParams,
     });
+  }
 
   static fetchOrganizations() {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/organizations/`;

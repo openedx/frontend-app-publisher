@@ -20,12 +20,6 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-// const mergeProps = (stateProps, actionProps) => ({
-//   ...stateProps,
-//   fetchOrganizations: () => actionProps.fetchOrganizations(),
-//   createCourse: (courseData) => { actionProps.createCourse(courseData); },
-// });
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
