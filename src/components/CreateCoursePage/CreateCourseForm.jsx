@@ -127,7 +127,6 @@ class CreateCourseForm extends React.Component {
 }
 
 CreateCourseForm.propTypes = {
-  // props From redux-form
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
     courseOrg: PropTypes.string,

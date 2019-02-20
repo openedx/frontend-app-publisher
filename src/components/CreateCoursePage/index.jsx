@@ -5,7 +5,6 @@ import { Icon, StatusAlert } from '@edx/paragon';
 import { push } from 'connected-react-router';
 
 import CreateCourseForm from './CreateCourseForm';
-import './CreateCoursePage.scss';
 import store from '../../data/store';
 
 class CreateCoursePage extends React.Component {
