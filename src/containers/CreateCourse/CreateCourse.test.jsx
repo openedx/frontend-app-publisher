@@ -52,7 +52,6 @@ describe('CreatCourse View', () => {
     testState.publisherUserInfo.error = null;
 
     store = mockStore(testState);
-    mockOnSubmit = jest.fn();
 
     const CourseCreatePageWrapper = props => (
       <MemoryRouter>
@@ -65,14 +64,15 @@ describe('CreatCourse View', () => {
 
     );
 
-    wrapper = mount(<CourseCreatePageWrapper
-      createCourse={mockOnSubmit}
-    />);
+    wrapper = mount(<CourseCreatePageWrapper />);
     const instance = (wrapper.find('CreateCoursePage')).instance();
-    const spyHandleCreate = jest.spyOn(instance, 'handleCourseCreate');
+    const spy = jest.spyOn(instance, 'handleCourseCreate');
+    instance.forceUpdate();
+
+    // Submit
     const formWrapper = wrapper.find('#create-course-form');
     formWrapper.find('.form-submit-btn').simulate('submit');
 
-    expect(spyHandleCreate).toBeCalledTimes(1);
+    expect(spy).toBeCalledTimes(1);
   });
 });

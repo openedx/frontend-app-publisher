@@ -7,6 +7,11 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 
 class CreateCoursePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleCourseCreate = this.handleCourseCreate.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchOrganizations();
   }
@@ -22,18 +27,18 @@ class CreateCoursePage extends React.Component {
     this.props.createCourse(courseData);
   }
 
-  showErrorStatus(error) {
-    return (
-      <StatusAlert
-        id="error"
-        alertType="danger"
-        title="Course Create Form failed to load: "
-        message={error}
-      />
-    );
-  }
+  render() {
+    if (!this.props.publisherUserInfo) {
+      return (
+        <StatusAlert
+          id="error"
+          alertType="danger"
+          title="Course Create Form failed to load: "
+          message="User information unavailable"
+        />
+      );
+    }
 
-  renderForm() {
     const {
       courseOrg,
       courseTitle,
@@ -47,41 +52,6 @@ class CreateCoursePage extends React.Component {
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
 
     return (
-      <div>
-        <h2>Create New Course</h2>
-        <hr />
-        <h3>Course Information</h3>
-        <div className="col">
-          {courseInfo.error ? this.showErrorStatus(courseInfo.error) : ''}
-          <CreateCourseForm
-            id="create-course-form"
-            onSubmit={options => (
-              this.handleCourseCreate(options)
-            )}
-            initialValues={{
-              courseOrg,
-              courseTitle,
-              courseNumber,
-              courseEnrollmentTrack,
-              coursePrice,
-            }}
-            organizations={organizations}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  render() {
-    if (!this.props.publisherUserInfo) {
-      return this.showErrorStatus('user information unavailable');
-    }
-
-    const {
-      publisherUserInfo,
-    } = this.props;
-
-    return (
       <React.Fragment>
         <Helmet>
           <title>Create a New Course</title>
@@ -91,8 +61,43 @@ class CreateCoursePage extends React.Component {
           <div className="row justify-content-md-center my-3 ">
             <div className="col-6">
               { publisherUserInfo.isFetching && <LoadingSpinner /> }
-              { publisherUserInfo.error && this.showErrorStatus(publisherUserInfo.error) }
-              { !publisherUserInfo.isFetching && this.renderForm() }
+              { publisherUserInfo.error && (
+                <StatusAlert
+                  id="error"
+                  alertType="danger"
+                  title="Course Create Form failed to load: "
+                  message={publisherUserInfo.error}
+                />
+              )}
+              { !publisherUserInfo.isFetching && (
+                <div>
+                  <h2>Create New Course</h2>
+                  <hr />
+                  <h3>Course Information</h3>
+                  <div className="col">
+                    {courseInfo.error ? (
+                      <StatusAlert
+                        id="error"
+                        alertType="danger"
+                        title="Course Create Form failed to load: "
+                        message={courseInfo.error}
+                      />
+                    ) : ''}
+                    <CreateCourseForm
+                      id="create-course-form"
+                      onSubmit={this.handleCourseCreate}
+                      initialValues={{
+                        courseOrg,
+                        courseTitle,
+                        courseNumber,
+                        courseEnrollmentTrack,
+                        coursePrice,
+                      }}
+                      organizations={organizations}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
