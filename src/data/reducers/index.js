@@ -4,6 +4,7 @@ import { reducer as formReducer } from 'redux-form';
 
 import courseInfo from './courseInfo';
 import table from './table';
+import publisherUserInfo from './publisherUserInfo';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -16,6 +17,7 @@ export default history => combineReducers({
   // creating the store in data/store.js.
   authentication: identityReducer,
   courseInfo,
+  publisherUserInfo,
   form: formReducer,
   table,
 });

@@ -8,7 +8,11 @@ import {
   fetchCourseInfo,
   receiveCourseInfo,
   requestCourseInfo,
+  courseCreateFail,
+  courseCreateSuccess,
+  createNewCourse,
 } from './courseInfo';
+import * as types from '../constants/courseInfo';
 
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(apiClient);
@@ -16,7 +20,7 @@ const mockClient = new MockAdapter(apiClient);
 const uuid = '11111111-1111-1111-1111-111111111111';
 
 
-describe('courseInfo actions', () => {
+describe('courseInfo fetch course actions', () => {
   afterEach(() => {
     mockClient.reset();
   });
@@ -86,5 +90,32 @@ describe('courseInfo actions', () => {
     return store.dispatch(fetchCourseInfo(uuid)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
+  });
+});
+
+describe('courseInfo create course actions', () => {
+  it('should start new course', () => {
+    const courseData = { name: 'test course data' };
+    const expectedAction = {
+      type: types.CREATE_COURSE,
+      courseData,
+    };
+    expect(createNewCourse(courseData)).toEqual(expectedAction);
+  });
+  it('should succeed', () => {
+    const data = { name: 'test course data' };
+    const expectedAction = {
+      type: types.CREATE_COURSE_SUCCESS,
+      data,
+    };
+    expect(courseCreateSuccess(data)).toEqual(expectedAction);
+  });
+  it('should fail', () => {
+    const error = 'Test error';
+    const expectedAction = {
+      type: types.CREATE_COURSE_FAIL,
+      error,
+    };
+    expect(courseCreateFail(error)).toEqual(expectedAction);
   });
 });

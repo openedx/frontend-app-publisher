@@ -1,5 +1,8 @@
 export const FAIL_COURSE_INFO = 'FAIL_COURSE_INFO';
 export const RECEIVE_COURSE_INFO = 'RECEIVE_COURSE_INFO';
 export const REQUEST_COURSE_INFO = 'REQUEST_COURSE_INFO';
+export const CREATE_COURSE = 'CREATE_COURSE';
+export const CREATE_COURSE_SUCCESS = 'CREATE_COURSE_SUCCESS';
+export const CREATE_COURSE_FAIL = 'CREATE_COURSE_FAIL';
 
 export const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
