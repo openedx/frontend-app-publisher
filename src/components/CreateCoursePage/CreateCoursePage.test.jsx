@@ -18,7 +18,6 @@ describe('CreateCoursePage', () => {
       }}
       courseInfo={{
         error: null,
-        courseCreated: false,
         data: {},
       }}
       createCourse={() => null}
@@ -37,7 +36,6 @@ describe('CreateCoursePage', () => {
       }}
       courseInfo={{
         error: null,
-        courseCreated: false,
         data: {},
       }}
       createCourse={() => null}
@@ -55,7 +53,6 @@ describe('CreateCoursePage', () => {
       }}
       courseInfo={{
         error: null,
-        courseCreated: false,
         data: {},
       }}
       createCourse={() => null}
@@ -67,7 +64,6 @@ describe('CreateCoursePage', () => {
       fetchOrganizations={() => null}
       courseInfo={{
         error: null,
-        courseCreated: false,
         data: {},
       }}
       createCourse={() => null}
@@ -85,7 +81,6 @@ describe('CreateCoursePage', () => {
       }}
       courseInfo={{
         error: 'Fail',
-        courseCreated: false,
         data: {},
       }}
       createCourse={() => null}
@@ -103,7 +98,6 @@ describe('CreateCoursePage', () => {
       }}
       courseInfo={{
         error: null,
-        courseCreated: true,
         data: {
           uuid: '11111111-1111-1111-1111-111111111111',
         },

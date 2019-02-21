@@ -11,7 +11,6 @@ import {
 const initialState = {
   data: {},
   isFetching: false,
-  courseCreated: false,
   error: null,
 };
 
@@ -38,21 +37,18 @@ function courseInfo(state = initialState, action) {
     case CREATE_COURSE:
       return Object.assign({}, state, {
         data: {},
-        courseCreated: false,
         isFetching: false,
         error: null,
       });
     case CREATE_COURSE_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
-        courseCreated: true,
         isFetching: false,
         error: null,
       });
     case CREATE_COURSE_FAIL:
       return Object.assign({}, state, {
         data: {},
-        courseCreated: false,
         isFetching: false,
         error: action.error,
       });

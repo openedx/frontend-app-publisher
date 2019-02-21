@@ -114,7 +114,7 @@ class CreateCourseForm extends React.Component {
                 >
                   Cancel
                 </Link>
-                <button type="submit" className="form-submit-btn" disabled={pristine || submitting}>
+                <button type="submit" className="btn btn-outline-primary form-submit-btn" disabled={pristine || submitting}>
                   Submit
                 </button>
               </div>

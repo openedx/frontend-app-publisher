@@ -8,9 +8,7 @@ import { MemoryRouter } from 'react-router-dom';
 import CreateCoursePage from './index';
 
 const initialState = {
-  courseInfo: {
-    courseCreated: false,
-  },
+  courseInfo: {},
   publisherUserInfo: {
     organizations: [],
     isFetching: true,
@@ -31,14 +29,11 @@ const createWrapper = (state) => {
 
 
 describe('CreatCourse View', () => {
-  beforeEach(() => {
-  });
-
   it('shows spinner while loading', () => {
     const testState = initialState;
     testState.publisherUserInfo.isFetching = true;
     wrapper = createWrapper(testState).dive();
-    expect(wrapper.find('#spinner')).toHaveLength(1);
+    expect(wrapper.find('LoadingSpinner').dive()).toHaveLength(1);
   });
 
   it('shows error when fails to retrieve organizations', () => {
@@ -48,13 +43,11 @@ describe('CreatCourse View', () => {
     testState.publisherUserInfo.error = errorMessage;
     wrapper = createWrapper(testState).dive();
     expect(wrapper.find('#error')).toHaveLength(1);
-    expect(wrapper.find('#error').props().dialog).toEqual(errorMessage);
+    expect(wrapper.find('#error').props().message).toEqual(errorMessage);
   });
 
   it('Submits the form with correct data', () => {
     const testState = initialState;
-    // const handleSubmit = jest.fn();
-
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
 

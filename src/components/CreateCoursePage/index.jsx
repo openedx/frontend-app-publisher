@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Icon, StatusAlert } from '@edx/paragon';
 import { push } from 'connected-react-router';
 
 import CreateCourseForm from './CreateCourseForm';
 import store from '../../data/store';
+import StatusAlert from '../StatusAlert';
+import LoadingSpinner from '../LoadingSpinner';
 
 class CreateCoursePage extends React.Component {
   componentDidMount() {
@@ -28,49 +29,59 @@ class CreateCoursePage extends React.Component {
       <StatusAlert
         id="error"
         alertType="danger"
-        dismissible={false}
-        open
-        dialog={error}
-        className={['text-center', 'mx-auto', 'w-50']}
+        title="Course Create Form failed to load: "
+        message={error}
       />
     );
   }
 
-  render() {
-    if (!this.props.publisherUserInfo) {
-      return this.showErrorStatus('Unable to load course creation form, please contact support');
-    }
-
-    if (this.props.courseInfo && this.props.courseInfo.courseCreated) {
-      store.dispatch(push(`/courses/${this.props.courseInfo.data.uuid}/`));
-    }
-
+  renderForm() {
     const {
       courseOrg,
       courseTitle,
       courseNumber,
       courseEnrollmentTrack,
       coursePrice,
-      publisherUserInfo,
       courseInfo,
+      publisherUserInfo,
     } = this.props;
 
-    if (publisherUserInfo.error) {
-      return this.showErrorStatus(publisherUserInfo.error);
-    }
+    const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
 
-    if (publisherUserInfo.isFetching) {
-      return (
-        <div className="mx-auto text-center">
-          <Icon
-            id="spinner"
-            className={['fa', 'fa-circle-o-notch', 'fa-spin', 'fa-3x', 'fa-fw']}
+    return (
+      <div>
+        <h2>Create New Course</h2>
+        <hr />
+        <h3>Course Information</h3>
+        <div className="col">
+          {courseInfo.error ? this.showErrorStatus(courseInfo.error) : ''}
+          <CreateCourseForm
+            id="create-course-form"
+            onSubmit={options => (
+              this.handleCourseCreate(options)
+            )}
+            initialValues={{
+              courseOrg,
+              courseTitle,
+              courseNumber,
+              courseEnrollmentTrack,
+              coursePrice,
+            }}
+            organizations={organizations}
           />
         </div>
-      );
+      </div>
+    );
+  }
+
+  render() {
+    if (!this.props.publisherUserInfo) {
+      return this.showErrorStatus('user information unavailable');
     }
 
-    const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
+    const {
+      publisherUserInfo,
+    } = this.props;
 
     return (
       <React.Fragment>
@@ -81,31 +92,11 @@ class CreateCoursePage extends React.Component {
         <div className="container-fluid">
           <div className="row justify-content-md-center my-3 ">
             <div className="col-6">
-              <h2>Create New Course</h2>
-              <hr />
-              <h3>Course Information</h3>
-              <div className="col">
-                {courseInfo.error ? this.showErrorStatus(courseInfo.error) : ''}
-                <CreateCourseForm
-                  id="create-course-form"
-                  onSubmit={options => (
-                    this.handleCourseCreate(options)
-                  )}
-                  initialValues={{
-                    courseOrg,
-                    courseTitle,
-                    courseNumber,
-                    courseEnrollmentTrack,
-                    coursePrice,
-                  }}
-                  organizations={organizations}
-                />
-              </div>
-
+              { publisherUserInfo.isFetching && <LoadingSpinner /> }
+              { publisherUserInfo.error && this.showErrorStatus(publisherUserInfo.error) }
+              { !publisherUserInfo.isFetching && this.renderForm() }
             </div>
-
           </div>
-
         </div>
       </React.Fragment>
     );
@@ -137,7 +128,6 @@ CreateCoursePage.propTypes = {
   }),
   courseInfo: PropTypes.shape({
     error: PropTypes.string,
-    courseCreated: PropTypes.bool,
     data: PropTypes.shape({
       uuid: PropTypes.string,
     }),

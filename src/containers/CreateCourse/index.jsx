@@ -9,16 +9,10 @@ const mapStateToProps = state => ({
   courseInfo: state.courseInfo,
 });
 
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchOrganizations: () => {
-      dispatch(fetchOrganizations());
-    },
-    createCourse: (courseData) => {
-      dispatch(createCourse(courseData));
-    },
-  };
-}
+const mapDispatchToProps = {
+  createCourse,
+  fetchOrganizations,
+};
 
 export default connect(
   mapStateToProps,

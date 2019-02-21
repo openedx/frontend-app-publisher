@@ -10,6 +10,8 @@ import {
 
 
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
+import store from '../store';
+import { push } from "connected-react-router";
 
 export function failCourseInfo(id, error) {
   return { type: FAIL_COURSE_INFO, id, error };
@@ -24,9 +26,7 @@ export function requestCourseInfo(id) {
 }
 
 export function createNewCourse(courseData) {
-  return {
-    type: CREATE_COURSE, courseData,
-  };
+  return { type: CREATE_COURSE, courseData, };
 }
 
 export function courseCreateSuccess(data) {
@@ -75,6 +75,7 @@ export function createCourse(courseData) {
     return DiscoveryDataApiService.createCourse(courseData)
       .then((response) => {
         const course = response.data;
+        dispatch(push(`/courses/${course.uuid}/`));
         dispatch(courseCreateSuccess(course));
       })
       .catch((error) => {

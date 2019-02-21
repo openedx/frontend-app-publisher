@@ -7,7 +7,6 @@ describe('courseInfo reducer', () => {
   const oldState = { // overwritten as old state for actions
     data: { nope: 'bad data' },
     isFetching: true,
-    courseCreated: false,
     error: 'error occurred',
   };
 
@@ -23,7 +22,6 @@ describe('courseInfo reducer', () => {
     expect(courseInfo(undefined, {})).toEqual({
       data: {},
       isFetching: false,
-      courseCreated: false,
       error: null,
     });
   });
@@ -33,7 +31,6 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: true,
-        courseCreated: false,
         error: null,
       });
   });
@@ -43,7 +40,6 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: { key: 'DemoX+TestCourse' },
         isFetching: false,
-        courseCreated: false,
         error: null,
       });
   });
@@ -53,7 +49,6 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: false,
-        courseCreated: false,
         error: 'failure',
       });
   });
@@ -63,7 +58,6 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: false,
-        courseCreated: false,
         error: null,
       });
   });
@@ -73,7 +67,6 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: courseData,
         isFetching: false,
-        courseCreated: true,
         error: null,
       });
   });
@@ -83,7 +76,6 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: false,
-        courseCreated: false,
         error: 'failure',
       });
   });
