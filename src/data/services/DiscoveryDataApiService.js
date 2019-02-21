@@ -20,6 +20,7 @@ class DiscoveryDataApiService {
       page: 1,
       page_size: 50,
       fields: fields.join(),
+      editable: 1,
       ...options,
     };
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses`;
