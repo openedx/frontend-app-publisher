@@ -1,3 +1,5 @@
+import { push } from 'connected-react-router';
+
 import {
   FAIL_COURSE_INFO,
   RECEIVE_COURSE_INFO,
@@ -7,11 +9,7 @@ import {
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
 } from '../constants/courseInfo';
-
-
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
-import store from '../store';
-import { push } from "connected-react-router";
 
 export function failCourseInfo(id, error) {
   return { type: FAIL_COURSE_INFO, id, error };
@@ -26,7 +24,7 @@ export function requestCourseInfo(id) {
 }
 
 export function createNewCourse(courseData) {
-  return { type: CREATE_COURSE, courseData, };
+  return { type: CREATE_COURSE, courseData };
 }
 
 export function courseCreateSuccess(data) {

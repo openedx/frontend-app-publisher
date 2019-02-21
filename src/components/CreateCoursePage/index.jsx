@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { push } from 'connected-react-router';
 
 import CreateCourseForm from './CreateCourseForm';
-import store from '../../data/store';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 
