@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Hyperlink, Icon, StatusAlert } from '@edx/paragon';
 
 import LabelledData from '../../components/LabelledData';
+import StaffGrid from '../../components/StaffGrid';
 
 import { fetchCourseInfo } from '../../data/actions/courseInfo';
 
@@ -68,6 +69,10 @@ class CourseView extends React.Component {
     const number = keyParts[keyParts.length - 1];
     const subjects = data.subjects.map(x => x.name);
 
+    // TODO: Move the staff grid into the course run view
+    const { staff } = data.course_runs[0];
+    console.log(staff);
+
     return (
       <div className="container mx-auto">
         <LabelledData id="title" label="Title" value={data.title} />
@@ -107,6 +112,11 @@ class CourseView extends React.Component {
             data.video && data.video.src &&
             <Hyperlink content={data.video.src} destination={data.video.src} target="_blank" />
           }
+        />
+        <LabelledData
+          id="staff"
+          label="Course Staff"
+          value={<StaffGrid staff={staff} />}
         />
       </div>
     );
