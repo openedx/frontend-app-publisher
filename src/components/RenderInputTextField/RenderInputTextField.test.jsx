@@ -6,6 +6,7 @@ import RenderInputTextField from './index';
 describe('RenderInputTextField', () => {
   it('renders html for text', () => {
     const component = shallow(<RenderInputTextField
+      id="testId"
       input={{}}
       type="text"
       name="Test"
@@ -16,6 +17,7 @@ describe('RenderInputTextField', () => {
   });
   it('renders html for number type', () => {
     const component = shallow(<RenderInputTextField
+      id="testId"
       input={{}}
       type="number"
       name="Test"

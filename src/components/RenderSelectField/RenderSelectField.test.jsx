@@ -6,6 +6,7 @@ import RenderSelectField from './index';
 describe('RenderSelectField', () => {
   it('renders html for select field', () => {
     const component = shallow(<RenderSelectField
+      id="testId"
       input={{}}
       name="Test"
       label="TestLabel"

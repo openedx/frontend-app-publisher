@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { InputText } from '@edx/paragon';
 
 const RenderInputTextField = ({
+  id,
   input,
   label,
   type,
@@ -11,6 +12,7 @@ const RenderInputTextField = ({
   meta: { touched, error },
 }) => (
   <InputText
+    id={id}
     {...input}
     label={label}
     type={type}
@@ -23,11 +25,13 @@ const RenderInputTextField = ({
 );
 
 RenderInputTextField.defaultProps = {
+  id: undefined,
   disabled: false,
   required: false,
 };
 
 RenderInputTextField.propTypes = {
+  id: PropTypes.string,
   input: PropTypes.shape({}).isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   type: PropTypes.string.isRequired,
