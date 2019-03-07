@@ -11,12 +11,14 @@ import {
   createCourseFail,
   createCourseSuccess,
   createNewCourse,
+  createNewCourseRun,
+  createCourseRunSuccess,
+  createCourseRunFail,
   editCourseInfo,
   editCourseSuccess,
   editCourseFail,
 } from './courseInfo';
 import * as types from '../constants/courseInfo';
-
 
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(apiClient);
@@ -99,12 +101,12 @@ describe('courseInfo fetch course actions', () => {
 
 describe('courseInfo create course actions', () => {
   it('should start new course', () => {
-    const courseData = { name: 'test course data' };
+    const data = { name: 'test course data' };
     const expectedAction = {
       type: types.CREATE_COURSE,
-      courseData,
+      data,
     };
-    expect(createNewCourse(courseData)).toEqual(expectedAction);
+    expect(createNewCourse(data)).toEqual(expectedAction);
   });
 
   it('should succeed', () => {
@@ -188,5 +190,32 @@ describe('courseInfo edit course actions', () => {
       error,
     };
     expect(editCourseFail(error)).toEqual(expectedAction);
+  });
+});
+
+describe('courseInfo create course run actions', () => {
+  it('should start creating new course run', () => {
+    const data = { start: '2019-03-04T00:00:00.000Z' };
+    const expectedAction = {
+      type: types.CREATE_COURSE_RUN,
+      data,
+    };
+    expect(createNewCourseRun(data)).toEqual(expectedAction);
+  });
+  it('should succeed creating new course run', () => {
+    const data = { name: 'test course data' };
+    const expectedAction = {
+      type: types.CREATE_COURSE_RUN_SUCCESS,
+      data,
+    };
+    expect(createCourseRunSuccess(data)).toEqual(expectedAction);
+  });
+  it('should fail creating new course run', () => {
+    const error = 'Test error';
+    const expectedAction = {
+      type: types.CREATE_COURSE_RUN_FAIL,
+      error,
+    };
+    expect(createCourseRunFail(error)).toEqual(expectedAction);
   });
 });
