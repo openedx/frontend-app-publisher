@@ -11,6 +11,9 @@ import {
   CREATE_COURSE,
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
+  CREATE_COURSE_RUN,
+  CREATE_COURSE_RUN_SUCCESS,
+  CREATE_COURSE_RUN_FAIL,
 } from '../constants/courseInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
@@ -27,8 +30,8 @@ function requestCourseInfo(id) {
   return { type: REQUEST_COURSE_INFO, id };
 }
 
-function createNewCourse(courseData) {
-  return { type: CREATE_COURSE, courseData };
+function createNewCourse(data) {
+  return { type: CREATE_COURSE, data };
 }
 
 function createCourseSuccess(data) {
@@ -37,6 +40,18 @@ function createCourseSuccess(data) {
 
 function createCourseFail(error) {
   return { type: CREATE_COURSE_FAIL, error };
+}
+
+function createNewCourseRun(data) {
+  return { type: CREATE_COURSE_RUN, data };
+}
+
+function createCourseRunSuccess(data) {
+  return { type: CREATE_COURSE_RUN_SUCCESS, data };
+}
+
+function createCourseRunFail(error) {
+  return { type: CREATE_COURSE_RUN_FAIL, error };
 }
 
 function editCourseInfo(courseData) {
@@ -82,15 +97,52 @@ function fetchCourseInfo(id) {
   };
 }
 
-function createCourse(courseData) {
+function createCourseRun(course, courseRunData) {
+  return (dispatch) => {
+    dispatch(createNewCourseRun());
+    if (!course.key) {
+      dispatch(createCourseRunFail('Course Run create failed, please try again or contact support. Error( Course create incomplete )'));
+      return null;
+    }
+
+    const data = {
+      course: course.key,
+      start: courseRunData.start,
+      end: courseRunData.end,
+    };
+    return DiscoveryDataApiService.createCourseRun(data)
+      .then((response) => {
+        const courseRun = response.data;
+        dispatch(createCourseRunSuccess(courseRun));
+        return dispatch(push(`/courses/${course.uuid}/edit/`));
+      })
+      .catch((response) => {
+        let errorMsg = `Course Run create failed, please try again or contact support. \nError ( ${response.message} )`;
+        const errorData = response.response.data;
+        if (errorData) {
+          // More options in the error response
+          errorMsg += '\n\n';
+
+          Object.keys(errorData).forEach((errorKey) => {
+            if (Object.prototype.hasOwnProperty.call(errorData, errorKey)) {
+              errorMsg += `${errorKey}: ${errorData[errorKey]}`;
+            }
+          });
+        }
+        dispatch(createCourseRunFail(errorMsg));
+      });
+  };
+}
+
+function createCourse(courseData, courseRunData) {
   return (dispatch) => {
     dispatch(createNewCourse(courseData));
-    // Send create course POST
+
     return DiscoveryDataApiService.createCourse(courseData)
       .then((response) => {
         const course = response.data;
-        dispatch(push(`/courses/${course.uuid}/edit/`));
         dispatch(createCourseSuccess(course));
+        dispatch(createCourseRun(course, courseRunData));
       })
       .catch((error) => {
         dispatch(createCourseFail(`Course create failed, please try again or contact support. Error( ${error.response.data} )`));
@@ -120,10 +172,14 @@ export {
   createNewCourse,
   createCourseSuccess,
   createCourseFail,
+  createNewCourseRun,
+  createCourseRunSuccess,
+  createCourseRunFail,
   editCourseInfo,
   editCourseSuccess,
   editCourseFail,
   fetchCourseInfo,
+  createCourseRun,
   createCourse,
   editCourse,
 };

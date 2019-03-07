@@ -40,6 +40,11 @@ class DiscoveryDataApiService {
     return apiClient.post(url, data);
   }
 
+  static createCourseRun(data) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/`;
+    return apiClient.post(url, data);
+  }
+
   static fetchCourseOptions(uuid) {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
     return apiClient.options(url);

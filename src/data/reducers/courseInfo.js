@@ -5,6 +5,9 @@ import {
   CREATE_COURSE,
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
+  CREATE_COURSE_RUN,
+  CREATE_COURSE_RUN_SUCCESS,
+  CREATE_COURSE_RUN_FAIL,
   EDIT_COURSE_INFO,
   EDIT_COURSE_SUCCESS,
   EDIT_COURSE_FAIL,
@@ -14,6 +17,7 @@ import {
 const initialState = {
   data: {},
   isFetching: false,
+  isCreating: false,
   error: null,
 };
 
@@ -39,17 +43,30 @@ function courseInfo(state = initialState, action) {
       });
     case CREATE_COURSE:
       return Object.assign({}, state, {
-        data: {},
+        isCreating: true,
         error: null,
       });
     case CREATE_COURSE_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
-        error: null,
       });
     case CREATE_COURSE_FAIL:
       return Object.assign({}, state, {
-        data: {},
+        isCreating: false,
+        error: action.error,
+      });
+    case CREATE_COURSE_RUN:
+      return Object.assign({}, state, {
+        error: null,
+      });
+    case CREATE_COURSE_RUN_SUCCESS:
+      return Object.assign({}, state, {
+        isCreating: false,
+        error: null,
+      });
+    case CREATE_COURSE_RUN_FAIL:
+      return Object.assign({}, state, {
+        isCreating: false,
         error: action.error,
       });
     case EDIT_COURSE_INFO:

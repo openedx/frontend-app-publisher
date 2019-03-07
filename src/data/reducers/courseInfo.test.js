@@ -17,6 +17,7 @@ describe('courseInfo reducer', () => {
     initialState = {
       data: {},
       isFetching: false,
+      isCreating: false,
       error: null,
     };
   });
@@ -25,6 +26,7 @@ describe('courseInfo reducer', () => {
     expect(courseInfo(undefined, {})).toEqual({
       data: {},
       isFetching: false,
+      isCreating: false,
       error: null,
     });
   });
@@ -34,6 +36,7 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: true,
+        isCreating: false,
         error: null,
       });
   });
@@ -44,6 +47,7 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: { key: 'DemoX+TestCourse' },
         isFetching: false,
+        isCreating: false,
         error: null,
       });
   });
@@ -54,13 +58,19 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: false,
+        isCreating: false,
         error: 'failure',
       });
   });
 
   it('course create request works', () => {
     expect(courseInfo(initialState, actions.createNewCourse(courseData)))
-      .toEqual(initialState);
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: true,
+        error: null,
+      });
   });
 
   it('course create receive works', () => {
@@ -68,6 +78,7 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: courseData,
         error: null,
+        isCreating: false,
         isFetching: false,
       });
   });
@@ -77,6 +88,7 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         error: 'failure',
+        isCreating: false,
         isFetching: false,
       });
   });
@@ -86,6 +98,7 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: false,
+        isCreating: false,
         error: null,
       });
   });
@@ -95,6 +108,7 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: courseData,
         isFetching: false,
+        isCreating: false,
         error: null,
       });
   });
@@ -104,6 +118,37 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: false,
+        isCreating: false,
+        error: 'failure',
+      });
+  });
+
+  it('course create run request works', () => {
+    expect(courseInfo(initialState, actions.createNewCourseRun()))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
+        error: null,
+      });
+  });
+
+  it('course create run receive works', () => {
+    expect(courseInfo(initialState, actions.createCourseRunSuccess(courseData)))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
+        error: null,
+      });
+  });
+
+  it('course create run fail works', () => {
+    expect(courseInfo(initialState, actions.createCourseRunFail('failure')))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
         error: 'failure',
       });
   });
