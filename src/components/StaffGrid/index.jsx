@@ -13,7 +13,7 @@ const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name |
 const StaffGrid = ({ staff }) => (
   <div className="staff-grid row">
     {staff.map(staffer => (
-      <div className="staffer-wrapper col-6 col-md-4 col-lg-3" key={staffer.uuid}>
+      <div className="staffer-wrapper col-6 col-md-4 col-lg-3 col-xl-2" key={staffer.uuid}>
         <div className="staffer-image-wrapper overflow-hidden">
           <img src={staffer.profile_image_url} className="rounded-circle w-50" alt="" />
         </div>
