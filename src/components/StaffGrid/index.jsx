@@ -8,7 +8,7 @@ const removeStaff = () => console.log('Delete');
 
 const editStaff = () => console.log('Edit');
 
-const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name}`;
+const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name || ''}`;
 
 const StaffGrid = ({ staff }) => (
   <div className="staff-grid row">
