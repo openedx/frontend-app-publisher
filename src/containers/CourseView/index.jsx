@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Hyperlink, Icon, StatusAlert } from '@edx/paragon';
 
 import LabelledData from '../../components/LabelledData';
-import StaffGrid from '../../components/StaffGrid';
 
 import { fetchCourseInfo } from '../../data/actions/courseInfo';
 
