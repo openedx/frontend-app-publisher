@@ -4,9 +4,9 @@ import { Icon } from '@edx/paragon';
 
 
 // TODO: Make these actually do something
-const removeStaff = () => console.log('Delete');
+const removeStaff = () => {};
 
-const editStaff = () => console.log('Edit');
+const editStaff = () => {};
 
 const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name || ''}`;
 
