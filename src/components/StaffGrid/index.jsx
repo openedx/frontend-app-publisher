@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '@edx/paragon';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-// TODO: Make these actually do something
-const removeStaff = () => {};
+import { Staffer, getStafferName } from '../Staffer';
 
-const editStaff = () => {};
-
-const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name || ''}`;
 
 class StaffGrid extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { staffList: props.staff };
+    this.state = {
+      staffList: props.staff,
+    };
+
+    this.handleRemove = this.handleRemove.bind(this);
     this.onDragEnd = this.onDragEnd.bind(this);
   }
 
@@ -34,44 +33,35 @@ class StaffGrid extends React.Component {
     });
   }
 
+  handleRemove(uuid) {
+    this.setState({
+      staffList: this.state.staffList.filter(staffer => staffer.uuid !== uuid),
+    });
+  }
+
   render() {
+    const {
+      staffList,
+    } = this.state;
+
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="staffGrid" direction="horizontal">
           {provided => (
-            <div ref={provided.innerRef} className="staff-grid row" {...provided.droppableProps}>
-              {this.state.staffList.map((staffer, index) => (
-                <Draggable draggableId={getStafferName(staffer)} index={index}>
+            <div className="staff-grid row" ref={provided.innerRef} {...provided.droppableProps}>
+              {staffList.map((staffer, index) => (
+                <Draggable draggableId={getStafferName(staffer)} index={index} key={staffer.uuid}>
                   {draggableProvided => (
                     <div
-                      ref={draggableProvided.innerRef}
                       className="staffer-wrapper col-6 col-md-4 col-lg-3 col-xl-2"
-                      key={staffer.uuid}
+                      ref={draggableProvided.innerRef}
                       {...draggableProvided.dragHandleProps}
                       {...draggableProvided.draggableProps}
                     >
-                      <div className="staffer-image-wrapper overflow-hidden">
-                        <img src={staffer.profile_image_url} className="rounded-circle w-50" alt="" />
-                      </div>
-                      <div className="staffer-details">
-                        <button className="btn mr-1 p-0" onClick={() => removeStaff()}>
-                          <Icon
-                            id="delete-icon"
-                            className={['fa', 'fa-trash', 'fa-fw', 'text-danger']}
-                            screenReaderText={`Remove ${getStafferName(staffer)}`}
-                          />
-                        </button>
-                        <button className="btn mr-1 p-0" onClick={() => editStaff()}>
-                          <Icon
-                            id="edit-icon"
-                            className={['fa', 'fa-edit', 'fa-fw']}
-                            screenReaderText={`Edit ${getStafferName(staffer)}`}
-                          />
-                        </button>
-                        <span className="name font-weight-bold">
-                          {getStafferName(staffer)}
-                        </span>
-                      </div>
+                      <Staffer
+                        onRemove={this.handleRemove}
+                        staffer={staffer}
+                      />
                     </div>
                   )}
                 </Draggable>

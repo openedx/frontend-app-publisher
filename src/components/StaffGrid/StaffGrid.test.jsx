@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import StaffGrid from './index';
 
@@ -25,8 +25,24 @@ const staff = [
 ];
 
 describe('StaffGrid', () => {
-  it('renders a grid of the staff', () => {
+  it('renders a grid of staff members', () => {
     const component = shallow(<StaffGrid staff={staff} />);
     expect(component).toMatchSnapshot();
+  });
+
+  it('correctly handles removing members of the staff', () => {
+    const component = mount(<StaffGrid staff={staff} />);
+    let staffers = component.find('Staffer');
+    expect(staffers).toHaveLength(staff.length);
+
+    // Delete the first staffer
+    const firstStaffer = staffers.at(0);
+    firstStaffer.find('.js-delete-btn').simulate('click');
+
+    // Verify that the first staffer has been removed
+    staffers = component.find('Staffer');
+    expect(staffers).toHaveLength(staff.length - 1);
+    const newFirstStaffer = staffers.at(0);
+    expect(newFirstStaffer).not.toEqual(firstStaffer);
   });
 });
