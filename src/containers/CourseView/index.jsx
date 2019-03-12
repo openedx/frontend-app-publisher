@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { Hyperlink, Icon, StatusAlert } from '@edx/paragon';
+import { Collapsible, Hyperlink, Icon, StatusAlert } from '@edx/paragon';
 
 import LabelledData from '../../components/LabelledData';
+import CourseRun from '../../components/CourseRun';
 
 import { fetchCourseInfo } from '../../data/actions/courseInfo';
-
 
 class CourseView extends React.Component {
   static propTypes = {
@@ -25,6 +25,20 @@ class CourseView extends React.Component {
 
   componentDidMount() {
     this.props.fetchCourseInfo();
+  }
+
+  formatCourseRunTitle = (courseRun) => {
+    const startDateString = new Date(courseRun.start).toLocaleDateString(
+      'en',
+      {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      },
+    );
+    const pacingTypeString = courseRun.pacing_type.split('_').map(pacingType =>
+      pacingType.charAt(0).toUpperCase() + pacingType.slice(1)).join(' ');
+    return `${startDateString} - ${pacingTypeString}`;
   }
 
   render() {
@@ -108,6 +122,15 @@ class CourseView extends React.Component {
             <Hyperlink content={data.video.src} destination={data.video.src} target="_blank" />
           }
         />
+        {data.course_runs.map(courseRun =>
+          (
+            <Collapsible
+              title={this.formatCourseRunTitle(courseRun)}
+            >
+              {CourseRun(courseRun)}
+            </Collapsible>
+          ))
+        }
       </div>
     );
   }
