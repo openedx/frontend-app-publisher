@@ -39,6 +39,18 @@ class DiscoveryDataApiService {
     // POST to Course endpoint to create
     return apiClient.post(url, data);
   }
+
+  static fetchCourseOptions(uuid) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
+    return apiClient.options(url);
+  }
+
+  static editCourse(courseData) {
+    const { uuid } = courseData;
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
+    // PATCH to Course endpoint to create
+    return apiClient.patch(url, courseData);
+  }
 }
 
 export default DiscoveryDataApiService;

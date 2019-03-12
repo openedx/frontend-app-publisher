@@ -16,7 +16,8 @@ import CourseDashboard from './containers/CourseDashboard';
 import CreateCourse from './containers/CreateCourse';
 
 import apiClient from './data/apiClient';
-import CourseView from './containers/CourseView';
+import EditCourse from './containers/EditCourse';
+
 
 const App = () => (
   <Provider store={store}>
@@ -39,10 +40,9 @@ const App = () => (
               redirect={`${process.env.BASE_URL}`}
             />
             <PrivateRoute
-              path="/courses/:id"
-              exact
+              path="/courses/:id/edit"
               render={({ match }) => (
-                <CourseView id={match.params.id} />
+                <EditCourse id={match.params.id} />
               )}
               authenticatedAPIClient={apiClient}
               redirect={`${process.env.BASE_URL}`}

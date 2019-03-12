@@ -67,6 +67,7 @@ describe('CreateCoursePage', () => {
         data: {},
       }}
       createCourse={() => null}
+      publisherUserInfo={null}
     />);
     expect(component).toMatchSnapshot();
   });

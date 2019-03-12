@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 
 import CreateCoursePage from './index';
+import { jsonDeepCopy } from '../../utils';
+
 
 const initialState = {
   courseInfo: {},
@@ -28,16 +30,16 @@ const createWrapper = (state) => {
 };
 
 
-describe('CreatCourse View', () => {
+describe('Create Course View', () => {
   it('shows spinner while loading', () => {
-    const testState = initialState;
+    const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = true;
     wrapper = createWrapper(testState).dive();
     expect(wrapper.find('LoadingSpinner').dive()).toHaveLength(1);
   });
 
   it('shows error when fails to retrieve organizations', () => {
-    const testState = initialState;
+    const testState = jsonDeepCopy(initialState);
     const errorMessage = 'organization failure';
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = errorMessage;
@@ -47,7 +49,7 @@ describe('CreatCourse View', () => {
   });
 
   it('Submits the form with correct data', () => {
-    const testState = initialState;
+    const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
 

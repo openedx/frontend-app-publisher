@@ -726,6 +726,7 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;
 
@@ -1028,6 +1029,7 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;
 
@@ -2069,6 +2071,7 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;
 
@@ -2970,6 +2973,7 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;
 
@@ -2990,7 +2994,7 @@ ShallowWrapper {
     courseTitle=""
     createCourse={[Function]}
     fetchOrganizations={[Function]}
-    publisherUserInfo={Object {}}
+    publisherUserInfo={null}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -3006,340 +3010,18 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <HelmetWrapper
-          defer={true}
-          encodeSpecialCharacters={true}
-        >
-          <title>
-            Create a New Course
-          </title>
-        </HelmetWrapper>,
-        <div
-          className="container-fluid"
-        >
-          <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Course
-                </h2>
-                <hr />
-                <h3>
-                  Course Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  
-                  <ReduxForm
-                    id="create-course-form"
-                    initialValues={
-                      Object {
-                        "courseEnrollmentTrack": "",
-                        "courseNumber": "",
-                        "courseOrg": "",
-                        "coursePrice": 0,
-                        "courseTitle": "",
-                      }
-                    }
-                    onSubmit={[Function]}
-                    organizations={Array []}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>,
-      ],
+      "alertType": "danger",
+      "className": Array [],
+      "dismissible": false,
+      "iconClassNames": Array [],
+      "id": "error",
+      "message": "User information unavailable",
+      "onClose": [Function],
+      "title": "Course Create Form failed to load: ",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <title>
-            Create a New Course
-          </title>,
-          "defer": true,
-          "encodeSpecialCharacters": true,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Create a New Course",
-          },
-          "ref": null,
-          "rendered": "Create a New Course",
-          "type": "title",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Course
-                </h2>
-                <hr />
-                <h3>
-                  Course Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  
-                  <ReduxForm
-                    id="create-course-form"
-                    initialValues={
-                      Object {
-                        "courseEnrollmentTrack": "",
-                        "courseNumber": "",
-                        "courseOrg": "",
-                        "coursePrice": 0,
-                        "courseTitle": "",
-                      }
-                    }
-                    onSubmit={[Function]}
-                    organizations={Array []}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>,
-          "className": "container-fluid",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Course
-                </h2>
-                <hr />
-                <h3>
-                  Course Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  
-                  <ReduxForm
-                    id="create-course-form"
-                    initialValues={
-                      Object {
-                        "courseEnrollmentTrack": "",
-                        "courseNumber": "",
-                        "courseOrg": "",
-                        "coursePrice": 0,
-                        "courseTitle": "",
-                      }
-                    }
-                    onSubmit={[Function]}
-                    organizations={Array []}
-                  />
-                </div>
-              </div>
-            </div>,
-            "className": "row justify-content-md-center my-3 ",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                undefined,
-                undefined,
-                <div>
-                  <h2>
-                    Create New Course
-                  </h2>
-                  <hr />
-                  <h3>
-                    Course Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    
-                    <ReduxForm
-                      id="create-course-form"
-                      initialValues={
-                        Object {
-                          "courseEnrollmentTrack": "",
-                          "courseNumber": "",
-                          "courseOrg": "",
-                          "coursePrice": 0,
-                          "courseTitle": "",
-                        }
-                      }
-                      onSubmit={[Function]}
-                      organizations={Array []}
-                    />
-                  </div>
-                </div>,
-              ],
-              "className": "col-6",
-            },
-            "ref": null,
-            "rendered": Array [
-              undefined,
-              undefined,
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <h2>
-                      Create New Course
-                    </h2>,
-                    <hr />,
-                    <h3>
-                      Course Information
-                    </h3>,
-                    <div
-                      className="col"
-                    >
-                      
-                      <ReduxForm
-                        id="create-course-form"
-                        initialValues={
-                          Object {
-                            "courseEnrollmentTrack": "",
-                            "courseNumber": "",
-                            "courseOrg": "",
-                            "coursePrice": 0,
-                            "courseTitle": "",
-                          }
-                        }
-                        onSubmit={[Function]}
-                        organizations={Array []}
-                      />
-                    </div>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Create New Course",
-                    },
-                    "ref": null,
-                    "rendered": "Create New Course",
-                    "type": "h2",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "hr",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Course Information",
-                    },
-                    "ref": null,
-                    "rendered": "Course Information",
-                    "type": "h3",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        "",
-                        <ReduxForm
-                          id="create-course-form"
-                          initialValues={
-                            Object {
-                              "courseEnrollmentTrack": "",
-                              "courseNumber": "",
-                              "courseOrg": "",
-                              "coursePrice": 0,
-                              "courseTitle": "",
-                            }
-                          }
-                          onSubmit={[Function]}
-                          organizations={Array []}
-                        />,
-                      ],
-                      "className": "col",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      "",
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "id": "create-course-form",
-                          "initialValues": Object {
-                            "courseEnrollmentTrack": "",
-                            "courseNumber": "",
-                            "courseOrg": "",
-                            "coursePrice": 0,
-                            "courseTitle": "",
-                          },
-                          "onSubmit": [Function],
-                          "organizations": Array [],
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                    ],
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
-              },
-            ],
-            "type": "div",
-          },
-          "type": "div",
-        },
-        "type": "div",
-      },
-    ],
-    "type": Symbol(react.fragment),
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -3347,340 +3029,18 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-          >
-            <title>
-              Create a New Course
-            </title>
-          </HelmetWrapper>,
-          <div
-            className="container-fluid"
-          >
-            <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Course
-                  </h2>
-                  <hr />
-                  <h3>
-                    Course Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    
-                    <ReduxForm
-                      id="create-course-form"
-                      initialValues={
-                        Object {
-                          "courseEnrollmentTrack": "",
-                          "courseNumber": "",
-                          "courseOrg": "",
-                          "coursePrice": 0,
-                          "courseTitle": "",
-                        }
-                      }
-                      onSubmit={[Function]}
-                      organizations={Array []}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>,
-        ],
+        "alertType": "danger",
+        "className": Array [],
+        "dismissible": false,
+        "iconClassNames": Array [],
+        "id": "error",
+        "message": "User information unavailable",
+        "onClose": [Function],
+        "title": "Course Create Form failed to load: ",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <title>
-              Create a New Course
-            </title>,
-            "defer": true,
-            "encodeSpecialCharacters": true,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Create a New Course",
-            },
-            "ref": null,
-            "rendered": "Create a New Course",
-            "type": "title",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Course
-                  </h2>
-                  <hr />
-                  <h3>
-                    Course Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    
-                    <ReduxForm
-                      id="create-course-form"
-                      initialValues={
-                        Object {
-                          "courseEnrollmentTrack": "",
-                          "courseNumber": "",
-                          "courseOrg": "",
-                          "coursePrice": 0,
-                          "courseTitle": "",
-                        }
-                      }
-                      onSubmit={[Function]}
-                      organizations={Array []}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>,
-            "className": "container-fluid",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Course
-                  </h2>
-                  <hr />
-                  <h3>
-                    Course Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    
-                    <ReduxForm
-                      id="create-course-form"
-                      initialValues={
-                        Object {
-                          "courseEnrollmentTrack": "",
-                          "courseNumber": "",
-                          "courseOrg": "",
-                          "coursePrice": 0,
-                          "courseTitle": "",
-                        }
-                      }
-                      onSubmit={[Function]}
-                      organizations={Array []}
-                    />
-                  </div>
-                </div>
-              </div>,
-              "className": "row justify-content-md-center my-3 ",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  undefined,
-                  undefined,
-                  <div>
-                    <h2>
-                      Create New Course
-                    </h2>
-                    <hr />
-                    <h3>
-                      Course Information
-                    </h3>
-                    <div
-                      className="col"
-                    >
-                      
-                      <ReduxForm
-                        id="create-course-form"
-                        initialValues={
-                          Object {
-                            "courseEnrollmentTrack": "",
-                            "courseNumber": "",
-                            "courseOrg": "",
-                            "coursePrice": 0,
-                            "courseTitle": "",
-                          }
-                        }
-                        onSubmit={[Function]}
-                        organizations={Array []}
-                      />
-                    </div>
-                  </div>,
-                ],
-                "className": "col-6",
-              },
-              "ref": null,
-              "rendered": Array [
-                undefined,
-                undefined,
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      <h2>
-                        Create New Course
-                      </h2>,
-                      <hr />,
-                      <h3>
-                        Course Information
-                      </h3>,
-                      <div
-                        className="col"
-                      >
-                        
-                        <ReduxForm
-                          id="create-course-form"
-                          initialValues={
-                            Object {
-                              "courseEnrollmentTrack": "",
-                              "courseNumber": "",
-                              "courseOrg": "",
-                              "coursePrice": 0,
-                              "courseTitle": "",
-                            }
-                          }
-                          onSubmit={[Function]}
-                          organizations={Array []}
-                        />
-                      </div>,
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Create New Course",
-                      },
-                      "ref": null,
-                      "rendered": "Create New Course",
-                      "type": "h2",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "hr",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Course Information",
-                      },
-                      "ref": null,
-                      "rendered": "Course Information",
-                      "type": "h3",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          "",
-                          <ReduxForm
-                            id="create-course-form"
-                            initialValues={
-                              Object {
-                                "courseEnrollmentTrack": "",
-                                "courseNumber": "",
-                                "courseOrg": "",
-                                "coursePrice": 0,
-                                "courseTitle": "",
-                              }
-                            }
-                            onSubmit={[Function]}
-                            organizations={Array []}
-                          />,
-                        ],
-                        "className": "col",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        "",
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "class",
-                          "props": Object {
-                            "id": "create-course-form",
-                            "initialValues": Object {
-                              "courseEnrollmentTrack": "",
-                              "courseNumber": "",
-                              "courseOrg": "",
-                              "coursePrice": 0,
-                              "courseTitle": "",
-                            },
-                            "onSubmit": [Function],
-                            "organizations": Array [],
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                      ],
-                      "type": "div",
-                    },
-                  ],
-                  "type": "div",
-                },
-              ],
-              "type": "div",
-            },
-            "type": "div",
-          },
-          "type": "div",
-        },
-      ],
-      "type": Symbol(react.fragment),
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -3704,6 +3064,7 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;
 
@@ -4715,6 +4076,7 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;
 
@@ -5614,5 +4976,6 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;
