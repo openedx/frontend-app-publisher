@@ -9,7 +9,7 @@ import SiteFooter from '@edx/frontend-component-footer';
 
 import history from './data/history';
 import store from './data/store';
-import Header from './components/Header';
+import Header from './containers/Header';
 import FooterLogo from '../assets/edx-footer.png';
 import './App.scss';
 import CourseDashboard from './containers/CourseDashboard';
