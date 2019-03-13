@@ -45,4 +45,23 @@ describe('StaffGrid', () => {
     const newFirstStaffer = staffers.at(0);
     expect(newFirstStaffer).not.toEqual(firstStaffer);
   });
+
+  it('correctly handles reordering members of the staff', () => {
+    const component = mount(<StaffGrid staff={staff} />);
+    // Find the first staffer.
+    const firstStaffer = component.state().staffList[0].uuid;
+
+    const result = {
+      source: {
+        index: 0,
+      },
+      destination: {
+        index: 2,
+      },
+    };
+    // Pretend we dragged the first staffer to the end.
+    component.instance().onDragEnd(result);
+    // Verify that it is on the end.
+    expect(firstStaffer).toEqual(component.state().staffList[2].uuid);
+  });
 });
