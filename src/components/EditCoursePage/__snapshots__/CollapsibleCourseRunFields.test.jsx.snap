@@ -1,0 +1,2091 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collapsible Course Run Fields renders correctly when given fields 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
+    courseRuns={
+      Array [
+        Object {
+          "content_language": "ar-ae",
+          "end": "2010/01/01",
+          "max_effort": 1,
+          "min_effort": 1,
+          "pacing_type": "self_paced",
+          "start": "2000-01-01T00:00:00Z",
+          "transcript_languages": Array [
+            "ar-ae",
+          ],
+          "weeks_to_complete": 1,
+        },
+      ]
+    }
+    fields={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    languageOptions={
+      Array [
+        Object {
+          "label": "Arabic - United Arab Emirates",
+          "value": "ar-ae",
+        },
+      ]
+    }
+    pacingTypeOptions={
+      Array [
+        Object {
+          "label": "Self-paced",
+          "value": "self_paced",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [
+          <t
+            iconId="collapsible-icon-0"
+            isOpen={false}
+            onToggle={[Function]}
+            title={
+              <div
+                className="course-run-label"
+              >
+                <span>
+                  Jan 1st 2000 - Self Paced
+                </span>
+                <div
+                  className="course-run-studio-url"
+                >
+                  Studio URL - 
+                  <a
+                    href="undefined/course/undefined"
+                  >
+                    undefined
+                  </a>
+                </div>
+              </div>
+            }
+          >
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].end"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Minimum Effort
+                </React.Fragment>
+              }
+              name="[object Object].min_effort"
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Maximum Effort
+                </React.Fragment>
+              }
+              name="[object Object].max_effort"
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Course Pacing
+                </React.Fragment>
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Content Language
+                </React.Fragment>
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              type="text"
+            />
+            <div
+              className="transcript-label"
+            >
+              Transcript Languages
+            </div>
+            <FieldArray
+              component={[Function]}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Length
+                </React.Fragment>
+              }
+              name="[object Object].weeks_to_complete"
+              type="number"
+            />
+          </t>,
+          <t
+            iconId="collapsible-icon-1"
+            isOpen={false}
+            onToggle={[Function]}
+            title={
+              <div>
+                <span>
+                  Your new course run
+                </span>
+              </div>
+            }
+          >
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].end"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Minimum Effort
+                </React.Fragment>
+              }
+              name="[object Object].min_effort"
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Maximum Effort
+                </React.Fragment>
+              }
+              name="[object Object].max_effort"
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Course Pacing
+                </React.Fragment>
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Content Language
+                </React.Fragment>
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              type="text"
+            />
+            <div
+              className="transcript-label"
+            >
+              Transcript Languages
+            </div>
+            <FieldArray
+              component={[Function]}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Length
+                </React.Fragment>
+              }
+              name="[object Object].weeks_to_complete"
+              type="number"
+            />
+          </t>,
+        ],
+        <button
+          className="btn btn-light js-add-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Add Course Run
+        </button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].start"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].end"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Minimum Effort
+                </React.Fragment>
+              }
+              name="[object Object].min_effort"
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Maximum Effort
+                </React.Fragment>
+              }
+              name="[object Object].max_effort"
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Course Pacing
+                </React.Fragment>
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Content Language
+                </React.Fragment>
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <div
+              className="transcript-label"
+            >
+              Transcript Languages
+            </div>,
+            <FieldArray
+              component={[Function]}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Length
+                </React.Fragment>
+              }
+              name="[object Object].weeks_to_complete"
+              type="number"
+            />,
+          ],
+          "expandedTitle": undefined,
+          "iconId": "collapsible-icon-0",
+          "isCollapsible": undefined,
+          "isOpen": false,
+          "onToggle": [Function],
+          "title": <div
+            className="course-run-label"
+          >
+            <span>
+              Jan 1st 2000 - Self Paced
+            </span>
+            <div
+              className="course-run-studio-url"
+            >
+              Studio URL - 
+              <a
+                href="undefined/course/undefined"
+              >
+                undefined
+              </a>
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "format": [Function],
+              "label": <React.Fragment>
+                Start date
+                <span
+                  aria-hidden={true}
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "[object Object].start",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "format": [Function],
+              "label": <React.Fragment>
+                End date
+                <span
+                  aria-hidden={true}
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "[object Object].end",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Minimum Effort
+              </React.Fragment>,
+              "name": "[object Object].min_effort",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Maximum Effort
+              </React.Fragment>,
+              "name": "[object Object].max_effort",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Course Pacing
+              </React.Fragment>,
+              "name": "[object Object].pacing_type",
+              "options": Array [
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Content Language
+              </React.Fragment>,
+              "name": "[object Object].content_language",
+              "options": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Transcript Languages",
+              "className": "transcript-label",
+            },
+            "ref": null,
+            "rendered": "Transcript Languages",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "languageOptions": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "name": "[object Object].transcript_languages",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Length
+              </React.Fragment>,
+              "name": "[object Object].weeks_to_complete",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].start"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              format={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="[object Object].end"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Minimum Effort
+                </React.Fragment>
+              }
+              name="[object Object].min_effort"
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Maximum Effort
+                </React.Fragment>
+              }
+              name="[object Object].max_effort"
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Course Pacing
+                </React.Fragment>
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Content Language
+                </React.Fragment>
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <div
+              className="transcript-label"
+            >
+              Transcript Languages
+            </div>,
+            <FieldArray
+              component={[Function]}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Length
+                </React.Fragment>
+              }
+              name="[object Object].weeks_to_complete"
+              type="number"
+            />,
+          ],
+          "expandedTitle": undefined,
+          "iconId": "collapsible-icon-1",
+          "isCollapsible": undefined,
+          "isOpen": false,
+          "onToggle": [Function],
+          "title": <div>
+            <span>
+              Your new course run
+            </span>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "format": [Function],
+              "label": <React.Fragment>
+                Start date
+                <span
+                  aria-hidden={true}
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "[object Object].start",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "format": [Function],
+              "label": <React.Fragment>
+                End date
+                <span
+                  aria-hidden={true}
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "[object Object].end",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Minimum Effort
+              </React.Fragment>,
+              "name": "[object Object].min_effort",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Maximum Effort
+              </React.Fragment>,
+              "name": "[object Object].max_effort",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Course Pacing
+              </React.Fragment>,
+              "name": "[object Object].pacing_type",
+              "options": Array [
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Content Language
+              </React.Fragment>,
+              "name": "[object Object].content_language",
+              "options": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Transcript Languages",
+              "className": "transcript-label",
+            },
+            "ref": null,
+            "rendered": "Transcript Languages",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "languageOptions": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "name": "[object Object].transcript_languages",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                Length
+              </React.Fragment>,
+              "name": "[object Object].weeks_to_complete",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add Course Run",
+          "className": "btn btn-light js-add-button",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add Course Run",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [
+            <t
+              iconId="collapsible-icon-0"
+              isOpen={false}
+              onToggle={[Function]}
+              title={
+                <div
+                  className="course-run-label"
+                >
+                  <span>
+                    Jan 1st 2000 - Self Paced
+                  </span>
+                  <div
+                    className="course-run-studio-url"
+                  >
+                    Studio URL - 
+                    <a
+                      href="undefined/course/undefined"
+                    >
+                      undefined
+                    </a>
+                  </div>
+                </div>
+              }
+            >
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].end"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Minimum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].min_effort"
+                type="number"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Maximum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].max_effort"
+                type="number"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Course Pacing
+                  </React.Fragment>
+                }
+                name="[object Object].pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Content Language
+                  </React.Fragment>
+                }
+                name="[object Object].content_language"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                type="text"
+              />
+              <div
+                className="transcript-label"
+              >
+                Transcript Languages
+              </div>
+              <FieldArray
+                component={[Function]}
+                languageOptions={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                name="[object Object].transcript_languages"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Length
+                  </React.Fragment>
+                }
+                name="[object Object].weeks_to_complete"
+                type="number"
+              />
+            </t>,
+            <t
+              iconId="collapsible-icon-1"
+              isOpen={false}
+              onToggle={[Function]}
+              title={
+                <div>
+                  <span>
+                    Your new course run
+                  </span>
+                </div>
+              }
+            >
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].end"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Minimum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].min_effort"
+                type="number"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Maximum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].max_effort"
+                type="number"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Course Pacing
+                  </React.Fragment>
+                }
+                name="[object Object].pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Content Language
+                  </React.Fragment>
+                }
+                name="[object Object].content_language"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                type="text"
+              />
+              <div
+                className="transcript-label"
+              >
+                Transcript Languages
+              </div>
+              <FieldArray
+                component={[Function]}
+                languageOptions={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                name="[object Object].transcript_languages"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Length
+                  </React.Fragment>
+                }
+                name="[object Object].weeks_to_complete"
+                type="number"
+              />
+            </t>,
+          ],
+          <button
+            className="btn btn-light js-add-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Add Course Run
+          </button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].start"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].end"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Minimum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].min_effort"
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Maximum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].max_effort"
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Course Pacing
+                  </React.Fragment>
+                }
+                name="[object Object].pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Content Language
+                  </React.Fragment>
+                }
+                name="[object Object].content_language"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                type="text"
+              />,
+              <div
+                className="transcript-label"
+              >
+                Transcript Languages
+              </div>,
+              <FieldArray
+                component={[Function]}
+                languageOptions={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                name="[object Object].transcript_languages"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Length
+                  </React.Fragment>
+                }
+                name="[object Object].weeks_to_complete"
+                type="number"
+              />,
+            ],
+            "expandedTitle": undefined,
+            "iconId": "collapsible-icon-0",
+            "isCollapsible": undefined,
+            "isOpen": false,
+            "onToggle": [Function],
+            "title": <div
+              className="course-run-label"
+            >
+              <span>
+                Jan 1st 2000 - Self Paced
+              </span>
+              <div
+                className="course-run-studio-url"
+              >
+                Studio URL - 
+                <a
+                  href="undefined/course/undefined"
+                >
+                  undefined
+                </a>
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "format": [Function],
+                "label": <React.Fragment>
+                  Start date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "[object Object].start",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "format": [Function],
+                "label": <React.Fragment>
+                  End date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "[object Object].end",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Minimum Effort
+                </React.Fragment>,
+                "name": "[object Object].min_effort",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Maximum Effort
+                </React.Fragment>,
+                "name": "[object Object].max_effort",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Course Pacing
+                </React.Fragment>,
+                "name": "[object Object].pacing_type",
+                "options": Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ],
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Content Language
+                </React.Fragment>,
+                "name": "[object Object].content_language",
+                "options": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Transcript Languages",
+                "className": "transcript-label",
+              },
+              "ref": null,
+              "rendered": "Transcript Languages",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "languageOptions": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "name": "[object Object].transcript_languages",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Length
+                </React.Fragment>,
+                "name": "[object Object].weeks_to_complete",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].start"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                format={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].end"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Minimum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].min_effort"
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Maximum Effort
+                  </React.Fragment>
+                }
+                name="[object Object].max_effort"
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Course Pacing
+                  </React.Fragment>
+                }
+                name="[object Object].pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Content Language
+                  </React.Fragment>
+                }
+                name="[object Object].content_language"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                type="text"
+              />,
+              <div
+                className="transcript-label"
+              >
+                Transcript Languages
+              </div>,
+              <FieldArray
+                component={[Function]}
+                languageOptions={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                name="[object Object].transcript_languages"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Length
+                  </React.Fragment>
+                }
+                name="[object Object].weeks_to_complete"
+                type="number"
+              />,
+            ],
+            "expandedTitle": undefined,
+            "iconId": "collapsible-icon-1",
+            "isCollapsible": undefined,
+            "isOpen": false,
+            "onToggle": [Function],
+            "title": <div>
+              <span>
+                Your new course run
+              </span>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "format": [Function],
+                "label": <React.Fragment>
+                  Start date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "[object Object].start",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "format": [Function],
+                "label": <React.Fragment>
+                  End date
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "[object Object].end",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Minimum Effort
+                </React.Fragment>,
+                "name": "[object Object].min_effort",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Maximum Effort
+                </React.Fragment>,
+                "name": "[object Object].max_effort",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Course Pacing
+                </React.Fragment>,
+                "name": "[object Object].pacing_type",
+                "options": Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ],
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Content Language
+                </React.Fragment>,
+                "name": "[object Object].content_language",
+                "options": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Transcript Languages",
+                "className": "transcript-label",
+              },
+              "ref": null,
+              "rendered": "Transcript Languages",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "languageOptions": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "name": "[object Object].transcript_languages",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Length
+                </React.Fragment>,
+                "name": "[object Object].weeks_to_complete",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add Course Run",
+            "className": "btn btn-light js-add-button",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add Course Run",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`Collapsible Course Run Fields renders correctly with no fields 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
+    courseRuns={Array []}
+    fields={Array []}
+    languageOptions={Array []}
+    pacingTypeOptions={Array []}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        Array [],
+        <button
+          className="btn btn-light js-add-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Add Course Run
+        </button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add Course Run",
+          "className": "btn btn-light js-add-button",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add Course Run",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [],
+          <button
+            className="btn btn-light js-add-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Add Course Run
+          </button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add Course Run",
+            "className": "btn btn-light js-add-button",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add Course Run",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

@@ -6,6 +6,7 @@ class DiscoveryDataApiService {
   static fetchCourse(uuid) {
     const queryParams = {
       editable: 1,
+      exclude_utm: 1,
     };
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
     return apiClient.get(url, {
@@ -26,6 +27,7 @@ class DiscoveryDataApiService {
       page_size: 50,
       fields: fields.join(),
       editable: 1,
+      exclude_utm: 1,
       ...options,
     };
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses`;
@@ -60,11 +62,28 @@ class DiscoveryDataApiService {
     });
   }
 
-  static editCourse(courseData) {
+  static fetchCourseRunOptions() {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/`;
+    return apiClient.options(url);
+  }
+
+  static editCourse(courseData, courseRunData, newCourseRunData) {
     const { uuid } = courseData;
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
-    // PATCH to Course endpoint to create
-    return apiClient.patch(url, courseData);
+    // Create a promises array to handle all of the new/modified course runs
+    const promises = courseRunData.map((courseRun) => {
+      const courseRunUrl = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/${courseRun.key}/`;
+      return apiClient.patch(courseRunUrl, courseRun);
+    });
+    newCourseRunData.forEach((courseRun) => {
+      /* eslint-disable no-param-reassign */
+      courseRun.course = courseData.key; // Need key association set for creation
+      const courseRunUrl = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/`;
+      promises.push(apiClient.post(courseRunUrl, courseRun));
+    });
+    // Add PATCH to Course endpoint to create to promises array
+    promises.push(apiClient.patch(url, courseData));
+    return Promise.all(promises);
   }
 
   static createInstructor(data) {

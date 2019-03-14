@@ -22,6 +22,7 @@ class EditCoursePage extends React.Component {
   componentDidMount() {
     this.props.fetchCourseInfo();
     this.props.fetchCourseOptions();
+    this.props.fetchCourseRunOptions();
     this.setStartedFetching();
   }
 
@@ -45,11 +46,33 @@ class EditCoursePage extends React.Component {
           key,
           uuid,
           entitlements,
+          course_runs: initialCourseRuns,
         },
       },
       editCourse,
     } = this.props;
     const courseData = options;
+    const modifiedCourseRuns = [];
+    const newCourseRuns = [];
+    courseData.course_runs.forEach((modifiedCourseRun) => {
+      let found = initialCourseRuns.some(initialCourseRun => (
+        initialCourseRun.key === modifiedCourseRun.key &&
+        JSON.stringify(initialCourseRun) !== JSON.stringify(modifiedCourseRun)
+      ));
+      initialCourseRuns.forEach((initialCourseRun) => {
+        if (initialCourseRun.key === modifiedCourseRun.key) {
+          found = true;
+          if (JSON.stringify(initialCourseRun) !== JSON.stringify(modifiedCourseRun)) {
+            modifiedCourseRuns.push(modifiedCourseRun);
+          }
+        }
+      });
+      if (found) {
+        modifiedCourseRuns.push(modifiedCourseRun);
+      } else {
+        newCourseRuns.push(modifiedCourseRun);
+      }
+    });
     courseData.subjects = [
       courseData.subjectPrimary,
       courseData.subjectSecondary,
@@ -64,7 +87,7 @@ class EditCoursePage extends React.Component {
     courseData.video = { src: courseData.videoSrc };
     courseData.key = key;
     courseData.uuid = uuid;
-    return editCourse(courseData);
+    return editCourse(courseData, modifiedCourseRuns, newCourseRuns);
   }
 
   render() {
@@ -98,9 +121,11 @@ class EditCoursePage extends React.Component {
           syllabus_raw,
           video,
           entitlements,
+          course_runs,
         },
       },
       courseOptions,
+      courseRunOptions,
     } = this.props;
     const { startedFetching } = this.state;
 
@@ -164,10 +189,13 @@ class EditCoursePage extends React.Component {
                         videoSrc,
                         mode,
                         price,
+                        course_runs,
                       }}
                       number={number}
                       courseOptions={courseOptions}
                       entitlement={!!entitlement}
+                      courseRunOptions={courseRunOptions}
+                      courseRuns={course_runs}
                     />
                   </div>
                 </div>
@@ -193,8 +221,10 @@ EditCoursePage.defaultProps = {
     data: {},
   },
   courseOptions: {},
+  courseRunOptions: {},
   fetchCourseInfo: () => null,
   fetchCourseOptions: () => null,
+  fetchCourseRunOptions: () => null,
   editCourse: () => null,
 };
 
@@ -209,8 +239,14 @@ EditCoursePage.propTypes = {
     error: PropTypes.string,
     isFetching: PropTypes.bool,
   }),
+  courseRunOptions: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.string,
+    isFetching: PropTypes.bool,
+  }),
   fetchCourseInfo: PropTypes.func,
   fetchCourseOptions: PropTypes.func,
+  fetchCourseRunOptions: PropTypes.func,
   editCourse: PropTypes.func,
 };
 

@@ -150,11 +150,11 @@ function createCourse(courseData, courseRunData) {
   };
 }
 
-function editCourse(courseData) {
+function editCourse(courseData, courseRunData, newCourseRunData) {
   return (dispatch) => {
     dispatch(editCourseInfo(courseData));
     // Send edit course PATCH
-    return DiscoveryDataApiService.editCourse(courseData)
+    return DiscoveryDataApiService.editCourse(courseData, courseRunData, newCourseRunData)
       .then((response) => {
         const course = response.data;
         dispatch(editCourseSuccess(course));
