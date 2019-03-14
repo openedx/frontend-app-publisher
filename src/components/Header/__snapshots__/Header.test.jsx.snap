@@ -3,7 +3,9 @@
 exports[`Header renders the correct header 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__unrendered__): <Header
+    username="test-username"
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -72,6 +74,7 @@ ShallowWrapper {
                   </button>,
                 ]
               }
+              title="test-username"
             />
           </div>
         </header>
@@ -135,6 +138,7 @@ ShallowWrapper {
                   </button>,
                 ]
               }
+              title="test-username"
             />
           </div>
         </header>,
@@ -195,6 +199,7 @@ ShallowWrapper {
                     </button>,
                   ]
                 }
+                title="test-username"
               />
             </div>,
           ],
@@ -314,6 +319,7 @@ ShallowWrapper {
                     </button>,
                   ]
                 }
+                title="test-username"
               />,
               "className": "ml-auto",
             },
@@ -333,7 +339,7 @@ ShallowWrapper {
                     Sign Out
                   </button>,
                 ],
-                "title": undefined,
+                "title": "test-username",
               },
               "ref": null,
               "rendered": null,
@@ -408,6 +414,7 @@ ShallowWrapper {
                     </button>,
                   ]
                 }
+                title="test-username"
               />
             </div>
           </header>
@@ -471,6 +478,7 @@ ShallowWrapper {
                     </button>,
                   ]
                 }
+                title="test-username"
               />
             </div>
           </header>,
@@ -531,6 +539,7 @@ ShallowWrapper {
                       </button>,
                     ]
                   }
+                  title="test-username"
                 />
               </div>,
             ],
@@ -650,6 +659,7 @@ ShallowWrapper {
                       </button>,
                     ]
                   }
+                  title="test-username"
                 />,
                 "className": "ml-auto",
               },
@@ -669,7 +679,7 @@ ShallowWrapper {
                       Sign Out
                     </button>,
                   ],
-                  "title": undefined,
+                  "title": "test-username",
                 },
                 "ref": null,
                 "rendered": null,

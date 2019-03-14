@@ -6,7 +6,7 @@ import Header from './index';
 
 describe('Header', () => {
   it('renders the correct header', () => {
-    const component = shallow(<Header />);
+    const component = shallow(<Header username="test-username" />);
     expect(component).toMatchSnapshot();
   });
 });
