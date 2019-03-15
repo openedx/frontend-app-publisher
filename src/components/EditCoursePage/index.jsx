@@ -55,7 +55,7 @@ class EditCoursePage extends React.Component {
       courseData.subjectSecondary,
       courseData.subjectTertiary,
     ].filter(subject => !!subject);
-    courseData.entitlements = entitlements && [{
+    courseData.entitlements = entitlements && entitlements[0] && [{
       mode: courseData.mode,
       price: courseData.price,
       sku: entitlements[0].sku,
@@ -114,7 +114,7 @@ class EditCoursePage extends React.Component {
     const imageSrc = image && image.src;
     const videoSrc = video && video.src;
     const entitlement = entitlements && entitlements[0];
-    const mode = (entitlement && entitlement.mode) || 'Audit';
+    const mode = entitlement && entitlement.mode;
     const price = entitlement && entitlement.price;
 
     let error = '';
@@ -167,6 +167,7 @@ class EditCoursePage extends React.Component {
                       }}
                       number={number}
                       courseOptions={courseOptions}
+                      entitlement={!!entitlement}
                     />
                   </div>
                 </div>
