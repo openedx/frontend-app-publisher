@@ -43,6 +43,7 @@ class EditCourseForm extends React.Component {
     const {
       handleSubmit,
       number,
+      entitlement,
       submitting,
     } = this.props;
 
@@ -165,18 +166,22 @@ class EditCourseForm extends React.Component {
               label={<strong>About Video Link: *</strong>}
               required
             />
-            <Field
-              name="mode"
-              component={RenderSelectField}
-              label={<strong>Enrollment Track:</strong>}
-              options={this.getEnrollmentTrackOptions()}
-            />
-            <Field
-              name="price"
-              component={RenderInputTextField}
-              type="number"
-              label={<strong>Price: *</strong>}
-            />
+            {entitlement && (
+              <React.Fragment>
+                <Field
+                  name="mode"
+                  component={RenderSelectField}
+                  label={<strong>Enrollment Track:</strong>}
+                  options={this.getEnrollmentTrackOptions()}
+                />
+                <Field
+                  name="price"
+                  component={RenderInputTextField}
+                  type="number"
+                  label={<strong>Price: *</strong>}
+                />
+              </React.Fragment>
+            )}
             <div className="row justify-content-end">
               <button type="submit" className="btn btn-outline-primary form-submit-btn" disabled={submitting}>
                 Save Course
@@ -189,9 +194,14 @@ class EditCourseForm extends React.Component {
   }
 }
 
+EditCourseForm.defaultProps = {
+  entitlement: false,
+};
+
 EditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
+  entitlement: PropTypes.bool,
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.string,

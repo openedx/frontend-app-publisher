@@ -62,12 +62,13 @@ describe('EditCourseForm', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('renders html correctly with all data present', () => {
+  it('renders html correctly with all data present and verified entitlement', () => {
     const component = shallow(<EditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       number="Test102x"
       courseOptions={courseOptions}
+      entitlement
     />);
     expect(component).toMatchSnapshot();
   });
@@ -78,6 +79,7 @@ describe('EditCourseForm', () => {
       initialValues={initialValuesFull}
       number="Test103x"
       courseOptions={courseOptions}
+      entitlement
       submitting
     />);
     expect(component).toMatchSnapshot();
