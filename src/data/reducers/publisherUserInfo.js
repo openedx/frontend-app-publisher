@@ -1,7 +1,7 @@
 import {
   REQUEST_USER_ORGANIZATIONS,
-  RECEIVE_USER_ORGANIZATIONS,
-  FAIL_USER_ORGANIZATIONS,
+  REQUEST_USER_ORGANIZATIONS_SUCCESS,
+  REQUEST_USER_ORGANIZATIONS_FAIL,
 } from '../constants/publisherUserInfo';
 
 
@@ -19,13 +19,13 @@ function publisherUserInfo(state = initialState, action) {
         isFetching: true,
         error: null,
       });
-    case RECEIVE_USER_ORGANIZATIONS:
+    case REQUEST_USER_ORGANIZATIONS_SUCCESS:
       return Object.assign({}, state, {
         organizations: action.data,
         isFetching: false,
         error: null,
       });
-    case FAIL_USER_ORGANIZATIONS:
+    case REQUEST_USER_ORGANIZATIONS_FAIL:
       return Object.assign({}, state, {
         organizations: [],
         isFetching: false,

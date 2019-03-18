@@ -1,16 +1,22 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import MockAdapter from 'axios-mock-adapter';
-import apiClient from '../apiClient';
 
+import apiClient from '../apiClient';
 import {
-  failCourseInfo,
+  requestCourseInfoFail,
   fetchCourseInfo,
-  receiveCourseInfo,
+  requestCourseInfoSuccess,
   requestCourseInfo,
-  courseCreateFail,
-  courseCreateSuccess,
+  createCourseFail,
+  createCourseSuccess,
   createNewCourse,
+  createNewCourseRun,
+  createCourseRunSuccess,
+  createCourseRunFail,
+  editCourseInfo,
+  editCourseSuccess,
+  editCourseFail,
 } from './courseInfo';
 import * as types from '../constants/courseInfo';
 
@@ -33,7 +39,7 @@ describe('courseInfo fetch course actions', () => {
 
     const expectedActions = [
       requestCourseInfo(uuid),
-      receiveCourseInfo(uuid, { key: 'DemoX+TestCourse' }),
+      requestCourseInfoSuccess(uuid, { key: 'DemoX+TestCourse' }),
     ];
     const store = mockStore();
 
@@ -48,7 +54,7 @@ describe('courseInfo fetch course actions', () => {
 
     const expectedActions = [
       requestCourseInfo(uuid),
-      failCourseInfo(
+      requestCourseInfoFail(
         uuid,
         'Could not get course information. Error: Request failed with status code 500',
       ),
@@ -62,7 +68,7 @@ describe('courseInfo fetch course actions', () => {
 
   it('handles fetch with bad id', () => {
     const expectedActions = [
-      failCourseInfo(
+      requestCourseInfoFail(
         'test',
         'Could not get course information. test is not a valid course UUID.',
       ),
@@ -80,7 +86,7 @@ describe('courseInfo fetch course actions', () => {
 
     const expectedActions = [
       requestCourseInfo(uuid),
-      failCourseInfo(
+      requestCourseInfoFail(
         uuid,
         'Could not get course information. Error: Did not understand response.',
       ),
@@ -95,27 +101,121 @@ describe('courseInfo fetch course actions', () => {
 
 describe('courseInfo create course actions', () => {
   it('should start new course', () => {
-    const courseData = { name: 'test course data' };
+    const data = { name: 'test course data' };
     const expectedAction = {
       type: types.CREATE_COURSE,
-      courseData,
+      data,
     };
-    expect(createNewCourse(courseData)).toEqual(expectedAction);
+    expect(createNewCourse(data)).toEqual(expectedAction);
   });
+
   it('should succeed', () => {
     const data = { name: 'test course data' };
     const expectedAction = {
       type: types.CREATE_COURSE_SUCCESS,
       data,
     };
-    expect(courseCreateSuccess(data)).toEqual(expectedAction);
+    expect(createCourseSuccess(data)).toEqual(expectedAction);
   });
+
   it('should fail', () => {
     const error = 'Test error';
     const expectedAction = {
       type: types.CREATE_COURSE_FAIL,
       error,
     };
-    expect(courseCreateFail(error)).toEqual(expectedAction);
+    expect(createCourseFail(error)).toEqual(expectedAction);
+  });
+});
+
+describe('courseInfo edit course actions', () => {
+  it('should send edits for a course', () => {
+    const courseData = {
+      title: 'test course title',
+      short_description: '<p>short&nbsp;</p>',
+      full_description: '<p>long desc</p>',
+      outcome: '<p>learn</p>',
+      subjectPrimary: 'army',
+      subjectSecondary: 'cats',
+      imageSrc: 'http://updated.image.src/woo.small',
+      prerequisites_raw: '<p>prereq updated</p>',
+      level_type: 'Intermediate',
+      learner_testimonials: '',
+      faq: '',
+      additional_information: '',
+      syllabus_raw: '',
+      videoSrc: '',
+      mode: 'verified',
+      price: '32.00',
+      uuid,
+    };
+    const expectedAction = {
+      type: types.EDIT_COURSE_INFO,
+      courseData,
+    };
+    expect(editCourseInfo(courseData)).toEqual(expectedAction);
+  });
+
+  it('should succeed', () => {
+    const data = {
+      title: 'test course title',
+      short_description: '<p>short&nbsp;</p>',
+      full_description: '<p>long desc</p>',
+      outcome: '<p>learn</p>',
+      subjectPrimary: 'army',
+      subjectSecondary: 'cats',
+      imageSrc: 'http://updated.image.src/woo.small',
+      prerequisites_raw: '<p>prereq updated</p>',
+      level_type: 'Intermediate',
+      learner_testimonials: '',
+      faq: '',
+      additional_information: '',
+      syllabus_raw: '',
+      videoSrc: '',
+      mode: 'verified',
+      price: '32.00',
+      uuid,
+    };
+    const expectedAction = {
+      type: types.EDIT_COURSE_SUCCESS,
+      data,
+    };
+    expect(editCourseSuccess(data)).toEqual(expectedAction);
+  });
+
+  it('should fail', () => {
+    const error = 'Edit Course Test error';
+    const expectedAction = {
+      type: types.EDIT_COURSE_FAIL,
+      error,
+    };
+    expect(editCourseFail(error)).toEqual(expectedAction);
+  });
+});
+
+describe('courseInfo create course run actions', () => {
+  it('should start creating new course run', () => {
+    const data = { start: '2019-03-04T00:00:00.000Z' };
+    const expectedAction = {
+      type: types.CREATE_COURSE_RUN,
+      data,
+    };
+    expect(createNewCourseRun(data)).toEqual(expectedAction);
+  });
+  it('should succeed creating new course run', () => {
+    const data = { name: 'test course data' };
+    const expectedAction = {
+      type: types.CREATE_COURSE_RUN_SUCCESS,
+      data,
+    };
+    expect(createCourseRunSuccess(data)).toEqual(expectedAction);
+  });
+  it('should fail creating new course run', () => {
+    const error = 'Test error';
+    const expectedAction = {
+      type: types.CREATE_COURSE_RUN_FAIL,
+      error,
+    };
+    expect(createCourseRunFail(error)).toEqual(expectedAction);
   });
 });

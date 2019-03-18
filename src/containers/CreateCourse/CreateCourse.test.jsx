@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 
 import CreateCoursePage from './index';
+import { jsonDeepCopy } from '../../utils';
+
 
 const initialState = {
   courseInfo: {},
@@ -14,11 +16,23 @@ const initialState = {
     isFetching: true,
     error: null,
   },
+  form: {
+    'create-course-form': {
+      initial: {
+        org: 'edx',
+        title: 'Test Course',
+        number: 'test101',
+        enrollmentTrack: 'verified',
+        price: 100.00,
+        start: '2019-03-04',
+        end: '2019-03-19',
+      },
+    },
+  },
 };
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 let mockOnSubmit;
-let wrapper;
 let store;
 
 const createWrapper = (state) => {
@@ -28,43 +42,50 @@ const createWrapper = (state) => {
 };
 
 
-describe('CreatCourse View', () => {
+describe('Create Course View', () => {
   it('shows spinner while loading', () => {
-    const testState = initialState;
+    const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = true;
-    wrapper = createWrapper(testState).dive();
+    const wrapper = createWrapper(testState).dive();
     expect(wrapper.find('LoadingSpinner').dive()).toHaveLength(1);
   });
 
   it('shows error when fails to retrieve organizations', () => {
-    const testState = initialState;
+    const testState = jsonDeepCopy(initialState);
     const errorMessage = 'organization failure';
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = errorMessage;
-    wrapper = createWrapper(testState).dive();
-    expect(wrapper.find('#error')).toHaveLength(1);
-    expect(wrapper.find('#error').props().message).toEqual(errorMessage);
+    const wrapper = createWrapper(testState).dive();
+    expect(wrapper.find('#user-info-error')).toHaveLength(1);
+    expect(wrapper.find('#user-info-error').props().message).toEqual(errorMessage);
   });
 
   it('Submits the form with correct data', () => {
-    const testState = initialState;
+    const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
 
     store = mockStore(testState);
-
     const CourseCreatePageWrapper = props => (
       <MemoryRouter>
         <Provider store={store} >
           <CreateCoursePage
             {...props}
+            initialValues={{
+              org: 'edx',
+              title: 'Test Course',
+              number: 'test101',
+              enrollmentTrack: 'verified',
+              price: 100.00,
+              start: '2019-03-04',
+              end: '2020-03-04',
+            }}
           />
         </Provider>
       </MemoryRouter>
-
     );
 
-    wrapper = mount(<CourseCreatePageWrapper />);
+    const wrapper = mount(<CourseCreatePageWrapper />);
     const instance = (wrapper.find('CreateCoursePage')).instance();
     const spy = jest.spyOn(instance, 'handleCourseCreate');
     instance.forceUpdate();
@@ -72,7 +93,6 @@ describe('CreatCourse View', () => {
     // Submit
     const formWrapper = wrapper.find('#create-course-form');
     formWrapper.find('.form-submit-btn').simulate('submit');
-
     expect(spy).toBeCalledTimes(1);
   });
 });

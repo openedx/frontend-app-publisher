@@ -4,12 +4,7 @@ import courseInfo from './courseInfo';
 
 
 describe('courseInfo reducer', () => {
-  const oldState = { // overwritten as old state for actions
-    data: { nope: 'bad data' },
-    isFetching: true,
-    error: 'error occurred',
-  };
-
+  let initialState;
   const courseData = {
     org: 'edx',
     title: 'Hello',
@@ -18,64 +13,142 @@ describe('courseInfo reducer', () => {
     price: 100.00,
   };
 
+  beforeEach(() => {
+    initialState = {
+      data: {},
+      isFetching: false,
+      isCreating: false,
+      error: null,
+    };
+  });
+
   it('initial state is valid', () => {
     expect(courseInfo(undefined, {})).toEqual({
       data: {},
       isFetching: false,
+      isCreating: false,
       error: null,
     });
   });
 
   it('course info request works', () => {
-    expect(courseInfo(oldState, actions.requestCourseInfo('test')))
+    expect(courseInfo(initialState, actions.requestCourseInfo('test')))
       .toEqual({
         data: {},
         isFetching: true,
+        isCreating: false,
         error: null,
       });
   });
 
   it('course info receive works', () => {
-    expect(courseInfo(oldState, actions.receiveCourseInfo('test', { key: 'DemoX+TestCourse' })))
+    initialState.isFetching = true;
+    expect(courseInfo(initialState, actions.requestCourseInfoSuccess('test', { key: 'DemoX+TestCourse' })))
       .toEqual({
         data: { key: 'DemoX+TestCourse' },
         isFetching: false,
+        isCreating: false,
         error: null,
       });
   });
 
   it('course info fail works', () => {
-    expect(courseInfo(oldState, actions.failCourseInfo('test', 'failure')))
+    initialState.isFetching = true;
+    expect(courseInfo(initialState, actions.requestCourseInfoFail('test', 'failure')))
       .toEqual({
         data: {},
         isFetching: false,
+        isCreating: false,
         error: 'failure',
       });
   });
 
   it('course create request works', () => {
-    expect(courseInfo(oldState, actions.createNewCourse(courseData)))
+    expect(courseInfo(initialState, actions.createNewCourse(courseData)))
       .toEqual({
         data: {},
         isFetching: false,
+        isCreating: true,
         error: null,
       });
   });
 
   it('course create receive works', () => {
-    expect(courseInfo(oldState, actions.courseCreateSuccess(courseData)))
+    expect(courseInfo(initialState, actions.createCourseSuccess(courseData)))
       .toEqual({
         data: courseData,
-        isFetching: false,
         error: null,
+        isCreating: false,
+        isFetching: false,
       });
   });
 
   it('course create fail works', () => {
-    expect(courseInfo(oldState, actions.courseCreateFail('failure')))
+    expect(courseInfo(initialState, actions.createCourseFail('failure')))
+      .toEqual({
+        data: {},
+        error: 'failure',
+        isCreating: false,
+        isFetching: false,
+      });
+  });
+
+  it('course edit request works', () => {
+    expect(courseInfo(initialState, actions.editCourseInfo(courseData)))
       .toEqual({
         data: {},
         isFetching: false,
+        isCreating: false,
+        error: null,
+      });
+  });
+
+  it('course edit receive works', () => {
+    expect(courseInfo(initialState, actions.editCourseSuccess(courseData)))
+      .toEqual({
+        data: courseData,
+        isFetching: false,
+        isCreating: false,
+        error: null,
+      });
+  });
+
+  it('course edit fail works', () => {
+    expect(courseInfo(initialState, actions.editCourseFail('failure')))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
+        error: 'failure',
+      });
+  });
+
+  it('course create run request works', () => {
+    expect(courseInfo(initialState, actions.createNewCourseRun()))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
+        error: null,
+      });
+  });
+
+  it('course create run receive works', () => {
+    expect(courseInfo(initialState, actions.createCourseRunSuccess(courseData)))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
+        error: null,
+      });
+  });
+
+  it('course create run fail works', () => {
+    expect(courseInfo(initialState, actions.createCourseRunFail('failure')))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
         error: 'failure',
       });
   });
