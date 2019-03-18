@@ -14,11 +14,11 @@ describe('CreateCourseForm', () => {
       pristine
       handleSubmit={() => null}
       initialValues={{
-        courseOrg: 'edx',
-        courseTitle: 'Hello',
-        courseNumber: 'edx101',
-        courseEnrollmentTrack: 'verified',
-        coursePrice: 100.00,
+        org: 'edx',
+        title: 'Hello',
+        number: 'edx101',
+        enrollmentTrack: 'verified',
+        price: 100.00,
       }}
       organizations={organizations}
     />);
@@ -30,11 +30,11 @@ describe('CreateCourseForm', () => {
       submitting
       handleSubmit={() => null}
       initialValues={{
-        courseOrg: '',
-        courseTitle: '',
-        courseNumber: '',
-        courseEnrollmentTrack: '',
-        coursePrice: '',
+        org: '',
+        title: '',
+        number: '',
+        enrollmentTrack: '',
+        price: '',
       }}
       organizations={organizations}
     />);

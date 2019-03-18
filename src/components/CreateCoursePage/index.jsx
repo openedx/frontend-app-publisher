@@ -18,13 +18,17 @@ class CreateCoursePage extends React.Component {
 
   handleCourseCreate(options) {
     const courseData = {
-      org: options.courseOrg,
-      title: options.courseTitle,
-      number: options.courseNumber,
-      mode: options.courseEnrollmentTrack,
-      price: options.coursePrice,
+      org: options.org,
+      title: options.title,
+      number: options.number,
+      mode: options.enrollmentTrack,
+      price: options.price,
     };
-    this.props.createCourse(courseData);
+    const courseRunData = {
+      start: (new Date(options.start)).toISOString(),
+      end: (new Date(options.end)).toISOString(),
+    };
+    return this.props.createCourse(courseData, courseRunData);
   }
 
   render() {
@@ -40,15 +44,14 @@ class CreateCoursePage extends React.Component {
     }
 
     const {
-      courseOrg,
-      courseTitle,
-      courseNumber,
-      courseEnrollmentTrack,
-      coursePrice,
+      initialValues,
       courseInfo,
       publisherUserInfo,
     } = this.props;
 
+    const showCreatingCourseSpinner = !publisherUserInfo.isFetching &&
+      courseInfo.isCreating &&
+      !courseInfo.error;
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
 
     return (
@@ -63,38 +66,37 @@ class CreateCoursePage extends React.Component {
               { publisherUserInfo.isFetching && <LoadingSpinner /> }
               { publisherUserInfo.error && (
                 <StatusAlert
-                  id="error"
+                  id="user-info-error"
                   alertType="danger"
                   title="Course Create Form failed to load: "
                   message={publisherUserInfo.error}
                 />
               )}
-              { !publisherUserInfo.isFetching && (
+              { !publisherUserInfo.isFetching &&
+              (
                 <div>
                   <h2>Create New Course</h2>
-                  <hr />
-                  <h3>Course Information</h3>
                   <div className="col">
-                    {courseInfo.error ? (
+                    <CreateCourseForm
+                      id="create-course-form"
+                      onSubmit={this.handleCourseCreate}
+                      initialValues={initialValues}
+                      organizations={organizations}
+                      isCreating={courseInfo.isCreating}
+                    />
+                    { showCreatingCourseSpinner &&
+                    <LoadingSpinner
+                      message="Creating Course and Course Run"
+                    />
+                    }
+                    {courseInfo.error && (
                       <StatusAlert
-                        id="error"
+                        id="create-error"
                         alertType="danger"
                         title="Course Create Form failed to load: "
                         message={courseInfo.error}
                       />
-                    ) : ''}
-                    <CreateCourseForm
-                      id="create-course-form"
-                      onSubmit={this.handleCourseCreate}
-                      initialValues={{
-                        courseOrg,
-                        courseTitle,
-                        courseNumber,
-                        courseEnrollmentTrack,
-                        coursePrice,
-                      }}
-                      organizations={organizations}
-                    />
+                    ) }
                   </div>
                 </div>
               )}
@@ -107,11 +109,7 @@ class CreateCoursePage extends React.Component {
 }
 
 CreateCoursePage.defaultProps = {
-  courseOrg: '',
-  courseTitle: '',
-  courseNumber: '',
-  courseEnrollmentTrack: '',
-  coursePrice: 0.0,
+  initialValues: {},
   publisherUserInfo: {},
   fetchOrganizations: () => {},
   courseInfo: {},
@@ -119,11 +117,15 @@ CreateCoursePage.defaultProps = {
 };
 
 CreateCoursePage.propTypes = {
-  courseOrg: PropTypes.string,
-  courseTitle: PropTypes.string,
-  courseNumber: PropTypes.string,
-  courseEnrollmentTrack: PropTypes.string,
-  coursePrice: PropTypes.number,
+  initialValues: PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
+    org: PropTypes.string,
+    title: PropTypes.string,
+    number: PropTypes.string,
+    enrollmentTrack: PropTypes.string,
+    price: PropTypes.number,
+    start: PropTypes.string,
+    end: PropTypes.string,
+  }),
   publisherUserInfo: PropTypes.shape({
     organizations: PropTypes.array,
     error: PropTypes.string,

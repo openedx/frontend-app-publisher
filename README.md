@@ -55,7 +55,7 @@ Run the following commands to get started with the Publisher Development environ
 
 Currently we are using Jest and Enzyme for our testing
 
-1.  The following command will ensure the container is up and then exec into it and run the tests using npm. Output will show up in your terminal.
+1. The following command will ensure the container is up and then exec into it and run the tests using npm. Output will show up in your terminal.
 
     ```
     make test
@@ -65,3 +65,15 @@ Currently we are using Jest and Enzyme for our testing
     shell using `make shell`.
 
     * `npm snapshot` - will update the snapshots for snapshot tests
+
+2. To run tests on a specific folder or file, use Jest directly.
+
+    ```
+    jest path/to/folder/
+    ```
+    or
+    ```
+    jest path/to/file.test.js[x]
+    ```
+
+    Additionally, for snapshot tests, you can update only the snapshots in a folder or for a test by appending `-u` to the end of the command.

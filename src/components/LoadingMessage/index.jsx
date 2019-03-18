@@ -11,13 +11,18 @@ const LoadingMessage = (props) => {
         className,
       )}
     >
-      Loading...
+      { props.message ? props.message : 'Loading…' }
     </div>
   );
 };
 
+LoadingMessage.defaultProps = {
+  message: null,
+};
+
 LoadingMessage.propTypes = {
   className: PropTypes.string.isRequired,
+  message: PropTypes.string,
 };
 
 export default LoadingMessage;

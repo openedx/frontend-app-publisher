@@ -99,6 +99,7 @@ module.exports = Merge.smart(commonConfig, {
       NODE_ENV: 'development',
       BASE_URL: 'localhost:18400',
       LMS_BASE_URL: 'http://localhost:18000',
+      STUDIO_BASE_URL: 'http://localhost:18010',
       DISCOVERY_API_BASE_URL: 'http://localhost:18381',
       LOGIN_URL: 'http://localhost:18000/login',
       LOGOUT_URL: 'http://localhost:18000/logout',

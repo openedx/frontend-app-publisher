@@ -2,6 +2,7 @@ import qs from 'query-string';
 
 import history from './data/history';
 
+
 const updateUrl = (queryOptions) => {
   if (!queryOptions) {
     return;
@@ -45,7 +46,19 @@ const getPageOptionsFromUrl = () => {
   };
 };
 
+function jsonDeepCopy(src) {
+  return JSON.parse(JSON.stringify(src));
+}
+
+function getCourseNumber(courseKeyFragment) {
+  const COURSE_KEY_FRAGMENT_REGEX = /\+|\//;
+  const keyParts = courseKeyFragment.split(COURSE_KEY_FRAGMENT_REGEX);
+  return keyParts[keyParts.length - 1];
+}
+
 export {
   updateUrl,
   getPageOptionsFromUrl,
+  jsonDeepCopy,
+  getCourseNumber,
 };
