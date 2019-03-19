@@ -60,18 +60,4 @@ describe('Collapsible Course Run Fields', () => {
     />);
     expect(component).toMatchSnapshot();
   });
-
-  it('adds fields when the add button is pushed', () => {
-    const fields = [{}];
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={fields}
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRuns={initialvalues}
-    />);
-    expect(fields.length).toEqual(1);
-
-    component.find('.js-add-button').simulate('click');
-    expect(fields.length).toEqual(2);
-  });
 });

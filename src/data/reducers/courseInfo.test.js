@@ -128,7 +128,7 @@ describe('courseInfo reducer', () => {
       .toEqual({
         data: {},
         isFetching: false,
-        isCreating: false,
+        isCreating: true,
         error: null,
       });
   });

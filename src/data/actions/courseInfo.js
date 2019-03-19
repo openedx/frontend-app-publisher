@@ -107,8 +107,8 @@ function createCourseRun(course, courseRunData) {
 
     const data = {
       course: course.key,
-      start: courseRunData.start,
-      end: courseRunData.end,
+      start: (new Date(courseRunData.start)).toISOString(),
+      end: (new Date(courseRunData.end)).toISOString(),
     };
     return DiscoveryDataApiService.createCourseRun(data)
       .then((response) => {

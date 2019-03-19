@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
 import RenderInputTextField from '../RenderInputTextField';
@@ -63,9 +64,10 @@ class EditCourseForm extends React.Component {
       number,
       entitlement,
       submitting,
+      pristine,
       courseRuns,
+      uuid,
     } = this.props;
-
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
     const levelTypeOptions = courseOptions && this.parseOptions(courseOptions.level_type.choices);
@@ -218,7 +220,15 @@ class EditCourseForm extends React.Component {
               pacingTypeOptions={pacingTypeOptions}
             />
             <div className="row justify-content-end">
-              <button type="submit" className="btn btn-outline-primary form-submit-btn" disabled={submitting}>
+              <Link to={`/courses/${uuid}/course_runs/new`}>
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={!pristine}
+                >
+                  Re-run Course
+                </button>
+              </Link>
+              <button type="submit" className="btn btn-primary form-submit-btn" disabled={submitting}>
                 Save Course
               </button>
             </div>
@@ -248,7 +258,9 @@ EditCourseForm.propTypes = {
     isFetching: PropTypes.bool,
   }).isRequired,
   submitting: PropTypes.bool.isRequired,
+  pristine: PropTypes.bool.isRequired,
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
+  uuid: PropTypes.string.isRequired,
 };
 
 EditCourseForm.defaultProps = {

@@ -57,6 +57,7 @@ function courseInfo(state = initialState, action) {
       });
     case CREATE_COURSE_RUN:
       return Object.assign({}, state, {
+        isCreating: true,
         error: null,
       });
     case CREATE_COURSE_RUN_SUCCESS:
