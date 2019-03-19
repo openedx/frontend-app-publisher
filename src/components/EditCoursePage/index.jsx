@@ -132,13 +132,13 @@ class EditCoursePage extends React.Component {
           video,
           entitlements,
           course_runs,
+          uuid,
         },
       },
       courseOptions,
       courseRunOptions,
     } = this.props;
     const { startedFetching } = this.state;
-
     // If we want to keep a lot of the logic in the lower return,
     // we have to do all this '&&' logic to make sure the data is there.
     const number = key && getCourseNumber(key);
@@ -206,6 +206,7 @@ class EditCoursePage extends React.Component {
                       entitlement={!!entitlement}
                       courseRunOptions={courseRunOptions}
                       courseRuns={course_runs}
+                      uuid={uuid}
                     />
                   </div>
                 </div>

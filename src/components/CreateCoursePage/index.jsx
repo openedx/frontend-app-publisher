@@ -25,8 +25,8 @@ class CreateCoursePage extends React.Component {
       price: options.price,
     };
     const courseRunData = {
-      start: (new Date(options.start)).toISOString(),
-      end: (new Date(options.end)).toISOString(),
+      start: options.start,
+      end: options.end,
     };
     return this.props.createCourse(courseData, courseRunData);
   }
@@ -93,7 +93,7 @@ class CreateCoursePage extends React.Component {
                       <StatusAlert
                         id="create-error"
                         alertType="danger"
-                        title="Course Create Form failed to load: "
+                        title="Course create failed: "
                         message={courseInfo.error}
                       />
                     ) }
