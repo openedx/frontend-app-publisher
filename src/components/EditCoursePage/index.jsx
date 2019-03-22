@@ -145,6 +145,7 @@ class EditCoursePage extends React.Component {
           entitlements,
           course_runs,
           uuid,
+          owners,
         },
       },
       courseOptions,
@@ -243,6 +244,7 @@ class EditCoursePage extends React.Component {
                 uuid={uuid}
                 courseInfo={courseInfo}
                 courseInReview={courseInReview}
+                owners={owners}
               />
             </div>
           )}

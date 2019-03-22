@@ -1,8 +1,13 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import MockAdapter from 'axios-mock-adapter';
 
+import apiClient from '../../data/apiClient';
 import StaffList from './index';
 
+const mockClient = new MockAdapter(apiClient);
+apiClient.isAccessTokenExpired = jest.fn();
+apiClient.isAccessTokenExpired.mockReturnValue(false);
 
 const input = {
   value: [
@@ -27,16 +32,95 @@ const input = {
   ],
   onChange: jest.fn(),
 };
+const owners = [{ key: 'MITx' }];
+const autoCompletePersonResponses = {
+  long: [
+    {
+      id: '5',
+      text: {
+        uuid: 'a7d0e2c0-9a02-421b-93bf-d081339090cc',
+        profile_image_url: '/assets/new-80.png',
+        given_name: 'Pippi',
+        family_name: 'Longstocking',
+      },
+    },
+    {
+      id: '6',
+      text: {
+        uuid: 'b7d0e2c0-9a02-421b-93bf-d081339090cc',
+        profile_image_url: '/assets/new-80.png',
+        given_name: 'Hank',
+        family_name: 'Longfellow',
+      },
+    }],
+};
 
 describe('StaffList', () => {
   afterEach(() => {
     // Clear onChange's call count after each test
     input.onChange.mockClear();
+    // reset api client response
+    mockClient.reset();
   });
 
-  it('renders a grid of staff members', () => {
+  it('renders a grid of staff members and an autocomplete search input', () => {
     const component = shallow(<StaffList input={input} />);
     expect(component).toMatchSnapshot();
+  });
+
+  it('gets/clears suggestions for autocomplete', (done) => {
+    mockClient.onGet('http://localhost:18381/admin/course_metadata/person-autocomplete/?q=long&serialize=1&org=MITx')
+      .replyOnce(200, JSON.stringify({
+        results: autoCompletePersonResponses.long,
+      }));
+    const component = mount(<StaffList input={input} owners={owners} />);
+    component.instance().onSuggestionsFetchRequested({ value: 'long' }).then(() => {
+      let { suggestions } = component.state();
+      // check that we get the expected response from the API
+      expect(suggestions[0].text.family_name).toEqual('Longstocking');
+      expect(suggestions[0].id).toEqual('5');
+      // check that we get the 'add new' link at the bottom of our expected results.
+      expect(suggestions[2].link).not.toBeNull();
+      expect(suggestions[2].id).toEqual('new');
+
+      // check that clearing suggestions...clears suggestions
+      component.instance().onSuggestionsClearRequested();
+      ({ suggestions } = component.state());
+      expect(suggestions.length).toEqual(0);
+      // required because we are 'expect'ing inside of an async promise
+      done();
+    });
+  });
+
+  it('gets no suggestions for short autocomplete', (done) => {
+    const component = mount(<StaffList input={input} />);
+    component.instance().onSuggestionsFetchRequested({ value: 'l' }).then(() => {
+      const state = component.state().suggestions;
+      // check that we get no suggestions for a query that is too short
+      expect(state.length).toEqual(0);
+      // required because we are 'expect'ing inside of an async promise
+      done();
+    });
+  });
+
+  it('updates selected staff on form', () => {
+    const component = mount(<StaffList input={input} />);
+    let { staffList } = component.state();
+    // we start with 3 staff members
+    expect(staffList.length).toEqual(3);
+    component.instance().onSuggestionEntered(
+      null,
+      { suggestion: autoCompletePersonResponses.long[0] },
+    );
+    // confirm that entering a staff member not in the list adds it
+    ({ staffList } = component.state());
+    expect(staffList.length).toEqual(4);
+    // confirm that entering a staff member already in the list does NOT add it
+    component.instance().onSuggestionEntered(
+      null,
+      { suggestion: autoCompletePersonResponses.long[0] },
+    );
+    expect(staffList.length).toEqual(4);
   });
 
   it('correctly handles removing members of the staff', () => {

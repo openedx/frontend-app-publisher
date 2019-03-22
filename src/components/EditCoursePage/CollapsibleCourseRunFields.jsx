@@ -59,6 +59,7 @@ export const BaseCollapsibleCourseRunFields = ({
   handleCourseRunSubmit,
   dispatch,
   formId,
+  owners,
 }) => (
   <div>
     {fields.map((courseRun, index) => (
@@ -137,6 +138,7 @@ export const BaseCollapsibleCourseRunFields = ({
           name={`${courseRun}.staff`}
           component={StaffList}
           disabled={courseInReview}
+          owners={owners}
         />
         <ButtonToolbar>
           <button
@@ -189,12 +191,14 @@ BaseCollapsibleCourseRunFields.propTypes = {
   handleCourseRunSubmit: PropTypes.func.isRequired,
   dispatch: PropTypes.func,
   formId: PropTypes.string.isRequired,
+  owners: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 BaseCollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
   courseInReview: false,
   dispatch: () => {},
+  owners: [],
 };
 
 export default connect()(BaseCollapsibleCourseRunFields);
