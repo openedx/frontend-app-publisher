@@ -2,6 +2,7 @@ import apiClient from '../apiClient';
 
 class DiscoveryDataApiService {
   static discoveryBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/api/v1`;
+  static autocompleteBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/admin/course_metadata`;
 
   static fetchCourse(uuid) {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
@@ -55,6 +56,17 @@ class DiscoveryDataApiService {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
     // PATCH to Course endpoint to create
     return apiClient.patch(url, courseData);
+  }
+
+  static autocompletePerson(text, orgs) {
+    let queryString = `?q=${text}`;
+    if (orgs) {
+      orgs.forEach((org) => {
+        queryString += `&org=${org}`;
+      });
+    }
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/person-autocomplete/${queryString}`;
+    return apiClient.get(url);
   }
 }
 
