@@ -65,7 +65,7 @@ class DiscoveryDataApiService {
         queryString += `&org=${org}`;
       });
     }
-    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/person-autocomplete/${queryString}`;
+    const url = `${DiscoveryDataApiService.autocompleteBaseUrl}/person-autocomplete/${queryString}`;
     return apiClient.get(url);
   }
 }
