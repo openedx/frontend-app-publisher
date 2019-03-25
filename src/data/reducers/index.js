@@ -6,6 +6,7 @@ import courseInfo from './courseInfo';
 import table from './table';
 import publisherUserInfo from './publisherUserInfo';
 import courseOptions from './courseOptions';
+import instructorAutocomplete from './instructorAutocomplete';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -22,4 +23,5 @@ export default history => combineReducers({
   courseOptions,
   form: formReducer,
   table,
+  instructorAutocomplete,
 });
