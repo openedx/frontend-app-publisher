@@ -14,6 +14,7 @@ describe('RichEditor', () => {
         onChange: () => null,
       }}
       maxChars={500}
+      meta={{ touched: false, error: '' }}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -27,6 +28,7 @@ describe('RichEditor', () => {
         onChange: () => null,
       }}
       maxChars={2500}
+      meta={{ touched: false, error: '' }}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -39,6 +41,21 @@ describe('RichEditor', () => {
         value: '<p>Prior text<p>',
         onChange: () => null,
       }}
+      meta={{ touched: false, error: '' }}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('shows a rich text editor and an error', () => {
+    const component = shallow(<RichEditor
+      label="Rich Text Editor Test"
+      id="rich-text-editor-test"
+      input={{
+        value: null,
+        onChange: () => null,
+      }}
+      maxChars={500}
+      meta={{ touched: true, error: 'Required' }}
     />);
     expect(component).toMatchSnapshot();
   });

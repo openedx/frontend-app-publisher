@@ -8,6 +8,7 @@ import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/themes/silver/theme';
 import 'style-loader!tinymce/skins/ui/oxide/skin.min.css'; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved
+import StatusAlert from '../StatusAlert';
 
 
 class RichEditor extends React.Component {
@@ -44,6 +45,10 @@ class RichEditor extends React.Component {
       input: {
         value,
       },
+      meta: {
+        touched,
+        error,
+      },
     } = this.props;
     const remainingChars = maxChars - this.state.charCount;
     const characterLimitMessage = `Recommended character limit (including spaces) is
@@ -51,7 +56,13 @@ class RichEditor extends React.Component {
 
     return (
       <React.Fragment>
-        <div id={id} className="form-group">{label}</div>
+        <div id={id} className="form-group mt-3">{label}</div>
+        {touched && error &&
+          <StatusAlert
+            alertType="danger"
+            message={error}
+          />
+        }
         {/*
           We are using aria-labelledby here instead of a <label> tag because the TinyMCE Editor
           adds an iframe instead of a standard tag that would be used with <label>. This was
@@ -91,6 +102,10 @@ RichEditor.propTypes = {
   input: PropTypes.shape({
     value: PropTypes.string,
     onChange: PropTypes.func.isRequired,
+  }).isRequired,
+  meta: PropTypes.shape({
+    touched: PropTypes.bool,
+    error: PropTypes.string,
   }).isRequired,
 };
 

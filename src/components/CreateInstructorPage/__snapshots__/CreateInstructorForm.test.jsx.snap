@@ -1,0 +1,6031 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateInstructorForm renders html correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BaseCreateInstructorForm
+    handleSubmit={[Function]}
+    instructorOptions={
+      Object {
+        "data": Object {
+          "actions": Object {
+            "POST": Object {
+              "position": Object {
+                "children": Object {
+                  "organization": Object {
+                    "choices": Array [
+                      Object {
+                        "display_name": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "display_name": "bananasX",
+                        "value": 2,
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
+        },
+      }
+    }
+    isCreating={false}
+    pristine={true}
+    submitting={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <div
+        className="create-instructor-form row"
+      >
+        <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "create-instructor-form row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>,
+          "className": "col",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />,
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />,
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />,
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "image",
+                "label": <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "image",
+                "required": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "firstName",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "lastName",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "title",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "organization",
+                "options": Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ],
+                "required": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "bio",
+                "label": <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "bio",
+                "validate": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "works",
+                "label": <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "majorWorks",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "socialLinks",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "areasOfExpertise",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>,
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
+                ],
+                "className": "row justify-content-end",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ],
+                    "disabled": true,
+                    "onClick": [Function],
+                    "replace": false,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit",
+                    "className": "btn btn-outline-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <div
+          className="create-instructor-form row"
+        >
+          <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "create-instructor-form row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>,
+            "className": "col",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  id="image"
+                  label={
+                    <React.Fragment>
+                      Image:
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="image"
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      First name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="firstName"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Last name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="lastName"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Position
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="organization"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select instructor organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "label": "bananasX",
+                        "value": 2,
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  id="bio"
+                  label={
+                    <React.Fragment>
+                      Biography
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="bio"
+                  validate={[Function]}
+                />,
+                <Field
+                  component={[Function]}
+                  id="works"
+                  label={
+                    <React.Fragment>
+                      Major works (optional)
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="majorWorks"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="socialLinks"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="areasOfExpertise"
+                />,
+                <div
+                  className="row justify-content-end"
+                >
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "image",
+                  "label": <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "image",
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "firstName",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "lastName",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "title",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "organization",
+                  "options": Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "bio",
+                  "label": <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "bio",
+                  "validate": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "works",
+                  "label": <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "majorWorks",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "socialLinks",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "areasOfExpertise",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Link
+                      className={
+                        Array [
+                          "btn btn-link ml-3 form-cancel-btn",
+                        ]
+                      }
+                      disabled={true}
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Cancel
+                    </Link>,
+                    <button
+                      className="btn btn-outline-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>,
+                  ],
+                  "className": "row justify-content-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ],
+                      "disabled": true,
+                      "onClick": [Function],
+                      "replace": false,
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit",
+                      "className": "btn btn-outline-primary form-submit-btn",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`CreateInstructorForm renders html correctly when creating 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BaseCreateInstructorForm
+    handleSubmit={[Function]}
+    instructorOptions={
+      Object {
+        "data": Object {
+          "actions": Object {
+            "POST": Object {
+              "position": Object {
+                "children": Object {
+                  "organization": Object {
+                    "choices": Array [
+                      Object {
+                        "display_name": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "display_name": "bananasX",
+                        "value": 2,
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
+        },
+      }
+    }
+    isCreating={true}
+    pristine={false}
+    submitting={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <div
+        className="create-instructor-form row"
+      >
+        <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "create-instructor-form row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>,
+          "className": "col",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />,
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />,
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />,
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "image",
+                "label": <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "image",
+                "required": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "firstName",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "lastName",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "title",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "organization",
+                "options": Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ],
+                "required": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "bio",
+                "label": <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "bio",
+                "validate": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "works",
+                "label": <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "majorWorks",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "socialLinks",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "areasOfExpertise",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>,
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
+                ],
+                "className": "row justify-content-end",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ],
+                    "disabled": true,
+                    "onClick": [Function],
+                    "replace": false,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit",
+                    "className": "btn btn-outline-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <div
+          className="create-instructor-form row"
+        >
+          <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "create-instructor-form row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>,
+            "className": "col",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  id="image"
+                  label={
+                    <React.Fragment>
+                      Image:
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="image"
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      First name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="firstName"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Last name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="lastName"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Position
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="organization"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select instructor organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "label": "bananasX",
+                        "value": 2,
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  id="bio"
+                  label={
+                    <React.Fragment>
+                      Biography
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="bio"
+                  validate={[Function]}
+                />,
+                <Field
+                  component={[Function]}
+                  id="works"
+                  label={
+                    <React.Fragment>
+                      Major works (optional)
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="majorWorks"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="socialLinks"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="areasOfExpertise"
+                />,
+                <div
+                  className="row justify-content-end"
+                >
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "image",
+                  "label": <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "image",
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "firstName",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "lastName",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "title",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "organization",
+                  "options": Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "bio",
+                  "label": <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "bio",
+                  "validate": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "works",
+                  "label": <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "majorWorks",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "socialLinks",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "areasOfExpertise",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Link
+                      className={
+                        Array [
+                          "btn btn-link ml-3 form-cancel-btn",
+                        ]
+                      }
+                      disabled={true}
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Cancel
+                    </Link>,
+                    <button
+                      className="btn btn-outline-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>,
+                  ],
+                  "className": "row justify-content-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ],
+                      "disabled": true,
+                      "onClick": [Function],
+                      "replace": false,
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit",
+                      "className": "btn btn-outline-primary form-submit-btn",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`CreateInstructorForm renders html correctly when submitting 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BaseCreateInstructorForm
+    handleSubmit={[Function]}
+    instructorOptions={
+      Object {
+        "data": Object {
+          "actions": Object {
+            "POST": Object {
+              "position": Object {
+                "children": Object {
+                  "organization": Object {
+                    "choices": Array [
+                      Object {
+                        "display_name": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "display_name": "bananasX",
+                        "value": 2,
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
+        },
+      }
+    }
+    isCreating={false}
+    pristine={false}
+    submitting={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <div
+        className="create-instructor-form row"
+      >
+        <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "create-instructor-form row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="image"
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="firstName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="lastName"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="organization"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="majorWorks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="socialLinks"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areasOfExpertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>,
+          "className": "col",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />,
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />,
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />,
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "image",
+                "label": <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "image",
+                "required": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "firstName",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "lastName",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "title",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "organization",
+                "options": Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ],
+                "required": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "bio",
+                "label": <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "bio",
+                "validate": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "works",
+                "label": <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "majorWorks",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "socialLinks",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "areasOfExpertise",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>,
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
+                ],
+                "className": "row justify-content-end",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ],
+                    "disabled": true,
+                    "onClick": [Function],
+                    "replace": false,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit",
+                    "className": "btn btn-outline-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <div
+          className="create-instructor-form row"
+        >
+          <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "create-instructor-form row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="image"
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="firstName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="lastName"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="organization"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="majorWorks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="socialLinks"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areasOfExpertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>,
+            "className": "col",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  id="image"
+                  label={
+                    <React.Fragment>
+                      Image:
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="image"
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      First name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="firstName"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Last name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="lastName"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Position
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="organization"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select instructor organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "label": "bananasX",
+                        "value": 2,
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  id="bio"
+                  label={
+                    <React.Fragment>
+                      Biography
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="bio"
+                  validate={[Function]}
+                />,
+                <Field
+                  component={[Function]}
+                  id="works"
+                  label={
+                    <React.Fragment>
+                      Major works (optional)
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="majorWorks"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="socialLinks"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="areasOfExpertise"
+                />,
+                <div
+                  className="row justify-content-end"
+                >
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "image",
+                  "label": <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "image",
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "firstName",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "lastName",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "title",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "organization",
+                  "options": Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "bio",
+                  "label": <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "bio",
+                  "validate": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "works",
+                  "label": <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "majorWorks",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "socialLinks",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "areasOfExpertise",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Link
+                      className={
+                        Array [
+                          "btn btn-link ml-3 form-cancel-btn",
+                        ]
+                      }
+                      disabled={true}
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Cancel
+                    </Link>,
+                    <button
+                      className="btn btn-outline-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>,
+                  ],
+                  "className": "row justify-content-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ],
+                      "disabled": true,
+                      "onClick": [Function],
+                      "replace": false,
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit",
+                      "className": "btn btn-outline-primary form-submit-btn",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

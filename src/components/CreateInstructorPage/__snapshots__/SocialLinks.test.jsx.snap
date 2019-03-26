@@ -1,0 +1,1217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Social links renders correctly when given fields 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SocialLinks
+    fields={
+      Array [
+        Object {},
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="btn btn-light js-add-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Add social link
+        </button>,
+        <ul
+          className="list-group p-0 m-0"
+        >
+          <li
+            className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
+          >
+            <div
+              className="col-6"
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Type
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Please select a type",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Facebook",
+                      "value": "facebook",
+                    },
+                    Object {
+                      "label": "Twitter",
+                      "value": "twitter",
+                    },
+                    Object {
+                      "label": "Blog",
+                      "value": "blog",
+                    },
+                    Object {
+                      "label": "Other",
+                      "value": "others",
+                    },
+                  ]
+                }
+                required={true}
+              />
+            </div>
+            <div
+              className="col-6"
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title - optional
+                  </React.Fragment>
+                }
+                name="[object Object].title"
+                type="text"
+              />
+            </div>
+            <div
+              className="col-4"
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    URL
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="[object Object].url"
+                required={true}
+                type="text"
+              />
+            </div>
+            <RemoveButton
+              className="col-2"
+              label="Remove social link"
+              onRemove={[Function]}
+              targetFieldNumber={0}
+            />
+          </li>
+        </ul>,
+      ],
+      "className": "social-links mt-4",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add social link",
+          "className": "btn btn-light js-add-button",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add social link",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
+            >
+              <div
+                className="col-6"
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Type
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="[object Object].type"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Please select a type",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Facebook",
+                        "value": "facebook",
+                      },
+                      Object {
+                        "label": "Twitter",
+                        "value": "twitter",
+                      },
+                      Object {
+                        "label": "Blog",
+                        "value": "blog",
+                      },
+                      Object {
+                        "label": "Other",
+                        "value": "others",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+              </div>
+              <div
+                className="col-6"
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title - optional
+                    </React.Fragment>
+                  }
+                  name="[object Object].title"
+                  type="text"
+                />
+              </div>
+              <div
+                className="col-4"
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      URL
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="[object Object].url"
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <RemoveButton
+                className="col-2"
+                label="Remove social link"
+                onRemove={[Function]}
+                targetFieldNumber={0}
+              />
+            </li>,
+          ],
+          "className": "list-group p-0 m-0",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "[object Object]",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="col-6"
+                >
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Type
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="[object Object].type"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Please select a type",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "Facebook",
+                          "value": "facebook",
+                        },
+                        Object {
+                          "label": "Twitter",
+                          "value": "twitter",
+                        },
+                        Object {
+                          "label": "Blog",
+                          "value": "blog",
+                        },
+                        Object {
+                          "label": "Other",
+                          "value": "others",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />
+                </div>,
+                <div
+                  className="col-6"
+                >
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Title - optional
+                      </React.Fragment>
+                    }
+                    name="[object Object].title"
+                    type="text"
+                  />
+                </div>,
+                <div
+                  className="col-4"
+                >
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        URL
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="[object Object].url"
+                    required={true}
+                    type="text"
+                  />
+                </div>,
+                <RemoveButton
+                  className="col-2"
+                  label="Remove social link"
+                  onRemove={[Function]}
+                  targetFieldNumber={0}
+                />,
+              ],
+              "className": "social-link list-group-item row d-flex align-items-center px-0 mx-0",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Type
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="[object Object].type"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Please select a type",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "Facebook",
+                          "value": "facebook",
+                        },
+                        Object {
+                          "label": "Twitter",
+                          "value": "twitter",
+                        },
+                        Object {
+                          "label": "Blog",
+                          "value": "blog",
+                        },
+                        Object {
+                          "label": "Other",
+                          "value": "others",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />,
+                  "className": "col-6",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Type
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "[object Object].type",
+                    "options": Array [
+                      Object {
+                        "label": "Please select a type",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Facebook",
+                        "value": "facebook",
+                      },
+                      Object {
+                        "label": "Twitter",
+                        "value": "twitter",
+                      },
+                      Object {
+                        "label": "Blog",
+                        "value": "blog",
+                      },
+                      Object {
+                        "label": "Other",
+                        "value": "others",
+                      },
+                    ],
+                    "required": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Title - optional
+                      </React.Fragment>
+                    }
+                    name="[object Object].title"
+                    type="text"
+                  />,
+                  "className": "col-6",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Title - optional
+                    </React.Fragment>,
+                    "name": "[object Object].title",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        URL
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="[object Object].url"
+                    required={true}
+                    type="text"
+                  />,
+                  "className": "col-4",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      URL
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "[object Object].url",
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "col-2",
+                  "label": "Remove social link",
+                  "onRemove": [Function],
+                  "targetFieldNumber": 0,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="btn btn-light js-add-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Add social link
+          </button>,
+          <ul
+            className="list-group p-0 m-0"
+          >
+            <li
+              className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
+            >
+              <div
+                className="col-6"
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Type
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="[object Object].type"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Please select a type",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Facebook",
+                        "value": "facebook",
+                      },
+                      Object {
+                        "label": "Twitter",
+                        "value": "twitter",
+                      },
+                      Object {
+                        "label": "Blog",
+                        "value": "blog",
+                      },
+                      Object {
+                        "label": "Other",
+                        "value": "others",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+              </div>
+              <div
+                className="col-6"
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title - optional
+                    </React.Fragment>
+                  }
+                  name="[object Object].title"
+                  type="text"
+                />
+              </div>
+              <div
+                className="col-4"
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      URL
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="[object Object].url"
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <RemoveButton
+                className="col-2"
+                label="Remove social link"
+                onRemove={[Function]}
+                targetFieldNumber={0}
+              />
+            </li>
+          </ul>,
+        ],
+        "className": "social-links mt-4",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add social link",
+            "className": "btn btn-light js-add-button",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add social link",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
+              >
+                <div
+                  className="col-6"
+                >
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Type
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="[object Object].type"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Please select a type",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "Facebook",
+                          "value": "facebook",
+                        },
+                        Object {
+                          "label": "Twitter",
+                          "value": "twitter",
+                        },
+                        Object {
+                          "label": "Blog",
+                          "value": "blog",
+                        },
+                        Object {
+                          "label": "Other",
+                          "value": "others",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />
+                </div>
+                <div
+                  className="col-6"
+                >
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Title - optional
+                      </React.Fragment>
+                    }
+                    name="[object Object].title"
+                    type="text"
+                  />
+                </div>
+                <div
+                  className="col-4"
+                >
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        URL
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="[object Object].url"
+                    required={true}
+                    type="text"
+                  />
+                </div>
+                <RemoveButton
+                  className="col-2"
+                  label="Remove social link"
+                  onRemove={[Function]}
+                  targetFieldNumber={0}
+                />
+              </li>,
+            ],
+            "className": "list-group p-0 m-0",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "[object Object]",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="col-6"
+                  >
+                    <Field
+                      component={[Function]}
+                      label={
+                        <React.Fragment>
+                          Type
+                          <span
+                            className="required"
+                          >
+                            *
+                          </span>
+                        </React.Fragment>
+                      }
+                      name="[object Object].type"
+                      options={
+                        Array [
+                          Object {
+                            "label": "Please select a type",
+                            "value": "",
+                          },
+                          Object {
+                            "label": "Facebook",
+                            "value": "facebook",
+                          },
+                          Object {
+                            "label": "Twitter",
+                            "value": "twitter",
+                          },
+                          Object {
+                            "label": "Blog",
+                            "value": "blog",
+                          },
+                          Object {
+                            "label": "Other",
+                            "value": "others",
+                          },
+                        ]
+                      }
+                      required={true}
+                    />
+                  </div>,
+                  <div
+                    className="col-6"
+                  >
+                    <Field
+                      component={[Function]}
+                      label={
+                        <React.Fragment>
+                          Title - optional
+                        </React.Fragment>
+                      }
+                      name="[object Object].title"
+                      type="text"
+                    />
+                  </div>,
+                  <div
+                    className="col-4"
+                  >
+                    <Field
+                      component={[Function]}
+                      label={
+                        <React.Fragment>
+                          URL
+                          <span
+                            className="required"
+                          >
+                            *
+                          </span>
+                        </React.Fragment>
+                      }
+                      name="[object Object].url"
+                      required={true}
+                      type="text"
+                    />
+                  </div>,
+                  <RemoveButton
+                    className="col-2"
+                    label="Remove social link"
+                    onRemove={[Function]}
+                    targetFieldNumber={0}
+                  />,
+                ],
+                "className": "social-link list-group-item row d-flex align-items-center px-0 mx-0",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Field
+                      component={[Function]}
+                      label={
+                        <React.Fragment>
+                          Type
+                          <span
+                            className="required"
+                          >
+                            *
+                          </span>
+                        </React.Fragment>
+                      }
+                      name="[object Object].type"
+                      options={
+                        Array [
+                          Object {
+                            "label": "Please select a type",
+                            "value": "",
+                          },
+                          Object {
+                            "label": "Facebook",
+                            "value": "facebook",
+                          },
+                          Object {
+                            "label": "Twitter",
+                            "value": "twitter",
+                          },
+                          Object {
+                            "label": "Blog",
+                            "value": "blog",
+                          },
+                          Object {
+                            "label": "Other",
+                            "value": "others",
+                          },
+                        ]
+                      }
+                      required={true}
+                    />,
+                    "className": "col-6",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "label": <React.Fragment>
+                        Type
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>,
+                      "name": "[object Object].type",
+                      "options": Array [
+                        Object {
+                          "label": "Please select a type",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "Facebook",
+                          "value": "facebook",
+                        },
+                        Object {
+                          "label": "Twitter",
+                          "value": "twitter",
+                        },
+                        Object {
+                          "label": "Blog",
+                          "value": "blog",
+                        },
+                        Object {
+                          "label": "Other",
+                          "value": "others",
+                        },
+                      ],
+                      "required": true,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Field
+                      component={[Function]}
+                      label={
+                        <React.Fragment>
+                          Title - optional
+                        </React.Fragment>
+                      }
+                      name="[object Object].title"
+                      type="text"
+                    />,
+                    "className": "col-6",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "label": <React.Fragment>
+                        Title - optional
+                      </React.Fragment>,
+                      "name": "[object Object].title",
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Field
+                      component={[Function]}
+                      label={
+                        <React.Fragment>
+                          URL
+                          <span
+                            className="required"
+                          >
+                            *
+                          </span>
+                        </React.Fragment>
+                      }
+                      name="[object Object].url"
+                      required={true}
+                      type="text"
+                    />,
+                    "className": "col-4",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "label": <React.Fragment>
+                        URL
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>,
+                      "name": "[object Object].url",
+                      "required": true,
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "col-2",
+                    "label": "Remove social link",
+                    "onRemove": [Function],
+                    "targetFieldNumber": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`Social links renders correctly with no fields 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SocialLinks
+    fields={Array []}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="btn btn-light js-add-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Add social link
+        </button>,
+        <ul
+          className="list-group p-0 m-0"
+        />,
+      ],
+      "className": "social-links mt-4",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add social link",
+          "className": "btn btn-light js-add-button",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add social link",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [],
+          "className": "list-group p-0 m-0",
+        },
+        "ref": null,
+        "rendered": Array [],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="btn btn-light js-add-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Add social link
+          </button>,
+          <ul
+            className="list-group p-0 m-0"
+          />,
+        ],
+        "className": "social-links mt-4",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add social link",
+            "className": "btn btn-light js-add-button",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add social link",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [],
+            "className": "list-group p-0 m-0",
+          },
+          "ref": null,
+          "rendered": Array [],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
