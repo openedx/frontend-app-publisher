@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RichEditor shows a rich text editor with default text value 1`] = `
+exports[`RichEditor shows a rich text editor and an error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RichEditor
@@ -8,15 +8,17 @@ ShallowWrapper {
     input={
       Object {
         "onChange": [Function],
-        "value": "<p>Prior text<p>",
+        "value": null,
       }
     }
-    label={
-      <strong>
-        Rich Text Editor Test
-      </strong>
+    label="Rich Text Editor Test"
+    maxChars={500}
+    meta={
+      Object {
+        "error": "Required",
+        "touched": true,
+      }
     }
-    maxChars={2500}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -34,13 +36,370 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="form-group"
+          className="form-group mt-3"
+          id="rich-text-editor-test"
+        >
+          Rich Text Editor Test
+        </div>,
+        <StatusAlert
+          alertType="danger"
+          className={Array []}
+          dismissible={false}
+          iconClassNames={Array []}
+          message="Required"
+          onClose={[Function]}
+          title={null}
+        />,
+        <div
+          aria-labelledby="rich-text-editor-test"
+        >
+          <Editor
+            init={
+              Object {
+                "branding": false,
+                "menubar": false,
+                "plugins": "legacyoutput link lists",
+                "statusbar": false,
+                "toolbar": "undo redo | bold italic underline | bullist numlist | link",
+              }
+            }
+            initialValue={null}
+            onChange={[Function]}
+            onInit={[Function]}
+            onKeyUp={[Function]}
+          />
+          <span>
+            Recommended character limit (including spaces) is
+      500. 500 characters remaining.
+          </span>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Rich Text Editor Test",
+          "className": "form-group mt-3",
+          "id": "rich-text-editor-test",
+        },
+        "ref": null,
+        "rendered": "Rich Text Editor Test",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "alertType": "danger",
+          "className": Array [],
+          "dismissible": false,
+          "iconClassNames": Array [],
+          "message": "Required",
+          "onClose": [Function],
+          "title": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "aria-labelledby": "rich-text-editor-test",
+          "children": Array [
+            <Editor
+              init={
+                Object {
+                  "branding": false,
+                  "menubar": false,
+                  "plugins": "legacyoutput link lists",
+                  "statusbar": false,
+                  "toolbar": "undo redo | bold italic underline | bullist numlist | link",
+                }
+              }
+              initialValue={null}
+              onChange={[Function]}
+              onInit={[Function]}
+              onKeyUp={[Function]}
+            />,
+            <span>
+              Recommended character limit (including spaces) is
+      500. 500 characters remaining.
+            </span>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "init": Object {
+                "branding": false,
+                "menubar": false,
+                "plugins": "legacyoutput link lists",
+                "statusbar": false,
+                "toolbar": "undo redo | bold italic underline | bullist numlist | link",
+              },
+              "initialValue": null,
+              "onChange": [Function],
+              "onInit": [Function],
+              "onKeyUp": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Recommended character limit (including spaces) is
+      500. 500 characters remaining.",
+            },
+            "ref": null,
+            "rendered": "Recommended character limit (including spaces) is
+      500. 500 characters remaining.",
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <div
+            className="form-group mt-3"
+            id="rich-text-editor-test"
+          >
+            Rich Text Editor Test
+          </div>,
+          <StatusAlert
+            alertType="danger"
+            className={Array []}
+            dismissible={false}
+            iconClassNames={Array []}
+            message="Required"
+            onClose={[Function]}
+            title={null}
+          />,
+          <div
+            aria-labelledby="rich-text-editor-test"
+          >
+            <Editor
+              init={
+                Object {
+                  "branding": false,
+                  "menubar": false,
+                  "plugins": "legacyoutput link lists",
+                  "statusbar": false,
+                  "toolbar": "undo redo | bold italic underline | bullist numlist | link",
+                }
+              }
+              initialValue={null}
+              onChange={[Function]}
+              onInit={[Function]}
+              onKeyUp={[Function]}
+            />
+            <span>
+              Recommended character limit (including spaces) is
+      500. 500 characters remaining.
+            </span>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Rich Text Editor Test",
+            "className": "form-group mt-3",
+            "id": "rich-text-editor-test",
+          },
+          "ref": null,
+          "rendered": "Rich Text Editor Test",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alertType": "danger",
+            "className": Array [],
+            "dismissible": false,
+            "iconClassNames": Array [],
+            "message": "Required",
+            "onClose": [Function],
+            "title": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "aria-labelledby": "rich-text-editor-test",
+            "children": Array [
+              <Editor
+                init={
+                  Object {
+                    "branding": false,
+                    "menubar": false,
+                    "plugins": "legacyoutput link lists",
+                    "statusbar": false,
+                    "toolbar": "undo redo | bold italic underline | bullist numlist | link",
+                  }
+                }
+                initialValue={null}
+                onChange={[Function]}
+                onInit={[Function]}
+                onKeyUp={[Function]}
+              />,
+              <span>
+                Recommended character limit (including spaces) is
+      500. 500 characters remaining.
+              </span>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "init": Object {
+                  "branding": false,
+                  "menubar": false,
+                  "plugins": "legacyoutput link lists",
+                  "statusbar": false,
+                  "toolbar": "undo redo | bold italic underline | bullist numlist | link",
+                },
+                "initialValue": null,
+                "onChange": [Function],
+                "onInit": [Function],
+                "onKeyUp": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Recommended character limit (including spaces) is
+      500. 500 characters remaining.",
+              },
+              "ref": null,
+              "rendered": "Recommended character limit (including spaces) is
+      500. 500 characters remaining.",
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`RichEditor shows a rich text editor with default text value 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RichEditor
+    id="rich-text-editor-test"
+    input={
+      Object {
+        "onChange": [Function],
+        "value": "<p>Prior text<p>",
+      }
+    }
+    label={
+      <strong>
+        Rich Text Editor Test
+      </strong>
+    }
+    maxChars={2500}
+    meta={
+      Object {
+        "error": "",
+        "touched": false,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <div
+          className="form-group mt-3"
           id="rich-text-editor-test"
         >
           <strong>
             Rich Text Editor Test
           </strong>
         </div>,
+        false,
         <div
           aria-labelledby="rich-text-editor-test"
         >
@@ -76,7 +435,7 @@ ShallowWrapper {
           "children": <strong>
             Rich Text Editor Test
           </strong>,
-          "className": "form-group",
+          "className": "form-group mt-3",
           "id": "rich-text-editor-test",
         },
         "ref": null,
@@ -93,6 +452,7 @@ ShallowWrapper {
         },
         "type": "div",
       },
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -171,13 +531,14 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="form-group"
+            className="form-group mt-3"
             id="rich-text-editor-test"
           >
             <strong>
               Rich Text Editor Test
             </strong>
           </div>,
+          false,
           <div
             aria-labelledby="rich-text-editor-test"
           >
@@ -213,7 +574,7 @@ ShallowWrapper {
             "children": <strong>
               Rich Text Editor Test
             </strong>,
-            "className": "form-group",
+            "className": "form-group mt-3",
             "id": "rich-text-editor-test",
           },
           "ref": null,
@@ -230,6 +591,7 @@ ShallowWrapper {
           },
           "type": "div",
         },
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -339,6 +701,12 @@ ShallowWrapper {
     }
     label="Rich Text Editor Test"
     maxChars={500}
+    meta={
+      Object {
+        "error": "",
+        "touched": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -356,11 +724,12 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="form-group"
+          className="form-group mt-3"
           id="rich-text-editor-test"
         >
           Rich Text Editor Test
         </div>,
+        false,
         <div
           aria-labelledby="rich-text-editor-test"
         >
@@ -394,13 +763,14 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Rich Text Editor Test",
-          "className": "form-group",
+          "className": "form-group mt-3",
           "id": "rich-text-editor-test",
         },
         "ref": null,
         "rendered": "Rich Text Editor Test",
         "type": "div",
       },
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -479,11 +849,12 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="form-group"
+            className="form-group mt-3"
             id="rich-text-editor-test"
           >
             Rich Text Editor Test
           </div>,
+          false,
           <div
             aria-labelledby="rich-text-editor-test"
           >
@@ -517,13 +888,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Rich Text Editor Test",
-            "className": "form-group",
+            "className": "form-group mt-3",
             "id": "rich-text-editor-test",
           },
           "ref": null,
           "rendered": "Rich Text Editor Test",
           "type": "div",
         },
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -637,6 +1009,12 @@ ShallowWrapper {
       </strong>
     }
     maxChars={null}
+    meta={
+      Object {
+        "error": "",
+        "touched": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -654,13 +1032,14 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="form-group"
+          className="form-group mt-3"
           id="rich-text-editor-test"
         >
           <strong>
             Rich Text Editor Test
           </strong>
         </div>,
+        false,
         <div
           aria-labelledby="rich-text-editor-test"
         >
@@ -692,7 +1071,7 @@ ShallowWrapper {
           "children": <strong>
             Rich Text Editor Test
           </strong>,
-          "className": "form-group",
+          "className": "form-group mt-3",
           "id": "rich-text-editor-test",
         },
         "ref": null,
@@ -709,6 +1088,7 @@ ShallowWrapper {
         },
         "type": "div",
       },
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -772,13 +1152,14 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="form-group"
+            className="form-group mt-3"
             id="rich-text-editor-test"
           >
             <strong>
               Rich Text Editor Test
             </strong>
           </div>,
+          false,
           <div
             aria-labelledby="rich-text-editor-test"
           >
@@ -810,7 +1191,7 @@ ShallowWrapper {
             "children": <strong>
               Rich Text Editor Test
             </strong>,
-            "className": "form-group",
+            "className": "form-group mt-3",
             "id": "rich-text-editor-test",
           },
           "ref": null,
@@ -827,6 +1208,7 @@ ShallowWrapper {
           },
           "type": "div",
         },
+        false,
         Object {
           "instance": null,
           "key": undefined,

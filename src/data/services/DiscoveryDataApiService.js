@@ -56,6 +56,17 @@ class DiscoveryDataApiService {
     // PATCH to Course endpoint to create
     return apiClient.patch(url, courseData);
   }
+
+  static createInstructor(data) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/`;
+    // POST to People endpoint to create
+    return apiClient.post(url, data);
+  }
+
+  static fetchInstructorOptions() {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/`;
+    return apiClient.options(url);
+  }
 }
 
 export default DiscoveryDataApiService;
