@@ -83,7 +83,7 @@ class EditCourseForm extends React.Component {
 
     return (
       <div className="edit-course-form row">
-        <div className="row col">
+        <div className="col">
           <form onSubmit={handleSubmit}>
             <Field
               name="title"
