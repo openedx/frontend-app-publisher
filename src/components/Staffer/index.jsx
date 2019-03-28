@@ -8,17 +8,21 @@ export const getStafferName = staffer => `${staffer.given_name} ${staffer.family
 export const Staffer = ({ staffer, onRemove }) => (
   <React.Fragment>
     <div className="staffer-image-wrapper overflow-hidden">
-      <img src={staffer.profile_image_url} className="rounded-circle w-50" alt="" />
+      <img src={staffer.profile_image_url} className="rounded-circle w-25" alt="" />
     </div>
     <div className="staffer-details">
-      <button className="btn js-delete-btn mr-1 p-0" onClick={() => onRemove(staffer.uuid)}>
+      <button
+        type="button"
+        className="btn js-delete-btn mr-1 p-0"
+        onClick={() => onRemove(staffer.uuid)}
+      >
         <Icon
           id={`delete-icon-${staffer.uuid}`}
           className={['fa', 'fa-trash', 'fa-fw', 'text-danger']}
           screenReaderText={`Remove ${getStafferName(staffer)}`}
         />
       </button>
-      <button className="btn mr-1 p-0">
+      <button type="button" className="btn mr-1 p-0">
         <Icon
           id={`edit-icon-${staffer.uuid}`}
           className={['fa', 'fa-edit', 'fa-fw']}
