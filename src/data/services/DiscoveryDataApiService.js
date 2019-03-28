@@ -4,8 +4,13 @@ class DiscoveryDataApiService {
   static discoveryBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/api/v1`;
 
   static fetchCourse(uuid) {
+    const queryParams = {
+      editable: 1,
+    };
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
-    return apiClient.get(url);
+    return apiClient.get(url, {
+      params: queryParams,
+    });
   }
 
   static fetchCourses(options) {
@@ -46,8 +51,13 @@ class DiscoveryDataApiService {
   }
 
   static fetchCourseOptions(uuid) {
+    const queryParams = {
+      editable: 1,
+    };
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
-    return apiClient.options(url);
+    return apiClient.options(url, {
+      params: queryParams,
+    });
   }
 
   static editCourse(courseData) {
