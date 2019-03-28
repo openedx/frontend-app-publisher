@@ -1,36 +1,18 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import * as actions from '../actions/courseRunOptions';
 
-import EditCourseForm from './EditCourseForm';
+import courseRunOptions from './courseRunOptions';
 
 
-describe('EditCourseForm', () => {
-  const courseOptions = {
+describe('courseRunOptions reducer', () => {
+  const oldState = { // overwritten as old state for actions
     data: {
-      actions: {
-        PUT: {
-          level_type: {
-            choices: [
-              { display_name: 'Beginner', value: 'beginner' },
-              { display_name: 'Intermediate', value: 'intermediate' },
-              { display_name: 'Advanced', value: 'advanced' },
-            ],
-          },
-          subjects: {
-            child: {
-              choices: [
-                { display_name: 'Business', value: 'business' },
-                { display_name: 'Chemistry', value: 'chemistry' },
-                { display_name: 'English', value: 'english' },
-                { display_name: 'Security', value: 'security' },
-              ],
-            },
-          },
-        },
-      },
+      nope: 'bad data',
     },
+    isFetching: true,
+    error: 'error occurred',
   };
-  const courseRunOptions = {
+
+  const courseRunData = {
     actions: {
       POST: {
         pacing_type: {
@@ -468,61 +450,39 @@ describe('EditCourseForm', () => {
       },
     },
   };
-  const initialValuesFull = {
-    title: 'Test Title',
-    short_description: 'short desc',
-    full_description: 'long desc',
-    outcome: 'learning outcomes',
-    subjectPrimary: 'business',
-    subjectSecondary: 'english',
-    subjectTertiary: 'security',
-    imageSrc: 'http://image.src.small',
-    prerequisites_raw: 'prereq',
-    level_type: 'advanced',
-    learner_testimonials: 'learner testimonials',
-    faq: 'frequently asked questions',
-    additional_information: 'additional info',
-    syllabus_raw: 'syllabus',
-    videoSrc: 'https://www.video.src/watch?v=fdsafd',
-    mode: 'verified',
-    price: '77',
-  };
 
-  it('renders html correctly with minimal data', () => {
-    const component = shallow(<EditCourseForm
-      handleSubmit={() => null}
-      initialValues={{
-        title: 'Test Title',
-      }}
-      number="Test101x"
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-    />);
-    expect(component).toMatchSnapshot();
+  it('initial state is valid', () => {
+    expect(courseRunOptions(undefined, {})).toEqual({
+      data: {},
+      isFetching: false,
+      error: null,
+    });
   });
 
-  it('renders html correctly with all data present and verified entitlement', () => {
-    const component = shallow(<EditCourseForm
-      handleSubmit={() => null}
-      initialValues={initialValuesFull}
-      number="Test102x"
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      entitlement
-    />);
-    expect(component).toMatchSnapshot();
+  it('courseRun options request works', () => {
+    expect(courseRunOptions(oldState, actions.requestCourseRunOptions()))
+      .toEqual({
+        data: {},
+        isFetching: true,
+        error: null,
+      });
   });
 
-  it('renders html correctly while submitting', () => {
-    const component = shallow(<EditCourseForm
-      handleSubmit={() => null}
-      initialValues={initialValuesFull}
-      number="Test103x"
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      entitlement
-      submitting
-    />);
-    expect(component).toMatchSnapshot();
+  it('courseRun options success works', () => {
+    expect(courseRunOptions(oldState, actions.requestCourseRunOptionsSuccess(courseRunData)))
+      .toEqual({
+        data: courseRunData,
+        isFetching: false,
+        error: null,
+      });
+  });
+
+  it('courseRun options fail works', () => {
+    expect(courseRunOptions(oldState, actions.requestCourseRunOptionsFail('failure')))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        error: 'failure',
+      });
   });
 });

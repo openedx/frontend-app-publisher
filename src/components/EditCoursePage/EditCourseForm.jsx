@@ -1,13 +1,15 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, FieldArray, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 
+import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import ImageUpload from '../../components/ImageUpload';
 import RichEditor from '../../components/RichEditor';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
 
+const formName = 'edit-course-form';
 
 class EditCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -18,7 +20,7 @@ class EditCourseForm extends React.Component {
     ];
   }
 
-  getOptions() {
+  getCourseOptions() {
     const { courseOptions } = this.props;
 
     if (!courseOptions) {
@@ -34,6 +36,22 @@ class EditCourseForm extends React.Component {
     return data.actions.PUT;
   }
 
+  getCourseRunOptions() {
+    const { courseRunOptions } = this.props;
+
+    if (!courseRunOptions) {
+      return [];
+    }
+
+    const { data } = courseRunOptions;
+
+    if (!data || !data.actions) {
+      return [];
+    }
+
+    return data.actions.POST;
+  }
+
   parseOptions(inChoices) {
     return inChoices.map(choice =>
       ({ label: choice.display_name, value: choice.value }));
@@ -45,11 +63,20 @@ class EditCourseForm extends React.Component {
       number,
       entitlement,
       submitting,
+      courseRuns,
     } = this.props;
 
-    const options = this.getOptions();
-    const levelTypeOptions = options && this.parseOptions(options.level_type.choices);
-    const subjectOptions = options && this.parseOptions(options.subjects.child.choices);
+    const courseOptions = this.getCourseOptions();
+    const courseRunOptions = this.getCourseRunOptions();
+    const levelTypeOptions = courseOptions && this.parseOptions(courseOptions.level_type.choices);
+    const subjectOptions = courseOptions && this.parseOptions(courseOptions.subjects.child.choices);
+    const pacingTypeOptions = (courseRunOptions &&
+      this.parseOptions(courseRunOptions.pacing_type.choices));
+    const languageOptions = (courseRunOptions &&
+      [{
+        label: '----------', // Add a default null language for the dropdown
+        value: null,
+      }].concat(this.parseOptions(courseRunOptions.content_language.choices)));
 
     levelTypeOptions.unshift({ label: '--', value: '' });
     subjectOptions.unshift({ label: '--', value: '' });
@@ -182,6 +209,14 @@ class EditCourseForm extends React.Component {
                 />
               </React.Fragment>
             )}
+            <strong>Course Runs: </strong>
+            <FieldArray
+              name="course_runs"
+              component={CollapsibleCourseRunFields}
+              courseRuns={courseRuns}
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+            />
             <div className="row justify-content-end">
               <button type="submit" className="btn btn-outline-primary form-submit-btn" disabled={submitting}>
                 Save Course
@@ -207,7 +242,17 @@ EditCourseForm.propTypes = {
     error: PropTypes.string,
     isFetching: PropTypes.bool,
   }).isRequired,
+  courseRunOptions: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.string,
+    isFetching: PropTypes.bool,
+  }).isRequired,
   submitting: PropTypes.bool.isRequired,
+  courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
-export default reduxForm({ form: 'edit-course-form' })(EditCourseForm);
+EditCourseForm.defaultProps = {
+  courseRuns: [],
+};
+
+export default reduxForm({ form: formName })(EditCourseForm);

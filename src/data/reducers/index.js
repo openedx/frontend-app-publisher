@@ -8,6 +8,7 @@ import publisherUserInfo from './publisherUserInfo';
 import courseOptions from './courseOptions';
 import instructorOptions from './instructorOptions';
 import instructorInfo from './instructorInfo';
+import courseRunOptions from './courseRunOptions';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -24,6 +25,7 @@ export default history => combineReducers({
   courseOptions,
   instructorOptions,
   instructorInfo,
+  courseRunOptions,
   form: formReducer,
   table,
 });
