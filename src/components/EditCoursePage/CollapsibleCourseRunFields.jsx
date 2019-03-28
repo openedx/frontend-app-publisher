@@ -44,19 +44,6 @@ const formatCourseRunTitle = (courseRun) => {
   );
 };
 
-const pacingTypeOptions = () => (
-  [
-    {
-      label: 'Instructor-paced',
-      value: 'instructor_paced',
-    },
-    {
-      label: 'Self-paced',
-      value: 'self_paced',
-    },
-  ]
-);
-
 class CollapsibleCourseRunFields extends React.Component {
   constructor(props) {
     super(props);
