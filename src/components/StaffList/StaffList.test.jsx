@@ -34,7 +34,7 @@ describe('StaffList', () => {
     input.onChange.mockClear();
   });
 
-  it('renders a grid of staff members', () => {
+  it('renders a list of staff members', () => {
     const component = shallow(<StaffList input={input} />);
     expect(component).toMatchSnapshot();
   });
