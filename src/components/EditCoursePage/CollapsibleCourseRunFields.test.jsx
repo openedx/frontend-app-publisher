@@ -19,7 +19,7 @@ const pacingTypeOptions = [
 
 const initialvalues = [
   {
-    start: '2000-01-01T00:00:00Z', // Different format to be transformed
+    start: '2000-01-01T12:00:00Z', // Different format to be transformed
     end: '2010/01/01',
     pacing_type: 'self_paced',
     min_effort: 1,
