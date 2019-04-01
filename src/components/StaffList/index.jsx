@@ -51,7 +51,7 @@ class StaffList extends React.Component {
           <Droppable droppableId="StaffList" direction="vertical">
             {provided => (
               <div className="staff-list container" ref={provided.innerRef} {...provided.droppableProps}>
-                {staffList.map((staffer, index) => (
+                {staffList && staffList.map((staffer, index) => (
                   <Draggable draggableId={getStafferName(staffer)} index={index} key={staffer.uuid}>
                     {draggableProvided => (
                       <div

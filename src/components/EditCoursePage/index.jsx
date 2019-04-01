@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import EditCourseForm from './EditCourseForm';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { getCourseNumber } from '../../utils';
+import { getCourseNumber, jsonDeepCopy } from '../../utils';
 
 
 class EditCoursePage extends React.Component {
@@ -30,15 +30,24 @@ class EditCoursePage extends React.Component {
     this.setState({ startedFetching: true });
   }
 
+  prepareStaff(courseRuns) {
+    /* eslint-disable no-param-reassign */
+    courseRuns.forEach((courseRun) => {
+      courseRun.staff = courseRun.staff.map(staffer => staffer.uuid);
+    });
+    /* eslint-enable no-param-reassign */
+  }
+
   handleCourseEdit(options) {
     /*
       Need to do some preprocessing before sending anything to course-discovery.
       This includes:
-        1. Only including subjects that have values
-        2. Putting the entitlement into an array and also adding in the sku
+        1. Only sending the uuid from the array of staff objects
+        2. Only including subjects that have values
+        3. Putting the entitlement into an array and also adding in the sku
           (required for updating price)
-        3. Renaming the image and video fields to correspond to what course-discovery is expecting
-        4. Setting the uuid so we can create the url to send to course-discovery
+        4. Renaming the image and video fields to correspond to what course-discovery is expecting
+        5. Setting the uuid so we can create the url to send to course-discovery
     */
     const {
       courseInfo: {
@@ -55,24 +64,19 @@ class EditCoursePage extends React.Component {
     const modifiedCourseRuns = [];
     const newCourseRuns = [];
     courseData.course_runs.forEach((modifiedCourseRun) => {
-      let found = initialCourseRuns.some(initialCourseRun => (
+      const found = initialCourseRuns.some(initialCourseRun => (
         initialCourseRun.key === modifiedCourseRun.key &&
         JSON.stringify(initialCourseRun) !== JSON.stringify(modifiedCourseRun)
       ));
-      initialCourseRuns.forEach((initialCourseRun) => {
-        if (initialCourseRun.key === modifiedCourseRun.key) {
-          found = true;
-          if (JSON.stringify(initialCourseRun) !== JSON.stringify(modifiedCourseRun)) {
-            modifiedCourseRuns.push(modifiedCourseRun);
-          }
-        }
-      });
       if (found) {
-        modifiedCourseRuns.push(modifiedCourseRun);
+        modifiedCourseRuns.push(jsonDeepCopy(modifiedCourseRun));
       } else {
-        newCourseRuns.push(modifiedCourseRun);
+        newCourseRuns.push(jsonDeepCopy(modifiedCourseRun));
       }
     });
+
+    this.prepareStaff(modifiedCourseRuns);
+    this.prepareStaff(newCourseRuns);
     courseData.subjects = [
       courseData.subjectPrimary,
       courseData.subjectSecondary,
