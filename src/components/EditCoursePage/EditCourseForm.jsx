@@ -255,4 +255,7 @@ EditCourseForm.defaultProps = {
   courseRuns: [],
 };
 
-export default reduxForm({ form: formName })(EditCourseForm);
+export default reduxForm({
+  form: formName,
+  destroyOnUnmount: false, // Keep form state in redux when editing / creating instructors
+})(EditCourseForm);

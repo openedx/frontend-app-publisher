@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Icon } from '@edx/paragon';
 
 
@@ -22,14 +23,17 @@ export const Staffer = ({ staffer, onRemove }) => (
           screenReaderText={`Remove ${getStafferName(staffer)}`}
         />
       </button>
-      <button type="button" className="btn mr-1 p-0">
+      <Link
+        to="/"
+        className="btn mr-1 p-0"
+      >
         <Icon
           id={`edit-icon-${staffer.uuid}`}
           className={['fa', 'fa-edit', 'fa-fw']}
           screenReaderText={`Edit ${getStafferName(staffer)}`}
           title="Edit"
         />
-      </button>
+      </Link>
       <span className="name font-weight-bold">
         {getStafferName(staffer)}
       </span>
