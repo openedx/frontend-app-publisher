@@ -78,6 +78,7 @@ class DiscoveryDataApiService {
     newCourseRunData.forEach((courseRun) => {
       /* eslint-disable no-param-reassign */
       courseRun.course = courseData.key; // Need key association set for creation
+      /* eslint-enable no-param-reassign */
       const courseRunUrl = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/`;
       promises.push(apiClient.post(courseRunUrl, courseRun));
     });

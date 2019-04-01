@@ -74,8 +74,8 @@ class EditCourseForm extends React.Component {
       this.parseOptions(courseRunOptions.pacing_type.choices));
     const languageOptions = (courseRunOptions &&
       [{
-        label: '----------', // Add a default null language for the dropdown
-        value: null,
+        label: '--', // Add a default null language for the dropdown
+        value: '',
       }].concat(this.parseOptions(courseRunOptions.content_language.choices)));
 
     levelTypeOptions.unshift({ label: '--', value: '' });
