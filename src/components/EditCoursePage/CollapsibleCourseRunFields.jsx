@@ -47,129 +47,116 @@ const formatCourseRunTitle = (courseRun) => {
 
 const getDateString = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 
-class CollapsibleCourseRunFields extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleRemove = this.handleRemove.bind(this);
-  }
-
-  handleRemove(index) {
-    this.props.fields.remove(index);
-  }
-
-  render() {
-    const {
-      fields,
-      courseRuns,
-      languageOptions,
-      pacingTypeOptions,
-    } = this.props;
-    return (
-      <div>
-        {fields.map((courseRun, index) => (
-          <Collapsible
-            title={formatCourseRunTitle(courseRuns[index])}
-            key={`collapsible-run-${courseRun}`}
-            iconId={`collapsible-icon-${courseRun}`}
-          >
-            <Field
-              name={`${courseRun}.start`}
-              type="date"
-              component={RenderInputTextField}
-              format={value => getDateString(value)}
-              label={
-                <React.Fragment>
-                  Start date
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              placeholder="mm/dd/yyyy"
-              required
-            />
-            <Field
-              name={`${courseRun}.end`}
-              type="date"
-              component={RenderInputTextField}
-              format={value => getDateString(value)}
-              label={
-                <React.Fragment>
-                  End date
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              placeholder="mm/dd/yyyy"
-              required
-            />
-            <Field
-              name={`${courseRun}.min_effort`}
-              type="number"
-              component={RenderInputTextField}
-              label={
-                <React.Fragment>
-                  Minimum Effort
-                </React.Fragment>
-              }
-            />
-            <Field
-              name={`${courseRun}.max_effort`}
-              type="number"
-              component={RenderInputTextField}
-              label={
-                <React.Fragment>
-                  Maximum Effort
-                </React.Fragment>
-              }
-            />
-            <Field
-              name={`${courseRun}.pacing_type`}
-              type="text"
-              component={RenderSelectField}
-              options={pacingTypeOptions}
-              label={
-                <React.Fragment>
-                  Course Pacing
-                </React.Fragment>
-              }
-            />
-            <Field
-              name={`${courseRun}.content_language`}
-              type="text"
-              component={RenderSelectField}
-              options={languageOptions}
-              label={
-                <React.Fragment>
-                  Content Language
-                </React.Fragment>
-              }
-            />
-            <div className="transcript-label">
-              Transcript Languages
-            </div>
-            <FieldArray
-              name={`${courseRun}.transcript_languages`}
-              component={TranscriptLanguage}
-              languageOptions={languageOptions}
-            />
-            <Field
-              name={`${courseRun}.weeks_to_complete`}
-              type="number"
-              component={RenderInputTextField}
-              label={
-                <React.Fragment>
-                  Length
-                </React.Fragment>
-              }
-            />
-            <Field
-              name={`${courseRun}.staff`}
-              component={StaffList}
-            />
-          </Collapsible>
-        ))}
-      </div>
-    );
-  }
-}
+const CollapsibleCourseRunFields = ({
+  fields,
+  courseRuns,
+  languageOptions,
+  pacingTypeOptions,
+}) => (
+  <div>
+    {fields.map((courseRun, index) => (
+      <Collapsible
+        title={formatCourseRunTitle(courseRuns[index])}
+        key={`collapsible-run-${courseRun}`}
+        iconId={`collapsible-icon-${courseRun}`}
+      >
+        <Field
+          name={`${courseRun}.start`}
+          type="date"
+          component={RenderInputTextField}
+          format={value => getDateString(value)}
+          label={
+            <React.Fragment>
+              Start date
+              <span className="required" aria-hidden>*</span>
+            </React.Fragment>
+          }
+          placeholder="mm/dd/yyyy"
+          required
+        />
+        <Field
+          name={`${courseRun}.end`}
+          type="date"
+          component={RenderInputTextField}
+          format={value => getDateString(value)}
+          normalize={value => moment(value).toISOString()}
+          label={
+            <React.Fragment>
+              End date
+              <span className="required" aria-hidden>*</span>
+            </React.Fragment>
+          }
+          placeholder="mm/dd/yyyy"
+          required
+        />
+        <Field
+          name={`${courseRun}.min_effort`}
+          type="number"
+          component={RenderInputTextField}
+          label={
+            <React.Fragment>
+              Minimum Effort
+            </React.Fragment>
+          }
+        />
+        <Field
+          name={`${courseRun}.max_effort`}
+          type="number"
+          component={RenderInputTextField}
+          label={
+            <React.Fragment>
+              Maximum Effort
+            </React.Fragment>
+          }
+        />
+        <Field
+          name={`${courseRun}.pacing_type`}
+          type="text"
+          component={RenderSelectField}
+          options={pacingTypeOptions}
+          label={
+            <React.Fragment>
+              Course Pacing
+            </React.Fragment>
+          }
+        />
+        <Field
+          name={`${courseRun}.content_language`}
+          type="text"
+          component={RenderSelectField}
+          options={languageOptions}
+          label={
+            <React.Fragment>
+              Content Language
+            </React.Fragment>
+          }
+        />
+        <div className="transcript-label">
+          Transcript Languages
+        </div>
+        <FieldArray
+          name={`${courseRun}.transcript_languages`}
+          component={TranscriptLanguage}
+          languageOptions={languageOptions}
+        />
+        <Field
+          name={`${courseRun}.weeks_to_complete`}
+          type="number"
+          component={RenderInputTextField}
+          label={
+            <React.Fragment>
+              Length
+            </React.Fragment>
+          }
+        />
+        <Field
+          name={`${courseRun}.staff`}
+          component={StaffList}
+        />
+      </Collapsible>
+    ))}
+  </div>
+);
 
 CollapsibleCourseRunFields.propTypes = {
   fields: PropTypes.shape({

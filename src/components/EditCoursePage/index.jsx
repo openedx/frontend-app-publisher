@@ -2,13 +2,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import moment from 'moment';
 
 import EditCourseForm from './EditCourseForm';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
-
 
 class EditCoursePage extends React.Component {
   constructor(props) {
@@ -41,7 +39,7 @@ class EditCoursePage extends React.Component {
     /* eslint-enable no-param-reassign */
   }
 
-  handleCourseEdit(options) {
+  handleCourseEdit(courseData) {
     /*
       Need to do some preprocessing before sending anything to course-discovery.
       This includes:
@@ -58,31 +56,14 @@ class EditCoursePage extends React.Component {
           key,
           uuid,
           entitlements,
-          course_runs: initialCourseRuns,
         },
       },
       editCourse,
     } = this.props;
-    const courseData = options;
-    const modifiedCourseRuns = [];
-    const newCourseRuns = [];
-    courseData.course_runs.forEach((modifiedCourseRun) => {
-      /* eslint-disable no-param-reassign */
-      modifiedCourseRun.start = moment(modifiedCourseRun.start).toISOString();
-      modifiedCourseRun.end = moment(modifiedCourseRun.end).toISOString();
-      /* eslint-enable no-param-reassign */
-      const found = initialCourseRuns.some(initialCourseRun => (
-        initialCourseRun.key === modifiedCourseRun.key &&
-        JSON.stringify(initialCourseRun) !== JSON.stringify(modifiedCourseRun)
-      ));
-      if (found) {
-        modifiedCourseRuns.push(jsonDeepCopy(modifiedCourseRun));
-      } else {
-        newCourseRuns.push(jsonDeepCopy(modifiedCourseRun));
-      }
-    });
+    // Create a deep copy of course runs since we modify the state of the staffers
+    const modifiedCourseRuns = jsonDeepCopy(courseData.course_runs);
     this.prepareStaff(modifiedCourseRuns);
-    this.prepareStaff(newCourseRuns);
+    /* eslint-disable no-param-reassign */
     courseData.subjects = [
       courseData.subjectPrimary,
       courseData.subjectSecondary,
@@ -97,7 +78,8 @@ class EditCoursePage extends React.Component {
     courseData.video = { src: courseData.videoSrc };
     courseData.key = key;
     courseData.uuid = uuid;
-    return editCourse(courseData, modifiedCourseRuns, newCourseRuns);
+    /* eslint-enable no-param-reassign */
+    return editCourse(courseData, modifiedCourseRuns);
   }
 
   render() {
@@ -139,6 +121,19 @@ class EditCoursePage extends React.Component {
       courseRunOptions,
     } = this.props;
     const { startedFetching } = this.state;
+    const minimalCourseRuns = course_runs && course_runs.map(courseRun => ({
+      key: courseRun.key,
+      start: courseRun.start,
+      end: courseRun.end,
+      min_effort: courseRun.min_effort,
+      max_effort: courseRun.max_effort,
+      pacing_type: courseRun.pacing_type,
+      content_language: courseRun.content_language,
+      transcript_languages: courseRun.transcript_languages,
+      weeks_to_complete: courseRun.weeks_to_complete,
+      staff: courseRun.staff,
+    }));
+
     // If we want to keep a lot of the logic in the lower return,
     // we have to do all this '&&' logic to make sure the data is there.
     const number = key && getCourseNumber(key);
@@ -199,13 +194,13 @@ class EditCoursePage extends React.Component {
                         videoSrc,
                         mode,
                         price,
-                        course_runs,
+                        course_runs: minimalCourseRuns,
                       }}
                       number={number}
                       courseOptions={courseOptions}
                       entitlement={!!entitlement}
                       courseRunOptions={courseRunOptions}
-                      courseRuns={course_runs}
+                      courseRuns={minimalCourseRuns}
                       uuid={uuid}
                     />
                   </div>
