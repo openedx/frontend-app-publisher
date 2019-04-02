@@ -7,6 +7,7 @@ import { Collapsible } from '@edx/paragon';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import TranscriptLanguage from './TranscriptLanguage';
+import StaffList from '../StaffList';
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -159,12 +160,18 @@ class CollapsibleCourseRunFields extends React.Component {
                 </React.Fragment>
               }
             />
+            <Field
+              name={`${courseRun}.staff`}
+              component={StaffList}
+            />
           </Collapsible>
         ))}
         <button
           type="button"
           className="btn btn-light js-add-button"
-          onClick={() => fields.push({})}
+          onClick={() => fields.push({
+            staff: [],
+          })}
         >
           Add Course Run
         </button>
