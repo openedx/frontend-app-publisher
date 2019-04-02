@@ -7,7 +7,6 @@ import { Collapsible } from '@edx/paragon';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import TranscriptLanguage from './TranscriptLanguage';
-import StaffList from '../StaffList';
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -45,6 +44,8 @@ const formatCourseRunTitle = (courseRun) => {
   );
 };
 
+const getDateString = date => (date ? moment(date).format('YYYY-MM-DD') : '');
+
 class CollapsibleCourseRunFields extends React.Component {
   constructor(props) {
     super(props);
@@ -67,32 +68,35 @@ class CollapsibleCourseRunFields extends React.Component {
         {fields.map((courseRun, index) => (
           <Collapsible
             title={formatCourseRunTitle(courseRuns[index])}
-            iconId={`collapsible-icon-${index}`}
+            key={`collapsible-run-${courseRun}`}
+            iconId={`collapsible-icon-${courseRun}`}
           >
             <Field
               name={`${courseRun}.start`}
               type="date"
               component={RenderInputTextField}
-              format={value => moment(value).format('YYYY-MM-DD')}
+              format={value => getDateString(value)}
               label={
                 <React.Fragment>
                   Start date
                   <span className="required" aria-hidden>*</span>
                 </React.Fragment>
               }
+              placeholder="mm/dd/yyyy"
               required
             />
             <Field
               name={`${courseRun}.end`}
               type="date"
               component={RenderInputTextField}
-              format={value => moment(value).format('YYYY-MM-DD')}
+              format={value => getDateString(value)}
               label={
                 <React.Fragment>
                   End date
                   <span className="required" aria-hidden>*</span>
                 </React.Fragment>
               }
+              placeholder="mm/dd/yyyy"
               required
             />
             <Field
@@ -154,10 +158,6 @@ class CollapsibleCourseRunFields extends React.Component {
                   Length
                 </React.Fragment>
               }
-            />
-            <Field
-              name={`${courseRun}.staff`}
-              component={StaffList}
             />
           </Collapsible>
         ))}

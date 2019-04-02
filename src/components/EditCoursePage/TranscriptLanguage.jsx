@@ -27,6 +27,7 @@ class TranscriptLanguage extends React.Component {
                 <Field
                   name={`${language}`}
                   component={RenderSelectField}
+                  label="Transcript Language"
                   options={languageOptions}
                   type="text"
                 />

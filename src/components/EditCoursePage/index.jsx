@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import moment from 'moment';
 
 import EditCourseForm from './EditCourseForm';
 import StatusAlert from '../StatusAlert';
@@ -64,6 +65,10 @@ class EditCoursePage extends React.Component {
     const modifiedCourseRuns = [];
     const newCourseRuns = [];
     courseData.course_runs.forEach((modifiedCourseRun) => {
+      /* eslint-disable no-param-reassign */
+      modifiedCourseRun.start = moment(modifiedCourseRun.start).toISOString();
+      modifiedCourseRun.end = moment(modifiedCourseRun.end).toISOString();
+      /* eslint-enable no-param-reassign */
       const found = initialCourseRuns.some(initialCourseRun => (
         initialCourseRun.key === modifiedCourseRun.key &&
         JSON.stringify(initialCourseRun) !== JSON.stringify(modifiedCourseRun)
