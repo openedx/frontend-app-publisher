@@ -9,7 +9,7 @@ class StaffList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      staffList: props.input.value,
+      staffList: props.input.value || [], // requires staffList to be an array
     };
 
     this.handleRemove = this.handleRemove.bind(this);
@@ -80,12 +80,15 @@ class StaffList extends React.Component {
 
 StaffList.propTypes = {
   input: PropTypes.shape({
-    value: PropTypes.arrayOf(PropTypes.shape({
-      uuid: PropTypes.string.isRequired,
-      given_name: PropTypes.string.isRequired,
-      family_name: PropTypes.string,
-      profile_image_url: PropTypes.string.isRequired,
-    })).isRequired,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.shape({
+        uuid: PropTypes.string.isRequired,
+        given_name: PropTypes.string.isRequired,
+        family_name: PropTypes.string,
+        profile_image_url: PropTypes.string.isRequired,
+      })),
+    ]).isRequired,
     onChange: PropTypes.func.isRequired,
   }).isRequired,
 };
