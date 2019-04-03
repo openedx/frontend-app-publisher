@@ -29,7 +29,7 @@ ShallowWrapper {
         onClick={[Function]}
         type="button"
       >
-        <u
+        <WithDeprecatedProps(B)
           className={
             Array [
               "fa",
@@ -38,7 +38,6 @@ ShallowWrapper {
               "text-danger",
             ]
           }
-          hidden={true}
           id="remove-field"
         />
       </button>,
@@ -51,7 +50,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "aria-label": "Test Label",
-        "children": <u
+        "children": <WithDeprecatedProps(B)
           className={
             Array [
               "fa",
@@ -60,7 +59,6 @@ ShallowWrapper {
               "text-danger",
             ]
           }
-          hidden={true}
           id="remove-field"
         />,
         "className": "close float-none mt-2",
@@ -71,7 +69,7 @@ ShallowWrapper {
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "className": Array [
             "fa",
@@ -79,9 +77,7 @@ ShallowWrapper {
             "fa-2x",
             "text-danger",
           ],
-          "hidden": true,
           "id": "remove-field",
-          "screenReaderText": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -103,7 +99,7 @@ ShallowWrapper {
           onClick={[Function]}
           type="button"
         >
-          <u
+          <WithDeprecatedProps(B)
             className={
               Array [
                 "fa",
@@ -112,7 +108,6 @@ ShallowWrapper {
                 "text-danger",
               ]
             }
-            hidden={true}
             id="remove-field"
           />
         </button>,
@@ -125,7 +120,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "aria-label": "Test Label",
-          "children": <u
+          "children": <WithDeprecatedProps(B)
             className={
               Array [
                 "fa",
@@ -134,7 +129,6 @@ ShallowWrapper {
                 "text-danger",
               ]
             }
-            hidden={true}
             id="remove-field"
           />,
           "className": "close float-none mt-2",
@@ -145,7 +139,7 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "className": Array [
               "fa",
@@ -153,9 +147,7 @@ ShallowWrapper {
               "fa-2x",
               "text-danger",
             ],
-            "hidden": true,
             "id": "remove-field",
-            "screenReaderText": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -178,7 +170,9 @@ ShallowWrapper {
           "getChildContext": Object {
             "calledByRenderer": false,
           },
-          "getDerivedStateFromProps": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,

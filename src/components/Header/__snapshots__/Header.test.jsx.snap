@@ -29,7 +29,7 @@ ShallowWrapper {
           <div
             className="col-md-auto"
           >
-            <m
+            <WithDeprecatedProps(Le)
               content={
                 <img
                   alt="edX logo"
@@ -38,10 +38,6 @@ ShallowWrapper {
                   width="60"
                 />
               }
-              externalLinkAlternativeText="Opens in a new window"
-              externalLinkTitle="Opens in a new window"
-              onClick={[Function]}
-              target="_self"
             />
             <span
               className="badge badge-secondary beta"
@@ -93,7 +89,7 @@ ShallowWrapper {
           <div
             className="col-md-auto"
           >
-            <m
+            <WithDeprecatedProps(Le)
               content={
                 <img
                   alt="edX logo"
@@ -102,10 +98,6 @@ ShallowWrapper {
                   width="60"
                 />
               }
-              externalLinkAlternativeText="Opens in a new window"
-              externalLinkTitle="Opens in a new window"
-              onClick={[Function]}
-              target="_self"
             />
             <span
               className="badge badge-secondary beta"
@@ -154,7 +146,7 @@ ShallowWrapper {
             <div
               className="col-md-auto"
             >
-              <m
+              <WithDeprecatedProps(Le)
                 content={
                   <img
                     alt="edX logo"
@@ -163,10 +155,6 @@ ShallowWrapper {
                     width="60"
                   />
                 }
-                externalLinkAlternativeText="Opens in a new window"
-                externalLinkTitle="Opens in a new window"
-                onClick={[Function]}
-                target="_self"
               />
               <span
                 className="badge badge-secondary beta"
@@ -213,7 +201,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <m
+                <WithDeprecatedProps(Le)
                   content={
                     <img
                       alt="edX logo"
@@ -222,10 +210,6 @@ ShallowWrapper {
                       width="60"
                     />
                   }
-                  externalLinkAlternativeText="Opens in a new window"
-                  externalLinkTitle="Opens in a new window"
-                  onClick={[Function]}
-                  target="_self"
                 />,
                 <span
                   className="badge badge-secondary beta"
@@ -240,7 +224,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "class",
                 "props": Object {
                   "content": <img
                     alt="edX logo"
@@ -249,10 +233,6 @@ ShallowWrapper {
                     width="60"
                   />,
                   "destination": undefined,
-                  "externalLinkAlternativeText": "Opens in a new window",
-                  "externalLinkTitle": "Opens in a new window",
-                  "onClick": [Function],
-                  "target": "_self",
                 },
                 "ref": null,
                 "rendered": null,
@@ -369,7 +349,7 @@ ShallowWrapper {
             <div
               className="col-md-auto"
             >
-              <m
+              <WithDeprecatedProps(Le)
                 content={
                   <img
                     alt="edX logo"
@@ -378,10 +358,6 @@ ShallowWrapper {
                     width="60"
                   />
                 }
-                externalLinkAlternativeText="Opens in a new window"
-                externalLinkTitle="Opens in a new window"
-                onClick={[Function]}
-                target="_self"
               />
               <span
                 className="badge badge-secondary beta"
@@ -433,7 +409,7 @@ ShallowWrapper {
             <div
               className="col-md-auto"
             >
-              <m
+              <WithDeprecatedProps(Le)
                 content={
                   <img
                     alt="edX logo"
@@ -442,10 +418,6 @@ ShallowWrapper {
                     width="60"
                   />
                 }
-                externalLinkAlternativeText="Opens in a new window"
-                externalLinkTitle="Opens in a new window"
-                onClick={[Function]}
-                target="_self"
               />
               <span
                 className="badge badge-secondary beta"
@@ -494,7 +466,7 @@ ShallowWrapper {
               <div
                 className="col-md-auto"
               >
-                <m
+                <WithDeprecatedProps(Le)
                   content={
                     <img
                       alt="edX logo"
@@ -503,10 +475,6 @@ ShallowWrapper {
                       width="60"
                     />
                   }
-                  externalLinkAlternativeText="Opens in a new window"
-                  externalLinkTitle="Opens in a new window"
-                  onClick={[Function]}
-                  target="_self"
                 />
                 <span
                   className="badge badge-secondary beta"
@@ -553,7 +521,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <m
+                  <WithDeprecatedProps(Le)
                     content={
                       <img
                         alt="edX logo"
@@ -562,10 +530,6 @@ ShallowWrapper {
                         width="60"
                       />
                     }
-                    externalLinkAlternativeText="Opens in a new window"
-                    externalLinkTitle="Opens in a new window"
-                    onClick={[Function]}
-                    target="_self"
                   />,
                   <span
                     className="badge badge-secondary beta"
@@ -580,7 +544,7 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "class",
                   "props": Object {
                     "content": <img
                       alt="edX logo"
@@ -589,10 +553,6 @@ ShallowWrapper {
                       width="60"
                     />,
                     "destination": undefined,
-                    "externalLinkAlternativeText": "Opens in a new window",
-                    "externalLinkTitle": "Opens in a new window",
-                    "onClick": [Function],
-                    "target": "_self",
                   },
                   "ref": null,
                   "rendered": null,
@@ -707,7 +667,9 @@ ShallowWrapper {
           "getChildContext": Object {
             "calledByRenderer": false,
           },
-          "getDerivedStateFromProps": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,

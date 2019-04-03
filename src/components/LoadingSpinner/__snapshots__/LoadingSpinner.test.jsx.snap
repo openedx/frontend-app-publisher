@@ -24,7 +24,7 @@ ShallowWrapper {
         <div>
           Loading…
         </div>,
-        <u
+        <WithDeprecatedProps(B)
           className={
             Array [
               "fa",
@@ -34,7 +34,6 @@ ShallowWrapper {
               "fa-fw",
             ]
           }
-          hidden={true}
           id="spinner"
         />,
       ],
@@ -56,7 +55,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "className": Array [
             "fa",
@@ -65,9 +64,7 @@ ShallowWrapper {
             "fa-3x",
             "fa-fw",
           ],
-          "hidden": true,
           "id": "spinner",
-          "screenReaderText": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -86,7 +83,7 @@ ShallowWrapper {
           <div>
             Loading…
           </div>,
-          <u
+          <WithDeprecatedProps(B)
             className={
               Array [
                 "fa",
@@ -96,7 +93,6 @@ ShallowWrapper {
                 "fa-fw",
               ]
             }
-            hidden={true}
             id="spinner"
           />,
         ],
@@ -118,7 +114,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "className": Array [
               "fa",
@@ -127,9 +123,7 @@ ShallowWrapper {
               "fa-3x",
               "fa-fw",
             ],
-            "hidden": true,
             "id": "spinner",
-            "screenReaderText": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -151,7 +145,9 @@ ShallowWrapper {
           "getChildContext": Object {
             "calledByRenderer": false,
           },
-          "getDerivedStateFromProps": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,
