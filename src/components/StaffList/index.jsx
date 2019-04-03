@@ -9,7 +9,7 @@ class StaffList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      staffList: props.input.value,
+      staffList: props.input.value || [], // requires staffList to be an array
     };
 
     this.handleRemove = this.handleRemove.bind(this);

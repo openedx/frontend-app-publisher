@@ -34,7 +34,9 @@ class EditCoursePage extends React.Component {
   prepareStaff(courseRuns) {
     /* eslint-disable no-param-reassign */
     courseRuns.forEach((courseRun) => {
-      courseRun.staff = courseRun.staff.map(staffer => staffer.uuid);
+      if (courseRun.staff) {
+        courseRun.staff = courseRun.staff.map(staffer => staffer.uuid);
+      }
     });
     /* eslint-enable no-param-reassign */
   }
@@ -79,7 +81,6 @@ class EditCoursePage extends React.Component {
         newCourseRuns.push(jsonDeepCopy(modifiedCourseRun));
       }
     });
-
     this.prepareStaff(modifiedCourseRuns);
     this.prepareStaff(newCourseRuns);
     courseData.subjects = [

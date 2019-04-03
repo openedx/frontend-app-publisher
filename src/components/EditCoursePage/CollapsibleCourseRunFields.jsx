@@ -7,6 +7,7 @@ import { Collapsible } from '@edx/paragon';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import TranscriptLanguage from './TranscriptLanguage';
+import StaffList from '../StaffList';
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -158,6 +159,10 @@ class CollapsibleCourseRunFields extends React.Component {
                   Length
                 </React.Fragment>
               }
+            />
+            <Field
+              name={`${courseRun}.staff`}
+              component={StaffList}
             />
           </Collapsible>
         ))}
