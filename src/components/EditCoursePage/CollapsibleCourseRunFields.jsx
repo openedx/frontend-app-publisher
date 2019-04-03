@@ -169,9 +169,7 @@ class CollapsibleCourseRunFields extends React.Component {
         <button
           type="button"
           className="btn btn-light js-add-button"
-          onClick={() => fields.push({
-            staff: [],
-          })}
+          onClick={() => fields.push({})}
         >
           Add Course Run
         </button>
