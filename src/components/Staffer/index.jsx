@@ -23,17 +23,14 @@ export const Staffer = ({ staffer, onRemove }) => (
           screenReaderText={`Remove ${getStafferName(staffer)}`}
         />
       </button>
-      <Link
-        to="/"
-        className="btn mr-1 p-0"
-      >
+      <button type="button" className="btn mr-1 p-0">
         <Icon
           id={`edit-icon-${staffer.uuid}`}
           className={['fa', 'fa-edit', 'fa-fw']}
           screenReaderText={`Edit ${getStafferName(staffer)}`}
           title="Edit"
         />
-      </Link>
+      </button>
       <span className="name font-weight-bold">
         {getStafferName(staffer)}
       </span>
