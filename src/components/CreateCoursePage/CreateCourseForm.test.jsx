@@ -1,18 +1,24 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CreateCourseForm from './CreateCourseForm';
+import { BaseCreateCourseForm } from './CreateCourseForm';
+
+const organizations = [
+  { name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' },
+];
 
 describe('CreateCourseForm', () => {
   it('renders html correctly with no orgs', () => {
-    const component = shallow(<CreateCourseForm />);
+    const component = shallow(<BaseCreateCourseForm
+      handleSubmit={() => {}}
+      initialValues={{}}
+      organizations={organizations}
+    />);
     expect(component).toMatchSnapshot();
   });
   it('renders html correctly with data', () => {
-    const organizations = [{ name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' }];
-    const component = shallow(<CreateCourseForm
-      pristine
-      handleSubmit={() => null}
+    const component = shallow(<BaseCreateCourseForm
+      handleSubmit={() => {}}
       initialValues={{
         org: 'edx',
         title: 'Hello',
@@ -25,17 +31,12 @@ describe('CreateCourseForm', () => {
     expect(component).toMatchSnapshot();
   });
   it('renders html correctly while submitting', () => {
-    const organizations = [{ name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' }];
-    const component = shallow(<CreateCourseForm
+    const component = shallow(<BaseCreateCourseForm
       submitting
-      handleSubmit={() => null}
-      initialValues={{
-        org: '',
-        title: '',
-        number: '',
-        enrollmentTrack: '',
-        price: '',
-      }}
+      isCreating
+      pristine={false}
+      handleSubmit={() => {}}
+      initialValues={{}}
       organizations={organizations}
     />);
     expect(component).toMatchSnapshot();

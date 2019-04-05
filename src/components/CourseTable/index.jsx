@@ -40,7 +40,7 @@ const CourseTable = () => {
         <div className="col-md-10">
           <div className="row justify-content-md-end">
             <Link to="/courses/new">
-              <button className="btn btn-outline-primary">New Course</button>
+              <button className="btn btn-primary">New Course</button>
             </Link>
           </div>
           <div className="row">
