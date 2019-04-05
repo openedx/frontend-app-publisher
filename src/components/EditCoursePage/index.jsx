@@ -7,7 +7,7 @@ import moment from 'moment';
 import EditCourseForm from './EditCourseForm';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { getCourseNumber, jsonDeepCopy } from '../../utils';
+import { getCourseNumber, jsonDeepCopy, getCourseEditFormId } from '../../utils';
 
 
 class EditCoursePage extends React.Component {
@@ -179,7 +179,7 @@ class EditCoursePage extends React.Component {
                   <hr />
                   <div className="col">
                     <EditCourseForm
-                      id="edit-course-form"
+                      id={getCourseEditFormId(uuid)}
                       onSubmit={this.handleCourseEdit}
                       initialValues={{
                         title,

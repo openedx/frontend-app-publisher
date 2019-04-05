@@ -46,19 +46,20 @@ const getPageOptionsFromUrl = () => {
   };
 };
 
-function jsonDeepCopy(src) {
-  return JSON.parse(JSON.stringify(src));
-}
+const jsonDeepCopy = src => JSON.parse(JSON.stringify(src));
 
-function getCourseNumber(courseKeyFragment) {
+const getCourseNumber = (courseKeyFragment) => {
   const COURSE_KEY_FRAGMENT_REGEX = /\+|\//;
   const keyParts = courseKeyFragment.split(COURSE_KEY_FRAGMENT_REGEX);
   return keyParts[keyParts.length - 1];
-}
+};
+
+const getCourseEditFormId = uuid => `edit-course-form-${uuid}`;
 
 export {
   updateUrl,
   getPageOptionsFromUrl,
   jsonDeepCopy,
   getCourseNumber,
+  getCourseEditFormId,
 };
