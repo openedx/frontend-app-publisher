@@ -24,8 +24,8 @@ const mergeProps = (stateProps, actionProps, { id }) => ({
   fetchCourseInfo: () => actionProps.fetchCourseInfo(id),
   fetchCourseOptions: () => actionProps.fetchCourseOptions(id),
   fetchCourseRunOptions: () => actionProps.fetchCourseRunOptions(),
-  editCourse: (courseData, courseRunData, newCourseRunData) => (
-    actionProps.editCourse(courseData, courseRunData, newCourseRunData)),
+  editCourse: (courseData, courseRunData) => (
+    actionProps.editCourse(courseData, courseRunData)),
 });
 
 export default connect(

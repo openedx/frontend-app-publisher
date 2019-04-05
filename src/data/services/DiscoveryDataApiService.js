@@ -67,20 +67,13 @@ class DiscoveryDataApiService {
     return apiClient.options(url);
   }
 
-  static editCourse(courseData, courseRunData, newCourseRunData) {
+  static editCourse(courseData, courseRunData) {
     const { uuid } = courseData;
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
     // Create a promises array to handle all of the new/modified course runs
     const promises = courseRunData.map((courseRun) => {
       const courseRunUrl = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/${courseRun.key}/`;
       return apiClient.patch(courseRunUrl, courseRun);
-    });
-    newCourseRunData.forEach((courseRun) => {
-      /* eslint-disable no-param-reassign */
-      courseRun.course = courseData.key; // Need key association set for creation
-      /* eslint-enable no-param-reassign */
-      const courseRunUrl = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/`;
-      promises.push(apiClient.post(courseRunUrl, courseRun));
     });
     // Add PATCH to Course endpoint to create to promises array
     promises.push(apiClient.patch(url, courseData));
