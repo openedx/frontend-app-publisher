@@ -3,17 +3,10 @@
 exports[`CreateCourseForm renders html correctly while submitting 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ReduxForm
+  Symbol(enzyme.__unrendered__): <BaseCreateCourseForm
     handleSubmit={[Function]}
-    initialValues={
-      Object {
-        "enrollmentTrack": "",
-        "number": "",
-        "org": "",
-        "price": "",
-        "title": "",
-      }
-    }
+    initialValues={Object {}}
+    isCreating={true}
     organizations={
       Array [
         Object {
@@ -26,6 +19,7 @@ ShallowWrapper {
         },
       ]
     }
+    pristine={false}
     submitting={true}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -40,91 +34,1967 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
-      "destroyOnUnmount": true,
-      "enableReinitialize": false,
-      "forceUnregisterOnUnmount": false,
-      "form": "create-course-form",
-      "getFormState": [Function],
-      "handleSubmit": [Function],
-      "initialValues": Object {
-        "enrollmentTrack": "",
-        "number": "",
-        "org": "",
-        "price": "",
-        "title": "",
-      },
-      "keepDirtyOnReinitialize": false,
-      "organizations": Array [
-        Object {
-          "key": "edx",
-          "name": "edX",
-        },
-        Object {
-          "key": "edx2",
-          "name": "edX2",
-        },
-      ],
-      "persistentSubmitErrors": false,
-      "pure": true,
-      "shouldAsyncValidate": [Function],
-      "shouldError": [Function],
-      "shouldValidate": [Function],
-      "shouldWarn": [Function],
-      "submitting": true,
-      "touchOnBlur": true,
-      "touchOnChange": false,
-      "updateUnregisteredFields": false,
+      "children": <div
+        className="create-course-form row"
+      >
+        <div
+          className="col"
+        >
+          <h3>
+            Course
+          </h3>
+          <hr />
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="org"
+              options={
+                Array [
+                  Object {
+                    "label": "Select user organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": "edx",
+                  },
+                  Object {
+                    "label": "edX2",
+                    "value": "edx2",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Title
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Number
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Enrollment track
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="enrollmentTrack"
+              options={
+                Array [
+                  Object {
+                    "label": "Select enrollment track",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Price (USD)
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
+            <h3>
+              First run of your Course
+            </h3>
+            <hr />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
     },
-    "ref": [Function],
-    "rendered": null,
-    "type": [Function],
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col"
+        >
+          <h3>
+            Course
+          </h3>
+          <hr />
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="org"
+              options={
+                Array [
+                  Object {
+                    "label": "Select user organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": "edx",
+                  },
+                  Object {
+                    "label": "edX2",
+                    "value": "edx2",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Title
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Number
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Enrollment track
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="enrollmentTrack"
+              options={
+                Array [
+                  Object {
+                    "label": "Select enrollment track",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Price (USD)
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
+            <h3>
+              First run of your Course
+            </h3>
+            <hr />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "create-course-form row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Course
+            </h3>,
+            <hr />,
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>,
+          ],
+          "className": "col",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Course",
+            },
+            "ref": null,
+            "rendered": "Course",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "hr",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="org"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="enrollmentTrack"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="price"
+                  required={true}
+                  type="number"
+                />,
+                <h3>
+                  First run of your Course
+                </h3>,
+                <hr />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="start"
+                  required={true}
+                  type="date"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="end"
+                  required={true}
+                  type="date"
+                />,
+                <div
+                  className="row justify-content-end"
+                >
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "org",
+                  "options": Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "title",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "enrollmentTrack",
+                  "options": Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "price",
+                  "required": true,
+                  "type": "number",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "First run of your Course",
+                },
+                "ref": null,
+                "rendered": "First run of your Course",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "start",
+                  "required": true,
+                  "type": "date",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "end",
+                  "required": true,
+                  "type": "date",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
+                  "className": "row justify-content-end",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit",
+                    "className": "btn btn-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
-        "destroyOnUnmount": true,
-        "enableReinitialize": false,
-        "forceUnregisterOnUnmount": false,
-        "form": "create-course-form",
-        "getFormState": [Function],
-        "handleSubmit": [Function],
-        "initialValues": Object {
-          "enrollmentTrack": "",
-          "number": "",
-          "org": "",
-          "price": "",
-          "title": "",
-        },
-        "keepDirtyOnReinitialize": false,
-        "organizations": Array [
-          Object {
-            "key": "edx",
-            "name": "edX",
-          },
-          Object {
-            "key": "edx2",
-            "name": "edX2",
-          },
-        ],
-        "persistentSubmitErrors": false,
-        "pure": true,
-        "shouldAsyncValidate": [Function],
-        "shouldError": [Function],
-        "shouldValidate": [Function],
-        "shouldWarn": [Function],
-        "submitting": true,
-        "touchOnBlur": true,
-        "touchOnChange": false,
-        "updateUnregisteredFields": false,
+        "children": <div
+          className="create-course-form row"
+        >
+          <div
+            className="col"
+          >
+            <h3>
+              Course
+            </h3>
+            <hr />
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
       },
-      "ref": [Function],
-      "rendered": null,
-      "type": [Function],
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col"
+          >
+            <h3>
+              Course
+            </h3>
+            <hr />
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "create-course-form row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Course
+              </h3>,
+              <hr />,
+              <form
+                onSubmit={[Function]}
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="org"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="enrollmentTrack"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="price"
+                  required={true}
+                  type="number"
+                />
+                <h3>
+                  First run of your Course
+                </h3>
+                <hr />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="start"
+                  required={true}
+                  type="date"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="end"
+                  required={true}
+                  type="date"
+                />
+                <div
+                  className="row justify-content-end"
+                >
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>,
+            ],
+            "className": "col",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Course",
+              },
+              "ref": null,
+              "rendered": "Course",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "hr",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Organization
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="org"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Select user organization",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "edX",
+                          "value": "edx",
+                        },
+                        Object {
+                          "label": "edX2",
+                          "value": "edx2",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Title
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="title"
+                    required={true}
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Number
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="number"
+                    required={true}
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Enrollment track
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="enrollmentTrack"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Select enrollment track",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "Verified and Audit",
+                          "value": "verified",
+                        },
+                        Object {
+                          "label": "Audit Only",
+                          "value": "audit",
+                        },
+                        Object {
+                          "label": "Professional Only",
+                          "value": "professional",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Price (USD)
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="price"
+                    required={true}
+                    type="number"
+                  />,
+                  <h3>
+                    First run of your Course
+                  </h3>,
+                  <hr />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Start date
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="start"
+                    required={true}
+                    type="date"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        End date
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="end"
+                    required={true}
+                    type="date"
+                  />,
+                  <div
+                    className="row justify-content-end"
+                  >
+                    <button
+                      className="btn btn-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>,
+                ],
+                "onSubmit": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "org",
+                    "options": Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ],
+                    "required": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "title",
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "number",
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "enrollmentTrack",
+                    "options": Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ],
+                    "required": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "price",
+                    "required": true,
+                    "type": "number",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "First run of your Course",
+                  },
+                  "ref": null,
+                  "rendered": "First run of your Course",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "start",
+                    "required": true,
+                    "type": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "end",
+                    "required": true,
+                    "type": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>,
+                    "className": "row justify-content-end",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit",
+                      "className": "btn btn-primary form-submit-btn",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": "button",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "form",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -157,7 +2027,7 @@ ShallowWrapper {
 exports[`CreateCourseForm renders html correctly with data 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ReduxForm
+  Symbol(enzyme.__unrendered__): <BaseCreateCourseForm
     handleSubmit={[Function]}
     initialValues={
       Object {
@@ -168,6 +2038,7 @@ ShallowWrapper {
         "title": "Hello",
       }
     }
+    isCreating={false}
     organizations={
       Array [
         Object {
@@ -181,6 +2052,7 @@ ShallowWrapper {
       ]
     }
     pristine={true}
+    submitting={false}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -194,91 +2066,1967 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
-      "destroyOnUnmount": true,
-      "enableReinitialize": false,
-      "forceUnregisterOnUnmount": false,
-      "form": "create-course-form",
-      "getFormState": [Function],
-      "handleSubmit": [Function],
-      "initialValues": Object {
-        "enrollmentTrack": "verified",
-        "number": "edx101",
-        "org": "edx",
-        "price": 100,
-        "title": "Hello",
-      },
-      "keepDirtyOnReinitialize": false,
-      "organizations": Array [
-        Object {
-          "key": "edx",
-          "name": "edX",
-        },
-        Object {
-          "key": "edx2",
-          "name": "edX2",
-        },
-      ],
-      "persistentSubmitErrors": false,
-      "pristine": true,
-      "pure": true,
-      "shouldAsyncValidate": [Function],
-      "shouldError": [Function],
-      "shouldValidate": [Function],
-      "shouldWarn": [Function],
-      "touchOnBlur": true,
-      "touchOnChange": false,
-      "updateUnregisteredFields": false,
+      "children": <div
+        className="create-course-form row"
+      >
+        <div
+          className="col"
+        >
+          <h3>
+            Course
+          </h3>
+          <hr />
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="org"
+              options={
+                Array [
+                  Object {
+                    "label": "Select user organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": "edx",
+                  },
+                  Object {
+                    "label": "edX2",
+                    "value": "edx2",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Title
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Number
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Enrollment track
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="enrollmentTrack"
+              options={
+                Array [
+                  Object {
+                    "label": "Select enrollment track",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Price (USD)
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
+            <h3>
+              First run of your Course
+            </h3>
+            <hr />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
     },
-    "ref": [Function],
-    "rendered": null,
-    "type": [Function],
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col"
+        >
+          <h3>
+            Course
+          </h3>
+          <hr />
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="org"
+              options={
+                Array [
+                  Object {
+                    "label": "Select user organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": "edx",
+                  },
+                  Object {
+                    "label": "edX2",
+                    "value": "edx2",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Title
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Number
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Enrollment track
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="enrollmentTrack"
+              options={
+                Array [
+                  Object {
+                    "label": "Select enrollment track",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Price (USD)
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
+            <h3>
+              First run of your Course
+            </h3>
+            <hr />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "create-course-form row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Course
+            </h3>,
+            <hr />,
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>,
+          ],
+          "className": "col",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Course",
+            },
+            "ref": null,
+            "rendered": "Course",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "hr",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="org"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="enrollmentTrack"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="price"
+                  required={true}
+                  type="number"
+                />,
+                <h3>
+                  First run of your Course
+                </h3>,
+                <hr />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="start"
+                  required={true}
+                  type="date"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="end"
+                  required={true}
+                  type="date"
+                />,
+                <div
+                  className="row justify-content-end"
+                >
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "org",
+                  "options": Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "title",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "enrollmentTrack",
+                  "options": Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "price",
+                  "required": true,
+                  "type": "number",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "First run of your Course",
+                },
+                "ref": null,
+                "rendered": "First run of your Course",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "start",
+                  "required": true,
+                  "type": "date",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "end",
+                  "required": true,
+                  "type": "date",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
+                  "className": "row justify-content-end",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit",
+                    "className": "btn btn-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
-        "destroyOnUnmount": true,
-        "enableReinitialize": false,
-        "forceUnregisterOnUnmount": false,
-        "form": "create-course-form",
-        "getFormState": [Function],
-        "handleSubmit": [Function],
-        "initialValues": Object {
-          "enrollmentTrack": "verified",
-          "number": "edx101",
-          "org": "edx",
-          "price": 100,
-          "title": "Hello",
-        },
-        "keepDirtyOnReinitialize": false,
-        "organizations": Array [
-          Object {
-            "key": "edx",
-            "name": "edX",
-          },
-          Object {
-            "key": "edx2",
-            "name": "edX2",
-          },
-        ],
-        "persistentSubmitErrors": false,
-        "pristine": true,
-        "pure": true,
-        "shouldAsyncValidate": [Function],
-        "shouldError": [Function],
-        "shouldValidate": [Function],
-        "shouldWarn": [Function],
-        "touchOnBlur": true,
-        "touchOnChange": false,
-        "updateUnregisteredFields": false,
+        "children": <div
+          className="create-course-form row"
+        >
+          <div
+            className="col"
+          >
+            <h3>
+              Course
+            </h3>
+            <hr />
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
       },
-      "ref": [Function],
-      "rendered": null,
-      "type": [Function],
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col"
+          >
+            <h3>
+              Course
+            </h3>
+            <hr />
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "create-course-form row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Course
+              </h3>,
+              <hr />,
+              <form
+                onSubmit={[Function]}
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="org"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="enrollmentTrack"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="price"
+                  required={true}
+                  type="number"
+                />
+                <h3>
+                  First run of your Course
+                </h3>
+                <hr />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="start"
+                  required={true}
+                  type="date"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="end"
+                  required={true}
+                  type="date"
+                />
+                <div
+                  className="row justify-content-end"
+                >
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>,
+            ],
+            "className": "col",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Course",
+              },
+              "ref": null,
+              "rendered": "Course",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "hr",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Organization
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="org"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Select user organization",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "edX",
+                          "value": "edx",
+                        },
+                        Object {
+                          "label": "edX2",
+                          "value": "edx2",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Title
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="title"
+                    required={true}
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Number
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="number"
+                    required={true}
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Enrollment track
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="enrollmentTrack"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Select enrollment track",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "Verified and Audit",
+                          "value": "verified",
+                        },
+                        Object {
+                          "label": "Audit Only",
+                          "value": "audit",
+                        },
+                        Object {
+                          "label": "Professional Only",
+                          "value": "professional",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Price (USD)
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="price"
+                    required={true}
+                    type="number"
+                  />,
+                  <h3>
+                    First run of your Course
+                  </h3>,
+                  <hr />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Start date
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="start"
+                    required={true}
+                    type="date"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        End date
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="end"
+                    required={true}
+                    type="date"
+                  />,
+                  <div
+                    className="row justify-content-end"
+                  >
+                    <button
+                      className="btn btn-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>,
+                ],
+                "onSubmit": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "org",
+                    "options": Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ],
+                    "required": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "title",
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "number",
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "enrollmentTrack",
+                    "options": Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ],
+                    "required": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "price",
+                    "required": true,
+                    "type": "number",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "First run of your Course",
+                  },
+                  "ref": null,
+                  "rendered": "First run of your Course",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "start",
+                    "required": true,
+                    "type": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "end",
+                    "required": true,
+                    "type": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>,
+                    "className": "row justify-content-end",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit",
+                      "className": "btn btn-primary form-submit-btn",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": "button",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "form",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -311,7 +4059,25 @@ ShallowWrapper {
 exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ReduxForm />,
+  Symbol(enzyme.__unrendered__): <BaseCreateCourseForm
+    handleSubmit={[Function]}
+    initialValues={Object {}}
+    isCreating={false}
+    organizations={
+      Array [
+        Object {
+          "key": "edx",
+          "name": "edX",
+        },
+        Object {
+          "key": "edx2",
+          "name": "edX2",
+        },
+      ]
+    }
+    pristine={true}
+    submitting={false}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -324,55 +4090,1967 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
-      "destroyOnUnmount": true,
-      "enableReinitialize": false,
-      "forceUnregisterOnUnmount": false,
-      "form": "create-course-form",
-      "getFormState": [Function],
-      "initialValues": undefined,
-      "keepDirtyOnReinitialize": false,
-      "persistentSubmitErrors": false,
-      "pure": true,
-      "shouldAsyncValidate": [Function],
-      "shouldError": [Function],
-      "shouldValidate": [Function],
-      "shouldWarn": [Function],
-      "touchOnBlur": true,
-      "touchOnChange": false,
-      "updateUnregisteredFields": false,
+      "children": <div
+        className="create-course-form row"
+      >
+        <div
+          className="col"
+        >
+          <h3>
+            Course
+          </h3>
+          <hr />
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="org"
+              options={
+                Array [
+                  Object {
+                    "label": "Select user organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": "edx",
+                  },
+                  Object {
+                    "label": "edX2",
+                    "value": "edx2",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Title
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Number
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Enrollment track
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="enrollmentTrack"
+              options={
+                Array [
+                  Object {
+                    "label": "Select enrollment track",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Price (USD)
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
+            <h3>
+              First run of your Course
+            </h3>
+            <hr />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
     },
-    "ref": [Function],
-    "rendered": null,
-    "type": [Function],
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col"
+        >
+          <h3>
+            Course
+          </h3>
+          <hr />
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="org"
+              options={
+                Array [
+                  Object {
+                    "label": "Select user organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": "edx",
+                  },
+                  Object {
+                    "label": "edX2",
+                    "value": "edx2",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Title
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Number
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Enrollment track
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="enrollmentTrack"
+              options={
+                Array [
+                  Object {
+                    "label": "Select enrollment track",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Price (USD)
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
+            <h3>
+              First run of your Course
+            </h3>
+            <hr />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Start date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  End date
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "create-course-form row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Course
+            </h3>,
+            <hr />,
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>,
+          ],
+          "className": "col",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Course",
+            },
+            "ref": null,
+            "rendered": "Course",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "hr",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="org"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="enrollmentTrack"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="price"
+                  required={true}
+                  type="number"
+                />,
+                <h3>
+                  First run of your Course
+                </h3>,
+                <hr />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="start"
+                  required={true}
+                  type="date"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="end"
+                  required={true}
+                  type="date"
+                />,
+                <div
+                  className="row justify-content-end"
+                >
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "org",
+                  "options": Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "title",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "enrollmentTrack",
+                  "options": Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "price",
+                  "required": true,
+                  "type": "number",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "First run of your Course",
+                },
+                "ref": null,
+                "rendered": "First run of your Course",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "start",
+                  "required": true,
+                  "type": "date",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "end",
+                  "required": true,
+                  "type": "date",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
+                  "className": "row justify-content-end",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit",
+                    "className": "btn btn-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
-        "destroyOnUnmount": true,
-        "enableReinitialize": false,
-        "forceUnregisterOnUnmount": false,
-        "form": "create-course-form",
-        "getFormState": [Function],
-        "initialValues": undefined,
-        "keepDirtyOnReinitialize": false,
-        "persistentSubmitErrors": false,
-        "pure": true,
-        "shouldAsyncValidate": [Function],
-        "shouldError": [Function],
-        "shouldValidate": [Function],
-        "shouldWarn": [Function],
-        "touchOnBlur": true,
-        "touchOnChange": false,
-        "updateUnregisteredFields": false,
+        "children": <div
+          className="create-course-form row"
+        >
+          <div
+            className="col"
+          >
+            <h3>
+              Course
+            </h3>
+            <hr />
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
       },
-      "ref": [Function],
-      "rendered": null,
-      "type": [Function],
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col"
+          >
+            <h3>
+              Course
+            </h3>
+            <hr />
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="org"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select user organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": "edx",
+                    },
+                    Object {
+                      "label": "edX2",
+                      "value": "edx2",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Title
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Number
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Enrollment track
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="enrollmentTrack"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select enrollment track",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Price (USD)
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
+              <h3>
+                First run of your Course
+              </h3>
+              <hr />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Start date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    End date
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "create-course-form row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Course
+              </h3>,
+              <hr />,
+              <form
+                onSubmit={[Function]}
+              >
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="org"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="title"
+                  required={true}
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="enrollmentTrack"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                  required={true}
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="price"
+                  required={true}
+                  type="number"
+                />
+                <h3>
+                  First run of your Course
+                </h3>
+                <hr />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="start"
+                  required={true}
+                  type="date"
+                />
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="end"
+                  required={true}
+                  type="date"
+                />
+                <div
+                  className="row justify-content-end"
+                >
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>,
+            ],
+            "className": "col",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Course",
+              },
+              "ref": null,
+              "rendered": "Course",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "hr",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Organization
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="org"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Select user organization",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "edX",
+                          "value": "edx",
+                        },
+                        Object {
+                          "label": "edX2",
+                          "value": "edx2",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Title
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="title"
+                    required={true}
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Number
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="number"
+                    required={true}
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Enrollment track
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="enrollmentTrack"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Select enrollment track",
+                          "value": "",
+                        },
+                        Object {
+                          "label": "Verified and Audit",
+                          "value": "verified",
+                        },
+                        Object {
+                          "label": "Audit Only",
+                          "value": "audit",
+                        },
+                        Object {
+                          "label": "Professional Only",
+                          "value": "professional",
+                        },
+                      ]
+                    }
+                    required={true}
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Price (USD)
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="price"
+                    required={true}
+                    type="number"
+                  />,
+                  <h3>
+                    First run of your Course
+                  </h3>,
+                  <hr />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        Start date
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="start"
+                    required={true}
+                    type="date"
+                  />,
+                  <Field
+                    component={[Function]}
+                    label={
+                      <React.Fragment>
+                        End date
+                        <span
+                          className="required"
+                        >
+                          *
+                        </span>
+                      </React.Fragment>
+                    }
+                    name="end"
+                    required={true}
+                    type="date"
+                  />,
+                  <div
+                    className="row justify-content-end"
+                  >
+                    <button
+                      className="btn btn-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>,
+                ],
+                "onSubmit": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Organization
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "org",
+                    "options": Array [
+                      Object {
+                        "label": "Select user organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": "edx",
+                      },
+                      Object {
+                        "label": "edX2",
+                        "value": "edx2",
+                      },
+                    ],
+                    "required": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Title
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "title",
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Number
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "number",
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Enrollment track
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "enrollmentTrack",
+                    "options": Array [
+                      Object {
+                        "label": "Select enrollment track",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ],
+                    "required": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Price (USD)
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "price",
+                    "required": true,
+                    "type": "number",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "First run of your Course",
+                  },
+                  "ref": null,
+                  "rendered": "First run of your Course",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      Start date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "start",
+                    "required": true,
+                    "type": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "label": <React.Fragment>
+                      End date
+                      <span
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>,
+                    "name": "end",
+                    "required": true,
+                    "type": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>,
+                    "className": "row justify-content-end",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit",
+                      "className": "btn btn-primary form-submit-btn",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": "button",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "form",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -6,7 +6,7 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
 
-class CreateCourseForm extends React.Component {
+class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
     return [
       { label: 'Select enrollment track', value: '' },
@@ -131,7 +131,7 @@ class CreateCourseForm extends React.Component {
               <div className="row justify-content-end">
                 <button
                   type="submit"
-                  className="btn btn-outline-primary form-submit-btn"
+                  className="btn btn-primary form-submit-btn"
                   disabled={pristine || submitting || isCreating}
                 >
                   Submit
@@ -145,11 +145,13 @@ class CreateCourseForm extends React.Component {
   }
 }
 
-CreateCourseForm.defaultProps = {
+BaseCreateCourseForm.defaultProps = {
   isCreating: false,
+  pristine: true,
+  submitting: false,
 };
 
-CreateCourseForm.propTypes = {
+BaseCreateCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
     org: PropTypes.string,
@@ -164,12 +166,13 @@ CreateCourseForm.propTypes = {
     name: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,
   })).isRequired,
-  pristine: PropTypes.bool.isRequired,
-  submitting: PropTypes.bool.isRequired,
+  pristine: PropTypes.bool,
+  submitting: PropTypes.bool,
   isCreating: PropTypes.bool,
 };
 
 export default reduxForm({
   form: 'create-course-form',
-})(CreateCourseForm);
+})(BaseCreateCourseForm);
+export { BaseCreateCourseForm };
 

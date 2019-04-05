@@ -544,6 +544,7 @@ ShallowWrapper {
       Object {
         "data": Object {},
         "error": null,
+        "isCreating": false,
       }
     }
     createCourse={[Function]}
@@ -865,6 +866,7 @@ ShallowWrapper {
       Object {
         "data": Object {},
         "error": "Fail",
+        "isCreating": false,
       }
     }
     createCourse={[Function]}
@@ -929,6 +931,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -1008,6 +1011,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -1057,6 +1061,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -1105,6 +1110,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -1153,6 +1159,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -1202,6 +1209,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -1216,7 +1224,7 @@ ShallowWrapper {
                             ]
                           }
                         />,
-                        undefined,
+                        false,
                         <StatusAlert
                           alertType="danger"
                           className={Array []}
@@ -1239,7 +1247,7 @@ ShallowWrapper {
                         "props": Object {
                           "id": "create-course-form",
                           "initialValues": Object {},
-                          "isCreating": undefined,
+                          "isCreating": false,
                           "onSubmit": [Function],
                           "organizations": Array [
                             Object {
@@ -1256,7 +1264,7 @@ ShallowWrapper {
                         "rendered": null,
                         "type": [Function],
                       },
-                      undefined,
+                      false,
                       Object {
                         "instance": null,
                         "key": undefined,
@@ -1325,6 +1333,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -1404,6 +1413,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -1453,6 +1463,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -1501,6 +1512,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -1549,6 +1561,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -1598,6 +1611,7 @@ ShallowWrapper {
                           <ReduxForm
                             id="create-course-form"
                             initialValues={Object {}}
+                            isCreating={false}
                             onSubmit={[Function]}
                             organizations={
                               Array [
@@ -1612,7 +1626,7 @@ ShallowWrapper {
                               ]
                             }
                           />,
-                          undefined,
+                          false,
                           <StatusAlert
                             alertType="danger"
                             className={Array []}
@@ -1635,7 +1649,7 @@ ShallowWrapper {
                           "props": Object {
                             "id": "create-course-form",
                             "initialValues": Object {},
-                            "isCreating": undefined,
+                            "isCreating": false,
                             "onSubmit": [Function],
                             "organizations": Array [
                               Object {
@@ -1652,7 +1666,7 @@ ShallowWrapper {
                           "rendered": null,
                           "type": [Function],
                         },
-                        undefined,
+                        false,
                         Object {
                           "instance": null,
                           "key": undefined,
@@ -1715,7 +1729,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateCoursePage renders page correctly with course create success 1`] = `
+exports[`CreateCoursePage renders page correctly with course create in progress 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CreateCoursePage
@@ -1725,6 +1739,7 @@ ShallowWrapper {
           "uuid": "11111111-1111-1111-1111-111111111111",
         },
         "error": null,
+        "isCreating": true,
       }
     }
     createCourse={[Function]}
@@ -1789,6 +1804,782 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={true}
+                    onSubmit={[Function]}
+                    organizations={
+                      Array [
+                        Object {
+                          "key": "edx",
+                          "name": "edX",
+                        },
+                        Object {
+                          "key": "edx2",
+                          "name": "edX2",
+                        },
+                      ]
+                    }
+                  />
+                  <LoadingSpinner
+                    message="Creating Course and Course Run"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <title>
+            Create a New Course
+          </title>,
+          "defer": true,
+          "encodeSpecialCharacters": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Create a New Course",
+          },
+          "ref": null,
+          "rendered": "Create a New Course",
+          "type": "title",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row justify-content-md-center my-3 "
+          >
+            <div
+              className="col-6"
+            >
+              <div>
+                <h2>
+                  Create New Course
+                </h2>
+                <div
+                  className="col"
+                >
+                  <ReduxForm
+                    id="create-course-form"
+                    initialValues={Object {}}
+                    isCreating={true}
+                    onSubmit={[Function]}
+                    organizations={
+                      Array [
+                        Object {
+                          "key": "edx",
+                          "name": "edX",
+                        },
+                        Object {
+                          "key": "edx2",
+                          "name": "edX2",
+                        },
+                      ]
+                    }
+                  />
+                  <LoadingSpinner
+                    message="Creating Course and Course Run"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>,
+          "className": "container-fluid",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="col-6"
+            >
+              <div>
+                <h2>
+                  Create New Course
+                </h2>
+                <div
+                  className="col"
+                >
+                  <ReduxForm
+                    id="create-course-form"
+                    initialValues={Object {}}
+                    isCreating={true}
+                    onSubmit={[Function]}
+                    organizations={
+                      Array [
+                        Object {
+                          "key": "edx",
+                          "name": "edX",
+                        },
+                        Object {
+                          "key": "edx2",
+                          "name": "edX2",
+                        },
+                      ]
+                    }
+                  />
+                  <LoadingSpinner
+                    message="Creating Course and Course Run"
+                  />
+                </div>
+              </div>
+            </div>,
+            "className": "row justify-content-md-center my-3 ",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                false,
+                null,
+                <div>
+                  <h2>
+                    Create New Course
+                  </h2>
+                  <div
+                    className="col"
+                  >
+                    <ReduxForm
+                      id="create-course-form"
+                      initialValues={Object {}}
+                      isCreating={true}
+                      onSubmit={[Function]}
+                      organizations={
+                        Array [
+                          Object {
+                            "key": "edx",
+                            "name": "edX",
+                          },
+                          Object {
+                            "key": "edx2",
+                            "name": "edX2",
+                          },
+                        ]
+                      }
+                    />
+                    <LoadingSpinner
+                      message="Creating Course and Course Run"
+                    />
+                  </div>
+                </div>,
+              ],
+              "className": "col-6",
+            },
+            "ref": null,
+            "rendered": Array [
+              false,
+              null,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h2>
+                      Create New Course
+                    </h2>,
+                    <div
+                      className="col"
+                    >
+                      <ReduxForm
+                        id="create-course-form"
+                        initialValues={Object {}}
+                        isCreating={true}
+                        onSubmit={[Function]}
+                        organizations={
+                          Array [
+                            Object {
+                              "key": "edx",
+                              "name": "edX",
+                            },
+                            Object {
+                              "key": "edx2",
+                              "name": "edX2",
+                            },
+                          ]
+                        }
+                      />
+                      <LoadingSpinner
+                        message="Creating Course and Course Run"
+                      />
+                    </div>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Create New Course",
+                    },
+                    "ref": null,
+                    "rendered": "Create New Course",
+                    "type": "h2",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <ReduxForm
+                          id="create-course-form"
+                          initialValues={Object {}}
+                          isCreating={true}
+                          onSubmit={[Function]}
+                          organizations={
+                            Array [
+                              Object {
+                                "key": "edx",
+                                "name": "edX",
+                              },
+                              Object {
+                                "key": "edx2",
+                                "name": "edX2",
+                              },
+                            ]
+                          }
+                        />,
+                        <LoadingSpinner
+                          message="Creating Course and Course Run"
+                        />,
+                        null,
+                      ],
+                      "className": "col",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "id": "create-course-form",
+                          "initialValues": Object {},
+                          "isCreating": true,
+                          "onSubmit": [Function],
+                          "organizations": Array [
+                            Object {
+                              "key": "edx",
+                              "name": "edX",
+                            },
+                            Object {
+                              "key": "edx2",
+                              "name": "edX2",
+                            },
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "message": "Creating Course and Course Run",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      null,
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <HelmetWrapper
+            defer={true}
+            encodeSpecialCharacters={true}
+          >
+            <title>
+              Create a New Course
+            </title>
+          </HelmetWrapper>,
+          <div
+            className="container-fluid"
+          >
+            <div
+              className="row justify-content-md-center my-3 "
+            >
+              <div
+                className="col-6"
+              >
+                <div>
+                  <h2>
+                    Create New Course
+                  </h2>
+                  <div
+                    className="col"
+                  >
+                    <ReduxForm
+                      id="create-course-form"
+                      initialValues={Object {}}
+                      isCreating={true}
+                      onSubmit={[Function]}
+                      organizations={
+                        Array [
+                          Object {
+                            "key": "edx",
+                            "name": "edX",
+                          },
+                          Object {
+                            "key": "edx2",
+                            "name": "edX2",
+                          },
+                        ]
+                      }
+                    />
+                    <LoadingSpinner
+                      message="Creating Course and Course Run"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <title>
+              Create a New Course
+            </title>,
+            "defer": true,
+            "encodeSpecialCharacters": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Create a New Course",
+            },
+            "ref": null,
+            "rendered": "Create a New Course",
+            "type": "title",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="row justify-content-md-center my-3 "
+            >
+              <div
+                className="col-6"
+              >
+                <div>
+                  <h2>
+                    Create New Course
+                  </h2>
+                  <div
+                    className="col"
+                  >
+                    <ReduxForm
+                      id="create-course-form"
+                      initialValues={Object {}}
+                      isCreating={true}
+                      onSubmit={[Function]}
+                      organizations={
+                        Array [
+                          Object {
+                            "key": "edx",
+                            "name": "edX",
+                          },
+                          Object {
+                            "key": "edx2",
+                            "name": "edX2",
+                          },
+                        ]
+                      }
+                    />
+                    <LoadingSpinner
+                      message="Creating Course and Course Run"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>,
+            "className": "container-fluid",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="col-6"
+              >
+                <div>
+                  <h2>
+                    Create New Course
+                  </h2>
+                  <div
+                    className="col"
+                  >
+                    <ReduxForm
+                      id="create-course-form"
+                      initialValues={Object {}}
+                      isCreating={true}
+                      onSubmit={[Function]}
+                      organizations={
+                        Array [
+                          Object {
+                            "key": "edx",
+                            "name": "edX",
+                          },
+                          Object {
+                            "key": "edx2",
+                            "name": "edX2",
+                          },
+                        ]
+                      }
+                    />
+                    <LoadingSpinner
+                      message="Creating Course and Course Run"
+                    />
+                  </div>
+                </div>
+              </div>,
+              "className": "row justify-content-md-center my-3 ",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  false,
+                  null,
+                  <div>
+                    <h2>
+                      Create New Course
+                    </h2>
+                    <div
+                      className="col"
+                    >
+                      <ReduxForm
+                        id="create-course-form"
+                        initialValues={Object {}}
+                        isCreating={true}
+                        onSubmit={[Function]}
+                        organizations={
+                          Array [
+                            Object {
+                              "key": "edx",
+                              "name": "edX",
+                            },
+                            Object {
+                              "key": "edx2",
+                              "name": "edX2",
+                            },
+                          ]
+                        }
+                      />
+                      <LoadingSpinner
+                        message="Creating Course and Course Run"
+                      />
+                    </div>
+                  </div>,
+                ],
+                "className": "col-6",
+              },
+              "ref": null,
+              "rendered": Array [
+                false,
+                null,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <h2>
+                        Create New Course
+                      </h2>,
+                      <div
+                        className="col"
+                      >
+                        <ReduxForm
+                          id="create-course-form"
+                          initialValues={Object {}}
+                          isCreating={true}
+                          onSubmit={[Function]}
+                          organizations={
+                            Array [
+                              Object {
+                                "key": "edx",
+                                "name": "edX",
+                              },
+                              Object {
+                                "key": "edx2",
+                                "name": "edX2",
+                              },
+                            ]
+                          }
+                        />
+                        <LoadingSpinner
+                          message="Creating Course and Course Run"
+                        />
+                      </div>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Create New Course",
+                      },
+                      "ref": null,
+                      "rendered": "Create New Course",
+                      "type": "h2",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <ReduxForm
+                            id="create-course-form"
+                            initialValues={Object {}}
+                            isCreating={true}
+                            onSubmit={[Function]}
+                            organizations={
+                              Array [
+                                Object {
+                                  "key": "edx",
+                                  "name": "edX",
+                                },
+                                Object {
+                                  "key": "edx2",
+                                  "name": "edX2",
+                                },
+                              ]
+                            }
+                          />,
+                          <LoadingSpinner
+                            message="Creating Course and Course Run"
+                          />,
+                          null,
+                        ],
+                        "className": "col",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "id": "create-course-form",
+                            "initialValues": Object {},
+                            "isCreating": true,
+                            "onSubmit": [Function],
+                            "organizations": Array [
+                              Object {
+                                "key": "edx",
+                                "name": "edX",
+                              },
+                              Object {
+                                "key": "edx2",
+                                "name": "edX2",
+                              },
+                            ],
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "function",
+                          "props": Object {
+                            "message": "Creating Course and Course Run",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        null,
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`CreateCoursePage renders page correctly with course create success 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CreateCoursePage
+    courseInfo={
+      Object {
+        "data": Object {
+          "uuid": "11111111-1111-1111-1111-111111111111",
+        },
+        "error": null,
+        "isCreating": false,
+      }
+    }
+    createCourse={[Function]}
+    fetchOrganizations={[Function]}
+    initialValues={Object {}}
+    publisherUserInfo={
+      Object {
+        "error": null,
+        "isFetching": false,
+        "organizations": Array [
+          Object {
+            "key": "edx",
+            "name": "edX",
+          },
+          Object {
+            "key": "edx2",
+            "name": "edX2",
+          },
+        ],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <HelmetWrapper
+          defer={true}
+          encodeSpecialCharacters={true}
+        >
+          <title>
+            Create a New Course
+          </title>
+        </HelmetWrapper>,
+        <div
+          className="container-fluid"
+        >
+          <div
+            className="row justify-content-md-center my-3 "
+          >
+            <div
+              className="col-6"
+            >
+              <div>
+                <h2>
+                  Create New Course
+                </h2>
+                <div
+                  className="col"
+                >
+                  <ReduxForm
+                    id="create-course-form"
+                    initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -1858,6 +2649,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -1897,6 +2689,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -1935,6 +2728,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -1973,6 +2767,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -2012,6 +2807,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -2026,7 +2822,7 @@ ShallowWrapper {
                             ]
                           }
                         />,
-                        undefined,
+                        false,
                         null,
                       ],
                       "className": "col",
@@ -2040,7 +2836,7 @@ ShallowWrapper {
                         "props": Object {
                           "id": "create-course-form",
                           "initialValues": Object {},
-                          "isCreating": undefined,
+                          "isCreating": false,
                           "onSubmit": [Function],
                           "organizations": Array [
                             Object {
@@ -2057,7 +2853,7 @@ ShallowWrapper {
                         "rendered": null,
                         "type": [Function],
                       },
-                      undefined,
+                      false,
                       null,
                     ],
                     "type": "div",
@@ -2109,6 +2905,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -2178,6 +2975,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -2217,6 +3015,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -2255,6 +3054,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -2293,6 +3093,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -2332,6 +3133,7 @@ ShallowWrapper {
                           <ReduxForm
                             id="create-course-form"
                             initialValues={Object {}}
+                            isCreating={false}
                             onSubmit={[Function]}
                             organizations={
                               Array [
@@ -2346,7 +3148,7 @@ ShallowWrapper {
                               ]
                             }
                           />,
-                          undefined,
+                          false,
                           null,
                         ],
                         "className": "col",
@@ -2360,7 +3162,7 @@ ShallowWrapper {
                           "props": Object {
                             "id": "create-course-form",
                             "initialValues": Object {},
-                            "isCreating": undefined,
+                            "isCreating": false,
                             "onSubmit": [Function],
                             "organizations": Array [
                               Object {
@@ -2377,7 +3179,7 @@ ShallowWrapper {
                           "rendered": null,
                           "type": [Function],
                         },
-                        undefined,
+                        false,
                         null,
                       ],
                       "type": "div",
@@ -2431,6 +3233,7 @@ ShallowWrapper {
       Object {
         "data": Object {},
         "error": null,
+        "isCreating": false,
       }
     }
     createCourse={[Function]}
@@ -2520,6 +3323,7 @@ ShallowWrapper {
       Object {
         "data": Object {},
         "error": null,
+        "isCreating": false,
       }
     }
     createCourse={[Function]}
@@ -2594,6 +3398,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -2673,6 +3478,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -2722,6 +3528,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -2769,6 +3576,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -2824,6 +3632,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -2863,6 +3672,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -2877,7 +3687,7 @@ ShallowWrapper {
                             ]
                           }
                         />,
-                        undefined,
+                        false,
                         null,
                       ],
                       "className": "col",
@@ -2891,7 +3701,7 @@ ShallowWrapper {
                         "props": Object {
                           "id": "create-course-form",
                           "initialValues": Object {},
-                          "isCreating": undefined,
+                          "isCreating": false,
                           "onSubmit": [Function],
                           "organizations": Array [
                             Object {
@@ -2908,7 +3718,7 @@ ShallowWrapper {
                         "rendered": null,
                         "type": [Function],
                       },
-                      undefined,
+                      false,
                       null,
                     ],
                     "type": "div",
@@ -2970,6 +3780,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -3049,6 +3860,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -3098,6 +3910,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -3145,6 +3958,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -3200,6 +4014,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -3239,6 +4054,7 @@ ShallowWrapper {
                           <ReduxForm
                             id="create-course-form"
                             initialValues={Object {}}
+                            isCreating={false}
                             onSubmit={[Function]}
                             organizations={
                               Array [
@@ -3253,7 +4069,7 @@ ShallowWrapper {
                               ]
                             }
                           />,
-                          undefined,
+                          false,
                           null,
                         ],
                         "className": "col",
@@ -3267,7 +4083,7 @@ ShallowWrapper {
                           "props": Object {
                             "id": "create-course-form",
                             "initialValues": Object {},
-                            "isCreating": undefined,
+                            "isCreating": false,
                             "onSubmit": [Function],
                             "organizations": Array [
                               Object {
@@ -3284,7 +4100,7 @@ ShallowWrapper {
                           "rendered": null,
                           "type": [Function],
                         },
-                        undefined,
+                        false,
                         null,
                       ],
                       "type": "div",
@@ -3338,6 +4154,7 @@ ShallowWrapper {
       Object {
         "data": Object {},
         "error": null,
+        "isCreating": false,
       }
     }
     createCourse={[Function]}
@@ -3402,6 +4219,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -3471,6 +4289,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -3510,6 +4329,7 @@ ShallowWrapper {
                   <ReduxForm
                     id="create-course-form"
                     initialValues={Object {}}
+                    isCreating={false}
                     onSubmit={[Function]}
                     organizations={
                       Array [
@@ -3548,6 +4368,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -3586,6 +4407,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -3625,6 +4447,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -3639,7 +4462,7 @@ ShallowWrapper {
                             ]
                           }
                         />,
-                        undefined,
+                        false,
                         null,
                       ],
                       "className": "col",
@@ -3653,7 +4476,7 @@ ShallowWrapper {
                         "props": Object {
                           "id": "create-course-form",
                           "initialValues": Object {},
-                          "isCreating": undefined,
+                          "isCreating": false,
                           "onSubmit": [Function],
                           "organizations": Array [
                             Object {
@@ -3670,7 +4493,7 @@ ShallowWrapper {
                         "rendered": null,
                         "type": [Function],
                       },
-                      undefined,
+                      false,
                       null,
                     ],
                     "type": "div",
@@ -3722,6 +4545,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -3791,6 +4615,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -3830,6 +4655,7 @@ ShallowWrapper {
                     <ReduxForm
                       id="create-course-form"
                       initialValues={Object {}}
+                      isCreating={false}
                       onSubmit={[Function]}
                       organizations={
                         Array [
@@ -3868,6 +4694,7 @@ ShallowWrapper {
                       <ReduxForm
                         id="create-course-form"
                         initialValues={Object {}}
+                        isCreating={false}
                         onSubmit={[Function]}
                         organizations={
                           Array [
@@ -3906,6 +4733,7 @@ ShallowWrapper {
                         <ReduxForm
                           id="create-course-form"
                           initialValues={Object {}}
+                          isCreating={false}
                           onSubmit={[Function]}
                           organizations={
                             Array [
@@ -3945,6 +4773,7 @@ ShallowWrapper {
                           <ReduxForm
                             id="create-course-form"
                             initialValues={Object {}}
+                            isCreating={false}
                             onSubmit={[Function]}
                             organizations={
                               Array [
@@ -3959,7 +4788,7 @@ ShallowWrapper {
                               ]
                             }
                           />,
-                          undefined,
+                          false,
                           null,
                         ],
                         "className": "col",
@@ -3973,7 +4802,7 @@ ShallowWrapper {
                           "props": Object {
                             "id": "create-course-form",
                             "initialValues": Object {},
-                            "isCreating": undefined,
+                            "isCreating": false,
                             "onSubmit": [Function],
                             "organizations": Array [
                               Object {
@@ -3990,7 +4819,7 @@ ShallowWrapper {
                           "rendered": null,
                           "type": [Function],
                         },
-                        undefined,
+                        false,
                         null,
                       ],
                       "type": "div",
