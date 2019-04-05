@@ -11,7 +11,6 @@ import RenderSelectField from '../RenderSelectField';
 import ImageUpload from '../../components/ImageUpload';
 import RichEditor from '../../components/RichEditor';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
-import { getCourseEditFormId } from '../../utils';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -273,8 +272,8 @@ BaseEditCourseForm.defaultProps = {
 
 const EditCourseForm = compose(
   connect((state, props) => ({
-    // Give form an id so that values from one course form don't overwrite others
-    form: getCourseEditFormId(props.uuid),
+    // Give form a unique id so that values from one course form don't overwrite others
+    form: props.id,
   })),
   reduxForm({
     destroyOnUnmount: false, // Keep the form state in redux when editing / creating instructors

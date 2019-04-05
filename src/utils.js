@@ -54,12 +54,9 @@ const getCourseNumber = (courseKeyFragment) => {
   return keyParts[keyParts.length - 1];
 };
 
-const getCourseEditFormId = uuid => `edit-course-form-${uuid}`;
-
 export {
   updateUrl,
   getPageOptionsFromUrl,
   jsonDeepCopy,
   getCourseNumber,
-  getCourseEditFormId,
 };

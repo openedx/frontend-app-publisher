@@ -21,10 +21,3 @@ describe('getCourseNumber', () => {
     expect(utils.getCourseNumber(courseKeyFragmentOld)).toEqual(expected);
   });
 });
-
-describe('getCourseEditFormId', () => {
-  it('correctly returns an identifying string when given a uuid', () => {
-    const uuid = '11111111-1111-1111-1111-111111111111';
-    expect(utils.getCourseEditFormId(uuid)).toContain(uuid);
-  });
-});
