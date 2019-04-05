@@ -1,8 +1,8 @@
 import * as utils from './utils';
 
 
-describe('utils tests', () => {
-  it('jsonDeepCopy returns a new object', () => {
+describe('jsonDeepCopy', () => {
+  it('returns a new object', () => {
     const original = { data: 'test data' };
     const newObject = utils.jsonDeepCopy(original);
     expect(original === newObject).toBe(false);
@@ -10,8 +10,10 @@ describe('utils tests', () => {
     newObject.data = 'updated data';
     expect(original.data).not.toEqual(newObject.data);
   });
+});
 
-  it('getCourseNumber correctly parses course key fragments', () => {
+describe('getCourseNumber', () => {
+  it('correctly parses course key fragments', () => {
     const courseKeyFragment = 'edx+Test101x';
     const courseKeyFragmentOld = 'edx/Test101x';
     const expected = 'Test101x';

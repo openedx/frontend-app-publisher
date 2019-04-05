@@ -2,6 +2,8 @@ import React from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
 import RenderInputTextField from '../RenderInputTextField';
@@ -10,9 +12,8 @@ import ImageUpload from '../../components/ImageUpload';
 import RichEditor from '../../components/RichEditor';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
 
-const formName = 'edit-course-form';
 
-class EditCourseForm extends React.Component {
+export class BaseEditCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
     return [
       { label: VERIFIED_TRACK.name, value: VERIFIED_TRACK.key },
@@ -239,11 +240,11 @@ class EditCourseForm extends React.Component {
   }
 }
 
-EditCourseForm.defaultProps = {
+BaseEditCourseForm.defaultProps = {
   entitlement: false,
 };
 
-EditCourseForm.propTypes = {
+BaseEditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
   entitlement: PropTypes.bool,
@@ -257,17 +258,26 @@ EditCourseForm.propTypes = {
     error: PropTypes.string,
     isFetching: PropTypes.bool,
   }).isRequired,
-  submitting: PropTypes.bool.isRequired,
-  pristine: PropTypes.bool.isRequired,
+  submitting: PropTypes.bool,
+  pristine: PropTypes.bool,
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   uuid: PropTypes.string.isRequired,
 };
 
-EditCourseForm.defaultProps = {
+BaseEditCourseForm.defaultProps = {
+  submitting: false,
+  pristine: true,
   courseRuns: [],
 };
 
-export default reduxForm({
-  form: formName,
-  destroyOnUnmount: false, // Keep form state in redux when editing / creating instructors
-})(EditCourseForm);
+const EditCourseForm = compose(
+  connect((state, props) => ({
+    // Give form a unique id so that values from one course form don't overwrite others
+    form: props.id,
+  })),
+  reduxForm({
+    destroyOnUnmount: false, // Keep the form state in redux when editing / creating instructors
+  }),
+)(BaseEditCourseForm);
+
+export default EditCourseForm;

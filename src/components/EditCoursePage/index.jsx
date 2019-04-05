@@ -179,7 +179,7 @@ class EditCoursePage extends React.Component {
                   <hr />
                   <div className="col">
                     <EditCourseForm
-                      id="edit-course-form"
+                      id={`edit-course-form-${uuid}`}
                       onSubmit={this.handleCourseEdit}
                       initialValues={{
                         title,
