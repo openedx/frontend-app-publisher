@@ -153,6 +153,16 @@ const CollapsibleCourseRunFields = ({
           name={`${courseRun}.staff`}
           component={StaffList}
         />
+        <button
+          type="submit"
+          className="btn btn-primary form-submit-btn float-right mt-2"
+        >
+          {courseRun.status === 'published' ? (
+            <span>Published</span>
+          ) : (
+            <span>Submit for Review</span>
+          )}
+        </button>
       </Collapsible>
     ))}
   </div>

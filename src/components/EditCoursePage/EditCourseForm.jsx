@@ -223,13 +223,13 @@ export class BaseEditCourseForm extends React.Component {
             <div className="row justify-content-end">
               <Link to={`/courses/${uuid}/course_runs/new`}>
                 <button
-                  className="btn btn-outline-primary"
+                  className="btn btn-outline-primary mx-2 mt-3"
                   disabled={!pristine}
                 >
                   Re-run Course
                 </button>
               </Link>
-              <button type="submit" className="btn btn-primary form-submit-btn" disabled={submitting}>
+              <button type="submit" className="btn btn-primary form-submit-btn mt-3" disabled={submitting}>
                 Save Course
               </button>
             </div>
