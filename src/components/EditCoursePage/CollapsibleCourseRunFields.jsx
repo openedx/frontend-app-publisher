@@ -158,7 +158,7 @@ const CollapsibleCourseRunFields = ({
           className="btn btn-primary form-submit-btn float-right mt-2"
         >
           {courseRun.status === 'published' ? (
-            <span>Published</span>
+            <span>Publish</span>
           ) : (
             <span>Submit for Review</span>
           )}
