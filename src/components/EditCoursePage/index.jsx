@@ -170,8 +170,6 @@ class EditCoursePage extends React.Component {
               { showSpinner && <LoadingSpinner /> }
               { showForm && (
                 <div>
-                  <h2>Course</h2>
-                  <hr />
                   <div className="col">
                     <EditCourseForm
                       id={`edit-course-form-${uuid}`}
@@ -200,6 +198,7 @@ class EditCoursePage extends React.Component {
                       courseOptions={courseOptions}
                       entitlement={!!entitlement}
                       courseRunOptions={courseRunOptions}
+                      title={title}
                       courseRuns={minimalCourseRuns}
                       uuid={uuid}
                     />

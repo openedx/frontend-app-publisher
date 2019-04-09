@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { Collapsible } from '@edx/paragon';
 
 import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
 import RenderInputTextField from '../RenderInputTextField';
@@ -65,6 +66,7 @@ export class BaseEditCourseForm extends React.Component {
       number,
       entitlement,
       submitting,
+      title,
       pristine,
       courseRuns,
       uuid,
@@ -88,128 +90,133 @@ export class BaseEditCourseForm extends React.Component {
       <div className="edit-course-form row">
         <div className="col">
           <form onSubmit={handleSubmit}>
-            <Field
-              name="title"
-              component={RenderInputTextField}
-              type="text"
-              label={<strong>Title: *</strong>}
-              required
-            />
-            <div className="row">
-              <div id="number" className="col-12">
-                <strong>Number:</strong>
+            <Collapsible
+              title={`Course: ${title}`}
+              key="Test Key"
+              isOpen
+            >
+              <Field
+                name="title"
+                component={RenderInputTextField}
+                type="text"
+                label={<strong>Title: *</strong>}
+                required
+              />
+              <div className="row">
+                <div id="number" className="col-12">
+                  <strong>Number:</strong>
+                </div>
+                <div className="col-12">{number}</div>
               </div>
-              <div className="col-12">{number}</div>
-            </div>
-            <Field
-              name="short_description"
-              component={RichEditor}
-              label={<strong>Short Description:</strong>}
-              maxChars={500}
-              id="sdesc"
-            />
-            <Field
-              name="full_description"
-              component={RichEditor}
-              label={<strong>Long Description:</strong>}
-              maxChars={2500}
-              id="ldesc"
-            />
-            <Field
-              name="outcome"
-              component={RichEditor}
-              label={<strong>What you will learn:</strong>}
-              maxChars={2500}
-              id="outcome"
-            />
-            <Field
-              name="subjectPrimary"
-              component={RenderSelectField}
-              label={<strong>Primary Subject:</strong>}
-              options={subjectOptions}
-            />
-            <Field
-              name="subjectSecondary"
-              component={RenderSelectField}
-              label={<strong>Secondary Subject:</strong>}
-              options={subjectOptions}
-            />
-            <Field
-              name="subjectTertiary"
-              component={RenderSelectField}
-              label={<strong>Tertiary Subject:</strong>}
-              options={subjectOptions}
-            />
-            <Field
-              name="imageSrc"
-              component={ImageUpload}
-              label={<strong>Image:</strong>}
-              id="image"
-            />
-            <Field
-              name="prerequisites_raw"
-              component={RichEditor}
-              label={<strong>Prerequisites:</strong>}
-              maxChars={1000}
-              id="prereq"
-            />
-            <Field
-              name="level_type"
-              component={RenderSelectField}
-              label={<strong>Course Level:</strong>}
-              options={levelTypeOptions}
-            />
-            <Field
-              name="learner_testimonials"
-              component={RichEditor}
-              label={<strong>Learner Testimonials:</strong>}
-              maxChars={500}
-              id="learner-testimonials"
-            />
-            <Field
-              name="faq"
-              component={RichEditor}
-              label={<strong>Frequently Asked Questions:</strong>}
-              maxChars={2500}
-              id="faq"
-            />
-            <Field
-              name="additional_information"
-              component={RichEditor}
-              label={<strong>Additional Information:</strong>}
-              maxChars={2500}
-              id="additional-information"
-            />
-            <Field
-              name="syllabus_raw"
-              component={RichEditor}
-              label={<strong>Syllabus:</strong>}
-              maxChars={500}
-              id="syllabus"
-            />
-            <Field
-              name="videoSrc"
-              component={RenderInputTextField}
-              type="text"
-              label={<strong>About Video Link:</strong>}
-            />
-            {entitlement && (
-              <React.Fragment>
-                <Field
-                  name="mode"
-                  component={RenderSelectField}
-                  label={<strong>Enrollment Track:</strong>}
-                  options={this.getEnrollmentTrackOptions()}
-                />
-                <Field
-                  name="price"
-                  component={RenderInputTextField}
-                  type="number"
-                  label={<strong>Price:</strong>}
-                />
-              </React.Fragment>
-            )}
-            <strong>Course Runs: </strong>
+              <Field
+                name="short_description"
+                component={RichEditor}
+                label={<strong>Short Description:</strong>}
+                maxChars={500}
+                id="sdesc"
+              />
+              <Field
+                name="full_description"
+                component={RichEditor}
+                label={<strong>Long Description:</strong>}
+                maxChars={2500}
+                id="ldesc"
+              />
+              <Field
+                name="outcome"
+                component={RichEditor}
+                label={<strong>What you will learn:</strong>}
+                maxChars={2500}
+                id="outcome"
+              />
+              <Field
+                name="subjectPrimary"
+                component={RenderSelectField}
+                label={<strong>Primary Subject:</strong>}
+                options={subjectOptions}
+              />
+              <Field
+                name="subjectSecondary"
+                component={RenderSelectField}
+                label={<strong>Secondary Subject:</strong>}
+                options={subjectOptions}
+              />
+              <Field
+                name="subjectTertiary"
+                component={RenderSelectField}
+                label={<strong>Tertiary Subject:</strong>}
+                options={subjectOptions}
+              />
+              <Field
+                name="imageSrc"
+                component={ImageUpload}
+                label={<strong>Image:</strong>}
+                id="image"
+              />
+              <Field
+                name="prerequisites_raw"
+                component={RichEditor}
+                label={<strong>Prerequisites:</strong>}
+                maxChars={1000}
+                id="prereq"
+              />
+              <Field
+                name="level_type"
+                component={RenderSelectField}
+                label={<strong>Course Level:</strong>}
+                options={levelTypeOptions}
+              />
+              <Field
+                name="learner_testimonials"
+                component={RichEditor}
+                label={<strong>Learner Testimonials:</strong>}
+                maxChars={500}
+                id="learner-testimonials"
+              />
+              <Field
+                name="faq"
+                component={RichEditor}
+                label={<strong>Frequently Asked Questions:</strong>}
+                maxChars={2500}
+                id="faq"
+              />
+              <Field
+                name="additional_information"
+                component={RichEditor}
+                label={<strong>Additional Information:</strong>}
+                maxChars={2500}
+                id="additional-information"
+              />
+              <Field
+                name="syllabus_raw"
+                component={RichEditor}
+                label={<strong>Syllabus:</strong>}
+                maxChars={500}
+                id="syllabus"
+              />
+              <Field
+                name="videoSrc"
+                component={RenderInputTextField}
+                type="text"
+                label={<strong>About Video Link:</strong>}
+              />
+              {entitlement && (
+                <React.Fragment>
+                  <Field
+                    name="mode"
+                    component={RenderSelectField}
+                    label={<strong>Enrollment Track:</strong>}
+                    options={this.getEnrollmentTrackOptions()}
+                  />
+                  <Field
+                    name="price"
+                    component={RenderInputTextField}
+                    type="number"
+                    label={<strong>Price:</strong>}
+                  />
+                </React.Fragment>
+              )}
+            </Collapsible>
             <FieldArray
               name="course_runs"
               component={CollapsibleCourseRunFields}
@@ -244,6 +251,7 @@ BaseEditCourseForm.defaultProps = {
 BaseEditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   entitlement: PropTypes.bool,
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
