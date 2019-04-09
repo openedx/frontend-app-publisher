@@ -104,37 +104,36 @@ export class BaseEditCourseForm extends React.Component {
             />
             <div>
               <div id="number">
-                <strong>Number: *</strong>
+                <strong>Number:</strong>
               </div>
               <div>{number}</div>
             </div>
             <Field
               name="short_description"
               component={RichEditor}
-              label={<strong>Short Description: *</strong>}
+              label={<strong>Short Description:</strong>}
               maxChars={500}
               id="sdesc"
             />
             <Field
               name="full_description"
               component={RichEditor}
-              label={<strong>Long Description: *</strong>}
+              label={<strong>Long Description:</strong>}
               maxChars={2500}
               id="ldesc"
             />
             <Field
               name="outcome"
               component={RichEditor}
-              label={<strong>What you will learn: *</strong>}
+              label={<strong>What you will learn:</strong>}
               maxChars={2500}
               id="outcome"
             />
             <Field
               name="subjectPrimary"
               component={RenderSelectField}
-              label={<strong>Primary Subject: *</strong>}
+              label={<strong>Primary Subject:</strong>}
               options={subjectOptions}
-              required
             />
             <Field
               name="subjectSecondary"
@@ -151,7 +150,7 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="imageSrc"
               component={ImageUpload}
-              label={<strong>Image: *</strong>}
+              label={<strong>Image:</strong>}
               id="image"
             />
             <Field
@@ -164,9 +163,8 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="level_type"
               component={RenderSelectField}
-              label={<strong>Course Level: *</strong>}
+              label={<strong>Course Level:</strong>}
               options={levelTypeOptions}
-              required
             />
             <Field
               name="learner_testimonials"
@@ -200,8 +198,7 @@ export class BaseEditCourseForm extends React.Component {
               name="videoSrc"
               component={RenderInputTextField}
               type="text"
-              label={<strong>About Video Link: *</strong>}
-              required
+              label={<strong>About Video Link:</strong>}
             />
             {entitlement && (
               <React.Fragment>
@@ -215,7 +212,7 @@ export class BaseEditCourseForm extends React.Component {
                   name="price"
                   component={RenderInputTextField}
                   type="number"
-                  label={<strong>Price: *</strong>}
+                  label={<strong>Price:</strong>}
                 />
               </React.Fragment>
             )}
