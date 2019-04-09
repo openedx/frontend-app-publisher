@@ -16,755 +16,293 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": <div
-        className="row justify-content-md-center"
-      >
-        <div
-          className="col-md-10"
+      "children": Array [
+        <ButtonToolbar
+          className="mb-3"
         >
-          <div
-            className="row justify-content-md-end"
+          <Link
+            replace={false}
+            to="/courses/new"
           >
-            <Link
-              replace={false}
-              to="/courses/new"
+            <button
+              className="btn btn-primary"
             >
-              <button
-                className="btn btn-primary"
-              >
-                New Course
-              </button>
-            </Link>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col"
-            >
-              <withRouter(Connect(TableComponent))
-                className="courses"
-                columns={
-                  Array [
-                    Object {
-                      "columnSortable": true,
-                      "key": "title",
-                      "label": "Course Name",
-                    },
-                    Object {
-                      "columnSortable": true,
-                      "key": "key",
-                      "label": "Course Number",
-                    },
-                    Object {
-                      "columnSortable": false,
-                      "key": "owners",
-                      "label": "Owner",
-                    },
-                    Object {
-                      "columnSortable": true,
-                      "key": "modified",
-                      "label": "Modified",
-                    },
-                  ]
-                }
-                fetchMethod={[Function]}
-                formatData={[Function]}
-                id="courses"
-                tableSortable={true}
-              />
-            </div>
-          </div>
-        </div>
-      </div>,
-      "className": "container",
+              New Course
+            </button>
+          </Link>
+        </ButtonToolbar>,
+        <withRouter(Connect(TableComponent))
+          className="courses"
+          columns={
+            Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "key",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "owners",
+                "label": "Owner",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "modified",
+                "label": "Modified",
+              },
+            ]
+          }
+          fetchMethod={[Function]}
+          formatData={[Function]}
+          id="courses"
+          tableSortable={true}
+        />,
+      ],
+      "className": "",
+      "wide": true,
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="col-md-10"
-        >
-          <div
-            className="row justify-content-md-end"
-          >
-            <Link
-              replace={false}
-              to="/courses/new"
-            >
-              <button
-                className="btn btn-primary"
-              >
-                New Course
-              </button>
-            </Link>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col"
-            >
-              <withRouter(Connect(TableComponent))
-                className="courses"
-                columns={
-                  Array [
-                    Object {
-                      "columnSortable": true,
-                      "key": "title",
-                      "label": "Course Name",
-                    },
-                    Object {
-                      "columnSortable": true,
-                      "key": "key",
-                      "label": "Course Number",
-                    },
-                    Object {
-                      "columnSortable": false,
-                      "key": "owners",
-                      "label": "Owner",
-                    },
-                    Object {
-                      "columnSortable": true,
-                      "key": "modified",
-                      "label": "Modified",
-                    },
-                  ]
-                }
-                fetchMethod={[Function]}
-                formatData={[Function]}
-                id="courses"
-                tableSortable={true}
-              />
-            </div>
-          </div>
-        </div>,
-        "className": "row justify-content-md-center",
-      },
-      "ref": null,
-      "rendered": Object {
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            <div
-              className="row justify-content-md-end"
-            >
-              <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>
-            </div>,
-            <div
-              className="row"
-            >
-              <div
-                className="col"
-              >
-                <withRouter(Connect(TableComponent))
-                  className="courses"
-                  columns={
-                    Array [
-                      Object {
-                        "columnSortable": true,
-                        "key": "title",
-                        "label": "Course Name",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "key",
-                        "label": "Course Number",
-                      },
-                      Object {
-                        "columnSortable": false,
-                        "key": "owners",
-                        "label": "Owner",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "modified",
-                        "label": "Modified",
-                      },
-                    ]
-                  }
-                  fetchMethod={[Function]}
-                  formatData={[Function]}
-                  id="courses"
-                  tableSortable={true}
-                />
-              </div>
-            </div>,
-          ],
-          "className": "col-md-10",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>,
-              "className": "row justify-content-md-end",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>,
-                "replace": false,
-                "to": "/courses/new",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "New Course",
-                  "className": "btn btn-primary",
-                },
-                "ref": null,
-                "rendered": "New Course",
-                "type": "button",
-              },
-              "type": [Function],
-            },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col"
-              >
-                <withRouter(Connect(TableComponent))
-                  className="courses"
-                  columns={
-                    Array [
-                      Object {
-                        "columnSortable": true,
-                        "key": "title",
-                        "label": "Course Name",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "key",
-                        "label": "Course Number",
-                      },
-                      Object {
-                        "columnSortable": false,
-                        "key": "owners",
-                        "label": "Owner",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "modified",
-                        "label": "Modified",
-                      },
-                    ]
-                  }
-                  fetchMethod={[Function]}
-                  formatData={[Function]}
-                  id="courses"
-                  tableSortable={true}
-                />
-              </div>,
-              "className": "row",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <withRouter(Connect(TableComponent))
-                  className="courses"
-                  columns={
-                    Array [
-                      Object {
-                        "columnSortable": true,
-                        "key": "title",
-                        "label": "Course Name",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "key",
-                        "label": "Course Number",
-                      },
-                      Object {
-                        "columnSortable": false,
-                        "key": "owners",
-                        "label": "Owner",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "modified",
-                        "label": "Modified",
-                      },
-                    ]
-                  }
-                  fetchMethod={[Function]}
-                  formatData={[Function]}
-                  id="courses"
-                  tableSortable={true}
-                />,
-                "className": "col",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "courses",
-                  "columns": Array [
-                    Object {
-                      "columnSortable": true,
-                      "key": "title",
-                      "label": "Course Name",
-                    },
-                    Object {
-                      "columnSortable": true,
-                      "key": "key",
-                      "label": "Course Number",
-                    },
-                    Object {
-                      "columnSortable": false,
-                      "key": "owners",
-                      "label": "Owner",
-                    },
-                    Object {
-                      "columnSortable": true,
-                      "key": "modified",
-                      "label": "Modified",
-                    },
-                  ],
-                  "fetchMethod": [Function],
-                  "formatData": [Function],
-                  "id": "courses",
-                  "tableSortable": true,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": "div",
-            },
-            "type": "div",
-          },
-        ],
-        "type": "div",
-      },
-      "type": "div",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="row justify-content-md-center"
-        >
-          <div
-            className="col-md-10"
+          "children": <Link
+            replace={false}
+            to="/courses/new"
           >
-            <div
-              className="row justify-content-md-end"
+            <button
+              className="btn btn-primary"
             >
-              <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>
-            </div>
-            <div
-              className="row"
-            >
-              <div
-                className="col"
-              >
-                <withRouter(Connect(TableComponent))
-                  className="courses"
-                  columns={
-                    Array [
-                      Object {
-                        "columnSortable": true,
-                        "key": "title",
-                        "label": "Course Name",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "key",
-                        "label": "Course Number",
-                      },
-                      Object {
-                        "columnSortable": false,
-                        "key": "owners",
-                        "label": "Owner",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "modified",
-                        "label": "Modified",
-                      },
-                    ]
-                  }
-                  fetchMethod={[Function]}
-                  formatData={[Function]}
-                  id="courses"
-                  tableSortable={true}
-                />
-              </div>
-            </div>
-          </div>
-        </div>,
-        "className": "container",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="col-md-10"
-          >
-            <div
-              className="row justify-content-md-end"
-            >
-              <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>
-            </div>
-            <div
-              className="row"
-            >
-              <div
-                className="col"
-              >
-                <withRouter(Connect(TableComponent))
-                  className="courses"
-                  columns={
-                    Array [
-                      Object {
-                        "columnSortable": true,
-                        "key": "title",
-                        "label": "Course Name",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "key",
-                        "label": "Course Number",
-                      },
-                      Object {
-                        "columnSortable": false,
-                        "key": "owners",
-                        "label": "Owner",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "modified",
-                        "label": "Modified",
-                      },
-                    ]
-                  }
-                  fetchMethod={[Function]}
-                  formatData={[Function]}
-                  id="courses"
-                  tableSortable={true}
-                />
-              </div>
-            </div>
-          </div>,
-          "className": "row justify-content-md-center",
+              New Course
+            </button>
+          </Link>,
+          "className": "mb-3",
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <div
-                className="row justify-content-md-end"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>
-                </Link>
-              </div>,
-              <div
-                className="row"
-              >
-                <div
-                  className="col"
-                >
-                  <withRouter(Connect(TableComponent))
-                    className="courses"
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "title",
-                          "label": "Course Name",
-                        },
-                        Object {
-                          "columnSortable": true,
-                          "key": "key",
-                          "label": "Course Number",
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "owners",
-                          "label": "Owner",
-                        },
-                        Object {
-                          "columnSortable": true,
-                          "key": "modified",
-                          "label": "Modified",
-                        },
-                      ]
-                    }
-                    fetchMethod={[Function]}
-                    formatData={[Function]}
-                    id="courses"
-                    tableSortable={true}
-                  />
-                </div>
-              </div>,
-            ],
-            "className": "col-md-10",
+            "children": <button
+              className="btn btn-primary"
+            >
+              New Course
+            </button>,
+            "replace": false,
+            "to": "/courses/new",
           },
           "ref": null,
-          "rendered": Array [
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "New Course",
+              "className": "btn btn-primary",
+            },
+            "ref": null,
+            "rendered": "New Course",
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "className": "courses",
+          "columns": Array [
             Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>
-                </Link>,
-                "className": "row justify-content-md-end",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>,
-                  "replace": false,
-                  "to": "/courses/new",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "New Course",
-                    "className": "btn btn-primary",
-                  },
-                  "ref": null,
-                  "rendered": "New Course",
-                  "type": "button",
-                },
-                "type": [Function],
-              },
-              "type": "div",
+              "columnSortable": true,
+              "key": "title",
+              "label": "Course Name",
             },
             Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col"
-                >
-                  <withRouter(Connect(TableComponent))
-                    className="courses"
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "title",
-                          "label": "Course Name",
-                        },
-                        Object {
-                          "columnSortable": true,
-                          "key": "key",
-                          "label": "Course Number",
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "owners",
-                          "label": "Owner",
-                        },
-                        Object {
-                          "columnSortable": true,
-                          "key": "modified",
-                          "label": "Modified",
-                        },
-                      ]
-                    }
-                    fetchMethod={[Function]}
-                    formatData={[Function]}
-                    id="courses"
-                    tableSortable={true}
-                  />
-                </div>,
-                "className": "row",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <withRouter(Connect(TableComponent))
-                    className="courses"
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "title",
-                          "label": "Course Name",
-                        },
-                        Object {
-                          "columnSortable": true,
-                          "key": "key",
-                          "label": "Course Number",
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "owners",
-                          "label": "Owner",
-                        },
-                        Object {
-                          "columnSortable": true,
-                          "key": "modified",
-                          "label": "Modified",
-                        },
-                      ]
-                    }
-                    fetchMethod={[Function]}
-                    formatData={[Function]}
-                    id="courses"
-                    tableSortable={true}
-                  />,
-                  "className": "col",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "className": "courses",
-                    "columns": Array [
-                      Object {
-                        "columnSortable": true,
-                        "key": "title",
-                        "label": "Course Name",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "key",
-                        "label": "Course Number",
-                      },
-                      Object {
-                        "columnSortable": false,
-                        "key": "owners",
-                        "label": "Owner",
-                      },
-                      Object {
-                        "columnSortable": true,
-                        "key": "modified",
-                        "label": "Modified",
-                      },
-                    ],
-                    "fetchMethod": [Function],
-                    "formatData": [Function],
-                    "id": "courses",
-                    "tableSortable": true,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": "div",
-              },
-              "type": "div",
+              "columnSortable": true,
+              "key": "key",
+              "label": "Course Number",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "owners",
+              "label": "Owner",
+            },
+            Object {
+              "columnSortable": true,
+              "key": "modified",
+              "label": "Modified",
             },
           ],
-          "type": "div",
+          "fetchMethod": [Function],
+          "formatData": [Function],
+          "id": "courses",
+          "tableSortable": true,
         },
-        "type": "div",
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "type": "div",
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <ButtonToolbar
+            className="mb-3"
+          >
+            <Link
+              replace={false}
+              to="/courses/new"
+            >
+              <button
+                className="btn btn-primary"
+              >
+                New Course
+              </button>
+            </Link>
+          </ButtonToolbar>,
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "key",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "owners",
+                  "label": "Owner",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "modified",
+                  "label": "Modified",
+                },
+              ]
+            }
+            fetchMethod={[Function]}
+            formatData={[Function]}
+            id="courses"
+            tableSortable={true}
+          />,
+        ],
+        "className": "",
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Link
+              replace={false}
+              to="/courses/new"
+            >
+              <button
+                className="btn btn-primary"
+              >
+                New Course
+              </button>
+            </Link>,
+            "className": "mb-3",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <button
+                className="btn btn-primary"
+              >
+                New Course
+              </button>,
+              "replace": false,
+              "to": "/courses/new",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "New Course",
+                "className": "btn btn-primary",
+              },
+              "ref": null,
+              "rendered": "New Course",
+              "type": "button",
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "className": "courses",
+            "columns": Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "key",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "owners",
+                "label": "Owner",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "modified",
+                "label": "Modified",
+              },
+            ],
+            "fetchMethod": [Function],
+            "formatData": [Function],
+            "id": "courses",
+            "tableSortable": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

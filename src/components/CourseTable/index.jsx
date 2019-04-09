@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import TableContainer from '../../containers/TableContainer';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
+import ButtonToolbar from '../ButtonToolbar';
+import PageContainer from '../PageContainer';
 
 const CourseTable = () => {
   const courseTableColumns = [
@@ -35,29 +37,21 @@ const CourseTable = () => {
   }));
 
   return (
-    <div className="container">
-      <div className="row justify-content-md-center">
-        <div className="col-md-10">
-          <div className="row justify-content-md-end">
-            <Link to="/courses/new">
-              <button className="btn btn-primary">New Course</button>
-            </Link>
-          </div>
-          <div className="row">
-            <div className="col">
-              <TableContainer
-                id="courses"
-                className="courses"
-                fetchMethod={DiscoveryDataApiService.fetchCourses}
-                columns={courseTableColumns}
-                formatData={formatCourseData}
-                tableSortable
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageContainer wide>
+      <ButtonToolbar className="mb-3">
+        <Link to="/courses/new">
+          <button className="btn btn-primary">New Course</button>
+        </Link>
+      </ButtonToolbar>
+      <TableContainer
+        id="courses"
+        className="courses"
+        fetchMethod={DiscoveryDataApiService.fetchCourses}
+        columns={courseTableColumns}
+        formatData={formatCourseData}
+        tableSortable
+      />
+    </PageContainer>
   );
 };
 

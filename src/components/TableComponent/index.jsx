@@ -68,31 +68,25 @@ class TableComponent extends React.Component {
 
     return (
       <div className={className}>
-        <div className="row">
-          <div className="col">
-            {loading && <TableLoadingOverlay />}
-            <div className="table-responsive">
-              <Table
-                id={id}
-                className={['table-sm', 'table-striped']}
-                columns={columnConfig}
-                data={formatData(data)}
-                tableSortable={tableSortable}
-                defaultSortedColumn={sortColumn}
-                defaultSortDirection={sortDirection}
-              />
-            </div>
-          </div>
+        {loading && <TableLoadingOverlay />}
+        <div className="table-responsive">
+          <Table
+            id={id}
+            className={['table-sm', 'table-striped']}
+            columns={columnConfig}
+            data={formatData(data)}
+            tableSortable={tableSortable}
+            defaultSortedColumn={sortColumn}
+            defaultSortDirection={sortDirection}
+          />
         </div>
-        <div className="row mt-2">
-          <div className="col d-flex justify-content-center">
-            <Pagination
-              paginationLabel={`${id}-pagination`}
-              pageCount={pageCount}
-              currentPage={currentPage}
-              onPageSelect={page => updateUrl({ page })}
-            />
-          </div>
+        <div className="mt-2 d-flex justify-content-center">
+          <Pagination
+            paginationLabel={`${id}-pagination`}
+            pageCount={pageCount}
+            currentPage={currentPage}
+            onPageSelect={page => updateUrl({ page })}
+          />
         </div>
       </div>
     );

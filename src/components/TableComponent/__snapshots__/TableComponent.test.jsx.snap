@@ -68,11 +68,389 @@ ShallowWrapper {
           className="test"
         >
           <div
-            className="row"
+            className="table-responsive"
+          >
+            <WithDeprecatedProps(t)
+              className={
+                Array [
+                  "table-sm",
+                  "table-striped",
+                ]
+              }
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "col1",
+                    "label": "Col 1",
+                    "onSort": [Function],
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "col2",
+                    "label": "Col 2",
+                    "onSort": null,
+                  },
+                ]
+              }
+              data={
+                Array [
+                  Object {
+                    "col1": "Test11",
+                    "col2": "Test12",
+                  },
+                  Object {
+                    "col1": "Test21",
+                    "col2": "Test22",
+                  },
+                ]
+              }
+              defaultSortDirection="asc"
+              defaultSortedColumn="col1"
+              id="test"
+              tableSortable={true}
+            />
+          </div>
+          <div
+            className="mt-2 d-flex justify-content-center"
+          >
+            <t
+              buttonLabels={
+                Object {
+                  "currentPage": "Current Page",
+                  "next": "Next",
+                  "page": "Page",
+                  "pageOfCount": "of",
+                  "previous": "Previous",
+                }
+              }
+              currentPage={1}
+              maxPagesDisplayed={7}
+              onPageSelect={[Function]}
+              paginationLabel="test-pagination"
+            />
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      null,
+      false,
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            <div
+              className="table-responsive"
+            >
+              <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />
+            </div>,
+            <div
+              className="mt-2 d-flex justify-content-center"
+            >
+              <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />
+            </div>,
+          ],
+          "className": "test",
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />,
+              "className": "table-responsive",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": Array [
+                  "table-sm",
+                  "table-striped",
+                ],
+                "columns": Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "col1",
+                    "label": "Col 1",
+                    "onSort": [Function],
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "col2",
+                    "label": "Col 2",
+                    "onSort": null,
+                  },
+                ],
+                "data": Array [
+                  Object {
+                    "col1": "Test11",
+                    "col2": "Test12",
+                  },
+                  Object {
+                    "col1": "Test21",
+                    "col2": "Test22",
+                  },
+                ],
+                "defaultSortDirection": "asc",
+                "defaultSortedColumn": "col1",
+                "id": "test",
+                "tableSortable": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />,
+              "className": "mt-2 d-flex justify-content-center",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "buttonLabels": Object {
+                  "currentPage": "Current Page",
+                  "next": "Next",
+                  "page": "Page",
+                  "pageOfCount": "of",
+                  "previous": "Previous",
+                },
+                "className": undefined,
+                "currentPage": 1,
+                "maxPagesDisplayed": 7,
+                "onPageSelect": [Function],
+                "pageCount": undefined,
+                "paginationLabel": "test-pagination",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          null,
+          false,
+          false,
+          <div
+            className="test"
           >
             <div
-              className="col"
+              className="table-responsive"
             >
+              <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />
+            </div>
+            <div
+              className="mt-2 d-flex justify-content-center"
+            >
+              <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        null,
+        false,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
               <div
                 className="table-responsive"
               >
@@ -116,103 +494,9 @@ ShallowWrapper {
                   id="test"
                   tableSortable={true}
                 />
-              </div>
-            </div>
-          </div>
-          <div
-            className="row mt-2"
-          >
-            <div
-              className="col d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                paginationLabel="test-pagination"
-              />
-            </div>
-          </div>
-        </div>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      null,
-      false,
-      false,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <div
-              className="row"
-            >
+              </div>,
               <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
-              </div>
-            </div>,
-            <div
-              className="row mt-2"
-            >
-              <div
-                className="col d-flex justify-content-center"
+                className="mt-2 d-flex justify-content-center"
               >
                 <t
                   buttonLabels={
@@ -229,251 +513,106 @@ ShallowWrapper {
                   onPageSelect={[Function]}
                   paginationLabel="test-pagination"
                 />
-              </div>
-            </div>,
-          ],
-          "className": "test",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
               </div>,
-              "className": "row",
-            },
-            "ref": null,
-            "rendered": Object {
+            ],
+            "className": "test",
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  false,
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>,
-                ],
-                "className": "col",
+                "children": <WithDeprecatedProps(t)
+                  className={
+                    Array [
+                      "table-sm",
+                      "table-striped",
+                    ]
+                  }
+                  columns={
+                    Array [
+                      Object {
+                        "columnSortable": true,
+                        "key": "col1",
+                        "label": "Col 1",
+                        "onSort": [Function],
+                      },
+                      Object {
+                        "columnSortable": false,
+                        "key": "col2",
+                        "label": "Col 2",
+                        "onSort": null,
+                      },
+                    ]
+                  }
+                  data={
+                    Array [
+                      Object {
+                        "col1": "Test11",
+                        "col2": "Test12",
+                      },
+                      Object {
+                        "col1": "Test21",
+                        "col2": "Test22",
+                      },
+                    ]
+                  }
+                  defaultSortDirection="asc"
+                  defaultSortedColumn="col1"
+                  id="test"
+                  tableSortable={true}
+                />,
+                "className": "table-responsive",
               },
               "ref": null,
-              "rendered": Array [
-                false,
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />,
-                    "className": "table-responsive",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "className": Array [
-                        "table-sm",
-                        "table-striped",
-                      ],
-                      "columns": Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ],
-                      "data": Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ],
-                      "defaultSortDirection": "asc",
-                      "defaultSortedColumn": "col1",
-                      "id": "test",
-                      "tableSortable": true,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": Array [
+                    "table-sm",
+                    "table-striped",
+                  ],
+                  "columns": Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
                     },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": "div",
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ],
+                  "data": Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ],
+                  "defaultSortDirection": "asc",
+                  "defaultSortedColumn": "col1",
+                  "id": "test",
+                  "tableSortable": true,
                 },
-              ],
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": "div",
             },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  paginationLabel="test-pagination"
-                />
-              </div>,
-              "className": "row mt-2",
-            },
-            "ref": null,
-            "rendered": Object {
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
@@ -493,7 +632,7 @@ ShallowWrapper {
                   onPageSelect={[Function]}
                   paginationLabel="test-pagination"
                 />,
-                "className": "col d-flex justify-content-center",
+                "className": "mt-2 d-flex justify-content-center",
               },
               "ref": null,
               "rendered": Object {
@@ -518,483 +657,6 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
-              },
-              "type": "div",
-            },
-            "type": "div",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": Symbol(react.fragment),
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          null,
-          false,
-          false,
-          <div
-            className="test"
-          >
-            <div
-              className="row"
-            >
-              <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="row mt-2"
-            >
-              <div
-                className="col d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  paginationLabel="test-pagination"
-                />
-              </div>
-            </div>
-          </div>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        null,
-        false,
-        false,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <div
-                className="row"
-              >
-                <div
-                  className="col"
-                >
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>
-                </div>
-              </div>,
-              <div
-                className="row mt-2"
-              >
-                <div
-                  className="col d-flex justify-content-center"
-                >
-                  <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />
-                </div>
-              </div>,
-            ],
-            "className": "test",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col"
-                >
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>
-                </div>,
-                "className": "row",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    false,
-                    <div
-                      className="table-responsive"
-                    >
-                      <WithDeprecatedProps(t)
-                        className={
-                          Array [
-                            "table-sm",
-                            "table-striped",
-                          ]
-                        }
-                        columns={
-                          Array [
-                            Object {
-                              "columnSortable": true,
-                              "key": "col1",
-                              "label": "Col 1",
-                              "onSort": [Function],
-                            },
-                            Object {
-                              "columnSortable": false,
-                              "key": "col2",
-                              "label": "Col 2",
-                              "onSort": null,
-                            },
-                          ]
-                        }
-                        data={
-                          Array [
-                            Object {
-                              "col1": "Test11",
-                              "col2": "Test12",
-                            },
-                            Object {
-                              "col1": "Test21",
-                              "col2": "Test22",
-                            },
-                          ]
-                        }
-                        defaultSortDirection="asc"
-                        defaultSortedColumn="col1"
-                        id="test"
-                        tableSortable={true}
-                      />
-                    </div>,
-                  ],
-                  "className": "col",
-                },
-                "ref": null,
-                "rendered": Array [
-                  false,
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": <WithDeprecatedProps(t)
-                        className={
-                          Array [
-                            "table-sm",
-                            "table-striped",
-                          ]
-                        }
-                        columns={
-                          Array [
-                            Object {
-                              "columnSortable": true,
-                              "key": "col1",
-                              "label": "Col 1",
-                              "onSort": [Function],
-                            },
-                            Object {
-                              "columnSortable": false,
-                              "key": "col2",
-                              "label": "Col 2",
-                              "onSort": null,
-                            },
-                          ]
-                        }
-                        data={
-                          Array [
-                            Object {
-                              "col1": "Test11",
-                              "col2": "Test12",
-                            },
-                            Object {
-                              "col1": "Test21",
-                              "col2": "Test22",
-                            },
-                          ]
-                        }
-                        defaultSortDirection="asc"
-                        defaultSortedColumn="col1"
-                        id="test"
-                        tableSortable={true}
-                      />,
-                      "className": "table-responsive",
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "className": Array [
-                          "table-sm",
-                          "table-striped",
-                        ],
-                        "columns": Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ],
-                        "data": Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ],
-                        "defaultSortDirection": "asc",
-                        "defaultSortedColumn": "col1",
-                        "id": "test",
-                        "tableSortable": true,
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
-              },
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col d-flex justify-content-center"
-                >
-                  <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />
-                </div>,
-                "className": "row mt-2",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />,
-                  "className": "col d-flex justify-content-center",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "buttonLabels": Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    },
-                    "className": undefined,
-                    "currentPage": 1,
-                    "maxPagesDisplayed": 7,
-                    "onPageSelect": [Function],
-                    "pageCount": undefined,
-                    "paginationLabel": "test-pagination",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": "div",
               },
               "type": "div",
             },
@@ -1100,11 +762,389 @@ ShallowWrapper {
           className="test"
         >
           <div
-            className="row"
+            className="table-responsive"
+          >
+            <WithDeprecatedProps(t)
+              className={
+                Array [
+                  "table-sm",
+                  "table-striped",
+                ]
+              }
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "col1",
+                    "label": "Col 1",
+                    "onSort": [Function],
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "col2",
+                    "label": "Col 2",
+                    "onSort": null,
+                  },
+                ]
+              }
+              data={
+                Array [
+                  Object {
+                    "col1": "Test11",
+                    "col2": "Test12",
+                  },
+                  Object {
+                    "col1": "Test21",
+                    "col2": "Test22",
+                  },
+                ]
+              }
+              defaultSortDirection="asc"
+              defaultSortedColumn="col1"
+              id="test"
+              tableSortable={true}
+            />
+          </div>
+          <div
+            className="mt-2 d-flex justify-content-center"
+          >
+            <t
+              buttonLabels={
+                Object {
+                  "currentPage": "Current Page",
+                  "next": "Next",
+                  "page": "Page",
+                  "pageOfCount": "of",
+                  "previous": "Previous",
+                }
+              }
+              currentPage={1}
+              maxPagesDisplayed={7}
+              onPageSelect={[Function]}
+              paginationLabel="test-pagination"
+            />
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      null,
+      false,
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            <div
+              className="table-responsive"
+            >
+              <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />
+            </div>,
+            <div
+              className="mt-2 d-flex justify-content-center"
+            >
+              <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />
+            </div>,
+          ],
+          "className": "test",
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />,
+              "className": "table-responsive",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": Array [
+                  "table-sm",
+                  "table-striped",
+                ],
+                "columns": Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "col1",
+                    "label": "Col 1",
+                    "onSort": [Function],
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "col2",
+                    "label": "Col 2",
+                    "onSort": null,
+                  },
+                ],
+                "data": Array [
+                  Object {
+                    "col1": "Test11",
+                    "col2": "Test12",
+                  },
+                  Object {
+                    "col1": "Test21",
+                    "col2": "Test22",
+                  },
+                ],
+                "defaultSortDirection": "asc",
+                "defaultSortedColumn": "col1",
+                "id": "test",
+                "tableSortable": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />,
+              "className": "mt-2 d-flex justify-content-center",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "buttonLabels": Object {
+                  "currentPage": "Current Page",
+                  "next": "Next",
+                  "page": "Page",
+                  "pageOfCount": "of",
+                  "previous": "Previous",
+                },
+                "className": undefined,
+                "currentPage": 1,
+                "maxPagesDisplayed": 7,
+                "onPageSelect": [Function],
+                "pageCount": undefined,
+                "paginationLabel": "test-pagination",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          null,
+          false,
+          false,
+          <div
+            className="test"
           >
             <div
-              className="col"
+              className="table-responsive"
             >
+              <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />
+            </div>
+            <div
+              className="mt-2 d-flex justify-content-center"
+            >
+              <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        null,
+        false,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
               <div
                 className="table-responsive"
               >
@@ -1148,103 +1188,9 @@ ShallowWrapper {
                   id="test"
                   tableSortable={true}
                 />
-              </div>
-            </div>
-          </div>
-          <div
-            className="row mt-2"
-          >
-            <div
-              className="col d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                paginationLabel="test-pagination"
-              />
-            </div>
-          </div>
-        </div>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      null,
-      false,
-      false,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <div
-              className="row"
-            >
+              </div>,
               <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
-              </div>
-            </div>,
-            <div
-              className="row mt-2"
-            >
-              <div
-                className="col d-flex justify-content-center"
+                className="mt-2 d-flex justify-content-center"
               >
                 <t
                   buttonLabels={
@@ -1261,251 +1207,106 @@ ShallowWrapper {
                   onPageSelect={[Function]}
                   paginationLabel="test-pagination"
                 />
-              </div>
-            </div>,
-          ],
-          "className": "test",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
               </div>,
-              "className": "row",
-            },
-            "ref": null,
-            "rendered": Object {
+            ],
+            "className": "test",
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  false,
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>,
-                ],
-                "className": "col",
+                "children": <WithDeprecatedProps(t)
+                  className={
+                    Array [
+                      "table-sm",
+                      "table-striped",
+                    ]
+                  }
+                  columns={
+                    Array [
+                      Object {
+                        "columnSortable": true,
+                        "key": "col1",
+                        "label": "Col 1",
+                        "onSort": [Function],
+                      },
+                      Object {
+                        "columnSortable": false,
+                        "key": "col2",
+                        "label": "Col 2",
+                        "onSort": null,
+                      },
+                    ]
+                  }
+                  data={
+                    Array [
+                      Object {
+                        "col1": "Test11",
+                        "col2": "Test12",
+                      },
+                      Object {
+                        "col1": "Test21",
+                        "col2": "Test22",
+                      },
+                    ]
+                  }
+                  defaultSortDirection="asc"
+                  defaultSortedColumn="col1"
+                  id="test"
+                  tableSortable={true}
+                />,
+                "className": "table-responsive",
               },
               "ref": null,
-              "rendered": Array [
-                false,
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />,
-                    "className": "table-responsive",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "className": Array [
-                        "table-sm",
-                        "table-striped",
-                      ],
-                      "columns": Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ],
-                      "data": Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ],
-                      "defaultSortDirection": "asc",
-                      "defaultSortedColumn": "col1",
-                      "id": "test",
-                      "tableSortable": true,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": Array [
+                    "table-sm",
+                    "table-striped",
+                  ],
+                  "columns": Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
                     },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": "div",
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ],
+                  "data": Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ],
+                  "defaultSortDirection": "asc",
+                  "defaultSortedColumn": "col1",
+                  "id": "test",
+                  "tableSortable": true,
                 },
-              ],
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": "div",
             },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  paginationLabel="test-pagination"
-                />
-              </div>,
-              "className": "row mt-2",
-            },
-            "ref": null,
-            "rendered": Object {
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
@@ -1525,7 +1326,7 @@ ShallowWrapper {
                   onPageSelect={[Function]}
                   paginationLabel="test-pagination"
                 />,
-                "className": "col d-flex justify-content-center",
+                "className": "mt-2 d-flex justify-content-center",
               },
               "ref": null,
               "rendered": Object {
@@ -1550,483 +1351,6 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
-              },
-              "type": "div",
-            },
-            "type": "div",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": Symbol(react.fragment),
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          null,
-          false,
-          false,
-          <div
-            className="test"
-          >
-            <div
-              className="row"
-            >
-              <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="row mt-2"
-            >
-              <div
-                className="col d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  paginationLabel="test-pagination"
-                />
-              </div>
-            </div>
-          </div>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        null,
-        false,
-        false,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <div
-                className="row"
-              >
-                <div
-                  className="col"
-                >
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>
-                </div>
-              </div>,
-              <div
-                className="row mt-2"
-              >
-                <div
-                  className="col d-flex justify-content-center"
-                >
-                  <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />
-                </div>
-              </div>,
-            ],
-            "className": "test",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col"
-                >
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>
-                </div>,
-                "className": "row",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    false,
-                    <div
-                      className="table-responsive"
-                    >
-                      <WithDeprecatedProps(t)
-                        className={
-                          Array [
-                            "table-sm",
-                            "table-striped",
-                          ]
-                        }
-                        columns={
-                          Array [
-                            Object {
-                              "columnSortable": true,
-                              "key": "col1",
-                              "label": "Col 1",
-                              "onSort": [Function],
-                            },
-                            Object {
-                              "columnSortable": false,
-                              "key": "col2",
-                              "label": "Col 2",
-                              "onSort": null,
-                            },
-                          ]
-                        }
-                        data={
-                          Array [
-                            Object {
-                              "col1": "Test11",
-                              "col2": "Test12",
-                            },
-                            Object {
-                              "col1": "Test21",
-                              "col2": "Test22",
-                            },
-                          ]
-                        }
-                        defaultSortDirection="asc"
-                        defaultSortedColumn="col1"
-                        id="test"
-                        tableSortable={true}
-                      />
-                    </div>,
-                  ],
-                  "className": "col",
-                },
-                "ref": null,
-                "rendered": Array [
-                  false,
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": <WithDeprecatedProps(t)
-                        className={
-                          Array [
-                            "table-sm",
-                            "table-striped",
-                          ]
-                        }
-                        columns={
-                          Array [
-                            Object {
-                              "columnSortable": true,
-                              "key": "col1",
-                              "label": "Col 1",
-                              "onSort": [Function],
-                            },
-                            Object {
-                              "columnSortable": false,
-                              "key": "col2",
-                              "label": "Col 2",
-                              "onSort": null,
-                            },
-                          ]
-                        }
-                        data={
-                          Array [
-                            Object {
-                              "col1": "Test11",
-                              "col2": "Test12",
-                            },
-                            Object {
-                              "col1": "Test21",
-                              "col2": "Test22",
-                            },
-                          ]
-                        }
-                        defaultSortDirection="asc"
-                        defaultSortedColumn="col1"
-                        id="test"
-                        tableSortable={true}
-                      />,
-                      "className": "table-responsive",
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "className": Array [
-                          "table-sm",
-                          "table-striped",
-                        ],
-                        "columns": Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ],
-                        "data": Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ],
-                        "defaultSortDirection": "asc",
-                        "defaultSortedColumn": "col1",
-                        "id": "test",
-                        "tableSortable": true,
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
-              },
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col d-flex justify-content-center"
-                >
-                  <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />
-                </div>,
-                "className": "row mt-2",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />,
-                  "className": "col d-flex justify-content-center",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "buttonLabels": Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    },
-                    "className": undefined,
-                    "currentPage": 1,
-                    "maxPagesDisplayed": 7,
-                    "onPageSelect": [Function],
-                    "pageCount": undefined,
-                    "paginationLabel": "test-pagination",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": "div",
               },
               "type": "div",
             },
@@ -2132,11 +1456,389 @@ ShallowWrapper {
           className="test"
         >
           <div
-            className="row"
+            className="table-responsive"
+          >
+            <WithDeprecatedProps(t)
+              className={
+                Array [
+                  "table-sm",
+                  "table-striped",
+                ]
+              }
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "col1",
+                    "label": "Col 1",
+                    "onSort": [Function],
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "col2",
+                    "label": "Col 2",
+                    "onSort": null,
+                  },
+                ]
+              }
+              data={
+                Array [
+                  Object {
+                    "col1": "Test11",
+                    "col2": "Test12",
+                  },
+                  Object {
+                    "col1": "Test21",
+                    "col2": "Test22",
+                  },
+                ]
+              }
+              defaultSortDirection="asc"
+              defaultSortedColumn="col1"
+              id="test"
+              tableSortable={true}
+            />
+          </div>
+          <div
+            className="mt-2 d-flex justify-content-center"
+          >
+            <t
+              buttonLabels={
+                Object {
+                  "currentPage": "Current Page",
+                  "next": "Next",
+                  "page": "Page",
+                  "pageOfCount": "of",
+                  "previous": "Previous",
+                }
+              }
+              currentPage={1}
+              maxPagesDisplayed={7}
+              onPageSelect={[Function]}
+              paginationLabel="test-pagination"
+            />
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      null,
+      false,
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            <div
+              className="table-responsive"
+            >
+              <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />
+            </div>,
+            <div
+              className="mt-2 d-flex justify-content-center"
+            >
+              <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />
+            </div>,
+          ],
+          "className": "test",
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />,
+              "className": "table-responsive",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": Array [
+                  "table-sm",
+                  "table-striped",
+                ],
+                "columns": Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "col1",
+                    "label": "Col 1",
+                    "onSort": [Function],
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "col2",
+                    "label": "Col 2",
+                    "onSort": null,
+                  },
+                ],
+                "data": Array [
+                  Object {
+                    "col1": "Test11",
+                    "col2": "Test12",
+                  },
+                  Object {
+                    "col1": "Test21",
+                    "col2": "Test22",
+                  },
+                ],
+                "defaultSortDirection": "asc",
+                "defaultSortedColumn": "col1",
+                "id": "test",
+                "tableSortable": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />,
+              "className": "mt-2 d-flex justify-content-center",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "buttonLabels": Object {
+                  "currentPage": "Current Page",
+                  "next": "Next",
+                  "page": "Page",
+                  "pageOfCount": "of",
+                  "previous": "Previous",
+                },
+                "className": undefined,
+                "currentPage": 1,
+                "maxPagesDisplayed": 7,
+                "onPageSelect": [Function],
+                "pageCount": undefined,
+                "paginationLabel": "test-pagination",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          null,
+          false,
+          false,
+          <div
+            className="test"
           >
             <div
-              className="col"
+              className="table-responsive"
             >
+              <WithDeprecatedProps(t)
+                className={
+                  Array [
+                    "table-sm",
+                    "table-striped",
+                  ]
+                }
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ]
+                }
+                defaultSortDirection="asc"
+                defaultSortedColumn="col1"
+                id="test"
+                tableSortable={true}
+              />
+            </div>
+            <div
+              className="mt-2 d-flex justify-content-center"
+            >
+              <t
+                buttonLabels={
+                  Object {
+                    "currentPage": "Current Page",
+                    "next": "Next",
+                    "page": "Page",
+                    "pageOfCount": "of",
+                    "previous": "Previous",
+                  }
+                }
+                currentPage={1}
+                maxPagesDisplayed={7}
+                onPageSelect={[Function]}
+                paginationLabel="test-pagination"
+              />
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        null,
+        false,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
               <div
                 className="table-responsive"
               >
@@ -2180,103 +1882,9 @@ ShallowWrapper {
                   id="test"
                   tableSortable={true}
                 />
-              </div>
-            </div>
-          </div>
-          <div
-            className="row mt-2"
-          >
-            <div
-              className="col d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                paginationLabel="test-pagination"
-              />
-            </div>
-          </div>
-        </div>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      null,
-      false,
-      false,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <div
-              className="row"
-            >
+              </div>,
               <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
-              </div>
-            </div>,
-            <div
-              className="row mt-2"
-            >
-              <div
-                className="col d-flex justify-content-center"
+                className="mt-2 d-flex justify-content-center"
               >
                 <t
                   buttonLabels={
@@ -2293,251 +1901,106 @@ ShallowWrapper {
                   onPageSelect={[Function]}
                   paginationLabel="test-pagination"
                 />
-              </div>
-            </div>,
-          ],
-          "className": "test",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
               </div>,
-              "className": "row",
-            },
-            "ref": null,
-            "rendered": Object {
+            ],
+            "className": "test",
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  false,
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>,
-                ],
-                "className": "col",
+                "children": <WithDeprecatedProps(t)
+                  className={
+                    Array [
+                      "table-sm",
+                      "table-striped",
+                    ]
+                  }
+                  columns={
+                    Array [
+                      Object {
+                        "columnSortable": true,
+                        "key": "col1",
+                        "label": "Col 1",
+                        "onSort": [Function],
+                      },
+                      Object {
+                        "columnSortable": false,
+                        "key": "col2",
+                        "label": "Col 2",
+                        "onSort": null,
+                      },
+                    ]
+                  }
+                  data={
+                    Array [
+                      Object {
+                        "col1": "Test11",
+                        "col2": "Test12",
+                      },
+                      Object {
+                        "col1": "Test21",
+                        "col2": "Test22",
+                      },
+                    ]
+                  }
+                  defaultSortDirection="asc"
+                  defaultSortedColumn="col1"
+                  id="test"
+                  tableSortable={true}
+                />,
+                "className": "table-responsive",
               },
               "ref": null,
-              "rendered": Array [
-                false,
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />,
-                    "className": "table-responsive",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "className": Array [
-                        "table-sm",
-                        "table-striped",
-                      ],
-                      "columns": Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ],
-                      "data": Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ],
-                      "defaultSortDirection": "asc",
-                      "defaultSortedColumn": "col1",
-                      "id": "test",
-                      "tableSortable": true,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": Array [
+                    "table-sm",
+                    "table-striped",
+                  ],
+                  "columns": Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "col1",
+                      "label": "Col 1",
+                      "onSort": [Function],
                     },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": "div",
+                    Object {
+                      "columnSortable": false,
+                      "key": "col2",
+                      "label": "Col 2",
+                      "onSort": null,
+                    },
+                  ],
+                  "data": Array [
+                    Object {
+                      "col1": "Test11",
+                      "col2": "Test12",
+                    },
+                    Object {
+                      "col1": "Test21",
+                      "col2": "Test22",
+                    },
+                  ],
+                  "defaultSortDirection": "asc",
+                  "defaultSortedColumn": "col1",
+                  "id": "test",
+                  "tableSortable": true,
                 },
-              ],
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": "div",
             },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  paginationLabel="test-pagination"
-                />
-              </div>,
-              "className": "row mt-2",
-            },
-            "ref": null,
-            "rendered": Object {
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
@@ -2557,7 +2020,7 @@ ShallowWrapper {
                   onPageSelect={[Function]}
                   paginationLabel="test-pagination"
                 />,
-                "className": "col d-flex justify-content-center",
+                "className": "mt-2 d-flex justify-content-center",
               },
               "ref": null,
               "rendered": Object {
@@ -2582,483 +2045,6 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
-              },
-              "type": "div",
-            },
-            "type": "div",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": Symbol(react.fragment),
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          null,
-          false,
-          false,
-          <div
-            className="test"
-          >
-            <div
-              className="row"
-            >
-              <div
-                className="col"
-              >
-                <div
-                  className="table-responsive"
-                >
-                  <WithDeprecatedProps(t)
-                    className={
-                      Array [
-                        "table-sm",
-                        "table-striped",
-                      ]
-                    }
-                    columns={
-                      Array [
-                        Object {
-                          "columnSortable": true,
-                          "key": "col1",
-                          "label": "Col 1",
-                          "onSort": [Function],
-                        },
-                        Object {
-                          "columnSortable": false,
-                          "key": "col2",
-                          "label": "Col 2",
-                          "onSort": null,
-                        },
-                      ]
-                    }
-                    data={
-                      Array [
-                        Object {
-                          "col1": "Test11",
-                          "col2": "Test12",
-                        },
-                        Object {
-                          "col1": "Test21",
-                          "col2": "Test22",
-                        },
-                      ]
-                    }
-                    defaultSortDirection="asc"
-                    defaultSortedColumn="col1"
-                    id="test"
-                    tableSortable={true}
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="row mt-2"
-            >
-              <div
-                className="col d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  paginationLabel="test-pagination"
-                />
-              </div>
-            </div>
-          </div>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        null,
-        false,
-        false,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <div
-                className="row"
-              >
-                <div
-                  className="col"
-                >
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>
-                </div>
-              </div>,
-              <div
-                className="row mt-2"
-              >
-                <div
-                  className="col d-flex justify-content-center"
-                >
-                  <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />
-                </div>
-              </div>,
-            ],
-            "className": "test",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col"
-                >
-                  <div
-                    className="table-responsive"
-                  >
-                    <WithDeprecatedProps(t)
-                      className={
-                        Array [
-                          "table-sm",
-                          "table-striped",
-                        ]
-                      }
-                      columns={
-                        Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ]
-                      }
-                      data={
-                        Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ]
-                      }
-                      defaultSortDirection="asc"
-                      defaultSortedColumn="col1"
-                      id="test"
-                      tableSortable={true}
-                    />
-                  </div>
-                </div>,
-                "className": "row",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    false,
-                    <div
-                      className="table-responsive"
-                    >
-                      <WithDeprecatedProps(t)
-                        className={
-                          Array [
-                            "table-sm",
-                            "table-striped",
-                          ]
-                        }
-                        columns={
-                          Array [
-                            Object {
-                              "columnSortable": true,
-                              "key": "col1",
-                              "label": "Col 1",
-                              "onSort": [Function],
-                            },
-                            Object {
-                              "columnSortable": false,
-                              "key": "col2",
-                              "label": "Col 2",
-                              "onSort": null,
-                            },
-                          ]
-                        }
-                        data={
-                          Array [
-                            Object {
-                              "col1": "Test11",
-                              "col2": "Test12",
-                            },
-                            Object {
-                              "col1": "Test21",
-                              "col2": "Test22",
-                            },
-                          ]
-                        }
-                        defaultSortDirection="asc"
-                        defaultSortedColumn="col1"
-                        id="test"
-                        tableSortable={true}
-                      />
-                    </div>,
-                  ],
-                  "className": "col",
-                },
-                "ref": null,
-                "rendered": Array [
-                  false,
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": <WithDeprecatedProps(t)
-                        className={
-                          Array [
-                            "table-sm",
-                            "table-striped",
-                          ]
-                        }
-                        columns={
-                          Array [
-                            Object {
-                              "columnSortable": true,
-                              "key": "col1",
-                              "label": "Col 1",
-                              "onSort": [Function],
-                            },
-                            Object {
-                              "columnSortable": false,
-                              "key": "col2",
-                              "label": "Col 2",
-                              "onSort": null,
-                            },
-                          ]
-                        }
-                        data={
-                          Array [
-                            Object {
-                              "col1": "Test11",
-                              "col2": "Test12",
-                            },
-                            Object {
-                              "col1": "Test21",
-                              "col2": "Test22",
-                            },
-                          ]
-                        }
-                        defaultSortDirection="asc"
-                        defaultSortedColumn="col1"
-                        id="test"
-                        tableSortable={true}
-                      />,
-                      "className": "table-responsive",
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "className": Array [
-                          "table-sm",
-                          "table-striped",
-                        ],
-                        "columns": Array [
-                          Object {
-                            "columnSortable": true,
-                            "key": "col1",
-                            "label": "Col 1",
-                            "onSort": [Function],
-                          },
-                          Object {
-                            "columnSortable": false,
-                            "key": "col2",
-                            "label": "Col 2",
-                            "onSort": null,
-                          },
-                        ],
-                        "data": Array [
-                          Object {
-                            "col1": "Test11",
-                            "col2": "Test12",
-                          },
-                          Object {
-                            "col1": "Test21",
-                            "col2": "Test22",
-                          },
-                        ],
-                        "defaultSortDirection": "asc",
-                        "defaultSortedColumn": "col1",
-                        "id": "test",
-                        "tableSortable": true,
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
-              },
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="col d-flex justify-content-center"
-                >
-                  <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />
-                </div>,
-                "className": "row mt-2",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <t
-                    buttonLabels={
-                      Object {
-                        "currentPage": "Current Page",
-                        "next": "Next",
-                        "page": "Page",
-                        "pageOfCount": "of",
-                        "previous": "Previous",
-                      }
-                    }
-                    currentPage={1}
-                    maxPagesDisplayed={7}
-                    onPageSelect={[Function]}
-                    paginationLabel="test-pagination"
-                  />,
-                  "className": "col d-flex justify-content-center",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "buttonLabels": Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    },
-                    "className": undefined,
-                    "currentPage": 1,
-                    "maxPagesDisplayed": 7,
-                    "onPageSelect": [Function],
-                    "pageCount": undefined,
-                    "paginationLabel": "test-pagination",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": "div",
               },
               "type": "div",
             },

@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
+import PageContainer from '../PageContainer';
 
 class CreateCourseRunPage extends React.Component {
   constructor(props) {
@@ -46,36 +47,31 @@ class CreateCourseRunPage extends React.Component {
         <Helmet>
           Create Course Run
         </Helmet>
-        <div className="container-fluid">
-          <div className="row justify-content-md-center my-3 ">
-            <div className="col-6">
-              <div>
-                { courseInfo.isFetching && <LoadingSpinner /> }
-                { !courseInfo.isFetching &&
-                (
-                  <div>
-                    <CreateCourseRunForm
-                      onSubmit={this.handleCourseCreate}
-                      title={title}
-                      uuid={uuid}
-                    />
-                    { showCreatingCourseRunSpinner &&
-                      <LoadingSpinner message="Creating Course Run" />
-                    }
-                    {courseInfo.error && (
-                      <StatusAlert
-                        id="create-error"
-                        alertType="danger"
-                        title="Course Run create failed: "
-                        message={courseInfo.error}
-                      />
-                    ) }
-                  </div>
-                )}
-              </div>
+
+        <PageContainer>
+          { courseInfo.isFetching && <LoadingSpinner /> }
+          { !courseInfo.isFetching &&
+          (
+            <div>
+              <CreateCourseRunForm
+                onSubmit={this.handleCourseCreate}
+                title={title}
+                uuid={uuid}
+              />
+              { showCreatingCourseRunSpinner &&
+                <LoadingSpinner message="Creating Course Run" />
+              }
+              {courseInfo.error && (
+                <StatusAlert
+                  id="create-error"
+                  alertType="danger"
+                  title="Course Run create failed: "
+                  message={courseInfo.error}
+                />
+              ) }
             </div>
-          </div>
-        </div>
+          )}
+        </PageContainer>
 
       </React.Fragment>
     );

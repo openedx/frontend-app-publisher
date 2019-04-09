@@ -17,17 +17,17 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="row mb-3">
-        <div className="col-10 offset-1">
-          <header className="d-flex align-items-center p-3 border-bottom-blue">
-            <div className="col-md-auto">
+      <header className="mb-3 py-3 border-bottom-blue">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-auto justify-content-start">
               <Hyperlink content={this.renderLogo()} destination={process.env.STUDIO_BASE_URL} />
               <span className="badge badge-secondary beta">Alpha</span>
             </div>
-            <div className="col-md-auto">
+            <div className="col">
               <Link to="/">Courses</Link>
             </div>
-            <div className="ml-auto">
+            <div className="col-auto justify-content-end">
               <Dropdown
                 title={this.props.username}
                 menuItems={[
@@ -39,9 +39,9 @@ class Header extends React.Component {
                 ]}
               />
             </div>
-          </header>
+          </div>
         </div>
-      </div>
+      </header>
     );
   }
 }

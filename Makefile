@@ -29,3 +29,6 @@ validate-no-uncommitted-package-lock-changes:
 
 test: up
 	docker exec -it edx.pubfe npm test
+
+snapshot:
+	docker exec -it edx.pubfe npm run snapshot

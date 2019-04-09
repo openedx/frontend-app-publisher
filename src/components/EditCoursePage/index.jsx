@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import EditCourseForm from './EditCourseForm';
+import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
@@ -164,58 +165,53 @@ class EditCoursePage extends React.Component {
           <title>{`Course - ${title}`}</title>
         </Helmet>
 
-        <div className="container-fluid">
-          <div className="row justify-content-md-center my-3 ">
-            <div className="col-6">
-              { showSpinner && <LoadingSpinner /> }
-              { showForm && (
-                <div>
-                  <div className="col">
-                    <EditCourseForm
-                      id={`edit-course-form-${uuid}`}
-                      onSubmit={this.handleCourseEdit}
-                      initialValues={{
-                        title,
-                        short_description,
-                        full_description,
-                        outcome,
-                        subjectPrimary,
-                        subjectSecondary,
-                        subjectTertiary,
-                        imageSrc,
-                        prerequisites_raw,
-                        level_type,
-                        learner_testimonials,
-                        faq,
-                        additional_information,
-                        syllabus_raw,
-                        videoSrc,
-                        mode,
-                        price,
-                        course_runs: minimalCourseRuns,
-                      }}
-                      number={number}
-                      courseOptions={courseOptions}
-                      entitlement={!!entitlement}
-                      courseRunOptions={courseRunOptions}
-                      title={title}
-                      courseRuns={minimalCourseRuns}
-                      uuid={uuid}
-                    />
-                  </div>
-                </div>
-              )}
-              { error && (
-                <StatusAlert
-                  id="error"
-                  alertType="danger"
-                  title="Course Edit Form failed to load: "
-                  message={error}
-                />
-              )}
+        <PageContainer>
+          { showSpinner && <LoadingSpinner /> }
+          { showForm && (
+            <div>
+              <EditCourseForm
+                id={`edit-course-form-${uuid}`}
+                onSubmit={this.handleCourseEdit}
+                initialValues={{
+                  title,
+                  short_description,
+                  full_description,
+                  outcome,
+                  subjectPrimary,
+                  subjectSecondary,
+                  subjectTertiary,
+                  imageSrc,
+                  prerequisites_raw,
+                  level_type,
+                  learner_testimonials,
+                  faq,
+                  additional_information,
+                  syllabus_raw,
+                  videoSrc,
+                  mode,
+                  price,
+                  course_runs: minimalCourseRuns,
+                }}
+                number={number}
+                courseOptions={courseOptions}
+                entitlement={!!entitlement}
+                courseRunOptions={courseRunOptions}
+                title={title}
+                courseRuns={minimalCourseRuns}
+                uuid={uuid}
+                courseInfo={courseInfo}
+              />
             </div>
-          </div>
-        </div>
+          )}
+          { error && (
+            <StatusAlert
+              id="error"
+              alertType="danger"
+              title="Course Edit Form failed to load: "
+              message={error}
+            />
+          )}
+        </PageContainer>
       </React.Fragment>
     );
   }

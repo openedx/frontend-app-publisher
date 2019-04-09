@@ -8,6 +8,7 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import TranscriptLanguage from './TranscriptLanguage';
 import StaffList from '../StaffList';
+import ButtonToolbar from '../ButtonToolbar';
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -153,16 +154,18 @@ const CollapsibleCourseRunFields = ({
           name={`${courseRun}.staff`}
           component={StaffList}
         />
-        <button
-          type="submit"
-          className="btn btn-primary form-submit-btn float-right mt-2"
-        >
-          {courseRun.status === 'published' ? (
-            <span>Publish</span>
-          ) : (
-            <span>Submit for Review</span>
-          )}
-        </button>
+        <ButtonToolbar>
+          <button
+            type="submit"
+            className="btn btn-primary form-submit-btn float-right mt-2"
+          >
+            {courseRun.status === 'published' ? (
+              <span>Publish</span>
+            ) : (
+              <span>Submit for Review</span>
+            )}
+          </button>
+        </ButtonToolbar>
       </Collapsible>
     ))}
   </div>

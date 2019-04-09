@@ -27,302 +27,139 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="create-course-run-form row"
-      >
-        <div
-          className="col"
-        >
-          <h2>
-            Create a new course run
-          </h2>
-          <hr />
+      "children": Array [
+        <h2>
+          Create a new course run
+        </h2>,
+        <hr />,
+        <div>
           <div
-            className="row"
+            id="course"
           >
-            <div
-              className="col-12"
-              id="course"
-            >
-              <strong>
-                Course
-              </strong>
-            </div>
-            <div
-              className="col-12"
-            >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                Test Course
-              </Link>
-            </div>
+            <strong>
+              Course
+            </strong>
           </div>
-          <form
-            onSubmit={[Function]}
-          >
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    Start date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="start"
-              required={true}
-              type="date"
-            />
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    End date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="end"
-              required={true}
-              type="date"
-            />
-            <div
-              className="row justify-content-end"
+          <div>
+            <Link
+              replace={false}
+              to="/courses/00000000-0000-0000-0000-000000000001/edit/"
             >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
+              Test Course
+            </Link>
+          </div>
+        </div>,
+        <form
+          onSubmit={[Function]}
+        >
+          <Field
+            component={[Function]}
+            label={
+              <React.Fragment>
+                <strong>
+                  Start date
+                </strong>
+                <span
+                  className="required"
                 >
-                  Cancel
-                </button>
-              </Link>
+                  *
+                </span>
+              </React.Fragment>
+            }
+            name="start"
+            required={true}
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            label={
+              <React.Fragment>
+                <strong>
+                  End date
+                </strong>
+                <span
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>
+            }
+            name="end"
+            required={true}
+            type="date"
+          />
+          <ButtonToolbar
+            className=""
+          >
+            <Link
+              replace={false}
+              to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+            >
               <button
-                className="btn btn-primary form-submit-btn"
-                disabled={true}
-                type="submit"
+                className="btn btn-outline-primary"
+                disabled={false}
               >
-                Submit
+                Cancel
               </button>
-            </div>
-          </form>
-        </div>
-      </div>,
+            </Link>
+            <button
+              className="btn btn-primary form-submit-btn"
+              disabled={true}
+              type="submit"
+            >
+              Submit
+            </button>
+          </ButtonToolbar>
+        </form>,
+      ],
+      "className": "create-course-run-form",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="col"
-        >
-          <h2>
-            Create a new course run
-          </h2>
-          <hr />
-          <div
-            className="row"
-          >
-            <div
-              className="col-12"
-              id="course"
-            >
-              <strong>
-                Course
-              </strong>
-            </div>
-            <div
-              className="col-12"
-            >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                Test Course
-              </Link>
-            </div>
-          </div>
-          <form
-            onSubmit={[Function]}
-          >
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    Start date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="start"
-              required={true}
-              type="date"
-            />
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    End date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="end"
-              required={true}
-              type="date"
-            />
-            <div
-              className="row justify-content-end"
-            >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Cancel
-                </button>
-              </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
-                disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>,
-        "className": "create-course-run-form row",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Create a new course run",
+        },
+        "ref": null,
+        "rendered": "Create a new course run",
+        "type": "h2",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h2>
-              Create a new course run
-            </h2>,
-            <hr />,
             <div
-              className="row"
+              id="course"
             >
-              <div
-                className="col-12"
-                id="course"
-              >
-                <strong>
-                  Course
-                </strong>
-              </div>
-              <div
-                className="col-12"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  Test Course
-                </Link>
-              </div>
+              <strong>
+                Course
+              </strong>
             </div>,
-            <form
-              onSubmit={[Function]}
-            >
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="start"
-                required={true}
-                type="date"
-              />
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="end"
-                required={true}
-                type="date"
-              />
-              <div
-                className="row justify-content-end"
+            <div>
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
               >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Cancel
-                  </button>
-                </Link>
-                <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>,
+                Test Course
+              </Link>
+            </div>,
           ],
-          "className": "col",
         },
         "ref": null,
         "rendered": Array [
@@ -331,105 +168,23 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a new course run",
+              "children": <strong>
+                Course
+              </strong>,
+              "id": "course",
             },
             "ref": null,
-            "rendered": "Create a new course run",
-            "type": "h2",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": "hr",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="col-12"
-                  id="course"
-                >
-                  <strong>
-                    Course
-                  </strong>
-                </div>,
-                <div
-                  className="col-12"
-                >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    Test Course
-                  </Link>
-                </div>,
-              ],
-              "className": "row",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Course",
+              },
+              "ref": null,
+              "rendered": "Course",
+              "type": "strong",
             },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <strong>
-                    Course
-                  </strong>,
-                  "className": "col-12",
-                  "id": "course",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Course",
-                  },
-                  "ref": null,
-                  "rendered": "Course",
-                  "type": "strong",
-                },
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    Test Course
-                  </Link>,
-                  "className": "col-12",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Test Course",
-                    "replace": false,
-                    "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                  },
-                  "ref": null,
-                  "rendered": "Test Course",
-                  "type": [Function],
-                },
-                "type": "div",
-              },
-            ],
             "type": "div",
           },
           Object {
@@ -437,67 +192,175 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        Start date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="start"
-                  required={true}
-                  type="date"
-                />,
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        End date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="end"
-                  required={true}
-                  type="date"
-                />,
-                <div
-                  className="row justify-content-end"
+              "children": <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+              >
+                Test Course
+              </Link>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Test Course",
+                "replace": false,
+                "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
+              },
+              "ref": null,
+              "rendered": "Test Course",
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />,
+            <ButtonToolbar
+              className=""
+            >
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={false}
                 >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    <button
-                      className="btn btn-outline-primary"
-                      disabled={false}
-                    >
-                      Cancel
-                    </button>
-                  </Link>
+                  Cancel
+                </button>
+              </Link>
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </ButtonToolbar>,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                <strong>
+                  Start date
+                </strong>
+                <span
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "start",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                <strong>
+                  End date
+                </strong>
+                <span
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "end",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                >
                   <button
-                    className="btn btn-primary form-submit-btn"
-                    disabled={true}
-                    type="submit"
+                    className="btn btn-outline-primary"
+                    disabled={false}
                   >
-                    Submit
+                    Cancel
                   </button>
-                </div>,
+                </Link>,
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>,
               ],
-              "onSubmit": [Function],
+              "className": "",
             },
             "ref": null,
             "rendered": Array [
@@ -506,47 +369,29 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "component": [Function],
-                  "label": <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>,
-                  "name": "start",
-                  "required": true,
-                  "type": "date",
+                  "children": <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
+                  >
+                    Cancel
+                  </button>,
+                  "replace": false,
+                  "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
                 },
                 "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "label": <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>,
-                  "name": "end",
-                  "required": true,
-                  "type": "date",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": "btn btn-outline-primary",
+                    "disabled": false,
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": "button",
                 },
-                "ref": null,
-                "rendered": null,
                 "type": [Function],
               },
               Object {
@@ -554,387 +399,161 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      <button
-                        className="btn btn-outline-primary"
-                        disabled={false}
-                      >
-                        Cancel
-                      </button>
-                    </Link>,
-                    <button
-                      className="btn btn-primary form-submit-btn"
-                      disabled={true}
-                      type="submit"
-                    >
-                      Submit
-                    </button>,
-                  ],
-                  "className": "row justify-content-end",
+                  "children": "Submit",
+                  "className": "btn btn-primary form-submit-btn",
+                  "disabled": true,
+                  "type": "submit",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": <button
-                        className="btn btn-outline-primary"
-                        disabled={false}
-                      >
-                        Cancel
-                      </button>,
-                      "replace": false,
-                      "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Cancel",
-                        "className": "btn btn-outline-primary",
-                        "disabled": false,
-                      },
-                      "ref": null,
-                      "rendered": "Cancel",
-                      "type": "button",
-                    },
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Submit",
-                      "className": "btn btn-primary form-submit-btn",
-                      "disabled": true,
-                      "type": "submit",
-                    },
-                    "ref": null,
-                    "rendered": "Submit",
-                    "type": "button",
-                  },
-                ],
-                "type": "div",
+                "rendered": "Submit",
+                "type": "button",
               },
             ],
-            "type": "form",
+            "type": [Function],
           },
         ],
-        "type": "div",
+        "type": "form",
       },
-      "type": "div",
-    },
-    "type": Symbol(react.fragment),
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": <div
-          className="create-course-run-form row"
-        >
-          <div
-            className="col"
-          >
-            <h2>
-              Create a new course run
-            </h2>
-            <hr />
+        "children": Array [
+          <h2>
+            Create a new course run
+          </h2>,
+          <hr />,
+          <div>
             <div
-              className="row"
+              id="course"
             >
-              <div
-                className="col-12"
-                id="course"
-              >
-                <strong>
-                  Course
-                </strong>
-              </div>
-              <div
-                className="col-12"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  Test Course
-                </Link>
-              </div>
+              <strong>
+                Course
+              </strong>
             </div>
-            <form
-              onSubmit={[Function]}
-            >
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="start"
-                required={true}
-                type="date"
-              />
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="end"
-                required={true}
-                type="date"
-              />
-              <div
-                className="row justify-content-end"
+            <div>
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
               >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
+                Test Course
+              </Link>
+            </div>
+          </div>,
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    className="required"
                   >
-                    Cancel
-                  </button>
-                </Link>
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <ButtonToolbar
+              className=""
+            >
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+              >
                 <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={true}
-                  type="submit"
+                  className="btn btn-outline-primary"
+                  disabled={false}
                 >
-                  Submit
+                  Cancel
                 </button>
-              </div>
-            </form>
-          </div>
-        </div>,
+              </Link>
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </ButtonToolbar>
+          </form>,
+        ],
+        "className": "create-course-run-form",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="col"
-          >
-            <h2>
-              Create a new course run
-            </h2>
-            <hr />
-            <div
-              className="row"
-            >
-              <div
-                className="col-12"
-                id="course"
-              >
-                <strong>
-                  Course
-                </strong>
-              </div>
-              <div
-                className="col-12"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  Test Course
-                </Link>
-              </div>
-            </div>
-            <form
-              onSubmit={[Function]}
-            >
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="start"
-                required={true}
-                type="date"
-              />
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="end"
-                required={true}
-                type="date"
-              />
-              <div
-                className="row justify-content-end"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Cancel
-                  </button>
-                </Link>
-                <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>,
-          "className": "create-course-run-form row",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Create a new course run",
+          },
+          "ref": null,
+          "rendered": "Create a new course run",
+          "type": "h2",
         },
-        "ref": null,
-        "rendered": Object {
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h2>
-                Create a new course run
-              </h2>,
-              <hr />,
               <div
-                className="row"
+                id="course"
               >
-                <div
-                  className="col-12"
-                  id="course"
-                >
-                  <strong>
-                    Course
-                  </strong>
-                </div>
-                <div
-                  className="col-12"
-                >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    Test Course
-                  </Link>
-                </div>
+                <strong>
+                  Course
+                </strong>
               </div>,
-              <form
-                onSubmit={[Function]}
-              >
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        Start date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="start"
-                  required={true}
-                  type="date"
-                />
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        End date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="end"
-                  required={true}
-                  type="date"
-                />
-                <div
-                  className="row justify-content-end"
+              <div>
+                <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
                 >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    <button
-                      className="btn btn-outline-primary"
-                      disabled={false}
-                    >
-                      Cancel
-                    </button>
-                  </Link>
-                  <button
-                    className="btn btn-primary form-submit-btn"
-                    disabled={true}
-                    type="submit"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>,
+                  Test Course
+                </Link>
+              </div>,
             ],
-            "className": "col",
           },
           "ref": null,
           "rendered": Array [
@@ -943,105 +562,23 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Create a new course run",
+                "children": <strong>
+                  Course
+                </strong>,
+                "id": "course",
               },
               "ref": null,
-              "rendered": "Create a new course run",
-              "type": "h2",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": "hr",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="col-12"
-                    id="course"
-                  >
-                    <strong>
-                      Course
-                    </strong>
-                  </div>,
-                  <div
-                    className="col-12"
-                  >
-                    <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      Test Course
-                    </Link>
-                  </div>,
-                ],
-                "className": "row",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Course",
+                },
+                "ref": null,
+                "rendered": "Course",
+                "type": "strong",
               },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <strong>
-                      Course
-                    </strong>,
-                    "className": "col-12",
-                    "id": "course",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Course",
-                    },
-                    "ref": null,
-                    "rendered": "Course",
-                    "type": "strong",
-                  },
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      Test Course
-                    </Link>,
-                    "className": "col-12",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Test Course",
-                      "replace": false,
-                      "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                    },
-                    "ref": null,
-                    "rendered": "Test Course",
-                    "type": [Function],
-                  },
-                  "type": "div",
-                },
-              ],
               "type": "div",
             },
             Object {
@@ -1049,67 +586,175 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  <Field
-                    component={[Function]}
-                    label={
-                      <React.Fragment>
-                        <strong>
-                          Start date
-                        </strong>
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
-                    }
-                    name="start"
-                    required={true}
-                    type="date"
-                  />,
-                  <Field
-                    component={[Function]}
-                    label={
-                      <React.Fragment>
-                        <strong>
-                          End date
-                        </strong>
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
-                    }
-                    name="end"
-                    required={true}
-                    type="date"
-                  />,
-                  <div
-                    className="row justify-content-end"
+                "children": <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                >
+                  Test Course
+                </Link>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Test Course",
+                  "replace": false,
+                  "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
+                },
+                "ref": null,
+                "rendered": "Test Course",
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    <strong>
+                      Start date
+                    </strong>
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    <strong>
+                      End date
+                    </strong>
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />,
+              <ButtonToolbar
+                className=""
+              >
+                <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
                   >
-                    <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      <button
-                        className="btn btn-outline-primary"
-                        disabled={false}
-                      >
-                        Cancel
-                      </button>
-                    </Link>
+                    Cancel
+                  </button>
+                </Link>
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </ButtonToolbar>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "start",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "end",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    replace={false}
+                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                  >
                     <button
-                      className="btn btn-primary form-submit-btn"
-                      disabled={true}
-                      type="submit"
+                      className="btn btn-outline-primary"
+                      disabled={false}
                     >
-                      Submit
+                      Cancel
                     </button>
-                  </div>,
+                  </Link>,
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
                 ],
-                "onSubmit": [Function],
+                "className": "",
               },
               "ref": null,
               "rendered": Array [
@@ -1118,47 +763,29 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "component": [Function],
-                    "label": <React.Fragment>
-                      <strong>
-                        Start date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>,
-                    "name": "start",
-                    "required": true,
-                    "type": "date",
+                    "children": <button
+                      className="btn btn-outline-primary"
+                      disabled={false}
+                    >
+                      Cancel
+                    </button>,
+                    "replace": false,
+                    "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
                   },
                   "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "component": [Function],
-                    "label": <React.Fragment>
-                      <strong>
-                        End date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>,
-                    "name": "end",
-                    "required": true,
-                    "type": "date",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": "btn btn-outline-primary",
+                      "disabled": false,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": "button",
                   },
-                  "ref": null,
-                  "rendered": null,
                   "type": [Function],
                 },
                 Object {
@@ -1166,86 +793,23 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <Link
-                        replace={false}
-                        to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                      >
-                        <button
-                          className="btn btn-outline-primary"
-                          disabled={false}
-                        >
-                          Cancel
-                        </button>
-                      </Link>,
-                      <button
-                        className="btn btn-primary form-submit-btn"
-                        disabled={true}
-                        type="submit"
-                      >
-                        Submit
-                      </button>,
-                    ],
-                    "className": "row justify-content-end",
+                    "children": "Submit",
+                    "className": "btn btn-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "children": <button
-                          className="btn btn-outline-primary"
-                          disabled={false}
-                        >
-                          Cancel
-                        </button>,
-                        "replace": false,
-                        "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                      },
-                      "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": "Cancel",
-                          "className": "btn btn-outline-primary",
-                          "disabled": false,
-                        },
-                        "ref": null,
-                        "rendered": "Cancel",
-                        "type": "button",
-                      },
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Submit",
-                        "className": "btn btn-primary form-submit-btn",
-                        "disabled": true,
-                        "type": "submit",
-                      },
-                      "ref": null,
-                      "rendered": "Submit",
-                      "type": "button",
-                    },
-                  ],
-                  "type": "div",
+                  "rendered": "Submit",
+                  "type": "button",
                 },
               ],
-              "type": "form",
+              "type": [Function],
             },
           ],
-          "type": "div",
+          "type": "form",
         },
-        "type": "div",
-      },
-      "type": Symbol(react.fragment),
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -1301,302 +865,139 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="create-course-run-form row"
-      >
-        <div
-          className="col"
-        >
-          <h2>
-            Create a new course run
-          </h2>
-          <hr />
+      "children": Array [
+        <h2>
+          Create a new course run
+        </h2>,
+        <hr />,
+        <div>
           <div
-            className="row"
+            id="course"
           >
-            <div
-              className="col-12"
-              id="course"
-            >
-              <strong>
-                Course
-              </strong>
-            </div>
-            <div
-              className="col-12"
-            >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                Test Course
-              </Link>
-            </div>
+            <strong>
+              Course
+            </strong>
           </div>
-          <form
-            onSubmit={[Function]}
-          >
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    Start date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="start"
-              required={true}
-              type="date"
-            />
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    End date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="end"
-              required={true}
-              type="date"
-            />
-            <div
-              className="row justify-content-end"
+          <div>
+            <Link
+              replace={false}
+              to="/courses/00000000-0000-0000-0000-000000000001/edit/"
             >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={true}
+              Test Course
+            </Link>
+          </div>
+        </div>,
+        <form
+          onSubmit={[Function]}
+        >
+          <Field
+            component={[Function]}
+            label={
+              <React.Fragment>
+                <strong>
+                  Start date
+                </strong>
+                <span
+                  className="required"
                 >
-                  Cancel
-                </button>
-              </Link>
+                  *
+                </span>
+              </React.Fragment>
+            }
+            name="start"
+            required={true}
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            label={
+              <React.Fragment>
+                <strong>
+                  End date
+                </strong>
+                <span
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>
+            }
+            name="end"
+            required={true}
+            type="date"
+          />
+          <ButtonToolbar
+            className=""
+          >
+            <Link
+              replace={false}
+              to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+            >
               <button
-                className="btn btn-primary form-submit-btn"
+                className="btn btn-outline-primary"
                 disabled={true}
-                type="submit"
               >
-                Submit
+                Cancel
               </button>
-            </div>
-          </form>
-        </div>
-      </div>,
+            </Link>
+            <button
+              className="btn btn-primary form-submit-btn"
+              disabled={true}
+              type="submit"
+            >
+              Submit
+            </button>
+          </ButtonToolbar>
+        </form>,
+      ],
+      "className": "create-course-run-form",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="col"
-        >
-          <h2>
-            Create a new course run
-          </h2>
-          <hr />
-          <div
-            className="row"
-          >
-            <div
-              className="col-12"
-              id="course"
-            >
-              <strong>
-                Course
-              </strong>
-            </div>
-            <div
-              className="col-12"
-            >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                Test Course
-              </Link>
-            </div>
-          </div>
-          <form
-            onSubmit={[Function]}
-          >
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    Start date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="start"
-              required={true}
-              type="date"
-            />
-            <Field
-              component={[Function]}
-              label={
-                <React.Fragment>
-                  <strong>
-                    End date
-                  </strong>
-                  <span
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
-              }
-              name="end"
-              required={true}
-              type="date"
-            />
-            <div
-              className="row justify-content-end"
-            >
-              <Link
-                replace={false}
-                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={true}
-                >
-                  Cancel
-                </button>
-              </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
-                disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>,
-        "className": "create-course-run-form row",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Create a new course run",
+        },
+        "ref": null,
+        "rendered": "Create a new course run",
+        "type": "h2",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h2>
-              Create a new course run
-            </h2>,
-            <hr />,
             <div
-              className="row"
+              id="course"
             >
-              <div
-                className="col-12"
-                id="course"
-              >
-                <strong>
-                  Course
-                </strong>
-              </div>
-              <div
-                className="col-12"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  Test Course
-                </Link>
-              </div>
+              <strong>
+                Course
+              </strong>
             </div>,
-            <form
-              onSubmit={[Function]}
-            >
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="start"
-                required={true}
-                type="date"
-              />
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="end"
-                required={true}
-                type="date"
-              />
-              <div
-                className="row justify-content-end"
+            <div>
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
               >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={true}
-                  >
-                    Cancel
-                  </button>
-                </Link>
-                <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>,
+                Test Course
+              </Link>
+            </div>,
           ],
-          "className": "col",
         },
         "ref": null,
         "rendered": Array [
@@ -1605,105 +1006,23 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a new course run",
+              "children": <strong>
+                Course
+              </strong>,
+              "id": "course",
             },
             "ref": null,
-            "rendered": "Create a new course run",
-            "type": "h2",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": "hr",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <div
-                  className="col-12"
-                  id="course"
-                >
-                  <strong>
-                    Course
-                  </strong>
-                </div>,
-                <div
-                  className="col-12"
-                >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    Test Course
-                  </Link>
-                </div>,
-              ],
-              "className": "row",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Course",
+              },
+              "ref": null,
+              "rendered": "Course",
+              "type": "strong",
             },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <strong>
-                    Course
-                  </strong>,
-                  "className": "col-12",
-                  "id": "course",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Course",
-                  },
-                  "ref": null,
-                  "rendered": "Course",
-                  "type": "strong",
-                },
-                "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    Test Course
-                  </Link>,
-                  "className": "col-12",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Test Course",
-                    "replace": false,
-                    "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                  },
-                  "ref": null,
-                  "rendered": "Test Course",
-                  "type": [Function],
-                },
-                "type": "div",
-              },
-            ],
             "type": "div",
           },
           Object {
@@ -1711,67 +1030,175 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        Start date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="start"
-                  required={true}
-                  type="date"
-                />,
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        End date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="end"
-                  required={true}
-                  type="date"
-                />,
-                <div
-                  className="row justify-content-end"
+              "children": <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+              >
+                Test Course
+              </Link>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Test Course",
+                "replace": false,
+                "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
+              },
+              "ref": null,
+              "rendered": "Test Course",
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />,
+            <ButtonToolbar
+              className=""
+            >
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={true}
                 >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    <button
-                      className="btn btn-outline-primary"
-                      disabled={true}
-                    >
-                      Cancel
-                    </button>
-                  </Link>
+                  Cancel
+                </button>
+              </Link>
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </ButtonToolbar>,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                <strong>
+                  Start date
+                </strong>
+                <span
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "start",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <React.Fragment>
+                <strong>
+                  End date
+                </strong>
+                <span
+                  className="required"
+                >
+                  *
+                </span>
+              </React.Fragment>,
+              "name": "end",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                >
                   <button
-                    className="btn btn-primary form-submit-btn"
+                    className="btn btn-outline-primary"
                     disabled={true}
-                    type="submit"
                   >
-                    Submit
+                    Cancel
                   </button>
-                </div>,
+                </Link>,
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>,
               ],
-              "onSubmit": [Function],
+              "className": "",
             },
             "ref": null,
             "rendered": Array [
@@ -1780,47 +1207,29 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "component": [Function],
-                  "label": <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>,
-                  "name": "start",
-                  "required": true,
-                  "type": "date",
+                  "children": <button
+                    className="btn btn-outline-primary"
+                    disabled={true}
+                  >
+                    Cancel
+                  </button>,
+                  "replace": false,
+                  "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
                 },
                 "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "label": <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>,
-                  "name": "end",
-                  "required": true,
-                  "type": "date",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": "btn btn-outline-primary",
+                    "disabled": true,
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": "button",
                 },
-                "ref": null,
-                "rendered": null,
                 "type": [Function],
               },
               Object {
@@ -1828,387 +1237,161 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      <button
-                        className="btn btn-outline-primary"
-                        disabled={true}
-                      >
-                        Cancel
-                      </button>
-                    </Link>,
-                    <button
-                      className="btn btn-primary form-submit-btn"
-                      disabled={true}
-                      type="submit"
-                    >
-                      Submit
-                    </button>,
-                  ],
-                  "className": "row justify-content-end",
+                  "children": "Submit",
+                  "className": "btn btn-primary form-submit-btn",
+                  "disabled": true,
+                  "type": "submit",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": <button
-                        className="btn btn-outline-primary"
-                        disabled={true}
-                      >
-                        Cancel
-                      </button>,
-                      "replace": false,
-                      "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Cancel",
-                        "className": "btn btn-outline-primary",
-                        "disabled": true,
-                      },
-                      "ref": null,
-                      "rendered": "Cancel",
-                      "type": "button",
-                    },
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Submit",
-                      "className": "btn btn-primary form-submit-btn",
-                      "disabled": true,
-                      "type": "submit",
-                    },
-                    "ref": null,
-                    "rendered": "Submit",
-                    "type": "button",
-                  },
-                ],
-                "type": "div",
+                "rendered": "Submit",
+                "type": "button",
               },
             ],
-            "type": "form",
+            "type": [Function],
           },
         ],
-        "type": "div",
+        "type": "form",
       },
-      "type": "div",
-    },
-    "type": Symbol(react.fragment),
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": <div
-          className="create-course-run-form row"
-        >
-          <div
-            className="col"
-          >
-            <h2>
-              Create a new course run
-            </h2>
-            <hr />
+        "children": Array [
+          <h2>
+            Create a new course run
+          </h2>,
+          <hr />,
+          <div>
             <div
-              className="row"
+              id="course"
             >
-              <div
-                className="col-12"
-                id="course"
-              >
-                <strong>
-                  Course
-                </strong>
-              </div>
-              <div
-                className="col-12"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  Test Course
-                </Link>
-              </div>
+              <strong>
+                Course
+              </strong>
             </div>
-            <form
-              onSubmit={[Function]}
-            >
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="start"
-                required={true}
-                type="date"
-              />
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="end"
-                required={true}
-                type="date"
-              />
-              <div
-                className="row justify-content-end"
+            <div>
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
               >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={true}
+                Test Course
+              </Link>
+            </div>
+          </div>,
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    className="required"
                   >
-                    Cancel
-                  </button>
-                </Link>
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="start"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="end"
+              required={true}
+              type="date"
+            />
+            <ButtonToolbar
+              className=""
+            >
+              <Link
+                replace={false}
+                to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+              >
                 <button
-                  className="btn btn-primary form-submit-btn"
+                  className="btn btn-outline-primary"
                   disabled={true}
-                  type="submit"
                 >
-                  Submit
+                  Cancel
                 </button>
-              </div>
-            </form>
-          </div>
-        </div>,
+              </Link>
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </ButtonToolbar>
+          </form>,
+        ],
+        "className": "create-course-run-form",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="col"
-          >
-            <h2>
-              Create a new course run
-            </h2>
-            <hr />
-            <div
-              className="row"
-            >
-              <div
-                className="col-12"
-                id="course"
-              >
-                <strong>
-                  Course
-                </strong>
-              </div>
-              <div
-                className="col-12"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  Test Course
-                </Link>
-              </div>
-            </div>
-            <form
-              onSubmit={[Function]}
-            >
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      Start date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="start"
-                required={true}
-                type="date"
-              />
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    <strong>
-                      End date
-                    </strong>
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="end"
-                required={true}
-                type="date"
-              />
-              <div
-                className="row justify-content-end"
-              >
-                <Link
-                  replace={false}
-                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={true}
-                  >
-                    Cancel
-                  </button>
-                </Link>
-                <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>,
-          "className": "create-course-run-form row",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Create a new course run",
+          },
+          "ref": null,
+          "rendered": "Create a new course run",
+          "type": "h2",
         },
-        "ref": null,
-        "rendered": Object {
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h2>
-                Create a new course run
-              </h2>,
-              <hr />,
               <div
-                className="row"
+                id="course"
               >
-                <div
-                  className="col-12"
-                  id="course"
-                >
-                  <strong>
-                    Course
-                  </strong>
-                </div>
-                <div
-                  className="col-12"
-                >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    Test Course
-                  </Link>
-                </div>
+                <strong>
+                  Course
+                </strong>
               </div>,
-              <form
-                onSubmit={[Function]}
-              >
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        Start date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="start"
-                  required={true}
-                  type="date"
-                />
-                <Field
-                  component={[Function]}
-                  label={
-                    <React.Fragment>
-                      <strong>
-                        End date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
-                  }
-                  name="end"
-                  required={true}
-                  type="date"
-                />
-                <div
-                  className="row justify-content-end"
+              <div>
+                <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
                 >
-                  <Link
-                    replace={false}
-                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                  >
-                    <button
-                      className="btn btn-outline-primary"
-                      disabled={true}
-                    >
-                      Cancel
-                    </button>
-                  </Link>
-                  <button
-                    className="btn btn-primary form-submit-btn"
-                    disabled={true}
-                    type="submit"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>,
+                  Test Course
+                </Link>
+              </div>,
             ],
-            "className": "col",
           },
           "ref": null,
           "rendered": Array [
@@ -2217,105 +1400,23 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Create a new course run",
+                "children": <strong>
+                  Course
+                </strong>,
+                "id": "course",
               },
               "ref": null,
-              "rendered": "Create a new course run",
-              "type": "h2",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": "hr",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <div
-                    className="col-12"
-                    id="course"
-                  >
-                    <strong>
-                      Course
-                    </strong>
-                  </div>,
-                  <div
-                    className="col-12"
-                  >
-                    <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      Test Course
-                    </Link>
-                  </div>,
-                ],
-                "className": "row",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Course",
+                },
+                "ref": null,
+                "rendered": "Course",
+                "type": "strong",
               },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <strong>
-                      Course
-                    </strong>,
-                    "className": "col-12",
-                    "id": "course",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Course",
-                    },
-                    "ref": null,
-                    "rendered": "Course",
-                    "type": "strong",
-                  },
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      Test Course
-                    </Link>,
-                    "className": "col-12",
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Test Course",
-                      "replace": false,
-                      "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                    },
-                    "ref": null,
-                    "rendered": "Test Course",
-                    "type": [Function],
-                  },
-                  "type": "div",
-                },
-              ],
               "type": "div",
             },
             Object {
@@ -2323,67 +1424,175 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  <Field
-                    component={[Function]}
-                    label={
-                      <React.Fragment>
-                        <strong>
-                          Start date
-                        </strong>
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
-                    }
-                    name="start"
-                    required={true}
-                    type="date"
-                  />,
-                  <Field
-                    component={[Function]}
-                    label={
-                      <React.Fragment>
-                        <strong>
-                          End date
-                        </strong>
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
-                    }
-                    name="end"
-                    required={true}
-                    type="date"
-                  />,
-                  <div
-                    className="row justify-content-end"
+                "children": <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                >
+                  Test Course
+                </Link>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Test Course",
+                  "replace": false,
+                  "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
+                },
+                "ref": null,
+                "rendered": "Test Course",
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    <strong>
+                      Start date
+                    </strong>
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="start"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    <strong>
+                      End date
+                    </strong>
+                    <span
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="end"
+                required={true}
+                type="date"
+              />,
+              <ButtonToolbar
+                className=""
+              >
+                <Link
+                  replace={false}
+                  to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={true}
                   >
-                    <Link
-                      replace={false}
-                      to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                    >
-                      <button
-                        className="btn btn-outline-primary"
-                        disabled={true}
-                      >
-                        Cancel
-                      </button>
-                    </Link>
+                    Cancel
+                  </button>
+                </Link>
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </ButtonToolbar>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "start",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "end",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    replace={false}
+                    to="/courses/00000000-0000-0000-0000-000000000001/edit/"
+                  >
                     <button
-                      className="btn btn-primary form-submit-btn"
+                      className="btn btn-outline-primary"
                       disabled={true}
-                      type="submit"
                     >
-                      Submit
+                      Cancel
                     </button>
-                  </div>,
+                  </Link>,
+                  <button
+                    className="btn btn-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
                 ],
-                "onSubmit": [Function],
+                "className": "",
               },
               "ref": null,
               "rendered": Array [
@@ -2392,47 +1601,29 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "component": [Function],
-                    "label": <React.Fragment>
-                      <strong>
-                        Start date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>,
-                    "name": "start",
-                    "required": true,
-                    "type": "date",
+                    "children": <button
+                      className="btn btn-outline-primary"
+                      disabled={true}
+                    >
+                      Cancel
+                    </button>,
+                    "replace": false,
+                    "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
                   },
                   "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "component": [Function],
-                    "label": <React.Fragment>
-                      <strong>
-                        End date
-                      </strong>
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>,
-                    "name": "end",
-                    "required": true,
-                    "type": "date",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": "btn btn-outline-primary",
+                      "disabled": true,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": "button",
                   },
-                  "ref": null,
-                  "rendered": null,
                   "type": [Function],
                 },
                 Object {
@@ -2440,86 +1631,23 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <Link
-                        replace={false}
-                        to="/courses/00000000-0000-0000-0000-000000000001/edit/"
-                      >
-                        <button
-                          className="btn btn-outline-primary"
-                          disabled={true}
-                        >
-                          Cancel
-                        </button>
-                      </Link>,
-                      <button
-                        className="btn btn-primary form-submit-btn"
-                        disabled={true}
-                        type="submit"
-                      >
-                        Submit
-                      </button>,
-                    ],
-                    "className": "row justify-content-end",
+                    "children": "Submit",
+                    "className": "btn btn-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "children": <button
-                          className="btn btn-outline-primary"
-                          disabled={true}
-                        >
-                          Cancel
-                        </button>,
-                        "replace": false,
-                        "to": "/courses/00000000-0000-0000-0000-000000000001/edit/",
-                      },
-                      "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": "Cancel",
-                          "className": "btn btn-outline-primary",
-                          "disabled": true,
-                        },
-                        "ref": null,
-                        "rendered": "Cancel",
-                        "type": "button",
-                      },
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Submit",
-                        "className": "btn btn-primary form-submit-btn",
-                        "disabled": true,
-                        "type": "submit",
-                      },
-                      "ref": null,
-                      "rendered": "Submit",
-                      "type": "button",
-                    },
-                  ],
-                  "type": "div",
+                  "rendered": "Submit",
+                  "type": "button",
                 },
               ],
-              "type": "form",
+              "type": [Function],
             },
           ],
-          "type": "div",
+          "type": "form",
         },
-        "type": "div",
-      },
-      "type": Symbol(react.fragment),
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
