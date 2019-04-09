@@ -73,6 +73,8 @@ export class BaseEditCourseForm extends React.Component {
       courseRuns,
       uuid,
       courseInReview,
+      handleCourseRunSubmit,
+      id,
     } = this.props;
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
@@ -91,7 +93,7 @@ export class BaseEditCourseForm extends React.Component {
 
     return (
       <div className="edit-course-form">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id={id}>
           <Collapsible
             title={`Course: ${title}`}
             key="Test Key"
@@ -242,6 +244,8 @@ export class BaseEditCourseForm extends React.Component {
             languageOptions={languageOptions}
             pacingTypeOptions={pacingTypeOptions}
             courseInReview={courseInReview}
+            handleCourseRunSubmit={handleCourseRunSubmit}
+            formId={id}
           />
           <ButtonToolbar className="mt-3">
             <Link to={`/courses/${uuid}/course_runs/new`}>
@@ -290,6 +294,8 @@ BaseEditCourseForm.propTypes = {
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   uuid: PropTypes.string.isRequired,
   courseInReview: PropTypes.bool,
+  handleCourseRunSubmit: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 BaseEditCourseForm.defaultProps = {

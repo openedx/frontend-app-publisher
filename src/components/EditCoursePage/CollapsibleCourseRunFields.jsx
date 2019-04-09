@@ -1,8 +1,9 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Field, FieldArray } from 'redux-form';
+import { Field, FieldArray, submit } from 'redux-form';
 import { Collapsible } from '@edx/paragon';
+import { connect } from 'react-redux';
 
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -49,12 +50,18 @@ const formatCourseRunTitle = (courseRun) => {
 
 const getDateString = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 
-const CollapsibleCourseRunFields = ({
+export const BaseCollapsibleCourseRunFields = ({
   fields,
   courseRuns,
   languageOptions,
   pacingTypeOptions,
+<<<<<<< HEAD
   courseInReview,
+=======
+  handleCourseRunSubmit,
+  dispatch,
+  formId,
+>>>>>>> Mark course_runs as non-draft if submitted
 }) => (
   <div>
     {fields.map((courseRun, index) => (
@@ -139,8 +146,24 @@ const CollapsibleCourseRunFields = ({
             type="submit"
             className="btn btn-primary form-submit-btn"
             disabled={courseInReview}
+            onClick={(event) => {
+              /*
+              *  Manually check the form for validity so that we can pass the targeted course run up
+              *  through the handler and redux-form's submit if it passes validation. If validation
+              *  fails, report the form issues back without triggering submission.
+              */
+              // We manually check the form for validity, and then pass the targeted
+              event.preventDefault();
+              const form = document.getElementById(formId);
+              if (form.checkValidity()) {
+                handleCourseRunSubmit(courseRuns[index]);
+                dispatch(submit(formId));
+              } else {
+                form.reportValidity();
+              }
+            }}
           >
-            {courseRun.status === 'published' ? (
+            {courseRuns[index].status === 'published' ? (
               <span>Publish</span>
             ) : (
               <span>Submit for Review</span>
@@ -152,7 +175,7 @@ const CollapsibleCourseRunFields = ({
   </div>
 );
 
-CollapsibleCourseRunFields.propTypes = {
+BaseCollapsibleCourseRunFields.propTypes = {
   fields: PropTypes.shape({
     remove: PropTypes.func,
   }).isRequired,
@@ -166,11 +189,15 @@ CollapsibleCourseRunFields.propTypes = {
   })).isRequired,
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   courseInReview: PropTypes.bool,
+  handleCourseRunSubmit: PropTypes.func.isRequired,
+  dispatch: PropTypes.func,
+  formId: PropTypes.string.isRequired,
 };
 
-CollapsibleCourseRunFields.defaultProps = {
+BaseCollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
   courseInReview: false,
+  dispatch: () => {},
 };
 
-export default CollapsibleCourseRunFields;
+export default connect()(BaseCollapsibleCourseRunFields);
