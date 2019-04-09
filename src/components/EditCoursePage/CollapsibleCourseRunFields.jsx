@@ -21,7 +21,7 @@ const formatCourseRunTitle = (courseRun) => {
     }
     return (
       <div className="course-run-label">
-        <span>{labelItems.join(' - ')}</span>
+        <span>{`Course run starting on ${labelItems.join(' - ')}`}</span>
         <div className="course-run-studio-url">
           {'Studio URL - '}
           <a href={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}>
