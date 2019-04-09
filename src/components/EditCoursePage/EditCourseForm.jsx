@@ -72,6 +72,7 @@ export class BaseEditCourseForm extends React.Component {
       pristine,
       courseRuns,
       uuid,
+      courseInReview,
     } = this.props;
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
@@ -102,6 +103,7 @@ export class BaseEditCourseForm extends React.Component {
               type="text"
               label={<FieldLabel text="Title" required />}
               required
+              disabled={courseInReview}
             />
             <div>
               <FieldLabel id="number" text="Number" className="mb-2" />
@@ -113,6 +115,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Short description" />}
               maxChars={500}
               id="sdesc"
+              disabled={courseInReview}
             />
             <Field
               name="full_description"
@@ -120,6 +123,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Long description" />}
               maxChars={2500}
               id="ldesc"
+              disabled={courseInReview}
             />
             <Field
               name="outcome"
@@ -127,30 +131,35 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="What you will learn" />}
               maxChars={2500}
               id="outcome"
+              disabled={courseInReview}
             />
             <Field
               name="subjectPrimary"
               component={RenderSelectField}
               label={<FieldLabel text="Primary subject" />}
               options={subjectOptions}
+              disabled={courseInReview}
             />
             <Field
               name="subjectSecondary"
               component={RenderSelectField}
               label={<FieldLabel text="Secondary subject" />}
               options={subjectOptions}
+              disabled={courseInReview}
             />
             <Field
               name="subjectTertiary"
               component={RenderSelectField}
               label={<FieldLabel text="Tertiary subject" />}
               options={subjectOptions}
+              disabled={courseInReview}
             />
             <Field
               name="imageSrc"
               component={ImageUpload}
               label={<FieldLabel text="Image" />}
               id="image"
+              disabled={courseInReview}
             />
             <Field
               name="prerequisites_raw"
@@ -158,12 +167,14 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Prerequisites" />}
               maxChars={1000}
               id="prereq"
+              disabled={courseInReview}
             />
             <Field
               name="level_type"
               component={RenderSelectField}
               label={<FieldLabel text="Course level" />}
               options={levelTypeOptions}
+              disabled={courseInReview}
             />
             <Field
               name="learner_testimonials"
@@ -171,6 +182,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Learner testimonials" />}
               maxChars={500}
               id="learner-testimonials"
+              disabled={courseInReview}
             />
             <Field
               name="faq"
@@ -178,6 +190,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Frequently asked questions" />}
               maxChars={2500}
               id="faq"
+              disabled={courseInReview}
             />
             <Field
               name="additional_information"
@@ -185,6 +198,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Additional information" />}
               maxChars={2500}
               id="additional-information"
+              disabled={courseInReview}
             />
             <Field
               name="syllabus_raw"
@@ -192,12 +206,14 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Syllabus" />}
               maxChars={500}
               id="syllabus"
+              disabled={courseInReview}
             />
             <Field
               name="videoSrc"
               component={RenderInputTextField}
               type="text"
               label={<FieldLabel text="About video link" />}
+              disabled={courseInReview}
             />
             {entitlement && (
               <React.Fragment>
@@ -206,12 +222,14 @@ export class BaseEditCourseForm extends React.Component {
                   component={RenderSelectField}
                   label={<FieldLabel text="Enrollment track" />}
                   options={this.getEnrollmentTrackOptions()}
+                  disabled={courseInReview}
                 />
                 <Field
                   name="price"
                   component={RenderInputTextField}
                   type="number"
                   label={<FieldLabel text="Price" />}
+                  disabled={courseInReview}
                 />
               </React.Fragment>
             )}
@@ -266,12 +284,14 @@ BaseEditCourseForm.propTypes = {
   pristine: PropTypes.bool,
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   uuid: PropTypes.string.isRequired,
+  courseInReview: PropTypes.bool,
 };
 
 BaseEditCourseForm.defaultProps = {
   submitting: false,
   pristine: true,
   courseRuns: [],
+  courseInReview: false,
 };
 
 const EditCourseForm = compose(

@@ -60,4 +60,18 @@ describe('Collapsible Course Run Fields', () => {
     />);
     expect(component).toMatchSnapshot();
   });
+
+  it('renders fields as disabled when course is in review', () => {
+    const component = shallow(<CollapsibleCourseRunFields
+      fields={[]}
+      languageOptions={[]}
+      pacingTypeOptions={[]}
+      courseRuns={[]}
+      courseInReview
+    />);
+    const childFields = component.find('input');
+    childFields.forEach((field) => {
+      expect(field.prop('disabled')).toBeTrue();
+    });
+  });
 });

@@ -531,4 +531,21 @@ describe('BaseEditCourseForm', () => {
     />);
     expect(component).toMatchSnapshot();
   });
+
+  it('renders with disabled fields if course is in review', () => {
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title="Title"
+      number="Test101x"
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      courseInReview
+    />);
+
+    const childFields = component.find('input');
+    childFields.forEach((field) => {
+      expect(field.prop('disabled')).toBeTrue();
+    });
+  });
 });
