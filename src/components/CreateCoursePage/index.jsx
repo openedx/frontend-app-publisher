@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import CreateCourseForm from './CreateCourseForm';
-import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
+import PageContainer from '../PageContainer';
+import StatusAlert from '../StatusAlert';
 
 class CreateCoursePage extends React.Component {
   constructor(props) {
@@ -60,49 +61,42 @@ class CreateCoursePage extends React.Component {
           <title>Create a New Course</title>
         </Helmet>
 
-        <div className="container-fluid">
-          <div className="row justify-content-md-center my-3 ">
-            <div className="col-6">
-              { publisherUserInfo.isFetching && <LoadingSpinner /> }
-              { publisherUserInfo.error && (
+        <PageContainer>
+          { publisherUserInfo.isFetching && <LoadingSpinner /> }
+          { publisherUserInfo.error && (
+            <StatusAlert
+              id="user-info-error"
+              alertType="danger"
+              title="Course Create Form failed to load: "
+              message={publisherUserInfo.error}
+            />
+          )}
+          { !publisherUserInfo.isFetching &&
+          (
+            <div>
+              <CreateCourseForm
+                id="create-course-form"
+                onSubmit={this.handleCourseCreate}
+                initialValues={initialValues}
+                organizations={organizations}
+                isCreating={courseInfo.isCreating}
+              />
+              { showCreatingCourseSpinner &&
+              <LoadingSpinner
+                message="Creating Course and Course Run"
+              />
+              }
+              {courseInfo.error && (
                 <StatusAlert
-                  id="user-info-error"
+                  id="create-error"
                   alertType="danger"
-                  title="Course Create Form failed to load: "
-                  message={publisherUserInfo.error}
+                  title="Course create failed: "
+                  message={courseInfo.error}
                 />
-              )}
-              { !publisherUserInfo.isFetching &&
-              (
-                <div>
-                  <h2>Create New Course</h2>
-                  <div className="col">
-                    <CreateCourseForm
-                      id="create-course-form"
-                      onSubmit={this.handleCourseCreate}
-                      initialValues={initialValues}
-                      organizations={organizations}
-                      isCreating={courseInfo.isCreating}
-                    />
-                    { showCreatingCourseSpinner &&
-                    <LoadingSpinner
-                      message="Creating Course and Course Run"
-                    />
-                    }
-                    {courseInfo.error && (
-                      <StatusAlert
-                        id="create-error"
-                        alertType="danger"
-                        title="Course create failed: "
-                        message={courseInfo.error}
-                      />
-                    ) }
-                  </div>
-                </div>
-              )}
+              ) }
             </div>
-          </div>
-        </div>
+          )}
+        </PageContainer>
       </React.Fragment>
     );
   }

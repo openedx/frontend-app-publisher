@@ -21,13 +21,13 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="col-10 offset-1"
+        className="container"
       >
-        <header
-          className="d-flex align-items-center p-3 border-bottom-blue"
+        <div
+          className="row align-items-center"
         >
           <div
-            className="col-md-auto"
+            className="col-auto justify-content-start"
           >
             <WithDeprecatedProps(Le)
               content={
@@ -46,7 +46,7 @@ ShallowWrapper {
             </span>
           </div>
           <div
-            className="col-md-auto"
+            className="col"
           >
             <Link
               replace={false}
@@ -56,7 +56,7 @@ ShallowWrapper {
             </Link>
           </div>
           <div
-            className="ml-auto"
+            className="col-auto justify-content-end"
           >
             <t
               buttonType="light"
@@ -73,9 +73,9 @@ ShallowWrapper {
               title="test-username"
             />
           </div>
-        </header>
+        </div>
       </div>,
-      "className": "row mb-3",
+      "className": "mb-3 py-3 border-bottom-blue",
     },
     "ref": null,
     "rendered": Object {
@@ -83,11 +83,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <header
-          className="d-flex align-items-center p-3 border-bottom-blue"
+        "children": <div
+          className="row align-items-center"
         >
           <div
-            className="col-md-auto"
+            className="col-auto justify-content-start"
           >
             <WithDeprecatedProps(Le)
               content={
@@ -106,7 +106,7 @@ ShallowWrapper {
             </span>
           </div>
           <div
-            className="col-md-auto"
+            className="col"
           >
             <Link
               replace={false}
@@ -116,7 +116,7 @@ ShallowWrapper {
             </Link>
           </div>
           <div
-            className="ml-auto"
+            className="col-auto justify-content-end"
           >
             <t
               buttonType="light"
@@ -133,8 +133,8 @@ ShallowWrapper {
               title="test-username"
             />
           </div>
-        </header>,
-        "className": "col-10 offset-1",
+        </div>,
+        "className": "container",
       },
       "ref": null,
       "rendered": Object {
@@ -144,7 +144,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="col-md-auto"
+              className="col-auto justify-content-start"
             >
               <WithDeprecatedProps(Le)
                 content={
@@ -163,7 +163,7 @@ ShallowWrapper {
               </span>
             </div>,
             <div
-              className="col-md-auto"
+              className="col"
             >
               <Link
                 replace={false}
@@ -173,7 +173,7 @@ ShallowWrapper {
               </Link>
             </div>,
             <div
-              className="ml-auto"
+              className="col-auto justify-content-end"
             >
               <t
                 buttonType="light"
@@ -191,7 +191,7 @@ ShallowWrapper {
               />
             </div>,
           ],
-          "className": "d-flex align-items-center p-3 border-bottom-blue",
+          "className": "row align-items-center",
         },
         "ref": null,
         "rendered": Array [
@@ -217,7 +217,7 @@ ShallowWrapper {
                   Alpha
                 </span>,
               ],
-              "className": "col-md-auto",
+              "className": "col-auto justify-content-start",
             },
             "ref": null,
             "rendered": Array [
@@ -264,7 +264,7 @@ ShallowWrapper {
               >
                 Courses
               </Link>,
-              "className": "col-md-auto",
+              "className": "col",
             },
             "ref": null,
             "rendered": Object {
@@ -301,7 +301,7 @@ ShallowWrapper {
                 }
                 title="test-username"
               />,
-              "className": "ml-auto",
+              "className": "col-auto justify-content-end",
             },
             "ref": null,
             "rendered": Object {
@@ -328,11 +328,11 @@ ShallowWrapper {
             "type": "div",
           },
         ],
-        "type": "header",
+        "type": "div",
       },
       "type": "div",
     },
-    "type": "div",
+    "type": "header",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -341,13 +341,13 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="col-10 offset-1"
+          className="container"
         >
-          <header
-            className="d-flex align-items-center p-3 border-bottom-blue"
+          <div
+            className="row align-items-center"
           >
             <div
-              className="col-md-auto"
+              className="col-auto justify-content-start"
             >
               <WithDeprecatedProps(Le)
                 content={
@@ -366,7 +366,7 @@ ShallowWrapper {
               </span>
             </div>
             <div
-              className="col-md-auto"
+              className="col"
             >
               <Link
                 replace={false}
@@ -376,7 +376,7 @@ ShallowWrapper {
               </Link>
             </div>
             <div
-              className="ml-auto"
+              className="col-auto justify-content-end"
             >
               <t
                 buttonType="light"
@@ -393,9 +393,9 @@ ShallowWrapper {
                 title="test-username"
               />
             </div>
-          </header>
+          </div>
         </div>,
-        "className": "row mb-3",
+        "className": "mb-3 py-3 border-bottom-blue",
       },
       "ref": null,
       "rendered": Object {
@@ -403,11 +403,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <header
-            className="d-flex align-items-center p-3 border-bottom-blue"
+          "children": <div
+            className="row align-items-center"
           >
             <div
-              className="col-md-auto"
+              className="col-auto justify-content-start"
             >
               <WithDeprecatedProps(Le)
                 content={
@@ -426,7 +426,7 @@ ShallowWrapper {
               </span>
             </div>
             <div
-              className="col-md-auto"
+              className="col"
             >
               <Link
                 replace={false}
@@ -436,7 +436,7 @@ ShallowWrapper {
               </Link>
             </div>
             <div
-              className="ml-auto"
+              className="col-auto justify-content-end"
             >
               <t
                 buttonType="light"
@@ -453,8 +453,8 @@ ShallowWrapper {
                 title="test-username"
               />
             </div>
-          </header>,
-          "className": "col-10 offset-1",
+          </div>,
+          "className": "container",
         },
         "ref": null,
         "rendered": Object {
@@ -464,7 +464,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="col-md-auto"
+                className="col-auto justify-content-start"
               >
                 <WithDeprecatedProps(Le)
                   content={
@@ -483,7 +483,7 @@ ShallowWrapper {
                 </span>
               </div>,
               <div
-                className="col-md-auto"
+                className="col"
               >
                 <Link
                   replace={false}
@@ -493,7 +493,7 @@ ShallowWrapper {
                 </Link>
               </div>,
               <div
-                className="ml-auto"
+                className="col-auto justify-content-end"
               >
                 <t
                   buttonType="light"
@@ -511,7 +511,7 @@ ShallowWrapper {
                 />
               </div>,
             ],
-            "className": "d-flex align-items-center p-3 border-bottom-blue",
+            "className": "row align-items-center",
           },
           "ref": null,
           "rendered": Array [
@@ -537,7 +537,7 @@ ShallowWrapper {
                     Alpha
                   </span>,
                 ],
-                "className": "col-md-auto",
+                "className": "col-auto justify-content-start",
               },
               "ref": null,
               "rendered": Array [
@@ -584,7 +584,7 @@ ShallowWrapper {
                 >
                   Courses
                 </Link>,
-                "className": "col-md-auto",
+                "className": "col",
               },
               "ref": null,
               "rendered": Object {
@@ -621,7 +621,7 @@ ShallowWrapper {
                   }
                   title="test-username"
                 />,
-                "className": "ml-auto",
+                "className": "col-auto justify-content-end",
               },
               "ref": null,
               "rendered": Object {
@@ -648,11 +648,11 @@ ShallowWrapper {
               "type": "div",
             },
           ],
-          "type": "header",
+          "type": "div",
         },
         "type": "div",
       },
-      "type": "div",
+      "type": "header",
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
+import ButtonToolbar from '../ButtonToolbar';
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -36,111 +37,107 @@ class BaseCreateCourseForm extends React.Component {
       isCreating,
     } = this.props;
     return (
-      <React.Fragment>
-        <div className="create-course-form row">
-          <div className="col">
-            <h3>Course</h3>
-            <hr />
-            <form onSubmit={handleSubmit}>
-              <Field
-                name="org"
-                component={RenderSelectField}
-                options={this.processOrganizations(organizations)}
-                label={
-                  <React.Fragment>
-                    Organization
-                    <span className="required">*</span>
-                  </React.Fragment>
-                }
-                required
-              />
-              <Field
-                name="title"
-                component={RenderInputTextField}
-                type="text"
-                label={
-                  <React.Fragment>
-                    Title
-                    <span className="required">*</span>
-                  </React.Fragment>
-                }
-                required
-              />
-              <Field
-                name="number"
-                component={RenderInputTextField}
-                type="text"
-                label={
-                  <React.Fragment>
-                    Number
-                    <span className="required">*</span>
-                  </React.Fragment>
-                }
-                required
-              />
-              <Field
-                name="enrollmentTrack"
-                component={RenderSelectField}
-                options={this.getEnrollmentTrackOptions()}
-                label={
-                  <React.Fragment>
-                    Enrollment track
-                    <span className="required">*</span>
-                  </React.Fragment>
-                }
-                required
-              />
-              <Field
-                name="price"
-                component={RenderInputTextField}
-                type="number"
-                label={
-                  <React.Fragment>
-                    Price (USD)
-                    <span className="required">*</span>
-                  </React.Fragment>
-                }
-                required
-              />
-              <h3>First run of your Course</h3>
-              <hr />
-              <Field
-                name="start"
-                type="date"
-                component={RenderInputTextField}
-                label={
-                  <React.Fragment>
-                    Start date
-                    <span className="required">*</span>
-                  </React.Fragment>
-                }
-                required
-              />
-              <Field
-                name="end"
-                type="date"
-                component={RenderInputTextField}
-                label={
-                  <React.Fragment>
-                    End date
-                    <span className="required">*</span>
-                  </React.Fragment>
-                }
-                required
-              />
-              <div className="row justify-content-end">
-                <button
-                  type="submit"
-                  className="btn btn-primary form-submit-btn"
-                  disabled={pristine || submitting || isCreating}
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </React.Fragment>
+      <div className="create-course-form">
+        <h2>Create New Course</h2>
+        <hr />
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="org"
+            component={RenderSelectField}
+            options={this.processOrganizations(organizations)}
+            label={
+              <React.Fragment>
+                Organization
+                <span className="required">*</span>
+              </React.Fragment>
+            }
+            required
+          />
+          <Field
+            name="title"
+            component={RenderInputTextField}
+            type="text"
+            label={
+              <React.Fragment>
+                Title
+                <span className="required">*</span>
+              </React.Fragment>
+            }
+            required
+          />
+          <Field
+            name="number"
+            component={RenderInputTextField}
+            type="text"
+            label={
+              <React.Fragment>
+                Number
+                <span className="required">*</span>
+              </React.Fragment>
+            }
+            required
+          />
+          <Field
+            name="enrollmentTrack"
+            component={RenderSelectField}
+            options={this.getEnrollmentTrackOptions()}
+            label={
+              <React.Fragment>
+                Enrollment track
+                <span className="required">*</span>
+              </React.Fragment>
+            }
+            required
+          />
+          <Field
+            name="price"
+            component={RenderInputTextField}
+            type="number"
+            label={
+              <React.Fragment>
+                Price (USD)
+                <span className="required">*</span>
+              </React.Fragment>
+            }
+            required
+          />
+          <h2>First run of your Course</h2>
+          <hr />
+          <Field
+            name="start"
+            type="date"
+            component={RenderInputTextField}
+            label={
+              <React.Fragment>
+                Start date
+                <span className="required">*</span>
+              </React.Fragment>
+            }
+            required
+          />
+          <Field
+            name="end"
+            type="date"
+            component={RenderInputTextField}
+            label={
+              <React.Fragment>
+                End date
+                <span className="required">*</span>
+              </React.Fragment>
+            }
+            required
+          />
+          <ButtonToolbar>
+            <button
+              type="submit"
+              className="btn btn-primary form-submit-btn"
+              disabled={pristine || submitting || isCreating}
+            >
+              Submit
+            </button>
+          </ButtonToolbar>
+        </form>
+      </div>
     );
   }
 }
