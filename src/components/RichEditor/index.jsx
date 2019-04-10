@@ -49,6 +49,7 @@ class RichEditor extends React.Component {
         touched,
         error,
       },
+      disabled,
     } = this.props;
     const remainingChars = maxChars - this.state.charCount;
     const characterLimitMessage = `Recommended character limit (including spaces) is
@@ -83,6 +84,7 @@ class RichEditor extends React.Component {
             onChange={this.updateCharCount}
             onKeyUp={this.updateCharCount}
             onInit={this.initCharCount}
+            disabled={disabled}
           />
           {maxChars && <span>{characterLimitMessage}</span>}
         </div>
@@ -93,6 +95,7 @@ class RichEditor extends React.Component {
 
 RichEditor.defaultProps = {
   maxChars: null,
+  disabled: false,
 };
 
 RichEditor.propTypes = {
@@ -107,6 +110,7 @@ RichEditor.propTypes = {
     touched: PropTypes.bool,
     error: PropTypes.string,
   }).isRequired,
+  disabled: PropTypes.bool,
 };
 
 export default RichEditor;

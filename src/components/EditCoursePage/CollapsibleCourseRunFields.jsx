@@ -54,6 +54,7 @@ const CollapsibleCourseRunFields = ({
   courseRuns,
   languageOptions,
   pacingTypeOptions,
+  courseInReview,
 }) => (
   <div>
     {fields.map((courseRun, index) => (
@@ -70,6 +71,7 @@ const CollapsibleCourseRunFields = ({
           label={<FieldLabel text="Start date" required />}
           placeholder="mm/dd/yyyy"
           required
+          disabled={courseInReview}
         />
         <Field
           name={`${courseRun}.end`}
@@ -80,18 +82,21 @@ const CollapsibleCourseRunFields = ({
           label={<FieldLabel text="End date" required />}
           placeholder="mm/dd/yyyy"
           required
+          disabled={courseInReview}
         />
         <Field
           name={`${courseRun}.min_effort`}
           type="number"
           component={RenderInputTextField}
           label={<FieldLabel text="Minimum effort" />}
+          disabled={courseInReview}
         />
         <Field
           name={`${courseRun}.max_effort`}
           type="number"
           component={RenderInputTextField}
           label={<FieldLabel text="Maximum effort" />}
+          disabled={courseInReview}
         />
         <Field
           name={`${courseRun}.pacing_type`}
@@ -99,6 +104,7 @@ const CollapsibleCourseRunFields = ({
           component={RenderSelectField}
           options={pacingTypeOptions}
           label={<FieldLabel text="Course pacing" />}
+          disabled={courseInReview}
         />
         <Field
           name={`${courseRun}.content_language`}
@@ -106,6 +112,7 @@ const CollapsibleCourseRunFields = ({
           component={RenderSelectField}
           options={languageOptions}
           label={<FieldLabel text="Content language" />}
+          disabled={courseInReview}
         />
         <FieldLabel text="Transcript languages" className="mb-2" />
         <FieldArray
@@ -118,16 +125,19 @@ const CollapsibleCourseRunFields = ({
           type="number"
           component={RenderInputTextField}
           label={<FieldLabel text="Length" />}
+          disabled={courseInReview}
         />
         <FieldLabel text="Staff" className="mb-2" />
         <Field
           name={`${courseRun}.staff`}
           component={StaffList}
+          disabled={courseInReview}
         />
         <ButtonToolbar>
           <button
             type="submit"
             className="btn btn-primary form-submit-btn"
+            disabled={courseInReview}
           >
             {courseRun.status === 'published' ? (
               <span>Publish</span>
@@ -154,10 +164,12 @@ CollapsibleCourseRunFields.propTypes = {
     value: PropTypes.string,
   })).isRequired,
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
+  courseInReview: PropTypes.bool,
 };
 
 CollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
+  courseInReview: false,
 };
 
 export default CollapsibleCourseRunFields;

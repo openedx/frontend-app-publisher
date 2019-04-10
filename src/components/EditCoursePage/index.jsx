@@ -8,6 +8,7 @@ import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
+import { IN_REVIEW_STATUS } from '../../data/constants';
 
 class EditCoursePage extends React.Component {
   constructor(props) {
@@ -122,6 +123,9 @@ class EditCoursePage extends React.Component {
       courseRunOptions,
     } = this.props;
     const { startedFetching } = this.state;
+
+    const courseInReview = course_runs && course_runs.some(courseRun =>
+      IN_REVIEW_STATUS.includes(courseRun.status));
     const minimalCourseRuns = course_runs && course_runs.map(courseRun => ({
       key: courseRun.key,
       start: courseRun.start,
@@ -200,6 +204,7 @@ class EditCoursePage extends React.Component {
                 courseRuns={minimalCourseRuns}
                 uuid={uuid}
                 courseInfo={courseInfo}
+                courseInReview={courseInReview}
               />
             </div>
           )}
