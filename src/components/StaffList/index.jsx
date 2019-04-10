@@ -45,35 +45,32 @@ class StaffList extends React.Component {
     } = this.state;
 
     return (
-      <React.Fragment>
-        Staff
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          <Droppable droppableId="StaffList" direction="vertical">
-            {provided => (
-              <div className="staff-list container" ref={provided.innerRef} {...provided.droppableProps}>
-                {staffList && staffList.map((staffer, index) => (
-                  <Draggable draggableId={getStafferName(staffer)} index={index} key={staffer.uuid}>
-                    {draggableProvided => (
-                      <div
-                        className="staffer-wrapper col-12 my-2"
-                        ref={draggableProvided.innerRef}
-                        {...draggableProvided.dragHandleProps}
-                        {...draggableProvided.draggableProps}
-                      >
-                        <Staffer
-                          onRemove={this.handleRemove}
-                          staffer={staffer}
-                        />
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
-      </React.Fragment>
+      <DragDropContext onDragEnd={this.onDragEnd}>
+        <Droppable droppableId="StaffList" direction="vertical">
+          {provided => (
+            <div className="staff-list container" ref={provided.innerRef} {...provided.droppableProps}>
+              {staffList && staffList.map((staffer, index) => (
+                <Draggable draggableId={getStafferName(staffer)} index={index} key={staffer.uuid}>
+                  {draggableProvided => (
+                    <div
+                      className="staffer-wrapper col-12 my-2"
+                      ref={draggableProvided.innerRef}
+                      {...draggableProvided.dragHandleProps}
+                      {...draggableProvided.draggableProps}
+                    >
+                      <Staffer
+                        onRemove={this.handleRemove}
+                        staffer={staffer}
+                      />
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
     );
   }
 }

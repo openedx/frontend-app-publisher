@@ -55,8 +55,8 @@ class RichEditor extends React.Component {
       ${maxChars}. ${remainingChars} characters remaining.`;
 
     return (
-      <React.Fragment>
-        <div id={id} className="form-group mt-3">{label}</div>
+      <div className="form-group">
+        <div id={id} className="mb-2">{label}</div>
         {touched && error &&
           <StatusAlert
             alertType="danger"
@@ -86,7 +86,7 @@ class RichEditor extends React.Component {
           />
           {maxChars && <span>{characterLimitMessage}</span>}
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

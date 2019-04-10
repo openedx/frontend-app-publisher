@@ -9,6 +9,7 @@ import RenderSelectField from '../RenderSelectField';
 import TranscriptLanguage from './TranscriptLanguage';
 import StaffList from '../StaffList';
 import ButtonToolbar from '../ButtonToolbar';
+import FieldLabel from '../FieldLabel';
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -66,12 +67,7 @@ const CollapsibleCourseRunFields = ({
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
-          label={
-            <React.Fragment>
-              Start date
-              <span className="required" aria-hidden>*</span>
-            </React.Fragment>
-          }
+          label={<FieldLabel text="Start date" required />}
           placeholder="mm/dd/yyyy"
           required
         />
@@ -81,12 +77,7 @@ const CollapsibleCourseRunFields = ({
           component={RenderInputTextField}
           format={value => getDateString(value)}
           normalize={value => moment(value).toISOString()}
-          label={
-            <React.Fragment>
-              End date
-              <span className="required" aria-hidden>*</span>
-            </React.Fragment>
-          }
+          label={<FieldLabel text="End date" required />}
           placeholder="mm/dd/yyyy"
           required
         />
@@ -94,47 +85,29 @@ const CollapsibleCourseRunFields = ({
           name={`${courseRun}.min_effort`}
           type="number"
           component={RenderInputTextField}
-          label={
-            <React.Fragment>
-              Minimum Effort
-            </React.Fragment>
-          }
+          label={<FieldLabel text="Minimum effort" />}
         />
         <Field
           name={`${courseRun}.max_effort`}
           type="number"
           component={RenderInputTextField}
-          label={
-            <React.Fragment>
-              Maximum Effort
-            </React.Fragment>
-          }
+          label={<FieldLabel text="Maximum effort" />}
         />
         <Field
           name={`${courseRun}.pacing_type`}
           type="text"
           component={RenderSelectField}
           options={pacingTypeOptions}
-          label={
-            <React.Fragment>
-              Course Pacing
-            </React.Fragment>
-          }
+          label={<FieldLabel text="Course pacing" />}
         />
         <Field
           name={`${courseRun}.content_language`}
           type="text"
           component={RenderSelectField}
           options={languageOptions}
-          label={
-            <React.Fragment>
-              Content Language
-            </React.Fragment>
-          }
+          label={<FieldLabel text="Content language" />}
         />
-        <div className="transcript-label">
-          Transcript Languages
-        </div>
+        <FieldLabel text="Transcript languages" className="mb-2" />
         <FieldArray
           name={`${courseRun}.transcript_languages`}
           component={TranscriptLanguage}
@@ -144,12 +117,9 @@ const CollapsibleCourseRunFields = ({
           name={`${courseRun}.weeks_to_complete`}
           type="number"
           component={RenderInputTextField}
-          label={
-            <React.Fragment>
-              Length
-            </React.Fragment>
-          }
+          label={<FieldLabel text="Length" />}
         />
+        <FieldLabel text="Staff" className="mb-2" />
         <Field
           name={`${courseRun}.staff`}
           component={StaffList}
@@ -157,7 +127,7 @@ const CollapsibleCourseRunFields = ({
         <ButtonToolbar>
           <button
             type="submit"
-            className="btn btn-primary form-submit-btn float-right mt-2"
+            className="btn btn-primary form-submit-btn"
           >
             {courseRun.status === 'published' ? (
               <span>Publish</span>

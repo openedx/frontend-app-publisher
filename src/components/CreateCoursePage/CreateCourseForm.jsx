@@ -6,6 +6,7 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
 import ButtonToolbar from '../ButtonToolbar';
+import FieldLabel from '../FieldLabel';
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -45,60 +46,35 @@ class BaseCreateCourseForm extends React.Component {
             name="org"
             component={RenderSelectField}
             options={this.processOrganizations(organizations)}
-            label={
-              <React.Fragment>
-                Organization
-                <span className="required">*</span>
-              </React.Fragment>
-            }
+            label={<FieldLabel text="Organization" required />}
             required
           />
           <Field
             name="title"
             component={RenderInputTextField}
             type="text"
-            label={
-              <React.Fragment>
-                Title
-                <span className="required">*</span>
-              </React.Fragment>
-            }
+            label={<FieldLabel text="Title" required />}
             required
           />
           <Field
             name="number"
             component={RenderInputTextField}
             type="text"
-            label={
-              <React.Fragment>
-                Number
-                <span className="required">*</span>
-              </React.Fragment>
-            }
+            label={<FieldLabel text="Number" required />}
             required
           />
           <Field
             name="enrollmentTrack"
             component={RenderSelectField}
             options={this.getEnrollmentTrackOptions()}
-            label={
-              <React.Fragment>
-                Enrollment track
-                <span className="required">*</span>
-              </React.Fragment>
-            }
+            label={<FieldLabel text="Enrollment track" required />}
             required
           />
           <Field
             name="price"
             component={RenderInputTextField}
             type="number"
-            label={
-              <React.Fragment>
-                Price (USD)
-                <span className="required">*</span>
-              </React.Fragment>
-            }
+            label={<FieldLabel text="Price (USD)" required />}
             required
           />
           <h2>First run of your Course</h2>
@@ -107,24 +83,14 @@ class BaseCreateCourseForm extends React.Component {
             name="start"
             type="date"
             component={RenderInputTextField}
-            label={
-              <React.Fragment>
-                Start date
-                <span className="required">*</span>
-              </React.Fragment>
-            }
+            label={<FieldLabel text="Start date" required />}
             required
           />
           <Field
             name="end"
             type="date"
             component={RenderInputTextField}
-            label={
-              <React.Fragment>
-                End date
-                <span className="required">*</span>
-              </React.Fragment>
-            }
+            label={<FieldLabel text="End date" required />}
             required
           />
           <ButtonToolbar>

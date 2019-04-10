@@ -19,19 +19,16 @@ class TranscriptLanguage extends React.Component {
     const { fields, languageOptions } = this.props;
 
     return (
-      <div className="transcript-languages my-4">
+      <div className="transcript-languages mb-3">
         <ul className="list-group p-0 m-0">
           {fields.map((language, index) => (
-            <li className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0" key={language}>
-              <div className="col-10">
-                <Field
-                  name={`${language}`}
-                  component={RenderSelectField}
-                  label="Transcript Language"
-                  options={languageOptions}
-                  type="text"
-                />
-              </div>
+            <li className="transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0" key={language}>
+              <Field
+                name={`${language}`}
+                component={RenderSelectField}
+                options={languageOptions}
+                type="text"
+              />
               <RemoveButton
                 label="Remove language"
                 onRemove={this.handleRemove}
@@ -42,7 +39,7 @@ class TranscriptLanguage extends React.Component {
         </ul>
         <button
           type="button"
-          className="btn btn-light js-add-button"
+          className="btn btn-outline-primary js-add-button"
           onClick={() => fields.push({})}
         >
           Add language
