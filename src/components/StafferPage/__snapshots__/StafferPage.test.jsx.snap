@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateInstructorPage renders html correctly 1`] = `
+exports[`StafferPage renders html correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={Object {}}
-    instructorOptions={Object {}}
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={Object {}}
+    stafferOptions={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -29,7 +31,7 @@ ShallowWrapper {
           encodeSpecialCharacters={true}
         >
           <title>
-            Create a New Instructor
+            Create New Instructor
           </title>
         </HelmetWrapper>,
         <div
@@ -53,9 +55,10 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={Object {}}
+                    id="create-staffer-form"
+                    isCreateForm={true}
                     onSubmit={[Function]}
+                    stafferOptions={Object {}}
                   />
                   
                 </div>
@@ -73,7 +76,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <title>
-            Create a New Instructor
+            Create New Instructor
           </title>,
           "defer": true,
           "encodeSpecialCharacters": true,
@@ -84,10 +87,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Create a New Instructor",
+            "children": "Create New Instructor",
           },
           "ref": null,
-          "rendered": "Create a New Instructor",
+          "rendered": "Create New Instructor",
           "type": "title",
         },
         "type": [Function],
@@ -115,9 +118,10 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={Object {}}
+                    id="create-staffer-form"
+                    isCreateForm={true}
                     onSubmit={[Function]}
+                    stafferOptions={Object {}}
                   />
                   
                 </div>
@@ -147,9 +151,10 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={Object {}}
+                    id="create-staffer-form"
+                    isCreateForm={true}
                     onSubmit={[Function]}
+                    stafferOptions={Object {}}
                   />
                   
                 </div>
@@ -164,7 +169,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                undefined,
+                false,
                 <div>
                   <h2>
                     Create New Instructor
@@ -177,9 +182,10 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={Object {}}
+                      id="create-staffer-form"
+                      isCreateForm={true}
                       onSubmit={[Function]}
+                      stafferOptions={Object {}}
                     />
                     
                   </div>
@@ -189,7 +195,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              undefined,
+              false,
               Object {
                 "instance": null,
                 "key": undefined,
@@ -207,9 +213,10 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={Object {}}
+                        id="create-staffer-form"
+                        isCreateForm={true}
                         onSubmit={[Function]}
+                        stafferOptions={Object {}}
                       />
                       
                     </div>,
@@ -255,9 +262,10 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={Object {}}
+                          id="create-staffer-form"
+                          isCreateForm={true}
                           onSubmit={[Function]}
+                          stafferOptions={Object {}}
                         />,
                         undefined,
                         "",
@@ -271,10 +279,12 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
-                          "id": "create-instructor-form",
-                          "instructorOptions": Object {},
-                          "isCreating": undefined,
+                          "id": "create-staffer-form",
+                          "initialValues": undefined,
+                          "isCreateForm": true,
+                          "isSaving": undefined,
                           "onSubmit": [Function],
+                          "stafferOptions": Object {},
                         },
                         "ref": null,
                         "rendered": null,
@@ -310,7 +320,7 @@ ShallowWrapper {
             encodeSpecialCharacters={true}
           >
             <title>
-              Create a New Instructor
+              Create New Instructor
             </title>
           </HelmetWrapper>,
           <div
@@ -334,9 +344,10 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={Object {}}
+                      id="create-staffer-form"
+                      isCreateForm={true}
                       onSubmit={[Function]}
+                      stafferOptions={Object {}}
                     />
                     
                   </div>
@@ -354,7 +365,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <title>
-              Create a New Instructor
+              Create New Instructor
             </title>,
             "defer": true,
             "encodeSpecialCharacters": true,
@@ -365,10 +376,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a New Instructor",
+              "children": "Create New Instructor",
             },
             "ref": null,
-            "rendered": "Create a New Instructor",
+            "rendered": "Create New Instructor",
             "type": "title",
           },
           "type": [Function],
@@ -396,9 +407,10 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={Object {}}
+                      id="create-staffer-form"
+                      isCreateForm={true}
                       onSubmit={[Function]}
+                      stafferOptions={Object {}}
                     />
                     
                   </div>
@@ -428,9 +440,10 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={Object {}}
+                      id="create-staffer-form"
+                      isCreateForm={true}
                       onSubmit={[Function]}
+                      stafferOptions={Object {}}
                     />
                     
                   </div>
@@ -445,7 +458,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  undefined,
+                  false,
                   <div>
                     <h2>
                       Create New Instructor
@@ -458,9 +471,10 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={Object {}}
+                        id="create-staffer-form"
+                        isCreateForm={true}
                         onSubmit={[Function]}
+                        stafferOptions={Object {}}
                       />
                       
                     </div>
@@ -470,7 +484,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                undefined,
+                false,
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -488,9 +502,10 @@ ShallowWrapper {
                         className="col"
                       >
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={Object {}}
+                          id="create-staffer-form"
+                          isCreateForm={true}
                           onSubmit={[Function]}
+                          stafferOptions={Object {}}
                         />
                         
                       </div>,
@@ -536,9 +551,10 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           <ReduxForm
-                            id="create-instructor-form"
-                            instructorOptions={Object {}}
+                            id="create-staffer-form"
+                            isCreateForm={true}
                             onSubmit={[Function]}
+                            stafferOptions={Object {}}
                           />,
                           undefined,
                           "",
@@ -552,10 +568,12 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "class",
                           "props": Object {
-                            "id": "create-instructor-form",
-                            "instructorOptions": Object {},
-                            "isCreating": undefined,
+                            "id": "create-staffer-form",
+                            "initialValues": undefined,
+                            "isCreateForm": true,
+                            "isSaving": undefined,
                             "onSubmit": [Function],
+                            "stafferOptions": Object {},
                           },
                           "ref": null,
                           "rendered": null,
@@ -607,19 +625,21 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateInstructorPage renders page correctly while creating 1`] = `
+exports[`StafferPage renders page correctly while creating 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={
       Object {
         "error": null,
-        "isCreating": true,
+        "isSaving": true,
       }
     }
-    instructorOptions={
+    stafferOptions={
       Object {
         "data": Object {},
         "error": null,
@@ -647,7 +667,7 @@ ShallowWrapper {
           encodeSpecialCharacters={true}
         >
           <title>
-            Create a New Instructor
+            Create New Instructor
           </title>
         </HelmetWrapper>,
         <div
@@ -671,19 +691,20 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={true}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": null,
                         "isFetching": false,
                       }
                     }
-                    isCreating={true}
-                    onSubmit={[Function]}
                   />
                   <LoadingSpinner
-                    message="Creating Instructor"
+                    message="Saving instructor"
                   />
                   
                 </div>
@@ -701,7 +722,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <title>
-            Create a New Instructor
+            Create New Instructor
           </title>,
           "defer": true,
           "encodeSpecialCharacters": true,
@@ -712,10 +733,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Create a New Instructor",
+            "children": "Create New Instructor",
           },
           "ref": null,
-          "rendered": "Create a New Instructor",
+          "rendered": "Create New Instructor",
           "type": "title",
         },
         "type": [Function],
@@ -743,19 +764,20 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={true}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": null,
                         "isFetching": false,
                       }
                     }
-                    isCreating={true}
-                    onSubmit={[Function]}
                   />
                   <LoadingSpinner
-                    message="Creating Instructor"
+                    message="Saving instructor"
                   />
                   
                 </div>
@@ -785,19 +807,20 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={true}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": null,
                         "isFetching": false,
                       }
                     }
-                    isCreating={true}
-                    onSubmit={[Function]}
                   />
                   <LoadingSpinner
-                    message="Creating Instructor"
+                    message="Saving instructor"
                   />
                   
                 </div>
@@ -825,19 +848,20 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={true}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={true}
-                      onSubmit={[Function]}
                     />
                     <LoadingSpinner
-                      message="Creating Instructor"
+                      message="Saving instructor"
                     />
                     
                   </div>
@@ -865,19 +889,20 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={true}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": null,
                             "isFetching": false,
                           }
                         }
-                        isCreating={true}
-                        onSubmit={[Function]}
                       />
                       <LoadingSpinner
-                        message="Creating Instructor"
+                        message="Saving instructor"
                       />
                       
                     </div>,
@@ -923,19 +948,20 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={true}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": null,
                               "isFetching": false,
                             }
                           }
-                          isCreating={true}
-                          onSubmit={[Function]}
                         />,
                         <LoadingSpinner
-                          message="Creating Instructor"
+                          message="Saving instructor"
                         />,
                         "",
                       ],
@@ -948,14 +974,16 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
-                          "id": "create-instructor-form",
-                          "instructorOptions": Object {
+                          "id": "create-staffer-form",
+                          "initialValues": undefined,
+                          "isCreateForm": true,
+                          "isSaving": true,
+                          "onSubmit": [Function],
+                          "stafferOptions": Object {
                             "data": Object {},
                             "error": null,
                             "isFetching": false,
                           },
-                          "isCreating": true,
-                          "onSubmit": [Function],
                         },
                         "ref": null,
                         "rendered": null,
@@ -966,7 +994,7 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "function",
                         "props": Object {
-                          "message": "Creating Instructor",
+                          "message": "Saving instructor",
                         },
                         "ref": null,
                         "rendered": null,
@@ -1001,7 +1029,7 @@ ShallowWrapper {
             encodeSpecialCharacters={true}
           >
             <title>
-              Create a New Instructor
+              Create New Instructor
             </title>
           </HelmetWrapper>,
           <div
@@ -1025,19 +1053,20 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={true}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={true}
-                      onSubmit={[Function]}
                     />
                     <LoadingSpinner
-                      message="Creating Instructor"
+                      message="Saving instructor"
                     />
                     
                   </div>
@@ -1055,7 +1084,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <title>
-              Create a New Instructor
+              Create New Instructor
             </title>,
             "defer": true,
             "encodeSpecialCharacters": true,
@@ -1066,10 +1095,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a New Instructor",
+              "children": "Create New Instructor",
             },
             "ref": null,
-            "rendered": "Create a New Instructor",
+            "rendered": "Create New Instructor",
             "type": "title",
           },
           "type": [Function],
@@ -1097,19 +1126,20 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={true}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={true}
-                      onSubmit={[Function]}
                     />
                     <LoadingSpinner
-                      message="Creating Instructor"
+                      message="Saving instructor"
                     />
                     
                   </div>
@@ -1139,19 +1169,20 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={true}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={true}
-                      onSubmit={[Function]}
                     />
                     <LoadingSpinner
-                      message="Creating Instructor"
+                      message="Saving instructor"
                     />
                     
                   </div>
@@ -1179,19 +1210,20 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={true}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": null,
                             "isFetching": false,
                           }
                         }
-                        isCreating={true}
-                        onSubmit={[Function]}
                       />
                       <LoadingSpinner
-                        message="Creating Instructor"
+                        message="Saving instructor"
                       />
                       
                     </div>
@@ -1219,19 +1251,20 @@ ShallowWrapper {
                         className="col"
                       >
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={true}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": null,
                               "isFetching": false,
                             }
                           }
-                          isCreating={true}
-                          onSubmit={[Function]}
                         />
                         <LoadingSpinner
-                          message="Creating Instructor"
+                          message="Saving instructor"
                         />
                         
                       </div>,
@@ -1277,19 +1310,20 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           <ReduxForm
-                            id="create-instructor-form"
-                            instructorOptions={
+                            id="create-staffer-form"
+                            isCreateForm={true}
+                            isSaving={true}
+                            onSubmit={[Function]}
+                            stafferOptions={
                               Object {
                                 "data": Object {},
                                 "error": null,
                                 "isFetching": false,
                               }
                             }
-                            isCreating={true}
-                            onSubmit={[Function]}
                           />,
                           <LoadingSpinner
-                            message="Creating Instructor"
+                            message="Saving instructor"
                           />,
                           "",
                         ],
@@ -1302,14 +1336,16 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "class",
                           "props": Object {
-                            "id": "create-instructor-form",
-                            "instructorOptions": Object {
+                            "id": "create-staffer-form",
+                            "initialValues": undefined,
+                            "isCreateForm": true,
+                            "isSaving": true,
+                            "onSubmit": [Function],
+                            "stafferOptions": Object {
                               "data": Object {},
                               "error": null,
                               "isFetching": false,
                             },
-                            "isCreating": true,
-                            "onSubmit": [Function],
                           },
                           "ref": null,
                           "rendered": null,
@@ -1320,7 +1356,7 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "function",
                           "props": Object {
-                            "message": "Creating Instructor",
+                            "message": "Saving instructor",
                           },
                           "ref": null,
                           "rendered": null,
@@ -1371,19 +1407,21 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateInstructorPage renders page correctly while fetching 1`] = `
+exports[`StafferPage renders page correctly while fetching 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={
       Object {
         "error": null,
-        "isCreating": false,
+        "isSaving": false,
       }
     }
-    instructorOptions={
+    stafferOptions={
       Object {
         "data": Object {},
         "error": null,
@@ -1411,7 +1449,7 @@ ShallowWrapper {
           encodeSpecialCharacters={true}
         >
           <title>
-            Create a New Instructor
+            Create New Instructor
           </title>
         </HelmetWrapper>,
         <div
@@ -1439,7 +1477,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <title>
-            Create a New Instructor
+            Create New Instructor
           </title>,
           "defer": true,
           "encodeSpecialCharacters": true,
@@ -1450,10 +1488,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Create a New Instructor",
+            "children": "Create New Instructor",
           },
           "ref": null,
-          "rendered": "Create a New Instructor",
+          "rendered": "Create New Instructor",
           "type": "title",
         },
         "type": [Function],
@@ -1541,7 +1579,7 @@ ShallowWrapper {
             encodeSpecialCharacters={true}
           >
             <title>
-              Create a New Instructor
+              Create New Instructor
             </title>
           </HelmetWrapper>,
           <div
@@ -1569,7 +1607,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <title>
-              Create a New Instructor
+              Create New Instructor
             </title>,
             "defer": true,
             "encodeSpecialCharacters": true,
@@ -1580,10 +1618,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a New Instructor",
+              "children": "Create New Instructor",
             },
             "ref": null,
-            "rendered": "Create a New Instructor",
+            "rendered": "Create New Instructor",
             "type": "title",
           },
           "type": [Function],
@@ -1687,19 +1725,202 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateInstructorPage renders page correctly with instructor info error 1`] = `
+exports[`StafferPage renders page correctly with no stafferInfo 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={null}
+    stafferOptions={
       Object {
-        "error": "Fail",
-        "isCreating": false,
+        "data": Object {},
+        "error": null,
+        "isFetching": false,
       }
     }
-    instructorOptions={
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "alertType": "danger",
+      "className": Array [],
+      "dismissible": false,
+      "iconClassNames": Array [],
+      "id": "error",
+      "message": "Could not get instructor information",
+      "onClose": [Function],
+      "title": "Could not load page",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "alertType": "danger",
+        "className": Array [],
+        "dismissible": false,
+        "iconClassNames": Array [],
+        "id": "error",
+        "message": "Could not get instructor information",
+        "onClose": [Function],
+        "title": "Could not load page",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`StafferPage renders page correctly with no stafferOptions 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={
+      Object {
+        "error": null,
+        "isSaving": false,
+      }
+    }
+    stafferOptions={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "alertType": "danger",
+      "className": Array [],
+      "dismissible": false,
+      "iconClassNames": Array [],
+      "id": "error",
+      "message": "Could not get instructor information",
+      "onClose": [Function],
+      "title": "Could not load page",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "alertType": "danger",
+        "className": Array [],
+        "dismissible": false,
+        "iconClassNames": Array [],
+        "id": "error",
+        "message": "Could not get instructor information",
+        "onClose": [Function],
+        "title": "Could not load page",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`StafferPage renders page correctly with staffer info error 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={
+      Object {
+        "error": "Fail",
+        "isSaving": false,
+      }
+    }
+    stafferOptions={
       Object {
         "data": Object {},
         "error": null,
@@ -1727,7 +1948,7 @@ ShallowWrapper {
           encodeSpecialCharacters={true}
         >
           <title>
-            Create a New Instructor
+            Create New Instructor
           </title>
         </HelmetWrapper>,
         <div
@@ -1751,26 +1972,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": null,
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -1787,7 +2009,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <title>
-            Create a New Instructor
+            Create New Instructor
           </title>,
           "defer": true,
           "encodeSpecialCharacters": true,
@@ -1798,10 +2020,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Create a New Instructor",
+            "children": "Create New Instructor",
           },
           "ref": null,
-          "rendered": "Create a New Instructor",
+          "rendered": "Create New Instructor",
           "type": "title",
         },
         "type": [Function],
@@ -1829,26 +2051,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": null,
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -1877,26 +2100,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": null,
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -1923,26 +2147,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>,
@@ -1969,26 +2194,27 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={false}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": null,
                             "isFetching": false,
                           }
                         }
-                        isCreating={false}
-                        onSubmit={[Function]}
                       />
                       <StatusAlert
                         alertType="danger"
                         className={Array []}
                         dismissible={false}
                         iconClassNames={Array []}
-                        id="create-instructor-error"
+                        id="create-staffer-error"
                         message="Fail"
                         onClose={[Function]}
-                        title="Instructor creation received an error: "
+                        title="Could not save instructor"
                       />
                     </div>,
                   ],
@@ -2033,16 +2259,17 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={false}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": null,
                               "isFetching": false,
                             }
                           }
-                          isCreating={false}
-                          onSubmit={[Function]}
                         />,
                         false,
                         <StatusAlert
@@ -2050,10 +2277,10 @@ ShallowWrapper {
                           className={Array []}
                           dismissible={false}
                           iconClassNames={Array []}
-                          id="create-instructor-error"
+                          id="create-staffer-error"
                           message="Fail"
                           onClose={[Function]}
-                          title="Instructor creation received an error: "
+                          title="Could not save instructor"
                         />,
                       ],
                       "className": "col",
@@ -2065,14 +2292,16 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
-                          "id": "create-instructor-form",
-                          "instructorOptions": Object {
+                          "id": "create-staffer-form",
+                          "initialValues": undefined,
+                          "isCreateForm": true,
+                          "isSaving": false,
+                          "onSubmit": [Function],
+                          "stafferOptions": Object {
                             "data": Object {},
                             "error": null,
                             "isFetching": false,
                           },
-                          "isCreating": false,
-                          "onSubmit": [Function],
                         },
                         "ref": null,
                         "rendered": null,
@@ -2088,10 +2317,10 @@ ShallowWrapper {
                           "className": Array [],
                           "dismissible": false,
                           "iconClassNames": Array [],
-                          "id": "create-instructor-error",
+                          "id": "create-staffer-error",
                           "message": "Fail",
                           "onClose": [Function],
-                          "title": "Instructor creation received an error: ",
+                          "title": "Could not save instructor",
                         },
                         "ref": null,
                         "rendered": null,
@@ -2125,7 +2354,7 @@ ShallowWrapper {
             encodeSpecialCharacters={true}
           >
             <title>
-              Create a New Instructor
+              Create New Instructor
             </title>
           </HelmetWrapper>,
           <div
@@ -2149,26 +2378,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -2185,7 +2415,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <title>
-              Create a New Instructor
+              Create New Instructor
             </title>,
             "defer": true,
             "encodeSpecialCharacters": true,
@@ -2196,10 +2426,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a New Instructor",
+              "children": "Create New Instructor",
             },
             "ref": null,
-            "rendered": "Create a New Instructor",
+            "rendered": "Create New Instructor",
             "type": "title",
           },
           "type": [Function],
@@ -2227,26 +2457,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -2275,26 +2506,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": null,
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -2321,26 +2553,27 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={false}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": null,
                             "isFetching": false,
                           }
                         }
-                        isCreating={false}
-                        onSubmit={[Function]}
                       />
                       <StatusAlert
                         alertType="danger"
                         className={Array []}
                         dismissible={false}
                         iconClassNames={Array []}
-                        id="create-instructor-error"
+                        id="create-staffer-error"
                         message="Fail"
                         onClose={[Function]}
-                        title="Instructor creation received an error: "
+                        title="Could not save instructor"
                       />
                     </div>
                   </div>,
@@ -2367,26 +2600,27 @@ ShallowWrapper {
                         className="col"
                       >
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={false}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": null,
                               "isFetching": false,
                             }
                           }
-                          isCreating={false}
-                          onSubmit={[Function]}
                         />
                         <StatusAlert
                           alertType="danger"
                           className={Array []}
                           dismissible={false}
                           iconClassNames={Array []}
-                          id="create-instructor-error"
+                          id="create-staffer-error"
                           message="Fail"
                           onClose={[Function]}
-                          title="Instructor creation received an error: "
+                          title="Could not save instructor"
                         />
                       </div>,
                     ],
@@ -2431,16 +2665,17 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           <ReduxForm
-                            id="create-instructor-form"
-                            instructorOptions={
+                            id="create-staffer-form"
+                            isCreateForm={true}
+                            isSaving={false}
+                            onSubmit={[Function]}
+                            stafferOptions={
                               Object {
                                 "data": Object {},
                                 "error": null,
                                 "isFetching": false,
                               }
                             }
-                            isCreating={false}
-                            onSubmit={[Function]}
                           />,
                           false,
                           <StatusAlert
@@ -2448,10 +2683,10 @@ ShallowWrapper {
                             className={Array []}
                             dismissible={false}
                             iconClassNames={Array []}
-                            id="create-instructor-error"
+                            id="create-staffer-error"
                             message="Fail"
                             onClose={[Function]}
-                            title="Instructor creation received an error: "
+                            title="Could not save instructor"
                           />,
                         ],
                         "className": "col",
@@ -2463,14 +2698,16 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "class",
                           "props": Object {
-                            "id": "create-instructor-form",
-                            "instructorOptions": Object {
+                            "id": "create-staffer-form",
+                            "initialValues": undefined,
+                            "isCreateForm": true,
+                            "isSaving": false,
+                            "onSubmit": [Function],
+                            "stafferOptions": Object {
                               "data": Object {},
                               "error": null,
                               "isFetching": false,
                             },
-                            "isCreating": false,
-                            "onSubmit": [Function],
                           },
                           "ref": null,
                           "rendered": null,
@@ -2486,10 +2723,10 @@ ShallowWrapper {
                             "className": Array [],
                             "dismissible": false,
                             "iconClassNames": Array [],
-                            "id": "create-instructor-error",
+                            "id": "create-staffer-error",
                             "message": "Fail",
                             "onClose": [Function],
-                            "title": "Instructor creation received an error: ",
+                            "title": "Could not save instructor",
                           },
                           "ref": null,
                           "rendered": null,
@@ -2539,19 +2776,21 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateInstructorPage renders page correctly with instructor info error and instructor options error 1`] = `
+exports[`StafferPage renders page correctly with staffer info error and staffer options error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={
       Object {
         "error": "Fail here too",
-        "isCreating": false,
+        "isSaving": false,
       }
     }
-    instructorOptions={
+    stafferOptions={
       Object {
         "data": Object {},
         "error": "Fail",
@@ -2579,7 +2818,7 @@ ShallowWrapper {
           encodeSpecialCharacters={true}
         >
           <title>
-            Create a New Instructor
+            Create New Instructor
           </title>
         </HelmetWrapper>,
         <div
@@ -2603,26 +2842,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": "Fail",
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail here too Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -2639,7 +2879,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <title>
-            Create a New Instructor
+            Create New Instructor
           </title>,
           "defer": true,
           "encodeSpecialCharacters": true,
@@ -2650,10 +2890,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Create a New Instructor",
+            "children": "Create New Instructor",
           },
           "ref": null,
-          "rendered": "Create a New Instructor",
+          "rendered": "Create New Instructor",
           "type": "title",
         },
         "type": [Function],
@@ -2681,26 +2921,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": "Fail",
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail here too Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -2729,26 +2970,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": "Fail",
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail here too Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -2775,26 +3017,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail here too Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>,
@@ -2821,26 +3064,27 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={false}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": "Fail",
                             "isFetching": false,
                           }
                         }
-                        isCreating={false}
-                        onSubmit={[Function]}
                       />
                       <StatusAlert
                         alertType="danger"
                         className={Array []}
                         dismissible={false}
                         iconClassNames={Array []}
-                        id="create-instructor-error"
+                        id="create-staffer-error"
                         message="Fail here too Fail"
                         onClose={[Function]}
-                        title="Instructor creation received an error: "
+                        title="Could not save instructor"
                       />
                     </div>,
                   ],
@@ -2885,16 +3129,17 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={false}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": "Fail",
                               "isFetching": false,
                             }
                           }
-                          isCreating={false}
-                          onSubmit={[Function]}
                         />,
                         false,
                         <StatusAlert
@@ -2902,10 +3147,10 @@ ShallowWrapper {
                           className={Array []}
                           dismissible={false}
                           iconClassNames={Array []}
-                          id="create-instructor-error"
+                          id="create-staffer-error"
                           message="Fail here too Fail"
                           onClose={[Function]}
-                          title="Instructor creation received an error: "
+                          title="Could not save instructor"
                         />,
                       ],
                       "className": "col",
@@ -2917,14 +3162,16 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
-                          "id": "create-instructor-form",
-                          "instructorOptions": Object {
+                          "id": "create-staffer-form",
+                          "initialValues": undefined,
+                          "isCreateForm": true,
+                          "isSaving": false,
+                          "onSubmit": [Function],
+                          "stafferOptions": Object {
                             "data": Object {},
                             "error": "Fail",
                             "isFetching": false,
                           },
-                          "isCreating": false,
-                          "onSubmit": [Function],
                         },
                         "ref": null,
                         "rendered": null,
@@ -2940,10 +3187,10 @@ ShallowWrapper {
                           "className": Array [],
                           "dismissible": false,
                           "iconClassNames": Array [],
-                          "id": "create-instructor-error",
+                          "id": "create-staffer-error",
                           "message": "Fail here too Fail",
                           "onClose": [Function],
-                          "title": "Instructor creation received an error: ",
+                          "title": "Could not save instructor",
                         },
                         "ref": null,
                         "rendered": null,
@@ -2977,7 +3224,7 @@ ShallowWrapper {
             encodeSpecialCharacters={true}
           >
             <title>
-              Create a New Instructor
+              Create New Instructor
             </title>
           </HelmetWrapper>,
           <div
@@ -3001,26 +3248,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail here too Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -3037,7 +3285,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <title>
-              Create a New Instructor
+              Create New Instructor
             </title>,
             "defer": true,
             "encodeSpecialCharacters": true,
@@ -3048,10 +3296,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a New Instructor",
+              "children": "Create New Instructor",
             },
             "ref": null,
-            "rendered": "Create a New Instructor",
+            "rendered": "Create New Instructor",
             "type": "title",
           },
           "type": [Function],
@@ -3079,26 +3327,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail here too Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -3127,26 +3376,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail here too Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -3173,26 +3423,27 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={false}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": "Fail",
                             "isFetching": false,
                           }
                         }
-                        isCreating={false}
-                        onSubmit={[Function]}
                       />
                       <StatusAlert
                         alertType="danger"
                         className={Array []}
                         dismissible={false}
                         iconClassNames={Array []}
-                        id="create-instructor-error"
+                        id="create-staffer-error"
                         message="Fail here too Fail"
                         onClose={[Function]}
-                        title="Instructor creation received an error: "
+                        title="Could not save instructor"
                       />
                     </div>
                   </div>,
@@ -3219,26 +3470,27 @@ ShallowWrapper {
                         className="col"
                       >
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={false}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": "Fail",
                               "isFetching": false,
                             }
                           }
-                          isCreating={false}
-                          onSubmit={[Function]}
                         />
                         <StatusAlert
                           alertType="danger"
                           className={Array []}
                           dismissible={false}
                           iconClassNames={Array []}
-                          id="create-instructor-error"
+                          id="create-staffer-error"
                           message="Fail here too Fail"
                           onClose={[Function]}
-                          title="Instructor creation received an error: "
+                          title="Could not save instructor"
                         />
                       </div>,
                     ],
@@ -3283,16 +3535,17 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           <ReduxForm
-                            id="create-instructor-form"
-                            instructorOptions={
+                            id="create-staffer-form"
+                            isCreateForm={true}
+                            isSaving={false}
+                            onSubmit={[Function]}
+                            stafferOptions={
                               Object {
                                 "data": Object {},
                                 "error": "Fail",
                                 "isFetching": false,
                               }
                             }
-                            isCreating={false}
-                            onSubmit={[Function]}
                           />,
                           false,
                           <StatusAlert
@@ -3300,10 +3553,10 @@ ShallowWrapper {
                             className={Array []}
                             dismissible={false}
                             iconClassNames={Array []}
-                            id="create-instructor-error"
+                            id="create-staffer-error"
                             message="Fail here too Fail"
                             onClose={[Function]}
-                            title="Instructor creation received an error: "
+                            title="Could not save instructor"
                           />,
                         ],
                         "className": "col",
@@ -3315,14 +3568,16 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "class",
                           "props": Object {
-                            "id": "create-instructor-form",
-                            "instructorOptions": Object {
+                            "id": "create-staffer-form",
+                            "initialValues": undefined,
+                            "isCreateForm": true,
+                            "isSaving": false,
+                            "onSubmit": [Function],
+                            "stafferOptions": Object {
                               "data": Object {},
                               "error": "Fail",
                               "isFetching": false,
                             },
-                            "isCreating": false,
-                            "onSubmit": [Function],
                           },
                           "ref": null,
                           "rendered": null,
@@ -3338,10 +3593,10 @@ ShallowWrapper {
                             "className": Array [],
                             "dismissible": false,
                             "iconClassNames": Array [],
-                            "id": "create-instructor-error",
+                            "id": "create-staffer-error",
                             "message": "Fail here too Fail",
                             "onClose": [Function],
-                            "title": "Instructor creation received an error: ",
+                            "title": "Could not save instructor",
                           },
                           "ref": null,
                           "rendered": null,
@@ -3391,19 +3646,21 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateInstructorPage renders page correctly with instructor options error 1`] = `
+exports[`StafferPage renders page correctly with staffer options error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    stafferInfo={
       Object {
         "error": null,
-        "isCreating": false,
+        "isSaving": false,
       }
     }
-    instructorOptions={
+    stafferOptions={
       Object {
         "data": Object {},
         "error": "Fail",
@@ -3431,7 +3688,7 @@ ShallowWrapper {
           encodeSpecialCharacters={true}
         >
           <title>
-            Create a New Instructor
+            Create New Instructor
           </title>
         </HelmetWrapper>,
         <div
@@ -3455,26 +3712,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": "Fail",
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -3491,7 +3749,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <title>
-            Create a New Instructor
+            Create New Instructor
           </title>,
           "defer": true,
           "encodeSpecialCharacters": true,
@@ -3502,10 +3760,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Create a New Instructor",
+            "children": "Create New Instructor",
           },
           "ref": null,
-          "rendered": "Create a New Instructor",
+          "rendered": "Create New Instructor",
           "type": "title",
         },
         "type": [Function],
@@ -3533,26 +3791,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": "Fail",
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -3581,26 +3840,27 @@ ShallowWrapper {
                   className="col"
                 >
                   <ReduxForm
-                    id="create-instructor-form"
-                    instructorOptions={
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
                       Object {
                         "data": Object {},
                         "error": "Fail",
                         "isFetching": false,
                       }
                     }
-                    isCreating={false}
-                    onSubmit={[Function]}
                   />
                   <StatusAlert
                     alertType="danger"
                     className={Array []}
                     dismissible={false}
                     iconClassNames={Array []}
-                    id="create-instructor-error"
+                    id="create-staffer-error"
                     message="Fail"
                     onClose={[Function]}
-                    title="Instructor creation received an error: "
+                    title="Could not save instructor"
                   />
                 </div>
               </div>
@@ -3627,26 +3887,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>,
@@ -3673,26 +3934,27 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={false}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": "Fail",
                             "isFetching": false,
                           }
                         }
-                        isCreating={false}
-                        onSubmit={[Function]}
                       />
                       <StatusAlert
                         alertType="danger"
                         className={Array []}
                         dismissible={false}
                         iconClassNames={Array []}
-                        id="create-instructor-error"
+                        id="create-staffer-error"
                         message="Fail"
                         onClose={[Function]}
-                        title="Instructor creation received an error: "
+                        title="Could not save instructor"
                       />
                     </div>,
                   ],
@@ -3737,16 +3999,17 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={false}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": "Fail",
                               "isFetching": false,
                             }
                           }
-                          isCreating={false}
-                          onSubmit={[Function]}
                         />,
                         false,
                         <StatusAlert
@@ -3754,10 +4017,10 @@ ShallowWrapper {
                           className={Array []}
                           dismissible={false}
                           iconClassNames={Array []}
-                          id="create-instructor-error"
+                          id="create-staffer-error"
                           message="Fail"
                           onClose={[Function]}
-                          title="Instructor creation received an error: "
+                          title="Could not save instructor"
                         />,
                       ],
                       "className": "col",
@@ -3769,14 +4032,16 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
-                          "id": "create-instructor-form",
-                          "instructorOptions": Object {
+                          "id": "create-staffer-form",
+                          "initialValues": undefined,
+                          "isCreateForm": true,
+                          "isSaving": false,
+                          "onSubmit": [Function],
+                          "stafferOptions": Object {
                             "data": Object {},
                             "error": "Fail",
                             "isFetching": false,
                           },
-                          "isCreating": false,
-                          "onSubmit": [Function],
                         },
                         "ref": null,
                         "rendered": null,
@@ -3792,10 +4057,10 @@ ShallowWrapper {
                           "className": Array [],
                           "dismissible": false,
                           "iconClassNames": Array [],
-                          "id": "create-instructor-error",
+                          "id": "create-staffer-error",
                           "message": "Fail",
                           "onClose": [Function],
-                          "title": "Instructor creation received an error: ",
+                          "title": "Could not save instructor",
                         },
                         "ref": null,
                         "rendered": null,
@@ -3829,7 +4094,7 @@ ShallowWrapper {
             encodeSpecialCharacters={true}
           >
             <title>
-              Create a New Instructor
+              Create New Instructor
             </title>
           </HelmetWrapper>,
           <div
@@ -3853,26 +4118,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -3889,7 +4155,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <title>
-              Create a New Instructor
+              Create New Instructor
             </title>,
             "defer": true,
             "encodeSpecialCharacters": true,
@@ -3900,10 +4166,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Create a New Instructor",
+              "children": "Create New Instructor",
             },
             "ref": null,
-            "rendered": "Create a New Instructor",
+            "rendered": "Create New Instructor",
             "type": "title",
           },
           "type": [Function],
@@ -3931,26 +4197,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -3979,26 +4246,27 @@ ShallowWrapper {
                     className="col"
                   >
                     <ReduxForm
-                      id="create-instructor-form"
-                      instructorOptions={
+                      id="create-staffer-form"
+                      isCreateForm={true}
+                      isSaving={false}
+                      onSubmit={[Function]}
+                      stafferOptions={
                         Object {
                           "data": Object {},
                           "error": "Fail",
                           "isFetching": false,
                         }
                       }
-                      isCreating={false}
-                      onSubmit={[Function]}
                     />
                     <StatusAlert
                       alertType="danger"
                       className={Array []}
                       dismissible={false}
                       iconClassNames={Array []}
-                      id="create-instructor-error"
+                      id="create-staffer-error"
                       message="Fail"
                       onClose={[Function]}
-                      title="Instructor creation received an error: "
+                      title="Could not save instructor"
                     />
                   </div>
                 </div>
@@ -4025,26 +4293,27 @@ ShallowWrapper {
                       className="col"
                     >
                       <ReduxForm
-                        id="create-instructor-form"
-                        instructorOptions={
+                        id="create-staffer-form"
+                        isCreateForm={true}
+                        isSaving={false}
+                        onSubmit={[Function]}
+                        stafferOptions={
                           Object {
                             "data": Object {},
                             "error": "Fail",
                             "isFetching": false,
                           }
                         }
-                        isCreating={false}
-                        onSubmit={[Function]}
                       />
                       <StatusAlert
                         alertType="danger"
                         className={Array []}
                         dismissible={false}
                         iconClassNames={Array []}
-                        id="create-instructor-error"
+                        id="create-staffer-error"
                         message="Fail"
                         onClose={[Function]}
-                        title="Instructor creation received an error: "
+                        title="Could not save instructor"
                       />
                     </div>
                   </div>,
@@ -4071,26 +4340,27 @@ ShallowWrapper {
                         className="col"
                       >
                         <ReduxForm
-                          id="create-instructor-form"
-                          instructorOptions={
+                          id="create-staffer-form"
+                          isCreateForm={true}
+                          isSaving={false}
+                          onSubmit={[Function]}
+                          stafferOptions={
                             Object {
                               "data": Object {},
                               "error": "Fail",
                               "isFetching": false,
                             }
                           }
-                          isCreating={false}
-                          onSubmit={[Function]}
                         />
                         <StatusAlert
                           alertType="danger"
                           className={Array []}
                           dismissible={false}
                           iconClassNames={Array []}
-                          id="create-instructor-error"
+                          id="create-staffer-error"
                           message="Fail"
                           onClose={[Function]}
-                          title="Instructor creation received an error: "
+                          title="Could not save instructor"
                         />
                       </div>,
                     ],
@@ -4135,16 +4405,17 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           <ReduxForm
-                            id="create-instructor-form"
-                            instructorOptions={
+                            id="create-staffer-form"
+                            isCreateForm={true}
+                            isSaving={false}
+                            onSubmit={[Function]}
+                            stafferOptions={
                               Object {
                                 "data": Object {},
                                 "error": "Fail",
                                 "isFetching": false,
                               }
                             }
-                            isCreating={false}
-                            onSubmit={[Function]}
                           />,
                           false,
                           <StatusAlert
@@ -4152,10 +4423,10 @@ ShallowWrapper {
                             className={Array []}
                             dismissible={false}
                             iconClassNames={Array []}
-                            id="create-instructor-error"
+                            id="create-staffer-error"
                             message="Fail"
                             onClose={[Function]}
-                            title="Instructor creation received an error: "
+                            title="Could not save instructor"
                           />,
                         ],
                         "className": "col",
@@ -4167,14 +4438,16 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "class",
                           "props": Object {
-                            "id": "create-instructor-form",
-                            "instructorOptions": Object {
+                            "id": "create-staffer-form",
+                            "initialValues": undefined,
+                            "isCreateForm": true,
+                            "isSaving": false,
+                            "onSubmit": [Function],
+                            "stafferOptions": Object {
                               "data": Object {},
                               "error": "Fail",
                               "isFetching": false,
                             },
-                            "isCreating": false,
-                            "onSubmit": [Function],
                           },
                           "ref": null,
                           "rendered": null,
@@ -4190,10 +4463,10 @@ ShallowWrapper {
                             "className": Array [],
                             "dismissible": false,
                             "iconClassNames": Array [],
-                            "id": "create-instructor-error",
+                            "id": "create-staffer-error",
                             "message": "Fail",
                             "onClose": [Function],
-                            "title": "Instructor creation received an error: ",
+                            "title": "Could not save instructor",
                           },
                           "ref": null,
                           "rendered": null,
@@ -4214,183 +4487,6 @@ ShallowWrapper {
         },
       ],
       "type": Symbol(react.fragment),
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
-`;
-
-exports[`CreateInstructorPage renders page correctly with no instructorInfo 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={null}
-    instructorOptions={
-      Object {
-        "data": Object {},
-        "error": null,
-        "isFetching": false,
-      }
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "alertType": "danger",
-      "className": Array [],
-      "dismissible": false,
-      "iconClassNames": Array [],
-      "id": "error",
-      "message": "Instructor options information unavailable.",
-      "onClose": [Function],
-      "title": "Create Instructor Form failed to load: ",
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "alertType": "danger",
-        "className": Array [],
-        "dismissible": false,
-        "iconClassNames": Array [],
-        "id": "error",
-        "message": "Instructor options information unavailable.",
-        "onClose": [Function],
-        "title": "Create Instructor Form failed to load: ",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
-`;
-
-exports[`CreateInstructorPage renders page correctly with no instructorOptions 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CreateInstructorPage
-    createInstructor={[Function]}
-    fetchInstructorOptions={[Function]}
-    instructorInfo={
-      Object {
-        "error": null,
-        "isCreating": false,
-      }
-    }
-    instructorOptions={null}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "alertType": "danger",
-      "className": Array [],
-      "dismissible": false,
-      "iconClassNames": Array [],
-      "id": "error",
-      "message": "Instructor options information unavailable.",
-      "onClose": [Function],
-      "title": "Create Instructor Form failed to load: ",
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "alertType": "danger",
-        "className": Array [],
-        "dismissible": false,
-        "iconClassNames": Array [],
-        "id": "error",
-        "message": "Instructor options information unavailable.",
-        "onClose": [Function],
-        "title": "Create Instructor Form failed to load: ",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

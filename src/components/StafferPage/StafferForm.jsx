@@ -15,8 +15,8 @@ import store from '../../data/store';
 
 const basicValidate = value => (value ? undefined : 'This field is required');
 
-const extractOrgChoices = (instructorOptions) => {
-  const { data = {} } = instructorOptions;
+const extractOrgChoices = (stafferOptions) => {
+  const { data = {} } = stafferOptions;
 
   if (!data.actions) {
     return [];
@@ -29,22 +29,23 @@ const extractOrgChoices = (instructorOptions) => {
     .map(choice => ({ label: choice.display_name, value: choice.value })));
 };
 
-const BaseCreateInstructorForm = ({
+const BaseStafferForm = ({
   handleSubmit,
   pristine,
   submitting,
-  isCreating,
-  instructorOptions,
+  isSaving,
+  isCreateForm,
+  stafferOptions,
 }) => {
-  const formControlDisabled = pristine || submitting || isCreating;
+  const formControlDisabled = pristine || submitting || isSaving;
 
   return (
     <React.Fragment>
-      <div className="create-instructor-form row">
+      <div className="create-staffer-form row">
         <div className="col">
           <form onSubmit={handleSubmit}>
             <Field
-              name="image"
+              name="profile_image.medium.url"
               component={ImageUpload}
               label={
                 <React.Fragment>
@@ -52,11 +53,11 @@ const BaseCreateInstructorForm = ({
                   <span className="required" aria-hidden>*</span>
                 </React.Fragment>
               }
-              id="image"
-              required
+              id="profile_image"
+              required={isCreateForm}
             />
             <Field
-              name="firstName"
+              name="given_name"
               component={RenderInputTextField}
               type="text"
               label={
@@ -68,7 +69,7 @@ const BaseCreateInstructorForm = ({
               required
             />
             <Field
-              name="lastName"
+              name="family_name"
               component={RenderInputTextField}
               type="text"
               label={
@@ -80,7 +81,7 @@ const BaseCreateInstructorForm = ({
               required
             />
             <Field
-              name="title"
+              name="position.title"
               component={RenderInputTextField}
               type="text"
               label={
@@ -92,9 +93,9 @@ const BaseCreateInstructorForm = ({
               required
             />
             <Field
-              name="organization"
+              name="position.organization_id"
               component={RenderSelectField}
-              options={extractOrgChoices(instructorOptions)}
+              options={extractOrgChoices(stafferOptions)}
               label={
                 <React.Fragment>
                   Organization
@@ -117,7 +118,7 @@ const BaseCreateInstructorForm = ({
               id="bio"
             />
             <Field
-              name="majorWorks"
+              name="major_works"
               component={RichEditor}
               label={
                 <React.Fragment>
@@ -128,11 +129,11 @@ const BaseCreateInstructorForm = ({
               id="works"
             />
             <FieldArray
-              name="socialLinks"
+              name="urls_detailed"
               component={SocialLinks}
             />
             <FieldArray
-              name="areasOfExpertise"
+              name="areas_of_expertise"
               component={AreasOfExpertise}
             />
             <div className="row justify-content-end">
@@ -157,22 +158,26 @@ const BaseCreateInstructorForm = ({
   );
 };
 
-BaseCreateInstructorForm.propTypes = {
+BaseStafferForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   pristine: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
-  instructorOptions: PropTypes.shape({
+  stafferOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.string,
     isFetching: PropTypes.bool,
   }),
-  isCreating: PropTypes.bool,
+  isSaving: PropTypes.bool,
+  isCreateForm: PropTypes.bool,
 };
 
-BaseCreateInstructorForm.defaultProps = {
-  instructorOptions: {},
-  isCreating: false,
+BaseStafferForm.defaultProps = {
+  stafferOptions: {},
+  isSaving: false,
+  isCreateForm: false,
 };
 
-const CreateInstructorForm = reduxForm({ form: 'create-instructor-form' })(BaseCreateInstructorForm);
-export { basicValidate, extractOrgChoices, BaseCreateInstructorForm, CreateInstructorForm };
+export default reduxForm({
+  form: 'create-staffer-form',
+})(BaseStafferForm);
+export { basicValidate, extractOrgChoices, BaseStafferForm };

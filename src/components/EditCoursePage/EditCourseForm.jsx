@@ -305,7 +305,7 @@ const EditCourseForm = compose(
     form: props.id,
   })),
   reduxForm({
-    destroyOnUnmount: false, // Keep the form state in redux when editing / creating instructors
+    destroyOnUnmount: false, // Keep the form state in redux when editing / creating staffers
   }),
 )(BaseEditCourseForm);
 

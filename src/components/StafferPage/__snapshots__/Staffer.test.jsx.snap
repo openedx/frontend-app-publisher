@@ -1,38 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateInstructorForm renders html correctly 1`] = `
+exports[`StafferForm renders correctly with staffer info 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BaseCreateInstructorForm
+  Symbol(enzyme.__unrendered__): <BaseStafferForm
     handleSubmit={[Function]}
-    instructorOptions={
-      Object {
-        "data": Object {
-          "actions": Object {
-            "POST": Object {
-              "position": Object {
-                "children": Object {
-                  "organization": Object {
-                    "choices": Array [
-                      Object {
-                        "display_name": "edX",
-                        "value": 1,
-                      },
-                      Object {
-                        "display_name": "bananasX",
-                        "value": 2,
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          },
-        },
-      }
-    }
-    isCreating={false}
+    isCreateForm={false}
+    isSaving={false}
     pristine={true}
+    stafferInfo={
+      Object {
+        "data": Object {
+          "areas_of_expertise": Array [
+            Object {
+              "id": 10,
+              "value": "Experting",
+            },
+          ],
+          "bio": "<p><strong>b</strong>io<i>grapizing</i></p>",
+          "email": null,
+          "family_name": "er",
+          "given_name": "staff",
+          "major_works": "<p><em>Workings</em></p>",
+          "position": Object {
+            "organization_id": 1,
+            "organization_marketing_url": null,
+            "organization_name": "",
+            "organization_override": null,
+            "title": "señor",
+          },
+          "profile_image": Object {
+            "medium": Object {
+              "height": 110,
+              "url": "http://localhost:18381/media/media/people/profile_images/14d7368b-51dc-42de-9952-0870bcd1f5f1-1ffe0424ec10.medium.jpeg",
+              "width": 110,
+            },
+          },
+          "profile_image_url": "http://localhost:18381/media/media/people/profile_images/14d7368b-51dc-42de-9952-0870bcd1f5f1-1ffe0424ec10.jpeg",
+          "published": true,
+          "salutation": null,
+          "slug": "staff-er",
+          "urls": Object {
+            "blog": null,
+            "facebook": null,
+            "twitter": null,
+          },
+          "urls_detailed": Array [
+            Object {
+              "display_title": "Github",
+              "id": 10,
+              "title": "Github",
+              "type": "others",
+              "url": "https://github.com/edx",
+            },
+          ],
+          "uuid": "14d7368b-51dc-42de-9952-0870bcd1f5f1",
+          "works": Array [],
+        },
+        "error": null,
+        "isFetching": false,
+        "isSaving": false,
+      }
+    }
+    stafferOptions={
+      Object {
+        "data": Object {
+          "actions": Object {
+            "POST": Object {
+              "position": Object {
+                "children": Object {
+                  "organization": Object {
+                    "choices": Array [
+                      Object {
+                        "display_name": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "display_name": "bananasX",
+                        "value": 2,
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
+        },
+      }
+    }
     submitting={false}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -50,7 +105,7 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": <div
-        className="create-instructor-form row"
+        className="create-staffer-form row"
       >
         <div
           className="col"
@@ -60,7 +115,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -72,8 +127,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -88,7 +143,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -105,7 +160,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -122,7 +177,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -139,7 +194,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -185,15 +240,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -237,7 +292,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -249,8 +304,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -265,7 +320,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -282,7 +337,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -299,7 +354,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -316,7 +371,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -362,15 +417,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -398,7 +453,7 @@ ShallowWrapper {
             </div>
           </form>
         </div>,
-        "className": "create-instructor-form row",
+        "className": "create-staffer-form row",
       },
       "ref": null,
       "rendered": Object {
@@ -411,7 +466,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -423,8 +478,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -439,7 +494,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -456,7 +511,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -473,7 +528,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -490,7 +545,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -536,15 +591,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -582,7 +637,7 @@ ShallowWrapper {
             "children": Array [
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -594,8 +649,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />,
               <Field
                 component={[Function]}
@@ -610,7 +665,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />,
@@ -627,7 +682,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />,
@@ -644,7 +699,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />,
@@ -661,7 +716,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -707,15 +762,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />,
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />,
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />,
               <div
                 className="row justify-content-end"
@@ -752,7 +807,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "id": "image",
+                "id": "profile_image",
                 "label": <React.Fragment>
                   Image:
                   <span
@@ -762,8 +817,8 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "image",
-                "required": true,
+                "name": "profile_image.medium.url",
+                "required": false,
               },
               "ref": null,
               "rendered": null,
@@ -784,7 +839,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "firstName",
+                "name": "given_name",
                 "required": true,
                 "type": "text",
               },
@@ -807,7 +862,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "lastName",
+                "name": "family_name",
                 "required": true,
                 "type": "text",
               },
@@ -830,7 +885,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "title",
+                "name": "position.title",
                 "required": true,
                 "type": "text",
               },
@@ -853,7 +908,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "organization",
+                "name": "position.organization_id",
                 "options": Array [
                   Object {
                     "label": "Select instructor organization",
@@ -909,7 +964,7 @@ ShallowWrapper {
                   Major works (optional)
                 </React.Fragment>,
                 "maxChars": 250,
-                "name": "majorWorks",
+                "name": "major_works",
               },
               "ref": null,
               "rendered": null,
@@ -921,7 +976,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "name": "socialLinks",
+                "name": "urls_detailed",
               },
               "ref": null,
               "rendered": null,
@@ -933,7 +988,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "name": "areasOfExpertise",
+                "name": "areas_of_expertise",
               },
               "ref": null,
               "rendered": null,
@@ -1021,7 +1076,7 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": <div
-          className="create-instructor-form row"
+          className="create-staffer-form row"
         >
           <div
             className="col"
@@ -1031,7 +1086,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -1043,8 +1098,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -1059,7 +1114,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -1076,7 +1131,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -1093,7 +1148,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -1110,7 +1165,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -1156,15 +1211,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -1208,7 +1263,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -1220,8 +1275,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -1236,7 +1291,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -1253,7 +1308,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -1270,7 +1325,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -1287,7 +1342,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -1333,15 +1388,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -1369,7 +1424,7 @@ ShallowWrapper {
               </div>
             </form>
           </div>,
-          "className": "create-instructor-form row",
+          "className": "create-staffer-form row",
         },
         "ref": null,
         "rendered": Object {
@@ -1382,7 +1437,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -1394,8 +1449,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -1410,7 +1465,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -1427,7 +1482,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -1444,7 +1499,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -1461,7 +1516,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -1507,15 +1562,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -1553,7 +1608,7 @@ ShallowWrapper {
               "children": Array [
                 <Field
                   component={[Function]}
-                  id="image"
+                  id="profile_image"
                   label={
                     <React.Fragment>
                       Image:
@@ -1565,8 +1620,8 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="image"
-                  required={true}
+                  name="profile_image.medium.url"
+                  required={false}
                 />,
                 <Field
                   component={[Function]}
@@ -1581,7 +1636,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="firstName"
+                  name="given_name"
                   required={true}
                   type="text"
                 />,
@@ -1598,7 +1653,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="lastName"
+                  name="family_name"
                   required={true}
                   type="text"
                 />,
@@ -1615,7 +1670,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="title"
+                  name="position.title"
                   required={true}
                   type="text"
                 />,
@@ -1632,7 +1687,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="organization"
+                  name="position.organization_id"
                   options={
                     Array [
                       Object {
@@ -1678,15 +1733,15 @@ ShallowWrapper {
                     </React.Fragment>
                   }
                   maxChars={250}
-                  name="majorWorks"
+                  name="major_works"
                 />,
                 <FieldArray
                   component={[Function]}
-                  name="socialLinks"
+                  name="urls_detailed"
                 />,
                 <FieldArray
                   component={[Function]}
-                  name="areasOfExpertise"
+                  name="areas_of_expertise"
                 />,
                 <div
                   className="row justify-content-end"
@@ -1723,7 +1778,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "id": "image",
+                  "id": "profile_image",
                   "label": <React.Fragment>
                     Image:
                     <span
@@ -1733,8 +1788,8 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "image",
-                  "required": true,
+                  "name": "profile_image.medium.url",
+                  "required": false,
                 },
                 "ref": null,
                 "rendered": null,
@@ -1755,7 +1810,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "firstName",
+                  "name": "given_name",
                   "required": true,
                   "type": "text",
                 },
@@ -1778,7 +1833,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "lastName",
+                  "name": "family_name",
                   "required": true,
                   "type": "text",
                 },
@@ -1801,7 +1856,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "title",
+                  "name": "position.title",
                   "required": true,
                   "type": "text",
                 },
@@ -1824,7 +1879,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "organization",
+                  "name": "position.organization_id",
                   "options": Array [
                     Object {
                       "label": "Select instructor organization",
@@ -1880,7 +1935,7 @@ ShallowWrapper {
                     Major works (optional)
                   </React.Fragment>,
                   "maxChars": 250,
-                  "name": "majorWorks",
+                  "name": "major_works",
                 },
                 "ref": null,
                 "rendered": null,
@@ -1892,7 +1947,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "name": "socialLinks",
+                  "name": "urls_detailed",
                 },
                 "ref": null,
                 "rendered": null,
@@ -1904,7 +1959,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "name": "areasOfExpertise",
+                  "name": "areas_of_expertise",
                 },
                 "ref": null,
                 "rendered": null,
@@ -2012,12 +2067,15 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateInstructorForm renders html correctly when creating 1`] = `
+exports[`StafferForm renders html correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BaseCreateInstructorForm
+  Symbol(enzyme.__unrendered__): <BaseStafferForm
     handleSubmit={[Function]}
-    instructorOptions={
+    isCreateForm={false}
+    isSaving={false}
+    pristine={true}
+    stafferOptions={
       Object {
         "data": Object {
           "actions": Object {
@@ -2043,8 +2101,6 @@ ShallowWrapper {
         },
       }
     }
-    isCreating={true}
-    pristine={false}
     submitting={false}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -2062,7 +2118,7 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": <div
-        className="create-instructor-form row"
+        className="create-staffer-form row"
       >
         <div
           className="col"
@@ -2072,7 +2128,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -2084,8 +2140,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -2100,7 +2156,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -2117,7 +2173,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -2134,7 +2190,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -2151,7 +2207,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -2197,15 +2253,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -2249,7 +2305,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -2261,8 +2317,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -2277,7 +2333,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -2294,7 +2350,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -2311,7 +2367,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -2328,7 +2384,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -2374,15 +2430,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -2410,7 +2466,7 @@ ShallowWrapper {
             </div>
           </form>
         </div>,
-        "className": "create-instructor-form row",
+        "className": "create-staffer-form row",
       },
       "ref": null,
       "rendered": Object {
@@ -2423,7 +2479,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -2435,8 +2491,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -2451,7 +2507,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -2468,7 +2524,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -2485,7 +2541,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -2502,7 +2558,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -2548,15 +2604,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -2594,7 +2650,7 @@ ShallowWrapper {
             "children": Array [
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -2606,8 +2662,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />,
               <Field
                 component={[Function]}
@@ -2622,7 +2678,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />,
@@ -2639,7 +2695,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />,
@@ -2656,7 +2712,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />,
@@ -2673,7 +2729,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -2719,15 +2775,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />,
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />,
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />,
               <div
                 className="row justify-content-end"
@@ -2764,7 +2820,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "id": "image",
+                "id": "profile_image",
                 "label": <React.Fragment>
                   Image:
                   <span
@@ -2774,8 +2830,8 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "image",
-                "required": true,
+                "name": "profile_image.medium.url",
+                "required": false,
               },
               "ref": null,
               "rendered": null,
@@ -2796,7 +2852,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "firstName",
+                "name": "given_name",
                 "required": true,
                 "type": "text",
               },
@@ -2819,7 +2875,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "lastName",
+                "name": "family_name",
                 "required": true,
                 "type": "text",
               },
@@ -2842,7 +2898,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "title",
+                "name": "position.title",
                 "required": true,
                 "type": "text",
               },
@@ -2865,7 +2921,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "organization",
+                "name": "position.organization_id",
                 "options": Array [
                   Object {
                     "label": "Select instructor organization",
@@ -2921,7 +2977,7 @@ ShallowWrapper {
                   Major works (optional)
                 </React.Fragment>,
                 "maxChars": 250,
-                "name": "majorWorks",
+                "name": "major_works",
               },
               "ref": null,
               "rendered": null,
@@ -2933,7 +2989,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "name": "socialLinks",
+                "name": "urls_detailed",
               },
               "ref": null,
               "rendered": null,
@@ -2945,7 +3001,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "name": "areasOfExpertise",
+                "name": "areas_of_expertise",
               },
               "ref": null,
               "rendered": null,
@@ -3033,7 +3089,7 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": <div
-          className="create-instructor-form row"
+          className="create-staffer-form row"
         >
           <div
             className="col"
@@ -3043,7 +3099,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -3055,8 +3111,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -3071,7 +3127,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -3088,7 +3144,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -3105,7 +3161,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -3122,7 +3178,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -3168,15 +3224,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -3220,7 +3276,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -3232,8 +3288,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -3248,7 +3304,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -3265,7 +3321,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -3282,7 +3338,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -3299,7 +3355,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -3345,15 +3401,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -3381,7 +3437,7 @@ ShallowWrapper {
               </div>
             </form>
           </div>,
-          "className": "create-instructor-form row",
+          "className": "create-staffer-form row",
         },
         "ref": null,
         "rendered": Object {
@@ -3394,7 +3450,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -3406,8 +3462,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -3422,7 +3478,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -3439,7 +3495,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -3456,7 +3512,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -3473,7 +3529,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -3519,15 +3575,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -3565,7 +3621,7 @@ ShallowWrapper {
               "children": Array [
                 <Field
                   component={[Function]}
-                  id="image"
+                  id="profile_image"
                   label={
                     <React.Fragment>
                       Image:
@@ -3577,8 +3633,8 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="image"
-                  required={true}
+                  name="profile_image.medium.url"
+                  required={false}
                 />,
                 <Field
                   component={[Function]}
@@ -3593,7 +3649,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="firstName"
+                  name="given_name"
                   required={true}
                   type="text"
                 />,
@@ -3610,7 +3666,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="lastName"
+                  name="family_name"
                   required={true}
                   type="text"
                 />,
@@ -3627,7 +3683,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="title"
+                  name="position.title"
                   required={true}
                   type="text"
                 />,
@@ -3644,7 +3700,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="organization"
+                  name="position.organization_id"
                   options={
                     Array [
                       Object {
@@ -3690,15 +3746,15 @@ ShallowWrapper {
                     </React.Fragment>
                   }
                   maxChars={250}
-                  name="majorWorks"
+                  name="major_works"
                 />,
                 <FieldArray
                   component={[Function]}
-                  name="socialLinks"
+                  name="urls_detailed"
                 />,
                 <FieldArray
                   component={[Function]}
-                  name="areasOfExpertise"
+                  name="areas_of_expertise"
                 />,
                 <div
                   className="row justify-content-end"
@@ -3735,7 +3791,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "id": "image",
+                  "id": "profile_image",
                   "label": <React.Fragment>
                     Image:
                     <span
@@ -3745,8 +3801,8 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "image",
-                  "required": true,
+                  "name": "profile_image.medium.url",
+                  "required": false,
                 },
                 "ref": null,
                 "rendered": null,
@@ -3767,7 +3823,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "firstName",
+                  "name": "given_name",
                   "required": true,
                   "type": "text",
                 },
@@ -3790,7 +3846,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "lastName",
+                  "name": "family_name",
                   "required": true,
                   "type": "text",
                 },
@@ -3813,7 +3869,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "title",
+                  "name": "position.title",
                   "required": true,
                   "type": "text",
                 },
@@ -3836,7 +3892,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "organization",
+                  "name": "position.organization_id",
                   "options": Array [
                     Object {
                       "label": "Select instructor organization",
@@ -3892,7 +3948,7 @@ ShallowWrapper {
                     Major works (optional)
                   </React.Fragment>,
                   "maxChars": 250,
-                  "name": "majorWorks",
+                  "name": "major_works",
                 },
                 "ref": null,
                 "rendered": null,
@@ -3904,7 +3960,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "name": "socialLinks",
+                  "name": "urls_detailed",
                 },
                 "ref": null,
                 "rendered": null,
@@ -3916,7 +3972,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "name": "areasOfExpertise",
+                  "name": "areas_of_expertise",
                 },
                 "ref": null,
                 "rendered": null,
@@ -4024,12 +4080,15 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateInstructorForm renders html correctly when submitting 1`] = `
+exports[`StafferForm renders html correctly when creating 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BaseCreateInstructorForm
+  Symbol(enzyme.__unrendered__): <BaseStafferForm
     handleSubmit={[Function]}
-    instructorOptions={
+    isCreateForm={false}
+    isSaving={true}
+    pristine={false}
+    stafferOptions={
       Object {
         "data": Object {
           "actions": Object {
@@ -4055,8 +4114,2019 @@ ShallowWrapper {
         },
       }
     }
-    isCreating={false}
+    submitting={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <div
+        className="create-staffer-form row"
+      >
+        <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="profile_image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="profile_image.medium.url"
+              required={false}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="given_name"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="family_name"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="position.title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="position.organization_id"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="major_works"
+            />
+            <FieldArray
+              component={[Function]}
+              name="urls_detailed"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areas_of_expertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="profile_image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="profile_image.medium.url"
+              required={false}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="given_name"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="family_name"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="position.title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="position.organization_id"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="major_works"
+            />
+            <FieldArray
+              component={[Function]}
+              name="urls_detailed"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areas_of_expertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "create-staffer-form row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[Function]}
+          >
+            <Field
+              component={[Function]}
+              id="profile_image"
+              label={
+                <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="profile_image.medium.url"
+              required={false}
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="given_name"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="family_name"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="position.title"
+              required={true}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              label={
+                <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              name="position.organization_id"
+              options={
+                Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ]
+              }
+              required={true}
+            />
+            <Field
+              component={[Function]}
+              id="bio"
+              label={
+                <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="bio"
+              validate={[Function]}
+            />
+            <Field
+              component={[Function]}
+              id="works"
+              label={
+                <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>
+              }
+              maxChars={250}
+              name="major_works"
+            />
+            <FieldArray
+              component={[Function]}
+              name="urls_detailed"
+            />
+            <FieldArray
+              component={[Function]}
+              name="areas_of_expertise"
+            />
+            <div
+              className="row justify-content-end"
+            >
+              <Link
+                className={
+                  Array [
+                    "btn btn-link ml-3 form-cancel-btn",
+                  ]
+                }
+                disabled={true}
+                onClick={[Function]}
+                replace={false}
+                to="/"
+              >
+                Cancel
+              </Link>
+              <button
+                className="btn btn-outline-primary form-submit-btn"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>,
+          "className": "col",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                id="profile_image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="profile_image.medium.url"
+                required={false}
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="given_name"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="family_name"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.title"
+                required={true}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.organization_id"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />,
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />,
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="major_works"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="urls_detailed"
+              />,
+              <FieldArray
+                component={[Function]}
+                name="areas_of_expertise"
+              />,
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "profile_image",
+                "label": <React.Fragment>
+                  Image:
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "profile_image.medium.url",
+                "required": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  First name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "given_name",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Last name
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "family_name",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Position
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "position.title",
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <React.Fragment>
+                  Organization
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "name": "position.organization_id",
+                "options": Array [
+                  Object {
+                    "label": "Select instructor organization",
+                    "value": "",
+                  },
+                  Object {
+                    "label": "edX",
+                    "value": 1,
+                  },
+                  Object {
+                    "label": "bananasX",
+                    "value": 2,
+                  },
+                ],
+                "required": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "bio",
+                "label": <React.Fragment>
+                  Biography
+                  <span
+                    aria-hidden={true}
+                    className="required"
+                  >
+                    *
+                  </span>
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "bio",
+                "validate": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "id": "works",
+                "label": <React.Fragment>
+                  Major works (optional)
+                </React.Fragment>,
+                "maxChars": 250,
+                "name": "major_works",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "urls_detailed",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "name": "areas_of_expertise",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>,
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>,
+                ],
+                "className": "row justify-content-end",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ],
+                    "disabled": true,
+                    "onClick": [Function],
+                    "replace": false,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit",
+                    "className": "btn btn-outline-primary form-submit-btn",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <div
+          className="create-staffer-form row"
+        >
+          <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="profile_image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="profile_image.medium.url"
+                required={false}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="given_name"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="family_name"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.organization_id"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="major_works"
+              />
+              <FieldArray
+                component={[Function]}
+                name="urls_detailed"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areas_of_expertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="profile_image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="profile_image.medium.url"
+                required={false}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="given_name"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="family_name"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.organization_id"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="major_works"
+              />
+              <FieldArray
+                component={[Function]}
+                name="urls_detailed"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areas_of_expertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "create-staffer-form row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[Function]}
+            >
+              <Field
+                component={[Function]}
+                id="profile_image"
+                label={
+                  <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="profile_image.medium.url"
+                required={false}
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="given_name"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="family_name"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.title"
+                required={true}
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                label={
+                  <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                name="position.organization_id"
+                options={
+                  Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ]
+                }
+                required={true}
+              />
+              <Field
+                component={[Function]}
+                id="bio"
+                label={
+                  <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="bio"
+                validate={[Function]}
+              />
+              <Field
+                component={[Function]}
+                id="works"
+                label={
+                  <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>
+                }
+                maxChars={250}
+                name="major_works"
+              />
+              <FieldArray
+                component={[Function]}
+                name="urls_detailed"
+              />
+              <FieldArray
+                component={[Function]}
+                name="areas_of_expertise"
+              />
+              <div
+                className="row justify-content-end"
+              >
+                <Link
+                  className={
+                    Array [
+                      "btn btn-link ml-3 form-cancel-btn",
+                    ]
+                  }
+                  disabled={true}
+                  onClick={[Function]}
+                  replace={false}
+                  to="/"
+                >
+                  Cancel
+                </Link>
+                <button
+                  className="btn btn-outline-primary form-submit-btn"
+                  disabled={true}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>,
+            "className": "col",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  id="profile_image"
+                  label={
+                    <React.Fragment>
+                      Image:
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="profile_image.medium.url"
+                  required={false}
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      First name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="given_name"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Last name
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="family_name"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Position
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="position.title"
+                  required={true}
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  label={
+                    <React.Fragment>
+                      Organization
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  name="position.organization_id"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Select instructor organization",
+                        "value": "",
+                      },
+                      Object {
+                        "label": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "label": "bananasX",
+                        "value": 2,
+                      },
+                    ]
+                  }
+                  required={true}
+                />,
+                <Field
+                  component={[Function]}
+                  id="bio"
+                  label={
+                    <React.Fragment>
+                      Biography
+                      <span
+                        aria-hidden={true}
+                        className="required"
+                      >
+                        *
+                      </span>
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="bio"
+                  validate={[Function]}
+                />,
+                <Field
+                  component={[Function]}
+                  id="works"
+                  label={
+                    <React.Fragment>
+                      Major works (optional)
+                    </React.Fragment>
+                  }
+                  maxChars={250}
+                  name="major_works"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="urls_detailed"
+                />,
+                <FieldArray
+                  component={[Function]}
+                  name="areas_of_expertise"
+                />,
+                <div
+                  className="row justify-content-end"
+                >
+                  <Link
+                    className={
+                      Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ]
+                    }
+                    disabled={true}
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Cancel
+                  </Link>
+                  <button
+                    className="btn btn-outline-primary form-submit-btn"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "profile_image",
+                  "label": <React.Fragment>
+                    Image:
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "profile_image.medium.url",
+                  "required": false,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    First name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "given_name",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Last name
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "family_name",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Position
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "position.title",
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "label": <React.Fragment>
+                    Organization
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "name": "position.organization_id",
+                  "options": Array [
+                    Object {
+                      "label": "Select instructor organization",
+                      "value": "",
+                    },
+                    Object {
+                      "label": "edX",
+                      "value": 1,
+                    },
+                    Object {
+                      "label": "bananasX",
+                      "value": 2,
+                    },
+                  ],
+                  "required": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "bio",
+                  "label": <React.Fragment>
+                    Biography
+                    <span
+                      aria-hidden={true}
+                      className="required"
+                    >
+                      *
+                    </span>
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "bio",
+                  "validate": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "id": "works",
+                  "label": <React.Fragment>
+                    Major works (optional)
+                  </React.Fragment>,
+                  "maxChars": 250,
+                  "name": "major_works",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "urls_detailed",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "name": "areas_of_expertise",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Link
+                      className={
+                        Array [
+                          "btn btn-link ml-3 form-cancel-btn",
+                        ]
+                      }
+                      disabled={true}
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Cancel
+                    </Link>,
+                    <button
+                      className="btn btn-outline-primary form-submit-btn"
+                      disabled={true}
+                      type="submit"
+                    >
+                      Submit
+                    </button>,
+                  ],
+                  "className": "row justify-content-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": Array [
+                        "btn btn-link ml-3 form-cancel-btn",
+                      ],
+                      "disabled": true,
+                      "onClick": [Function],
+                      "replace": false,
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit",
+                      "className": "btn btn-outline-primary form-submit-btn",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`StafferForm renders html correctly when submitting 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BaseStafferForm
+    handleSubmit={[Function]}
+    isCreateForm={false}
+    isSaving={false}
     pristine={false}
+    stafferOptions={
+      Object {
+        "data": Object {
+          "actions": Object {
+            "POST": Object {
+              "position": Object {
+                "children": Object {
+                  "organization": Object {
+                    "choices": Array [
+                      Object {
+                        "display_name": "edX",
+                        "value": 1,
+                      },
+                      Object {
+                        "display_name": "bananasX",
+                        "value": 2,
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
+        },
+      }
+    }
     submitting={true}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -4074,7 +6144,7 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": <div
-        className="create-instructor-form row"
+        className="create-staffer-form row"
       >
         <div
           className="col"
@@ -4084,7 +6154,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -4096,8 +6166,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -4112,7 +6182,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -4129,7 +6199,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -4146,7 +6216,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -4163,7 +6233,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -4209,15 +6279,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -4261,7 +6331,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -4273,8 +6343,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -4289,7 +6359,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -4306,7 +6376,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -4323,7 +6393,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -4340,7 +6410,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -4386,15 +6456,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -4422,7 +6492,7 @@ ShallowWrapper {
             </div>
           </form>
         </div>,
-        "className": "create-instructor-form row",
+        "className": "create-staffer-form row",
       },
       "ref": null,
       "rendered": Object {
@@ -4435,7 +6505,7 @@ ShallowWrapper {
           >
             <Field
               component={[Function]}
-              id="image"
+              id="profile_image"
               label={
                 <React.Fragment>
                   Image:
@@ -4447,8 +6517,8 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="image"
-              required={true}
+              name="profile_image.medium.url"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -4463,7 +6533,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="firstName"
+              name="given_name"
               required={true}
               type="text"
             />
@@ -4480,7 +6550,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="lastName"
+              name="family_name"
               required={true}
               type="text"
             />
@@ -4497,7 +6567,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="title"
+              name="position.title"
               required={true}
               type="text"
             />
@@ -4514,7 +6584,7 @@ ShallowWrapper {
                   </span>
                 </React.Fragment>
               }
-              name="organization"
+              name="position.organization_id"
               options={
                 Array [
                   Object {
@@ -4560,15 +6630,15 @@ ShallowWrapper {
                 </React.Fragment>
               }
               maxChars={250}
-              name="majorWorks"
+              name="major_works"
             />
             <FieldArray
               component={[Function]}
-              name="socialLinks"
+              name="urls_detailed"
             />
             <FieldArray
               component={[Function]}
-              name="areasOfExpertise"
+              name="areas_of_expertise"
             />
             <div
               className="row justify-content-end"
@@ -4606,7 +6676,7 @@ ShallowWrapper {
             "children": Array [
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -4618,8 +6688,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />,
               <Field
                 component={[Function]}
@@ -4634,7 +6704,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />,
@@ -4651,7 +6721,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />,
@@ -4668,7 +6738,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />,
@@ -4685,7 +6755,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -4731,15 +6801,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />,
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />,
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />,
               <div
                 className="row justify-content-end"
@@ -4776,7 +6846,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "id": "image",
+                "id": "profile_image",
                 "label": <React.Fragment>
                   Image:
                   <span
@@ -4786,8 +6856,8 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "image",
-                "required": true,
+                "name": "profile_image.medium.url",
+                "required": false,
               },
               "ref": null,
               "rendered": null,
@@ -4808,7 +6878,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "firstName",
+                "name": "given_name",
                 "required": true,
                 "type": "text",
               },
@@ -4831,7 +6901,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "lastName",
+                "name": "family_name",
                 "required": true,
                 "type": "text",
               },
@@ -4854,7 +6924,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "title",
+                "name": "position.title",
                 "required": true,
                 "type": "text",
               },
@@ -4877,7 +6947,7 @@ ShallowWrapper {
                     *
                   </span>
                 </React.Fragment>,
-                "name": "organization",
+                "name": "position.organization_id",
                 "options": Array [
                   Object {
                     "label": "Select instructor organization",
@@ -4933,7 +7003,7 @@ ShallowWrapper {
                   Major works (optional)
                 </React.Fragment>,
                 "maxChars": 250,
-                "name": "majorWorks",
+                "name": "major_works",
               },
               "ref": null,
               "rendered": null,
@@ -4945,7 +7015,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "name": "socialLinks",
+                "name": "urls_detailed",
               },
               "ref": null,
               "rendered": null,
@@ -4957,7 +7027,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "name": "areasOfExpertise",
+                "name": "areas_of_expertise",
               },
               "ref": null,
               "rendered": null,
@@ -5045,7 +7115,7 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": <div
-          className="create-instructor-form row"
+          className="create-staffer-form row"
         >
           <div
             className="col"
@@ -5055,7 +7125,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -5067,8 +7137,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -5083,7 +7153,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -5100,7 +7170,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -5117,7 +7187,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -5134,7 +7204,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -5180,15 +7250,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -5232,7 +7302,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -5244,8 +7314,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -5260,7 +7330,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -5277,7 +7347,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -5294,7 +7364,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -5311,7 +7381,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -5357,15 +7427,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -5393,7 +7463,7 @@ ShallowWrapper {
               </div>
             </form>
           </div>,
-          "className": "create-instructor-form row",
+          "className": "create-staffer-form row",
         },
         "ref": null,
         "rendered": Object {
@@ -5406,7 +7476,7 @@ ShallowWrapper {
             >
               <Field
                 component={[Function]}
-                id="image"
+                id="profile_image"
                 label={
                   <React.Fragment>
                     Image:
@@ -5418,8 +7488,8 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="image"
-                required={true}
+                name="profile_image.medium.url"
+                required={false}
               />
               <Field
                 component={[Function]}
@@ -5434,7 +7504,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="firstName"
+                name="given_name"
                 required={true}
                 type="text"
               />
@@ -5451,7 +7521,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="lastName"
+                name="family_name"
                 required={true}
                 type="text"
               />
@@ -5468,7 +7538,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="title"
+                name="position.title"
                 required={true}
                 type="text"
               />
@@ -5485,7 +7555,7 @@ ShallowWrapper {
                     </span>
                   </React.Fragment>
                 }
-                name="organization"
+                name="position.organization_id"
                 options={
                   Array [
                     Object {
@@ -5531,15 +7601,15 @@ ShallowWrapper {
                   </React.Fragment>
                 }
                 maxChars={250}
-                name="majorWorks"
+                name="major_works"
               />
               <FieldArray
                 component={[Function]}
-                name="socialLinks"
+                name="urls_detailed"
               />
               <FieldArray
                 component={[Function]}
-                name="areasOfExpertise"
+                name="areas_of_expertise"
               />
               <div
                 className="row justify-content-end"
@@ -5577,7 +7647,7 @@ ShallowWrapper {
               "children": Array [
                 <Field
                   component={[Function]}
-                  id="image"
+                  id="profile_image"
                   label={
                     <React.Fragment>
                       Image:
@@ -5589,8 +7659,8 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="image"
-                  required={true}
+                  name="profile_image.medium.url"
+                  required={false}
                 />,
                 <Field
                   component={[Function]}
@@ -5605,7 +7675,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="firstName"
+                  name="given_name"
                   required={true}
                   type="text"
                 />,
@@ -5622,7 +7692,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="lastName"
+                  name="family_name"
                   required={true}
                   type="text"
                 />,
@@ -5639,7 +7709,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="title"
+                  name="position.title"
                   required={true}
                   type="text"
                 />,
@@ -5656,7 +7726,7 @@ ShallowWrapper {
                       </span>
                     </React.Fragment>
                   }
-                  name="organization"
+                  name="position.organization_id"
                   options={
                     Array [
                       Object {
@@ -5702,15 +7772,15 @@ ShallowWrapper {
                     </React.Fragment>
                   }
                   maxChars={250}
-                  name="majorWorks"
+                  name="major_works"
                 />,
                 <FieldArray
                   component={[Function]}
-                  name="socialLinks"
+                  name="urls_detailed"
                 />,
                 <FieldArray
                   component={[Function]}
-                  name="areasOfExpertise"
+                  name="areas_of_expertise"
                 />,
                 <div
                   className="row justify-content-end"
@@ -5747,7 +7817,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "id": "image",
+                  "id": "profile_image",
                   "label": <React.Fragment>
                     Image:
                     <span
@@ -5757,8 +7827,8 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "image",
-                  "required": true,
+                  "name": "profile_image.medium.url",
+                  "required": false,
                 },
                 "ref": null,
                 "rendered": null,
@@ -5779,7 +7849,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "firstName",
+                  "name": "given_name",
                   "required": true,
                   "type": "text",
                 },
@@ -5802,7 +7872,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "lastName",
+                  "name": "family_name",
                   "required": true,
                   "type": "text",
                 },
@@ -5825,7 +7895,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "title",
+                  "name": "position.title",
                   "required": true,
                   "type": "text",
                 },
@@ -5848,7 +7918,7 @@ ShallowWrapper {
                       *
                     </span>
                   </React.Fragment>,
-                  "name": "organization",
+                  "name": "position.organization_id",
                   "options": Array [
                     Object {
                       "label": "Select instructor organization",
@@ -5904,7 +7974,7 @@ ShallowWrapper {
                     Major works (optional)
                   </React.Fragment>,
                   "maxChars": 250,
-                  "name": "majorWorks",
+                  "name": "major_works",
                 },
                 "ref": null,
                 "rendered": null,
@@ -5916,7 +7986,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "name": "socialLinks",
+                  "name": "urls_detailed",
                 },
                 "ref": null,
                 "rendered": null,
@@ -5928,7 +7998,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "name": "areasOfExpertise",
+                  "name": "areas_of_expertise",
                 },
                 "ref": null,
                 "rendered": null,

@@ -1,16 +1,16 @@
-import * as actions from '../actions/instructorOptions';
+import * as actions from '../actions/stafferOptions';
 
-import instructorOptions from './instructorOptions';
+import stafferOptions from './stafferOptions';
 
 
-describe('instructor options reducer', () => {
+describe('staffer options reducer', () => {
   const oldState = { // overwritten as old state for actions
     data: { nope: 'bad data' },
     isFetching: true,
     error: 'error occurred',
   };
 
-  const instructorData = {
+  const stafferData = {
     actions: {
       POST: {
         position: {
@@ -28,15 +28,15 @@ describe('instructor options reducer', () => {
   };
 
   it('initial state is valid', () => {
-    expect(instructorOptions(undefined, {})).toEqual({
+    expect(stafferOptions(undefined, {})).toEqual({
       data: {},
       isFetching: false,
       error: null,
     });
   });
 
-  it('instructor options request works', () => {
-    expect(instructorOptions(oldState, actions.requestInstructorOptions()))
+  it('staffer options request works', () => {
+    expect(stafferOptions(oldState, actions.requestStafferOptions()))
       .toEqual({
         data: {},
         isFetching: true,
@@ -44,8 +44,8 @@ describe('instructor options reducer', () => {
       });
   });
 
-  it('instructor options receive works', () => {
-    expect(instructorOptions(oldState, actions.requestInstructorOptionsSuccess(instructorData)))
+  it('staffer options receive works', () => {
+    expect(stafferOptions(oldState, actions.requestStafferOptionsSuccess(stafferData)))
       .toEqual({
         data: {
           actions: {
@@ -68,8 +68,8 @@ describe('instructor options reducer', () => {
       });
   });
 
-  it('instructor options fail works', () => {
-    expect(instructorOptions(oldState, actions.requestInstructorOptionsFail('failure')))
+  it('staffer options fail works', () => {
+    expect(stafferOptions(oldState, actions.requestStafferOptionsFail('failure')))
       .toEqual({
         data: {},
         isFetching: false,

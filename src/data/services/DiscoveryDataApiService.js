@@ -80,15 +80,27 @@ class DiscoveryDataApiService {
     return Promise.all(promises);
   }
 
-  static createInstructor(data) {
+  static createStaffer(data) {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/`;
     // POST to People endpoint to create
     return apiClient.post(url, data);
   }
 
-  static fetchInstructorOptions() {
+  static fetchStafferOptions() {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/`;
     return apiClient.options(url);
+  }
+
+  static fetchStaffer(uuid) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/${uuid}/`;
+    return apiClient.get(url);
+  }
+
+  static editStaffer(stafferData) {
+    const { uuid } = stafferData;
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/${uuid}/`;
+    // PATCH to People endpoint to update
+    return apiClient.patch(url, stafferData);
   }
 }
 

@@ -4,17 +4,17 @@ import MockAdapter from 'axios-mock-adapter';
 
 import apiClient from '../apiClient';
 import {
-  requestInstructorOptionsFail,
-  requestInstructorOptionsSuccess,
-  requestInstructorOptions,
-  fetchInstructorOptions,
-} from './instructorOptions';
+  requestStafferOptionsFail,
+  requestStafferOptionsSuccess,
+  requestStafferOptions,
+  fetchStafferOptions,
+} from './stafferOptions';
 
 
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(apiClient);
 
-const instructorOptions = {
+const stafferOptions = {
   actions: {
     POST: {
       position: {
@@ -31,7 +31,7 @@ const instructorOptions = {
   },
 };
 
-describe('instructorOptions fetch instructor options actions', () => {
+describe('stafferOptions fetch staffer options actions', () => {
   const url = 'http://localhost:18381/api/v1/people/';
 
   afterEach(() => {
@@ -40,15 +40,15 @@ describe('instructorOptions fetch instructor options actions', () => {
 
   it('handles fetch success', () => {
     mockClient.onOptions(url)
-      .replyOnce(200, JSON.stringify(instructorOptions));
+      .replyOnce(200, JSON.stringify(stafferOptions));
 
     const expectedActions = [
-      requestInstructorOptions(),
-      requestInstructorOptionsSuccess(instructorOptions),
+      requestStafferOptions(),
+      requestStafferOptionsSuccess(stafferOptions),
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchInstructorOptions()).then(() => {
+    return store.dispatch(fetchStafferOptions()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -57,12 +57,12 @@ describe('instructorOptions fetch instructor options actions', () => {
     mockClient.onOptions(url).replyOnce(500, '');
 
     const expectedActions = [
-      requestInstructorOptions(),
-      requestInstructorOptionsFail('Could not get instructor information. Error: Request failed with status code 500'),
+      requestStafferOptions(),
+      requestStafferOptionsFail('Could not get instructor information. Error: Request failed with status code 500'),
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchInstructorOptions()).then(() => {
+    return store.dispatch(fetchStafferOptions()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -71,12 +71,12 @@ describe('instructorOptions fetch instructor options actions', () => {
     mockClient.onOptions(url).replyOnce(200, {});
 
     const expectedActions = [
-      requestInstructorOptions(),
-      requestInstructorOptionsFail('Could not get instructor information. Error: Did not understand response'),
+      requestStafferOptions(),
+      requestStafferOptionsFail('Could not get instructor information. Error: Did not understand response'),
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchInstructorOptions()).then(() => {
+    return store.dispatch(fetchStafferOptions()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

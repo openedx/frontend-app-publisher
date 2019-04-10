@@ -46,6 +46,10 @@ class AreasOfExpertise extends React.Component {
                   required
                 />
               </div>
+              <input
+                name={`${expertise}.id`}
+                type="hidden"
+              />
               <RemoveButton
                 label="Remove area of expertise"
                 onRemove={this.handleRemove}

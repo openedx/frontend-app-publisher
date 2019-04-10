@@ -35,7 +35,7 @@ class BaseCreateCourseForm extends React.Component {
       organizations,
       pristine,
       submitting,
-      isCreating,
+      isSaving,
     } = this.props;
     return (
       <div className="create-course-form">
@@ -97,7 +97,7 @@ class BaseCreateCourseForm extends React.Component {
             <button
               type="submit"
               className="btn btn-primary form-submit-btn"
-              disabled={pristine || submitting || isCreating}
+              disabled={pristine || submitting || isSaving}
             >
               Submit
             </button>
@@ -109,7 +109,7 @@ class BaseCreateCourseForm extends React.Component {
 }
 
 BaseCreateCourseForm.defaultProps = {
-  isCreating: false,
+  isSaving: false,
   pristine: true,
   submitting: false,
 };
@@ -131,11 +131,10 @@ BaseCreateCourseForm.propTypes = {
   })).isRequired,
   pristine: PropTypes.bool,
   submitting: PropTypes.bool,
-  isCreating: PropTypes.bool,
+  isSaving: PropTypes.bool,
 };
 
 export default reduxForm({
   form: 'create-course-form',
 })(BaseCreateCourseForm);
 export { BaseCreateCourseForm };
-

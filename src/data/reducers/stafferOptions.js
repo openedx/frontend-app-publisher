@@ -1,8 +1,8 @@
 import {
-  REQUEST_INSTRUCTOR_OPTIONS_FAIL,
-  REQUEST_INSTRUCTOR_OPTIONS_SUCCESS,
-  REQUEST_INSTRUCTOR_OPTIONS,
-} from '../constants/instructorOptions';
+  REQUEST_STAFFER_OPTIONS_FAIL,
+  REQUEST_STAFFER_OPTIONS_SUCCESS,
+  REQUEST_STAFFER_OPTIONS,
+} from '../constants/stafferOptions';
 
 
 const initialState = {
@@ -11,21 +11,21 @@ const initialState = {
   error: null,
 };
 
-function instructorOptions(state = initialState, action) {
+function stafferOptions(state = initialState, action) {
   switch (action.type) {
-    case REQUEST_INSTRUCTOR_OPTIONS_FAIL:
+    case REQUEST_STAFFER_OPTIONS_FAIL:
       return Object.assign({}, state, {
         data: {},
         isFetching: false,
         error: action.error,
       });
-    case REQUEST_INSTRUCTOR_OPTIONS_SUCCESS:
+    case REQUEST_STAFFER_OPTIONS_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
         isFetching: false,
         error: null,
       });
-    case REQUEST_INSTRUCTOR_OPTIONS:
+    case REQUEST_STAFFER_OPTIONS:
       return Object.assign({}, state, {
         data: {},
         isFetching: true,
@@ -36,4 +36,4 @@ function instructorOptions(state = initialState, action) {
   }
 }
 
-export default instructorOptions;
+export default stafferOptions;
