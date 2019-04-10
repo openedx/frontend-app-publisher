@@ -13,6 +13,7 @@ import ButtonToolbar from '../../components/ButtonToolbar';
 import ImageUpload from '../../components/ImageUpload';
 import RichEditor from '../../components/RichEditor';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
+import FieldLabel from '../FieldLabel';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -99,98 +100,96 @@ export class BaseEditCourseForm extends React.Component {
               name="title"
               component={RenderInputTextField}
               type="text"
-              label={<strong>Title: *</strong>}
+              label={<FieldLabel text="Title" required />}
               required
             />
             <div>
-              <div id="number">
-                <strong>Number:</strong>
-              </div>
-              <div>{number}</div>
+              <FieldLabel id="number" text="Number" className="mb-2" />
+              <div className="mb-3">{number}</div>
             </div>
             <Field
               name="short_description"
               component={RichEditor}
-              label={<strong>Short Description:</strong>}
+              label={<FieldLabel text="Short description" />}
               maxChars={500}
               id="sdesc"
             />
             <Field
               name="full_description"
               component={RichEditor}
-              label={<strong>Long Description:</strong>}
+              label={<FieldLabel text="Long description" />}
               maxChars={2500}
               id="ldesc"
             />
             <Field
               name="outcome"
               component={RichEditor}
-              label={<strong>What you will learn:</strong>}
+              label={<FieldLabel text="What you will learn" />}
               maxChars={2500}
               id="outcome"
             />
             <Field
               name="subjectPrimary"
               component={RenderSelectField}
-              label={<strong>Primary Subject:</strong>}
+              label={<FieldLabel text="Primary subject" />}
               options={subjectOptions}
             />
             <Field
               name="subjectSecondary"
               component={RenderSelectField}
-              label={<strong>Secondary Subject:</strong>}
+              label={<FieldLabel text="Secondary subject" />}
               options={subjectOptions}
             />
             <Field
               name="subjectTertiary"
               component={RenderSelectField}
-              label={<strong>Tertiary Subject:</strong>}
+              label={<FieldLabel text="Tertiary subject" />}
               options={subjectOptions}
             />
             <Field
               name="imageSrc"
               component={ImageUpload}
-              label={<strong>Image:</strong>}
+              label={<FieldLabel text="Image" />}
               id="image"
             />
             <Field
               name="prerequisites_raw"
               component={RichEditor}
-              label={<strong>Prerequisites:</strong>}
+              label={<FieldLabel text="Prerequisites" />}
               maxChars={1000}
               id="prereq"
             />
             <Field
               name="level_type"
               component={RenderSelectField}
-              label={<strong>Course Level:</strong>}
+              label={<FieldLabel text="Course level" />}
               options={levelTypeOptions}
             />
             <Field
               name="learner_testimonials"
               component={RichEditor}
-              label={<strong>Learner Testimonials:</strong>}
+              label={<FieldLabel text="Learner testimonials" />}
               maxChars={500}
               id="learner-testimonials"
             />
             <Field
               name="faq"
               component={RichEditor}
-              label={<strong>Frequently Asked Questions:</strong>}
+              label={<FieldLabel text="Frequently asked questions" />}
               maxChars={2500}
               id="faq"
             />
             <Field
               name="additional_information"
               component={RichEditor}
-              label={<strong>Additional Information:</strong>}
+              label={<FieldLabel text="Additional information" />}
               maxChars={2500}
               id="additional-information"
             />
             <Field
               name="syllabus_raw"
               component={RichEditor}
-              label={<strong>Syllabus:</strong>}
+              label={<FieldLabel text="Syllabus" />}
               maxChars={500}
               id="syllabus"
             />
@@ -198,26 +197,26 @@ export class BaseEditCourseForm extends React.Component {
               name="videoSrc"
               component={RenderInputTextField}
               type="text"
-              label={<strong>About Video Link:</strong>}
+              label={<FieldLabel text="About video link" />}
             />
             {entitlement && (
               <React.Fragment>
                 <Field
                   name="mode"
                   component={RenderSelectField}
-                  label={<strong>Enrollment Track:</strong>}
+                  label={<FieldLabel text="Enrollment track" />}
                   options={this.getEnrollmentTrackOptions()}
                 />
                 <Field
                   name="price"
                   component={RenderInputTextField}
                   type="number"
-                  label={<strong>Price:</strong>}
+                  label={<FieldLabel text="Price" />}
                 />
               </React.Fragment>
             )}
           </Collapsible>
-          <strong>Course Runs: </strong>
+          <FieldLabel text="Course runs" className="mt-4 mb-2" />
           <FieldArray
             name="course_runs"
             component={CollapsibleCourseRunFields}

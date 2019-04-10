@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import RenderInputTextField from '../RenderInputTextField';
 import ButtonToolbar from '../ButtonToolbar';
+import FieldLabel from '../FieldLabel';
 
 const BaseCreateCourseRunForm = ({
   handleSubmit,
@@ -18,39 +19,25 @@ const BaseCreateCourseRunForm = ({
     <div className="create-course-run-form">
       <h2>Create a new course run</h2>
       <hr />
-      <div>
-        <div id="course">
-          <strong>Course</strong>
-        </div>
-        <div>
-          <Link to={`/courses/${uuid}/edit/`}>
-            {title}
-          </Link>
-        </div>
+      <FieldLabel text="Course" className="mb-2" />
+      <div className="mb-3">
+        <Link to={`/courses/${uuid}/edit/`}>
+          {title}
+        </Link>
       </div>
       <form onSubmit={handleSubmit}>
         <Field
           name="start"
           type="date"
           component={RenderInputTextField}
-          label={
-            <React.Fragment>
-              <strong>Start date</strong>
-              <span className="required">*</span>
-            </React.Fragment>
-          }
+          label={<FieldLabel text="Start date" required />}
           required
         />
         <Field
           name="end"
           type="date"
           component={RenderInputTextField}
-          label={
-            <React.Fragment>
-              <strong>End date</strong>
-              <span className="required">*</span>
-            </React.Fragment>
-          }
+          label={<FieldLabel text="End date" required />}
           required
         />
         <ButtonToolbar>

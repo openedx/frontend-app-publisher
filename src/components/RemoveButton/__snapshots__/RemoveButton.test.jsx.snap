@@ -4,7 +4,7 @@ exports[`RemoveButton renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RemoveButton
-    className="col-2"
+    className=""
     label="Test Label"
     onRemove={[MockFunction]}
     targetFieldNumber={0}
@@ -25,7 +25,7 @@ ShallowWrapper {
     "props": Object {
       "children": <button
         aria-label="Test Label"
-        className="close float-none mt-2"
+        className="close float-none mt-2 ml-2"
         onClick={[Function]}
         type="button"
       >
@@ -41,7 +41,7 @@ ShallowWrapper {
           id="remove-field"
         />
       </button>,
-      "className": "col-2",
+      "className": "",
     },
     "ref": null,
     "rendered": Object {
@@ -61,7 +61,7 @@ ShallowWrapper {
           }
           id="remove-field"
         />,
-        "className": "close float-none mt-2",
+        "className": "close float-none mt-2 ml-2",
         "onClick": [Function],
         "type": "button",
       },
@@ -95,7 +95,7 @@ ShallowWrapper {
       "props": Object {
         "children": <button
           aria-label="Test Label"
-          className="close float-none mt-2"
+          className="close float-none mt-2 ml-2"
           onClick={[Function]}
           type="button"
         >
@@ -111,7 +111,7 @@ ShallowWrapper {
             id="remove-field"
           />
         </button>,
-        "className": "col-2",
+        "className": "",
       },
       "ref": null,
       "rendered": Object {
@@ -131,7 +131,7 @@ ShallowWrapper {
             }
             id="remove-field"
           />,
-          "className": "close float-none mt-2",
+          "className": "close float-none mt-2 ml-2",
           "onClick": [Function],
           "type": "button",
         },

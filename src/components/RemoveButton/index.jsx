@@ -11,7 +11,7 @@ const RemoveButton = ({
   <div className={className}>
     <button
       type="button"
-      className="close float-none mt-2"
+      className="close float-none mt-2 ml-2"
       aria-label={label}
       onClick={() => onRemove(targetFieldNumber)}
     >
@@ -31,7 +31,7 @@ RemoveButton.propTypes = {
 };
 
 RemoveButton.defaultProps = {
-  className: 'col-2',
+  className: '',
 };
 
 export default RemoveButton;

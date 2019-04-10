@@ -86,15 +86,12 @@ ShallowWrapper {
             component={[Function]}
             format={[Function]}
             label={
-              <React.Fragment>
-                Start date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="Start date"
+              />
             }
             name="[object Object].start"
             placeholder="mm/dd/yyyy"
@@ -105,15 +102,12 @@ ShallowWrapper {
             component={[Function]}
             format={[Function]}
             label={
-              <React.Fragment>
-                End date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="End date"
+              />
             }
             name="[object Object].end"
             normalize={[Function]}
@@ -124,9 +118,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Minimum Effort
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Minimum effort"
+              />
             }
             name="[object Object].min_effort"
             type="number"
@@ -134,9 +131,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Maximum Effort
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Maximum effort"
+              />
             }
             name="[object Object].max_effort"
             type="number"
@@ -144,9 +144,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Course Pacing
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />
             }
             name="[object Object].pacing_type"
             options={
@@ -162,9 +165,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Content Language
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Content language"
+              />
             }
             name="[object Object].content_language"
             options={
@@ -177,11 +183,12 @@ ShallowWrapper {
             }
             type="text"
           />
-          <div
-            className="transcript-label"
-          >
-            Transcript Languages
-          </div>
+          <FieldLabel
+            className="mb-2"
+            required={false}
+            requiredForSubmit={false}
+            text="Transcript languages"
+          />
           <FieldArray
             component={[Function]}
             languageOptions={
@@ -197,12 +204,21 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Length
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Length"
+              />
             }
             name="[object Object].weeks_to_complete"
             type="number"
+          />
+          <FieldLabel
+            className="mb-2"
+            required={false}
+            requiredForSubmit={false}
+            text="Staff"
           />
           <Field
             component={[Function]}
@@ -212,7 +228,7 @@ ShallowWrapper {
             className=""
           >
             <button
-              className="btn btn-primary form-submit-btn float-right mt-2"
+              className="btn btn-primary form-submit-btn"
               type="submit"
             >
               <span>
@@ -237,15 +253,12 @@ ShallowWrapper {
             component={[Function]}
             format={[Function]}
             label={
-              <React.Fragment>
-                Start date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="Start date"
+              />
             }
             name="[object Object].start"
             placeholder="mm/dd/yyyy"
@@ -256,15 +269,12 @@ ShallowWrapper {
             component={[Function]}
             format={[Function]}
             label={
-              <React.Fragment>
-                End date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="End date"
+              />
             }
             name="[object Object].end"
             normalize={[Function]}
@@ -275,9 +285,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Minimum Effort
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Minimum effort"
+              />
             }
             name="[object Object].min_effort"
             type="number"
@@ -285,9 +298,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Maximum Effort
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Maximum effort"
+              />
             }
             name="[object Object].max_effort"
             type="number"
@@ -295,9 +311,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Course Pacing
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />
             }
             name="[object Object].pacing_type"
             options={
@@ -313,9 +332,12 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Content Language
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Content language"
+              />
             }
             name="[object Object].content_language"
             options={
@@ -328,11 +350,12 @@ ShallowWrapper {
             }
             type="text"
           />
-          <div
-            className="transcript-label"
-          >
-            Transcript Languages
-          </div>
+          <FieldLabel
+            className="mb-2"
+            required={false}
+            requiredForSubmit={false}
+            text="Transcript languages"
+          />
           <FieldArray
             component={[Function]}
             languageOptions={
@@ -348,12 +371,21 @@ ShallowWrapper {
           <Field
             component={[Function]}
             label={
-              <React.Fragment>
-                Length
-              </React.Fragment>
+              <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Length"
+              />
             }
             name="[object Object].weeks_to_complete"
             type="number"
+          />
+          <FieldLabel
+            className="mb-2"
+            required={false}
+            requiredForSubmit={false}
+            text="Staff"
           />
           <Field
             component={[Function]}
@@ -363,7 +395,7 @@ ShallowWrapper {
             className=""
           >
             <button
-              className="btn btn-primary form-submit-btn float-right mt-2"
+              className="btn btn-primary form-submit-btn"
               type="submit"
             >
               <span>
@@ -386,15 +418,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  Start date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />
               }
               name="[object Object].start"
               placeholder="mm/dd/yyyy"
@@ -405,15 +434,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  End date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />
               }
               name="[object Object].end"
               normalize={[Function]}
@@ -424,9 +450,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Minimum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />
               }
               name="[object Object].min_effort"
               type="number"
@@ -434,9 +463,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Maximum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />
               }
               name="[object Object].max_effort"
               type="number"
@@ -444,9 +476,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Course Pacing
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
               }
               name="[object Object].pacing_type"
               options={
@@ -462,9 +497,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Content Language
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />
               }
               name="[object Object].content_language"
               options={
@@ -477,11 +515,12 @@ ShallowWrapper {
               }
               type="text"
             />,
-            <div
-              className="transcript-label"
-            >
-              Transcript Languages
-            </div>,
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Transcript languages"
+            />,
             <FieldArray
               component={[Function]}
               languageOptions={
@@ -497,12 +536,21 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Length
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />
               }
               name="[object Object].weeks_to_complete"
               type="number"
+            />,
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Staff"
             />,
             <Field
               component={[Function]}
@@ -512,7 +560,7 @@ ShallowWrapper {
               className=""
             >
               <button
-                className="btn btn-primary form-submit-btn float-right mt-2"
+                className="btn btn-primary form-submit-btn"
                 type="submit"
               >
                 <span>
@@ -553,15 +601,12 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "format": [Function],
-              "label": <React.Fragment>
-                Start date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="Start date"
+              />,
               "name": "[object Object].start",
               "placeholder": "mm/dd/yyyy",
               "required": true,
@@ -578,15 +623,12 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "format": [Function],
-              "label": <React.Fragment>
-                End date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="End date"
+              />,
               "name": "[object Object].end",
               "normalize": [Function],
               "placeholder": "mm/dd/yyyy",
@@ -603,9 +645,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Minimum Effort
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Minimum effort"
+              />,
               "name": "[object Object].min_effort",
               "type": "number",
             },
@@ -619,9 +664,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Maximum Effort
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Maximum effort"
+              />,
               "name": "[object Object].max_effort",
               "type": "number",
             },
@@ -635,9 +683,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Course Pacing
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />,
               "name": "[object Object].pacing_type",
               "options": Array [
                 Object {
@@ -657,9 +708,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Content Language
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Content language"
+              />,
               "name": "[object Object].content_language",
               "options": Array [
                 Object {
@@ -676,14 +730,16 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "children": "Transcript Languages",
-              "className": "transcript-label",
+              "className": "mb-2",
+              "required": false,
+              "requiredForSubmit": false,
+              "text": "Transcript languages",
             },
             "ref": null,
-            "rendered": "Transcript Languages",
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -709,11 +765,28 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Length
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Length"
+              />,
               "name": "[object Object].weeks_to_complete",
               "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "required": false,
+              "requiredForSubmit": false,
+              "text": "Staff",
             },
             "ref": null,
             "rendered": null,
@@ -737,7 +810,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <button
-                className="btn btn-primary form-submit-btn float-right mt-2"
+                className="btn btn-primary form-submit-btn"
                 type="submit"
               >
                 <span>
@@ -755,7 +828,7 @@ ShallowWrapper {
                 "children": <span>
                   Submit for Review
                 </span>,
-                "className": "btn btn-primary form-submit-btn float-right mt-2",
+                "className": "btn btn-primary form-submit-btn",
                 "type": "submit",
               },
               "ref": null,
@@ -787,15 +860,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  Start date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />
               }
               name="[object Object].start"
               placeholder="mm/dd/yyyy"
@@ -806,15 +876,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  End date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />
               }
               name="[object Object].end"
               normalize={[Function]}
@@ -825,9 +892,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Minimum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />
               }
               name="[object Object].min_effort"
               type="number"
@@ -835,9 +905,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Maximum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />
               }
               name="[object Object].max_effort"
               type="number"
@@ -845,9 +918,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Course Pacing
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
               }
               name="[object Object].pacing_type"
               options={
@@ -863,9 +939,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Content Language
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />
               }
               name="[object Object].content_language"
               options={
@@ -878,11 +957,12 @@ ShallowWrapper {
               }
               type="text"
             />,
-            <div
-              className="transcript-label"
-            >
-              Transcript Languages
-            </div>,
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Transcript languages"
+            />,
             <FieldArray
               component={[Function]}
               languageOptions={
@@ -898,12 +978,21 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Length
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />
               }
               name="[object Object].weeks_to_complete"
               type="number"
+            />,
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Staff"
             />,
             <Field
               component={[Function]}
@@ -913,7 +1002,7 @@ ShallowWrapper {
               className=""
             >
               <button
-                className="btn btn-primary form-submit-btn float-right mt-2"
+                className="btn btn-primary form-submit-btn"
                 type="submit"
               >
                 <span>
@@ -942,15 +1031,12 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "format": [Function],
-              "label": <React.Fragment>
-                Start date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="Start date"
+              />,
               "name": "[object Object].start",
               "placeholder": "mm/dd/yyyy",
               "required": true,
@@ -967,15 +1053,12 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "format": [Function],
-              "label": <React.Fragment>
-                End date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="End date"
+              />,
               "name": "[object Object].end",
               "normalize": [Function],
               "placeholder": "mm/dd/yyyy",
@@ -992,9 +1075,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Minimum Effort
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Minimum effort"
+              />,
               "name": "[object Object].min_effort",
               "type": "number",
             },
@@ -1008,9 +1094,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Maximum Effort
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Maximum effort"
+              />,
               "name": "[object Object].max_effort",
               "type": "number",
             },
@@ -1024,9 +1113,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Course Pacing
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />,
               "name": "[object Object].pacing_type",
               "options": Array [
                 Object {
@@ -1046,9 +1138,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Content Language
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Content language"
+              />,
               "name": "[object Object].content_language",
               "options": Array [
                 Object {
@@ -1065,14 +1160,16 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "children": "Transcript Languages",
-              "className": "transcript-label",
+              "className": "mb-2",
+              "required": false,
+              "requiredForSubmit": false,
+              "text": "Transcript languages",
             },
             "ref": null,
-            "rendered": "Transcript Languages",
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -1098,11 +1195,28 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "label": <React.Fragment>
-                Length
-              </React.Fragment>,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Length"
+              />,
               "name": "[object Object].weeks_to_complete",
               "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "required": false,
+              "requiredForSubmit": false,
+              "text": "Staff",
             },
             "ref": null,
             "rendered": null,
@@ -1126,7 +1240,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <button
-                className="btn btn-primary form-submit-btn float-right mt-2"
+                className="btn btn-primary form-submit-btn"
                 type="submit"
               >
                 <span>
@@ -1144,7 +1258,7 @@ ShallowWrapper {
                 "children": <span>
                   Submit for Review
                 </span>,
-                "className": "btn btn-primary form-submit-btn float-right mt-2",
+                "className": "btn btn-primary form-submit-btn",
                 "type": "submit",
               },
               "ref": null,
@@ -1204,15 +1318,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  Start date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />
               }
               name="[object Object].start"
               placeholder="mm/dd/yyyy"
@@ -1223,15 +1334,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  End date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />
               }
               name="[object Object].end"
               normalize={[Function]}
@@ -1242,9 +1350,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Minimum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />
               }
               name="[object Object].min_effort"
               type="number"
@@ -1252,9 +1363,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Maximum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />
               }
               name="[object Object].max_effort"
               type="number"
@@ -1262,9 +1376,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Course Pacing
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
               }
               name="[object Object].pacing_type"
               options={
@@ -1280,9 +1397,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Content Language
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />
               }
               name="[object Object].content_language"
               options={
@@ -1295,11 +1415,12 @@ ShallowWrapper {
               }
               type="text"
             />
-            <div
-              className="transcript-label"
-            >
-              Transcript Languages
-            </div>
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Transcript languages"
+            />
             <FieldArray
               component={[Function]}
               languageOptions={
@@ -1315,12 +1436,21 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Length
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />
               }
               name="[object Object].weeks_to_complete"
               type="number"
+            />
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Staff"
             />
             <Field
               component={[Function]}
@@ -1330,7 +1460,7 @@ ShallowWrapper {
               className=""
             >
               <button
-                className="btn btn-primary form-submit-btn float-right mt-2"
+                className="btn btn-primary form-submit-btn"
                 type="submit"
               >
                 <span>
@@ -1355,15 +1485,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  Start date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />
               }
               name="[object Object].start"
               placeholder="mm/dd/yyyy"
@@ -1374,15 +1501,12 @@ ShallowWrapper {
               component={[Function]}
               format={[Function]}
               label={
-                <React.Fragment>
-                  End date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />
               }
               name="[object Object].end"
               normalize={[Function]}
@@ -1393,9 +1517,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Minimum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />
               }
               name="[object Object].min_effort"
               type="number"
@@ -1403,9 +1530,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Maximum Effort
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />
               }
               name="[object Object].max_effort"
               type="number"
@@ -1413,9 +1543,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Course Pacing
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
               }
               name="[object Object].pacing_type"
               options={
@@ -1431,9 +1564,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Content Language
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />
               }
               name="[object Object].content_language"
               options={
@@ -1446,11 +1582,12 @@ ShallowWrapper {
               }
               type="text"
             />
-            <div
-              className="transcript-label"
-            >
-              Transcript Languages
-            </div>
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Transcript languages"
+            />
             <FieldArray
               component={[Function]}
               languageOptions={
@@ -1466,12 +1603,21 @@ ShallowWrapper {
             <Field
               component={[Function]}
               label={
-                <React.Fragment>
-                  Length
-                </React.Fragment>
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />
               }
               name="[object Object].weeks_to_complete"
               type="number"
+            />
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Staff"
             />
             <Field
               component={[Function]}
@@ -1481,7 +1627,7 @@ ShallowWrapper {
               className=""
             >
               <button
-                className="btn btn-primary form-submit-btn float-right mt-2"
+                className="btn btn-primary form-submit-btn"
                 type="submit"
               >
                 <span>
@@ -1504,15 +1650,12 @@ ShallowWrapper {
                 component={[Function]}
                 format={[Function]}
                 label={
-                  <React.Fragment>
-                    Start date
-                    <span
-                      aria-hidden={true}
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="Start date"
+                  />
                 }
                 name="[object Object].start"
                 placeholder="mm/dd/yyyy"
@@ -1523,15 +1666,12 @@ ShallowWrapper {
                 component={[Function]}
                 format={[Function]}
                 label={
-                  <React.Fragment>
-                    End date
-                    <span
-                      aria-hidden={true}
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="End date"
+                  />
                 }
                 name="[object Object].end"
                 normalize={[Function]}
@@ -1542,9 +1682,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Minimum Effort
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Minimum effort"
+                  />
                 }
                 name="[object Object].min_effort"
                 type="number"
@@ -1552,9 +1695,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Maximum Effort
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Maximum effort"
+                  />
                 }
                 name="[object Object].max_effort"
                 type="number"
@@ -1562,9 +1708,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Course Pacing
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Course pacing"
+                  />
                 }
                 name="[object Object].pacing_type"
                 options={
@@ -1580,9 +1729,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Content Language
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Content language"
+                  />
                 }
                 name="[object Object].content_language"
                 options={
@@ -1595,11 +1747,12 @@ ShallowWrapper {
                 }
                 type="text"
               />,
-              <div
-                className="transcript-label"
-              >
-                Transcript Languages
-              </div>,
+              <FieldLabel
+                className="mb-2"
+                required={false}
+                requiredForSubmit={false}
+                text="Transcript languages"
+              />,
               <FieldArray
                 component={[Function]}
                 languageOptions={
@@ -1615,12 +1768,21 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Length
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Length"
+                  />
                 }
                 name="[object Object].weeks_to_complete"
                 type="number"
+              />,
+              <FieldLabel
+                className="mb-2"
+                required={false}
+                requiredForSubmit={false}
+                text="Staff"
               />,
               <Field
                 component={[Function]}
@@ -1630,7 +1792,7 @@ ShallowWrapper {
                 className=""
               >
                 <button
-                  className="btn btn-primary form-submit-btn float-right mt-2"
+                  className="btn btn-primary form-submit-btn"
                   type="submit"
                 >
                   <span>
@@ -1671,15 +1833,12 @@ ShallowWrapper {
               "props": Object {
                 "component": [Function],
                 "format": [Function],
-                "label": <React.Fragment>
-                  Start date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />,
                 "name": "[object Object].start",
                 "placeholder": "mm/dd/yyyy",
                 "required": true,
@@ -1696,15 +1855,12 @@ ShallowWrapper {
               "props": Object {
                 "component": [Function],
                 "format": [Function],
-                "label": <React.Fragment>
-                  End date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />,
                 "name": "[object Object].end",
                 "normalize": [Function],
                 "placeholder": "mm/dd/yyyy",
@@ -1721,9 +1877,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Minimum Effort
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />,
                 "name": "[object Object].min_effort",
                 "type": "number",
               },
@@ -1737,9 +1896,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Maximum Effort
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />,
                 "name": "[object Object].max_effort",
                 "type": "number",
               },
@@ -1753,9 +1915,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Course Pacing
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />,
                 "name": "[object Object].pacing_type",
                 "options": Array [
                   Object {
@@ -1775,9 +1940,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Content Language
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />,
                 "name": "[object Object].content_language",
                 "options": Array [
                   Object {
@@ -1794,14 +1962,16 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Transcript Languages",
-                "className": "transcript-label",
+                "className": "mb-2",
+                "required": false,
+                "requiredForSubmit": false,
+                "text": "Transcript languages",
               },
               "ref": null,
-              "rendered": "Transcript Languages",
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -1827,11 +1997,28 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Length
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />,
                 "name": "[object Object].weeks_to_complete",
                 "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "required": false,
+                "requiredForSubmit": false,
+                "text": "Staff",
               },
               "ref": null,
               "rendered": null,
@@ -1855,7 +2042,7 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": <button
-                  className="btn btn-primary form-submit-btn float-right mt-2"
+                  className="btn btn-primary form-submit-btn"
                   type="submit"
                 >
                   <span>
@@ -1873,7 +2060,7 @@ ShallowWrapper {
                   "children": <span>
                     Submit for Review
                   </span>,
-                  "className": "btn btn-primary form-submit-btn float-right mt-2",
+                  "className": "btn btn-primary form-submit-btn",
                   "type": "submit",
                 },
                 "ref": null,
@@ -1905,15 +2092,12 @@ ShallowWrapper {
                 component={[Function]}
                 format={[Function]}
                 label={
-                  <React.Fragment>
-                    Start date
-                    <span
-                      aria-hidden={true}
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="Start date"
+                  />
                 }
                 name="[object Object].start"
                 placeholder="mm/dd/yyyy"
@@ -1924,15 +2108,12 @@ ShallowWrapper {
                 component={[Function]}
                 format={[Function]}
                 label={
-                  <React.Fragment>
-                    End date
-                    <span
-                      aria-hidden={true}
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="End date"
+                  />
                 }
                 name="[object Object].end"
                 normalize={[Function]}
@@ -1943,9 +2124,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Minimum Effort
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Minimum effort"
+                  />
                 }
                 name="[object Object].min_effort"
                 type="number"
@@ -1953,9 +2137,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Maximum Effort
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Maximum effort"
+                  />
                 }
                 name="[object Object].max_effort"
                 type="number"
@@ -1963,9 +2150,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Course Pacing
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Course pacing"
+                  />
                 }
                 name="[object Object].pacing_type"
                 options={
@@ -1981,9 +2171,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Content Language
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Content language"
+                  />
                 }
                 name="[object Object].content_language"
                 options={
@@ -1996,11 +2189,12 @@ ShallowWrapper {
                 }
                 type="text"
               />,
-              <div
-                className="transcript-label"
-              >
-                Transcript Languages
-              </div>,
+              <FieldLabel
+                className="mb-2"
+                required={false}
+                requiredForSubmit={false}
+                text="Transcript languages"
+              />,
               <FieldArray
                 component={[Function]}
                 languageOptions={
@@ -2016,12 +2210,21 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Length
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Length"
+                  />
                 }
                 name="[object Object].weeks_to_complete"
                 type="number"
+              />,
+              <FieldLabel
+                className="mb-2"
+                required={false}
+                requiredForSubmit={false}
+                text="Staff"
               />,
               <Field
                 component={[Function]}
@@ -2031,7 +2234,7 @@ ShallowWrapper {
                 className=""
               >
                 <button
-                  className="btn btn-primary form-submit-btn float-right mt-2"
+                  className="btn btn-primary form-submit-btn"
                   type="submit"
                 >
                   <span>
@@ -2060,15 +2263,12 @@ ShallowWrapper {
               "props": Object {
                 "component": [Function],
                 "format": [Function],
-                "label": <React.Fragment>
-                  Start date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />,
                 "name": "[object Object].start",
                 "placeholder": "mm/dd/yyyy",
                 "required": true,
@@ -2085,15 +2285,12 @@ ShallowWrapper {
               "props": Object {
                 "component": [Function],
                 "format": [Function],
-                "label": <React.Fragment>
-                  End date
-                  <span
-                    aria-hidden={true}
-                    className="required"
-                  >
-                    *
-                  </span>
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />,
                 "name": "[object Object].end",
                 "normalize": [Function],
                 "placeholder": "mm/dd/yyyy",
@@ -2110,9 +2307,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Minimum Effort
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />,
                 "name": "[object Object].min_effort",
                 "type": "number",
               },
@@ -2126,9 +2326,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Maximum Effort
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />,
                 "name": "[object Object].max_effort",
                 "type": "number",
               },
@@ -2142,9 +2345,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Course Pacing
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />,
                 "name": "[object Object].pacing_type",
                 "options": Array [
                   Object {
@@ -2164,9 +2370,12 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Content Language
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />,
                 "name": "[object Object].content_language",
                 "options": Array [
                   Object {
@@ -2183,14 +2392,16 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Transcript Languages",
-                "className": "transcript-label",
+                "className": "mb-2",
+                "required": false,
+                "requiredForSubmit": false,
+                "text": "Transcript languages",
               },
               "ref": null,
-              "rendered": "Transcript Languages",
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -2216,11 +2427,28 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "label": <React.Fragment>
-                  Length
-                </React.Fragment>,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />,
                 "name": "[object Object].weeks_to_complete",
                 "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "required": false,
+                "requiredForSubmit": false,
+                "text": "Staff",
               },
               "ref": null,
               "rendered": null,
@@ -2244,7 +2472,7 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": <button
-                  className="btn btn-primary form-submit-btn float-right mt-2"
+                  className="btn btn-primary form-submit-btn"
                   type="submit"
                 >
                   <span>
@@ -2262,7 +2490,7 @@ ShallowWrapper {
                   "children": <span>
                     Submit for Review
                   </span>,
-                  "className": "btn btn-primary form-submit-btn float-right mt-2",
+                  "className": "btn btn-primary form-submit-btn",
                   "type": "submit",
                 },
                 "ref": null,
