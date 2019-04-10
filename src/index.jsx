@@ -15,7 +15,8 @@ import './App.scss';
 import CourseDashboard from './containers/CourseDashboard';
 import CreateCourse from './containers/CreateCourse';
 import CreateCourseRun from './containers/CreateCourseRun';
-import CreateInstructor from './containers/CreateInstructor';
+import CreateStaffer from './containers/CreateStaffer';
+import EditStaffer from './containers/EditStaffer';
 
 import apiClient from './data/apiClient';
 import EditCourse from './containers/EditCourse';
@@ -35,19 +36,26 @@ const App = () => (
               redirect={`${process.env.BASE_URL}`}
             />
             <PrivateRoute
-              path="/instructors/new"
-              exact
-              component={CreateInstructor}
-              authenticatedAPIClient={apiClient}
-              redirect={`${process.env.BASE_URL}`}
-            />
-            <PrivateRoute
               path="/courses/:id/course_runs/new"
               component={({ match }) => (
                 <CreateCourseRun id={match.params.id} />
               )}
               authenticatedAPIClient={apiClient}
               redirect={`${process.env.BASE_URL}`}
+            />
+            <PrivateRoute
+              path="/instructors/new"
+              exact
+              component={CreateStaffer}
+              authenticatedAPIClient={apiClient}
+              redirect={`${process.env.BASE_URL}`}
+            />
+            <PrivateRoute
+              path="/instructors/:uuid/edit"
+              exact
+              render={({ match }) => (
+                <EditStaffer uuid={match.params.uuid} />
+              )}
             />
             <PrivateRoute
               path="/"

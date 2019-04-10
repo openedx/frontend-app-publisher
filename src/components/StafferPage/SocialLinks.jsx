@@ -83,6 +83,10 @@ class SocialLinks extends React.Component {
                   required
                 />
               </div>
+              <input
+                name={`${link}.id`}
+                type="hidden"
+              />
               <RemoveButton
                 label="Remove social link"
                 onRemove={this.handleRemove}
