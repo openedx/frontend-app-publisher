@@ -44,13 +44,20 @@ class StaffList extends React.Component {
       staffList,
     } = this.state;
 
+    const { disabled } = this.props;
+
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="StaffList" direction="vertical">
           {provided => (
             <div className="staff-list container" ref={provided.innerRef} {...provided.droppableProps}>
               {staffList && staffList.map((staffer, index) => (
-                <Draggable draggableId={getStafferName(staffer)} index={index} key={staffer.uuid}>
+                <Draggable
+                  draggableId={getStafferName(staffer)}
+                  index={index}
+                  key={staffer.uuid}
+                  isDragDisabled={disabled}
+                >
                   {draggableProvided => (
                     <div
                       className="staffer-wrapper col-12 my-2"
@@ -61,6 +68,7 @@ class StaffList extends React.Component {
                       <Staffer
                         onRemove={this.handleRemove}
                         staffer={staffer}
+                        disabled={disabled}
                       />
                     </div>
                   )}
@@ -88,6 +96,11 @@ StaffList.propTypes = {
     ]).isRequired,
     onChange: PropTypes.func.isRequired,
   }).isRequired,
+  disabled: PropTypes.bool,
+};
+
+StaffList.defaultProps = {
+  disabled: false,
 };
 
 export default StaffList;

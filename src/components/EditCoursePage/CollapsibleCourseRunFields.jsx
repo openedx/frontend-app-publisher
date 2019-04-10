@@ -119,6 +119,7 @@ const CollapsibleCourseRunFields = ({
           name={`${courseRun}.transcript_languages`}
           component={TranscriptLanguage}
           languageOptions={languageOptions}
+          disabled={courseInReview}
         />
         <Field
           name={`${courseRun}.weeks_to_complete`}
