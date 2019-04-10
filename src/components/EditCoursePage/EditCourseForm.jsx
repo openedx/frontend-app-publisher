@@ -247,12 +247,16 @@ export class BaseEditCourseForm extends React.Component {
             <Link to={`/courses/${uuid}/course_runs/new`}>
               <button
                 className="btn btn-outline-primary"
-                disabled={!pristine}
+                disabled={!pristine || courseInReview}
               >
                 Re-run Course
               </button>
             </Link>
-            <button type="submit" className="btn btn-primary form-submit-btn" disabled={submitting}>
+            <button
+              type="submit"
+              className="btn btn-primary form-submit-btn"
+              disabled={submitting || courseInReview}
+            >
               Save Course
             </button>
           </ButtonToolbar>
