@@ -241,6 +241,7 @@ export class BaseEditCourseForm extends React.Component {
             courseRuns={courseRuns}
             languageOptions={languageOptions}
             pacingTypeOptions={pacingTypeOptions}
+            courseInReview={courseInReview}
           />
           <ButtonToolbar className="mt-3">
             <Link to={`/courses/${uuid}/course_runs/new`}>
