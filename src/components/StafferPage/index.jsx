@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import StafferForm from './StafferForm';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
+import PageContainer from '../PageContainer';
 
 class StafferPage extends React.Component {
   constructor(props) {
@@ -129,39 +130,33 @@ class StafferPage extends React.Component {
         <Helmet>
           <title>{titleText}</title>
         </Helmet>
-        <div className="container-fluid">
-          <div className="row justify-content-md-center my-3 ">
-            <div className="col-6">
-              { showSpinner && <LoadingSpinner /> }
-              { showForm && (
-                <div>
-                  <h2>{titleText}</h2>
-                  <hr />
-                  <h3>Instructor Information</h3>
-                  <div className="col">
-                    <StafferForm
-                      id="create-staffer-form"
-                      onSubmit={handleSubmit}
-                      stafferOptions={stafferOptions}
-                      isSaving={isSaving}
-                      isCreateForm={isCreateForm}
-                      initialValues={data}
-                    />
-                    { isSaving && <LoadingSpinner message="Saving instructor" /> }
-                    { error && (
-                      <StatusAlert
-                        id="create-staffer-error"
-                        alertType="danger"
-                        title="Could not save instructor"
-                        message={error}
-                      />
-                    )}
-                  </div>
-                </div>
+
+        <PageContainer>
+          { showSpinner && <LoadingSpinner /> }
+          { showForm && (
+            <div>
+              <h2>{titleText}</h2>
+              <hr />
+              <StafferForm
+                id="create-staffer-form"
+                onSubmit={handleSubmit}
+                stafferOptions={stafferOptions}
+                isSaving={isSaving}
+                isCreateForm={isCreateForm}
+                initialValues={data}
+              />
+              { isSaving && <LoadingSpinner message="Saving instructor" /> }
+              { error && (
+                <StatusAlert
+                  id="create-staffer-error"
+                  alertType="danger"
+                  title="Could not save instructor"
+                  message={error}
+                />
               )}
             </div>
-          </div>
-        </div>
+          )}
+        </PageContainer>
       </React.Fragment>
     );
   }

@@ -228,7 +228,7 @@ export class BaseEditCourseForm extends React.Component {
                   name="price"
                   component={RenderInputTextField}
                   type="number"
-                  label={<FieldLabel text="Price" />}
+                  label={<FieldLabel text="Price" required />}
                   disabled={courseInReview}
                 />
               </React.Fragment>

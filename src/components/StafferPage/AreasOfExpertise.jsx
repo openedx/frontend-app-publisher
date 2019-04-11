@@ -4,6 +4,7 @@ import { Field } from 'redux-form';
 
 import RenderInputTextField from '../RenderInputTextField';
 import RemoveButton from '../../components/RemoveButton';
+import FieldLabel from '../FieldLabel';
 
 
 class AreasOfExpertise extends React.Component {
@@ -21,28 +22,16 @@ class AreasOfExpertise extends React.Component {
     const { fields } = this.props;
 
     return (
-      <div className="areas-of-expertise my-4">
-        <button
-          type="button"
-          className="btn btn-light js-add-button"
-          onClick={() => fields.push({})}
-        >
-          Add area of expertise
-        </button>
-        <ul className="list-group p-0 m-0">
+      <div className="areas-of-expertise mb-3">
+        <ul className="list-group p-0 m-0 container-fluid">
           {fields.map((expertise, index) => (
             <li className="area-of-expertise list-group-item row d-flex align-items-center px-0 mx-0" key={expertise}>
-              <div className="col-10">
+              <div className="col-11">
                 <Field
                   name={`${expertise}.value`}
                   component={RenderInputTextField}
                   type="text"
-                  label={
-                    <React.Fragment>
-                      Area of expertise
-                      <span className="required" aria-hidden>*</span>
-                    </React.Fragment>
-                  }
+                  label={<FieldLabel text="Area of expertise" required />}
                   required
                 />
               </div>
@@ -51,6 +40,7 @@ class AreasOfExpertise extends React.Component {
                 type="hidden"
               />
               <RemoveButton
+                className="col-1"
                 label="Remove area of expertise"
                 onRemove={this.handleRemove}
                 targetFieldNumber={index}
@@ -58,6 +48,13 @@ class AreasOfExpertise extends React.Component {
             </li>
           ))}
         </ul>
+        <button
+          type="button"
+          className="btn btn-outline-primary js-add-button mt-2"
+          onClick={() => fields.push({})}
+        >
+          Add area of expertise
+        </button>
       </div>
     );
   }

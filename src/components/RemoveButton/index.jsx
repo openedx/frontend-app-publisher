@@ -11,7 +11,7 @@ const RemoveButton = ({
   <div className={className}>
     <button
       type="button"
-      className="close float-none mt-2 ml-2"
+      className="close float-none"
       aria-label={label}
       onClick={() => onRemove(targetFieldNumber)}
     >

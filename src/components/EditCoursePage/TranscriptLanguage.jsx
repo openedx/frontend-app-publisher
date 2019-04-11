@@ -4,6 +4,7 @@ import { Field } from 'redux-form';
 
 import RenderSelectField from '../RenderSelectField';
 import RemoveButton from '../RemoveButton';
+import FieldLabel from '../FieldLabel';
 
 class TranscriptLanguage extends React.Component {
   constructor(props) {
@@ -20,17 +21,22 @@ class TranscriptLanguage extends React.Component {
 
     return (
       <div className="transcript-languages mb-3">
-        <ul className="list-group p-0 m-0">
+        <ul className="list-group p-0 m-0 container-fluid">
           {fields.map((language, index) => (
-            <li className="transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0" key={language}>
-              <Field
-                name={`${language}`}
-                component={RenderSelectField}
-                options={languageOptions}
-                type="text"
-                disabled={disabled}
-              />
+            <li className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0" key={language}>
+              <div className="col-11">
+                <Field
+                  name={`${language}`}
+                  component={RenderSelectField}
+                  options={languageOptions}
+                  type="text"
+                  label={<FieldLabel text="Transcript language" required />}
+                  disabled={disabled}
+                  required
+                />
+              </div>
               <RemoveButton
+                className="col-1"
                 label="Remove language"
                 onRemove={this.handleRemove}
                 targetFieldNumber={index}
@@ -41,7 +47,7 @@ class TranscriptLanguage extends React.Component {
         </ul>
         <button
           type="button"
-          className="btn btn-outline-primary js-add-button"
+          className="btn btn-outline-primary js-add-button mt-2"
           onClick={() => fields.push({})}
           disabled={disabled}
         >

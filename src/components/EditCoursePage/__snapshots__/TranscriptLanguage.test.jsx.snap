@@ -35,27 +35,40 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <ul
-          className="list-group p-0 m-0"
+          className="list-group p-0 m-0 container-fluid"
         >
           <li
-            className="transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0"
+            className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
           >
-            <Field
-              component={[Function]}
-              disabled={false}
-              name="[object Object]"
-              options={
-                Array [
-                  Object {
-                    "label": "Arabic - United Arab Emirates",
-                    "value": "ar-ae",
-                  },
-                ]
-              }
-              type="text"
-            />
+            <div
+              className="col-11"
+            >
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="Transcript language"
+                  />
+                }
+                name="[object Object]"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                required={true}
+                type="text"
+              />
+            </div>
             <RemoveButton
-              className=""
+              className="col-1"
               disabled={false}
               label="Remove language"
               onRemove={[Function]}
@@ -64,7 +77,7 @@ ShallowWrapper {
           </li>
         </ul>,
         <button
-          className="btn btn-outline-primary js-add-button"
+          className="btn btn-outline-primary js-add-button mt-2"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -83,44 +96,22 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <li
-              className="transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0"
+              className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
             >
-              <Field
-                component={[Function]}
-                disabled={false}
-                name="[object Object]"
-                options={
-                  Array [
-                    Object {
-                      "label": "Arabic - United Arab Emirates",
-                      "value": "ar-ae",
-                    },
-                  ]
-                }
-                type="text"
-              />
-              <RemoveButton
-                className=""
-                disabled={false}
-                label="Remove language"
-                onRemove={[Function]}
-                targetFieldNumber={0}
-              />
-            </li>,
-          ],
-          "className": "list-group p-0 m-0",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": "[object Object]",
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
+              <div
+                className="col-11"
+              >
                 <Field
                   component={[Function]}
                   disabled={false}
+                  label={
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Transcript language"
+                    />
+                  }
                   name="[object Object]"
                   options={
                     Array [
@@ -130,46 +121,134 @@ ShallowWrapper {
                       },
                     ]
                   }
+                  required={true}
                   type="text"
-                />,
+                />
+              </div>
+              <RemoveButton
+                className="col-1"
+                disabled={false}
+                label="Remove language"
+                onRemove={[Function]}
+                targetFieldNumber={0}
+              />
+            </li>,
+          ],
+          "className": "list-group p-0 m-0 container-fluid",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "[object Object]",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="col-11"
+                >
+                  <Field
+                    component={[Function]}
+                    disabled={false}
+                    label={
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />
+                    }
+                    name="[object Object]"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Arabic - United Arab Emirates",
+                          "value": "ar-ae",
+                        },
+                      ]
+                    }
+                    required={true}
+                    type="text"
+                  />
+                </div>,
                 <RemoveButton
-                  className=""
+                  className="col-1"
                   disabled={false}
                   label="Remove language"
                   onRemove={[Function]}
                   targetFieldNumber={0}
                 />,
               ],
-              "className": "transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0",
+              "className": "transcript-language list-group-item row d-flex align-items-center px-0 mx-0",
             },
             "ref": null,
             "rendered": Array [
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "host",
                 "props": Object {
-                  "component": [Function],
-                  "disabled": false,
-                  "name": "[object Object]",
-                  "options": Array [
-                    Object {
-                      "label": "Arabic - United Arab Emirates",
-                      "value": "ar-ae",
-                    },
-                  ],
-                  "type": "text",
+                  "children": <Field
+                    component={[Function]}
+                    disabled={false}
+                    label={
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />
+                    }
+                    name="[object Object]"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Arabic - United Arab Emirates",
+                          "value": "ar-ae",
+                        },
+                      ]
+                    }
+                    required={true}
+                    type="text"
+                  />,
+                  "className": "col-11",
                 },
                 "ref": null,
-                "rendered": null,
-                "type": [Function],
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "disabled": false,
+                    "label": <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Transcript language"
+                    />,
+                    "name": "[object Object]",
+                    "options": Array [
+                      Object {
+                        "label": "Arabic - United Arab Emirates",
+                        "value": "ar-ae",
+                      },
+                    ],
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
               },
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "className": "",
+                  "className": "col-1",
                   "disabled": false,
                   "label": "Remove language",
                   "onRemove": [Function],
@@ -191,7 +270,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Add language",
-          "className": "btn btn-outline-primary js-add-button",
+          "className": "btn btn-outline-primary js-add-button mt-2",
           "disabled": false,
           "onClick": [Function],
           "type": "button",
@@ -211,27 +290,40 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <ul
-            className="list-group p-0 m-0"
+            className="list-group p-0 m-0 container-fluid"
           >
             <li
-              className="transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0"
+              className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
             >
-              <Field
-                component={[Function]}
-                disabled={false}
-                name="[object Object]"
-                options={
-                  Array [
-                    Object {
-                      "label": "Arabic - United Arab Emirates",
-                      "value": "ar-ae",
-                    },
-                  ]
-                }
-                type="text"
-              />
+              <div
+                className="col-11"
+              >
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  label={
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Transcript language"
+                    />
+                  }
+                  name="[object Object]"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Arabic - United Arab Emirates",
+                        "value": "ar-ae",
+                      },
+                    ]
+                  }
+                  required={true}
+                  type="text"
+                />
+              </div>
               <RemoveButton
-                className=""
+                className="col-1"
                 disabled={false}
                 label="Remove language"
                 onRemove={[Function]}
@@ -240,7 +332,7 @@ ShallowWrapper {
             </li>
           </ul>,
           <button
-            className="btn btn-outline-primary js-add-button"
+            className="btn btn-outline-primary js-add-button mt-2"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -259,44 +351,22 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <li
-                className="transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0"
+                className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
               >
-                <Field
-                  component={[Function]}
-                  disabled={false}
-                  name="[object Object]"
-                  options={
-                    Array [
-                      Object {
-                        "label": "Arabic - United Arab Emirates",
-                        "value": "ar-ae",
-                      },
-                    ]
-                  }
-                  type="text"
-                />
-                <RemoveButton
-                  className=""
-                  disabled={false}
-                  label="Remove language"
-                  onRemove={[Function]}
-                  targetFieldNumber={0}
-                />
-              </li>,
-            ],
-            "className": "list-group p-0 m-0",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": "[object Object]",
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
+                <div
+                  className="col-11"
+                >
                   <Field
                     component={[Function]}
                     disabled={false}
+                    label={
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />
+                    }
                     name="[object Object]"
                     options={
                       Array [
@@ -306,46 +376,134 @@ ShallowWrapper {
                         },
                       ]
                     }
+                    required={true}
                     type="text"
-                  />,
+                  />
+                </div>
+                <RemoveButton
+                  className="col-1"
+                  disabled={false}
+                  label="Remove language"
+                  onRemove={[Function]}
+                  targetFieldNumber={0}
+                />
+              </li>,
+            ],
+            "className": "list-group p-0 m-0 container-fluid",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "[object Object]",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="col-11"
+                  >
+                    <Field
+                      component={[Function]}
+                      disabled={false}
+                      label={
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Transcript language"
+                        />
+                      }
+                      name="[object Object]"
+                      options={
+                        Array [
+                          Object {
+                            "label": "Arabic - United Arab Emirates",
+                            "value": "ar-ae",
+                          },
+                        ]
+                      }
+                      required={true}
+                      type="text"
+                    />
+                  </div>,
                   <RemoveButton
-                    className=""
+                    className="col-1"
                     disabled={false}
                     label="Remove language"
                     onRemove={[Function]}
                     targetFieldNumber={0}
                   />,
                 ],
-                "className": "transcript-language list-group-item d-flex align-items-center border-0 p-0 m-0",
+                "className": "transcript-language list-group-item row d-flex align-items-center px-0 mx-0",
               },
               "ref": null,
               "rendered": Array [
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "host",
                   "props": Object {
-                    "component": [Function],
-                    "disabled": false,
-                    "name": "[object Object]",
-                    "options": Array [
-                      Object {
-                        "label": "Arabic - United Arab Emirates",
-                        "value": "ar-ae",
-                      },
-                    ],
-                    "type": "text",
+                    "children": <Field
+                      component={[Function]}
+                      disabled={false}
+                      label={
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Transcript language"
+                        />
+                      }
+                      name="[object Object]"
+                      options={
+                        Array [
+                          Object {
+                            "label": "Arabic - United Arab Emirates",
+                            "value": "ar-ae",
+                          },
+                        ]
+                      }
+                      required={true}
+                      type="text"
+                    />,
+                    "className": "col-11",
                   },
                   "ref": null,
-                  "rendered": null,
-                  "type": [Function],
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "disabled": false,
+                      "label": <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />,
+                      "name": "[object Object]",
+                      "options": Array [
+                        Object {
+                          "label": "Arabic - United Arab Emirates",
+                          "value": "ar-ae",
+                        },
+                      ],
+                      "required": true,
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "className": "",
+                    "className": "col-1",
                     "disabled": false,
                     "label": "Remove language",
                     "onRemove": [Function],
@@ -367,7 +525,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Add language",
-            "className": "btn btn-outline-primary js-add-button",
+            "className": "btn btn-outline-primary js-add-button mt-2",
             "disabled": false,
             "onClick": [Function],
             "type": "button",
@@ -438,10 +596,10 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <ul
-          className="list-group p-0 m-0"
+          className="list-group p-0 m-0 container-fluid"
         />,
         <button
-          className="btn btn-outline-primary js-add-button"
+          className="btn btn-outline-primary js-add-button mt-2"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -459,7 +617,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [],
-          "className": "list-group p-0 m-0",
+          "className": "list-group p-0 m-0 container-fluid",
         },
         "ref": null,
         "rendered": Array [],
@@ -471,7 +629,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Add language",
-          "className": "btn btn-outline-primary js-add-button",
+          "className": "btn btn-outline-primary js-add-button mt-2",
           "disabled": false,
           "onClick": [Function],
           "type": "button",
@@ -491,10 +649,10 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <ul
-            className="list-group p-0 m-0"
+            className="list-group p-0 m-0 container-fluid"
           />,
           <button
-            className="btn btn-outline-primary js-add-button"
+            className="btn btn-outline-primary js-add-button mt-2"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -512,7 +670,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [],
-            "className": "list-group p-0 m-0",
+            "className": "list-group p-0 m-0 container-fluid",
           },
           "ref": null,
           "rendered": Array [],
@@ -524,7 +682,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Add language",
-            "className": "btn btn-outline-primary js-add-button",
+            "className": "btn btn-outline-primary js-add-button mt-2",
             "disabled": false,
             "onClick": [Function],
             "type": "button",
