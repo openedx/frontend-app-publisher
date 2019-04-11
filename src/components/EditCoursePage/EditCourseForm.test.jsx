@@ -493,6 +493,7 @@ describe('BaseEditCourseForm', () => {
 
   it('renders html correctly with minimal data', () => {
     const component = shallow(<BaseEditCourseForm
+      title="Edit Form"
       handleSubmit={() => null}
       initialValues={{
         title: 'Test Title',
@@ -501,24 +502,30 @@ describe('BaseEditCourseForm', () => {
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
+      handleCourseRunSubmit={() => {}}
+      id="edit-course-form"
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders html correctly with all data present and verified entitlement', () => {
     const component = shallow(<BaseEditCourseForm
+      title="Edit Form"
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       number="Test102x"
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
+      handleCourseRunSubmit={() => {}}
+      id="edit-course-form"
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders html correctly while submitting', () => {
     const component = shallow(<BaseEditCourseForm
+      title="Edit Form"
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       number="Test103x"
@@ -528,6 +535,8 @@ describe('BaseEditCourseForm', () => {
       pristine={false}
       submitting
       uuid={initialValuesFull.uuid}
+      handleCourseRunSubmit={() => {}}
+      id="edit-course-form"
     />);
     expect(component).toMatchSnapshot();
   });
@@ -541,6 +550,8 @@ describe('BaseEditCourseForm', () => {
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
       courseInReview
+      handleCourseRunSubmit={() => {}}
+      id="edit-course-form"
     />);
 
     const childFields = component.find('input');

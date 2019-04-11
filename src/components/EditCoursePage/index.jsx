@@ -15,9 +15,11 @@ class EditCoursePage extends React.Component {
     super(props);
     this.state = {
       startedFetching: false,
+      targetRun: null,
     };
     this.handleCourseEdit = this.handleCourseEdit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
+    this.handleCourseRunSubmit = this.handleCourseRunSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -31,27 +33,27 @@ class EditCoursePage extends React.Component {
     this.setState({ startedFetching: true });
   }
 
-  prepareStaff(courseRuns) {
+  prepareCourseRuns(courseRuns) {
     /* eslint-disable no-param-reassign */
     courseRuns.forEach((courseRun) => {
       if (courseRun.staff) {
         courseRun.staff = courseRun.staff.map(staffer => staffer.uuid);
       }
     });
+    const { targetRun } = this.state;
+    if (targetRun) {
+      // If a course run triggered the submission, mark it as not a draft
+      const submittedRun = courseRuns.find(run => run.uuid === targetRun.uuid);
+      submittedRun.draft = false;
+    }
     /* eslint-enable no-param-reassign */
+
+    // Reset the target run after we handle setting it as not a draft
+    this.setState({ targetRun: null });
   }
 
-  handleCourseEdit(courseData) {
-    /*
-      Need to do some preprocessing before sending anything to course-discovery.
-      This includes:
-        1. Only sending the uuid from the array of staff objects
-        2. Only including subjects that have values
-        3. Putting the entitlement into an array and also adding in the sku
-          (required for updating price)
-        4. Renaming the image and video fields to correspond to what course-discovery is expecting
-        5. Setting the uuid so we can create the url to send to course-discovery
-    */
+  prepareCourse(courseData) {
+    /* eslint-disable no-param-reassign */
     const {
       courseInfo: {
         data: {
@@ -60,12 +62,8 @@ class EditCoursePage extends React.Component {
           entitlements,
         },
       },
-      editCourse,
     } = this.props;
-    // Create a deep copy of course runs since we modify the state of the staffers
-    const modifiedCourseRuns = jsonDeepCopy(courseData.course_runs);
-    this.prepareStaff(modifiedCourseRuns);
-    /* eslint-disable no-param-reassign */
+
     courseData.subjects = [
       courseData.subjectPrimary,
       courseData.subjectSecondary,
@@ -81,7 +79,36 @@ class EditCoursePage extends React.Component {
     courseData.key = key;
     courseData.uuid = uuid;
     /* eslint-enable no-param-reassign */
+  }
+
+  handleCourseEdit(courseData) {
+    /*
+      Need to do some preprocessing before sending anything to course-discovery.
+      This includes:
+        1. Only sending the uuid from the array of staff objects
+        2. Only including subjects that have values
+        3. Putting the entitlement into an array and also adding in the sku
+          (required for updating price)
+        4. Renaming the image and video fields to correspond to what course-discovery is expecting
+        5. Setting the uuid so we can create the url to send to course-discovery
+    */
+    const {
+      editCourse,
+    } = this.props;
+    // Create a deep copy of course runs since we modify their properties
+    const modifiedCourseRuns = jsonDeepCopy(courseData.course_runs);
+
+    // Process course run info
+    this.prepareCourseRuns(modifiedCourseRuns);
+
+    // Process course info
+    this.prepareCourse(courseData);
+
     return editCourse(courseData, modifiedCourseRuns);
+  }
+
+  handleCourseRunSubmit(targetRun) {
+    this.setState({ targetRun });
   }
 
   render() {
@@ -137,6 +164,8 @@ class EditCoursePage extends React.Component {
       transcript_languages: courseRun.transcript_languages,
       weeks_to_complete: courseRun.weeks_to_complete,
       staff: courseRun.staff,
+      status: courseRun.status,
+      draft: courseRun.draft,
     }));
 
     // If we want to keep a lot of the logic in the lower return,
@@ -176,6 +205,7 @@ class EditCoursePage extends React.Component {
               <EditCourseForm
                 id={`edit-course-form-${uuid}`}
                 onSubmit={this.handleCourseEdit}
+                handleCourseRunSubmit={this.handleCourseRunSubmit}
                 initialValues={{
                   title,
                   short_description,
