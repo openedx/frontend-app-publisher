@@ -31,14 +31,21 @@ class DiscoveryDataApiService {
       ...options,
     };
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses`;
-    return apiClient.get(`${url}`, {
+    return apiClient.get(url, {
       params: queryParams,
     });
   }
 
   static fetchOrganizations() {
+    const queryParams = {
+      page: 1,
+      page_size: 500,
+      limit: 500,
+    };
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/organizations/`;
-    return apiClient.get(url);
+    return apiClient.get(url, {
+      params: queryParams,
+    });
   }
 
   static createCourse(data) {

@@ -17,7 +17,7 @@ const RemoveButton = ({
     >
       <Icon
         id="remove-field"
-        className={['fa', 'fa-close', 'fa-2x', 'text-danger']}
+        className={['fa', 'fa-close']}
       />
     </button>
   </div>
