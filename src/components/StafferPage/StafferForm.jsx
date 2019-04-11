@@ -11,6 +11,8 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import store from '../../data/store';
+import FieldLabel from '../FieldLabel';
+import ButtonToolbar from '../ButtonToolbar';
 
 
 const basicValidate = value => (value ? undefined : 'This field is required');
@@ -40,121 +42,85 @@ const BaseStafferForm = ({
   const formControlDisabled = pristine || submitting || isSaving;
 
   return (
-    <React.Fragment>
-      <div className="create-staffer-form row">
-        <div className="col">
-          <form onSubmit={handleSubmit}>
-            <Field
-              name="profile_image.medium.url"
-              component={ImageUpload}
-              label={
-                <React.Fragment>
-                  Image:
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              id="profile_image"
-              required={isCreateForm}
-            />
-            <Field
-              name="given_name"
-              component={RenderInputTextField}
-              type="text"
-              label={
-                <React.Fragment>
-                  First name
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              required
-            />
-            <Field
-              name="family_name"
-              component={RenderInputTextField}
-              type="text"
-              label={
-                <React.Fragment>
-                  Last name
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              required
-            />
-            <Field
-              name="position.title"
-              component={RenderInputTextField}
-              type="text"
-              label={
-                <React.Fragment>
-                  Position
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              required
-            />
-            <Field
-              name="position.organization_id"
-              component={RenderSelectField}
-              options={extractOrgChoices(stafferOptions)}
-              label={
-                <React.Fragment>
-                  Organization
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              required
-            />
-            <Field
-              name="bio"
-              component={RichEditor}
-              label={
-                <React.Fragment>
-                  Biography
-                  <span className="required" aria-hidden>*</span>
-                </React.Fragment>
-              }
-              maxChars={250}
-              validate={basicValidate}
-              id="bio"
-            />
-            <Field
-              name="major_works"
-              component={RichEditor}
-              label={
-                <React.Fragment>
-                  Major works (optional)
-                </React.Fragment>
-              }
-              maxChars={250}
-              id="works"
-            />
-            <FieldArray
-              name="urls_detailed"
-              component={SocialLinks}
-            />
-            <FieldArray
-              name="areas_of_expertise"
-              component={AreasOfExpertise}
-            />
-            <div className="row justify-content-end">
-              <Link
-                className={['btn btn-link ml-3 form-cancel-btn']}
-                to="/"
-                disabled={formControlDisabled}
-                onClick={() => {
-                  store.dispatch(push('/'));
-                }}
-              >
-                Cancel
-              </Link>
-              <button type="submit" className="btn btn-outline-primary form-submit-btn" disabled={formControlDisabled} >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </React.Fragment>
+    <div className="create-staffer-form">
+      <form onSubmit={handleSubmit}>
+        <Field
+          name="profile_image.medium.url"
+          component={ImageUpload}
+          label={<FieldLabel text="Image" required />}
+          id="profile_image"
+          required={isCreateForm}
+        />
+        <Field
+          name="given_name"
+          component={RenderInputTextField}
+          type="text"
+          label={<FieldLabel text="First name" required />}
+          required
+        />
+        <Field
+          name="family_name"
+          component={RenderInputTextField}
+          type="text"
+          label={<FieldLabel text="Last name" required />}
+          required
+        />
+        <Field
+          name="position.title"
+          component={RenderInputTextField}
+          type="text"
+          label={<FieldLabel text="Position" required />}
+          required
+        />
+        <Field
+          name="position.organization_id"
+          component={RenderSelectField}
+          options={extractOrgChoices(stafferOptions)}
+          label={<FieldLabel text="Organization" required />}
+          required
+        />
+        <Field
+          name="bio"
+          component={RichEditor}
+          label={<FieldLabel text="Biography" required />}
+          maxChars={250}
+          validate={basicValidate}
+          id="bio"
+        />
+        <Field
+          name="major_works"
+          component={RichEditor}
+          label={<FieldLabel text="Major works" />}
+          maxChars={250}
+          id="works"
+        />
+        <FieldLabel text="Social links" className="mb-2" />
+        <FieldArray
+          name="urls_detailed"
+          component={SocialLinks}
+        />
+        <FieldLabel text="Areas of expertise" className="mb-2" />
+        <FieldArray
+          name="areas_of_expertise"
+          component={AreasOfExpertise}
+        />
+        <ButtonToolbar>
+          <Link
+            className={['btn btn-outline-primary form-cancel-btn']}
+            to="/"
+            disabled={formControlDisabled}
+            onClick={() => {
+              store.dispatch(push('/'));
+            }}
+          >
+            Cancel
+          </Link>
+          <button type="submit" className="btn btn-primary form-submit-btn" disabled={formControlDisabled} >
+            Submit
+          </button>
+        </ButtonToolbar>
+      </form>
+    </div>
   );
 };
 

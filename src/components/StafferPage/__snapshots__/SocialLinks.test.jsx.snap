@@ -25,33 +25,24 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <button
-          className="btn btn-light js-add-button"
-          onClick={[Function]}
-          type="button"
-        >
-          Add social link
-        </button>,
         <ul
-          className="list-group p-0 m-0"
+          className="list-group p-0 m-0 container-fluid"
         >
           <li
             className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
           >
             <div
-              className="col-6"
+              className="col-4"
             >
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Type
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="Type"
+                  />
                 }
                 name="[object Object].type"
                 options={
@@ -82,14 +73,17 @@ ShallowWrapper {
               />
             </div>
             <div
-              className="col-6"
+              className="col-3"
             >
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Title - optional
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Title"
+                  />
                 }
                 name="[object Object].title"
                 type="text"
@@ -101,18 +95,16 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    URL
-                    <span
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="URL"
+                  />
                 }
                 name="[object Object].url"
                 required={true}
-                type="text"
+                type="url"
               />
             </div>
             <input
@@ -120,32 +112,25 @@ ShallowWrapper {
               type="hidden"
             />
             <RemoveButton
-              className=""
+              className="col-1 m-auto"
               label="Remove social link"
               onRemove={[Function]}
               targetFieldNumber={0}
             />
           </li>
         </ul>,
+        <button
+          className="btn btn-outline-primary js-add-button mt-2"
+          onClick={[Function]}
+          type="button"
+        >
+          Add social link
+        </button>,
       ],
-      "className": "social-links mt-4",
+      "className": "social-links mb-3",
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Add social link",
-          "className": "btn btn-light js-add-button",
-          "onClick": [Function],
-          "type": "button",
-        },
-        "ref": null,
-        "rendered": "Add social link",
-        "type": "button",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -156,19 +141,17 @@ ShallowWrapper {
               className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
             >
               <div
-                className="col-6"
+                className="col-4"
               >
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      Type
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Type"
+                    />
                   }
                   name="[object Object].type"
                   options={
@@ -199,14 +182,17 @@ ShallowWrapper {
                 />
               </div>
               <div
-                className="col-6"
+                className="col-3"
               >
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      Title - optional
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={false}
+                      requiredForSubmit={false}
+                      text="Title"
+                    />
                   }
                   name="[object Object].title"
                   type="text"
@@ -218,18 +204,16 @@ ShallowWrapper {
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      URL
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="URL"
+                    />
                   }
                   name="[object Object].url"
                   required={true}
-                  type="text"
+                  type="url"
                 />
               </div>
               <input
@@ -237,14 +221,14 @@ ShallowWrapper {
                 type="hidden"
               />
               <RemoveButton
-                className=""
+                className="col-1 m-auto"
                 label="Remove social link"
                 onRemove={[Function]}
                 targetFieldNumber={0}
               />
             </li>,
           ],
-          "className": "list-group p-0 m-0",
+          "className": "list-group p-0 m-0 container-fluid",
         },
         "ref": null,
         "rendered": Array [
@@ -255,19 +239,17 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <div
-                  className="col-6"
+                  className="col-4"
                 >
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Type
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Type"
+                      />
                     }
                     name="[object Object].type"
                     options={
@@ -298,14 +280,17 @@ ShallowWrapper {
                   />
                 </div>,
                 <div
-                  className="col-6"
+                  className="col-3"
                 >
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Title - optional
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={false}
+                        requiredForSubmit={false}
+                        text="Title"
+                      />
                     }
                     name="[object Object].title"
                     type="text"
@@ -317,18 +302,16 @@ ShallowWrapper {
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        URL
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="URL"
+                      />
                     }
                     name="[object Object].url"
                     required={true}
-                    type="text"
+                    type="url"
                   />
                 </div>,
                 <input
@@ -336,7 +319,7 @@ ShallowWrapper {
                   type="hidden"
                 />,
                 <RemoveButton
-                  className=""
+                  className="col-1 m-auto"
                   label="Remove social link"
                   onRemove={[Function]}
                   targetFieldNumber={0}
@@ -354,14 +337,12 @@ ShallowWrapper {
                   "children": <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Type
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Type"
+                      />
                     }
                     name="[object Object].type"
                     options={
@@ -390,7 +371,7 @@ ShallowWrapper {
                     }
                     required={true}
                   />,
-                  "className": "col-6",
+                  "className": "col-4",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -399,14 +380,12 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "component": [Function],
-                    "label": <React.Fragment>
-                      Type
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>,
+                    "label": <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Type"
+                    />,
                     "name": "[object Object].type",
                     "options": Array [
                       Object {
@@ -446,14 +425,17 @@ ShallowWrapper {
                   "children": <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Title - optional
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={false}
+                        requiredForSubmit={false}
+                        text="Title"
+                      />
                     }
                     name="[object Object].title"
                     type="text"
                   />,
-                  "className": "col-6",
+                  "className": "col-3",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -462,9 +444,12 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "component": [Function],
-                    "label": <React.Fragment>
-                      Title - optional
-                    </React.Fragment>,
+                    "label": <FieldLabel
+                      className=""
+                      required={false}
+                      requiredForSubmit={false}
+                      text="Title"
+                    />,
                     "name": "[object Object].title",
                     "type": "text",
                   },
@@ -482,18 +467,16 @@ ShallowWrapper {
                   "children": <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        URL
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="URL"
+                      />
                     }
                     name="[object Object].url"
                     required={true}
-                    type="text"
+                    type="url"
                   />,
                   "className": "col-4",
                 },
@@ -504,17 +487,15 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "component": [Function],
-                    "label": <React.Fragment>
-                      URL
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>,
+                    "label": <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="URL"
+                    />,
                     "name": "[object Object].url",
                     "required": true,
-                    "type": "text",
+                    "type": "url",
                   },
                   "ref": null,
                   "rendered": null,
@@ -539,7 +520,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "className": "",
+                  "className": "col-1 m-auto",
                   "label": "Remove social link",
                   "onRemove": [Function],
                   "targetFieldNumber": 0,
@@ -554,6 +535,20 @@ ShallowWrapper {
         ],
         "type": "ul",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add social link",
+          "className": "btn btn-outline-primary js-add-button mt-2",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add social link",
+        "type": "button",
+      },
     ],
     "type": "div",
   },
@@ -564,33 +559,24 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <button
-            className="btn btn-light js-add-button"
-            onClick={[Function]}
-            type="button"
-          >
-            Add social link
-          </button>,
           <ul
-            className="list-group p-0 m-0"
+            className="list-group p-0 m-0 container-fluid"
           >
             <li
               className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
             >
               <div
-                className="col-6"
+                className="col-4"
               >
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      Type
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Type"
+                    />
                   }
                   name="[object Object].type"
                   options={
@@ -621,14 +607,17 @@ ShallowWrapper {
                 />
               </div>
               <div
-                className="col-6"
+                className="col-3"
               >
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      Title - optional
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={false}
+                      requiredForSubmit={false}
+                      text="Title"
+                    />
                   }
                   name="[object Object].title"
                   type="text"
@@ -640,18 +629,16 @@ ShallowWrapper {
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      URL
-                      <span
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="URL"
+                    />
                   }
                   name="[object Object].url"
                   required={true}
-                  type="text"
+                  type="url"
                 />
               </div>
               <input
@@ -659,32 +646,25 @@ ShallowWrapper {
                 type="hidden"
               />
               <RemoveButton
-                className=""
+                className="col-1 m-auto"
                 label="Remove social link"
                 onRemove={[Function]}
                 targetFieldNumber={0}
               />
             </li>
           </ul>,
+          <button
+            className="btn btn-outline-primary js-add-button mt-2"
+            onClick={[Function]}
+            type="button"
+          >
+            Add social link
+          </button>,
         ],
-        "className": "social-links mt-4",
+        "className": "social-links mb-3",
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Add social link",
-            "className": "btn btn-light js-add-button",
-            "onClick": [Function],
-            "type": "button",
-          },
-          "ref": null,
-          "rendered": "Add social link",
-          "type": "button",
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -695,19 +675,17 @@ ShallowWrapper {
                 className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
               >
                 <div
-                  className="col-6"
+                  className="col-4"
                 >
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Type
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Type"
+                      />
                     }
                     name="[object Object].type"
                     options={
@@ -738,14 +716,17 @@ ShallowWrapper {
                   />
                 </div>
                 <div
-                  className="col-6"
+                  className="col-3"
                 >
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Title - optional
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={false}
+                        requiredForSubmit={false}
+                        text="Title"
+                      />
                     }
                     name="[object Object].title"
                     type="text"
@@ -757,18 +738,16 @@ ShallowWrapper {
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        URL
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="URL"
+                      />
                     }
                     name="[object Object].url"
                     required={true}
-                    type="text"
+                    type="url"
                   />
                 </div>
                 <input
@@ -776,14 +755,14 @@ ShallowWrapper {
                   type="hidden"
                 />
                 <RemoveButton
-                  className=""
+                  className="col-1 m-auto"
                   label="Remove social link"
                   onRemove={[Function]}
                   targetFieldNumber={0}
                 />
               </li>,
             ],
-            "className": "list-group p-0 m-0",
+            "className": "list-group p-0 m-0 container-fluid",
           },
           "ref": null,
           "rendered": Array [
@@ -794,19 +773,17 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <div
-                    className="col-6"
+                    className="col-4"
                   >
                     <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          Type
-                          <span
-                            className="required"
-                          >
-                            *
-                          </span>
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Type"
+                        />
                       }
                       name="[object Object].type"
                       options={
@@ -837,14 +814,17 @@ ShallowWrapper {
                     />
                   </div>,
                   <div
-                    className="col-6"
+                    className="col-3"
                   >
                     <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          Title - optional
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={false}
+                          requiredForSubmit={false}
+                          text="Title"
+                        />
                       }
                       name="[object Object].title"
                       type="text"
@@ -856,18 +836,16 @@ ShallowWrapper {
                     <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          URL
-                          <span
-                            className="required"
-                          >
-                            *
-                          </span>
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="URL"
+                        />
                       }
                       name="[object Object].url"
                       required={true}
-                      type="text"
+                      type="url"
                     />
                   </div>,
                   <input
@@ -875,7 +853,7 @@ ShallowWrapper {
                     type="hidden"
                   />,
                   <RemoveButton
-                    className=""
+                    className="col-1 m-auto"
                     label="Remove social link"
                     onRemove={[Function]}
                     targetFieldNumber={0}
@@ -893,14 +871,12 @@ ShallowWrapper {
                     "children": <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          Type
-                          <span
-                            className="required"
-                          >
-                            *
-                          </span>
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Type"
+                        />
                       }
                       name="[object Object].type"
                       options={
@@ -929,7 +905,7 @@ ShallowWrapper {
                       }
                       required={true}
                     />,
-                    "className": "col-6",
+                    "className": "col-4",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -938,14 +914,12 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "component": [Function],
-                      "label": <React.Fragment>
-                        Type
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>,
+                      "label": <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Type"
+                      />,
                       "name": "[object Object].type",
                       "options": Array [
                         Object {
@@ -985,14 +959,17 @@ ShallowWrapper {
                     "children": <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          Title - optional
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={false}
+                          requiredForSubmit={false}
+                          text="Title"
+                        />
                       }
                       name="[object Object].title"
                       type="text"
                     />,
-                    "className": "col-6",
+                    "className": "col-3",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1001,9 +978,12 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "component": [Function],
-                      "label": <React.Fragment>
-                        Title - optional
-                      </React.Fragment>,
+                      "label": <FieldLabel
+                        className=""
+                        required={false}
+                        requiredForSubmit={false}
+                        text="Title"
+                      />,
                       "name": "[object Object].title",
                       "type": "text",
                     },
@@ -1021,18 +1001,16 @@ ShallowWrapper {
                     "children": <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          URL
-                          <span
-                            className="required"
-                          >
-                            *
-                          </span>
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="URL"
+                        />
                       }
                       name="[object Object].url"
                       required={true}
-                      type="text"
+                      type="url"
                     />,
                     "className": "col-4",
                   },
@@ -1043,17 +1021,15 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "component": [Function],
-                      "label": <React.Fragment>
-                        URL
-                        <span
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>,
+                      "label": <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="URL"
+                      />,
                       "name": "[object Object].url",
                       "required": true,
-                      "type": "text",
+                      "type": "url",
                     },
                     "ref": null,
                     "rendered": null,
@@ -1078,7 +1054,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "className": "",
+                    "className": "col-1 m-auto",
                     "label": "Remove social link",
                     "onRemove": [Function],
                     "targetFieldNumber": 0,
@@ -1092,6 +1068,20 @@ ShallowWrapper {
             },
           ],
           "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add social link",
+            "className": "btn btn-outline-primary js-add-button mt-2",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add social link",
+          "type": "button",
         },
       ],
       "type": "div",
@@ -1145,18 +1135,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <ul
+          className="list-group p-0 m-0 container-fluid"
+        />,
         <button
-          className="btn btn-light js-add-button"
+          className="btn btn-outline-primary js-add-button mt-2"
           onClick={[Function]}
           type="button"
         >
           Add social link
         </button>,
-        <ul
-          className="list-group p-0 m-0"
-        />,
       ],
-      "className": "social-links mt-4",
+      "className": "social-links mb-3",
     },
     "ref": null,
     "rendered": Array [
@@ -1165,26 +1155,26 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Add social link",
-          "className": "btn btn-light js-add-button",
-          "onClick": [Function],
-          "type": "button",
+          "children": Array [],
+          "className": "list-group p-0 m-0 container-fluid",
         },
         "ref": null,
-        "rendered": "Add social link",
-        "type": "button",
+        "rendered": Array [],
+        "type": "ul",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [],
-          "className": "list-group p-0 m-0",
+          "children": "Add social link",
+          "className": "btn btn-outline-primary js-add-button mt-2",
+          "onClick": [Function],
+          "type": "button",
         },
         "ref": null,
-        "rendered": Array [],
-        "type": "ul",
+        "rendered": "Add social link",
+        "type": "button",
       },
     ],
     "type": "div",
@@ -1196,18 +1186,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <ul
+            className="list-group p-0 m-0 container-fluid"
+          />,
           <button
-            className="btn btn-light js-add-button"
+            className="btn btn-outline-primary js-add-button mt-2"
             onClick={[Function]}
             type="button"
           >
             Add social link
           </button>,
-          <ul
-            className="list-group p-0 m-0"
-          />,
         ],
-        "className": "social-links mt-4",
+        "className": "social-links mb-3",
       },
       "ref": null,
       "rendered": Array [
@@ -1216,26 +1206,26 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Add social link",
-            "className": "btn btn-light js-add-button",
-            "onClick": [Function],
-            "type": "button",
+            "children": Array [],
+            "className": "list-group p-0 m-0 container-fluid",
           },
           "ref": null,
-          "rendered": "Add social link",
-          "type": "button",
+          "rendered": Array [],
+          "type": "ul",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [],
-            "className": "list-group p-0 m-0",
+            "children": "Add social link",
+            "className": "btn btn-outline-primary js-add-button mt-2",
+            "onClick": [Function],
+            "type": "button",
           },
           "ref": null,
-          "rendered": Array [],
-          "type": "ul",
+          "rendered": "Add social link",
+          "type": "button",
         },
       ],
       "type": "div",

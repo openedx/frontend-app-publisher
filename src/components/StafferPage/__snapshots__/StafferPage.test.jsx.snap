@@ -34,38 +34,24 @@ ShallowWrapper {
             Create New Instructor
           </title>
         </HelmetWrapper>,
-        <div
-          className="container-fluid"
+        <PageContainer
+          className=""
+          wide={false}
         >
-          <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    onSubmit={[Function]}
-                    stafferOptions={Object {}}
-                  />
-                  
-                </div>
-              </div>
-            </div>
+          <div>
+            <h2>
+              Create New Instructor
+            </h2>
+            <hr />
+            <ReduxForm
+              id="create-staffer-form"
+              isCreateForm={true}
+              onSubmit={[Function]}
+              stafferOptions={Object {}}
+            />
+            
           </div>
-        </div>,
+        </PageContainer>,
       ],
     },
     "ref": null,
@@ -98,212 +84,95 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    onSubmit={[Function]}
-                    stafferOptions={Object {}}
-                  />
-                  
-                </div>
-              </div>
-            </div>
-          </div>,
-          "className": "container-fluid",
+          "children": Array [
+            false,
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                onSubmit={[Function]}
+                stafferOptions={Object {}}
+              />
+              
+            </div>,
+          ],
+          "className": "",
+          "wide": false,
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    onSubmit={[Function]}
-                    stafferOptions={Object {}}
-                  />
-                  
-                </div>
-              </div>
-            </div>,
-            "className": "row justify-content-md-center my-3 ",
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          false,
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                false,
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      onSubmit={[Function]}
-                      stafferOptions={Object {}}
-                    />
-                    
-                  </div>
-                </div>,
+                <h2>
+                  Create New Instructor
+                </h2>,
+                <hr />,
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  onSubmit={[Function]}
+                  stafferOptions={Object {}}
+                />,
+                undefined,
+                "",
               ],
-              "className": "col-6",
             },
             "ref": null,
             "rendered": Array [
-              false,
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    <h2>
-                      Create New Instructor
-                    </h2>,
-                    <hr />,
-                    <h3>
-                      Instructor Information
-                    </h3>,
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        onSubmit={[Function]}
-                        stafferOptions={Object {}}
-                      />
-                      
-                    </div>,
-                  ],
+                  "children": "Create New Instructor",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Create New Instructor",
-                    },
-                    "ref": null,
-                    "rendered": "Create New Instructor",
-                    "type": "h2",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "hr",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Instructor Information",
-                    },
-                    "ref": null,
-                    "rendered": "Instructor Information",
-                    "type": "h3",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          onSubmit={[Function]}
-                          stafferOptions={Object {}}
-                        />,
-                        undefined,
-                        "",
-                      ],
-                      "className": "col",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "id": "create-staffer-form",
-                          "initialValues": undefined,
-                          "isCreateForm": true,
-                          "isSaving": undefined,
-                          "onSubmit": [Function],
-                          "stafferOptions": Object {},
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      undefined,
-                      "",
-                    ],
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                "rendered": "Create New Instructor",
+                "type": "h2",
               },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "id": "create-staffer-form",
+                  "initialValues": undefined,
+                  "isCreateForm": true,
+                  "isSaving": undefined,
+                  "onSubmit": [Function],
+                  "stafferOptions": Object {},
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              undefined,
+              "",
             ],
             "type": "div",
           },
-          "type": "div",
-        },
-        "type": "div",
+        ],
+        "type": [Function],
       },
     ],
     "type": Symbol(react.fragment),
@@ -323,38 +192,24 @@ ShallowWrapper {
               Create New Instructor
             </title>
           </HelmetWrapper>,
-          <div
-            className="container-fluid"
+          <PageContainer
+            className=""
+            wide={false}
           >
-            <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      onSubmit={[Function]}
-                      stafferOptions={Object {}}
-                    />
-                    
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                onSubmit={[Function]}
+                stafferOptions={Object {}}
+              />
+              
             </div>
-          </div>,
+          </PageContainer>,
         ],
       },
       "ref": null,
@@ -387,212 +242,95 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      onSubmit={[Function]}
-                      stafferOptions={Object {}}
-                    />
-                    
-                  </div>
-                </div>
-              </div>
-            </div>,
-            "className": "container-fluid",
+            "children": Array [
+              false,
+              <div>
+                <h2>
+                  Create New Instructor
+                </h2>
+                <hr />
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  onSubmit={[Function]}
+                  stafferOptions={Object {}}
+                />
+                
+              </div>,
+            ],
+            "className": "",
+            "wide": false,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      onSubmit={[Function]}
-                      stafferOptions={Object {}}
-                    />
-                    
-                  </div>
-                </div>
-              </div>,
-              "className": "row justify-content-md-center my-3 ",
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  false,
-                  <div>
-                    <h2>
-                      Create New Instructor
-                    </h2>
-                    <hr />
-                    <h3>
-                      Instructor Information
-                    </h3>
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        onSubmit={[Function]}
-                        stafferOptions={Object {}}
-                      />
-                      
-                    </div>
-                  </div>,
+                  <h2>
+                    Create New Instructor
+                  </h2>,
+                  <hr />,
+                  <ReduxForm
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    onSubmit={[Function]}
+                    stafferOptions={Object {}}
+                  />,
+                  undefined,
+                  "",
                 ],
-                "className": "col-6",
               },
               "ref": null,
               "rendered": Array [
-                false,
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <h2>
-                        Create New Instructor
-                      </h2>,
-                      <hr />,
-                      <h3>
-                        Instructor Information
-                      </h3>,
-                      <div
-                        className="col"
-                      >
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          onSubmit={[Function]}
-                          stafferOptions={Object {}}
-                        />
-                        
-                      </div>,
-                    ],
+                    "children": "Create New Instructor",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Create New Instructor",
-                      },
-                      "ref": null,
-                      "rendered": "Create New Instructor",
-                      "type": "h2",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "hr",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Instructor Information",
-                      },
-                      "ref": null,
-                      "rendered": "Instructor Information",
-                      "type": "h3",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <ReduxForm
-                            id="create-staffer-form"
-                            isCreateForm={true}
-                            onSubmit={[Function]}
-                            stafferOptions={Object {}}
-                          />,
-                          undefined,
-                          "",
-                        ],
-                        "className": "col",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "class",
-                          "props": Object {
-                            "id": "create-staffer-form",
-                            "initialValues": undefined,
-                            "isCreateForm": true,
-                            "isSaving": undefined,
-                            "onSubmit": [Function],
-                            "stafferOptions": Object {},
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                        undefined,
-                        "",
-                      ],
-                      "type": "div",
-                    },
-                  ],
-                  "type": "div",
+                  "rendered": "Create New Instructor",
+                  "type": "h2",
                 },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "id": "create-staffer-form",
+                    "initialValues": undefined,
+                    "isCreateForm": true,
+                    "isSaving": undefined,
+                    "onSubmit": [Function],
+                    "stafferOptions": Object {},
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                undefined,
+                "",
               ],
               "type": "div",
             },
-            "type": "div",
-          },
-          "type": "div",
+          ],
+          "type": [Function],
         },
       ],
       "type": Symbol(react.fragment),
@@ -670,48 +408,34 @@ ShallowWrapper {
             Create New Instructor
           </title>
         </HelmetWrapper>,
-        <div
-          className="container-fluid"
+        <PageContainer
+          className=""
+          wide={false}
         >
-          <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={true}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": null,
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <LoadingSpinner
-                    message="Saving instructor"
-                  />
-                  
-                </div>
-              </div>
-            </div>
+          <div>
+            <h2>
+              Create New Instructor
+            </h2>
+            <hr />
+            <ReduxForm
+              id="create-staffer-form"
+              isCreateForm={true}
+              isSaving={true}
+              onSubmit={[Function]}
+              stafferOptions={
+                Object {
+                  "data": Object {},
+                  "error": null,
+                  "isFetching": false,
+                }
+              }
+            />
+            <LoadingSpinner
+              message="Saving instructor"
+            />
+            
           </div>
-        </div>,
+        </PageContainer>,
       ],
     },
     "ref": null,
@@ -744,275 +468,128 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={true}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": null,
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <LoadingSpinner
-                    message="Saving instructor"
-                  />
-                  
-                </div>
-              </div>
-            </div>
-          </div>,
-          "className": "container-fluid",
+          "children": Array [
+            false,
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={true}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": null,
+                    "isFetching": false,
+                  }
+                }
+              />
+              <LoadingSpinner
+                message="Saving instructor"
+              />
+              
+            </div>,
+          ],
+          "className": "",
+          "wide": false,
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={true}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": null,
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <LoadingSpinner
-                    message="Saving instructor"
-                  />
-                  
-                </div>
-              </div>
-            </div>,
-            "className": "row justify-content-md-center my-3 ",
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          false,
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                false,
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={true}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <LoadingSpinner
-                      message="Saving instructor"
-                    />
-                    
-                  </div>
-                </div>,
+                <h2>
+                  Create New Instructor
+                </h2>,
+                <hr />,
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={true}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": null,
+                      "isFetching": false,
+                    }
+                  }
+                />,
+                <LoadingSpinner
+                  message="Saving instructor"
+                />,
+                "",
               ],
-              "className": "col-6",
             },
             "ref": null,
             "rendered": Array [
-              false,
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    <h2>
-                      Create New Instructor
-                    </h2>,
-                    <hr />,
-                    <h3>
-                      Instructor Information
-                    </h3>,
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={true}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": null,
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <LoadingSpinner
-                        message="Saving instructor"
-                      />
-                      
-                    </div>,
-                  ],
+                  "children": "Create New Instructor",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Create New Instructor",
-                    },
-                    "ref": null,
-                    "rendered": "Create New Instructor",
-                    "type": "h2",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "hr",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Instructor Information",
-                    },
-                    "ref": null,
-                    "rendered": "Instructor Information",
-                    "type": "h3",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={true}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": null,
-                              "isFetching": false,
-                            }
-                          }
-                        />,
-                        <LoadingSpinner
-                          message="Saving instructor"
-                        />,
-                        "",
-                      ],
-                      "className": "col",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "id": "create-staffer-form",
-                          "initialValues": undefined,
-                          "isCreateForm": true,
-                          "isSaving": true,
-                          "onSubmit": [Function],
-                          "stafferOptions": Object {
-                            "data": Object {},
-                            "error": null,
-                            "isFetching": false,
-                          },
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "function",
-                        "props": Object {
-                          "message": "Saving instructor",
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      "",
-                    ],
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                "rendered": "Create New Instructor",
+                "type": "h2",
               },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "id": "create-staffer-form",
+                  "initialValues": undefined,
+                  "isCreateForm": true,
+                  "isSaving": true,
+                  "onSubmit": [Function],
+                  "stafferOptions": Object {
+                    "data": Object {},
+                    "error": null,
+                    "isFetching": false,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "message": "Saving instructor",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "",
             ],
             "type": "div",
           },
-          "type": "div",
-        },
-        "type": "div",
+        ],
+        "type": [Function],
       },
     ],
     "type": Symbol(react.fragment),
@@ -1032,48 +609,34 @@ ShallowWrapper {
               Create New Instructor
             </title>
           </HelmetWrapper>,
-          <div
-            className="container-fluid"
+          <PageContainer
+            className=""
+            wide={false}
           >
-            <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={true}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <LoadingSpinner
-                      message="Saving instructor"
-                    />
-                    
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={true}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": null,
+                    "isFetching": false,
+                  }
+                }
+              />
+              <LoadingSpinner
+                message="Saving instructor"
+              />
+              
             </div>
-          </div>,
+          </PageContainer>,
         ],
       },
       "ref": null,
@@ -1106,275 +669,128 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={true}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <LoadingSpinner
-                      message="Saving instructor"
-                    />
-                    
-                  </div>
-                </div>
-              </div>
-            </div>,
-            "className": "container-fluid",
+            "children": Array [
+              false,
+              <div>
+                <h2>
+                  Create New Instructor
+                </h2>
+                <hr />
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={true}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": null,
+                      "isFetching": false,
+                    }
+                  }
+                />
+                <LoadingSpinner
+                  message="Saving instructor"
+                />
+                
+              </div>,
+            ],
+            "className": "",
+            "wide": false,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={true}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <LoadingSpinner
-                      message="Saving instructor"
-                    />
-                    
-                  </div>
-                </div>
-              </div>,
-              "className": "row justify-content-md-center my-3 ",
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  false,
-                  <div>
-                    <h2>
-                      Create New Instructor
-                    </h2>
-                    <hr />
-                    <h3>
-                      Instructor Information
-                    </h3>
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={true}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": null,
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <LoadingSpinner
-                        message="Saving instructor"
-                      />
-                      
-                    </div>
-                  </div>,
+                  <h2>
+                    Create New Instructor
+                  </h2>,
+                  <hr />,
+                  <ReduxForm
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={true}
+                    onSubmit={[Function]}
+                    stafferOptions={
+                      Object {
+                        "data": Object {},
+                        "error": null,
+                        "isFetching": false,
+                      }
+                    }
+                  />,
+                  <LoadingSpinner
+                    message="Saving instructor"
+                  />,
+                  "",
                 ],
-                "className": "col-6",
               },
               "ref": null,
               "rendered": Array [
-                false,
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <h2>
-                        Create New Instructor
-                      </h2>,
-                      <hr />,
-                      <h3>
-                        Instructor Information
-                      </h3>,
-                      <div
-                        className="col"
-                      >
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={true}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": null,
-                              "isFetching": false,
-                            }
-                          }
-                        />
-                        <LoadingSpinner
-                          message="Saving instructor"
-                        />
-                        
-                      </div>,
-                    ],
+                    "children": "Create New Instructor",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Create New Instructor",
-                      },
-                      "ref": null,
-                      "rendered": "Create New Instructor",
-                      "type": "h2",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "hr",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Instructor Information",
-                      },
-                      "ref": null,
-                      "rendered": "Instructor Information",
-                      "type": "h3",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <ReduxForm
-                            id="create-staffer-form"
-                            isCreateForm={true}
-                            isSaving={true}
-                            onSubmit={[Function]}
-                            stafferOptions={
-                              Object {
-                                "data": Object {},
-                                "error": null,
-                                "isFetching": false,
-                              }
-                            }
-                          />,
-                          <LoadingSpinner
-                            message="Saving instructor"
-                          />,
-                          "",
-                        ],
-                        "className": "col",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "class",
-                          "props": Object {
-                            "id": "create-staffer-form",
-                            "initialValues": undefined,
-                            "isCreateForm": true,
-                            "isSaving": true,
-                            "onSubmit": [Function],
-                            "stafferOptions": Object {
-                              "data": Object {},
-                              "error": null,
-                              "isFetching": false,
-                            },
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "function",
-                          "props": Object {
-                            "message": "Saving instructor",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                        "",
-                      ],
-                      "type": "div",
-                    },
-                  ],
-                  "type": "div",
+                  "rendered": "Create New Instructor",
+                  "type": "h2",
                 },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "id": "create-staffer-form",
+                    "initialValues": undefined,
+                    "isCreateForm": true,
+                    "isSaving": true,
+                    "onSubmit": [Function],
+                    "stafferOptions": Object {
+                      "data": Object {},
+                      "error": null,
+                      "isFetching": false,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "message": "Saving instructor",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "",
               ],
               "type": "div",
             },
-            "type": "div",
-          },
-          "type": "div",
+          ],
+          "type": [Function],
         },
       ],
       "type": Symbol(react.fragment),
@@ -1452,21 +868,14 @@ ShallowWrapper {
             Create New Instructor
           </title>
         </HelmetWrapper>,
-        <div
-          className="container-fluid"
+        <PageContainer
+          className=""
+          wide={false}
         >
-          <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <LoadingSpinner
-                message="Loading…"
-              />
-            </div>
-          </div>
-        </div>,
+          <LoadingSpinner
+            message="Loading…"
+          />
+        </PageContainer>,
       ],
     },
     "ref": null,
@@ -1499,70 +908,33 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <LoadingSpinner
-                message="Loading…"
-              />
-            </div>
-          </div>,
-          "className": "container-fluid",
+          "children": Array [
+            <LoadingSpinner
+              message="Loading…"
+            />,
+            false,
+          ],
+          "className": "",
+          "wide": false,
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
-            >
-              <LoadingSpinner
-                message="Loading…"
-              />
-            </div>,
-            "className": "row justify-content-md-center my-3 ",
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <LoadingSpinner
-                  message="Loading…"
-                />,
-                false,
-              ],
-              "className": "col-6",
+              "message": "Loading…",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "message": "Loading…",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              false,
-            ],
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
-          "type": "div",
-        },
-        "type": "div",
+          false,
+        ],
+        "type": [Function],
       },
     ],
     "type": Symbol(react.fragment),
@@ -1582,21 +954,14 @@ ShallowWrapper {
               Create New Instructor
             </title>
           </HelmetWrapper>,
-          <div
-            className="container-fluid"
+          <PageContainer
+            className=""
+            wide={false}
           >
-            <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <LoadingSpinner
-                  message="Loading…"
-                />
-              </div>
-            </div>
-          </div>,
+            <LoadingSpinner
+              message="Loading…"
+            />
+          </PageContainer>,
         ],
       },
       "ref": null,
@@ -1629,70 +994,33 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <LoadingSpinner
-                  message="Loading…"
-                />
-              </div>
-            </div>,
-            "className": "container-fluid",
+            "children": Array [
+              <LoadingSpinner
+                message="Loading…"
+              />,
+              false,
+            ],
+            "className": "",
+            "wide": false,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <LoadingSpinner
-                  message="Loading…"
-                />
-              </div>,
-              "className": "row justify-content-md-center my-3 ",
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": Array [
-                  <LoadingSpinner
-                    message="Loading…"
-                  />,
-                  false,
-                ],
-                "className": "col-6",
+                "message": "Loading…",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "message": "Loading…",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                false,
-              ],
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
-            "type": "div",
-          },
-          "type": "div",
+            false,
+          ],
+          "type": [Function],
         },
       ],
       "type": Symbol(react.fragment),
@@ -1951,54 +1279,40 @@ ShallowWrapper {
             Create New Instructor
           </title>
         </HelmetWrapper>,
-        <div
-          className="container-fluid"
+        <PageContainer
+          className=""
+          wide={false}
         >
-          <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": null,
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>
+          <div>
+            <h2>
+              Create New Instructor
+            </h2>
+            <hr />
+            <ReduxForm
+              id="create-staffer-form"
+              isCreateForm={true}
+              isSaving={false}
+              onSubmit={[Function]}
+              stafferOptions={
+                Object {
+                  "data": Object {},
+                  "error": null,
+                  "isFetching": false,
+                }
+              }
+            />
+            <StatusAlert
+              alertType="danger"
+              className={Array []}
+              dismissible={false}
+              iconClassNames={Array []}
+              id="create-staffer-error"
+              message="Fail"
+              onClose={[Function]}
+              title="Could not save instructor"
+            />
           </div>
-        </div>,
+        </PageContainer>,
       ],
     },
     "ref": null,
@@ -2031,313 +1345,148 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": null,
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>,
-          "className": "container-fluid",
+          "children": Array [
+            false,
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={false}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": null,
+                    "isFetching": false,
+                  }
+                }
+              />
+              <StatusAlert
+                alertType="danger"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="create-staffer-error"
+                message="Fail"
+                onClose={[Function]}
+                title="Could not save instructor"
+              />
+            </div>,
+          ],
+          "className": "",
+          "wide": false,
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": null,
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>,
-            "className": "row justify-content-md-center my-3 ",
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          false,
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": Array [
+                <h2>
+                  Create New Instructor
+                </h2>,
+                <hr />,
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={false}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": null,
+                      "isFetching": false,
+                    }
+                  }
+                />,
                 false,
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>,
+                <StatusAlert
+                  alertType="danger"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="create-staffer-error"
+                  message="Fail"
+                  onClose={[Function]}
+                  title="Could not save instructor"
+                />,
               ],
-              "className": "col-6",
             },
             "ref": null,
             "rendered": Array [
-              false,
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    <h2>
-                      Create New Instructor
-                    </h2>,
-                    <hr />,
-                    <h3>
-                      Instructor Information
-                    </h3>,
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={false}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": null,
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <StatusAlert
-                        alertType="danger"
-                        className={Array []}
-                        dismissible={false}
-                        iconClassNames={Array []}
-                        id="create-staffer-error"
-                        message="Fail"
-                        onClose={[Function]}
-                        title="Could not save instructor"
-                      />
-                    </div>,
-                  ],
+                  "children": "Create New Instructor",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Create New Instructor",
-                    },
-                    "ref": null,
-                    "rendered": "Create New Instructor",
-                    "type": "h2",
+                "rendered": "Create New Instructor",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "id": "create-staffer-form",
+                  "initialValues": undefined,
+                  "isCreateForm": true,
+                  "isSaving": false,
+                  "onSubmit": [Function],
+                  "stafferOptions": Object {
+                    "data": Object {},
+                    "error": null,
+                    "isFetching": false,
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "hr",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Instructor Information",
-                    },
-                    "ref": null,
-                    "rendered": "Instructor Information",
-                    "type": "h3",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={false}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": null,
-                              "isFetching": false,
-                            }
-                          }
-                        />,
-                        false,
-                        <StatusAlert
-                          alertType="danger"
-                          className={Array []}
-                          dismissible={false}
-                          iconClassNames={Array []}
-                          id="create-staffer-error"
-                          message="Fail"
-                          onClose={[Function]}
-                          title="Could not save instructor"
-                        />,
-                      ],
-                      "className": "col",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "id": "create-staffer-form",
-                          "initialValues": undefined,
-                          "isCreateForm": true,
-                          "isSaving": false,
-                          "onSubmit": [Function],
-                          "stafferOptions": Object {
-                            "data": Object {},
-                            "error": null,
-                            "isFetching": false,
-                          },
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      false,
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "function",
-                        "props": Object {
-                          "alertType": "danger",
-                          "className": Array [],
-                          "dismissible": false,
-                          "iconClassNames": Array [],
-                          "id": "create-staffer-error",
-                          "message": "Fail",
-                          "onClose": [Function],
-                          "title": "Could not save instructor",
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                    ],
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "alertType": "danger",
+                  "className": Array [],
+                  "dismissible": false,
+                  "iconClassNames": Array [],
+                  "id": "create-staffer-error",
+                  "message": "Fail",
+                  "onClose": [Function],
+                  "title": "Could not save instructor",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": "div",
           },
-          "type": "div",
-        },
-        "type": "div",
+        ],
+        "type": [Function],
       },
     ],
     "type": Symbol(react.fragment),
@@ -2357,54 +1506,40 @@ ShallowWrapper {
               Create New Instructor
             </title>
           </HelmetWrapper>,
-          <div
-            className="container-fluid"
+          <PageContainer
+            className=""
+            wide={false}
           >
-            <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={false}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": null,
+                    "isFetching": false,
+                  }
+                }
+              />
+              <StatusAlert
+                alertType="danger"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="create-staffer-error"
+                message="Fail"
+                onClose={[Function]}
+                title="Could not save instructor"
+              />
             </div>
-          </div>,
+          </PageContainer>,
         ],
       },
       "ref": null,
@@ -2437,313 +1572,148 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>,
-            "className": "container-fluid",
+            "children": Array [
+              false,
+              <div>
+                <h2>
+                  Create New Instructor
+                </h2>
+                <hr />
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={false}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": null,
+                      "isFetching": false,
+                    }
+                  }
+                />
+                <StatusAlert
+                  alertType="danger"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="create-staffer-error"
+                  message="Fail"
+                  onClose={[Function]}
+                  title="Could not save instructor"
+                />
+              </div>,
+            ],
+            "className": "",
+            "wide": false,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": null,
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>,
-              "className": "row justify-content-md-center my-3 ",
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  <h2>
+                    Create New Instructor
+                  </h2>,
+                  <hr />,
+                  <ReduxForm
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
+                      Object {
+                        "data": Object {},
+                        "error": null,
+                        "isFetching": false,
+                      }
+                    }
+                  />,
                   false,
-                  <div>
-                    <h2>
-                      Create New Instructor
-                    </h2>
-                    <hr />
-                    <h3>
-                      Instructor Information
-                    </h3>
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={false}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": null,
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <StatusAlert
-                        alertType="danger"
-                        className={Array []}
-                        dismissible={false}
-                        iconClassNames={Array []}
-                        id="create-staffer-error"
-                        message="Fail"
-                        onClose={[Function]}
-                        title="Could not save instructor"
-                      />
-                    </div>
-                  </div>,
+                  <StatusAlert
+                    alertType="danger"
+                    className={Array []}
+                    dismissible={false}
+                    iconClassNames={Array []}
+                    id="create-staffer-error"
+                    message="Fail"
+                    onClose={[Function]}
+                    title="Could not save instructor"
+                  />,
                 ],
-                "className": "col-6",
               },
               "ref": null,
               "rendered": Array [
-                false,
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <h2>
-                        Create New Instructor
-                      </h2>,
-                      <hr />,
-                      <h3>
-                        Instructor Information
-                      </h3>,
-                      <div
-                        className="col"
-                      >
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={false}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": null,
-                              "isFetching": false,
-                            }
-                          }
-                        />
-                        <StatusAlert
-                          alertType="danger"
-                          className={Array []}
-                          dismissible={false}
-                          iconClassNames={Array []}
-                          id="create-staffer-error"
-                          message="Fail"
-                          onClose={[Function]}
-                          title="Could not save instructor"
-                        />
-                      </div>,
-                    ],
+                    "children": "Create New Instructor",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Create New Instructor",
-                      },
-                      "ref": null,
-                      "rendered": "Create New Instructor",
-                      "type": "h2",
+                  "rendered": "Create New Instructor",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "id": "create-staffer-form",
+                    "initialValues": undefined,
+                    "isCreateForm": true,
+                    "isSaving": false,
+                    "onSubmit": [Function],
+                    "stafferOptions": Object {
+                      "data": Object {},
+                      "error": null,
+                      "isFetching": false,
                     },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "hr",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Instructor Information",
-                      },
-                      "ref": null,
-                      "rendered": "Instructor Information",
-                      "type": "h3",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <ReduxForm
-                            id="create-staffer-form"
-                            isCreateForm={true}
-                            isSaving={false}
-                            onSubmit={[Function]}
-                            stafferOptions={
-                              Object {
-                                "data": Object {},
-                                "error": null,
-                                "isFetching": false,
-                              }
-                            }
-                          />,
-                          false,
-                          <StatusAlert
-                            alertType="danger"
-                            className={Array []}
-                            dismissible={false}
-                            iconClassNames={Array []}
-                            id="create-staffer-error"
-                            message="Fail"
-                            onClose={[Function]}
-                            title="Could not save instructor"
-                          />,
-                        ],
-                        "className": "col",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "class",
-                          "props": Object {
-                            "id": "create-staffer-form",
-                            "initialValues": undefined,
-                            "isCreateForm": true,
-                            "isSaving": false,
-                            "onSubmit": [Function],
-                            "stafferOptions": Object {
-                              "data": Object {},
-                              "error": null,
-                              "isFetching": false,
-                            },
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                        false,
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "function",
-                          "props": Object {
-                            "alertType": "danger",
-                            "className": Array [],
-                            "dismissible": false,
-                            "iconClassNames": Array [],
-                            "id": "create-staffer-error",
-                            "message": "Fail",
-                            "onClose": [Function],
-                            "title": "Could not save instructor",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                      ],
-                      "type": "div",
-                    },
-                  ],
-                  "type": "div",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "alertType": "danger",
+                    "className": Array [],
+                    "dismissible": false,
+                    "iconClassNames": Array [],
+                    "id": "create-staffer-error",
+                    "message": "Fail",
+                    "onClose": [Function],
+                    "title": "Could not save instructor",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": "div",
             },
-            "type": "div",
-          },
-          "type": "div",
+          ],
+          "type": [Function],
         },
       ],
       "type": Symbol(react.fragment),
@@ -2821,54 +1791,40 @@ ShallowWrapper {
             Create New Instructor
           </title>
         </HelmetWrapper>,
-        <div
-          className="container-fluid"
+        <PageContainer
+          className=""
+          wide={false}
         >
-          <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": "Fail",
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail here too Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>
+          <div>
+            <h2>
+              Create New Instructor
+            </h2>
+            <hr />
+            <ReduxForm
+              id="create-staffer-form"
+              isCreateForm={true}
+              isSaving={false}
+              onSubmit={[Function]}
+              stafferOptions={
+                Object {
+                  "data": Object {},
+                  "error": "Fail",
+                  "isFetching": false,
+                }
+              }
+            />
+            <StatusAlert
+              alertType="danger"
+              className={Array []}
+              dismissible={false}
+              iconClassNames={Array []}
+              id="create-staffer-error"
+              message="Fail here too Fail"
+              onClose={[Function]}
+              title="Could not save instructor"
+            />
           </div>
-        </div>,
+        </PageContainer>,
       ],
     },
     "ref": null,
@@ -2901,313 +1857,148 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": "Fail",
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail here too Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>,
-          "className": "container-fluid",
+          "children": Array [
+            false,
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={false}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": "Fail",
+                    "isFetching": false,
+                  }
+                }
+              />
+              <StatusAlert
+                alertType="danger"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="create-staffer-error"
+                message="Fail here too Fail"
+                onClose={[Function]}
+                title="Could not save instructor"
+              />
+            </div>,
+          ],
+          "className": "",
+          "wide": false,
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": "Fail",
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail here too Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>,
-            "className": "row justify-content-md-center my-3 ",
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          false,
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": Array [
+                <h2>
+                  Create New Instructor
+                </h2>,
+                <hr />,
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={false}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": "Fail",
+                      "isFetching": false,
+                    }
+                  }
+                />,
                 false,
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail here too Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>,
+                <StatusAlert
+                  alertType="danger"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="create-staffer-error"
+                  message="Fail here too Fail"
+                  onClose={[Function]}
+                  title="Could not save instructor"
+                />,
               ],
-              "className": "col-6",
             },
             "ref": null,
             "rendered": Array [
-              false,
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    <h2>
-                      Create New Instructor
-                    </h2>,
-                    <hr />,
-                    <h3>
-                      Instructor Information
-                    </h3>,
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={false}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": "Fail",
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <StatusAlert
-                        alertType="danger"
-                        className={Array []}
-                        dismissible={false}
-                        iconClassNames={Array []}
-                        id="create-staffer-error"
-                        message="Fail here too Fail"
-                        onClose={[Function]}
-                        title="Could not save instructor"
-                      />
-                    </div>,
-                  ],
+                  "children": "Create New Instructor",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Create New Instructor",
-                    },
-                    "ref": null,
-                    "rendered": "Create New Instructor",
-                    "type": "h2",
+                "rendered": "Create New Instructor",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "id": "create-staffer-form",
+                  "initialValues": undefined,
+                  "isCreateForm": true,
+                  "isSaving": false,
+                  "onSubmit": [Function],
+                  "stafferOptions": Object {
+                    "data": Object {},
+                    "error": "Fail",
+                    "isFetching": false,
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "hr",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Instructor Information",
-                    },
-                    "ref": null,
-                    "rendered": "Instructor Information",
-                    "type": "h3",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={false}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": "Fail",
-                              "isFetching": false,
-                            }
-                          }
-                        />,
-                        false,
-                        <StatusAlert
-                          alertType="danger"
-                          className={Array []}
-                          dismissible={false}
-                          iconClassNames={Array []}
-                          id="create-staffer-error"
-                          message="Fail here too Fail"
-                          onClose={[Function]}
-                          title="Could not save instructor"
-                        />,
-                      ],
-                      "className": "col",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "id": "create-staffer-form",
-                          "initialValues": undefined,
-                          "isCreateForm": true,
-                          "isSaving": false,
-                          "onSubmit": [Function],
-                          "stafferOptions": Object {
-                            "data": Object {},
-                            "error": "Fail",
-                            "isFetching": false,
-                          },
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      false,
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "function",
-                        "props": Object {
-                          "alertType": "danger",
-                          "className": Array [],
-                          "dismissible": false,
-                          "iconClassNames": Array [],
-                          "id": "create-staffer-error",
-                          "message": "Fail here too Fail",
-                          "onClose": [Function],
-                          "title": "Could not save instructor",
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                    ],
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "alertType": "danger",
+                  "className": Array [],
+                  "dismissible": false,
+                  "iconClassNames": Array [],
+                  "id": "create-staffer-error",
+                  "message": "Fail here too Fail",
+                  "onClose": [Function],
+                  "title": "Could not save instructor",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": "div",
           },
-          "type": "div",
-        },
-        "type": "div",
+        ],
+        "type": [Function],
       },
     ],
     "type": Symbol(react.fragment),
@@ -3227,54 +2018,40 @@ ShallowWrapper {
               Create New Instructor
             </title>
           </HelmetWrapper>,
-          <div
-            className="container-fluid"
+          <PageContainer
+            className=""
+            wide={false}
           >
-            <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail here too Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={false}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": "Fail",
+                    "isFetching": false,
+                  }
+                }
+              />
+              <StatusAlert
+                alertType="danger"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="create-staffer-error"
+                message="Fail here too Fail"
+                onClose={[Function]}
+                title="Could not save instructor"
+              />
             </div>
-          </div>,
+          </PageContainer>,
         ],
       },
       "ref": null,
@@ -3307,313 +2084,148 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail here too Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>,
-            "className": "container-fluid",
+            "children": Array [
+              false,
+              <div>
+                <h2>
+                  Create New Instructor
+                </h2>
+                <hr />
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={false}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": "Fail",
+                      "isFetching": false,
+                    }
+                  }
+                />
+                <StatusAlert
+                  alertType="danger"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="create-staffer-error"
+                  message="Fail here too Fail"
+                  onClose={[Function]}
+                  title="Could not save instructor"
+                />
+              </div>,
+            ],
+            "className": "",
+            "wide": false,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail here too Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>,
-              "className": "row justify-content-md-center my-3 ",
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  <h2>
+                    Create New Instructor
+                  </h2>,
+                  <hr />,
+                  <ReduxForm
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
+                      Object {
+                        "data": Object {},
+                        "error": "Fail",
+                        "isFetching": false,
+                      }
+                    }
+                  />,
                   false,
-                  <div>
-                    <h2>
-                      Create New Instructor
-                    </h2>
-                    <hr />
-                    <h3>
-                      Instructor Information
-                    </h3>
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={false}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": "Fail",
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <StatusAlert
-                        alertType="danger"
-                        className={Array []}
-                        dismissible={false}
-                        iconClassNames={Array []}
-                        id="create-staffer-error"
-                        message="Fail here too Fail"
-                        onClose={[Function]}
-                        title="Could not save instructor"
-                      />
-                    </div>
-                  </div>,
+                  <StatusAlert
+                    alertType="danger"
+                    className={Array []}
+                    dismissible={false}
+                    iconClassNames={Array []}
+                    id="create-staffer-error"
+                    message="Fail here too Fail"
+                    onClose={[Function]}
+                    title="Could not save instructor"
+                  />,
                 ],
-                "className": "col-6",
               },
               "ref": null,
               "rendered": Array [
-                false,
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <h2>
-                        Create New Instructor
-                      </h2>,
-                      <hr />,
-                      <h3>
-                        Instructor Information
-                      </h3>,
-                      <div
-                        className="col"
-                      >
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={false}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": "Fail",
-                              "isFetching": false,
-                            }
-                          }
-                        />
-                        <StatusAlert
-                          alertType="danger"
-                          className={Array []}
-                          dismissible={false}
-                          iconClassNames={Array []}
-                          id="create-staffer-error"
-                          message="Fail here too Fail"
-                          onClose={[Function]}
-                          title="Could not save instructor"
-                        />
-                      </div>,
-                    ],
+                    "children": "Create New Instructor",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Create New Instructor",
-                      },
-                      "ref": null,
-                      "rendered": "Create New Instructor",
-                      "type": "h2",
+                  "rendered": "Create New Instructor",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "id": "create-staffer-form",
+                    "initialValues": undefined,
+                    "isCreateForm": true,
+                    "isSaving": false,
+                    "onSubmit": [Function],
+                    "stafferOptions": Object {
+                      "data": Object {},
+                      "error": "Fail",
+                      "isFetching": false,
                     },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "hr",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Instructor Information",
-                      },
-                      "ref": null,
-                      "rendered": "Instructor Information",
-                      "type": "h3",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <ReduxForm
-                            id="create-staffer-form"
-                            isCreateForm={true}
-                            isSaving={false}
-                            onSubmit={[Function]}
-                            stafferOptions={
-                              Object {
-                                "data": Object {},
-                                "error": "Fail",
-                                "isFetching": false,
-                              }
-                            }
-                          />,
-                          false,
-                          <StatusAlert
-                            alertType="danger"
-                            className={Array []}
-                            dismissible={false}
-                            iconClassNames={Array []}
-                            id="create-staffer-error"
-                            message="Fail here too Fail"
-                            onClose={[Function]}
-                            title="Could not save instructor"
-                          />,
-                        ],
-                        "className": "col",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "class",
-                          "props": Object {
-                            "id": "create-staffer-form",
-                            "initialValues": undefined,
-                            "isCreateForm": true,
-                            "isSaving": false,
-                            "onSubmit": [Function],
-                            "stafferOptions": Object {
-                              "data": Object {},
-                              "error": "Fail",
-                              "isFetching": false,
-                            },
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                        false,
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "function",
-                          "props": Object {
-                            "alertType": "danger",
-                            "className": Array [],
-                            "dismissible": false,
-                            "iconClassNames": Array [],
-                            "id": "create-staffer-error",
-                            "message": "Fail here too Fail",
-                            "onClose": [Function],
-                            "title": "Could not save instructor",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                      ],
-                      "type": "div",
-                    },
-                  ],
-                  "type": "div",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "alertType": "danger",
+                    "className": Array [],
+                    "dismissible": false,
+                    "iconClassNames": Array [],
+                    "id": "create-staffer-error",
+                    "message": "Fail here too Fail",
+                    "onClose": [Function],
+                    "title": "Could not save instructor",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": "div",
             },
-            "type": "div",
-          },
-          "type": "div",
+          ],
+          "type": [Function],
         },
       ],
       "type": Symbol(react.fragment),
@@ -3691,54 +2303,40 @@ ShallowWrapper {
             Create New Instructor
           </title>
         </HelmetWrapper>,
-        <div
-          className="container-fluid"
+        <PageContainer
+          className=""
+          wide={false}
         >
-          <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": "Fail",
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>
+          <div>
+            <h2>
+              Create New Instructor
+            </h2>
+            <hr />
+            <ReduxForm
+              id="create-staffer-form"
+              isCreateForm={true}
+              isSaving={false}
+              onSubmit={[Function]}
+              stafferOptions={
+                Object {
+                  "data": Object {},
+                  "error": "Fail",
+                  "isFetching": false,
+                }
+              }
+            />
+            <StatusAlert
+              alertType="danger"
+              className={Array []}
+              dismissible={false}
+              iconClassNames={Array []}
+              id="create-staffer-error"
+              message="Fail"
+              onClose={[Function]}
+              title="Could not save instructor"
+            />
           </div>
-        </div>,
+        </PageContainer>,
       ],
     },
     "ref": null,
@@ -3771,313 +2369,148 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": <div
-            className="row justify-content-md-center my-3 "
-          >
-            <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": "Fail",
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>,
-          "className": "container-fluid",
+          "children": Array [
+            false,
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={false}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": "Fail",
+                    "isFetching": false,
+                  }
+                }
+              />
+              <StatusAlert
+                alertType="danger"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="create-staffer-error"
+                message="Fail"
+                onClose={[Function]}
+                title="Could not save instructor"
+              />
+            </div>,
+          ],
+          "className": "",
+          "wide": false,
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-6"
-            >
-              <div>
-                <h2>
-                  Create New Instructor
-                </h2>
-                <hr />
-                <h3>
-                  Instructor Information
-                </h3>
-                <div
-                  className="col"
-                >
-                  <ReduxForm
-                    id="create-staffer-form"
-                    isCreateForm={true}
-                    isSaving={false}
-                    onSubmit={[Function]}
-                    stafferOptions={
-                      Object {
-                        "data": Object {},
-                        "error": "Fail",
-                        "isFetching": false,
-                      }
-                    }
-                  />
-                  <StatusAlert
-                    alertType="danger"
-                    className={Array []}
-                    dismissible={false}
-                    iconClassNames={Array []}
-                    id="create-staffer-error"
-                    message="Fail"
-                    onClose={[Function]}
-                    title="Could not save instructor"
-                  />
-                </div>
-              </div>
-            </div>,
-            "className": "row justify-content-md-center my-3 ",
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          false,
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": Array [
+                <h2>
+                  Create New Instructor
+                </h2>,
+                <hr />,
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={false}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": "Fail",
+                      "isFetching": false,
+                    }
+                  }
+                />,
                 false,
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>,
+                <StatusAlert
+                  alertType="danger"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="create-staffer-error"
+                  message="Fail"
+                  onClose={[Function]}
+                  title="Could not save instructor"
+                />,
               ],
-              "className": "col-6",
             },
             "ref": null,
             "rendered": Array [
-              false,
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    <h2>
-                      Create New Instructor
-                    </h2>,
-                    <hr />,
-                    <h3>
-                      Instructor Information
-                    </h3>,
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={false}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": "Fail",
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <StatusAlert
-                        alertType="danger"
-                        className={Array []}
-                        dismissible={false}
-                        iconClassNames={Array []}
-                        id="create-staffer-error"
-                        message="Fail"
-                        onClose={[Function]}
-                        title="Could not save instructor"
-                      />
-                    </div>,
-                  ],
+                  "children": "Create New Instructor",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Create New Instructor",
-                    },
-                    "ref": null,
-                    "rendered": "Create New Instructor",
-                    "type": "h2",
+                "rendered": "Create New Instructor",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "id": "create-staffer-form",
+                  "initialValues": undefined,
+                  "isCreateForm": true,
+                  "isSaving": false,
+                  "onSubmit": [Function],
+                  "stafferOptions": Object {
+                    "data": Object {},
+                    "error": "Fail",
+                    "isFetching": false,
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "hr",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Instructor Information",
-                    },
-                    "ref": null,
-                    "rendered": "Instructor Information",
-                    "type": "h3",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={false}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": "Fail",
-                              "isFetching": false,
-                            }
-                          }
-                        />,
-                        false,
-                        <StatusAlert
-                          alertType="danger"
-                          className={Array []}
-                          dismissible={false}
-                          iconClassNames={Array []}
-                          id="create-staffer-error"
-                          message="Fail"
-                          onClose={[Function]}
-                          title="Could not save instructor"
-                        />,
-                      ],
-                      "className": "col",
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "id": "create-staffer-form",
-                          "initialValues": undefined,
-                          "isCreateForm": true,
-                          "isSaving": false,
-                          "onSubmit": [Function],
-                          "stafferOptions": Object {
-                            "data": Object {},
-                            "error": "Fail",
-                            "isFetching": false,
-                          },
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      false,
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "function",
-                        "props": Object {
-                          "alertType": "danger",
-                          "className": Array [],
-                          "dismissible": false,
-                          "iconClassNames": Array [],
-                          "id": "create-staffer-error",
-                          "message": "Fail",
-                          "onClose": [Function],
-                          "title": "Could not save instructor",
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                    ],
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "alertType": "danger",
+                  "className": Array [],
+                  "dismissible": false,
+                  "iconClassNames": Array [],
+                  "id": "create-staffer-error",
+                  "message": "Fail",
+                  "onClose": [Function],
+                  "title": "Could not save instructor",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": "div",
           },
-          "type": "div",
-        },
-        "type": "div",
+        ],
+        "type": [Function],
       },
     ],
     "type": Symbol(react.fragment),
@@ -4097,54 +2530,40 @@ ShallowWrapper {
               Create New Instructor
             </title>
           </HelmetWrapper>,
-          <div
-            className="container-fluid"
+          <PageContainer
+            className=""
+            wide={false}
           >
-            <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <hr />
+              <ReduxForm
+                id="create-staffer-form"
+                isCreateForm={true}
+                isSaving={false}
+                onSubmit={[Function]}
+                stafferOptions={
+                  Object {
+                    "data": Object {},
+                    "error": "Fail",
+                    "isFetching": false,
+                  }
+                }
+              />
+              <StatusAlert
+                alertType="danger"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="create-staffer-error"
+                message="Fail"
+                onClose={[Function]}
+                title="Could not save instructor"
+              />
             </div>
-          </div>,
+          </PageContainer>,
         ],
       },
       "ref": null,
@@ -4177,313 +2596,148 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <div
-              className="row justify-content-md-center my-3 "
-            >
-              <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>,
-            "className": "container-fluid",
+            "children": Array [
+              false,
+              <div>
+                <h2>
+                  Create New Instructor
+                </h2>
+                <hr />
+                <ReduxForm
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  isSaving={false}
+                  onSubmit={[Function]}
+                  stafferOptions={
+                    Object {
+                      "data": Object {},
+                      "error": "Fail",
+                      "isFetching": false,
+                    }
+                  }
+                />
+                <StatusAlert
+                  alertType="danger"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="create-staffer-error"
+                  message="Fail"
+                  onClose={[Function]}
+                  title="Could not save instructor"
+                />
+              </div>,
+            ],
+            "className": "",
+            "wide": false,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="col-6"
-              >
-                <div>
-                  <h2>
-                    Create New Instructor
-                  </h2>
-                  <hr />
-                  <h3>
-                    Instructor Information
-                  </h3>
-                  <div
-                    className="col"
-                  >
-                    <ReduxForm
-                      id="create-staffer-form"
-                      isCreateForm={true}
-                      isSaving={false}
-                      onSubmit={[Function]}
-                      stafferOptions={
-                        Object {
-                          "data": Object {},
-                          "error": "Fail",
-                          "isFetching": false,
-                        }
-                      }
-                    />
-                    <StatusAlert
-                      alertType="danger"
-                      className={Array []}
-                      dismissible={false}
-                      iconClassNames={Array []}
-                      id="create-staffer-error"
-                      message="Fail"
-                      onClose={[Function]}
-                      title="Could not save instructor"
-                    />
-                  </div>
-                </div>
-              </div>,
-              "className": "row justify-content-md-center my-3 ",
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            false,
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  <h2>
+                    Create New Instructor
+                  </h2>,
+                  <hr />,
+                  <ReduxForm
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    isSaving={false}
+                    onSubmit={[Function]}
+                    stafferOptions={
+                      Object {
+                        "data": Object {},
+                        "error": "Fail",
+                        "isFetching": false,
+                      }
+                    }
+                  />,
                   false,
-                  <div>
-                    <h2>
-                      Create New Instructor
-                    </h2>
-                    <hr />
-                    <h3>
-                      Instructor Information
-                    </h3>
-                    <div
-                      className="col"
-                    >
-                      <ReduxForm
-                        id="create-staffer-form"
-                        isCreateForm={true}
-                        isSaving={false}
-                        onSubmit={[Function]}
-                        stafferOptions={
-                          Object {
-                            "data": Object {},
-                            "error": "Fail",
-                            "isFetching": false,
-                          }
-                        }
-                      />
-                      <StatusAlert
-                        alertType="danger"
-                        className={Array []}
-                        dismissible={false}
-                        iconClassNames={Array []}
-                        id="create-staffer-error"
-                        message="Fail"
-                        onClose={[Function]}
-                        title="Could not save instructor"
-                      />
-                    </div>
-                  </div>,
+                  <StatusAlert
+                    alertType="danger"
+                    className={Array []}
+                    dismissible={false}
+                    iconClassNames={Array []}
+                    id="create-staffer-error"
+                    message="Fail"
+                    onClose={[Function]}
+                    title="Could not save instructor"
+                  />,
                 ],
-                "className": "col-6",
               },
               "ref": null,
               "rendered": Array [
-                false,
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      <h2>
-                        Create New Instructor
-                      </h2>,
-                      <hr />,
-                      <h3>
-                        Instructor Information
-                      </h3>,
-                      <div
-                        className="col"
-                      >
-                        <ReduxForm
-                          id="create-staffer-form"
-                          isCreateForm={true}
-                          isSaving={false}
-                          onSubmit={[Function]}
-                          stafferOptions={
-                            Object {
-                              "data": Object {},
-                              "error": "Fail",
-                              "isFetching": false,
-                            }
-                          }
-                        />
-                        <StatusAlert
-                          alertType="danger"
-                          className={Array []}
-                          dismissible={false}
-                          iconClassNames={Array []}
-                          id="create-staffer-error"
-                          message="Fail"
-                          onClose={[Function]}
-                          title="Could not save instructor"
-                        />
-                      </div>,
-                    ],
+                    "children": "Create New Instructor",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Create New Instructor",
-                      },
-                      "ref": null,
-                      "rendered": "Create New Instructor",
-                      "type": "h2",
+                  "rendered": "Create New Instructor",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "id": "create-staffer-form",
+                    "initialValues": undefined,
+                    "isCreateForm": true,
+                    "isSaving": false,
+                    "onSubmit": [Function],
+                    "stafferOptions": Object {
+                      "data": Object {},
+                      "error": "Fail",
+                      "isFetching": false,
                     },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": "hr",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "Instructor Information",
-                      },
-                      "ref": null,
-                      "rendered": "Instructor Information",
-                      "type": "h3",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <ReduxForm
-                            id="create-staffer-form"
-                            isCreateForm={true}
-                            isSaving={false}
-                            onSubmit={[Function]}
-                            stafferOptions={
-                              Object {
-                                "data": Object {},
-                                "error": "Fail",
-                                "isFetching": false,
-                              }
-                            }
-                          />,
-                          false,
-                          <StatusAlert
-                            alertType="danger"
-                            className={Array []}
-                            dismissible={false}
-                            iconClassNames={Array []}
-                            id="create-staffer-error"
-                            message="Fail"
-                            onClose={[Function]}
-                            title="Could not save instructor"
-                          />,
-                        ],
-                        "className": "col",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "class",
-                          "props": Object {
-                            "id": "create-staffer-form",
-                            "initialValues": undefined,
-                            "isCreateForm": true,
-                            "isSaving": false,
-                            "onSubmit": [Function],
-                            "stafferOptions": Object {
-                              "data": Object {},
-                              "error": "Fail",
-                              "isFetching": false,
-                            },
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                        false,
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "function",
-                          "props": Object {
-                            "alertType": "danger",
-                            "className": Array [],
-                            "dismissible": false,
-                            "iconClassNames": Array [],
-                            "id": "create-staffer-error",
-                            "message": "Fail",
-                            "onClose": [Function],
-                            "title": "Could not save instructor",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                      ],
-                      "type": "div",
-                    },
-                  ],
-                  "type": "div",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "alertType": "danger",
+                    "className": Array [],
+                    "dismissible": false,
+                    "iconClassNames": Array [],
+                    "id": "create-staffer-error",
+                    "message": "Fail",
+                    "onClose": [Function],
+                    "title": "Could not save instructor",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": "div",
             },
-            "type": "div",
-          },
-          "type": "div",
+          ],
+          "type": [Function],
         },
       ],
       "type": Symbol(react.fragment),

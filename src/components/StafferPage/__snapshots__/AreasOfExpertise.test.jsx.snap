@@ -25,34 +25,24 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <button
-          className="btn btn-light js-add-button"
-          onClick={[Function]}
-          type="button"
-        >
-          Add area of expertise
-        </button>,
         <ul
-          className="list-group p-0 m-0"
+          className="list-group p-0 m-0 container-fluid"
         >
           <li
             className="area-of-expertise list-group-item row d-flex align-items-center px-0 mx-0"
           >
             <div
-              className="col-10"
+              className="col-11"
             >
               <Field
                 component={[Function]}
                 label={
-                  <React.Fragment>
-                    Area of expertise
-                    <span
-                      aria-hidden={true}
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="Area of expertise"
+                  />
                 }
                 name="[object Object].value"
                 required={true}
@@ -64,32 +54,25 @@ ShallowWrapper {
               type="hidden"
             />
             <RemoveButton
-              className=""
+              className="col-1"
               label="Remove area of expertise"
               onRemove={[Function]}
               targetFieldNumber={0}
             />
           </li>
         </ul>,
+        <button
+          className="btn btn-outline-primary js-add-button mt-2"
+          onClick={[Function]}
+          type="button"
+        >
+          Add area of expertise
+        </button>,
       ],
-      "className": "areas-of-expertise my-4",
+      "className": "areas-of-expertise mb-3",
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Add area of expertise",
-          "className": "btn btn-light js-add-button",
-          "onClick": [Function],
-          "type": "button",
-        },
-        "ref": null,
-        "rendered": "Add area of expertise",
-        "type": "button",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -100,20 +83,17 @@ ShallowWrapper {
               className="area-of-expertise list-group-item row d-flex align-items-center px-0 mx-0"
             >
               <div
-                className="col-10"
+                className="col-11"
               >
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      Area of expertise
-                      <span
-                        aria-hidden={true}
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Area of expertise"
+                    />
                   }
                   name="[object Object].value"
                   required={true}
@@ -125,14 +105,14 @@ ShallowWrapper {
                 type="hidden"
               />
               <RemoveButton
-                className=""
+                className="col-1"
                 label="Remove area of expertise"
                 onRemove={[Function]}
                 targetFieldNumber={0}
               />
             </li>,
           ],
-          "className": "list-group p-0 m-0",
+          "className": "list-group p-0 m-0 container-fluid",
         },
         "ref": null,
         "rendered": Array [
@@ -143,20 +123,17 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <div
-                  className="col-10"
+                  className="col-11"
                 >
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Area of expertise
-                        <span
-                          aria-hidden={true}
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Area of expertise"
+                      />
                     }
                     name="[object Object].value"
                     required={true}
@@ -168,7 +145,7 @@ ShallowWrapper {
                   type="hidden"
                 />,
                 <RemoveButton
-                  className=""
+                  className="col-1"
                   label="Remove area of expertise"
                   onRemove={[Function]}
                   targetFieldNumber={0}
@@ -186,21 +163,18 @@ ShallowWrapper {
                   "children": <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Area of expertise
-                        <span
-                          aria-hidden={true}
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Area of expertise"
+                      />
                     }
                     name="[object Object].value"
                     required={true}
                     type="text"
                   />,
-                  "className": "col-10",
+                  "className": "col-11",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -209,15 +183,12 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "component": [Function],
-                    "label": <React.Fragment>
-                      Area of expertise
-                      <span
-                        aria-hidden={true}
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>,
+                    "label": <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Area of expertise"
+                    />,
                     "name": "[object Object].value",
                     "required": true,
                     "type": "text",
@@ -245,7 +216,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "className": "",
+                  "className": "col-1",
                   "label": "Remove area of expertise",
                   "onRemove": [Function],
                   "targetFieldNumber": 0,
@@ -260,6 +231,20 @@ ShallowWrapper {
         ],
         "type": "ul",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add area of expertise",
+          "className": "btn btn-outline-primary js-add-button mt-2",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add area of expertise",
+        "type": "button",
+      },
     ],
     "type": "div",
   },
@@ -270,34 +255,24 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <button
-            className="btn btn-light js-add-button"
-            onClick={[Function]}
-            type="button"
-          >
-            Add area of expertise
-          </button>,
           <ul
-            className="list-group p-0 m-0"
+            className="list-group p-0 m-0 container-fluid"
           >
             <li
               className="area-of-expertise list-group-item row d-flex align-items-center px-0 mx-0"
             >
               <div
-                className="col-10"
+                className="col-11"
               >
                 <Field
                   component={[Function]}
                   label={
-                    <React.Fragment>
-                      Area of expertise
-                      <span
-                        aria-hidden={true}
-                        className="required"
-                      >
-                        *
-                      </span>
-                    </React.Fragment>
+                    <FieldLabel
+                      className=""
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Area of expertise"
+                    />
                   }
                   name="[object Object].value"
                   required={true}
@@ -309,32 +284,25 @@ ShallowWrapper {
                 type="hidden"
               />
               <RemoveButton
-                className=""
+                className="col-1"
                 label="Remove area of expertise"
                 onRemove={[Function]}
                 targetFieldNumber={0}
               />
             </li>
           </ul>,
+          <button
+            className="btn btn-outline-primary js-add-button mt-2"
+            onClick={[Function]}
+            type="button"
+          >
+            Add area of expertise
+          </button>,
         ],
-        "className": "areas-of-expertise my-4",
+        "className": "areas-of-expertise mb-3",
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Add area of expertise",
-            "className": "btn btn-light js-add-button",
-            "onClick": [Function],
-            "type": "button",
-          },
-          "ref": null,
-          "rendered": "Add area of expertise",
-          "type": "button",
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -345,20 +313,17 @@ ShallowWrapper {
                 className="area-of-expertise list-group-item row d-flex align-items-center px-0 mx-0"
               >
                 <div
-                  className="col-10"
+                  className="col-11"
                 >
                   <Field
                     component={[Function]}
                     label={
-                      <React.Fragment>
-                        Area of expertise
-                        <span
-                          aria-hidden={true}
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>
+                      <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Area of expertise"
+                      />
                     }
                     name="[object Object].value"
                     required={true}
@@ -370,14 +335,14 @@ ShallowWrapper {
                   type="hidden"
                 />
                 <RemoveButton
-                  className=""
+                  className="col-1"
                   label="Remove area of expertise"
                   onRemove={[Function]}
                   targetFieldNumber={0}
                 />
               </li>,
             ],
-            "className": "list-group p-0 m-0",
+            "className": "list-group p-0 m-0 container-fluid",
           },
           "ref": null,
           "rendered": Array [
@@ -388,20 +353,17 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <div
-                    className="col-10"
+                    className="col-11"
                   >
                     <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          Area of expertise
-                          <span
-                            aria-hidden={true}
-                            className="required"
-                          >
-                            *
-                          </span>
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Area of expertise"
+                        />
                       }
                       name="[object Object].value"
                       required={true}
@@ -413,7 +375,7 @@ ShallowWrapper {
                     type="hidden"
                   />,
                   <RemoveButton
-                    className=""
+                    className="col-1"
                     label="Remove area of expertise"
                     onRemove={[Function]}
                     targetFieldNumber={0}
@@ -431,21 +393,18 @@ ShallowWrapper {
                     "children": <Field
                       component={[Function]}
                       label={
-                        <React.Fragment>
-                          Area of expertise
-                          <span
-                            aria-hidden={true}
-                            className="required"
-                          >
-                            *
-                          </span>
-                        </React.Fragment>
+                        <FieldLabel
+                          className=""
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Area of expertise"
+                        />
                       }
                       name="[object Object].value"
                       required={true}
                       type="text"
                     />,
-                    "className": "col-10",
+                    "className": "col-11",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -454,15 +413,12 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "component": [Function],
-                      "label": <React.Fragment>
-                        Area of expertise
-                        <span
-                          aria-hidden={true}
-                          className="required"
-                        >
-                          *
-                        </span>
-                      </React.Fragment>,
+                      "label": <FieldLabel
+                        className=""
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Area of expertise"
+                      />,
                       "name": "[object Object].value",
                       "required": true,
                       "type": "text",
@@ -490,7 +446,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "className": "",
+                    "className": "col-1",
                     "label": "Remove area of expertise",
                     "onRemove": [Function],
                     "targetFieldNumber": 0,
@@ -504,6 +460,20 @@ ShallowWrapper {
             },
           ],
           "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add area of expertise",
+            "className": "btn btn-outline-primary js-add-button mt-2",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add area of expertise",
+          "type": "button",
         },
       ],
       "type": "div",
@@ -557,18 +527,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <ul
+          className="list-group p-0 m-0 container-fluid"
+        />,
         <button
-          className="btn btn-light js-add-button"
+          className="btn btn-outline-primary js-add-button mt-2"
           onClick={[Function]}
           type="button"
         >
           Add area of expertise
         </button>,
-        <ul
-          className="list-group p-0 m-0"
-        />,
       ],
-      "className": "areas-of-expertise my-4",
+      "className": "areas-of-expertise mb-3",
     },
     "ref": null,
     "rendered": Array [
@@ -577,26 +547,26 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Add area of expertise",
-          "className": "btn btn-light js-add-button",
-          "onClick": [Function],
-          "type": "button",
+          "children": Array [],
+          "className": "list-group p-0 m-0 container-fluid",
         },
         "ref": null,
-        "rendered": "Add area of expertise",
-        "type": "button",
+        "rendered": Array [],
+        "type": "ul",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [],
-          "className": "list-group p-0 m-0",
+          "children": "Add area of expertise",
+          "className": "btn btn-outline-primary js-add-button mt-2",
+          "onClick": [Function],
+          "type": "button",
         },
         "ref": null,
-        "rendered": Array [],
-        "type": "ul",
+        "rendered": "Add area of expertise",
+        "type": "button",
       },
     ],
     "type": "div",
@@ -608,18 +578,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <ul
+            className="list-group p-0 m-0 container-fluid"
+          />,
           <button
-            className="btn btn-light js-add-button"
+            className="btn btn-outline-primary js-add-button mt-2"
             onClick={[Function]}
             type="button"
           >
             Add area of expertise
           </button>,
-          <ul
-            className="list-group p-0 m-0"
-          />,
         ],
-        "className": "areas-of-expertise my-4",
+        "className": "areas-of-expertise mb-3",
       },
       "ref": null,
       "rendered": Array [
@@ -628,26 +598,26 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Add area of expertise",
-            "className": "btn btn-light js-add-button",
-            "onClick": [Function],
-            "type": "button",
+            "children": Array [],
+            "className": "list-group p-0 m-0 container-fluid",
           },
           "ref": null,
-          "rendered": "Add area of expertise",
-          "type": "button",
+          "rendered": Array [],
+          "type": "ul",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [],
-            "className": "list-group p-0 m-0",
+            "children": "Add area of expertise",
+            "className": "btn btn-outline-primary js-add-button mt-2",
+            "onClick": [Function],
+            "type": "button",
           },
           "ref": null,
-          "rendered": Array [],
-          "type": "ul",
+          "rendered": "Add area of expertise",
+          "type": "button",
         },
       ],
       "type": "div",
