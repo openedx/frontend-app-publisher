@@ -550,6 +550,8 @@ describe('BaseEditCourseForm', () => {
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
       courseInReview
+      handleCourseRunSubmit={() => {}}
+      id="edit-course-form"
     />);
 
     const childFields = component.find('input');

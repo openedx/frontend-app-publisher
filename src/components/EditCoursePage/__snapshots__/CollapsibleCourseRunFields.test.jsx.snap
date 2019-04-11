@@ -4,6 +4,7 @@ exports[`Collapsible Course Run Fields renders correctly when given a published 
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseCollapsibleCourseRunFields
+    courseInReview={false}
     courseRuns={
       Array [
         Object {
@@ -242,23 +243,1268 @@ ShallowWrapper {
             <button
               className="btn btn-primary form-submit-btn"
               disabled={false}
+              onClick={[Function]}
               type="submit"
             >
               <span>
-                Submit for Review
+                Publish
               </span>
             </button>
           </ButtonToolbar>
         </t>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "collapsible-run-[object Object]",
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />
+              }
+              name="[object Object].start"
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />
+              }
+              name="[object Object].end"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />
+              }
+              name="[object Object].min_effort"
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />
+              }
+              name="[object Object].max_effort"
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Transcript languages"
+            />,
+            <FieldArray
+              component={[Function]}
+              disabled={false}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />
+              }
+              name="[object Object].weeks_to_complete"
+              type="number"
+            />,
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Staff"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              name="[object Object].staff"
+            />,
+            <ButtonToolbar
+              className=""
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                <span>
+                  Publish
+                </span>
+              </button>
+            </ButtonToolbar>,
+          ],
+          "expandedTitle": undefined,
+          "iconId": "collapsible-icon-[object Object]",
+          "isCollapsible": undefined,
+          "isOpen": false,
+          "onToggle": [Function],
+          "title": <div
+            className="course-run-label"
+          >
+            <span>
+              Course run starting on Jan 1st 2000 - Self Paced
+            </span>
+            <div
+              className="course-run-studio-url"
+            >
+              Studio URL - 
+              <a
+                href="undefined/course/undefined"
+              >
+                undefined
+              </a>
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="Start date"
+              />,
+              "name": "[object Object].start",
+              "placeholder": "mm/dd/yyyy",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                required={true}
+                requiredForSubmit={false}
+                text="End date"
+              />,
+              "name": "[object Object].end",
+              "normalize": [Function],
+              "placeholder": "mm/dd/yyyy",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Minimum effort"
+              />,
+              "name": "[object Object].min_effort",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Maximum effort"
+              />,
+              "name": "[object Object].max_effort",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />,
+              "name": "[object Object].pacing_type",
+              "options": Array [
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Content language"
+              />,
+              "name": "[object Object].content_language",
+              "options": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "required": false,
+              "requiredForSubmit": false,
+              "text": "Transcript languages",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "languageOptions": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "name": "[object Object].transcript_languages",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                required={false}
+                requiredForSubmit={false}
+                text="Length"
+              />,
+              "name": "[object Object].weeks_to_complete",
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "required": false,
+              "requiredForSubmit": false,
+              "text": "Staff",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "name": "[object Object].staff",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <button
+                className="btn btn-primary form-submit-btn"
+                disabled={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                <span>
+                  Publish
+                </span>
+              </button>,
+              "className": "",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  Publish
+                </span>,
+                "className": "btn btn-primary form-submit-btn",
+                "disabled": false,
+                "onClick": [Function],
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Publish",
+                },
+                "ref": null,
+                "rendered": "Publish",
+                "type": "span",
+              },
+              "type": "button",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <t
+            iconId="collapsible-icon-[object Object]"
+            isOpen={false}
+            onToggle={[Function]}
+            title={
+              <div
+                className="course-run-label"
+              >
+                <span>
+                  Course run starting on Jan 1st 2000 - Self Paced
+                </span>
+                <div
+                  className="course-run-studio-url"
+                >
+                  Studio URL - 
+                  <a
+                    href="undefined/course/undefined"
+                  >
+                    undefined
+                  </a>
+                </div>
+              </div>
+            }
+          >
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />
+              }
+              name="[object Object].start"
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />
+              }
+              name="[object Object].end"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />
+              }
+              name="[object Object].min_effort"
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />
+              }
+              name="[object Object].max_effort"
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              type="text"
+            />
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Transcript languages"
+            />
+            <FieldArray
+              component={[Function]}
+              disabled={false}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />
+              }
+              name="[object Object].weeks_to_complete"
+              type="number"
+            />
+            <FieldLabel
+              className="mb-2"
+              required={false}
+              requiredForSubmit={false}
+              text="Staff"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              name="[object Object].staff"
+            />
+            <ButtonToolbar
+              className=""
+            >
+              <button
+                className="btn btn-primary form-submit-btn"
+                disabled={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                <span>
+                  Publish
+                </span>
+              </button>
+            </ButtonToolbar>
+          </t>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "collapsible-run-[object Object]",
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="Start date"
+                  />
+                }
+                name="[object Object].start"
+                placeholder="mm/dd/yyyy"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={true}
+                    requiredForSubmit={false}
+                    text="End date"
+                  />
+                }
+                name="[object Object].end"
+                normalize={[Function]}
+                placeholder="mm/dd/yyyy"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Minimum effort"
+                  />
+                }
+                name="[object Object].min_effort"
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Maximum effort"
+                  />
+                }
+                name="[object Object].max_effort"
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Course pacing"
+                  />
+                }
+                name="[object Object].pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Content language"
+                  />
+                }
+                name="[object Object].content_language"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                type="text"
+              />,
+              <FieldLabel
+                className="mb-2"
+                required={false}
+                requiredForSubmit={false}
+                text="Transcript languages"
+              />,
+              <FieldArray
+                component={[Function]}
+                disabled={false}
+                languageOptions={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                name="[object Object].transcript_languages"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Length"
+                  />
+                }
+                name="[object Object].weeks_to_complete"
+                type="number"
+              />,
+              <FieldLabel
+                className="mb-2"
+                required={false}
+                requiredForSubmit={false}
+                text="Staff"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                name="[object Object].staff"
+              />,
+              <ButtonToolbar
+                className=""
+              >
+                <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  <span>
+                    Publish
+                  </span>
+                </button>
+              </ButtonToolbar>,
+            ],
+            "expandedTitle": undefined,
+            "iconId": "collapsible-icon-[object Object]",
+            "isCollapsible": undefined,
+            "isOpen": false,
+            "onToggle": [Function],
+            "title": <div
+              className="course-run-label"
+            >
+              <span>
+                Course run starting on Jan 1st 2000 - Self Paced
+              </span>
+              <div
+                className="course-run-studio-url"
+              >
+                Studio URL - 
+                <a
+                  href="undefined/course/undefined"
+                >
+                  undefined
+                </a>
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="Start date"
+                />,
+                "name": "[object Object].start",
+                "placeholder": "mm/dd/yyyy",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  required={true}
+                  requiredForSubmit={false}
+                  text="End date"
+                />,
+                "name": "[object Object].end",
+                "normalize": [Function],
+                "placeholder": "mm/dd/yyyy",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Minimum effort"
+                />,
+                "name": "[object Object].min_effort",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Maximum effort"
+                />,
+                "name": "[object Object].max_effort",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />,
+                "name": "[object Object].pacing_type",
+                "options": Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ],
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Content language"
+                />,
+                "name": "[object Object].content_language",
+                "options": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "required": false,
+                "requiredForSubmit": false,
+                "text": "Transcript languages",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "languageOptions": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "name": "[object Object].transcript_languages",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Length"
+                />,
+                "name": "[object Object].weeks_to_complete",
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "required": false,
+                "requiredForSubmit": false,
+                "text": "Staff",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "name": "[object Object].staff",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary form-submit-btn"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  <span>
+                    Publish
+                  </span>
+                </button>,
+                "className": "",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Publish
+                  </span>,
+                  "className": "btn btn-primary form-submit-btn",
+                  "disabled": false,
+                  "onClick": [Function],
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Publish",
+                  },
+                  "ref": null,
+                  "rendered": "Publish",
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Collapsible Course Run Fields renders correctly when given an unpublished course run 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BaseCollapsibleCourseRunFields
+    courseInReview={false}
+    courseRuns={
+      Array [
+        Object {
+          "content_language": "ar-ae",
+          "end": "2010/01/01",
+          "max_effort": 1,
+          "min_effort": 1,
+          "pacing_type": "self_paced",
+          "start": "2000-01-01T12:00:00Z",
+          "status": "unpublished",
+          "transcript_languages": Array [
+            "ar-ae",
+          ],
+          "weeks_to_complete": 1,
+        },
+      ]
+    }
+    dispatch={[Function]}
+    fields={
+      Array [
+        Object {},
+      ]
+    }
+    formId="test-form"
+    handleCourseRunSubmit={[MockFunction]}
+    languageOptions={
+      Array [
+        Object {
+          "label": "Arabic - United Arab Emirates",
+          "value": "ar-ae",
+        },
+      ]
+    }
+    pacingTypeOptions={
+      Array [
+        Object {
+          "label": "Self-paced",
+          "value": "self_paced",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
         <t
           iconId="collapsible-icon-[object Object]"
           isOpen={false}
           onToggle={[Function]}
           title={
-            <div>
+            <div
+              className="course-run-label"
+            >
               <span>
-                Your new course run
+                Course run starting on Jan 1st 2000 - Self Paced
               </span>
+              <div
+                className="course-run-studio-url"
+              >
+                Studio URL - 
+                <a
+                  href="undefined/course/undefined"
+                >
+                  undefined
+                </a>
+              </div>
             </div>
           }
         >
@@ -419,6 +1665,7 @@ ShallowWrapper {
             <button
               className="btn btn-primary form-submit-btn"
               disabled={false}
+              onClick={[Function]}
               type="submit"
             >
               <span>
@@ -594,6 +1841,7 @@ ShallowWrapper {
               <button
                 className="btn btn-primary form-submit-btn"
                 disabled={false}
+                onClick={[Function]}
                 type="submit"
               >
                 <span>
@@ -854,6 +2102,7 @@ ShallowWrapper {
               "children": <button
                 className="btn btn-primary form-submit-btn"
                 disabled={false}
+                onClick={[Function]}
                 type="submit"
               >
                 <span>
@@ -873,6 +2122,7 @@ ShallowWrapper {
                 </span>,
                 "className": "btn btn-primary form-submit-btn",
                 "disabled": false,
+                "onClick": [Function],
                 "type": "submit",
               },
               "ref": null,
@@ -1034,13 +2284,13 @@ ShallowWrapper {
                 ]
               }
               type="text"
-            />,
+            />
             <FieldLabel
               className="mb-2"
               required={false}
               requiredForSubmit={false}
               text="Transcript languages"
-            />,
+            />
             <FieldArray
               component={[Function]}
               disabled={false}
@@ -1067,969 +2317,34 @@ ShallowWrapper {
               }
               name="[object Object].weeks_to_complete"
               type="number"
-            />,
+            />
             <FieldLabel
               className="mb-2"
               required={false}
               requiredForSubmit={false}
               text="Staff"
-            />,
+            />
             <Field
               component={[Function]}
               disabled={false}
               name="[object Object].staff"
-            />,
+            />
             <ButtonToolbar
               className=""
             >
               <button
                 className="btn btn-primary form-submit-btn"
                 disabled={false}
-                type="submit"
-              >
-                <span>
-                  Submit for Review
-                </span>
-              </button>
-            </ButtonToolbar>,
-          ],
-          "expandedTitle": undefined,
-          "iconId": "collapsible-icon-[object Object]",
-          "isCollapsible": undefined,
-          "isOpen": false,
-          "onToggle": [Function],
-          "title": <div>
-            <span>
-              Your new course run
-            </span>
-          </div>,
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                required={true}
-                requiredForSubmit={false}
-                text="Start date"
-              />,
-              "name": "[object Object].start",
-              "placeholder": "mm/dd/yyyy",
-              "required": true,
-              "type": "date",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                required={true}
-                requiredForSubmit={false}
-                text="End date"
-              />,
-              "name": "[object Object].end",
-              "normalize": [Function],
-              "placeholder": "mm/dd/yyyy",
-              "required": true,
-              "type": "date",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "label": <FieldLabel
-                className=""
-                required={false}
-                requiredForSubmit={false}
-                text="Minimum effort"
-              />,
-              "name": "[object Object].min_effort",
-              "type": "number",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "label": <FieldLabel
-                className=""
-                required={false}
-                requiredForSubmit={false}
-                text="Maximum effort"
-              />,
-              "name": "[object Object].max_effort",
-              "type": "number",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "label": <FieldLabel
-                className=""
-                required={false}
-                requiredForSubmit={false}
-                text="Course pacing"
-              />,
-              "name": "[object Object].pacing_type",
-              "options": Array [
-                Object {
-                  "label": "Self-paced",
-                  "value": "self_paced",
-                },
-              ],
-              "type": "text",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "label": <FieldLabel
-                className=""
-                required={false}
-                requiredForSubmit={false}
-                text="Content language"
-              />,
-              "name": "[object Object].content_language",
-              "options": Array [
-                Object {
-                  "label": "Arabic - United Arab Emirates",
-                  "value": "ar-ae",
-                },
-              ],
-              "type": "text",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "className": "mb-2",
-              "required": false,
-              "requiredForSubmit": false,
-              "text": "Transcript languages",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "languageOptions": Array [
-                Object {
-                  "label": "Arabic - United Arab Emirates",
-                  "value": "ar-ae",
-                },
-              ],
-              "name": "[object Object].transcript_languages",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "label": <FieldLabel
-                className=""
-                required={false}
-                requiredForSubmit={false}
-                text="Length"
-              />,
-              "name": "[object Object].weeks_to_complete",
-              "type": "number",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "className": "mb-2",
-              "required": false,
-              "requiredForSubmit": false,
-              "text": "Staff",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "disabled": false,
-              "name": "[object Object].staff",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <button
-                className="btn btn-primary form-submit-btn"
-                disabled={false}
-                type="submit"
-              >
-                <span>
-                  Submit for Review
-                </span>
-              </button>,
-              "className": "",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <span>
-                  Submit for Review
-                </span>,
-                "className": "btn btn-primary form-submit-btn",
-                "disabled": false,
-                "type": "submit",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Submit for Review",
-                },
-                "ref": null,
-                "rendered": "Submit for Review",
-                "type": "span",
-              },
-              "type": "button",
-            },
-            "type": [Function],
-          },
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": "collapsible-run-[object Object]",
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <Field
-                component={[Function]}
-                format={[Function]}
-                label={
-                  <React.Fragment>
-                    Start date
-                    <span
-                      aria-hidden={true}
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="[object Object].start"
-                placeholder="mm/dd/yyyy"
-                required={true}
-                type="date"
-              />,
-              <Field
-                component={[Function]}
-                format={[Function]}
-                label={
-                  <React.Fragment>
-                    End date
-                    <span
-                      aria-hidden={true}
-                      className="required"
-                    >
-                      *
-                    </span>
-                  </React.Fragment>
-                }
-                name="[object Object].end"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
-                required={true}
-                type="date"
-              />,
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    Minimum Effort
-                  </React.Fragment>
-                }
-                name="[object Object].min_effort"
-                type="number"
-              />,
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    Maximum Effort
-                  </React.Fragment>
-                }
-                name="[object Object].max_effort"
-                type="number"
-              />,
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    Course Pacing
-                  </React.Fragment>
-                }
-                name="[object Object].pacing_type"
-                options={
-                  Array [
-                    Object {
-                      "label": "Self-paced",
-                      "value": "self_paced",
-                    },
-                  ]
-                }
-                type="text"
-              />,
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    Content Language
-                  </React.Fragment>
-                }
-                name="[object Object].content_language"
-                options={
-                  Array [
-                    Object {
-                      "label": "Arabic - United Arab Emirates",
-                      "value": "ar-ae",
-                    },
-                  ]
-                }
-                type="text"
-              />,
-              <div
-                className="transcript-label"
-              >
-                Transcript Languages
-              </div>,
-              <FieldArray
-                component={[Function]}
-                languageOptions={
-                  Array [
-                    Object {
-                      "label": "Arabic - United Arab Emirates",
-                      "value": "ar-ae",
-                    },
-                  ]
-                }
-                name="[object Object].transcript_languages"
-              />,
-              <Field
-                component={[Function]}
-                label={
-                  <React.Fragment>
-                    Length
-                  </React.Fragment>
-                }
-                name="[object Object].weeks_to_complete"
-                type="number"
-              />,
-              <Field
-                component={[Function]}
-                name="[object Object].staff"
-              />,
-              <button
-                className="btn btn-primary form-submit-btn float-right mt-2"
                 onClick={[Function]}
                 type="submit"
               >
                 <span>
-                  Publish
-                </span>
-              </button>,
-            ],
-            "expandedTitle": undefined,
-            "iconId": "collapsible-icon-[object Object]",
-            "isCollapsible": undefined,
-            "isOpen": false,
-            "onToggle": [Function],
-            "title": <div
-              className="course-run-label"
-            >
-              <span>
-                Course run starting on Jan 1st 2000 - Self Paced
-              </span>
-              <div
-                className="course-run-studio-url"
-              >
-                Studio URL - 
-                <a
-                  href="undefined/course/undefined"
-                >
-                  undefined
-                </a>
-              </div>
-            }
-          >
-            <Field
-              component={[Function]}
-              disabled={false}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
-              }
-              name="[object Object].start"
-              placeholder="mm/dd/yyyy"
-              required={true}
-              type="date"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
-              }
-              name="[object Object].end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
-              required={true}
-              type="date"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Minimum effort"
-                />
-              }
-              name="[object Object].min_effort"
-              type="number"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Maximum effort"
-                />
-              }
-              name="[object Object].max_effort"
-              type="number"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Course pacing"
-                />
-              }
-              name="[object Object].pacing_type"
-              options={
-                Array [
-                  Object {
-                    "label": "Self-paced",
-                    "value": "self_paced",
-                  },
-                ]
-              }
-              type="text"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Content language"
-                />
-              }
-              name="[object Object].content_language"
-              options={
-                Array [
-                  Object {
-                    "label": "Arabic - United Arab Emirates",
-                    "value": "ar-ae",
-                  },
-                ]
-              }
-              type="text"
-            />
-            <FieldLabel
-              className="mb-2"
-              required={false}
-              requiredForSubmit={false}
-              text="Transcript languages"
-            />
-            <FieldArray
-              component={[Function]}
-              disabled={false}
-              languageOptions={
-                Array [
-                  Object {
-                    "label": "Arabic - United Arab Emirates",
-                    "value": "ar-ae",
-                  },
-                ]
-              }
-              name="[object Object].transcript_languages"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Length"
-                />
-              }
-              name="[object Object].weeks_to_complete"
-              type="number"
-            />
-            <FieldLabel
-              className="mb-2"
-              required={false}
-              requiredForSubmit={false}
-              text="Staff"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              name="[object Object].staff"
-            />
-            <ButtonToolbar
-              className=""
-            >
-              <button
-                className="btn btn-primary form-submit-btn"
-                disabled={false}
-                type="submit"
-              >
-                <span>
-                  Submit for Review
-                </span>
-              </button>
-            </ButtonToolbar>
-          </t>,
-          <t
-            iconId="collapsible-icon-[object Object]"
-            isOpen={false}
-            onToggle={[Function]}
-            title={
-              <div>
-                <span>
-                  Your new course run
-                </span>
-              </div>
-            </div>
-          }
-        >
-          <Field
-            component={[Function]}
-            format={[Function]}
-            label={
-              <React.Fragment>
-                Start date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>
-            }
-            name="[object Object].start"
-            placeholder="mm/dd/yyyy"
-            required={true}
-            type="date"
-          />
-          <Field
-            component={[Function]}
-            format={[Function]}
-            label={
-              <React.Fragment>
-                End date
-                <span
-                  aria-hidden={true}
-                  className="required"
-                >
-                  *
-                </span>
-              </React.Fragment>
-            }
-            name="[object Object].end"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
-            required={true}
-            type="date"
-          />
-          <Field
-            component={[Function]}
-            label={
-              <React.Fragment>
-                Minimum Effort
-              </React.Fragment>
-            }
-            name="[object Object].min_effort"
-            type="number"
-          />
-          <Field
-            component={[Function]}
-            label={
-              <React.Fragment>
-                Maximum Effort
-              </React.Fragment>
-            }
-            name="[object Object].max_effort"
-            type="number"
-          />
-          <Field
-            component={[Function]}
-            label={
-              <React.Fragment>
-                Course Pacing
-              </React.Fragment>
-            }
-            name="[object Object].pacing_type"
-            options={
-              Array [
-                Object {
-                  "label": "Self-paced",
-                  "value": "self_paced",
-                },
-              ]
-            }
-            type="text"
-          />
-          <Field
-            component={[Function]}
-            label={
-              <React.Fragment>
-                Content Language
-              </React.Fragment>
-            }
-            name="[object Object].content_language"
-            options={
-              Array [
-                Object {
-                  "label": "Arabic - United Arab Emirates",
-                  "value": "ar-ae",
-                },
-              ]
-            }
-            type="text"
-          />
-          <div
-            className="transcript-label"
-          >
-            Transcript Languages
-          </div>
-          <FieldArray
-            component={[Function]}
-            languageOptions={
-              Array [
-                Object {
-                  "label": "Arabic - United Arab Emirates",
-                  "value": "ar-ae",
-                },
-              ]
-            }
-            name="[object Object].transcript_languages"
-          />
-          <Field
-            component={[Function]}
-            label={
-              <React.Fragment>
-                Length
-              </React.Fragment>
-            }
-            name="[object Object].weeks_to_complete"
-            type="number"
-          />
-          <Field
-            component={[Function]}
-            name="[object Object].staff"
-          />
-          <button
-            className="btn btn-primary form-submit-btn float-right mt-2"
-            onClick={[Function]}
-            type="submit"
-          >
-            <span>
-              Submit for Review
-            </span>
-          </button>
-        </t>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": "collapsible-run-[object Object]",
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <Field
-              component={[Function]}
-              disabled={false}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
-              }
-              name="[object Object].start"
-              placeholder="mm/dd/yyyy"
-              required={true}
-              type="date"
-            />,
-            <Field
-              component={[Function]}
-              disabled={false}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
-              }
-              name="[object Object].end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
-              required={true}
-              type="date"
-            />,
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Minimum effort"
-                />
-              }
-              name="[object Object].min_effort"
-              type="number"
-            />,
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Maximum effort"
-                />
-              }
-              name="[object Object].max_effort"
-              type="number"
-            />,
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Course pacing"
-                />
-              }
-              name="[object Object].pacing_type"
-              options={
-                Array [
-                  Object {
-                    "label": "Self-paced",
-                    "value": "self_paced",
-                  },
-                ]
-              }
-              type="text"
-            />,
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Content language"
-                />
-              }
-              name="[object Object].content_language"
-              options={
-                Array [
-                  Object {
-                    "label": "Arabic - United Arab Emirates",
-                    "value": "ar-ae",
-                  },
-                ]
-              }
-              type="text"
-            />
-            <FieldLabel
-              className="mb-2"
-              required={false}
-              requiredForSubmit={false}
-              text="Transcript languages"
-            />
-            <FieldArray
-              component={[Function]}
-              disabled={false}
-              languageOptions={
-                Array [
-                  Object {
-                    "label": "Arabic - United Arab Emirates",
-                    "value": "ar-ae",
-                  },
-                ]
-              }
-              name="[object Object].transcript_languages"
-            />,
-            <Field
-              component={[Function]}
-              disabled={false}
-              label={
-                <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Length"
-                />
-              }
-              name="[object Object].weeks_to_complete"
-              type="number"
-            />
-            <FieldLabel
-              className="mb-2"
-              required={false}
-              requiredForSubmit={false}
-              text="Staff"
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              name="[object Object].staff"
-            />
-            <ButtonToolbar
-              className=""
-            >
-              <button
-                className="btn btn-primary form-submit-btn"
-                disabled={false}
-                type="submit"
-              >
-                <span>
                   Submit for Review
                 </span>
               </button>
             </ButtonToolbar>
           </t>,
         ],
-        "type": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -2196,474 +2511,7 @@ ShallowWrapper {
                 <button
                   className="btn btn-primary form-submit-btn"
                   disabled={false}
-                  type="submit"
-                >
-                  <span>
-                    Submit for Review
-                  </span>
-                </button>
-              </ButtonToolbar>,
-            ],
-            "expandedTitle": undefined,
-            "iconId": "collapsible-icon-[object Object]",
-            "isCollapsible": undefined,
-            "isOpen": false,
-            "onToggle": [Function],
-            "title": <div
-              className="course-run-label"
-            >
-              <span>
-                Course run starting on Jan 1st 2000 - Self Paced
-              </span>
-              <div
-                className="course-run-studio-url"
-              >
-                Studio URL - 
-                <a
-                  href="undefined/course/undefined"
-                >
-                  Studio URL - 
-                  <a
-                    href="undefined/course/undefined"
-                  >
-                    undefined
-                  </a>
-                </div>
-              </div>
-            </div>,
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />,
-                "name": "[object Object].start",
-                "placeholder": "mm/dd/yyyy",
-                "required": true,
-                "type": "date",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />,
-                "name": "[object Object].end",
-                "normalize": [Function],
-                "placeholder": "mm/dd/yyyy",
-                "required": true,
-                "type": "date",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "label": <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Minimum effort"
-                />,
-                "name": "[object Object].min_effort",
-                "type": "number",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "label": <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Maximum effort"
-                />,
-                "name": "[object Object].max_effort",
-                "type": "number",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "label": <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Course pacing"
-                />,
-                "name": "[object Object].pacing_type",
-                "options": Array [
-                  Object {
-                    "label": "Self-paced",
-                    "value": "self_paced",
-                  },
-                ],
-                "type": "text",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "label": <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Content language"
-                />,
-                "name": "[object Object].content_language",
-                "options": Array [
-                  Object {
-                    "label": "Arabic - United Arab Emirates",
-                    "value": "ar-ae",
-                  },
-                ],
-                "type": "text",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "mb-2",
-                "required": false,
-                "requiredForSubmit": false,
-                "text": "Transcript languages",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "languageOptions": Array [
-                  Object {
-                    "label": "Arabic - United Arab Emirates",
-                    "value": "ar-ae",
-                  },
-                ],
-                "name": "[object Object].transcript_languages",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "label": <FieldLabel
-                  className=""
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Length"
-                />,
-                "name": "[object Object].weeks_to_complete",
-                "type": "number",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "mb-2",
-                "required": false,
-                "requiredForSubmit": false,
-                "text": "Staff",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "disabled": false,
-                "name": "[object Object].staff",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={false}
-                  type="submit"
-                >
-                  <span>
-                    Submit for Review
-                  </span>
-                </button>,
-                "className": "",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <span>
-                    Submit for Review
-                  </span>,
-                  "className": "btn btn-primary form-submit-btn",
-                  "disabled": false,
-                  "type": "submit",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Submit for Review",
-                  },
-                  "ref": null,
-                  "rendered": "Submit for Review",
-                  "type": "span",
-                },
-                "type": "button",
-              },
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "collapsible-run-[object Object]",
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <Field
-                component={[Function]}
-                disabled={false}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    required={true}
-                    requiredForSubmit={false}
-                    text="Start date"
-                  />
-                }
-                name="[object Object].start"
-                placeholder="mm/dd/yyyy"
-                required={true}
-                type="date"
-              />,
-              <Field
-                component={[Function]}
-                disabled={false}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    required={true}
-                    requiredForSubmit={false}
-                    text="End date"
-                  />
-                }
-                name="[object Object].end"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
-                required={true}
-                type="date"
-              />,
-              <Field
-                component={[Function]}
-                disabled={false}
-                label={
-                  <FieldLabel
-                    className=""
-                    required={false}
-                    requiredForSubmit={false}
-                    text="Minimum effort"
-                  />
-                }
-                name="[object Object].min_effort"
-                type="number"
-              />,
-              <Field
-                component={[Function]}
-                disabled={false}
-                label={
-                  <FieldLabel
-                    className=""
-                    required={false}
-                    requiredForSubmit={false}
-                    text="Maximum effort"
-                  />
-                }
-                name="[object Object].max_effort"
-                type="number"
-              />,
-              <Field
-                component={[Function]}
-                disabled={false}
-                label={
-                  <FieldLabel
-                    className=""
-                    required={false}
-                    requiredForSubmit={false}
-                    text="Course pacing"
-                  />
-                }
-                name="[object Object].pacing_type"
-                options={
-                  Array [
-                    Object {
-                      "label": "Self-paced",
-                      "value": "self_paced",
-                    },
-                  ]
-                }
-                type="text"
-              />,
-              <Field
-                component={[Function]}
-                disabled={false}
-                label={
-                  <FieldLabel
-                    className=""
-                    required={false}
-                    requiredForSubmit={false}
-                    text="Content language"
-                  />
-                }
-                name="[object Object].content_language"
-                options={
-                  Array [
-                    Object {
-                      "label": "Arabic - United Arab Emirates",
-                      "value": "ar-ae",
-                    },
-                  ]
-                }
-                type="text"
-              />,
-              <FieldLabel
-                className="mb-2"
-                required={false}
-                requiredForSubmit={false}
-                text="Transcript languages"
-              />,
-              <FieldArray
-                component={[Function]}
-                disabled={false}
-                languageOptions={
-                  Array [
-                    Object {
-                      "label": "Arabic - United Arab Emirates",
-                      "value": "ar-ae",
-                    },
-                  ]
-                }
-                name="[object Object].transcript_languages"
-              />,
-              <Field
-                component={[Function]}
-                disabled={false}
-                label={
-                  <FieldLabel
-                    className=""
-                    required={false}
-                    requiredForSubmit={false}
-                    text="Length"
-                  />
-                }
-                name="[object Object].weeks_to_complete"
-                type="number"
-              />,
-              <FieldLabel
-                className="mb-2"
-                required={false}
-                requiredForSubmit={false}
-                text="Staff"
-              />,
-              <Field
-                component={[Function]}
-                disabled={false}
-                name="[object Object].staff"
-              />,
-              <ButtonToolbar
-                className=""
-              >
-                <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={false}
+                  onClick={[Function]}
                   type="submit"
                 >
                   <span>
@@ -2924,6 +2772,7 @@ ShallowWrapper {
                 "children": <button
                   className="btn btn-primary form-submit-btn"
                   disabled={false}
+                  onClick={[Function]}
                   type="submit"
                 >
                   <span>
@@ -2943,6 +2792,7 @@ ShallowWrapper {
                   </span>,
                   "className": "btn btn-primary form-submit-btn",
                   "disabled": false,
+                  "onClick": [Function],
                   "type": "submit",
                 },
                 "ref": null,
@@ -2997,7 +2847,7 @@ ShallowWrapper {
 exports[`Collapsible Course Run Fields renders correctly with no fields 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
+  Symbol(enzyme.__unrendered__): <BaseCollapsibleCourseRunFields
     courseInReview={false}
     courseRuns={Array []}
     dispatch={[Function]}
