@@ -9,6 +9,8 @@ import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(apiClient);
+apiClient.isAccessTokenExpired = jest.fn();
+apiClient.isAccessTokenExpired.mockReturnValue(false);
 const testData = {
   uuid: '4c30506c-4150-4243-90a1-4e62f1ce3718',
   key: 'edx',

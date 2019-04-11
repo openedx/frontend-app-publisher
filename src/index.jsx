@@ -97,6 +97,9 @@ const App = () => (
   </Provider>
 );
 
-if (apiClient.ensurePublicOrAuthencationAndCookies(window.location.pathname)) {
-  ReactDOM.render(<App />, document.getElementById('root'));
-}
+apiClient.ensurePublicOrAuthenticationAndCookies(
+  window.location.pathname,
+  () => {
+    ReactDOM.render(<App />, document.getElementById('root'));
+  },
+);
