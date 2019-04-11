@@ -22,6 +22,8 @@ import * as types from '../constants/courseInfo';
 
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(apiClient);
+apiClient.isAccessTokenExpired = jest.fn();
+apiClient.isAccessTokenExpired.mockReturnValue(false);
 
 const uuid = '11111111-1111-1111-1111-111111111111';
 

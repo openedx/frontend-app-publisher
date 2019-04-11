@@ -13,6 +13,8 @@ import {
 
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(apiClient);
+apiClient.isAccessTokenExpired = jest.fn();
+apiClient.isAccessTokenExpired.mockReturnValue(false);
 
 const courseRunData = {
   actions: {
