@@ -55,13 +55,10 @@ export const BaseCollapsibleCourseRunFields = ({
   courseRuns,
   languageOptions,
   pacingTypeOptions,
-<<<<<<< HEAD
   courseInReview,
-=======
   handleCourseRunSubmit,
   dispatch,
   formId,
->>>>>>> Mark course_runs as non-draft if submitted
 }) => (
   <div>
     {fields.map((courseRun, index) => (
