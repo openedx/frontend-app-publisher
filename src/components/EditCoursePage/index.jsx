@@ -47,6 +47,9 @@ class EditCoursePage extends React.Component {
       submittedRun.draft = false;
     }
     /* eslint-enable no-param-reassign */
+
+    // Reset the target run after we handle setting it as not a draft
+    this.setState({ targetRun: null });
   }
 
   prepareCourse(courseData) {
