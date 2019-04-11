@@ -493,11 +493,11 @@ describe('BaseEditCourseForm', () => {
 
   it('renders html correctly with minimal data', () => {
     const component = shallow(<BaseEditCourseForm
-      title="Edit Form"
       handleSubmit={() => null}
       initialValues={{
-        title: 'Test Title',
+        title: initialValuesFull.title,
       }}
+      title={initialValuesFull.title}
       number="Test101x"
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -510,9 +510,9 @@ describe('BaseEditCourseForm', () => {
 
   it('renders html correctly with all data present and verified entitlement', () => {
     const component = shallow(<BaseEditCourseForm
-      title="Edit Form"
       handleSubmit={() => null}
       initialValues={initialValuesFull}
+      title={initialValuesFull.title}
       number="Test102x"
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -525,9 +525,9 @@ describe('BaseEditCourseForm', () => {
 
   it('renders html correctly while submitting', () => {
     const component = shallow(<BaseEditCourseForm
-      title="Edit Form"
       handleSubmit={() => null}
       initialValues={initialValuesFull}
+      title={initialValuesFull.title}
       number="Test103x"
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -544,7 +544,7 @@ describe('BaseEditCourseForm', () => {
   it('renders with disabled fields if course is in review', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
-      title="Title"
+      title={initialValuesFull.title}
       number="Test101x"
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
