@@ -89,6 +89,43 @@ describe('EditCoursePage', () => {
     isFetching: false,
     error: null,
   };
+  const courseRunOptions = {
+    data: {
+      actions: {
+        POST: {
+          pacing_type: {
+            type: 'choice',
+            required: false,
+            read_only: false,
+            label: 'Pacing type',
+            choices: [{
+              display_name: 'Instructor-paced',
+              value: 'instructor_paced',
+            }, {
+              display_name: 'Self-paced',
+              value: 'self_paced',
+            }],
+          },
+          content_language: {
+            type: 'field',
+            required: false,
+            read_only: false,
+            label: 'Content language',
+            help_text: 'Language in which the course is administered',
+            choices: [{
+              display_name: 'Afrikaans',
+              value: 'af',
+            }, {
+              display_name: 'Arabic - United Arab Emirates',
+              value: 'ar-ae',
+            }],
+          },
+        },
+      },
+    },
+    isFetching: false,
+    error: null,
+  };
 
   it('renders html correctly', () => {
     const component = shallow(<EditCoursePage />);
@@ -123,7 +160,7 @@ describe('EditCoursePage', () => {
       courseInfo={{
         data: {},
         isFetching: false,
-        error: 'Course Info error',
+        error: 'Course Info error.',
       }}
     />);
     expect(component).toMatchSnapshot();
@@ -148,7 +185,7 @@ describe('EditCoursePage', () => {
       courseOptions={{
         data: {},
         isFetching: false,
-        error: 'Course Options error',
+        error: 'Course Options error.',
       }}
     />);
     expect(component).toMatchSnapshot();
@@ -169,7 +206,32 @@ describe('EditCoursePage', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('renders page correctly with courseInfo error and courseOptions error', () => {
+  it('renders page correctly with courseRunOptions', () => {
+    const component = shallow(<EditCoursePage
+      courseRunOptions={courseRunOptions}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders page correctly with no courseRunOptions', () => {
+    const component = shallow(<EditCoursePage
+      courseRunOptions={null}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders page correctly with courseRunOptions error', () => {
+    const component = shallow(<EditCoursePage
+      courseRunOptions={{
+        data: {},
+        isFetching: false,
+        error: 'Course Run Options error.',
+      }}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders page correctly with courseInfo, courseOptions, and courseRunOptions errors', () => {
     const component = shallow(<EditCoursePage
       courseInfo={{
         data: {},
@@ -180,6 +242,11 @@ describe('EditCoursePage', () => {
         data: {},
         isFetching: false,
         error: 'Course Options error.',
+      }}
+      courseRunOptions={{
+        data: {},
+        isFetching: false,
+        error: 'Course Run Options error.',
       }}
     />);
     expect(component).toMatchSnapshot();

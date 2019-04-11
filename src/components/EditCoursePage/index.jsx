@@ -112,13 +112,14 @@ class EditCoursePage extends React.Component {
   }
 
   render() {
-    if (!this.props.courseInfo || !this.props.courseOptions) {
+    if (!this.props.courseInfo || !this.props.courseOptions || !this.props.courseRunOptions) {
       return (
         <StatusAlert
           id="error"
           alertType="danger"
           title="Course Edit Form failed to load: "
-          message="Course information unavailable."
+          message="Course information unavailable. Please try reloading the page and if the error
+           persists, please contact support."
         />
       );
     }
@@ -186,11 +187,18 @@ class EditCoursePage extends React.Component {
       error = error.concat(courseInfo.error, ' ');
     }
     if (courseOptions.error) {
-      error = error.concat(courseOptions.error);
+      error = error.concat(courseOptions.error, ' ');
+    }
+    if (courseRunOptions.error) {
+      error = error.concat(courseRunOptions.error, ' ');
+    }
+    if (error) {
+      error += 'Please try reloading the page and if the error persists, please contact support.';
     }
     error = error.trim();
     const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching;
-    const showForm = startedFetching && !courseInfo.isFetching && !courseOptions.isFetching;
+    const showForm = !error && startedFetching && !courseInfo.isFetching &&
+      !courseOptions.isFetching;
 
     return (
       <React.Fragment>

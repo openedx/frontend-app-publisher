@@ -83,11 +83,9 @@ export class BaseEditCourseForm extends React.Component {
     const pacingTypeOptions = (courseRunOptions &&
       this.parseOptions(courseRunOptions.pacing_type.choices));
     const languageOptions = (courseRunOptions &&
-      [{
-        label: '--', // Add a default null language for the dropdown
-        value: '',
-      }].concat(this.parseOptions(courseRunOptions.content_language.choices)));
+      this.parseOptions(courseRunOptions.content_language.choices));
 
+    languageOptions.unshift({ label: '--', value: '' });
     levelTypeOptions.unshift({ label: '--', value: '' });
     subjectOptions.unshift({ label: '--', value: '' });
 
