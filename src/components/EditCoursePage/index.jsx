@@ -10,6 +10,7 @@ import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
 import { IN_REVIEW_STATUS } from '../../data/constants';
 
+
 class EditCoursePage extends React.Component {
   constructor(props) {
     super(props);

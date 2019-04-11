@@ -8,6 +8,7 @@ import {
   EDIT_STAFFER_INFO,
   EDIT_STAFFER_INFO_SUCCESS,
   EDIT_STAFFER_INFO_FAIL,
+  EDIT_STAFFER_INFO_FINISH,
 } from '../constants/stafferInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
@@ -83,6 +84,10 @@ export function editStafferInfo(data) {
   return { type: EDIT_STAFFER_INFO, data };
 }
 
+export function editStafferInfoFinish() {
+  return { type: EDIT_STAFFER_INFO_FINISH };
+}
+
 export function editStaffer(stafferData) {
   return (dispatch) => {
     dispatch(editStafferInfo(stafferData));
@@ -90,7 +95,9 @@ export function editStaffer(stafferData) {
     return DiscoveryDataApiService.editStaffer(stafferData)
       .then((response) => {
         const staffer = response.data;
-        dispatch(editStafferInfoSuccess(staffer));
+        dispatch(editStafferInfoSuccess(staffer))
+          // Used to reset the wasEditSuccessful flag after a successful edit
+          .then(dispatch(editStafferInfoFinish()));
       })
       .catch((error) => {
         dispatch(editStafferInfoFail(`Edit instructor failed, please try again or contact support. Error( ${error.response.data} )`));

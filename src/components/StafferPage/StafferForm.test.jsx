@@ -74,6 +74,17 @@ const stafferInfo = {
   error: null,
   isFetching: false,
   isSaving: false,
+  wasEditSuccessful: false,
+};
+
+const notFromEditCourse = {
+  fromEditCourse: false,
+  uuid: null,
+};
+
+const fromEditCourse = {
+  fromEditCourse: true,
+  uuid: '11111111-1111-1111-1111-111111111111',
 };
 
 describe('StafferForm', () => {
@@ -84,6 +95,7 @@ describe('StafferForm', () => {
       isSaving={false}
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -95,6 +107,7 @@ describe('StafferForm', () => {
       isSaving={false}
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -106,6 +119,7 @@ describe('StafferForm', () => {
       isSaving
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -118,6 +132,19 @@ describe('StafferForm', () => {
       stafferOptions={stafferOptions}
       stafferInfo={stafferInfo}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly when sent from the edit course page', () => {
+    const component = shallow(<BaseStafferForm
+      pristine
+      submitting={false}
+      isSaving={false}
+      stafferOptions={stafferOptions}
+      handleSubmit={() => {}}
+      fromEditCourse={fromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });

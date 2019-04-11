@@ -4,9 +4,11 @@ import StafferPage from '../../components/StafferPage';
 import { fetchStafferInfo, editStaffer } from '../../data/actions/stafferInfo';
 import { fetchStafferOptions } from '../../data/actions/stafferOptions';
 
+
 const mapStateToProps = state => ({
   stafferOptions: state.stafferOptions,
   stafferInfo: state.stafferInfo,
+  fromEditCourse: state.fromEditCourse,
 });
 
 const mergeProps = (stateProps, actionProps, { uuid }) => ({

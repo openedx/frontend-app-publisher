@@ -60,6 +60,7 @@ export const BaseCollapsibleCourseRunFields = ({
   dispatch,
   formId,
   owners,
+  courseUuid,
 }) => (
   <div>
     {fields.map((courseRun, index) => (
@@ -139,6 +140,7 @@ export const BaseCollapsibleCourseRunFields = ({
           component={StaffList}
           disabled={courseInReview}
           owners={owners}
+          courseUuid={courseUuid}
         />
         <ButtonToolbar>
           <button
@@ -192,6 +194,7 @@ BaseCollapsibleCourseRunFields.propTypes = {
   dispatch: PropTypes.func,
   formId: PropTypes.string.isRequired,
   owners: PropTypes.arrayOf(PropTypes.shape({})),
+  courseUuid: PropTypes.string.isRequired,
 };
 
 BaseCollapsibleCourseRunFields.defaultProps = {

@@ -8,6 +8,7 @@ import {
   EDIT_STAFFER_INFO,
   EDIT_STAFFER_INFO_SUCCESS,
   EDIT_STAFFER_INFO_FAIL,
+  EDIT_STAFFER_INFO_FINISH,
 } from '../constants/stafferInfo';
 
 
@@ -16,6 +17,7 @@ const initialState = {
   isSaving: false,
   isFetching: false,
   error: null,
+  wasEditSuccessful: false,
 };
 
 function stafferInfo(state = initialState, action) {
@@ -26,6 +28,7 @@ function stafferInfo(state = initialState, action) {
         isSaving: false,
         isFetching: true,
         error: null,
+        wasEditSuccessful: false,
       });
     case REQUEST_STAFFER_INFO_SUCCESS:
       return Object.assign({}, state, {
@@ -33,6 +36,7 @@ function stafferInfo(state = initialState, action) {
         isSaving: false,
         isFetching: false,
         error: null,
+        wasEditSuccessful: false,
       });
     case REQUEST_STAFFER_INFO_FAIL:
       return Object.assign({}, state, {
@@ -40,42 +44,56 @@ function stafferInfo(state = initialState, action) {
         isSaving: false,
         isFetching: false,
         error: action.error,
+        wasEditSuccessful: false,
       });
     case CREATE_STAFFER:
       return Object.assign({}, state, {
         data: {},
         isSaving: true,
         error: null,
+        wasEditSuccessful: false,
       });
     case CREATE_STAFFER_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
         isSaving: false,
         error: null,
+        wasEditSuccessful: false,
       });
     case CREATE_STAFFER_FAIL:
       return Object.assign({}, state, {
         data: {},
         isSaving: false,
         error: action.error,
+        wasEditSuccessful: false,
       });
     case EDIT_STAFFER_INFO:
       return Object.assign({}, state, {
         data: {},
         isSaving: true,
         error: null,
+        wasEditSuccessful: false,
       });
     case EDIT_STAFFER_INFO_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
         isSaving: false,
         error: null,
+        wasEditSuccessful: true,
       });
     case EDIT_STAFFER_INFO_FAIL:
       return Object.assign({}, state, {
         data: {},
         isSaving: false,
         error: action.error,
+        wasEditSuccessful: false,
+      });
+    case EDIT_STAFFER_INFO_FINISH:
+      return Object.assign({}, state, {
+        data: {},
+        isSaving: false,
+        error: null,
+        wasEditSuccessful: false,
       });
     default:
       return state;

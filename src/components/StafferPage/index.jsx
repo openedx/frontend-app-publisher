@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { Redirect } from 'react-router-dom';
 
 import StafferForm from './StafferForm';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
+
+
+// Returns the url for sending the user back to the previous edit course page
+export const getPreviousCourseEditUrl = courseUuid => `/courses/${courseUuid}/edit`;
 
 class StafferPage extends React.Component {
   constructor(props) {
@@ -89,6 +94,7 @@ class StafferPage extends React.Component {
     const {
       stafferOptions,
       stafferInfo,
+      fromEditCourse,
     } = this.props;
 
     if (!stafferOptions || !stafferInfo) {
@@ -99,6 +105,13 @@ class StafferPage extends React.Component {
           title="Could not load page"
           message="Could not get instructor information"
         />
+      );
+    }
+
+    // Redirect users back to the previous edit course page on successful submission
+    if (fromEditCourse.fromEditCourse && stafferInfo.wasEditSuccessful) {
+      return (
+        <Redirect push to={getPreviousCourseEditUrl(fromEditCourse.courseUuid)} />
       );
     }
 
@@ -136,6 +149,12 @@ class StafferPage extends React.Component {
           { showForm && (
             <div>
               <h2>{titleText}</h2>
+              { fromEditCourse.fromEditCourse &&
+                <div className="alert alert-primary my-3" role="alert">
+                The data you entered on the course edit screen is saved. You will return
+                to that page when you have finished updating instructor information.
+                </div>
+              }
               <hr />
               <StafferForm
                 id="create-staffer-form"
@@ -144,6 +163,7 @@ class StafferPage extends React.Component {
                 isSaving={isSaving}
                 isCreateForm={isCreateForm}
                 initialValues={data}
+                fromEditCourse={fromEditCourse}
               />
               { isSaving && <LoadingSpinner message="Saving instructor" /> }
               { error && (
@@ -169,6 +189,7 @@ StafferPage.defaultProps = {
   fetchStafferInfo: () => null,
   stafferOptions: null,
   stafferInfo: null,
+  fromEditCourse: {},
 };
 
 StafferPage.propTypes = {
@@ -186,6 +207,11 @@ StafferPage.propTypes = {
     isSaving: PropTypes.bool,
     data: PropTypes.shape(),
     error: PropTypes.string,
+    wasEditSuccessful: PropTypes.bool,
+  }),
+  fromEditCourse: PropTypes.shape({
+    fromEditCourse: PropTypes.bool,
+    courseUuid: PropTypes.string,
   }),
 };
 

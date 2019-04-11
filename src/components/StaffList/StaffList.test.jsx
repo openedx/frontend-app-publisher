@@ -55,6 +55,17 @@ const autoCompletePersonResponses = {
     }],
 };
 
+const defaultProps = {
+  input,
+  courseUuid: '11111111-1111-1111-1111-111111111111',
+};
+
+jest.mock('../Staffer', () => ({
+  Staffer: () => <div className="mock-staffer" />,
+  // mock a generic name function so that drag and drop works
+  getStafferName: staffer => staffer.given_name,
+}));
+
 describe('StaffList', () => {
   afterEach(() => {
     // Clear onChange's call count after each test
@@ -63,8 +74,8 @@ describe('StaffList', () => {
     mockClient.reset();
   });
 
-  it('renders a grid of staff members and an autocomplete search input', () => {
-    const component = shallow(<StaffList input={input} />);
+  it('renders a list of staff members and an autocomplete input', () => {
+    const component = shallow(<StaffList {...defaultProps} />);
     expect(component).toMatchSnapshot();
   });
 
@@ -124,26 +135,29 @@ describe('StaffList', () => {
   });
 
   it('correctly handles removing members of the staff', () => {
-    const component = mount(<StaffList input={input} />);
-    let staffers = component.find('Staffer');
+    const component = mount(<StaffList {...defaultProps} />);
+    let staffers = component.find('.mock-staffer');
     expect(staffers).toHaveLength(input.value.length);
 
-    // Delete the first staffer
-    const firstStaffer = staffers.at(0);
-    firstStaffer.find('.js-delete-btn').simulate('click');
+    const firstStaffer = component.state().staffList[0];
+    // Petend we deleted the first staffer
+    const firstUuid = input.value[0].uuid;
+    component.instance().handleRemove(firstUuid);
 
     // Verify that the onChange method has been called
     expect(input.onChange).toBeCalled();
 
     // Verify that the first staffer has been removed
-    staffers = component.find('Staffer');
+    component.update();
+    staffers = component.find('.mock-staffer');
     expect(staffers).toHaveLength(input.value.length - 1);
-    const newFirstStaffer = staffers.at(0);
-    expect(newFirstStaffer).not.toEqual(firstStaffer);
+
+    const newFirstStaffer = component.state().staffList[0];
+    expect(firstStaffer).not.toEqual(newFirstStaffer);
   });
 
   it('correctly handles reordering members of the staff', () => {
-    const component = mount(<StaffList input={input} />);
+    const component = mount(<StaffList {...defaultProps} />);
     // Find the first staffer.
     const firstStaffer = component.state().staffList[0].uuid;
 
@@ -166,7 +180,7 @@ describe('StaffList', () => {
   });
 
   it('does not re-order when dragged outside of the list', () => {
-    const component = mount(<StaffList input={input} />);
+    const component = mount(<StaffList {...defaultProps} />);
     // Find the first staffer.
     const firstStaffer = component.state().staffList[0].uuid;
 
@@ -184,7 +198,7 @@ describe('StaffList', () => {
   });
 
   it('does not re-order when dragged to the same position', () => {
-    const component = mount(<StaffList input={input} />);
+    const component = mount(<StaffList {...defaultProps} />);
     // Find the first staffer.
     const firstStaffer = component.state().staffList[0].uuid;
 

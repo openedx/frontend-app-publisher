@@ -35,6 +35,7 @@ describe('stafferInfo reducer', () => {
       data: {},
       isSaving: false,
       error: null,
+      wasEditSuccessful: false,
     };
   });
 
@@ -44,6 +45,7 @@ describe('stafferInfo reducer', () => {
       isSaving: false,
       isFetching: false,
       error: null,
+      wasEditSuccessful: false,
     });
   });
 
@@ -54,6 +56,7 @@ describe('stafferInfo reducer', () => {
         data: {},
         isSaving: true,
         error: null,
+        wasEditSuccessful: false,
       });
   });
 
@@ -63,6 +66,7 @@ describe('stafferInfo reducer', () => {
         data: stafferData,
         isSaving: false,
         error: null,
+        wasEditSuccessful: false,
       });
   });
 
@@ -72,6 +76,7 @@ describe('stafferInfo reducer', () => {
         data: {},
         isSaving: false,
         error: 'failure',
+        wasEditSuccessful: false,
       });
   });
 
@@ -83,6 +88,7 @@ describe('stafferInfo reducer', () => {
         isSaving: false,
         isFetching: true,
         error: null,
+        wasEditSuccessful: false,
       });
   });
 
@@ -93,6 +99,7 @@ describe('stafferInfo reducer', () => {
         isSaving: false,
         isFetching: false,
         error: null,
+        wasEditSuccessful: false,
       });
   });
 
@@ -103,6 +110,7 @@ describe('stafferInfo reducer', () => {
         isSaving: false,
         isFetching: false,
         error: 'failure',
+        wasEditSuccessful: false,
       });
   });
 
@@ -113,6 +121,7 @@ describe('stafferInfo reducer', () => {
         data: {},
         isSaving: true,
         error: null,
+        wasEditSuccessful: false,
       });
   });
 
@@ -122,6 +131,7 @@ describe('stafferInfo reducer', () => {
         data: stafferData,
         isSaving: false,
         error: null,
+        wasEditSuccessful: true,
       });
   });
 
@@ -131,6 +141,17 @@ describe('stafferInfo reducer', () => {
         data: {},
         isSaving: false,
         error: 'failure',
+        wasEditSuccessful: false,
+      });
+  });
+
+  it('staffer info finish works', () => {
+    expect(stafferInfo(initalState, actions.editStafferInfoFinish()))
+      .toEqual({
+        data: {},
+        isSaving: false,
+        error: null,
+        wasEditSuccessful: false,
       });
   });
 });
