@@ -5,7 +5,7 @@ import { Icon } from '@edx/paragon';
 
 export const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name || ''}`;
 
-export const Staffer = ({ staffer, onRemove }) => (
+export const Staffer = ({ staffer, onRemove, disabled }) => (
   <React.Fragment>
     <div className="staffer-image-wrapper overflow-hidden">
       <img src={staffer.profile_image_url} className="rounded-circle w-25" alt="" />
@@ -15,6 +15,7 @@ export const Staffer = ({ staffer, onRemove }) => (
         type="button"
         className="btn js-delete-btn mr-1 p-0"
         onClick={() => onRemove(staffer.uuid)}
+        disabled={disabled}
       >
         <Icon
           id={`delete-icon-${staffer.uuid}`}
@@ -22,7 +23,7 @@ export const Staffer = ({ staffer, onRemove }) => (
           screenReaderText={`Remove ${getStafferName(staffer)}`}
         />
       </button>
-      <button type="button" className="btn mr-1 p-0">
+      <button type="button" className="btn mr-1 p-0" disabled={disabled}>
         <Icon
           id={`edit-icon-${staffer.uuid}`}
           className={['fa', 'fa-edit', 'fa-fw']}
@@ -45,4 +46,9 @@ Staffer.propTypes = {
     family_name: PropTypes.string,
     profile_image_url: PropTypes.string.isRequired,
   }).isRequired,
+  disabled: PropTypes.bool,
+};
+
+Staffer.defaultProps = {
+  disabled: false,
 };

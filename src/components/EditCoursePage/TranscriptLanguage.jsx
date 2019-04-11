@@ -16,7 +16,7 @@ class TranscriptLanguage extends React.Component {
   }
 
   render() {
-    const { fields, languageOptions } = this.props;
+    const { fields, languageOptions, disabled } = this.props;
 
     return (
       <div className="transcript-languages mb-3">
@@ -28,11 +28,13 @@ class TranscriptLanguage extends React.Component {
                 component={RenderSelectField}
                 options={languageOptions}
                 type="text"
+                disabled={disabled}
               />
               <RemoveButton
                 label="Remove language"
                 onRemove={this.handleRemove}
                 targetFieldNumber={index}
+                disabled={disabled}
               />
             </li>
           ))}
@@ -41,6 +43,7 @@ class TranscriptLanguage extends React.Component {
           type="button"
           className="btn btn-outline-primary js-add-button"
           onClick={() => fields.push({})}
+          disabled={disabled}
         >
           Add language
         </button>
@@ -57,6 +60,11 @@ TranscriptLanguage.propTypes = {
     label: PropTypes.string,
     value: PropTypes.string,
   })).isRequired,
+  disabled: PropTypes.bool,
+};
+
+TranscriptLanguage.defaultProps = {
+  disabled: false,
 };
 
 export default TranscriptLanguage;
