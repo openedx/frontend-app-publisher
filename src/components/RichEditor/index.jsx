@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { Editor } from '@tinymce/tinymce-react';
 import 'tinymce/tinymce.min';
@@ -71,7 +72,7 @@ class RichEditor extends React.Component {
           The <div> with the title stating what the Editor is for has the corresponding
           id to match the aria-labelledby.
         */}
-        <div aria-labelledby={id}>
+        <div aria-labelledby={id} className={classNames({ 'disabled-rich-text': disabled })}>
           <Editor
             initialValue={value}
             init={{
