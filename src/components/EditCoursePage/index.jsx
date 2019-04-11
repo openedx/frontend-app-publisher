@@ -8,7 +8,7 @@ import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
-import { IN_REVIEW_STATUS } from '../../data/constants';
+import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
 
 
 class EditCoursePage extends React.Component {
@@ -154,8 +154,25 @@ class EditCoursePage extends React.Component {
     } = this.props;
     const { startedFetching } = this.state;
 
+    const courseStatuses = [];
     const courseInReview = course_runs && course_runs.some(courseRun =>
       IN_REVIEW_STATUS.includes(courseRun.status));
+    if (courseInReview) {
+      courseStatuses.push(IN_REVIEW_STATUS[0]);
+    }
+    if (course_runs && course_runs.some(courseRun => PUBLISHED === courseRun.status)) {
+      courseStatuses.push(PUBLISHED);
+    }
+    if (course_runs && !courseStatuses.includes(PUBLISHED) &&
+        course_runs.some(courseRun => REVIEWED === courseRun.status)) {
+      courseStatuses.push(REVIEWED);
+    }
+    if (course_runs && !courseStatuses.includes(PUBLISHED) &&
+        !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !!courseStatuses.includes(REVIEWED) &&
+        course_runs.some(courseRun => UNPUBLISHED === courseRun.status)) {
+      courseStatuses.push(UNPUBLISHED);
+    }
+
     const minimalCourseRuns = course_runs && course_runs.map(courseRun => ({
       key: courseRun.key,
       start: courseRun.start,
@@ -245,6 +262,7 @@ class EditCoursePage extends React.Component {
                 uuid={uuid}
                 courseInfo={courseInfo}
                 courseInReview={courseInReview}
+                courseStatuses={courseStatuses}
                 owners={owners}
               />
             </div>
