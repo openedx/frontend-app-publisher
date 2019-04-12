@@ -11,6 +11,7 @@ class DiscoveryDataApiService {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
     return apiClient.get(url, {
       params: queryParams,
+      editable: 1,
     });
   }
 
