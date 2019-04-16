@@ -193,6 +193,8 @@ class StaffList extends React.Component {
       value: searchString,
       onChange: this.onChange,
       type: 'text',
+      disabled,
+      className: 'form-control',
     };
 
     return (
