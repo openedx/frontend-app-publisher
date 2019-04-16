@@ -1,6 +1,5 @@
 .react-autosuggest__container {
   position: relative;
-  margin-bottom: 300px;
 }
 
 .react-autosuggest__input {
@@ -32,9 +31,10 @@
   position: absolute;
   top: 29px;
   width: 100%;
-  border: 1px solid $medium-gray;
-  margin-top: 0;
+  border: 1px solid $light-gray;
+  margin-top: 12px;
   z-index: 2;
+  background-color: $white;
   border-bottom: {
     left-radius: 0.1875rem;
     right-radius: 0.1875rem;
@@ -45,11 +45,10 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  max-height: 300px;
+  max-height: 318px;
   overflow-y: auto;
 }
 
 .react-autosuggest__suggestion--highlighted {
   background-color: $light-gray;
 }
-

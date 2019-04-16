@@ -47,7 +47,6 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        "Staff",
         <DragDropContext
           onDragEnd={[Function]}
         >
@@ -63,12 +62,14 @@ ShallowWrapper {
           </Connect(Droppable)>
         </DragDropContext>,
         <label
-          className="col-12"
+          className="w-100"
           htmlFor="staff-search"
           id="label-staff-search"
           onKeyDown={[Function]}
         >
-          Search or add new instructor
+          <strong>
+            Search or add new instructor:
+          </strong>
           <Autosuggest
             alwaysRenderSuggestions={false}
             focusInputOnSuggestionClick={true}
@@ -117,7 +118,6 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
-      "Staff",
       Object {
         "instance": null,
         "key": undefined,
@@ -161,7 +161,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "Search or add new instructor",
+            <strong>
+              Search or add new instructor:
+            </strong>,
             <Autosuggest
               alwaysRenderSuggestions={false}
               focusInputOnSuggestionClick={true}
@@ -206,14 +208,24 @@ ShallowWrapper {
               }
             />,
           ],
-          "className": "col-12",
+          "className": "w-100",
           "htmlFor": "staff-search",
           "id": "label-staff-search",
           "onKeyDown": [Function],
         },
         "ref": null,
         "rendered": Array [
-          "Search or add new instructor",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Search or add new instructor:",
+            },
+            "ref": null,
+            "rendered": "Search or add new instructor:",
+            "type": "strong",
+          },
           Object {
             "instance": null,
             "key": undefined,
@@ -274,7 +286,6 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          "Staff",
           <DragDropContext
             onDragEnd={[Function]}
           >
@@ -290,12 +301,14 @@ ShallowWrapper {
             </Connect(Droppable)>
           </DragDropContext>,
           <label
-            className="col-12"
+            className="w-100"
             htmlFor="staff-search"
             id="label-staff-search"
             onKeyDown={[Function]}
           >
-            Search or add new instructor
+            <strong>
+              Search or add new instructor:
+            </strong>
             <Autosuggest
               alwaysRenderSuggestions={false}
               focusInputOnSuggestionClick={true}
@@ -344,7 +357,6 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        "Staff",
         Object {
           "instance": null,
           "key": undefined,
@@ -388,7 +400,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Search or add new instructor",
+              <strong>
+                Search or add new instructor:
+              </strong>,
               <Autosuggest
                 alwaysRenderSuggestions={false}
                 focusInputOnSuggestionClick={true}
@@ -433,14 +447,24 @@ ShallowWrapper {
                 }
               />,
             ],
-            "className": "col-12",
+            "className": "w-100",
             "htmlFor": "staff-search",
             "id": "label-staff-search",
             "onKeyDown": [Function],
           },
           "ref": null,
           "rendered": Array [
-            "Search or add new instructor",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Search or add new instructor:",
+              },
+              "ref": null,
+              "rendered": "Search or add new instructor:",
+              "type": "strong",
+            },
             Object {
               "instance": null,
               "key": undefined,
