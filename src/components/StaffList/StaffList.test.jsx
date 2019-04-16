@@ -84,7 +84,7 @@ describe('StaffList', () => {
       .replyOnce(200, JSON.stringify({
         results: autoCompletePersonResponses.long,
       }));
-    const component = mount(<StaffList input={input} owners={owners} />);
+    const component = mount(<StaffList {...defaultProps} owners={owners} />);
     component.instance().onSuggestionsFetchRequested({ value: 'long' }).then(() => {
       let { suggestions } = component.state();
       // check that we get the expected response from the API
@@ -104,7 +104,7 @@ describe('StaffList', () => {
   });
 
   it('gets no suggestions for short autocomplete', (done) => {
-    const component = mount(<StaffList input={input} />);
+    const component = mount(<StaffList {...defaultProps} />);
     component.instance().onSuggestionsFetchRequested({ value: 'l' }).then(() => {
       const state = component.state().suggestions;
       // check that we get no suggestions for a query that is too short
@@ -115,7 +115,7 @@ describe('StaffList', () => {
   });
 
   it('updates selected staff on form', () => {
-    const component = mount(<StaffList input={input} />);
+    const component = mount(<StaffList {...defaultProps} />);
     let { staffList } = component.state();
     // we start with 3 staff members
     expect(staffList.length).toEqual(3);
