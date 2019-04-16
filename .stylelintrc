@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-declaration-use-variable"
+  ],
+  "extends": "@edx/stylelint-config-edx",
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["function", "if", "each", "include", "mixin", "extend"]
+    }],
+    "font-family-no-missing-generic-family-keyword": [ true, {
+      "ignoreValues": [
+        "Font Awesome 5 Pro'",
+        "Font Awesome 5 Brands'"
+      ]
+    }],
+    "selector-max-type": [0, {
+      "ignoreTypes": ["body"]
+    }],
+    "declaration-property-unit-whitelist": {
+      "font-size": ["rem"]
+    },
+    "scss/declaration-nested-properties": ["always", {
+      "except": [
+        "only-of-namespace"
+      ]
+    }],
+    "sh-waqar/declaration-use-variable": [["/color/", { "ignoreValues": ["inherit", "transparent"] }]],
+    "property-no-vendor-prefix": [true]
+  }
+}

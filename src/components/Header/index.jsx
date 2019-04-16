@@ -5,8 +5,6 @@ import { Dropdown, Hyperlink } from '@edx/paragon';
 
 import apiClient from '../../data/apiClient';
 import EdxLogo from '../../../assets/edx-sm.png';
-import './Header.scss';
-
 
 class Header extends React.Component {
   renderLogo() {
@@ -17,7 +15,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="mb-3 py-3 border-bottom-blue">
+      <header className="site-header mb-3 py-3 border-bottom-blue">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-auto justify-content-start">
@@ -32,7 +30,7 @@ class Header extends React.Component {
                 title={this.props.username}
                 menuItems={[
                   <button
-                    className=""
+                    className="dropdown-button"
                     onClick={() => apiClient.logout(process.env.STUDIO_BASE_URL)}
                   >Sign Out
                   </button>,

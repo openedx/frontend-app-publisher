@@ -75,6 +75,7 @@ export class BaseEditCourseForm extends React.Component {
       courseInReview,
       handleCourseRunSubmit,
       id,
+      owners,
     } = this.props;
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
@@ -244,6 +245,7 @@ export class BaseEditCourseForm extends React.Component {
             courseInReview={courseInReview}
             handleCourseRunSubmit={handleCourseRunSubmit}
             formId={id}
+            owners={owners}
           />
           <ButtonToolbar className="mt-3">
             <Link to={`/courses/${uuid}/course_runs/new`}>
@@ -276,6 +278,7 @@ BaseEditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  owners: PropTypes.arrayOf(PropTypes.shape({})),
   entitlement: PropTypes.bool,
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
@@ -301,6 +304,7 @@ BaseEditCourseForm.defaultProps = {
   pristine: true,
   courseRuns: [],
   courseInReview: false,
+  owners: [],
 };
 
 const EditCourseForm = compose(
