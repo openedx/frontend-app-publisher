@@ -9,7 +9,6 @@ import ImageUpload from '../../components/ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
-import store from '../../data/store';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 import { getPreviousCourseEditUrl } from './index';
