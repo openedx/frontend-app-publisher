@@ -7,24 +7,18 @@ describe('fromEditCourse reducer', () => {
 
   beforeEach(() => {
     initalState = {
-      fromEditCourse: false,
-      courseUuid: null,
+      referrer: null,
     };
   });
 
   it('initial state is valid', () => {
-    expect(fromEditCourse(undefined, {})).toEqual({
-      fromEditCourse: false,
-      courseUuid: null,
-    });
+    expect(fromEditCourse(undefined, {})).toEqual({ referrer: null });
   });
 
   it('from edit course action works', () => {
     const courseUuid = '00000000-0000-0000-0000-000000000000';
-    expect(fromEditCourse(initalState, fromEditCourseAction(courseUuid)))
-      .toEqual({
-        fromEditCourse: true,
-        courseUuid,
-      });
+    const referrer = `courses/${courseUuid}/edit`;
+
+    expect(fromEditCourse(initalState, fromEditCourseAction(referrer))).toEqual({ referrer });
   });
 });

@@ -78,13 +78,11 @@ const stafferInfo = {
 };
 
 const notFromEditCourse = {
-  fromEditCourse: false,
-  uuid: null,
+  referrer: null,
 };
 
 const fromEditCourse = {
-  fromEditCourse: true,
-  uuid: '11111111-1111-1111-1111-111111111111',
+  referrer: 'courses/00000000-0000-0000-0000-000000000000/edit',
 };
 
 describe('StafferForm', () => {

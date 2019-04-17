@@ -11,7 +11,6 @@ import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
-import { getPreviousCourseEditUrl } from './index';
 
 
 const basicValidate = value => (value ? undefined : 'This field is required');
@@ -37,7 +36,7 @@ const BaseStafferForm = ({
   isSaving,
   isCreateForm,
   stafferOptions,
-  fromEditCourse,
+  fromEditCourse: { referrer },
 }) => {
   const formControlDisabled = pristine || submitting || isSaving;
 
@@ -107,7 +106,7 @@ const BaseStafferForm = ({
         <ButtonToolbar>
           <Link
             className={['btn btn-outline-primary form-cancel-btn']}
-            to={fromEditCourse.fromEditCourse ? getPreviousCourseEditUrl(fromEditCourse.courseUuid) : '/'}
+            to={referrer || '/'}
             disabled={formControlDisabled}
           >
             Cancel

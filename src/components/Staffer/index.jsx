@@ -37,7 +37,7 @@ export const Staffer = ({
         <Link
           to={`/instructors/${staffer.uuid}/edit`}
           className="btn mr-1 p-0"
-          onClick={() => store.dispatch(fromEditCourse(courseUuid))}
+          onClick={() => store.dispatch(fromEditCourse(`/courses/${courseUuid}/edit`))}
         >
           <Icon
             id={`edit-icon-${staffer.uuid}`}

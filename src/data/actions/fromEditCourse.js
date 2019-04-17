@@ -1,5 +1,5 @@
 import FROM_EDIT_COURSE from '../constants/fromEditCourse';
 
-export default function fromEditCourse(courseUuid) {
-  return { type: FROM_EDIT_COURSE, fromEditCourse: true, courseUuid };
+export default function fromEditCourse(referrer) {
+  return { type: FROM_EDIT_COURSE, referrer };
 }

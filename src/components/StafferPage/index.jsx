@@ -9,9 +9,6 @@ import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
 
 
-// Returns the url for sending the user back to the previous edit course page
-export const getPreviousCourseEditUrl = courseUuid => `/courses/${courseUuid}/edit`;
-
 class StafferPage extends React.Component {
   constructor(props) {
     super(props);
@@ -108,10 +105,11 @@ class StafferPage extends React.Component {
       );
     }
 
+    const { referrer } = fromEditCourse;
     // Redirect users back to the previous edit course page on successful submission
-    if (fromEditCourse.fromEditCourse && stafferInfo.wasEditSuccessful) {
+    if (referrer && stafferInfo.wasEditSuccessful) {
       return (
-        <Redirect push to={getPreviousCourseEditUrl(fromEditCourse.courseUuid)} />
+        <Redirect push to={referrer} />
       );
     }
 
@@ -149,11 +147,12 @@ class StafferPage extends React.Component {
           { showForm && (
             <div>
               <h2>{titleText}</h2>
-              { fromEditCourse.fromEditCourse &&
-                <div className="alert alert-primary my-3" role="alert">
-                The data you entered on the course edit screen is saved. You will return
-                to that page when you have finished updating instructor information.
-                </div>
+              { referrer &&
+                <StatusAlert
+                  id="sent-from-edit-course-info"
+                  alertType="info"
+                  message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+                />
               }
               <hr />
               <StafferForm
@@ -210,8 +209,7 @@ StafferPage.propTypes = {
     wasEditSuccessful: PropTypes.bool,
   }),
   fromEditCourse: PropTypes.shape({
-    fromEditCourse: PropTypes.bool,
-    courseUuid: PropTypes.string,
+    referrer: PropTypes.string,
   }),
 };
 
