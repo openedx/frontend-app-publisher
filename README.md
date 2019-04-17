@@ -77,3 +77,11 @@ Currently we are using Jest and Enzyme for our testing
     ```
 
     Additionally, for snapshot tests, you can update only the snapshots in a folder or for a test by appending `-u` to the end of the command.
+
+## Linting
+
+To lint your javascript and sass run:
+
+    ```
+    make lint
+    ```
