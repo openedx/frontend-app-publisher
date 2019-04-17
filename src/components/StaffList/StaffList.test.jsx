@@ -91,7 +91,7 @@ describe('StaffList', () => {
       expect(suggestions[0].text.family_name).toEqual('Longstocking');
       expect(suggestions[0].id).toEqual('5');
       // check that we get the 'add new' link at the bottom of our expected results.
-      expect(suggestions[2].link).not.toBeNull();
+      expect(suggestions[2].url).not.toBeNull();
       expect(suggestions[2].id).toEqual('new');
 
       // check that clearing suggestions...clears suggestions

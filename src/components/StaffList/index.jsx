@@ -55,7 +55,7 @@ class StaffList extends React.Component {
         .autocompletePerson(value, organizationKeys)
         .then((response) => {
           const { results } = response.data;
-          // Add in last 'suggestion' - the 'add new' instructor link
+          // Add in last 'suggestion' - the 'add new' instructor list item
           results.push({
             id: 'new',
             text: {
@@ -63,8 +63,8 @@ class StaffList extends React.Component {
               given_name: '',
               family_name: '',
             },
-            link: '/instructors/new',
-            link_text: 'Add New Instructor',
+            url: '/instructors/new',
+            item_text: 'Add New Instructor',
           });
           this.setState({ suggestions: results });
         });
@@ -104,19 +104,21 @@ class StaffList extends React.Component {
    */
   onSuggestionEntered(event, { suggestion }) {
     const { staffList } = this.state;
-    const newInstructor = (suggestion.id === 'new');
-    const instructorAlreadySelected =
-      staffList.some(staff => staff.uuid === suggestion.text.uuid);
+    // clear search string to allow for another staffer to be added.
+    this.setState({ searchString: '' });
+    if (suggestion.id === 'new') {
+      window.location.href = suggestion.url;
+      return;
+    }
     const newStaffList = Array.from(this.state.staffList);
-    if (!instructorAlreadySelected && !newInstructor) {
+    // if instructor NOT already selected
+    if (!staffList.some(staff => staff.uuid === suggestion.text.uuid)) {
       newStaffList.push(suggestion.text); // add to component state
     }
     // add to form state (trigger change action)
     this.setState({
       staffList: newStaffList,
     }, () => this.props.input.onChange(this.state.staffList));
-    // clear search string to allow for another staffer to be added.
-    this.setState({ searchString: '' });
   }
 
   /**
@@ -127,8 +129,8 @@ class StaffList extends React.Component {
    * @returns {string} - the value for the search input box after a selection
    */
   getSuggestionValue(selectedValue) {
-    if (selectedValue.link_text) {
-      return selectedValue.link_text;
+    if (selectedValue.item_text) {
+      return selectedValue.item_text;
     }
     return getStafferName(selectedValue.text);
   }
@@ -166,8 +168,8 @@ class StaffList extends React.Component {
         <div className="m-1 p-1 w-75">
           <div className="m-1 p-1">{getStafferName(suggestion.text)}</div>
           <div className="m-1 p-1">
-            {suggestion.link && (
-              <a href={suggestion.link}>{suggestion.link_text}</a>
+            {suggestion.item_text && (
+              <span>{suggestion.item_text}</span>
             )}
             {suggestion.text.position && (
               <span>
