@@ -203,7 +203,6 @@ class StaffList extends React.Component {
 
     return (
       <React.Fragment>
-        Staff
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable droppableId="StaffList" direction="vertical">
             {provided => (
@@ -238,7 +237,8 @@ class StaffList extends React.Component {
           </Droppable>
         </DragDropContext>
         {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
-        <label className="col-12" id="label-staff-search" htmlFor="staff-search" onKeyDown={this.handleAutosuggestEnterEvent}>Search or add new instructor
+        <label className="w-100" id="label-staff-search" htmlFor="staff-search" onKeyDown={this.handleAutosuggestEnterEvent}>
+          <strong>Search or add new instructor:</strong>
           <Autosuggest
             suggestions={suggestions}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
