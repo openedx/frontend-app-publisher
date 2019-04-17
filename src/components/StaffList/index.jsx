@@ -130,7 +130,7 @@ class StaffList extends React.Component {
     if (selectedValue.link_text) {
       return selectedValue.link_text;
     }
-    return `${selectedValue.text.given_name} ${selectedValue.text.family_name}`;
+    return getStafferName(selectedValue.text);
   }
 
 
