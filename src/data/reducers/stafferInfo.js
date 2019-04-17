@@ -17,7 +17,6 @@ const initialState = {
   isSaving: false,
   isFetching: false,
   error: null,
-  wasEditSuccessful: false,
 };
 
 function stafferInfo(state = initialState, action) {
@@ -72,21 +71,18 @@ function stafferInfo(state = initialState, action) {
         data: action.data,
         isSaving: false,
         error: null,
-        wasEditSuccessful: true,
       });
     case EDIT_STAFFER_INFO_FAIL:
       return Object.assign({}, state, {
         data: {},
         isSaving: false,
         error: action.error,
-        wasEditSuccessful: false,
       });
     case EDIT_STAFFER_INFO_FINISH:
       return Object.assign({}, state, {
         data: {},
         isSaving: false,
         error: null,
-        wasEditSuccessful: false,
       });
     default:
       return state;

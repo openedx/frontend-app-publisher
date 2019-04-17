@@ -74,7 +74,6 @@ const stafferInfo = {
   error: null,
   isFetching: false,
   isSaving: false,
-  wasEditSuccessful: false,
 };
 
 const notFromEditCourse = {

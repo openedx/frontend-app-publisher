@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Redirect } from 'react-router-dom';
 
 import StafferForm from './StafferForm';
 import StatusAlert from '../StatusAlert';
@@ -79,12 +78,17 @@ class StafferPage extends React.Component {
   }
 
   handleStafferEdit(fieldValues) {
+    const {
+      editStaffer,
+      fromEditCourse: { referrer },
+    } = this.props;
+
     const stafferData = this.prepareStafferData(fieldValues);
     if (!stafferData.profile_image.startsWith('data:')) {
       // Only send profile_image if a new one is being uploaded
       delete stafferData.profile_image;
     }
-    this.props.editStaffer(stafferData);
+    editStaffer(stafferData, referrer);
   }
 
   render() {
@@ -102,14 +106,6 @@ class StafferPage extends React.Component {
           title="Could not load page"
           message="Could not get instructor information"
         />
-      );
-    }
-
-    const { referrer } = fromEditCourse;
-    // Redirect users back to the previous edit course page on successful submission
-    if (referrer && stafferInfo.wasEditSuccessful) {
-      return (
-        <Redirect push to={referrer} />
       );
     }
 
@@ -135,6 +131,8 @@ class StafferPage extends React.Component {
       error = error.concat(stafferOptions.error);
     }
     error = error.trim();
+
+    const { referrer } = fromEditCourse;
 
     return (
       <React.Fragment>
@@ -206,7 +204,6 @@ StafferPage.propTypes = {
     isSaving: PropTypes.bool,
     data: PropTypes.shape(),
     error: PropTypes.string,
-    wasEditSuccessful: PropTypes.bool,
   }),
   fromEditCourse: PropTypes.shape({
     referrer: PropTypes.string,

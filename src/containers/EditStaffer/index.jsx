@@ -15,7 +15,7 @@ const mergeProps = (stateProps, actionProps, { uuid }) => ({
   ...stateProps,
   fetchStafferInfo: () => actionProps.fetchStafferInfo(uuid),
   fetchStafferOptions: () => actionProps.fetchStafferOptions(),
-  editStaffer: stafferData => actionProps.editStaffer(stafferData),
+  editStaffer: (stafferData, referrer = null) => actionProps.editStaffer(stafferData, referrer),
 });
 
 const mapDispatchToProps = {

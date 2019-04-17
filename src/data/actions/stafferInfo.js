@@ -1,3 +1,5 @@
+import { push } from 'connected-react-router';
+
 import {
   CREATE_STAFFER,
   CREATE_STAFFER_SUCCESS,
@@ -88,16 +90,19 @@ export function editStafferInfoFinish() {
   return { type: EDIT_STAFFER_INFO_FINISH };
 }
 
-export function editStaffer(stafferData) {
+export function editStaffer(stafferData, referrer = null) {
   return (dispatch) => {
     dispatch(editStafferInfo(stafferData));
     // Send edit course PATCH
     return DiscoveryDataApiService.editStaffer(stafferData)
       .then((response) => {
         const staffer = response.data;
-        dispatch(editStafferInfoSuccess(staffer))
-          // Used to reset the wasEditSuccessful flag after a successful edit
-          .then(dispatch(editStafferInfoFinish()));
+        dispatch(editStafferInfoSuccess(staffer));
+
+        // Redirect to referring page after a successful edit
+        if (referrer) {
+          dispatch(push(referrer));
+        }
       })
       .catch((error) => {
         dispatch(editStafferInfoFail(`Edit instructor failed, please try again or contact support. Error( ${error.response.data} )`));
