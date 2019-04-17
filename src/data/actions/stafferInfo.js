@@ -86,10 +86,6 @@ export function editStafferInfo(data) {
   return { type: EDIT_STAFFER_INFO, data };
 }
 
-export function editStafferInfoFinish() {
-  return { type: EDIT_STAFFER_INFO_FINISH };
-}
-
 export function editStaffer(stafferData, referrer = null) {
   return (dispatch) => {
     dispatch(editStafferInfo(stafferData));

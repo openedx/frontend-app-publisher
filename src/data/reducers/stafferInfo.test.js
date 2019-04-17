@@ -133,13 +133,4 @@ describe('stafferInfo reducer', () => {
         error: 'failure',
       });
   });
-
-  it('staffer info finish works', () => {
-    expect(stafferInfo(initalState, actions.editStafferInfoFinish()))
-      .toEqual({
-        data: {},
-        isSaving: false,
-        error: null,
-      });
-  });
 });

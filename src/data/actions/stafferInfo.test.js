@@ -5,7 +5,6 @@ import {
   editStafferInfoFail,
   editStafferInfoSuccess,
   editStafferInfo,
-  editStafferInfoFinish,
   requestStafferInfoFail,
   requestStafferInfoSuccess,
   requestStafferInfo,
@@ -68,13 +67,6 @@ describe('stafferInfo edit staffer actions', () => {
       error,
     };
     expect(editStafferInfoFail(error)).toEqual(expectedAction);
-  });
-
-  it('should handle staffer info finishing', () => {
-    const expectedAction = {
-      type: types.EDIT_STAFFER_INFO_FINISH,
-    };
-    expect(editStafferInfoFinish()).toEqual(expectedAction);
   });
 });
 

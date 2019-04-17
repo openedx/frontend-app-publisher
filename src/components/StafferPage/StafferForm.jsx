@@ -132,8 +132,7 @@ BaseStafferForm.propTypes = {
   isSaving: PropTypes.bool,
   isCreateForm: PropTypes.bool,
   fromEditCourse: PropTypes.shape({
-    fromEditCourse: PropTypes.bool,
-    courseUuid: PropTypes.string,
+    referrer: PropTypes.string,
   }).isRequired,
 };
 
