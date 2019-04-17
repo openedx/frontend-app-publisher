@@ -32,3 +32,6 @@ test: up
 
 snapshot:
 	docker exec -it edx.pubfe npm run snapshot
+
+lint:
+	docker exec -it edx.pubfe npm run lint && npm run stylelint
