@@ -4,8 +4,9 @@ exports[`Staffer renders the staffer 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Staffer
+    courseUuid="11111111-1111-1111-1111-111111111111"
     disabled={false}
-    onRemove={[Function]}
+    onRemove={[MockFunction]}
     staffer={
       Object {
         "family_name": "Grohl",
@@ -61,10 +62,11 @@ ShallowWrapper {
               screenReaderText="Remove Dave Grohl"
             />
           </button>
-          <button
+          <Link
             className="btn mr-1 p-0"
-            disabled={false}
-            type="button"
+            onClick={[Function]}
+            replace={false}
+            to="/instructors/2aba6189-ad7e-45a8-b269-bea071b80391/edit"
           >
             <WithDeprecatedProps(B)
               className={
@@ -78,7 +80,7 @@ ShallowWrapper {
               screenReaderText="Edit Dave Grohl"
               title="Edit"
             />
-          </button>
+          </Link>
           <span
             className="name font-weight-bold"
           >
@@ -142,10 +144,11 @@ ShallowWrapper {
                 screenReaderText="Remove Dave Grohl"
               />
             </button>,
-            <button
+            <Link
               className="btn mr-1 p-0"
-              disabled={false}
-              type="button"
+              onClick={[Function]}
+              replace={false}
+              to="/instructors/2aba6189-ad7e-45a8-b269-bea071b80391/edit"
             >
               <WithDeprecatedProps(B)
                 className={
@@ -159,7 +162,7 @@ ShallowWrapper {
                 screenReaderText="Edit Dave Grohl"
                 title="Edit"
               />
-            </button>,
+            </Link>,
             <span
               className="name font-weight-bold"
             >
@@ -216,7 +219,7 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
               "children": <WithDeprecatedProps(B)
                 className={
@@ -231,8 +234,9 @@ ShallowWrapper {
                 title="Edit"
               />,
               "className": "btn mr-1 p-0",
-              "disabled": false,
-              "type": "button",
+              "onClick": [Function],
+              "replace": false,
+              "to": "/instructors/2aba6189-ad7e-45a8-b269-bea071b80391/edit",
             },
             "ref": null,
             "rendered": Object {
@@ -253,7 +257,7 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            "type": "button",
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -311,10 +315,11 @@ ShallowWrapper {
                 screenReaderText="Remove Dave Grohl"
               />
             </button>
-            <button
+            <Link
               className="btn mr-1 p-0"
-              disabled={false}
-              type="button"
+              onClick={[Function]}
+              replace={false}
+              to="/instructors/2aba6189-ad7e-45a8-b269-bea071b80391/edit"
             >
               <WithDeprecatedProps(B)
                 className={
@@ -328,7 +333,7 @@ ShallowWrapper {
                 screenReaderText="Edit Dave Grohl"
                 title="Edit"
               />
-            </button>
+            </Link>
             <span
               className="name font-weight-bold"
             >
@@ -392,10 +397,11 @@ ShallowWrapper {
                   screenReaderText="Remove Dave Grohl"
                 />
               </button>,
-              <button
+              <Link
                 className="btn mr-1 p-0"
-                disabled={false}
-                type="button"
+                onClick={[Function]}
+                replace={false}
+                to="/instructors/2aba6189-ad7e-45a8-b269-bea071b80391/edit"
               >
                 <WithDeprecatedProps(B)
                   className={
@@ -409,7 +415,7 @@ ShallowWrapper {
                   screenReaderText="Edit Dave Grohl"
                   title="Edit"
                 />
-              </button>,
+              </Link>,
               <span
                 className="name font-weight-bold"
               >
@@ -466,7 +472,7 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
                 "children": <WithDeprecatedProps(B)
                   className={
@@ -481,8 +487,9 @@ ShallowWrapper {
                   title="Edit"
                 />,
                 "className": "btn mr-1 p-0",
-                "disabled": false,
-                "type": "button",
+                "onClick": [Function],
+                "replace": false,
+                "to": "/instructors/2aba6189-ad7e-45a8-b269-bea071b80391/edit",
               },
               "ref": null,
               "rendered": Object {
@@ -503,7 +510,7 @@ ShallowWrapper {
                 "rendered": null,
                 "type": [Function],
               },
-              "type": "button",
+              "type": [Function],
             },
             Object {
               "instance": null,

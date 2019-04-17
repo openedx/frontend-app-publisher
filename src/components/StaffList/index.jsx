@@ -188,8 +188,10 @@ class StaffList extends React.Component {
       suggestions,
       searchString,
     } = this.state;
-
-    const { disabled } = this.props;
+    const {
+      disabled,
+      courseUuid,
+    } = this.props;
     const inputProps = {
       placeholder: '',
       value: searchString,
@@ -223,6 +225,7 @@ class StaffList extends React.Component {
                           onRemove={this.handleRemove}
                           staffer={staffer}
                           disabled={disabled}
+                          courseUuid={courseUuid}
                         />
                       </div>
                     )}
@@ -268,6 +271,7 @@ StaffList.propTypes = {
   }).isRequired,
   disabled: PropTypes.bool,
   owners: PropTypes.arrayOf(PropTypes.shape({})),
+  courseUuid: PropTypes.string.isRequired,
 };
 
 StaffList.defaultProps = {

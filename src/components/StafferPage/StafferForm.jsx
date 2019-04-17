@@ -2,7 +2,6 @@ import React from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { push } from 'connected-react-router';
 
 import AreasOfExpertise from './AreasOfExpertise';
 import SocialLinks from './SocialLinks';
@@ -10,7 +9,6 @@ import ImageUpload from '../../components/ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
-import store from '../../data/store';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 
@@ -38,6 +36,7 @@ const BaseStafferForm = ({
   isSaving,
   isCreateForm,
   stafferOptions,
+  fromEditCourse: { referrer },
 }) => {
   const formControlDisabled = pristine || submitting || isSaving;
 
@@ -107,11 +106,8 @@ const BaseStafferForm = ({
         <ButtonToolbar>
           <Link
             className={['btn btn-outline-primary form-cancel-btn']}
-            to="/"
+            to={referrer || '/'}
             disabled={formControlDisabled}
-            onClick={() => {
-              store.dispatch(push('/'));
-            }}
           >
             Cancel
           </Link>
@@ -135,6 +131,9 @@ BaseStafferForm.propTypes = {
   }),
   isSaving: PropTypes.bool,
   isCreateForm: PropTypes.bool,
+  fromEditCourse: PropTypes.shape({
+    referrer: PropTypes.string,
+  }).isRequired,
 };
 
 BaseStafferForm.defaultProps = {
@@ -144,6 +143,6 @@ BaseStafferForm.defaultProps = {
 };
 
 export default reduxForm({
-  form: 'create-staffer-form',
+  form: 'staffer-form',
 })(BaseStafferForm);
 export { basicValidate, extractOrgChoices, BaseStafferForm };

@@ -4,16 +4,18 @@ import StafferPage from '../../components/StafferPage';
 import { fetchStafferInfo, editStaffer } from '../../data/actions/stafferInfo';
 import { fetchStafferOptions } from '../../data/actions/stafferOptions';
 
+
 const mapStateToProps = state => ({
   stafferOptions: state.stafferOptions,
   stafferInfo: state.stafferInfo,
+  fromEditCourse: state.fromEditCourse,
 });
 
 const mergeProps = (stateProps, actionProps, { uuid }) => ({
   ...stateProps,
   fetchStafferInfo: () => actionProps.fetchStafferInfo(uuid),
   fetchStafferOptions: () => actionProps.fetchStafferOptions(),
-  editStaffer: stafferData => actionProps.editStaffer(stafferData),
+  editStaffer: (stafferData, referrer = null) => actionProps.editStaffer(stafferData, referrer),
 });
 
 const mapDispatchToProps = {

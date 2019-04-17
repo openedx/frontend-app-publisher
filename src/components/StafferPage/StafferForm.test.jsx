@@ -76,6 +76,14 @@ const stafferInfo = {
   isSaving: false,
 };
 
+const notFromEditCourse = {
+  referrer: null,
+};
+
+const fromEditCourse = {
+  referrer: 'courses/00000000-0000-0000-0000-000000000000/edit',
+};
+
 describe('StafferForm', () => {
   it('renders html correctly', () => {
     const component = shallow(<BaseStafferForm
@@ -84,6 +92,7 @@ describe('StafferForm', () => {
       isSaving={false}
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -95,6 +104,7 @@ describe('StafferForm', () => {
       isSaving={false}
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -106,6 +116,7 @@ describe('StafferForm', () => {
       isSaving
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -118,6 +129,19 @@ describe('StafferForm', () => {
       stafferOptions={stafferOptions}
       stafferInfo={stafferInfo}
       handleSubmit={() => {}}
+      fromEditCourse={notFromEditCourse}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly when sent from the edit course page', () => {
+    const component = shallow(<BaseStafferForm
+      pristine
+      submitting={false}
+      isSaving={false}
+      stafferOptions={stafferOptions}
+      handleSubmit={() => {}}
+      fromEditCourse={fromEditCourse}
     />);
     expect(component).toMatchSnapshot();
   });

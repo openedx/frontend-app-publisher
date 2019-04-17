@@ -246,6 +246,7 @@ export class BaseEditCourseForm extends React.Component {
             handleCourseRunSubmit={handleCourseRunSubmit}
             formId={id}
             owners={owners}
+            courseUuid={uuid}
           />
           <ButtonToolbar className="mt-3">
             <Link to={`/courses/${uuid}/course_runs/new`}>
@@ -313,6 +314,8 @@ const EditCourseForm = compose(
     form: props.id,
   })),
   reduxForm({
+    enableReinitialize: true, // Reload staff changes when returning from editing /creating staffers
+    keepDirtyOnReinitialize: true, // Don't wipe out changes on reinitialization
     destroyOnUnmount: false, // Keep the form state in redux when editing / creating staffers
   }),
 )(BaseEditCourseForm);

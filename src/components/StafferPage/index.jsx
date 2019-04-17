@@ -7,6 +7,7 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
 
+
 class StafferPage extends React.Component {
   constructor(props) {
     super(props);
@@ -77,18 +78,24 @@ class StafferPage extends React.Component {
   }
 
   handleStafferEdit(fieldValues) {
+    const {
+      editStaffer,
+      fromEditCourse: { referrer },
+    } = this.props;
+
     const stafferData = this.prepareStafferData(fieldValues);
     if (!stafferData.profile_image.startsWith('data:')) {
       // Only send profile_image if a new one is being uploaded
       delete stafferData.profile_image;
     }
-    this.props.editStaffer(stafferData);
+    editStaffer(stafferData, referrer);
   }
 
   render() {
     const {
       stafferOptions,
       stafferInfo,
+      fromEditCourse,
     } = this.props;
 
     if (!stafferOptions || !stafferInfo) {
@@ -125,6 +132,8 @@ class StafferPage extends React.Component {
     }
     error = error.trim();
 
+    const { referrer } = fromEditCourse;
+
     return (
       <React.Fragment>
         <Helmet>
@@ -136,6 +145,13 @@ class StafferPage extends React.Component {
           { showForm && (
             <div>
               <h2>{titleText}</h2>
+              { referrer &&
+                <StatusAlert
+                  id="sent-from-edit-course-info"
+                  alertType="info"
+                  message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+                />
+              }
               <hr />
               <StafferForm
                 id="create-staffer-form"
@@ -144,6 +160,7 @@ class StafferPage extends React.Component {
                 isSaving={isSaving}
                 isCreateForm={isCreateForm}
                 initialValues={data}
+                fromEditCourse={fromEditCourse}
               />
               { isSaving && <LoadingSpinner message="Saving instructor" /> }
               { error && (
@@ -169,6 +186,7 @@ StafferPage.defaultProps = {
   fetchStafferInfo: () => null,
   stafferOptions: null,
   stafferInfo: null,
+  fromEditCourse: {},
 };
 
 StafferPage.propTypes = {
@@ -186,6 +204,9 @@ StafferPage.propTypes = {
     isSaving: PropTypes.bool,
     data: PropTypes.shape(),
     error: PropTypes.string,
+  }),
+  fromEditCourse: PropTypes.shape({
+    referrer: PropTypes.string,
   }),
 };
 
