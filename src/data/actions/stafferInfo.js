@@ -10,7 +10,6 @@ import {
   EDIT_STAFFER_INFO,
   EDIT_STAFFER_INFO_SUCCESS,
   EDIT_STAFFER_INFO_FAIL,
-  EDIT_STAFFER_INFO_FINISH,
 } from '../constants/stafferInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
