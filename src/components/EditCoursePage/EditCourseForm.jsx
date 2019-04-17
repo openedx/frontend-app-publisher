@@ -82,13 +82,10 @@ export class BaseEditCourseForm extends React.Component {
       submitting,
       title,
       pristine,
-      courseRuns,
       uuid,
       courseInReview,
       courseStatuses,
-      handleCourseRunSubmit,
       id,
-      owners,
     } = this.props;
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
@@ -252,14 +249,11 @@ export class BaseEditCourseForm extends React.Component {
           <FieldArray
             name="course_runs"
             component={CollapsibleCourseRunFields}
-            courseRuns={courseRuns}
             languageOptions={languageOptions}
             pacingTypeOptions={pacingTypeOptions}
-            courseInReview={courseInReview}
-            handleCourseRunSubmit={handleCourseRunSubmit}
             formId={id}
-            owners={owners}
             courseUuid={uuid}
+            {...this.props}
           />
           <ButtonToolbar className="mt-3">
             <Link to={`/courses/${uuid}/course_runs/new`}>
@@ -292,7 +286,6 @@ BaseEditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  owners: PropTypes.arrayOf(PropTypes.shape({})),
   entitlement: PropTypes.bool,
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
@@ -306,21 +299,17 @@ BaseEditCourseForm.propTypes = {
   }).isRequired,
   submitting: PropTypes.bool,
   pristine: PropTypes.bool,
-  courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   uuid: PropTypes.string.isRequired,
   courseInReview: PropTypes.bool,
   courseStatuses: PropTypes.arrayOf(PropTypes.string),
-  handleCourseRunSubmit: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
 
 BaseEditCourseForm.defaultProps = {
   submitting: false,
   pristine: true,
-  courseRuns: [],
   courseInReview: false,
   courseStatuses: [],
-  owners: [],
 };
 
 const EditCourseForm = compose(

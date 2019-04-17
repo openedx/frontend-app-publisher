@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '@edx/paragon';
 import { Link } from 'react-router-dom';
 
-import fromEditCourse from '../../data/actions/fromEditCourse';
+import sourceInfo from '../../data/actions/sourceInfo';
 import store from '../../data/store';
 
 
@@ -37,7 +37,7 @@ export const Staffer = ({
         <Link
           to={`/instructors/${staffer.uuid}/edit`}
           className="btn mr-1 p-0"
-          onClick={() => store.dispatch(fromEditCourse(`/courses/${courseUuid}/edit`))}
+          onClick={() => store.dispatch(sourceInfo(`/courses/${courseUuid}/edit`))}
         >
           <Icon
             id={`edit-icon-${staffer.uuid}`}

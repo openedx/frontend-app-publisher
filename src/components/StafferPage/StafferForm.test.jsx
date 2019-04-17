@@ -76,11 +76,11 @@ const stafferInfo = {
   isSaving: false,
 };
 
-const notFromEditCourse = {
+const noReferrerSourceInfo = {
   referrer: null,
 };
 
-const fromEditCourse = {
+const sourceInfo = {
   referrer: 'courses/00000000-0000-0000-0000-000000000000/edit',
 };
 
@@ -92,7 +92,7 @@ describe('StafferForm', () => {
       isSaving={false}
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
-      fromEditCourse={notFromEditCourse}
+      sourceInfo={noReferrerSourceInfo}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -104,7 +104,7 @@ describe('StafferForm', () => {
       isSaving={false}
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
-      fromEditCourse={notFromEditCourse}
+      sourceInfo={noReferrerSourceInfo}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -116,7 +116,7 @@ describe('StafferForm', () => {
       isSaving
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
-      fromEditCourse={notFromEditCourse}
+      sourceInfo={noReferrerSourceInfo}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -129,7 +129,7 @@ describe('StafferForm', () => {
       stafferOptions={stafferOptions}
       stafferInfo={stafferInfo}
       handleSubmit={() => {}}
-      fromEditCourse={notFromEditCourse}
+      sourceInfo={noReferrerSourceInfo}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -141,7 +141,7 @@ describe('StafferForm', () => {
       isSaving={false}
       stafferOptions={stafferOptions}
       handleSubmit={() => {}}
-      fromEditCourse={fromEditCourse}
+      sourceInfo={sourceInfo}
     />);
     expect(component).toMatchSnapshot();
   });

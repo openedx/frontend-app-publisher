@@ -9,6 +9,17 @@ describe('StafferPage', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('renders html correctly when given a referrer', () => {
+    const component = shallow(<StafferPage
+      stafferInfo={{}}
+      stafferOptions={{}}
+      sourceInfo={{
+        referrer: '/course/11111111-1111-1111-111111111111/edit',
+      }}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
   it('renders page correctly with staffer options error', () => {
     const component = shallow(<StafferPage
       createStaffer={() => null}

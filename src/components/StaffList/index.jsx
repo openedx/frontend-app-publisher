@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Autosuggest from 'react-autosuggest';
+import { push } from 'connected-react-router';
 
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 
 import { Staffer, getStafferName } from '../Staffer';
+import sourceInfo from '../../data/actions/sourceInfo';
+import store from '../../data/store';
 
 
 class StaffList extends React.Component {
@@ -25,6 +28,10 @@ class StaffList extends React.Component {
     this.getSuggestionValue = this.getSuggestionValue.bind(this);
     this.renderSuggestion = this.renderSuggestion.bind(this);
     this.onSuggestionEntered = this.onSuggestionEntered.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateStaffList();
   }
 
   /**
@@ -107,9 +114,13 @@ class StaffList extends React.Component {
     // clear search string to allow for another staffer to be added.
     this.setState({ searchString: '' });
     if (suggestion.id === 'new') {
-      window.location.href = suggestion.url;
+      // Send users to the create instructor page
+      const { courseUuid, courseRunKey } = this.props;
+      store.dispatch(sourceInfo(`/courses/${courseUuid}/edit`, courseRunKey));
+      store.dispatch(push('/instructors/new'));
       return;
     }
+
     const newStaffList = Array.from(this.state.staffList);
     // if instructor NOT already selected
     if (!staffList.some(staff => staff.uuid === suggestion.text.uuid)) {
@@ -135,6 +146,31 @@ class StaffList extends React.Component {
     return getStafferName(selectedValue.text);
   }
 
+  /**
+   * Updates the staff list to account for new staffers being created
+   */
+  updateStaffList() {
+    const {
+      courseRunKey,
+      stafferInfo: {
+        data: newStaffer,
+      },
+      sourceInfo: {
+        referringRun,
+      },
+      input,
+    } = this.props;
+
+    if (courseRunKey === referringRun) {
+      const containsNewStaffer = this.state.staffList
+        .some(staffer => staffer.uuid === newStaffer.uuid);
+      if (!containsNewStaffer) {
+        this.setState({
+          staffList: this.state.staffList.concat(newStaffer),
+        }, () => input.onChange(this.state.staffList));
+      }
+    }
+  }
 
   handleRemove(uuid) {
     this.setState({
@@ -190,7 +226,6 @@ class StaffList extends React.Component {
     } = this.state;
     const {
       disabled,
-      courseUuid,
     } = this.props;
     const inputProps = {
       placeholder: '',
@@ -224,8 +259,7 @@ class StaffList extends React.Component {
                         <Staffer
                           onRemove={this.handleRemove}
                           staffer={staffer}
-                          disabled={disabled}
-                          courseUuid={courseUuid}
+                          {...this.props}
                         />
                       </div>
                     )}
@@ -272,11 +306,20 @@ StaffList.propTypes = {
   disabled: PropTypes.bool,
   owners: PropTypes.arrayOf(PropTypes.shape({})),
   courseUuid: PropTypes.string.isRequired,
+  courseRunKey: PropTypes.string.isRequired,
+  stafferInfo: PropTypes.shape({
+    data: PropTypes.shape(),
+  }),
+  sourceInfo: PropTypes.shape({
+    referringRun: PropTypes.string,
+  }),
 };
 
 StaffList.defaultProps = {
   disabled: false,
   owners: [],
+  stafferInfo: {},
+  sourceInfo: {},
 };
 
 export default StaffList;

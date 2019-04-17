@@ -58,7 +58,28 @@ const autoCompletePersonResponses = {
 const defaultProps = {
   input,
   courseUuid: '11111111-1111-1111-1111-111111111111',
+  courseRunKey: 'DemoX+TestCourse',
 };
+
+const newStaffer = {
+  uuid: '00000000-0000-0000-0000-000000000000',
+  profile_image_url: '/assets/pic.png',
+  given_name: 'Person',
+  family_name: 'McPerson',
+};
+
+const referredProps = Object.assign(
+  {},
+  defaultProps,
+  {
+    stafferInfo: {
+      data: newStaffer,
+    },
+    sourceInfo: {
+      referringRun: 'DemoX+TestCourse',
+    },
+  },
+);
 
 jest.mock('../Staffer', () => ({
   Staffer: () => <div className="mock-staffer" />,
@@ -76,6 +97,11 @@ describe('StaffList', () => {
 
   it('renders a list of staff members and an autocomplete input', () => {
     const component = shallow(<StaffList {...defaultProps} />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly with referred props', () => {
+    const component = shallow(<StaffList {...referredProps} />);
     expect(component).toMatchSnapshot();
   });
 
@@ -215,5 +241,13 @@ describe('StaffList', () => {
     // Verify that the onChange method has NOT been called
     expect(input.onChange).not.toBeCalled();
     expect(firstStaffer).toEqual(component.state().staffList[0].uuid);
+  });
+
+  it('adds the referred staffer to state when one is given', () => {
+    const component = mount(<StaffList {...referredProps} />);
+
+    const { staffList } = component.state();
+
+    expect(staffList[staffList.length - 1]).toEqual(newStaffer);
   });
 });

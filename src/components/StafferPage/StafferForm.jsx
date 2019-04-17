@@ -36,7 +36,7 @@ const BaseStafferForm = ({
   isSaving,
   isCreateForm,
   stafferOptions,
-  fromEditCourse: { referrer },
+  sourceInfo: { referrer },
 }) => {
   const formControlDisabled = pristine || submitting || isSaving;
 
@@ -131,7 +131,7 @@ BaseStafferForm.propTypes = {
   }),
   isSaving: PropTypes.bool,
   isCreateForm: PropTypes.bool,
-  fromEditCourse: PropTypes.shape({
+  sourceInfo: PropTypes.shape({
     referrer: PropTypes.string,
   }).isRequired,
 };

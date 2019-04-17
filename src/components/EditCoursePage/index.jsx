@@ -254,9 +254,7 @@ class EditCoursePage extends React.Component {
                   course_runs: minimalCourseRuns,
                 }}
                 number={number}
-                courseOptions={courseOptions}
                 entitlement={!!entitlement}
-                courseRunOptions={courseRunOptions}
                 title={title}
                 courseRuns={minimalCourseRuns}
                 uuid={uuid}
@@ -264,6 +262,7 @@ class EditCoursePage extends React.Component {
                 courseInReview={courseInReview}
                 courseStatuses={courseStatuses}
                 owners={owners}
+                {...this.props}
               />
             </div>
           )}

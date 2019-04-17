@@ -4,6 +4,7 @@ exports[`StaffList renders a list of staff members and an autocomplete input 1`]
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <StaffList
+    courseRunKey="DemoX+TestCourse"
     courseUuid="11111111-1111-1111-1111-111111111111"
     disabled={false}
     input={
@@ -32,6 +33,608 @@ ShallowWrapper {
       }
     }
     owners={Array []}
+    sourceInfo={Object {}}
+    stafferInfo={Object {}}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <DragDropContext
+          onDragEnd={[Function]}
+        >
+          <Connect(Droppable)
+            direction="vertical"
+            droppableId="StaffList"
+            ignoreContainerClipping={false}
+            isCombineEnabled={false}
+            isDropDisabled={false}
+            type="DEFAULT"
+          >
+            [Function]
+          </Connect(Droppable)>
+        </DragDropContext>,
+        <label
+          className="w-100"
+          htmlFor="staff-search"
+          id="label-staff-search"
+          onKeyDown={[Function]}
+        >
+          <strong>
+            Search or add new instructor:
+          </strong>
+          <Autosuggest
+            alwaysRenderSuggestions={false}
+            focusInputOnSuggestionClick={true}
+            getSuggestionValue={[Function]}
+            highlightFirstSuggestion={false}
+            id="staff-search"
+            inputProps={
+              Object {
+                "className": "form-control",
+                "disabled": false,
+                "onChange": [Function],
+                "placeholder": "",
+                "type": "text",
+                "value": "",
+              }
+            }
+            multiSection={false}
+            onSuggestionSelected={[Function]}
+            onSuggestionsClearRequested={[Function]}
+            onSuggestionsFetchRequested={[Function]}
+            renderSuggestion={[Function]}
+            renderSuggestionsContainer={[Function]}
+            shouldRenderSuggestions={[Function]}
+            suggestions={Array []}
+            theme={
+              Object {
+                "container": "react-autosuggest__container",
+                "containerOpen": "react-autosuggest__container--open",
+                "input": "react-autosuggest__input",
+                "inputFocused": "react-autosuggest__input--focused",
+                "inputOpen": "react-autosuggest__input--open",
+                "sectionContainer": "react-autosuggest__section-container",
+                "sectionContainerFirst": "react-autosuggest__section-container--first",
+                "sectionTitle": "react-autosuggest__section-title",
+                "suggestion": "react-autosuggest__suggestion",
+                "suggestionFirst": "react-autosuggest__suggestion--first",
+                "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                "suggestionsContainer": "react-autosuggest__suggestions-container",
+                "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                "suggestionsList": "react-autosuggest__suggestions-list",
+              }
+            }
+          />
+        </label>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Connect(Droppable)
+            direction="vertical"
+            droppableId="StaffList"
+            ignoreContainerClipping={false}
+            isCombineEnabled={false}
+            isDropDisabled={false}
+            type="DEFAULT"
+          >
+            [Function]
+          </Connect(Droppable)>,
+          "onDragEnd": [Function],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": [Function],
+            "direction": "vertical",
+            "droppableId": "StaffList",
+            "ignoreContainerClipping": false,
+            "isCombineEnabled": false,
+            "isDropDisabled": false,
+            "type": "DEFAULT",
+          },
+          "ref": null,
+          "rendered": [Function],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <strong>
+              Search or add new instructor:
+            </strong>,
+            <Autosuggest
+              alwaysRenderSuggestions={false}
+              focusInputOnSuggestionClick={true}
+              getSuggestionValue={[Function]}
+              highlightFirstSuggestion={false}
+              id="staff-search"
+              inputProps={
+                Object {
+                  "className": "form-control",
+                  "disabled": false,
+                  "onChange": [Function],
+                  "placeholder": "",
+                  "type": "text",
+                  "value": "",
+                }
+              }
+              multiSection={false}
+              onSuggestionSelected={[Function]}
+              onSuggestionsClearRequested={[Function]}
+              onSuggestionsFetchRequested={[Function]}
+              renderSuggestion={[Function]}
+              renderSuggestionsContainer={[Function]}
+              shouldRenderSuggestions={[Function]}
+              suggestions={Array []}
+              theme={
+                Object {
+                  "container": "react-autosuggest__container",
+                  "containerOpen": "react-autosuggest__container--open",
+                  "input": "react-autosuggest__input",
+                  "inputFocused": "react-autosuggest__input--focused",
+                  "inputOpen": "react-autosuggest__input--open",
+                  "sectionContainer": "react-autosuggest__section-container",
+                  "sectionContainerFirst": "react-autosuggest__section-container--first",
+                  "sectionTitle": "react-autosuggest__section-title",
+                  "suggestion": "react-autosuggest__suggestion",
+                  "suggestionFirst": "react-autosuggest__suggestion--first",
+                  "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                  "suggestionsContainer": "react-autosuggest__suggestions-container",
+                  "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                  "suggestionsList": "react-autosuggest__suggestions-list",
+                }
+              }
+            />,
+          ],
+          "className": "w-100",
+          "htmlFor": "staff-search",
+          "id": "label-staff-search",
+          "onKeyDown": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Search or add new instructor:",
+            },
+            "ref": null,
+            "rendered": "Search or add new instructor:",
+            "type": "strong",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "alwaysRenderSuggestions": false,
+              "focusInputOnSuggestionClick": true,
+              "getSuggestionValue": [Function],
+              "highlightFirstSuggestion": false,
+              "id": "staff-search",
+              "inputProps": Object {
+                "className": "form-control",
+                "disabled": false,
+                "onChange": [Function],
+                "placeholder": "",
+                "type": "text",
+                "value": "",
+              },
+              "multiSection": false,
+              "onSuggestionSelected": [Function],
+              "onSuggestionsClearRequested": [Function],
+              "onSuggestionsFetchRequested": [Function],
+              "renderSuggestion": [Function],
+              "renderSuggestionsContainer": [Function],
+              "shouldRenderSuggestions": [Function],
+              "suggestions": Array [],
+              "theme": Object {
+                "container": "react-autosuggest__container",
+                "containerOpen": "react-autosuggest__container--open",
+                "input": "react-autosuggest__input",
+                "inputFocused": "react-autosuggest__input--focused",
+                "inputOpen": "react-autosuggest__input--open",
+                "sectionContainer": "react-autosuggest__section-container",
+                "sectionContainerFirst": "react-autosuggest__section-container--first",
+                "sectionTitle": "react-autosuggest__section-title",
+                "suggestion": "react-autosuggest__suggestion",
+                "suggestionFirst": "react-autosuggest__suggestion--first",
+                "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                "suggestionsContainer": "react-autosuggest__suggestions-container",
+                "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                "suggestionsList": "react-autosuggest__suggestions-list",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "label",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <DragDropContext
+            onDragEnd={[Function]}
+          >
+            <Connect(Droppable)
+              direction="vertical"
+              droppableId="StaffList"
+              ignoreContainerClipping={false}
+              isCombineEnabled={false}
+              isDropDisabled={false}
+              type="DEFAULT"
+            >
+              [Function]
+            </Connect(Droppable)>
+          </DragDropContext>,
+          <label
+            className="w-100"
+            htmlFor="staff-search"
+            id="label-staff-search"
+            onKeyDown={[Function]}
+          >
+            <strong>
+              Search or add new instructor:
+            </strong>
+            <Autosuggest
+              alwaysRenderSuggestions={false}
+              focusInputOnSuggestionClick={true}
+              getSuggestionValue={[Function]}
+              highlightFirstSuggestion={false}
+              id="staff-search"
+              inputProps={
+                Object {
+                  "className": "form-control",
+                  "disabled": false,
+                  "onChange": [Function],
+                  "placeholder": "",
+                  "type": "text",
+                  "value": "",
+                }
+              }
+              multiSection={false}
+              onSuggestionSelected={[Function]}
+              onSuggestionsClearRequested={[Function]}
+              onSuggestionsFetchRequested={[Function]}
+              renderSuggestion={[Function]}
+              renderSuggestionsContainer={[Function]}
+              shouldRenderSuggestions={[Function]}
+              suggestions={Array []}
+              theme={
+                Object {
+                  "container": "react-autosuggest__container",
+                  "containerOpen": "react-autosuggest__container--open",
+                  "input": "react-autosuggest__input",
+                  "inputFocused": "react-autosuggest__input--focused",
+                  "inputOpen": "react-autosuggest__input--open",
+                  "sectionContainer": "react-autosuggest__section-container",
+                  "sectionContainerFirst": "react-autosuggest__section-container--first",
+                  "sectionTitle": "react-autosuggest__section-title",
+                  "suggestion": "react-autosuggest__suggestion",
+                  "suggestionFirst": "react-autosuggest__suggestion--first",
+                  "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                  "suggestionsContainer": "react-autosuggest__suggestions-container",
+                  "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                  "suggestionsList": "react-autosuggest__suggestions-list",
+                }
+              }
+            />
+          </label>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Connect(Droppable)
+              direction="vertical"
+              droppableId="StaffList"
+              ignoreContainerClipping={false}
+              isCombineEnabled={false}
+              isDropDisabled={false}
+              type="DEFAULT"
+            >
+              [Function]
+            </Connect(Droppable)>,
+            "onDragEnd": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": [Function],
+              "direction": "vertical",
+              "droppableId": "StaffList",
+              "ignoreContainerClipping": false,
+              "isCombineEnabled": false,
+              "isDropDisabled": false,
+              "type": "DEFAULT",
+            },
+            "ref": null,
+            "rendered": [Function],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong>
+                Search or add new instructor:
+              </strong>,
+              <Autosuggest
+                alwaysRenderSuggestions={false}
+                focusInputOnSuggestionClick={true}
+                getSuggestionValue={[Function]}
+                highlightFirstSuggestion={false}
+                id="staff-search"
+                inputProps={
+                  Object {
+                    "className": "form-control",
+                    "disabled": false,
+                    "onChange": [Function],
+                    "placeholder": "",
+                    "type": "text",
+                    "value": "",
+                  }
+                }
+                multiSection={false}
+                onSuggestionSelected={[Function]}
+                onSuggestionsClearRequested={[Function]}
+                onSuggestionsFetchRequested={[Function]}
+                renderSuggestion={[Function]}
+                renderSuggestionsContainer={[Function]}
+                shouldRenderSuggestions={[Function]}
+                suggestions={Array []}
+                theme={
+                  Object {
+                    "container": "react-autosuggest__container",
+                    "containerOpen": "react-autosuggest__container--open",
+                    "input": "react-autosuggest__input",
+                    "inputFocused": "react-autosuggest__input--focused",
+                    "inputOpen": "react-autosuggest__input--open",
+                    "sectionContainer": "react-autosuggest__section-container",
+                    "sectionContainerFirst": "react-autosuggest__section-container--first",
+                    "sectionTitle": "react-autosuggest__section-title",
+                    "suggestion": "react-autosuggest__suggestion",
+                    "suggestionFirst": "react-autosuggest__suggestion--first",
+                    "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                    "suggestionsContainer": "react-autosuggest__suggestions-container",
+                    "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                    "suggestionsList": "react-autosuggest__suggestions-list",
+                  }
+                }
+              />,
+            ],
+            "className": "w-100",
+            "htmlFor": "staff-search",
+            "id": "label-staff-search",
+            "onKeyDown": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Search or add new instructor:",
+              },
+              "ref": null,
+              "rendered": "Search or add new instructor:",
+              "type": "strong",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "alwaysRenderSuggestions": false,
+                "focusInputOnSuggestionClick": true,
+                "getSuggestionValue": [Function],
+                "highlightFirstSuggestion": false,
+                "id": "staff-search",
+                "inputProps": Object {
+                  "className": "form-control",
+                  "disabled": false,
+                  "onChange": [Function],
+                  "placeholder": "",
+                  "type": "text",
+                  "value": "",
+                },
+                "multiSection": false,
+                "onSuggestionSelected": [Function],
+                "onSuggestionsClearRequested": [Function],
+                "onSuggestionsFetchRequested": [Function],
+                "renderSuggestion": [Function],
+                "renderSuggestionsContainer": [Function],
+                "shouldRenderSuggestions": [Function],
+                "suggestions": Array [],
+                "theme": Object {
+                  "container": "react-autosuggest__container",
+                  "containerOpen": "react-autosuggest__container--open",
+                  "input": "react-autosuggest__input",
+                  "inputFocused": "react-autosuggest__input--focused",
+                  "inputOpen": "react-autosuggest__input--open",
+                  "sectionContainer": "react-autosuggest__section-container",
+                  "sectionContainerFirst": "react-autosuggest__section-container--first",
+                  "sectionTitle": "react-autosuggest__section-title",
+                  "suggestion": "react-autosuggest__suggestion",
+                  "suggestionFirst": "react-autosuggest__suggestion--first",
+                  "suggestionHighlighted": "react-autosuggest__suggestion--highlighted",
+                  "suggestionsContainer": "react-autosuggest__suggestions-container",
+                  "suggestionsContainerOpen": "react-autosuggest__suggestions-container--open",
+                  "suggestionsList": "react-autosuggest__suggestions-list",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "label",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`StaffList renders correctly with referred props 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <StaffList
+    courseRunKey="DemoX+TestCourse"
+    courseUuid="11111111-1111-1111-1111-111111111111"
+    disabled={false}
+    input={
+      Object {
+        "onChange": [MockFunction] {
+          "calls": Array [
+            Array [
+              Array [
+                Object {
+                  "family_name": "Last",
+                  "given_name": "First",
+                  "profile_image_url": "/media/people/profile_images/6f23f2f8-10dd-454a-8497-2ba972c980c4-a411afec9477.jpeg",
+                  "uuid": "6f23f2f8-10dd-454a-8497-2ba972c980c4",
+                },
+                Object {
+                  "family_name": null,
+                  "given_name": "Pippa",
+                  "profile_image_url": "/media/people/profile_images/17d0e2c0-9a02-421b-93bf-d081339090cc-68912d27b6e7.jpeg",
+                  "uuid": "17d0e2c0-9a02-421b-93bf-d081339090cc",
+                },
+                Object {
+                  "family_name": "Grohl",
+                  "given_name": "Dave",
+                  "profile_image_url": "/media/people/profile_images/2aba6189-ad7e-45a8-b269-bea071b80391-11df6812f839.png",
+                  "uuid": "2aba6189-ad7e-45a8-b269-bea071b80391",
+                },
+                Object {
+                  "family_name": "McPerson",
+                  "given_name": "Person",
+                  "profile_image_url": "/assets/pic.png",
+                  "uuid": "00000000-0000-0000-0000-000000000000",
+                },
+              ],
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "value": Array [
+          Object {
+            "family_name": "Last",
+            "given_name": "First",
+            "profile_image_url": "/media/people/profile_images/6f23f2f8-10dd-454a-8497-2ba972c980c4-a411afec9477.jpeg",
+            "uuid": "6f23f2f8-10dd-454a-8497-2ba972c980c4",
+          },
+          Object {
+            "family_name": null,
+            "given_name": "Pippa",
+            "profile_image_url": "/media/people/profile_images/17d0e2c0-9a02-421b-93bf-d081339090cc-68912d27b6e7.jpeg",
+            "uuid": "17d0e2c0-9a02-421b-93bf-d081339090cc",
+          },
+          Object {
+            "family_name": "Grohl",
+            "given_name": "Dave",
+            "profile_image_url": "/media/people/profile_images/2aba6189-ad7e-45a8-b269-bea071b80391-11df6812f839.png",
+            "uuid": "2aba6189-ad7e-45a8-b269-bea071b80391",
+          },
+        ],
+      }
+    }
+    owners={Array []}
+    sourceInfo={
+      Object {
+        "referringRun": "DemoX+TestCourse",
+      }
+    }
+    stafferInfo={
+      Object {
+        "data": Object {
+          "family_name": "McPerson",
+          "given_name": "Person",
+          "profile_image_url": "/assets/pic.png",
+          "uuid": "00000000-0000-0000-0000-000000000000",
+        },
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

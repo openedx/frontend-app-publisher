@@ -9,7 +9,7 @@ import courseOptions from './courseOptions';
 import stafferOptions from './stafferOptions';
 import stafferInfo from './stafferInfo';
 import courseRunOptions from './courseRunOptions';
-import fromEditCourse from './fromEditCourse';
+import sourceInfo from './sourceInfo';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -29,5 +29,5 @@ export default history => combineReducers({
   courseRunOptions,
   form: formReducer,
   table,
-  fromEditCourse,
+  sourceInfo,
 });

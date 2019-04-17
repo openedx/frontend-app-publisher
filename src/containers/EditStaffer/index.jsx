@@ -8,7 +8,7 @@ import { fetchStafferOptions } from '../../data/actions/stafferOptions';
 const mapStateToProps = state => ({
   stafferOptions: state.stafferOptions,
   stafferInfo: state.stafferInfo,
-  fromEditCourse: state.fromEditCourse,
+  sourceInfo: state.sourceInfo,
 });
 
 const mergeProps = (stateProps, actionProps, { uuid }) => ({
