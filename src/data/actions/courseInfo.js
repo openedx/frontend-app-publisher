@@ -156,7 +156,7 @@ function editCourse(courseData, courseRunData) {
     // Send edit course PATCH
     return DiscoveryDataApiService.editCourse(courseData, courseRunData)
       .then((response) => {
-        const course = response.data;
+        const course = response[response.length - 1].data;
         dispatch(editCourseSuccess(course));
       })
       .catch((error) => {
