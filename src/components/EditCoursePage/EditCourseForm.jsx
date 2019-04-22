@@ -117,7 +117,7 @@ export class BaseEditCourseForm extends React.Component {
               disabled={courseInReview}
             />
             <div>
-              <FieldLabel id="number" text="Number" className="mb-2" requiredForSubmit />
+              <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
             </div>
             <Field
