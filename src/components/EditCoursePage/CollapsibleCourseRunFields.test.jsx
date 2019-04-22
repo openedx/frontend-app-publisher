@@ -30,6 +30,7 @@ const pacingTypeOptions = [
 const publishedCourseRun = {
   start: '2000-01-01T12:00:00Z', // Different format to be transformed
   end: '2010/01/01',
+  go_live_date: '1999/12/31',
   pacing_type: 'self_paced',
   min_effort: 1,
   max_effort: 1,

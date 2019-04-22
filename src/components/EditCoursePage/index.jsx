@@ -177,6 +177,7 @@ class EditCoursePage extends React.Component {
       key: courseRun.key,
       start: courseRun.start,
       end: courseRun.end,
+      go_live_date: courseRun.go_live_date,
       min_effort: courseRun.min_effort,
       max_effort: courseRun.max_effort,
       pacing_type: courseRun.pacing_type,
@@ -186,6 +187,7 @@ class EditCoursePage extends React.Component {
       staff: courseRun.staff,
       status: courseRun.status,
       draft: courseRun.draft,
+      marketing_url: courseRun.marketing_url,
     }));
 
     // If we want to keep a lot of the logic in the lower return,
