@@ -25,7 +25,7 @@ export function stafferCreateFail(error) {
   return { type: CREATE_STAFFER_FAIL, error };
 }
 
-export function createStaffer(stafferData) {
+export function createStaffer(stafferData, referrer = null) {
   return (dispatch) => {
     dispatch(createNewStaffer(stafferData));
     // Send create staffer POST
@@ -33,6 +33,11 @@ export function createStaffer(stafferData) {
       .then((response) => {
         const staffer = response.data;
         dispatch(stafferCreateSuccess(staffer));
+
+        // Redirect to referring page after a successful create
+        if (referrer) {
+          dispatch(push(referrer));
+        }
       })
       .catch((error) => {
         dispatch(stafferCreateFail(`Instructor create failed, please try again or contact support. Error( ${error.response.data} )`));

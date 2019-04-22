@@ -74,14 +74,19 @@ class StafferPage extends React.Component {
   }
 
   handleStafferCreate(fieldValues) {
+    const {
+      createStaffer,
+      sourceInfo: { referrer },
+    } = this.props;
+
     const stafferData = this.prepareStafferData(fieldValues);
-    this.props.createStaffer(stafferData);
+    createStaffer(stafferData, referrer);
   }
 
   handleStafferEdit(fieldValues) {
     const {
       editStaffer,
-      fromEditCourse: { referrer },
+      sourceInfo: { referrer },
     } = this.props;
 
     const stafferData = this.prepareStafferData(fieldValues);
@@ -96,7 +101,7 @@ class StafferPage extends React.Component {
     const {
       stafferOptions,
       stafferInfo,
-      fromEditCourse,
+      sourceInfo,
     } = this.props;
 
     if (!stafferOptions || !stafferInfo) {
@@ -133,7 +138,7 @@ class StafferPage extends React.Component {
     }
     error = error.trim();
 
-    const { referrer } = fromEditCourse;
+    const { referrer } = sourceInfo;
 
     return (
       <React.Fragment>
@@ -157,11 +162,10 @@ class StafferPage extends React.Component {
               <StafferForm
                 id="create-staffer-form"
                 onSubmit={handleSubmit}
-                stafferOptions={stafferOptions}
                 isSaving={isSaving}
                 isCreateForm={isCreateForm}
                 initialValues={data}
-                fromEditCourse={fromEditCourse}
+                {...this.props}
               />
               { isSaving && <LoadingSpinner message="Saving instructor" /> }
               { error && (
@@ -187,7 +191,7 @@ StafferPage.defaultProps = {
   fetchStafferInfo: () => null,
   stafferOptions: null,
   stafferInfo: null,
-  fromEditCourse: {},
+  sourceInfo: {},
 };
 
 StafferPage.propTypes = {
@@ -206,7 +210,7 @@ StafferPage.propTypes = {
     data: PropTypes.shape(),
     error: PropTypes.string,
   }),
-  fromEditCourse: PropTypes.shape({
+  sourceInfo: PropTypes.shape({
     referrer: PropTypes.string,
   }),
 };

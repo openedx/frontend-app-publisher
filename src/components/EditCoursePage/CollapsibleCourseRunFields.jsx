@@ -66,8 +66,7 @@ export const BaseCollapsibleCourseRunFields = ({
   handleCourseRunSubmit,
   dispatch,
   formId,
-  owners,
-  courseUuid,
+  ...passedProps
 }) => (
   <div>
     {fields.map((courseRun, index) => (
@@ -146,8 +145,8 @@ export const BaseCollapsibleCourseRunFields = ({
           name={`${courseRun}.staff`}
           component={StaffList}
           disabled={courseInReview}
-          owners={owners}
-          courseUuid={courseUuid}
+          courseRunKey={courseRuns[index].key}
+          {...passedProps}
         />
         <ButtonToolbar>
           <button
@@ -199,15 +198,14 @@ BaseCollapsibleCourseRunFields.propTypes = {
   handleCourseRunSubmit: PropTypes.func.isRequired,
   dispatch: PropTypes.func,
   formId: PropTypes.string.isRequired,
-  owners: PropTypes.arrayOf(PropTypes.shape({})),
-  courseUuid: PropTypes.string.isRequired,
+  passedProps: PropTypes.shape({}),
 };
 
 BaseCollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
   courseInReview: false,
   dispatch: () => {},
-  owners: [],
+  passedProps: {},
 };
 
 export default connect()(BaseCollapsibleCourseRunFields);

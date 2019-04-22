@@ -8,7 +8,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={Object {}}
     stafferOptions={Object {}}
   />,
@@ -45,10 +45,15 @@ ShallowWrapper {
             </h2>
             <hr />
             <ReduxForm
-              fromEditCourse={Object {}}
+              createStaffer={[Function]}
+              editStaffer={null}
+              fetchStafferInfo={[Function]}
+              fetchStafferOptions={[Function]}
               id="create-staffer-form"
               isCreateForm={true}
               onSubmit={[Function]}
+              sourceInfo={Object {}}
+              stafferInfo={Object {}}
               stafferOptions={Object {}}
             />
             
@@ -96,10 +101,15 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={Object {}}
                 stafferOptions={Object {}}
               />
               
@@ -123,10 +133,15 @@ ShallowWrapper {
                 undefined,
                 <hr />,
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={Object {}}
                   stafferOptions={Object {}}
                 />,
                 undefined,
@@ -161,12 +176,17 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "fromEditCourse": Object {},
+                  "createStaffer": [Function],
+                  "editStaffer": null,
+                  "fetchStafferInfo": [Function],
+                  "fetchStafferOptions": [Function],
                   "id": "create-staffer-form",
                   "initialValues": undefined,
                   "isCreateForm": true,
                   "isSaving": undefined,
                   "onSubmit": [Function],
+                  "sourceInfo": Object {},
+                  "stafferInfo": Object {},
                   "stafferOptions": Object {},
                 },
                 "ref": null,
@@ -209,10 +229,15 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={Object {}}
                 stafferOptions={Object {}}
               />
               
@@ -260,10 +285,15 @@ ShallowWrapper {
                 </h2>
                 <hr />
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={Object {}}
                   stafferOptions={Object {}}
                 />
                 
@@ -287,10 +317,15 @@ ShallowWrapper {
                   undefined,
                   <hr />,
                   <ReduxForm
-                    fromEditCourse={Object {}}
+                    createStaffer={[Function]}
+                    editStaffer={null}
+                    fetchStafferInfo={[Function]}
+                    fetchStafferOptions={[Function]}
                     id="create-staffer-form"
                     isCreateForm={true}
                     onSubmit={[Function]}
+                    sourceInfo={Object {}}
+                    stafferInfo={Object {}}
                     stafferOptions={Object {}}
                   />,
                   undefined,
@@ -325,12 +360,557 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "fromEditCourse": Object {},
+                    "createStaffer": [Function],
+                    "editStaffer": null,
+                    "fetchStafferInfo": [Function],
+                    "fetchStafferOptions": [Function],
                     "id": "create-staffer-form",
                     "initialValues": undefined,
                     "isCreateForm": true,
                     "isSaving": undefined,
                     "onSubmit": [Function],
+                    "sourceInfo": Object {},
+                    "stafferInfo": Object {},
+                    "stafferOptions": Object {},
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                undefined,
+                "",
+              ],
+              "type": "div",
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`StafferPage renders html correctly when given a referrer 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <StafferPage
+    createStaffer={[Function]}
+    editStaffer={null}
+    fetchStafferInfo={[Function]}
+    fetchStafferOptions={[Function]}
+    sourceInfo={
+      Object {
+        "referrer": "/course/11111111-1111-1111-111111111111/edit",
+      }
+    }
+    stafferInfo={Object {}}
+    stafferOptions={Object {}}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <HelmetWrapper
+          defer={true}
+          encodeSpecialCharacters={true}
+        >
+          <title>
+            Create New Instructor
+          </title>
+        </HelmetWrapper>,
+        <PageContainer
+          className=""
+          wide={false}
+        >
+          <div>
+            <h2>
+              Create New Instructor
+            </h2>
+            <StatusAlert
+              alertType="info"
+              className={Array []}
+              dismissible={false}
+              iconClassNames={Array []}
+              id="sent-from-edit-course-info"
+              message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+              onClose={[Function]}
+              title={null}
+            />
+            <hr />
+            <ReduxForm
+              createStaffer={[Function]}
+              editStaffer={null}
+              fetchStafferInfo={[Function]}
+              fetchStafferOptions={[Function]}
+              id="create-staffer-form"
+              isCreateForm={true}
+              onSubmit={[Function]}
+              sourceInfo={
+                Object {
+                  "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                }
+              }
+              stafferInfo={Object {}}
+              stafferOptions={Object {}}
+            />
+            
+          </div>
+        </PageContainer>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <title>
+            Create New Instructor
+          </title>,
+          "defer": true,
+          "encodeSpecialCharacters": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Create New Instructor",
+          },
+          "ref": null,
+          "rendered": "Create New Instructor",
+          "type": "title",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            false,
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <StatusAlert
+                alertType="info"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="sent-from-edit-course-info"
+                message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+                onClose={[Function]}
+                title={null}
+              />
+              <hr />
+              <ReduxForm
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
+                id="create-staffer-form"
+                isCreateForm={true}
+                onSubmit={[Function]}
+                sourceInfo={
+                  Object {
+                    "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                  }
+                }
+                stafferInfo={Object {}}
+                stafferOptions={Object {}}
+              />
+              
+            </div>,
+          ],
+          "className": "",
+          "wide": false,
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h2>
+                  Create New Instructor
+                </h2>,
+                <StatusAlert
+                  alertType="info"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="sent-from-edit-course-info"
+                  message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+                  onClose={[Function]}
+                  title={null}
+                />,
+                <hr />,
+                <ReduxForm
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  onSubmit={[Function]}
+                  sourceInfo={
+                    Object {
+                      "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                    }
+                  }
+                  stafferInfo={Object {}}
+                  stafferOptions={Object {}}
+                />,
+                undefined,
+                "",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Create New Instructor",
+                },
+                "ref": null,
+                "rendered": "Create New Instructor",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "alertType": "info",
+                  "className": Array [],
+                  "dismissible": false,
+                  "iconClassNames": Array [],
+                  "id": "sent-from-edit-course-info",
+                  "message": "The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information.",
+                  "onClose": [Function],
+                  "title": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "createStaffer": [Function],
+                  "editStaffer": null,
+                  "fetchStafferInfo": [Function],
+                  "fetchStafferOptions": [Function],
+                  "id": "create-staffer-form",
+                  "initialValues": undefined,
+                  "isCreateForm": true,
+                  "isSaving": undefined,
+                  "onSubmit": [Function],
+                  "sourceInfo": Object {
+                    "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                  },
+                  "stafferInfo": Object {},
+                  "stafferOptions": Object {},
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              undefined,
+              "",
+            ],
+            "type": "div",
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <HelmetWrapper
+            defer={true}
+            encodeSpecialCharacters={true}
+          >
+            <title>
+              Create New Instructor
+            </title>
+          </HelmetWrapper>,
+          <PageContainer
+            className=""
+            wide={false}
+          >
+            <div>
+              <h2>
+                Create New Instructor
+              </h2>
+              <StatusAlert
+                alertType="info"
+                className={Array []}
+                dismissible={false}
+                iconClassNames={Array []}
+                id="sent-from-edit-course-info"
+                message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+                onClose={[Function]}
+                title={null}
+              />
+              <hr />
+              <ReduxForm
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
+                id="create-staffer-form"
+                isCreateForm={true}
+                onSubmit={[Function]}
+                sourceInfo={
+                  Object {
+                    "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                  }
+                }
+                stafferInfo={Object {}}
+                stafferOptions={Object {}}
+              />
+              
+            </div>
+          </PageContainer>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <title>
+              Create New Instructor
+            </title>,
+            "defer": true,
+            "encodeSpecialCharacters": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Create New Instructor",
+            },
+            "ref": null,
+            "rendered": "Create New Instructor",
+            "type": "title",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              false,
+              <div>
+                <h2>
+                  Create New Instructor
+                </h2>
+                <StatusAlert
+                  alertType="info"
+                  className={Array []}
+                  dismissible={false}
+                  iconClassNames={Array []}
+                  id="sent-from-edit-course-info"
+                  message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+                  onClose={[Function]}
+                  title={null}
+                />
+                <hr />
+                <ReduxForm
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
+                  id="create-staffer-form"
+                  isCreateForm={true}
+                  onSubmit={[Function]}
+                  sourceInfo={
+                    Object {
+                      "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                    }
+                  }
+                  stafferInfo={Object {}}
+                  stafferOptions={Object {}}
+                />
+                
+              </div>,
+            ],
+            "className": "",
+            "wide": false,
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h2>
+                    Create New Instructor
+                  </h2>,
+                  <StatusAlert
+                    alertType="info"
+                    className={Array []}
+                    dismissible={false}
+                    iconClassNames={Array []}
+                    id="sent-from-edit-course-info"
+                    message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+                    onClose={[Function]}
+                    title={null}
+                  />,
+                  <hr />,
+                  <ReduxForm
+                    createStaffer={[Function]}
+                    editStaffer={null}
+                    fetchStafferInfo={[Function]}
+                    fetchStafferOptions={[Function]}
+                    id="create-staffer-form"
+                    isCreateForm={true}
+                    onSubmit={[Function]}
+                    sourceInfo={
+                      Object {
+                        "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                      }
+                    }
+                    stafferInfo={Object {}}
+                    stafferOptions={Object {}}
+                  />,
+                  undefined,
+                  "",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Create New Instructor",
+                  },
+                  "ref": null,
+                  "rendered": "Create New Instructor",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "alertType": "info",
+                    "className": Array [],
+                    "dismissible": false,
+                    "iconClassNames": Array [],
+                    "id": "sent-from-edit-course-info",
+                    "message": "The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information.",
+                    "onClose": [Function],
+                    "title": null,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "createStaffer": [Function],
+                    "editStaffer": null,
+                    "fetchStafferInfo": [Function],
+                    "fetchStafferOptions": [Function],
+                    "id": "create-staffer-form",
+                    "initialValues": undefined,
+                    "isCreateForm": true,
+                    "isSaving": undefined,
+                    "onSubmit": [Function],
+                    "sourceInfo": Object {
+                      "referrer": "/course/11111111-1111-1111-111111111111/edit",
+                    },
+                    "stafferInfo": Object {},
                     "stafferOptions": Object {},
                   },
                   "ref": null,
@@ -384,7 +964,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={
       Object {
         "error": null,
@@ -432,11 +1012,21 @@ ShallowWrapper {
             </h2>
             <hr />
             <ReduxForm
-              fromEditCourse={Object {}}
+              createStaffer={[Function]}
+              editStaffer={null}
+              fetchStafferInfo={[Function]}
+              fetchStafferOptions={[Function]}
               id="create-staffer-form"
               isCreateForm={true}
               isSaving={true}
               onSubmit={[Function]}
+              sourceInfo={Object {}}
+              stafferInfo={
+                Object {
+                  "error": null,
+                  "isSaving": true,
+                }
+              }
               stafferOptions={
                 Object {
                   "data": Object {},
@@ -493,11 +1083,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={true}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": null,
+                    "isSaving": true,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -530,11 +1130,21 @@ ShallowWrapper {
                 undefined,
                 <hr />,
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={true}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": null,
+                      "isSaving": true,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -577,12 +1187,20 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "fromEditCourse": Object {},
+                  "createStaffer": [Function],
+                  "editStaffer": null,
+                  "fetchStafferInfo": [Function],
+                  "fetchStafferOptions": [Function],
                   "id": "create-staffer-form",
                   "initialValues": undefined,
                   "isCreateForm": true,
                   "isSaving": true,
                   "onSubmit": [Function],
+                  "sourceInfo": Object {},
+                  "stafferInfo": Object {
+                    "error": null,
+                    "isSaving": true,
+                  },
                   "stafferOptions": Object {
                     "data": Object {},
                     "error": null,
@@ -639,11 +1257,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={true}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": null,
+                    "isSaving": true,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -700,11 +1328,21 @@ ShallowWrapper {
                 </h2>
                 <hr />
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={true}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": null,
+                      "isSaving": true,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -737,11 +1375,21 @@ ShallowWrapper {
                   undefined,
                   <hr />,
                   <ReduxForm
-                    fromEditCourse={Object {}}
+                    createStaffer={[Function]}
+                    editStaffer={null}
+                    fetchStafferInfo={[Function]}
+                    fetchStafferOptions={[Function]}
                     id="create-staffer-form"
                     isCreateForm={true}
                     isSaving={true}
                     onSubmit={[Function]}
+                    sourceInfo={Object {}}
+                    stafferInfo={
+                      Object {
+                        "error": null,
+                        "isSaving": true,
+                      }
+                    }
                     stafferOptions={
                       Object {
                         "data": Object {},
@@ -784,12 +1432,20 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "fromEditCourse": Object {},
+                    "createStaffer": [Function],
+                    "editStaffer": null,
+                    "fetchStafferInfo": [Function],
+                    "fetchStafferOptions": [Function],
                     "id": "create-staffer-form",
                     "initialValues": undefined,
                     "isCreateForm": true,
                     "isSaving": true,
                     "onSubmit": [Function],
+                    "sourceInfo": Object {},
+                    "stafferInfo": Object {
+                      "error": null,
+                      "isSaving": true,
+                    },
                     "stafferOptions": Object {
                       "data": Object {},
                       "error": null,
@@ -857,7 +1513,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={
       Object {
         "error": null,
@@ -1088,7 +1744,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={null}
     stafferOptions={
       Object {
@@ -1180,7 +1836,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={
       Object {
         "error": null,
@@ -1271,7 +1927,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={
       Object {
         "error": "Fail",
@@ -1319,11 +1975,21 @@ ShallowWrapper {
             </h2>
             <hr />
             <ReduxForm
-              fromEditCourse={Object {}}
+              createStaffer={[Function]}
+              editStaffer={null}
+              fetchStafferInfo={[Function]}
+              fetchStafferOptions={[Function]}
               id="create-staffer-form"
               isCreateForm={true}
               isSaving={false}
               onSubmit={[Function]}
+              sourceInfo={Object {}}
+              stafferInfo={
+                Object {
+                  "error": "Fail",
+                  "isSaving": false,
+                }
+              }
               stafferOptions={
                 Object {
                   "data": Object {},
@@ -1386,11 +2052,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={false}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": "Fail",
+                    "isSaving": false,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -1429,11 +2105,21 @@ ShallowWrapper {
                 undefined,
                 <hr />,
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={false}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": "Fail",
+                      "isSaving": false,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -1483,12 +2169,20 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "fromEditCourse": Object {},
+                  "createStaffer": [Function],
+                  "editStaffer": null,
+                  "fetchStafferInfo": [Function],
+                  "fetchStafferOptions": [Function],
                   "id": "create-staffer-form",
                   "initialValues": undefined,
                   "isCreateForm": true,
                   "isSaving": false,
                   "onSubmit": [Function],
+                  "sourceInfo": Object {},
+                  "stafferInfo": Object {
+                    "error": "Fail",
+                    "isSaving": false,
+                  },
                   "stafferOptions": Object {
                     "data": Object {},
                     "error": null,
@@ -1552,11 +2246,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={false}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": "Fail",
+                    "isSaving": false,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -1619,11 +2323,21 @@ ShallowWrapper {
                 </h2>
                 <hr />
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={false}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": "Fail",
+                      "isSaving": false,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -1662,11 +2376,21 @@ ShallowWrapper {
                   undefined,
                   <hr />,
                   <ReduxForm
-                    fromEditCourse={Object {}}
+                    createStaffer={[Function]}
+                    editStaffer={null}
+                    fetchStafferInfo={[Function]}
+                    fetchStafferOptions={[Function]}
                     id="create-staffer-form"
                     isCreateForm={true}
                     isSaving={false}
                     onSubmit={[Function]}
+                    sourceInfo={Object {}}
+                    stafferInfo={
+                      Object {
+                        "error": "Fail",
+                        "isSaving": false,
+                      }
+                    }
                     stafferOptions={
                       Object {
                         "data": Object {},
@@ -1716,12 +2440,20 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "fromEditCourse": Object {},
+                    "createStaffer": [Function],
+                    "editStaffer": null,
+                    "fetchStafferInfo": [Function],
+                    "fetchStafferOptions": [Function],
                     "id": "create-staffer-form",
                     "initialValues": undefined,
                     "isCreateForm": true,
                     "isSaving": false,
                     "onSubmit": [Function],
+                    "sourceInfo": Object {},
+                    "stafferInfo": Object {
+                      "error": "Fail",
+                      "isSaving": false,
+                    },
                     "stafferOptions": Object {
                       "data": Object {},
                       "error": null,
@@ -1796,7 +2528,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={
       Object {
         "error": "Fail here too",
@@ -1844,11 +2576,21 @@ ShallowWrapper {
             </h2>
             <hr />
             <ReduxForm
-              fromEditCourse={Object {}}
+              createStaffer={[Function]}
+              editStaffer={null}
+              fetchStafferInfo={[Function]}
+              fetchStafferOptions={[Function]}
               id="create-staffer-form"
               isCreateForm={true}
               isSaving={false}
               onSubmit={[Function]}
+              sourceInfo={Object {}}
+              stafferInfo={
+                Object {
+                  "error": "Fail here too",
+                  "isSaving": false,
+                }
+              }
               stafferOptions={
                 Object {
                   "data": Object {},
@@ -1911,11 +2653,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={false}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": "Fail here too",
+                    "isSaving": false,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -1954,11 +2706,21 @@ ShallowWrapper {
                 undefined,
                 <hr />,
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={false}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": "Fail here too",
+                      "isSaving": false,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -2008,12 +2770,20 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "fromEditCourse": Object {},
+                  "createStaffer": [Function],
+                  "editStaffer": null,
+                  "fetchStafferInfo": [Function],
+                  "fetchStafferOptions": [Function],
                   "id": "create-staffer-form",
                   "initialValues": undefined,
                   "isCreateForm": true,
                   "isSaving": false,
                   "onSubmit": [Function],
+                  "sourceInfo": Object {},
+                  "stafferInfo": Object {
+                    "error": "Fail here too",
+                    "isSaving": false,
+                  },
                   "stafferOptions": Object {
                     "data": Object {},
                     "error": "Fail",
@@ -2077,11 +2847,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={false}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": "Fail here too",
+                    "isSaving": false,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -2144,11 +2924,21 @@ ShallowWrapper {
                 </h2>
                 <hr />
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={false}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": "Fail here too",
+                      "isSaving": false,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -2187,11 +2977,21 @@ ShallowWrapper {
                   undefined,
                   <hr />,
                   <ReduxForm
-                    fromEditCourse={Object {}}
+                    createStaffer={[Function]}
+                    editStaffer={null}
+                    fetchStafferInfo={[Function]}
+                    fetchStafferOptions={[Function]}
                     id="create-staffer-form"
                     isCreateForm={true}
                     isSaving={false}
                     onSubmit={[Function]}
+                    sourceInfo={Object {}}
+                    stafferInfo={
+                      Object {
+                        "error": "Fail here too",
+                        "isSaving": false,
+                      }
+                    }
                     stafferOptions={
                       Object {
                         "data": Object {},
@@ -2241,12 +3041,20 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "fromEditCourse": Object {},
+                    "createStaffer": [Function],
+                    "editStaffer": null,
+                    "fetchStafferInfo": [Function],
+                    "fetchStafferOptions": [Function],
                     "id": "create-staffer-form",
                     "initialValues": undefined,
                     "isCreateForm": true,
                     "isSaving": false,
                     "onSubmit": [Function],
+                    "sourceInfo": Object {},
+                    "stafferInfo": Object {
+                      "error": "Fail here too",
+                      "isSaving": false,
+                    },
                     "stafferOptions": Object {
                       "data": Object {},
                       "error": "Fail",
@@ -2321,7 +3129,7 @@ ShallowWrapper {
     editStaffer={null}
     fetchStafferInfo={[Function]}
     fetchStafferOptions={[Function]}
-    fromEditCourse={Object {}}
+    sourceInfo={Object {}}
     stafferInfo={
       Object {
         "error": null,
@@ -2369,11 +3177,21 @@ ShallowWrapper {
             </h2>
             <hr />
             <ReduxForm
-              fromEditCourse={Object {}}
+              createStaffer={[Function]}
+              editStaffer={null}
+              fetchStafferInfo={[Function]}
+              fetchStafferOptions={[Function]}
               id="create-staffer-form"
               isCreateForm={true}
               isSaving={false}
               onSubmit={[Function]}
+              sourceInfo={Object {}}
+              stafferInfo={
+                Object {
+                  "error": null,
+                  "isSaving": false,
+                }
+              }
               stafferOptions={
                 Object {
                   "data": Object {},
@@ -2436,11 +3254,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={false}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": null,
+                    "isSaving": false,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -2479,11 +3307,21 @@ ShallowWrapper {
                 undefined,
                 <hr />,
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={false}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": null,
+                      "isSaving": false,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -2533,12 +3371,20 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "fromEditCourse": Object {},
+                  "createStaffer": [Function],
+                  "editStaffer": null,
+                  "fetchStafferInfo": [Function],
+                  "fetchStafferOptions": [Function],
                   "id": "create-staffer-form",
                   "initialValues": undefined,
                   "isCreateForm": true,
                   "isSaving": false,
                   "onSubmit": [Function],
+                  "sourceInfo": Object {},
+                  "stafferInfo": Object {
+                    "error": null,
+                    "isSaving": false,
+                  },
                   "stafferOptions": Object {
                     "data": Object {},
                     "error": "Fail",
@@ -2602,11 +3448,21 @@ ShallowWrapper {
               </h2>
               <hr />
               <ReduxForm
-                fromEditCourse={Object {}}
+                createStaffer={[Function]}
+                editStaffer={null}
+                fetchStafferInfo={[Function]}
+                fetchStafferOptions={[Function]}
                 id="create-staffer-form"
                 isCreateForm={true}
                 isSaving={false}
                 onSubmit={[Function]}
+                sourceInfo={Object {}}
+                stafferInfo={
+                  Object {
+                    "error": null,
+                    "isSaving": false,
+                  }
+                }
                 stafferOptions={
                   Object {
                     "data": Object {},
@@ -2669,11 +3525,21 @@ ShallowWrapper {
                 </h2>
                 <hr />
                 <ReduxForm
-                  fromEditCourse={Object {}}
+                  createStaffer={[Function]}
+                  editStaffer={null}
+                  fetchStafferInfo={[Function]}
+                  fetchStafferOptions={[Function]}
                   id="create-staffer-form"
                   isCreateForm={true}
                   isSaving={false}
                   onSubmit={[Function]}
+                  sourceInfo={Object {}}
+                  stafferInfo={
+                    Object {
+                      "error": null,
+                      "isSaving": false,
+                    }
+                  }
                   stafferOptions={
                     Object {
                       "data": Object {},
@@ -2712,11 +3578,21 @@ ShallowWrapper {
                   undefined,
                   <hr />,
                   <ReduxForm
-                    fromEditCourse={Object {}}
+                    createStaffer={[Function]}
+                    editStaffer={null}
+                    fetchStafferInfo={[Function]}
+                    fetchStafferOptions={[Function]}
                     id="create-staffer-form"
                     isCreateForm={true}
                     isSaving={false}
                     onSubmit={[Function]}
+                    sourceInfo={Object {}}
+                    stafferInfo={
+                      Object {
+                        "error": null,
+                        "isSaving": false,
+                      }
+                    }
                     stafferOptions={
                       Object {
                         "data": Object {},
@@ -2766,12 +3642,20 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "fromEditCourse": Object {},
+                    "createStaffer": [Function],
+                    "editStaffer": null,
+                    "fetchStafferInfo": [Function],
+                    "fetchStafferOptions": [Function],
                     "id": "create-staffer-form",
                     "initialValues": undefined,
                     "isCreateForm": true,
                     "isSaving": false,
                     "onSubmit": [Function],
+                    "sourceInfo": Object {},
+                    "stafferInfo": Object {
+                      "error": null,
+                      "isSaving": false,
+                    },
                     "stafferOptions": Object {
                       "data": Object {},
                       "error": "Fail",
