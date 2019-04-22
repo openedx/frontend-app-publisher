@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import Pill from '../Pill';
+import { PUBLISHED } from '../../data/constants';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import StaffList from '../StaffList';
@@ -80,7 +81,7 @@ export const BaseCollapsibleCourseRunFields = ({
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
-          label={<FieldLabel text="Start date" required />}
+          label={<FieldLabel text="Start date" required requiredForSubmit />}
           placeholder="mm/dd/yyyy"
           required
           disabled={courseInReview}
@@ -91,7 +92,7 @@ export const BaseCollapsibleCourseRunFields = ({
           component={RenderInputTextField}
           format={value => getDateString(value)}
           normalize={value => moment(value).toISOString()}
-          label={<FieldLabel text="End date" required />}
+          label={<FieldLabel text="End date" required requiredForSubmit />}
           placeholder="mm/dd/yyyy"
           required
           disabled={courseInReview}
@@ -100,14 +101,14 @@ export const BaseCollapsibleCourseRunFields = ({
           name={`${courseRun}.min_effort`}
           type="number"
           component={RenderInputTextField}
-          label={<FieldLabel text="Minimum effort" />}
+          label={<FieldLabel text="Minimum effort" requiredForSubmit />}
           disabled={courseInReview}
         />
         <Field
           name={`${courseRun}.max_effort`}
           type="number"
           component={RenderInputTextField}
-          label={<FieldLabel text="Maximum effort" />}
+          label={<FieldLabel text="Maximum effort" requiredForSubmit />}
           disabled={courseInReview}
         />
         <Field
@@ -115,7 +116,7 @@ export const BaseCollapsibleCourseRunFields = ({
           type="text"
           component={RenderSelectField}
           options={pacingTypeOptions}
-          label={<FieldLabel text="Course pacing" />}
+          label={<FieldLabel text="Course pacing" requiredForSubmit />}
           disabled={courseInReview}
         />
         <Field
@@ -123,10 +124,10 @@ export const BaseCollapsibleCourseRunFields = ({
           type="text"
           component={RenderSelectField}
           options={languageOptions}
-          label={<FieldLabel text="Content language" />}
+          label={<FieldLabel text="Content language" requiredForSubmit />}
           disabled={courseInReview}
         />
-        <FieldLabel text="Transcript languages" className="mb-2" />
+        <FieldLabel text="Transcript languages" className="mb-2" requiredForSubmit />
         <FieldArray
           name={`${courseRun}.transcript_languages`}
           component={TranscriptLanguage}
@@ -137,10 +138,10 @@ export const BaseCollapsibleCourseRunFields = ({
           name={`${courseRun}.weeks_to_complete`}
           type="number"
           component={RenderInputTextField}
-          label={<FieldLabel text="Length" />}
+          label={<FieldLabel text="Length" requiredForSubmit />}
           disabled={courseInReview}
         />
-        <FieldLabel text="Staff" className="mb-2" />
+        <FieldLabel text="Staff" className="mb-2" requiredForSubmit />
         <Field
           name={`${courseRun}.staff`}
           component={StaffList}
@@ -169,7 +170,7 @@ export const BaseCollapsibleCourseRunFields = ({
               }
             }}
           >
-            {courseRuns[index].status === 'published' ? (
+            {courseRuns[index].status === PUBLISHED ? (
               <span>Publish</span>
             ) : (
               <span>Submit for Review</span>
