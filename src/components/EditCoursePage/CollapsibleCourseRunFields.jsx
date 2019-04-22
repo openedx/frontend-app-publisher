@@ -5,12 +5,14 @@ import { Field, FieldArray, submit } from 'redux-form';
 import { Collapsible } from '@edx/paragon';
 import { connect } from 'react-redux';
 
-import RenderInputTextField from '../RenderInputTextField';
-import RenderSelectField from '../RenderSelectField';
-import TranscriptLanguage from './TranscriptLanguage';
-import StaffList from '../StaffList';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
+import Pill from '../Pill';
+import RenderInputTextField from '../RenderInputTextField';
+import RenderSelectField from '../RenderSelectField';
+import StaffList from '../StaffList';
+import TranscriptLanguage from './TranscriptLanguage';
+
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -25,6 +27,11 @@ const formatCourseRunTitle = (courseRun) => {
     return (
       <div className="course-run-label">
         <span>{`Course run starting on ${labelItems.join(' - ')}`}</span>
+        {/*
+          TODO: After we have a way of determining if the course run has been edited, that should
+          be added into the list of statuses being passed into the Pill component.
+        */}
+        <Pill statuses={[courseRun.status]} />
         <div className="course-run-studio-url">
           {'Studio URL - '}
           <a href={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}>
@@ -153,7 +160,6 @@ export const BaseCollapsibleCourseRunFields = ({
               *  through the handler and redux-form's submit if it passes validation. If validation
               *  fails, report the form issues back without triggering submission.
               */
-              // We manually check the form for validity, and then pass the targeted
               event.preventDefault();
               const form = document.getElementById(formId);
               if (form.checkValidity()) {

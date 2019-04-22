@@ -39,6 +39,7 @@ class StafferPage extends React.Component {
       ({
         ...link,
         id: link.id || null,
+        title: link.title || '',
       })
     ));
   }

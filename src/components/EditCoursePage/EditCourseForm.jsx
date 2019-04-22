@@ -1,19 +1,20 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Collapsible } from '@edx/paragon';
 
+import ButtonToolbar from '../../components/ButtonToolbar';
 import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
+import FieldLabel from '../FieldLabel';
+import ImageUpload from '../../components/ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
-import ButtonToolbar from '../../components/ButtonToolbar';
-import ImageUpload from '../../components/ImageUpload';
 import RichEditor from '../../components/RichEditor';
+import Pill from '../../components/Pill';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
-import FieldLabel from '../FieldLabel';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -62,6 +63,17 @@ export class BaseEditCourseForm extends React.Component {
       ({ label: choice.display_name, value: choice.value }));
   }
 
+  formatCourseTitle(title, courseStatuses) {
+    // TODO: After we have a way of determining if the course has been edited, that should be
+    // added into the list of statuses being passed into the Pill component.
+    return (
+      <React.Fragment>
+        {`Course: ${title}`}
+        <Pill statuses={courseStatuses} />
+      </React.Fragment>
+    );
+  }
+
   render() {
     const {
       handleSubmit,
@@ -73,6 +85,7 @@ export class BaseEditCourseForm extends React.Component {
       courseRuns,
       uuid,
       courseInReview,
+      courseStatuses,
       handleCourseRunSubmit,
       id,
       owners,
@@ -93,10 +106,10 @@ export class BaseEditCourseForm extends React.Component {
     return (
       <div className="edit-course-form">
         <form onSubmit={handleSubmit} id={id}>
+          <FieldLabel text="Course" className="mt-4 mb-2" />
           <Collapsible
-            title={`Course: ${title}`}
+            title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
-            isOpen
           >
             <Field
               name="title"
@@ -296,6 +309,7 @@ BaseEditCourseForm.propTypes = {
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   uuid: PropTypes.string.isRequired,
   courseInReview: PropTypes.bool,
+  courseStatuses: PropTypes.arrayOf(PropTypes.string),
   handleCourseRunSubmit: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
@@ -305,6 +319,7 @@ BaseEditCourseForm.defaultProps = {
   pristine: true,
   courseRuns: [],
   courseInReview: false,
+  courseStatuses: [],
   owners: [],
 };
 
