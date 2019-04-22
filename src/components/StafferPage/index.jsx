@@ -167,7 +167,6 @@ class StafferPage extends React.Component {
                 initialValues={data}
                 {...this.props}
               />
-              { isSaving && <LoadingSpinner message="Saving instructor" /> }
               { error && (
                 <StatusAlert
                   id="create-staffer-error"

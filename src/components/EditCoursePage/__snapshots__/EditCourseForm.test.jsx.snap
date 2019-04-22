@@ -1025,7 +1025,7 @@ ShallowWrapper {
               />
             }
             name="videoSrc"
-            type="text"
+            type="url"
           />
           <React.Fragment>
             <Field
@@ -1060,6 +1060,12 @@ ShallowWrapper {
             <Field
               component={[Function]}
               disabled={false}
+              input={
+                Object {
+                  "min": 0.01,
+                  "step": 0.01,
+                }
+              }
               label={
                 <FieldLabel
                   className=""
@@ -2331,13 +2337,18 @@ ShallowWrapper {
               Re-run Course
             </button>
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
+          <ActionButton
+            className=""
             disabled={true}
-            type="submit"
-          >
-            Save Course
-          </button>
+            labels={
+              Object {
+                "complete": "Course Saved",
+                "default": "Save Course",
+                "pending": "Saving Course",
+              }
+            }
+            state="pending"
+          />
         </ButtonToolbar>
       </form>,
       "className": "edit-course-form",
@@ -2687,7 +2698,7 @@ ShallowWrapper {
                 />
               }
               name="videoSrc"
-              type="text"
+              type="url"
             />
             <React.Fragment>
               <Field
@@ -2722,6 +2733,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 disabled={false}
+                input={
+                  Object {
+                    "min": 0.01,
+                    "step": 0.01,
+                  }
+                }
                 label={
                   <FieldLabel
                     className=""
@@ -3993,13 +4010,18 @@ ShallowWrapper {
                 Re-run Course
               </button>
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Save Course
-            </button>
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                }
+              }
+              state="pending"
+            />
           </ButtonToolbar>,
         ],
         "id": "edit-course-form",
@@ -4346,7 +4368,7 @@ ShallowWrapper {
                   />
                 }
                 name="videoSrc"
-                type="text"
+                type="url"
               />,
               <React.Fragment>
                 <Field
@@ -4381,6 +4403,12 @@ ShallowWrapper {
                 <Field
                   component={[Function]}
                   disabled={false}
+                  input={
+                    Object {
+                      "min": 0.01,
+                      "step": 0.01,
+                    }
+                  }
                   label={
                     <FieldLabel
                       className=""
@@ -4843,7 +4871,7 @@ ShallowWrapper {
                   text="About video link"
                 />,
                 "name": "videoSrc",
-                "type": "text",
+                "type": "url",
               },
               "ref": null,
               "rendered": null,
@@ -4887,6 +4915,12 @@ ShallowWrapper {
                   <Field
                     component={[Function]}
                     disabled={false}
+                    input={
+                      Object {
+                        "min": 0.01,
+                        "step": 0.01,
+                      }
+                    }
                     label={
                       <FieldLabel
                         className=""
@@ -4942,6 +4976,10 @@ ShallowWrapper {
                   "props": Object {
                     "component": [Function],
                     "disabled": false,
+                    "input": Object {
+                      "min": 0.01,
+                      "step": 0.01,
+                    },
                     "label": <FieldLabel
                       className=""
                       required={true}
@@ -6228,13 +6266,18 @@ ShallowWrapper {
                   Re-run Course
                 </button>
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Save Course
-              </button>,
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  }
+                }
+                state="pending"
+              />,
             ],
             "className": "mt-3",
           },
@@ -6273,16 +6316,20 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Save Course",
-                "className": "btn btn-primary form-submit-btn",
+                "className": "",
                 "disabled": true,
-                "type": "submit",
+                "labels": Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                },
+                "state": "pending",
               },
               "ref": null,
-              "rendered": "Save Course",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -6640,7 +6687,7 @@ ShallowWrapper {
                 />
               }
               name="videoSrc"
-              type="text"
+              type="url"
             />
             <React.Fragment>
               <Field
@@ -6675,6 +6722,12 @@ ShallowWrapper {
               <Field
                 component={[Function]}
                 disabled={false}
+                input={
+                  Object {
+                    "min": 0.01,
+                    "step": 0.01,
+                  }
+                }
                 label={
                   <FieldLabel
                     className=""
@@ -7946,13 +7999,18 @@ ShallowWrapper {
                 Re-run Course
               </button>
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Save Course
-            </button>
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                }
+              }
+              state="pending"
+            />
           </ButtonToolbar>
         </form>,
         "className": "edit-course-form",
@@ -8302,7 +8360,7 @@ ShallowWrapper {
                   />
                 }
                 name="videoSrc"
-                type="text"
+                type="url"
               />
               <React.Fragment>
                 <Field
@@ -8337,6 +8395,12 @@ ShallowWrapper {
                 <Field
                   component={[Function]}
                   disabled={false}
+                  input={
+                    Object {
+                      "min": 0.01,
+                      "step": 0.01,
+                    }
+                  }
                   label={
                     <FieldLabel
                       className=""
@@ -9608,13 +9672,18 @@ ShallowWrapper {
                   Re-run Course
                 </button>
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Save Course
-              </button>
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  }
+                }
+                state="pending"
+              />
             </ButtonToolbar>,
           ],
           "id": "edit-course-form",
@@ -9961,7 +10030,7 @@ ShallowWrapper {
                     />
                   }
                   name="videoSrc"
-                  type="text"
+                  type="url"
                 />,
                 <React.Fragment>
                   <Field
@@ -9996,6 +10065,12 @@ ShallowWrapper {
                   <Field
                     component={[Function]}
                     disabled={false}
+                    input={
+                      Object {
+                        "min": 0.01,
+                        "step": 0.01,
+                      }
+                    }
                     label={
                       <FieldLabel
                         className=""
@@ -10458,7 +10533,7 @@ ShallowWrapper {
                     text="About video link"
                   />,
                   "name": "videoSrc",
-                  "type": "text",
+                  "type": "url",
                 },
                 "ref": null,
                 "rendered": null,
@@ -10502,6 +10577,12 @@ ShallowWrapper {
                     <Field
                       component={[Function]}
                       disabled={false}
+                      input={
+                        Object {
+                          "min": 0.01,
+                          "step": 0.01,
+                        }
+                      }
                       label={
                         <FieldLabel
                           className=""
@@ -10557,6 +10638,10 @@ ShallowWrapper {
                     "props": Object {
                       "component": [Function],
                       "disabled": false,
+                      "input": Object {
+                        "min": 0.01,
+                        "step": 0.01,
+                      },
                       "label": <FieldLabel
                         className=""
                         required={true}
@@ -11843,13 +11928,18 @@ ShallowWrapper {
                     Re-run Course
                   </button>
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
+                <ActionButton
+                  className=""
                   disabled={true}
-                  type="submit"
-                >
-                  Save Course
-                </button>,
+                  labels={
+                    Object {
+                      "complete": "Course Saved",
+                      "default": "Save Course",
+                      "pending": "Saving Course",
+                    }
+                  }
+                  state="pending"
+                />,
               ],
               "className": "mt-3",
             },
@@ -11888,16 +11978,20 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Save Course",
-                  "className": "btn btn-primary form-submit-btn",
+                  "className": "",
                   "disabled": true,
-                  "type": "submit",
+                  "labels": Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  },
+                  "state": "pending",
                 },
                 "ref": null,
-                "rendered": "Save Course",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -12959,7 +13053,7 @@ ShallowWrapper {
               />
             }
             name="videoSrc"
-            type="text"
+            type="url"
           />
         </t>
         <FieldLabel
@@ -14219,13 +14313,18 @@ ShallowWrapper {
               Re-run Course
             </button>
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
+          <ActionButton
+            className=""
             disabled={false}
-            type="submit"
-          >
-            Save Course
-          </button>
+            labels={
+              Object {
+                "complete": "Course Saved",
+                "default": "Save Course",
+                "pending": "Saving Course",
+              }
+            }
+            state="default"
+          />
         </ButtonToolbar>
       </form>,
       "className": "edit-course-form",
@@ -14575,7 +14674,7 @@ ShallowWrapper {
                 />
               }
               name="videoSrc"
-              type="text"
+              type="url"
             />
           </t>,
           <FieldLabel
@@ -15835,13 +15934,18 @@ ShallowWrapper {
                 Re-run Course
               </button>
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={false}
-              type="submit"
-            >
-              Save Course
-            </button>
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>,
         ],
         "id": "edit-course-form",
@@ -16188,7 +16292,7 @@ ShallowWrapper {
                   />
                 }
                 name="videoSrc"
-                type="text"
+                type="url"
               />,
               undefined,
             ],
@@ -16641,7 +16745,7 @@ ShallowWrapper {
                   text="About video link"
                 />,
                 "name": "videoSrc",
-                "type": "text",
+                "type": "url",
               },
               "ref": null,
               "rendered": null,
@@ -17917,13 +18021,18 @@ ShallowWrapper {
                   Re-run Course
                 </button>
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={false}
-                type="submit"
-              >
-                Save Course
-              </button>,
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  }
+                }
+                state="default"
+              />,
             ],
             "className": "mt-3",
           },
@@ -17962,16 +18071,20 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Save Course",
-                "className": "btn btn-primary form-submit-btn",
+                "className": "",
                 "disabled": false,
-                "type": "submit",
+                "labels": Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                },
+                "state": "default",
               },
               "ref": null,
-              "rendered": "Save Course",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -18329,7 +18442,7 @@ ShallowWrapper {
                 />
               }
               name="videoSrc"
-              type="text"
+              type="url"
             />
           </t>
           <FieldLabel
@@ -19589,13 +19702,18 @@ ShallowWrapper {
                 Re-run Course
               </button>
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={false}
-              type="submit"
-            >
-              Save Course
-            </button>
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>
         </form>,
         "className": "edit-course-form",
@@ -19945,7 +20063,7 @@ ShallowWrapper {
                   />
                 }
                 name="videoSrc"
-                type="text"
+                type="url"
               />
             </t>,
             <FieldLabel
@@ -21205,13 +21323,18 @@ ShallowWrapper {
                   Re-run Course
                 </button>
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={false}
-                type="submit"
-              >
-                Save Course
-              </button>
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  }
+                }
+                state="default"
+              />
             </ButtonToolbar>,
           ],
           "id": "edit-course-form",
@@ -21558,7 +21681,7 @@ ShallowWrapper {
                     />
                   }
                   name="videoSrc"
-                  type="text"
+                  type="url"
                 />,
                 undefined,
               ],
@@ -22011,7 +22134,7 @@ ShallowWrapper {
                     text="About video link"
                   />,
                   "name": "videoSrc",
-                  "type": "text",
+                  "type": "url",
                 },
                 "ref": null,
                 "rendered": null,
@@ -23287,13 +23410,18 @@ ShallowWrapper {
                     Re-run Course
                   </button>
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
+                <ActionButton
+                  className=""
                   disabled={false}
-                  type="submit"
-                >
-                  Save Course
-                </button>,
+                  labels={
+                    Object {
+                      "complete": "Course Saved",
+                      "default": "Save Course",
+                      "pending": "Saving Course",
+                    }
+                  }
+                  state="default"
+                />,
               ],
               "className": "mt-3",
             },
@@ -23332,16 +23460,20 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Save Course",
-                  "className": "btn btn-primary form-submit-btn",
+                  "className": "",
                   "disabled": false,
-                  "type": "submit",
+                  "labels": Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  },
+                  "state": "default",
                 },
                 "ref": null,
-                "rendered": "Save Course",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -24386,7 +24518,7 @@ ShallowWrapper {
               />
             }
             name="videoSrc"
-            type="text"
+            type="url"
           />
         </t>
         <FieldLabel
@@ -25629,13 +25761,18 @@ ShallowWrapper {
               Re-run Course
             </button>
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
+          <ActionButton
+            className=""
             disabled={false}
-            type="submit"
-          >
-            Save Course
-          </button>
+            labels={
+              Object {
+                "complete": "Course Saved",
+                "default": "Save Course",
+                "pending": "Saving Course",
+              }
+            }
+            state="default"
+          />
         </ButtonToolbar>
       </form>,
       "className": "edit-course-form",
@@ -25985,7 +26122,7 @@ ShallowWrapper {
                 />
               }
               name="videoSrc"
-              type="text"
+              type="url"
             />
           </t>,
           <FieldLabel
@@ -27228,13 +27365,18 @@ ShallowWrapper {
                 Re-run Course
               </button>
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={false}
-              type="submit"
-            >
-              Save Course
-            </button>
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>,
         ],
         "id": "edit-course-form",
@@ -27581,7 +27723,7 @@ ShallowWrapper {
                   />
                 }
                 name="videoSrc"
-                type="text"
+                type="url"
               />,
               undefined,
             ],
@@ -28034,7 +28176,7 @@ ShallowWrapper {
                   text="About video link"
                 />,
                 "name": "videoSrc",
-                "type": "text",
+                "type": "url",
               },
               "ref": null,
               "rendered": null,
@@ -29293,13 +29435,18 @@ ShallowWrapper {
                   Re-run Course
                 </button>
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={false}
-                type="submit"
-              >
-                Save Course
-              </button>,
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  }
+                }
+                state="default"
+              />,
             ],
             "className": "mt-3",
           },
@@ -29338,16 +29485,20 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Save Course",
-                "className": "btn btn-primary form-submit-btn",
+                "className": "",
                 "disabled": false,
-                "type": "submit",
+                "labels": Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                },
+                "state": "default",
               },
               "ref": null,
-              "rendered": "Save Course",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -29705,7 +29856,7 @@ ShallowWrapper {
                 />
               }
               name="videoSrc"
-              type="text"
+              type="url"
             />
           </t>
           <FieldLabel
@@ -30948,13 +31099,18 @@ ShallowWrapper {
                 Re-run Course
               </button>
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={false}
-              type="submit"
-            >
-              Save Course
-            </button>
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save Course",
+                  "pending": "Saving Course",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>
         </form>,
         "className": "edit-course-form",
@@ -31304,7 +31460,7 @@ ShallowWrapper {
                   />
                 }
                 name="videoSrc"
-                type="text"
+                type="url"
               />
             </t>,
             <FieldLabel
@@ -32547,13 +32703,18 @@ ShallowWrapper {
                   Re-run Course
                 </button>
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={false}
-                type="submit"
-              >
-                Save Course
-              </button>
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  }
+                }
+                state="default"
+              />
             </ButtonToolbar>,
           ],
           "id": "edit-course-form",
@@ -32900,7 +33061,7 @@ ShallowWrapper {
                     />
                   }
                   name="videoSrc"
-                  type="text"
+                  type="url"
                 />,
                 undefined,
               ],
@@ -33353,7 +33514,7 @@ ShallowWrapper {
                     text="About video link"
                   />,
                   "name": "videoSrc",
-                  "type": "text",
+                  "type": "url",
                 },
                 "ref": null,
                 "rendered": null,
@@ -34612,13 +34773,18 @@ ShallowWrapper {
                     Re-run Course
                   </button>
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
+                <ActionButton
+                  className=""
                   disabled={false}
-                  type="submit"
-                >
-                  Save Course
-                </button>,
+                  labels={
+                    Object {
+                      "complete": "Course Saved",
+                      "default": "Save Course",
+                      "pending": "Saving Course",
+                    }
+                  }
+                  state="default"
+                />,
               ],
               "className": "mt-3",
             },
@@ -34657,16 +34823,20 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Save Course",
-                  "className": "btn btn-primary form-submit-btn",
+                  "className": "",
                   "disabled": false,
-                  "type": "submit",
+                  "labels": Object {
+                    "complete": "Course Saved",
+                    "default": "Save Course",
+                    "pending": "Saving Course",
+                  },
+                  "state": "default",
                 },
                 "ref": null,
-                "rendered": "Save Course",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],

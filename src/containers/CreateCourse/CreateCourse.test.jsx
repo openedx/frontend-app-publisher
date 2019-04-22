@@ -92,7 +92,7 @@ describe('Create Course View', () => {
 
     // Submit
     const formWrapper = wrapper.find('#create-course-form');
-    formWrapper.find('.form-submit-btn').simulate('submit');
+    formWrapper.find('ActionButton').simulate('submit');
     expect(spy).toBeCalledTimes(1);
   });
 });

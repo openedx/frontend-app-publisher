@@ -50,9 +50,6 @@ class CreateCoursePage extends React.Component {
       publisherUserInfo,
     } = this.props;
 
-    const showCreatingCourseSpinner = !publisherUserInfo.isFetching &&
-      courseInfo.isCreating &&
-      !courseInfo.error;
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
 
     return (
@@ -80,11 +77,6 @@ class CreateCoursePage extends React.Component {
                 organizations={organizations}
                 isCreating={courseInfo.isCreating}
               />
-              { showCreatingCourseSpinner &&
-              <LoadingSpinner
-                message="Creating Course and Course Run"
-              />
-              }
               {courseInfo.error && (
                 <StatusAlert
                   id="create-error"

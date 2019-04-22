@@ -9,7 +9,7 @@ const LoadingSpinner = props => (
     </div>
     <Icon
       id="spinner"
-      className={['fa', 'fa-circle-o-notch', 'fa-spin', 'fa-3x', 'fa-fw']}
+      className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"
     />
   </div>
 );

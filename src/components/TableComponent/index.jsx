@@ -5,8 +5,7 @@ import qs from 'query-string';
 import { Pagination, Table } from '@edx/paragon';
 import 'font-awesome/css/font-awesome.css';
 
-import LoadingMessage from '../LoadingMessage';
-import TableLoadingOverlay from '../TableLoadingOverlay';
+import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
 import { getErrorMessage, updateUrl } from '../../utils';
 
@@ -68,11 +67,11 @@ class TableComponent extends React.Component {
 
     return (
       <div className={className}>
-        {loading && <TableLoadingOverlay />}
+        {loading && <LoadingSpinner />}
         <div className="table-responsive">
           <Table
             id={id}
-            className={['table-sm', 'table-striped']}
+            className="table-sm table-striped"
             columns={columnConfig}
             data={formatData(data)}
             tableSortable={tableSortable}
@@ -93,7 +92,7 @@ class TableComponent extends React.Component {
   }
 
   renderLoadingMessage() {
-    return <LoadingMessage className="table-loading" />;
+    return <LoadingSpinner />;
   }
 
   renderErrorMessage() {

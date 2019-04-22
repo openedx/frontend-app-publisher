@@ -1,20 +1,12 @@
 $fa-font-path: "~font-awesome/fonts";
 
-@import "./_variables.scss";
 @import "~@edx/edx-bootstrap/sass/edx/theme";
 @import "~bootstrap/scss/bootstrap";
 @import "~@edx/paragon/src/index";
 @import "~font-awesome/scss/font-awesome";
 @import "~@edx/frontend-component-footer/src/lib/scss/site-footer";
-// Required to have the Collapsible component work
-@import '~@edx/paragon/src/Collapsible/Collapsible';
 
 // Components
 @import '../components/EditCoursePage/CollapsibleCourseRunFields';
-
-// Required to style the AutoSuggest Component (can't modify internal HTML classNames)
-@import '../components/StaffList/StaffList';
-
-// Required to style the Header Component
 @import '../components/Header/Header';
-
+@import '../components/StaffList/StaffList';
