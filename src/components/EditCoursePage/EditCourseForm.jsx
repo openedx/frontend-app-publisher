@@ -112,18 +112,18 @@ export class BaseEditCourseForm extends React.Component {
               name="title"
               component={RenderInputTextField}
               type="text"
-              label={<FieldLabel text="Title" required />}
+              label={<FieldLabel text="Title" required requiredForSubmit />}
               required
               disabled={courseInReview}
             />
             <div>
-              <FieldLabel id="number" text="Number" className="mb-2" />
+              <FieldLabel id="number" text="Number" className="mb-2" requiredForSubmit />
               <div className="mb-3">{number}</div>
             </div>
             <Field
               name="short_description"
               component={RichEditor}
-              label={<FieldLabel text="Short description" />}
+              label={<FieldLabel text="Short description" requiredForSubmit />}
               maxChars={500}
               id="sdesc"
               disabled={courseInReview}
@@ -131,7 +131,7 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="full_description"
               component={RichEditor}
-              label={<FieldLabel text="Long description" />}
+              label={<FieldLabel text="Long description" requiredForSubmit />}
               maxChars={2500}
               id="ldesc"
               disabled={courseInReview}
@@ -139,7 +139,7 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="outcome"
               component={RichEditor}
-              label={<FieldLabel text="What you will learn" />}
+              label={<FieldLabel text="What you will learn" requiredForSubmit />}
               maxChars={2500}
               id="outcome"
               disabled={courseInReview}
@@ -147,7 +147,7 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="subjectPrimary"
               component={RenderSelectField}
-              label={<FieldLabel text="Primary subject" />}
+              label={<FieldLabel text="Primary subject" requiredForSubmit />}
               options={subjectOptions}
               disabled={courseInReview}
             />
@@ -168,7 +168,7 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="imageSrc"
               component={ImageUpload}
-              label={<FieldLabel text="Image" />}
+              label={<FieldLabel text="Image" requiredForSubmit />}
               id="image"
               disabled={courseInReview}
             />
@@ -183,7 +183,7 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="level_type"
               component={RenderSelectField}
-              label={<FieldLabel text="Course level" />}
+              label={<FieldLabel text="Course level" requiredForSubmit />}
               options={levelTypeOptions}
               disabled={courseInReview}
             />
@@ -239,7 +239,7 @@ export class BaseEditCourseForm extends React.Component {
                   name="price"
                   component={RenderInputTextField}
                   type="number"
-                  label={<FieldLabel text="Price" required />}
+                  label={<FieldLabel text="Price" required requiredForSubmit />}
                   disabled={courseInReview}
                 />
               </React.Fragment>
