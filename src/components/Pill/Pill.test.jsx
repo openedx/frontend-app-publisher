@@ -11,7 +11,7 @@ describe('Pill', () => {
   });
 
   it('renders with invalid statuses', () => {
-    const statuses = [undefined, false, 'fnjdsahf'];
+    const statuses = [undefined, null, 'fnjdsahf'];
     const component = shallow(<Pill statuses={statuses} />);
     expect(component).toMatchSnapshot();
   });
