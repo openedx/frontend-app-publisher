@@ -98,6 +98,16 @@ export const BaseCollapsibleCourseRunFields = ({
           disabled={courseInReview}
         />
         <Field
+          name={`${courseRun}.go_live_date`}
+          type="date"
+          component={RenderInputTextField}
+          format={value => getDateString(value)}
+          normalize={value => moment(value).toISOString()}
+          label={<FieldLabel text="Go Live date" />}
+          placeholder="mm/dd/yyyy"
+          disabled={courseInReview}
+        />
+        <Field
           name={`${courseRun}.min_effort`}
           type="number"
           component={RenderInputTextField}
