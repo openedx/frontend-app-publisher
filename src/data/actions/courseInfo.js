@@ -1,5 +1,7 @@
 import { push } from 'connected-react-router';
 
+import { getErrorMessage } from '../../utils';
+
 import {
   REQUEST_COURSE_INFO_FAIL,
   REQUEST_COURSE_INFO_SUCCESS,
@@ -80,18 +82,12 @@ function fetchCourseInfo(id) {
     return DiscoveryDataApiService.fetchCourse(id)
       .then((response) => {
         const course = response.data;
-
-        // Confirm it looks vaguely correct
-        if (!course || !('key' in course)) {
-          throw Error('Did not understand response.');
-        }
-
         dispatch(requestCourseInfoSuccess(id, course));
       })
       .catch((error) => {
         dispatch(requestCourseInfoFail(
           id,
-          `Could not get course information. ${error.toString()}`,
+          `Could not get course information. ${getErrorMessage(error)}.`,
         ));
       });
   };
@@ -101,7 +97,7 @@ function createCourseRun(course, courseRunData) {
   return (dispatch) => {
     dispatch(createNewCourseRun());
     if (!course.key) {
-      dispatch(createCourseRunFail('Course Run create failed, please try again or contact support. Error( Course create incomplete )'));
+      dispatch(createCourseRunFail('Course Run create failed, please try again or contact support. Course create incomplete.'));
       return null;
     }
 
@@ -116,20 +112,8 @@ function createCourseRun(course, courseRunData) {
         dispatch(createCourseRunSuccess(courseRun));
         return dispatch(push(`/courses/${course.uuid}/edit/`));
       })
-      .catch((response) => {
-        let errorMsg = `Course Run create failed, please try again or contact support. \nError ( ${response.message} )`;
-        const errorData = response.response.data;
-        if (errorData) {
-          // More options in the error response
-          errorMsg += '\n\n';
-
-          Object.keys(errorData).forEach((errorKey) => {
-            if (Object.prototype.hasOwnProperty.call(errorData, errorKey)) {
-              errorMsg += `${errorKey}: ${errorData[errorKey]}`;
-            }
-          });
-        }
-        dispatch(createCourseRunFail(errorMsg));
+      .catch((error) => {
+        dispatch(createCourseRunFail(`Course Run create failed, please try again or contact support. ${getErrorMessage(error)}.`));
       });
   };
 }
@@ -145,7 +129,7 @@ function createCourse(courseData, courseRunData) {
         dispatch(createCourseRun(course, courseRunData));
       })
       .catch((error) => {
-        dispatch(createCourseFail(`Course create failed, please try again or contact support. Error( ${error.response.data} )`));
+        dispatch(createCourseFail(`Course create failed, please try again or contact support. ${getErrorMessage(error)}.`));
       });
   };
 }
@@ -160,7 +144,7 @@ function editCourse(courseData, courseRunData) {
         dispatch(editCourseSuccess(course));
       })
       .catch((error) => {
-        dispatch(editCourseFail(`Course edit failed, please try again or contact support. Error( ${error.response.data} )`));
+        dispatch(editCourseFail(`Course edit failed, please try again or contact support. ${getErrorMessage(error)}.`));
       });
   };
 }

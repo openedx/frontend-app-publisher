@@ -65,7 +65,6 @@ class CreateCourseRunPage extends React.Component {
                 <StatusAlert
                   id="create-error"
                   alertType="danger"
-                  title="Course Run create failed: "
                   message={courseInfo.error}
                 />
               ) }

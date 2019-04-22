@@ -272,7 +272,6 @@ class EditCoursePage extends React.Component {
             <StatusAlert
               id="error"
               alertType="danger"
-              title="Course Edit Form failed to load: "
               message={error}
             />
           )}

@@ -58,7 +58,7 @@ describe('courseInfo fetch course actions', () => {
       requestCourseInfo(uuid),
       requestCourseInfoFail(
         uuid,
-        'Could not get course information. Error: Request failed with status code 500',
+        'Could not get course information. Request failed with status code 500.',
       ),
     ];
     const store = mockStore();
@@ -78,24 +78,6 @@ describe('courseInfo fetch course actions', () => {
     const store = mockStore();
 
     return store.dispatch(fetchCourseInfo('test')).then(() => {
-      expect(store.getActions()).toEqual(expectedActions);
-    });
-  });
-
-  it('handles fetch with bad data', () => {
-    mockClient.onGet(`http://localhost:18381/api/v1/courses/${uuid}/`)
-      .replyOnce(200, {});
-
-    const expectedActions = [
-      requestCourseInfo(uuid),
-      requestCourseInfoFail(
-        uuid,
-        'Could not get course information. Error: Did not understand response.',
-      ),
-    ];
-    const store = mockStore();
-
-    return store.dispatch(fetchCourseInfo(uuid)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

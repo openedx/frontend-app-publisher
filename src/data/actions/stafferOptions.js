@@ -5,6 +5,7 @@ import {
 } from '../constants/stafferOptions';
 
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
+import { getErrorMessage } from '../../utils';
 
 
 function requestStafferOptionsFail(error) {
@@ -35,7 +36,7 @@ function fetchStafferOptions() {
         dispatch(requestStafferOptionsSuccess(stafferOptions));
       })
       .catch((error) => {
-        dispatch(requestStafferOptionsFail(`Could not get instructor information. ${error.toString()}`));
+        dispatch(requestStafferOptionsFail(`Could not get instructor information. ${getErrorMessage(error)}.`));
       });
   };
 }

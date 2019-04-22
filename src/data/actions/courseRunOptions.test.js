@@ -482,7 +482,7 @@ describe('courseRunOptions fetch courseRun actions', () => {
 
     const expectedActions = [
       requestCourseRunOptions(),
-      requestCourseRunOptionsFail('Could not get course run information. Error: Request failed with status code 500'),
+      requestCourseRunOptionsFail('Could not get course run information. Request failed with status code 500.'),
     ];
     const store = mockStore();
 
@@ -497,7 +497,7 @@ describe('courseRunOptions fetch courseRun actions', () => {
 
     const expectedActions = [
       requestCourseRunOptions(),
-      requestCourseRunOptionsFail('Could not get course run information. Error: Did not understand response.'),
+      requestCourseRunOptionsFail('Could not get course run information. Did not understand response.'),
     ];
     const store = mockStore();
 

@@ -6,6 +6,8 @@ import {
 
 import { UUID_REGEX } from '../constants/courseInfo';
 
+import { getErrorMessage } from '../../utils';
+
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
 
@@ -26,7 +28,7 @@ function fetchCourseOptions(id) {
     // We only support UUIDs right now, not course keys
     if (!UUID_REGEX.test(id)) {
       const error = `Could not get course information. ${id} is not a valid course UUID.`;
-      dispatch(requestCourseOptionsFail(id, error));
+      dispatch(requestCourseOptionsFail(id, getErrorMessage(error)));
       return Promise.resolve(); // early exit with empty promise
     }
 
@@ -38,7 +40,7 @@ function fetchCourseOptions(id) {
 
         // Confirm it looks vaguely correct
         if (!course || !('actions' in course)) {
-          throw Error('Did not understand response.');
+          throw Error('Did not understand response');
         }
 
         dispatch(requestCourseOptionsSuccess(id, course));
@@ -46,7 +48,7 @@ function fetchCourseOptions(id) {
       .catch((error) => {
         dispatch(requestCourseOptionsFail(
           id,
-          `Could not get course information. ${error.toString()}`,
+          `Could not get course information. ${getErrorMessage(error)}.`,
         ));
       });
   };

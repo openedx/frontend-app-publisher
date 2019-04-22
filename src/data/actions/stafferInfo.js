@@ -12,6 +12,7 @@ import {
   EDIT_STAFFER_INFO_FAIL,
 } from '../constants/stafferInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
+import { getErrorMessage } from '../../utils';
 
 export function createNewStaffer(stafferData) {
   return { type: CREATE_STAFFER, stafferData };
@@ -40,7 +41,7 @@ export function createStaffer(stafferData, referrer = null) {
         }
       })
       .catch((error) => {
-        dispatch(stafferCreateFail(`Instructor create failed, please try again or contact support. Error( ${error.response.data} )`));
+        dispatch(stafferCreateFail(`Instructor create failed, please try again or contact support. ${getErrorMessage(error)}.`));
       });
   };
 }
@@ -73,7 +74,7 @@ export function fetchStafferInfo(uuid) {
         dispatch(requestStafferInfoSuccess(stafferInfo));
       })
       .catch((error) => {
-        dispatch(requestStafferInfoFail(`Could not get instructor information. ${error.toString()}`));
+        dispatch(requestStafferInfoFail(`Could not get instructor information. ${getErrorMessage(error)}.`));
       });
   };
 }
@@ -105,7 +106,7 @@ export function editStaffer(stafferData, referrer = null) {
         }
       })
       .catch((error) => {
-        dispatch(editStafferInfoFail(`Edit instructor failed, please try again or contact support. Error( ${error.response.data} )`));
+        dispatch(editStafferInfoFail(`Edit instructor failed, please try again or contact support. ${getErrorMessage(error)}.`));
       });
   };
 }
