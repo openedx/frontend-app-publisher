@@ -60,7 +60,7 @@ describe('stafferOptions fetch staffer options actions', () => {
 
     const expectedActions = [
       requestStafferOptions(),
-      requestStafferOptionsFail('Could not get instructor information. Error: Request failed with status code 500'),
+      requestStafferOptionsFail('Could not get instructor information. Request failed with status code 500.'),
     ];
     const store = mockStore();
 
@@ -74,7 +74,7 @@ describe('stafferOptions fetch staffer options actions', () => {
 
     const expectedActions = [
       requestStafferOptions(),
-      requestStafferOptionsFail('Could not get instructor information. Error: Did not understand response'),
+      requestStafferOptionsFail('Could not get instructor information. Did not understand response.'),
     ];
     const store = mockStore();
 

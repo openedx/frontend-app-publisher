@@ -67,7 +67,6 @@ class CreateCoursePage extends React.Component {
             <StatusAlert
               id="user-info-error"
               alertType="danger"
-              title="Course Create Form failed to load: "
               message={publisherUserInfo.error}
             />
           )}
@@ -90,7 +89,6 @@ class CreateCoursePage extends React.Component {
                 <StatusAlert
                   id="create-error"
                   alertType="danger"
-                  title="Course create failed: "
                   message={courseInfo.error}
                 />
               ) }

@@ -5,6 +5,7 @@ import {
 } from '../constants/courseRunOptions';
 
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
+import { getErrorMessage } from '../../utils';
 
 function requestCourseRunOptionsFail(error) {
   return { type: REQUEST_COURSE_RUN_OPTIONS_FAIL, error };
@@ -28,13 +29,13 @@ function fetchCourseRunOptions() {
 
         // Confirm it looks vaguely correct
         if (!courseRun || !('actions' in courseRun)) {
-          throw Error('Did not understand response.');
+          throw Error('Did not understand response');
         }
 
         dispatch(requestCourseRunOptionsSuccess(courseRun));
       })
       .catch((error) => {
-        dispatch(requestCourseRunOptionsFail(`Could not get course run information. ${error.toString()}`));
+        dispatch(requestCourseRunOptionsFail(`Could not get course run information. ${getErrorMessage(error)}.`));
       });
   };
 }

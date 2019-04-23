@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.css';
 import LoadingMessage from '../LoadingMessage';
 import TableLoadingOverlay from '../TableLoadingOverlay';
 import StatusAlert from '../StatusAlert';
-import { updateUrl } from '../../utils';
+import { getErrorMessage, updateUrl } from '../../utils';
 
 class TableComponent extends React.Component {
   componentDidMount() {
@@ -101,8 +101,7 @@ class TableComponent extends React.Component {
       <StatusAlert
         alertType="danger"
         iconClassNames={['fa', 'fa-times-circle']}
-        title="Unable to load data"
-        message={`Try refreshing your screen (${this.props.error.message})`}
+        message={`Unable to load data: ${getErrorMessage(this.props.error)}.`}
       />
     );
   }

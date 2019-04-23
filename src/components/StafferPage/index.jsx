@@ -172,7 +172,6 @@ class StafferPage extends React.Component {
                 <StatusAlert
                   id="create-staffer-error"
                   alertType="danger"
-                  title="Could not save instructor"
                   message={error}
                 />
               )}

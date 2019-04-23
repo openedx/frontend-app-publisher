@@ -91,7 +91,7 @@ describe('courseOptions fetch course actions', () => {
       requestCourseOptions(uuid),
       requestCourseOptionsFail(
         uuid,
-        'Could not get course information. Error: Request failed with status code 500',
+        'Could not get course information. Request failed with status code 500.',
       ),
     ];
     const store = mockStore();
@@ -123,7 +123,7 @@ describe('courseOptions fetch course actions', () => {
       requestCourseOptions(uuid),
       requestCourseOptionsFail(
         uuid,
-        'Could not get course information. Error: Did not understand response.',
+        'Could not get course information. Did not understand response.',
       ),
     ];
     const store = mockStore();
