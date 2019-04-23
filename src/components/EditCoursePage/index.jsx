@@ -44,7 +44,7 @@ class EditCoursePage extends React.Component {
     const { targetRun } = this.state;
     if (targetRun) {
       // If a course run triggered the submission, mark it as not a draft
-      const submittedRun = courseRuns.find(run => run.uuid === targetRun.uuid);
+      const submittedRun = courseRuns.find(run => run.key === targetRun.key);
       submittedRun.draft = false;
     }
     /* eslint-enable no-param-reassign */
