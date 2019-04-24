@@ -140,7 +140,8 @@ function editCourse(courseData, courseRunData) {
     // Send edit course PATCH
     return DiscoveryDataApiService.editCourse(courseData, courseRunData)
       .then((response) => {
-        const course = response[response.length - 1].data;
+        const course = response.pop().data;
+        course.course_runs = response.map(courseRun => courseRun.data);
         dispatch(editCourseSuccess(course));
       })
       .catch((error) => {
