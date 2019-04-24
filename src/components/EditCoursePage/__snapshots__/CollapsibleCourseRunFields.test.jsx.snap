@@ -3,7 +3,7 @@
 exports[`Collapsible Course Run Fields renders correctly when given a published course run 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BaseCollapsibleCourseRunFields
+  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
     courseInReview={false}
     courseRuns={
       Array [
@@ -11,6 +11,7 @@ ShallowWrapper {
           "content_language": "ar-ae",
           "end": "2010/01/01",
           "go_live_date": "1999/12/31",
+          "key": "edX101+DemoX",
           "max_effort": 1,
           "min_effort": 1,
           "pacing_type": "self_paced",
@@ -23,14 +24,14 @@ ShallowWrapper {
         },
       ]
     }
-    dispatch={[Function]}
     fields={
       Array [
         Object {},
       ]
     }
     formId="test-form"
-    handleCourseRunSubmit={[MockFunction]}
+    handleSubmit={[MockFunction]}
+    isSubmittingForReview={false}
     languageOptions={
       Array [
         Object {
@@ -49,6 +50,7 @@ ShallowWrapper {
     }
     passedProps={Object {}}
     submitting={false}
+    targetRun={null}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -88,9 +90,9 @@ ShallowWrapper {
               >
                 Studio URL - 
                 <a
-                  href="undefined/course/undefined"
+                  href="undefined/course/edX101+DemoX"
                 >
-                  undefined
+                  edX101+DemoX
                 </a>
               </div>
             </div>
@@ -146,7 +148,7 @@ ShallowWrapper {
                 id={null}
                 required={false}
                 requiredForSubmit={false}
-                text="Publish date"
+                text="Go Live date"
               />
             }
             name="[object Object].go_live_date"
@@ -168,6 +170,7 @@ ShallowWrapper {
               />
             }
             name="[object Object].min_effort"
+            required={false}
             type="number"
           />
           <Field
@@ -184,6 +187,7 @@ ShallowWrapper {
               />
             }
             name="[object Object].max_effort"
+            required={false}
             type="number"
           />
           <Field
@@ -208,6 +212,7 @@ ShallowWrapper {
                 },
               ]
             }
+            required={false}
             type="text"
           />
           <Field
@@ -232,6 +237,7 @@ ShallowWrapper {
                 },
               ]
             }
+            required={false}
             type="text"
           />
           <FieldLabel
@@ -254,6 +260,7 @@ ShallowWrapper {
               ]
             }
             name="[object Object].transcript_languages"
+            required={false}
           />
           <Field
             component={[Function]}
@@ -269,6 +276,7 @@ ShallowWrapper {
               />
             }
             name="[object Object].weeks_to_complete"
+            required={false}
             type="number"
           />
           <FieldLabel
@@ -281,9 +289,11 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
+            courseRunKey="edX101+DemoX"
             disabled={false}
             name="[object Object].staff"
             passedProps={Object {}}
+            required={false}
           />
           <ButtonToolbar
             className=""
@@ -360,7 +370,7 @@ ShallowWrapper {
                   id={null}
                   required={false}
                   requiredForSubmit={false}
-                  text="Publish date"
+                  text="Go Live date"
                 />
               }
               name="[object Object].go_live_date"
@@ -382,6 +392,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].min_effort"
+              required={false}
               type="number"
             />,
             <Field
@@ -398,6 +409,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].max_effort"
+              required={false}
               type="number"
             />,
             <Field
@@ -422,6 +434,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />,
             <Field
@@ -446,6 +459,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />,
             <FieldLabel
@@ -468,6 +482,7 @@ ShallowWrapper {
                 ]
               }
               name="[object Object].transcript_languages"
+              required={false}
             />,
             <Field
               component={[Function]}
@@ -483,6 +498,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].weeks_to_complete"
+              required={false}
               type="number"
             />,
             <FieldLabel
@@ -495,9 +511,11 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
+              courseRunKey="edX101+DemoX"
               disabled={false}
               name="[object Object].staff"
               passedProps={Object {}}
+              required={false}
             />,
             <ButtonToolbar
               className=""
@@ -537,9 +555,9 @@ ShallowWrapper {
             >
               Studio URL - 
               <a
-                href="undefined/course/undefined"
+                href="undefined/course/edX101+DemoX"
               >
-                undefined
+                edX101+DemoX
               </a>
             </div>
           </div>,
@@ -611,7 +629,7 @@ ShallowWrapper {
                 id={null}
                 required={false}
                 requiredForSubmit={false}
-                text="Publish date"
+                text="Go Live date"
               />,
               "name": "[object Object].go_live_date",
               "normalize": [Function],
@@ -638,6 +656,7 @@ ShallowWrapper {
                 text="Minimum effort"
               />,
               "name": "[object Object].min_effort",
+              "required": false,
               "type": "number",
             },
             "ref": null,
@@ -660,6 +679,7 @@ ShallowWrapper {
                 text="Maximum effort"
               />,
               "name": "[object Object].max_effort",
+              "required": false,
               "type": "number",
             },
             "ref": null,
@@ -688,6 +708,7 @@ ShallowWrapper {
                   "value": "self_paced",
                 },
               ],
+              "required": false,
               "type": "text",
             },
             "ref": null,
@@ -716,6 +737,7 @@ ShallowWrapper {
                   "value": "ar-ae",
                 },
               ],
+              "required": false,
               "type": "text",
             },
             "ref": null,
@@ -752,6 +774,7 @@ ShallowWrapper {
                 },
               ],
               "name": "[object Object].transcript_languages",
+              "required": false,
             },
             "ref": null,
             "rendered": null,
@@ -773,6 +796,7 @@ ShallowWrapper {
                 text="Length"
               />,
               "name": "[object Object].weeks_to_complete",
+              "required": false,
               "type": "number",
             },
             "ref": null,
@@ -801,10 +825,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "courseRunKey": undefined,
+              "courseRunKey": "edX101+DemoX",
               "disabled": false,
               "name": "[object Object].staff",
               "passedProps": Object {},
+              "required": false,
             },
             "ref": null,
             "rendered": null,
@@ -882,9 +907,9 @@ ShallowWrapper {
                 >
                   Studio URL - 
                   <a
-                    href="undefined/course/undefined"
+                    href="undefined/course/edX101+DemoX"
                   >
-                    undefined
+                    edX101+DemoX
                   </a>
                 </div>
               </div>
@@ -940,7 +965,7 @@ ShallowWrapper {
                   id={null}
                   required={false}
                   requiredForSubmit={false}
-                  text="Publish date"
+                  text="Go Live date"
                 />
               }
               name="[object Object].go_live_date"
@@ -962,6 +987,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].min_effort"
+              required={false}
               type="number"
             />
             <Field
@@ -978,6 +1004,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].max_effort"
+              required={false}
               type="number"
             />
             <Field
@@ -1002,6 +1029,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />
             <Field
@@ -1026,6 +1054,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />
             <FieldLabel
@@ -1048,6 +1077,7 @@ ShallowWrapper {
                 ]
               }
               name="[object Object].transcript_languages"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -1063,6 +1093,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].weeks_to_complete"
+              required={false}
               type="number"
             />
             <FieldLabel
@@ -1075,9 +1106,11 @@ ShallowWrapper {
             />
             <Field
               component={[Function]}
+              courseRunKey="edX101+DemoX"
               disabled={false}
               name="[object Object].staff"
               passedProps={Object {}}
+              required={false}
             />
             <ButtonToolbar
               className=""
@@ -1154,7 +1187,7 @@ ShallowWrapper {
                     id={null}
                     required={false}
                     requiredForSubmit={false}
-                    text="Publish date"
+                    text="Go Live date"
                   />
                 }
                 name="[object Object].go_live_date"
@@ -1176,6 +1209,7 @@ ShallowWrapper {
                   />
                 }
                 name="[object Object].min_effort"
+                required={false}
                 type="number"
               />,
               <Field
@@ -1192,6 +1226,7 @@ ShallowWrapper {
                   />
                 }
                 name="[object Object].max_effort"
+                required={false}
                 type="number"
               />,
               <Field
@@ -1216,6 +1251,7 @@ ShallowWrapper {
                     },
                   ]
                 }
+                required={false}
                 type="text"
               />,
               <Field
@@ -1240,6 +1276,7 @@ ShallowWrapper {
                     },
                   ]
                 }
+                required={false}
                 type="text"
               />,
               <FieldLabel
@@ -1262,6 +1299,7 @@ ShallowWrapper {
                   ]
                 }
                 name="[object Object].transcript_languages"
+                required={false}
               />,
               <Field
                 component={[Function]}
@@ -1277,6 +1315,7 @@ ShallowWrapper {
                   />
                 }
                 name="[object Object].weeks_to_complete"
+                required={false}
                 type="number"
               />,
               <FieldLabel
@@ -1289,9 +1328,11 @@ ShallowWrapper {
               />,
               <Field
                 component={[Function]}
+                courseRunKey="edX101+DemoX"
                 disabled={false}
                 name="[object Object].staff"
                 passedProps={Object {}}
+                required={false}
               />,
               <ButtonToolbar
                 className=""
@@ -1331,9 +1372,9 @@ ShallowWrapper {
               >
                 Studio URL - 
                 <a
-                  href="undefined/course/undefined"
+                  href="undefined/course/edX101+DemoX"
                 >
-                  undefined
+                  edX101+DemoX
                 </a>
               </div>
             </div>,
@@ -1405,7 +1446,7 @@ ShallowWrapper {
                   id={null}
                   required={false}
                   requiredForSubmit={false}
-                  text="Publish date"
+                  text="Go Live date"
                 />,
                 "name": "[object Object].go_live_date",
                 "normalize": [Function],
@@ -1432,6 +1473,7 @@ ShallowWrapper {
                   text="Minimum effort"
                 />,
                 "name": "[object Object].min_effort",
+                "required": false,
                 "type": "number",
               },
               "ref": null,
@@ -1454,6 +1496,7 @@ ShallowWrapper {
                   text="Maximum effort"
                 />,
                 "name": "[object Object].max_effort",
+                "required": false,
                 "type": "number",
               },
               "ref": null,
@@ -1482,6 +1525,7 @@ ShallowWrapper {
                     "value": "self_paced",
                   },
                 ],
+                "required": false,
                 "type": "text",
               },
               "ref": null,
@@ -1510,6 +1554,7 @@ ShallowWrapper {
                     "value": "ar-ae",
                   },
                 ],
+                "required": false,
                 "type": "text",
               },
               "ref": null,
@@ -1546,6 +1591,7 @@ ShallowWrapper {
                   },
                 ],
                 "name": "[object Object].transcript_languages",
+                "required": false,
               },
               "ref": null,
               "rendered": null,
@@ -1567,6 +1613,7 @@ ShallowWrapper {
                   text="Length"
                 />,
                 "name": "[object Object].weeks_to_complete",
+                "required": false,
                 "type": "number",
               },
               "ref": null,
@@ -1595,10 +1642,11 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "courseRunKey": undefined,
+                "courseRunKey": "edX101+DemoX",
                 "disabled": false,
                 "name": "[object Object].staff",
                 "passedProps": Object {},
+                "required": false,
               },
               "ref": null,
               "rendered": null,
@@ -1676,7 +1724,7 @@ ShallowWrapper {
 exports[`Collapsible Course Run Fields renders correctly when given an unpublished course run 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BaseCollapsibleCourseRunFields
+  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
     courseInReview={false}
     courseRuns={
       Array [
@@ -1684,6 +1732,7 @@ ShallowWrapper {
           "content_language": "ar-ae",
           "end": "2010/01/01",
           "go_live_date": "1999/12/31",
+          "key": "edX101+DemoX",
           "max_effort": 1,
           "min_effort": 1,
           "pacing_type": "self_paced",
@@ -1696,14 +1745,14 @@ ShallowWrapper {
         },
       ]
     }
-    dispatch={[Function]}
     fields={
       Array [
         Object {},
       ]
     }
     formId="test-form"
-    handleCourseRunSubmit={[MockFunction]}
+    handleSubmit={[MockFunction]}
+    isSubmittingForReview={false}
     languageOptions={
       Array [
         Object {
@@ -1722,6 +1771,7 @@ ShallowWrapper {
     }
     passedProps={Object {}}
     submitting={false}
+    targetRun={null}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -1761,9 +1811,9 @@ ShallowWrapper {
               >
                 Studio URL - 
                 <a
-                  href="undefined/course/undefined"
+                  href="undefined/course/edX101+DemoX"
                 >
-                  undefined
+                  edX101+DemoX
                 </a>
               </div>
             </div>
@@ -1819,7 +1869,7 @@ ShallowWrapper {
                 id={null}
                 required={false}
                 requiredForSubmit={false}
-                text="Publish date"
+                text="Go Live date"
               />
             }
             name="[object Object].go_live_date"
@@ -1841,6 +1891,7 @@ ShallowWrapper {
               />
             }
             name="[object Object].min_effort"
+            required={false}
             type="number"
           />
           <Field
@@ -1857,6 +1908,7 @@ ShallowWrapper {
               />
             }
             name="[object Object].max_effort"
+            required={false}
             type="number"
           />
           <Field
@@ -1881,6 +1933,7 @@ ShallowWrapper {
                 },
               ]
             }
+            required={false}
             type="text"
           />
           <Field
@@ -1905,6 +1958,7 @@ ShallowWrapper {
                 },
               ]
             }
+            required={false}
             type="text"
           />
           <FieldLabel
@@ -1927,6 +1981,7 @@ ShallowWrapper {
               ]
             }
             name="[object Object].transcript_languages"
+            required={false}
           />
           <Field
             component={[Function]}
@@ -1942,6 +1997,7 @@ ShallowWrapper {
               />
             }
             name="[object Object].weeks_to_complete"
+            required={false}
             type="number"
           />
           <FieldLabel
@@ -1954,9 +2010,11 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
+            courseRunKey="edX101+DemoX"
             disabled={false}
             name="[object Object].staff"
             passedProps={Object {}}
+            required={false}
           />
           <ButtonToolbar
             className=""
@@ -2033,7 +2091,7 @@ ShallowWrapper {
                   id={null}
                   required={false}
                   requiredForSubmit={false}
-                  text="Publish date"
+                  text="Go Live date"
                 />
               }
               name="[object Object].go_live_date"
@@ -2055,6 +2113,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].min_effort"
+              required={false}
               type="number"
             />,
             <Field
@@ -2071,6 +2130,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].max_effort"
+              required={false}
               type="number"
             />,
             <Field
@@ -2095,6 +2155,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />,
             <Field
@@ -2119,6 +2180,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />,
             <FieldLabel
@@ -2141,6 +2203,7 @@ ShallowWrapper {
                 ]
               }
               name="[object Object].transcript_languages"
+              required={false}
             />,
             <Field
               component={[Function]}
@@ -2156,6 +2219,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].weeks_to_complete"
+              required={false}
               type="number"
             />,
             <FieldLabel
@@ -2168,9 +2232,11 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
+              courseRunKey="edX101+DemoX"
               disabled={false}
               name="[object Object].staff"
               passedProps={Object {}}
+              required={false}
             />,
             <ButtonToolbar
               className=""
@@ -2210,9 +2276,9 @@ ShallowWrapper {
             >
               Studio URL - 
               <a
-                href="undefined/course/undefined"
+                href="undefined/course/edX101+DemoX"
               >
-                undefined
+                edX101+DemoX
               </a>
             </div>
           </div>,
@@ -2284,7 +2350,7 @@ ShallowWrapper {
                 id={null}
                 required={false}
                 requiredForSubmit={false}
-                text="Publish date"
+                text="Go Live date"
               />,
               "name": "[object Object].go_live_date",
               "normalize": [Function],
@@ -2311,6 +2377,7 @@ ShallowWrapper {
                 text="Minimum effort"
               />,
               "name": "[object Object].min_effort",
+              "required": false,
               "type": "number",
             },
             "ref": null,
@@ -2333,6 +2400,7 @@ ShallowWrapper {
                 text="Maximum effort"
               />,
               "name": "[object Object].max_effort",
+              "required": false,
               "type": "number",
             },
             "ref": null,
@@ -2361,6 +2429,7 @@ ShallowWrapper {
                   "value": "self_paced",
                 },
               ],
+              "required": false,
               "type": "text",
             },
             "ref": null,
@@ -2389,6 +2458,7 @@ ShallowWrapper {
                   "value": "ar-ae",
                 },
               ],
+              "required": false,
               "type": "text",
             },
             "ref": null,
@@ -2425,6 +2495,7 @@ ShallowWrapper {
                 },
               ],
               "name": "[object Object].transcript_languages",
+              "required": false,
             },
             "ref": null,
             "rendered": null,
@@ -2446,6 +2517,7 @@ ShallowWrapper {
                 text="Length"
               />,
               "name": "[object Object].weeks_to_complete",
+              "required": false,
               "type": "number",
             },
             "ref": null,
@@ -2474,10 +2546,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "courseRunKey": undefined,
+              "courseRunKey": "edX101+DemoX",
               "disabled": false,
               "name": "[object Object].staff",
               "passedProps": Object {},
+              "required": false,
             },
             "ref": null,
             "rendered": null,
@@ -2555,9 +2628,9 @@ ShallowWrapper {
                 >
                   Studio URL - 
                   <a
-                    href="undefined/course/undefined"
+                    href="undefined/course/edX101+DemoX"
                   >
-                    undefined
+                    edX101+DemoX
                   </a>
                 </div>
               </div>
@@ -2613,7 +2686,7 @@ ShallowWrapper {
                   id={null}
                   required={false}
                   requiredForSubmit={false}
-                  text="Publish date"
+                  text="Go Live date"
                 />
               }
               name="[object Object].go_live_date"
@@ -2635,6 +2708,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].min_effort"
+              required={false}
               type="number"
             />
             <Field
@@ -2651,6 +2725,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].max_effort"
+              required={false}
               type="number"
             />
             <Field
@@ -2675,6 +2750,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />
             <Field
@@ -2699,6 +2775,7 @@ ShallowWrapper {
                   },
                 ]
               }
+              required={false}
               type="text"
             />
             <FieldLabel
@@ -2721,6 +2798,7 @@ ShallowWrapper {
                 ]
               }
               name="[object Object].transcript_languages"
+              required={false}
             />
             <Field
               component={[Function]}
@@ -2736,6 +2814,7 @@ ShallowWrapper {
                 />
               }
               name="[object Object].weeks_to_complete"
+              required={false}
               type="number"
             />
             <FieldLabel
@@ -2748,9 +2827,11 @@ ShallowWrapper {
             />
             <Field
               component={[Function]}
+              courseRunKey="edX101+DemoX"
               disabled={false}
               name="[object Object].staff"
               passedProps={Object {}}
+              required={false}
             />
             <ButtonToolbar
               className=""
@@ -2827,7 +2908,7 @@ ShallowWrapper {
                     id={null}
                     required={false}
                     requiredForSubmit={false}
-                    text="Publish date"
+                    text="Go Live date"
                   />
                 }
                 name="[object Object].go_live_date"
@@ -2849,6 +2930,7 @@ ShallowWrapper {
                   />
                 }
                 name="[object Object].min_effort"
+                required={false}
                 type="number"
               />,
               <Field
@@ -2865,6 +2947,7 @@ ShallowWrapper {
                   />
                 }
                 name="[object Object].max_effort"
+                required={false}
                 type="number"
               />,
               <Field
@@ -2889,6 +2972,7 @@ ShallowWrapper {
                     },
                   ]
                 }
+                required={false}
                 type="text"
               />,
               <Field
@@ -2913,6 +2997,7 @@ ShallowWrapper {
                     },
                   ]
                 }
+                required={false}
                 type="text"
               />,
               <FieldLabel
@@ -2935,6 +3020,7 @@ ShallowWrapper {
                   ]
                 }
                 name="[object Object].transcript_languages"
+                required={false}
               />,
               <Field
                 component={[Function]}
@@ -2950,6 +3036,7 @@ ShallowWrapper {
                   />
                 }
                 name="[object Object].weeks_to_complete"
+                required={false}
                 type="number"
               />,
               <FieldLabel
@@ -2962,9 +3049,11 @@ ShallowWrapper {
               />,
               <Field
                 component={[Function]}
+                courseRunKey="edX101+DemoX"
                 disabled={false}
                 name="[object Object].staff"
                 passedProps={Object {}}
+                required={false}
               />,
               <ButtonToolbar
                 className=""
@@ -3004,9 +3093,9 @@ ShallowWrapper {
               >
                 Studio URL - 
                 <a
-                  href="undefined/course/undefined"
+                  href="undefined/course/edX101+DemoX"
                 >
-                  undefined
+                  edX101+DemoX
                 </a>
               </div>
             </div>,
@@ -3078,7 +3167,7 @@ ShallowWrapper {
                   id={null}
                   required={false}
                   requiredForSubmit={false}
-                  text="Publish date"
+                  text="Go Live date"
                 />,
                 "name": "[object Object].go_live_date",
                 "normalize": [Function],
@@ -3105,6 +3194,7 @@ ShallowWrapper {
                   text="Minimum effort"
                 />,
                 "name": "[object Object].min_effort",
+                "required": false,
                 "type": "number",
               },
               "ref": null,
@@ -3127,6 +3217,7 @@ ShallowWrapper {
                   text="Maximum effort"
                 />,
                 "name": "[object Object].max_effort",
+                "required": false,
                 "type": "number",
               },
               "ref": null,
@@ -3155,6 +3246,7 @@ ShallowWrapper {
                     "value": "self_paced",
                   },
                 ],
+                "required": false,
                 "type": "text",
               },
               "ref": null,
@@ -3183,6 +3275,7 @@ ShallowWrapper {
                     "value": "ar-ae",
                   },
                 ],
+                "required": false,
                 "type": "text",
               },
               "ref": null,
@@ -3219,6 +3312,7 @@ ShallowWrapper {
                   },
                 ],
                 "name": "[object Object].transcript_languages",
+                "required": false,
               },
               "ref": null,
               "rendered": null,
@@ -3240,6 +3334,7 @@ ShallowWrapper {
                   text="Length"
                 />,
                 "name": "[object Object].weeks_to_complete",
+                "required": false,
                 "type": "number",
               },
               "ref": null,
@@ -3268,10 +3363,11 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "courseRunKey": undefined,
+                "courseRunKey": "edX101+DemoX",
                 "disabled": false,
                 "name": "[object Object].staff",
                 "passedProps": Object {},
+                "required": false,
               },
               "ref": null,
               "rendered": null,
@@ -3346,20 +3442,3463 @@ ShallowWrapper {
 }
 `;
 
+exports[`Collapsible Course Run Fields renders correctly when submitting for review 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
+    courseInReview={false}
+    courseRuns={
+      Array [
+        Object {
+          "content_language": "ar-ae",
+          "end": "2010/01/01",
+          "go_live_date": "1999/12/31",
+          "key": "edX101+DemoX",
+          "max_effort": 1,
+          "min_effort": 1,
+          "pacing_type": "self_paced",
+          "start": "2000-01-01T12:00:00Z",
+          "status": "unpublished",
+          "transcript_languages": Array [
+            "ar-ae",
+          ],
+          "weeks_to_complete": 1,
+        },
+      ]
+    }
+    fields={
+      Array [
+        Object {},
+      ]
+    }
+    formId="test-form"
+    handleSubmit={[MockFunction]}
+    isSubmittingForReview={true}
+    languageOptions={
+      Array [
+        Object {
+          "label": "Arabic - United Arab Emirates",
+          "value": "ar-ae",
+        },
+      ]
+    }
+    pacingTypeOptions={
+      Array [
+        Object {
+          "label": "Self-paced",
+          "value": "self_paced",
+        },
+      ]
+    }
+    passedProps={Object {}}
+    submitting={false}
+    targetRun={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <t
+          iconId="collapsible-icon-[object Object]"
+          isOpen={false}
+          onToggle={[Function]}
+          title={
+            <div
+              className="course-run-label"
+            >
+              <span>
+                Course run starting on Jan 1st 2000 - Self Paced
+              </span>
+              <Pill
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
+              />
+              <div
+                className="course-run-studio-url"
+              >
+                Studio URL - 
+                <a
+                  href="undefined/course/edX101+DemoX"
+                >
+                  edX101+DemoX
+                </a>
+              </div>
+            </div>
+          }
+        >
+          <Field
+            component={[Function]}
+            disabled={false}
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="Start date"
+              />
+            }
+            name="[object Object].start"
+            placeholder="mm/dd/yyyy"
+            required={true}
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="End date"
+              />
+            }
+            name="[object Object].end"
+            normalize={[Function]}
+            placeholder="mm/dd/yyyy"
+            required={true}
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={false}
+                text="Go Live date"
+              />
+            }
+            name="[object Object].go_live_date"
+            normalize={[Function]}
+            placeholder="mm/dd/yyyy"
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Minimum effort"
+              />
+            }
+            name="[object Object].min_effort"
+            required={null}
+            type="number"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Maximum effort"
+              />
+            }
+            name="[object Object].max_effort"
+            required={null}
+            type="number"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Course pacing"
+              />
+            }
+            name="[object Object].pacing_type"
+            options={
+              Array [
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ]
+            }
+            required={null}
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Content language"
+              />
+            }
+            name="[object Object].content_language"
+            options={
+              Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ]
+            }
+            required={null}
+            type="text"
+          />
+          <FieldLabel
+            className="mb-2"
+            helpText=""
+            id={null}
+            required={false}
+            requiredForSubmit={true}
+            text="Transcript languages"
+          />
+          <FieldArray
+            component={[Function]}
+            disabled={false}
+            languageOptions={
+              Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ]
+            }
+            name="[object Object].transcript_languages"
+            required={null}
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Length"
+              />
+            }
+            name="[object Object].weeks_to_complete"
+            required={null}
+            type="number"
+          />
+          <FieldLabel
+            className="mb-2"
+            helpText=""
+            id={null}
+            required={false}
+            requiredForSubmit={true}
+            text="Staff"
+          />
+          <Field
+            component={[Function]}
+            courseRunKey="edX101+DemoX"
+            disabled={false}
+            name="[object Object].staff"
+            passedProps={Object {}}
+            required={null}
+          />
+          <ButtonToolbar
+            className=""
+          >
+            <ActionButton
+              className=""
+              disabled={false}
+              labels={
+                Object {
+                  "default": "Submit for Review",
+                }
+              }
+              onClick={[Function]}
+            />
+          </ButtonToolbar>
+        </t>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "collapsible-run-[object Object]",
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Start date"
+                />
+              }
+              name="[object Object].start"
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="End date"
+                />
+              }
+              name="[object Object].end"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Go Live date"
+                />
+              }
+              name="[object Object].go_live_date"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Minimum effort"
+                />
+              }
+              name="[object Object].min_effort"
+              required={null}
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Maximum effort"
+                />
+              }
+              name="[object Object].max_effort"
+              required={null}
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Course pacing"
+                />
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Content language"
+                />
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />,
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Transcript languages"
+            />,
+            <FieldArray
+              component={[Function]}
+              disabled={false}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+              required={null}
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Length"
+                />
+              }
+              name="[object Object].weeks_to_complete"
+              required={null}
+              type="number"
+            />,
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Staff"
+            />,
+            <Field
+              component={[Function]}
+              courseRunKey="edX101+DemoX"
+              disabled={false}
+              name="[object Object].staff"
+              passedProps={Object {}}
+              required={null}
+            />,
+            <ButtonToolbar
+              className=""
+            >
+              <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Submit for Review",
+                  }
+                }
+                onClick={[Function]}
+              />
+            </ButtonToolbar>,
+          ],
+          "expandedTitle": undefined,
+          "iconId": "collapsible-icon-[object Object]",
+          "isCollapsible": undefined,
+          "isOpen": false,
+          "onToggle": [Function],
+          "title": <div
+            className="course-run-label"
+          >
+            <span>
+              Course run starting on Jan 1st 2000 - Self Paced
+            </span>
+            <Pill
+              statuses={
+                Array [
+                  "unpublished",
+                ]
+              }
+            />
+            <div
+              className="course-run-studio-url"
+            >
+              Studio URL - 
+              <a
+                href="undefined/course/edX101+DemoX"
+              >
+                edX101+DemoX
+              </a>
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="Start date"
+              />,
+              "name": "[object Object].start",
+              "placeholder": "mm/dd/yyyy",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="End date"
+              />,
+              "name": "[object Object].end",
+              "normalize": [Function],
+              "placeholder": "mm/dd/yyyy",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={false}
+                text="Go Live date"
+              />,
+              "name": "[object Object].go_live_date",
+              "normalize": [Function],
+              "placeholder": "mm/dd/yyyy",
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Minimum effort"
+              />,
+              "name": "[object Object].min_effort",
+              "required": null,
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Maximum effort"
+              />,
+              "name": "[object Object].max_effort",
+              "required": null,
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Course pacing"
+              />,
+              "name": "[object Object].pacing_type",
+              "options": Array [
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ],
+              "required": null,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Content language"
+              />,
+              "name": "[object Object].content_language",
+              "options": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "required": null,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "helpText": "",
+              "id": null,
+              "required": false,
+              "requiredForSubmit": true,
+              "text": "Transcript languages",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "languageOptions": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "name": "[object Object].transcript_languages",
+              "required": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Length"
+              />,
+              "name": "[object Object].weeks_to_complete",
+              "required": null,
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "helpText": "",
+              "id": null,
+              "required": false,
+              "requiredForSubmit": true,
+              "text": "Staff",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "courseRunKey": "edX101+DemoX",
+              "disabled": false,
+              "name": "[object Object].staff",
+              "passedProps": Object {},
+              "required": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Submit for Review",
+                  }
+                }
+                onClick={[Function]}
+              />,
+              "className": "",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "",
+                "disabled": false,
+                "labels": Object {
+                  "default": "Submit for Review",
+                },
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <t
+            iconId="collapsible-icon-[object Object]"
+            isOpen={false}
+            onToggle={[Function]}
+            title={
+              <div
+                className="course-run-label"
+              >
+                <span>
+                  Course run starting on Jan 1st 2000 - Self Paced
+                </span>
+                <Pill
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
+                />
+                <div
+                  className="course-run-studio-url"
+                >
+                  Studio URL - 
+                  <a
+                    href="undefined/course/edX101+DemoX"
+                  >
+                    edX101+DemoX
+                  </a>
+                </div>
+              </div>
+            }
+          >
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Start date"
+                />
+              }
+              name="[object Object].start"
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="End date"
+                />
+              }
+              name="[object Object].end"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Go Live date"
+                />
+              }
+              name="[object Object].go_live_date"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Minimum effort"
+                />
+              }
+              name="[object Object].min_effort"
+              required={null}
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Maximum effort"
+                />
+              }
+              name="[object Object].max_effort"
+              required={null}
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Course pacing"
+                />
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Content language"
+                />
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Transcript languages"
+            />
+            <FieldArray
+              component={[Function]}
+              disabled={false}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+              required={null}
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Length"
+                />
+              }
+              name="[object Object].weeks_to_complete"
+              required={null}
+              type="number"
+            />
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Staff"
+            />
+            <Field
+              component={[Function]}
+              courseRunKey="edX101+DemoX"
+              disabled={false}
+              name="[object Object].staff"
+              passedProps={Object {}}
+              required={null}
+            />
+            <ButtonToolbar
+              className=""
+            >
+              <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Submit for Review",
+                  }
+                }
+                onClick={[Function]}
+              />
+            </ButtonToolbar>
+          </t>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "collapsible-run-[object Object]",
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Start date"
+                  />
+                }
+                name="[object Object].start"
+                placeholder="mm/dd/yyyy"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="End date"
+                  />
+                }
+                name="[object Object].end"
+                normalize={[Function]}
+                placeholder="mm/dd/yyyy"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Go Live date"
+                  />
+                }
+                name="[object Object].go_live_date"
+                normalize={[Function]}
+                placeholder="mm/dd/yyyy"
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Minimum effort"
+                  />
+                }
+                name="[object Object].min_effort"
+                required={null}
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Maximum effort"
+                  />
+                }
+                name="[object Object].max_effort"
+                required={null}
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Course pacing"
+                  />
+                }
+                name="[object Object].pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                required={null}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Content language"
+                  />
+                }
+                name="[object Object].content_language"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                required={null}
+                type="text"
+              />,
+              <FieldLabel
+                className="mb-2"
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Transcript languages"
+              />,
+              <FieldArray
+                component={[Function]}
+                disabled={false}
+                languageOptions={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                name="[object Object].transcript_languages"
+                required={null}
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Length"
+                  />
+                }
+                name="[object Object].weeks_to_complete"
+                required={null}
+                type="number"
+              />,
+              <FieldLabel
+                className="mb-2"
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Staff"
+              />,
+              <Field
+                component={[Function]}
+                courseRunKey="edX101+DemoX"
+                disabled={false}
+                name="[object Object].staff"
+                passedProps={Object {}}
+                required={null}
+              />,
+              <ButtonToolbar
+                className=""
+              >
+                <ActionButton
+                  className=""
+                  disabled={false}
+                  labels={
+                    Object {
+                      "default": "Submit for Review",
+                    }
+                  }
+                  onClick={[Function]}
+                />
+              </ButtonToolbar>,
+            ],
+            "expandedTitle": undefined,
+            "iconId": "collapsible-icon-[object Object]",
+            "isCollapsible": undefined,
+            "isOpen": false,
+            "onToggle": [Function],
+            "title": <div
+              className="course-run-label"
+            >
+              <span>
+                Course run starting on Jan 1st 2000 - Self Paced
+              </span>
+              <Pill
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
+              />
+              <div
+                className="course-run-studio-url"
+              >
+                Studio URL - 
+                <a
+                  href="undefined/course/edX101+DemoX"
+                >
+                  edX101+DemoX
+                </a>
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Start date"
+                />,
+                "name": "[object Object].start",
+                "placeholder": "mm/dd/yyyy",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="End date"
+                />,
+                "name": "[object Object].end",
+                "normalize": [Function],
+                "placeholder": "mm/dd/yyyy",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Go Live date"
+                />,
+                "name": "[object Object].go_live_date",
+                "normalize": [Function],
+                "placeholder": "mm/dd/yyyy",
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Minimum effort"
+                />,
+                "name": "[object Object].min_effort",
+                "required": null,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Maximum effort"
+                />,
+                "name": "[object Object].max_effort",
+                "required": null,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Course pacing"
+                />,
+                "name": "[object Object].pacing_type",
+                "options": Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ],
+                "required": null,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Content language"
+                />,
+                "name": "[object Object].content_language",
+                "options": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "required": null,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "helpText": "",
+                "id": null,
+                "required": false,
+                "requiredForSubmit": true,
+                "text": "Transcript languages",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "languageOptions": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "name": "[object Object].transcript_languages",
+                "required": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Length"
+                />,
+                "name": "[object Object].weeks_to_complete",
+                "required": null,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "helpText": "",
+                "id": null,
+                "required": false,
+                "requiredForSubmit": true,
+                "text": "Staff",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "courseRunKey": "edX101+DemoX",
+                "disabled": false,
+                "name": "[object Object].staff",
+                "passedProps": Object {},
+                "required": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <ActionButton
+                  className=""
+                  disabled={false}
+                  labels={
+                    Object {
+                      "default": "Submit for Review",
+                    }
+                  }
+                  onClick={[Function]}
+                />,
+                "className": "",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "",
+                  "disabled": false,
+                  "labels": Object {
+                    "default": "Submit for Review",
+                  },
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Collapsible Course Run Fields renders correctly when submitting for review and given a matching target run 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
+    courseInReview={false}
+    courseRuns={
+      Array [
+        Object {
+          "content_language": "ar-ae",
+          "end": "2010/01/01",
+          "go_live_date": "1999/12/31",
+          "key": "edX101+DemoX",
+          "max_effort": 1,
+          "min_effort": 1,
+          "pacing_type": "self_paced",
+          "start": "2000-01-01T12:00:00Z",
+          "status": "published",
+          "transcript_languages": Array [
+            "ar-ae",
+          ],
+          "weeks_to_complete": 1,
+        },
+      ]
+    }
+    fields={
+      Array [
+        Object {},
+      ]
+    }
+    formId="test-form"
+    handleSubmit={[MockFunction]}
+    isSubmittingForReview={true}
+    languageOptions={
+      Array [
+        Object {
+          "label": "Arabic - United Arab Emirates",
+          "value": "ar-ae",
+        },
+      ]
+    }
+    pacingTypeOptions={
+      Array [
+        Object {
+          "label": "Self-paced",
+          "value": "self_paced",
+        },
+      ]
+    }
+    passedProps={Object {}}
+    submitting={false}
+    targetRun={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <t
+          iconId="collapsible-icon-[object Object]"
+          isOpen={false}
+          onToggle={[Function]}
+          title={
+            <div
+              className="course-run-label"
+            >
+              <span>
+                Course run starting on Jan 1st 2000 - Self Paced
+              </span>
+              <Pill
+                statuses={
+                  Array [
+                    "published",
+                  ]
+                }
+              />
+              <div
+                className="course-run-studio-url"
+              >
+                Studio URL - 
+                <a
+                  href="undefined/course/edX101+DemoX"
+                >
+                  edX101+DemoX
+                </a>
+              </div>
+            </div>
+          }
+        >
+          <Field
+            component={[Function]}
+            disabled={false}
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="Start date"
+              />
+            }
+            name="[object Object].start"
+            placeholder="mm/dd/yyyy"
+            required={true}
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="End date"
+              />
+            }
+            name="[object Object].end"
+            normalize={[Function]}
+            placeholder="mm/dd/yyyy"
+            required={true}
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={false}
+                text="Go Live date"
+              />
+            }
+            name="[object Object].go_live_date"
+            normalize={[Function]}
+            placeholder="mm/dd/yyyy"
+            type="date"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Minimum effort"
+              />
+            }
+            name="[object Object].min_effort"
+            required={null}
+            type="number"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Maximum effort"
+              />
+            }
+            name="[object Object].max_effort"
+            required={null}
+            type="number"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Course pacing"
+              />
+            }
+            name="[object Object].pacing_type"
+            options={
+              Array [
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ]
+            }
+            required={null}
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Content language"
+              />
+            }
+            name="[object Object].content_language"
+            options={
+              Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ]
+            }
+            required={null}
+            type="text"
+          />
+          <FieldLabel
+            className="mb-2"
+            helpText=""
+            id={null}
+            required={false}
+            requiredForSubmit={true}
+            text="Transcript languages"
+          />
+          <FieldArray
+            component={[Function]}
+            disabled={false}
+            languageOptions={
+              Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ]
+            }
+            name="[object Object].transcript_languages"
+            required={null}
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Length"
+              />
+            }
+            name="[object Object].weeks_to_complete"
+            required={null}
+            type="number"
+          />
+          <FieldLabel
+            className="mb-2"
+            helpText=""
+            id={null}
+            required={false}
+            requiredForSubmit={true}
+            text="Staff"
+          />
+          <Field
+            component={[Function]}
+            courseRunKey="edX101+DemoX"
+            disabled={false}
+            name="[object Object].staff"
+            passedProps={Object {}}
+            required={null}
+          />
+          <ButtonToolbar
+            className=""
+          >
+            <ActionButton
+              className=""
+              disabled={false}
+              labels={
+                Object {
+                  "default": "Publish",
+                }
+              }
+              onClick={[Function]}
+            />
+          </ButtonToolbar>
+        </t>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "collapsible-run-[object Object]",
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Start date"
+                />
+              }
+              name="[object Object].start"
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="End date"
+                />
+              }
+              name="[object Object].end"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Go Live date"
+                />
+              }
+              name="[object Object].go_live_date"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              type="date"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Minimum effort"
+                />
+              }
+              name="[object Object].min_effort"
+              required={null}
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Maximum effort"
+                />
+              }
+              name="[object Object].max_effort"
+              required={null}
+              type="number"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Course pacing"
+                />
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Content language"
+                />
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />,
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Transcript languages"
+            />,
+            <FieldArray
+              component={[Function]}
+              disabled={false}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+              required={null}
+            />,
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Length"
+                />
+              }
+              name="[object Object].weeks_to_complete"
+              required={null}
+              type="number"
+            />,
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Staff"
+            />,
+            <Field
+              component={[Function]}
+              courseRunKey="edX101+DemoX"
+              disabled={false}
+              name="[object Object].staff"
+              passedProps={Object {}}
+              required={null}
+            />,
+            <ButtonToolbar
+              className=""
+            >
+              <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Publish",
+                  }
+                }
+                onClick={[Function]}
+              />
+            </ButtonToolbar>,
+          ],
+          "expandedTitle": undefined,
+          "iconId": "collapsible-icon-[object Object]",
+          "isCollapsible": undefined,
+          "isOpen": false,
+          "onToggle": [Function],
+          "title": <div
+            className="course-run-label"
+          >
+            <span>
+              Course run starting on Jan 1st 2000 - Self Paced
+            </span>
+            <Pill
+              statuses={
+                Array [
+                  "published",
+                ]
+              }
+            />
+            <div
+              className="course-run-studio-url"
+            >
+              Studio URL - 
+              <a
+                href="undefined/course/edX101+DemoX"
+              >
+                edX101+DemoX
+              </a>
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="Start date"
+              />,
+              "name": "[object Object].start",
+              "placeholder": "mm/dd/yyyy",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="End date"
+              />,
+              "name": "[object Object].end",
+              "normalize": [Function],
+              "placeholder": "mm/dd/yyyy",
+              "required": true,
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={false}
+                text="Go Live date"
+              />,
+              "name": "[object Object].go_live_date",
+              "normalize": [Function],
+              "placeholder": "mm/dd/yyyy",
+              "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Minimum effort"
+              />,
+              "name": "[object Object].min_effort",
+              "required": null,
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Maximum effort"
+              />,
+              "name": "[object Object].max_effort",
+              "required": null,
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Course pacing"
+              />,
+              "name": "[object Object].pacing_type",
+              "options": Array [
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ],
+              "required": null,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Content language"
+              />,
+              "name": "[object Object].content_language",
+              "options": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "required": null,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "helpText": "",
+              "id": null,
+              "required": false,
+              "requiredForSubmit": true,
+              "text": "Transcript languages",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "languageOptions": Array [
+                Object {
+                  "label": "Arabic - United Arab Emirates",
+                  "value": "ar-ae",
+                },
+              ],
+              "name": "[object Object].transcript_languages",
+              "required": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": false,
+              "label": <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Length"
+              />,
+              "name": "[object Object].weeks_to_complete",
+              "required": null,
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "mb-2",
+              "helpText": "",
+              "id": null,
+              "required": false,
+              "requiredForSubmit": true,
+              "text": "Staff",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "courseRunKey": "edX101+DemoX",
+              "disabled": false,
+              "name": "[object Object].staff",
+              "passedProps": Object {},
+              "required": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Publish",
+                  }
+                }
+                onClick={[Function]}
+              />,
+              "className": "",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "",
+                "disabled": false,
+                "labels": Object {
+                  "default": "Publish",
+                },
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <t
+            iconId="collapsible-icon-[object Object]"
+            isOpen={false}
+            onToggle={[Function]}
+            title={
+              <div
+                className="course-run-label"
+              >
+                <span>
+                  Course run starting on Jan 1st 2000 - Self Paced
+                </span>
+                <Pill
+                  statuses={
+                    Array [
+                      "published",
+                    ]
+                  }
+                />
+                <div
+                  className="course-run-studio-url"
+                >
+                  Studio URL - 
+                  <a
+                    href="undefined/course/edX101+DemoX"
+                  >
+                    edX101+DemoX
+                  </a>
+                </div>
+              </div>
+            }
+          >
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Start date"
+                />
+              }
+              name="[object Object].start"
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="End date"
+                />
+              }
+              name="[object Object].end"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              required={true}
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Go Live date"
+                />
+              }
+              name="[object Object].go_live_date"
+              normalize={[Function]}
+              placeholder="mm/dd/yyyy"
+              type="date"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Minimum effort"
+                />
+              }
+              name="[object Object].min_effort"
+              required={null}
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Maximum effort"
+                />
+              }
+              name="[object Object].max_effort"
+              required={null}
+              type="number"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Course pacing"
+                />
+              }
+              name="[object Object].pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Content language"
+                />
+              }
+              name="[object Object].content_language"
+              options={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              required={null}
+              type="text"
+            />
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Transcript languages"
+            />
+            <FieldArray
+              component={[Function]}
+              disabled={false}
+              languageOptions={
+                Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ]
+              }
+              name="[object Object].transcript_languages"
+              required={null}
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Length"
+                />
+              }
+              name="[object Object].weeks_to_complete"
+              required={null}
+              type="number"
+            />
+            <FieldLabel
+              className="mb-2"
+              helpText=""
+              id={null}
+              required={false}
+              requiredForSubmit={true}
+              text="Staff"
+            />
+            <Field
+              component={[Function]}
+              courseRunKey="edX101+DemoX"
+              disabled={false}
+              name="[object Object].staff"
+              passedProps={Object {}}
+              required={null}
+            />
+            <ButtonToolbar
+              className=""
+            >
+              <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Publish",
+                  }
+                }
+                onClick={[Function]}
+              />
+            </ButtonToolbar>
+          </t>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "collapsible-run-[object Object]",
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Start date"
+                  />
+                }
+                name="[object Object].start"
+                placeholder="mm/dd/yyyy"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="End date"
+                  />
+                }
+                name="[object Object].end"
+                normalize={[Function]}
+                placeholder="mm/dd/yyyy"
+                required={true}
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Go Live date"
+                  />
+                }
+                name="[object Object].go_live_date"
+                normalize={[Function]}
+                placeholder="mm/dd/yyyy"
+                type="date"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Minimum effort"
+                  />
+                }
+                name="[object Object].min_effort"
+                required={null}
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Maximum effort"
+                  />
+                }
+                name="[object Object].max_effort"
+                required={null}
+                type="number"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Course pacing"
+                  />
+                }
+                name="[object Object].pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                required={null}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Content language"
+                  />
+                }
+                name="[object Object].content_language"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                required={null}
+                type="text"
+              />,
+              <FieldLabel
+                className="mb-2"
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Transcript languages"
+              />,
+              <FieldArray
+                component={[Function]}
+                disabled={false}
+                languageOptions={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                name="[object Object].transcript_languages"
+                required={null}
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={false}
+                    requiredForSubmit={true}
+                    text="Length"
+                  />
+                }
+                name="[object Object].weeks_to_complete"
+                required={null}
+                type="number"
+              />,
+              <FieldLabel
+                className="mb-2"
+                helpText=""
+                id={null}
+                required={false}
+                requiredForSubmit={true}
+                text="Staff"
+              />,
+              <Field
+                component={[Function]}
+                courseRunKey="edX101+DemoX"
+                disabled={false}
+                name="[object Object].staff"
+                passedProps={Object {}}
+                required={null}
+              />,
+              <ButtonToolbar
+                className=""
+              >
+                <ActionButton
+                  className=""
+                  disabled={false}
+                  labels={
+                    Object {
+                      "default": "Publish",
+                    }
+                  }
+                  onClick={[Function]}
+                />
+              </ButtonToolbar>,
+            ],
+            "expandedTitle": undefined,
+            "iconId": "collapsible-icon-[object Object]",
+            "isCollapsible": undefined,
+            "isOpen": false,
+            "onToggle": [Function],
+            "title": <div
+              className="course-run-label"
+            >
+              <span>
+                Course run starting on Jan 1st 2000 - Self Paced
+              </span>
+              <Pill
+                statuses={
+                  Array [
+                    "published",
+                  ]
+                }
+              />
+              <div
+                className="course-run-studio-url"
+              >
+                Studio URL - 
+                <a
+                  href="undefined/course/edX101+DemoX"
+                >
+                  edX101+DemoX
+                </a>
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Start date"
+                />,
+                "name": "[object Object].start",
+                "placeholder": "mm/dd/yyyy",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="End date"
+                />,
+                "name": "[object Object].end",
+                "normalize": [Function],
+                "placeholder": "mm/dd/yyyy",
+                "required": true,
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Go Live date"
+                />,
+                "name": "[object Object].go_live_date",
+                "normalize": [Function],
+                "placeholder": "mm/dd/yyyy",
+                "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Minimum effort"
+                />,
+                "name": "[object Object].min_effort",
+                "required": null,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Maximum effort"
+                />,
+                "name": "[object Object].max_effort",
+                "required": null,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Course pacing"
+                />,
+                "name": "[object Object].pacing_type",
+                "options": Array [
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ],
+                "required": null,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Content language"
+                />,
+                "name": "[object Object].content_language",
+                "options": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "required": null,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "helpText": "",
+                "id": null,
+                "required": false,
+                "requiredForSubmit": true,
+                "text": "Transcript languages",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "languageOptions": Array [
+                  Object {
+                    "label": "Arabic - United Arab Emirates",
+                    "value": "ar-ae",
+                  },
+                ],
+                "name": "[object Object].transcript_languages",
+                "required": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={false}
+                  requiredForSubmit={true}
+                  text="Length"
+                />,
+                "name": "[object Object].weeks_to_complete",
+                "required": null,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "mb-2",
+                "helpText": "",
+                "id": null,
+                "required": false,
+                "requiredForSubmit": true,
+                "text": "Staff",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "courseRunKey": "edX101+DemoX",
+                "disabled": false,
+                "name": "[object Object].staff",
+                "passedProps": Object {},
+                "required": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <ActionButton
+                  className=""
+                  disabled={false}
+                  labels={
+                    Object {
+                      "default": "Publish",
+                    }
+                  }
+                  onClick={[Function]}
+                />,
+                "className": "",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "",
+                  "disabled": false,
+                  "labels": Object {
+                    "default": "Publish",
+                  },
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
 exports[`Collapsible Course Run Fields renders correctly with no fields 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BaseCollapsibleCourseRunFields
+  Symbol(enzyme.__unrendered__): <CollapsibleCourseRunFields
     courseInReview={false}
     courseRuns={Array []}
-    dispatch={[Function]}
     fields={Array []}
     formId="test-form"
-    handleCourseRunSubmit={[MockFunction]}
+    handleSubmit={[MockFunction]}
+    isSubmittingForReview={false}
     languageOptions={Array []}
     pacingTypeOptions={Array []}
     passedProps={Object {}}
     submitting={false}
+    targetRun={null}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

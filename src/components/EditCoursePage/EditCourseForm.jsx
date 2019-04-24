@@ -87,6 +87,7 @@ export class BaseEditCourseForm extends React.Component {
       courseInReview,
       courseStatuses,
       id,
+      isSubmittingForReview,
     } = this.props;
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
@@ -112,7 +113,7 @@ export class BaseEditCourseForm extends React.Component {
 
     return (
       <div className="edit-course-form">
-        <form onSubmit={handleSubmit} id={id}>
+        <form id={id}>
           <FieldLabel text="Course" className="mt-4 mb-2" />
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
@@ -169,14 +170,15 @@ export class BaseEditCourseForm extends React.Component {
               maxChars={500}
               id="sdesc"
               disabled={courseInReview}
+              required={isSubmittingForReview}
             />
             <Field
               name="full_description"
               component={RichEditor}
               label={<FieldLabel text="Long description" requiredForSubmit />}
               maxChars={2500}
-              id="ldesc"
               disabled={courseInReview}
+              required={isSubmittingForReview}
             />
             <Field
               name="outcome"
@@ -185,6 +187,7 @@ export class BaseEditCourseForm extends React.Component {
               maxChars={2500}
               id="outcome"
               disabled={courseInReview}
+              required={isSubmittingForReview}
             />
             <Field
               name="subjectPrimary"
@@ -192,6 +195,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Primary subject" requiredForSubmit />}
               options={subjectOptions}
               disabled={courseInReview}
+              required={isSubmittingForReview}
             />
             <Field
               name="subjectSecondary"
@@ -214,6 +218,7 @@ export class BaseEditCourseForm extends React.Component {
               id="image"
               className="course-image"
               disabled={courseInReview}
+              required={isSubmittingForReview}
             />
             <Field
               name="prerequisites_raw"
@@ -229,6 +234,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Course level" requiredForSubmit />}
               options={levelTypeOptions}
               disabled={courseInReview}
+              required={isSubmittingForReview}
             />
             <Field
               name="learner_testimonials"
@@ -288,6 +294,7 @@ export class BaseEditCourseForm extends React.Component {
                   type="number"
                   label={<FieldLabel text="Price" required requiredForSubmit />}
                   disabled={courseInReview}
+                  required={isSubmittingForReview}
                 />
               </React.Fragment>
             )}
@@ -319,6 +326,14 @@ export class BaseEditCourseForm extends React.Component {
                 complete: 'Course Saved',
               }}
               state={submitState}
+              onClick={(event) => {
+                /*
+                *  Prevent default submission and pass the targeted course run up through the
+                *  handler to manually validate fields based off the run status.
+                */
+                event.preventDefault();
+                handleSubmit();
+              }}
             />
           </ButtonToolbar>
         </form>
@@ -326,10 +341,6 @@ export class BaseEditCourseForm extends React.Component {
     );
   }
 }
-
-BaseEditCourseForm.defaultProps = {
-  entitlement: false,
-};
 
 BaseEditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
@@ -352,6 +363,7 @@ BaseEditCourseForm.propTypes = {
   courseInReview: PropTypes.bool,
   courseStatuses: PropTypes.arrayOf(PropTypes.string),
   id: PropTypes.string.isRequired,
+  isSubmittingForReview: PropTypes.bool,
 };
 
 BaseEditCourseForm.defaultProps = {
@@ -359,6 +371,8 @@ BaseEditCourseForm.defaultProps = {
   pristine: true,
   courseInReview: false,
   courseStatuses: [],
+  isSubmittingForReview: false,
+  entitlement: false,
 };
 
 const EditCourseForm = compose(

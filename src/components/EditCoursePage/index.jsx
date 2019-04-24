@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { submit } from 'redux-form';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
@@ -9,6 +10,7 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
+import store from '../../data/store';
 
 
 class EditCoursePage extends React.Component {
@@ -17,10 +19,11 @@ class EditCoursePage extends React.Component {
     this.state = {
       startedFetching: false,
       targetRun: null,
+      isSubmittingForReview: false,
     };
     this.handleCourseEdit = this.handleCourseEdit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
-    this.handleCourseRunSubmit = this.handleCourseRunSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +35,10 @@ class EditCoursePage extends React.Component {
 
   setStartedFetching() {
     this.setState({ startedFetching: true });
+  }
+
+  getFormId() {
+    return `edit-course-form-${this.props.courseInfo.data.uuid}`;
   }
 
   prepareCourseRuns(courseRuns) {
@@ -48,9 +55,6 @@ class EditCoursePage extends React.Component {
       submittedRun.draft = false;
     }
     /* eslint-enable no-param-reassign */
-
-    // Reset the target run after we handle setting it as not a draft
-    this.setState({ targetRun: null });
   }
 
   prepareCourse(courseData) {
@@ -108,8 +112,32 @@ class EditCoursePage extends React.Component {
     return editCourse(courseData, modifiedCourseRuns);
   }
 
-  handleCourseRunSubmit(targetRun) {
-    this.setState({ targetRun });
+  /**
+   * Sets which course run triggered submission and whether or not it is submitting for review
+   * before triggering manual form validation.
+   * @param {Object} targetRun - the course run that triggered submission
+   */
+  handleSubmit(targetRun = null) {
+    this.setState({
+      targetRun,
+      isSubmittingForReview: !!targetRun && targetRun.status !== PUBLISHED,
+    }, () => this.validateSubmit());
+  }
+
+  /**
+   *  Manually check the form for validity so that we can validate different fields depending
+   *  on if a course run is being submitted for review, and then trigger redux-form's submit if it
+   *  passes validation. If validation fails, we report the form issues back without triggering
+   *  submission.
+   */
+  validateSubmit() {
+    const formId = this.getFormId();
+    const form = document.getElementById(formId);
+    if (form.checkValidity()) {
+      store.dispatch(submit(formId));
+    } else {
+      form.reportValidity();
+    }
   }
 
   render() {
@@ -152,7 +180,7 @@ class EditCoursePage extends React.Component {
       courseOptions,
       courseRunOptions,
     } = this.props;
-    const { startedFetching } = this.state;
+    const { startedFetching, isSubmittingForReview, targetRun } = this.state;
 
     const courseStatuses = [];
     const courseInReview = course_runs && course_runs.some(courseRun =>
@@ -232,9 +260,9 @@ class EditCoursePage extends React.Component {
           { showForm && (
             <div>
               <EditCourseForm
-                id={`edit-course-form-${uuid}`}
+                id={this.getFormId()}
                 onSubmit={this.handleCourseEdit}
-                handleCourseRunSubmit={this.handleCourseRunSubmit}
+                handleSubmit={this.handleSubmit}
                 initialValues={{
                   title,
                   short_description,
@@ -264,6 +292,8 @@ class EditCoursePage extends React.Component {
                 courseInReview={courseInReview}
                 courseStatuses={courseStatuses}
                 owners={owners}
+                isSubmittingForReview={isSubmittingForReview}
+                targetRun={targetRun}
                 {...this.props}
               />
             </div>

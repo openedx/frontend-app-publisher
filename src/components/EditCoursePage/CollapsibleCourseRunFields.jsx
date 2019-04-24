@@ -1,9 +1,8 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Field, FieldArray, submit } from 'redux-form';
+import { Field, FieldArray } from 'redux-form';
 import { Collapsible } from '@edx/paragon';
-import { connect } from 'react-redux';
 
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
@@ -59,137 +58,144 @@ const formatCourseRunTitle = (courseRun) => {
 
 const getDateString = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 
-export const BaseCollapsibleCourseRunFields = ({
+const CollapsibleCourseRunFields = ({
   fields,
   courseRuns,
   languageOptions,
   pacingTypeOptions,
   courseInReview,
-  handleCourseRunSubmit,
-  dispatch,
+  handleSubmit,
   formId,
+  isSubmittingForReview,
+  targetRun,
   submitting,
   ...passedProps
 }) => (
   <div>
-    {fields.map((courseRun, index) => (
-      <Collapsible
-        title={formatCourseRunTitle(courseRuns[index])}
-        key={`collapsible-run-${courseRun}`}
-        iconId={`collapsible-icon-${courseRun}`}
-      >
-        <Field
-          name={`${courseRun}.start`}
-          type="date"
-          component={RenderInputTextField}
-          format={value => getDateString(value)}
-          label={<FieldLabel text="Start date" required requiredForSubmit />}
-          placeholder="mm/dd/yyyy"
-          required
-          disabled={courseInReview}
-        />
-        <Field
-          name={`${courseRun}.end`}
-          type="date"
-          component={RenderInputTextField}
-          format={value => getDateString(value)}
-          normalize={value => moment(value).toISOString()}
-          label={<FieldLabel text="End date" required requiredForSubmit />}
-          placeholder="mm/dd/yyyy"
-          required
-          disabled={courseInReview}
-        />
-        <Field
-          name={`${courseRun}.go_live_date`}
-          type="date"
-          component={RenderInputTextField}
-          format={value => getDateString(value)}
-          normalize={value => moment(value).toISOString()}
-          label={<FieldLabel text="Publish date" />}
-          placeholder="mm/dd/yyyy"
-          disabled={courseInReview}
-        />
-        <Field
-          name={`${courseRun}.min_effort`}
-          type="number"
-          component={RenderInputTextField}
-          label={<FieldLabel text="Minimum effort" requiredForSubmit />}
-          disabled={courseInReview}
-        />
-        <Field
-          name={`${courseRun}.max_effort`}
-          type="number"
-          component={RenderInputTextField}
-          label={<FieldLabel text="Maximum effort" requiredForSubmit />}
-          disabled={courseInReview}
-        />
-        <Field
-          name={`${courseRun}.pacing_type`}
-          type="text"
-          component={RenderSelectField}
-          options={pacingTypeOptions}
-          label={<FieldLabel text="Course pacing" requiredForSubmit />}
-          disabled={courseInReview}
-        />
-        <Field
-          name={`${courseRun}.content_language`}
-          type="text"
-          component={RenderSelectField}
-          options={languageOptions}
-          label={<FieldLabel text="Content language" requiredForSubmit />}
-          disabled={courseInReview}
-        />
-        <FieldLabel text="Transcript languages" className="mb-2" requiredForSubmit />
-        <FieldArray
-          name={`${courseRun}.transcript_languages`}
-          component={TranscriptLanguage}
-          languageOptions={languageOptions}
-          disabled={courseInReview}
-        />
-        <Field
-          name={`${courseRun}.weeks_to_complete`}
-          type="number"
-          component={RenderInputTextField}
-          label={<FieldLabel text="Length" requiredForSubmit />}
-          disabled={courseInReview}
-        />
-        <FieldLabel text="Staff" className="mb-2" requiredForSubmit />
-        <Field
-          name={`${courseRun}.staff`}
-          component={StaffList}
-          disabled={courseInReview}
-          courseRunKey={courseRuns[index].key}
-          {...passedProps}
-        />
-        <ButtonToolbar>
-          <ActionButton
-            disabled={courseInReview || submitting}
-            onClick={(event) => {
-              /*
-              *  Manually check the form for validity so that we can pass the targeted course run up
-              *  through the handler and redux-form's submit if it passes validation. If validation
-              *  fails, report the form issues back without triggering submission.
-              */
-              event.preventDefault();
-              const form = document.getElementById(formId);
-              if (form.checkValidity()) {
-                handleCourseRunSubmit(courseRuns[index]);
-                dispatch(submit(formId));
-              } else {
-                form.reportValidity();
-              }
-            }}
-            labels={{
-              default: courseRuns[index].status === PUBLISHED ? 'Publish' : 'Submit for Review',
-            }}
+    {fields.map((courseRun, index) => {
+      // Checks if the current course run is the one triggering submission for review
+      const courseRunSubmitting = isSubmittingForReview && targetRun &&
+        (targetRun.key === courseRuns[index].key);
+
+      return (
+        <Collapsible
+          title={formatCourseRunTitle(courseRuns[index])}
+          key={`collapsible-run-${courseRun}`}
+          iconId={`collapsible-icon-${courseRun}`}
+        >
+          <Field
+            name={`${courseRun}.start`}
+            type="date"
+            component={RenderInputTextField}
+            format={value => getDateString(value)}
+            label={<FieldLabel text="Start date" required requiredForSubmit />}
+            placeholder="mm/dd/yyyy"
+            required
+            disabled={courseInReview}
           />
-        </ButtonToolbar>
-      </Collapsible>
-    ))}
+          <Field
+            name={`${courseRun}.end`}
+            type="date"
+            component={RenderInputTextField}
+            format={value => getDateString(value)}
+            normalize={value => moment(value).toISOString()}
+            label={<FieldLabel text="End date" required requiredForSubmit />}
+            placeholder="mm/dd/yyyy"
+            required
+            disabled={courseInReview}
+          />
+          <Field
+            name={`${courseRun}.go_live_date`}
+            type="date"
+            component={RenderInputTextField}
+            format={value => getDateString(value)}
+            normalize={value => moment(value).toISOString()}
+            label={<FieldLabel text="Go Live date" />}
+            placeholder="mm/dd/yyyy"
+            disabled={courseInReview}
+          />
+          <Field
+            name={`${courseRun}.min_effort`}
+            type="number"
+            component={RenderInputTextField}
+            label={<FieldLabel text="Minimum effort" requiredForSubmit />}
+            disabled={courseInReview}
+            required={courseRunSubmitting}
+          />
+          <Field
+            name={`${courseRun}.max_effort`}
+            type="number"
+            component={RenderInputTextField}
+            label={<FieldLabel text="Maximum effort" requiredForSubmit />}
+            disabled={courseInReview}
+            required={courseRunSubmitting}
+          />
+          <Field
+            name={`${courseRun}.pacing_type`}
+            type="text"
+            component={RenderSelectField}
+            options={pacingTypeOptions}
+            label={<FieldLabel text="Course pacing" requiredForSubmit />}
+            disabled={courseInReview}
+            required={courseRunSubmitting}
+          />
+          <Field
+            name={`${courseRun}.content_language`}
+            type="text"
+            component={RenderSelectField}
+            options={languageOptions}
+            label={<FieldLabel text="Content language" requiredForSubmit />}
+            disabled={courseInReview}
+            required={courseRunSubmitting}
+          />
+          <FieldLabel text="Transcript languages" className="mb-2" requiredForSubmit />
+          <FieldArray
+            name={`${courseRun}.transcript_languages`}
+            component={TranscriptLanguage}
+            languageOptions={languageOptions}
+            disabled={courseInReview}
+            required={courseRunSubmitting}
+          />
+          <Field
+            name={`${courseRun}.weeks_to_complete`}
+            type="number"
+            component={RenderInputTextField}
+            label={<FieldLabel text="Length" requiredForSubmit />}
+            disabled={courseInReview}
+            required={courseRunSubmitting}
+          />
+          <FieldLabel text="Staff" className="mb-2" requiredForSubmit />
+          <Field
+            name={`${courseRun}.staff`}
+            component={StaffList}
+            disabled={courseInReview}
+            courseRunKey={courseRuns[index].key}
+            required={courseRunSubmitting}
+            {...passedProps}
+          />
+          <ButtonToolbar>
+            <ActionButton
+              disabled={courseInReview || submitting}
+              onClick={(event) => {
+                /*
+                *  Prevent default submission and pass the targeted course run up through the
+                *  handler to manually validate fields based off the run status.
+                */
+                event.preventDefault();
+                handleSubmit(courseRuns[index]);
+              }}
+              labels={{
+                default: courseRuns[index].status === PUBLISHED ? 'Publish' : 'Submit for Review',
+              }}
+            />
+          </ButtonToolbar>
+        </Collapsible>
+      );
+    })}
   </div>
 );
 
-BaseCollapsibleCourseRunFields.propTypes = {
+CollapsibleCourseRunFields.propTypes = {
   fields: PropTypes.shape({
     remove: PropTypes.func,
   }).isRequired,
@@ -204,18 +210,20 @@ BaseCollapsibleCourseRunFields.propTypes = {
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   courseInReview: PropTypes.bool,
   submitting: PropTypes.bool,
-  handleCourseRunSubmit: PropTypes.func.isRequired,
-  dispatch: PropTypes.func,
+  handleSubmit: PropTypes.func.isRequired,
   formId: PropTypes.string.isRequired,
   passedProps: PropTypes.shape({}),
+  isSubmittingForReview: PropTypes.bool,
+  targetRun: PropTypes.shape({}),
 };
 
-BaseCollapsibleCourseRunFields.defaultProps = {
+CollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
   courseInReview: false,
   submitting: false,
-  dispatch: () => {},
   passedProps: {},
+  isSubmittingForReview: false,
+  targetRun: null,
 };
 
-export default connect()(BaseCollapsibleCourseRunFields);
+export default CollapsibleCourseRunFields;
