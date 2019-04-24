@@ -105,7 +105,7 @@ export const BaseCollapsibleCourseRunFields = ({
           component={RenderInputTextField}
           format={value => getDateString(value)}
           normalize={value => moment(value).toISOString()}
-          label={<FieldLabel text="Go Live date" />}
+          label={<FieldLabel text="Publish date" />}
           placeholder="mm/dd/yyyy"
           disabled={courseInReview}
         />

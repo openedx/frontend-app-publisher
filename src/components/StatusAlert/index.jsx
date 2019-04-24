@@ -47,7 +47,7 @@ const StatusAlert = (props) => {
 StatusAlert.propTypes = {
   alertType: PropTypes.string.isRequired,
   message: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-  className: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
   iconClassNames: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
   dismissible: PropTypes.bool,
@@ -55,7 +55,7 @@ StatusAlert.propTypes = {
 };
 
 StatusAlert.defaultProps = {
-  className: [],
+  className: '',
   iconClassNames: [],
   title: null,
   dismissible: false,

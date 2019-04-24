@@ -13,11 +13,11 @@ describe('CreateCourseRunForm', () => {
       title="Test Course"
       uuid="00000000-0000-0000-0000-000000000001"
       pristine
-      submitting={false}
+      isCreating={false}
     />);
     expect(component).toMatchSnapshot();
   });
-  it('renders html correctly when submitting and creating', () => {
+  it('renders html correctly when creating', () => {
     const component = shallow(<BaseCreateCourseRunForm
       handleSubmit={() => {}}
       initialValues={{
@@ -26,7 +26,7 @@ describe('CreateCourseRunForm', () => {
       title="Test Course"
       uuid="00000000-0000-0000-0000-000000000001"
       pristine={false}
-      submitting
+      isCreating
     />);
     expect(component).toMatchSnapshot();
   });

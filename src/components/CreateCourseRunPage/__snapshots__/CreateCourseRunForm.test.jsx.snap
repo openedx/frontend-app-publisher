@@ -10,8 +10,8 @@ ShallowWrapper {
         "course": "edx+test101",
       }
     }
+    isCreating={false}
     pristine={true}
-    submitting={false}
     title="Test Course"
     uuid="00000000-0000-0000-0000-000000000001"
   />,
@@ -90,6 +90,7 @@ ShallowWrapper {
             >
               <button
                 className="btn btn-outline-primary"
+                disabled={false}
               >
                 Cancel
               </button>
@@ -218,6 +219,7 @@ ShallowWrapper {
               >
                 <button
                   className="btn btn-outline-primary"
+                  disabled={false}
                 >
                   Cancel
                 </button>
@@ -291,6 +293,7 @@ ShallowWrapper {
                 >
                   <button
                     className="btn btn-outline-primary"
+                    disabled={false}
                   >
                     Cancel
                   </button>
@@ -318,6 +321,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <button
                     className="btn btn-outline-primary"
+                    disabled={false}
                   >
                     Cancel
                   </button>,
@@ -332,7 +336,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Cancel",
                     "className": "btn btn-outline-primary",
-                    "disabled": undefined,
+                    "disabled": false,
                   },
                   "ref": null,
                   "rendered": "Cancel",
@@ -433,6 +437,7 @@ ShallowWrapper {
               >
                 <button
                   className="btn btn-outline-primary"
+                  disabled={false}
                 >
                   Cancel
                 </button>
@@ -561,6 +566,7 @@ ShallowWrapper {
                 >
                   <button
                     className="btn btn-outline-primary"
+                    disabled={false}
                   >
                     Cancel
                   </button>
@@ -634,6 +640,7 @@ ShallowWrapper {
                   >
                     <button
                       className="btn btn-outline-primary"
+                      disabled={false}
                     >
                       Cancel
                     </button>
@@ -661,6 +668,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <button
                       className="btn btn-outline-primary"
+                      disabled={false}
                     >
                       Cancel
                     </button>,
@@ -675,7 +683,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Cancel",
                       "className": "btn btn-outline-primary",
-                      "disabled": undefined,
+                      "disabled": false,
                     },
                     "ref": null,
                     "rendered": "Cancel",
@@ -736,7 +744,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`CreateCourseRunForm renders html correctly when submitting and creating 1`] = `
+exports[`CreateCourseRunForm renders html correctly when creating 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseCreateCourseRunForm
@@ -746,8 +754,8 @@ ShallowWrapper {
         "course": "edx+test101",
       }
     }
+    isCreating={true}
     pristine={false}
-    submitting={true}
     title="Test Course"
     uuid="00000000-0000-0000-0000-000000000001"
   />,
@@ -826,6 +834,7 @@ ShallowWrapper {
             >
               <button
                 className="btn btn-outline-primary"
+                disabled={true}
               >
                 Cancel
               </button>
@@ -839,7 +848,7 @@ ShallowWrapper {
                   "pending": "Creating",
                 }
               }
-              state="default"
+              state="pending"
             />
           </ButtonToolbar>
         </form>,
@@ -954,6 +963,7 @@ ShallowWrapper {
               >
                 <button
                   className="btn btn-outline-primary"
+                  disabled={true}
                 >
                   Cancel
                 </button>
@@ -967,7 +977,7 @@ ShallowWrapper {
                     "pending": "Creating",
                   }
                 }
-                state="default"
+                state="pending"
               />
             </ButtonToolbar>,
           ],
@@ -1027,6 +1037,7 @@ ShallowWrapper {
                 >
                   <button
                     className="btn btn-outline-primary"
+                    disabled={true}
                   >
                     Cancel
                   </button>
@@ -1040,7 +1051,7 @@ ShallowWrapper {
                       "pending": "Creating",
                     }
                   }
-                  state="default"
+                  state="pending"
                 />,
               ],
               "className": "",
@@ -1054,6 +1065,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <button
                     className="btn btn-outline-primary"
+                    disabled={true}
                   >
                     Cancel
                   </button>,
@@ -1068,7 +1080,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Cancel",
                     "className": "btn btn-outline-primary",
-                    "disabled": undefined,
+                    "disabled": true,
                   },
                   "ref": null,
                   "rendered": "Cancel",
@@ -1087,7 +1099,7 @@ ShallowWrapper {
                     "default": "Create",
                     "pending": "Creating",
                   },
-                  "state": "default",
+                  "state": "pending",
                 },
                 "ref": null,
                 "rendered": null,
@@ -1169,6 +1181,7 @@ ShallowWrapper {
               >
                 <button
                   className="btn btn-outline-primary"
+                  disabled={true}
                 >
                   Cancel
                 </button>
@@ -1182,7 +1195,7 @@ ShallowWrapper {
                     "pending": "Creating",
                   }
                 }
-                state="default"
+                state="pending"
               />
             </ButtonToolbar>
           </form>,
@@ -1297,6 +1310,7 @@ ShallowWrapper {
                 >
                   <button
                     className="btn btn-outline-primary"
+                    disabled={true}
                   >
                     Cancel
                   </button>
@@ -1310,7 +1324,7 @@ ShallowWrapper {
                       "pending": "Creating",
                     }
                   }
-                  state="default"
+                  state="pending"
                 />
               </ButtonToolbar>,
             ],
@@ -1370,6 +1384,7 @@ ShallowWrapper {
                   >
                     <button
                       className="btn btn-outline-primary"
+                      disabled={true}
                     >
                       Cancel
                     </button>
@@ -1383,7 +1398,7 @@ ShallowWrapper {
                         "pending": "Creating",
                       }
                     }
-                    state="default"
+                    state="pending"
                   />,
                 ],
                 "className": "",
@@ -1397,6 +1412,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <button
                       className="btn btn-outline-primary"
+                      disabled={true}
                     >
                       Cancel
                     </button>,
@@ -1411,7 +1427,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Cancel",
                       "className": "btn btn-outline-primary",
-                      "disabled": undefined,
+                      "disabled": true,
                     },
                     "ref": null,
                     "rendered": "Cancel",
@@ -1430,7 +1446,7 @@ ShallowWrapper {
                       "default": "Create",
                       "pending": "Creating",
                     },
-                    "state": "default",
+                    "state": "pending",
                   },
                   "ref": null,
                   "rendered": null,
