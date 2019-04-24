@@ -48,6 +48,7 @@ const BaseStafferForm = ({
           component={ImageUpload}
           label={<FieldLabel text="Image" required />}
           id="profile_image"
+          className="staffer-image"
           required={isCreateForm}
         />
         <Field

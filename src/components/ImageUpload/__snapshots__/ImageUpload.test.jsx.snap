@@ -4,6 +4,7 @@ exports[`ImageUpload shows an image upload with no prior image 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ImageUpload
+    className=""
     id="image-no-prior"
     input={
       Object {
@@ -30,7 +31,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <label
-          className="col-12 p-0"
+          className="w-100 p-0"
           htmlFor="image-no-prior"
         >
           Course Image: *
@@ -38,6 +39,7 @@ ShallowWrapper {
         "  ",
         <img
           alt=""
+          className="uploaded-image"
           src={null}
         />,
         <input
@@ -58,7 +60,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Course Image: *",
-          "className": "col-12 p-0",
+          "className": "w-100 p-0",
           "htmlFor": "image-no-prior",
         },
         "ref": null,
@@ -72,6 +74,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "alt": "",
+          "className": "uploaded-image",
           "src": null,
         },
         "ref": null,
@@ -104,7 +107,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <label
-            className="col-12 p-0"
+            className="w-100 p-0"
             htmlFor="image-no-prior"
           >
             Course Image: *
@@ -112,6 +115,7 @@ ShallowWrapper {
           "  ",
           <img
             alt=""
+            className="uploaded-image"
             src={null}
           />,
           <input
@@ -132,7 +136,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Course Image: *",
-            "className": "col-12 p-0",
+            "className": "w-100 p-0",
             "htmlFor": "image-no-prior",
           },
           "ref": null,
@@ -146,6 +150,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "alt": "",
+            "className": "uploaded-image",
             "src": null,
           },
           "ref": null,
@@ -202,6 +207,7 @@ exports[`ImageUpload shows an image upload with prior image 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ImageUpload
+    className=""
     id="image-with-prior"
     input={
       Object {
@@ -232,7 +238,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <label
-          className="col-12 p-0"
+          className="w-100 p-0"
           htmlFor="image-with-prior"
         >
           <strong>
@@ -242,6 +248,7 @@ ShallowWrapper {
         "  ",
         <img
           alt=""
+          className="uploaded-image"
           src="http://www.image.uploaded.source/view/image"
         />,
         <input
@@ -264,7 +271,7 @@ ShallowWrapper {
           "children": <strong>
             Course Image: *
           </strong>,
-          "className": "col-12 p-0",
+          "className": "w-100 p-0",
           "htmlFor": "image-with-prior",
         },
         "ref": null,
@@ -288,6 +295,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "alt": "",
+          "className": "uploaded-image",
           "src": "http://www.image.uploaded.source/view/image",
         },
         "ref": null,
@@ -320,7 +328,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <label
-            className="col-12 p-0"
+            className="w-100 p-0"
             htmlFor="image-with-prior"
           >
             <strong>
@@ -330,6 +338,7 @@ ShallowWrapper {
           "  ",
           <img
             alt=""
+            className="uploaded-image"
             src="http://www.image.uploaded.source/view/image"
           />,
           <input
@@ -352,7 +361,7 @@ ShallowWrapper {
             "children": <strong>
               Course Image: *
             </strong>,
-            "className": "col-12 p-0",
+            "className": "w-100 p-0",
             "htmlFor": "image-with-prior",
           },
           "ref": null,
@@ -376,6 +385,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "alt": "",
+            "className": "uploaded-image",
             "src": "http://www.image.uploaded.source/view/image",
           },
           "ref": null,
