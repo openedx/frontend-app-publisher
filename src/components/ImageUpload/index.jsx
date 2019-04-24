@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 
 class ImageUpload extends React.Component {
@@ -27,15 +28,16 @@ class ImageUpload extends React.Component {
 
   render() {
     const {
+      className,
       id,
       label,
       required,
     } = this.props;
 
     return (
-      <div className="form-group">
-        <label htmlFor={id} className="col-12 p-0">{label}</label>  {/* eslint-disable-line jsx-a11y/label-has-for */}
-        <img src={this.state.value} alt="" />
+      <div className={classNames('form-group', className)}>
+        <label htmlFor={id} className="w-100 p-0">{label}</label>  {/* eslint-disable-line jsx-a11y/label-has-for */}
+        <img src={this.state.value} alt="" className="uploaded-image" />
         <input id={id} type="file" accept="image/*" required={required} onChange={this.handleFilePicked} />
       </div>
     );
@@ -43,6 +45,7 @@ class ImageUpload extends React.Component {
 }
 
 ImageUpload.propTypes = {
+  className: PropTypes.string,
   id: PropTypes.string.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   input: PropTypes.shape({
@@ -53,6 +56,7 @@ ImageUpload.propTypes = {
 };
 
 ImageUpload.defaultProps = {
+  className: '',
   required: false,
 };
 

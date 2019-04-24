@@ -180,6 +180,7 @@ export class BaseEditCourseForm extends React.Component {
               component={ImageUpload}
               label={<FieldLabel text="Image" requiredForSubmit />}
               id="image"
+              className="course-image"
               disabled={courseInReview}
             />
             <Field
