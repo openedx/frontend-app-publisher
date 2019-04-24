@@ -1,6 +1,6 @@
 import { push } from 'connected-react-router';
 
-import { getErrorMessage } from '../../utils';
+import { getErrorMessages } from '../../utils';
 
 import {
   REQUEST_COURSE_INFO_FAIL,
@@ -72,7 +72,7 @@ function fetchCourseInfo(id) {
   return (dispatch) => {
     // We only support UUIDs right now, not course keys
     if (!UUID_REGEX.test(id)) {
-      const error = `Could not get course information. ${id} is not a valid course UUID.`;
+      const error = [`Could not get course information. ${id} is not a valid course UUID.`];
       dispatch(requestCourseInfoFail(id, error));
       return Promise.resolve(); // early exit with empty promise
     }
@@ -87,7 +87,7 @@ function fetchCourseInfo(id) {
       .catch((error) => {
         dispatch(requestCourseInfoFail(
           id,
-          `Could not get course information. ${getErrorMessage(error)}.`,
+          ['Could not get course information.'].concat(getErrorMessages(error)),
         ));
       });
   };
@@ -97,7 +97,7 @@ function createCourseRun(course, courseRunData) {
   return (dispatch) => {
     dispatch(createNewCourseRun());
     if (!course.key) {
-      dispatch(createCourseRunFail('Course Run create failed, please try again or contact support. Course create incomplete.'));
+      dispatch(createCourseRunFail(['Course Run create failed, please try again or contact support. Course create incomplete.']));
       return null;
     }
 
@@ -113,7 +113,7 @@ function createCourseRun(course, courseRunData) {
         return dispatch(push(`/courses/${course.uuid}/edit/`));
       })
       .catch((error) => {
-        dispatch(createCourseRunFail(`Course Run create failed, please try again or contact support. ${getErrorMessage(error)}.`));
+        dispatch(createCourseRunFail(['Course Run create failed, please try again or contact support.'].concat(getErrorMessages(error))));
       });
   };
 }
@@ -129,7 +129,7 @@ function createCourse(courseData, courseRunData) {
         dispatch(createCourseRun(course, courseRunData));
       })
       .catch((error) => {
-        dispatch(createCourseFail(`Course create failed, please try again or contact support. ${getErrorMessage(error)}.`));
+        dispatch(createCourseFail(['Course create failed, please try again or contact support.'].concat(getErrorMessages(error))));
       });
   };
 }
@@ -145,7 +145,7 @@ function editCourse(courseData, courseRunData) {
         dispatch(editCourseSuccess(course));
       })
       .catch((error) => {
-        dispatch(editCourseFail(`Course edit failed, please try again or contact support. ${getErrorMessage(error)}.`));
+        dispatch(editCourseFail(['Course edit failed, please try again or contact support.'].concat(getErrorMessages(error))));
       });
   };
 }

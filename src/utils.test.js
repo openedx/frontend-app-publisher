@@ -21,3 +21,48 @@ describe('getCourseNumber', () => {
     expect(utils.getCourseNumber(courseKeyFragmentOld)).toEqual(expected);
   });
 });
+
+describe('getCourseError', () => {
+  it('returns a string from a string', () => {
+    const testError = 'Test error message';
+    expect(utils.getErrorMessages(testError)).toEqual(['Test error message.']);
+  });
+
+  it('returns a string from a JS error', () => {
+    const testError = new Error('Test error message');
+    expect(utils.getErrorMessages(testError)).toEqual(['Test error message.']);
+  });
+
+  it('returns an array of strings from a DRF-like error ', () => {
+    const testResponse = {
+      response: {
+        data: {
+          key: 'value',
+        },
+        message: 'Response message',
+      },
+      message: 'Error message',
+    };
+    expect(utils.getErrorMessages(testResponse)).toEqual(['key: value.']);
+  });
+
+  it('returns a string from an error without data', () => {
+    const testResponse = {
+      response: {
+        message: 'Response message',
+      },
+      message: 'Error message',
+    };
+    expect(utils.getErrorMessages(testResponse)).toEqual(['Response message.']);
+  });
+
+  it('returns the object if fields not found for an object', () => {
+    const testResponse = {};
+    expect(utils.getErrorMessages(testResponse)).toEqual([{}]);
+  });
+
+  it('returns an error message if type is not known', () => {
+    const testResponse = 10; // Just a random integer
+    expect(utils.getErrorMessages(testResponse)).toEqual(['Unknown error.']);
+  });
+});

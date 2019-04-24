@@ -49,6 +49,7 @@ function courseInfo(state = initialState, action) {
     case CREATE_COURSE_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
+        error: null,
       });
     case CREATE_COURSE_FAIL:
       return Object.assign({}, state, {
@@ -77,6 +78,7 @@ function courseInfo(state = initialState, action) {
     case EDIT_COURSE_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
+        error: null,
       });
     case EDIT_COURSE_FAIL:
       return Object.assign({}, state, {

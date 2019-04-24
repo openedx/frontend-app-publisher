@@ -5,7 +5,7 @@ import {
 } from '../constants/stafferOptions';
 
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
-import { getErrorMessage } from '../../utils';
+import { getErrorMessages } from '../../utils';
 
 
 function requestStafferOptionsFail(error) {
@@ -30,13 +30,13 @@ function fetchStafferOptions() {
 
         // Confirm it looks vaguely correct
         if (!stafferOptions || !('actions' in stafferOptions)) {
-          throw Error('Did not understand response');
+          throw Error('Did not understand response.');
         }
 
         dispatch(requestStafferOptionsSuccess(stafferOptions));
       })
       .catch((error) => {
-        dispatch(requestStafferOptionsFail(`Could not get instructor information. ${getErrorMessage(error)}.`));
+        dispatch(requestStafferOptionsFail(['Could not get instructor information.'].concat(getErrorMessages(error))));
       });
   };
 }

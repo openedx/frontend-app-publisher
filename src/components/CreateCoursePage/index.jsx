@@ -52,6 +52,25 @@ class CreateCoursePage extends React.Component {
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
 
+    const errorArray = [];
+    if (courseInfo.error) {
+      courseInfo.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < courseInfo.error.length) {
+          errorArray.push(<br />);
+        }
+      });
+    }
+
+    if (publisherUserInfo.error) {
+      publisherUserInfo.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < publisherUserInfo.error.length) {
+          errorArray.push(<br />);
+        }
+      });
+    }
+
     return (
       <React.Fragment>
         <Helmet>
@@ -60,13 +79,6 @@ class CreateCoursePage extends React.Component {
 
         <PageContainer>
           { publisherUserInfo.isFetching && <LoadingSpinner /> }
-          { publisherUserInfo.error && (
-            <StatusAlert
-              id="user-info-error"
-              alertType="danger"
-              message={publisherUserInfo.error}
-            />
-          )}
           { !publisherUserInfo.isFetching &&
           (
             <div>
@@ -77,11 +89,11 @@ class CreateCoursePage extends React.Component {
                 organizations={organizations}
                 isCreating={courseInfo.isCreating}
               />
-              {courseInfo.error && (
+              {errorArray.length > 1 && (
                 <StatusAlert
                   id="create-error"
                   alertType="danger"
-                  message={courseInfo.error}
+                  message={errorArray}
                 />
               ) }
             </div>
@@ -112,11 +124,11 @@ CreateCoursePage.propTypes = {
   }),
   publisherUserInfo: PropTypes.shape({
     organizations: PropTypes.array,
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   courseInfo: PropTypes.shape({
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     data: PropTypes.shape({
       uuid: PropTypes.string,
     }),

@@ -163,7 +163,7 @@ describe('EditCoursePage', () => {
       courseInfo={{
         data: {},
         isFetching: false,
-        error: 'Course Info error.',
+        error: ['Course Info error.'],
       }}
     />);
     expect(component).toMatchSnapshot();
@@ -188,7 +188,7 @@ describe('EditCoursePage', () => {
       courseOptions={{
         data: {},
         isFetching: false,
-        error: 'Course Options error.',
+        error: ['Course Options error.'],
       }}
     />);
     expect(component).toMatchSnapshot();
@@ -228,7 +228,7 @@ describe('EditCoursePage', () => {
       courseRunOptions={{
         data: {},
         isFetching: false,
-        error: 'Course Run Options error.',
+        error: ['Course Run Options error.'],
       }}
     />);
     expect(component).toMatchSnapshot();
@@ -239,17 +239,17 @@ describe('EditCoursePage', () => {
       courseInfo={{
         data: {},
         isFetching: false,
-        error: 'Course Info error.',
+        error: ['Course Info error.'],
       }}
       courseOptions={{
         data: {},
         isFetching: false,
-        error: 'Course Options error.',
+        error: ['Course Options error.'],
       }}
       courseRunOptions={{
         data: {},
         isFetching: false,
-        error: 'Course Run Options error.',
+        error: ['Course Run Options error.'],
       }}
     />);
     expect(component).toMatchSnapshot();

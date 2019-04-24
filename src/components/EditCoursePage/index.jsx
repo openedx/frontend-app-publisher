@@ -231,22 +231,33 @@ class EditCoursePage extends React.Component {
     const mode = entitlement && entitlement.mode;
     const price = entitlement && entitlement.price;
 
-    let error = '';
+    const errorArray = [];
     if (courseInfo.error) {
-      error = error.concat(courseInfo.error, ' ');
+      courseInfo.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < courseInfo.error.length) {
+          errorArray.push(<br />);
+        }
+      });
     }
     if (courseOptions.error) {
-      error = error.concat(courseOptions.error, ' ');
+      courseOptions.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < courseOptions.error.length) {
+          errorArray.push(<br />);
+        }
+      });
     }
     if (courseRunOptions.error) {
-      error = error.concat(courseRunOptions.error, ' ');
+      courseRunOptions.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < courseRunOptions.error.length) {
+          errorArray.push(<br />);
+        }
+      });
     }
-    if (error) {
-      error += 'Please try reloading the page and if the error persists, please contact support.';
-    }
-    error = error.trim();
     const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching;
-    const showForm = !error && startedFetching && !courseInfo.isFetching &&
+    const showForm = errorArray.length < 1 && startedFetching && !courseInfo.isFetching &&
       !courseOptions.isFetching;
 
     return (
@@ -298,11 +309,11 @@ class EditCoursePage extends React.Component {
               />
             </div>
           )}
-          { error && (
+          { errorArray.length > 0 && (
             <StatusAlert
               id="error"
               alertType="danger"
-              message={error}
+              message={errorArray}
             />
           )}
         </PageContainer>
@@ -326,17 +337,17 @@ EditCoursePage.defaultProps = {
 EditCoursePage.propTypes = {
   courseInfo: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   fetchCourseInfo: PropTypes.func,

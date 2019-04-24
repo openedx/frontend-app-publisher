@@ -47,7 +47,7 @@ describe('CreateCourseRunPage', () => {
         data: {},
         isFetching: false,
         isCreating: false,
-        error: 'failed',
+        error: ['failed'],
       }}
     />);
     expect(component).toMatchSnapshot();

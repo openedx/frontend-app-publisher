@@ -6,7 +6,7 @@ import {
 
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
-import { getErrorMessage } from '../../utils';
+import { getErrorMessages } from '../../utils';
 
 function requestUserOrganizationsFail(error) {
   return { type: REQUEST_USER_ORGANIZATIONS_FAIL, error };
@@ -30,7 +30,7 @@ function fetchOrganizations() {
         dispatch(requestUserOrganizationsSuccess(organizations));
       })
       .catch((error) => {
-        dispatch(requestUserOrganizationsFail(`Unable to retrieve user Organizations, please contact support: ${getErrorMessage(error)}.`));
+        dispatch(requestUserOrganizationsFail(['Unable to retrieve user Organizations, please contact support.'].concat(getErrorMessages(error))));
       });
   };
 }

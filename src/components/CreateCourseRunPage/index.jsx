@@ -39,6 +39,16 @@ class CreateCourseRunPage extends React.Component {
     const title = courseInfo.data && courseInfo.data.title ? courseInfo.data.title : '';
     const uuid = courseInfo.data && courseInfo.data.uuid ? courseInfo.data.uuid : '';
 
+    const errorArray = [];
+    if (courseInfo.error) {
+      courseInfo.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < courseInfo.error.length) {
+          errorArray.push(<br />);
+        }
+      });
+    }
+
     return (
       <React.Fragment>
         <Helmet>
@@ -56,11 +66,11 @@ class CreateCourseRunPage extends React.Component {
                 uuid={uuid}
                 isCreating={courseInfo.isCreating}
               />
-              {courseInfo.error && (
+              {errorArray.length > 1 && (
                 <StatusAlert
                   id="create-error"
                   alertType="danger"
-                  message={courseInfo.error}
+                  message={errorArray}
                 />
               ) }
             </div>
@@ -86,7 +96,7 @@ CreateCourseRunPage.propTypes = {
   fetchCourseInfo: PropTypes.func,
   courseInfo: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   id: PropTypes.string.isRequired,

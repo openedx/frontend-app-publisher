@@ -29,6 +29,7 @@ const tableReducer = (state = {}, action) => {
     case PAGINATION_SUCCESS:
       return updateTable(state, action.payload.tableId, {
         loading: false,
+        error: null,
         ordering: action.payload.ordering,
         page: action.payload.page,
         pageSize: action.payload.pageSize,

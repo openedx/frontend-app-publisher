@@ -688,12 +688,12 @@ BaseEditCourseForm.propTypes = {
   entitlement: PropTypes.bool,
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }).isRequired,
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }).isRequired,
   submitting: PropTypes.bool,
