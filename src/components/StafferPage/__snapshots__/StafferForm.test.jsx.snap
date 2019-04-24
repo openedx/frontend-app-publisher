@@ -196,24 +196,24 @@ ShallowWrapper {
           className=""
         >
           <Link
-            className={
-              Array [
-                "btn btn-outline-primary form-cancel-btn",
-              ]
-            }
+            className="btn btn-outline-primary form-cancel-btn"
             disabled={true}
             replace={false}
             to="courses/00000000-0000-0000-0000-000000000000/edit"
           >
             Cancel
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
+          <ActionButton
+            className=""
             disabled={true}
-            type="submit"
-          >
-            Submit
-          </button>
+            labels={
+              Object {
+                "default": "Create",
+                "pending": "Creating",
+              }
+            }
+            state="default"
+          />
         </ButtonToolbar>
       </form>,
       "className": "create-staffer-form",
@@ -363,24 +363,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="courses/00000000-0000-0000-0000-000000000000/edit"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>,
         ],
         "onSubmit": [Function],
@@ -600,24 +600,24 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="courses/00000000-0000-0000-0000-000000000000/edit"
               >
                 Cancel
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>,
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />,
             ],
             "className": "",
           },
@@ -629,9 +629,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Cancel",
-                "className": Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ],
+                "className": "btn btn-outline-primary form-cancel-btn",
                 "disabled": true,
                 "replace": false,
                 "to": "courses/00000000-0000-0000-0000-000000000000/edit",
@@ -643,16 +641,19 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Submit",
-                "className": "btn btn-primary form-submit-btn",
+                "className": "",
                 "disabled": true,
-                "type": "submit",
+                "labels": Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                },
+                "state": "default",
               },
               "ref": null,
-              "rendered": "Submit",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -809,24 +810,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="courses/00000000-0000-0000-0000-000000000000/edit"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>
         </form>,
         "className": "create-staffer-form",
@@ -976,24 +977,24 @@ ShallowWrapper {
               className=""
             >
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="courses/00000000-0000-0000-0000-000000000000/edit"
               >
                 Cancel
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />
             </ButtonToolbar>,
           ],
           "onSubmit": [Function],
@@ -1213,24 +1214,24 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Link
-                  className={
-                    Array [
-                      "btn btn-outline-primary form-cancel-btn",
-                    ]
-                  }
+                  className="btn btn-outline-primary form-cancel-btn"
                   disabled={true}
                   replace={false}
                   to="courses/00000000-0000-0000-0000-000000000000/edit"
                 >
                   Cancel
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
+                <ActionButton
+                  className=""
                   disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>,
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
+                  }
+                  state="default"
+                />,
               ],
               "className": "",
             },
@@ -1242,9 +1243,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": "Cancel",
-                  "className": Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ],
+                  "className": "btn btn-outline-primary form-cancel-btn",
                   "disabled": true,
                   "replace": false,
                   "to": "courses/00000000-0000-0000-0000-000000000000/edit",
@@ -1256,16 +1255,19 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Submit",
-                  "className": "btn btn-primary form-submit-btn",
+                  "className": "",
                   "disabled": true,
-                  "type": "submit",
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "state": "default",
                 },
                 "ref": null,
-                "rendered": "Submit",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -1552,24 +1554,24 @@ ShallowWrapper {
           className=""
         >
           <Link
-            className={
-              Array [
-                "btn btn-outline-primary form-cancel-btn",
-              ]
-            }
+            className="btn btn-outline-primary form-cancel-btn"
             disabled={true}
             replace={false}
             to="/"
           >
             Cancel
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
+          <ActionButton
+            className=""
             disabled={true}
-            type="submit"
-          >
-            Submit
-          </button>
+            labels={
+              Object {
+                "default": "Create",
+                "pending": "Creating",
+              }
+            }
+            state="default"
+          />
         </ButtonToolbar>
       </form>,
       "className": "create-staffer-form",
@@ -1719,24 +1721,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>,
         ],
         "onSubmit": [Function],
@@ -1956,24 +1958,24 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>,
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />,
             ],
             "className": "",
           },
@@ -1985,9 +1987,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Cancel",
-                "className": Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ],
+                "className": "btn btn-outline-primary form-cancel-btn",
                 "disabled": true,
                 "replace": false,
                 "to": "/",
@@ -1999,16 +1999,19 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Submit",
-                "className": "btn btn-primary form-submit-btn",
+                "className": "",
                 "disabled": true,
-                "type": "submit",
+                "labels": Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                },
+                "state": "default",
               },
               "ref": null,
-              "rendered": "Submit",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -2165,24 +2168,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>
         </form>,
         "className": "create-staffer-form",
@@ -2332,24 +2335,24 @@ ShallowWrapper {
               className=""
             >
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />
             </ButtonToolbar>,
           ],
           "onSubmit": [Function],
@@ -2569,24 +2572,24 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Link
-                  className={
-                    Array [
-                      "btn btn-outline-primary form-cancel-btn",
-                    ]
-                  }
+                  className="btn btn-outline-primary form-cancel-btn"
                   disabled={true}
                   replace={false}
                   to="/"
                 >
                   Cancel
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
+                <ActionButton
+                  className=""
                   disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>,
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
+                  }
+                  state="default"
+                />,
               ],
               "className": "",
             },
@@ -2598,9 +2601,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": "Cancel",
-                  "className": Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ],
+                  "className": "btn btn-outline-primary form-cancel-btn",
                   "disabled": true,
                   "replace": false,
                   "to": "/",
@@ -2612,16 +2613,19 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Submit",
-                  "className": "btn btn-primary form-submit-btn",
+                  "className": "",
                   "disabled": true,
-                  "type": "submit",
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "state": "default",
                 },
                 "ref": null,
-                "rendered": "Submit",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -2854,24 +2858,24 @@ ShallowWrapper {
           className=""
         >
           <Link
-            className={
-              Array [
-                "btn btn-outline-primary form-cancel-btn",
-              ]
-            }
+            className="btn btn-outline-primary form-cancel-btn"
             disabled={true}
             replace={false}
             to="/"
           >
             Cancel
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
+          <ActionButton
+            className=""
             disabled={true}
-            type="submit"
-          >
-            Submit
-          </button>
+            labels={
+              Object {
+                "default": "Create",
+                "pending": "Creating",
+              }
+            }
+            state="default"
+          />
         </ButtonToolbar>
       </form>,
       "className": "create-staffer-form",
@@ -3021,24 +3025,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>,
         ],
         "onSubmit": [Function],
@@ -3258,24 +3262,24 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>,
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />,
             ],
             "className": "",
           },
@@ -3287,9 +3291,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Cancel",
-                "className": Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ],
+                "className": "btn btn-outline-primary form-cancel-btn",
                 "disabled": true,
                 "replace": false,
                 "to": "/",
@@ -3301,16 +3303,19 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Submit",
-                "className": "btn btn-primary form-submit-btn",
+                "className": "",
                 "disabled": true,
-                "type": "submit",
+                "labels": Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                },
+                "state": "default",
               },
               "ref": null,
-              "rendered": "Submit",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -3467,24 +3472,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>
         </form>,
         "className": "create-staffer-form",
@@ -3634,24 +3639,24 @@ ShallowWrapper {
               className=""
             >
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />
             </ButtonToolbar>,
           ],
           "onSubmit": [Function],
@@ -3871,24 +3876,24 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Link
-                  className={
-                    Array [
-                      "btn btn-outline-primary form-cancel-btn",
-                    ]
-                  }
+                  className="btn btn-outline-primary form-cancel-btn"
                   disabled={true}
                   replace={false}
                   to="/"
                 >
                   Cancel
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
+                <ActionButton
+                  className=""
                   disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>,
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
+                  }
+                  state="default"
+                />,
               ],
               "className": "",
             },
@@ -3900,9 +3905,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": "Cancel",
-                  "className": Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ],
+                  "className": "btn btn-outline-primary form-cancel-btn",
                   "disabled": true,
                   "replace": false,
                   "to": "/",
@@ -3914,16 +3917,19 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Submit",
-                  "className": "btn btn-primary form-submit-btn",
+                  "className": "",
                   "disabled": true,
-                  "type": "submit",
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "state": "default",
                 },
                 "ref": null,
-                "rendered": "Submit",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -4156,24 +4162,24 @@ ShallowWrapper {
           className=""
         >
           <Link
-            className={
-              Array [
-                "btn btn-outline-primary form-cancel-btn",
-              ]
-            }
+            className="btn btn-outline-primary form-cancel-btn"
             disabled={true}
             replace={false}
             to="/"
           >
             Cancel
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
+          <ActionButton
+            className=""
             disabled={true}
-            type="submit"
-          >
-            Submit
-          </button>
+            labels={
+              Object {
+                "default": "Create",
+                "pending": "Creating",
+              }
+            }
+            state="pending"
+          />
         </ButtonToolbar>
       </form>,
       "className": "create-staffer-form",
@@ -4323,24 +4329,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="pending"
+            />
           </ButtonToolbar>,
         ],
         "onSubmit": [Function],
@@ -4560,24 +4566,24 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>,
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="pending"
+              />,
             ],
             "className": "",
           },
@@ -4589,9 +4595,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Cancel",
-                "className": Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ],
+                "className": "btn btn-outline-primary form-cancel-btn",
                 "disabled": true,
                 "replace": false,
                 "to": "/",
@@ -4603,16 +4607,19 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Submit",
-                "className": "btn btn-primary form-submit-btn",
+                "className": "",
                 "disabled": true,
-                "type": "submit",
+                "labels": Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                },
+                "state": "pending",
               },
               "ref": null,
-              "rendered": "Submit",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -4769,24 +4776,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
+              className="btn btn-outline-primary form-cancel-btn"
               disabled={true}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
+            <ActionButton
+              className=""
               disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="pending"
+            />
           </ButtonToolbar>
         </form>,
         "className": "create-staffer-form",
@@ -4936,24 +4943,24 @@ ShallowWrapper {
               className=""
             >
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
+                className="btn btn-outline-primary form-cancel-btn"
                 disabled={true}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
+              <ActionButton
+                className=""
                 disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="pending"
+              />
             </ButtonToolbar>,
           ],
           "onSubmit": [Function],
@@ -5173,24 +5180,24 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Link
-                  className={
-                    Array [
-                      "btn btn-outline-primary form-cancel-btn",
-                    ]
-                  }
+                  className="btn btn-outline-primary form-cancel-btn"
                   disabled={true}
                   replace={false}
                   to="/"
                 >
                   Cancel
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
+                <ActionButton
+                  className=""
                   disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>,
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
+                  }
+                  state="pending"
+                />,
               ],
               "className": "",
             },
@@ -5202,9 +5209,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": "Cancel",
-                  "className": Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ],
+                  "className": "btn btn-outline-primary form-cancel-btn",
                   "disabled": true,
                   "replace": false,
                   "to": "/",
@@ -5216,16 +5221,19 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Submit",
-                  "className": "btn btn-primary form-submit-btn",
+                  "className": "",
                   "disabled": true,
-                  "type": "submit",
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "state": "pending",
                 },
                 "ref": null,
-                "rendered": "Submit",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -5458,24 +5466,24 @@ ShallowWrapper {
           className=""
         >
           <Link
-            className={
-              Array [
-                "btn btn-outline-primary form-cancel-btn",
-              ]
-            }
-            disabled={true}
+            className="btn btn-outline-primary form-cancel-btn"
+            disabled={false}
             replace={false}
             to="/"
           >
             Cancel
           </Link>
-          <button
-            className="btn btn-primary form-submit-btn"
-            disabled={true}
-            type="submit"
-          >
-            Submit
-          </button>
+          <ActionButton
+            className=""
+            disabled={false}
+            labels={
+              Object {
+                "default": "Create",
+                "pending": "Creating",
+              }
+            }
+            state="default"
+          />
         </ButtonToolbar>
       </form>,
       "className": "create-staffer-form",
@@ -5625,24 +5633,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
-              disabled={true}
+              className="btn btn-outline-primary form-cancel-btn"
+              disabled={false}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
-              disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+            <ActionButton
+              className=""
+              disabled={false}
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>,
         ],
         "onSubmit": [Function],
@@ -5862,24 +5870,24 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
-                disabled={true}
+                className="btn btn-outline-primary form-cancel-btn"
+                disabled={false}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>,
-              <button
-                className="btn btn-primary form-submit-btn"
-                disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>,
+              <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />,
             ],
             "className": "",
           },
@@ -5891,10 +5899,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Cancel",
-                "className": Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ],
-                "disabled": true,
+                "className": "btn btn-outline-primary form-cancel-btn",
+                "disabled": false,
                 "replace": false,
                 "to": "/",
               },
@@ -5905,16 +5911,19 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "Submit",
-                "className": "btn btn-primary form-submit-btn",
-                "disabled": true,
-                "type": "submit",
+                "className": "",
+                "disabled": false,
+                "labels": Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                },
+                "state": "default",
               },
               "ref": null,
-              "rendered": "Submit",
-              "type": "button",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -6071,24 +6080,24 @@ ShallowWrapper {
             className=""
           >
             <Link
-              className={
-                Array [
-                  "btn btn-outline-primary form-cancel-btn",
-                ]
-              }
-              disabled={true}
+              className="btn btn-outline-primary form-cancel-btn"
+              disabled={false}
               replace={false}
               to="/"
             >
               Cancel
             </Link>
-            <button
-              className="btn btn-primary form-submit-btn"
-              disabled={true}
-              type="submit"
-            >
-              Submit
-            </button>
+            <ActionButton
+              className=""
+              disabled={false}
+              labels={
+                Object {
+                  "default": "Create",
+                  "pending": "Creating",
+                }
+              }
+              state="default"
+            />
           </ButtonToolbar>
         </form>,
         "className": "create-staffer-form",
@@ -6238,24 +6247,24 @@ ShallowWrapper {
               className=""
             >
               <Link
-                className={
-                  Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ]
-                }
-                disabled={true}
+                className="btn btn-outline-primary form-cancel-btn"
+                disabled={false}
                 replace={false}
                 to="/"
               >
                 Cancel
               </Link>
-              <button
-                className="btn btn-primary form-submit-btn"
-                disabled={true}
-                type="submit"
-              >
-                Submit
-              </button>
+              <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  }
+                }
+                state="default"
+              />
             </ButtonToolbar>,
           ],
           "onSubmit": [Function],
@@ -6475,24 +6484,24 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Link
-                  className={
-                    Array [
-                      "btn btn-outline-primary form-cancel-btn",
-                    ]
-                  }
-                  disabled={true}
+                  className="btn btn-outline-primary form-cancel-btn"
+                  disabled={false}
                   replace={false}
                   to="/"
                 >
                   Cancel
                 </Link>,
-                <button
-                  className="btn btn-primary form-submit-btn"
-                  disabled={true}
-                  type="submit"
-                >
-                  Submit
-                </button>,
+                <ActionButton
+                  className=""
+                  disabled={false}
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
+                  }
+                  state="default"
+                />,
               ],
               "className": "",
             },
@@ -6504,10 +6513,8 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": "Cancel",
-                  "className": Array [
-                    "btn btn-outline-primary form-cancel-btn",
-                  ],
-                  "disabled": true,
+                  "className": "btn btn-outline-primary form-cancel-btn",
+                  "disabled": false,
                   "replace": false,
                   "to": "/",
                 },
@@ -6518,16 +6525,19 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": "Submit",
-                  "className": "btn btn-primary form-submit-btn",
-                  "disabled": true,
-                  "type": "submit",
+                  "className": "",
+                  "disabled": false,
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "state": "default",
                 },
                 "ref": null,
-                "rendered": "Submit",
-                "type": "button",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],

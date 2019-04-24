@@ -38,9 +38,6 @@ class CreateCourseRunPage extends React.Component {
     } = this.props;
     const title = courseInfo.data && courseInfo.data.title ? courseInfo.data.title : '';
     const uuid = courseInfo.data && courseInfo.data.uuid ? courseInfo.data.uuid : '';
-    const showCreatingCourseRunSpinner = !courseInfo.isFetching &&
-      courseInfo.isCreating &&
-      !courseInfo.error;
 
     return (
       <React.Fragment>
@@ -57,10 +54,8 @@ class CreateCourseRunPage extends React.Component {
                 onSubmit={this.handleCourseCreate}
                 title={title}
                 uuid={uuid}
+                isCreating={courseInfo.isCreating}
               />
-              { showCreatingCourseRunSpinner &&
-                <LoadingSpinner message="Creating Course Run" />
-              }
               {courseInfo.error && (
                 <StatusAlert
                   id="create-error"

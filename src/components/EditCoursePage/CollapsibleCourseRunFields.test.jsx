@@ -114,7 +114,7 @@ describe('Collapsible Course Run Fields', () => {
 
     const mockInvalidForm = getMockForm(false);
     jest.spyOn(document, 'getElementById').mockImplementation(() => mockInvalidForm);
-    component.find('button').simulate(
+    component.find('ActionButton').simulate(
       'click',
       { preventDefault: () => {} },
     );
@@ -134,7 +134,7 @@ describe('Collapsible Course Run Fields', () => {
 
     const mockValidForm = getMockForm(true);
     jest.spyOn(document, 'getElementById').mockImplementation(() => mockValidForm);
-    component.find('button').simulate(
+    component.find('ActionButton').simulate(
       'click',
       { preventDefault: () => {} },
     );

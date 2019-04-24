@@ -5,6 +5,7 @@ import { Field, FieldArray, submit } from 'redux-form';
 import { Collapsible } from '@edx/paragon';
 import { connect } from 'react-redux';
 
+import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import Pill from '../Pill';
@@ -67,6 +68,7 @@ export const BaseCollapsibleCourseRunFields = ({
   handleCourseRunSubmit,
   dispatch,
   formId,
+  submitting,
   ...passedProps
 }) => (
   <div>
@@ -160,10 +162,8 @@ export const BaseCollapsibleCourseRunFields = ({
           {...passedProps}
         />
         <ButtonToolbar>
-          <button
-            type="submit"
-            className="btn btn-primary form-submit-btn"
-            disabled={courseInReview}
+          <ActionButton
+            disabled={courseInReview || submitting}
             onClick={(event) => {
               /*
               *  Manually check the form for validity so that we can pass the targeted course run up
@@ -179,13 +179,10 @@ export const BaseCollapsibleCourseRunFields = ({
                 form.reportValidity();
               }
             }}
-          >
-            {courseRuns[index].status === PUBLISHED ? (
-              <span>Publish</span>
-            ) : (
-              <span>Submit for Review</span>
-            )}
-          </button>
+            labels={{
+              default: courseRuns[index].status === PUBLISHED ? 'Publish' : 'Submit for Review',
+            }}
+          />
         </ButtonToolbar>
       </Collapsible>
     ))}
@@ -206,6 +203,7 @@ BaseCollapsibleCourseRunFields.propTypes = {
   })).isRequired,
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   courseInReview: PropTypes.bool,
+  submitting: PropTypes.bool,
   handleCourseRunSubmit: PropTypes.func.isRequired,
   dispatch: PropTypes.func,
   formId: PropTypes.string.isRequired,
@@ -215,6 +213,7 @@ BaseCollapsibleCourseRunFields.propTypes = {
 BaseCollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
   courseInReview: false,
+  submitting: false,
   dispatch: () => {},
   passedProps: {},
 };

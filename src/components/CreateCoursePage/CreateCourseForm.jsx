@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
+import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 
@@ -34,8 +35,7 @@ class BaseCreateCourseForm extends React.Component {
       handleSubmit,
       organizations,
       pristine,
-      submitting,
-      isSaving,
+      isCreating,
     } = this.props;
     return (
       <div className="create-course-form">
@@ -73,6 +73,10 @@ class BaseCreateCourseForm extends React.Component {
           <Field
             name="price"
             component={RenderInputTextField}
+            input={{
+              min: 0.01,
+              step: 0.01,
+            }}
             type="number"
             label={<FieldLabel text="Price (USD)" required />}
             required
@@ -94,13 +98,14 @@ class BaseCreateCourseForm extends React.Component {
             required
           />
           <ButtonToolbar>
-            <button
-              type="submit"
-              className="btn btn-primary form-submit-btn"
-              disabled={pristine || submitting || isSaving}
-            >
-              Submit
-            </button>
+            <ActionButton
+              disabled={pristine}
+              labels={{
+                default: 'Create',
+                pending: 'Creating',
+              }}
+              state={isCreating ? 'pending' : 'default'}
+            />
           </ButtonToolbar>
         </form>
       </div>
@@ -109,9 +114,8 @@ class BaseCreateCourseForm extends React.Component {
 }
 
 BaseCreateCourseForm.defaultProps = {
-  isSaving: false,
+  isCreating: false,
   pristine: true,
-  submitting: false,
 };
 
 BaseCreateCourseForm.propTypes = {
@@ -130,8 +134,7 @@ BaseCreateCourseForm.propTypes = {
     key: PropTypes.string.isRequired,
   })).isRequired,
   pristine: PropTypes.bool,
-  submitting: PropTypes.bool,
-  isSaving: PropTypes.bool,
+  isCreating: PropTypes.bool,
 };
 
 export default reduxForm({

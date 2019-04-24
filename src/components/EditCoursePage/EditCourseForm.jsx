@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Collapsible } from '@edx/paragon';
 
+import ActionButton from '../../components/ActionButton';
 import ButtonToolbar from '../../components/ButtonToolbar';
 import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
 import FieldLabel from '../FieldLabel';
@@ -95,6 +96,15 @@ export class BaseEditCourseForm extends React.Component {
       this.parseOptions(courseRunOptions.pacing_type.choices));
     const languageOptions = (courseRunOptions &&
       this.parseOptions(courseRunOptions.content_language.choices));
+
+    let submitState = 'default';
+    if (submitting) {
+      submitState = 'pending';
+    } else if (pristine) {
+      // FIXME: Once this form is correctly reset to a pristine state after a successful submit,
+      //        re-enable this code.
+      // submitState = 'complete';
+    }
 
     languageOptions.unshift({ label: '--', value: '' });
     levelTypeOptions.unshift({ label: '--', value: '' });
@@ -222,7 +232,7 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="videoSrc"
               component={RenderInputTextField}
-              type="text"
+              type="url"
               label={<FieldLabel text="About video link" />}
               disabled={courseInReview}
             />
@@ -238,6 +248,10 @@ export class BaseEditCourseForm extends React.Component {
                 <Field
                   name="price"
                   component={RenderInputTextField}
+                  input={{
+                    min: 0.01,
+                    step: 0.01,
+                  }}
                   type="number"
                   label={<FieldLabel text="Price" required requiredForSubmit />}
                   disabled={courseInReview}
@@ -264,13 +278,15 @@ export class BaseEditCourseForm extends React.Component {
                 Re-run Course
               </button>
             </Link>
-            <button
-              type="submit"
-              className="btn btn-primary form-submit-btn"
-              disabled={submitting || courseInReview}
-            >
-              Save Course
-            </button>
+            <ActionButton
+              disabled={courseInReview || submitting}
+              labels={{
+                default: 'Save Course',
+                pending: 'Saving Course',
+                complete: 'Course Saved',
+              }}
+              state={submitState}
+            />
           </ButtonToolbar>
         </form>
       </div>

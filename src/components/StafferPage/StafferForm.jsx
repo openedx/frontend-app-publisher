@@ -3,6 +3,7 @@ import { Field, FieldArray, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import ActionButton from '../../components/ActionButton';
 import AreasOfExpertise from './AreasOfExpertise';
 import SocialLinks from './SocialLinks';
 import ImageUpload from '../../components/ImageUpload';
@@ -32,13 +33,12 @@ const extractOrgChoices = (stafferOptions) => {
 const BaseStafferForm = ({
   handleSubmit,
   pristine,
-  submitting,
   isSaving,
   isCreateForm,
   stafferOptions,
   sourceInfo: { referrer },
 }) => {
-  const formControlDisabled = pristine || submitting || isSaving;
+  const formControlDisabled = pristine || isSaving;
 
   return (
     <div className="create-staffer-form">
@@ -105,15 +105,20 @@ const BaseStafferForm = ({
         />
         <ButtonToolbar>
           <Link
-            className={['btn btn-outline-primary form-cancel-btn']}
+            className="btn btn-outline-primary form-cancel-btn"
             to={referrer || '/'}
             disabled={formControlDisabled}
           >
             Cancel
           </Link>
-          <button type="submit" className="btn btn-primary form-submit-btn" disabled={formControlDisabled} >
-            Submit
-          </button>
+          <ActionButton
+            disabled={formControlDisabled}
+            labels={{
+              default: 'Create',
+              pending: 'Creating',
+            }}
+            state={isSaving ? 'pending' : 'default'}
+          />
         </ButtonToolbar>
       </form>
     </div>
@@ -123,7 +128,6 @@ const BaseStafferForm = ({
 BaseStafferForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   pristine: PropTypes.bool.isRequired,
-  submitting: PropTypes.bool.isRequired,
   stafferOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.string,
