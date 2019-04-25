@@ -1,7 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { submit } from 'redux-form';
 
 import EditCoursePage from './index';
+import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
+import store from '../../data/store';
 
 
 describe('EditCoursePage', () => {
@@ -250,5 +253,96 @@ describe('EditCoursePage', () => {
       }}
     />);
     expect(component).toMatchSnapshot();
+  });
+
+  describe('EditCoursePage submission handling', () => {
+    const mockValidateSubmit = jest.fn();
+    const publishedCourseRun = {
+      key: 'edX101+DemoX',
+      status: PUBLISHED,
+    };
+    const unpublishedCourseRun = Object.assign(
+      {},
+      publishedCourseRun,
+      { status: UNPUBLISHED },
+    );
+
+    const getMockForm = valid => ({
+      checkValidity: jest.fn(() => valid),
+      reportValidity: jest.fn(() => {}),
+    });
+
+    it('sets state correctly and calls validateSubmit when submission is triggered with no target run', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      // Stub validateSubmit for this test
+      component.instance().validateSubmit = mockValidateSubmit;
+      component.update();
+
+      component.instance().handleSubmit();
+      expect(component.state().targetRun).toEqual(null);
+      expect(component.state().isSubmittingForReview).toEqual(false);
+      expect(mockValidateSubmit).toBeCalled();
+    });
+
+    it('sets state correctly and calls validateSubmit when submission is triggered with unpublished target run', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      // Stub validateSubmit for this test
+      component.instance().validateSubmit = mockValidateSubmit;
+      component.update();
+
+      component.instance().handleSubmit(unpublishedCourseRun);
+      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
+      expect(component.state().isSubmittingForReview).toEqual(true);
+      expect(mockValidateSubmit).toBeCalled();
+    });
+
+    it('sets state correctly and calls validateSubmit when submission is triggered with published target run', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      // Stub validateSubmit for this test
+      component.instance().validateSubmit = mockValidateSubmit;
+      component.update();
+
+      component.instance().handleSubmit(publishedCourseRun);
+      expect(component.state().targetRun).toEqual(publishedCourseRun);
+      expect(component.state().isSubmittingForReview).toEqual(false);
+      expect(mockValidateSubmit).toBeCalled();
+    });
+
+    it('reports validity when there are invalid fields', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      const mockInvalidForm = getMockForm(false);
+      jest.spyOn(document, 'getElementById').mockImplementation(() => mockInvalidForm);
+
+      component.instance().validateSubmit();
+      expect(mockInvalidForm.reportValidity).toHaveBeenCalled();
+    });
+
+    it('does not report validity when fields are valid and dispatches the expected submit action', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+
+      const mockValidForm = getMockForm(true);
+      jest.spyOn(document, 'getElementById').mockImplementation(() => mockValidForm);
+      const mockDispatch = jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+      const expectedAction = submit(component.instance().getFormId());
+
+      component.instance().validateSubmit();
+      expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
+      expect(mockValidForm.reportValidity).not.toHaveBeenCalled();
+    });
   });
 });

@@ -502,7 +502,6 @@ describe('BaseEditCourseForm', () => {
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
-      handleCourseRunSubmit={() => {}}
       id="edit-course-form"
     />);
     expect(component).toMatchSnapshot();
@@ -517,7 +516,6 @@ describe('BaseEditCourseForm', () => {
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
-      handleCourseRunSubmit={() => {}}
       id="edit-course-form"
     />);
     expect(component).toMatchSnapshot();
@@ -535,7 +533,20 @@ describe('BaseEditCourseForm', () => {
       pristine={false}
       submitting
       uuid={initialValuesFull.uuid}
-      handleCourseRunSubmit={() => {}}
+      id="edit-course-form"
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly when submitting for review', () => {
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      number="Test101x"
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      isSubmittingForReview
       id="edit-course-form"
     />);
     expect(component).toMatchSnapshot();
@@ -550,7 +561,6 @@ describe('BaseEditCourseForm', () => {
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
       courseInReview
-      handleCourseRunSubmit={() => {}}
       id="edit-course-form"
     />);
 

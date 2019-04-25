@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { BaseCollapsibleCourseRunFields } from './CollapsibleCourseRunFields';
+import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
 
 /*
 *  Disable console errors for this test file so that we don't receive warnings
@@ -38,63 +38,85 @@ const publishedCourseRun = {
   transcript_languages: [languageOptions[0].value],
   weeks_to_complete: 1,
   status: 'published',
+  key: 'edX101+DemoX',
 };
 
 const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'unpublished' });
 
-const getMockForm = valid => ({
-  checkValidity: jest.fn(() => valid),
-  reportValidity: jest.fn(() => {}),
-});
-
-const mockCourseRunSubmit = jest.fn();
+const mockSubmit = jest.fn();
 
 describe('Collapsible Course Run Fields', () => {
   it('renders correctly with no fields', () => {
-    const component = shallow(<BaseCollapsibleCourseRunFields
+    const component = shallow(<CollapsibleCourseRunFields
       fields={[]}
       languageOptions={[]}
       pacingTypeOptions={[]}
       courseRuns={[]}
       formId="test-form"
-      handleCourseRunSubmit={mockCourseRunSubmit}
+      handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders correctly when given a published course run', () => {
-    const component = shallow(<BaseCollapsibleCourseRunFields
+    const component = shallow(<CollapsibleCourseRunFields
       fields={[{}]}
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[publishedCourseRun]}
       formId="test-form"
-      handleCourseRunSubmit={mockCourseRunSubmit}
+      handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders correctly when given an unpublished course run', () => {
-    const component = shallow(<BaseCollapsibleCourseRunFields
+    const component = shallow(<CollapsibleCourseRunFields
       fields={[{}]}
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[unpublishedCourseRun]}
       formId="test-form"
-      handleCourseRunSubmit={mockCourseRunSubmit}
+      handleSubmit={mockSubmit}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly when submitting for review', () => {
+    const component = shallow(<CollapsibleCourseRunFields
+      fields={[{}]}
+      languageOptions={languageOptions}
+      pacingTypeOptions={pacingTypeOptions}
+      courseRuns={[unpublishedCourseRun]}
+      formId="test-form"
+      handleSubmit={mockSubmit}
+      isSubmittingForReview
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly when submitting for review and given a matching target run', () => {
+    const component = shallow(<CollapsibleCourseRunFields
+      fields={[{}]}
+      languageOptions={languageOptions}
+      pacingTypeOptions={pacingTypeOptions}
+      courseRuns={[publishedCourseRun]}
+      formId="test-form"
+      handleSubmit={mockSubmit}
+      isSubmittingForReview
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders fields as disabled when course is in review', () => {
-    const component = shallow(<BaseCollapsibleCourseRunFields
+    const component = shallow(<CollapsibleCourseRunFields
       fields={[]}
       languageOptions={[]}
       pacingTypeOptions={[]}
       courseRuns={[]}
       courseInReview
       formId="test-form"
-      handleCourseRunSubmit={mockCourseRunSubmit}
+      handleSubmit={mockSubmit}
     />);
     const childFields = component.find('input');
     childFields.forEach((field) => {
@@ -102,44 +124,21 @@ describe('Collapsible Course Run Fields', () => {
     });
   });
 
-  it('reports validity when submitted from course run and there are invalid fields', () => {
-    const component = shallow(<BaseCollapsibleCourseRunFields
+  it('handles submission when called from a course run', () => {
+    const component = shallow(<CollapsibleCourseRunFields
       fields={[{}]}
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[unpublishedCourseRun]}
       formId="test-form"
-      handleCourseRunSubmit={mockCourseRunSubmit}
+      handleSubmit={mockSubmit}
     />);
 
-    const mockInvalidForm = getMockForm(false);
-    jest.spyOn(document, 'getElementById').mockImplementation(() => mockInvalidForm);
-    component.find('ActionButton').simulate(
-      'click',
-      { preventDefault: () => {} },
-    );
-    expect(mockCourseRunSubmit).not.toHaveBeenCalled();
-    expect(mockInvalidForm.reportValidity).toHaveBeenCalled();
-  });
-
-  it('handles submission when submitted from courseRun with no invalid fields', () => {
-    const component = shallow(<BaseCollapsibleCourseRunFields
-      fields={[{}]}
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRuns={[unpublishedCourseRun]}
-      formId="test-form"
-      handleCourseRunSubmit={mockCourseRunSubmit}
-    />);
-
-    const mockValidForm = getMockForm(true);
-    jest.spyOn(document, 'getElementById').mockImplementation(() => mockValidForm);
     component.find('ActionButton').simulate(
       'click',
       { preventDefault: () => {} },
     );
 
-    expect(mockCourseRunSubmit).toHaveBeenCalled();
-    expect(mockValidForm.reportValidity).not.toHaveBeenCalled();
+    expect(mockSubmit).toHaveBeenCalled();
   });
 });
