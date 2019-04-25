@@ -88,7 +88,25 @@ const CollapsibleCourseRunFields = ({
             type="date"
             component={RenderInputTextField}
             format={value => getDateString(value)}
-            label={<FieldLabel text="Start date" required requiredForSubmit />}
+            label={
+              <FieldLabel
+                id={`${courseRun}.start.label`}
+                text="Start date"
+                required
+                requiredForSubmit
+                helpText={
+                  <div>
+                    <p>Start on a Tuesday, Wednesday, or Thursday.</p>
+                    <p>Avoid major U.S. holidays.</p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the
+                      estimated start date. For example, if your course will start near the end
+                      of March, specify March 31.
+                    </p>
+                  </div>
+                }
+              />
+            }
             placeholder="mm/dd/yyyy"
             required
             disabled={courseInReview}
@@ -99,7 +117,23 @@ const CollapsibleCourseRunFields = ({
             component={RenderInputTextField}
             format={value => getDateString(value)}
             normalize={value => moment(value).toISOString()}
-            label={<FieldLabel text="End date" required requiredForSubmit />}
+            label={
+              <FieldLabel
+                id={`${courseRun}.end.label`}
+                text="End date"
+                required
+                requiredForSubmit
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the
+                      estimated end date. For example, if your course will end near the end
+                      of March, specify March 31.
+                    </p>
+                  </div>
+                }
+              />
+            }
             placeholder="mm/dd/yyyy"
             required
             disabled={courseInReview}
@@ -110,7 +144,21 @@ const CollapsibleCourseRunFields = ({
             component={RenderInputTextField}
             format={value => getDateString(value)}
             normalize={value => moment(value).toISOString()}
-            label={<FieldLabel text="Go Live date" />}
+            label={
+              <FieldLabel
+                id={`${courseRun}.go_live_date.label`}
+                text="Publish date"
+                helpText={
+                  <div>
+                    <p>The date when the course run will be publicly published.</p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a
+                      publish date.
+                    </p>
+                  </div>
+                }
+              />
+            }
             placeholder="mm/dd/yyyy"
             disabled={courseInReview}
           />
@@ -118,7 +166,21 @@ const CollapsibleCourseRunFields = ({
             name={`${courseRun}.min_effort`}
             type="number"
             component={RenderInputTextField}
-            label={<FieldLabel text="Minimum effort" requiredForSubmit />}
+            label={
+              <FieldLabel
+                id={`${courseRun}.min_effort.label`}
+                text="Minimum effort"
+                requiredForSubmit
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend
+                      on the course.
+                    </p>
+                  </div>
+                }
+              />
+            }
             disabled={courseInReview}
             required={courseRunSubmitting}
           />
@@ -126,7 +188,21 @@ const CollapsibleCourseRunFields = ({
             name={`${courseRun}.max_effort`}
             type="number"
             component={RenderInputTextField}
-            label={<FieldLabel text="Maximum effort" requiredForSubmit />}
+            label={
+              <FieldLabel
+                id={`${courseRun}.max_effort.label`}
+                text="Maximum effort"
+                requiredForSubmit
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend
+                      on the course.
+                    </p>
+                  </div>
+                }
+              />
+            }
             disabled={courseInReview}
             required={courseRunSubmitting}
           />
@@ -135,7 +211,26 @@ const CollapsibleCourseRunFields = ({
             type="text"
             component={RenderSelectField}
             options={pacingTypeOptions}
-            label={<FieldLabel text="Course pacing" requiredForSubmit />}
+            label={
+              <FieldLabel
+                id={`${courseRun}.pacing_type.label`}
+                text="Course pacing"
+                requiredForSubmit
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific
+                      due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific
+                      due dates before the course end date. All assignments are due on the course
+                      end date.
+                    </p>
+                  </div>
+                }
+              />
+            }
             disabled={courseInReview}
             required={courseRunSubmitting}
           />
@@ -160,11 +255,36 @@ const CollapsibleCourseRunFields = ({
             name={`${courseRun}.weeks_to_complete`}
             type="number"
             component={RenderInputTextField}
-            label={<FieldLabel text="Length" requiredForSubmit />}
+            label={
+              <FieldLabel
+                id={`${courseRun}.weeks_to_complete.label`}
+                text="Length"
+                requiredForSubmit
+                helpText={
+                  <div>
+                    <p>The length of the course, in weeks, rounded to the nearest whole number.</p>
+                  </div>
+                }
+              />
+            }
             disabled={courseInReview}
             required={courseRunSubmitting}
           />
-          <FieldLabel text="Staff" className="mb-2" requiredForSubmit />
+          <FieldLabel
+            id={`${courseRun}.staff.label`}
+            text="Staff"
+            className="mb-2"
+            requiredForSubmit
+            helpText={
+              <div>
+                <p>The primary instructor or instructors for the course.</p>
+                <p>
+                  The order that instructors are listed here is the same order they will be
+                  displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>
+            }
+          />
           <Field
             name={`${courseRun}.staff`}
             component={StaffList}

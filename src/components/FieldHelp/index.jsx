@@ -67,6 +67,7 @@ class FieldHelp extends React.Component {
           place="right"
           type="dark"
           effect="solid"
+          clickable
         />
       </span>
     );

@@ -105,8 +105,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -124,8 +136,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -144,11 +162,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />
             }
             name="[object Object].go_live_date"
@@ -162,8 +189,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -179,8 +212,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -196,8 +235,17 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -268,8 +316,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -281,8 +335,17 @@ ShallowWrapper {
           />
           <FieldLabel
             className="mb-2"
-            helpText=""
-            id={null}
+            helpText={
+              <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>
+            }
+            id="[object Object].staff.label"
             required={false}
             requiredForSubmit={true}
             text="Staff"
@@ -327,8 +390,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -346,8 +421,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -366,11 +447,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -384,8 +474,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -401,8 +497,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -418,8 +520,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -490,8 +601,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -503,8 +620,17 @@ ShallowWrapper {
             />,
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -574,8 +700,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -599,8 +737,14 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -625,11 +769,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />,
               "name": "[object Object].go_live_date",
               "normalize": [Function],
@@ -649,8 +802,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -672,8 +831,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -695,8 +860,17 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -789,8 +963,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -809,8 +989,15 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mb-2",
-              "helpText": "",
-              "id": null,
+              "helpText": <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>,
+              "id": "[object Object].staff.label",
               "required": false,
               "requiredForSubmit": true,
               "text": "Staff",
@@ -922,8 +1109,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -941,8 +1140,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -961,11 +1166,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -979,8 +1193,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -996,8 +1216,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -1013,8 +1239,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -1085,8 +1320,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -1098,8 +1339,17 @@ ShallowWrapper {
             />
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -1144,8 +1394,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major U.S. holidays.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].start.label"
                     required={true}
                     requiredForSubmit={true}
                     text="Start date"
@@ -1163,8 +1425,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].end.label"
                     required={true}
                     requiredForSubmit={true}
                     text="End date"
@@ -1183,11 +1451,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The date when the course run will be publicly published.
+                        </p>
+                        <p>
+                          If you just want the run to be published as soon as possible, don’t set a publish date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].go_live_date.label"
                     required={false}
                     requiredForSubmit={false}
-                    text="Go Live date"
+                    text="Publish date"
                   />
                 }
                 name="[object Object].go_live_date"
@@ -1201,8 +1478,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The minimum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].min_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Minimum effort"
@@ -1218,8 +1501,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The maximum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].max_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Maximum effort"
@@ -1235,8 +1524,17 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                        </p>
+                        <p>
+                          Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].pacing_type.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Course pacing"
@@ -1307,8 +1605,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The length of the course, in weeks, rounded to the nearest whole number.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].weeks_to_complete.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Length"
@@ -1320,8 +1624,17 @@ ShallowWrapper {
               />,
               <FieldLabel
                 className="mb-2"
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The primary instructor or instructors for the course.
+                    </p>
+                    <p>
+                      The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                    </p>
+                  </div>
+                }
+                id="[object Object].staff.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Staff"
@@ -1391,8 +1704,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -1416,8 +1741,14 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -1442,11 +1773,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />,
                 "name": "[object Object].go_live_date",
                 "normalize": [Function],
@@ -1466,8 +1806,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -1489,8 +1835,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -1512,8 +1864,17 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -1606,8 +1967,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -1626,8 +1993,15 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "className": "mb-2",
-                "helpText": "",
-                "id": null,
+                "helpText": <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>,
+                "id": "[object Object].staff.label",
                 "required": false,
                 "requiredForSubmit": true,
                 "text": "Staff",
@@ -1826,8 +2200,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -1845,8 +2231,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -1865,11 +2257,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />
             }
             name="[object Object].go_live_date"
@@ -1883,8 +2284,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -1900,8 +2307,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -1917,8 +2330,17 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -1989,8 +2411,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -2002,8 +2430,17 @@ ShallowWrapper {
           />
           <FieldLabel
             className="mb-2"
-            helpText=""
-            id={null}
+            helpText={
+              <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>
+            }
+            id="[object Object].staff.label"
             required={false}
             requiredForSubmit={true}
             text="Staff"
@@ -2048,8 +2485,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -2067,8 +2516,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -2087,11 +2542,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -2105,8 +2569,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -2122,8 +2592,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -2139,8 +2615,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -2211,8 +2696,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -2224,8 +2715,17 @@ ShallowWrapper {
             />,
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -2295,8 +2795,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -2320,8 +2832,14 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -2346,11 +2864,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />,
               "name": "[object Object].go_live_date",
               "normalize": [Function],
@@ -2370,8 +2897,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -2393,8 +2926,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -2416,8 +2955,17 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -2510,8 +3058,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -2530,8 +3084,15 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mb-2",
-              "helpText": "",
-              "id": null,
+              "helpText": <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>,
+              "id": "[object Object].staff.label",
               "required": false,
               "requiredForSubmit": true,
               "text": "Staff",
@@ -2643,8 +3204,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -2662,8 +3235,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -2682,11 +3261,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -2700,8 +3288,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -2717,8 +3311,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -2734,8 +3334,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -2806,8 +3415,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -2819,8 +3434,17 @@ ShallowWrapper {
             />
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -2865,8 +3489,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major U.S. holidays.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].start.label"
                     required={true}
                     requiredForSubmit={true}
                     text="Start date"
@@ -2884,8 +3520,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].end.label"
                     required={true}
                     requiredForSubmit={true}
                     text="End date"
@@ -2904,11 +3546,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The date when the course run will be publicly published.
+                        </p>
+                        <p>
+                          If you just want the run to be published as soon as possible, don’t set a publish date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].go_live_date.label"
                     required={false}
                     requiredForSubmit={false}
-                    text="Go Live date"
+                    text="Publish date"
                   />
                 }
                 name="[object Object].go_live_date"
@@ -2922,8 +3573,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The minimum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].min_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Minimum effort"
@@ -2939,8 +3596,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The maximum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].max_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Maximum effort"
@@ -2956,8 +3619,17 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                        </p>
+                        <p>
+                          Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].pacing_type.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Course pacing"
@@ -3028,8 +3700,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The length of the course, in weeks, rounded to the nearest whole number.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].weeks_to_complete.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Length"
@@ -3041,8 +3719,17 @@ ShallowWrapper {
               />,
               <FieldLabel
                 className="mb-2"
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The primary instructor or instructors for the course.
+                    </p>
+                    <p>
+                      The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                    </p>
+                  </div>
+                }
+                id="[object Object].staff.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Staff"
@@ -3112,8 +3799,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -3137,8 +3836,14 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -3163,11 +3868,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />,
                 "name": "[object Object].go_live_date",
                 "normalize": [Function],
@@ -3187,8 +3901,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -3210,8 +3930,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -3233,8 +3959,17 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -3327,8 +4062,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -3347,8 +4088,15 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "className": "mb-2",
-                "helpText": "",
-                "id": null,
+                "helpText": <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>,
+                "id": "[object Object].staff.label",
                 "required": false,
                 "requiredForSubmit": true,
                 "text": "Staff",
@@ -3547,8 +4295,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -3566,8 +4326,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -3586,11 +4352,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />
             }
             name="[object Object].go_live_date"
@@ -3604,8 +4379,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -3621,8 +4402,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -3638,8 +4425,17 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -3710,8 +4506,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -3723,8 +4525,17 @@ ShallowWrapper {
           />
           <FieldLabel
             className="mb-2"
-            helpText=""
-            id={null}
+            helpText={
+              <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>
+            }
+            id="[object Object].staff.label"
             required={false}
             requiredForSubmit={true}
             text="Staff"
@@ -3769,8 +4580,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -3788,8 +4611,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -3808,11 +4637,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -3826,8 +4664,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -3843,8 +4687,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -3860,8 +4710,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -3932,8 +4791,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -3945,8 +4810,17 @@ ShallowWrapper {
             />,
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -4016,8 +4890,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -4041,8 +4927,14 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -4067,11 +4959,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />,
               "name": "[object Object].go_live_date",
               "normalize": [Function],
@@ -4091,8 +4992,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -4114,8 +5021,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -4137,8 +5050,17 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -4231,8 +5153,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -4251,8 +5179,15 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mb-2",
-              "helpText": "",
-              "id": null,
+              "helpText": <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>,
+              "id": "[object Object].staff.label",
               "required": false,
               "requiredForSubmit": true,
               "text": "Staff",
@@ -4364,8 +5299,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -4383,8 +5330,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -4403,11 +5356,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -4421,8 +5383,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -4438,8 +5406,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -4455,8 +5429,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -4527,8 +5510,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -4540,8 +5529,17 @@ ShallowWrapper {
             />
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -4586,8 +5584,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major U.S. holidays.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].start.label"
                     required={true}
                     requiredForSubmit={true}
                     text="Start date"
@@ -4605,8 +5615,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].end.label"
                     required={true}
                     requiredForSubmit={true}
                     text="End date"
@@ -4625,11 +5641,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The date when the course run will be publicly published.
+                        </p>
+                        <p>
+                          If you just want the run to be published as soon as possible, don’t set a publish date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].go_live_date.label"
                     required={false}
                     requiredForSubmit={false}
-                    text="Go Live date"
+                    text="Publish date"
                   />
                 }
                 name="[object Object].go_live_date"
@@ -4643,8 +5668,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The minimum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].min_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Minimum effort"
@@ -4660,8 +5691,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The maximum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].max_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Maximum effort"
@@ -4677,8 +5714,17 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                        </p>
+                        <p>
+                          Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].pacing_type.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Course pacing"
@@ -4749,8 +5795,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The length of the course, in weeks, rounded to the nearest whole number.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].weeks_to_complete.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Length"
@@ -4762,8 +5814,17 @@ ShallowWrapper {
               />,
               <FieldLabel
                 className="mb-2"
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The primary instructor or instructors for the course.
+                    </p>
+                    <p>
+                      The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                    </p>
+                  </div>
+                }
+                id="[object Object].staff.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Staff"
@@ -4833,8 +5894,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -4858,8 +5931,14 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -4884,11 +5963,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />,
                 "name": "[object Object].go_live_date",
                 "normalize": [Function],
@@ -4908,8 +5996,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -4931,8 +6025,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -4954,8 +6054,17 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -5048,8 +6157,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -5068,8 +6183,15 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "className": "mb-2",
-                "helpText": "",
-                "id": null,
+                "helpText": <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>,
+                "id": "[object Object].staff.label",
                 "required": false,
                 "requiredForSubmit": true,
                 "text": "Staff",
@@ -5268,8 +6390,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -5287,8 +6421,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -5307,11 +6447,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />
             }
             name="[object Object].go_live_date"
@@ -5325,8 +6474,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -5342,8 +6497,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -5359,8 +6520,17 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -5431,8 +6601,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -5444,8 +6620,17 @@ ShallowWrapper {
           />
           <FieldLabel
             className="mb-2"
-            helpText=""
-            id={null}
+            helpText={
+              <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>
+            }
+            id="[object Object].staff.label"
             required={false}
             requiredForSubmit={true}
             text="Staff"
@@ -5490,8 +6675,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -5509,8 +6706,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -5529,11 +6732,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -5547,8 +6759,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -5564,8 +6782,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -5581,8 +6805,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -5653,8 +6886,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -5666,8 +6905,17 @@ ShallowWrapper {
             />,
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -5737,8 +6985,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].start.label"
                 required={true}
                 requiredForSubmit={true}
                 text="Start date"
@@ -5762,8 +7022,14 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="[object Object].end.label"
                 required={true}
                 requiredForSubmit={true}
                 text="End date"
@@ -5788,11 +7054,20 @@ ShallowWrapper {
               "format": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The date when the course run will be publicly published.
+                    </p>
+                    <p>
+                      If you just want the run to be published as soon as possible, don’t set a publish date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].go_live_date.label"
                 required={false}
                 requiredForSubmit={false}
-                text="Go Live date"
+                text="Publish date"
               />,
               "name": "[object Object].go_live_date",
               "normalize": [Function],
@@ -5812,8 +7087,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The minimum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].min_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Minimum effort"
@@ -5835,8 +7116,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The maximum number of hours per week the learner should expect to spend on the course.
+                    </p>
+                  </div>
+                }
+                id="[object Object].max_effort.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Maximum effort"
@@ -5858,8 +7145,17 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="[object Object].pacing_type.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Course pacing"
@@ -5952,8 +7248,14 @@ ShallowWrapper {
               "disabled": false,
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The length of the course, in weeks, rounded to the nearest whole number.
+                    </p>
+                  </div>
+                }
+                id="[object Object].weeks_to_complete.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Length"
@@ -5972,8 +7274,15 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mb-2",
-              "helpText": "",
-              "id": null,
+              "helpText": <div>
+                <p>
+                  The primary instructor or instructors for the course.
+                </p>
+                <p>
+                  The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                </p>
+              </div>,
+              "id": "[object Object].staff.label",
               "required": false,
               "requiredForSubmit": true,
               "text": "Staff",
@@ -6085,8 +7394,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -6104,8 +7425,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -6124,11 +7451,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />
               }
               name="[object Object].go_live_date"
@@ -6142,8 +7478,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -6159,8 +7501,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -6176,8 +7524,17 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -6248,8 +7605,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -6261,8 +7624,17 @@ ShallowWrapper {
             />
             <FieldLabel
               className="mb-2"
-              helpText=""
-              id={null}
+              helpText={
+                <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>
+              }
+              id="[object Object].staff.label"
               required={false}
               requiredForSubmit={true}
               text="Staff"
@@ -6307,8 +7679,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major U.S. holidays.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].start.label"
                     required={true}
                     requiredForSubmit={true}
                     text="Start date"
@@ -6326,8 +7710,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].end.label"
                     required={true}
                     requiredForSubmit={true}
                     text="End date"
@@ -6346,11 +7736,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The date when the course run will be publicly published.
+                        </p>
+                        <p>
+                          If you just want the run to be published as soon as possible, don’t set a publish date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].go_live_date.label"
                     required={false}
                     requiredForSubmit={false}
-                    text="Go Live date"
+                    text="Publish date"
                   />
                 }
                 name="[object Object].go_live_date"
@@ -6364,8 +7763,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The minimum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].min_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Minimum effort"
@@ -6381,8 +7786,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The maximum number of hours per week the learner should expect to spend on the course.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].max_effort.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Maximum effort"
@@ -6398,8 +7809,17 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                        </p>
+                        <p>
+                          Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].pacing_type.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Course pacing"
@@ -6470,8 +7890,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The length of the course, in weeks, rounded to the nearest whole number.
+                        </p>
+                      </div>
+                    }
+                    id="[object Object].weeks_to_complete.label"
                     required={false}
                     requiredForSubmit={true}
                     text="Length"
@@ -6483,8 +7909,17 @@ ShallowWrapper {
               />,
               <FieldLabel
                 className="mb-2"
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The primary instructor or instructors for the course.
+                    </p>
+                    <p>
+                      The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                    </p>
+                  </div>
+                }
+                id="[object Object].staff.label"
                 required={false}
                 requiredForSubmit={true}
                 text="Staff"
@@ -6554,8 +7989,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].start.label"
                   required={true}
                   requiredForSubmit={true}
                   text="Start date"
@@ -6579,8 +8026,14 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].end.label"
                   required={true}
                   requiredForSubmit={true}
                   text="End date"
@@ -6605,11 +8058,20 @@ ShallowWrapper {
                 "format": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The date when the course run will be publicly published.
+                      </p>
+                      <p>
+                        If you just want the run to be published as soon as possible, don’t set a publish date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].go_live_date.label"
                   required={false}
                   requiredForSubmit={false}
-                  text="Go Live date"
+                  text="Publish date"
                 />,
                 "name": "[object Object].go_live_date",
                 "normalize": [Function],
@@ -6629,8 +8091,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].min_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Minimum effort"
@@ -6652,8 +8120,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend on the course.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].max_effort.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Maximum effort"
@@ -6675,8 +8149,17 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].pacing_type.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Course pacing"
@@ -6769,8 +8252,14 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The length of the course, in weeks, rounded to the nearest whole number.
+                      </p>
+                    </div>
+                  }
+                  id="[object Object].weeks_to_complete.label"
                   required={false}
                   requiredForSubmit={true}
                   text="Length"
@@ -6789,8 +8278,15 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "className": "mb-2",
-                "helpText": "",
-                "id": null,
+                "helpText": <div>
+                  <p>
+                    The primary instructor or instructors for the course.
+                  </p>
+                  <p>
+                    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+                  </p>
+                </div>,
+                "id": "[object Object].staff.label",
                 "required": false,
                 "requiredForSubmit": true,
                 "text": "Staff",
