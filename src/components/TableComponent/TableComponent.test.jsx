@@ -38,6 +38,7 @@ describe('CourseTable', () => {
       columns={mockColumns}
       formatData={mockFormat}
       tableSortable
+      pageCount={1}
       paginateTable={() => true}
       sortTable={() => true}
       clearTable={() => true}
@@ -55,6 +56,7 @@ describe('CourseTable', () => {
       formatData={mockFormat}
       error={new Error('Test error')}
       tableSortable
+      pageCount={1}
       paginateTable={() => true}
       sortTable={() => true}
       clearTable={() => true}
@@ -71,6 +73,7 @@ describe('CourseTable', () => {
       columns={mockColumns}
       formatData={mockFormat}
       tableSortable
+      pageCount={1}
       paginateTable={() => true}
       sortTable={() => true}
       clearTable={() => true}
@@ -88,6 +91,7 @@ describe('CourseTable', () => {
       columns={mockColumns}
       formatData={mockFormat}
       tableSortable
+      pageCount={1}
       paginateTable={() => true}
       sortTable={() => true}
       clearTable={() => true}
@@ -105,6 +109,7 @@ describe('CourseTable', () => {
       columns={mockColumns}
       formatData={mockFormat}
       tableSortable
+      pageCount={1}
       paginateTable={() => true}
       sortTable={() => true}
       clearTable={() => true}
@@ -122,6 +127,7 @@ describe('CourseTable', () => {
       columns={mockColumns}
       formatData={mockFormat}
       tableSortable
+      pageCount={1}
       paginateTable={() => true}
       sortTable={() => true}
       clearTable={() => true}
@@ -144,6 +150,7 @@ describe('CourseTable', () => {
       columns={mockColumns}
       formatData={mockFormat}
       tableSortable
+      pageCount={1}
       paginateTable={() => true}
       sortTable={() => true}
       clearTable={() => true}

@@ -31,7 +31,7 @@ const Pill = ({ statuses }) => {
         break;
       case 'published':
         pills.push({
-          text: 'Live',
+          text: 'Published',
           className: 'badge badge-success',
         });
         break;

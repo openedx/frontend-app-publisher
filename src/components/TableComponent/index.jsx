@@ -146,7 +146,7 @@ TableComponent.propTypes = {
   // Props expected from TableContainer / redux store
   data: PropTypes.arrayOf(PropTypes.shape({})),
   currentPage: PropTypes.number,
-  pageCount: PropTypes.number,
+  pageCount: PropTypes.number.isRequired,
   ordering: PropTypes.string,
   loading: PropTypes.bool,
   error: PropTypes.instanceOf(Error),
@@ -159,12 +159,11 @@ TableComponent.propTypes = {
 };
 
 TableComponent.defaultProps = {
-  className: null,
+  className: '',
   tableSortable: false,
   data: undefined,
   ordering: undefined,
   currentPage: undefined,
-  pageCount: undefined,
   error: null,
   loading: false,
 };

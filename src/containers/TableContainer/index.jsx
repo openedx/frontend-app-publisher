@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     data: tableState.data && tableState.data.results,
     currentPage: tableState.data && tableState.page,
-    pageCount: tableState.data && Math.ceil(tableState.data.count / tableState.pageSize),
+    pageCount: (tableState.data && Math.ceil(tableState.data.count / tableState.pageSize)) || 1,
     ordering: tableState.ordering,
     loading: tableState.loading,
     error: tableState.error,
