@@ -36,22 +36,16 @@ const owners = [{ key: 'MITx' }];
 const autoCompletePersonResponses = {
   long: [
     {
-      id: '5',
-      text: {
-        uuid: 'a7d0e2c0-9a02-421b-93bf-d081339090cc',
-        profile_image_url: '/assets/new-80.png',
-        given_name: 'Pippi',
-        family_name: 'Longstocking',
-      },
+      uuid: 'a7d0e2c0-9a02-421b-93bf-d081339090cc',
+      profile_image_url: '/assets/new-80.png',
+      given_name: 'Pippi',
+      family_name: 'Longstocking',
     },
     {
-      id: '6',
-      text: {
-        uuid: 'b7d0e2c0-9a02-421b-93bf-d081339090cc',
-        profile_image_url: '/assets/new-80.png',
-        given_name: 'Hank',
-        family_name: 'Longfellow',
-      },
+      uuid: 'b7d0e2c0-9a02-421b-93bf-d081339090cc',
+      profile_image_url: '/assets/new-80.png',
+      given_name: 'Hank',
+      family_name: 'Longfellow',
     }],
 };
 
@@ -106,19 +100,17 @@ describe('StaffList', () => {
   });
 
   it('gets/clears suggestions for autocomplete', (done) => {
-    mockClient.onGet('http://localhost:18381/admin/course_metadata/person-autocomplete/?q=long&serialize=1&org=MITx')
-      .replyOnce(200, JSON.stringify({
-        results: autoCompletePersonResponses.long,
-      }));
+    mockClient.onGet('http://localhost:18381/api/v1/search/person_typeahead/?q=long&org=MITx')
+      .replyOnce(200, JSON.stringify(autoCompletePersonResponses.long));
     const component = mount(<StaffList {...defaultProps} owners={owners} />);
     component.instance().onSuggestionsFetchRequested({ value: 'long' }).then(() => {
       let { suggestions } = component.state();
       // check that we get the expected response from the API
-      expect(suggestions[0].text.family_name).toEqual('Longstocking');
-      expect(suggestions[0].id).toEqual('5');
+      expect(suggestions[0].family_name).toEqual('Longstocking');
+      expect(suggestions[0].uuid).toEqual('a7d0e2c0-9a02-421b-93bf-d081339090cc');
       // check that we get the 'add new' link at the bottom of our expected results.
       expect(suggestions[2].url).not.toBeNull();
-      expect(suggestions[2].id).toEqual('new');
+      expect(suggestions[2].item_text).toEqual('Add New Instructor');
 
       // check that clearing suggestions...clears suggestions
       component.instance().onSuggestionsClearRequested();

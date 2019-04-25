@@ -61,15 +61,12 @@ class StaffList extends React.Component {
       return DiscoveryDataApiService
         .autocompletePerson(value, organizationKeys)
         .then((response) => {
-          const { results } = response.data;
+          const results = response.data;
           // Add in last 'suggestion' - the 'add new' instructor list item
           results.push({
-            id: 'new',
-            text: {
-              profile_image_url: '/assets/new-instructor-80.png',
-              given_name: '',
-              family_name: '',
-            },
+            profile_image_url: '/assets/new-instructor-80.png',
+            given_name: '',
+            family_name: '',
             url: '/instructors/new',
             item_text: 'Add New Instructor',
           });
@@ -113,7 +110,7 @@ class StaffList extends React.Component {
     const { staffList } = this.state;
     // clear search string to allow for another staffer to be added.
     this.setState({ searchString: '' });
-    if (suggestion.id === 'new') {
+    if (suggestion.item_text) {
       // Send users to the create instructor page
       const { courseUuid, courseRunKey } = this.props;
       store.dispatch(sourceInfo(`/courses/${courseUuid}/edit`, courseRunKey));
@@ -123,8 +120,8 @@ class StaffList extends React.Component {
 
     const newStaffList = Array.from(this.state.staffList);
     // if instructor NOT already selected
-    if (!staffList.some(staff => staff.uuid === suggestion.text.uuid)) {
-      newStaffList.push(suggestion.text); // add to component state
+    if (!staffList.some(staff => staff.uuid === suggestion.uuid)) {
+      newStaffList.push(suggestion); // add to component state
     }
     // add to form state (trigger change action)
     this.setState({
@@ -143,7 +140,7 @@ class StaffList extends React.Component {
     if (selectedValue.item_text) {
       return selectedValue.item_text;
     }
-    return getStafferName(selectedValue.text);
+    return getStafferName(selectedValue);
   }
 
   /**
@@ -196,20 +193,20 @@ class StaffList extends React.Component {
       <div className="d-flex flex-row m-1 p-1">
         <div className="m-1 p-1 w-25">
           <img
-            src={suggestion.text.profile_image_url}
-            alt={`profile for ${getStafferName(suggestion.text)}`}
+            src={suggestion.profile_image_url}
+            alt={`profile for ${getStafferName(suggestion)}`}
             className="rounded-circle w-100"
           />
         </div>
         <div className="m-1 p-1 w-75">
-          <div className="m-1 p-1">{getStafferName(suggestion.text)}</div>
+          <div className="m-1 p-1">{getStafferName(suggestion)}</div>
           <div className="m-1 p-1">
             {suggestion.item_text && (
               <span>{suggestion.item_text}</span>
             )}
-            {suggestion.text.position && (
+            {suggestion.position && (
               <span>
-                {suggestion.text.position.title} at {suggestion.text.position.organization_name}
+                {suggestion.position.title} at {suggestion.position.organization_name}
               </span>
             )}
           </div>
