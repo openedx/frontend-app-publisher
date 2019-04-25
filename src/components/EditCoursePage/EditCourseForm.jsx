@@ -177,6 +177,7 @@ export class BaseEditCourseForm extends React.Component {
               component={RichEditor}
               label={<FieldLabel text="Long description" requiredForSubmit />}
               maxChars={2500}
+              id="ldesc"
               disabled={courseInReview}
               required={isSubmittingForReview}
             />
