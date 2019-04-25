@@ -689,13 +689,15 @@ ShallowWrapper {
       >
         <FieldLabel
           className="mt-4 mb-2"
+          helpText=""
+          id={null}
           required={false}
           requiredForSubmit={false}
           text="Course"
         />
         <t
           iconId=""
-          isOpen={false}
+          isOpen={true}
           onToggle={[Function]}
           title={
             <React.Fragment>
@@ -712,6 +714,54 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                    </p>
+                    <p>
+                      <b>
+                        Single Course Example
+                      </b>
+                    </p>
+                    <ul>
+                      <li>
+                        English Grammar and Essay Writing
+                      </li>
+                    </ul>
+                    <p>
+                      <b>
+                        Sequential Course Examples
+                      </b>
+                    </p>
+                    <ul>
+                      <li>
+                        Statistics: Inference
+                      </li>
+                      <li>
+                        Statistics: Probability
+                      </li>
+                    </ul>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={true}
                 text="Title"
@@ -724,6 +774,7 @@ ShallowWrapper {
           <div>
             <FieldLabel
               className="mb-2"
+              helpText=""
               id="number"
               required={false}
               requiredForSubmit={false}
@@ -742,6 +793,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Short description"
@@ -757,6 +810,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Long description"
@@ -772,6 +827,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="What you will learn"
@@ -786,6 +843,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Primary subject"
@@ -823,6 +882,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Secondary subject"
@@ -860,6 +921,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Tertiary subject"
@@ -899,6 +962,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Image"
@@ -913,6 +978,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Prerequisites"
@@ -927,6 +994,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Course level"
@@ -961,6 +1030,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Learner testimonials"
@@ -976,6 +1047,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Frequently asked questions"
@@ -991,6 +1064,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Additional information"
@@ -1006,6 +1081,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Syllabus"
@@ -1020,6 +1097,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="About video link"
@@ -1035,6 +1114,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -1070,6 +1151,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={true}
                   requiredForSubmit={true}
                   text="Price"
@@ -1082,6 +1165,8 @@ ShallowWrapper {
         </t>
         <FieldLabel
           className="mt-4 mb-2"
+          helpText=""
+          id={null}
           required={false}
           requiredForSubmit={false}
           text="Course runs"
@@ -2363,13 +2448,15 @@ ShallowWrapper {
         "children": Array [
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course"
           />,
           <t
             iconId=""
-            isOpen={false}
+            isOpen={true}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -2386,6 +2473,54 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -2398,6 +2533,7 @@ ShallowWrapper {
             <div>
               <FieldLabel
                 className="mb-2"
+                helpText=""
                 id="number"
                 required={false}
                 requiredForSubmit={false}
@@ -2416,6 +2552,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -2431,6 +2569,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -2446,6 +2586,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -2460,6 +2602,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -2497,6 +2641,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -2534,6 +2680,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -2573,6 +2721,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -2587,6 +2737,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -2601,6 +2753,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -2635,6 +2789,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -2650,6 +2806,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -2665,6 +2823,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -2680,6 +2840,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -2694,6 +2856,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -2709,6 +2873,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Enrollment track"
@@ -2744,6 +2910,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={true}
                     requiredForSubmit={true}
                     text="Price"
@@ -2756,6 +2924,8 @@ ShallowWrapper {
           </t>,
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course runs"
@@ -4037,6 +4207,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "className": "mt-4 mb-2",
+            "helpText": "",
+            "id": null,
             "required": false,
             "requiredForSubmit": false,
             "text": "Course",
@@ -4057,6 +4229,54 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -4069,6 +4289,7 @@ ShallowWrapper {
               <div>
                 <FieldLabel
                   className="mb-2"
+                  helpText=""
                   id="number"
                   required={false}
                   requiredForSubmit={false}
@@ -4087,6 +4308,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -4102,6 +4325,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -4117,6 +4342,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -4131,6 +4358,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -4168,6 +4397,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -4205,6 +4436,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -4244,6 +4477,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -4258,6 +4493,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -4272,6 +4509,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -4306,6 +4545,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -4321,6 +4562,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -4336,6 +4579,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -4351,6 +4596,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -4365,6 +4612,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -4380,6 +4629,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Enrollment track"
@@ -4415,6 +4666,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={true}
                       requiredForSubmit={true}
                       text="Price"
@@ -4428,7 +4681,7 @@ ShallowWrapper {
             "expandedTitle": undefined,
             "iconId": "",
             "isCollapsible": undefined,
-            "isOpen": false,
+            "isOpen": true,
             "onToggle": [Function],
             "title": <React.Fragment>
               Course: Test Title
@@ -4448,6 +4701,54 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -4468,6 +4769,7 @@ ShallowWrapper {
                 "children": Array [
                   <FieldLabel
                     className="mb-2"
+                    helpText=""
                     id="number"
                     required={false}
                     requiredForSubmit={false}
@@ -4488,6 +4790,7 @@ ShallowWrapper {
                   "nodeType": "function",
                   "props": Object {
                     "className": "mb-2",
+                    "helpText": "",
                     "id": "number",
                     "required": false,
                     "requiredForSubmit": false,
@@ -4522,6 +4825,8 @@ ShallowWrapper {
                 "id": "sdesc",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -4543,6 +4848,8 @@ ShallowWrapper {
                 "id": "ldesc",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -4564,6 +4871,8 @@ ShallowWrapper {
                 "id": "outcome",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -4584,6 +4893,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -4625,6 +4936,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -4666,6 +4979,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -4709,6 +5024,8 @@ ShallowWrapper {
                 "id": "image",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -4729,6 +5046,8 @@ ShallowWrapper {
                 "id": "prereq",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -4749,6 +5068,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -4787,6 +5108,8 @@ ShallowWrapper {
                 "id": "learner-testimonials",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -4808,6 +5131,8 @@ ShallowWrapper {
                 "id": "faq",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -4829,6 +5154,8 @@ ShallowWrapper {
                 "id": "additional-information",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -4850,6 +5177,8 @@ ShallowWrapper {
                 "id": "syllabus",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -4870,6 +5199,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -4893,6 +5224,8 @@ ShallowWrapper {
                     label={
                       <FieldLabel
                         className=""
+                        helpText=""
+                        id={null}
                         required={false}
                         requiredForSubmit={false}
                         text="Enrollment track"
@@ -4928,6 +5261,8 @@ ShallowWrapper {
                     label={
                       <FieldLabel
                         className=""
+                        helpText=""
+                        id={null}
                         required={true}
                         requiredForSubmit={true}
                         text="Price"
@@ -4949,6 +5284,8 @@ ShallowWrapper {
                     "disabled": false,
                     "label": <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Enrollment track"
@@ -4986,6 +5323,8 @@ ShallowWrapper {
                     },
                     "label": <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={true}
                       requiredForSubmit={true}
                       text="Price"
@@ -5009,6 +5348,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "className": "mt-4 mb-2",
+            "helpText": "",
+            "id": null,
             "required": false,
             "requiredForSubmit": false,
             "text": "Course runs",
@@ -6355,13 +6696,15 @@ ShallowWrapper {
         >
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course"
           />
           <t
             iconId=""
-            isOpen={false}
+            isOpen={true}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -6378,6 +6721,54 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -6390,6 +6781,7 @@ ShallowWrapper {
             <div>
               <FieldLabel
                 className="mb-2"
+                helpText=""
                 id="number"
                 required={false}
                 requiredForSubmit={false}
@@ -6408,6 +6800,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -6423,6 +6817,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -6438,6 +6834,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -6452,6 +6850,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -6489,6 +6889,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -6526,6 +6928,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -6565,6 +6969,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -6579,6 +6985,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -6593,6 +7001,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -6627,6 +7037,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -6642,6 +7054,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -6657,6 +7071,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -6672,6 +7088,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -6686,6 +7104,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -6701,6 +7121,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Enrollment track"
@@ -6736,6 +7158,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={true}
                     requiredForSubmit={true}
                     text="Price"
@@ -6748,6 +7172,8 @@ ShallowWrapper {
           </t>
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course runs"
@@ -8029,13 +8455,15 @@ ShallowWrapper {
           "children": Array [
             <FieldLabel
               className="mt-4 mb-2"
+              helpText=""
+              id={null}
               required={false}
               requiredForSubmit={false}
               text="Course"
             />,
             <t
               iconId=""
-              isOpen={false}
+              isOpen={true}
               onToggle={[Function]}
               title={
                 <React.Fragment>
@@ -8052,6 +8480,54 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -8064,6 +8540,7 @@ ShallowWrapper {
               <div>
                 <FieldLabel
                   className="mb-2"
+                  helpText=""
                   id="number"
                   required={false}
                   requiredForSubmit={false}
@@ -8082,6 +8559,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -8097,6 +8576,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -8112,6 +8593,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -8126,6 +8609,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -8163,6 +8648,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -8200,6 +8687,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -8239,6 +8728,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -8253,6 +8744,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -8267,6 +8760,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -8301,6 +8796,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -8316,6 +8813,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -8331,6 +8830,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -8346,6 +8847,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -8360,6 +8863,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -8375,6 +8880,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Enrollment track"
@@ -8410,6 +8917,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={true}
                       requiredForSubmit={true}
                       text="Price"
@@ -8422,6 +8931,8 @@ ShallowWrapper {
             </t>,
             <FieldLabel
               className="mt-4 mb-2"
+              helpText=""
+              id={null}
               required={false}
               requiredForSubmit={false}
               text="Course runs"
@@ -9703,6 +10214,8 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mt-4 mb-2",
+              "helpText": "",
+              "id": null,
               "required": false,
               "requiredForSubmit": false,
               "text": "Course",
@@ -9723,6 +10236,54 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 70 characters. Recommended 50 or fewer characters.
+                          </p>
+                          <p>
+                            An effective course title:
+                          </p>
+                          <ul>
+                            <li>
+                              Clearly indicates the course subject matter.
+                            </li>
+                            <li>
+                              Follows search engine optimization (SEO) guidelines.
+                            </li>
+                            <li>
+                              Targets a global audience.
+                            </li>
+                          </ul>
+                          <p>
+                            If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                          </p>
+                          <p>
+                            <b>
+                              Single Course Example
+                            </b>
+                          </p>
+                          <ul>
+                            <li>
+                              English Grammar and Essay Writing
+                            </li>
+                          </ul>
+                          <p>
+                            <b>
+                              Sequential Course Examples
+                            </b>
+                          </p>
+                          <ul>
+                            <li>
+                              Statistics: Inference
+                            </li>
+                            <li>
+                              Statistics: Probability
+                            </li>
+                          </ul>
+                        </div>
+                      }
+                      id="title-label"
                       required={true}
                       requiredForSubmit={true}
                       text="Title"
@@ -9735,6 +10296,7 @@ ShallowWrapper {
                 <div>
                   <FieldLabel
                     className="mb-2"
+                    helpText=""
                     id="number"
                     required={false}
                     requiredForSubmit={false}
@@ -9753,6 +10315,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Short description"
@@ -9768,6 +10332,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Long description"
@@ -9783,6 +10349,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="What you will learn"
@@ -9797,6 +10365,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Primary subject"
@@ -9834,6 +10404,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Secondary subject"
@@ -9871,6 +10443,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Tertiary subject"
@@ -9910,6 +10484,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Image"
@@ -9924,6 +10500,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Prerequisites"
@@ -9938,6 +10516,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Course level"
@@ -9972,6 +10552,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Learner testimonials"
@@ -9987,6 +10569,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Frequently asked questions"
@@ -10002,6 +10586,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Additional information"
@@ -10017,6 +10603,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Syllabus"
@@ -10031,6 +10619,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="About video link"
@@ -10046,6 +10636,8 @@ ShallowWrapper {
                     label={
                       <FieldLabel
                         className=""
+                        helpText=""
+                        id={null}
                         required={false}
                         requiredForSubmit={false}
                         text="Enrollment track"
@@ -10081,6 +10673,8 @@ ShallowWrapper {
                     label={
                       <FieldLabel
                         className=""
+                        helpText=""
+                        id={null}
                         required={true}
                         requiredForSubmit={true}
                         text="Price"
@@ -10094,7 +10688,7 @@ ShallowWrapper {
               "expandedTitle": undefined,
               "iconId": "",
               "isCollapsible": undefined,
-              "isOpen": false,
+              "isOpen": true,
               "onToggle": [Function],
               "title": <React.Fragment>
                 Course: Test Title
@@ -10114,6 +10708,54 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -10134,6 +10776,7 @@ ShallowWrapper {
                   "children": Array [
                     <FieldLabel
                       className="mb-2"
+                      helpText=""
                       id="number"
                       required={false}
                       requiredForSubmit={false}
@@ -10154,6 +10797,7 @@ ShallowWrapper {
                     "nodeType": "function",
                     "props": Object {
                       "className": "mb-2",
+                      "helpText": "",
                       "id": "number",
                       "required": false,
                       "requiredForSubmit": false,
@@ -10188,6 +10832,8 @@ ShallowWrapper {
                   "id": "sdesc",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -10209,6 +10855,8 @@ ShallowWrapper {
                   "id": "ldesc",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -10230,6 +10878,8 @@ ShallowWrapper {
                   "id": "outcome",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -10250,6 +10900,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -10291,6 +10943,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -10332,6 +10986,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -10375,6 +11031,8 @@ ShallowWrapper {
                   "id": "image",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -10395,6 +11053,8 @@ ShallowWrapper {
                   "id": "prereq",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -10415,6 +11075,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -10453,6 +11115,8 @@ ShallowWrapper {
                   "id": "learner-testimonials",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -10474,6 +11138,8 @@ ShallowWrapper {
                   "id": "faq",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -10495,6 +11161,8 @@ ShallowWrapper {
                   "id": "additional-information",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -10516,6 +11184,8 @@ ShallowWrapper {
                   "id": "syllabus",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -10536,6 +11206,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -10559,6 +11231,8 @@ ShallowWrapper {
                       label={
                         <FieldLabel
                           className=""
+                          helpText=""
+                          id={null}
                           required={false}
                           requiredForSubmit={false}
                           text="Enrollment track"
@@ -10594,6 +11268,8 @@ ShallowWrapper {
                       label={
                         <FieldLabel
                           className=""
+                          helpText=""
+                          id={null}
                           required={true}
                           requiredForSubmit={true}
                           text="Price"
@@ -10615,6 +11291,8 @@ ShallowWrapper {
                       "disabled": false,
                       "label": <FieldLabel
                         className=""
+                        helpText=""
+                        id={null}
                         required={false}
                         requiredForSubmit={false}
                         text="Enrollment track"
@@ -10652,6 +11330,8 @@ ShallowWrapper {
                       },
                       "label": <FieldLabel
                         className=""
+                        helpText=""
+                        id={null}
                         required={true}
                         requiredForSubmit={true}
                         text="Price"
@@ -10675,6 +11355,8 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mt-4 mb-2",
+              "helpText": "",
+              "id": null,
               "required": false,
               "requiredForSubmit": false,
               "text": "Course runs",
@@ -12725,13 +13407,15 @@ ShallowWrapper {
       >
         <FieldLabel
           className="mt-4 mb-2"
+          helpText=""
+          id={null}
           required={false}
           requiredForSubmit={false}
           text="Course"
         />
         <t
           iconId=""
-          isOpen={false}
+          isOpen={true}
           onToggle={[Function]}
           title={
             <React.Fragment>
@@ -12748,6 +13432,54 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                    </p>
+                    <p>
+                      <b>
+                        Single Course Example
+                      </b>
+                    </p>
+                    <ul>
+                      <li>
+                        English Grammar and Essay Writing
+                      </li>
+                    </ul>
+                    <p>
+                      <b>
+                        Sequential Course Examples
+                      </b>
+                    </p>
+                    <ul>
+                      <li>
+                        Statistics: Inference
+                      </li>
+                      <li>
+                        Statistics: Probability
+                      </li>
+                    </ul>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={true}
                 text="Title"
@@ -12760,6 +13492,7 @@ ShallowWrapper {
           <div>
             <FieldLabel
               className="mb-2"
+              helpText=""
               id="number"
               required={false}
               requiredForSubmit={false}
@@ -12778,6 +13511,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Short description"
@@ -12793,6 +13528,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Long description"
@@ -12808,6 +13545,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="What you will learn"
@@ -12822,6 +13561,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Primary subject"
@@ -12859,6 +13600,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Secondary subject"
@@ -12896,6 +13639,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Tertiary subject"
@@ -12935,6 +13680,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Image"
@@ -12949,6 +13696,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Prerequisites"
@@ -12963,6 +13712,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Course level"
@@ -12997,6 +13748,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Learner testimonials"
@@ -13012,6 +13765,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Frequently asked questions"
@@ -13027,6 +13782,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Additional information"
@@ -13042,6 +13799,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Syllabus"
@@ -13056,6 +13815,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="About video link"
@@ -13067,6 +13828,8 @@ ShallowWrapper {
         </t>
         <FieldLabel
           className="mt-4 mb-2"
+          helpText=""
+          id={null}
           required={false}
           requiredForSubmit={false}
           text="Course runs"
@@ -14347,13 +15110,15 @@ ShallowWrapper {
         "children": Array [
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course"
           />,
           <t
             iconId=""
-            isOpen={false}
+            isOpen={true}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -14370,6 +15135,54 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -14382,6 +15195,7 @@ ShallowWrapper {
             <div>
               <FieldLabel
                 className="mb-2"
+                helpText=""
                 id="number"
                 required={false}
                 requiredForSubmit={false}
@@ -14400,6 +15214,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -14415,6 +15231,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -14430,6 +15248,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -14444,6 +15264,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -14481,6 +15303,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -14518,6 +15342,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -14557,6 +15383,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -14571,6 +15399,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -14585,6 +15415,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -14619,6 +15451,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -14634,6 +15468,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -14649,6 +15485,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -14664,6 +15502,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -14678,6 +15518,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -14689,6 +15531,8 @@ ShallowWrapper {
           </t>,
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course runs"
@@ -15969,6 +16813,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "className": "mt-4 mb-2",
+            "helpText": "",
+            "id": null,
             "required": false,
             "requiredForSubmit": false,
             "text": "Course",
@@ -15989,6 +16835,54 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -16001,6 +16895,7 @@ ShallowWrapper {
               <div>
                 <FieldLabel
                   className="mb-2"
+                  helpText=""
                   id="number"
                   required={false}
                   requiredForSubmit={false}
@@ -16019,6 +16914,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -16034,6 +16931,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -16049,6 +16948,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -16063,6 +16964,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -16100,6 +17003,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -16137,6 +17042,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -16176,6 +17083,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -16190,6 +17099,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -16204,6 +17115,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -16238,6 +17151,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -16253,6 +17168,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -16268,6 +17185,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -16283,6 +17202,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -16297,6 +17218,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -16310,7 +17233,7 @@ ShallowWrapper {
             "expandedTitle": undefined,
             "iconId": "",
             "isCollapsible": undefined,
-            "isOpen": false,
+            "isOpen": true,
             "onToggle": [Function],
             "title": <React.Fragment>
               Course: Test Title
@@ -16330,6 +17253,54 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -16350,6 +17321,7 @@ ShallowWrapper {
                 "children": Array [
                   <FieldLabel
                     className="mb-2"
+                    helpText=""
                     id="number"
                     required={false}
                     requiredForSubmit={false}
@@ -16370,6 +17342,7 @@ ShallowWrapper {
                   "nodeType": "function",
                   "props": Object {
                     "className": "mb-2",
+                    "helpText": "",
                     "id": "number",
                     "required": false,
                     "requiredForSubmit": false,
@@ -16404,6 +17377,8 @@ ShallowWrapper {
                 "id": "sdesc",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -16425,6 +17400,8 @@ ShallowWrapper {
                 "id": "ldesc",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -16446,6 +17423,8 @@ ShallowWrapper {
                 "id": "outcome",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -16466,6 +17445,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -16507,6 +17488,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -16548,6 +17531,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -16591,6 +17576,8 @@ ShallowWrapper {
                 "id": "image",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -16611,6 +17598,8 @@ ShallowWrapper {
                 "id": "prereq",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -16631,6 +17620,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -16669,6 +17660,8 @@ ShallowWrapper {
                 "id": "learner-testimonials",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -16690,6 +17683,8 @@ ShallowWrapper {
                 "id": "faq",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -16711,6 +17706,8 @@ ShallowWrapper {
                 "id": "additional-information",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -16732,6 +17729,8 @@ ShallowWrapper {
                 "id": "syllabus",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -16752,6 +17751,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -16773,6 +17774,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "className": "mt-4 mb-2",
+            "helpText": "",
+            "id": null,
             "required": false,
             "requiredForSubmit": false,
             "text": "Course runs",
@@ -18118,13 +19121,15 @@ ShallowWrapper {
         >
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course"
           />
           <t
             iconId=""
-            isOpen={false}
+            isOpen={true}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -18141,6 +19146,54 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -18153,6 +19206,7 @@ ShallowWrapper {
             <div>
               <FieldLabel
                 className="mb-2"
+                helpText=""
                 id="number"
                 required={false}
                 requiredForSubmit={false}
@@ -18171,6 +19225,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -18186,6 +19242,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -18201,6 +19259,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -18215,6 +19275,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -18252,6 +19314,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -18289,6 +19353,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -18328,6 +19394,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -18342,6 +19410,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -18356,6 +19426,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -18390,6 +19462,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -18405,6 +19479,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -18420,6 +19496,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -18435,6 +19513,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -18449,6 +19529,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -18460,6 +19542,8 @@ ShallowWrapper {
           </t>
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course runs"
@@ -19740,13 +20824,15 @@ ShallowWrapper {
           "children": Array [
             <FieldLabel
               className="mt-4 mb-2"
+              helpText=""
+              id={null}
               required={false}
               requiredForSubmit={false}
               text="Course"
             />,
             <t
               iconId=""
-              isOpen={false}
+              isOpen={true}
               onToggle={[Function]}
               title={
                 <React.Fragment>
@@ -19763,6 +20849,54 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -19775,6 +20909,7 @@ ShallowWrapper {
               <div>
                 <FieldLabel
                   className="mb-2"
+                  helpText=""
                   id="number"
                   required={false}
                   requiredForSubmit={false}
@@ -19793,6 +20928,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -19808,6 +20945,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -19823,6 +20962,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -19837,6 +20978,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -19874,6 +21017,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -19911,6 +21056,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -19950,6 +21097,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -19964,6 +21113,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -19978,6 +21129,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -20012,6 +21165,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -20027,6 +21182,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -20042,6 +21199,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -20057,6 +21216,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -20071,6 +21232,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -20082,6 +21245,8 @@ ShallowWrapper {
             </t>,
             <FieldLabel
               className="mt-4 mb-2"
+              helpText=""
+              id={null}
               required={false}
               requiredForSubmit={false}
               text="Course runs"
@@ -21362,6 +22527,8 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mt-4 mb-2",
+              "helpText": "",
+              "id": null,
               "required": false,
               "requiredForSubmit": false,
               "text": "Course",
@@ -21382,6 +22549,54 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 70 characters. Recommended 50 or fewer characters.
+                          </p>
+                          <p>
+                            An effective course title:
+                          </p>
+                          <ul>
+                            <li>
+                              Clearly indicates the course subject matter.
+                            </li>
+                            <li>
+                              Follows search engine optimization (SEO) guidelines.
+                            </li>
+                            <li>
+                              Targets a global audience.
+                            </li>
+                          </ul>
+                          <p>
+                            If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                          </p>
+                          <p>
+                            <b>
+                              Single Course Example
+                            </b>
+                          </p>
+                          <ul>
+                            <li>
+                              English Grammar and Essay Writing
+                            </li>
+                          </ul>
+                          <p>
+                            <b>
+                              Sequential Course Examples
+                            </b>
+                          </p>
+                          <ul>
+                            <li>
+                              Statistics: Inference
+                            </li>
+                            <li>
+                              Statistics: Probability
+                            </li>
+                          </ul>
+                        </div>
+                      }
+                      id="title-label"
                       required={true}
                       requiredForSubmit={true}
                       text="Title"
@@ -21394,6 +22609,7 @@ ShallowWrapper {
                 <div>
                   <FieldLabel
                     className="mb-2"
+                    helpText=""
                     id="number"
                     required={false}
                     requiredForSubmit={false}
@@ -21412,6 +22628,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Short description"
@@ -21427,6 +22645,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Long description"
@@ -21442,6 +22662,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="What you will learn"
@@ -21456,6 +22678,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Primary subject"
@@ -21493,6 +22717,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Secondary subject"
@@ -21530,6 +22756,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Tertiary subject"
@@ -21569,6 +22797,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Image"
@@ -21583,6 +22813,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Prerequisites"
@@ -21597,6 +22829,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Course level"
@@ -21631,6 +22865,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Learner testimonials"
@@ -21646,6 +22882,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Frequently asked questions"
@@ -21661,6 +22899,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Additional information"
@@ -21676,6 +22916,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Syllabus"
@@ -21690,6 +22932,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="About video link"
@@ -21703,7 +22947,7 @@ ShallowWrapper {
               "expandedTitle": undefined,
               "iconId": "",
               "isCollapsible": undefined,
-              "isOpen": false,
+              "isOpen": true,
               "onToggle": [Function],
               "title": <React.Fragment>
                 Course: Test Title
@@ -21723,6 +22967,54 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -21743,6 +23035,7 @@ ShallowWrapper {
                   "children": Array [
                     <FieldLabel
                       className="mb-2"
+                      helpText=""
                       id="number"
                       required={false}
                       requiredForSubmit={false}
@@ -21763,6 +23056,7 @@ ShallowWrapper {
                     "nodeType": "function",
                     "props": Object {
                       "className": "mb-2",
+                      "helpText": "",
                       "id": "number",
                       "required": false,
                       "requiredForSubmit": false,
@@ -21797,6 +23091,8 @@ ShallowWrapper {
                   "id": "sdesc",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -21818,6 +23114,8 @@ ShallowWrapper {
                   "id": "ldesc",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -21839,6 +23137,8 @@ ShallowWrapper {
                   "id": "outcome",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -21859,6 +23159,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -21900,6 +23202,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -21941,6 +23245,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -21984,6 +23290,8 @@ ShallowWrapper {
                   "id": "image",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -22004,6 +23312,8 @@ ShallowWrapper {
                   "id": "prereq",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -22024,6 +23334,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -22062,6 +23374,8 @@ ShallowWrapper {
                   "id": "learner-testimonials",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -22083,6 +23397,8 @@ ShallowWrapper {
                   "id": "faq",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -22104,6 +23420,8 @@ ShallowWrapper {
                   "id": "additional-information",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -22125,6 +23443,8 @@ ShallowWrapper {
                   "id": "syllabus",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -22145,6 +23465,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -22166,6 +23488,8 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mt-4 mb-2",
+              "helpText": "",
+              "id": null,
               "required": false,
               "requiredForSubmit": false,
               "text": "Course runs",
@@ -24198,13 +25522,15 @@ ShallowWrapper {
       >
         <FieldLabel
           className="mt-4 mb-2"
+          helpText=""
+          id={null}
           required={false}
           requiredForSubmit={false}
           text="Course"
         />
         <t
           iconId=""
-          isOpen={false}
+          isOpen={true}
           onToggle={[Function]}
           title={
             <React.Fragment>
@@ -24221,6 +25547,54 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                    </p>
+                    <p>
+                      <b>
+                        Single Course Example
+                      </b>
+                    </p>
+                    <ul>
+                      <li>
+                        English Grammar and Essay Writing
+                      </li>
+                    </ul>
+                    <p>
+                      <b>
+                        Sequential Course Examples
+                      </b>
+                    </p>
+                    <ul>
+                      <li>
+                        Statistics: Inference
+                      </li>
+                      <li>
+                        Statistics: Probability
+                      </li>
+                    </ul>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={true}
                 text="Title"
@@ -24233,6 +25607,7 @@ ShallowWrapper {
           <div>
             <FieldLabel
               className="mb-2"
+              helpText=""
               id="number"
               required={false}
               requiredForSubmit={false}
@@ -24251,6 +25626,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Short description"
@@ -24266,6 +25643,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Long description"
@@ -24281,6 +25660,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="What you will learn"
@@ -24295,6 +25676,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Primary subject"
@@ -24332,6 +25715,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Secondary subject"
@@ -24369,6 +25754,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Tertiary subject"
@@ -24408,6 +25795,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Image"
@@ -24422,6 +25811,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Prerequisites"
@@ -24436,6 +25827,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={true}
                 text="Course level"
@@ -24470,6 +25863,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Learner testimonials"
@@ -24485,6 +25880,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Frequently asked questions"
@@ -24500,6 +25897,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Additional information"
@@ -24515,6 +25914,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="Syllabus"
@@ -24529,6 +25930,8 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
+                helpText=""
+                id={null}
                 required={false}
                 requiredForSubmit={false}
                 text="About video link"
@@ -24540,6 +25943,8 @@ ShallowWrapper {
         </t>
         <FieldLabel
           className="mt-4 mb-2"
+          helpText=""
+          id={null}
           required={false}
           requiredForSubmit={false}
           text="Course runs"
@@ -25803,13 +27208,15 @@ ShallowWrapper {
         "children": Array [
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course"
           />,
           <t
             iconId=""
-            isOpen={false}
+            isOpen={true}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -25826,6 +27233,54 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -25838,6 +27293,7 @@ ShallowWrapper {
             <div>
               <FieldLabel
                 className="mb-2"
+                helpText=""
                 id="number"
                 required={false}
                 requiredForSubmit={false}
@@ -25856,6 +27312,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -25871,6 +27329,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -25886,6 +27346,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -25900,6 +27362,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -25937,6 +27401,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -25974,6 +27440,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -26013,6 +27481,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -26027,6 +27497,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -26041,6 +27513,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -26075,6 +27549,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -26090,6 +27566,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -26105,6 +27583,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -26120,6 +27600,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -26134,6 +27616,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -26145,6 +27629,8 @@ ShallowWrapper {
           </t>,
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course runs"
@@ -27408,6 +28894,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "className": "mt-4 mb-2",
+            "helpText": "",
+            "id": null,
             "required": false,
             "requiredForSubmit": false,
             "text": "Course",
@@ -27428,6 +28916,54 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -27440,6 +28976,7 @@ ShallowWrapper {
               <div>
                 <FieldLabel
                   className="mb-2"
+                  helpText=""
                   id="number"
                   required={false}
                   requiredForSubmit={false}
@@ -27458,6 +28995,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -27473,6 +29012,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -27488,6 +29029,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -27502,6 +29045,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -27539,6 +29084,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -27576,6 +29123,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -27615,6 +29164,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -27629,6 +29180,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -27643,6 +29196,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -27677,6 +29232,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -27692,6 +29249,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -27707,6 +29266,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -27722,6 +29283,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -27736,6 +29299,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -27749,7 +29314,7 @@ ShallowWrapper {
             "expandedTitle": undefined,
             "iconId": "",
             "isCollapsible": undefined,
-            "isOpen": false,
+            "isOpen": true,
             "onToggle": [Function],
             "title": <React.Fragment>
               Course: Test Title
@@ -27769,6 +29334,54 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -27789,6 +29402,7 @@ ShallowWrapper {
                 "children": Array [
                   <FieldLabel
                     className="mb-2"
+                    helpText=""
                     id="number"
                     required={false}
                     requiredForSubmit={false}
@@ -27809,6 +29423,7 @@ ShallowWrapper {
                   "nodeType": "function",
                   "props": Object {
                     "className": "mb-2",
+                    "helpText": "",
                     "id": "number",
                     "required": false,
                     "requiredForSubmit": false,
@@ -27843,6 +29458,8 @@ ShallowWrapper {
                 "id": "sdesc",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -27864,6 +29481,8 @@ ShallowWrapper {
                 "id": "ldesc",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -27885,6 +29504,8 @@ ShallowWrapper {
                 "id": "outcome",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -27905,6 +29526,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -27946,6 +29569,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -27987,6 +29612,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -28030,6 +29657,8 @@ ShallowWrapper {
                 "id": "image",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -28050,6 +29679,8 @@ ShallowWrapper {
                 "id": "prereq",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -28070,6 +29701,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -28108,6 +29741,8 @@ ShallowWrapper {
                 "id": "learner-testimonials",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -28129,6 +29764,8 @@ ShallowWrapper {
                 "id": "faq",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -28150,6 +29787,8 @@ ShallowWrapper {
                 "id": "additional-information",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -28171,6 +29810,8 @@ ShallowWrapper {
                 "id": "syllabus",
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -28191,6 +29832,8 @@ ShallowWrapper {
                 "disabled": false,
                 "label": <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -28212,6 +29855,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "className": "mt-4 mb-2",
+            "helpText": "",
+            "id": null,
             "required": false,
             "requiredForSubmit": false,
             "text": "Course runs",
@@ -29540,13 +31185,15 @@ ShallowWrapper {
         >
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course"
           />
           <t
             iconId=""
-            isOpen={false}
+            isOpen={true}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -29563,6 +31210,54 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                      </p>
+                      <p>
+                        <b>
+                          Single Course Example
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          English Grammar and Essay Writing
+                        </li>
+                      </ul>
+                      <p>
+                        <b>
+                          Sequential Course Examples
+                        </b>
+                      </p>
+                      <ul>
+                        <li>
+                          Statistics: Inference
+                        </li>
+                        <li>
+                          Statistics: Probability
+                        </li>
+                      </ul>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={true}
                   text="Title"
@@ -29575,6 +31270,7 @@ ShallowWrapper {
             <div>
               <FieldLabel
                 className="mb-2"
+                helpText=""
                 id="number"
                 required={false}
                 requiredForSubmit={false}
@@ -29593,6 +31289,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Short description"
@@ -29608,6 +31306,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Long description"
@@ -29623,6 +31323,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="What you will learn"
@@ -29637,6 +31339,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Primary subject"
@@ -29674,6 +31378,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Secondary subject"
@@ -29711,6 +31417,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Tertiary subject"
@@ -29750,6 +31458,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Image"
@@ -29764,6 +31474,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Prerequisites"
@@ -29778,6 +31490,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={true}
                   text="Course level"
@@ -29812,6 +31526,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Learner testimonials"
@@ -29827,6 +31543,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Frequently asked questions"
@@ -29842,6 +31560,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Additional information"
@@ -29857,6 +31577,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="Syllabus"
@@ -29871,6 +31593,8 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
+                  helpText=""
+                  id={null}
                   required={false}
                   requiredForSubmit={false}
                   text="About video link"
@@ -29882,6 +31606,8 @@ ShallowWrapper {
           </t>
           <FieldLabel
             className="mt-4 mb-2"
+            helpText=""
+            id={null}
             required={false}
             requiredForSubmit={false}
             text="Course runs"
@@ -31145,13 +32871,15 @@ ShallowWrapper {
           "children": Array [
             <FieldLabel
               className="mt-4 mb-2"
+              helpText=""
+              id={null}
               required={false}
               requiredForSubmit={false}
               text="Course"
             />,
             <t
               iconId=""
-              isOpen={false}
+              isOpen={true}
               onToggle={[Function]}
               title={
                 <React.Fragment>
@@ -31168,6 +32896,54 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -31180,6 +32956,7 @@ ShallowWrapper {
               <div>
                 <FieldLabel
                   className="mb-2"
+                  helpText=""
                   id="number"
                   required={false}
                   requiredForSubmit={false}
@@ -31198,6 +32975,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -31213,6 +32992,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -31228,6 +33009,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -31242,6 +33025,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -31279,6 +33064,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -31316,6 +33103,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -31355,6 +33144,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -31369,6 +33160,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -31383,6 +33176,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -31417,6 +33212,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -31432,6 +33229,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -31447,6 +33246,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -31462,6 +33263,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -31476,6 +33279,8 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -31487,6 +33292,8 @@ ShallowWrapper {
             </t>,
             <FieldLabel
               className="mt-4 mb-2"
+              helpText=""
+              id={null}
               required={false}
               requiredForSubmit={false}
               text="Course runs"
@@ -32750,6 +34557,8 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mt-4 mb-2",
+              "helpText": "",
+              "id": null,
               "required": false,
               "requiredForSubmit": false,
               "text": "Course",
@@ -32770,6 +34579,54 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 70 characters. Recommended 50 or fewer characters.
+                          </p>
+                          <p>
+                            An effective course title:
+                          </p>
+                          <ul>
+                            <li>
+                              Clearly indicates the course subject matter.
+                            </li>
+                            <li>
+                              Follows search engine optimization (SEO) guidelines.
+                            </li>
+                            <li>
+                              Targets a global audience.
+                            </li>
+                          </ul>
+                          <p>
+                            If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                          </p>
+                          <p>
+                            <b>
+                              Single Course Example
+                            </b>
+                          </p>
+                          <ul>
+                            <li>
+                              English Grammar and Essay Writing
+                            </li>
+                          </ul>
+                          <p>
+                            <b>
+                              Sequential Course Examples
+                            </b>
+                          </p>
+                          <ul>
+                            <li>
+                              Statistics: Inference
+                            </li>
+                            <li>
+                              Statistics: Probability
+                            </li>
+                          </ul>
+                        </div>
+                      }
+                      id="title-label"
                       required={true}
                       requiredForSubmit={true}
                       text="Title"
@@ -32782,6 +34639,7 @@ ShallowWrapper {
                 <div>
                   <FieldLabel
                     className="mb-2"
+                    helpText=""
                     id="number"
                     required={false}
                     requiredForSubmit={false}
@@ -32800,6 +34658,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Short description"
@@ -32815,6 +34675,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Long description"
@@ -32830,6 +34692,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="What you will learn"
@@ -32844,6 +34708,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Primary subject"
@@ -32881,6 +34747,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Secondary subject"
@@ -32918,6 +34786,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Tertiary subject"
@@ -32957,6 +34827,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Image"
@@ -32971,6 +34843,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Prerequisites"
@@ -32985,6 +34859,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={true}
                       text="Course level"
@@ -33019,6 +34895,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Learner testimonials"
@@ -33034,6 +34912,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Frequently asked questions"
@@ -33049,6 +34929,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Additional information"
@@ -33064,6 +34946,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="Syllabus"
@@ -33078,6 +34962,8 @@ ShallowWrapper {
                   label={
                     <FieldLabel
                       className=""
+                      helpText=""
+                      id={null}
                       required={false}
                       requiredForSubmit={false}
                       text="About video link"
@@ -33091,7 +34977,7 @@ ShallowWrapper {
               "expandedTitle": undefined,
               "iconId": "",
               "isCollapsible": undefined,
-              "isOpen": false,
+              "isOpen": true,
               "onToggle": [Function],
               "title": <React.Fragment>
                 Course: Test Title
@@ -33111,6 +34997,54 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          If the course is part of a sequence, include both sequence and course information as “Sequence: Course”.
+                        </p>
+                        <p>
+                          <b>
+                            Single Course Example
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            English Grammar and Essay Writing
+                          </li>
+                        </ul>
+                        <p>
+                          <b>
+                            Sequential Course Examples
+                          </b>
+                        </p>
+                        <ul>
+                          <li>
+                            Statistics: Inference
+                          </li>
+                          <li>
+                            Statistics: Probability
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={true}
                     text="Title"
@@ -33131,6 +35065,7 @@ ShallowWrapper {
                   "children": Array [
                     <FieldLabel
                       className="mb-2"
+                      helpText=""
                       id="number"
                       required={false}
                       requiredForSubmit={false}
@@ -33151,6 +35086,7 @@ ShallowWrapper {
                     "nodeType": "function",
                     "props": Object {
                       "className": "mb-2",
+                      "helpText": "",
                       "id": "number",
                       "required": false,
                       "requiredForSubmit": false,
@@ -33185,6 +35121,8 @@ ShallowWrapper {
                   "id": "sdesc",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Short description"
@@ -33206,6 +35144,8 @@ ShallowWrapper {
                   "id": "ldesc",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Long description"
@@ -33227,6 +35167,8 @@ ShallowWrapper {
                   "id": "outcome",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="What you will learn"
@@ -33247,6 +35189,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Primary subject"
@@ -33288,6 +35232,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Secondary subject"
@@ -33329,6 +35275,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Tertiary subject"
@@ -33372,6 +35320,8 @@ ShallowWrapper {
                   "id": "image",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Image"
@@ -33392,6 +35342,8 @@ ShallowWrapper {
                   "id": "prereq",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Prerequisites"
@@ -33412,6 +35364,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={true}
                     text="Course level"
@@ -33450,6 +35404,8 @@ ShallowWrapper {
                   "id": "learner-testimonials",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Learner testimonials"
@@ -33471,6 +35427,8 @@ ShallowWrapper {
                   "id": "faq",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Frequently asked questions"
@@ -33492,6 +35450,8 @@ ShallowWrapper {
                   "id": "additional-information",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Additional information"
@@ -33513,6 +35473,8 @@ ShallowWrapper {
                   "id": "syllabus",
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="Syllabus"
@@ -33533,6 +35495,8 @@ ShallowWrapper {
                   "disabled": false,
                   "label": <FieldLabel
                     className=""
+                    helpText=""
+                    id={null}
                     required={false}
                     requiredForSubmit={false}
                     text="About video link"
@@ -33554,6 +35518,8 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "mt-4 mb-2",
+              "helpText": "",
+              "id": null,
               "required": false,
               "requiredForSubmit": false,
               "text": "Course runs",

@@ -117,12 +117,44 @@ export class BaseEditCourseForm extends React.Component {
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
+            isOpen
           >
             <Field
               name="title"
               component={RenderInputTextField}
               type="text"
-              label={<FieldLabel text="Title" required requiredForSubmit />}
+              label={
+                <FieldLabel
+                  id="title-label"
+                  text="Title"
+                  required
+                  requiredForSubmit
+                  helpText={
+                    <div>
+                      <p>Maximum 70 characters. Recommended 50 or fewer characters.</p>
+                      <p>An effective course title:</p>
+                      <ul>
+                        <li>Clearly indicates the course subject matter.</li>
+                        <li>Follows search engine optimization (SEO) guidelines.</li>
+                        <li>Targets a global audience.</li>
+                      </ul>
+                      <p>
+                        If the course is part of a sequence, include both sequence and course
+                        information as “Sequence: Course”.
+                      </p>
+                      <p><b>Single Course Example</b></p>
+                      <ul>
+                        <li>English Grammar and Essay Writing</li>
+                      </ul>
+                      <p><b>Sequential Course Examples</b></p>
+                      <ul>
+                        <li>Statistics: Inference</li>
+                        <li>Statistics: Probability</li>
+                      </ul>
+                    </div>
+                  }
+                />
+              }
               required
               disabled={courseInReview}
             />
