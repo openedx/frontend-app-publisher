@@ -10,6 +10,7 @@ import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService
 import { Staffer, getStafferName } from '../Staffer';
 import sourceInfo from '../../data/actions/sourceInfo';
 import store from '../../data/store';
+import StatusAlert from '../StatusAlert';
 
 
 class StaffList extends React.Component {
@@ -224,7 +225,15 @@ class StaffList extends React.Component {
     } = this.state;
     const {
       disabled,
+      meta: {
+        submitFailed,
+        error,
+      },
+      input: {
+        name,
+      },
     } = this.props;
+
     const inputProps = {
       placeholder: '',
       value: searchString,
@@ -235,7 +244,14 @@ class StaffList extends React.Component {
     };
 
     return (
-      <React.Fragment>
+      // Set tabindex to -1 to allow programmatic shifting of focus for validation
+      <div name={name} tabIndex="-1">
+        {submitFailed && error &&
+          <StatusAlert
+            alertType="danger"
+            message={error}
+          />
+        }
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable droppableId="StaffList" direction="vertical">
             {provided => (
@@ -283,7 +299,7 @@ class StaffList extends React.Component {
           />
         </label>
         {/* eslint-enable jsx-a11y/no-noninteractive-element-interactions */}
-      </React.Fragment>
+      </div>
     );
   }
 }
@@ -300,6 +316,7 @@ StaffList.propTypes = {
       })),
     ]).isRequired,
     onChange: PropTypes.func.isRequired,
+    name: PropTypes.string,
   }).isRequired,
   disabled: PropTypes.bool,
   owners: PropTypes.arrayOf(PropTypes.shape({})),
@@ -311,6 +328,10 @@ StaffList.propTypes = {
   sourceInfo: PropTypes.shape({
     referringRun: PropTypes.string,
   }),
+  meta: PropTypes.shape({
+    submitFailed: PropTypes.bool,
+    error: PropTypes.string,
+  }).isRequired,
 };
 
 StaffList.defaultProps = {

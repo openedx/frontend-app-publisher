@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
+import store from '../../data/store';
+import courseSubmitInfo from '../../data/actions/courseSubmitInfo';
 
 /*
 *  Disable console errors for this test file so that we don't receive warnings
@@ -43,7 +45,6 @@ const publishedCourseRun = {
 
 const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'unpublished' });
 
-const mockSubmit = jest.fn();
 
 describe('Collapsible Course Run Fields', () => {
   it('renders correctly with no fields', () => {
@@ -53,7 +54,6 @@ describe('Collapsible Course Run Fields', () => {
       pacingTypeOptions={[]}
       courseRuns={[]}
       formId="test-form"
-      handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -65,7 +65,6 @@ describe('Collapsible Course Run Fields', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[publishedCourseRun]}
       formId="test-form"
-      handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -77,7 +76,6 @@ describe('Collapsible Course Run Fields', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[unpublishedCourseRun]}
       formId="test-form"
-      handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -89,7 +87,6 @@ describe('Collapsible Course Run Fields', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[unpublishedCourseRun]}
       formId="test-form"
-      handleSubmit={mockSubmit}
       isSubmittingForReview
     />);
     expect(component).toMatchSnapshot();
@@ -102,7 +99,6 @@ describe('Collapsible Course Run Fields', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[publishedCourseRun]}
       formId="test-form"
-      handleSubmit={mockSubmit}
       isSubmittingForReview
     />);
     expect(component).toMatchSnapshot();
@@ -116,7 +112,6 @@ describe('Collapsible Course Run Fields', () => {
       courseRuns={[]}
       courseInReview
       formId="test-form"
-      handleSubmit={mockSubmit}
     />);
     const childFields = component.find('input');
     childFields.forEach((field) => {
@@ -131,14 +126,11 @@ describe('Collapsible Course Run Fields', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRuns={[unpublishedCourseRun]}
       formId="test-form"
-      handleSubmit={mockSubmit}
     />);
 
-    component.find('ActionButton').simulate(
-      'click',
-      { preventDefault: () => {} },
-    );
 
-    expect(mockSubmit).toHaveBeenCalled();
+    const mockDispatch = jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+    component.find('ActionButton').simulate('click');
+    expect(mockDispatch).toHaveBeenCalledWith(courseSubmitInfo(unpublishedCourseRun));
   });
 });

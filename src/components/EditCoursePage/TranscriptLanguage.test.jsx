@@ -18,11 +18,22 @@ const languageOptions = [{
   value: 'ar-ae',
 }];
 
+const meta = {
+  submitFailed: false,
+  error: '',
+};
+
+const metaFailed = {
+  submitFailed: true,
+  error: 'There was an error',
+};
+
 describe('Transcript Language', () => {
   it('renders correctly with no fields', () => {
     const component = shallow(<TranscriptLanguage
       fields={[]}
       languageOptions={languageOptions}
+      meta={meta}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -31,6 +42,16 @@ describe('Transcript Language', () => {
     const component = shallow(<TranscriptLanguage
       fields={[{}]}
       languageOptions={languageOptions}
+      meta={meta}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly with an error after failed submission', () => {
+    const component = shallow(<TranscriptLanguage
+      fields={[{}]}
+      languageOptions={languageOptions}
+      meta={metaFailed}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -40,6 +61,7 @@ describe('Transcript Language', () => {
     const component = shallow(<TranscriptLanguage
       fields={fields}
       languageOptions={languageOptions}
+      meta={meta}
     />);
     expect(fields.length).toEqual(1);
 

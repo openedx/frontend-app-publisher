@@ -12,6 +12,8 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import StaffList from '../StaffList';
 import TranscriptLanguage from './TranscriptLanguage';
+import store from '../../data/store';
+import courseSubmitInfo from '../../data/actions/courseSubmitInfo';
 
 import { IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
 import { endDateHelp, startDateHelp } from '../../helpText';
@@ -66,12 +68,13 @@ const CollapsibleCourseRunFields = ({
   languageOptions,
   pacingTypeOptions,
   courseInReview,
-  handleSubmit,
-  formId,
-  isSubmittingForReview,
   targetRun,
   courseSubmitting,
-  ...passedProps
+  owners,
+  courseUuid,
+  stafferInfo,
+  sourceInfo,
+  isSubmittingForReview,
 }) => (
   <div>
     {fields.map((courseRun, index) => {
@@ -233,7 +236,6 @@ const CollapsibleCourseRunFields = ({
             component={TranscriptLanguage}
             languageOptions={languageOptions}
             disabled={courseInReview}
-            required={courseRunSubmitting}
           />
           <Field
             name={`${courseRun}.weeks_to_complete`}
@@ -274,26 +276,22 @@ const CollapsibleCourseRunFields = ({
             component={StaffList}
             disabled={courseInReview}
             courseRunKey={courseRuns[index].key}
-            required={courseRunSubmitting}
-            {...passedProps}
+            owners={owners}
+            courseUuid={courseUuid}
+            stafferInfo={stafferInfo}
+            sourceInfo={sourceInfo}
           />
           <ButtonToolbar>
             <ActionButton
               // only disable if *this run* is in review
               disabled={courseSubmitting || courseRunInReview}
-              onClick={(event) => {
-                /*
-                *  Prevent default submission and pass the targeted course run up through the
-                *  handler to manually validate fields based off the run status.
-                */
-                event.preventDefault();
-                handleSubmit(courseRuns[index]);
-              }}
+              // Pass the submitting course run up to validate different fields based on the status
+              onClick={() => store.dispatch(courseSubmitInfo(courseRuns[index]))}
               labels={{
                 default: courseRuns[index].status === PUBLISHED ? 'Publish' : 'Submit for Review',
                 pending: courseRuns[index].status === PUBLISHED ? 'Publishing' : 'Submitting for Review',
               }}
-              state={courseRunSubmitting ? 'pending' : 'default'}
+              state={courseSubmitting ? 'pending' : 'default'}
             />
           </ButtonToolbar>
         </Collapsible>
@@ -317,20 +315,27 @@ CollapsibleCourseRunFields.propTypes = {
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   courseInReview: PropTypes.bool,
   courseSubmitting: PropTypes.bool,
-  handleSubmit: PropTypes.func.isRequired,
-  formId: PropTypes.string.isRequired,
-  passedProps: PropTypes.shape({}),
   isSubmittingForReview: PropTypes.bool,
   targetRun: PropTypes.shape({}),
+  owners: PropTypes.arrayOf(PropTypes.shape({})),
+  courseUuid: PropTypes.string.isRequired,
+  stafferInfo: PropTypes.shape({
+    data: PropTypes.shape(),
+  }),
+  sourceInfo: PropTypes.shape({
+    referringRun: PropTypes.string,
+  }),
 };
 
 CollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
   courseInReview: false,
   courseSubmitting: false,
-  passedProps: {},
   isSubmittingForReview: false,
   targetRun: null,
+  owners: [],
+  stafferInfo: {},
+  sourceInfo: {},
 };
 
 export default CollapsibleCourseRunFields;

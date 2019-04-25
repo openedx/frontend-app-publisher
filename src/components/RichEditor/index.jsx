@@ -45,9 +45,10 @@ class RichEditor extends React.Component {
       label,
       input: {
         value,
+        name,
       },
       meta: {
-        touched,
+        submitFailed,
         error,
       },
       disabled,
@@ -58,8 +59,9 @@ class RichEditor extends React.Component {
 
     return (
       <div className="form-group">
-        <div id={id} className="mb-2">{label}</div>
-        {touched && error &&
+        {/* Set tabindex to -1 to allow programmatic shifting of focus for validation */}
+        <div id={id} name={name} tabIndex="-1" className="mb-2">{label}</div>
+        {submitFailed && error &&
           <StatusAlert
             alertType="danger"
             message={error}
@@ -105,10 +107,11 @@ RichEditor.propTypes = {
   maxChars: PropTypes.number,
   input: PropTypes.shape({
     value: PropTypes.string,
+    name: PropTypes.string,
     onChange: PropTypes.func.isRequired,
   }).isRequired,
   meta: PropTypes.shape({
-    touched: PropTypes.bool,
+    submitFailed: PropTypes.bool,
     error: PropTypes.string,
   }).isRequired,
   disabled: PropTypes.bool,

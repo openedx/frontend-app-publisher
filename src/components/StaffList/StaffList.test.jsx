@@ -51,6 +51,10 @@ const autoCompletePersonResponses = {
 
 const defaultProps = {
   input,
+  meta: {
+    submitFailed: false,
+    error: '',
+  },
   courseUuid: '11111111-1111-1111-1111-111111111111',
   courseRunKey: 'DemoX+TestCourse',
 };
@@ -96,6 +100,21 @@ describe('StaffList', () => {
 
   it('renders correctly with referred props', () => {
     const component = shallow(<StaffList {...referredProps} />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders correctly with an error after failed submission', () => {
+    const metaFailedProps = Object.assign(
+      {},
+      defaultProps,
+      {
+        meta: {
+          submitFailed: true,
+          error: 'This field is required',
+        },
+      },
+    );
+    const component = shallow(<StaffList {...metaFailedProps} />);
     expect(component).toMatchSnapshot();
   });
 

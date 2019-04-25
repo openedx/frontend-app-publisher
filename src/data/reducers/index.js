@@ -10,6 +10,7 @@ import stafferOptions from './stafferOptions';
 import stafferInfo from './stafferInfo';
 import courseRunOptions from './courseRunOptions';
 import sourceInfo from './sourceInfo';
+import courseSubmitInfo from './courseSubmitInfo';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -30,4 +31,5 @@ export default history => combineReducers({
   form: formReducer,
   table,
   sourceInfo,
+  courseSubmitInfo,
 });
