@@ -40,7 +40,7 @@ const Pill = ({ statuses }) => {
     }
   });
   return pills.map(pill => (
-    <span className={classNames('ml-2', pill.className)}>
+    <span className={classNames('ml-2', pill.className)} key={pill.text}>
       {pill.text}
     </span>
   ));
