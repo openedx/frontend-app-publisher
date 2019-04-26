@@ -123,7 +123,7 @@ describe('StaffList', () => {
 
   it('gets no suggestions for short autocomplete', (done) => {
     const component = mount(<StaffList {...defaultProps} />);
-    component.instance().onSuggestionsFetchRequested({ value: 'l' }).then(() => {
+    component.instance().onSuggestionsFetchRequested({ value: 'lo' }).then(() => {
       const state = component.state().suggestions;
       // check that we get no suggestions for a query that is too short
       expect(state.length).toEqual(0);

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Autosuggest from 'react-autosuggest';
 import { push } from 'connected-react-router';
+import NewInstructorImage from '../../../assets/new-instructor-80.png';
 
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 
@@ -56,7 +57,7 @@ class StaffList extends React.Component {
       owners,
     } = this.props;
 
-    if (value.length >= 2) { // We don't hit the discovery service until we have enough characters
+    if (value.length >= 3) { // We don't hit the discovery service until we have enough characters
       const organizationKeys = owners.map(owner => owner.key);
       return DiscoveryDataApiService
         .autocompletePerson(value, organizationKeys)
@@ -64,7 +65,7 @@ class StaffList extends React.Component {
           const results = response.data;
           // Add in last 'suggestion' - the 'add new' instructor list item
           results.push({
-            profile_image_url: '/assets/new-instructor-80.png',
+            profile_image_url: '',
             given_name: '',
             family_name: '',
             url: '/instructors/new',
@@ -193,7 +194,7 @@ class StaffList extends React.Component {
       <div className="d-flex flex-row m-1 p-1">
         <div className="m-1 p-1 w-25">
           <img
-            src={suggestion.profile_image_url}
+            src={suggestion.profile_image_url || NewInstructorImage}
             alt={`profile for ${getStafferName(suggestion)}`}
             className="rounded-circle w-100"
           />
