@@ -101,7 +101,10 @@ class EditCoursePage extends React.Component {
       editCourse,
     } = this.props;
     // Create a deep copy of course runs since we modify their properties
-    const modifiedCourseRuns = jsonDeepCopy(courseData.course_runs);
+    let modifiedCourseRuns = jsonDeepCopy(courseData.course_runs);
+
+    // Don't send any courses in review - backend will reject them
+    modifiedCourseRuns = modifiedCourseRuns.filter(run => !IN_REVIEW_STATUS.includes(run.status));
 
     // Process course run info
     this.prepareCourseRuns(modifiedCourseRuns);
@@ -137,6 +140,7 @@ class EditCoursePage extends React.Component {
       store.dispatch(submit(formId));
     } else {
       form.reportValidity();
+      this.setState({ isSubmittingForReview: false });
     }
   }
 

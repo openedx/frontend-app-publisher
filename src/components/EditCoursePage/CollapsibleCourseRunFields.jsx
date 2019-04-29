@@ -8,7 +8,7 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import Pill from '../Pill';
-import { PUBLISHED } from '../../data/constants';
+import { IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import StaffList from '../StaffList';
@@ -68,13 +68,14 @@ const CollapsibleCourseRunFields = ({
   formId,
   isSubmittingForReview,
   targetRun,
-  submitting,
+  courseSubmitting,
   ...passedProps
 }) => (
   <div>
     {fields.map((courseRun, index) => {
+      const courseRunInReview = IN_REVIEW_STATUS.includes(courseRuns[index].status);
       // Checks if the current course run is the one triggering submission for review
-      const courseRunSubmitting = isSubmittingForReview && targetRun &&
+      const courseRunSubmitting = !courseRunInReview && isSubmittingForReview && targetRun &&
         (targetRun.key === courseRuns[index].key);
 
       return (
@@ -215,7 +216,6 @@ const CollapsibleCourseRunFields = ({
               <FieldLabel
                 id={`${courseRun}.pacing_type.label`}
                 text="Course pacing"
-                requiredForSubmit
                 helpText={
                   <div>
                     <p>
@@ -295,7 +295,8 @@ const CollapsibleCourseRunFields = ({
           />
           <ButtonToolbar>
             <ActionButton
-              disabled={courseInReview || submitting}
+              // only disable if *this run* is in review
+              disabled={courseSubmitting || courseRunInReview}
               onClick={(event) => {
                 /*
                 *  Prevent default submission and pass the targeted course run up through the
@@ -306,7 +307,9 @@ const CollapsibleCourseRunFields = ({
               }}
               labels={{
                 default: courseRuns[index].status === PUBLISHED ? 'Publish' : 'Submit for Review',
+                pending: courseRuns[index].status === PUBLISHED ? 'Publishing' : 'Submitting for Review',
               }}
+              state={courseRunSubmitting ? 'pending' : 'default'}
             />
           </ButtonToolbar>
         </Collapsible>
@@ -329,7 +332,7 @@ CollapsibleCourseRunFields.propTypes = {
   })).isRequired,
   courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
   courseInReview: PropTypes.bool,
-  submitting: PropTypes.bool,
+  courseSubmitting: PropTypes.bool,
   handleSubmit: PropTypes.func.isRequired,
   formId: PropTypes.string.isRequired,
   passedProps: PropTypes.shape({}),
@@ -340,7 +343,7 @@ CollapsibleCourseRunFields.propTypes = {
 CollapsibleCourseRunFields.defaultProps = {
   courseRuns: [],
   courseInReview: false,
-  submitting: false,
+  courseSubmitting: false,
   passedProps: {},
   isSubmittingForReview: false,
   targetRun: null,
