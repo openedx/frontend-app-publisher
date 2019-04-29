@@ -151,9 +151,9 @@ const CollapsibleCourseRunFields = ({
                 text="Publish date"
                 helpText={
                   <div>
-                    <p>The date when the course run will be publicly published.</p>
+                    <p>The scheduled date for when the course run will be live and published.</p>
                     <p>
-                      If you just want the run to be published as soon as possible, don’t set a
+                      If you would like the run to be published as soon as possible, do not set a
                       publish date.
                     </p>
                   </div>

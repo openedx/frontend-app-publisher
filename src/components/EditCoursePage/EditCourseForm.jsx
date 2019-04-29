@@ -140,16 +140,16 @@ export class BaseEditCourseForm extends React.Component {
                         <li>Targets a global audience.</li>
                       </ul>
                       <p>
-                        If the course is part of a sequence, include both sequence and course
-                        information as “Sequence: Course”.
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
                       </p>
-                      <p><b>Single course example:</b></p>
+                      <p><b>Example:</b></p>
                       <p>English Grammar and Essay Writing</p>
-                      <p><b>Sequential course examples:</b></p>
-                      <ol>
-                        <li>Statistics: Inference</li>
-                        <li>Statistics: Probability</li>
-                      </ol>
                     </div>
                   }
                 />
@@ -179,6 +179,15 @@ export class BaseEditCourseForm extends React.Component {
                         <li>Follows SEO guidelines.</li>
                         <li>Targets a global audience.</li>
                       </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-short-description-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
                       <p><b>Example:</b></p>
                       <p>
                         The first MOOC to teach positive psychology. Learn science-based
@@ -215,32 +224,14 @@ export class BaseEditCourseForm extends React.Component {
                         The first four lines are visible when the About page opens. Learners can
                         select “See More” to view the full description.
                       </p>
-                      <p><b>Content-based example:</b></p>
                       <p>
-                        Want to learn computer programming, but unsure where to begin? This is
-                        the course for you! Scratch is the computer programming language that
-                        makes it easy and fun to create interactive stories, games and animations
-                        and share them online.
-                      </p>
-                      <p>
-                        This course is an introduction to computer science using the programming
-                        language Scratch, developed by MIT. Starting with the basics of using
-                        Scratch, the course will stretch your mind and challenge you. You will
-                        learn how to create amazing games, animated images and songs in just
-                        minutes with a simple “drag and drop” interface.
-                      </p>
-                      <p>
-                        No previous programming knowledge needed. Join us as you start your
-                        computer science journey.
-                      </p>
-                      <p><b>Skills-based example:</b></p>
-                      <p>
-                        Taught by instructors with decades of experience on Wall Street, this
-                        M&amp;A course will equip analysts and associates with the skills they need
-                        to rise to employment in the M&amp;A field. Additionally, directors and
-                        managers who have transitioned, or hope to transition, to M&amp;A from
-                        other areas such as equities or fixed income can use this course to
-                        eliminate skill gaps.
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-long-description-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
                       </p>
                     </div>
                   }
@@ -270,6 +261,15 @@ export class BaseEditCourseForm extends React.Component {
                         <li>Application of text analytics</li>
                         <li>Linear and integer optimization</li>
                       </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#what-you-will-learn-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
                     </div>
                   }
                 />
@@ -293,6 +293,15 @@ export class BaseEditCourseForm extends React.Component {
                       <p>
                         You can select up to two subjects in addition to the primary subject.
                         Only the primary subject appears on the About page.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#subject-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
                       </p>
                     </div>
                   }
@@ -330,17 +339,8 @@ export class BaseEditCourseForm extends React.Component {
                         An eye-catching, colorful image that captures the essence of your course.
                       </p>
                       <ul>
-                        <li>
-                          <span>New course images must be 1134×675 pixels in size.</span>
-                          <a
-                            href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#course-image-size"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Learn more.
-                          </a>
-                        </li>
-                        <li>Each course in a sequence must have a unique image.</li>
+                        <li>New course images must be 1134×675 pixels in size.</li>
+                        <li>Each course must have a unique image.</li>
                         <li>The image cannot include text or headlines.</li>
                         <li>
                           You must have permission to use the image. Possible image sources
@@ -348,6 +348,15 @@ export class BaseEditCourseForm extends React.Component {
                           Photo.
                         </li>
                       </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#representative-image-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
                     </div>
                   }
                 />
@@ -368,6 +377,15 @@ export class BaseEditCourseForm extends React.Component {
                       <p>
                         Specific knowledge learners must have to be successful in the course.
                         If the course has no prerequisites, enter “None”.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#skill-and-knowledge-prerequisites"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
                       </p>
                       <p><b>Examples:</b></p>
                       <ol>
@@ -434,6 +452,15 @@ export class BaseEditCourseForm extends React.Component {
                         the course.
                       </p>
                       <p>Should be no more than 25–50 words in length.</p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#learner-testimonial-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
                       <p><b>Example:</b></p>
                       <p>
                         “Brilliant course! It’s definitely the best introduction to electronics
@@ -458,6 +485,15 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={
                     <div>
                       <p>Any frequently asked questions and the answers to those questions.</p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#faq-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
                     </div>
                   }
                 />
@@ -496,12 +532,23 @@ export class BaseEditCourseForm extends React.Component {
                       <p>
                         A review of content covered in your course, organized by week or module.
                       </p>
-                      <p>Focus on topics and content.</p>
+                      <ul>
+                        <li>Focus on topics and content.</li>
+                        <li>
+                          Do not include detailed information about course logistics, such as
+                          grading, communication policies, and reading lists.
+                        </li>
+                        <li>Format items as either paragraphs or a bulleted list.</li>
+                      </ul>
                       <p>
-                        Do not include detailed information about course logistics, such as
-                        grading, communication policies, and reading lists.
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
                       </p>
-                      <p>Format items as either paragraphs or a bulleted list.</p>
                       <p><b>Example:</b></p>
                       <ul>
                         <li>
@@ -558,31 +605,15 @@ export class BaseEditCourseForm extends React.Component {
                         <li>Who is teaching the course?</li>
                         <li>What institution is delivering the course?</li>
                       </ul>
-                      <p>Naming specifications:</p>
-                      <ul>
-                        <li>Name: InstitutionX_CourseNumber_About.mp4</li>
-                        <li>
-                          {/* spans avoid a jsx-to-string bug that would skip the text */}
-                          <span>Post to:</span>
-                          <a
-                            href="http://veda.edx.org/upload"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            http://veda.edx.org/upload
-                          </a>
-                        </li>
-                      </ul>
-                      <p>Technical specifications:</p>
-                      <ul>
-                        <li>Codec: H.264</li>
-                        <li>Container: .mp4</li>
-                        <li>Resolution: 1920×1080</li>
-                        <li>Frame rate: 29.97 fps</li>
-                        <li>Aspect: 1.0</li>
-                        <li>Bitrate: 5Mbps VBR</li>
-                        <li>Audio codec: AAC 44.1KHz/192 Kbps</li>
-                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
                       <p>
                         <span>Visit</span>
                         <a
@@ -612,8 +643,17 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={
                         <div>
                           <p>
-                            If the course offers a verified or professional education certificate,
-                            select the certificate type and enter the price for the certificate.
+                            The enrollment track determines whether a course offers a paid
+                            certificate and what sort of verification is required.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Learn more.
+                            </a>
                           </p>
                         </div>
                       }
