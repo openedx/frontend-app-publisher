@@ -7,7 +7,7 @@ import 'font-awesome/css/font-awesome.css';
 
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
-import { getErrorMessage, updateUrl } from '../../utils';
+import { getErrorMessages, updateUrl } from '../../utils';
 
 class TableComponent extends React.Component {
   componentDidMount() {
@@ -100,7 +100,7 @@ class TableComponent extends React.Component {
       <StatusAlert
         alertType="danger"
         iconClassNames={['fa', 'fa-times-circle']}
-        message={`Unable to load data: ${getErrorMessage(this.props.error)}.`}
+        message={['Unable to load data'].concat(getErrorMessages(this.props.error))}
       />
     );
   }

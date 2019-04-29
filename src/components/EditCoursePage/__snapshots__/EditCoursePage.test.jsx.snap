@@ -87,7 +87,6 @@ ShallowWrapper {
               targetRun={null}
             />
           </div>
-          
         </PageContainer>,
       ],
     },
@@ -169,7 +168,7 @@ ShallowWrapper {
                 targetRun={null}
               />
             </div>,
-            "",
+            false,
           ],
           "className": "",
           "wide": false,
@@ -280,7 +279,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          "",
+          false,
         ],
         "type": [Function],
       },
@@ -350,7 +349,6 @@ ShallowWrapper {
                 targetRun={null}
               />
             </div>
-            
           </PageContainer>,
         ],
       },
@@ -432,7 +430,7 @@ ShallowWrapper {
                   targetRun={null}
                 />
               </div>,
-              "",
+              false,
             ],
             "className": "",
             "wide": false,
@@ -543,7 +541,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            "",
+            false,
           ],
           "type": [Function],
         },
@@ -632,7 +630,6 @@ ShallowWrapper {
           <LoadingSpinner
             message="Loading…"
           />
-          
         </PageContainer>,
       ],
     },
@@ -673,7 +670,7 @@ ShallowWrapper {
               message="Loading…"
             />,
             false,
-            "",
+            false,
           ],
           "className": "",
           "wide": false,
@@ -692,7 +689,7 @@ ShallowWrapper {
             "type": [Function],
           },
           false,
-          "",
+          false,
         ],
         "type": [Function],
       },
@@ -721,7 +718,6 @@ ShallowWrapper {
             <LoadingSpinner
               message="Loading…"
             />
-            
           </PageContainer>,
         ],
       },
@@ -762,7 +758,7 @@ ShallowWrapper {
                 message="Loading…"
               />,
               false,
-              "",
+              false,
             ],
             "className": "",
             "wide": false,
@@ -781,7 +777,7 @@ ShallowWrapper {
               "type": [Function],
             },
             false,
-            "",
+            false,
           ],
           "type": [Function],
         },
@@ -1016,7 +1012,6 @@ ShallowWrapper {
               uuid="00000000-0000-0000-0000-000000000000"
             />
           </div>
-          
         </PageContainer>,
       ],
     },
@@ -1156,7 +1151,7 @@ ShallowWrapper {
                 uuid="00000000-0000-0000-0000-000000000000"
               />
             </div>,
-            "",
+            false,
           ],
           "className": "",
           "wide": false,
@@ -1380,7 +1375,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          "",
+          false,
         ],
         "type": [Function],
       },
@@ -1508,7 +1503,6 @@ ShallowWrapper {
                 uuid="00000000-0000-0000-0000-000000000000"
               />
             </div>
-            
           </PageContainer>,
         ],
       },
@@ -1648,7 +1642,7 @@ ShallowWrapper {
                   uuid="00000000-0000-0000-0000-000000000000"
                 />
               </div>,
-              "",
+              false,
             ],
             "className": "",
             "wide": false,
@@ -1872,7 +1866,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            "",
+            false,
           ],
           "type": [Function],
         },
@@ -2205,7 +2199,6 @@ ShallowWrapper {
               uuid="00000000-0000-0000-0000-000000000000"
             />
           </div>
-          
         </PageContainer>,
       ],
     },
@@ -2394,7 +2387,7 @@ ShallowWrapper {
                 uuid="00000000-0000-0000-0000-000000000000"
               />
             </div>,
-            "",
+            false,
           ],
           "className": "",
           "wide": false,
@@ -2714,7 +2707,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          "",
+          false,
         ],
         "type": [Function],
       },
@@ -2891,7 +2884,6 @@ ShallowWrapper {
                 uuid="00000000-0000-0000-0000-000000000000"
               />
             </div>
-            
           </PageContainer>,
         ],
       },
@@ -3080,7 +3072,7 @@ ShallowWrapper {
                   uuid="00000000-0000-0000-0000-000000000000"
                 />
               </div>,
-              "",
+              false,
             ],
             "className": "",
             "wide": false,
@@ -3400,7 +3392,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            "",
+            false,
           ],
           "type": [Function],
         },
@@ -3442,7 +3434,9 @@ ShallowWrapper {
     courseInfo={
       Object {
         "data": Object {},
-        "error": "Course Info error.",
+        "error": Array [
+          "Course Info error.",
+        ],
         "isFetching": false,
       }
     }
@@ -3486,7 +3480,12 @@ ShallowWrapper {
             dismissible={false}
             iconClassNames={Array []}
             id="error"
-            message="Course Info error. Please try reloading the page and if the error persists, please contact support."
+            message={
+              Array [
+                "Course Info error.",
+                <br />,
+              ]
+            }
             onClose={[Function]}
             title={null}
           />
@@ -3534,7 +3533,12 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Info error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Info error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />,
@@ -3556,7 +3560,10 @@ ShallowWrapper {
               "dismissible": false,
               "iconClassNames": Array [],
               "id": "error",
-              "message": "Course Info error. Please try reloading the page and if the error persists, please contact support.",
+              "message": Array [
+                "Course Info error.",
+                <br />,
+              ],
               "onClose": [Function],
               "title": null,
             },
@@ -3595,7 +3602,12 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Info error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Info error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />
@@ -3643,7 +3655,12 @@ ShallowWrapper {
                 dismissible={false}
                 iconClassNames={Array []}
                 id="error"
-                message="Course Info error. Please try reloading the page and if the error persists, please contact support."
+                message={
+                  Array [
+                    "Course Info error.",
+                    <br />,
+                  ]
+                }
                 onClose={[Function]}
                 title={null}
               />,
@@ -3665,7 +3682,10 @@ ShallowWrapper {
                 "dismissible": false,
                 "iconClassNames": Array [],
                 "id": "error",
-                "message": "Course Info error. Please try reloading the page and if the error persists, please contact support.",
+                "message": Array [
+                  "Course Info error.",
+                  <br />,
+                ],
                 "onClose": [Function],
                 "title": null,
               },
@@ -3714,21 +3734,27 @@ ShallowWrapper {
     courseInfo={
       Object {
         "data": Object {},
-        "error": "Course Info error.",
+        "error": Array [
+          "Course Info error.",
+        ],
         "isFetching": false,
       }
     }
     courseOptions={
       Object {
         "data": Object {},
-        "error": "Course Options error.",
+        "error": Array [
+          "Course Options error.",
+        ],
         "isFetching": false,
       }
     }
     courseRunOptions={
       Object {
         "data": Object {},
-        "error": "Course Run Options error.",
+        "error": Array [
+          "Course Run Options error.",
+        ],
         "isFetching": false,
       }
     }
@@ -3770,7 +3796,16 @@ ShallowWrapper {
             dismissible={false}
             iconClassNames={Array []}
             id="error"
-            message="Course Info error. Course Options error. Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+            message={
+              Array [
+                "Course Info error.",
+                <br />,
+                "Course Options error.",
+                <br />,
+                "Course Run Options error.",
+                <br />,
+              ]
+            }
             onClose={[Function]}
             title={null}
           />
@@ -3818,7 +3853,16 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Info error. Course Options error. Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Info error.",
+                  <br />,
+                  "Course Options error.",
+                  <br />,
+                  "Course Run Options error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />,
@@ -3840,7 +3884,14 @@ ShallowWrapper {
               "dismissible": false,
               "iconClassNames": Array [],
               "id": "error",
-              "message": "Course Info error. Course Options error. Course Run Options error. Please try reloading the page and if the error persists, please contact support.",
+              "message": Array [
+                "Course Info error.",
+                <br />,
+                "Course Options error.",
+                <br />,
+                "Course Run Options error.",
+                <br />,
+              ],
               "onClose": [Function],
               "title": null,
             },
@@ -3879,7 +3930,16 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Info error. Course Options error. Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Info error.",
+                  <br />,
+                  "Course Options error.",
+                  <br />,
+                  "Course Run Options error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />
@@ -3927,7 +3987,16 @@ ShallowWrapper {
                 dismissible={false}
                 iconClassNames={Array []}
                 id="error"
-                message="Course Info error. Course Options error. Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+                message={
+                  Array [
+                    "Course Info error.",
+                    <br />,
+                    "Course Options error.",
+                    <br />,
+                    "Course Run Options error.",
+                    <br />,
+                  ]
+                }
                 onClose={[Function]}
                 title={null}
               />,
@@ -3949,7 +4018,14 @@ ShallowWrapper {
                 "dismissible": false,
                 "iconClassNames": Array [],
                 "id": "error",
-                "message": "Course Info error. Course Options error. Course Run Options error. Please try reloading the page and if the error persists, please contact support.",
+                "message": Array [
+                  "Course Info error.",
+                  <br />,
+                  "Course Options error.",
+                  <br />,
+                  "Course Run Options error.",
+                  <br />,
+                ],
                 "onClose": [Function],
                 "title": null,
               },
@@ -4176,7 +4252,6 @@ ShallowWrapper {
               targetRun={null}
             />
           </div>
-          
         </PageContainer>,
       ],
     },
@@ -4307,7 +4382,7 @@ ShallowWrapper {
                 targetRun={null}
               />
             </div>,
-            "",
+            false,
           ],
           "className": "",
           "wide": false,
@@ -4514,7 +4589,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          "",
+          false,
         ],
         "type": [Function],
       },
@@ -4633,7 +4708,6 @@ ShallowWrapper {
                 targetRun={null}
               />
             </div>
-            
           </PageContainer>,
         ],
       },
@@ -4764,7 +4838,7 @@ ShallowWrapper {
                   targetRun={null}
                 />
               </div>,
-              "",
+              false,
             ],
             "className": "",
             "wide": false,
@@ -4971,7 +5045,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            "",
+            false,
           ],
           "type": [Function],
         },
@@ -5018,7 +5092,9 @@ ShallowWrapper {
     courseOptions={
       Object {
         "data": Object {},
-        "error": "Course Options error.",
+        "error": Array [
+          "Course Options error.",
+        ],
         "isFetching": false,
       }
     }
@@ -5061,7 +5137,12 @@ ShallowWrapper {
             dismissible={false}
             iconClassNames={Array []}
             id="error"
-            message="Course Options error. Please try reloading the page and if the error persists, please contact support."
+            message={
+              Array [
+                "Course Options error.",
+                <br />,
+              ]
+            }
             onClose={[Function]}
             title={null}
           />
@@ -5109,7 +5190,12 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Options error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Options error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />,
@@ -5131,7 +5217,10 @@ ShallowWrapper {
               "dismissible": false,
               "iconClassNames": Array [],
               "id": "error",
-              "message": "Course Options error. Please try reloading the page and if the error persists, please contact support.",
+              "message": Array [
+                "Course Options error.",
+                <br />,
+              ],
               "onClose": [Function],
               "title": null,
             },
@@ -5170,7 +5259,12 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Options error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Options error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />
@@ -5218,7 +5312,12 @@ ShallowWrapper {
                 dismissible={false}
                 iconClassNames={Array []}
                 id="error"
-                message="Course Options error. Please try reloading the page and if the error persists, please contact support."
+                message={
+                  Array [
+                    "Course Options error.",
+                    <br />,
+                  ]
+                }
                 onClose={[Function]}
                 title={null}
               />,
@@ -5240,7 +5339,10 @@ ShallowWrapper {
                 "dismissible": false,
                 "iconClassNames": Array [],
                 "id": "error",
-                "message": "Course Options error. Please try reloading the page and if the error persists, please contact support.",
+                "message": Array [
+                  "Course Options error.",
+                  <br />,
+                ],
                 "onClose": [Function],
                 "title": null,
               },
@@ -5457,7 +5559,6 @@ ShallowWrapper {
               targetRun={null}
             />
           </div>
-          
         </PageContainer>,
       ],
     },
@@ -5583,7 +5684,7 @@ ShallowWrapper {
                 targetRun={null}
               />
             </div>,
-            "",
+            false,
           ],
           "className": "",
           "wide": false,
@@ -5780,7 +5881,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          "",
+          false,
         ],
         "type": [Function],
       },
@@ -5894,7 +5995,6 @@ ShallowWrapper {
                 targetRun={null}
               />
             </div>
-            
           </PageContainer>,
         ],
       },
@@ -6020,7 +6120,7 @@ ShallowWrapper {
                   targetRun={null}
                 />
               </div>,
-              "",
+              false,
             ],
             "className": "",
             "wide": false,
@@ -6217,7 +6317,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            "",
+            false,
           ],
           "type": [Function],
         },
@@ -6265,7 +6365,9 @@ ShallowWrapper {
     courseRunOptions={
       Object {
         "data": Object {},
-        "error": "Course Run Options error.",
+        "error": Array [
+          "Course Run Options error.",
+        ],
         "isFetching": false,
       }
     }
@@ -6307,7 +6409,12 @@ ShallowWrapper {
             dismissible={false}
             iconClassNames={Array []}
             id="error"
-            message="Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+            message={
+              Array [
+                "Course Run Options error.",
+                <br />,
+              ]
+            }
             onClose={[Function]}
             title={null}
           />
@@ -6355,7 +6462,12 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Run Options error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />,
@@ -6377,7 +6489,10 @@ ShallowWrapper {
               "dismissible": false,
               "iconClassNames": Array [],
               "id": "error",
-              "message": "Course Run Options error. Please try reloading the page and if the error persists, please contact support.",
+              "message": Array [
+                "Course Run Options error.",
+                <br />,
+              ],
               "onClose": [Function],
               "title": null,
             },
@@ -6416,7 +6531,12 @@ ShallowWrapper {
               dismissible={false}
               iconClassNames={Array []}
               id="error"
-              message="Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+              message={
+                Array [
+                  "Course Run Options error.",
+                  <br />,
+                ]
+              }
               onClose={[Function]}
               title={null}
             />
@@ -6464,7 +6584,12 @@ ShallowWrapper {
                 dismissible={false}
                 iconClassNames={Array []}
                 id="error"
-                message="Course Run Options error. Please try reloading the page and if the error persists, please contact support."
+                message={
+                  Array [
+                    "Course Run Options error.",
+                    <br />,
+                  ]
+                }
                 onClose={[Function]}
                 title={null}
               />,
@@ -6486,7 +6611,10 @@ ShallowWrapper {
                 "dismissible": false,
                 "iconClassNames": Array [],
                 "id": "error",
-                "message": "Course Run Options error. Please try reloading the page and if the error persists, please contact support.",
+                "message": Array [
+                  "Course Run Options error.",
+                  <br />,
+                ],
                 "onClose": [Function],
                 "title": null,
               },

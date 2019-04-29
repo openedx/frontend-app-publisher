@@ -52,12 +52,12 @@ describe('Create Course View', () => {
 
   it('shows error when fails to retrieve organizations', () => {
     const testState = jsonDeepCopy(initialState);
-    const errorMessage = 'organization failure';
+    const errorMessage = ['organization failure'];
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = errorMessage;
     const wrapper = createWrapper(testState).dive();
-    expect(wrapper.find('#user-info-error')).toHaveLength(1);
-    expect(wrapper.find('#user-info-error').props().message).toEqual(errorMessage);
+    expect(wrapper.find('#create-error')).toHaveLength(1);
+    expect(wrapper.find('#create-error').props().message).toEqual(errorMessage.concat(<br />));
   });
 
   it('Submits the form with correct data', () => {

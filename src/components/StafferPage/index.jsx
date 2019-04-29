@@ -129,15 +129,25 @@ class StafferPage extends React.Component {
 
     const { data, isSaving } = stafferInfo;
 
-    let error = '';
-    if (stafferInfo.error) {
-      error = error.concat(stafferInfo.error, ' ');
-    }
-    if (stafferOptions.error) {
-      error = error.concat(stafferOptions.error);
-    }
-    error = error.trim();
+    const errorArray = [];
 
+    if (stafferInfo.error) {
+      stafferInfo.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < stafferInfo.error.length) {
+          errorArray.push(<br />);
+        }
+      });
+    }
+
+    if (stafferOptions.error) {
+      stafferOptions.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < stafferOptions.error.length) {
+          errorArray.push(<br />);
+        }
+      });
+    }
     const { referrer } = sourceInfo;
 
     return (
@@ -167,11 +177,11 @@ class StafferPage extends React.Component {
                 initialValues={data}
                 {...this.props}
               />
-              { error && (
+              { errorArray.length > 1 && (
                 <StatusAlert
                   id="create-staffer-error"
                   alertType="danger"
-                  message={error}
+                  message={errorArray}
                 />
               )}
             </div>
@@ -199,14 +209,14 @@ StafferPage.propTypes = {
   fetchStafferInfo: PropTypes.func,
   stafferOptions: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   stafferInfo: PropTypes.shape({
     isFetching: PropTypes.bool,
     isSaving: PropTypes.bool,
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
   }),
   sourceInfo: PropTypes.shape({
     referrer: PropTypes.string,

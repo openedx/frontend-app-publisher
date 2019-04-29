@@ -6,7 +6,7 @@ import apiClient from '../apiClient';
 import * as types from '../constants/publisherUserInfo';
 import * as actions from './publisherUserInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
-import { getErrorMessage } from '../../utils';
+import { getErrorMessages } from '../../utils';
 
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(apiClient);
@@ -74,7 +74,7 @@ describe('publisherUserInfo fetch organizations actions', () => {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/organizations/`;
 
     const error = 'Request failed with status code 404';
-    const expectedError = `Unable to retrieve user Organizations, please contact support: ${getErrorMessage(error)}.`;
+    const expectedError = ['Unable to retrieve user Organizations, please contact support.'].concat(getErrorMessages(error));
     mockClient.onGet(url).replyOnce(404);
 
     const expectedActions = [

@@ -131,7 +131,7 @@ BaseStafferForm.propTypes = {
   pristine: PropTypes.bool.isRequired,
   stafferOptions: PropTypes.shape({
     data: PropTypes.shape(),
-    error: PropTypes.string,
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   isSaving: PropTypes.bool,

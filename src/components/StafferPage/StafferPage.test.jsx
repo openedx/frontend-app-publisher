@@ -26,7 +26,7 @@ describe('StafferPage', () => {
       fetchStafferOptions={() => null}
       stafferOptions={{
         data: {},
-        error: 'Fail',
+        error: ['Fail'],
         isFetching: false,
       }}
       stafferInfo={{
@@ -47,7 +47,7 @@ describe('StafferPage', () => {
         isFetching: false,
       }}
       stafferInfo={{
-        error: 'Fail',
+        error: ['Fail'],
         isSaving: false,
       }}
     />);
@@ -60,11 +60,11 @@ describe('StafferPage', () => {
       fetchStafferOptions={() => null}
       stafferOptions={{
         data: {},
-        error: 'Fail',
+        error: ['Fail'],
         isFetching: false,
       }}
       stafferInfo={{
-        error: 'Fail here too',
+        error: ['Fail here too'],
         isSaving: false,
       }}
     />);

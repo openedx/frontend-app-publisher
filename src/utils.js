@@ -54,18 +54,33 @@ const getCourseNumber = (courseKeyFragment) => {
   return keyParts[keyParts.length - 1];
 };
 
-const getErrorMessage = (error) => {
+const addPeriodToString = (string) => {
+  if (typeof string === 'string') {
+    const punctuation = new Set(['.', ',', ':', '!', '?']);
+    if (punctuation.has(string.substr(-1))) {
+      return string;
+    }
+    return `${string}.`;
+  }
+  return string;
+};
+
+const getErrorMessages = (error) => {
   if (typeof error === 'object') {
     // For form validation from DRF, comes back as an object of fields:errors
-    if (error.response && error.response.data && typeof data === 'object') {
-      return Object.keys(error.response.data).map(key => `${key}: ${error.response.data[key]}`);
+    if (error.response && error.response.data && typeof error.response.data === 'object') {
+      return Object.keys(error.response.data).map(key => addPeriodToString(`${key}: ${error.response.data[key]}`));
     }
-    // For base JS errors check .message first before checking the response
-    return error.message || error.response.data || error.response.message;
+    // Some request responses contain a .message, as well as JS errors let's
+    // try to use the request data or message before the or base JS errors check
+    const message = (
+      error.response && (error.response.data || error.response.message)
+    ) || error.message || error;
+    return [addPeriodToString(message)];
   } else if (typeof error === 'string') {
-    return error;
+    return [addPeriodToString(error)];
   }
-  return null;
+  return ['Unknown error.'];
 };
 
 export {
@@ -73,5 +88,5 @@ export {
   getPageOptionsFromUrl,
   jsonDeepCopy,
   getCourseNumber,
-  getErrorMessage,
+  getErrorMessages,
 };

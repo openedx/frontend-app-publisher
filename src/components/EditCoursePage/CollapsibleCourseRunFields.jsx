@@ -19,7 +19,7 @@ const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
     const labelItems = [];
     if (courseRun.start) {
-      labelItems.push(moment(courseRun.start).format('MMM Do YYYY'));
+      labelItems.push(moment.utc(courseRun.start).format('MMM Do YYYY'));
     }
     if (courseRun.pacing_type) {
       labelItems.push(courseRun.pacing_type.split('_').map(pacingType =>
@@ -56,7 +56,7 @@ const formatCourseRunTitle = (courseRun) => {
   );
 };
 
-const getDateString = date => (date ? moment(date).format('YYYY-MM-DD') : '');
+const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 
 const CollapsibleCourseRunFields = ({
   fields,
@@ -116,7 +116,7 @@ const CollapsibleCourseRunFields = ({
             type="date"
             component={RenderInputTextField}
             format={value => getDateString(value)}
-            normalize={value => moment(value).toISOString()}
+            normalize={value => moment.utc(value).toISOString()}
             label={
               <FieldLabel
                 id={`${courseRun}.end.label`}
@@ -143,7 +143,7 @@ const CollapsibleCourseRunFields = ({
             type="date"
             component={RenderInputTextField}
             format={value => getDateString(value)}
-            normalize={value => moment(value).toISOString()}
+            normalize={value => moment.utc(value).toISOString()}
             label={
               <FieldLabel
                 id={`${courseRun}.go_live_date.label`}

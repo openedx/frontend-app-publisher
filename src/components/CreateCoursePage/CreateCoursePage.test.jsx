@@ -50,7 +50,7 @@ describe('CreateCoursePage', () => {
       fetchOrganizations={() => null}
       publisherUserInfo={{
         organizations,
-        error: 'Fail',
+        error: ['Fail'],
         isFetching: false,
       }}
       courseInfo={{
@@ -84,7 +84,7 @@ describe('CreateCoursePage', () => {
         isFetching: false,
       }}
       courseInfo={{
-        error: 'Fail',
+        error: ['Fail'],
         isCreating: false,
         data: {},
       }}

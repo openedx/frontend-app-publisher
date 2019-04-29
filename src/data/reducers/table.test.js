@@ -72,7 +72,7 @@ describe('table reducer', () => {
         ordering: newOrdering,
         pageSize: newPageSize,
         data: newData,
-        error: initialState[tableId].error,
+        error: null,
       },
     });
   });
