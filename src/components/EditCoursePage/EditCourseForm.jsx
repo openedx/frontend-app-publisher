@@ -114,7 +114,7 @@ export class BaseEditCourseForm extends React.Component {
     return (
       <div className="edit-course-form">
         <form id={id}>
-          <FieldLabel text="Course" className="mt-4 mb-2" />
+          <FieldLabel text="Course" className="mt-4 mb-2 h2" />
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
@@ -638,7 +638,7 @@ export class BaseEditCourseForm extends React.Component {
               </React.Fragment>
             )}
           </Collapsible>
-          <FieldLabel text="Course runs" className="mt-4 mb-2" />
+          <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
             name="course_runs"
             component={CollapsibleCourseRunFields}
@@ -646,6 +646,7 @@ export class BaseEditCourseForm extends React.Component {
             pacingTypeOptions={pacingTypeOptions}
             formId={id}
             courseUuid={uuid}
+            courseSubmitting={submitting}
             {...this.props}
           />
           <ButtonToolbar className="mt-3">
