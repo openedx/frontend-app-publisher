@@ -200,7 +200,7 @@ class EditCoursePage extends React.Component {
       courseStatuses.push(REVIEWED);
     }
     if (course_runs && !courseStatuses.includes(PUBLISHED) &&
-        !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !!courseStatuses.includes(REVIEWED) &&
+        !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !courseStatuses.includes(REVIEWED) &&
         course_runs.some(courseRun => UNPUBLISHED === courseRun.status)) {
       courseStatuses.push(UNPUBLISHED);
     }
