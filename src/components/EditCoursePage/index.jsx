@@ -257,7 +257,7 @@ class EditCoursePage extends React.Component {
       });
     }
     const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching;
-    const showForm = errorArray.length < 1 && startedFetching && !courseInfo.isFetching &&
+    const showForm = startedFetching && !courseInfo.isFetching &&
       !courseOptions.isFetching;
 
     return (
