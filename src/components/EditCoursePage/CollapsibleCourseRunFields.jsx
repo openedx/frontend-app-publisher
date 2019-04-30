@@ -8,11 +8,13 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import Pill from '../Pill';
-import { IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import StaffList from '../StaffList';
 import TranscriptLanguage from './TranscriptLanguage';
+
+import { IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
+import { endDateHelp, startDateHelp } from '../../helpText';
 
 
 const formatCourseRunTitle = (courseRun) => {
@@ -95,17 +97,7 @@ const CollapsibleCourseRunFields = ({
                 text="Start date"
                 required
                 requiredForSubmit
-                helpText={
-                  <div>
-                    <p>Start on a Tuesday, Wednesday, or Thursday.</p>
-                    <p>Avoid major U.S. holidays.</p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the
-                      estimated start date. For example, if your course will start near the end
-                      of March, specify March 31.
-                    </p>
-                  </div>
-                }
+                helpText={startDateHelp}
               />
             }
             placeholder="mm/dd/yyyy"
@@ -124,15 +116,7 @@ const CollapsibleCourseRunFields = ({
                 text="End date"
                 required
                 requiredForSubmit
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the
-                      estimated end date. For example, if your course will end near the end
-                      of March, specify March 31.
-                    </p>
-                  </div>
-                }
+                helpText={endDateHelp}
               />
             }
             placeholder="mm/dd/yyyy"

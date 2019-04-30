@@ -15,7 +15,9 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import Pill from '../../components/Pill';
+
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
+import { enrollmentHelp, titleHelp } from '../../helpText';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -130,28 +132,7 @@ export class BaseEditCourseForm extends React.Component {
                   text="Title"
                   required
                   requiredForSubmit
-                  helpText={
-                    <div>
-                      <p>Maximum 70 characters. Recommended 50 or fewer characters.</p>
-                      <p>An effective course title:</p>
-                      <ul>
-                        <li>Clearly indicates the course subject matter.</li>
-                        <li>Follows search engine optimization (SEO) guidelines.</li>
-                        <li>Targets a global audience.</li>
-                      </ul>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p><b>Example:</b></p>
-                      <p>English Grammar and Essay Writing</p>
-                    </div>
-                  }
+                  helpText={titleHelp}
                 />
               }
               required
@@ -640,23 +621,7 @@ export class BaseEditCourseForm extends React.Component {
                     <FieldLabel
                       id="mode.label"
                       text="Enrollment track"
-                      helpText={
-                        <div>
-                          <p>
-                            The enrollment track determines whether a course offers a paid
-                            certificate and what sort of verification is required.
-                          </p>
-                          <p>
-                            <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Learn more.
-                            </a>
-                          </p>
-                        </div>
-                      }
+                      helpText={enrollmentHelp}
                     />
                   }
                   options={this.getEnrollmentTrackOptions()}

@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
-import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
+
+import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
+import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp } from '../../helpText';
+
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -20,7 +23,7 @@ class BaseCreateCourseForm extends React.Component {
   }
 
   processOrganizations(organizations) {
-    const orgSelectList = [{ label: 'Select user organization', value: '' }];
+    const orgSelectList = [{ label: 'Select organization', value: '' }];
 
     if (organizations) {
       organizations.forEach((org) => {
@@ -53,21 +56,67 @@ class BaseCreateCourseForm extends React.Component {
             name="title"
             component={RenderInputTextField}
             type="text"
-            label={<FieldLabel text="Title" required />}
+            label={
+              <FieldLabel
+                id="title-label"
+                text="Title"
+                required
+                helpText={titleHelp}
+              />
+            }
             required
           />
           <Field
             name="number"
             component={RenderInputTextField}
             type="text"
-            label={<FieldLabel text="Number" required />}
+            label={
+              <FieldLabel
+                id="number-label"
+                text="Number"
+                required
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods,
+                      underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an
+                      ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p><b>Examples:</b></p>
+                    <ol>
+                      <li>CS002x</li>
+                      <li>BIO1.1x, BIO1.2x</li>
+                    </ol>
+                  </div>
+                }
+              />
+            }
             required
           />
           <Field
             name="enrollmentTrack"
             component={RenderSelectField}
             options={this.getEnrollmentTrackOptions()}
-            label={<FieldLabel text="Enrollment track" required />}
+            label={
+              <FieldLabel
+                id="enrollment-track-label"
+                text="Enrollment track"
+                required
+                helpText={enrollmentHelp}
+              />
+            }
             required
           />
           <Field
@@ -87,14 +136,28 @@ class BaseCreateCourseForm extends React.Component {
             name="start"
             type="date"
             component={RenderInputTextField}
-            label={<FieldLabel text="Start date" required />}
+            label={
+              <FieldLabel
+                id="start-label"
+                text="Start date"
+                required
+                helpText={startDateHelp}
+              />
+            }
             required
           />
           <Field
             name="end"
             type="date"
             component={RenderInputTextField}
-            label={<FieldLabel text="End date" required />}
+            label={
+              <FieldLabel
+                id="end-label"
+                text="End date"
+                required
+                helpText={endDateHelp}
+              />
+            }
             required
           />
           <ButtonToolbar>

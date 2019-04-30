@@ -60,7 +60,7 @@ ShallowWrapper {
             options={
               Array [
                 Object {
-                  "label": "Select user organization",
+                  "label": "Select organization",
                   "value": "",
                 },
                 Object {
@@ -80,8 +80,45 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Example:
+                      </b>
+                    </p>
+                    <p>
+                      English Grammar and Essay Writing
+                    </p>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Title"
@@ -96,8 +133,39 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Number"
@@ -112,8 +180,23 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="enrollment-track-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Enrollment track"
@@ -173,8 +256,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="start-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Start date"
@@ -189,8 +284,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="end-label"
                 required={true}
                 requiredForSubmit={false}
                 text="End date"
@@ -263,7 +364,7 @@ ShallowWrapper {
               options={
                 Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -283,8 +384,45 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -299,8 +437,39 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -315,8 +484,23 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -376,8 +560,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -392,8 +588,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -440,7 +642,7 @@ ShallowWrapper {
               "name": "org",
               "options": Array [
                 Object {
-                  "label": "Select user organization",
+                  "label": "Select organization",
                   "value": "",
                 },
                 Object {
@@ -466,8 +668,45 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Example:
+                      </b>
+                    </p>
+                    <p>
+                      English Grammar and Essay Writing
+                    </p>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Title"
@@ -488,8 +727,39 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Number"
@@ -510,8 +780,23 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="enrollment-track-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Enrollment track"
@@ -595,8 +880,20 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="start-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Start date"
@@ -617,8 +914,14 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="end-label"
                 required={true}
                 requiredForSubmit={false}
                 text="End date"
@@ -705,7 +1008,7 @@ ShallowWrapper {
               options={
                 Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -725,8 +1028,45 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -741,8 +1081,39 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -757,8 +1128,23 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -818,8 +1204,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -834,8 +1232,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -908,7 +1312,7 @@ ShallowWrapper {
                 options={
                   Array [
                     Object {
-                      "label": "Select user organization",
+                      "label": "Select organization",
                       "value": "",
                     },
                     Object {
@@ -928,8 +1332,45 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Example:
+                          </b>
+                        </p>
+                        <p>
+                          English Grammar and Essay Writing
+                        </p>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Title"
@@ -944,8 +1385,39 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Number"
@@ -960,8 +1432,23 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="enrollment-track-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Enrollment track"
@@ -1021,8 +1508,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major U.S. holidays.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="start-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Start date"
@@ -1037,8 +1536,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="end-label"
                     required={true}
                     requiredForSubmit={false}
                     text="End date"
@@ -1085,7 +1590,7 @@ ShallowWrapper {
                 "name": "org",
                 "options": Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -1111,8 +1616,45 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -1133,8 +1675,39 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -1155,8 +1728,23 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -1240,8 +1828,20 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -1262,8 +1862,14 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -1415,7 +2021,7 @@ ShallowWrapper {
             options={
               Array [
                 Object {
-                  "label": "Select user organization",
+                  "label": "Select organization",
                   "value": "",
                 },
                 Object {
@@ -1435,8 +2041,45 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Example:
+                      </b>
+                    </p>
+                    <p>
+                      English Grammar and Essay Writing
+                    </p>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Title"
@@ -1451,8 +2094,39 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Number"
@@ -1467,8 +2141,23 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="enrollment-track-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Enrollment track"
@@ -1528,8 +2217,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="start-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Start date"
@@ -1544,8 +2245,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="end-label"
                 required={true}
                 requiredForSubmit={false}
                 text="End date"
@@ -1618,7 +2325,7 @@ ShallowWrapper {
               options={
                 Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -1638,8 +2345,45 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -1654,8 +2398,39 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -1670,8 +2445,23 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -1731,8 +2521,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -1747,8 +2549,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -1795,7 +2603,7 @@ ShallowWrapper {
               "name": "org",
               "options": Array [
                 Object {
-                  "label": "Select user organization",
+                  "label": "Select organization",
                   "value": "",
                 },
                 Object {
@@ -1821,8 +2629,45 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Example:
+                      </b>
+                    </p>
+                    <p>
+                      English Grammar and Essay Writing
+                    </p>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Title"
@@ -1843,8 +2688,39 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Number"
@@ -1865,8 +2741,23 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="enrollment-track-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Enrollment track"
@@ -1950,8 +2841,20 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="start-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Start date"
@@ -1972,8 +2875,14 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="end-label"
                 required={true}
                 requiredForSubmit={false}
                 text="End date"
@@ -2060,7 +2969,7 @@ ShallowWrapper {
               options={
                 Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -2080,8 +2989,45 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -2096,8 +3042,39 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -2112,8 +3089,23 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -2173,8 +3165,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -2189,8 +3193,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -2263,7 +3273,7 @@ ShallowWrapper {
                 options={
                   Array [
                     Object {
-                      "label": "Select user organization",
+                      "label": "Select organization",
                       "value": "",
                     },
                     Object {
@@ -2283,8 +3293,45 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Example:
+                          </b>
+                        </p>
+                        <p>
+                          English Grammar and Essay Writing
+                        </p>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Title"
@@ -2299,8 +3346,39 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Number"
@@ -2315,8 +3393,23 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="enrollment-track-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Enrollment track"
@@ -2376,8 +3469,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major U.S. holidays.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="start-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Start date"
@@ -2392,8 +3497,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="end-label"
                     required={true}
                     requiredForSubmit={false}
                     text="End date"
@@ -2440,7 +3551,7 @@ ShallowWrapper {
                 "name": "org",
                 "options": Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -2466,8 +3577,45 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -2488,8 +3636,39 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -2510,8 +3689,23 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -2595,8 +3789,20 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -2617,8 +3823,14 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -2762,7 +3974,7 @@ ShallowWrapper {
             options={
               Array [
                 Object {
-                  "label": "Select user organization",
+                  "label": "Select organization",
                   "value": "",
                 },
                 Object {
@@ -2782,8 +3994,45 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Example:
+                      </b>
+                    </p>
+                    <p>
+                      English Grammar and Essay Writing
+                    </p>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Title"
@@ -2798,8 +4047,39 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Number"
@@ -2814,8 +4094,23 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="enrollment-track-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Enrollment track"
@@ -2875,8 +4170,20 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="start-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Start date"
@@ -2891,8 +4198,14 @@ ShallowWrapper {
             label={
               <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="end-label"
                 required={true}
                 requiredForSubmit={false}
                 text="End date"
@@ -2965,7 +4278,7 @@ ShallowWrapper {
               options={
                 Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -2985,8 +4298,45 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -3001,8 +4351,39 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -3017,8 +4398,23 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -3078,8 +4474,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -3094,8 +4502,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -3142,7 +4556,7 @@ ShallowWrapper {
               "name": "org",
               "options": Array [
                 Object {
-                  "label": "Select user organization",
+                  "label": "Select organization",
                   "value": "",
                 },
                 Object {
@@ -3168,8 +4582,45 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 70 characters. Recommended 50 or fewer characters.
+                    </p>
+                    <p>
+                      An effective course title:
+                    </p>
+                    <ul>
+                      <li>
+                        Clearly indicates the course subject matter.
+                      </li>
+                      <li>
+                        Follows search engine optimization (SEO) guidelines.
+                      </li>
+                      <li>
+                        Targets a global audience.
+                      </li>
+                    </ul>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Example:
+                      </b>
+                    </p>
+                    <p>
+                      English Grammar and Essay Writing
+                    </p>
+                  </div>
+                }
+                id="title-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Title"
@@ -3190,8 +4641,39 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Number"
@@ -3212,8 +4694,23 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="enrollment-track-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Enrollment track"
@@ -3297,8 +4794,20 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="start-label"
                 required={true}
                 requiredForSubmit={false}
                 text="Start date"
@@ -3319,8 +4828,14 @@ ShallowWrapper {
               "component": [Function],
               "label": <FieldLabel
                 className=""
-                helpText=""
-                id={null}
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                id="end-label"
                 required={true}
                 requiredForSubmit={false}
                 text="End date"
@@ -3407,7 +4922,7 @@ ShallowWrapper {
               options={
                 Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -3427,8 +4942,45 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -3443,8 +4995,39 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -3459,8 +5042,23 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -3520,8 +5118,20 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -3536,8 +5146,14 @@ ShallowWrapper {
               label={
                 <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"
@@ -3610,7 +5226,7 @@ ShallowWrapper {
                 options={
                   Array [
                     Object {
-                      "label": "Select user organization",
+                      "label": "Select organization",
                       "value": "",
                     },
                     Object {
@@ -3630,8 +5246,45 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 70 characters. Recommended 50 or fewer characters.
+                        </p>
+                        <p>
+                          An effective course title:
+                        </p>
+                        <ul>
+                          <li>
+                            Clearly indicates the course subject matter.
+                          </li>
+                          <li>
+                            Follows search engine optimization (SEO) guidelines.
+                          </li>
+                          <li>
+                            Targets a global audience.
+                          </li>
+                        </ul>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Example:
+                          </b>
+                        </p>
+                        <p>
+                          English Grammar and Essay Writing
+                        </p>
+                      </div>
+                    }
+                    id="title-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Title"
@@ -3646,8 +5299,39 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Number"
@@ -3662,8 +5346,23 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="enrollment-track-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Enrollment track"
@@ -3723,8 +5422,20 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major U.S. holidays.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="start-label"
                     required={true}
                     requiredForSubmit={false}
                     text="Start date"
@@ -3739,8 +5450,14 @@ ShallowWrapper {
                 label={
                   <FieldLabel
                     className=""
-                    helpText=""
-                    id={null}
+                    helpText={
+                      <div>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    id="end-label"
                     required={true}
                     requiredForSubmit={false}
                     text="End date"
@@ -3787,7 +5504,7 @@ ShallowWrapper {
                 "name": "org",
                 "options": Array [
                   Object {
-                    "label": "Select user organization",
+                    "label": "Select organization",
                     "value": "",
                   },
                   Object {
@@ -3813,8 +5530,45 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 70 characters. Recommended 50 or fewer characters.
+                      </p>
+                      <p>
+                        An effective course title:
+                      </p>
+                      <ul>
+                        <li>
+                          Clearly indicates the course subject matter.
+                        </li>
+                        <li>
+                          Follows search engine optimization (SEO) guidelines.
+                        </li>
+                        <li>
+                          Targets a global audience.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Example:
+                        </b>
+                      </p>
+                      <p>
+                        English Grammar and Essay Writing
+                      </p>
+                    </div>
+                  }
+                  id="title-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Title"
@@ -3835,8 +5589,39 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Number"
@@ -3857,8 +5642,23 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="enrollment-track-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Enrollment track"
@@ -3942,8 +5742,20 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major U.S. holidays.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="start-label"
                   required={true}
                   requiredForSubmit={false}
                   text="Start date"
@@ -3964,8 +5776,14 @@ ShallowWrapper {
                 "component": [Function],
                 "label": <FieldLabel
                   className=""
-                  helpText=""
-                  id={null}
+                  helpText={
+                    <div>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  id="end-label"
                   required={true}
                   requiredForSubmit={false}
                   text="End date"

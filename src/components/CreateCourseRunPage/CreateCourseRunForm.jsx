@@ -8,6 +8,9 @@ import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import ActionButton from '../ActionButton';
 
+import { endDateHelp, startDateHelp } from '../../helpText';
+
+
 const BaseCreateCourseRunForm = ({
   handleSubmit,
   pristine,
@@ -29,14 +32,28 @@ const BaseCreateCourseRunForm = ({
         name="start"
         type="date"
         component={RenderInputTextField}
-        label={<FieldLabel text="Start date" required />}
+        label={
+          <FieldLabel
+            id="start-label"
+            text="Start date"
+            required
+            helpText={startDateHelp}
+          />
+        }
         required
       />
       <Field
         name="end"
         type="date"
         component={RenderInputTextField}
-        label={<FieldLabel text="End date" required />}
+        label={
+          <FieldLabel
+            id="end-label"
+            text="End date"
+            required
+            helpText={endDateHelp}
+          />
+        }
         required
       />
       <ButtonToolbar>
