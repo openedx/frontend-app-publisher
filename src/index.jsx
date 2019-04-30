@@ -31,12 +31,14 @@ const App = () => (
           <Switch>
             <PrivateRoute
               path="/courses/new"
+              exact
               component={CreateCourse}
               authenticatedAPIClient={apiClient}
               redirect={`${process.env.BASE_URL}`}
             />
             <PrivateRoute
-              path="/courses/:id/course_runs/new"
+              path="/courses/:id/rerun"
+              exact
               component={({ match }) => (
                 <CreateCourseRun id={match.params.id} />
               )}
@@ -51,7 +53,7 @@ const App = () => (
               redirect={`${process.env.BASE_URL}`}
             />
             <PrivateRoute
-              path="/instructors/:uuid/edit"
+              path="/instructors/:uuid"
               exact
               render={({ match }) => (
                 <EditStaffer uuid={match.params.uuid} />
@@ -65,7 +67,8 @@ const App = () => (
               redirect={`${process.env.BASE_URL}`}
             />
             <PrivateRoute
-              path="/courses/:id/edit"
+              path="/courses/:id"
+              exact
               render={({ match }) => (
                 <EditCourse id={match.params.id} />
               )}

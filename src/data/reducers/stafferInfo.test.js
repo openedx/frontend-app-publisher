@@ -133,4 +133,15 @@ describe('stafferInfo reducer', () => {
         error: 'failure',
       });
   });
+
+  // Reset
+  it('staffer reset works', () => {
+    expect(stafferInfo(initalState, actions.resetStafferInfo()))
+      .toEqual({
+        data: {},
+        isSaving: false,
+        isFetching: false,
+        error: null,
+      });
+  });
 });

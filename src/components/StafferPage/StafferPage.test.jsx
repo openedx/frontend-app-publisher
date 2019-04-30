@@ -14,7 +14,7 @@ describe('StafferPage', () => {
       stafferInfo={{}}
       stafferOptions={{}}
       sourceInfo={{
-        referrer: '/course/11111111-1111-1111-111111111111/edit',
+        referrer: '/course/11111111-1111-1111-111111111111',
       }}
     />);
     expect(component).toMatchSnapshot();

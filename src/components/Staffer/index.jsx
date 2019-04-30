@@ -35,9 +35,9 @@ export const Staffer = ({
       { !disabled &&
         // Don't show the edit link at all if fields should be disabled
         <Link
-          to={`/instructors/${staffer.uuid}/edit`}
+          to={`/instructors/${staffer.uuid}`}
           className="btn mr-1 p-0"
-          onClick={() => store.dispatch(sourceInfo(`/courses/${courseUuid}/edit`))}
+          onClick={() => store.dispatch(sourceInfo(`/courses/${courseUuid}`))}
         >
           <Icon
             id={`edit-icon-${staffer.uuid}`}

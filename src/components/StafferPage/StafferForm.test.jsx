@@ -81,7 +81,7 @@ const noReferrerSourceInfo = {
 };
 
 const sourceInfo = {
-  referrer: 'courses/00000000-0000-0000-0000-000000000000/edit',
+  referrer: 'courses/00000000-0000-0000-0000-000000000000',
 };
 
 describe('StafferForm', () => {
