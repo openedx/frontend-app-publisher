@@ -31,14 +31,13 @@ class ImageUpload extends React.Component {
       className,
       id,
       label,
-      required,
     } = this.props;
 
     return (
       <div className={classNames('form-group', className)}>
         <label htmlFor={id} className="w-100 p-0">{label}</label>  {/* eslint-disable-line jsx-a11y/label-has-for */}
         <img src={this.state.value} alt="" className="uploaded-image" />
-        <input id={id} type="file" accept="image/*" required={required} onChange={this.handleFilePicked} />
+        <input id={id} type="file" accept="image/*" onChange={this.handleFilePicked} />
       </div>
     );
   }
@@ -52,12 +51,10 @@ ImageUpload.propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func.isRequired,
   }).isRequired,
-  required: PropTypes.bool,
 };
 
 ImageUpload.defaultProps = {
   className: '',
-  required: false,
 };
 
 export default ImageUpload;

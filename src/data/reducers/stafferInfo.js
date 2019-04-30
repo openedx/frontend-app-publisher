@@ -8,6 +8,7 @@ import {
   EDIT_STAFFER_INFO,
   EDIT_STAFFER_INFO_SUCCESS,
   EDIT_STAFFER_INFO_FAIL,
+  RESET_STAFFER_INFO,
 } from '../constants/stafferInfo';
 
 
@@ -77,6 +78,8 @@ function stafferInfo(state = initialState, action) {
         isSaving: false,
         error: action.error,
       });
+    case RESET_STAFFER_INFO:
+      return initialState;
     default:
       return state;
   }

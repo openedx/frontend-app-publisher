@@ -114,7 +114,7 @@ class StaffList extends React.Component {
     if (suggestion.item_text) {
       // Send users to the create instructor page
       const { courseUuid, courseRunKey } = this.props;
-      store.dispatch(sourceInfo(`/courses/${courseUuid}/edit`, courseRunKey));
+      store.dispatch(sourceInfo(`/courses/${courseUuid}`, courseRunKey));
       store.dispatch(push('/instructors/new'));
       return;
     }
@@ -159,7 +159,7 @@ class StaffList extends React.Component {
       input,
     } = this.props;
 
-    if (courseRunKey === referringRun) {
+    if (courseRunKey === referringRun && newStaffer.uuid) {
       const containsNewStaffer = this.state.staffList
         .some(staffer => staffer.uuid === newStaffer.uuid);
       if (!containsNewStaffer) {

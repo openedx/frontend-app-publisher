@@ -10,6 +10,7 @@ import {
   EDIT_STAFFER_INFO,
   EDIT_STAFFER_INFO_SUCCESS,
   EDIT_STAFFER_INFO_FAIL,
+  RESET_STAFFER_INFO,
 } from '../constants/stafferInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { getErrorMessages } from '../../utils';
@@ -109,4 +110,8 @@ export function editStaffer(stafferData, referrer = null) {
         dispatch(editStafferInfoFail(['Edit instructor failed, please try again or contact support.'].concat(getErrorMessages(error))));
       });
   };
+}
+
+export function resetStafferInfo() {
+  return { type: RESET_STAFFER_INFO };
 }

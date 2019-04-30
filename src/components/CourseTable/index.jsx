@@ -32,7 +32,7 @@ const CourseTable = () => {
 
   const formatCourseData = courses => courses.map(course => ({
     ...course,
-    title: (<Link to={`/courses/${course.uuid}/edit/`}>{course.title}</Link>),
+    title: (<Link to={`/courses/${course.uuid}`}>{course.title}</Link>),
     owners: course.owners ? course.owners.map(owners => owners.name).join(', ') : '',
   }));
 

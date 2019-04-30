@@ -355,7 +355,6 @@ export class BaseEditCourseForm extends React.Component {
               id="image"
               className="course-image"
               disabled={courseInReview}
-              required={isSubmittingForReview}
             />
             <Field
               name="prerequisites_raw"
@@ -650,7 +649,7 @@ export class BaseEditCourseForm extends React.Component {
             {...this.props}
           />
           <ButtonToolbar className="mt-3">
-            <Link to={`/courses/${uuid}/course_runs/new`}>
+            <Link to={`/courses/${uuid}/rerun`}>
               <button
                 className="btn btn-outline-primary"
                 disabled={!pristine || courseInReview}

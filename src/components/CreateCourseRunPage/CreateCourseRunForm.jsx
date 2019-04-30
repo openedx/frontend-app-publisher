@@ -20,7 +20,7 @@ const BaseCreateCourseRunForm = ({
     <hr />
     <FieldLabel text="Course" className="mb-2" />
     <div className="mb-3">
-      <Link to={`/courses/${uuid}/edit/`}>
+      <Link to={`/courses/${uuid}`}>
         {title}
       </Link>
     </div>
@@ -40,7 +40,7 @@ const BaseCreateCourseRunForm = ({
         required
       />
       <ButtonToolbar>
-        <Link to={`/courses/${uuid}/edit/`}>
+        <Link to={`/courses/${uuid}`}>
           <button
             className="btn btn-outline-primary"
             disabled={isCreating}
