@@ -8,6 +8,14 @@ const organizations = [
 ];
 
 describe('CreateCourseForm', () => {
+  const initialValues = {
+    org: 'edx',
+    title: 'Hello',
+    number: 'edx101',
+    enrollmentTrack: 'verified',
+    price: 100.00,
+  };
+
   it('renders html correctly with no orgs', () => {
     const component = shallow(<BaseCreateCourseForm
       handleSubmit={() => {}}
@@ -16,20 +24,17 @@ describe('CreateCourseForm', () => {
     />);
     expect(component).toMatchSnapshot();
   });
+
   it('renders html correctly with data', () => {
     const component = shallow(<BaseCreateCourseForm
       handleSubmit={() => {}}
-      initialValues={{
-        org: 'edx',
-        title: 'Hello',
-        number: 'edx101',
-        enrollmentTrack: 'verified',
-        price: 100.00,
-      }}
+      initialValues={initialValues}
+      currentValues={initialValues}
       organizations={organizations}
     />);
     expect(component).toMatchSnapshot();
   });
+
   it('renders html correctly while submitting', () => {
     const component = shallow(<BaseCreateCourseForm
       submitting
@@ -37,6 +42,7 @@ describe('CreateCourseForm', () => {
       pristine={false}
       handleSubmit={() => {}}
       initialValues={{}}
+      currentValues={initialValues}
       organizations={organizations}
     />);
     expect(component).toMatchSnapshot();

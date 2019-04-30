@@ -8,7 +8,12 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 
-import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
+import {
+  AUDIT_TRACK,
+  ENTITLEMENT_TRACKS,
+  PROFESSIONAL_TRACK,
+  VERIFIED_TRACK,
+} from '../../data/constants';
 import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp } from '../../helpText';
 
 
@@ -35,6 +40,7 @@ class BaseCreateCourseForm extends React.Component {
 
   render() {
     const {
+      currentValues,
       handleSubmit,
       organizations,
       pristine,
@@ -119,17 +125,17 @@ class BaseCreateCourseForm extends React.Component {
             }
             required
           />
-          <Field
+          {ENTITLEMENT_TRACKS.includes(currentValues.enrollmentTrack) && <Field
             name="price"
             component={RenderInputTextField}
-            input={{
+            extraInput={{
               min: 0.01,
               step: 0.01,
             }}
             type="number"
             label={<FieldLabel text="Price (USD)" required />}
             required
-          />
+          />}
           <h2>First run of your Course</h2>
           <hr />
           <Field
@@ -179,6 +185,7 @@ class BaseCreateCourseForm extends React.Component {
 BaseCreateCourseForm.defaultProps = {
   isCreating: false,
   pristine: true,
+  currentValues: {},
 };
 
 BaseCreateCourseForm.propTypes = {
@@ -192,6 +199,7 @@ BaseCreateCourseForm.propTypes = {
     start: PropTypes.string,
     end: PropTypes.string,
   }).isRequired,
+  currentValues: PropTypes.shape({}),
   organizations: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,

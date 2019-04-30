@@ -636,8 +636,39 @@ ShallowWrapper {
         },
       }
     }
-    courseStatuses={Array []}
-    entitlement={false}
+    courseStatuses={
+      Array [
+        "unpublished",
+      ]
+    }
+    currentValues={
+      Object {
+        "additional_information": "additional info",
+        "faq": "frequently asked questions",
+        "full_description": "long desc",
+        "imageSrc": "http://image.src.small",
+        "learner_testimonials": "learner testimonials",
+        "level_type": "advanced",
+        "mode": "verified",
+        "outcome": "learning outcomes",
+        "prerequisites_raw": "prereq",
+        "price": "77",
+        "short_description": "short desc",
+        "subjectPrimary": "business",
+        "subjectSecondary": "english",
+        "subjectTertiary": "security",
+        "syllabus_raw": "syllabus",
+        "title": "Test Title",
+        "uuid": "11111111-1111-1111-1111-111111111111",
+        "videoSrc": "https://www.video.src/watch?v=fdsafd",
+      }
+    }
+    entitlement={
+      Object {
+        "mode": "verified",
+        "price": "77",
+      }
+    }
     handleSubmit={[Function]}
     id="edit-course-form"
     isSubmittingForReview={true}
@@ -681,7 +712,11 @@ ShallowWrapper {
             <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>
           }
@@ -1515,6 +1550,81 @@ ShallowWrapper {
             name="videoSrc"
             type="url"
           />
+          <Field
+            component={[Function]}
+            disabled={false}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="mode.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Enrollment track"
+              />
+            }
+            name="mode"
+            options={
+              Array [
+                Object {
+                  "label": "Verified and Audit",
+                  "value": "verified",
+                },
+                Object {
+                  "label": "Audit Only",
+                  "value": "audit",
+                },
+                Object {
+                  "label": "Professional Only",
+                  "value": "professional",
+                },
+              ]
+            }
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            extraInput={
+              Object {
+                "min": 0.01,
+                "onInvalid": [Function],
+                "step": 0.01,
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="Price"
+              />
+            }
+            name="price"
+            required={true}
+            type="number"
+          />
         </t>
         <FieldLabel
           className="mt-4 mb-2 h2"
@@ -2158,10 +2268,41 @@ ShallowWrapper {
               },
             }
           }
-          courseStatuses={Array []}
+          courseStatuses={
+            Array [
+              "unpublished",
+            ]
+          }
           courseSubmitting={false}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          entitlement={false}
+          currentValues={
+            Object {
+              "additional_information": "additional info",
+              "faq": "frequently asked questions",
+              "full_description": "long desc",
+              "imageSrc": "http://image.src.small",
+              "learner_testimonials": "learner testimonials",
+              "level_type": "advanced",
+              "mode": "verified",
+              "outcome": "learning outcomes",
+              "prerequisites_raw": "prereq",
+              "price": "77",
+              "short_description": "short desc",
+              "subjectPrimary": "business",
+              "subjectSecondary": "english",
+              "subjectTertiary": "security",
+              "syllabus_raw": "syllabus",
+              "title": "Test Title",
+              "uuid": "11111111-1111-1111-1111-111111111111",
+              "videoSrc": "https://www.video.src/watch?v=fdsafd",
+            }
+          }
+          entitlement={
+            Object {
+              "mode": "verified",
+              "price": "77",
+            }
+          }
           formId="edit-course-form"
           handleSubmit={[Function]}
           id="edit-course-form"
@@ -2799,7 +2940,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -3633,6 +3778,81 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
           </t>,
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -4276,10 +4496,41 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={false}
+            currentValues={
+              Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              }
+            }
+            entitlement={
+              Object {
+                "mode": "verified",
+                "price": "77",
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -5748,7 +5999,81 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />,
-              false,
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />
+                }
+                name="price"
+                required={true}
+                type="number"
+              />,
             ],
             "expandedTitle": undefined,
             "iconId": "",
@@ -5758,7 +6083,11 @@ ShallowWrapper {
             "title": <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>,
           },
@@ -6684,7 +7013,87 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />,
+                "name": "mode",
+                "options": Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "extraInput": Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
+                },
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />,
+                "name": "price",
+                "required": true,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
           ],
           "type": [Function],
         },
@@ -7338,10 +7747,35 @@ ShallowWrapper {
                 },
               },
             },
-            "courseStatuses": Array [],
+            "courseStatuses": Array [
+              "unpublished",
+            ],
             "courseSubmitting": false,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "entitlement": false,
+            "currentValues": Object {
+              "additional_information": "additional info",
+              "faq": "frequently asked questions",
+              "full_description": "long desc",
+              "imageSrc": "http://image.src.small",
+              "learner_testimonials": "learner testimonials",
+              "level_type": "advanced",
+              "mode": "verified",
+              "outcome": "learning outcomes",
+              "prerequisites_raw": "prereq",
+              "price": "77",
+              "short_description": "short desc",
+              "subjectPrimary": "business",
+              "subjectSecondary": "english",
+              "subjectTertiary": "security",
+              "syllabus_raw": "syllabus",
+              "title": "Test Title",
+              "uuid": "11111111-1111-1111-1111-111111111111",
+              "videoSrc": "https://www.video.src/watch?v=fdsafd",
+            },
+            "entitlement": Object {
+              "mode": "verified",
+              "price": "77",
+            },
             "formId": "edit-course-form",
             "handleSubmit": [Function],
             "id": "edit-course-form",
@@ -8047,7 +8481,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -8881,6 +9319,81 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />
+              }
+              name="price"
+              required={true}
+              type="number"
+            />
           </t>
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -9524,10 +10037,41 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={false}
+            currentValues={
+              Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              }
+            }
+            entitlement={
+              Object {
+                "mode": "verified",
+                "price": "77",
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -10165,7 +10709,11 @@ ShallowWrapper {
                 <React.Fragment>
                   Course: Test Title
                   <Pill
-                    statuses={Array []}
+                    statuses={
+                      Array [
+                        "unpublished",
+                      ]
+                    }
                   />
                 </React.Fragment>
               }
@@ -10999,6 +11547,81 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />
+                }
+                name="price"
+                required={true}
+                type="number"
+              />
             </t>,
             <FieldLabel
               className="mt-4 mb-2 h2"
@@ -11642,10 +12265,41 @@ ShallowWrapper {
                   },
                 }
               }
-              courseStatuses={Array []}
+              courseStatuses={
+                Array [
+                  "unpublished",
+                ]
+              }
               courseSubmitting={false}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              entitlement={false}
+              currentValues={
+                Object {
+                  "additional_information": "additional info",
+                  "faq": "frequently asked questions",
+                  "full_description": "long desc",
+                  "imageSrc": "http://image.src.small",
+                  "learner_testimonials": "learner testimonials",
+                  "level_type": "advanced",
+                  "mode": "verified",
+                  "outcome": "learning outcomes",
+                  "prerequisites_raw": "prereq",
+                  "price": "77",
+                  "short_description": "short desc",
+                  "subjectPrimary": "business",
+                  "subjectSecondary": "english",
+                  "subjectTertiary": "security",
+                  "syllabus_raw": "syllabus",
+                  "title": "Test Title",
+                  "uuid": "11111111-1111-1111-1111-111111111111",
+                  "videoSrc": "https://www.video.src/watch?v=fdsafd",
+                }
+              }
+              entitlement={
+                Object {
+                  "mode": "verified",
+                  "price": "77",
+                }
+              }
               formId="edit-course-form"
               handleSubmit={[Function]}
               id="edit-course-form"
@@ -13114,7 +13768,81 @@ ShallowWrapper {
                   name="videoSrc"
                   type="url"
                 />,
-                false,
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText={
+                        <div>
+                          <p>
+                            The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                        </div>
+                      }
+                      id="mode.label"
+                      required={false}
+                      requiredForSubmit={false}
+                      text="Enrollment track"
+                    />
+                  }
+                  name="mode"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                />,
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "min": 0.01,
+                      "onInvalid": [Function],
+                      "step": 0.01,
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText=""
+                      id={null}
+                      required={true}
+                      requiredForSubmit={true}
+                      text="Price"
+                    />
+                  }
+                  name="price"
+                  required={true}
+                  type="number"
+                />,
               ],
               "expandedTitle": undefined,
               "iconId": "",
@@ -13124,7 +13852,11 @@ ShallowWrapper {
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>,
             },
@@ -14050,7 +14782,87 @@ ShallowWrapper {
                 "rendered": null,
                 "type": [Function],
               },
-              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "disabled": false,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />,
+                  "name": "mode",
+                  "options": Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "disabled": false,
+                  "extraInput": Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />,
+                  "name": "price",
+                  "required": true,
+                  "type": "number",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
             ],
             "type": [Function],
           },
@@ -14704,10 +15516,35 @@ ShallowWrapper {
                   },
                 },
               },
-              "courseStatuses": Array [],
+              "courseStatuses": Array [
+                "unpublished",
+              ],
               "courseSubmitting": false,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "entitlement": false,
+              "currentValues": Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              },
+              "entitlement": Object {
+                "mode": "verified",
+                "price": "77",
+              },
               "formId": "edit-course-form",
               "handleSubmit": [Function],
               "id": "edit-course-form",
@@ -16051,8 +16888,39 @@ ShallowWrapper {
         },
       }
     }
-    courseStatuses={Array []}
-    entitlement={true}
+    courseStatuses={
+      Array [
+        "unpublished",
+      ]
+    }
+    currentValues={
+      Object {
+        "additional_information": "additional info",
+        "faq": "frequently asked questions",
+        "full_description": "long desc",
+        "imageSrc": "http://image.src.small",
+        "learner_testimonials": "learner testimonials",
+        "level_type": "advanced",
+        "mode": "verified",
+        "outcome": "learning outcomes",
+        "prerequisites_raw": "prereq",
+        "price": "77",
+        "short_description": "short desc",
+        "subjectPrimary": "business",
+        "subjectSecondary": "english",
+        "subjectTertiary": "security",
+        "syllabus_raw": "syllabus",
+        "title": "Test Title",
+        "uuid": "11111111-1111-1111-1111-111111111111",
+        "videoSrc": "https://www.video.src/watch?v=fdsafd",
+      }
+    }
+    entitlement={
+      Object {
+        "mode": "verified",
+        "price": "77",
+      }
+    }
     handleSubmit={[Function]}
     id="edit-course-form"
     initialValues={
@@ -16118,7 +16986,11 @@ ShallowWrapper {
             <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>
           }
@@ -16952,83 +17824,81 @@ ShallowWrapper {
             name="videoSrc"
             type="url"
           />
-          <React.Fragment>
-            <Field
-              component={[Function]}
-              disabled={false}
-              extraInput={
-                Object {
-                  "onInvalid": [Function],
+          <Field
+            component={[Function]}
+            disabled={false}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
                 }
-              }
-              label={
-                <FieldLabel
-                  className=""
-                  helpText={
-                    <div>
-                      <p>
-                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                      </p>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                    </div>
-                  }
-                  id="mode.label"
-                  required={false}
-                  requiredForSubmit={false}
-                  text="Enrollment track"
-                />
-              }
-              name="mode"
-              options={
-                Array [
-                  Object {
-                    "label": "Verified and Audit",
-                    "value": "verified",
-                  },
-                  Object {
-                    "label": "Audit Only",
-                    "value": "audit",
-                  },
-                  Object {
-                    "label": "Professional Only",
-                    "value": "professional",
-                  },
-                ]
-              }
-            />
-            <Field
-              component={[Function]}
-              disabled={false}
-              extraInput={
+                id="mode.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Enrollment track"
+              />
+            }
+            name="mode"
+            options={
+              Array [
                 Object {
-                  "min": 0.01,
-                  "onInvalid": [Function],
-                  "step": 0.01,
-                }
+                  "label": "Verified and Audit",
+                  "value": "verified",
+                },
+                Object {
+                  "label": "Audit Only",
+                  "value": "audit",
+                },
+                Object {
+                  "label": "Professional Only",
+                  "value": "professional",
+                },
+              ]
+            }
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            extraInput={
+              Object {
+                "min": 0.01,
+                "onInvalid": [Function],
+                "step": 0.01,
               }
-              label={
-                <FieldLabel
-                  className=""
-                  helpText=""
-                  id={null}
-                  required={true}
-                  requiredForSubmit={true}
-                  text="Price"
-                />
-              }
-              name="price"
-              required={false}
-              type="number"
-            />
-          </React.Fragment>
+            }
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="Price"
+              />
+            }
+            name="price"
+            required={false}
+            type="number"
+          />
         </t>
         <FieldLabel
           className="mt-4 mb-2 h2"
@@ -17672,10 +18542,41 @@ ShallowWrapper {
               },
             }
           }
-          courseStatuses={Array []}
+          courseStatuses={
+            Array [
+              "unpublished",
+            ]
+          }
           courseSubmitting={true}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          entitlement={true}
+          currentValues={
+            Object {
+              "additional_information": "additional info",
+              "faq": "frequently asked questions",
+              "full_description": "long desc",
+              "imageSrc": "http://image.src.small",
+              "learner_testimonials": "learner testimonials",
+              "level_type": "advanced",
+              "mode": "verified",
+              "outcome": "learning outcomes",
+              "prerequisites_raw": "prereq",
+              "price": "77",
+              "short_description": "short desc",
+              "subjectPrimary": "business",
+              "subjectSecondary": "english",
+              "subjectTertiary": "security",
+              "syllabus_raw": "syllabus",
+              "title": "Test Title",
+              "uuid": "11111111-1111-1111-1111-111111111111",
+              "videoSrc": "https://www.video.src/watch?v=fdsafd",
+            }
+          }
+          entitlement={
+            Object {
+              "mode": "verified",
+              "price": "77",
+            }
+          }
           formId="edit-course-form"
           handleSubmit={[Function]}
           id="edit-course-form"
@@ -18332,7 +19233,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -19166,83 +20071,81 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
-            <React.Fragment>
-              <Field
-                component={[Function]}
-                disabled={false}
-                extraInput={
-                  Object {
-                    "onInvalid": [Function],
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
                   }
-                }
-                label={
-                  <FieldLabel
-                    className=""
-                    helpText={
-                      <div>
-                        <p>
-                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                        </p>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                          >
-                            Learn more.
-                          </a>
-                        </p>
-                      </div>
-                    }
-                    id="mode.label"
-                    required={false}
-                    requiredForSubmit={false}
-                    text="Enrollment track"
-                  />
-                }
-                name="mode"
-                options={
-                  Array [
-                    Object {
-                      "label": "Verified and Audit",
-                      "value": "verified",
-                    },
-                    Object {
-                      "label": "Audit Only",
-                      "value": "audit",
-                    },
-                    Object {
-                      "label": "Professional Only",
-                      "value": "professional",
-                    },
-                  ]
-                }
-              />
-              <Field
-                component={[Function]}
-                disabled={false}
-                extraInput={
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
                   Object {
-                    "min": 0.01,
-                    "onInvalid": [Function],
-                    "step": 0.01,
-                  }
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
                 }
-                label={
-                  <FieldLabel
-                    className=""
-                    helpText=""
-                    id={null}
-                    required={true}
-                    requiredForSubmit={true}
-                    text="Price"
-                  />
-                }
-                name="price"
-                required={false}
-                type="number"
-              />
-            </React.Fragment>
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />
+              }
+              name="price"
+              required={false}
+              type="number"
+            />
           </t>,
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -19886,10 +20789,41 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={true}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={true}
+            currentValues={
+              Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              }
+            }
+            entitlement={
+              Object {
+                "mode": "verified",
+                "price": "77",
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -21377,83 +22311,81 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />,
-              <React.Fragment>
-                <Field
-                  component={[Function]}
-                  disabled={false}
-                  extraInput={
-                    Object {
-                      "onInvalid": [Function],
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
                     }
-                  }
-                  label={
-                    <FieldLabel
-                      className=""
-                      helpText={
-                        <div>
-                          <p>
-                            The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                          </p>
-                          <p>
-                            <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              Learn more.
-                            </a>
-                          </p>
-                        </div>
-                      }
-                      id="mode.label"
-                      required={false}
-                      requiredForSubmit={false}
-                      text="Enrollment track"
-                    />
-                  }
-                  name="mode"
-                  options={
-                    Array [
-                      Object {
-                        "label": "Verified and Audit",
-                        "value": "verified",
-                      },
-                      Object {
-                        "label": "Audit Only",
-                        "value": "audit",
-                      },
-                      Object {
-                        "label": "Professional Only",
-                        "value": "professional",
-                      },
-                    ]
-                  }
-                />
-                <Field
-                  component={[Function]}
-                  disabled={false}
-                  extraInput={
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
                     Object {
-                      "min": 0.01,
-                      "onInvalid": [Function],
-                      "step": 0.01,
-                    }
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
                   }
-                  label={
-                    <FieldLabel
-                      className=""
-                      helpText=""
-                      id={null}
-                      required={true}
-                      requiredForSubmit={true}
-                      text="Price"
-                    />
-                  }
-                  name="price"
-                  required={false}
-                  type="number"
-                />
-              </React.Fragment>,
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />
+                }
+                name="price"
+                required={false}
+                type="number"
+              />,
             ],
             "expandedTitle": undefined,
             "iconId": "",
@@ -21463,7 +22395,11 @@ ShallowWrapper {
             "title": <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>,
           },
@@ -22392,171 +23328,83 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  <Field
-                    component={[Function]}
-                    disabled={false}
-                    extraInput={
-                      Object {
-                        "onInvalid": [Function],
-                      }
-                    }
-                    label={
-                      <FieldLabel
-                        className=""
-                        helpText={
-                          <div>
-                            <p>
-                              The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                            </p>
-                            <p>
-                              <a
-                                href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Learn more.
-                              </a>
-                            </p>
-                          </div>
-                        }
-                        id="mode.label"
-                        required={false}
-                        requiredForSubmit={false}
-                        text="Enrollment track"
-                      />
-                    }
-                    name="mode"
-                    options={
-                      Array [
-                        Object {
-                          "label": "Verified and Audit",
-                          "value": "verified",
-                        },
-                        Object {
-                          "label": "Audit Only",
-                          "value": "audit",
-                        },
-                        Object {
-                          "label": "Professional Only",
-                          "value": "professional",
-                        },
-                      ]
-                    }
-                  />,
-                  <Field
-                    component={[Function]}
-                    disabled={false}
-                    extraInput={
-                      Object {
-                        "min": 0.01,
-                        "onInvalid": [Function],
-                        "step": 0.01,
-                      }
-                    }
-                    label={
-                      <FieldLabel
-                        className=""
-                        helpText=""
-                        id={null}
-                        required={true}
-                        requiredForSubmit={true}
-                        text="Price"
-                      />
-                    }
-                    name="price"
-                    required={false}
-                    type="number"
-                  />,
+                "component": [Function],
+                "disabled": false,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />,
+                "name": "mode",
+                "options": Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
                 ],
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "component": [Function],
-                    "disabled": false,
-                    "extraInput": Object {
-                      "onInvalid": [Function],
-                    },
-                    "label": <FieldLabel
-                      className=""
-                      helpText={
-                        <div>
-                          <p>
-                            The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                          </p>
-                          <p>
-                            <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              Learn more.
-                            </a>
-                          </p>
-                        </div>
-                      }
-                      id="mode.label"
-                      required={false}
-                      requiredForSubmit={false}
-                      text="Enrollment track"
-                    />,
-                    "name": "mode",
-                    "options": Array [
-                      Object {
-                        "label": "Verified and Audit",
-                        "value": "verified",
-                      },
-                      Object {
-                        "label": "Audit Only",
-                        "value": "audit",
-                      },
-                      Object {
-                        "label": "Professional Only",
-                        "value": "professional",
-                      },
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "extraInput": Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "component": [Function],
-                    "disabled": false,
-                    "extraInput": Object {
-                      "min": 0.01,
-                      "onInvalid": [Function],
-                      "step": 0.01,
-                    },
-                    "label": <FieldLabel
-                      className=""
-                      helpText=""
-                      id={null}
-                      required={true}
-                      requiredForSubmit={true}
-                      text="Price"
-                    />,
-                    "name": "price",
-                    "required": false,
-                    "type": "number",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": Symbol(react.fragment),
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />,
+                "name": "price",
+                "required": false,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],
@@ -23211,10 +24059,35 @@ ShallowWrapper {
                 },
               },
             },
-            "courseStatuses": Array [],
+            "courseStatuses": Array [
+              "unpublished",
+            ],
             "courseSubmitting": true,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "entitlement": true,
+            "currentValues": Object {
+              "additional_information": "additional info",
+              "faq": "frequently asked questions",
+              "full_description": "long desc",
+              "imageSrc": "http://image.src.small",
+              "learner_testimonials": "learner testimonials",
+              "level_type": "advanced",
+              "mode": "verified",
+              "outcome": "learning outcomes",
+              "prerequisites_raw": "prereq",
+              "price": "77",
+              "short_description": "short desc",
+              "subjectPrimary": "business",
+              "subjectSecondary": "english",
+              "subjectTertiary": "security",
+              "syllabus_raw": "syllabus",
+              "title": "Test Title",
+              "uuid": "11111111-1111-1111-1111-111111111111",
+              "videoSrc": "https://www.video.src/watch?v=fdsafd",
+            },
+            "entitlement": Object {
+              "mode": "verified",
+              "price": "77",
+            },
             "formId": "edit-course-form",
             "handleSubmit": [Function],
             "id": "edit-course-form",
@@ -23938,7 +24811,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -24772,83 +25649,81 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
-            <React.Fragment>
-              <Field
-                component={[Function]}
-                disabled={false}
-                extraInput={
-                  Object {
-                    "onInvalid": [Function],
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
                   }
-                }
-                label={
-                  <FieldLabel
-                    className=""
-                    helpText={
-                      <div>
-                        <p>
-                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                        </p>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                          >
-                            Learn more.
-                          </a>
-                        </p>
-                      </div>
-                    }
-                    id="mode.label"
-                    required={false}
-                    requiredForSubmit={false}
-                    text="Enrollment track"
-                  />
-                }
-                name="mode"
-                options={
-                  Array [
-                    Object {
-                      "label": "Verified and Audit",
-                      "value": "verified",
-                    },
-                    Object {
-                      "label": "Audit Only",
-                      "value": "audit",
-                    },
-                    Object {
-                      "label": "Professional Only",
-                      "value": "professional",
-                    },
-                  ]
-                }
-              />
-              <Field
-                component={[Function]}
-                disabled={false}
-                extraInput={
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
                   Object {
-                    "min": 0.01,
-                    "onInvalid": [Function],
-                    "step": 0.01,
-                  }
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
                 }
-                label={
-                  <FieldLabel
-                    className=""
-                    helpText=""
-                    id={null}
-                    required={true}
-                    requiredForSubmit={true}
-                    text="Price"
-                  />
-                }
-                name="price"
-                required={false}
-                type="number"
-              />
-            </React.Fragment>
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />
+              }
+              name="price"
+              required={false}
+              type="number"
+            />
           </t>
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -25492,10 +26367,41 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={true}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={true}
+            currentValues={
+              Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              }
+            }
+            entitlement={
+              Object {
+                "mode": "verified",
+                "price": "77",
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -26152,7 +27058,11 @@ ShallowWrapper {
                 <React.Fragment>
                   Course: Test Title
                   <Pill
-                    statuses={Array []}
+                    statuses={
+                      Array [
+                        "unpublished",
+                      ]
+                    }
                   />
                 </React.Fragment>
               }
@@ -26986,83 +27896,81 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />
-              <React.Fragment>
-                <Field
-                  component={[Function]}
-                  disabled={false}
-                  extraInput={
-                    Object {
-                      "onInvalid": [Function],
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
                     }
-                  }
-                  label={
-                    <FieldLabel
-                      className=""
-                      helpText={
-                        <div>
-                          <p>
-                            The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                          </p>
-                          <p>
-                            <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              Learn more.
-                            </a>
-                          </p>
-                        </div>
-                      }
-                      id="mode.label"
-                      required={false}
-                      requiredForSubmit={false}
-                      text="Enrollment track"
-                    />
-                  }
-                  name="mode"
-                  options={
-                    Array [
-                      Object {
-                        "label": "Verified and Audit",
-                        "value": "verified",
-                      },
-                      Object {
-                        "label": "Audit Only",
-                        "value": "audit",
-                      },
-                      Object {
-                        "label": "Professional Only",
-                        "value": "professional",
-                      },
-                    ]
-                  }
-                />
-                <Field
-                  component={[Function]}
-                  disabled={false}
-                  extraInput={
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
                     Object {
-                      "min": 0.01,
-                      "onInvalid": [Function],
-                      "step": 0.01,
-                    }
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
                   }
-                  label={
-                    <FieldLabel
-                      className=""
-                      helpText=""
-                      id={null}
-                      required={true}
-                      requiredForSubmit={true}
-                      text="Price"
-                    />
-                  }
-                  name="price"
-                  required={false}
-                  type="number"
-                />
-              </React.Fragment>
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />
+                }
+                name="price"
+                required={false}
+                type="number"
+              />
             </t>,
             <FieldLabel
               className="mt-4 mb-2 h2"
@@ -27706,10 +28614,41 @@ ShallowWrapper {
                   },
                 }
               }
-              courseStatuses={Array []}
+              courseStatuses={
+                Array [
+                  "unpublished",
+                ]
+              }
               courseSubmitting={true}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              entitlement={true}
+              currentValues={
+                Object {
+                  "additional_information": "additional info",
+                  "faq": "frequently asked questions",
+                  "full_description": "long desc",
+                  "imageSrc": "http://image.src.small",
+                  "learner_testimonials": "learner testimonials",
+                  "level_type": "advanced",
+                  "mode": "verified",
+                  "outcome": "learning outcomes",
+                  "prerequisites_raw": "prereq",
+                  "price": "77",
+                  "short_description": "short desc",
+                  "subjectPrimary": "business",
+                  "subjectSecondary": "english",
+                  "subjectTertiary": "security",
+                  "syllabus_raw": "syllabus",
+                  "title": "Test Title",
+                  "uuid": "11111111-1111-1111-1111-111111111111",
+                  "videoSrc": "https://www.video.src/watch?v=fdsafd",
+                }
+              }
+              entitlement={
+                Object {
+                  "mode": "verified",
+                  "price": "77",
+                }
+              }
               formId="edit-course-form"
               handleSubmit={[Function]}
               id="edit-course-form"
@@ -29197,83 +30136,81 @@ ShallowWrapper {
                   name="videoSrc"
                   type="url"
                 />,
-                <React.Fragment>
-                  <Field
-                    component={[Function]}
-                    disabled={false}
-                    extraInput={
-                      Object {
-                        "onInvalid": [Function],
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText={
+                        <div>
+                          <p>
+                            The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                        </div>
                       }
-                    }
-                    label={
-                      <FieldLabel
-                        className=""
-                        helpText={
-                          <div>
-                            <p>
-                              The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                            </p>
-                            <p>
-                              <a
-                                href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Learn more.
-                              </a>
-                            </p>
-                          </div>
-                        }
-                        id="mode.label"
-                        required={false}
-                        requiredForSubmit={false}
-                        text="Enrollment track"
-                      />
-                    }
-                    name="mode"
-                    options={
-                      Array [
-                        Object {
-                          "label": "Verified and Audit",
-                          "value": "verified",
-                        },
-                        Object {
-                          "label": "Audit Only",
-                          "value": "audit",
-                        },
-                        Object {
-                          "label": "Professional Only",
-                          "value": "professional",
-                        },
-                      ]
-                    }
-                  />
-                  <Field
-                    component={[Function]}
-                    disabled={false}
-                    extraInput={
+                      id="mode.label"
+                      required={false}
+                      requiredForSubmit={false}
+                      text="Enrollment track"
+                    />
+                  }
+                  name="mode"
+                  options={
+                    Array [
                       Object {
-                        "min": 0.01,
-                        "onInvalid": [Function],
-                        "step": 0.01,
-                      }
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                />,
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "min": 0.01,
+                      "onInvalid": [Function],
+                      "step": 0.01,
                     }
-                    label={
-                      <FieldLabel
-                        className=""
-                        helpText=""
-                        id={null}
-                        required={true}
-                        requiredForSubmit={true}
-                        text="Price"
-                      />
-                    }
-                    name="price"
-                    required={false}
-                    type="number"
-                  />
-                </React.Fragment>,
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText=""
+                      id={null}
+                      required={true}
+                      requiredForSubmit={true}
+                      text="Price"
+                    />
+                  }
+                  name="price"
+                  required={false}
+                  type="number"
+                />,
               ],
               "expandedTitle": undefined,
               "iconId": "",
@@ -29283,7 +30220,11 @@ ShallowWrapper {
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>,
             },
@@ -30212,171 +31153,83 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    <Field
-                      component={[Function]}
-                      disabled={false}
-                      extraInput={
-                        Object {
-                          "onInvalid": [Function],
-                        }
-                      }
-                      label={
-                        <FieldLabel
-                          className=""
-                          helpText={
-                            <div>
-                              <p>
-                                The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                              </p>
-                              <p>
-                                <a
-                                  href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Learn more.
-                                </a>
-                              </p>
-                            </div>
-                          }
-                          id="mode.label"
-                          required={false}
-                          requiredForSubmit={false}
-                          text="Enrollment track"
-                        />
-                      }
-                      name="mode"
-                      options={
-                        Array [
-                          Object {
-                            "label": "Verified and Audit",
-                            "value": "verified",
-                          },
-                          Object {
-                            "label": "Audit Only",
-                            "value": "audit",
-                          },
-                          Object {
-                            "label": "Professional Only",
-                            "value": "professional",
-                          },
-                        ]
-                      }
-                    />,
-                    <Field
-                      component={[Function]}
-                      disabled={false}
-                      extraInput={
-                        Object {
-                          "min": 0.01,
-                          "onInvalid": [Function],
-                          "step": 0.01,
-                        }
-                      }
-                      label={
-                        <FieldLabel
-                          className=""
-                          helpText=""
-                          id={null}
-                          required={true}
-                          requiredForSubmit={true}
-                          text="Price"
-                        />
-                      }
-                      name="price"
-                      required={false}
-                      type="number"
-                    />,
+                  "component": [Function],
+                  "disabled": false,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />,
+                  "name": "mode",
+                  "options": Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
                   ],
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "component": [Function],
-                      "disabled": false,
-                      "extraInput": Object {
-                        "onInvalid": [Function],
-                      },
-                      "label": <FieldLabel
-                        className=""
-                        helpText={
-                          <div>
-                            <p>
-                              The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
-                            </p>
-                            <p>
-                              <a
-                                href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Learn more.
-                              </a>
-                            </p>
-                          </div>
-                        }
-                        id="mode.label"
-                        required={false}
-                        requiredForSubmit={false}
-                        text="Enrollment track"
-                      />,
-                      "name": "mode",
-                      "options": Array [
-                        Object {
-                          "label": "Verified and Audit",
-                          "value": "verified",
-                        },
-                        Object {
-                          "label": "Audit Only",
-                          "value": "audit",
-                        },
-                        Object {
-                          "label": "Professional Only",
-                          "value": "professional",
-                        },
-                      ],
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "disabled": false,
+                  "extraInput": Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "component": [Function],
-                      "disabled": false,
-                      "extraInput": Object {
-                        "min": 0.01,
-                        "onInvalid": [Function],
-                        "step": 0.01,
-                      },
-                      "label": <FieldLabel
-                        className=""
-                        helpText=""
-                        id={null}
-                        required={true}
-                        requiredForSubmit={true}
-                        text="Price"
-                      />,
-                      "name": "price",
-                      "required": false,
-                      "type": "number",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
-                "type": Symbol(react.fragment),
+                  "label": <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />,
+                  "name": "price",
+                  "required": false,
+                  "type": "number",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -31031,10 +31884,35 @@ ShallowWrapper {
                   },
                 },
               },
-              "courseStatuses": Array [],
+              "courseStatuses": Array [
+                "unpublished",
+              ],
               "courseSubmitting": true,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "entitlement": true,
+              "currentValues": Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              },
+              "entitlement": Object {
+                "mode": "verified",
+                "price": "77",
+              },
               "formId": "edit-course-form",
               "handleSubmit": [Function],
               "id": "edit-course-form",
@@ -32396,8 +33274,39 @@ ShallowWrapper {
         },
       }
     }
-    courseStatuses={Array []}
-    entitlement={false}
+    courseStatuses={
+      Array [
+        "unpublished",
+      ]
+    }
+    currentValues={
+      Object {
+        "additional_information": "additional info",
+        "faq": "frequently asked questions",
+        "full_description": "long desc",
+        "imageSrc": "http://image.src.small",
+        "learner_testimonials": "learner testimonials",
+        "level_type": "advanced",
+        "mode": "verified",
+        "outcome": "learning outcomes",
+        "prerequisites_raw": "prereq",
+        "price": "77",
+        "short_description": "short desc",
+        "subjectPrimary": "business",
+        "subjectSecondary": "english",
+        "subjectTertiary": "security",
+        "syllabus_raw": "syllabus",
+        "title": "Test Title",
+        "uuid": "11111111-1111-1111-1111-111111111111",
+        "videoSrc": "https://www.video.src/watch?v=fdsafd",
+      }
+    }
+    entitlement={
+      Object {
+        "mode": "verified",
+        "price": "77",
+      }
+    }
     handleSubmit={[Function]}
     id="edit-course-form"
     initialValues={
@@ -32463,7 +33372,11 @@ ShallowWrapper {
             <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>
           }
@@ -33297,6 +34210,81 @@ ShallowWrapper {
             name="videoSrc"
             type="url"
           />
+          <Field
+            component={[Function]}
+            disabled={false}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="mode.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Enrollment track"
+              />
+            }
+            name="mode"
+            options={
+              Array [
+                Object {
+                  "label": "Verified and Audit",
+                  "value": "verified",
+                },
+                Object {
+                  "label": "Audit Only",
+                  "value": "audit",
+                },
+                Object {
+                  "label": "Professional Only",
+                  "value": "professional",
+                },
+              ]
+            }
+          />
+          <Field
+            component={[Function]}
+            disabled={false}
+            extraInput={
+              Object {
+                "min": 0.01,
+                "onInvalid": [Function],
+                "step": 0.01,
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                helpText=""
+                id={null}
+                required={true}
+                requiredForSubmit={true}
+                text="Price"
+              />
+            }
+            name="price"
+            required={false}
+            type="number"
+          />
         </t>
         <FieldLabel
           className="mt-4 mb-2 h2"
@@ -33940,10 +34928,41 @@ ShallowWrapper {
               },
             }
           }
-          courseStatuses={Array []}
+          courseStatuses={
+            Array [
+              "unpublished",
+            ]
+          }
           courseSubmitting={false}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          entitlement={false}
+          currentValues={
+            Object {
+              "additional_information": "additional info",
+              "faq": "frequently asked questions",
+              "full_description": "long desc",
+              "imageSrc": "http://image.src.small",
+              "learner_testimonials": "learner testimonials",
+              "level_type": "advanced",
+              "mode": "verified",
+              "outcome": "learning outcomes",
+              "prerequisites_raw": "prereq",
+              "price": "77",
+              "short_description": "short desc",
+              "subjectPrimary": "business",
+              "subjectSecondary": "english",
+              "subjectTertiary": "security",
+              "syllabus_raw": "syllabus",
+              "title": "Test Title",
+              "uuid": "11111111-1111-1111-1111-111111111111",
+              "videoSrc": "https://www.video.src/watch?v=fdsafd",
+            }
+          }
+          entitlement={
+            Object {
+              "mode": "verified",
+              "price": "77",
+            }
+          }
           formId="edit-course-form"
           handleSubmit={[Function]}
           id="edit-course-form"
@@ -34603,7 +35622,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -35437,6 +36460,81 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />
+              }
+              name="price"
+              required={false}
+              type="number"
+            />
           </t>,
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -36080,10 +37178,41 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={false}
+            currentValues={
+              Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              }
+            }
+            entitlement={
+              Object {
+                "mode": "verified",
+                "price": "77",
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -37574,7 +38703,81 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />,
-              false,
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />
+                }
+                name="price"
+                required={false}
+                type="number"
+              />,
             ],
             "expandedTitle": undefined,
             "iconId": "",
@@ -37584,7 +38787,11 @@ ShallowWrapper {
             "title": <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>,
           },
@@ -38510,7 +39717,87 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />,
+                "name": "mode",
+                "options": Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "extraInput": Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
+                },
+                "label": <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />,
+                "name": "price",
+                "required": false,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
           ],
           "type": [Function],
         },
@@ -39164,10 +40451,35 @@ ShallowWrapper {
                 },
               },
             },
-            "courseStatuses": Array [],
+            "courseStatuses": Array [
+              "unpublished",
+            ],
             "courseSubmitting": false,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "entitlement": false,
+            "currentValues": Object {
+              "additional_information": "additional info",
+              "faq": "frequently asked questions",
+              "full_description": "long desc",
+              "imageSrc": "http://image.src.small",
+              "learner_testimonials": "learner testimonials",
+              "level_type": "advanced",
+              "mode": "verified",
+              "outcome": "learning outcomes",
+              "prerequisites_raw": "prereq",
+              "price": "77",
+              "short_description": "short desc",
+              "subjectPrimary": "business",
+              "subjectSecondary": "english",
+              "subjectTertiary": "security",
+              "syllabus_raw": "syllabus",
+              "title": "Test Title",
+              "uuid": "11111111-1111-1111-1111-111111111111",
+              "videoSrc": "https://www.video.src/watch?v=fdsafd",
+            },
+            "entitlement": Object {
+              "mode": "verified",
+              "price": "77",
+            },
             "formId": "edit-course-form",
             "handleSubmit": [Function],
             "id": "edit-course-form",
@@ -39893,7 +41205,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -40727,6 +42043,81 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "min": 0.01,
+                  "onInvalid": [Function],
+                  "step": 0.01,
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText=""
+                  id={null}
+                  required={true}
+                  requiredForSubmit={true}
+                  text="Price"
+                />
+              }
+              name="price"
+              required={false}
+              type="number"
+            />
           </t>
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -41370,10 +42761,41 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={false}
+            currentValues={
+              Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              }
+            }
+            entitlement={
+              Object {
+                "mode": "verified",
+                "price": "77",
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -42033,7 +43455,11 @@ ShallowWrapper {
                 <React.Fragment>
                   Course: Test Title
                   <Pill
-                    statuses={Array []}
+                    statuses={
+                      Array [
+                        "unpublished",
+                      ]
+                    }
                   />
                 </React.Fragment>
               }
@@ -42867,6 +44293,81 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />
+                }
+                name="price"
+                required={false}
+                type="number"
+              />
             </t>,
             <FieldLabel
               className="mt-4 mb-2 h2"
@@ -43510,10 +45011,41 @@ ShallowWrapper {
                   },
                 }
               }
-              courseStatuses={Array []}
+              courseStatuses={
+                Array [
+                  "unpublished",
+                ]
+              }
               courseSubmitting={false}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              entitlement={false}
+              currentValues={
+                Object {
+                  "additional_information": "additional info",
+                  "faq": "frequently asked questions",
+                  "full_description": "long desc",
+                  "imageSrc": "http://image.src.small",
+                  "learner_testimonials": "learner testimonials",
+                  "level_type": "advanced",
+                  "mode": "verified",
+                  "outcome": "learning outcomes",
+                  "prerequisites_raw": "prereq",
+                  "price": "77",
+                  "short_description": "short desc",
+                  "subjectPrimary": "business",
+                  "subjectSecondary": "english",
+                  "subjectTertiary": "security",
+                  "syllabus_raw": "syllabus",
+                  "title": "Test Title",
+                  "uuid": "11111111-1111-1111-1111-111111111111",
+                  "videoSrc": "https://www.video.src/watch?v=fdsafd",
+                }
+              }
+              entitlement={
+                Object {
+                  "mode": "verified",
+                  "price": "77",
+                }
+              }
               formId="edit-course-form"
               handleSubmit={[Function]}
               id="edit-course-form"
@@ -45004,7 +46536,81 @@ ShallowWrapper {
                   name="videoSrc"
                   type="url"
                 />,
-                false,
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText={
+                        <div>
+                          <p>
+                            The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                        </div>
+                      }
+                      id="mode.label"
+                      required={false}
+                      requiredForSubmit={false}
+                      text="Enrollment track"
+                    />
+                  }
+                  name="mode"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                />,
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "min": 0.01,
+                      "onInvalid": [Function],
+                      "step": 0.01,
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText=""
+                      id={null}
+                      required={true}
+                      requiredForSubmit={true}
+                      text="Price"
+                    />
+                  }
+                  name="price"
+                  required={false}
+                  type="number"
+                />,
               ],
               "expandedTitle": undefined,
               "iconId": "",
@@ -45014,7 +46620,11 @@ ShallowWrapper {
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>,
             },
@@ -45940,7 +47550,87 @@ ShallowWrapper {
                 "rendered": null,
                 "type": [Function],
               },
-              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "disabled": false,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />,
+                  "name": "mode",
+                  "options": Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "disabled": false,
+                  "extraInput": Object {
+                    "min": 0.01,
+                    "onInvalid": [Function],
+                    "step": 0.01,
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={true}
+                    text="Price"
+                  />,
+                  "name": "price",
+                  "required": false,
+                  "type": "number",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
             ],
             "type": [Function],
           },
@@ -46594,10 +48284,35 @@ ShallowWrapper {
                   },
                 },
               },
-              "courseStatuses": Array [],
+              "courseStatuses": Array [
+                "unpublished",
+              ],
               "courseSubmitting": false,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "entitlement": false,
+              "currentValues": Object {
+                "additional_information": "additional info",
+                "faq": "frequently asked questions",
+                "full_description": "long desc",
+                "imageSrc": "http://image.src.small",
+                "learner_testimonials": "learner testimonials",
+                "level_type": "advanced",
+                "mode": "verified",
+                "outcome": "learning outcomes",
+                "prerequisites_raw": "prereq",
+                "price": "77",
+                "short_description": "short desc",
+                "subjectPrimary": "business",
+                "subjectSecondary": "english",
+                "subjectTertiary": "security",
+                "syllabus_raw": "syllabus",
+                "title": "Test Title",
+                "uuid": "11111111-1111-1111-1111-111111111111",
+                "videoSrc": "https://www.video.src/watch?v=fdsafd",
+              },
+              "entitlement": Object {
+                "mode": "verified",
+                "price": "77",
+              },
               "formId": "edit-course-form",
               "handleSubmit": [Function],
               "id": "edit-course-form",
@@ -47961,8 +49676,17 @@ ShallowWrapper {
         },
       }
     }
-    courseStatuses={Array []}
-    entitlement={false}
+    courseStatuses={
+      Array [
+        "unpublished",
+      ]
+    }
+    currentValues={Object {}}
+    entitlement={
+      Object {
+        "sku": null,
+      }
+    }
     handleSubmit={[Function]}
     id="edit-course-form"
     initialValues={
@@ -48011,7 +49735,11 @@ ShallowWrapper {
             <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>
           }
@@ -48845,6 +50573,57 @@ ShallowWrapper {
             name="videoSrc"
             type="url"
           />
+          <Field
+            component={[Function]}
+            disabled={false}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                helpText={
+                  <div>
+                    <p>
+                      The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                  </div>
+                }
+                id="mode.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Enrollment track"
+              />
+            }
+            name="mode"
+            options={
+              Array [
+                Object {
+                  "label": "Verified and Audit",
+                  "value": "verified",
+                },
+                Object {
+                  "label": "Audit Only",
+                  "value": "audit",
+                },
+                Object {
+                  "label": "Professional Only",
+                  "value": "professional",
+                },
+              ]
+            }
+          />
         </t>
         <FieldLabel
           className="mt-4 mb-2 h2"
@@ -49488,10 +51267,19 @@ ShallowWrapper {
               },
             }
           }
-          courseStatuses={Array []}
+          courseStatuses={
+            Array [
+              "unpublished",
+            ]
+          }
           courseSubmitting={false}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          entitlement={false}
+          currentValues={Object {}}
+          entitlement={
+            Object {
+              "sku": null,
+            }
+          }
           formId="edit-course-form"
           handleSubmit={[Function]}
           id="edit-course-form"
@@ -50134,7 +51922,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -50968,6 +52760,57 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
           </t>,
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -51611,10 +53454,19 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={false}
+            currentValues={Object {}}
+            entitlement={
+              Object {
+                "sku": null,
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -53088,6 +54940,57 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />,
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />,
               false,
             ],
             "expandedTitle": undefined,
@@ -53098,7 +55001,11 @@ ShallowWrapper {
             "title": <React.Fragment>
               Course: Test Title
               <Pill
-                statuses={Array []}
+                statuses={
+                  Array [
+                    "unpublished",
+                  ]
+                }
               />
             </React.Fragment>,
           },
@@ -54024,6 +55931,59 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": false,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />,
+                "name": "mode",
+                "options": Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             false,
           ],
           "type": [Function],
@@ -54678,10 +56638,15 @@ ShallowWrapper {
                 },
               },
             },
-            "courseStatuses": Array [],
+            "courseStatuses": Array [
+              "unpublished",
+            ],
             "courseSubmitting": false,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "entitlement": false,
+            "currentValues": Object {},
+            "entitlement": Object {
+              "sku": null,
+            },
             "formId": "edit-course-form",
             "handleSubmit": [Function],
             "id": "edit-course-form",
@@ -55390,7 +57355,11 @@ ShallowWrapper {
               <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>
             }
@@ -56224,6 +58193,57 @@ ShallowWrapper {
               name="videoSrc"
               type="url"
             />
+            <Field
+              component={[Function]}
+              disabled={false}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  helpText={
+                    <div>
+                      <p>
+                        The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                  id="mode.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Enrollment track"
+                />
+              }
+              name="mode"
+              options={
+                Array [
+                  Object {
+                    "label": "Verified and Audit",
+                    "value": "verified",
+                  },
+                  Object {
+                    "label": "Audit Only",
+                    "value": "audit",
+                  },
+                  Object {
+                    "label": "Professional Only",
+                    "value": "professional",
+                  },
+                ]
+              }
+            />
           </t>
           <FieldLabel
             className="mt-4 mb-2 h2"
@@ -56867,10 +58887,19 @@ ShallowWrapper {
                 },
               }
             }
-            courseStatuses={Array []}
+            courseStatuses={
+              Array [
+                "unpublished",
+              ]
+            }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            entitlement={false}
+            currentValues={Object {}}
+            entitlement={
+              Object {
+                "sku": null,
+              }
+            }
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
@@ -57513,7 +59542,11 @@ ShallowWrapper {
                 <React.Fragment>
                   Course: Test Title
                   <Pill
-                    statuses={Array []}
+                    statuses={
+                      Array [
+                        "unpublished",
+                      ]
+                    }
                   />
                 </React.Fragment>
               }
@@ -58347,6 +60380,57 @@ ShallowWrapper {
                 name="videoSrc"
                 type="url"
               />
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />
+                }
+                name="mode"
+                options={
+                  Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ]
+                }
+              />
             </t>,
             <FieldLabel
               className="mt-4 mb-2 h2"
@@ -58990,10 +61074,19 @@ ShallowWrapper {
                   },
                 }
               }
-              courseStatuses={Array []}
+              courseStatuses={
+                Array [
+                  "unpublished",
+                ]
+              }
               courseSubmitting={false}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              entitlement={false}
+              currentValues={Object {}}
+              entitlement={
+                Object {
+                  "sku": null,
+                }
+              }
               formId="edit-course-form"
               handleSubmit={[Function]}
               id="edit-course-form"
@@ -60467,6 +62560,57 @@ ShallowWrapper {
                   name="videoSrc"
                   type="url"
                 />,
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText={
+                        <div>
+                          <p>
+                            The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                        </div>
+                      }
+                      id="mode.label"
+                      required={false}
+                      requiredForSubmit={false}
+                      text="Enrollment track"
+                    />
+                  }
+                  name="mode"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Verified and Audit",
+                        "value": "verified",
+                      },
+                      Object {
+                        "label": "Audit Only",
+                        "value": "audit",
+                      },
+                      Object {
+                        "label": "Professional Only",
+                        "value": "professional",
+                      },
+                    ]
+                  }
+                />,
                 false,
               ],
               "expandedTitle": undefined,
@@ -60477,7 +62621,11 @@ ShallowWrapper {
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
-                  statuses={Array []}
+                  statuses={
+                    Array [
+                      "unpublished",
+                    ]
+                  }
                 />
               </React.Fragment>,
             },
@@ -61403,6 +63551,59 @@ ShallowWrapper {
                 "rendered": null,
                 "type": [Function],
               },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "disabled": false,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    helpText={
+                      <div>
+                        <p>
+                          The enrollment track determines whether a course offers a paid certificate and what sort of verification is required.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                    id="mode.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Enrollment track"
+                  />,
+                  "name": "mode",
+                  "options": Array [
+                    Object {
+                      "label": "Verified and Audit",
+                      "value": "verified",
+                    },
+                    Object {
+                      "label": "Audit Only",
+                      "value": "audit",
+                    },
+                    Object {
+                      "label": "Professional Only",
+                      "value": "professional",
+                    },
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               false,
             ],
             "type": [Function],
@@ -62057,10 +64258,15 @@ ShallowWrapper {
                   },
                 },
               },
-              "courseStatuses": Array [],
+              "courseStatuses": Array [
+                "unpublished",
+              ],
               "courseSubmitting": false,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "entitlement": false,
+              "currentValues": Object {},
+              "entitlement": Object {
+                "sku": null,
+              },
               "formId": "edit-course-form",
               "handleSubmit": [Function],
               "id": "edit-course-form",

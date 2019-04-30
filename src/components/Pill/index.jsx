@@ -2,25 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import {
+  REVIEW_BY_LEGAL,
+  REVIEW_BY_INTERNAL,
+  PUBLISHED,
+  REVIEWED,
+  UNPUBLISHED,
+} from '../../data/constants';
+
 
 const Pill = ({ statuses }) => {
   const pills = [];
   statuses.forEach((status) => {
     switch (status) {
-      case 'unpublished':
+      case UNPUBLISHED:
         pills.push({
           text: 'Unsubmitted',
           className: 'badge badge-warning',
         });
         break;
-      case 'reviewed':
+      case REVIEWED:
         pills.push({
           text: 'Scheduled',
           className: 'badge badge-primary',
         });
         break;
-      case 'review_by_legal':
-      case 'review_by_internal':
+      case REVIEW_BY_LEGAL:
+      case REVIEW_BY_INTERNAL:
         pills.push({
           text: 'In review',
           className: 'badge badge-light',
@@ -29,7 +37,7 @@ const Pill = ({ statuses }) => {
           text: <i className="fa fa-lock" />,
         });
         break;
-      case 'published':
+      case PUBLISHED:
         pills.push({
           text: 'Published',
           className: 'badge badge-success',

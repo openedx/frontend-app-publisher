@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { getFormValues } from 'redux-form';
 
 import EditCoursePage from '../../components/EditCoursePage';
 import { editCourse, fetchCourseInfo } from '../../data/actions/courseInfo';
@@ -13,6 +14,7 @@ const mapStateToProps = state => ({
   stafferInfo: state.stafferInfo,
   sourceInfo: state.sourceInfo,
   courseSubmitInfo: state.courseSubmitInfo,
+  formValues: formId => getFormValues(formId)(state),
 });
 
 const mapDispatchToProps = {

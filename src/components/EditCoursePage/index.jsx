@@ -57,7 +57,7 @@ class EditCoursePage extends React.Component {
     return `edit-course-form-${this.props.courseInfo.data.uuid}`;
   }
 
-  prepareCourseRuns(courseRuns) {
+  prepareCourseRuns(courseRuns, courseData) {
     /* eslint-disable no-param-reassign */
     courseRuns.forEach((courseRun) => {
       if (courseRun.staff) {
@@ -69,6 +69,11 @@ class EditCoursePage extends React.Component {
       // If a course run triggered the submission, mark it as not a draft
       const submittedRun = courseRuns.find(run => run.key === targetRun.key);
       submittedRun.draft = false;
+      // If we are updating a published course run, we need to also publish the course.
+      // We want to use the same indicator of draft = false for consistency.
+      if (submittedRun.status === PUBLISHED) {
+        courseData.draft = false;
+      }
     }
     /* eslint-enable no-param-reassign */
   }
@@ -123,7 +128,7 @@ class EditCoursePage extends React.Component {
     modifiedCourseRuns = modifiedCourseRuns.filter(run => !IN_REVIEW_STATUS.includes(run.status));
 
     // Process course run info
-    this.prepareCourseRuns(modifiedCourseRuns);
+    this.prepareCourseRuns(modifiedCourseRuns, courseData);
 
     // Process course info
     this.prepareCourse(courseData);
@@ -170,8 +175,10 @@ class EditCoursePage extends React.Component {
       },
       courseOptions,
       courseRunOptions,
+      formValues,
     } = this.props;
     const { startedFetching, isSubmittingForReview, targetRun } = this.state;
+    const currentValues = formValues(this.getFormId());
 
     const courseStatuses = [];
     const courseInReview = course_runs && course_runs.some(courseRun =>
@@ -285,10 +292,11 @@ class EditCoursePage extends React.Component {
                   course_runs: minimalCourseRuns,
                 }}
                 number={number}
-                entitlement={!!entitlement}
+                entitlement={entitlement || {}}
                 title={title}
                 courseRuns={minimalCourseRuns}
                 uuid={uuid}
+                currentValues={currentValues}
                 courseInfo={courseInfo}
                 courseInReview={courseInReview}
                 courseStatuses={courseStatuses}
@@ -323,6 +331,7 @@ EditCoursePage.defaultProps = {
   fetchCourseRunOptions: () => null,
   editCourse: () => null,
   courseSubmitInfo: {},
+  formValues: () => {},
 };
 
 EditCoursePage.propTypes = {
@@ -351,6 +360,7 @@ EditCoursePage.propTypes = {
       status: PropTypes.string,
     }),
   }),
+  formValues: PropTypes.func,
 };
 
 export default EditCoursePage;

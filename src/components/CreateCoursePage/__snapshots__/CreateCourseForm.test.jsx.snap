@@ -4,6 +4,15 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseCreateCourseForm
+    currentValues={
+      Object {
+        "enrollmentTrack": "verified",
+        "number": "edx101",
+        "org": "edx",
+        "price": 100,
+        "title": "Hello",
+      }
+    }
     handleSubmit={[Function]}
     initialValues={Object {}}
     isCreating={true}
@@ -227,7 +236,7 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
-            input={
+            extraInput={
               Object {
                 "min": 0.01,
                 "step": 0.01,
@@ -532,7 +541,7 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
-              input={
+              extraInput={
                 Object {
                   "min": 0.01,
                   "step": 0.01,
@@ -834,7 +843,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "input": Object {
+              "extraInput": Object {
                 "min": 0.01,
                 "step": 0.01,
               },
@@ -1179,7 +1188,7 @@ ShallowWrapper {
             />
             <Field
               component={[Function]}
-              input={
+              extraInput={
                 Object {
                   "min": 0.01,
                   "step": 0.01,
@@ -1484,7 +1493,7 @@ ShallowWrapper {
               />,
               <Field
                 component={[Function]}
-                input={
+                extraInput={
                   Object {
                     "min": 0.01,
                     "step": 0.01,
@@ -1786,7 +1795,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "input": Object {
+                "extraInput": Object {
                   "min": 0.01,
                   "step": 0.01,
                 },
@@ -1966,6 +1975,15 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseCreateCourseForm
+    currentValues={
+      Object {
+        "enrollmentTrack": "verified",
+        "number": "edx101",
+        "org": "edx",
+        "price": 100,
+        "title": "Hello",
+      }
+    }
     handleSubmit={[Function]}
     initialValues={
       Object {
@@ -2196,7 +2214,7 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
-            input={
+            extraInput={
               Object {
                 "min": 0.01,
                 "step": 0.01,
@@ -2501,7 +2519,7 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
-              input={
+              extraInput={
                 Object {
                   "min": 0.01,
                   "step": 0.01,
@@ -2803,7 +2821,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "input": Object {
+              "extraInput": Object {
                 "min": 0.01,
                 "step": 0.01,
               },
@@ -3148,7 +3166,7 @@ ShallowWrapper {
             />
             <Field
               component={[Function]}
-              input={
+              extraInput={
                 Object {
                   "min": 0.01,
                   "step": 0.01,
@@ -3453,7 +3471,7 @@ ShallowWrapper {
               />,
               <Field
                 component={[Function]}
-                input={
+                extraInput={
                   Object {
                     "min": 0.01,
                     "step": 0.01,
@@ -3755,7 +3773,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "input": Object {
+                "extraInput": Object {
                   "min": 0.01,
                   "step": 0.01,
                 },
@@ -3935,6 +3953,7 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseCreateCourseForm
+    currentValues={Object {}}
     handleSubmit={[Function]}
     initialValues={Object {}}
     isCreating={false}
@@ -4155,28 +4174,6 @@ ShallowWrapper {
             }
             required={true}
           />
-          <Field
-            component={[Function]}
-            input={
-              Object {
-                "min": 0.01,
-                "step": 0.01,
-              }
-            }
-            label={
-              <FieldLabel
-                className=""
-                helpText=""
-                id={null}
-                required={true}
-                requiredForSubmit={false}
-                text="Price (USD)"
-              />
-            }
-            name="price"
-            required={true}
-            type="number"
-          />
           <h2>
             First run of your Course
           </h2>
@@ -4460,28 +4457,7 @@ ShallowWrapper {
               }
               required={true}
             />,
-            <Field
-              component={[Function]}
-              input={
-                Object {
-                  "min": 0.01,
-                  "step": 0.01,
-                }
-              }
-              label={
-                <FieldLabel
-                  className=""
-                  helpText=""
-                  id={null}
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Price (USD)"
-                />
-              }
-              name="price"
-              required={true}
-              type="number"
-            />,
+            false,
             <h2>
               First run of your Course
             </h2>,
@@ -4758,32 +4734,7 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "input": Object {
-                "min": 0.01,
-                "step": 0.01,
-              },
-              "label": <FieldLabel
-                className=""
-                helpText=""
-                id={null}
-                required={true}
-                requiredForSubmit={false}
-                text="Price (USD)"
-              />,
-              "name": "price",
-              "required": true,
-              "type": "number",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
+          false,
           Object {
             "instance": null,
             "key": undefined,
@@ -5107,28 +5058,6 @@ ShallowWrapper {
               }
               required={true}
             />
-            <Field
-              component={[Function]}
-              input={
-                Object {
-                  "min": 0.01,
-                  "step": 0.01,
-                }
-              }
-              label={
-                <FieldLabel
-                  className=""
-                  helpText=""
-                  id={null}
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Price (USD)"
-                />
-              }
-              name="price"
-              required={true}
-              type="number"
-            />
             <h2>
               First run of your Course
             </h2>
@@ -5412,28 +5341,7 @@ ShallowWrapper {
                 }
                 required={true}
               />,
-              <Field
-                component={[Function]}
-                input={
-                  Object {
-                    "min": 0.01,
-                    "step": 0.01,
-                  }
-                }
-                label={
-                  <FieldLabel
-                    className=""
-                    helpText=""
-                    id={null}
-                    required={true}
-                    requiredForSubmit={false}
-                    text="Price (USD)"
-                  />
-                }
-                name="price"
-                required={true}
-                type="number"
-              />,
+              false,
               <h2>
                 First run of your Course
               </h2>,
@@ -5710,32 +5618,7 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "input": Object {
-                  "min": 0.01,
-                  "step": 0.01,
-                },
-                "label": <FieldLabel
-                  className=""
-                  helpText=""
-                  id={null}
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Price (USD)"
-                />,
-                "name": "price",
-                "required": true,
-                "type": "number",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+            false,
             Object {
               "instance": null,
               "key": undefined,
