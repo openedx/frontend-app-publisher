@@ -110,7 +110,7 @@ function createCourseRun(course, courseRunData) {
       .then((response) => {
         const courseRun = response.data;
         dispatch(createCourseRunSuccess(courseRun));
-        return dispatch(push(`/courses/${course.uuid}/edit/`));
+        return dispatch(push(`/courses/${course.uuid}`));
       })
       .catch((error) => {
         dispatch(createCourseRunFail(['Course Run create failed, please try again or contact support.'].concat(getErrorMessages(error))));
