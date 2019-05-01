@@ -8,7 +8,7 @@ import { Collapsible } from '@edx/paragon';
 
 import ActionButton from '../../components/ActionButton';
 import ButtonToolbar from '../../components/ButtonToolbar';
-import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
+import CollapsibleCourseRuns from './CollapsibleCourseRuns';
 import FieldLabel from '../FieldLabel';
 import ImageUpload from '../../components/ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
@@ -21,6 +21,23 @@ import { enrollmentHelp, titleHelp } from '../../helpText';
 
 
 export class BaseEditCourseForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: true,
+    };
+
+    this.openCollapsible = this.openCollapsible.bind(this);
+    this.setCollapsible = this.setCollapsible.bind(this);
+  }
+
+  setCollapsible(open) {
+    this.setState({
+      open,
+    });
+  }
+
   getEnrollmentTrackOptions() {
     return [
       { label: VERIFIED_TRACK.name, value: VERIFIED_TRACK.key },
@@ -61,6 +78,10 @@ export class BaseEditCourseForm extends React.Component {
     return data.actions.POST;
   }
 
+  openCollapsible() {
+    this.setCollapsible(true);
+  }
+
   parseOptions(inChoices) {
     return inChoices.map(choice =>
       ({ label: choice.display_name, value: choice.value }));
@@ -91,6 +112,10 @@ export class BaseEditCourseForm extends React.Component {
       id,
       isSubmittingForReview,
     } = this.props;
+    const {
+      open,
+    } = this.state;
+
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
     const levelTypeOptions = courseOptions && this.parseOptions(courseOptions.level_type.choices);
@@ -120,7 +145,8 @@ export class BaseEditCourseForm extends React.Component {
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
-            isOpen
+            isOpen={open}
+            onToggle={this.setCollapsible}
           >
             <Field
               name="title"
@@ -135,6 +161,7 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={titleHelp}
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               required
               disabled={courseInReview}
             />
@@ -178,6 +205,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={500}
               id="sdesc"
               disabled={courseInReview}
@@ -218,6 +246,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="ldesc"
               disabled={courseInReview}
@@ -255,6 +284,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="outcome"
               disabled={courseInReview}
@@ -288,6 +318,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
               disabled={courseInReview}
               required={isSubmittingForReview}
@@ -296,6 +327,7 @@ export class BaseEditCourseForm extends React.Component {
               name="subjectSecondary"
               component={RenderSelectField}
               label={<FieldLabel text="Secondary subject" />}
+              extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
               disabled={courseInReview}
             />
@@ -303,6 +335,7 @@ export class BaseEditCourseForm extends React.Component {
               name="subjectTertiary"
               component={RenderSelectField}
               label={<FieldLabel text="Tertiary subject" />}
+              extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
               disabled={courseInReview}
             />
@@ -342,6 +375,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               id="image"
               className="course-image"
               disabled={courseInReview}
@@ -378,6 +412,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={1000}
               id="prereq"
               disabled={courseInReview}
@@ -415,6 +450,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               options={levelTypeOptions}
               disabled={courseInReview}
               required={isSubmittingForReview}
@@ -452,6 +488,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={500}
               id="learner-testimonials"
               disabled={courseInReview}
@@ -479,6 +516,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="faq"
               disabled={courseInReview}
@@ -497,6 +535,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="additional-information"
               disabled={courseInReview}
@@ -552,6 +591,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={500}
               id="syllabus"
               disabled={courseInReview}
@@ -610,6 +650,7 @@ export class BaseEditCourseForm extends React.Component {
                   }
                 />
               }
+              extraInput={{ onInvalid: this.openCollapsible }}
               disabled={courseInReview}
             />
             {entitlement && (
@@ -624,18 +665,20 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={enrollmentHelp}
                     />
                   }
+                  extraInput={{ onInvalid: this.openCollapsible }}
                   options={this.getEnrollmentTrackOptions()}
                   disabled={courseInReview}
                 />
                 <Field
                   name="price"
                   component={RenderInputTextField}
-                  input={{
+                  type="number"
+                  label={<FieldLabel text="Price" required requiredForSubmit />}
+                  extraInput={{
+                    onInvalid: this.openCollapsible,
                     min: 0.01,
                     step: 0.01,
                   }}
-                  type="number"
-                  label={<FieldLabel text="Price" required requiredForSubmit />}
                   disabled={courseInReview}
                   required={isSubmittingForReview}
                 />
@@ -645,7 +688,7 @@ export class BaseEditCourseForm extends React.Component {
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
             name="course_runs"
-            component={CollapsibleCourseRunFields}
+            component={CollapsibleCourseRuns}
             languageOptions={languageOptions}
             pacingTypeOptions={pacingTypeOptions}
             formId={id}

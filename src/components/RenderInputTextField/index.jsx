@@ -4,6 +4,7 @@ import { InputText } from '@edx/paragon';
 
 const RenderInputTextField = ({
   input,
+  extraInput,
   name,
   label,
   type,
@@ -13,6 +14,7 @@ const RenderInputTextField = ({
 }) => (
   <InputText
     {...input}
+    {...extraInput}
     name={name}
     label={label}
     type={type}
@@ -25,6 +27,7 @@ const RenderInputTextField = ({
 );
 
 RenderInputTextField.defaultProps = {
+  extraInput: {},
   name: '',
   disabled: false,
   required: false,
@@ -32,6 +35,7 @@ RenderInputTextField.defaultProps = {
 
 RenderInputTextField.propTypes = {
   input: PropTypes.shape({}).isRequired,
+  extraInput: PropTypes.shape({}),
   name: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   type: PropTypes.string.isRequired,

@@ -1,17 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CollapsibleCourseRunFields from './CollapsibleCourseRunFields';
-
-/*
-*  Disable console errors for this test file so that we don't receive warnings
-*  about fields being an array rather than an object. This prop change is
-*  intentional as redux-form field arrays treat fields strangely:
-*  'The fields object is a "pseudo-array", in that it has many of the same
-*  properties and methods as a javascript Array, providing both reading and
-*  writing functionality.'
-*/
-jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn());
+import CollapsibleCourseRun from './CollapsibleCourseRun';
 
 const languageOptions = [
   {
@@ -45,50 +35,46 @@ const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'un
 
 const mockSubmit = jest.fn();
 
-describe('Collapsible Course Run Fields', () => {
+describe('Collapsible Course Run', () => {
   it('renders correctly with no fields', () => {
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={[]}
+    const component = shallow(<CollapsibleCourseRun
       languageOptions={[]}
       pacingTypeOptions={[]}
-      courseRuns={[]}
-      formId="test-form"
+      courseRun={{}}
+      courseId="test-course"
       handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders correctly when given a published course run', () => {
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={[{}]}
+    const component = shallow(<CollapsibleCourseRun
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
-      courseRuns={[publishedCourseRun]}
-      formId="test-form"
+      courseRun={publishedCourseRun}
+      courseId="test-course"
       handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders correctly when given an unpublished course run', () => {
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={[{}]}
+    const component = shallow(<CollapsibleCourseRun
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
-      courseRuns={[unpublishedCourseRun]}
-      formId="test-form"
+      courseRun={unpublishedCourseRun}
+      courseId="test-course"
       handleSubmit={mockSubmit}
     />);
     expect(component).toMatchSnapshot();
   });
 
   it('renders correctly when submitting for review', () => {
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={[{}]}
+    const component = shallow(<CollapsibleCourseRun
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
-      courseRuns={[unpublishedCourseRun]}
-      formId="test-form"
+      courseRun={unpublishedCourseRun}
+      courseId="test-course"
       handleSubmit={mockSubmit}
       isSubmittingForReview
     />);
@@ -96,12 +82,11 @@ describe('Collapsible Course Run Fields', () => {
   });
 
   it('renders correctly when submitting for review and given a matching target run', () => {
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={[{}]}
+    const component = shallow(<CollapsibleCourseRun
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
-      courseRuns={[publishedCourseRun]}
-      formId="test-form"
+      courseRun={publishedCourseRun}
+      courseId="test-course"
       handleSubmit={mockSubmit}
       isSubmittingForReview
     />);
@@ -109,13 +94,12 @@ describe('Collapsible Course Run Fields', () => {
   });
 
   it('renders fields as disabled when course is in review', () => {
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={[]}
+    const component = shallow(<CollapsibleCourseRun
       languageOptions={[]}
       pacingTypeOptions={[]}
-      courseRuns={[]}
+      courseRun={{}}
       courseInReview
-      formId="test-form"
+      courseId="test-course"
       handleSubmit={mockSubmit}
     />);
     const childFields = component.find('input');
@@ -125,12 +109,11 @@ describe('Collapsible Course Run Fields', () => {
   });
 
   it('handles submission when called from a course run', () => {
-    const component = shallow(<CollapsibleCourseRunFields
-      fields={[{}]}
+    const component = shallow(<CollapsibleCourseRun
       languageOptions={languageOptions}
       pacingTypeOptions={pacingTypeOptions}
-      courseRuns={[unpublishedCourseRun]}
-      formId="test-form"
+      courseRun={unpublishedCourseRun}
+      courseId="test-course"
       handleSubmit={mockSubmit}
     />);
 

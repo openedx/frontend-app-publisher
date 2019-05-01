@@ -31,6 +31,7 @@ class TranscriptLanguage extends React.Component {
                   options={languageOptions}
                   type="text"
                   label={<FieldLabel text="Transcript language" required />}
+                  extraInput={{ onInvalid: this.openCollapsible }}
                   disabled={disabled}
                   required
                 />
@@ -67,10 +68,12 @@ TranscriptLanguage.propTypes = {
     value: PropTypes.string,
   })).isRequired,
   disabled: PropTypes.bool,
+  extraInput: PropTypes.shape({}),
 };
 
 TranscriptLanguage.defaultProps = {
   disabled: false,
+  extraInput: {},
 };
 
 export default TranscriptLanguage;

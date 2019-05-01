@@ -4,6 +4,7 @@ import { InputSelect } from '@edx/paragon';
 
 const RenderSelectField = ({
   input,
+  extraInput,
   name,
   label,
   disabled,
@@ -13,6 +14,7 @@ const RenderSelectField = ({
 }) => (
   <InputSelect
     {...input}
+    {...extraInput}
     name={name}
     label={label}
     disabled={disabled}
@@ -25,6 +27,7 @@ const RenderSelectField = ({
 );
 
 RenderSelectField.defaultProps = {
+  extraInput: {},
   name: '',
   disabled: false,
   required: false,
@@ -32,6 +35,7 @@ RenderSelectField.defaultProps = {
 
 RenderSelectField.propTypes = {
   input: PropTypes.shape({}).isRequired,
+  extraInput: PropTypes.shape({}),
   name: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   meta: PropTypes.shape({
