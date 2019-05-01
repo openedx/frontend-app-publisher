@@ -141,7 +141,7 @@ export class BaseEditCourseForm extends React.Component {
     return (
       <div className="edit-course-form">
         <form id={id}>
-          <FieldLabel text="Course" className="mt-4 mb-2 h2" />
+          <FieldLabel text={title} className="mt-4 mb-2 h2" />
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
@@ -663,6 +663,7 @@ export class BaseEditCourseForm extends React.Component {
                       id="mode.label"
                       text="Enrollment track"
                       helpText={enrollmentHelp}
+                      extraText="(Cannot edit after submission)"
                     />
                   }
                   extraInput={{ onInvalid: this.openCollapsible }}

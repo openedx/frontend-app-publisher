@@ -1,11 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { mount, shallow } from 'enzyme';
 import { submit } from 'redux-form';
+import configureStore from 'redux-mock-store';
 
 import EditCoursePage from './index';
+import SubmitConfirmModal from '../SubmitConfirmModal';
+
 import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
 import store from '../../data/store';
 
+const mockStore = configureStore();
+
+// Need to mock the Editor as we don't want to test TinyMCE
+jest.mock('@tinymce/tinymce-react');
 
 describe('EditCoursePage', () => {
   const courseInfo = {
@@ -329,11 +338,10 @@ describe('EditCoursePage', () => {
       expect(mockInvalidForm.reportValidity).toHaveBeenCalled();
     });
 
-    it('does not report validity when fields are valid and dispatches the expected submit action', () => {
+    it('does not report validity when fields are valid and shows the expected submit modal', () => {
       const component = shallow(<EditCoursePage
         courseInfo={courseInfo}
       />);
-
 
       const mockValidForm = getMockForm(true);
       jest.spyOn(document, 'getElementById').mockImplementation(() => mockValidForm);
@@ -341,8 +349,92 @@ describe('EditCoursePage', () => {
       const expectedAction = submit(component.instance().getFormId());
 
       component.instance().validateSubmit();
-      expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
+      expect(mockDispatch).not.toHaveBeenCalledWith(expectedAction);
+      expect(component.state().submitConfirmVisible).toEqual(true);
       expect(mockValidForm.reportValidity).not.toHaveBeenCalled();
+    });
+
+    it('does not report validity when fields are valid and just dispatches if published', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      const mockValidForm = getMockForm(true);
+      jest.spyOn(document, 'getElementById').mockImplementation(() => mockValidForm);
+      const mockDispatch = jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+      const expectedAction = submit(component.instance().getFormId());
+
+      // Hack a fake little targetRun, so the page will skip the modal
+      component.setState({
+        targetRun: {
+          status: PUBLISHED,
+        },
+      });
+
+      component.instance().validateSubmit();
+      expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
+      expect(component.state().submitConfirmVisible).toEqual(false);
+      expect(mockValidForm.reportValidity).not.toHaveBeenCalled();
+    });
+
+    it('submit modal can be cancelled', () => {
+      const EditCoursePageWrapper = props => (
+        <MemoryRouter>
+          <Provider store={mockStore()}>
+            <EditCoursePage
+              {...props}
+              courseInfo={courseInfo}
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+            />
+          </Provider>
+        </MemoryRouter>
+      );
+
+      const wrapper = mount(EditCoursePageWrapper());
+
+      wrapper.setState({
+        isSubmittingForReview: true,
+        submitConfirmVisible: true,
+      });
+
+      const modal = wrapper.find(SubmitConfirmModal);
+      modal.find('.btn-secondary').simulate('click');
+
+      expect(wrapper.find(EditCoursePage).instance().state.isSubmittingForReview).toEqual(false);
+      expect(wrapper.find(EditCoursePage).instance().state.submitConfirmVisible).toEqual(false);
+    });
+
+    it('submit modal dispatches if accepted', () => {
+      const EditCoursePageWrapper = props => (
+        <MemoryRouter>
+          <Provider store={mockStore()}>
+            <EditCoursePage
+              {...props}
+              courseInfo={courseInfo}
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+            />
+          </Provider>
+        </MemoryRouter>
+      );
+
+      const wrapper = mount(EditCoursePageWrapper());
+
+      wrapper.setState({
+        isSubmittingForReview: true,
+        submitConfirmVisible: true,
+      });
+
+      const mockDispatch = jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+      const expectedAction = submit(wrapper.find(EditCoursePage).instance().getFormId());
+
+      const modal = wrapper.find(SubmitConfirmModal);
+      modal.find('.btn-primary').simulate('click');
+
+      expect(wrapper.find(EditCoursePage).instance().state.isSubmittingForReview).toEqual(false);
+      expect(wrapper.find(EditCoursePage).instance().state.submitConfirmVisible).toEqual(false);
+      expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
     });
   });
 });

@@ -11,6 +11,7 @@ import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
 import store from '../../data/store';
+import SubmitConfirmModal from '../SubmitConfirmModal';
 
 
 class EditCoursePage extends React.Component {
@@ -20,10 +21,13 @@ class EditCoursePage extends React.Component {
       startedFetching: false,
       targetRun: null,
       isSubmittingForReview: false,
+      submitConfirmVisible: false,
     };
     this.handleCourseEdit = this.handleCourseEdit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.cancelSubmit = this.cancelSubmit.bind(this);
+    this.continueSubmit = this.continueSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -127,6 +131,21 @@ class EditCoursePage extends React.Component {
     }, () => this.validateSubmit());
   }
 
+  cancelSubmit() {
+    this.setState({
+      isSubmittingForReview: false,
+      submitConfirmVisible: false,
+      targetRun: null,
+    });
+  }
+
+  continueSubmit() {
+    const formId = this.getFormId();
+    this.setState({
+      submitConfirmVisible: false,
+    }, () => store.dispatch(submit(formId)));
+  }
+
   /**
    *  Manually check the form for validity so that we can validate different fields depending
    *  on if a course run is being submitted for review, and then trigger redux-form's submit if it
@@ -134,13 +153,18 @@ class EditCoursePage extends React.Component {
    *  submission.
    */
   validateSubmit() {
+    const {
+      targetRun,
+    } = this.state;
     const formId = this.getFormId();
     const form = document.getElementById(formId);
-    if (form.checkValidity()) {
-      store.dispatch(submit(formId));
-    } else {
+    if (!form.checkValidity()) {
+      this.cancelSubmit();
       form.reportValidity();
-      this.setState({ isSubmittingForReview: false });
+    } else if (targetRun && targetRun.status === PUBLISHED) {
+      this.continueSubmit(); // don't stress 'em with a modal, there's no review for published runs
+    } else {
+      this.setState({ submitConfirmVisible: true });
     }
   }
 
@@ -184,7 +208,12 @@ class EditCoursePage extends React.Component {
       courseOptions,
       courseRunOptions,
     } = this.props;
-    const { startedFetching, isSubmittingForReview, targetRun } = this.state;
+    const {
+      isSubmittingForReview,
+      startedFetching,
+      submitConfirmVisible,
+      targetRun,
+    } = this.state;
 
     const courseStatuses = [];
     const courseInReview = course_runs && course_runs.some(courseRun =>
@@ -269,6 +298,12 @@ class EditCoursePage extends React.Component {
         <Helmet>
           <title>{`Course - ${title}`}</title>
         </Helmet>
+
+        <SubmitConfirmModal
+          open={submitConfirmVisible}
+          onSubmit={this.continueSubmit}
+          onClose={this.cancelSubmit}
+        />
 
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
