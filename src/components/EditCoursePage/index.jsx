@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { submit } from 'redux-form';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
@@ -9,6 +10,8 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
+import store from '../../data/store';
+import SubmitConfirmModal from '../SubmitConfirmModal';
 
 
 class EditCoursePage extends React.Component {
@@ -18,9 +21,13 @@ class EditCoursePage extends React.Component {
       startedFetching: false,
       targetRun: null,
       isSubmittingForReview: false,
+      submitConfirmVisible: false,
     };
     this.handleCourseEdit = this.handleCourseEdit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.cancelSubmit = this.cancelSubmit.bind(this);
+    this.continueSubmit = this.continueSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -136,6 +143,55 @@ class EditCoursePage extends React.Component {
     return editCourse(courseData, modifiedCourseRuns);
   }
 
+  /**
+   * Sets which course run triggered submission and whether or not it is submitting for review
+   * before triggering manual form validation.
+   * @param {Object} targetRun - the course run that triggered submission
+   */
+  handleSubmit(targetRun = null) {
+    this.setState({
+      targetRun,
+      isSubmittingForReview: !!targetRun && targetRun.status !== PUBLISHED,
+    }, () => this.validateSubmit());
+  }
+
+  cancelSubmit() {
+    this.setState({
+      isSubmittingForReview: false,
+      submitConfirmVisible: false,
+      targetRun: null,
+    });
+  }
+
+  continueSubmit() {
+    const formId = this.getFormId();
+    this.setState({
+      submitConfirmVisible: false,
+    }, () => store.dispatch(submit(formId)));
+  }
+
+  /**
+   *  Manually check the form for validity so that we can validate different fields depending
+   *  on if a course run is being submitted for review, and then trigger redux-form's submit if it
+   *  passes validation. If validation fails, we report the form issues back without triggering
+   *  submission.
+   */
+  validateSubmit() {
+    const {
+      targetRun,
+    } = this.state;
+    const formId = this.getFormId();
+    const form = document.getElementById(formId);
+    if (!form.checkValidity()) {
+      this.cancelSubmit();
+      form.reportValidity();
+    } else if (targetRun && targetRun.status === PUBLISHED) {
+      this.continueSubmit(); // don't stress 'em with a modal, there's no review for published runs
+    } else {
+      this.setState({ submitConfirmVisible: true });
+    }
+  }
+
   render() {
     if (!this.props.courseInfo || !this.props.courseOptions || !this.props.courseRunOptions) {
       return (
@@ -177,8 +233,13 @@ class EditCoursePage extends React.Component {
       courseRunOptions,
       formValues,
     } = this.props;
-    const { startedFetching, isSubmittingForReview, targetRun } = this.state;
     const currentValues = formValues(this.getFormId());
+    const {
+      isSubmittingForReview,
+      startedFetching,
+      submitConfirmVisible,
+      targetRun,
+    } = this.state;
 
     const courseStatuses = [];
     const courseInReview = course_runs && course_runs.some(courseRun =>
@@ -264,6 +325,12 @@ class EditCoursePage extends React.Component {
         <Helmet>
           <title>{`Course - ${title}`}</title>
         </Helmet>
+
+        <SubmitConfirmModal
+          open={submitConfirmVisible}
+          onSubmit={this.continueSubmit}
+          onClose={this.cancelSubmit}
+        />
 
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
