@@ -5,11 +5,11 @@ import { StatefulButton } from '@edx/paragon';
 
 // Just a tiny wrapper around StatefulButton to provide some good defaults
 
-const ActionButton = ({ className, ...others }) => (
+const ActionButton = ({ className, ...passThroughProps }) => (
   <StatefulButton
+    {...passThroughProps}
     type="submit"
     className={classNames('btn btn-primary form-submit-btn', className)}
-    {...others}
   />
 );
 
