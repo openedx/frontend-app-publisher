@@ -14,6 +14,7 @@ const CollapsibleCourseRuns = ({
         {...passThroughProps}
         courseRun={courseRuns[index]}
         courseId={courseRun}
+        key={courseRuns[index].key}
       />
     ))}
   </div>

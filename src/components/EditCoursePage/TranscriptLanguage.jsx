@@ -5,6 +5,7 @@ import { Field } from 'redux-form';
 import RenderSelectField from '../RenderSelectField';
 import RemoveButton from '../RemoveButton';
 import FieldLabel from '../FieldLabel';
+import StatusAlert from '../StatusAlert';
 
 class TranscriptLanguage extends React.Component {
   constructor(props) {
@@ -17,10 +18,25 @@ class TranscriptLanguage extends React.Component {
   }
 
   render() {
-    const { fields, languageOptions, disabled } = this.props;
+    const {
+      fields,
+      languageOptions,
+      disabled,
+      meta: {
+        submitFailed,
+        error,
+      },
+    } = this.props;
 
     return (
-      <div className="transcript-languages mb-3">
+      // Set tabindex to -1 to allow programmatic shifting of focus for validation
+      <div className="transcript-languages mb-3" name={fields.name} tabIndex="-1">
+        {submitFailed && error &&
+          <StatusAlert
+            alertType="danger"
+            message={error}
+          />
+        }
         <ul className="list-group p-0 m-0 container-fluid">
           {fields.map((language, index) => (
             <li className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0" key={language}>
@@ -62,6 +78,7 @@ class TranscriptLanguage extends React.Component {
 TranscriptLanguage.propTypes = {
   fields: PropTypes.shape({
     remove: PropTypes.func,
+    name: PropTypes.string,
   }).isRequired,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
@@ -69,6 +86,10 @@ TranscriptLanguage.propTypes = {
   })).isRequired,
   disabled: PropTypes.bool,
   extraInput: PropTypes.shape({}),
+  meta: PropTypes.shape({
+    submitFailed: PropTypes.bool,
+    error: PropTypes.string,
+  }).isRequired,
 };
 
 TranscriptLanguage.defaultProps = {

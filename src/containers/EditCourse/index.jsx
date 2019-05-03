@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
   courseRunOptions: state.courseRunOptions,
   stafferInfo: state.stafferInfo,
   sourceInfo: state.sourceInfo,
+  courseSubmitInfo: state.courseSubmitInfo,
 });
 
 const mapDispatchToProps = {

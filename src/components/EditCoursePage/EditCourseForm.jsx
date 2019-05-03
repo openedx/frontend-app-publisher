@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Field, FieldArray, reduxForm } from 'redux-form';
+import { Field, FieldArray, reduxForm, stopSubmit } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -18,6 +18,9 @@ import Pill from '../../components/Pill';
 
 import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
 import { enrollmentHelp, titleHelp } from '../../helpText';
+import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
+import store from '../../data/store';
+import courseSubmitInfo from '../../data/actions/courseSubmitInfo';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -140,7 +143,7 @@ export class BaseEditCourseForm extends React.Component {
 
     return (
       <div className="edit-course-form">
-        <form id={id}>
+        <form id={id} onSubmit={handleSubmit}>
           <FieldLabel text="Course" className="mt-4 mb-2 h2" />
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
@@ -209,7 +212,6 @@ export class BaseEditCourseForm extends React.Component {
               maxChars={500}
               id="sdesc"
               disabled={courseInReview}
-              required={isSubmittingForReview}
             />
             <Field
               name="full_description"
@@ -250,7 +252,6 @@ export class BaseEditCourseForm extends React.Component {
               maxChars={2500}
               id="ldesc"
               disabled={courseInReview}
-              required={isSubmittingForReview}
             />
             <Field
               name="outcome"
@@ -288,7 +289,6 @@ export class BaseEditCourseForm extends React.Component {
               maxChars={2500}
               id="outcome"
               disabled={courseInReview}
-              required={isSubmittingForReview}
             />
             <Field
               name="subjectPrimary"
@@ -713,13 +713,12 @@ export class BaseEditCourseForm extends React.Component {
                 complete: 'Course Saved',
               }}
               state={submitState}
-              onClick={(event) => {
-                /*
-                *  Prevent default submission and pass the targeted course run up through the
-                *  handler to manually validate fields based off the run status.
+              onClick={() => {
+               /* Bit of a hack used to clear old validation errors that might be around from
+                *  trying to submit for review with errors.
                 */
-                event.preventDefault();
-                handleSubmit();
+               store.dispatch(stopSubmit(id));
+               store.dispatch(courseSubmitInfo());
               }}
             />
           </ButtonToolbar>
@@ -771,6 +770,22 @@ const EditCourseForm = compose(
     enableReinitialize: true, // Reload staff changes when returning from editing /creating staffers
     keepDirtyOnReinitialize: true, // Don't wipe out changes on reinitialization
     destroyOnUnmount: false, // Keep the form state in redux when editing / creating staffers
+    onSubmitFail: handleCourseEditFail, // Send focus to first non-input field with errors
+    // Run the sync validation when a run is submitting for review and regular submission process
+    shouldError: (params) => {
+      const { nextProps, props } = params;
+      if (
+        props.submitting ||
+        (nextProps && nextProps.submitting) ||
+        props.targetRun ||
+        (nextProps && nextProps.targetRun)
+      ) {
+        return true;
+      }
+
+      return false;
+    },
+    validate: editCourseValidate,
   }),
 )(BaseEditCourseForm);
 

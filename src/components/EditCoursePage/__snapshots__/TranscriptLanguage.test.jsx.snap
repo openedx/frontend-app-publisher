@@ -19,6 +19,12 @@ ShallowWrapper {
         },
       ]
     }
+    meta={
+      Object {
+        "error": "",
+        "submitFailed": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -35,6 +41,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <ul
           className="list-group p-0 m-0 container-fluid"
         >
@@ -94,9 +101,12 @@ ShallowWrapper {
         </button>,
       ],
       "className": "transcript-languages mb-3",
+      "name": undefined,
+      "tabIndex": "-1",
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -323,6 +333,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <ul
             className="list-group p-0 m-0 container-fluid"
           >
@@ -382,9 +393,706 @@ ShallowWrapper {
           </button>,
         ],
         "className": "transcript-languages mb-3",
+        "name": undefined,
+        "tabIndex": "-1",
       },
       "ref": null,
       "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
+              >
+                <div
+                  className="col-11"
+                >
+                  <Field
+                    component={[Function]}
+                    disabled={false}
+                    extraInput={
+                      Object {
+                        "onInvalid": undefined,
+                      }
+                    }
+                    label={
+                      <FieldLabel
+                        className=""
+                        helpText=""
+                        id={null}
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />
+                    }
+                    name="[object Object]"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Arabic - United Arab Emirates",
+                          "value": "ar-ae",
+                        },
+                      ]
+                    }
+                    required={true}
+                    type="text"
+                  />
+                </div>
+                <RemoveButton
+                  className="col-1"
+                  disabled={false}
+                  label="Remove language"
+                  onRemove={[Function]}
+                  targetFieldNumber={0}
+                />
+              </li>,
+            ],
+            "className": "list-group p-0 m-0 container-fluid",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "[object Object]",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="col-11"
+                  >
+                    <Field
+                      component={[Function]}
+                      disabled={false}
+                      extraInput={
+                        Object {
+                          "onInvalid": undefined,
+                        }
+                      }
+                      label={
+                        <FieldLabel
+                          className=""
+                          helpText=""
+                          id={null}
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Transcript language"
+                        />
+                      }
+                      name="[object Object]"
+                      options={
+                        Array [
+                          Object {
+                            "label": "Arabic - United Arab Emirates",
+                            "value": "ar-ae",
+                          },
+                        ]
+                      }
+                      required={true}
+                      type="text"
+                    />
+                  </div>,
+                  <RemoveButton
+                    className="col-1"
+                    disabled={false}
+                    label="Remove language"
+                    onRemove={[Function]}
+                    targetFieldNumber={0}
+                  />,
+                ],
+                "className": "transcript-language list-group-item row d-flex align-items-center px-0 mx-0",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Field
+                      component={[Function]}
+                      disabled={false}
+                      extraInput={
+                        Object {
+                          "onInvalid": undefined,
+                        }
+                      }
+                      label={
+                        <FieldLabel
+                          className=""
+                          helpText=""
+                          id={null}
+                          required={true}
+                          requiredForSubmit={false}
+                          text="Transcript language"
+                        />
+                      }
+                      name="[object Object]"
+                      options={
+                        Array [
+                          Object {
+                            "label": "Arabic - United Arab Emirates",
+                            "value": "ar-ae",
+                          },
+                        ]
+                      }
+                      required={true}
+                      type="text"
+                    />,
+                    "className": "col-11",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "disabled": false,
+                      "extraInput": Object {
+                        "onInvalid": undefined,
+                      },
+                      "label": <FieldLabel
+                        className=""
+                        helpText=""
+                        id={null}
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />,
+                      "name": "[object Object]",
+                      "options": Array [
+                        Object {
+                          "label": "Arabic - United Arab Emirates",
+                          "value": "ar-ae",
+                        },
+                      ],
+                      "required": true,
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "col-1",
+                    "disabled": false,
+                    "label": "Remove language",
+                    "onRemove": [Function],
+                    "targetFieldNumber": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add language",
+            "className": "btn btn-outline-primary js-add-button mt-2",
+            "disabled": false,
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add language",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`Transcript Language renders correctly with an error after failed submission 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TranscriptLanguage
+    disabled={false}
+    extraInput={Object {}}
+    fields={
+      Array [
+        Object {},
+      ]
+    }
+    languageOptions={
+      Array [
+        Object {
+          "label": "Arabic - United Arab Emirates",
+          "value": "ar-ae",
+        },
+      ]
+    }
+    meta={
+      Object {
+        "error": "This field is required",
+        "submitFailed": true,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <StatusAlert
+          alertType="danger"
+          className=""
+          dismissible={false}
+          iconClassNames={Array []}
+          message="This field is required"
+          onClose={[Function]}
+          title={null}
+        />,
+        <ul
+          className="list-group p-0 m-0 container-fluid"
+        >
+          <li
+            className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
+          >
+            <div
+              className="col-11"
+            >
+              <Field
+                component={[Function]}
+                disabled={false}
+                extraInput={
+                  Object {
+                    "onInvalid": undefined,
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    helpText=""
+                    id={null}
+                    required={true}
+                    requiredForSubmit={false}
+                    text="Transcript language"
+                  />
+                }
+                name="[object Object]"
+                options={
+                  Array [
+                    Object {
+                      "label": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ]
+                }
+                required={true}
+                type="text"
+              />
+            </div>
+            <RemoveButton
+              className="col-1"
+              disabled={false}
+              label="Remove language"
+              onRemove={[Function]}
+              targetFieldNumber={0}
+            />
+          </li>
+        </ul>,
+        <button
+          className="btn btn-outline-primary js-add-button mt-2"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Add language
+        </button>,
+      ],
+      "className": "transcript-languages mb-3",
+      "name": undefined,
+      "tabIndex": "-1",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "alertType": "danger",
+          "className": "",
+          "dismissible": false,
+          "iconClassNames": Array [],
+          "message": "This field is required",
+          "onClose": [Function],
+          "title": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
+            >
+              <div
+                className="col-11"
+              >
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "onInvalid": undefined,
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText=""
+                      id={null}
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Transcript language"
+                    />
+                  }
+                  name="[object Object]"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Arabic - United Arab Emirates",
+                        "value": "ar-ae",
+                      },
+                    ]
+                  }
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <RemoveButton
+                className="col-1"
+                disabled={false}
+                label="Remove language"
+                onRemove={[Function]}
+                targetFieldNumber={0}
+              />
+            </li>,
+          ],
+          "className": "list-group p-0 m-0 container-fluid",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "[object Object]",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="col-11"
+                >
+                  <Field
+                    component={[Function]}
+                    disabled={false}
+                    extraInput={
+                      Object {
+                        "onInvalid": undefined,
+                      }
+                    }
+                    label={
+                      <FieldLabel
+                        className=""
+                        helpText=""
+                        id={null}
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />
+                    }
+                    name="[object Object]"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Arabic - United Arab Emirates",
+                          "value": "ar-ae",
+                        },
+                      ]
+                    }
+                    required={true}
+                    type="text"
+                  />
+                </div>,
+                <RemoveButton
+                  className="col-1"
+                  disabled={false}
+                  label="Remove language"
+                  onRemove={[Function]}
+                  targetFieldNumber={0}
+                />,
+              ],
+              "className": "transcript-language list-group-item row d-flex align-items-center px-0 mx-0",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Field
+                    component={[Function]}
+                    disabled={false}
+                    extraInput={
+                      Object {
+                        "onInvalid": undefined,
+                      }
+                    }
+                    label={
+                      <FieldLabel
+                        className=""
+                        helpText=""
+                        id={null}
+                        required={true}
+                        requiredForSubmit={false}
+                        text="Transcript language"
+                      />
+                    }
+                    name="[object Object]"
+                    options={
+                      Array [
+                        Object {
+                          "label": "Arabic - United Arab Emirates",
+                          "value": "ar-ae",
+                        },
+                      ]
+                    }
+                    required={true}
+                    type="text"
+                  />,
+                  "className": "col-11",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "disabled": false,
+                    "extraInput": Object {
+                      "onInvalid": undefined,
+                    },
+                    "label": <FieldLabel
+                      className=""
+                      helpText=""
+                      id={null}
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Transcript language"
+                    />,
+                    "name": "[object Object]",
+                    "options": Array [
+                      Object {
+                        "label": "Arabic - United Arab Emirates",
+                        "value": "ar-ae",
+                      },
+                    ],
+                    "required": true,
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "col-1",
+                  "disabled": false,
+                  "label": "Remove language",
+                  "onRemove": [Function],
+                  "targetFieldNumber": 0,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add language",
+          "className": "btn btn-outline-primary js-add-button mt-2",
+          "disabled": false,
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add language",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <StatusAlert
+            alertType="danger"
+            className=""
+            dismissible={false}
+            iconClassNames={Array []}
+            message="This field is required"
+            onClose={[Function]}
+            title={null}
+          />,
+          <ul
+            className="list-group p-0 m-0 container-fluid"
+          >
+            <li
+              className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
+            >
+              <div
+                className="col-11"
+              >
+                <Field
+                  component={[Function]}
+                  disabled={false}
+                  extraInput={
+                    Object {
+                      "onInvalid": undefined,
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      helpText=""
+                      id={null}
+                      required={true}
+                      requiredForSubmit={false}
+                      text="Transcript language"
+                    />
+                  }
+                  name="[object Object]"
+                  options={
+                    Array [
+                      Object {
+                        "label": "Arabic - United Arab Emirates",
+                        "value": "ar-ae",
+                      },
+                    ]
+                  }
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <RemoveButton
+                className="col-1"
+                disabled={false}
+                label="Remove language"
+                onRemove={[Function]}
+                targetFieldNumber={0}
+              />
+            </li>
+          </ul>,
+          <button
+            className="btn btn-outline-primary js-add-button mt-2"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Add language
+          </button>,
+        ],
+        "className": "transcript-languages mb-3",
+        "name": undefined,
+        "tabIndex": "-1",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alertType": "danger",
+            "className": "",
+            "dismissible": false,
+            "iconClassNames": Array [],
+            "message": "This field is required",
+            "onClose": [Function],
+            "title": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -647,6 +1355,12 @@ ShallowWrapper {
         },
       ]
     }
+    meta={
+      Object {
+        "error": "",
+        "submitFailed": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -663,6 +1377,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <ul
           className="list-group p-0 m-0 container-fluid"
         />,
@@ -676,9 +1391,12 @@ ShallowWrapper {
         </button>,
       ],
       "className": "transcript-languages mb-3",
+      "name": undefined,
+      "tabIndex": "-1",
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -716,6 +1434,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <ul
             className="list-group p-0 m-0 container-fluid"
           />,
@@ -729,9 +1448,12 @@ ShallowWrapper {
           </button>,
         ],
         "className": "transcript-languages mb-3",
+        "name": undefined,
+        "tabIndex": "-1",
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,

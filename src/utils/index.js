@@ -1,6 +1,6 @@
 import qs from 'query-string';
 
-import history from './data/history';
+import history from '../data/history';
 
 
 const updateUrl = (queryOptions) => {
