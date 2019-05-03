@@ -774,16 +774,12 @@ const EditCourseForm = compose(
     // Run the sync validation when a run is submitting for review and regular submission process
     shouldError: (params) => {
       const { nextProps, props } = params;
-      if (
+      return (
         props.submitting ||
         (nextProps && nextProps.submitting) ||
         props.targetRun ||
         (nextProps && nextProps.targetRun)
-      ) {
-        return true;
-      }
-
-      return false;
+      );
     },
     validate: editCourseValidate,
   }),

@@ -309,7 +309,6 @@ class CollapsibleCourseRun extends React.Component {
             </div>
           }
         />
-        {/* We don't use pass through props on staff to avoid wiping out meta info */}
         <Field
           name={`${courseId}.staff`}
           component={StaffList}
