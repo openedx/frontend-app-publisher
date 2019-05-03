@@ -2741,31 +2741,35 @@ ShallowWrapper {
           title="Test Title"
           uuid="11111111-1111-1111-1111-111111111111"
         />
+        <Link
+          replace={false}
+          to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+        >
+          <button
+            className="btn btn-block rounded mt-3 new-run-button"
+            disabled={false}
+          >
+            <withDeprecatedProps(Icon)
+              className="fa fa-plus"
+            />
+             Add Course Run
+          </button>
+        </Link>
         <ButtonToolbar
           className="mt-3"
         >
-          <Link
-            replace={false}
-            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-          >
-            <button
-              className="btn btn-outline-primary"
-              disabled={false}
-            >
-              Re-run Course
-            </button>
-          </Link>
           <ActionButton
             className=""
             disabled={false}
             labels={
               Object {
                 "complete": "Course Saved",
-                "default": "Save Course",
+                "default": "Save & Continue Editing",
                 "pending": "Saving Course",
               }
             }
             onClick={[Function]}
+            primary={false}
             state="default"
           />
         </ButtonToolbar>
@@ -4855,31 +4859,35 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />,
+          <Link
+            replace={false}
+            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+          >
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </Link>,
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={false}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={false}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="default"
             />
           </ButtonToolbar>,
@@ -7916,88 +7924,96 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>,
+            "replace": false,
+            "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />,
+                " Add Course Run",
+              ],
+              "className": "btn btn-block rounded mt-3 new-run-button",
+              "disabled": false,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": "fa fa-plus",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              " Add Course Run",
+            ],
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>
-              </Link>,
-              <ActionButton
-                className=""
-                disabled={false}
-                labels={
-                  Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  }
+            "children": <ActionButton
+              className=""
+              disabled={false}
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
                 }
-                onClick={[Function]}
-                state="default"
-              />,
-            ],
+              }
+              onClick={[Function]}
+              primary={false}
+              state="default"
+            />,
             "className": "mt-3",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>,
-                "replace": false,
-                "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "",
+              "disabled": false,
+              "labels": Object {
+                "complete": "Course Saved",
+                "default": "Save & Continue Editing",
+                "pending": "Saving Course",
               },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Re-run Course",
-                  "className": "btn btn-outline-primary",
-                  "disabled": false,
-                },
-                "ref": null,
-                "rendered": "Re-run Course",
-                "type": "button",
-              },
-              "type": [Function],
+              "onClick": [Function],
+              "primary": false,
+              "state": "default",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "",
-                "disabled": false,
-                "labels": Object {
-                  "complete": "Course Saved",
-                  "default": "Save Course",
-                  "pending": "Saving Course",
-                },
-                "onClick": [Function],
-                "state": "default",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
@@ -10091,31 +10107,35 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />
+          <Link
+            replace={false}
+            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+          >
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </Link>
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={false}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={false}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="default"
             />
           </ButtonToolbar>
@@ -12205,31 +12225,35 @@ ShallowWrapper {
               title="Test Title"
               uuid="11111111-1111-1111-1111-111111111111"
             />,
+            <Link
+              replace={false}
+              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+            >
+              <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={false}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>
+            </Link>,
             <ButtonToolbar
               className="mt-3"
             >
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>
-              </Link>
               <ActionButton
                 className=""
                 disabled={false}
                 labels={
                   Object {
                     "complete": "Course Saved",
-                    "default": "Save Course",
+                    "default": "Save & Continue Editing",
                     "pending": "Saving Course",
                   }
                 }
                 onClick={[Function]}
+                primary={false}
                 state="default"
               />
             </ButtonToolbar>,
@@ -15266,88 +15290,96 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={false}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>,
+              "replace": false,
+              "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <withDeprecatedProps(Icon)
+                    className="fa fa-plus"
+                  />,
+                  " Add Course Run",
+                ],
+                "className": "btn btn-block rounded mt-3 new-run-button",
+                "disabled": false,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "className": "fa fa-plus",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                " Add Course Run",
+              ],
+              "type": "button",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <Link
-                  replace={false}
-                  to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Re-run Course
-                  </button>
-                </Link>,
-                <ActionButton
-                  className=""
-                  disabled={false}
-                  labels={
-                    Object {
-                      "complete": "Course Saved",
-                      "default": "Save Course",
-                      "pending": "Saving Course",
-                    }
+              "children": <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save & Continue Editing",
+                    "pending": "Saving Course",
                   }
-                  onClick={[Function]}
-                  state="default"
-                />,
-              ],
+                }
+                onClick={[Function]}
+                primary={false}
+                state="default"
+              />,
               "className": "mt-3",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Re-run Course
-                  </button>,
-                  "replace": false,
-                  "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "",
+                "disabled": false,
+                "labels": Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
                 },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Re-run Course",
-                    "className": "btn btn-outline-primary",
-                    "disabled": false,
-                  },
-                  "ref": null,
-                  "rendered": "Re-run Course",
-                  "type": "button",
-                },
-                "type": [Function],
+                "onClick": [Function],
+                "primary": false,
+                "state": "default",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "",
-                  "disabled": false,
-                  "labels": Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  },
-                  "onClick": [Function],
-                  "state": "default",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
         ],
@@ -18245,31 +18277,32 @@ ShallowWrapper {
           title="Test Title"
           uuid="11111111-1111-1111-1111-111111111111"
         />
+        <React.Fragment>
+          <button
+            className="btn btn-block rounded mt-3 new-run-button"
+            disabled={true}
+          >
+            <withDeprecatedProps(Icon)
+              className="fa fa-plus"
+            />
+             Add Course Run
+          </button>
+        </React.Fragment>
         <ButtonToolbar
           className="mt-3"
         >
-          <Link
-            replace={false}
-            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-          >
-            <button
-              className="btn btn-outline-primary"
-              disabled={true}
-            >
-              Re-run Course
-            </button>
-          </Link>
           <ActionButton
             className=""
             disabled={true}
             labels={
               Object {
                 "complete": "Course Saved",
-                "default": "Save Course",
+                "default": "Save & Continue Editing",
                 "pending": "Saving Course",
               }
             }
             onClick={[Function]}
+            primary={false}
             state="pending"
           />
         </ButtonToolbar>
@@ -20458,31 +20491,32 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />,
+          <React.Fragment>
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={true}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </React.Fragment>,
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={true}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={true}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="pending"
             />
           </ButtonToolbar>,
@@ -23785,86 +23819,92 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={true}
-                >
-                  Re-run Course
-                </button>
-              </Link>,
-              <ActionButton
-                className=""
-                disabled={true}
-                labels={
-                  Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  }
-                }
-                onClick={[Function]}
-                state="pending"
-              />,
+            "children": <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={true}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />,
+                " Add Course Run",
+              ],
+              "className": "btn btn-block rounded mt-3 new-run-button",
+              "disabled": true,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": "fa fa-plus",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              " Add Course Run",
             ],
+            "type": "button",
+          },
+          "type": Symbol(react.fragment),
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <ActionButton
+              className=""
+              disabled={true}
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
+                }
+              }
+              onClick={[Function]}
+              primary={false}
+              state="pending"
+            />,
             "className": "mt-3",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <button
-                  className="btn btn-outline-primary"
-                  disabled={true}
-                >
-                  Re-run Course
-                </button>,
-                "replace": false,
-                "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "",
+              "disabled": true,
+              "labels": Object {
+                "complete": "Course Saved",
+                "default": "Save & Continue Editing",
+                "pending": "Saving Course",
               },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Re-run Course",
-                  "className": "btn btn-outline-primary",
-                  "disabled": true,
-                },
-                "ref": null,
-                "rendered": "Re-run Course",
-                "type": "button",
-              },
-              "type": [Function],
+              "onClick": [Function],
+              "primary": false,
+              "state": "pending",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "",
-                "disabled": true,
-                "labels": Object {
-                  "complete": "Course Saved",
-                  "default": "Save Course",
-                  "pending": "Saving Course",
-                },
-                "onClick": [Function],
-                "state": "pending",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
@@ -26057,31 +26097,32 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />
+          <React.Fragment>
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={true}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </React.Fragment>
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={true}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={true}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="pending"
             />
           </ButtonToolbar>
@@ -28270,31 +28311,32 @@ ShallowWrapper {
               title="Test Title"
               uuid="11111111-1111-1111-1111-111111111111"
             />,
+            <React.Fragment>
+              <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={true}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>
+            </React.Fragment>,
             <ButtonToolbar
               className="mt-3"
             >
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={true}
-                >
-                  Re-run Course
-                </button>
-              </Link>
               <ActionButton
                 className=""
                 disabled={true}
                 labels={
                   Object {
                     "complete": "Course Saved",
-                    "default": "Save Course",
+                    "default": "Save & Continue Editing",
                     "pending": "Saving Course",
                   }
                 }
                 onClick={[Function]}
+                primary={false}
                 state="pending"
               />
             </ButtonToolbar>,
@@ -31597,86 +31639,92 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <Link
-                  replace={false}
-                  to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={true}
-                  >
-                    Re-run Course
-                  </button>
-                </Link>,
-                <ActionButton
-                  className=""
-                  disabled={true}
-                  labels={
-                    Object {
-                      "complete": "Course Saved",
-                      "default": "Save Course",
-                      "pending": "Saving Course",
-                    }
-                  }
-                  onClick={[Function]}
-                  state="pending"
-                />,
+              "children": <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={true}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <withDeprecatedProps(Icon)
+                    className="fa fa-plus"
+                  />,
+                  " Add Course Run",
+                ],
+                "className": "btn btn-block rounded mt-3 new-run-button",
+                "disabled": true,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "className": "fa fa-plus",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                " Add Course Run",
               ],
+              "type": "button",
+            },
+            "type": Symbol(react.fragment),
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <ActionButton
+                className=""
+                disabled={true}
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save & Continue Editing",
+                    "pending": "Saving Course",
+                  }
+                }
+                onClick={[Function]}
+                primary={false}
+                state="pending"
+              />,
               "className": "mt-3",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <button
-                    className="btn btn-outline-primary"
-                    disabled={true}
-                  >
-                    Re-run Course
-                  </button>,
-                  "replace": false,
-                  "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "",
+                "disabled": true,
+                "labels": Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
                 },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Re-run Course",
-                    "className": "btn btn-outline-primary",
-                    "disabled": true,
-                  },
-                  "ref": null,
-                  "rendered": "Re-run Course",
-                  "type": "button",
-                },
-                "type": [Function],
+                "onClick": [Function],
+                "primary": false,
+                "state": "pending",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "",
-                  "disabled": true,
-                  "labels": Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  },
-                  "onClick": [Function],
-                  "state": "pending",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
         ],
@@ -34497,31 +34545,35 @@ ShallowWrapper {
           title="Test Title"
           uuid="11111111-1111-1111-1111-111111111111"
         />
+        <Link
+          replace={false}
+          to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+        >
+          <button
+            className="btn btn-block rounded mt-3 new-run-button"
+            disabled={false}
+          >
+            <withDeprecatedProps(Icon)
+              className="fa fa-plus"
+            />
+             Add Course Run
+          </button>
+        </Link>
         <ButtonToolbar
           className="mt-3"
         >
-          <Link
-            replace={false}
-            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-          >
-            <button
-              className="btn btn-outline-primary"
-              disabled={false}
-            >
-              Re-run Course
-            </button>
-          </Link>
           <ActionButton
             className=""
             disabled={false}
             labels={
               Object {
                 "complete": "Course Saved",
-                "default": "Save Course",
+                "default": "Save & Continue Editing",
                 "pending": "Saving Course",
               }
             }
             onClick={[Function]}
+            primary={false}
             state="default"
           />
         </ButtonToolbar>
@@ -36633,31 +36685,35 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />,
+          <Link
+            replace={false}
+            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+          >
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </Link>,
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={false}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={false}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="default"
             />
           </ButtonToolbar>,
@@ -39714,88 +39770,96 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>,
+            "replace": false,
+            "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />,
+                " Add Course Run",
+              ],
+              "className": "btn btn-block rounded mt-3 new-run-button",
+              "disabled": false,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": "fa fa-plus",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              " Add Course Run",
+            ],
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>
-              </Link>,
-              <ActionButton
-                className=""
-                disabled={false}
-                labels={
-                  Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  }
+            "children": <ActionButton
+              className=""
+              disabled={false}
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
                 }
-                onClick={[Function]}
-                state="default"
-              />,
-            ],
+              }
+              onClick={[Function]}
+              primary={false}
+              state="default"
+            />,
             "className": "mt-3",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>,
-                "replace": false,
-                "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "",
+              "disabled": false,
+              "labels": Object {
+                "complete": "Course Saved",
+                "default": "Save & Continue Editing",
+                "pending": "Saving Course",
               },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Re-run Course",
-                  "className": "btn btn-outline-primary",
-                  "disabled": false,
-                },
-                "ref": null,
-                "rendered": "Re-run Course",
-                "type": "button",
-              },
-              "type": [Function],
+              "onClick": [Function],
+              "primary": false,
+              "state": "default",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "",
-                "disabled": false,
-                "labels": Object {
-                  "complete": "Course Saved",
-                  "default": "Save Course",
-                  "pending": "Saving Course",
-                },
-                "onClick": [Function],
-                "state": "default",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
@@ -41911,31 +41975,35 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />
+          <Link
+            replace={false}
+            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+          >
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </Link>
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={false}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={false}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="default"
             />
           </ButtonToolbar>
@@ -44047,31 +44115,35 @@ ShallowWrapper {
               title="Test Title"
               uuid="11111111-1111-1111-1111-111111111111"
             />,
+            <Link
+              replace={false}
+              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+            >
+              <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={false}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>
+            </Link>,
             <ButtonToolbar
               className="mt-3"
             >
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>
-              </Link>
               <ActionButton
                 className=""
                 disabled={false}
                 labels={
                   Object {
                     "complete": "Course Saved",
-                    "default": "Save Course",
+                    "default": "Save & Continue Editing",
                     "pending": "Saving Course",
                   }
                 }
                 onClick={[Function]}
+                primary={false}
                 state="default"
               />
             </ButtonToolbar>,
@@ -47128,88 +47200,96 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={false}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>,
+              "replace": false,
+              "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <withDeprecatedProps(Icon)
+                    className="fa fa-plus"
+                  />,
+                  " Add Course Run",
+                ],
+                "className": "btn btn-block rounded mt-3 new-run-button",
+                "disabled": false,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "className": "fa fa-plus",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                " Add Course Run",
+              ],
+              "type": "button",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <Link
-                  replace={false}
-                  to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Re-run Course
-                  </button>
-                </Link>,
-                <ActionButton
-                  className=""
-                  disabled={false}
-                  labels={
-                    Object {
-                      "complete": "Course Saved",
-                      "default": "Save Course",
-                      "pending": "Saving Course",
-                    }
+              "children": <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save & Continue Editing",
+                    "pending": "Saving Course",
                   }
-                  onClick={[Function]}
-                  state="default"
-                />,
-              ],
+                }
+                onClick={[Function]}
+                primary={false}
+                state="default"
+              />,
               "className": "mt-3",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Re-run Course
-                  </button>,
-                  "replace": false,
-                  "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "",
+                "disabled": false,
+                "labels": Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
                 },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Re-run Course",
-                    "className": "btn btn-outline-primary",
-                    "disabled": false,
-                  },
-                  "ref": null,
-                  "rendered": "Re-run Course",
-                  "type": "button",
-                },
-                "type": [Function],
+                "onClick": [Function],
+                "primary": false,
+                "state": "default",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "",
-                  "disabled": false,
-                  "labels": Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  },
-                  "onClick": [Function],
-                  "state": "default",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
         ],
@@ -49996,31 +50076,35 @@ ShallowWrapper {
           title="Test Title"
           uuid="11111111-1111-1111-1111-111111111111"
         />
+        <Link
+          replace={false}
+          to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+        >
+          <button
+            className="btn btn-block rounded mt-3 new-run-button"
+            disabled={false}
+          >
+            <withDeprecatedProps(Icon)
+              className="fa fa-plus"
+            />
+             Add Course Run
+          </button>
+        </Link>
         <ButtonToolbar
           className="mt-3"
         >
-          <Link
-            replace={false}
-            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-          >
-            <button
-              className="btn btn-outline-primary"
-              disabled={false}
-            >
-              Re-run Course
-            </button>
-          </Link>
           <ActionButton
             className=""
             disabled={false}
             labels={
               Object {
                 "complete": "Course Saved",
-                "default": "Save Course",
+                "default": "Save & Continue Editing",
                 "pending": "Saving Course",
               }
             }
             onClick={[Function]}
+            primary={false}
             state="default"
           />
         </ButtonToolbar>
@@ -52115,31 +52199,35 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />,
+          <Link
+            replace={false}
+            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+          >
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </Link>,
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={false}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={false}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="default"
             />
           </ButtonToolbar>,
@@ -55179,88 +55267,96 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>,
+            "replace": false,
+            "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />,
+                " Add Course Run",
+              ],
+              "className": "btn btn-block rounded mt-3 new-run-button",
+              "disabled": false,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": "fa fa-plus",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              " Add Course Run",
+            ],
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>
-              </Link>,
-              <ActionButton
-                className=""
-                disabled={false}
-                labels={
-                  Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  }
+            "children": <ActionButton
+              className=""
+              disabled={false}
+              labels={
+                Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
                 }
-                onClick={[Function]}
-                state="default"
-              />,
-            ],
+              }
+              onClick={[Function]}
+              primary={false}
+              state="default"
+            />,
             "className": "mt-3",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>,
-                "replace": false,
-                "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "",
+              "disabled": false,
+              "labels": Object {
+                "complete": "Course Saved",
+                "default": "Save & Continue Editing",
+                "pending": "Saving Course",
               },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Re-run Course",
-                  "className": "btn btn-outline-primary",
-                  "disabled": false,
-                },
-                "ref": null,
-                "rendered": "Re-run Course",
-                "type": "button",
-              },
-              "type": [Function],
+              "onClick": [Function],
+              "primary": false,
+              "state": "default",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "",
-                "disabled": false,
-                "labels": Object {
-                  "complete": "Course Saved",
-                  "default": "Save Course",
-                  "pending": "Saving Course",
-                },
-                "onClick": [Function],
-                "state": "default",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
@@ -57359,31 +57455,35 @@ ShallowWrapper {
             title="Test Title"
             uuid="11111111-1111-1111-1111-111111111111"
           />
+          <Link
+            replace={false}
+            to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+          >
+            <button
+              className="btn btn-block rounded mt-3 new-run-button"
+              disabled={false}
+            >
+              <withDeprecatedProps(Icon)
+                className="fa fa-plus"
+              />
+               Add Course Run
+            </button>
+          </Link>
           <ButtonToolbar
             className="mt-3"
           >
-            <Link
-              replace={false}
-              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-            >
-              <button
-                className="btn btn-outline-primary"
-                disabled={false}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               className=""
               disabled={false}
               labels={
                 Object {
                   "complete": "Course Saved",
-                  "default": "Save Course",
+                  "default": "Save & Continue Editing",
                   "pending": "Saving Course",
                 }
               }
               onClick={[Function]}
+              primary={false}
               state="default"
             />
           </ButtonToolbar>
@@ -59478,31 +59578,35 @@ ShallowWrapper {
               title="Test Title"
               uuid="11111111-1111-1111-1111-111111111111"
             />,
+            <Link
+              replace={false}
+              to="/courses/11111111-1111-1111-1111-111111111111/rerun"
+            >
+              <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={false}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>
+            </Link>,
             <ButtonToolbar
               className="mt-3"
             >
-              <Link
-                replace={false}
-                to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-              >
-                <button
-                  className="btn btn-outline-primary"
-                  disabled={false}
-                >
-                  Re-run Course
-                </button>
-              </Link>
               <ActionButton
                 className=""
                 disabled={false}
                 labels={
                   Object {
                     "complete": "Course Saved",
-                    "default": "Save Course",
+                    "default": "Save & Continue Editing",
                     "pending": "Saving Course",
                   }
                 }
                 onClick={[Function]}
+                primary={false}
                 state="default"
               />
             </ButtonToolbar>,
@@ -62542,88 +62646,96 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <button
+                className="btn btn-block rounded mt-3 new-run-button"
+                disabled={false}
+              >
+                <withDeprecatedProps(Icon)
+                  className="fa fa-plus"
+                />
+                 Add Course Run
+              </button>,
+              "replace": false,
+              "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <withDeprecatedProps(Icon)
+                    className="fa fa-plus"
+                  />,
+                  " Add Course Run",
+                ],
+                "className": "btn btn-block rounded mt-3 new-run-button",
+                "disabled": false,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "className": "fa fa-plus",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                " Add Course Run",
+              ],
+              "type": "button",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <Link
-                  replace={false}
-                  to="/courses/11111111-1111-1111-1111-111111111111/rerun"
-                >
-                  <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Re-run Course
-                  </button>
-                </Link>,
-                <ActionButton
-                  className=""
-                  disabled={false}
-                  labels={
-                    Object {
-                      "complete": "Course Saved",
-                      "default": "Save Course",
-                      "pending": "Saving Course",
-                    }
+              "children": <ActionButton
+                className=""
+                disabled={false}
+                labels={
+                  Object {
+                    "complete": "Course Saved",
+                    "default": "Save & Continue Editing",
+                    "pending": "Saving Course",
                   }
-                  onClick={[Function]}
-                  state="default"
-                />,
-              ],
+                }
+                onClick={[Function]}
+                primary={false}
+                state="default"
+              />,
               "className": "mt-3",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <button
-                    className="btn btn-outline-primary"
-                    disabled={false}
-                  >
-                    Re-run Course
-                  </button>,
-                  "replace": false,
-                  "to": "/courses/11111111-1111-1111-1111-111111111111/rerun",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "",
+                "disabled": false,
+                "labels": Object {
+                  "complete": "Course Saved",
+                  "default": "Save & Continue Editing",
+                  "pending": "Saving Course",
                 },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Re-run Course",
-                    "className": "btn btn-outline-primary",
-                    "disabled": false,
-                  },
-                  "ref": null,
-                  "rendered": "Re-run Course",
-                  "type": "button",
-                },
-                "type": [Function],
+                "onClick": [Function],
+                "primary": false,
+                "state": "default",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "",
-                  "disabled": false,
-                  "labels": Object {
-                    "complete": "Course Saved",
-                    "default": "Save Course",
-                    "pending": "Saving Course",
-                  },
-                  "onClick": [Function],
-                  "state": "default",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
         ],

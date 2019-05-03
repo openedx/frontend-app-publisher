@@ -327,8 +327,8 @@ class CollapsibleCourseRun extends React.Component {
             // Pass the submitting course run up to validate different fields based on status
             onClick={() => store.dispatch(courseSubmitInfo(courseRun))}
             labels={{
-              default: courseRun.status === PUBLISHED ? 'Publish' : 'Submit for Review',
-              pending: courseRun.status === PUBLISHED ? 'Publishing' : 'Submitting for Review',
+              default: courseRun.status === PUBLISHED ? 'Publish Run' : 'Submit Run for Review',
+              pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
             }}
             state={courseSubmitting ? 'pending' : 'default'}
           />
