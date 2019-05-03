@@ -114,9 +114,12 @@ const BaseStafferForm = ({
           </Link>
           <ActionButton
             disabled={formControlDisabled}
-            labels={{
+            labels={isCreateForm ? {
               default: 'Create',
               pending: 'Creating',
+            } : {
+              default: 'Save',
+              pending: 'Saving',
             }}
             state={isSaving ? 'pending' : 'default'}
           />
