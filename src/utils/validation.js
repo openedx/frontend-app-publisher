@@ -84,7 +84,7 @@ const editCourseValidate = (values, props) => {
     // Validate all the fields required for submission in the submitting course run
     errors.course_runs = [];
     values.course_runs.forEach((run) => {
-      const { key: targetKey } = targetRun || {};
+      const { key: targetKey } = targetRun;
       const isSubmittingRun = run.key === targetKey;
       if (isSubmittingRun) {
         const runRequiredFields = ['transcript_languages', 'staff'];
