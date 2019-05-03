@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import CollapsibleCourseRun from './CollapsibleCourseRun';
+import courseSubmitInfo from '../../data/actions/courseSubmitInfo';
+import store from '../../data/store';
 
 const languageOptions = [
   {
@@ -33,8 +35,6 @@ const publishedCourseRun = {
 
 const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'unpublished' });
 
-const mockSubmit = jest.fn();
-
 describe('Collapsible Course Run', () => {
   it('renders correctly with no fields', () => {
     const component = shallow(<CollapsibleCourseRun
@@ -42,7 +42,7 @@ describe('Collapsible Course Run', () => {
       pacingTypeOptions={[]}
       courseRun={{}}
       courseId="test-course"
-      handleSubmit={mockSubmit}
+      courseUuid="11111111-1111-1111-1111-111111111111"
     />);
     expect(component).toMatchSnapshot();
   });
@@ -53,7 +53,7 @@ describe('Collapsible Course Run', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRun={publishedCourseRun}
       courseId="test-course"
-      handleSubmit={mockSubmit}
+      courseUuid="11111111-1111-1111-1111-111111111111"
     />);
     expect(component).toMatchSnapshot();
   });
@@ -64,7 +64,7 @@ describe('Collapsible Course Run', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRun={unpublishedCourseRun}
       courseId="test-course"
-      handleSubmit={mockSubmit}
+      courseUuid="11111111-1111-1111-1111-111111111111"
     />);
     expect(component).toMatchSnapshot();
   });
@@ -75,7 +75,7 @@ describe('Collapsible Course Run', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRun={unpublishedCourseRun}
       courseId="test-course"
-      handleSubmit={mockSubmit}
+      courseUuid="11111111-1111-1111-1111-111111111111"
       isSubmittingForReview
     />);
     expect(component).toMatchSnapshot();
@@ -87,7 +87,7 @@ describe('Collapsible Course Run', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRun={publishedCourseRun}
       courseId="test-course"
-      handleSubmit={mockSubmit}
+      courseUuid="11111111-1111-1111-1111-111111111111"
       isSubmittingForReview
     />);
     expect(component).toMatchSnapshot();
@@ -100,7 +100,7 @@ describe('Collapsible Course Run', () => {
       courseRun={{}}
       courseInReview
       courseId="test-course"
-      handleSubmit={mockSubmit}
+      courseUuid="11111111-1111-1111-1111-111111111111"
     />);
     const childFields = component.find('input');
     childFields.forEach((field) => {
@@ -114,14 +114,11 @@ describe('Collapsible Course Run', () => {
       pacingTypeOptions={pacingTypeOptions}
       courseRun={unpublishedCourseRun}
       courseId="test-course"
-      handleSubmit={mockSubmit}
+      courseUuid="11111111-1111-1111-1111-111111111111"
     />);
 
-    component.find('ActionButton').simulate(
-      'click',
-      { preventDefault: () => {} },
-    );
-
-    expect(mockSubmit).toHaveBeenCalled();
+    const mockDispatch = jest.spyOn(store, 'dispatch');
+    component.find('ActionButton').simulate('click');
+    expect(mockDispatch).toHaveBeenCalledWith(courseSubmitInfo(unpublishedCourseRun));
   });
 });

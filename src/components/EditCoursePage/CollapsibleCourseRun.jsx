@@ -6,11 +6,13 @@ import { Collapsible } from '@edx/paragon';
 
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
+import courseSubmitInfo from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import StaffList from '../StaffList';
+import store from '../../data/store';
 import TranscriptLanguage from './TranscriptLanguage';
 
 import { IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
@@ -88,12 +90,14 @@ class CollapsibleCourseRun extends React.Component {
       courseInReview,
       courseRun,
       courseSubmitting,
-      handleSubmit,
       isSubmittingForReview,
       languageOptions,
       pacingTypeOptions,
       targetRun,
-      ...passThroughProps
+      owners,
+      courseUuid,
+      stafferInfo,
+      sourceInfo,
     } = this.props;
     const {
       open,
@@ -107,7 +111,6 @@ class CollapsibleCourseRun extends React.Component {
     return (
       <Collapsible
         title={formatCourseRunTitle(courseRun)}
-        key={`collapsible-run-${courseId}`}
         iconId={`collapsible-icon-${courseId}`}
         isOpen={open}
         onToggle={this.setCollapsible}
@@ -270,7 +273,6 @@ class CollapsibleCourseRun extends React.Component {
           languageOptions={languageOptions}
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={courseInReview}
-          required={courseRunSubmitting}
         />
         <Field
           name={`${courseId}.weeks_to_complete`}
@@ -313,26 +315,22 @@ class CollapsibleCourseRun extends React.Component {
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={courseInReview}
           courseRunKey={courseRun.key}
-          required={courseRunSubmitting}
-          {...passThroughProps}
+          owners={owners}
+          courseUuid={courseUuid}
+          sourceInfo={sourceInfo}
+          stafferInfo={stafferInfo}
         />
         <ButtonToolbar>
           <ActionButton
             // only disable if *this run* is in review
             disabled={courseSubmitting || courseRunInReview}
-            onClick={(event) => {
-              /*
-              *  Prevent default submission and pass the targeted course run up through the
-              *  handler to manually validate fields based off the run status.
-              */
-              event.preventDefault();
-              handleSubmit(courseRun);
-            }}
+            // Pass the submitting course run up to validate different fields based on status
+            onClick={() => store.dispatch(courseSubmitInfo(courseRun))}
             labels={{
               default: courseRun.status === PUBLISHED ? 'Publish' : 'Submit for Review',
               pending: courseRun.status === PUBLISHED ? 'Publishing' : 'Submitting for Review',
             }}
-            state={courseRunSubmitting ? 'pending' : 'default'}
+            state={courseSubmitting ? 'pending' : 'default'}
           />
         </ButtonToolbar>
       </Collapsible>
@@ -345,16 +343,19 @@ CollapsibleCourseRun.propTypes = {
   courseInReview: PropTypes.bool,
   courseRun: PropTypes.shape({}).isRequired,
   courseSubmitting: PropTypes.bool,
-  handleSubmit: PropTypes.func.isRequired,
+  courseUuid: PropTypes.string.isRequired,
   isSubmittingForReview: PropTypes.bool,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string,
   })).isRequired,
+  owners: PropTypes.arrayOf(PropTypes.shape({})),
   pacingTypeOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string,
   })).isRequired,
+  sourceInfo: PropTypes.shape({}),
+  stafferInfo: PropTypes.shape({}),
   targetRun: PropTypes.shape({}),
 };
 
@@ -362,6 +363,9 @@ CollapsibleCourseRun.defaultProps = {
   courseInReview: false,
   courseSubmitting: false,
   isSubmittingForReview: false,
+  owners: [],
+  sourceInfo: {},
+  stafferInfo: {},
   targetRun: null,
 };
 

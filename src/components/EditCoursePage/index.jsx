@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { submit } from 'redux-form';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
@@ -10,7 +9,6 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, jsonDeepCopy } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
-import store from '../../data/store';
 
 
 class EditCoursePage extends React.Component {
@@ -23,7 +21,6 @@ class EditCoursePage extends React.Component {
     };
     this.handleCourseEdit = this.handleCourseEdit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +28,25 @@ class EditCoursePage extends React.Component {
     this.props.fetchCourseOptions();
     this.props.fetchCourseRunOptions();
     this.setStartedFetching();
+  }
+
+  componentDidUpdate(prevProps) {
+    /* eslint-disable react/no-did-update-set-state */
+    const { courseSubmitInfo: { targetRun } } = this.props;
+    const { key } = targetRun || {};
+
+    const { courseSubmitInfo: { targetRun: prevRun } } = prevProps;
+    const { key: prevKey } = prevRun || {};
+
+    if (key !== prevKey) {
+      /* We can safely update state here since we are comparing the current props against previous
+      *  props, ensuring that we won't end up in a continuous re-render loop.
+      */
+      this.setState({
+        targetRun,
+        isSubmittingForReview: targetRun && targetRun.status !== PUBLISHED,
+      });
+    }
   }
 
   setStartedFetching() {
@@ -113,35 +129,6 @@ class EditCoursePage extends React.Component {
     this.prepareCourse(courseData);
 
     return editCourse(courseData, modifiedCourseRuns);
-  }
-
-  /**
-   * Sets which course run triggered submission and whether or not it is submitting for review
-   * before triggering manual form validation.
-   * @param {Object} targetRun - the course run that triggered submission
-   */
-  handleSubmit(targetRun = null) {
-    this.setState({
-      targetRun,
-      isSubmittingForReview: !!targetRun && targetRun.status !== PUBLISHED,
-    }, () => this.validateSubmit());
-  }
-
-  /**
-   *  Manually check the form for validity so that we can validate different fields depending
-   *  on if a course run is being submitted for review, and then trigger redux-form's submit if it
-   *  passes validation. If validation fails, we report the form issues back without triggering
-   *  submission.
-   */
-  validateSubmit() {
-    const formId = this.getFormId();
-    const form = document.getElementById(formId);
-    if (form.checkValidity()) {
-      store.dispatch(submit(formId));
-    } else {
-      form.reportValidity();
-      this.setState({ isSubmittingForReview: false });
-    }
   }
 
   render() {
@@ -277,7 +264,6 @@ class EditCoursePage extends React.Component {
               <EditCourseForm
                 id={this.getFormId()}
                 onSubmit={this.handleCourseEdit}
-                handleSubmit={this.handleSubmit}
                 initialValues={{
                   title,
                   short_description,
@@ -336,6 +322,7 @@ EditCoursePage.defaultProps = {
   fetchCourseOptions: () => null,
   fetchCourseRunOptions: () => null,
   editCourse: () => null,
+  courseSubmitInfo: {},
 };
 
 EditCoursePage.propTypes = {
@@ -358,6 +345,12 @@ EditCoursePage.propTypes = {
   fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,
   editCourse: PropTypes.func,
+  courseSubmitInfo: PropTypes.shape({
+    targetRun: PropTypes.shape({
+      uuid: PropTypes.string,
+      status: PropTypes.string,
+    }),
+  }),
 };
 
 export default EditCoursePage;

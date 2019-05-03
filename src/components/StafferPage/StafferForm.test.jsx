@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { extractOrgChoices, BaseStafferForm, basicValidate } from './StafferForm';
+import { extractOrgChoices, BaseStafferForm } from './StafferForm';
 
 
 const stafferOptions = {
@@ -165,23 +165,5 @@ describe('extractOrgChoices', () => {
   it('extracts empty list of org choices from junk options', () => {
     const choices = extractOrgChoices({ junk: 'junk' });
     expect(choices).toEqual([]);
-  });
-});
-
-describe('basicValidate', () => {
-  it('returns a validation message for falsey values', () => {
-    const falseyValues = [0, '', undefined, null];
-
-    falseyValues.forEach((value) => {
-      expect(basicValidate(value)).toEqual('This field is required');
-    });
-  });
-
-  it('returns undefined for truthy values', () => {
-    const truthyValues = [1, 'test', { key: 'key value' }];
-
-    truthyValues.forEach((value) => {
-      expect(basicValidate(value)).toEqual(undefined);
-    });
   });
 });

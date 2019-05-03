@@ -12,9 +12,8 @@ import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
+import { basicValidate } from '../../utils/validation';
 
-
-const basicValidate = value => (value ? undefined : 'This field is required');
 
 const extractOrgChoices = (stafferOptions) => {
   const { data = {} } = stafferOptions;
