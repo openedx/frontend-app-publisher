@@ -4,7 +4,7 @@ import { Field, FieldArray, reduxForm, stopSubmit } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Collapsible } from '@edx/paragon';
+import { Collapsible, Icon } from '@edx/paragon';
 
 import ActionButton from '../../components/ActionButton';
 import ButtonToolbar from '../../components/ButtonToolbar';
@@ -63,6 +63,35 @@ export class BaseEditCourseForm extends React.Component {
     }
 
     return data.actions.PUT;
+  }
+
+  getAddCourseRunButton(courseInReview, pristine, uuid) {
+    /** Disabling a Link is discouraged and disabling a button within a link results
+     * in a Disabled button with a link that will still underline on hover.
+     * This method will remove the Link when disabling the button.
+     */
+    if (courseInReview) {
+      return '';
+    }
+
+    const courseRunButton = (
+      <button className="btn btn-block rounded mt-3 new-run-button" disabled={!pristine}>
+        <Icon className="fa fa-plus" /> Add Course Run
+      </button>);
+
+    let buttonWrapper = (
+      <Link to={`/courses/${uuid}/rerun`}>
+        {courseRunButton}
+      </Link>);
+
+    if (!pristine) {
+      buttonWrapper = (
+        <React.Fragment>
+          {courseRunButton}
+        </React.Fragment>
+      );
+    }
+    return buttonWrapper;
   }
 
   getCourseRunOptions() {
@@ -696,22 +725,16 @@ export class BaseEditCourseForm extends React.Component {
             courseSubmitting={submitting}
             {...this.props}
           />
+          {this.getAddCourseRunButton(courseInReview, pristine, uuid)}
           <ButtonToolbar className="mt-3">
-            <Link to={`/courses/${uuid}/rerun`}>
-              <button
-                className="btn btn-outline-primary"
-                disabled={!pristine || courseInReview}
-              >
-                Re-run Course
-              </button>
-            </Link>
             <ActionButton
               disabled={courseInReview || submitting}
               labels={{
-                default: 'Save Course',
+                default: 'Save & Continue Editing',
                 pending: 'Saving Course',
                 complete: 'Course Saved',
               }}
+              primary={false}
               state={submitState}
               onClick={() => {
                /* Bit of a hack used to clear old validation errors that might be around from
