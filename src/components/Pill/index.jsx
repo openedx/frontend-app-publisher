@@ -9,8 +9,8 @@ const Pill = ({ statuses }) => {
     switch (status) {
       case 'unpublished':
         pills.push({
-          text: 'Incomplete',
-          className: 'badge badge-danger',
+          text: 'Unsubmitted',
+          className: 'badge badge-warning',
         });
         break;
       case 'reviewed':
@@ -23,7 +23,7 @@ const Pill = ({ statuses }) => {
       case 'review_by_internal':
         pills.push({
           text: 'In review',
-          className: 'badge badge-warning',
+          className: 'badge badge-light',
         });
         pills.push({
           text: <i className="fa fa-lock" />,
