@@ -231,6 +231,15 @@ describe('EditCoursePage', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('renders page correctly with courseInfo, courseOptions, and courseRunOptions', () => {
+    const component = shallow(<EditCoursePage
+      courseInfo={courseInfo}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
   it('renders page correctly with courseInfo, courseOptions, and courseRunOptions errors', () => {
     const component = shallow(<EditCoursePage
       courseInfo={{

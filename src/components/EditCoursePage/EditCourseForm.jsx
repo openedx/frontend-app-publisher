@@ -16,7 +16,12 @@ import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import Pill from '../../components/Pill';
 
-import { AUDIT_TRACK, VERIFIED_TRACK, PROFESSIONAL_TRACK } from '../../data/constants';
+import {
+  AUDIT_TRACK,
+  ENTITLEMENT_TRACKS,
+  PROFESSIONAL_TRACK,
+  VERIFIED_TRACK,
+} from '../../data/constants';
 import { enrollmentHelp, titleHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import store from '../../data/store';
@@ -135,6 +140,7 @@ export class BaseEditCourseForm extends React.Component {
       handleSubmit,
       number,
       entitlement,
+      currentValues,
       submitting,
       title,
       pristine,
@@ -682,37 +688,33 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               disabled={courseInReview}
             />
-            {entitlement && (
-              <React.Fragment>
-                <Field
-                  name="mode"
-                  component={RenderSelectField}
-                  label={
-                    <FieldLabel
-                      id="mode.label"
-                      text="Enrollment track"
-                      helpText={enrollmentHelp}
-                    />
-                  }
-                  extraInput={{ onInvalid: this.openCollapsible }}
-                  options={this.getEnrollmentTrackOptions()}
-                  disabled={courseInReview}
+            <Field
+              name="mode"
+              component={RenderSelectField}
+              label={
+                <FieldLabel
+                  id="mode.label"
+                  text="Enrollment track"
+                  helpText={enrollmentHelp}
                 />
-                <Field
-                  name="price"
-                  component={RenderInputTextField}
-                  type="number"
-                  label={<FieldLabel text="Price" required requiredForSubmit />}
-                  extraInput={{
-                    onInvalid: this.openCollapsible,
-                    min: 0.01,
-                    step: 0.01,
-                  }}
-                  disabled={courseInReview}
-                  required={isSubmittingForReview}
-                />
-              </React.Fragment>
-            )}
+              }
+              extraInput={{ onInvalid: this.openCollapsible }}
+              options={this.getEnrollmentTrackOptions()}
+              disabled={courseInReview || !!entitlement.sku}
+            />
+            {ENTITLEMENT_TRACKS.includes(currentValues.mode) && <Field
+              name="price"
+              component={RenderInputTextField}
+              type="number"
+              label={<FieldLabel text="Price" required requiredForSubmit />}
+              extraInput={{
+                onInvalid: this.openCollapsible,
+                min: 0.01,
+                step: 0.01,
+              }}
+              disabled={courseInReview}
+              required={isSubmittingForReview}
+            />}
           </Collapsible>
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
@@ -754,8 +756,11 @@ export class BaseEditCourseForm extends React.Component {
 BaseEditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
+  currentValues: PropTypes.shape({}),
   title: PropTypes.string.isRequired,
-  entitlement: PropTypes.bool,
+  entitlement: PropTypes.shape({
+    sku: PropTypes.string,
+  }),
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
@@ -776,12 +781,13 @@ BaseEditCourseForm.propTypes = {
 };
 
 BaseEditCourseForm.defaultProps = {
+  currentValues: {},
+  entitlement: { sku: null },
   submitting: false,
   pristine: true,
   courseInReview: false,
   courseStatuses: [],
   isSubmittingForReview: false,
-  entitlement: false,
 };
 
 const EditCourseForm = compose(

@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Field } from 'redux-form';
 
 import { BaseEditCourseForm } from './EditCourseForm';
+import { IN_LEGAL_REVIEW, REVIEWED, UNPUBLISHED } from '../../data/constants';
 
 
 describe('BaseEditCourseForm', () => {
@@ -490,6 +492,10 @@ describe('BaseEditCourseForm', () => {
     price: '77',
     uuid: '11111111-1111-1111-1111-111111111111',
   };
+  const entitlement = {
+    mode: 'verified',
+    price: '77',
+  };
 
   it('renders html correctly with minimal data', () => {
     const component = shallow(<BaseEditCourseForm
@@ -499,6 +505,8 @@ describe('BaseEditCourseForm', () => {
       }}
       title={initialValuesFull.title}
       number="Test101x"
+      entitlement={undefined}
+      courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -511,8 +519,11 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
+      currentValues={initialValuesFull}
       title={initialValuesFull.title}
       number="Test102x"
+      entitlement={entitlement}
+      courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -525,11 +536,13 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
+      currentValues={initialValuesFull}
       title={initialValuesFull.title}
       number="Test103x"
+      entitlement={entitlement}
+      courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
-      entitlement
       pristine={false}
       submitting
       uuid={initialValuesFull.uuid}
@@ -542,7 +555,10 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
+      currentValues={initialValuesFull}
       number="Test101x"
+      entitlement={entitlement}
+      courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -556,7 +572,10 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
+      currentValues={initialValuesFull}
       number="Test101x"
+      entitlement={entitlement}
+      courseStatuses={[IN_LEGAL_REVIEW]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -564,9 +583,49 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const childFields = component.find('input');
+    const childFields = component.find(Field);
     childFields.forEach((field) => {
-      expect(field.prop('disabled')).toBeTrue();
+      expect(field.prop('disabled')).toBe(true);
     });
+  });
+
+  it('renders with mode disabled after being reviewed', () => {
+    entitlement.sku = 'ABC1234';
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      initialValues={initialValuesFull}
+      currentValues={initialValuesFull}
+      number="Test101x"
+      entitlement={entitlement}
+      courseStatuses={[REVIEWED]}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      id="edit-course-form"
+    />);
+
+    const disabledFields = component.find({ disabled: true });
+    expect(disabledFields.length === 1);
+  });
+
+  it('renders with mode disabled once a sku exists, even if course is unpublished', () => {
+    entitlement.sku = 'ABC1234';
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      initialValues={initialValuesFull}
+      currentValues={initialValuesFull}
+      number="Test101x"
+      entitlement={entitlement}
+      courseStatuses={[UNPUBLISHED]}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      id="edit-course-form"
+    />);
+
+    const disabledFields = component.find({ disabled: true });
+    expect(disabledFields.length === 1);
   });
 });

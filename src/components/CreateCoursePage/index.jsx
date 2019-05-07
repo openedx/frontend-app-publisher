@@ -48,6 +48,7 @@ class CreateCoursePage extends React.Component {
       initialValues,
       courseInfo,
       publisherUserInfo,
+      formValues,
     } = this.props;
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
@@ -86,6 +87,7 @@ class CreateCoursePage extends React.Component {
                 id="create-course-form"
                 onSubmit={this.handleCourseCreate}
                 initialValues={initialValues}
+                currentValues={formValues}
                 organizations={organizations}
                 isCreating={courseInfo.isCreating}
               />
@@ -110,6 +112,7 @@ CreateCoursePage.defaultProps = {
   fetchOrganizations: () => {},
   courseInfo: {},
   createCourse: () => {},
+  formValues: {},
 };
 
 CreateCoursePage.propTypes = {
@@ -135,6 +138,7 @@ CreateCoursePage.propTypes = {
   }),
   fetchOrganizations: PropTypes.func,
   createCourse: PropTypes.func,
+  formValues: PropTypes.shape({}),
 };
 
 export default CreateCoursePage;
