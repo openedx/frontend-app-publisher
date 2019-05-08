@@ -8,7 +8,7 @@ const CollapsibleCourseRuns = ({
   fields,
   ...passThroughProps
 }) => (
-  <div>
+  <div className="course-run-collapsible">
     {fields.map((courseRun, index) => (
       <CollapsibleCourseRun
         {...passThroughProps}
