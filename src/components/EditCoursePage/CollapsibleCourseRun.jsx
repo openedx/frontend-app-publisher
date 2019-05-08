@@ -166,6 +166,7 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.go_live_date.label`}
               text="Publish date"
+              requiredForSubmit
               helpText={
                 <div>
                   <p>The scheduled date for when the course run will be live and published.</p>
@@ -180,6 +181,7 @@ class CollapsibleCourseRun extends React.Component {
           extraInput={{ onInvalid: this.openCollapsible }}
           placeholder="mm/dd/yyyy"
           disabled={courseInReview}
+          required={courseRunSubmitting}
         />
         <Field
           name={`${courseId}.min_effort`}
