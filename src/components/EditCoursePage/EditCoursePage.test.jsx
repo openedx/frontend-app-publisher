@@ -144,6 +144,11 @@ describe('EditCoursePage', () => {
         isFetching: true,
         error: null,
       }}
+      courseRunOptions={{
+        data: {},
+        isFetching: true,
+        error: null,
+      }}
     />);
     expect(component).toMatchSnapshot();
   });
