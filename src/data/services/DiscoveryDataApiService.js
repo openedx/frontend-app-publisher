@@ -31,7 +31,7 @@ class DiscoveryDataApiService {
       exclude_utm: 1,
       ...options,
     };
-    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses`;
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/`;
     return apiClient.get(url, {
       params: queryParams,
     });

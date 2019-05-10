@@ -34,7 +34,7 @@ describe('table actions', () => {
   });
 
   it('handles pagination request ', () => {
-    mockClient.onGet('http://localhost:18381/api/v1/courses')
+    mockClient.onGet('http://localhost:18381/api/v1/courses/')
       .replyOnce(200, JSON.stringify({
         results: [{
           key,
@@ -78,7 +78,7 @@ describe('table actions', () => {
   });
 
   it('handles pagination failure', () => {
-    mockClient.onGet('http://localhost:18381/api/v1/courses')
+    mockClient.onGet('http://localhost:18381/api/v1/courses/')
       .replyOnce(500);
     const expectedActions = [
       {
@@ -109,7 +109,7 @@ describe('table actions', () => {
   });
 
   it('handles a 404', () => {
-    mockClient.onGet('http://localhost:18381/api/v1/courses')
+    mockClient.onGet('http://localhost:18381/api/v1/courses/')
       .replyOnce(404);
     const expectedActions = [
       {
@@ -146,7 +146,7 @@ describe('table actions', () => {
 
   it('handles a sort request', () => {
     const ordering = 'key';
-    mockClient.onGet('http://localhost:18381/api/v1/courses')
+    mockClient.onGet('http://localhost:18381/api/v1/courses/')
       .replyOnce(200, JSON.stringify({
         results: [
           {
@@ -201,7 +201,7 @@ describe('table actions', () => {
 
   it('handles a sort failure', () => {
     const ordering = 'key';
-    mockClient.onGet('http://localhost:18381/api/v1/courses')
+    mockClient.onGet('http://localhost:18381/api/v1/courses/')
       .replyOnce(500);
     const expectedActions = [
       {
