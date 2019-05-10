@@ -90,6 +90,9 @@ class EditCoursePage extends React.Component {
       },
     } = this.props;
 
+    // We don't need to send the course runs as part of courseData because they are
+    // pulled out and sent to their own endpoint for saving.
+    delete courseData.course_runs;
     courseData.subjects = [
       courseData.subjectPrimary,
       courseData.subjectSecondary,
@@ -101,6 +104,8 @@ class EditCoursePage extends React.Component {
       sku: entitlements[0].sku,
     }];
     courseData.image = courseData.imageSrc;
+    // We are removing imageSrc so we don't send the image data twice
+    delete courseData.imageSrc;
     courseData.video = { src: courseData.videoSrc };
     courseData.key = key;
     courseData.uuid = uuid;
