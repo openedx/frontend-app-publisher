@@ -6,7 +6,7 @@ import { Collapsible } from '@edx/paragon';
 
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
-import courseSubmitInfo from '../../data/actions/courseSubmitInfo';
+import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
@@ -98,6 +98,7 @@ class CollapsibleCourseRun extends React.Component {
       courseUuid,
       stafferInfo,
       sourceInfo,
+      courseSubmitInfo
     } = this.props;
     const {
       open,
@@ -327,12 +328,14 @@ class CollapsibleCourseRun extends React.Component {
             // only disable if *this run* is in review
             disabled={courseSubmitting || courseRunInReview}
             // Pass the submitting course run up to validate different fields based on status
-            onClick={() => store.dispatch(courseSubmitInfo(courseRun))}
+            onClick={() => store.dispatch(courseSubmittingInfo(courseRun))}
             labels={{
               default: courseRun.status === PUBLISHED ? 'Publish Run' : 'Submit Run for Review',
               pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
             }}
-            state={courseSubmitting ? 'pending' : 'default'}
+            state={
+              (courseSubmitting || courseSubmitInfo.isSubmittingRunReview) ? 'pending' : 'default'
+            }
           />
         </ButtonToolbar>
       </Collapsible>

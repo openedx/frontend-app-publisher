@@ -18,7 +18,7 @@ import {
   CREATE_COURSE_RUN_FAIL,
 } from '../constants/courseInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
-
+import { courseSubmittingFailure, courseSubmittingSuccess } from './courseSubmitInfo';
 
 function requestCourseInfoFail(id, error) {
   return { type: REQUEST_COURSE_INFO_FAIL, id, error };
@@ -134,7 +134,8 @@ function createCourse(courseData, courseRunData) {
   };
 }
 
-function editCourse(courseData, courseRunData) {
+function editCourse(courseData, courseRunData, submittingRunForReview = false) {
+  const submitReview = submittingRunForReview;
   return (dispatch) => {
     dispatch(editCourseInfo(courseData));
     // Send edit course PATCH
@@ -143,9 +144,15 @@ function editCourse(courseData, courseRunData) {
         const course = response.pop().data;
         course.course_runs = response.map(courseRun => courseRun.data);
         dispatch(editCourseSuccess(course));
+        if (submitReview) {
+          dispatch(courseSubmittingSuccess());
+        }
       })
       .catch((error) => {
         dispatch(editCourseFail(['Course edit failed, please try again or contact support.'].concat(getErrorMessages(error))));
+        if (submitReview) {
+          dispatch(courseSubmittingFailure());
+        }
       });
   };
 }

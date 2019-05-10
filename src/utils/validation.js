@@ -68,7 +68,6 @@ const handleCourseEditFail = (errors) => {
 
 const editCourseValidate = (values, props) => {
   const { targetRun } = props;
-
   if (!targetRun || targetRun.status === PUBLISHED) {
     return undefined;
   }

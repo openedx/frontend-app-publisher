@@ -25,7 +25,7 @@ import {
 import { enrollmentHelp, titleHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import store from '../../data/store';
-import courseSubmitInfo from '../../data/actions/courseSubmitInfo';
+import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -149,6 +149,7 @@ export class BaseEditCourseForm extends React.Component {
       courseStatuses,
       id,
       isSubmittingForReview,
+      courseInfo,
     } = this.props;
     const {
       open,
@@ -164,7 +165,7 @@ export class BaseEditCourseForm extends React.Component {
       this.parseOptions(courseRunOptions.content_language.choices));
 
     let submitState = 'default';
-    if (submitting) {
+    if (submitting || courseInfo.isSubmittingEdit) {
       submitState = 'pending';
     } else if (pristine) {
       // FIXME: Once this form is correctly reset to a pristine state after a successful submit,
@@ -179,7 +180,7 @@ export class BaseEditCourseForm extends React.Component {
     return (
       <div className="edit-course-form">
         <form id={id} onSubmit={handleSubmit}>
-          <FieldLabel text="Course" className="mt-4 mb-2 h2" />
+          <FieldLabel text={title} className="mt-4 mb-2 h2" />
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
@@ -696,6 +697,7 @@ export class BaseEditCourseForm extends React.Component {
                   id="mode.label"
                   text="Enrollment track"
                   helpText={enrollmentHelp}
+                  extraText="(Cannot edit after submission)"
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -743,7 +745,7 @@ export class BaseEditCourseForm extends React.Component {
                 *  trying to submit for review with errors.
                 */
                store.dispatch(stopSubmit(id));
-               store.dispatch(courseSubmitInfo());
+               store.dispatch(courseSubmittingInfo());
               }}
             />
           </ButtonToolbar>

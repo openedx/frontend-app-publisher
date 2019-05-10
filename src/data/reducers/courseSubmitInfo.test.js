@@ -2,7 +2,7 @@ import courseSubmitInfoReducer from './courseSubmitInfo';
 import courseSubmitInfo from '../actions/courseSubmitInfo';
 
 
-describe('courseSubmitInfo reducer', () => {
+describe('courseSubmittingInfo reducer', () => {
   let initalState;
 
   beforeEach(() => {
@@ -15,7 +15,7 @@ describe('courseSubmitInfo reducer', () => {
     expect(courseSubmitInfoReducer(undefined, {})).toEqual({ targetRun: null });
   });
 
-  it('courseSubmitInfo action works', () => {
+  it('courseSubmittingInfo action works', () => {
     const targetRun = {
       key: 'edX101+DemoX',
     };
