@@ -85,11 +85,11 @@ const BaseStafferForm = ({
           type="text"
           label={
             <FieldLabel
-              id="position.label"
-              text="Position"
+              id="title.label"
+              text="Title"
               helpText={
                 <div>
-                  <p>Your role at your organization.</p>
+                  <p>Instructor&apos;s title at your organization.</p>
                   <p><b>Examples:</b></p>
                   <ul>
                     <li>Professor</li>
