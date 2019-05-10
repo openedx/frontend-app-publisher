@@ -45,7 +45,22 @@ const BaseStafferForm = ({
         <Field
           name="profile_image.medium.url"
           component={ImageUpload}
-          label={<FieldLabel text="Image" required />}
+          label={
+            <FieldLabel
+              id="image.label"
+              text="Image"
+              helpText={
+                <div>
+                  <p>Image Requirements:</p>
+                  <ul>
+                    <li>The image dimensions must be 110×110.</li>
+                    <li>The image size must be less than 256KB.</li>
+                  </ul>
+                </div>
+              }
+              required
+            />
+          }
           id="profile_image"
           className="staffer-image"
           required={isCreateForm}
@@ -68,7 +83,24 @@ const BaseStafferForm = ({
           name="position.title"
           component={RenderInputTextField}
           type="text"
-          label={<FieldLabel text="Position" required />}
+          label={
+            <FieldLabel
+              id="position.label"
+              text="Position"
+              helpText={
+                <div>
+                  <p>Your role at your organization.</p>
+                  <p><b>Examples:</b></p>
+                  <ul>
+                    <li>Professor</li>
+                    <li>Content Developer</li>
+                    <li>Director</li>
+                  </ul>
+                </div>
+              }
+              required
+            />
+          }
           required
         />
         <Field
