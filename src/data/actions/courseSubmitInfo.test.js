@@ -2,7 +2,7 @@ import courseSubmitInfo from './courseSubmitInfo';
 import COURSE_SUBMIT_INFO from '../constants/courseSubmitInfo';
 
 
-describe('courseSubmitInfo actions', () => {
+describe('courseSubmittingInfo actions', () => {
   const targetRun = {
     key: 'edX101+DemoX',
   };

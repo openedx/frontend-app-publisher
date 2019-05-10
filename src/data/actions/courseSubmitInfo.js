@@ -1,5 +1,36 @@
-import COURSE_SUBMIT_INFO from '../constants/courseSubmitInfo';
+import {
+  COURSE_SUBMITTING_CANCEL,
+  COURSE_SUBMITTING_SUCCESS,
+  COURSE_SUBMITTING_INFO,
+  COURSE_SUBMITTING_FAILURE,
+} from '../constants/courseSubmitInfo';
 
-export default function courseSubmitInfo(targetRun = null) {
-  return { type: COURSE_SUBMIT_INFO, targetRun };
+function courseSubmittingCancel() {
+  return { type: COURSE_SUBMITTING_CANCEL };
 }
+
+function courseSubmittingFailure() {
+  return { type: COURSE_SUBMITTING_FAILURE };
+}
+
+function courseSubmittingInfo(targetRun = null) {
+  return { type: COURSE_SUBMITTING_INFO, targetRun };
+}
+
+function courseSubmittingSuccess() {
+  return { type: COURSE_SUBMITTING_SUCCESS };
+}
+
+function clearSubmitStatus() {
+  return (dispatch) => {
+    dispatch(courseSubmittingCancel());
+  };
+}
+
+export {
+  courseSubmittingCancel,
+  courseSubmittingFailure,
+  courseSubmittingInfo,
+  courseSubmittingSuccess,
+  clearSubmitStatus,
+};

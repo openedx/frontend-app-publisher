@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { getFormValues, stopSubmit } from 'redux-form';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
@@ -9,7 +10,8 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
-
+import store from '../../data/store';
+import SubmitConfirmModal from '../SubmitConfirmModal';
 
 class EditCoursePage extends React.Component {
   constructor(props) {
@@ -18,9 +20,14 @@ class EditCoursePage extends React.Component {
       startedFetching: false,
       targetRun: null,
       isSubmittingForReview: false,
+      submitConfirmVisible: false,
+      submitCourseData: {},
     };
     this.handleCourseSubmit = this.handleCourseSubmit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.cancelSubmit = this.cancelSubmit.bind(this);
+    this.continueSubmit = this.continueSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -138,6 +145,19 @@ class EditCoursePage extends React.Component {
     };
   }
 
+  continueSubmit() {
+    const {
+      submitCourseData,
+    } = this.state;
+
+    this.setState({
+      submitCourseData: {},
+      submitConfirmVisible: false,
+    });
+
+    this.handleCourseSubmit(submitCourseData);
+  }
+
   handleCourseSubmit(courseData) {
     /*
       Need to do some pre-processing before sending anything to course-discovery.
@@ -160,7 +180,7 @@ class EditCoursePage extends React.Component {
     // Process courseData to reduced data set
     const courseEditData =
       this.prepareSendCourseData(courseData, modifiedCourseRuns, targetRun);
-    return editCourse(courseEditData, modifiedCourseRuns);
+    return editCourse(courseEditData, modifiedCourseRuns, !!targetRun);
   }
 
   render() {
@@ -204,7 +224,12 @@ class EditCoursePage extends React.Component {
       courseRunOptions,
       formValues,
     } = this.props;
-    const { startedFetching, isSubmittingForReview, targetRun } = this.state;
+    const {
+      isSubmittingForReview,
+      startedFetching,
+      submitConfirmVisible,
+      targetRun,
+    } = this.state;
     const currentValues = formValues(this.getFormId());
 
     const courseStatuses = [];
@@ -292,13 +317,19 @@ class EditCoursePage extends React.Component {
           <title>{`Course - ${title}`}</title>
         </Helmet>
 
+        <SubmitConfirmModal
+          open={submitConfirmVisible}
+          onSubmit={this.continueSubmit}
+          onClose={this.cancelSubmit}
+        />
+
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
           { showForm && (
             <div>
               <EditCourseForm
                 id={this.getFormId()}
-                onSubmit={this.handleCourseSubmit}
+                onSubmit={this.showModal}
                 initialValues={{
                   title,
                   short_description,
@@ -358,6 +389,7 @@ EditCoursePage.defaultProps = {
   fetchCourseOptions: () => null,
   fetchCourseRunOptions: () => null,
   editCourse: () => null,
+  clearSubmitStatus: () => {},
   courseSubmitInfo: {},
   formValues: () => {},
 };
@@ -382,6 +414,7 @@ EditCoursePage.propTypes = {
   fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,
   editCourse: PropTypes.func,
+  clearSubmitStatus: PropTypes.func,
   courseSubmitInfo: PropTypes.shape({
     targetRun: PropTypes.shape({
       uuid: PropTypes.string,

@@ -18,6 +18,7 @@ const initialState = {
   data: {},
   isFetching: false,
   isCreating: false,
+  isSubmittingEdit: false,
   error: null,
 };
 
@@ -73,15 +74,18 @@ function courseInfo(state = initialState, action) {
       });
     case EDIT_COURSE_INFO:
       return Object.assign({}, state, {
+        isSubmittingEdit: true,
         error: null,
       });
     case EDIT_COURSE_SUCCESS:
       return Object.assign({}, state, {
         data: action.data,
+        isSubmittingEdit: false,
         error: null,
       });
     case EDIT_COURSE_FAIL:
       return Object.assign({}, state, {
+        isSubmittingEdit: false,
         error: action.error,
       });
     default:
