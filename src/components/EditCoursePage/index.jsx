@@ -7,7 +7,7 @@ import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { getCourseNumber, jsonDeepCopy } from '../../utils';
+import { getCourseNumber } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
 
 
@@ -19,7 +19,7 @@ class EditCoursePage extends React.Component {
       targetRun: null,
       isSubmittingForReview: false,
     };
-    this.handleCourseEdit = this.handleCourseEdit.bind(this);
+    this.handleCourseSubmit = this.handleCourseSubmit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
   }
 
@@ -57,29 +57,40 @@ class EditCoursePage extends React.Component {
     return `edit-course-form-${this.props.courseInfo.data.uuid}`;
   }
 
-  prepareCourseRuns(courseRuns, courseData) {
-    /* eslint-disable no-param-reassign */
-    courseRuns.forEach((courseRun) => {
-      if (courseRun.staff) {
-        courseRun.staff = courseRun.staff.map(staffer => staffer.uuid);
+  prepareSendCourseRunData(courseData, targetRun) {
+    const sendCourseRuns = [];
+    // Don't send any courses in review - backend will reject them
+    const modifiedCourseRuns =
+      courseData.course_runs.filter(run => !IN_REVIEW_STATUS.includes(run.status));
+
+    modifiedCourseRuns.forEach((courseRun) => {
+      let draft = true;
+      if (targetRun && (courseRun.key === targetRun.key)) {
+        // If a course run triggered the submission, mark it as not a draft
+        draft = false;
       }
+      sendCourseRuns.push({
+        content_language: courseRun.content_language,
+        draft,
+        end: courseRun.end,
+        go_live_date: courseRun.go_live_date,
+        key: courseRun.key,
+        max_effort: courseRun.max_effort,
+        min_effort: courseRun.min_effort,
+        pacing_type: courseRun.pacing_type,
+        // Reduce Staff list to just the UUID
+        staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
+        length: courseRun.length,
+        start: courseRun.start,
+        status: courseRun.status,
+        transcript_languages: courseRun.transcript_languages,
+        weeks_to_complete: courseRun.weeks_to_complete,
+      });
     });
-    const { targetRun } = this.state;
-    if (targetRun) {
-      // If a course run triggered the submission, mark it as not a draft
-      const submittedRun = courseRuns.find(run => run.key === targetRun.key);
-      submittedRun.draft = false;
-      // If we are updating a published course run, we need to also publish the course.
-      // We want to use the same indicator of draft = false for consistency.
-      if (submittedRun.status === PUBLISHED) {
-        courseData.draft = false;
-      }
-    }
-    /* eslint-enable no-param-reassign */
+    return sendCourseRuns;
   }
 
-  prepareCourse(courseData) {
-    /* eslint-disable no-param-reassign */
+  prepareSendCourseData(courseData, courseRuns, targetRun) {
     const {
       courseInfo: {
         data: {
@@ -90,31 +101,46 @@ class EditCoursePage extends React.Component {
       },
     } = this.props;
 
-    // We don't need to send the course runs as part of courseData because they are
-    // pulled out and sent to their own endpoint for saving.
-    delete courseData.course_runs;
-    courseData.subjects = [
-      courseData.subjectPrimary,
-      courseData.subjectSecondary,
-      courseData.subjectTertiary,
-    ].filter(subject => !!subject);
-    courseData.entitlements = entitlements && entitlements[0] && [{
-      mode: courseData.mode,
-      price: courseData.price,
-      sku: entitlements[0].sku,
-    }];
-    courseData.image = courseData.imageSrc;
-    // We are removing imageSrc so we don't send the image data twice
-    delete courseData.imageSrc;
-    courseData.video = { src: courseData.videoSrc };
-    courseData.key = key;
-    courseData.uuid = uuid;
-    /* eslint-enable no-param-reassign */
+    let updatingPublishedRun = false;
+    if (targetRun) {
+      const submittedRun = courseRuns.find(run => run.key === targetRun.key);
+      // If we are updating a published course run, we need to also publish the course.
+      // We want to use the same indicator of draft = false for consistency.
+      if (submittedRun.status === PUBLISHED) {
+        updatingPublishedRun = true;
+      }
+    }
+
+    return {
+      additional_information: courseData.additional_information,
+      draft: !updatingPublishedRun,
+      entitlements: [{
+        mode: courseData.mode,
+        price: courseData.price,
+        sku: entitlements[0].sku,
+      }],
+      faq: courseData.faq,
+      full_description: courseData.full_description,
+      image: courseData.imageSrc,
+      key,
+      learner_testimonials: courseData.learner_testimonials,
+      level_type: courseData.level_type,
+      outcome: courseData.outcome,
+      short_description: courseData.short_description,
+      subjects: [
+        courseData.subjectPrimary,
+        courseData.subjectSecondary,
+        courseData.subjectTertiary,
+      ].filter(subject => !!subject),
+      title: courseData.title,
+      uuid,
+      video: { src: courseData.videoSrc },
+    };
   }
 
-  handleCourseEdit(courseData) {
+  handleCourseSubmit(courseData) {
     /*
-      Need to do some preprocessing before sending anything to course-discovery.
+      Need to do some pre-processing before sending anything to course-discovery.
       This includes:
         1. Only sending the uuid from the array of staff objects
         2. Only including subjects that have values
@@ -126,19 +152,15 @@ class EditCoursePage extends React.Component {
     const {
       editCourse,
     } = this.props;
-    // Create a deep copy of course runs since we modify their properties
-    let modifiedCourseRuns = jsonDeepCopy(courseData.course_runs);
+    const { targetRun } = this.state;
 
-    // Don't send any courses in review - backend will reject them
-    modifiedCourseRuns = modifiedCourseRuns.filter(run => !IN_REVIEW_STATUS.includes(run.status));
+    // Process course run info from courseData
+    const modifiedCourseRuns = this.prepareSendCourseRunData(courseData, targetRun);
 
-    // Process course run info
-    this.prepareCourseRuns(modifiedCourseRuns, courseData);
-
-    // Process course info
-    this.prepareCourse(courseData);
-
-    return editCourse(courseData, modifiedCourseRuns);
+    // Process courseData to reduced data set
+    const courseEditData =
+      this.prepareSendCourseData(courseData, modifiedCourseRuns, targetRun);
+    return editCourse(courseEditData, modifiedCourseRuns);
   }
 
   render() {
@@ -276,7 +298,7 @@ class EditCoursePage extends React.Component {
             <div>
               <EditCourseForm
                 id={this.getFormId()}
-                onSubmit={this.handleCourseEdit}
+                onSubmit={this.handleCourseSubmit}
                 initialValues={{
                   title,
                   short_description,
