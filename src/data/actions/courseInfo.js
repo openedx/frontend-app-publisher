@@ -11,6 +11,7 @@ import {
   EDIT_COURSE_FAIL,
   CLEAR_COURSE_SAVED,
   UUID_REGEX,
+  CLEAR_COURSE_INFO_ERRORS,
   CREATE_COURSE,
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
@@ -31,6 +32,12 @@ function requestCourseInfoSuccess(id, data) {
 
 function requestCourseInfo(id) {
   return { type: REQUEST_COURSE_INFO, id };
+}
+
+function clearCourseInfoErrors() {
+  // We do not want to accidentally persist an error from a different page
+  // when a user comes to a create page.
+  return { type: CLEAR_COURSE_INFO_ERRORS };
 }
 
 function createNewCourse(data) {
@@ -185,6 +192,7 @@ export {
   requestCourseInfoFail,
   requestCourseInfoSuccess,
   requestCourseInfo,
+  clearCourseInfoErrors,
   createNewCourse,
   createCourseSuccess,
   createCourseFail,

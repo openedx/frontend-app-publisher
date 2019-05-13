@@ -3,7 +3,7 @@ import { getFormValues } from 'redux-form';
 
 import CreateCoursePage from '../../components/CreateCoursePage';
 import { fetchOrganizations } from '../../data/actions/publisherUserInfo';
-import { createCourse } from '../../data/actions/courseInfo';
+import { createCourse, clearCourseInfoErrors } from '../../data/actions/courseInfo';
 
 const mapStateToProps = (state, props) => ({
   publisherUserInfo: state.publisherUserInfo,
@@ -15,6 +15,7 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = {
   createCourse,
   fetchOrganizations,
+  clearCourseInfoErrors,
 };
 
 export default connect(

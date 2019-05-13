@@ -8,6 +8,7 @@ import {
   fetchCourseInfo,
   requestCourseInfoSuccess,
   requestCourseInfo,
+  clearCourseInfoErrors,
   createCourseFail,
   createCourseSuccess,
   createNewCourse,
@@ -85,6 +86,13 @@ describe('courseInfo fetch course actions', () => {
 });
 
 describe('courseInfo create course actions', () => {
+  it('should clear courseInfo errors', () => {
+    const expectedAction = {
+      type: types.CLEAR_COURSE_INFO_ERRORS,
+    };
+    expect(clearCourseInfoErrors()).toEqual(expectedAction);
+  });
+
   it('should start new course', () => {
     const data = { name: 'test course data' };
     const expectedAction = {
@@ -184,6 +192,13 @@ describe('courseInfo edit course actions', () => {
 });
 
 describe('courseInfo create course run actions', () => {
+  it('should clear courseInfo errors', () => {
+    const expectedAction = {
+      type: types.CLEAR_COURSE_INFO_ERRORS,
+    };
+    expect(clearCourseInfoErrors()).toEqual(expectedAction);
+  });
+
   it('should start creating new course run', () => {
     const data = { start: '2019-03-04T00:00:00.000Z' };
     const expectedAction = {
