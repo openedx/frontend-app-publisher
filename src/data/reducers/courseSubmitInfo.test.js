@@ -1,5 +1,5 @@
 import courseSubmitInfoReducer from './courseSubmitInfo';
-import courseSubmitInfo from '../actions/courseSubmitInfo';
+import { courseSubmittingInfo } from '../actions/courseSubmitInfo';
 
 
 describe('courseSubmittingInfo reducer', () => {
@@ -8,19 +8,36 @@ describe('courseSubmittingInfo reducer', () => {
   beforeEach(() => {
     initalState = {
       targetRun: null,
+      isSubmittingRunReview: false,
     };
   });
 
   it('initial state is valid', () => {
-    expect(courseSubmitInfoReducer(undefined, {})).toEqual({ targetRun: null });
+    expect(courseSubmitInfoReducer(undefined, {})).toEqual({
+      targetRun: null,
+      isSubmittingRunReview: false,
+    });
   });
 
-  it('courseSubmittingInfo action works', () => {
+  it('courseSubmittingInfo action works with targetRun', () => {
     const targetRun = {
       key: 'edX101+DemoX',
     };
 
-    expect(courseSubmitInfoReducer(initalState, courseSubmitInfo(targetRun)))
-      .toEqual({ targetRun });
+    expect(courseSubmitInfoReducer(initalState, courseSubmittingInfo(targetRun)))
+      .toEqual({
+        targetRun,
+        isSubmittingRunReview: true,
+      });
+  });
+
+  it('courseSubmittingInfo action works without targetRun', () => {
+    const targetRun = null;
+
+    expect(courseSubmitInfoReducer(initalState, courseSubmittingInfo(targetRun)))
+      .toEqual({
+        targetRun,
+        isSubmittingRunReview: false,
+      });
   });
 });

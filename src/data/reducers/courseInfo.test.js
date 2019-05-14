@@ -18,6 +18,7 @@ describe('courseInfo reducer', () => {
       data: {},
       isFetching: false,
       isCreating: false,
+      isSubmittingEdit: false,
       error: null,
     };
   });
@@ -27,6 +28,7 @@ describe('courseInfo reducer', () => {
       data: {},
       isFetching: false,
       isCreating: false,
+      isSubmittingEdit: false,
       error: null,
     });
   });
@@ -37,6 +39,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: true,
         isCreating: false,
+        isSubmittingEdit: false,
         error: null,
       });
   });
@@ -48,6 +51,7 @@ describe('courseInfo reducer', () => {
         data: { key: 'DemoX+TestCourse' },
         isFetching: false,
         isCreating: false,
+        isSubmittingEdit: false,
         error: null,
       });
   });
@@ -59,6 +63,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: false,
         isCreating: false,
+        isSubmittingEdit: false,
         error: 'failure',
       });
   });
@@ -69,6 +74,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: false,
         isCreating: true,
+        isSubmittingEdit: false,
         error: null,
       });
   });
@@ -79,6 +85,7 @@ describe('courseInfo reducer', () => {
         data: courseData,
         error: null,
         isCreating: false,
+        isSubmittingEdit: false,
         isFetching: false,
       });
   });
@@ -89,6 +96,7 @@ describe('courseInfo reducer', () => {
         data: {},
         error: 'failure',
         isCreating: false,
+        isSubmittingEdit: false,
         isFetching: false,
       });
   });
@@ -99,6 +107,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: false,
         isCreating: false,
+        isSubmittingEdit: true,
         error: null,
       });
   });
@@ -109,6 +118,7 @@ describe('courseInfo reducer', () => {
         data: courseData,
         isFetching: false,
         isCreating: false,
+        isSubmittingEdit: false,
         error: null,
       });
   });
@@ -119,6 +129,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: false,
         isCreating: false,
+        isSubmittingEdit: false,
         error: 'failure',
       });
   });
@@ -129,6 +140,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: false,
         isCreating: true,
+        isSubmittingEdit: false,
         error: null,
       });
   });
@@ -139,6 +151,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: false,
         isCreating: false,
+        isSubmittingEdit: false,
         error: null,
       });
   });
@@ -149,6 +162,7 @@ describe('courseInfo reducer', () => {
         data: {},
         isFetching: false,
         isCreating: false,
+        isSubmittingEdit: false,
         error: 'failure',
       });
   });
