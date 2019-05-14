@@ -93,24 +93,19 @@ function fetchCourseInfo(id) {
   };
 }
 
-function createCourseRun(course, courseRunData) {
+function createCourseRun(courseUuid, courseRunData) {
   return (dispatch) => {
-    dispatch(createNewCourseRun());
-    if (!course.key) {
+    dispatch(createNewCourseRun(courseRunData));
+    if (!courseRunData.course) {
       dispatch(createCourseRunFail(['Course Run create failed, please try again or contact support. Course create incomplete.']));
       return null;
     }
 
-    const data = {
-      course: course.key,
-      start: (new Date(courseRunData.start)).toISOString(),
-      end: (new Date(courseRunData.end)).toISOString(),
-    };
-    return DiscoveryDataApiService.createCourseRun(data)
+    return DiscoveryDataApiService.createCourseRun(courseRunData)
       .then((response) => {
         const courseRun = response.data;
         dispatch(createCourseRunSuccess(courseRun));
-        return dispatch(push(`/courses/${course.uuid}`));
+        return dispatch(push(`/courses/${courseUuid}`));
       })
       .catch((error) => {
         dispatch(createCourseRunFail(['Course Run create failed, please try again or contact support.'].concat(getErrorMessages(error))));
@@ -118,18 +113,21 @@ function createCourseRun(course, courseRunData) {
   };
 }
 
-function createCourse(courseData, courseRunData) {
+function createCourse(courseData) {
   return (dispatch) => {
     dispatch(createNewCourse(courseData));
+    dispatch(createNewCourseRun(courseData.course_run));
 
     return DiscoveryDataApiService.createCourse(courseData)
       .then((response) => {
         const course = response.data;
         dispatch(createCourseSuccess(course));
-        dispatch(createCourseRun(course, courseRunData));
+        const courseRun = course.course_runs[0];
+        dispatch(createCourseRunSuccess(courseRun));
+        return dispatch(push(`/courses/${course.uuid}`));
       })
       .catch((error) => {
-        dispatch(createCourseFail(['Course create failed, please try again or contact support.'].concat(getErrorMessages(error))));
+        dispatch(createCourseFail(['Creation failed, please try again or contact support.'].concat(getErrorMessages(error))));
       });
   };
 }

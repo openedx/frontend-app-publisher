@@ -1,6 +1,8 @@
+import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
@@ -27,9 +29,21 @@ class CreateCourseRunPage extends React.Component {
 
   handleCourseCreate(options) {
     const {
-      courseInfo,
+      courseInfo: {
+        data: {
+          key,
+          uuid,
+        },
+      },
+      createCourseRun,
     } = this.props;
-    return this.props.createCourseRun(courseInfo.data, options);
+
+    const courseRunData = {
+      course: key,
+      start: moment.utc(options.start).toISOString(),
+      end: moment.utc(options.end).toISOString(),
+    };
+    return createCourseRun(uuid, courseRunData);
   }
 
   render() {
