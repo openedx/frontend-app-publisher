@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { getFormValues, stopSubmit } from 'redux-form';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
@@ -10,7 +9,6 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
-import store from '../../data/store';
 import SubmitConfirmModal from '../SubmitConfirmModal';
 
 class EditCoursePage extends React.Component {
@@ -144,6 +142,23 @@ class EditCoursePage extends React.Component {
       video: { src: courseData.videoSrc },
     };
   }
+  showModal(submitCourseData) {
+    const {
+      targetRun,
+    } = this.state;
+
+    if (targetRun && !(targetRun.status === PUBLISHED)) {
+      // Submitting Run for review, show modal, and temporarily store form data until
+      // we have a response for how to continue.
+      this.setState({
+        submitCourseData,
+        submitConfirmVisible: true, // show modal
+      });
+    } else {
+      // Edit submission, no modal required.
+      this.handleCourseSubmit(submitCourseData);
+    }
+  }
 
   continueSubmit() {
     const {
@@ -156,6 +171,19 @@ class EditCoursePage extends React.Component {
     });
 
     this.handleCourseSubmit(submitCourseData);
+  }
+
+  cancelSubmit() {
+    const {
+      clearSubmitStatus,
+    } = this.props;
+
+    this.setState({
+      submitCourseData: {},
+      submitConfirmVisible: false,
+    });
+
+    return clearSubmitStatus();
   }
 
   handleCourseSubmit(courseData) {

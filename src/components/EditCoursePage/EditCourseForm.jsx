@@ -780,6 +780,9 @@ BaseEditCourseForm.propTypes = {
   courseStatuses: PropTypes.arrayOf(PropTypes.string),
   id: PropTypes.string.isRequired,
   isSubmittingForReview: PropTypes.bool,
+  courseInfo: PropTypes.shape({
+    isSubmittingEdit: PropTypes.bool,
+  }),
 };
 
 BaseEditCourseForm.defaultProps = {
@@ -790,6 +793,7 @@ BaseEditCourseForm.defaultProps = {
   courseInReview: false,
   courseStatuses: [],
   isSubmittingForReview: false,
+  courseInfo: {},
 };
 
 const EditCourseForm = compose(

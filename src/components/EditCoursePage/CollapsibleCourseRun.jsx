@@ -98,7 +98,7 @@ class CollapsibleCourseRun extends React.Component {
       courseUuid,
       stafferInfo,
       sourceInfo,
-      courseSubmitInfo
+      courseSubmitInfo,
     } = this.props;
     const {
       open,
@@ -351,6 +351,9 @@ CollapsibleCourseRun.propTypes = {
   courseInReview: PropTypes.bool,
   courseRun: PropTypes.shape({}).isRequired,
   courseSubmitting: PropTypes.bool,
+  courseSubmitInfo: PropTypes.shape({
+    isSubmittingRunReview: PropTypes.bool,
+  }),
   courseUuid: PropTypes.string.isRequired,
   isSubmittingForReview: PropTypes.bool,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
@@ -370,6 +373,9 @@ CollapsibleCourseRun.propTypes = {
 CollapsibleCourseRun.defaultProps = {
   courseInReview: false,
   courseSubmitting: false,
+  courseSubmitInfo: {
+    isSubmittingRunReview: false,
+  },
   isSubmittingForReview: false,
   owners: [],
   sourceInfo: {},
