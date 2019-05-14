@@ -7,6 +7,15 @@ import { ConnectedRouter } from 'connected-react-router';
 import { PrivateRoute } from '@edx/frontend-auth';
 import SiteFooter from '@edx/frontend-component-footer';
 
+import {
+  faFacebookSquare,
+  faTwitterSquare,
+  faYoutubeSquare,
+  faLinkedin,
+  faRedditSquare,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import './sass/App.scss';
 import history from './data/history';
 import store from './data/store';
@@ -21,6 +30,38 @@ import EditStaffer from './containers/EditStaffer';
 import apiClient from './data/apiClient';
 import EditCourse from './containers/EditCourse';
 
+const socialLinks = [
+  {
+    title: 'Facebook',
+    url: process.env.FACEBOOK_URL,
+    icon: <FontAwesomeIcon icon={faFacebookSquare} className="social-icon" size="2x" />,
+    screenReaderText: 'Like edX on Facebook',
+  },
+  {
+    title: 'Twitter',
+    url: process.env.TWITTER_URL,
+    icon: <FontAwesomeIcon icon={faTwitterSquare} className="social-icon" size="2x" />,
+    screenReaderText: 'Follow edX on Twitter',
+  },
+  {
+    title: 'Youtube',
+    url: process.env.YOU_TUBE_URL,
+    icon: <FontAwesomeIcon icon={faYoutubeSquare} className="social-icon" size="2x" />,
+    screenReaderText: 'Subscribe to the edX YouTube channel',
+  },
+  {
+    title: 'LinkedIn',
+    url: process.env.LINKED_IN_URL,
+    icon: <FontAwesomeIcon icon={faLinkedin} className="social-icon" size="2x" />,
+    screenReaderText: 'Follow edX on LinkedIn',
+  },
+  {
+    title: 'Reddit',
+    url: process.env.REDDIT_URL,
+    icon: <FontAwesomeIcon icon={faRedditSquare} className="social-icon" size="2x" />,
+    screenReaderText: 'Subscribe to the edX subreddit',
+  },
+];
 
 const App = () => (
   <Provider store={store}>
@@ -86,14 +127,17 @@ const App = () => (
           openSourceUrl={process.env.OPEN_SOURCE_URL}
           termsOfServiceUrl={process.env.TERMS_OF_SERVICE_URL}
           privacyPolicyUrl={process.env.PRIVACY_POLICY_URL}
-          facebookUrl={process.env.FACEBOOK_URL}
-          twitterUrl={process.env.TWITTER_URL}
-          youTubeUrl={process.env.YOU_TUBE_URL}
-          linkedInUrl={process.env.LINKED_IN_URL}
-          googlePlusUrl={process.env.GOOGLE_PLUS_URL}
-          redditUrl={process.env.REDDIT_URL}
           appleAppStoreUrl={process.env.APPLE_APP_STORE_URL}
           googlePlayUrl={process.env.GOOGLE_PLAY_URL}
+          socialLinks={socialLinks}
+          enterpriseMarketingLink={{
+            url: process.env.ENTERPRISE_MARKETING_URL,
+            queryParams: {
+              utm_source: process.env.ENTERPRISE_MARKETING_UTM_SOURCE,
+              utm_campaign: process.env.ENTERPRISE_MARKETING_UTM_CAMPAIGN,
+              utm_medium: process.env.ENTERPRISE_MARKETING_FOOTER_UTM_MEDIUM,
+            },
+          }}
         />
       </div>
     </ConnectedRouter>
