@@ -165,7 +165,7 @@ export class BaseEditCourseForm extends React.Component {
       this.parseOptions(courseRunOptions.content_language.choices));
 
     let submitState = 'default';
-    if (submitting || courseInfo.isSubmittingEdit) {
+    if (submitting || (courseInfo && courseInfo.isSubmittingEdit)) {
       submitState = 'pending';
     } else if (pristine) {
       // FIXME: Once this form is correctly reset to a pristine state after a successful submit,

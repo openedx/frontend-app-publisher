@@ -334,7 +334,10 @@ class CollapsibleCourseRun extends React.Component {
               pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
             }}
             state={
-              (courseSubmitting || courseSubmitInfo.isSubmittingRunReview) ? 'pending' : 'default'
+              (
+                courseSubmitting ||
+                (courseSubmitInfo && courseSubmitInfo.isSubmittingRunReview)
+              ) ? 'pending' : 'default'
             }
           />
         </ButtonToolbar>
