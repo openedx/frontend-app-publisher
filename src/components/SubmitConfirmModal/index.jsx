@@ -12,7 +12,6 @@ const SubmitConfirmModal = ({
     {...passThroughProps}
     title="Submit for Review?"
     body="You will not be able to make edits while the course is in review, which can take up to 48 hours. Confirm your edits are complete."
-    closeText="Cancel"
     buttons={[
       {
         label: 'Submit',

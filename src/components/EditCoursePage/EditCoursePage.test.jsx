@@ -1,8 +1,23 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-
+// import { MemoryRouter } from 'react-router-dom';
+// import { Provider } from 'react-redux';
+import {
+  // mount,
+  shallow,
+} from 'enzyme';
+// import { stopSubmit } from 'redux-form';
+// import configureStore from 'redux-mock-store';
 import EditCoursePage from './index';
 
+// import SubmitConfirmModal from '../SubmitConfirmModal';
+//
+// import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
+// import store from '../../data/store';
+
+// Need to mock the Editor as we don't want to test TinyMCE
+jest.mock('@tinymce/tinymce-react');
+
+// const mockStore = configureStore();
 
 describe('EditCoursePage', () => {
   const courseInfo = {
@@ -266,3 +281,55 @@ describe('EditCoursePage', () => {
     expect(component).toMatchSnapshot();
   });
 });
+
+// describe('EditCoursePage submission handling', () => {
+//   const mockValidateSubmit = jest.fn();
+//   const publishedCourseRun = {
+//     key: 'edX101+DemoX',
+//     status: PUBLISHED,
+//   };
+//   const unpublishedCourseRun = Object.assign(
+//     {},
+//     publishedCourseRun,
+//     { status: UNPUBLISHED },
+//   );
+//
+//   const getMockForm = valid => ({
+//     checkValidity: jest.fn(() => valid),
+//     reportValidity: jest.fn(() => {}),
+//   });
+//
+//   it('submit modal can be cancelled', () => {
+//     const EditCoursePageWrapper = props => (
+//       <MemoryRouter>
+//         <Provider store={mockStore()}>
+//           <EditCoursePage
+//             {...props}
+//             courseInfo={courseInfo}
+//             courseOptions={courseOptions}
+//             courseRunOptions={courseRunOptions}
+//           />
+//         </Provider>
+//       </MemoryRouter>
+//     );
+//
+//     const wrapper = mount(EditCoursePageWrapper());
+//     const mockDispatch = jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+//     const expectedAction = stopSubmit(wrapper.find(EditCoursePage).instance().getFormId());
+//
+//     wrapper.setState({
+//       submitConfirmVisible: true,
+//     });
+//
+//     const modal = wrapper.find(SubmitConfirmModal);
+//     modal.find('.btn-secondary').simulate('click');
+//
+//     expect(wrapper.find(EditCoursePage)
+//       .instance().state.isSubmittingForReview)
+//       .toEqual(false);
+//     expect(wrapper.find(EditCoursePage)
+//       .instance().state.submitCourseData)
+//       .toEqual({});
+//     expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
+//   });
+// });
