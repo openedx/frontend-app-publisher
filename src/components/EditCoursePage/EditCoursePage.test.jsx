@@ -1,10 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import {
-  mount,
-  shallow,
-} from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import EditCoursePage from './index';
 
