@@ -201,7 +201,6 @@ class EditCoursePage extends React.Component {
       editCourse,
     } = this.props;
     const { targetRun } = this.state;
-
     // Process course run info from courseData
     const modifiedCourseRuns = this.prepareSendCourseRunData(courseData, targetRun);
 

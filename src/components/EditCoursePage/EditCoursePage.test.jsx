@@ -1,23 +1,21 @@
 import React from 'react';
-// import { MemoryRouter } from 'react-router-dom';
-// import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import {
-  // mount,
+  mount,
   shallow,
 } from 'enzyme';
-// import { stopSubmit } from 'redux-form';
-// import configureStore from 'redux-mock-store';
+import configureStore from 'redux-mock-store';
 import EditCoursePage from './index';
 
-// import SubmitConfirmModal from '../SubmitConfirmModal';
-//
-// import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
-// import store from '../../data/store';
+import SubmitConfirmModal from '../SubmitConfirmModal';
+
+import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
 
 // Need to mock the Editor as we don't want to test TinyMCE
 jest.mock('@tinymce/tinymce-react');
 
-// const mockStore = configureStore();
+const mockStore = configureStore();
 
 describe('EditCoursePage', () => {
   const courseInfo = {
@@ -280,56 +278,307 @@ describe('EditCoursePage', () => {
     />);
     expect(component).toMatchSnapshot();
   });
-});
 
-// describe('EditCoursePage submission handling', () => {
-//   const mockValidateSubmit = jest.fn();
-//   const publishedCourseRun = {
-//     key: 'edX101+DemoX',
-//     status: PUBLISHED,
-//   };
-//   const unpublishedCourseRun = Object.assign(
-//     {},
-//     publishedCourseRun,
-//     { status: UNPUBLISHED },
-//   );
-//
-//   const getMockForm = valid => ({
-//     checkValidity: jest.fn(() => valid),
-//     reportValidity: jest.fn(() => {}),
-//   });
-//
-//   it('submit modal can be cancelled', () => {
-//     const EditCoursePageWrapper = props => (
-//       <MemoryRouter>
-//         <Provider store={mockStore()}>
-//           <EditCoursePage
-//             {...props}
-//             courseInfo={courseInfo}
-//             courseOptions={courseOptions}
-//             courseRunOptions={courseRunOptions}
-//           />
-//         </Provider>
-//       </MemoryRouter>
-//     );
-//
-//     const wrapper = mount(EditCoursePageWrapper());
-//     const mockDispatch = jest.spyOn(store, 'dispatch').mockImplementation(() => {});
-//     const expectedAction = stopSubmit(wrapper.find(EditCoursePage).instance().getFormId());
-//
-//     wrapper.setState({
-//       submitConfirmVisible: true,
-//     });
-//
-//     const modal = wrapper.find(SubmitConfirmModal);
-//     modal.find('.btn-secondary').simulate('click');
-//
-//     expect(wrapper.find(EditCoursePage)
-//       .instance().state.isSubmittingForReview)
-//       .toEqual(false);
-//     expect(wrapper.find(EditCoursePage)
-//       .instance().state.submitCourseData)
-//       .toEqual({});
-//     expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
-//   });
-// });
+  describe('EditCoursePage submission handling', () => {
+    const publishedCourseRun = {
+      key: 'edX101+DemoX+T1',
+      status: PUBLISHED,
+      content_language: 'en-us',
+      draft: undefined,
+      end: '2019-08-14T00:00:00Z',
+      go_live_date: '2019-05-06T00:00:00Z',
+      marketing_url: null,
+      max_effort: 123,
+      min_effort: 10,
+      pacing_type: 'instructor_paced',
+      staff: [],
+      start: '2019-05-14T00:00:00Z',
+      transcript_languages: ['en-us'],
+      weeks_to_complete: 100,
+    };
+
+    const unpublishedCourseRun = Object.assign(
+      {},
+      publishedCourseRun,
+      { key: 'edX101+DemoX+T2', status: UNPUBLISHED },
+    );
+
+    const courseData = {
+      additional_information: '<p>Stuff</p>',
+      course_runs: [unpublishedCourseRun, publishedCourseRun],
+      faq: '<p>Help?</p>',
+      full_description: '<p>Long</p>',
+      imageSrc: 'http://image.jpg',
+      learner_testimonials: '<p>I learned stuff!</p>',
+      level_type: 'Basic',
+      mode: 'verified',
+      outcome: '<p>Stuff</p>',
+      prerequisites_raw: '',
+      price: '200.00',
+      short_description: '<p>Short</p>',
+      subjectPrimary: 'basket-weaving',
+      subjectSecondary: undefined,
+      subjectTertiary: undefined,
+      syllabus_raw: null,
+      title: 'demo4004',
+      videoSrc: null,
+    };
+
+    const expectedSendCourse = {
+      additional_information: '<p>Stuff</p>',
+      draft: true,
+      entitlements: [{ mode: 'verified', price: '200.00', sku: '000000D' }],
+      faq: '<p>Help?</p>',
+      full_description: '<p>Long</p>',
+      image: 'http://image.jpg',
+      key: 'edX+Test101x',
+      learner_testimonials: '<p>I learned stuff!</p>',
+      level_type: 'Basic',
+      outcome: '<p>Stuff</p>',
+      short_description: '<p>Short</p>',
+      subjects: ['basket-weaving'],
+      title: 'demo4004',
+      uuid: '00000000-0000-0000-0000-000000000000',
+      video: { src: null },
+    };
+
+    const expectedSendCourseRuns = [
+      {
+        content_language: 'en-us',
+        draft: true,
+        end: '2019-08-14T00:00:00Z',
+        go_live_date: '2019-05-06T00:00:00Z',
+        key: 'edX101+DemoX+T2',
+        max_effort: 123,
+        min_effort: 10,
+        pacing_type: 'instructor_paced',
+        staff: [],
+        length: undefined,
+        start: '2019-05-14T00:00:00Z',
+        status: 'unpublished',
+        transcript_languages: ['en-us'],
+        weeks_to_complete: 100,
+      },
+      {
+        content_language: 'en-us',
+        draft: true,
+        end: '2019-08-14T00:00:00Z',
+        go_live_date: '2019-05-06T00:00:00Z',
+        key: 'edX101+DemoX+T1',
+        max_effort: 123,
+        min_effort: 10,
+        pacing_type: 'instructor_paced',
+        staff: [],
+        length: undefined,
+        start: '2019-05-14T00:00:00Z',
+        status: 'published',
+        transcript_languages: ['en-us'],
+        weeks_to_complete: 100,
+      },
+    ];
+
+    const mockHandleCourseSubmit = jest.fn();
+
+    beforeEach(() => {
+      mockHandleCourseSubmit.mockClear();
+      expectedSendCourseRuns[0].draft = true;
+      expectedSendCourseRuns[1].draft = true;
+      expectedSendCourse.draft = true;
+    });
+
+    it('sets state correctly and does not show modal with no target run', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      // const component = mount(EditCoursePageWrapper());
+      component.setState({
+        submitConfirmVisible: false,
+        targetRun: null,
+      });
+
+      component.instance().handleCourseSubmit = mockHandleCourseSubmit;
+      component.update();
+
+      component.instance().showModal(courseData);
+      expect(component.state().targetRun).toEqual(null);
+      expect(component.state().submitConfirmVisible).toEqual(false);
+      expect(mockHandleCourseSubmit).toHaveBeenCalled();
+    });
+
+    it('sets state correctly and does not show modal with PUBLISHED target run', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      component.setState({
+        submitConfirmVisible: false,
+        targetRun: publishedCourseRun,
+      });
+
+      component.instance().handleCourseSubmit = mockHandleCourseSubmit;
+      component.update();
+
+      component.instance().showModal(courseData);
+      expect(component.state().targetRun).toEqual(publishedCourseRun);
+      expect(component.state().submitConfirmVisible).toEqual(false);
+      expect(mockHandleCourseSubmit).toHaveBeenCalled();
+    });
+
+    it('sets state correctly and shows modal with UNPUBLISHED target run', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      component.setState({
+        submitConfirmVisible: false,
+        targetRun: unpublishedCourseRun,
+      });
+
+      component.instance().handleCourseSubmit = mockHandleCourseSubmit;
+      component.update();
+
+      component.instance().showModal(courseData);
+      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
+      expect(component.state().submitConfirmVisible).toEqual(true);
+      expect(component.state().submitCourseData).toEqual(courseData);
+      expect(mockHandleCourseSubmit).not.toHaveBeenCalled();
+    });
+
+    it('sets state correctly when modal shown and continue submit called', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={courseInfo}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+        targetRun: unpublishedCourseRun,
+      });
+
+      component.instance().handleCourseSubmit = mockHandleCourseSubmit;
+      component.update();
+
+      component.instance().showModal(courseData);
+      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
+      expect(component.state().submitConfirmVisible).toEqual(true);
+      expect(component.state().submitCourseData).toEqual(courseData);
+
+      component.instance().continueSubmit(courseData);
+      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
+      expect(component.state().submitConfirmVisible).toEqual(false);
+      expect(component.state().submitCourseData).toEqual({});
+      expect(mockHandleCourseSubmit).toHaveBeenCalled();
+    });
+
+    it('handleCourseSubmit properly prepares course data for Save Edits case', () => {
+      const mockEditCourse = jest.fn();
+      const props = {
+        editCourse: mockEditCourse,
+      };
+      const component = shallow(<EditCoursePage
+        {...props}
+        courseInfo={courseInfo}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+        targetRun: null,
+      });
+      component.update();
+
+      component.instance().handleCourseSubmit(courseData);
+      expect(component.state().targetRun).toEqual(null);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        false,
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Published Submit case', () => {
+      const mockEditCourse = jest.fn();
+      const props = {
+        editCourse: mockEditCourse,
+      };
+      const component = shallow(<EditCoursePage
+        {...props}
+        courseInfo={courseInfo}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+        targetRun: publishedCourseRun,
+      });
+      component.update();
+
+      expectedSendCourseRuns[1].draft = false;
+      expectedSendCourse.draft = false;
+
+      component.instance().handleCourseSubmit(courseData);
+      expect(component.state().targetRun).toEqual(publishedCourseRun);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        true,
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Unpublished Submits case', () => {
+      const mockEditCourse = jest.fn();
+      const props = {
+        editCourse: mockEditCourse,
+      };
+      const component = shallow(<EditCoursePage
+        {...props}
+        courseInfo={courseInfo}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+        targetRun: unpublishedCourseRun,
+      });
+      component.update();
+
+      expectedSendCourseRuns[0].draft = false;
+
+      component.instance().handleCourseSubmit(courseData);
+      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        true,
+      );
+    });
+
+    it('submit modal can be cancelled', () => {
+      const EditCoursePageWrapper = props => (
+        <MemoryRouter>
+          <Provider store={mockStore()}>
+            <EditCoursePage
+              {...props}
+              courseInfo={courseInfo}
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+            />
+          </Provider>
+        </MemoryRouter>
+      );
+
+      const wrapper = mount(EditCoursePageWrapper());
+
+      wrapper.setState({
+        submitConfirmVisible: true,
+      });
+
+      const modal = wrapper.find(SubmitConfirmModal);
+      modal.find('.btn-secondary').simulate('click');
+
+      expect(wrapper.find(EditCoursePage)
+        .instance().state.submitConfirmVisible)
+        .toEqual(false);
+      expect(wrapper.find(EditCoursePage)
+        .instance().state.submitCourseData)
+        .toEqual({});
+    });
+  });
+});
