@@ -141,6 +141,10 @@ module.exports = Merge.smart(commonConfig, {
       REDDIT_URL: null,
       APPLE_APP_STORE_URL: null,
       GOOGLE_PLAY_URL: null,
+      ENTERPRISE_MARKETING_URL: null,
+      ENTERPRISE_MARKETING_UTM_SOURCE: null,
+      ENTERPRISE_MARKETING_UTM_CAMPAIGN: null,
+      ENTERPRISE_MARKETING_FOOTER_UTM_MEDIUM: null,
     }),
   ],
 });

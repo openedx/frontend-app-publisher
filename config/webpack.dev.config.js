@@ -122,6 +122,10 @@ module.exports = Merge.smart(commonConfig, {
       REDDIT_URL: 'https://www.reddit.com',
       APPLE_APP_STORE_URL: 'https://www.apple.com/ios/app-store/',
       GOOGLE_PLAY_URL: 'https://play.google.com/store',
+      ENTERPRISE_MARKETING_URL: 'https://business.edx.org',
+      ENTERPRISE_MARKETING_UTM_SOURCE: 'publisher.edx.org',
+      ENTERPRISE_MARKETING_UTM_CAMPAIGN: 'edX.org Referral',
+      ENTERPRISE_MARKETING_FOOTER_UTM_MEDIUM: 'Footer',
     }),
     // when the --hot option is not passed in as part of the command
     // the HotModuleReplacementPlugin has to be specified in the Webpack configuration
