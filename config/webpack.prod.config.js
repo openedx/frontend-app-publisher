@@ -137,7 +137,6 @@ module.exports = Merge.smart(commonConfig, {
       TWITTER_URL: null,
       YOU_TUBE_URL: null,
       LINKED_IN_URL: null,
-      GOOGLE_PLUS_URL: null,
       REDDIT_URL: null,
       APPLE_APP_STORE_URL: null,
       GOOGLE_PLAY_URL: null,
