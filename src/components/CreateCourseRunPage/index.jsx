@@ -1,4 +1,3 @@
-import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -40,8 +39,8 @@ class CreateCourseRunPage extends React.Component {
 
     const courseRunData = {
       course: key,
-      start: moment.utc(options.start).toISOString(),
-      end: moment.utc(options.end).toISOString(),
+      start: options.start,
+      end: options.end,
     };
     return createCourseRun(uuid, courseRunData);
   }

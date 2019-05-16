@@ -1,4 +1,3 @@
-import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -26,8 +25,8 @@ class CreateCoursePage extends React.Component {
       mode: options.enrollmentTrack,
       price: options.price,
       course_run: {
-        start: moment.utc(options.start).toISOString(),
-        end: moment.utc(options.end).toISOString(),
+        start: options.start,
+        end: options.end,
       },
     };
     return this.props.createCourse(courseData);

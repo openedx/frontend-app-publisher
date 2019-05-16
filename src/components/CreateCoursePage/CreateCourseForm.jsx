@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
@@ -15,6 +16,7 @@ import {
   VERIFIED_TRACK,
 } from '../../data/constants';
 import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp } from '../../helpText';
+import { getDateString } from '../../utils/index';
 
 
 class BaseCreateCourseForm extends React.Component {
@@ -142,6 +144,8 @@ class BaseCreateCourseForm extends React.Component {
             name="start"
             type="date"
             component={RenderInputTextField}
+            format={value => getDateString(value)}
+            normalize={value => moment.utc(value).toISOString()}
             label={
               <FieldLabel
                 id="start-label"
@@ -150,12 +154,15 @@ class BaseCreateCourseForm extends React.Component {
                 helpText={startDateHelp}
               />
             }
+            placeholder="mm/dd/yyyy"
             required
           />
           <Field
             name="end"
             type="date"
             component={RenderInputTextField}
+            format={value => getDateString(value)}
+            normalize={value => moment.utc(value).toISOString()}
             label={
               <FieldLabel
                 id="end-label"
@@ -164,6 +171,7 @@ class BaseCreateCourseForm extends React.Component {
                 helpText={endDateHelp}
               />
             }
+            placeholder="mm/dd/yyyy"
             required
           />
           <ButtonToolbar>
