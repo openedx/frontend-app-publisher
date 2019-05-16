@@ -8,6 +8,7 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
+import { getDateString } from '../../utils/index';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -59,8 +60,6 @@ const formatCourseRunTitle = (courseRun) => {
     </div>
   );
 };
-
-const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 
 class CollapsibleCourseRun extends React.Component {
   constructor(props) {
@@ -121,6 +120,7 @@ class CollapsibleCourseRun extends React.Component {
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
+          normalize={value => moment.utc(value).toISOString()}
           label={
             <FieldLabel
               id={`${courseId}.start.label`}
@@ -140,8 +140,7 @@ class CollapsibleCourseRun extends React.Component {
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
-          normalize={value => moment.utc(value)
-          .toISOString()}
+          normalize={value => moment.utc(value).toISOString()}
           label={
             <FieldLabel
               id={`${courseId}.end.label`}
@@ -161,8 +160,7 @@ class CollapsibleCourseRun extends React.Component {
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
-          normalize={value => moment.utc(value)
-          .toISOString()}
+          normalize={value => moment.utc(value).toISOString()}
           label={
             <FieldLabel
               id={`${courseId}.go_live_date.label`}

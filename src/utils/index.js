@@ -1,7 +1,9 @@
+import moment from 'moment';
 import qs from 'query-string';
 
 import history from '../data/history';
 
+const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 
 const updateUrl = (queryOptions) => {
   if (!queryOptions) {
@@ -84,6 +86,7 @@ const getErrorMessages = (error) => {
 };
 
 export {
+  getDateString,
   updateUrl,
   getPageOptionsFromUrl,
   jsonDeepCopy,
