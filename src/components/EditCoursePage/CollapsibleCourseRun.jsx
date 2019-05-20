@@ -16,7 +16,7 @@ import StaffList from '../StaffList';
 import store from '../../data/store';
 import TranscriptLanguage from './TranscriptLanguage';
 
-import { IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
+import { DATE_FORMAT, IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
 import { endDateHelp, startDateHelp } from '../../helpText';
 
 
@@ -120,7 +120,7 @@ class CollapsibleCourseRun extends React.Component {
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
-          normalize={value => moment.utc(value).toISOString()}
+          normalize={value => moment.utc(value).format(DATE_FORMAT)}
           label={
             <FieldLabel
               id={`${courseId}.start.label`}
@@ -140,7 +140,7 @@ class CollapsibleCourseRun extends React.Component {
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
-          normalize={value => moment.utc(value).toISOString()}
+          normalize={value => moment.utc(value).format(DATE_FORMAT)}
           label={
             <FieldLabel
               id={`${courseId}.end.label`}
@@ -160,7 +160,7 @@ class CollapsibleCourseRun extends React.Component {
           type="date"
           component={RenderInputTextField}
           format={value => getDateString(value)}
-          normalize={value => moment.utc(value).toISOString()}
+          normalize={value => moment.utc(value).format(DATE_FORMAT)}
           label={
             <FieldLabel
               id={`${courseId}.go_live_date.label`}

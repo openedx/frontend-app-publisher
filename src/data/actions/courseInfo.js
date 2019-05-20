@@ -9,6 +9,7 @@ import {
   EDIT_COURSE_INFO,
   EDIT_COURSE_SUCCESS,
   EDIT_COURSE_FAIL,
+  CLEAR_COURSE_SAVED,
   UUID_REGEX,
   CREATE_COURSE,
   CREATE_COURSE_SUCCESS,
@@ -66,6 +67,31 @@ function editCourseSuccess(data) {
 
 function editCourseFail(error) {
   return { type: EDIT_COURSE_FAIL, error };
+}
+
+function clearCourseSaved() {
+  return { type: CLEAR_COURSE_SAVED };
+}
+
+function updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, initialCourseRuns) {
+  /*
+    We need to overwrite imageSrc and course run statuses because they are changed
+    in the backend so the form does not have the updated values by default.
+    * This will allow the form to return to being pristine after saving. *
+  */
+  return (dispatch) => {
+    // This emits a redux action called CHANGE that will update currentFormValues.imageSrc
+    change('imageSrc', initialImageSrc);
+    for (let i = 0; i < initialCourseRuns.length; i += 1) {
+      // Status is modified directly because it is not a registeredField with the form, but
+      // is still used in comparison for deciding if the form is pristine.
+      // eslint-disable-next-line no-param-reassign
+      currentFormValues.course_runs[i].status = initialCourseRuns[i].status;
+    }
+    // Need to reset courseInfo.courseSaved to false so we don't continuously
+    // overwrite the currentFormValues.
+    dispatch(clearCourseSaved());
+  };
 }
 
 function fetchCourseInfo(id) {
@@ -168,8 +194,10 @@ export {
   editCourseInfo,
   editCourseSuccess,
   editCourseFail,
+  clearCourseSaved,
   fetchCourseInfo,
   createCourseRun,
   createCourse,
   editCourse,
+  updateFormValuesAfterSave,
 };

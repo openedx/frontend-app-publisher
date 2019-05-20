@@ -142,6 +142,7 @@ class EditCoursePage extends React.Component {
       video: { src: courseData.videoSrc },
     };
   }
+
   showModal(submitCourseData) {
     const {
       targetRun,
@@ -257,7 +258,7 @@ class EditCoursePage extends React.Component {
       submitConfirmVisible,
       targetRun,
     } = this.state;
-    const currentValues = formValues(this.getFormId());
+    const currentFormValues = formValues(this.getFormId());
 
     const courseStatuses = [];
     const courseInReview = course_runs && course_runs.some(courseRun =>
@@ -283,12 +284,12 @@ class EditCoursePage extends React.Component {
       start: courseRun.start,
       end: courseRun.end,
       go_live_date: courseRun.go_live_date,
-      min_effort: courseRun.min_effort,
-      max_effort: courseRun.max_effort,
+      min_effort: String(courseRun.min_effort),
+      max_effort: String(courseRun.max_effort),
       pacing_type: courseRun.pacing_type,
       content_language: courseRun.content_language,
       transcript_languages: courseRun.transcript_languages,
-      weeks_to_complete: courseRun.weeks_to_complete,
+      weeks_to_complete: String(courseRun.weeks_to_complete),
       staff: courseRun.staff,
       status: courseRun.status,
       draft: courseRun.draft,
@@ -382,7 +383,7 @@ class EditCoursePage extends React.Component {
                 title={title}
                 courseRuns={minimalCourseRuns}
                 uuid={uuid}
-                currentValues={currentValues}
+                currentFormValues={currentFormValues}
                 courseInfo={courseInfo}
                 courseInReview={courseInReview}
                 courseStatuses={courseStatuses}

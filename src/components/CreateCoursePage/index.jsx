@@ -87,7 +87,7 @@ class CreateCoursePage extends React.Component {
                 id="create-course-form"
                 onSubmit={this.handleCourseCreate}
                 initialValues={initialValues}
-                currentValues={formValues}
+                currentFormValues={formValues}
                 organizations={organizations}
                 isCreating={courseInfo.isCreating}
               />
