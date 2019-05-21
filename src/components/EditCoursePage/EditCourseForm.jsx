@@ -187,9 +187,7 @@ export class BaseEditCourseForm extends React.Component {
     if (submitting || (courseInfo && courseInfo.isSubmittingEdit)) {
       submitState = 'pending';
     } else if (pristine) {
-      // FIXME: Once this form is correctly reset to a pristine state after a successful submit,
-      //        re-enable this code.
-      // submitState = 'complete';
+      submitState = 'complete';
     }
 
     languageOptions.unshift({ label: '--', value: '' });
