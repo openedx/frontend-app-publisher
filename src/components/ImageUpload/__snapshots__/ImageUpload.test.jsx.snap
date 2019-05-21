@@ -1,18 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ImageUpload shows an image upload with no prior image 1`] = `
+exports[`ImageUpload shows an image upload and an error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ImageUpload
     className=""
-    id="image-no-prior"
+    id="image-with-error"
     input={
       Object {
+        "name": "imageSrc",
         "onChange": [Function],
         "value": null,
       }
     }
-    label="Course Image: *"
+    label="Image Error Test"
+    meta={
+      Object {
+        "error": "Required",
+        "submitFailed": true,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -28,76 +35,376 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <div
+        name="imageSrc"
+        tabIndex={-1}
+      >
+        <label
+          className="w-100 p-0"
+          htmlFor="image-with-error"
+        >
+          Image Error Test
+        </label>
+          
+        <StatusAlert
+          alertType="danger"
+          className=""
+          dismissible={false}
+          iconClassNames={Array []}
+          message="Required"
+          onClose={[Function]}
+          title={null}
+        />
+        <img
+          alt=""
+          className="uploaded-image"
+          src={null}
+        />
+        <input
+          accept="image/*"
+          id="image-with-error"
+          onChange={[Function]}
+          type="file"
+        />
+      </div>,
+      "className": "form-group",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label
+            className="w-100 p-0"
+            htmlFor="image-with-error"
+          >
+            Image Error Test
+          </label>,
+          "  ",
+          <StatusAlert
+            alertType="danger"
+            className=""
+            dismissible={false}
+            iconClassNames={Array []}
+            message="Required"
+            onClose={[Function]}
+            title={null}
+          />,
+          <img
+            alt=""
+            className="uploaded-image"
+            src={null}
+          />,
+          <input
+            accept="image/*"
+            id="image-with-error"
+            onChange={[Function]}
+            type="file"
+          />,
+        ],
+        "name": "imageSrc",
+        "tabIndex": -1,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Image Error Test",
+            "className": "w-100 p-0",
+            "htmlFor": "image-with-error",
+          },
+          "ref": null,
+          "rendered": "Image Error Test",
+          "type": "label",
+        },
+        "  ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alertType": "danger",
+            "className": "",
+            "dismissible": false,
+            "iconClassNames": Array [],
+            "message": "Required",
+            "onClose": [Function],
+            "title": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "",
+            "className": "uploaded-image",
+            "src": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "accept": "image/*",
+            "id": "image-with-error",
+            "onChange": [Function],
+            "type": "file",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          name="imageSrc"
+          tabIndex={-1}
+        >
+          <label
+            className="w-100 p-0"
+            htmlFor="image-with-error"
+          >
+            Image Error Test
+          </label>
+            
+          <StatusAlert
+            alertType="danger"
+            className=""
+            dismissible={false}
+            iconClassNames={Array []}
+            message="Required"
+            onClose={[Function]}
+            title={null}
+          />
+          <img
+            alt=""
+            className="uploaded-image"
+            src={null}
+          />
+          <input
+            accept="image/*"
+            id="image-with-error"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>,
+        "className": "form-group",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="w-100 p-0"
+              htmlFor="image-with-error"
+            >
+              Image Error Test
+            </label>,
+            "  ",
+            <StatusAlert
+              alertType="danger"
+              className=""
+              dismissible={false}
+              iconClassNames={Array []}
+              message="Required"
+              onClose={[Function]}
+              title={null}
+            />,
+            <img
+              alt=""
+              className="uploaded-image"
+              src={null}
+            />,
+            <input
+              accept="image/*"
+              id="image-with-error"
+              onChange={[Function]}
+              type="file"
+            />,
+          ],
+          "name": "imageSrc",
+          "tabIndex": -1,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Image Error Test",
+              "className": "w-100 p-0",
+              "htmlFor": "image-with-error",
+            },
+            "ref": null,
+            "rendered": "Image Error Test",
+            "type": "label",
+          },
+          "  ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "alertType": "danger",
+              "className": "",
+              "dismissible": false,
+              "iconClassNames": Array [],
+              "message": "Required",
+              "onClose": [Function],
+              "title": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "",
+              "className": "uploaded-image",
+              "src": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "accept": "image/*",
+              "id": "image-with-error",
+              "onChange": [Function],
+              "type": "file",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`ImageUpload shows an image upload with no prior image 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ImageUpload
+    className=""
+    id="image-no-prior"
+    input={
+      Object {
+        "name": "imageSrc",
+        "onChange": [Function],
+        "value": null,
+      }
+    }
+    label="Course Image: *"
+    meta={
+      Object {
+        "error": null,
+        "submitFailed": false,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        name="imageSrc"
+        tabIndex={-1}
+      >
         <label
           className="w-100 p-0"
           htmlFor="image-no-prior"
         >
           Course Image: *
-        </label>,
-        "  ",
+        </label>
+          
         <img
           alt=""
           className="uploaded-image"
           src={null}
-        />,
+        />
         <input
           accept="image/*"
           id="image-no-prior"
           onChange={[Function]}
           type="file"
-        />,
-      ],
+        />
+      </div>,
       "className": "form-group",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Course Image: *",
-          "className": "w-100 p-0",
-          "htmlFor": "image-no-prior",
-        },
-        "ref": null,
-        "rendered": "Course Image: *",
-        "type": "label",
-      },
-      "  ",
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "alt": "",
-          "className": "uploaded-image",
-          "src": null,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "accept": "image/*",
-          "id": "image-no-prior",
-          "onChange": [Function],
-          "type": "file",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -110,6 +417,7 @@ ShallowWrapper {
             Course Image: *
           </label>,
           "  ",
+          false,
           <img
             alt=""
             className="uploaded-image"
@@ -122,7 +430,8 @@ ShallowWrapper {
             type="file"
           />,
         ],
-        "className": "form-group",
+        "name": "imageSrc",
+        "tabIndex": -1,
       },
       "ref": null,
       "rendered": Array [
@@ -140,6 +449,7 @@ ShallowWrapper {
           "type": "label",
         },
         "  ",
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -168,6 +478,118 @@ ShallowWrapper {
           "type": "input",
         },
       ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          name="imageSrc"
+          tabIndex={-1}
+        >
+          <label
+            className="w-100 p-0"
+            htmlFor="image-no-prior"
+          >
+            Course Image: *
+          </label>
+            
+          <img
+            alt=""
+            className="uploaded-image"
+            src={null}
+          />
+          <input
+            accept="image/*"
+            id="image-no-prior"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>,
+        "className": "form-group",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="w-100 p-0"
+              htmlFor="image-no-prior"
+            >
+              Course Image: *
+            </label>,
+            "  ",
+            false,
+            <img
+              alt=""
+              className="uploaded-image"
+              src={null}
+            />,
+            <input
+              accept="image/*"
+              id="image-no-prior"
+              onChange={[Function]}
+              type="file"
+            />,
+          ],
+          "name": "imageSrc",
+          "tabIndex": -1,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Course Image: *",
+              "className": "w-100 p-0",
+              "htmlFor": "image-no-prior",
+            },
+            "ref": null,
+            "rendered": "Course Image: *",
+            "type": "label",
+          },
+          "  ",
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "",
+              "className": "uploaded-image",
+              "src": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "accept": "image/*",
+              "id": "image-no-prior",
+              "onChange": [Function],
+              "type": "file",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],
@@ -206,6 +628,7 @@ ShallowWrapper {
     id="image-with-prior"
     input={
       Object {
+        "name": "imageSrc",
         "onChange": [Function],
         "value": "http://www.image.uploaded.source/view/image",
       }
@@ -214,6 +637,12 @@ ShallowWrapper {
       <strong>
         Course Image: *
       </strong>
+    }
+    meta={
+      Object {
+        "error": null,
+        "submitFailed": false,
+      }
     }
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -230,7 +659,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <div
+        name="imageSrc"
+        tabIndex={-1}
+      >
         <label
           className="w-100 p-0"
           htmlFor="image-with-prior"
@@ -238,82 +670,24 @@ ShallowWrapper {
           <strong>
             Course Image: *
           </strong>
-        </label>,
-        "  ",
+        </label>
+          
         <img
           alt=""
           className="uploaded-image"
           src="http://www.image.uploaded.source/view/image"
-        />,
+        />
         <input
           accept="image/*"
           id="image-with-prior"
           onChange={[Function]}
           type="file"
-        />,
-      ],
+        />
+      </div>,
       "className": "form-group",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <strong>
-            Course Image: *
-          </strong>,
-          "className": "w-100 p-0",
-          "htmlFor": "image-with-prior",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Course Image: *",
-          },
-          "ref": null,
-          "rendered": "Course Image: *",
-          "type": "strong",
-        },
-        "type": "label",
-      },
-      "  ",
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "alt": "",
-          "className": "uploaded-image",
-          "src": "http://www.image.uploaded.source/view/image",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "accept": "image/*",
-          "id": "image-with-prior",
-          "onChange": [Function],
-          "type": "file",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -328,6 +702,7 @@ ShallowWrapper {
             </strong>
           </label>,
           "  ",
+          false,
           <img
             alt=""
             className="uploaded-image"
@@ -340,7 +715,8 @@ ShallowWrapper {
             type="file"
           />,
         ],
-        "className": "form-group",
+        "name": "imageSrc",
+        "tabIndex": -1,
       },
       "ref": null,
       "rendered": Array [
@@ -370,6 +746,7 @@ ShallowWrapper {
           "type": "label",
         },
         "  ",
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -398,6 +775,134 @@ ShallowWrapper {
           "type": "input",
         },
       ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          name="imageSrc"
+          tabIndex={-1}
+        >
+          <label
+            className="w-100 p-0"
+            htmlFor="image-with-prior"
+          >
+            <strong>
+              Course Image: *
+            </strong>
+          </label>
+            
+          <img
+            alt=""
+            className="uploaded-image"
+            src="http://www.image.uploaded.source/view/image"
+          />
+          <input
+            accept="image/*"
+            id="image-with-prior"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>,
+        "className": "form-group",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="w-100 p-0"
+              htmlFor="image-with-prior"
+            >
+              <strong>
+                Course Image: *
+              </strong>
+            </label>,
+            "  ",
+            false,
+            <img
+              alt=""
+              className="uploaded-image"
+              src="http://www.image.uploaded.source/view/image"
+            />,
+            <input
+              accept="image/*"
+              id="image-with-prior"
+              onChange={[Function]}
+              type="file"
+            />,
+          ],
+          "name": "imageSrc",
+          "tabIndex": -1,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <strong>
+                Course Image: *
+              </strong>,
+              "className": "w-100 p-0",
+              "htmlFor": "image-with-prior",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Course Image: *",
+              },
+              "ref": null,
+              "rendered": "Course Image: *",
+              "type": "strong",
+            },
+            "type": "label",
+          },
+          "  ",
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "",
+              "className": "uploaded-image",
+              "src": "http://www.image.uploaded.source/view/image",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "accept": "image/*",
+              "id": "image-with-prior",
+              "onChange": [Function],
+              "type": "file",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],

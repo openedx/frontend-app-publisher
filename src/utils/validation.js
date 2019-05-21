@@ -76,7 +76,7 @@ const editCourseValidate = (values, props) => {
   const errors = {};
 
   // Validate all the fields required for submission at the top level of the form
-  const courseRequiredFields = ['short_description', 'full_description', 'outcome'];
+  const courseRequiredFields = ['short_description', 'full_description', 'outcome', 'imageSrc'];
   courseRequiredFields.forEach((fieldName) => {
     const value = values[fieldName];
     if (!value) {

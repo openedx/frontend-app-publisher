@@ -107,6 +107,7 @@ describe('editCourseValidate', () => {
       full_description: undefined,
       outcome: 'Outcome',
       course_runs: [],
+      imageSrc: 'base64;encodedimage',
     };
 
     const expectedErrors = {
@@ -117,11 +118,32 @@ describe('editCourseValidate', () => {
     expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual(expectedErrors);
   });
 
+  it('returns error for missing image fields', () => {
+    const values = {
+      short_description: 'Short',
+      full_description: 'Full',
+      outcome: 'Outcome',
+      imageSrc: null,
+      course_runs: [
+        {
+          key: 'NonSubmittingTestRun',
+        },
+      ],
+    };
+
+    const expectedErrors = {
+      imageSrc: requiredMessage,
+      course_runs: [null],
+    };
+    expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual(expectedErrors);
+  });
+
   it('does not return errors on course runs that are not the submitting run', () => {
     const values = {
       short_description: 'Short',
       full_description: 'Full',
       outcome: 'Outcome',
+      imageSrc: 'base64;encodedimage',
       course_runs: [
         {
           key: 'NonSubmittingTestRun',
@@ -139,6 +161,7 @@ describe('editCourseValidate', () => {
       short_description: 'Short',
       full_description: 'Full',
       outcome: 'Outcome',
+      imageSrc: 'base64;encodedimage',
       course_runs: [
         {
           key: 'NonSubmittingTestRun',
@@ -171,6 +194,7 @@ describe('editCourseValidate', () => {
       short_description: 'Short',
       full_description: 'Full',
       outcome: 'Outcome',
+      imageSrc: 'base64;encodedimage',
       course_runs: [
         {
           key: 'NonSubmittingTestRun',
