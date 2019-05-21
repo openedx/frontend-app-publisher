@@ -11,6 +11,10 @@ class CreateCourseRunPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleCourseCreate = this.handleCourseCreate.bind(this);
+
+    if (props.courseInfo.error) {
+      props.clearCourseInfoErrors();
+    }
   }
 
   componentDidMount() {
@@ -100,6 +104,7 @@ CreateCourseRunPage.defaultProps = {
   fetchCourseInfo: () => null,
   courseInfo: null,
   createCourseRun: () => {},
+  clearCourseInfoErrors: () => null,
 };
 
 CreateCourseRunPage.propTypes = {
@@ -114,6 +119,7 @@ CreateCourseRunPage.propTypes = {
   }),
   id: PropTypes.string.isRequired,
   createCourseRun: PropTypes.func,
+  clearCourseInfoErrors: PropTypes.func,
 };
 
 export default CreateCourseRunPage;

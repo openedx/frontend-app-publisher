@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 
 import CreateCourseRunPage from '../../components/CreateCourseRunPage';
-import { createCourseRun, fetchCourseInfo } from '../../data/actions/courseInfo';
+import {
+  createCourseRun,
+  fetchCourseInfo,
+  clearCourseInfoErrors,
+} from '../../data/actions/courseInfo';
 
 const mapStateToProps = state => ({
   courseInfo: state.courseInfo,
@@ -10,6 +14,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchCourseInfo,
   createCourseRun,
+  clearCourseInfoErrors,
 };
 
 export default connect(

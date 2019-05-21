@@ -2,6 +2,7 @@ import {
   REQUEST_COURSE_INFO,
   REQUEST_COURSE_INFO_SUCCESS,
   REQUEST_COURSE_INFO_FAIL,
+  CLEAR_COURSE_INFO_ERRORS,
   CREATE_COURSE,
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
@@ -42,6 +43,10 @@ function courseInfo(state = initialState, action) {
       return Object.assign({}, state, {
         data: {},
         isFetching: true,
+        error: null,
+      });
+    case CLEAR_COURSE_INFO_ERRORS:
+      return Object.assign({}, state, {
         error: null,
       });
     case CREATE_COURSE:

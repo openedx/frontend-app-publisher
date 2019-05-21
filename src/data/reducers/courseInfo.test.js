@@ -73,6 +73,19 @@ describe('courseInfo reducer', () => {
       });
   });
 
+  it('course info clear works', () => {
+    initialState.error = 'error';
+    expect(courseInfo(initialState, actions.clearCourseInfoErrors()))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
+        isSubmittingEdit: false,
+        error: null,
+        courseSaved: false,
+      });
+  });
+
   it('course create request works', () => {
     expect(courseInfo(initialState, actions.createNewCourse(courseData)))
       .toEqual({
