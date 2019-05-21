@@ -11,6 +11,7 @@ import {
   EDIT_COURSE_INFO,
   EDIT_COURSE_SUCCESS,
   EDIT_COURSE_FAIL,
+  CLEAR_COURSE_SAVED,
 } from '../constants/courseInfo';
 
 
@@ -20,6 +21,7 @@ const initialState = {
   isCreating: false,
   isSubmittingEdit: false,
   error: null,
+  courseSaved: false,
 };
 
 function courseInfo(state = initialState, action) {
@@ -82,11 +84,16 @@ function courseInfo(state = initialState, action) {
         data: action.data,
         isSubmittingEdit: false,
         error: null,
+        courseSaved: true,
       });
     case EDIT_COURSE_FAIL:
       return Object.assign({}, state, {
         isSubmittingEdit: false,
         error: action.error,
+      });
+    case CLEAR_COURSE_SAVED:
+      return Object.assign({}, state, {
+        courseSaved: false,
       });
     default:
       return state;

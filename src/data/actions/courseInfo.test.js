@@ -17,6 +17,7 @@ import {
   editCourseInfo,
   editCourseSuccess,
   editCourseFail,
+  clearCourseSaved,
 } from './courseInfo';
 import * as types from '../constants/courseInfo';
 
@@ -175,6 +176,11 @@ describe('courseInfo edit course actions', () => {
     };
     expect(editCourseFail(error)).toEqual(expectedAction);
   });
+
+  it('should call clear course saved', () => {
+    const expectedAction = { type: types.CLEAR_COURSE_SAVED };
+    expect(clearCourseSaved()).toEqual(expectedAction);
+  });
 });
 
 describe('courseInfo create course run actions', () => {
@@ -186,6 +192,7 @@ describe('courseInfo create course run actions', () => {
     };
     expect(createNewCourseRun(data)).toEqual(expectedAction);
   });
+
   it('should succeed creating new course run', () => {
     const data = { name: 'test course data' };
     const expectedAction = {
@@ -194,6 +201,7 @@ describe('courseInfo create course run actions', () => {
     };
     expect(createCourseRunSuccess(data)).toEqual(expectedAction);
   });
+
   it('should fail creating new course run', () => {
     const error = 'Test error';
     const expectedAction = {

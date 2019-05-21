@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { getFormValues } from 'redux-form';
 
 import EditCoursePage from '../../components/EditCoursePage';
-import { editCourse, fetchCourseInfo } from '../../data/actions/courseInfo';
+import { updateFormValuesAfterSave, editCourse, fetchCourseInfo } from '../../data/actions/courseInfo';
 import { clearSubmitStatus } from '../../data/actions/courseSubmitInfo';
 import { fetchCourseOptions } from '../../data/actions/courseOptions';
 import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
@@ -24,6 +24,7 @@ const mapDispatchToProps = {
   fetchCourseRunOptions,
   editCourse,
   clearSubmitStatus,
+  updateFormValuesAfterSave,
 };
 
 const mergeProps = (stateProps, actionProps, { id }) => ({
@@ -34,6 +35,13 @@ const mergeProps = (stateProps, actionProps, { id }) => ({
   editCourse: (courseData, courseRunData, submittingRunForReview) => (
     actionProps.editCourse(courseData, courseRunData, submittingRunForReview)),
   clearSubmitStatus: () => (actionProps.clearSubmitStatus()),
+  updateFormValuesAfterSave: (change, currentFormValues, initialImageSrc, initialCourseRuns) => (
+    actionProps.updateFormValuesAfterSave(
+      change,
+      currentFormValues,
+      initialImageSrc,
+      initialCourseRuns,
+    )),
 });
 
 export default connect(

@@ -4,6 +4,7 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseEditCourseForm
+    change={[Function]}
     courseInReview={false}
     courseInfo={Object {}}
     courseOptions={
@@ -642,7 +643,7 @@ ShallowWrapper {
         "unpublished",
       ]
     }
-    currentValues={
+    currentFormValues={
       Object {
         "additional_information": "additional info",
         "faq": "frequently asked questions",
@@ -672,11 +673,18 @@ ShallowWrapper {
     }
     handleSubmit={[Function]}
     id="edit-course-form"
+    initialValues={
+      Object {
+        "course_runs": Array [],
+        "imageSrc": "",
+      }
+    }
     isSubmittingForReview={true}
     number="Test101x"
     pristine={true}
     submitting={false}
     title="Test Title"
+    updateFormValuesAfterSave={[Function]}
     uuid="11111111-1111-1111-1111-111111111111"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -708,7 +716,7 @@ ShallowWrapper {
         />
         <r
           iconId=""
-          isOpen={true}
+          isOpen={false}
           onToggle={[Function]}
           title={
             <React.Fragment>
@@ -1656,6 +1664,7 @@ ShallowWrapper {
           text="Course runs"
         />
         <FieldArray
+          change={[Function]}
           component={[Function]}
           courseInReview={false}
           courseInfo={Object {}}
@@ -2297,7 +2306,7 @@ ShallowWrapper {
           }
           courseSubmitting={false}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          currentValues={
+          currentFormValues={
             Object {
               "additional_information": "additional info",
               "faq": "frequently asked questions",
@@ -2328,6 +2337,12 @@ ShallowWrapper {
           formId="edit-course-form"
           handleSubmit={[Function]}
           id="edit-course-form"
+          initialValues={
+            Object {
+              "course_runs": Array [],
+              "imageSrc": "",
+            }
+          }
           isSubmittingForReview={true}
           languageOptions={
             Array [
@@ -2902,6 +2917,7 @@ ShallowWrapper {
           pristine={true}
           submitting={false}
           title="Test Title"
+          updateFormValuesAfterSave={[Function]}
           uuid="11111111-1111-1111-1111-111111111111"
         />
         <Link
@@ -2957,7 +2973,7 @@ ShallowWrapper {
           />,
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -3905,6 +3921,7 @@ ShallowWrapper {
             text="Course runs"
           />,
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -4546,7 +4563,7 @@ ShallowWrapper {
             }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={
+            currentFormValues={
               Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
@@ -4577,6 +4594,12 @@ ShallowWrapper {
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
+            initialValues={
+              Object {
+                "course_runs": Array [],
+                "imageSrc": "",
+              }
+            }
             isSubmittingForReview={true}
             languageOptions={
               Array [
@@ -5151,6 +5174,7 @@ ShallowWrapper {
             pristine={true}
             submitting={false}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />,
           <Link
@@ -6140,7 +6164,7 @@ ShallowWrapper {
             "expandedTitle": undefined,
             "iconId": "",
             "isCollapsible": undefined,
-            "isOpen": true,
+            "isOpen": false,
             "onToggle": [Function],
             "title": <React.Fragment>
               Course: Test Title
@@ -7200,6 +7224,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "change": [Function],
             "component": [Function],
             "courseInReview": false,
             "courseInfo": Object {},
@@ -7835,7 +7860,7 @@ ShallowWrapper {
             ],
             "courseSubmitting": false,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "currentValues": Object {
+            "currentFormValues": Object {
               "additional_information": "additional info",
               "faq": "frequently asked questions",
               "full_description": "long desc",
@@ -7862,6 +7887,10 @@ ShallowWrapper {
             "formId": "edit-course-form",
             "handleSubmit": [Function],
             "id": "edit-course-form",
+            "initialValues": Object {
+              "course_runs": Array [],
+              "imageSrc": "",
+            },
             "isSubmittingForReview": true,
             "languageOptions": Array [
               Object {
@@ -8432,6 +8461,7 @@ ShallowWrapper {
             "pristine": true,
             "submitting": false,
             "title": "Test Title",
+            "updateFormValuesAfterSave": [Function],
             "uuid": "11111111-1111-1111-1111-111111111111",
           },
           "ref": null,
@@ -8559,7 +8589,7 @@ ShallowWrapper {
           />
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -9507,6 +9537,7 @@ ShallowWrapper {
             text="Course runs"
           />
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -10148,7 +10179,7 @@ ShallowWrapper {
             }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={
+            currentFormValues={
               Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
@@ -10179,6 +10210,12 @@ ShallowWrapper {
             formId="edit-course-form"
             handleSubmit={[Function]}
             id="edit-course-form"
+            initialValues={
+              Object {
+                "course_runs": Array [],
+                "imageSrc": "",
+              }
+            }
             isSubmittingForReview={true}
             languageOptions={
               Array [
@@ -10753,6 +10790,7 @@ ShallowWrapper {
             pristine={true}
             submitting={false}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />
           <Link
@@ -10808,7 +10846,7 @@ ShallowWrapper {
             />,
             <r
               iconId=""
-              isOpen={true}
+              isOpen={false}
               onToggle={[Function]}
               title={
                 <React.Fragment>
@@ -11756,6 +11794,7 @@ ShallowWrapper {
               text="Course runs"
             />,
             <FieldArray
+              change={[Function]}
               component={[Function]}
               courseInReview={false}
               courseInfo={Object {}}
@@ -12397,7 +12436,7 @@ ShallowWrapper {
               }
               courseSubmitting={false}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              currentValues={
+              currentFormValues={
                 Object {
                   "additional_information": "additional info",
                   "faq": "frequently asked questions",
@@ -12428,6 +12467,12 @@ ShallowWrapper {
               formId="edit-course-form"
               handleSubmit={[Function]}
               id="edit-course-form"
+              initialValues={
+                Object {
+                  "course_runs": Array [],
+                  "imageSrc": "",
+                }
+              }
               isSubmittingForReview={true}
               languageOptions={
                 Array [
@@ -13002,6 +13047,7 @@ ShallowWrapper {
               pristine={true}
               submitting={false}
               title="Test Title"
+              updateFormValuesAfterSave={[Function]}
               uuid="11111111-1111-1111-1111-111111111111"
             />,
             <Link
@@ -13991,7 +14037,7 @@ ShallowWrapper {
               "expandedTitle": undefined,
               "iconId": "",
               "isCollapsible": undefined,
-              "isOpen": true,
+              "isOpen": false,
               "onToggle": [Function],
               "title": <React.Fragment>
                 Course: Test Title
@@ -15051,6 +15097,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "change": [Function],
               "component": [Function],
               "courseInReview": false,
               "courseInfo": Object {},
@@ -15686,7 +15733,7 @@ ShallowWrapper {
               ],
               "courseSubmitting": false,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "currentValues": Object {
+              "currentFormValues": Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
                 "full_description": "long desc",
@@ -15713,6 +15760,10 @@ ShallowWrapper {
               "formId": "edit-course-form",
               "handleSubmit": [Function],
               "id": "edit-course-form",
+              "initialValues": Object {
+                "course_runs": Array [],
+                "imageSrc": "",
+              },
               "isSubmittingForReview": true,
               "languageOptions": Array [
                 Object {
@@ -16283,6 +16334,7 @@ ShallowWrapper {
               "pristine": true,
               "submitting": false,
               "title": "Test Title",
+              "updateFormValuesAfterSave": [Function],
               "uuid": "11111111-1111-1111-1111-111111111111",
             },
             "ref": null,
@@ -16421,6 +16473,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseEditCourseForm
+    change={[Function]}
     courseInReview={false}
     courseInfo={Object {}}
     courseOptions={
@@ -17059,7 +17112,7 @@ ShallowWrapper {
         "unpublished",
       ]
     }
-    currentValues={
+    currentFormValues={
       Object {
         "additional_information": "additional info",
         "faq": "frequently asked questions",
@@ -17116,6 +17169,7 @@ ShallowWrapper {
     pristine={false}
     submitting={true}
     title="Test Title"
+    updateFormValuesAfterSave={[Function]}
     uuid="11111111-1111-1111-1111-111111111111"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -17147,7 +17201,7 @@ ShallowWrapper {
         />
         <r
           iconId=""
-          isOpen={true}
+          isOpen={false}
           onToggle={[Function]}
           title={
             <React.Fragment>
@@ -18095,6 +18149,7 @@ ShallowWrapper {
           text="Course runs"
         />
         <FieldArray
+          change={[Function]}
           component={[Function]}
           courseInReview={false}
           courseInfo={Object {}}
@@ -18736,7 +18791,7 @@ ShallowWrapper {
           }
           courseSubmitting={true}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          currentValues={
+          currentFormValues={
             Object {
               "additional_information": "additional info",
               "faq": "frequently asked questions",
@@ -19363,6 +19418,7 @@ ShallowWrapper {
           pristine={false}
           submitting={true}
           title="Test Title"
+          updateFormValuesAfterSave={[Function]}
           uuid="11111111-1111-1111-1111-111111111111"
         />
         <React.Fragment>
@@ -19415,7 +19471,7 @@ ShallowWrapper {
           />,
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -20363,6 +20419,7 @@ ShallowWrapper {
             text="Course runs"
           />,
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -21004,7 +21061,7 @@ ShallowWrapper {
             }
             courseSubmitting={true}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={
+            currentFormValues={
               Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
@@ -21631,6 +21688,7 @@ ShallowWrapper {
             pristine={false}
             submitting={true}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />,
           <React.Fragment>
@@ -22617,7 +22675,7 @@ ShallowWrapper {
             "expandedTitle": undefined,
             "iconId": "",
             "isCollapsible": undefined,
-            "isOpen": true,
+            "isOpen": false,
             "onToggle": [Function],
             "title": <React.Fragment>
               Course: Test Title
@@ -23677,6 +23735,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "change": [Function],
             "component": [Function],
             "courseInReview": false,
             "courseInfo": Object {},
@@ -24312,7 +24371,7 @@ ShallowWrapper {
             ],
             "courseSubmitting": true,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "currentValues": Object {
+            "currentFormValues": Object {
               "additional_information": "additional info",
               "faq": "frequently asked questions",
               "full_description": "long desc",
@@ -24929,6 +24988,7 @@ ShallowWrapper {
             "pristine": false,
             "submitting": true,
             "title": "Test Title",
+            "updateFormValuesAfterSave": [Function],
             "uuid": "11111111-1111-1111-1111-111111111111",
           },
           "ref": null,
@@ -25054,7 +25114,7 @@ ShallowWrapper {
           />
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -26002,6 +26062,7 @@ ShallowWrapper {
             text="Course runs"
           />
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -26643,7 +26704,7 @@ ShallowWrapper {
             }
             courseSubmitting={true}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={
+            currentFormValues={
               Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
@@ -27270,6 +27331,7 @@ ShallowWrapper {
             pristine={false}
             submitting={true}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />
           <React.Fragment>
@@ -27322,7 +27384,7 @@ ShallowWrapper {
             />,
             <r
               iconId=""
-              isOpen={true}
+              isOpen={false}
               onToggle={[Function]}
               title={
                 <React.Fragment>
@@ -28270,6 +28332,7 @@ ShallowWrapper {
               text="Course runs"
             />,
             <FieldArray
+              change={[Function]}
               component={[Function]}
               courseInReview={false}
               courseInfo={Object {}}
@@ -28911,7 +28974,7 @@ ShallowWrapper {
               }
               courseSubmitting={true}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              currentValues={
+              currentFormValues={
                 Object {
                   "additional_information": "additional info",
                   "faq": "frequently asked questions",
@@ -29538,6 +29601,7 @@ ShallowWrapper {
               pristine={false}
               submitting={true}
               title="Test Title"
+              updateFormValuesAfterSave={[Function]}
               uuid="11111111-1111-1111-1111-111111111111"
             />,
             <React.Fragment>
@@ -30524,7 +30588,7 @@ ShallowWrapper {
               "expandedTitle": undefined,
               "iconId": "",
               "isCollapsible": undefined,
-              "isOpen": true,
+              "isOpen": false,
               "onToggle": [Function],
               "title": <React.Fragment>
                 Course: Test Title
@@ -31584,6 +31648,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "change": [Function],
               "component": [Function],
               "courseInReview": false,
               "courseInfo": Object {},
@@ -32219,7 +32284,7 @@ ShallowWrapper {
               ],
               "courseSubmitting": true,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "currentValues": Object {
+              "currentFormValues": Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
                 "full_description": "long desc",
@@ -32836,6 +32901,7 @@ ShallowWrapper {
               "pristine": false,
               "submitting": true,
               "title": "Test Title",
+              "updateFormValuesAfterSave": [Function],
               "uuid": "11111111-1111-1111-1111-111111111111",
             },
             "ref": null,
@@ -32972,6 +33038,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present and ver
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseEditCourseForm
+    change={[Function]}
     courseInReview={false}
     courseInfo={Object {}}
     courseOptions={
@@ -33610,7 +33677,7 @@ ShallowWrapper {
         "unpublished",
       ]
     }
-    currentValues={
+    currentFormValues={
       Object {
         "additional_information": "additional info",
         "faq": "frequently asked questions",
@@ -33667,6 +33734,7 @@ ShallowWrapper {
     pristine={true}
     submitting={false}
     title="Test Title"
+    updateFormValuesAfterSave={[Function]}
     uuid="11111111-1111-1111-1111-111111111111"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -33698,7 +33766,7 @@ ShallowWrapper {
         />
         <r
           iconId=""
-          isOpen={true}
+          isOpen={false}
           onToggle={[Function]}
           title={
             <React.Fragment>
@@ -34646,6 +34714,7 @@ ShallowWrapper {
           text="Course runs"
         />
         <FieldArray
+          change={[Function]}
           component={[Function]}
           courseInReview={false}
           courseInfo={Object {}}
@@ -35287,7 +35356,7 @@ ShallowWrapper {
           }
           courseSubmitting={false}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          currentValues={
+          currentFormValues={
             Object {
               "additional_information": "additional info",
               "faq": "frequently asked questions",
@@ -35914,6 +35983,7 @@ ShallowWrapper {
           pristine={true}
           submitting={false}
           title="Test Title"
+          updateFormValuesAfterSave={[Function]}
           uuid="11111111-1111-1111-1111-111111111111"
         />
         <Link
@@ -35969,7 +36039,7 @@ ShallowWrapper {
           />,
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -36917,6 +36987,7 @@ ShallowWrapper {
             text="Course runs"
           />,
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -37558,7 +37629,7 @@ ShallowWrapper {
             }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={
+            currentFormValues={
               Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
@@ -38185,6 +38256,7 @@ ShallowWrapper {
             pristine={true}
             submitting={false}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />,
           <Link
@@ -39174,7 +39246,7 @@ ShallowWrapper {
             "expandedTitle": undefined,
             "iconId": "",
             "isCollapsible": undefined,
-            "isOpen": true,
+            "isOpen": false,
             "onToggle": [Function],
             "title": <React.Fragment>
               Course: Test Title
@@ -40234,6 +40306,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "change": [Function],
             "component": [Function],
             "courseInReview": false,
             "courseInfo": Object {},
@@ -40869,7 +40942,7 @@ ShallowWrapper {
             ],
             "courseSubmitting": false,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "currentValues": Object {
+            "currentFormValues": Object {
               "additional_information": "additional info",
               "faq": "frequently asked questions",
               "full_description": "long desc",
@@ -41486,6 +41559,7 @@ ShallowWrapper {
             "pristine": true,
             "submitting": false,
             "title": "Test Title",
+            "updateFormValuesAfterSave": [Function],
             "uuid": "11111111-1111-1111-1111-111111111111",
           },
           "ref": null,
@@ -41613,7 +41687,7 @@ ShallowWrapper {
           />
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -42561,6 +42635,7 @@ ShallowWrapper {
             text="Course runs"
           />
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -43202,7 +43277,7 @@ ShallowWrapper {
             }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={
+            currentFormValues={
               Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
@@ -43829,6 +43904,7 @@ ShallowWrapper {
             pristine={true}
             submitting={false}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />
           <Link
@@ -43884,7 +43960,7 @@ ShallowWrapper {
             />,
             <r
               iconId=""
-              isOpen={true}
+              isOpen={false}
               onToggle={[Function]}
               title={
                 <React.Fragment>
@@ -44832,6 +44908,7 @@ ShallowWrapper {
               text="Course runs"
             />,
             <FieldArray
+              change={[Function]}
               component={[Function]}
               courseInReview={false}
               courseInfo={Object {}}
@@ -45473,7 +45550,7 @@ ShallowWrapper {
               }
               courseSubmitting={false}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              currentValues={
+              currentFormValues={
                 Object {
                   "additional_information": "additional info",
                   "faq": "frequently asked questions",
@@ -46100,6 +46177,7 @@ ShallowWrapper {
               pristine={true}
               submitting={false}
               title="Test Title"
+              updateFormValuesAfterSave={[Function]}
               uuid="11111111-1111-1111-1111-111111111111"
             />,
             <Link
@@ -47089,7 +47167,7 @@ ShallowWrapper {
               "expandedTitle": undefined,
               "iconId": "",
               "isCollapsible": undefined,
-              "isOpen": true,
+              "isOpen": false,
               "onToggle": [Function],
               "title": <React.Fragment>
                 Course: Test Title
@@ -48149,6 +48227,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "change": [Function],
               "component": [Function],
               "courseInReview": false,
               "courseInfo": Object {},
@@ -48784,7 +48863,7 @@ ShallowWrapper {
               ],
               "courseSubmitting": false,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "currentValues": Object {
+              "currentFormValues": Object {
                 "additional_information": "additional info",
                 "faq": "frequently asked questions",
                 "full_description": "long desc",
@@ -49401,6 +49480,7 @@ ShallowWrapper {
               "pristine": true,
               "submitting": false,
               "title": "Test Title",
+              "updateFormValuesAfterSave": [Function],
               "uuid": "11111111-1111-1111-1111-111111111111",
             },
             "ref": null,
@@ -49539,6 +49619,7 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseEditCourseForm
+    change={[Function]}
     courseInReview={false}
     courseInfo={Object {}}
     courseOptions={
@@ -50177,7 +50258,7 @@ ShallowWrapper {
         "unpublished",
       ]
     }
-    currentValues={Object {}}
+    currentFormValues={Object {}}
     entitlement={
       Object {
         "sku": null,
@@ -50195,6 +50276,7 @@ ShallowWrapper {
     pristine={true}
     submitting={false}
     title="Test Title"
+    updateFormValuesAfterSave={[Function]}
     uuid="11111111-1111-1111-1111-111111111111"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -50226,7 +50308,7 @@ ShallowWrapper {
         />
         <r
           iconId=""
-          isOpen={true}
+          isOpen={false}
           onToggle={[Function]}
           title={
             <React.Fragment>
@@ -51149,6 +51231,7 @@ ShallowWrapper {
           text="Course runs"
         />
         <FieldArray
+          change={[Function]}
           component={[Function]}
           courseInReview={false}
           courseInfo={Object {}}
@@ -51790,7 +51873,7 @@ ShallowWrapper {
           }
           courseSubmitting={false}
           courseUuid="11111111-1111-1111-1111-111111111111"
-          currentValues={Object {}}
+          currentFormValues={Object {}}
           entitlement={
             Object {
               "sku": null,
@@ -52378,6 +52461,7 @@ ShallowWrapper {
           pristine={true}
           submitting={false}
           title="Test Title"
+          updateFormValuesAfterSave={[Function]}
           uuid="11111111-1111-1111-1111-111111111111"
         />
         <Link
@@ -52433,7 +52517,7 @@ ShallowWrapper {
           />,
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -53356,6 +53440,7 @@ ShallowWrapper {
             text="Course runs"
           />,
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -53997,7 +54082,7 @@ ShallowWrapper {
             }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={Object {}}
+            currentFormValues={Object {}}
             entitlement={
               Object {
                 "sku": null,
@@ -54585,6 +54670,7 @@ ShallowWrapper {
             pristine={true}
             submitting={false}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />,
           <Link
@@ -55550,7 +55636,7 @@ ShallowWrapper {
             "expandedTitle": undefined,
             "iconId": "",
             "isCollapsible": undefined,
-            "isOpen": true,
+            "isOpen": false,
             "onToggle": [Function],
             "title": <React.Fragment>
               Course: Test Title
@@ -56582,6 +56668,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "change": [Function],
             "component": [Function],
             "courseInReview": false,
             "courseInfo": Object {},
@@ -57217,7 +57304,7 @@ ShallowWrapper {
             ],
             "courseSubmitting": false,
             "courseUuid": "11111111-1111-1111-1111-111111111111",
-            "currentValues": Object {},
+            "currentFormValues": Object {},
             "entitlement": Object {
               "sku": null,
             },
@@ -57797,6 +57884,7 @@ ShallowWrapper {
             "pristine": true,
             "submitting": false,
             "title": "Test Title",
+            "updateFormValuesAfterSave": [Function],
             "uuid": "11111111-1111-1111-1111-111111111111",
           },
           "ref": null,
@@ -57924,7 +58012,7 @@ ShallowWrapper {
           />
           <r
             iconId=""
-            isOpen={true}
+            isOpen={false}
             onToggle={[Function]}
             title={
               <React.Fragment>
@@ -58847,6 +58935,7 @@ ShallowWrapper {
             text="Course runs"
           />
           <FieldArray
+            change={[Function]}
             component={[Function]}
             courseInReview={false}
             courseInfo={Object {}}
@@ -59488,7 +59577,7 @@ ShallowWrapper {
             }
             courseSubmitting={false}
             courseUuid="11111111-1111-1111-1111-111111111111"
-            currentValues={Object {}}
+            currentFormValues={Object {}}
             entitlement={
               Object {
                 "sku": null,
@@ -60076,6 +60165,7 @@ ShallowWrapper {
             pristine={true}
             submitting={false}
             title="Test Title"
+            updateFormValuesAfterSave={[Function]}
             uuid="11111111-1111-1111-1111-111111111111"
           />
           <Link
@@ -60131,7 +60221,7 @@ ShallowWrapper {
             />,
             <r
               iconId=""
-              isOpen={true}
+              isOpen={false}
               onToggle={[Function]}
               title={
                 <React.Fragment>
@@ -61054,6 +61144,7 @@ ShallowWrapper {
               text="Course runs"
             />,
             <FieldArray
+              change={[Function]}
               component={[Function]}
               courseInReview={false}
               courseInfo={Object {}}
@@ -61695,7 +61786,7 @@ ShallowWrapper {
               }
               courseSubmitting={false}
               courseUuid="11111111-1111-1111-1111-111111111111"
-              currentValues={Object {}}
+              currentFormValues={Object {}}
               entitlement={
                 Object {
                   "sku": null,
@@ -62283,6 +62374,7 @@ ShallowWrapper {
               pristine={true}
               submitting={false}
               title="Test Title"
+              updateFormValuesAfterSave={[Function]}
               uuid="11111111-1111-1111-1111-111111111111"
             />,
             <Link
@@ -63248,7 +63340,7 @@ ShallowWrapper {
               "expandedTitle": undefined,
               "iconId": "",
               "isCollapsible": undefined,
-              "isOpen": true,
+              "isOpen": false,
               "onToggle": [Function],
               "title": <React.Fragment>
                 Course: Test Title
@@ -64280,6 +64372,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "change": [Function],
               "component": [Function],
               "courseInReview": false,
               "courseInfo": Object {},
@@ -64915,7 +65008,7 @@ ShallowWrapper {
               ],
               "courseSubmitting": false,
               "courseUuid": "11111111-1111-1111-1111-111111111111",
-              "currentValues": Object {},
+              "currentFormValues": Object {},
               "entitlement": Object {
                 "sku": null,
               },
@@ -65495,6 +65588,7 @@ ShallowWrapper {
               "pristine": true,
               "submitting": false,
               "title": "Test Title",
+              "updateFormValuesAfterSave": [Function],
               "uuid": "11111111-1111-1111-1111-111111111111",
             },
             "ref": null,

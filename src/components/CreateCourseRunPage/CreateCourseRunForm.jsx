@@ -9,6 +9,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import ActionButton from '../ActionButton';
 
+import { DATE_FORMAT } from '../../data/constants';
 import { endDateHelp, startDateHelp } from '../../helpText';
 import { getDateString } from '../../utils/index';
 
@@ -34,7 +35,7 @@ const BaseCreateCourseRunForm = ({
         type="date"
         component={RenderInputTextField}
         format={value => getDateString(value)}
-        normalize={value => moment.utc(value).toISOString()}
+        normalize={value => moment.utc(value).format(DATE_FORMAT)}
         label={
           <FieldLabel
             id="start-label"
@@ -51,7 +52,7 @@ const BaseCreateCourseRunForm = ({
         type="date"
         component={RenderInputTextField}
         format={value => getDateString(value)}
-        normalize={value => moment.utc(value).toISOString()}
+        normalize={value => moment.utc(value).format(DATE_FORMAT)}
         label={
           <FieldLabel
             id="end-label"

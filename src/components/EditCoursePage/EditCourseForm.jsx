@@ -33,11 +33,30 @@ export class BaseEditCourseForm extends React.Component {
     super(props);
 
     this.state = {
-      open: true,
+      open: false,
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
     this.setCollapsible = this.setCollapsible.bind(this);
+  }
+
+  componentDidUpdate() {
+    const {
+      change,
+      courseInfo: {
+        courseSaved,
+      },
+      currentFormValues,
+      initialValues: {
+        imageSrc: initialImageSrc,
+        course_runs: initialCourseRuns,
+      },
+      updateFormValuesAfterSave,
+    } = this.props;
+
+    if (courseSaved) {
+      updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, initialCourseRuns);
+    }
   }
 
   setCollapsible(open) {
@@ -140,7 +159,7 @@ export class BaseEditCourseForm extends React.Component {
       handleSubmit,
       number,
       entitlement,
-      currentValues,
+      currentFormValues,
       submitting,
       title,
       pristine,
@@ -704,7 +723,7 @@ export class BaseEditCourseForm extends React.Component {
               options={this.getEnrollmentTrackOptions()}
               disabled={courseInReview || !!entitlement.sku}
             />
-            {ENTITLEMENT_TRACKS.includes(currentValues.mode) && <Field
+            {ENTITLEMENT_TRACKS.includes(currentFormValues.mode) && <Field
               name="price"
               component={RenderInputTextField}
               type="number"
@@ -758,7 +777,7 @@ export class BaseEditCourseForm extends React.Component {
 BaseEditCourseForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
-  currentValues: PropTypes.shape({}),
+  currentFormValues: PropTypes.shape({}),
   title: PropTypes.string.isRequired,
   entitlement: PropTypes.shape({
     sku: PropTypes.string,
@@ -783,10 +802,16 @@ BaseEditCourseForm.propTypes = {
   courseInfo: PropTypes.shape({
     isSubmittingEdit: PropTypes.bool,
   }),
+  initialValues: PropTypes.shape({
+    course_runs: PropTypes.arrayOf(PropTypes.shape({})),
+    imageSrc: PropTypes.string,
+  }),
+  change: PropTypes.func,
+  updateFormValuesAfterSave: PropTypes.func,
 };
 
 BaseEditCourseForm.defaultProps = {
-  currentValues: {},
+  currentFormValues: {},
   entitlement: { sku: null },
   submitting: false,
   pristine: true,
@@ -794,6 +819,12 @@ BaseEditCourseForm.defaultProps = {
   courseStatuses: [],
   isSubmittingForReview: false,
   courseInfo: {},
+  initialValues: {
+    course_runs: [],
+    imageSrc: '',
+  },
+  change: () => null,
+  updateFormValuesAfterSave: () => null,
 };
 
 const EditCourseForm = compose(

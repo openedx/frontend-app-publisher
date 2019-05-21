@@ -29,7 +29,7 @@ describe('CreateCourseForm', () => {
     const component = shallow(<BaseCreateCourseForm
       handleSubmit={() => {}}
       initialValues={initialValues}
-      currentValues={initialValues}
+      currentFormValues={initialValues}
       organizations={organizations}
     />);
     expect(component).toMatchSnapshot();
@@ -42,7 +42,7 @@ describe('CreateCourseForm', () => {
       pristine={false}
       handleSubmit={() => {}}
       initialValues={{}}
-      currentValues={initialValues}
+      currentFormValues={initialValues}
       organizations={organizations}
     />);
     expect(component).toMatchSnapshot();

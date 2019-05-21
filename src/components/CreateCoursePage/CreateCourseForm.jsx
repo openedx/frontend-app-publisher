@@ -11,6 +11,7 @@ import FieldLabel from '../FieldLabel';
 
 import {
   AUDIT_TRACK,
+  DATE_FORMAT,
   ENTITLEMENT_TRACKS,
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
@@ -42,7 +43,7 @@ class BaseCreateCourseForm extends React.Component {
 
   render() {
     const {
-      currentValues,
+      currentFormValues,
       handleSubmit,
       organizations,
       pristine,
@@ -127,7 +128,7 @@ class BaseCreateCourseForm extends React.Component {
             }
             required
           />
-          {ENTITLEMENT_TRACKS.includes(currentValues.enrollmentTrack) && <Field
+          {ENTITLEMENT_TRACKS.includes(currentFormValues.enrollmentTrack) && <Field
             name="price"
             component={RenderInputTextField}
             extraInput={{
@@ -145,7 +146,7 @@ class BaseCreateCourseForm extends React.Component {
             type="date"
             component={RenderInputTextField}
             format={value => getDateString(value)}
-            normalize={value => moment.utc(value).toISOString()}
+            normalize={value => moment.utc(value).format(DATE_FORMAT)}
             label={
               <FieldLabel
                 id="start-label"
@@ -162,7 +163,7 @@ class BaseCreateCourseForm extends React.Component {
             type="date"
             component={RenderInputTextField}
             format={value => getDateString(value)}
-            normalize={value => moment.utc(value).toISOString()}
+            normalize={value => moment.utc(value).format(DATE_FORMAT)}
             label={
               <FieldLabel
                 id="end-label"
@@ -193,7 +194,7 @@ class BaseCreateCourseForm extends React.Component {
 BaseCreateCourseForm.defaultProps = {
   isCreating: false,
   pristine: true,
-  currentValues: {},
+  currentFormValues: {},
 };
 
 BaseCreateCourseForm.propTypes = {
@@ -207,7 +208,7 @@ BaseCreateCourseForm.propTypes = {
     start: PropTypes.string,
     end: PropTypes.string,
   }).isRequired,
-  currentValues: PropTypes.shape({}),
+  currentFormValues: PropTypes.shape({}),
   organizations: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,

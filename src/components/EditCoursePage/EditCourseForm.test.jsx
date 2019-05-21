@@ -519,7 +519,7 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
-      currentValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
       number="Test102x"
       entitlement={entitlement}
@@ -536,7 +536,7 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
-      currentValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
       number="Test103x"
       entitlement={entitlement}
@@ -555,7 +555,7 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
-      currentValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
       number="Test101x"
       entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
@@ -572,7 +572,7 @@ describe('BaseEditCourseForm', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
-      currentValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
       number="Test101x"
       entitlement={entitlement}
       courseStatuses={[IN_LEGAL_REVIEW]}
@@ -595,7 +595,7 @@ describe('BaseEditCourseForm', () => {
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
-      currentValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
       number="Test101x"
       entitlement={entitlement}
       courseStatuses={[REVIEWED]}
@@ -615,7 +615,7 @@ describe('BaseEditCourseForm', () => {
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
-      currentValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
       number="Test101x"
       entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}

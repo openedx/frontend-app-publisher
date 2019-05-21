@@ -20,6 +20,7 @@ describe('courseInfo reducer', () => {
       isCreating: false,
       isSubmittingEdit: false,
       error: null,
+      courseSaved: false,
     };
   });
 
@@ -30,6 +31,7 @@ describe('courseInfo reducer', () => {
       isCreating: false,
       isSubmittingEdit: false,
       error: null,
+      courseSaved: false,
     });
   });
 
@@ -41,6 +43,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         error: null,
+        courseSaved: false,
       });
   });
 
@@ -53,6 +56,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         error: null,
+        courseSaved: false,
       });
   });
 
@@ -65,6 +69,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         error: 'failure',
+        courseSaved: false,
       });
   });
 
@@ -76,6 +81,7 @@ describe('courseInfo reducer', () => {
         isCreating: true,
         isSubmittingEdit: false,
         error: null,
+        courseSaved: false,
       });
   });
 
@@ -87,6 +93,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         isFetching: false,
+        courseSaved: false,
       });
   });
 
@@ -98,6 +105,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         isFetching: false,
+        courseSaved: false,
       });
   });
 
@@ -109,6 +117,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: true,
         error: null,
+        courseSaved: false,
       });
   });
 
@@ -120,6 +129,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         error: null,
+        courseSaved: true,
       });
   });
 
@@ -131,6 +141,20 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         error: 'failure',
+        courseSaved: false,
+      });
+  });
+
+  it('course save clear works', () => {
+    initialState.courseSaved = true;
+    expect(courseInfo(initialState, actions.clearCourseSaved()))
+      .toEqual({
+        data: {},
+        isFetching: false,
+        isCreating: false,
+        isSubmittingEdit: false,
+        error: null,
+        courseSaved: false,
       });
   });
 
@@ -142,6 +166,7 @@ describe('courseInfo reducer', () => {
         isCreating: true,
         isSubmittingEdit: false,
         error: null,
+        courseSaved: false,
       });
   });
 
@@ -153,6 +178,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         error: null,
+        courseSaved: false,
       });
   });
 
@@ -164,6 +190,7 @@ describe('courseInfo reducer', () => {
         isCreating: false,
         isSubmittingEdit: false,
         error: 'failure',
+        courseSaved: false,
       });
   });
 });
