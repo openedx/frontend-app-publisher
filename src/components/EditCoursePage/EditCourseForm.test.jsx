@@ -532,6 +532,26 @@ describe('BaseEditCourseForm', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('renders html correctly with administrator being true', () => {
+    const component = shallow(<BaseEditCourseForm
+      authentication={{
+        administrator: true,
+      }}
+      handleSubmit={() => null}
+      initialValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
+      title={initialValuesFull.title}
+      number="Test102x"
+      entitlement={entitlement}
+      courseStatuses={[UNPUBLISHED]}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      id="edit-course-form"
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
   it('renders html correctly while submitting', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
