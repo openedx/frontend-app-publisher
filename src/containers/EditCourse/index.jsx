@@ -9,6 +9,7 @@ import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
 
 
 const mapStateToProps = state => ({
+  authentication: state.authentication,
   courseInfo: state.courseInfo,
   courseOptions: state.courseOptions,
   courseRunOptions: state.courseRunOptions,

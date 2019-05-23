@@ -156,6 +156,9 @@ export class BaseEditCourseForm extends React.Component {
 
   render() {
     const {
+      authentication: {
+        administrator,
+      },
       handleSubmit,
       number,
       entitlement,
@@ -574,7 +577,7 @@ export class BaseEditCourseForm extends React.Component {
               id="faq"
               disabled={courseInReview}
             />
-            <Field
+            {administrator && <Field
               name="additional_information"
               component={RichEditor}
               label={
@@ -592,7 +595,7 @@ export class BaseEditCourseForm extends React.Component {
               maxChars={2500}
               id="additional-information"
               disabled={courseInReview}
-            />
+            />}
             <Field
               name="syllabus_raw"
               component={RichEditor}
@@ -649,7 +652,7 @@ export class BaseEditCourseForm extends React.Component {
               id="syllabus"
               disabled={courseInReview}
             />
-            <Field
+            {administrator && <Field
               name="videoSrc"
               component={RenderInputTextField}
               type="url"
@@ -705,7 +708,7 @@ export class BaseEditCourseForm extends React.Component {
               }
               extraInput={{ onInvalid: this.openCollapsible }}
               disabled={courseInReview}
-            />
+            />}
             <Field
               name="mode"
               component={RenderSelectField}
@@ -773,6 +776,9 @@ export class BaseEditCourseForm extends React.Component {
 }
 
 BaseEditCourseForm.propTypes = {
+  authentication: PropTypes.shape({
+    administrator: PropTypes.bool,
+  }),
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
   currentFormValues: PropTypes.shape({}),
@@ -809,6 +815,9 @@ BaseEditCourseForm.propTypes = {
 };
 
 BaseEditCourseForm.defaultProps = {
+  authentication: {
+    administrator: false,
+  },
   currentFormValues: {},
   entitlement: { sku: null },
   submitting: false,
