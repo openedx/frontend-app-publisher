@@ -445,6 +445,9 @@ export class BaseEditCourseForm extends React.Component {
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
+              maxImageSizeKilo={1000}
+              requiredWidth={1134}
+              requiredHeight={675}
               id="image"
               className="course-image"
               disabled={courseInReview}

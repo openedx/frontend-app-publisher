@@ -62,6 +62,9 @@ const BaseStafferForm = ({
             />
           }
           id="profile_image"
+          maxImageSizeKilo={256}
+          requiredWidth={110}
+          requiredHeight={110}
           className="staffer-image"
           required={isCreateForm}
         />
