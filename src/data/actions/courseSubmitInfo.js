@@ -9,8 +9,8 @@ function courseSubmittingCancel() {
   return { type: COURSE_SUBMITTING_CANCEL };
 }
 
-function courseSubmittingFailure() {
-  return { type: COURSE_SUBMITTING_FAILURE };
+function courseSubmittingFailure(errors) {
+  return { type: COURSE_SUBMITTING_FAILURE, errors };
 }
 
 function courseSubmittingInfo(targetRun = null) {

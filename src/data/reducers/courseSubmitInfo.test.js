@@ -1,5 +1,5 @@
 import courseSubmitInfoReducer from './courseSubmitInfo';
-import { courseSubmittingInfo } from '../actions/courseSubmitInfo';
+import { courseSubmittingInfo, courseSubmittingFailure } from '../actions/courseSubmitInfo';
 
 
 describe('courseSubmittingInfo reducer', () => {
@@ -7,6 +7,7 @@ describe('courseSubmittingInfo reducer', () => {
 
   beforeEach(() => {
     initalState = {
+      errors: null,
       targetRun: null,
       isSubmittingRunReview: false,
     };
@@ -14,6 +15,7 @@ describe('courseSubmittingInfo reducer', () => {
 
   it('initial state is valid', () => {
     expect(courseSubmitInfoReducer(undefined, {})).toEqual({
+      errors: null,
       targetRun: null,
       isSubmittingRunReview: false,
     });
@@ -26,6 +28,7 @@ describe('courseSubmittingInfo reducer', () => {
 
     expect(courseSubmitInfoReducer(initalState, courseSubmittingInfo(targetRun)))
       .toEqual({
+        errors: null,
         targetRun,
         isSubmittingRunReview: true,
       });
@@ -36,7 +39,18 @@ describe('courseSubmittingInfo reducer', () => {
 
     expect(courseSubmitInfoReducer(initalState, courseSubmittingInfo(targetRun)))
       .toEqual({
+        errors: null,
         targetRun,
+        isSubmittingRunReview: false,
+      });
+  });
+
+  it('courseSubmittingFailure sets error state', () => {
+    const prevState = { isSubmittingRunReview: true };
+    const errors = { one: 'value' };
+    expect(courseSubmitInfoReducer(prevState, courseSubmittingFailure(errors)))
+      .toEqual({
+        errors,
         isSubmittingRunReview: false,
       });
   });

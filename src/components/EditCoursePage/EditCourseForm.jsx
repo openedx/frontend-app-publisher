@@ -40,12 +40,13 @@ export class BaseEditCourseForm extends React.Component {
     this.setCollapsible = this.setCollapsible.bind(this);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const {
       change,
       courseInfo: {
         courseSaved,
       },
+      courseSubmitInfo,
       currentFormValues,
       initialValues: {
         imageSrc: initialImageSrc,
@@ -53,6 +54,18 @@ export class BaseEditCourseForm extends React.Component {
       },
       updateFormValuesAfterSave,
     } = this.props;
+
+    // If we are transitioning off of a "submit for review" state (which means that we just
+    // finished turning fields into required so that html5 can flag them during validation) open
+    // the collapsible if and only if there are course-level errors.
+    const stoppingRunReview = prevProps.courseSubmitInfo.isSubmittingRunReview &&
+                              !courseSubmitInfo.isSubmittingRunReview;
+    const hasCourseErrors = courseSubmitInfo.errors &&
+                            courseSubmitInfo.errors !== {} &&
+                            Object.keys(courseSubmitInfo.errors) !== ['course_runs'];
+    if (stoppingRunReview && hasCourseErrors) {
+      this.openCollapsible();
+    }
 
     if (courseSaved) {
       updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, initialCourseRuns);
@@ -806,6 +819,10 @@ BaseEditCourseForm.propTypes = {
   courseInfo: PropTypes.shape({
     isSubmittingEdit: PropTypes.bool,
   }),
+  courseSubmitInfo: PropTypes.shape({
+    errors: PropTypes.shape({}),
+    isSubmittingRunReview: PropTypes.bool,
+  }),
   initialValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
     imageSrc: PropTypes.string,
@@ -826,6 +843,7 @@ BaseEditCourseForm.defaultProps = {
   courseStatuses: [],
   isSubmittingForReview: false,
   courseInfo: {},
+  courseSubmitInfo: {},
   initialValues: {
     course_runs: [],
     imageSrc: '',
