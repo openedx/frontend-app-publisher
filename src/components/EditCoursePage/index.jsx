@@ -80,16 +80,15 @@ class EditCoursePage extends React.Component {
         end: courseRun.end,
         go_live_date: courseRun.go_live_date,
         key: courseRun.key,
-        max_effort: courseRun.max_effort,
-        min_effort: courseRun.min_effort,
+        max_effort: courseRun.max_effort ? courseRun.max_effort : null,
+        min_effort: courseRun.min_effort ? courseRun.min_effort : null,
         pacing_type: courseRun.pacing_type,
         // Reduce Staff list to just the UUID
         staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
-        length: courseRun.length,
         start: courseRun.start,
         status: courseRun.status,
         transcript_languages: courseRun.transcript_languages,
-        weeks_to_complete: courseRun.weeks_to_complete,
+        weeks_to_complete: courseRun.weeks_to_complete ? courseRun.weeks_to_complete : null,
       });
     });
     return sendCourseRuns;
@@ -284,12 +283,13 @@ class EditCoursePage extends React.Component {
       start: courseRun.start,
       end: courseRun.end,
       go_live_date: courseRun.go_live_date,
-      min_effort: String(courseRun.min_effort),
-      max_effort: String(courseRun.max_effort),
+      min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
+      max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',
       pacing_type: courseRun.pacing_type,
       content_language: courseRun.content_language,
       transcript_languages: courseRun.transcript_languages,
-      weeks_to_complete: String(courseRun.weeks_to_complete),
+      weeks_to_complete: typeof courseRun.weeks_to_complete === 'number' ?
+        String(courseRun.weeks_to_complete) : '',
       staff: courseRun.staff,
       status: courseRun.status,
       draft: courseRun.draft,
