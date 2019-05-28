@@ -295,6 +295,22 @@ class CollapsibleCourseRun extends React.Component {
           disabled={courseInReview}
           required={courseRunSubmitting}
         />
+        <div>
+          <FieldLabel
+            id="number"
+            text="Course Embargo (OFAC) Restriction text added to the FAQ section"
+            className="mb-2"
+            helpText={
+              <div>
+                <p>
+                  Course embargo status for OFAC is managed internally, please contact
+                  support with questions.
+                </p>
+              </div>
+            }
+          />
+          <div className="mb-3">{courseRun.has_ofac_restrictions ? 'Yes' : 'No'}</div>
+        </div>
         <FieldLabel
           id={`${courseId}.staff.label`}
           text="Staff"
