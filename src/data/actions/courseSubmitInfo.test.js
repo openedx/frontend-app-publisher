@@ -39,11 +39,16 @@ describe('courseSubmittingInfo actions', () => {
   });
 
   it('handles Failure submit', () => {
+    const errors = {
+      field: 'value',
+      field2: 'value2',
+    };
     const expectedAction = {
       type: types.COURSE_SUBMITTING_FAILURE,
+      errors,
     };
 
-    expect(courseSubmittingFailure()).toEqual(expectedAction);
+    expect(courseSubmittingFailure(errors)).toEqual(expectedAction);
   });
 
   it('handles Success submit', () => {

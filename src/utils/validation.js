@@ -1,4 +1,6 @@
+import store from '../data/store';
 import { jsonDeepCopy } from '.';
+import { courseSubmittingFailure } from '../data/actions/courseSubmitInfo';
 import { PUBLISHED } from '../data/constants';
 
 
@@ -62,7 +64,12 @@ const getFieldName = (errors) => {
 const handleCourseEditFail = (errors) => {
   const fieldName = getFieldName(errors);
   if (fieldName) {
-    document.getElementsByName(fieldName)[0].focus();
+    // We use setTimeout here to avoid a race condition between React and HTML. See DISCO-992.
+    // 250ms worked in my personal testing. So I doubled it to give some more elbow room on less
+    // performant machines.
+    setTimeout(() => {
+      document.getElementsByName(fieldName)[0].focus();
+    }, 500);
   }
 };
 
@@ -109,6 +116,12 @@ const editCourseValidate = (values, props) => {
       errors.course_runs.push(null);
     }
   });
+
+  // If needed, reset our state variable isSubmittingRunReview, which indicates that we are
+  // validating for a submit-for-review (when we check required-for-submit properties).
+  if (errors !== {} && store.getState().courseSubmitInfo.isSubmittingRunReview) {
+    store.dispatch(courseSubmittingFailure(errors));
+  }
 
   return errors;
 };
