@@ -294,6 +294,7 @@ class EditCoursePage extends React.Component {
       status: courseRun.status,
       draft: courseRun.draft,
       marketing_url: courseRun.marketing_url,
+      has_ofac_restrictions: courseRun.has_ofac_restrictions,
     }));
 
     // If we want to keep a lot of the logic in the lower return,

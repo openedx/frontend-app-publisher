@@ -32,6 +32,7 @@ const publishedCourseRun = {
   weeks_to_complete: 1,
   status: 'published',
   key: 'edX101+DemoX',
+  has_ofac_restrictions: false,
 };
 
 const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'unpublished' });
