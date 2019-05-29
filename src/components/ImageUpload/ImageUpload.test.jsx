@@ -16,8 +16,12 @@ describe('ImageUpload', () => {
       }}
       meta={{
         error: null,
+        pristine: true,
         submitFailed: false,
       }}
+      maxImageSize={1000000}
+      requiredWidth={1134}
+      requiredHeight={675}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -33,8 +37,12 @@ describe('ImageUpload', () => {
       }}
       meta={{
         error: null,
+        pristine: true,
         submitFailed: false,
       }}
+      maxImageSize={256000}
+      requiredHeight={110}
+      requiredWidth={110}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -50,8 +58,12 @@ describe('ImageUpload', () => {
       }}
       meta={{
         error: 'Required',
+        pristine: false,
         submitFailed: true,
       }}
+      maxImageSize={1000000}
+      requiredWidth={1134}
+      requiredHeight={675}
     />);
     expect(component).toMatchSnapshot();
   });
