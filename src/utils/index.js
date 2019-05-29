@@ -5,6 +5,11 @@ import history from '../data/history';
 
 const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 
+const isValidDate = (dateStr) => {
+  const date = moment(dateStr);
+  return moment(dateStr) && date.isValid();
+};
+
 const updateUrl = (queryOptions) => {
   if (!queryOptions) {
     return;
@@ -92,4 +97,5 @@ export {
   jsonDeepCopy,
   getCourseNumber,
   getErrorMessages,
+  isValidDate,
 };
