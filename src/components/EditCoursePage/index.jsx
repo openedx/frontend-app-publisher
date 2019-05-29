@@ -7,7 +7,7 @@ import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { getCourseNumber } from '../../utils';
+import { getCourseNumber, isValidDate } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
 import SubmitConfirmModal from '../SubmitConfirmModal';
 
@@ -67,7 +67,6 @@ class EditCoursePage extends React.Component {
     // Don't send any courses in review - backend will reject them
     const modifiedCourseRuns =
       courseData.course_runs.filter(run => !IN_REVIEW_STATUS.includes(run.status));
-
     modifiedCourseRuns.forEach((courseRun) => {
       let draft = true;
       if (targetRun && (courseRun.key === targetRun.key)) {
@@ -77,15 +76,15 @@ class EditCoursePage extends React.Component {
       sendCourseRuns.push({
         content_language: courseRun.content_language,
         draft,
-        end: courseRun.end,
-        go_live_date: courseRun.go_live_date,
+        end: isValidDate(courseRun.end) ? courseRun.end : null,
+        go_live_date: isValidDate(courseRun.go_live_date) ? courseRun.go_live_date : null,
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
         pacing_type: courseRun.pacing_type,
         // Reduce Staff list to just the UUID
         staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
-        start: courseRun.start,
+        start: isValidDate(courseRun.start) ? courseRun.start : null,
         status: courseRun.status,
         transcript_languages: courseRun.transcript_languages,
         weeks_to_complete: courseRun.weeks_to_complete ? courseRun.weeks_to_complete : null,
