@@ -35,6 +35,7 @@ class CreateCourseRunPage extends React.Component {
       courseInfo: {
         data: {
           key,
+          entitlements,
           uuid,
         },
       },
@@ -45,6 +46,8 @@ class CreateCourseRunPage extends React.Component {
       course: key,
       start: options.start,
       end: options.end,
+      mode: entitlements && entitlements[0] && entitlements[0].mode,
+      price: entitlements && entitlements[0] && entitlements[0].price,
     };
     return createCourseRun(uuid, courseRunData);
   }

@@ -86,7 +86,9 @@ class EditCoursePage extends React.Component {
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
+        mode: courseData.mode,
         pacing_type: courseRun.pacing_type,
+        price: courseData.price,
         // Reduce Staff list to just the UUID
         staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
         start: isValidDate(courseRun.start) ? courseRun.start : null,
