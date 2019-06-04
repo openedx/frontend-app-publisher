@@ -30,6 +30,7 @@ describe('courseInfo reducer', () => {
       isFetching: false,
       isCreating: false,
       isSubmittingEdit: false,
+      showCreateStatusAlert: false,
       error: null,
       courseSaved: false,
     });
@@ -190,6 +191,7 @@ describe('courseInfo reducer', () => {
         isFetching: false,
         isCreating: false,
         isSubmittingEdit: false,
+        showCreateStatusAlert: true,
         error: null,
         courseSaved: false,
       });

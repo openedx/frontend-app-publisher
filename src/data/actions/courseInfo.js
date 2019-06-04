@@ -18,6 +18,7 @@ import {
   CREATE_COURSE_RUN,
   CREATE_COURSE_RUN_SUCCESS,
   CREATE_COURSE_RUN_FAIL,
+  CLEAR_COURSE_RUN_ALERT,
 } from '../constants/courseInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { courseSubmittingFailure, courseSubmittingSuccess } from './courseSubmitInfo';
@@ -188,11 +189,22 @@ function editCourse(courseData, courseRunData, submittingRunForReview = false) {
   };
 }
 
+function setCreateAlertOff() {
+  return { type: CLEAR_COURSE_RUN_ALERT };
+}
+
+function clearCreateStatusAlert() {
+  return (dispatch) => {
+    dispatch(setCreateAlertOff());
+  };
+}
+
 export {
   requestCourseInfoFail,
   requestCourseInfoSuccess,
   requestCourseInfo,
   clearCourseInfoErrors,
+  clearCreateStatusAlert,
   createNewCourse,
   createCourseSuccess,
   createCourseFail,
@@ -208,4 +220,5 @@ export {
   createCourse,
   editCourse,
   updateFormValuesAfterSave,
+  setCreateAlertOff,
 };

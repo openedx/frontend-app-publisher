@@ -19,6 +19,7 @@ import {
   editCourseSuccess,
   editCourseFail,
   clearCourseSaved,
+  setCreateAlertOff,
 } from './courseInfo';
 import * as types from '../constants/courseInfo';
 
@@ -224,5 +225,12 @@ describe('courseInfo create course run actions', () => {
       error,
     };
     expect(createCourseRunFail(error)).toEqual(expectedAction);
+  });
+
+  it('should clear create course run status alert', () => {
+    const expectedAction = {
+      type: types.CLEAR_COURSE_RUN_ALERT,
+    };
+    expect(setCreateAlertOff()).toEqual(expectedAction);
   });
 });
