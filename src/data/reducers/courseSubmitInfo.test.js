@@ -18,6 +18,7 @@ describe('courseSubmittingInfo reducer', () => {
       errors: null,
       targetRun: null,
       isSubmittingRunReview: false,
+      showReviewStatusAlert: false,
     });
   });
 

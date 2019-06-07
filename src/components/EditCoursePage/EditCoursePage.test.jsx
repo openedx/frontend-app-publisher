@@ -6,6 +6,7 @@ import configureStore from 'redux-mock-store';
 import EditCoursePage from './index';
 
 import SubmitConfirmModal from '../SubmitConfirmModal';
+import StatusAlert from '../StatusAlert';
 
 import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
 
@@ -69,6 +70,7 @@ describe('EditCoursePage', () => {
         image: null,
       },
     },
+    showCreateStatusAlert: false,
     isFetching: false,
     error: null,
   };
@@ -465,6 +467,24 @@ describe('EditCoursePage', () => {
       expect(component.state().submitConfirmVisible).toEqual(false);
       expect(component.state().submitCourseData).toEqual({});
       expect(mockHandleCourseSubmit).toHaveBeenCalled();
+    });
+
+    it('upon course submission, StatusAlert is set to appear', () => {
+      const component = shallow(<EditCoursePage
+        courseSubmitInfo={{ showReviewStatusAlert: true }}
+      />);
+      const reviewAlert = component.find(StatusAlert);
+      const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
+      expect(reviewAlert.props().message).toEqual(reviewMessage);
+    });
+
+    it('upon course run creation, StatusAlert is set to appear', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={{ data: { title: 'TestCourse101' }, showCreateStatusAlert: true }}
+      />);
+      const createAlert = component.find(StatusAlert);
+      const createMessage = 'Course run has been created in studio. See link below.';
+      expect(createAlert.props().message).toEqual(createMessage);
     });
 
     it('handleCourseSubmit properly prepares course data for Save Edits case', () => {

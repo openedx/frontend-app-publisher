@@ -4,6 +4,8 @@ exports[`EditCoursePage renders html correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -47,12 +49,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -140,6 +146,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -149,6 +157,8 @@ ShallowWrapper {
             undefined,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -207,6 +217,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -257,6 +269,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -336,12 +350,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -429,6 +447,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -438,6 +458,8 @@ ShallowWrapper {
               undefined,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -496,6 +518,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -546,6 +570,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -637,6 +663,8 @@ exports[`EditCoursePage renders page correctly while fetching 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -694,6 +722,8 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
@@ -744,6 +774,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -800,6 +832,8 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
@@ -850,6 +884,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -918,6 +954,8 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -977,6 +1015,7 @@ ShallowWrapper {
         },
         "error": null,
         "isFetching": false,
+        "showCreateStatusAlert": false,
       }
     }
     courseOptions={Object {}}
@@ -1016,12 +1055,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        false,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -1081,6 +1124,7 @@ ShallowWrapper {
                   },
                   "error": null,
                   "isFetching": false,
+                  "showCreateStatusAlert": false,
                 }
               }
               courseOptions={Object {}}
@@ -1175,6 +1219,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -1184,6 +1230,8 @@ ShallowWrapper {
             undefined,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -1243,6 +1291,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={Object {}}
@@ -1308,6 +1357,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -1367,6 +1418,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={Object {}}
@@ -1424,6 +1476,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -1483,6 +1537,7 @@ ShallowWrapper {
                   },
                   "error": null,
                   "isFetching": false,
+                  "showCreateStatusAlert": false,
                 },
                 "courseOptions": Object {},
                 "courseRunOptions": Object {},
@@ -1564,12 +1619,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          false,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -1629,6 +1688,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={Object {}}
@@ -1723,6 +1783,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -1732,6 +1794,8 @@ ShallowWrapper {
               undefined,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -1791,6 +1855,7 @@ ShallowWrapper {
                       },
                       "error": null,
                       "isFetching": false,
+                      "showCreateStatusAlert": false,
                     }
                   }
                   courseOptions={Object {}}
@@ -1856,6 +1921,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -1915,6 +1982,7 @@ ShallowWrapper {
                       },
                       "error": null,
                       "isFetching": false,
+                      "showCreateStatusAlert": false,
                     }
                   }
                   courseOptions={Object {}}
@@ -1972,6 +2040,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -2031,6 +2101,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   },
                   "courseOptions": Object {},
                   "courseRunOptions": Object {},
@@ -2124,6 +2195,8 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -2183,6 +2256,7 @@ ShallowWrapper {
         },
         "error": null,
         "isFetching": false,
+        "showCreateStatusAlert": false,
       }
     }
     courseOptions={
@@ -2271,12 +2345,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        false,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -2336,6 +2414,7 @@ ShallowWrapper {
                   },
                   "error": null,
                   "isFetching": false,
+                  "showCreateStatusAlert": false,
                 }
               }
               courseOptions={
@@ -2479,6 +2558,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -2488,6 +2569,8 @@ ShallowWrapper {
             undefined,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -2547,6 +2630,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={
@@ -2661,6 +2745,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -2720,6 +2806,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={
@@ -2826,6 +2913,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -2885,6 +2974,7 @@ ShallowWrapper {
                   },
                   "error": null,
                   "isFetching": false,
+                  "showCreateStatusAlert": false,
                 },
                 "courseOptions": Object {
                   "data": Object {
@@ -3013,12 +3103,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          false,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -3078,6 +3172,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={
@@ -3221,6 +3316,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -3230,6 +3327,8 @@ ShallowWrapper {
               undefined,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -3289,6 +3388,7 @@ ShallowWrapper {
                       },
                       "error": null,
                       "isFetching": false,
+                      "showCreateStatusAlert": false,
                     }
                   }
                   courseOptions={
@@ -3403,6 +3503,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -3462,6 +3564,7 @@ ShallowWrapper {
                       },
                       "error": null,
                       "isFetching": false,
+                      "showCreateStatusAlert": false,
                     }
                   }
                   courseOptions={
@@ -3568,6 +3671,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -3627,6 +3732,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   },
                   "courseOptions": Object {
                     "data": Object {
@@ -3767,6 +3873,8 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -3814,12 +3922,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -3926,6 +4038,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -3935,6 +4049,8 @@ ShallowWrapper {
             undefined,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -4011,6 +4127,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -4065,6 +4183,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -4168,12 +4288,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -4280,6 +4404,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -4289,6 +4415,8 @@ ShallowWrapper {
               undefined,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -4365,6 +4493,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -4419,6 +4549,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -4534,6 +4666,8 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -4593,6 +4727,7 @@ ShallowWrapper {
         },
         "error": null,
         "isFetching": false,
+        "showCreateStatusAlert": false,
       }
     }
     courseOptions={
@@ -4725,12 +4860,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        false,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -4790,6 +4929,7 @@ ShallowWrapper {
                   },
                   "error": null,
                   "isFetching": false,
+                  "showCreateStatusAlert": false,
                 }
               }
               courseOptions={
@@ -4977,6 +5117,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -4986,6 +5128,8 @@ ShallowWrapper {
             false,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -5045,6 +5189,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={
@@ -5203,6 +5348,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -5262,6 +5409,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={
@@ -5412,6 +5560,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -5471,6 +5621,7 @@ ShallowWrapper {
                   },
                   "error": null,
                   "isFetching": false,
+                  "showCreateStatusAlert": false,
                 },
                 "courseOptions": Object {
                   "data": Object {
@@ -5641,12 +5792,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          false,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -5706,6 +5861,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   }
                 }
                 courseOptions={
@@ -5893,6 +6049,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -5902,6 +6060,8 @@ ShallowWrapper {
               false,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -5961,6 +6121,7 @@ ShallowWrapper {
                       },
                       "error": null,
                       "isFetching": false,
+                      "showCreateStatusAlert": false,
                     }
                   }
                   courseOptions={
@@ -6119,6 +6280,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -6178,6 +6341,7 @@ ShallowWrapper {
                       },
                       "error": null,
                       "isFetching": false,
+                      "showCreateStatusAlert": false,
                     }
                   }
                   courseOptions={
@@ -6328,6 +6492,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -6387,6 +6553,7 @@ ShallowWrapper {
                     },
                     "error": null,
                     "isFetching": false,
+                    "showCreateStatusAlert": false,
                   },
                   "courseOptions": Object {
                     "data": Object {
@@ -6569,6 +6736,8 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -6632,12 +6801,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -6764,6 +6937,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -6773,6 +6948,8 @@ ShallowWrapper {
             false,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -6869,6 +7046,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -6939,6 +7118,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -7058,12 +7239,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -7190,6 +7375,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -7199,6 +7386,8 @@ ShallowWrapper {
               false,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -7295,6 +7484,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -7365,6 +7556,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -7496,6 +7689,8 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -7588,12 +7783,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -7730,6 +7929,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -7739,6 +7940,8 @@ ShallowWrapper {
             undefined,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -7846,6 +8049,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -7945,6 +8150,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -8071,12 +8278,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -8213,6 +8424,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -8222,6 +8435,8 @@ ShallowWrapper {
               undefined,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -8329,6 +8544,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -8428,6 +8645,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -8566,6 +8785,8 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -8617,12 +8838,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -8733,6 +8958,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -8742,6 +8969,8 @@ ShallowWrapper {
             undefined,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -8822,6 +9051,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -8880,6 +9111,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -8985,12 +9218,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -9101,6 +9338,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -9110,6 +9349,8 @@ ShallowWrapper {
               undefined,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -9190,6 +9431,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -9248,6 +9491,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -9365,6 +9610,8 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -9452,12 +9699,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -9589,6 +9840,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -9598,6 +9851,8 @@ ShallowWrapper {
             false,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -9700,6 +9955,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -9794,6 +10051,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -9915,12 +10174,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -10052,6 +10315,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -10061,6 +10326,8 @@ ShallowWrapper {
               false,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -10163,6 +10430,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -10257,6 +10526,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -10390,6 +10661,8 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -10441,12 +10714,16 @@ ShallowWrapper {
           onSubmit={[Function]}
           open={false}
         />,
+        undefined,
+        undefined,
         <PageContainer
           className=""
           wide={false}
         >
           <div>
             <Connect(ReduxForm)
+              clearCourseReviewAlert={[Function]}
+              clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
               courseInfo={
                 Object {
@@ -10557,6 +10834,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -10566,6 +10845,8 @@ ShallowWrapper {
             false,
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -10646,6 +10927,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -10704,6 +10987,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "clearCourseReviewAlert": [Function],
+                "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
                 "courseInReview": undefined,
                 "courseInfo": Object {
@@ -10809,12 +11094,16 @@ ShallowWrapper {
             onSubmit={[Function]}
             open={false}
           />,
+          undefined,
+          undefined,
           <PageContainer
             className=""
             wide={false}
           >
             <div>
               <Connect(ReduxForm)
+                clearCourseReviewAlert={[Function]}
+                clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
                 courseInfo={
                   Object {
@@ -10925,6 +11214,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
@@ -10934,6 +11225,8 @@ ShallowWrapper {
               false,
               <div>
                 <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -11014,6 +11307,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <Connect(ReduxForm)
+                  clearCourseReviewAlert={[Function]}
+                  clearCreateStatusAlert={[Function]}
                   clearSubmitStatus={[Function]}
                   courseInfo={
                     Object {
@@ -11072,6 +11367,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "clearCourseReviewAlert": [Function],
+                  "clearCreateStatusAlert": [Function],
                   "clearSubmitStatus": [Function],
                   "courseInReview": undefined,
                   "courseInfo": Object {
@@ -11189,6 +11486,8 @@ exports[`EditCoursePage renders page correctly with no courseInfo 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={null}
     courseOptions={Object {}}
@@ -11278,6 +11577,8 @@ exports[`EditCoursePage renders page correctly with no courseOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {
@@ -11371,6 +11672,8 @@ exports[`EditCoursePage renders page correctly with no courseRunOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    clearCourseReviewAlert={[Function]}
+    clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
     courseInfo={
       Object {

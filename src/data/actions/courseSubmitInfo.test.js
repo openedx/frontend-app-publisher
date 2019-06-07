@@ -3,6 +3,7 @@ import {
   courseSubmittingCancel,
   courseSubmittingFailure,
   courseSubmittingSuccess,
+  courseSubmittingInReview,
 } from './courseSubmitInfo';
 import * as types from '../constants/courseSubmitInfo';
 
@@ -57,5 +58,13 @@ describe('courseSubmittingInfo actions', () => {
     };
 
     expect(courseSubmittingSuccess()).toEqual(expectedAction);
+  });
+
+  it('handles in review after successful submit', () => {
+    const expectedAction = {
+      type: types.CLEAR_REVIEW_ALERT,
+    };
+
+    expect(courseSubmittingInReview()).toEqual(expectedAction);
   });
 });

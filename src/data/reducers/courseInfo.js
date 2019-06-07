@@ -13,6 +13,7 @@ import {
   EDIT_COURSE_SUCCESS,
   EDIT_COURSE_FAIL,
   CLEAR_COURSE_SAVED,
+  CLEAR_COURSE_RUN_ALERT,
 } from '../constants/courseInfo';
 
 
@@ -21,6 +22,7 @@ const initialState = {
   isFetching: false,
   isCreating: false,
   isSubmittingEdit: false,
+  showCreateStatusAlert: false,
   error: null,
   courseSaved: false,
 };
@@ -72,6 +74,7 @@ function courseInfo(state = initialState, action) {
     case CREATE_COURSE_RUN_SUCCESS:
       return Object.assign({}, state, {
         isCreating: false,
+        showCreateStatusAlert: true,
         error: null,
       });
     case CREATE_COURSE_RUN_FAIL:
@@ -99,6 +102,10 @@ function courseInfo(state = initialState, action) {
     case CLEAR_COURSE_SAVED:
       return Object.assign({}, state, {
         courseSaved: false,
+      });
+    case CLEAR_COURSE_RUN_ALERT:
+      return Object.assign({}, state, {
+        showCreateStatusAlert: false,
       });
     default:
       return state;

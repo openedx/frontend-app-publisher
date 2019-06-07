@@ -26,6 +26,7 @@ class EditCoursePage extends React.Component {
     this.showModal = this.showModal.bind(this);
     this.cancelSubmit = this.cancelSubmit.bind(this);
     this.continueSubmit = this.continueSubmit.bind(this);
+    this.dismissAlert = this.dismissAlert.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +53,10 @@ class EditCoursePage extends React.Component {
         isSubmittingForReview: targetRun && targetRun.status !== PUBLISHED,
       });
     }
+  }
+
+  componentWillUnmount() {
+    this.dismissAlert();
   }
 
   setStartedFetching() {
@@ -185,6 +190,17 @@ class EditCoursePage extends React.Component {
     return clearSubmitStatus();
   }
 
+  dismissAlert() {
+    const {
+      clearCourseReviewAlert,
+      clearCreateStatusAlert,
+    } = this.props;
+
+    clearCourseReviewAlert();
+    clearCreateStatusAlert();
+  }
+
+
   handleCourseSubmit(courseData) {
     /*
       Need to do some pre-processing before sending anything to course-discovery.
@@ -245,10 +261,14 @@ class EditCoursePage extends React.Component {
           uuid,
           owners,
         },
+        showCreateStatusAlert,
       },
       courseOptions,
       courseRunOptions,
       formValues,
+      courseSubmitInfo: {
+        showReviewStatusAlert,
+      },
     } = this.props;
     const {
       isSubmittingForReview,
@@ -351,6 +371,20 @@ class EditCoursePage extends React.Component {
           onClose={this.cancelSubmit}
         />
 
+        { showReviewStatusAlert && <StatusAlert
+          onClose={this.dismissAlert}
+          dismissible
+          alertType="success"
+          message="Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete."
+        /> }
+
+        { showCreateStatusAlert && <StatusAlert
+          onClose={this.dismissAlert}
+          dismissible
+          alertType="success"
+          message="Course run has been created in studio. See link below."
+        /> }
+
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
           { showForm && (
@@ -418,6 +452,8 @@ EditCoursePage.defaultProps = {
   fetchCourseRunOptions: () => null,
   editCourse: () => null,
   clearSubmitStatus: () => {},
+  clearCourseReviewAlert: () => {},
+  clearCreateStatusAlert: () => {},
   courseSubmitInfo: {},
   formValues: () => {},
 };
@@ -443,6 +479,8 @@ EditCoursePage.propTypes = {
   fetchCourseRunOptions: PropTypes.func,
   editCourse: PropTypes.func,
   clearSubmitStatus: PropTypes.func,
+  clearCourseReviewAlert: PropTypes.func,
+  clearCreateStatusAlert: PropTypes.func,
   courseSubmitInfo: PropTypes.shape({
     targetRun: PropTypes.shape({
       uuid: PropTypes.string,

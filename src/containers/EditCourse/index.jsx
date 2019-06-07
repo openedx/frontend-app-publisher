@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { getFormValues } from 'redux-form';
 
 import EditCoursePage from '../../components/EditCoursePage';
-import { updateFormValuesAfterSave, editCourse, fetchCourseInfo } from '../../data/actions/courseInfo';
-import { clearSubmitStatus } from '../../data/actions/courseSubmitInfo';
+import { updateFormValuesAfterSave, editCourse, fetchCourseInfo, clearCreateStatusAlert } from '../../data/actions/courseInfo';
+import { clearSubmitStatus, clearCourseReviewAlert } from '../../data/actions/courseSubmitInfo';
 import { fetchCourseOptions } from '../../data/actions/courseOptions';
 import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
 
@@ -25,6 +25,8 @@ const mapDispatchToProps = {
   fetchCourseRunOptions,
   editCourse,
   clearSubmitStatus,
+  clearCourseReviewAlert,
+  clearCreateStatusAlert,
   updateFormValuesAfterSave,
 };
 
@@ -36,6 +38,8 @@ const mergeProps = (stateProps, actionProps, { id }) => ({
   editCourse: (courseData, courseRunData, submittingRunForReview) => (
     actionProps.editCourse(courseData, courseRunData, submittingRunForReview)),
   clearSubmitStatus: () => (actionProps.clearSubmitStatus()),
+  clearCourseReviewAlert: () => (actionProps.clearCourseReviewAlert()),
+  clearCreateStatusAlert: () => (actionProps.clearCreateStatusAlert()),
   updateFormValuesAfterSave: (change, currentFormValues, initialImageSrc, initialCourseRuns) => (
     actionProps.updateFormValuesAfterSave(
       change,
