@@ -198,6 +198,8 @@ export class BaseEditCourseForm extends React.Component {
       this.parseOptions(courseRunOptions.pacing_type.choices));
     const languageOptions = (courseRunOptions &&
       this.parseOptions(courseRunOptions.content_language.choices));
+    const programOptions = (courseRunOptions &&
+      this.parseOptions(courseRunOptions.expected_program_type.choices));
 
     let submitState = 'default';
     if (submitting || (courseInfo && courseInfo.isSubmittingEdit)) {
@@ -209,6 +211,7 @@ export class BaseEditCourseForm extends React.Component {
     languageOptions.unshift({ label: '--', value: '' });
     levelTypeOptions.unshift({ label: '--', value: '' });
     subjectOptions.unshift({ label: '--', value: '' });
+    programOptions.unshift({ label: '--', value: '' });
 
     return (
       <div className="edit-course-form">
@@ -759,6 +762,7 @@ export class BaseEditCourseForm extends React.Component {
             name="course_runs"
             component={CollapsibleCourseRuns}
             languageOptions={languageOptions}
+            programOptions={programOptions}
             pacingTypeOptions={pacingTypeOptions}
             formId={id}
             courseUuid={uuid}

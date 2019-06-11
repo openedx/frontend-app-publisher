@@ -132,6 +132,28 @@ describe('EditCoursePage', () => {
               value: 'ar-ae',
             }],
           },
+          expected_program_type: {
+            type: 'field',
+            required: false,
+            read_only: false,
+            label: 'Expected Program Type',
+            choices: [{
+              display_name: 'Professional Certificate',
+              value: 'professional-certificate',
+            },
+            {
+              display_name: 'MicroMasters',
+              value: 'micromasters',
+            },
+            {
+              display_name: 'XSeries',
+              value: 'xseries',
+            },
+            {
+              display_name: 'Masters',
+              value: 'masters',
+            }],
+          },
         },
       },
     },
@@ -285,6 +307,8 @@ describe('EditCoursePage', () => {
       content_language: 'en-us',
       draft: undefined,
       end: '2019-08-14T00:00:00Z',
+      expected_program_type: null,
+      expected_program_name: '',
       go_live_date: '2019-05-06T00:00:00Z',
       marketing_url: null,
       max_effort: 123,
@@ -299,7 +323,12 @@ describe('EditCoursePage', () => {
     const unpublishedCourseRun = Object.assign(
       {},
       publishedCourseRun,
-      { key: 'edX101+DemoX+T2', status: UNPUBLISHED },
+      {
+        key: 'edX101+DemoX+T2',
+        status: UNPUBLISHED,
+        expected_program_type: 'micromasters',
+        expected_program_name: 'Test Program Name',
+      },
     );
 
     const courseData = {
@@ -346,6 +375,8 @@ describe('EditCoursePage', () => {
         content_language: 'en-us',
         draft: true,
         end: '2019-08-14T00:00:00Z',
+        expected_program_type: 'micromasters',
+        expected_program_name: 'Test Program Name',
         go_live_date: '2019-05-06T00:00:00Z',
         key: 'edX101+DemoX+T2',
         max_effort: 123,
@@ -362,6 +393,8 @@ describe('EditCoursePage', () => {
         content_language: 'en-us',
         draft: true,
         end: '2019-08-14T00:00:00Z',
+        expected_program_type: null,
+        expected_program_name: '',
         go_live_date: '2019-05-06T00:00:00Z',
         key: 'edX101+DemoX+T1',
         max_effort: 123,

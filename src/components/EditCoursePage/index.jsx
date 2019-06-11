@@ -82,6 +82,10 @@ class EditCoursePage extends React.Component {
         content_language: courseRun.content_language,
         draft,
         end: isValidDate(courseRun.end) ? courseRun.end : null,
+        expected_program_type: courseRun.expected_program_type ?
+          courseRun.expected_program_type : null,
+        expected_program_name: courseRun.expected_program_name ?
+          courseRun.expected_program_name : '',
         go_live_date: isValidDate(courseRun.go_live_date) ? courseRun.go_live_date : null,
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
@@ -301,6 +305,8 @@ class EditCoursePage extends React.Component {
       key: courseRun.key,
       start: courseRun.start,
       end: courseRun.end,
+      expected_program_type: courseRun.expected_program_type,
+      expected_program_name: courseRun.expected_program_name,
       go_live_date: courseRun.go_live_date,
       min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
       max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',

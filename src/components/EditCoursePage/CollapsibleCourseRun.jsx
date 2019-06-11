@@ -91,6 +91,7 @@ class CollapsibleCourseRun extends React.Component {
       courseSubmitting,
       isSubmittingForReview,
       languageOptions,
+      programOptions,
       pacingTypeOptions,
       targetRun,
       owners,
@@ -309,6 +310,49 @@ class CollapsibleCourseRun extends React.Component {
           />
           <div className="mb-3">{courseRun.has_ofac_restrictions ? 'Yes' : 'No'}</div>
         </div>
+        <Field
+          name={`${courseId}.expected_program_type`}
+          type="text"
+          component={RenderSelectField}
+          options={programOptions}
+          label={
+            <FieldLabel
+              id={`${courseId}.expected_program_type.label`}
+              text="Expected Program Type"
+              helpText={
+                <div>
+                  <p>
+                    If this Course Run will potentially be part of a Program please set the
+                    expected program type here.
+                  </p>
+                </div>
+              }
+            />
+          }
+          extraInput={{ onInvalid: this.openCollapsible }}
+          disabled={courseInReview}
+        />
+        <Field
+          name={`${courseId}.expected_program_name`}
+          component={RenderInputTextField}
+          type="text"
+          label={
+            <FieldLabel
+              id={`${courseId}.expected_program_name.label`}
+              text="Expected Program Name"
+              helpText={
+                <div>
+                  <p>
+                    If this Course Run will potentially be part of a Program please set the
+                    expected program name here.
+                  </p>
+                </div>
+              }
+            />
+          }
+          extraInput={{ onInvalid: this.openCollapsible }}
+          disabled={courseInReview}
+        />
         <FieldLabel
           id={`${courseId}.staff.label`}
           text="Staff"
@@ -369,6 +413,10 @@ CollapsibleCourseRun.propTypes = {
   courseUuid: PropTypes.string.isRequired,
   isSubmittingForReview: PropTypes.bool,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  })).isRequired,
+  programOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string,
   })).isRequired,
