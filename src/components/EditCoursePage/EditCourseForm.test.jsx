@@ -468,6 +468,28 @@ describe('BaseEditCourseForm', () => {
               value: 'zu',
             }],
           },
+          expected_program_type: {
+            type: 'field',
+            required: false,
+            read_only: false,
+            label: 'Expected Program Type',
+            choices: [{
+              display_name: 'Professional Certificate',
+              value: 'professional-certificate',
+            },
+            {
+              display_name: 'MicroMasters',
+              value: 'micromasters',
+            },
+            {
+              display_name: 'XSeries',
+              value: 'xseries',
+            },
+            {
+              display_name: 'Masters',
+              value: 'masters',
+            }],
+          },
         },
       },
     },
