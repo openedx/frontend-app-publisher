@@ -301,26 +301,27 @@ class EditCoursePage extends React.Component {
       courseStatuses.push(UNPUBLISHED);
     }
 
-    const minimalCourseRuns = course_runs && course_runs.map(courseRun => ({
-      key: courseRun.key,
-      start: courseRun.start,
-      end: courseRun.end,
-      expected_program_type: courseRun.expected_program_type,
-      expected_program_name: courseRun.expected_program_name,
-      go_live_date: courseRun.go_live_date,
-      min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
-      max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',
-      pacing_type: courseRun.pacing_type,
-      content_language: courseRun.content_language,
-      transcript_languages: courseRun.transcript_languages,
-      weeks_to_complete: typeof courseRun.weeks_to_complete === 'number' ?
-        String(courseRun.weeks_to_complete) : '',
-      staff: courseRun.staff,
-      status: courseRun.status,
-      draft: courseRun.draft,
-      marketing_url: courseRun.marketing_url,
-      has_ofac_restrictions: courseRun.has_ofac_restrictions,
-    }));
+    const minimalCourseRuns = course_runs && course_runs.map(courseRun =>
+      ({
+        key: courseRun.key,
+        start: courseRun.start,
+        end: courseRun.end,
+        expected_program_type: courseRun.expected_program_type,
+        expected_program_name: courseRun.expected_program_name,
+        go_live_date: courseRun.go_live_date,
+        min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
+        max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',
+        pacing_type: courseRun.pacing_type,
+        content_language: courseRun.content_language,
+        transcript_languages: courseRun.transcript_languages,
+        weeks_to_complete: typeof courseRun.weeks_to_complete === 'number' ?
+          String(courseRun.weeks_to_complete) : '',
+        staff: courseRun.staff,
+        status: courseRun.status,
+        draft: courseRun.draft,
+        marketing_url: courseRun.marketing_url,
+        has_ofac_restrictions: courseRun.has_ofac_restrictions,
+      }));
 
     // If we want to keep a lot of the logic in the lower return,
     // we have to do all this '&&' logic to make sure the data is there.

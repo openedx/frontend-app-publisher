@@ -4,6 +4,7 @@ import qs from 'query-string';
 import history from '../data/history';
 
 const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
+const getTimeString = date => (date ? moment.utc(date).format('HH:mm') : '');
 
 const isValidDate = (dateStr) => {
   const date = moment(dateStr);
@@ -92,6 +93,7 @@ const getErrorMessages = (error) => {
 
 export {
   getDateString,
+  getTimeString,
   updateUrl,
   getPageOptionsFromUrl,
   jsonDeepCopy,

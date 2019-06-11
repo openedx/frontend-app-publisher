@@ -13,6 +13,7 @@ import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import StaffList from '../StaffList';
+import DateTimeField from '../DateTimeField';
 import store from '../../data/store';
 import TranscriptLanguage from './TranscriptLanguage';
 
@@ -127,43 +128,21 @@ class CollapsibleCourseRun extends React.Component {
       >
         <Field
           name={`${courseId}.start`}
-          type="date"
-          component={RenderInputTextField}
-          format={value => getDateString(value)}
-          normalize={value => moment.utc(value).format(DATE_FORMAT)}
-          label={
-            <FieldLabel
-              id={`${courseId}.start.label`}
-              text="Start date"
-              required
-              requiredForSubmit
-              helpText={startDateHelp}
-            />
-          }
-          extraInput={{ onInvalid: this.openCollapsible }}
-          placeholder="mm/dd/yyyy"
-          required
+          component={DateTimeField}
+          dateLabel="Start date"
+          timeLabel="Start time"
+          helpText={startDateHelp}
           disabled={courseInReview}
+          required
         />
         <Field
           name={`${courseId}.end`}
-          type="date"
-          component={RenderInputTextField}
-          format={value => getDateString(value)}
-          normalize={value => moment.utc(value).format(DATE_FORMAT)}
-          label={
-            <FieldLabel
-              id={`${courseId}.end.label`}
-              text="End date"
-              required
-              requiredForSubmit
-              helpText={endDateHelp}
-            />
-          }
-          extraInput={{ onInvalid: this.openCollapsible }}
-          placeholder="mm/dd/yyyy"
-          required
+          component={DateTimeField}
+          dateLabel="End date"
+          timeLabel="End time"
+          helpText={endDateHelp}
           disabled={courseInReview}
+          required
         />
         <Field
           name={`${courseId}.go_live_date`}

@@ -269,61 +269,37 @@ ShallowWrapper {
           <hr />
           <Field
             component={[Function]}
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major U.S. holidays.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="start-label"
-                required={true}
-                requiredForSubmit={false}
-                text="Start date"
-              />
+            dateLabel="Start date"
+            helpText={
+              <div>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major U.S. holidays.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
             }
             name="start"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
             required={true}
-            type="date"
+            timeLabel="Start time"
           />
           <Field
             component={[Function]}
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="end-label"
-                required={true}
-                requiredForSubmit={false}
-                text="End date"
-              />
+            dateLabel="End date"
+            helpText={
+              <div>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
             }
             name="end"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
             required={true}
-            type="date"
+            timeLabel="End time"
           />
           <Field
             component={[Function]}
@@ -624,61 +600,37 @@ ShallowWrapper {
             <hr />,
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="start"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="Start time"
             />,
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="End time"
             />,
             <Field
               component={[Function]}
@@ -996,33 +948,21 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major U.S. holidays.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="start-label"
-                required={true}
-                requiredForSubmit={false}
-                text="Start date"
-              />,
+              "dateLabel": "Start date",
+              "helpText": <div>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major U.S. holidays.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
               "name": "start",
-              "normalize": [Function],
-              "placeholder": "mm/dd/yyyy",
               "required": true,
-              "type": "date",
+              "timeLabel": "Start time",
             },
             "ref": null,
             "rendered": null,
@@ -1034,27 +974,15 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="end-label"
-                required={true}
-                requiredForSubmit={false}
-                text="End date"
-              />,
+              "dateLabel": "End date",
+              "helpText": <div>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
               "name": "end",
-              "normalize": [Function],
-              "placeholder": "mm/dd/yyyy",
               "required": true,
-              "type": "date",
+              "timeLabel": "End time",
             },
             "ref": null,
             "rendered": null,
@@ -1375,61 +1303,37 @@ ShallowWrapper {
             <hr />
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="start"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="Start time"
             />
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="End time"
             />
             <Field
               component={[Function]}
@@ -1730,61 +1634,37 @@ ShallowWrapper {
               <hr />,
               <Field
                 component={[Function]}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    extraText=""
-                    helpText={
-                      <div>
-                        <p>
-                          Start on a Tuesday, Wednesday, or Thursday.
-                        </p>
-                        <p>
-                          Avoid major U.S. holidays.
-                        </p>
-                        <p>
-                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                        </p>
-                      </div>
-                    }
-                    id="start-label"
-                    required={true}
-                    requiredForSubmit={false}
-                    text="Start date"
-                  />
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
                 }
                 name="start"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
                 required={true}
-                type="date"
+                timeLabel="Start time"
               />,
               <Field
                 component={[Function]}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    extraText=""
-                    helpText={
-                      <div>
-                        <p>
-                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                        </p>
-                      </div>
-                    }
-                    id="end-label"
-                    required={true}
-                    requiredForSubmit={false}
-                    text="End date"
-                  />
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
                 }
                 name="end"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
                 required={true}
-                type="date"
+                timeLabel="End time"
               />,
               <Field
                 component={[Function]}
@@ -2102,33 +1982,21 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />,
+                "dateLabel": "Start date",
+                "helpText": <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
                 "name": "start",
-                "normalize": [Function],
-                "placeholder": "mm/dd/yyyy",
                 "required": true,
-                "type": "date",
+                "timeLabel": "Start time",
               },
               "ref": null,
               "rendered": null,
@@ -2140,27 +2008,15 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />,
+                "dateLabel": "End date",
+                "helpText": <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
                 "name": "end",
-                "normalize": [Function],
-                "placeholder": "mm/dd/yyyy",
                 "required": true,
-                "type": "date",
+                "timeLabel": "End time",
               },
               "ref": null,
               "rendered": null,
@@ -2557,61 +2413,37 @@ ShallowWrapper {
           <hr />
           <Field
             component={[Function]}
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major U.S. holidays.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="start-label"
-                required={true}
-                requiredForSubmit={false}
-                text="Start date"
-              />
+            dateLabel="Start date"
+            helpText={
+              <div>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major U.S. holidays.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
             }
             name="start"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
             required={true}
-            type="date"
+            timeLabel="Start time"
           />
           <Field
             component={[Function]}
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="end-label"
-                required={true}
-                requiredForSubmit={false}
-                text="End date"
-              />
+            dateLabel="End date"
+            helpText={
+              <div>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
             }
             name="end"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
             required={true}
-            type="date"
+            timeLabel="End time"
           />
           <Field
             component={[Function]}
@@ -2912,61 +2744,37 @@ ShallowWrapper {
             <hr />,
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="start"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="Start time"
             />,
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="End time"
             />,
             <Field
               component={[Function]}
@@ -3284,33 +3092,21 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major U.S. holidays.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="start-label"
-                required={true}
-                requiredForSubmit={false}
-                text="Start date"
-              />,
+              "dateLabel": "Start date",
+              "helpText": <div>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major U.S. holidays.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
               "name": "start",
-              "normalize": [Function],
-              "placeholder": "mm/dd/yyyy",
               "required": true,
-              "type": "date",
+              "timeLabel": "Start time",
             },
             "ref": null,
             "rendered": null,
@@ -3322,27 +3118,15 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="end-label"
-                required={true}
-                requiredForSubmit={false}
-                text="End date"
-              />,
+              "dateLabel": "End date",
+              "helpText": <div>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
               "name": "end",
-              "normalize": [Function],
-              "placeholder": "mm/dd/yyyy",
               "required": true,
-              "type": "date",
+              "timeLabel": "End time",
             },
             "ref": null,
             "rendered": null,
@@ -3663,61 +3447,37 @@ ShallowWrapper {
             <hr />
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="start"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="Start time"
             />
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="End time"
             />
             <Field
               component={[Function]}
@@ -4018,61 +3778,37 @@ ShallowWrapper {
               <hr />,
               <Field
                 component={[Function]}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    extraText=""
-                    helpText={
-                      <div>
-                        <p>
-                          Start on a Tuesday, Wednesday, or Thursday.
-                        </p>
-                        <p>
-                          Avoid major U.S. holidays.
-                        </p>
-                        <p>
-                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                        </p>
-                      </div>
-                    }
-                    id="start-label"
-                    required={true}
-                    requiredForSubmit={false}
-                    text="Start date"
-                  />
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
                 }
                 name="start"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
                 required={true}
-                type="date"
+                timeLabel="Start time"
               />,
               <Field
                 component={[Function]}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    extraText=""
-                    helpText={
-                      <div>
-                        <p>
-                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                        </p>
-                      </div>
-                    }
-                    id="end-label"
-                    required={true}
-                    requiredForSubmit={false}
-                    text="End date"
-                  />
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
                 }
                 name="end"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
                 required={true}
-                type="date"
+                timeLabel="End time"
               />,
               <Field
                 component={[Function]}
@@ -4390,33 +4126,21 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />,
+                "dateLabel": "Start date",
+                "helpText": <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
                 "name": "start",
-                "normalize": [Function],
-                "placeholder": "mm/dd/yyyy",
                 "required": true,
-                "type": "date",
+                "timeLabel": "Start time",
               },
               "ref": null,
               "rendered": null,
@@ -4428,27 +4152,15 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />,
+                "dateLabel": "End date",
+                "helpText": <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
                 "name": "end",
-                "normalize": [Function],
-                "placeholder": "mm/dd/yyyy",
                 "required": true,
-                "type": "date",
+                "timeLabel": "End time",
               },
               "ref": null,
               "rendered": null,
@@ -4806,61 +4518,37 @@ ShallowWrapper {
           <hr />
           <Field
             component={[Function]}
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major U.S. holidays.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="start-label"
-                required={true}
-                requiredForSubmit={false}
-                text="Start date"
-              />
+            dateLabel="Start date"
+            helpText={
+              <div>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major U.S. holidays.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
             }
             name="start"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
             required={true}
-            type="date"
+            timeLabel="Start time"
           />
           <Field
             component={[Function]}
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="end-label"
-                required={true}
-                requiredForSubmit={false}
-                text="End date"
-              />
+            dateLabel="End date"
+            helpText={
+              <div>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
             }
             name="end"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
             required={true}
-            type="date"
+            timeLabel="End time"
           />
           <Field
             component={[Function]}
@@ -5139,61 +4827,37 @@ ShallowWrapper {
             <hr />,
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="start"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="Start time"
             />,
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="End time"
             />,
             <Field
               component={[Function]}
@@ -5485,33 +5149,21 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major U.S. holidays.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="start-label"
-                required={true}
-                requiredForSubmit={false}
-                text="Start date"
-              />,
+              "dateLabel": "Start date",
+              "helpText": <div>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major U.S. holidays.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
               "name": "start",
-              "normalize": [Function],
-              "placeholder": "mm/dd/yyyy",
               "required": true,
-              "type": "date",
+              "timeLabel": "Start time",
             },
             "ref": null,
             "rendered": null,
@@ -5523,27 +5175,15 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
-              "format": [Function],
-              "label": <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                id="end-label"
-                required={true}
-                requiredForSubmit={false}
-                text="End date"
-              />,
+              "dateLabel": "End date",
+              "helpText": <div>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
               "name": "end",
-              "normalize": [Function],
-              "placeholder": "mm/dd/yyyy",
               "required": true,
-              "type": "date",
+              "timeLabel": "End time",
             },
             "ref": null,
             "rendered": null,
@@ -5841,61 +5481,37 @@ ShallowWrapper {
             <hr />
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="start"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="Start time"
             />
             <Field
               component={[Function]}
-              format={[Function]}
-              label={
-                <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
               }
               name="end"
-              normalize={[Function]}
-              placeholder="mm/dd/yyyy"
               required={true}
-              type="date"
+              timeLabel="End time"
             />
             <Field
               component={[Function]}
@@ -6174,61 +5790,37 @@ ShallowWrapper {
               <hr />,
               <Field
                 component={[Function]}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    extraText=""
-                    helpText={
-                      <div>
-                        <p>
-                          Start on a Tuesday, Wednesday, or Thursday.
-                        </p>
-                        <p>
-                          Avoid major U.S. holidays.
-                        </p>
-                        <p>
-                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                        </p>
-                      </div>
-                    }
-                    id="start-label"
-                    required={true}
-                    requiredForSubmit={false}
-                    text="Start date"
-                  />
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major U.S. holidays.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
                 }
                 name="start"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
                 required={true}
-                type="date"
+                timeLabel="Start time"
               />,
               <Field
                 component={[Function]}
-                format={[Function]}
-                label={
-                  <FieldLabel
-                    className=""
-                    extraText=""
-                    helpText={
-                      <div>
-                        <p>
-                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                        </p>
-                      </div>
-                    }
-                    id="end-label"
-                    required={true}
-                    requiredForSubmit={false}
-                    text="End date"
-                  />
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
                 }
                 name="end"
-                normalize={[Function]}
-                placeholder="mm/dd/yyyy"
                 required={true}
-                type="date"
+                timeLabel="End time"
               />,
               <Field
                 component={[Function]}
@@ -6520,33 +6112,21 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        Start on a Tuesday, Wednesday, or Thursday.
-                      </p>
-                      <p>
-                        Avoid major U.S. holidays.
-                      </p>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="start-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="Start date"
-                />,
+                "dateLabel": "Start date",
+                "helpText": <div>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major U.S. holidays.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
                 "name": "start",
-                "normalize": [Function],
-                "placeholder": "mm/dd/yyyy",
                 "required": true,
-                "type": "date",
+                "timeLabel": "Start time",
               },
               "ref": null,
               "rendered": null,
@@ -6558,27 +6138,15 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
-                "format": [Function],
-                "label": <FieldLabel
-                  className=""
-                  extraText=""
-                  helpText={
-                    <div>
-                      <p>
-                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                      </p>
-                    </div>
-                  }
-                  id="end-label"
-                  required={true}
-                  requiredForSubmit={false}
-                  text="End date"
-                />,
+                "dateLabel": "End date",
+                "helpText": <div>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
                 "name": "end",
-                "normalize": [Function],
-                "placeholder": "mm/dd/yyyy",
                 "required": true,
-                "type": "date",
+                "timeLabel": "End time",
               },
               "ref": null,
               "rendered": null,
