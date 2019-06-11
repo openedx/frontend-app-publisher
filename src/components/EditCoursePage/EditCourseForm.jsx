@@ -778,7 +778,6 @@ export class BaseEditCourseForm extends React.Component {
                 pending: 'Saving Course',
                 complete: 'Course Saved',
               }}
-              primary={false}
               state={submitState}
               onClick={() => {
                /* Bit of a hack used to clear old validation errors that might be around from

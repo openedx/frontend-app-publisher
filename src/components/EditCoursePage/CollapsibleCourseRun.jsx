@@ -17,18 +17,24 @@ import store from '../../data/store';
 import TranscriptLanguage from './TranscriptLanguage';
 
 import { DATE_FORMAT, IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
-import { endDateHelp, startDateHelp } from '../../helpText';
-
+import { endDateHelp, startDateHelp, pacingHelp } from '../../helpText';
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
     const labelItems = [];
+    let publishDate = '';
     if (courseRun.start) {
       labelItems.push(moment.utc(courseRun.start).format('MMM Do YYYY'));
     }
     if (courseRun.pacing_type) {
       labelItems.push(courseRun.pacing_type.split('_').map(pacingType =>
         pacingType.charAt(0).toUpperCase() + pacingType.slice(1)).join(' '));
+    }
+    if (courseRun.go_live_date) {
+      const formattedDate = moment.utc(courseRun.go_live_date).format('MMM Do YYYY');
+      publishDate = `Publish date is ${formattedDate}`;
+    } else {
+      publishDate = 'Unknown publish date';
     }
     return (
       <div className="course-run-label">
@@ -38,6 +44,9 @@ const formatCourseRunTitle = (courseRun) => {
           be added into the list of statuses being passed into the Pill component.
         */}
         <Pill statuses={[courseRun.status]} />
+        <div className="course-run-label">
+          <span>{`${publishDate}`}</span>
+        </div>
         <div className="course-run-studio-url">
           {'Studio URL - '}
           <a href={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}>
@@ -166,12 +175,16 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.go_live_date.label`}
               text="Publish date"
+              requiredForSubmit
               helpText={
                 <div>
                   <p>The scheduled date for when the course run will be live and published.</p>
                   <p>
-                    If you would like the run to be published as soon as possible, do not set a
-                    publish date.
+                    To publish as soon as possible, set the publish date to today.
+                    Please note that changes may take 48 hours to go live.
+                  </p>
+                  <p>
+                    If you don’t have a publish date yet, set to 1 year in the future.
                   </p>
                 </div>
               }
@@ -236,20 +249,7 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.pacing_type.label`}
               text="Course pacing"
-              helpText={
-                <div>
-                  <p>
-                    Instructor-paced courses include individual assignments that have specific
-                    due dates before the course end date.
-                  </p>
-                  <p>
-                    Self-paced courses do not have individual assignments that have specific
-                    due dates before the course end date. All assignments are due on the
-                    course
-                    end date.
-                  </p>
-                </div>
-              }
+              helpText={pacingHelp}
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}

@@ -6,13 +6,16 @@ import {
   fetchCourseInfo,
   clearCourseInfoErrors,
 } from '../../data/actions/courseInfo';
+import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
 
 const mapStateToProps = state => ({
   courseInfo: state.courseInfo,
+  courseRunOptions: state.courseRunOptions,
 });
 
 const mapDispatchToProps = {
   fetchCourseInfo,
+  fetchCourseRunOptions,
   createCourseRun,
   clearCourseInfoErrors,
 };

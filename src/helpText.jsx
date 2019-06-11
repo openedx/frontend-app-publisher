@@ -68,9 +68,24 @@ const titleHelp = (
   </div>
 );
 
+const pacingHelp = (
+  <div>
+    <p>
+      Instructor-paced courses include individual assignments that have specific
+      due dates before the course end date.
+    </p>
+    <p>
+      Self-paced courses do not have individual assignments that have specific
+      due dates before the course end date. All assignments are due on the
+      course end date.
+    </p>
+  </div>
+);
+
 export {
   endDateHelp,
   enrollmentHelp,
   startDateHelp,
   titleHelp,
+  pacingHelp,
 };

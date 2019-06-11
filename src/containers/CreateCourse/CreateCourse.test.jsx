@@ -8,11 +8,53 @@ import { MemoryRouter } from 'react-router-dom';
 import CreateCoursePage from './index';
 import { jsonDeepCopy } from '../../utils';
 
+const courseRunData = {
+  data: {
+    actions: {
+      POST: {
+        pacing_type: {
+          type: 'choice',
+          required: false,
+          read_only: false,
+          label: 'Pacing type',
+          choices: [{
+            display_name: 'Instructor-paced',
+            value: 'instructor_paced',
+          }, {
+            display_name: 'Self-paced',
+            value: 'self_paced',
+          }],
+        },
+        content_language: {
+          type: 'field',
+          required: false,
+          read_only: false,
+          label: 'Content language',
+          help_text: 'Language in which the course is administered',
+          choices: [{
+            display_name: 'Afrikaans',
+            value: 'af',
+          }, {
+            display_name: 'Arabic - United Arab Emirates',
+            value: 'ar-ae',
+          }],
+        },
+      },
+    },
+  },
+  isFetching: false,
+  error: null,
+};
 
 const initialState = {
   courseInfo: {},
   publisherUserInfo: {
     organizations: [],
+    isFetching: true,
+    error: null,
+  },
+  courseRunOptions: {
+    data: {},
     isFetching: true,
     error: null,
   },
@@ -26,10 +68,12 @@ const initialState = {
         price: 100.00,
         start: '2019-03-04',
         end: '2019-03-19',
+        pacing_type: 'instructor_paced',
       },
     },
   },
 };
+
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 let mockOnSubmit;
@@ -38,7 +82,10 @@ let store;
 const createWrapper = (state) => {
   store = mockStore(state);
   mockOnSubmit = jest.fn();
-  return shallow(<CreateCoursePage store={store} createCourse={mockOnSubmit} />);
+  return shallow(<CreateCoursePage
+    store={store}
+    createCourse={mockOnSubmit}
+  />);
 };
 
 
@@ -55,6 +102,7 @@ describe('Create Course View', () => {
     const errorMessage = ['organization failure'];
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = errorMessage;
+    testState.courseRunOptions.isFetching = false;
     const wrapper = createWrapper(testState).dive();
     expect(wrapper.find('#create-error')).toHaveLength(1);
     expect(wrapper.find('#create-error').props().message).toEqual(errorMessage.concat(<br />));
@@ -64,6 +112,8 @@ describe('Create Course View', () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
+    testState.courseRunOptions.isFetching = false;
+    testState.courseRunOptions = courseRunData;
 
     store = mockStore(testState);
     const CourseCreatePageWrapper = props => (
@@ -79,6 +129,7 @@ describe('Create Course View', () => {
               price: 100.00,
               start: '2019-03-04',
               end: '2020-03-04',
+              pacing_type: 'instructor_paced',
             }}
           />
         </Provider>
