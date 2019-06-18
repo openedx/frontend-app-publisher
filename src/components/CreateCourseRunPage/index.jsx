@@ -11,6 +11,11 @@ class CreateCourseRunPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleCourseCreate = this.handleCourseCreate.bind(this);
+    this.getCourseRunOptions = this.getCourseRunOptions.bind(this);
+    this.parseOptions = this.parseOptions.bind(this);
+    this.state = {
+      startedFetching: false,
+    };
 
     if (props.courseInfo.error) {
       props.clearCourseInfoErrors();
@@ -28,6 +33,27 @@ class CreateCourseRunPage extends React.Component {
       // We need to request Course data
       this.props.fetchCourseInfo(id);
     }
+    this.props.fetchCourseRunOptions();
+    this.setStartedFetching();
+  }
+
+  setStartedFetching() {
+    this.setState({ startedFetching: true });
+  }
+
+  getCourseRunOptions() {
+    const { courseRunOptions } = this.props;
+
+    if (!courseRunOptions) {
+      return [];
+    }
+    const { data } = courseRunOptions;
+
+    if (!data || !data.actions) {
+      return [];
+    }
+
+    return data.actions.POST;
   }
 
   handleCourseCreate(options) {
@@ -45,14 +71,25 @@ class CreateCourseRunPage extends React.Component {
       course: key,
       start: options.start,
       end: options.end,
+      pacing_type: options.pacing_type,
     };
+
     return createCourseRun(uuid, courseRunData);
+  }
+
+  parseOptions(inChoices) {
+    return inChoices.map(choice =>
+      ({ label: choice.display_name, value: choice.value }));
   }
 
   render() {
     const {
       courseInfo,
+      courseRunOptions,
     } = this.props;
+    const {
+      startedFetching,
+    } = this.state;
     const title = courseInfo.data && courseInfo.data.title ? courseInfo.data.title : '';
     const uuid = courseInfo.data && courseInfo.data.uuid ? courseInfo.data.uuid : '';
 
@@ -66,6 +103,11 @@ class CreateCourseRunPage extends React.Component {
       });
     }
 
+    const showSpinner = !startedFetching || courseInfo.isFetching ||
+      courseRunOptions.isFetching;
+    const showForm = startedFetching && !courseInfo.isFetching &&
+      !courseRunOptions.isFetching;
+
     return (
       <React.Fragment>
         <Helmet>
@@ -73,8 +115,8 @@ class CreateCourseRunPage extends React.Component {
         </Helmet>
 
         <PageContainer>
-          { courseInfo.isFetching && <LoadingSpinner /> }
-          { !courseInfo.isFetching &&
+          { showSpinner && <LoadingSpinner /> }
+          { showForm &&
           (
             <div>
               <CreateCourseRunForm
@@ -82,6 +124,8 @@ class CreateCourseRunPage extends React.Component {
                 title={title}
                 uuid={uuid}
                 isCreating={courseInfo.isCreating}
+                getCourseRunOptions={this.getCourseRunOptions}
+                parseOptions={this.parseOptions}
               />
               {errorArray.length > 1 && (
                 <StatusAlert
@@ -102,7 +146,9 @@ class CreateCourseRunPage extends React.Component {
 CreateCourseRunPage.defaultProps = {
   initialValues: {},
   fetchCourseInfo: () => null,
+  fetchCourseRunOptions: () => null,
   courseInfo: null,
+  courseRunOptions: {},
   createCourseRun: () => {},
   clearCourseInfoErrors: () => null,
 };
@@ -113,6 +159,12 @@ CreateCourseRunPage.propTypes = {
   }),
   fetchCourseInfo: PropTypes.func,
   courseInfo: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
+  fetchCourseRunOptions: PropTypes.func,
+  courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,

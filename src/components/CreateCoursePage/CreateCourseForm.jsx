@@ -16,9 +16,8 @@ import {
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
-import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp } from '../../helpText';
+import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
 import { getDateString } from '../../utils/index';
-
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -48,7 +47,12 @@ class BaseCreateCourseForm extends React.Component {
       organizations,
       pristine,
       isCreating,
+      getCourseRunOptions,
+      parseOptions,
     } = this.props;
+    const courseRunOptions = getCourseRunOptions();
+    const { pacing_type: { choices } } = courseRunOptions;
+    const pacingTypeOptions = courseRunOptions && parseOptions(choices);
     return (
       <div className="create-course-form">
         <h2>Create New Course</h2>
@@ -175,6 +179,19 @@ class BaseCreateCourseForm extends React.Component {
             placeholder="mm/dd/yyyy"
             required
           />
+          <Field
+            name="pacing_type"
+            type="text"
+            component={RenderSelectField}
+            options={pacingTypeOptions}
+            label={
+              <FieldLabel
+                id="pacing_type.label"
+                text="Course pacing"
+                helpText={pacingHelp}
+              />
+            }
+          />
           <ButtonToolbar>
             <ActionButton
               disabled={pristine}
@@ -215,6 +232,8 @@ BaseCreateCourseForm.propTypes = {
   })).isRequired,
   pristine: PropTypes.bool,
   isCreating: PropTypes.bool,
+  getCourseRunOptions: PropTypes.func.isRequired,
+  parseOptions: PropTypes.func.isRequired,
 };
 
 export default reduxForm({

@@ -4,6 +4,7 @@ exports[`CreateCourseRunForm renders html correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseCreateCourseRunForm
+    getCourseRunOptions={[Function]}
     handleSubmit={[Function]}
     initialValues={
       Object {
@@ -11,6 +12,7 @@ ShallowWrapper {
       }
     }
     isCreating={false}
+    parseOptions={[Function]}
     pristine={true}
     title="Test Course"
     uuid="00000000-0000-0000-0000-000000000001"
@@ -113,6 +115,43 @@ ShallowWrapper {
             placeholder="mm/dd/yyyy"
             required={true}
             type="date"
+          />
+          <Field
+            component={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="pacing_type.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />
+            }
+            name="pacing_type"
+            options={
+              Array [
+                Object {
+                  "label": "Instructor-paced",
+                  "value": "instructor_paced",
+                },
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ]
+            }
+            type="text"
           />
           <ButtonToolbar
             className=""
@@ -277,6 +316,43 @@ ShallowWrapper {
               required={true}
               type="date"
             />,
+            <Field
+              component={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="pacing_type.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
+              }
+              name="pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Instructor-paced",
+                    "value": "instructor_paced",
+                  },
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />,
             <ButtonToolbar
               className=""
             >
@@ -374,6 +450,47 @@ ShallowWrapper {
               "placeholder": "mm/dd/yyyy",
               "required": true,
               "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="pacing_type.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />,
+              "name": "pacing_type",
+              "options": Array [
+                Object {
+                  "label": "Instructor-paced",
+                  "value": "instructor_paced",
+                },
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ],
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -561,6 +678,43 @@ ShallowWrapper {
               required={true}
               type="date"
             />
+            <Field
+              component={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="pacing_type.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
+              }
+              name="pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Instructor-paced",
+                    "value": "instructor_paced",
+                  },
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />
             <ButtonToolbar
               className=""
             >
@@ -724,6 +878,43 @@ ShallowWrapper {
                 required={true}
                 type="date"
               />,
+              <Field
+                component={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                        </p>
+                        <p>
+                          Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                        </p>
+                      </div>
+                    }
+                    id="pacing_type.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Course pacing"
+                  />
+                }
+                name="pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Instructor-paced",
+                      "value": "instructor_paced",
+                    },
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                type="text"
+              />,
               <ButtonToolbar
                 className=""
               >
@@ -821,6 +1012,47 @@ ShallowWrapper {
                 "placeholder": "mm/dd/yyyy",
                 "required": true,
                 "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="pacing_type.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />,
+                "name": "pacing_type",
+                "options": Array [
+                  Object {
+                    "label": "Instructor-paced",
+                    "value": "instructor_paced",
+                  },
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ],
+                "type": "text",
               },
               "ref": null,
               "rendered": null,
@@ -948,6 +1180,7 @@ exports[`CreateCourseRunForm renders html correctly when creating 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BaseCreateCourseRunForm
+    getCourseRunOptions={[Function]}
     handleSubmit={[Function]}
     initialValues={
       Object {
@@ -955,6 +1188,7 @@ ShallowWrapper {
       }
     }
     isCreating={true}
+    parseOptions={[Function]}
     pristine={false}
     title="Test Course"
     uuid="00000000-0000-0000-0000-000000000001"
@@ -1057,6 +1291,43 @@ ShallowWrapper {
             placeholder="mm/dd/yyyy"
             required={true}
             type="date"
+          />
+          <Field
+            component={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="pacing_type.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />
+            }
+            name="pacing_type"
+            options={
+              Array [
+                Object {
+                  "label": "Instructor-paced",
+                  "value": "instructor_paced",
+                },
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ]
+            }
+            type="text"
           />
           <ButtonToolbar
             className=""
@@ -1221,6 +1492,43 @@ ShallowWrapper {
               required={true}
               type="date"
             />,
+            <Field
+              component={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="pacing_type.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
+              }
+              name="pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Instructor-paced",
+                    "value": "instructor_paced",
+                  },
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />,
             <ButtonToolbar
               className=""
             >
@@ -1318,6 +1626,47 @@ ShallowWrapper {
               "placeholder": "mm/dd/yyyy",
               "required": true,
               "type": "date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "label": <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                    </p>
+                    <p>
+                      Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                    </p>
+                  </div>
+                }
+                id="pacing_type.label"
+                required={false}
+                requiredForSubmit={false}
+                text="Course pacing"
+              />,
+              "name": "pacing_type",
+              "options": Array [
+                Object {
+                  "label": "Instructor-paced",
+                  "value": "instructor_paced",
+                },
+                Object {
+                  "label": "Self-paced",
+                  "value": "self_paced",
+                },
+              ],
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -1505,6 +1854,43 @@ ShallowWrapper {
               required={true}
               type="date"
             />
+            <Field
+              component={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="pacing_type.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />
+              }
+              name="pacing_type"
+              options={
+                Array [
+                  Object {
+                    "label": "Instructor-paced",
+                    "value": "instructor_paced",
+                  },
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ]
+              }
+              type="text"
+            />
             <ButtonToolbar
               className=""
             >
@@ -1668,6 +2054,43 @@ ShallowWrapper {
                 required={true}
                 type="date"
               />,
+              <Field
+                component={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                        </p>
+                        <p>
+                          Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                        </p>
+                      </div>
+                    }
+                    id="pacing_type.label"
+                    required={false}
+                    requiredForSubmit={false}
+                    text="Course pacing"
+                  />
+                }
+                name="pacing_type"
+                options={
+                  Array [
+                    Object {
+                      "label": "Instructor-paced",
+                      "value": "instructor_paced",
+                    },
+                    Object {
+                      "label": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ]
+                }
+                type="text"
+              />,
               <ButtonToolbar
                 className=""
               >
@@ -1765,6 +2188,47 @@ ShallowWrapper {
                 "placeholder": "mm/dd/yyyy",
                 "required": true,
                 "type": "date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+                      </p>
+                      <p>
+                        Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+                      </p>
+                    </div>
+                  }
+                  id="pacing_type.label"
+                  required={false}
+                  requiredForSubmit={false}
+                  text="Course pacing"
+                />,
+                "name": "pacing_type",
+                "options": Array [
+                  Object {
+                    "label": "Instructor-paced",
+                    "value": "instructor_paced",
+                  },
+                  Object {
+                    "label": "Self-paced",
+                    "value": "self_paced",
+                  },
+                ],
+                "type": "text",
               },
               "ref": null,
               "rendered": null,

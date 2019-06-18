@@ -7,6 +7,24 @@ const organizations = [
   { name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' },
 ];
 
+const courseRunOptionsReturn = {
+  pacing_type: {
+    type: 'choice',
+    required: false,
+    read_only: false,
+    label: 'Pacing type',
+    choices: [{
+      display_name: 'Instructor-paced',
+      value: 'instructor_paced',
+    }, {
+      display_name: 'Self-paced',
+      value: 'self_paced',
+    }],
+  },
+};
+const parseOptionsReturn = [{ label: 'Instructor-paced', value: 'instructor_paced' },
+  { label: 'Self-paced', value: 'self_paced' }];
+
 describe('CreateCourseForm', () => {
   const initialValues = {
     org: 'edx',
@@ -21,6 +39,8 @@ describe('CreateCourseForm', () => {
       handleSubmit={() => {}}
       initialValues={{}}
       organizations={organizations}
+      getCourseRunOptions={() => courseRunOptionsReturn}
+      parseOptions={() => parseOptionsReturn}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -31,6 +51,8 @@ describe('CreateCourseForm', () => {
       initialValues={initialValues}
       currentFormValues={initialValues}
       organizations={organizations}
+      getCourseRunOptions={() => courseRunOptionsReturn}
+      parseOptions={() => parseOptionsReturn}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -44,6 +66,8 @@ describe('CreateCourseForm', () => {
       initialValues={{}}
       currentFormValues={initialValues}
       organizations={organizations}
+      getCourseRunOptions={() => courseRunOptionsReturn}
+      parseOptions={() => parseOptionsReturn}
     />);
     expect(component).toMatchSnapshot();
   });
