@@ -1,4 +1,3 @@
-import moment from 'moment';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
@@ -11,13 +10,12 @@ import FieldLabel from '../FieldLabel';
 
 import {
   AUDIT_TRACK,
-  DATE_FORMAT,
   ENTITLEMENT_TRACKS,
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
 import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
-import { getDateString } from '../../utils/index';
+import DateTimeField from '../DateTimeField';
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -147,36 +145,18 @@ class BaseCreateCourseForm extends React.Component {
           <hr />
           <Field
             name="start"
-            type="date"
-            component={RenderInputTextField}
-            format={value => getDateString(value)}
-            normalize={value => moment.utc(value).format(DATE_FORMAT)}
-            label={
-              <FieldLabel
-                id="start-label"
-                text="Start date"
-                required
-                helpText={startDateHelp}
-              />
-            }
-            placeholder="mm/dd/yyyy"
+            component={DateTimeField}
+            dateLabel="Start date"
+            timeLabel="Start time"
+            helpText={startDateHelp}
             required
           />
           <Field
             name="end"
-            type="date"
-            component={RenderInputTextField}
-            format={value => getDateString(value)}
-            normalize={value => moment.utc(value).format(DATE_FORMAT)}
-            label={
-              <FieldLabel
-                id="end-label"
-                text="End date"
-                required
-                helpText={endDateHelp}
-              />
-            }
-            placeholder="mm/dd/yyyy"
+            component={DateTimeField}
+            dateLabel="End date"
+            timeLabel="End time"
+            helpText={endDateHelp}
             required
           />
           <Field
