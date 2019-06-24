@@ -171,14 +171,21 @@ function editCourse(courseData, courseRunData, submittingRunForReview = false) {
   return (dispatch) => {
     dispatch(editCourseInfo(courseData));
     // Send edit course PATCH
-    return DiscoveryDataApiService.editCourse(courseData, courseRunData)
+    return DiscoveryDataApiService.editCourse(courseData)
       .then((response) => {
-        const course = response.pop().data;
-        course.course_runs = response.map(courseRun => courseRun.data);
-        dispatch(editCourseSuccess(course));
-        if (submitReview) {
-          dispatch(courseSubmittingSuccess());
-        }
+        const course = response.data;
+        DiscoveryDataApiService.editCourseRuns(courseRunData).then((runResponse) => {
+          course.course_runs = runResponse.map(courseRun => courseRun.data);
+          dispatch(editCourseSuccess(course));
+          if (submitReview) {
+            dispatch(courseSubmittingSuccess());
+          }
+        }).catch((error) => {
+          dispatch(editCourseFail(['Course Run edit failed, please try again or contact support.'].concat(getErrorMessages(error))));
+          if (submitReview) {
+            dispatch(courseSubmittingFailure());
+          }
+        });
       })
       .catch((error) => {
         dispatch(editCourseFail(['Course edit failed, please try again or contact support.'].concat(getErrorMessages(error))));

@@ -75,24 +75,29 @@ class DiscoveryDataApiService {
     return apiClient.options(url);
   }
 
-  static editCourse(courseData, courseRunData) {
-    const { uuid } = courseData;
+  static editCourseRuns(courseRunsData) {
     const queryParams = {
       exclude_utm: 1,
     };
-    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
     // Create a promises array to handle all of the new/modified course runs
-    const promises = courseRunData.map((courseRun) => {
+    const promises = courseRunsData.map((courseRun) => {
       const courseRunUrl = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/${courseRun.key}/`;
       return apiClient.patch(courseRunUrl, courseRun, {
         params: queryParams,
       });
     });
-    // Add PATCH to Course endpoint to create to promises array
-    promises.push(apiClient.patch(url, courseData, {
-      params: queryParams,
-    }));
     return Promise.all(promises);
+  }
+
+  static editCourse(courseData) {
+    const { uuid } = courseData;
+    const queryParams = {
+      exclude_utm: 1,
+    };
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
+    return apiClient.patch(url, courseData, {
+      params: queryParams,
+    });
   }
 
   static createStaffer(data) {
