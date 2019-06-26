@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CourseTable shows a table 1`] = `
+exports[`CourseTable hides table and button when not whitelisted 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CourseTable />,
+  Symbol(enzyme.__unrendered__): <CourseTable
+    authentication={
+      Object {
+        "administrator": false,
+      }
+    }
+    fetchOrganizations={[Function]}
+    publisherUserInfo={Object {}}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -37,51 +45,53 @@ ShallowWrapper {
           onClose={[Function]}
           title={null}
         />,
-        <ButtonToolbar
-          className="mb-3"
-        >
-          <Link
-            replace={false}
-            to="/courses/new"
+        <React.Fragment>
+          <ButtonToolbar
+            className="mb-3"
           >
-            <button
-              className="btn btn-primary"
+            <Link
+              replace={false}
+              to="/courses/new"
             >
-              New Course
-            </button>
-          </Link>
-        </ButtonToolbar>,
-        <withRouter(Connect(TableComponent))
-          className="courses"
-          columns={
-            Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "key",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "owners",
-                "label": "Owner",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "modified",
-                "label": "Modified",
-              },
-            ]
-          }
-          fetchMethod={[Function]}
-          formatData={[Function]}
-          id="courses"
-          tableSortable={true}
-        />,
+              <button
+                className="btn btn-primary"
+              >
+                New Course
+              </button>
+            </Link>
+          </ButtonToolbar>
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "key",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "owners",
+                  "label": "Owner",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "modified",
+                  "label": "Modified",
+                },
+              ]
+            }
+            fetchMethod={[Function]}
+            formatData={[Function]}
+            id="courses"
+            tableSortable={true}
+          />
+        </React.Fragment>,
       ],
       "className": "",
       "wide": true,
@@ -117,85 +127,143 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "children": <Link
-            replace={false}
-            to="/courses/new"
-          >
-            <button
-              className="btn btn-primary"
+          "children": Array [
+            <ButtonToolbar
+              className="mb-3"
             >
-              New Course
-            </button>
-          </Link>,
-          "className": "mb-3",
+              <Link
+                replace={false}
+                to="/courses/new"
+              >
+                <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>
+              </Link>
+            </ButtonToolbar>,
+            <withRouter(Connect(TableComponent))
+              className="courses"
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "key",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "owners",
+                    "label": "Owner",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "modified",
+                    "label": "Modified",
+                  },
+                ]
+              }
+              fetchMethod={[Function]}
+              formatData={[Function]}
+              id="courses"
+              tableSortable={true}
+            />,
+          ],
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <button
-              className="btn btn-primary"
-            >
-              New Course
-            </button>,
-            "replace": false,
-            "to": "/courses/new",
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "children": "New Course",
-              "className": "btn btn-primary",
+              "children": <Link
+                replace={false}
+                to="/courses/new"
+              >
+                <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>
+              </Link>,
+              "className": "mb-3",
             },
             "ref": null,
-            "rendered": "New Course",
-            "type": "button",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>,
+                "replace": false,
+                "to": "/courses/new",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "New Course",
+                  "className": "btn btn-primary",
+                },
+                "ref": null,
+                "rendered": "New Course",
+                "type": "button",
+              },
+              "type": [Function],
+            },
+            "type": [Function],
           },
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "className": "courses",
-          "columns": Array [
-            Object {
-              "columnSortable": true,
-              "key": "title",
-              "label": "Course Name",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "courses",
+              "columns": Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "key",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "owners",
+                  "label": "Owner",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "modified",
+                  "label": "Modified",
+                },
+              ],
+              "fetchMethod": [Function],
+              "formatData": [Function],
+              "id": "courses",
+              "tableSortable": true,
             },
-            Object {
-              "columnSortable": true,
-              "key": "key",
-              "label": "Course Number",
-            },
-            Object {
-              "columnSortable": false,
-              "key": "owners",
-              "label": "Owner",
-            },
-            Object {
-              "columnSortable": true,
-              "key": "modified",
-              "label": "Modified",
-            },
-          ],
-          "fetchMethod": [Function],
-          "formatData": [Function],
-          "id": "courses",
-          "tableSortable": true,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": Symbol(react.fragment),
       },
     ],
     "type": [Function],
@@ -225,51 +293,53 @@ ShallowWrapper {
             onClose={[Function]}
             title={null}
           />,
-          <ButtonToolbar
-            className="mb-3"
-          >
-            <Link
-              replace={false}
-              to="/courses/new"
+          <React.Fragment>
+            <ButtonToolbar
+              className="mb-3"
             >
-              <button
-                className="btn btn-primary"
+              <Link
+                replace={false}
+                to="/courses/new"
               >
-                New Course
-              </button>
-            </Link>
-          </ButtonToolbar>,
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "key",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "owners",
-                  "label": "Owner",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "modified",
-                  "label": "Modified",
-                },
-              ]
-            }
-            fetchMethod={[Function]}
-            formatData={[Function]}
-            id="courses"
-            tableSortable={true}
-          />,
+                <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>
+              </Link>
+            </ButtonToolbar>
+            <withRouter(Connect(TableComponent))
+              className="courses"
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "key",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "owners",
+                    "label": "Owner",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "modified",
+                    "label": "Modified",
+                  },
+                ]
+              }
+              fetchMethod={[Function]}
+              formatData={[Function]}
+              id="courses"
+              tableSortable={true}
+            />
+          </React.Fragment>,
         ],
         "className": "",
         "wide": true,
@@ -305,85 +375,143 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": <Link
-              replace={false}
-              to="/courses/new"
-            >
-              <button
-                className="btn btn-primary"
+            "children": Array [
+              <ButtonToolbar
+                className="mb-3"
               >
-                New Course
-              </button>
-            </Link>,
-            "className": "mb-3",
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>,
+              <withRouter(Connect(TableComponent))
+                className="courses"
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "title",
+                      "label": "Course Name",
+                    },
+                    Object {
+                      "columnSortable": true,
+                      "key": "key",
+                      "label": "Course Number",
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "owners",
+                      "label": "Owner",
+                    },
+                    Object {
+                      "columnSortable": true,
+                      "key": "modified",
+                      "label": "Modified",
+                    },
+                  ]
+                }
+                fetchMethod={[Function]}
+                formatData={[Function]}
+                id="courses"
+                tableSortable={true}
+              />,
+            ],
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <button
-                className="btn btn-primary"
-              >
-                New Course
-              </button>,
-              "replace": false,
-              "to": "/courses/new",
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "children": "New Course",
-                "className": "btn btn-primary",
+                "children": <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>,
+                "className": "mb-3",
               },
               "ref": null,
-              "rendered": "New Course",
-              "type": "button",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>,
+                  "replace": false,
+                  "to": "/courses/new",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "New Course",
+                    "className": "btn btn-primary",
+                  },
+                  "ref": null,
+                  "rendered": "New Course",
+                  "type": "button",
+                },
+                "type": [Function],
+              },
+              "type": [Function],
             },
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "className": "courses",
-            "columns": Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "courses",
+                "columns": Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "key",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "owners",
+                    "label": "Owner",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "modified",
+                    "label": "Modified",
+                  },
+                ],
+                "fetchMethod": [Function],
+                "formatData": [Function],
+                "id": "courses",
+                "tableSortable": true,
               },
-              Object {
-                "columnSortable": true,
-                "key": "key",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "owners",
-                "label": "Owner",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "modified",
-                "label": "Modified",
-              },
-            ],
-            "fetchMethod": [Function],
-            "formatData": [Function],
-            "id": "courses",
-            "tableSortable": true,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": Symbol(react.fragment),
         },
       ],
       "type": [Function],
@@ -412,5 +540,550 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`CourseTable shows a table 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CourseTable
+    authentication={
+      Object {
+        "administrator": false,
+      }
+    }
+    fetchOrganizations={[Function]}
+    publisherUserInfo={Object {}}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <StatusAlert
+          alertType="warning"
+          className=""
+          dismissible={false}
+          iconClassNames={Array []}
+          message={
+            <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
+          }
+          onClose={[Function]}
+          title={null}
+        />,
+        <React.Fragment>
+          <ButtonToolbar
+            className="mb-3"
+          >
+            <Link
+              replace={false}
+              to="/courses/new"
+            >
+              <button
+                className="btn btn-primary"
+              >
+                New Course
+              </button>
+            </Link>
+          </ButtonToolbar>
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "key",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "owners",
+                  "label": "Owner",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "modified",
+                  "label": "Modified",
+                },
+              ]
+            }
+            fetchMethod={[Function]}
+            formatData={[Function]}
+            id="courses"
+            tableSortable={true}
+          />
+        </React.Fragment>,
+      ],
+      "className": "",
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "alertType": "warning",
+          "className": "",
+          "dismissible": false,
+          "iconClassNames": Array [],
+          "message": <React.Fragment>
+            This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+            <withDeprecatedProps(Hyperlink)
+              destination="http://localhost:18381/publisher/"
+            >
+              Click here to access the older version of Publisher.
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>,
+          "onClose": [Function],
+          "title": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <ButtonToolbar
+              className="mb-3"
+            >
+              <Link
+                replace={false}
+                to="/courses/new"
+              >
+                <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>
+              </Link>
+            </ButtonToolbar>,
+            <withRouter(Connect(TableComponent))
+              className="courses"
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "key",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "owners",
+                    "label": "Owner",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "modified",
+                    "label": "Modified",
+                  },
+                ]
+              }
+              fetchMethod={[Function]}
+              formatData={[Function]}
+              id="courses"
+              tableSortable={true}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <Link
+                replace={false}
+                to="/courses/new"
+              >
+                <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>
+              </Link>,
+              "className": "mb-3",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>,
+                "replace": false,
+                "to": "/courses/new",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "New Course",
+                  "className": "btn btn-primary",
+                },
+                "ref": null,
+                "rendered": "New Course",
+                "type": "button",
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "courses",
+              "columns": Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "key",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "owners",
+                  "label": "Owner",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "modified",
+                  "label": "Modified",
+                },
+              ],
+              "fetchMethod": [Function],
+              "formatData": [Function],
+              "id": "courses",
+              "tableSortable": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": Symbol(react.fragment),
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <StatusAlert
+            alertType="warning"
+            className=""
+            dismissible={false}
+            iconClassNames={Array []}
+            message={
+              <React.Fragment>
+                This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+                <withDeprecatedProps(Hyperlink)
+                  destination="http://localhost:18381/publisher/"
+                >
+                  Click here to access the older version of Publisher.
+                </withDeprecatedProps(Hyperlink)>
+              </React.Fragment>
+            }
+            onClose={[Function]}
+            title={null}
+          />,
+          <React.Fragment>
+            <ButtonToolbar
+              className="mb-3"
+            >
+              <Link
+                replace={false}
+                to="/courses/new"
+              >
+                <button
+                  className="btn btn-primary"
+                >
+                  New Course
+                </button>
+              </Link>
+            </ButtonToolbar>
+            <withRouter(Connect(TableComponent))
+              className="courses"
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "key",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "owners",
+                    "label": "Owner",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "modified",
+                    "label": "Modified",
+                  },
+                ]
+              }
+              fetchMethod={[Function]}
+              formatData={[Function]}
+              id="courses"
+              tableSortable={true}
+            />
+          </React.Fragment>,
+        ],
+        "className": "",
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alertType": "warning",
+            "className": "",
+            "dismissible": false,
+            "iconClassNames": Array [],
+            "message": <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>,
+            "onClose": [Function],
+            "title": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <ButtonToolbar
+                className="mb-3"
+              >
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>,
+              <withRouter(Connect(TableComponent))
+                className="courses"
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "title",
+                      "label": "Course Name",
+                    },
+                    Object {
+                      "columnSortable": true,
+                      "key": "key",
+                      "label": "Course Number",
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "owners",
+                      "label": "Owner",
+                    },
+                    Object {
+                      "columnSortable": true,
+                      "key": "modified",
+                      "label": "Modified",
+                    },
+                  ]
+                }
+                fetchMethod={[Function]}
+                formatData={[Function]}
+                id="courses"
+                tableSortable={true}
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>,
+                "className": "mb-3",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>,
+                  "replace": false,
+                  "to": "/courses/new",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "New Course",
+                    "className": "btn btn-primary",
+                  },
+                  "ref": null,
+                  "rendered": "New Course",
+                  "type": "button",
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "courses",
+                "columns": Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "key",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "owners",
+                    "label": "Owner",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "modified",
+                    "label": "Modified",
+                  },
+                ],
+                "fetchMethod": [Function],
+                "formatData": [Function],
+                "id": "courses",
+                "tableSortable": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": Symbol(react.fragment),
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
 }
 `;

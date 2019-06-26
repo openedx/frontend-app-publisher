@@ -144,6 +144,7 @@ module.exports = Merge.smart(commonConfig, {
       ENTERPRISE_MARKETING_UTM_SOURCE: null,
       ENTERPRISE_MARKETING_UTM_CAMPAIGN: null,
       ENTERPRISE_MARKETING_FOOTER_UTM_MEDIUM: null,
+      ORG_WHITELIST: [],
     }),
   ],
 });
