@@ -8,4 +8,10 @@ describe('CourseTable', () => {
     const component = shallow(<CourseTable />);
     expect(component).toMatchSnapshot();
   });
+
+  it('hides table and button when not whitelisted', () => {
+    process.env.ORG_WHITELIST = ['fake'];
+    const component = shallow(<CourseTable />);
+    expect(component).toMatchSnapshot();
+  });
 });
