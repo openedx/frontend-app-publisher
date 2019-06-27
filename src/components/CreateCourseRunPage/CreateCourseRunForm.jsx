@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
@@ -10,6 +11,7 @@ import ActionButton from '../ActionButton';
 import { endDateHelp, startDateHelp, pacingHelp } from '../../helpText';
 import RenderSelectField from '../RenderSelectField';
 import DateTimeField from '../DateTimeField';
+import { getDateString } from '../../utils';
 
 const BaseCreateCourseRunForm = ({
   handleSubmit,
@@ -19,6 +21,7 @@ const BaseCreateCourseRunForm = ({
   uuid,
   getCourseRunOptions,
   parseOptions,
+  currentFormValues,
 }) => {
   const courseRunOptions = getCourseRunOptions();
   const { pacing_type: { choices } } = courseRunOptions;
@@ -41,6 +44,7 @@ const BaseCreateCourseRunForm = ({
           timeLabel="Start time"
           helpText={startDateHelp}
           required
+          minDate={getDateString(moment())}
         />
         <Field
           name="end"
@@ -49,6 +53,7 @@ const BaseCreateCourseRunForm = ({
           timeLabel="End time"
           helpText={endDateHelp}
           required
+          minDate={getDateString(moment(currentFormValues.start).add(1, 'd') || moment())}
         />
         <Field
           name="pacing_type"
@@ -87,6 +92,7 @@ const BaseCreateCourseRunForm = ({
 };
 
 BaseCreateCourseRunForm.defaultProps = {
+  currentFormValues: {},
 };
 
 BaseCreateCourseRunForm.propTypes = {
@@ -97,6 +103,7 @@ BaseCreateCourseRunForm.propTypes = {
   isCreating: PropTypes.bool.isRequired,
   getCourseRunOptions: PropTypes.func.isRequired,
   parseOptions: PropTypes.func.isRequired,
+  currentFormValues: PropTypes.shape({}),
 };
 
 const CreateCourseRunForm = reduxForm({

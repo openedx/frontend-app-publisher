@@ -85,6 +85,7 @@ class CreateCourseRunPage extends React.Component {
     const {
       courseInfo,
       courseRunOptions,
+      formValues,
     } = this.props;
     const {
       startedFetching,
@@ -125,6 +126,7 @@ class CreateCourseRunPage extends React.Component {
                 isCreating={courseInfo.isCreating}
                 getCourseRunOptions={this.getCourseRunOptions}
                 parseOptions={this.parseOptions}
+                currentFormValues={formValues}
               />
               {errorArray.length > 1 && (
                 <StatusAlert
@@ -150,6 +152,7 @@ CreateCourseRunPage.defaultProps = {
   courseRunOptions: {},
   createCourseRun: () => {},
   clearCourseInfoErrors: () => null,
+  formValues: {},
 };
 
 CreateCourseRunPage.propTypes = {
@@ -171,6 +174,7 @@ CreateCourseRunPage.propTypes = {
   id: PropTypes.string.isRequired,
   createCourseRun: PropTypes.func,
   clearCourseInfoErrors: PropTypes.func,
+  formValues: PropTypes.shape({}),
 };
 
 export default CreateCourseRunPage;
