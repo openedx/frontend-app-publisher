@@ -41,12 +41,15 @@ class DateTimeField extends React.Component {
 
   render() {
     const {
-      name,
+      input: {
+        name,
+      },
       dateLabel,
       timeLabel,
       helpText,
       disabled,
       required,
+      minDate,
     } = this.props;
 
     const {
@@ -73,6 +76,7 @@ class DateTimeField extends React.Component {
             required={required}
             disabled={disabled}
             onChange={e => this.updateDate(e)}
+            min={getDateString(minDate)}
           />
         </div>
         <div className="col-6">
@@ -99,7 +103,6 @@ class DateTimeField extends React.Component {
 }
 
 DateTimeField.propTypes = {
-  name: PropTypes.string.isRequired,
   dateLabel: PropTypes.string.isRequired,
   timeLabel: PropTypes.string.isRequired,
   helpText: PropTypes.node.isRequired,
@@ -110,11 +113,13 @@ DateTimeField.propTypes = {
     name: PropTypes.string,
     onChange: PropTypes.func.isRequired,
   }).isRequired,
+  minDate: PropTypes.string,
 };
 
 DateTimeField.defaultProps = {
   disabled: false,
   required: false,
+  minDate: '',
 };
 
 export default DateTimeField;

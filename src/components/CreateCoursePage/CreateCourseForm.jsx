@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
@@ -16,6 +17,7 @@ import {
 } from '../../data/constants';
 import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
+import { getDateString } from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -134,8 +136,9 @@ class BaseCreateCourseForm extends React.Component {
             name="price"
             component={RenderInputTextField}
             extraInput={{
-              min: 0.01,
+              min: 1.00,
               step: 0.01,
+              max: 10000.00,
             }}
             type="number"
             label={<FieldLabel text="Price (USD)" required />}
@@ -150,6 +153,7 @@ class BaseCreateCourseForm extends React.Component {
             timeLabel="Start time"
             helpText={startDateHelp}
             required
+            minDate={getDateString(moment())}
           />
           <Field
             name="end"
@@ -158,6 +162,7 @@ class BaseCreateCourseForm extends React.Component {
             timeLabel="End time"
             helpText={endDateHelp}
             required
+            minDate={getDateString(moment(currentFormValues.start).add(1, 'd') || moment())}
           />
           <Field
             name="pacing_type"

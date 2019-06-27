@@ -750,8 +750,9 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Price" required requiredForSubmit />}
               extraInput={{
                 onInvalid: this.openCollapsible,
-                min: 0.01,
+                min: 1.00,
                 step: 0.01,
+                max: 10000.00,
               }}
               disabled={courseInReview}
               required={isSubmittingForReview}

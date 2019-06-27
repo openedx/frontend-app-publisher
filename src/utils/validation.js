@@ -3,7 +3,6 @@ import { jsonDeepCopy } from '.';
 import { courseSubmittingFailure } from '../data/actions/courseSubmitInfo';
 import { PUBLISHED } from '../data/constants';
 
-
 const requiredMessage = 'This field is required';
 
 // Basic validation that ensures some value was entered
@@ -106,11 +105,10 @@ const editCourseValidate = (values, props) => {
             // redux-form field arrays expect errors to be in this shape
             runErrors[fieldName] = { _error: requiredMessage };
           } else {
-            runErrors[fieldName] = 'This field is required';
+            runErrors[fieldName] = requiredMessage;
           }
         }
       });
-
       errors.course_runs.push(runErrors);
     } else {
       errors.course_runs.push(null);
@@ -125,7 +123,6 @@ const editCourseValidate = (values, props) => {
 
   return errors;
 };
-
 
 export {
   requiredMessage,
