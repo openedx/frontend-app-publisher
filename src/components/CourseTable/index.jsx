@@ -9,7 +9,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 
-const orgWhitelist = process.env.ORG_WHITELIST;
+const orgWhitelist = process.env.ORG_WHITELIST ? process.env.ORG_WHITELIST.split(',') : [];
 
 class CourseTable extends React.Component {
   componentDidMount() {
