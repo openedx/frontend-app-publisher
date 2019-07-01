@@ -80,8 +80,8 @@ export class BaseEditCourseForm extends React.Component {
 
   getEnrollmentTrackOptions() {
     return [
-      { label: VERIFIED_TRACK.name, value: VERIFIED_TRACK.key },
       { label: AUDIT_TRACK.name, value: AUDIT_TRACK.key },
+      { label: VERIFIED_TRACK.name, value: VERIFIED_TRACK.key },
       { label: PROFESSIONAL_TRACK.name, value: PROFESSIONAL_TRACK.key },
     ];
   }

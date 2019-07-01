@@ -129,7 +129,7 @@ class EditCoursePage extends React.Component {
       entitlements: [{
         mode: courseData.mode,
         price: courseData.price,
-        sku: entitlements[0].sku,
+        sku: entitlements && entitlements[0] && entitlements[0].sku,
       }],
       faq: courseData.faq,
       full_description: courseData.full_description,
