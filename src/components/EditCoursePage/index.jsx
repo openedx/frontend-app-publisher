@@ -94,7 +94,6 @@ class EditCoursePage extends React.Component {
         // Reduce Staff list to just the UUID
         staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
         start: isValidDate(courseRun.start) ? courseRun.start : null,
-        status: courseRun.status,
         transcript_languages: courseRun.transcript_languages,
         weeks_to_complete: courseRun.weeks_to_complete ? courseRun.weeks_to_complete : null,
       });
