@@ -25,6 +25,8 @@ const courseRunOptionsReturn = {
 const parseOptionsReturn = [{ label: 'Instructor-paced', value: 'instructor_paced' },
   { label: 'Self-paced', value: 'self_paced' }];
 
+Date.now = jest.fn(() => new Date(Date.UTC(2001, 0, 1)).valueOf());
+
 describe('CreateCourseForm', () => {
   const initialValues = {
     org: 'edx',
