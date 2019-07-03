@@ -253,7 +253,7 @@ export class BaseEditCourseForm extends React.Component {
                   id="mode.label"
                   text="Enrollment track"
                   helpText={enrollmentHelp}
-                  extraText="(Cannot edit after submission)"
+                  extraText="Cannot edit after submission"
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -288,6 +288,7 @@ export class BaseEditCourseForm extends React.Component {
                       </p>
                       <ul>
                         <li>New course images must be 1134×675 pixels in size.</li>
+                        <li>The image must be a JPEG or PNG file.</li>
                         <li>Each course must have a unique image.</li>
                         <li>The image cannot include text or headlines.</li>
                         <li>
@@ -307,6 +308,7 @@ export class BaseEditCourseForm extends React.Component {
                       </p>
                     </div>
                   }
+                  extraText="Image must be 1134x675 pixels in size."
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -513,11 +515,11 @@ export class BaseEditCourseForm extends React.Component {
                         </a>
                       </p>
                       <p><b>Examples:</b></p>
-                      <ol>
+                      <ul>
                         <li>Secondary school (high school) algebra; basic mathematics concepts</li>
                         <li>Graduate-level understanding of Keynesian economics</li>
                         <li>Basic algebra</li>
-                      </ol>
+                      </ul>
                     </div>
                   }
                   optional
@@ -585,6 +587,15 @@ export class BaseEditCourseForm extends React.Component {
                         >
                           Learn more.
                         </a>
+                      </p>
+                      <p><b>Example:</b></p>
+                      <strong>Do I need to know any programming languages before I start?</strong>
+                      <p>
+                        No, this course is designed for beginners.
+                      </p>
+                      <strong>What version of Swift will I be learning?</strong>
+                      <p>
+                        Swift version 4.
                       </p>
                     </div>
                   }

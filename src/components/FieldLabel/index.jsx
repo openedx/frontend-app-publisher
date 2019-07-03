@@ -21,7 +21,7 @@ const FieldLabel = ({
       <strong>{text}</strong>
       {helpText && id && <FieldHelp id={`${id}-help`} tip={helpText} />}
       {requireText}
-      {extraText}
+      <div><span className="text-muted">{extraText}</span></div>
     </div>
   );
 };

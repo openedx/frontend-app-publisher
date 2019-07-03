@@ -51,7 +51,7 @@ class SocialLinks extends React.Component {
                   name={`${link}.title`}
                   component={RenderInputTextField}
                   type="text"
-                  label={<FieldLabel text="Title" />}
+                  label={<FieldLabel text="Link Text" />}
                 />
               </div>
               <div className="col-4">

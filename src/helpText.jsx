@@ -36,7 +36,11 @@ const enrollmentHelp = (
 const startDateHelp = (
   <div>
     <p>Start on a Tuesday, Wednesday, or Thursday.</p>
-    <p>Avoid major U.S. holidays.</p>
+    <p>Avoid major holidays.</p>
+    <p>
+      Dates are editable after the course is created, rounded to the nearest term.
+      If your courses start on January - May 2020, the URL will end in 1T2020.
+    </p>
     <p>
       If you are unsure of the exact date, specify a day that is close to the
       estimated start date. For example, if your course will start near the end
