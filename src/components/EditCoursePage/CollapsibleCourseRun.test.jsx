@@ -22,8 +22,8 @@ const pacingTypeOptions = [
 
 const publishedCourseRun = {
   start: '2000-01-01T12:00:00Z', // Different format to be transformed
-  end: '2010/01/01',
-  go_live_date: '1999/12/31',
+  end: '2010-01-01T00:00:00Z',
+  go_live_date: '1999-12-31T00:00:00Z',
   pacing_type: 'self_paced',
   min_effort: 1,
   max_effort: 1,
@@ -36,6 +36,8 @@ const publishedCourseRun = {
 };
 
 const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'unpublished' });
+
+Date.now = jest.fn(() => new Date(Date.UTC(2001, 0, 1)).valueOf());
 
 describe('Collapsible Course Run', () => {
   it('renders correctly with no fields', () => {

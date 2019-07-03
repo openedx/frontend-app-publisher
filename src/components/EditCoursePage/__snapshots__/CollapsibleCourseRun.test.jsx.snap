@@ -9,8 +9,8 @@ ShallowWrapper {
     courseRun={
       Object {
         "content_language": "ar-ae",
-        "end": "2010/01/01",
-        "go_live_date": "1999/12/31",
+        "end": "2010-01-01T00:00:00Z",
+        "go_live_date": "1999-12-31T00:00:00Z",
         "has_ofac_restrictions": false,
         "key": "edX101+DemoX",
         "max_effort": 1,
@@ -85,8 +85,9 @@ ShallowWrapper {
               </p>
             </div>
           }
-          minDate="2019-07-01"
+          minDate="2000-01-01"
           name="test-course.start"
+          onInvalid={[Function]}
           required={true}
           timeLabel="Start time"
         />,
@@ -103,6 +104,7 @@ ShallowWrapper {
           }
           minDate="2000-01-02"
           name="test-course.end"
+          onInvalid={[Function]}
           required={true}
           timeLabel="End time"
         />,
@@ -111,7 +113,7 @@ ShallowWrapper {
           disabled={false}
           extraInput={
             Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             }
           }
@@ -520,8 +522,9 @@ ShallowWrapper {
               If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
             </p>
           </div>,
-          "minDate": "2019-07-01",
+          "minDate": "2000-01-01",
           "name": "test-course.start",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "Start time",
         },
@@ -544,6 +547,7 @@ ShallowWrapper {
           </div>,
           "minDate": "2000-01-02",
           "name": "test-course.end",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "End time",
         },
@@ -559,7 +563,7 @@ ShallowWrapper {
           "component": [Function],
           "disabled": false,
           "extraInput": Object {
-            "min": "2019-07-01",
+            "min": "1999-12-31",
             "onInvalid": [Function],
           },
           "format": [Function],
@@ -1055,8 +1059,9 @@ ShallowWrapper {
                 </p>
               </div>
             }
-            minDate="2019-07-01"
+            minDate="2000-01-01"
             name="test-course.start"
+            onInvalid={[Function]}
             required={true}
             timeLabel="Start time"
           />,
@@ -1073,6 +1078,7 @@ ShallowWrapper {
             }
             minDate="2000-01-02"
             name="test-course.end"
+            onInvalid={[Function]}
             required={true}
             timeLabel="End time"
           />,
@@ -1081,7 +1087,7 @@ ShallowWrapper {
             disabled={false}
             extraInput={
               Object {
-                "min": "2019-07-01",
+                "min": "1999-12-31",
                 "onInvalid": [Function],
               }
             }
@@ -1490,8 +1496,9 @@ ShallowWrapper {
                 If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
               </p>
             </div>,
-            "minDate": "2019-07-01",
+            "minDate": "2000-01-01",
             "name": "test-course.start",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "Start time",
           },
@@ -1514,6 +1521,7 @@ ShallowWrapper {
             </div>,
             "minDate": "2000-01-02",
             "name": "test-course.end",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "End time",
           },
@@ -1529,7 +1537,7 @@ ShallowWrapper {
             "component": [Function],
             "disabled": false,
             "extraInput": Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             },
             "format": [Function],
@@ -2038,8 +2046,8 @@ ShallowWrapper {
     courseRun={
       Object {
         "content_language": "ar-ae",
-        "end": "2010/01/01",
-        "go_live_date": "1999/12/31",
+        "end": "2010-01-01T00:00:00Z",
+        "go_live_date": "1999-12-31T00:00:00Z",
         "has_ofac_restrictions": false,
         "key": "edX101+DemoX",
         "max_effort": 1,
@@ -2114,8 +2122,9 @@ ShallowWrapper {
               </p>
             </div>
           }
-          minDate="2019-07-01"
+          minDate="2000-01-01"
           name="test-course.start"
+          onInvalid={[Function]}
           required={true}
           timeLabel="Start time"
         />,
@@ -2132,6 +2141,7 @@ ShallowWrapper {
           }
           minDate="2000-01-02"
           name="test-course.end"
+          onInvalid={[Function]}
           required={true}
           timeLabel="End time"
         />,
@@ -2140,7 +2150,7 @@ ShallowWrapper {
           disabled={false}
           extraInput={
             Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             }
           }
@@ -2549,8 +2559,9 @@ ShallowWrapper {
               If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
             </p>
           </div>,
-          "minDate": "2019-07-01",
+          "minDate": "2000-01-01",
           "name": "test-course.start",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "Start time",
         },
@@ -2573,6 +2584,7 @@ ShallowWrapper {
           </div>,
           "minDate": "2000-01-02",
           "name": "test-course.end",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "End time",
         },
@@ -2588,7 +2600,7 @@ ShallowWrapper {
           "component": [Function],
           "disabled": false,
           "extraInput": Object {
-            "min": "2019-07-01",
+            "min": "1999-12-31",
             "onInvalid": [Function],
           },
           "format": [Function],
@@ -3084,8 +3096,9 @@ ShallowWrapper {
                 </p>
               </div>
             }
-            minDate="2019-07-01"
+            minDate="2000-01-01"
             name="test-course.start"
+            onInvalid={[Function]}
             required={true}
             timeLabel="Start time"
           />,
@@ -3102,6 +3115,7 @@ ShallowWrapper {
             }
             minDate="2000-01-02"
             name="test-course.end"
+            onInvalid={[Function]}
             required={true}
             timeLabel="End time"
           />,
@@ -3110,7 +3124,7 @@ ShallowWrapper {
             disabled={false}
             extraInput={
               Object {
-                "min": "2019-07-01",
+                "min": "1999-12-31",
                 "onInvalid": [Function],
               }
             }
@@ -3519,8 +3533,9 @@ ShallowWrapper {
                 If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
               </p>
             </div>,
-            "minDate": "2019-07-01",
+            "minDate": "2000-01-01",
             "name": "test-course.start",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "Start time",
           },
@@ -3543,6 +3558,7 @@ ShallowWrapper {
             </div>,
             "minDate": "2000-01-02",
             "name": "test-course.end",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "End time",
           },
@@ -3558,7 +3574,7 @@ ShallowWrapper {
             "component": [Function],
             "disabled": false,
             "extraInput": Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             },
             "format": [Function],
@@ -4067,8 +4083,8 @@ ShallowWrapper {
     courseRun={
       Object {
         "content_language": "ar-ae",
-        "end": "2010/01/01",
-        "go_live_date": "1999/12/31",
+        "end": "2010-01-01T00:00:00Z",
+        "go_live_date": "1999-12-31T00:00:00Z",
         "has_ofac_restrictions": false,
         "key": "edX101+DemoX",
         "max_effort": 1,
@@ -4143,8 +4159,9 @@ ShallowWrapper {
               </p>
             </div>
           }
-          minDate="2019-07-01"
+          minDate="2000-01-01"
           name="test-course.start"
+          onInvalid={[Function]}
           required={true}
           timeLabel="Start time"
         />,
@@ -4161,6 +4178,7 @@ ShallowWrapper {
           }
           minDate="2000-01-02"
           name="test-course.end"
+          onInvalid={[Function]}
           required={true}
           timeLabel="End time"
         />,
@@ -4169,7 +4187,7 @@ ShallowWrapper {
           disabled={false}
           extraInput={
             Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             }
           }
@@ -4578,8 +4596,9 @@ ShallowWrapper {
               If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
             </p>
           </div>,
-          "minDate": "2019-07-01",
+          "minDate": "2000-01-01",
           "name": "test-course.start",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "Start time",
         },
@@ -4602,6 +4621,7 @@ ShallowWrapper {
           </div>,
           "minDate": "2000-01-02",
           "name": "test-course.end",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "End time",
         },
@@ -4617,7 +4637,7 @@ ShallowWrapper {
           "component": [Function],
           "disabled": false,
           "extraInput": Object {
-            "min": "2019-07-01",
+            "min": "1999-12-31",
             "onInvalid": [Function],
           },
           "format": [Function],
@@ -5113,8 +5133,9 @@ ShallowWrapper {
                 </p>
               </div>
             }
-            minDate="2019-07-01"
+            minDate="2000-01-01"
             name="test-course.start"
+            onInvalid={[Function]}
             required={true}
             timeLabel="Start time"
           />,
@@ -5131,6 +5152,7 @@ ShallowWrapper {
             }
             minDate="2000-01-02"
             name="test-course.end"
+            onInvalid={[Function]}
             required={true}
             timeLabel="End time"
           />,
@@ -5139,7 +5161,7 @@ ShallowWrapper {
             disabled={false}
             extraInput={
               Object {
-                "min": "2019-07-01",
+                "min": "1999-12-31",
                 "onInvalid": [Function],
               }
             }
@@ -5548,8 +5570,9 @@ ShallowWrapper {
                 If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
               </p>
             </div>,
-            "minDate": "2019-07-01",
+            "minDate": "2000-01-01",
             "name": "test-course.start",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "Start time",
           },
@@ -5572,6 +5595,7 @@ ShallowWrapper {
             </div>,
             "minDate": "2000-01-02",
             "name": "test-course.end",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "End time",
           },
@@ -5587,7 +5611,7 @@ ShallowWrapper {
             "component": [Function],
             "disabled": false,
             "extraInput": Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             },
             "format": [Function],
@@ -6096,8 +6120,8 @@ ShallowWrapper {
     courseRun={
       Object {
         "content_language": "ar-ae",
-        "end": "2010/01/01",
-        "go_live_date": "1999/12/31",
+        "end": "2010-01-01T00:00:00Z",
+        "go_live_date": "1999-12-31T00:00:00Z",
         "has_ofac_restrictions": false,
         "key": "edX101+DemoX",
         "max_effort": 1,
@@ -6172,8 +6196,9 @@ ShallowWrapper {
               </p>
             </div>
           }
-          minDate="2019-07-01"
+          minDate="2000-01-01"
           name="test-course.start"
+          onInvalid={[Function]}
           required={true}
           timeLabel="Start time"
         />,
@@ -6190,6 +6215,7 @@ ShallowWrapper {
           }
           minDate="2000-01-02"
           name="test-course.end"
+          onInvalid={[Function]}
           required={true}
           timeLabel="End time"
         />,
@@ -6198,7 +6224,7 @@ ShallowWrapper {
           disabled={false}
           extraInput={
             Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             }
           }
@@ -6607,8 +6633,9 @@ ShallowWrapper {
               If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
             </p>
           </div>,
-          "minDate": "2019-07-01",
+          "minDate": "2000-01-01",
           "name": "test-course.start",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "Start time",
         },
@@ -6631,6 +6658,7 @@ ShallowWrapper {
           </div>,
           "minDate": "2000-01-02",
           "name": "test-course.end",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "End time",
         },
@@ -6646,7 +6674,7 @@ ShallowWrapper {
           "component": [Function],
           "disabled": false,
           "extraInput": Object {
-            "min": "2019-07-01",
+            "min": "1999-12-31",
             "onInvalid": [Function],
           },
           "format": [Function],
@@ -7142,8 +7170,9 @@ ShallowWrapper {
                 </p>
               </div>
             }
-            minDate="2019-07-01"
+            minDate="2000-01-01"
             name="test-course.start"
+            onInvalid={[Function]}
             required={true}
             timeLabel="Start time"
           />,
@@ -7160,6 +7189,7 @@ ShallowWrapper {
             }
             minDate="2000-01-02"
             name="test-course.end"
+            onInvalid={[Function]}
             required={true}
             timeLabel="End time"
           />,
@@ -7168,7 +7198,7 @@ ShallowWrapper {
             disabled={false}
             extraInput={
               Object {
-                "min": "2019-07-01",
+                "min": "1999-12-31",
                 "onInvalid": [Function],
               }
             }
@@ -7577,8 +7607,9 @@ ShallowWrapper {
                 If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
               </p>
             </div>,
-            "minDate": "2019-07-01",
+            "minDate": "2000-01-01",
             "name": "test-course.start",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "Start time",
           },
@@ -7601,6 +7632,7 @@ ShallowWrapper {
             </div>,
             "minDate": "2000-01-02",
             "name": "test-course.end",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "End time",
           },
@@ -7616,7 +7648,7 @@ ShallowWrapper {
             "component": [Function],
             "disabled": false,
             "extraInput": Object {
-              "min": "2019-07-01",
+              "min": "1999-12-31",
               "onInvalid": [Function],
             },
             "format": [Function],
@@ -8170,8 +8202,9 @@ ShallowWrapper {
               </p>
             </div>
           }
-          minDate="2019-07-01"
+          minDate="2001-01-01"
           name="test-course.start"
+          onInvalid={[Function]}
           required={true}
           timeLabel="Start time"
         />,
@@ -8186,8 +8219,9 @@ ShallowWrapper {
               </p>
             </div>
           }
-          minDate="2019-07-02"
+          minDate="2001-01-02"
           name="test-course.end"
+          onInvalid={[Function]}
           required={true}
           timeLabel="End time"
         />,
@@ -8196,7 +8230,7 @@ ShallowWrapper {
           disabled={false}
           extraInput={
             Object {
-              "min": "2019-07-01",
+              "min": "2001-01-01",
               "onInvalid": [Function],
             }
           }
@@ -8583,8 +8617,9 @@ ShallowWrapper {
               If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
             </p>
           </div>,
-          "minDate": "2019-07-01",
+          "minDate": "2001-01-01",
           "name": "test-course.start",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "Start time",
         },
@@ -8605,8 +8640,9 @@ ShallowWrapper {
               If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
             </p>
           </div>,
-          "minDate": "2019-07-02",
+          "minDate": "2001-01-02",
           "name": "test-course.end",
+          "onInvalid": [Function],
           "required": true,
           "timeLabel": "End time",
         },
@@ -8622,7 +8658,7 @@ ShallowWrapper {
           "component": [Function],
           "disabled": false,
           "extraInput": Object {
-            "min": "2019-07-01",
+            "min": "2001-01-01",
             "onInvalid": [Function],
           },
           "format": [Function],
@@ -9103,8 +9139,9 @@ ShallowWrapper {
                 </p>
               </div>
             }
-            minDate="2019-07-01"
+            minDate="2001-01-01"
             name="test-course.start"
+            onInvalid={[Function]}
             required={true}
             timeLabel="Start time"
           />,
@@ -9119,8 +9156,9 @@ ShallowWrapper {
                 </p>
               </div>
             }
-            minDate="2019-07-02"
+            minDate="2001-01-02"
             name="test-course.end"
+            onInvalid={[Function]}
             required={true}
             timeLabel="End time"
           />,
@@ -9129,7 +9167,7 @@ ShallowWrapper {
             disabled={false}
             extraInput={
               Object {
-                "min": "2019-07-01",
+                "min": "2001-01-01",
                 "onInvalid": [Function],
               }
             }
@@ -9516,8 +9554,9 @@ ShallowWrapper {
                 If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
               </p>
             </div>,
-            "minDate": "2019-07-01",
+            "minDate": "2001-01-01",
             "name": "test-course.start",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "Start time",
           },
@@ -9538,8 +9577,9 @@ ShallowWrapper {
                 If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
               </p>
             </div>,
-            "minDate": "2019-07-02",
+            "minDate": "2001-01-02",
             "name": "test-course.end",
+            "onInvalid": [Function],
             "required": true,
             "timeLabel": "End time",
           },
@@ -9555,7 +9595,7 @@ ShallowWrapper {
             "component": [Function],
             "disabled": false,
             "extraInput": Object {
-              "min": "2019-07-01",
+              "min": "2001-01-01",
               "onInvalid": [Function],
             },
             "format": [Function],
