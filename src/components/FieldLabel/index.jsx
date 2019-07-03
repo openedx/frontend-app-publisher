@@ -7,15 +7,13 @@ const FieldLabel = ({
   extraText,
   helpText,
   id,
-  required,
-  requiredForSubmit,
+  optional,
   text,
 }) => {
   let requireText = '';
-  if (required) {
-    requireText = <span className="text-danger" aria-hidden> * Required</span>;
-  } else if (requiredForSubmit) {
-    requireText = <span className="text-info" aria-hidden> * Required for submission</span>;
+
+  if (optional) {
+    requireText = <span className="text-info" aria-hidden>   Optional</span>;
   }
 
   return (
@@ -33,8 +31,7 @@ FieldLabel.defaultProps = {
   extraText: '',
   helpText: '',
   id: null,
-  required: false,
-  requiredForSubmit: false,
+  optional: false,
 };
 
 FieldLabel.propTypes = {
@@ -42,8 +39,7 @@ FieldLabel.propTypes = {
   extraText: PropTypes.string,
   helpText: PropTypes.node,
   id: PropTypes.string,
-  required: PropTypes.bool,
-  requiredForSubmit: PropTypes.bool,
+  optional: PropTypes.bool,
   text: PropTypes.string.isRequired,
 };
 

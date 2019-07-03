@@ -126,6 +126,9 @@ class CollapsibleCourseRun extends React.Component {
         isOpen={open}
         onToggle={this.setCollapsible}
       >
+        <div className="mb-3">
+          <span className="text-info" aria-hidden> All fields below are required for publication.</span>
+        </div>
         <Field
           name={`${courseId}.start`}
           component={DateTimeField}
@@ -158,7 +161,6 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.go_live_date.label`}
               text="Publish date"
-              requiredForSubmit
               helpText={
                 <div>
                   <p>The scheduled date for when the course run will be live and published.</p>
@@ -188,7 +190,6 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.min_effort.label`}
               text="Minimum effort"
-              requiredForSubmit
               helpText={
                 <div>
                   <p>
@@ -215,7 +216,6 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.max_effort.label`}
               text="Maximum effort"
-              requiredForSubmit
               helpText={
                 <div>
                   <p>
@@ -255,12 +255,12 @@ class CollapsibleCourseRun extends React.Component {
           type="text"
           component={RenderSelectField}
           options={languageOptions}
-          label={<FieldLabel text="Content language" requiredForSubmit />}
+          label={<FieldLabel text="Content language" />}
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={courseInReview}
           required={courseRunSubmitting}
         />
-        <FieldLabel text="Transcript languages" className="mb-2" requiredForSubmit />
+        <FieldLabel text="Transcript languages" className="mb-2" />
         <FieldArray
           name={`${courseId}.transcript_languages`}
           component={TranscriptLanguage}
@@ -276,7 +276,6 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.weeks_to_complete.label`}
               text="Length"
-              requiredForSubmit
               helpText={
                 <div>
                   <p>The length of the course, in weeks, rounded to the nearest whole number.</p>
@@ -351,7 +350,6 @@ class CollapsibleCourseRun extends React.Component {
           id={`${courseId}.staff.label`}
           text="Staff"
           className="mb-2"
-          requiredForSubmit
           helpText={
             <div>
               <p>The primary instructor or instructors for the course.</p>

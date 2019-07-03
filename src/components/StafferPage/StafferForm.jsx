@@ -58,7 +58,6 @@ const BaseStafferForm = ({
                   </ul>
                 </div>
               }
-              required
             />
           }
           id="profile_image"
@@ -72,14 +71,14 @@ const BaseStafferForm = ({
           name="given_name"
           component={RenderInputTextField}
           type="text"
-          label={<FieldLabel text="First name" required />}
+          label={<FieldLabel text="First name" />}
           required
         />
         <Field
           name="family_name"
           component={RenderInputTextField}
           type="text"
-          label={<FieldLabel text="Last name" required />}
+          label={<FieldLabel text="Last name" />}
           required
         />
         <Field
@@ -101,7 +100,6 @@ const BaseStafferForm = ({
                   </ul>
                 </div>
               }
-              required
             />
           }
           required
@@ -110,13 +108,13 @@ const BaseStafferForm = ({
           name="position.organization_id"
           component={RenderSelectField}
           options={extractOrgChoices(stafferOptions)}
-          label={<FieldLabel text="Organization" required />}
+          label={<FieldLabel text="Organization" />}
           required
         />
         <Field
           name="bio"
           component={RichEditor}
-          label={<FieldLabel text="Biography" required />}
+          label={<FieldLabel text="Biography" />}
           maxChars={250}
           validate={basicValidate}
           id="bio"
@@ -124,16 +122,16 @@ const BaseStafferForm = ({
         <Field
           name="major_works"
           component={RichEditor}
-          label={<FieldLabel text="Major works" />}
+          label={<FieldLabel text="Major works" optional />}
           maxChars={250}
           id="works"
         />
-        <FieldLabel text="Social links" className="mb-2" />
+        <FieldLabel text="Social links" className="mb-2" optional />
         <FieldArray
           name="urls_detailed"
           component={SocialLinks}
         />
-        <FieldLabel text="Areas of expertise" className="mb-2" />
+        <FieldLabel text="Areas of expertise" className="mb-2" optional />
         <FieldArray
           name="areas_of_expertise"
           component={AreasOfExpertise}
