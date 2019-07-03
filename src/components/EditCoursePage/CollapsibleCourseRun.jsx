@@ -130,28 +130,6 @@ class CollapsibleCourseRun extends React.Component {
           <span className="text-info" aria-hidden> All fields below are required for publication.</span>
         </div>
         <Field
-          name={`${courseId}.start`}
-          component={DateTimeField}
-          dateLabel="Start date"
-          timeLabel="Start time"
-          helpText={startDateHelp}
-          disabled={courseInReview}
-          required
-          minDate={getDateString(moment(courseRun.start))}
-          onInvalid={this.openCollapsible}
-        />
-        <Field
-          name={`${courseId}.end`}
-          component={DateTimeField}
-          dateLabel="End date"
-          timeLabel="End time"
-          helpText={endDateHelp}
-          disabled={courseInReview}
-          required
-          minDate={getDateString(moment(courseRun.start).add(1, 'd') || moment())}
-          onInvalid={this.openCollapsible}
-        />
-        <Field
           name={`${courseId}.go_live_date`}
           type="date"
           component={RenderInputTextField}
@@ -183,57 +161,28 @@ class CollapsibleCourseRun extends React.Component {
           disabled={courseInReview}
         />
         <Field
-          name={`${courseId}.min_effort`}
-          type="number"
-          component={RenderInputTextField}
-          label={
-            <FieldLabel
-              id={`${courseId}.min_effort.label`}
-              text="Minimum effort"
-              helpText={
-                <div>
-                  <p>
-                    The minimum number of hours per week the learner should expect to spend
-                    on the course.
-                  </p>
-                </div>
-              }
-            />
-          }
-          extraInput={{
-            onInvalid: this.openCollapsible,
-            min: 0,
-            max: 168,
-          }}
+          name={`${courseId}.start`}
+          component={DateTimeField}
+          dateLabel="Start date"
+          timeLabel="Start time"
+          helpText={startDateHelp}
           disabled={courseInReview}
-          required={courseRunSubmitting}
+          required
+          minDate={getDateString(moment(courseRun.start))}
+          onInvalid={this.openCollapsible}
         />
         <Field
-          name={`${courseId}.max_effort`}
-          type="number"
-          component={RenderInputTextField}
-          label={
-            <FieldLabel
-              id={`${courseId}.max_effort.label`}
-              text="Maximum effort"
-              helpText={
-                <div>
-                  <p>
-                    The maximum number of hours per week the learner should expect to spend
-                    on the course.
-                  </p>
-                </div>
-              }
-            />
-          }
-          extraInput={{
-            onInvalid: this.openCollapsible,
-            min: 1,
-            max: 168,
-          }}
+          name={`${courseId}.end`}
+          component={DateTimeField}
+          dateLabel="End date"
+          timeLabel="End time"
+          helpText={endDateHelp}
           disabled={courseInReview}
-          required={courseRunSubmitting}
+          required
+          minDate={getDateString(moment(courseRun.start).add(1, 'd') || moment())}
+          onInvalid={this.openCollapsible}
         />
+        <hr />
         <Field
           name={`${courseId}.pacing_type`}
           type="text"
@@ -244,6 +193,108 @@ class CollapsibleCourseRun extends React.Component {
               id={`${courseId}.pacing_type.label`}
               text="Course pacing"
               helpText={pacingHelp}
+            />
+          }
+          extraInput={{ onInvalid: this.openCollapsible }}
+          disabled={courseInReview}
+          required={courseRunSubmitting}
+        />
+        <FieldLabel
+          id={`${courseId}.staff.label`}
+          text="Staff"
+          className="mb-2"
+          helpText={
+            <div>
+              <p>The primary instructor or instructors for the course.</p>
+              <p>
+                The order that instructors are listed here is the same order they will be
+                displayed on course pages. You can drag and drop to reorder instructors.
+              </p>
+            </div>
+          }
+        />
+        <Field
+          name={`${courseId}.staff`}
+          component={StaffList}
+          extraInput={{ onInvalid: this.openCollapsible }}
+          disabled={courseInReview}
+          courseRunKey={courseRun.key}
+          owners={owners}
+          courseUuid={courseUuid}
+          sourceInfo={sourceInfo}
+          stafferInfo={stafferInfo}
+        />
+        <div className="row">
+          <div className="col-6">
+            <Field
+              name={`${courseId}.min_effort`}
+              type="number"
+              component={RenderInputTextField}
+              label={
+                <FieldLabel
+                  id={`${courseId}.min_effort.label`}
+                  text="Minimum effort"
+                  helpText={
+                    <div>
+                      <p>
+                        The minimum number of hours per week the learner should expect to spend
+                        on the course.
+                      </p>
+                    </div>
+                  }
+                />
+              }
+              extraInput={{
+                onInvalid: this.openCollapsible,
+                min: 0,
+                max: 168,
+              }}
+              disabled={courseInReview}
+              required={courseRunSubmitting}
+            />
+          </div>
+          <div className="col-6">
+            <Field
+              name={`${courseId}.max_effort`}
+              type="number"
+              component={RenderInputTextField}
+              label={
+                <FieldLabel
+                  id={`${courseId}.max_effort.label`}
+                  text="Maximum effort"
+                  helpText={
+                    <div>
+                      <p>
+                        The maximum number of hours per week the learner should expect to spend
+                        on the course.
+                      </p>
+                    </div>
+                  }
+                />
+              }
+              extraInput={{
+                onInvalid: this.openCollapsible,
+                min: 1,
+                max: 168,
+              }}
+              disabled={courseInReview}
+              required={courseRunSubmitting}
+            />
+          </div>
+        </div>
+        <Field
+          name={`${courseId}.weeks_to_complete`}
+          type="number"
+          component={RenderInputTextField}
+          label={
+            <FieldLabel
+              id={`${courseId}.weeks_to_complete.label`}
+              text="Length"
+              helpText={
+                <div>
+                  <p>The length of the course, in weeks, rounded to the nearest whole number.</p>
+                </div>
+              }
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}
@@ -268,41 +319,6 @@ class CollapsibleCourseRun extends React.Component {
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={courseInReview}
         />
-        <Field
-          name={`${courseId}.weeks_to_complete`}
-          type="number"
-          component={RenderInputTextField}
-          label={
-            <FieldLabel
-              id={`${courseId}.weeks_to_complete.label`}
-              text="Length"
-              helpText={
-                <div>
-                  <p>The length of the course, in weeks, rounded to the nearest whole number.</p>
-                </div>
-              }
-            />
-          }
-          extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
-          required={courseRunSubmitting}
-        />
-        <div>
-          <FieldLabel
-            id="number"
-            text="Course Embargo (OFAC) Restriction text added to the FAQ section"
-            className="mb-2"
-            helpText={
-              <div>
-                <p>
-                  Course embargo status for OFAC is managed internally, please contact
-                  support with questions.
-                </p>
-              </div>
-            }
-          />
-          <div className="mb-3">{courseRun.has_ofac_restrictions ? 'Yes' : 'No'}</div>
-        </div>
         <Field
           name={`${courseId}.expected_program_type`}
           type="text"
@@ -346,31 +362,22 @@ class CollapsibleCourseRun extends React.Component {
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={courseInReview}
         />
-        <FieldLabel
-          id={`${courseId}.staff.label`}
-          text="Staff"
-          className="mb-2"
-          helpText={
-            <div>
-              <p>The primary instructor or instructors for the course.</p>
-              <p>
-                The order that instructors are listed here is the same order they will be
-                displayed on course pages. You can drag and drop to reorder instructors.
-              </p>
-            </div>
-          }
-        />
-        <Field
-          name={`${courseId}.staff`}
-          component={StaffList}
-          extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
-          courseRunKey={courseRun.key}
-          owners={owners}
-          courseUuid={courseUuid}
-          sourceInfo={sourceInfo}
-          stafferInfo={stafferInfo}
-        />
+        <div>
+          <FieldLabel
+            id="number"
+            text="Course Embargo (OFAC) Restriction text added to the FAQ section"
+            className="mb-2"
+            helpText={
+              <div>
+                <p>
+                  Course embargo status for OFAC is managed internally, please contact
+                  support with questions.
+                </p>
+              </div>
+            }
+          />
+          <div className="mb-3">{courseRun.has_ofac_restrictions ? 'Yes' : 'No'}</div>
+        </div>
         <ButtonToolbar>
           <ActionButton
             // only disable if *this run* is in review

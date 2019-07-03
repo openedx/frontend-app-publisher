@@ -246,6 +246,79 @@ export class BaseEditCourseForm extends React.Component {
               <div className="mb-3">{number}</div>
             </div>
             <Field
+              name="mode"
+              component={RenderSelectField}
+              label={
+                <FieldLabel
+                  id="mode.label"
+                  text="Enrollment track"
+                  helpText={enrollmentHelp}
+                  extraText="(Cannot edit after submission)"
+                />
+              }
+              extraInput={{ onInvalid: this.openCollapsible }}
+              options={this.getEnrollmentTrackOptions()}
+              disabled={courseInReview || !!entitlement.sku}
+            />
+            {ENTITLEMENT_TRACKS.includes(currentFormValues.mode) && <Field
+              name="price"
+              component={RenderInputTextField}
+              type="number"
+              label={<FieldLabel text="Price" />}
+              extraInput={{
+                onInvalid: this.openCollapsible,
+                min: 1.00,
+                step: 0.01,
+                max: 10000.00,
+              }}
+              disabled={courseInReview}
+              required={isSubmittingForReview}
+            />}
+            <Field
+              name="imageSrc"
+              component={ImageUpload}
+              label={
+                <FieldLabel
+                  id="image.label"
+                  text="Image"
+                  helpText={
+                    <div>
+                      <p>
+                        An eye-catching, colorful image that captures the essence of your course.
+                      </p>
+                      <ul>
+                        <li>New course images must be 1134×675 pixels in size.</li>
+                        <li>Each course must have a unique image.</li>
+                        <li>The image cannot include text or headlines.</li>
+                        <li>
+                          You must have permission to use the image. Possible image sources
+                          include Flickr creative commons, Stock Vault, Stock XCHNG, and iStock
+                          Photo.
+                        </li>
+                      </ul>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#representative-image-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                />
+              }
+              extraInput={{ onInvalid: this.openCollapsible }}
+              maxImageSizeKilo={1000}
+              requiredWidth={1134}
+              requiredHeight={675}
+              id="image"
+              className="course-image"
+              disabled={courseInReview}
+            />
+            <hr />
+            <Field
               name="short_description"
               component={RichEditor}
               label={
@@ -361,96 +434,60 @@ export class BaseEditCourseForm extends React.Component {
               disabled={courseInReview}
             />
             <Field
-              name="subjectPrimary"
-              component={RenderSelectField}
+              name="syllabus_raw"
+              component={RichEditor}
               label={
                 <FieldLabel
-                  id="subject1.label"
-                  text="Primary subject"
-                  helpText={
-                    <div>
-                      <p>The subject of the course.</p>
-                      <p>
-                        You can select up to two subjects in addition to the primary subject.
-                        Only the primary subject appears on the About page.
-                      </p>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#subject-guidelines"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                    </div>
-                  }
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              options={subjectOptions}
-              disabled={courseInReview}
-              required={isSubmittingForReview}
-            />
-            <Field
-              name="subjectSecondary"
-              component={RenderSelectField}
-              label={<FieldLabel text="Secondary subject" />}
-              extraInput={{ onInvalid: this.openCollapsible }}
-              options={subjectOptions}
-              disabled={courseInReview}
-              optional
-            />
-            <Field
-              name="subjectTertiary"
-              component={RenderSelectField}
-              label={<FieldLabel text="Tertiary subject" />}
-              extraInput={{ onInvalid: this.openCollapsible }}
-              options={subjectOptions}
-              disabled={courseInReview}
-              optional
-            />
-            <Field
-              name="imageSrc"
-              component={ImageUpload}
-              label={
-                <FieldLabel
-                  id="image.label"
-                  text="Image"
+                  id="syllabus.label"
+                  text="Syllabus"
                   helpText={
                     <div>
                       <p>
-                        An eye-catching, colorful image that captures the essence of your course.
+                        A review of content covered in your course, organized by week or module.
                       </p>
                       <ul>
-                        <li>New course images must be 1134×675 pixels in size.</li>
-                        <li>Each course must have a unique image.</li>
-                        <li>The image cannot include text or headlines.</li>
+                        <li>Focus on topics and content.</li>
                         <li>
-                          You must have permission to use the image. Possible image sources
-                          include Flickr creative commons, Stock Vault, Stock XCHNG, and iStock
-                          Photo.
+                          Do not include detailed information about course logistics, such as
+                          grading, communication policies, and reading lists.
                         </li>
+                        <li>Format items as either paragraphs or a bulleted list.</li>
                       </ul>
                       <p>
                         <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#representative-image-guidelines"
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           Learn more.
                         </a>
                       </p>
+                      <p><b>Example:</b></p>
+                      <ul>
+                        <li>
+                          <p>Week 1: From Calculator to Computer</p>
+                          <p>
+                            Introduction to basic programming concepts, such as values and
+                            expressions, as well as making decisions when implementing algorithms
+                            and developing programs.
+                          </p>
+                        </li>
+                        <li>
+                          <p>Week 2: State Transformation</p>
+                          <p>
+                            Introduction to state transformation, including representation of data
+                            and programs as well as conditional repetition.
+                          </p>
+                        </li>
+                      </ul>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
-              maxImageSizeKilo={1000}
-              requiredWidth={1134}
-              requiredHeight={675}
-              id="image"
-              className="course-image"
+              maxChars={500}
+              id="syllabus"
               disabled={courseInReview}
             />
             <Field
@@ -490,44 +527,6 @@ export class BaseEditCourseForm extends React.Component {
               maxChars={1000}
               id="prereq"
               disabled={courseInReview}
-            />
-            <Field
-              name="level_type"
-              component={RenderSelectField}
-              label={
-                <FieldLabel
-                  id="level.label"
-                  text="Course level"
-                  // TODO: these descriptions should come from the server -- levels are defined in
-                  //       the database and are not suitable for hardcoding like this.
-                  helpText={
-                    <div>
-                      <dl>
-                        <dt>Introductory</dt>
-                        <dd>
-                          No prerequisites; a learner who has completed some or all secondary
-                          school could complete the course.
-                        </dd>
-                        <dt>Intermediate</dt>
-                        <dd>
-                          Basic prerequisites; learners need to complete secondary school or some
-                          university courses.
-                        </dd>
-                        <dt>Advanced</dt>
-                        <dd>
-                          Significant prerequisites; the course is geared to third or fourth year
-                          university students or master’s degree students.
-                        </dd>
-                      </dl>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              options={levelTypeOptions}
-              disabled={courseInReview}
-              required={isSubmittingForReview}
             />
             <Field
               name="learner_testimonials"
@@ -617,63 +616,6 @@ export class BaseEditCourseForm extends React.Component {
               id="additional-information"
               disabled={courseInReview}
             />}
-            <Field
-              name="syllabus_raw"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="syllabus.label"
-                  text="Syllabus"
-                  helpText={
-                    <div>
-                      <p>
-                        A review of content covered in your course, organized by week or module.
-                      </p>
-                      <ul>
-                        <li>Focus on topics and content.</li>
-                        <li>
-                          Do not include detailed information about course logistics, such as
-                          grading, communication policies, and reading lists.
-                        </li>
-                        <li>Format items as either paragraphs or a bulleted list.</li>
-                      </ul>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p><b>Example:</b></p>
-                      <ul>
-                        <li>
-                          <p>Week 1: From Calculator to Computer</p>
-                          <p>
-                            Introduction to basic programming concepts, such as values and
-                            expressions, as well as making decisions when implementing algorithms
-                            and developing programs.
-                          </p>
-                        </li>
-                        <li>
-                          <p>Week 2: State Transformation</p>
-                          <p>
-                            Introduction to state transformation, including representation of data
-                            and programs as well as conditional repetition.
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={500}
-              id="syllabus"
-              disabled={courseInReview}
-            />
             {administrator && <Field
               name="videoSrc"
               component={RenderInputTextField}
@@ -732,35 +674,94 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               disabled={courseInReview}
             />}
+            <hr />
             <Field
-              name="mode"
+              name="level_type"
               component={RenderSelectField}
               label={
                 <FieldLabel
-                  id="mode.label"
-                  text="Enrollment track"
-                  helpText={enrollmentHelp}
-                  extraText="(Cannot edit after submission)"
+                  id="level.label"
+                  text="Course level"
+                  // TODO: these descriptions should come from the server -- levels are defined in
+                  //       the database and are not suitable for hardcoding like this.
+                  helpText={
+                    <div>
+                      <dl>
+                        <dt>Introductory</dt>
+                        <dd>
+                          No prerequisites; a learner who has completed some or all secondary
+                          school could complete the course.
+                        </dd>
+                        <dt>Intermediate</dt>
+                        <dd>
+                          Basic prerequisites; learners need to complete secondary school or some
+                          university courses.
+                        </dd>
+                        <dt>Advanced</dt>
+                        <dd>
+                          Significant prerequisites; the course is geared to third or fourth year
+                          university students or master’s degree students.
+                        </dd>
+                      </dl>
+                    </div>
+                  }
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
-              options={this.getEnrollmentTrackOptions()}
-              disabled={courseInReview || !!entitlement.sku}
-            />
-            {ENTITLEMENT_TRACKS.includes(currentFormValues.mode) && <Field
-              name="price"
-              component={RenderInputTextField}
-              type="number"
-              label={<FieldLabel text="Price" />}
-              extraInput={{
-                onInvalid: this.openCollapsible,
-                min: 1.00,
-                step: 0.01,
-                max: 10000.00,
-              }}
+              options={levelTypeOptions}
               disabled={courseInReview}
               required={isSubmittingForReview}
-            />}
+            />
+            <Field
+              name="subjectPrimary"
+              component={RenderSelectField}
+              label={
+                <FieldLabel
+                  id="subject1.label"
+                  text="Primary subject"
+                  helpText={
+                    <div>
+                      <p>The subject of the course.</p>
+                      <p>
+                        You can select up to two subjects in addition to the primary subject.
+                        Only the primary subject appears on the About page.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#subject-guidelines"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                    </div>
+                  }
+                />
+              }
+              extraInput={{ onInvalid: this.openCollapsible }}
+              options={subjectOptions}
+              disabled={courseInReview}
+              required={isSubmittingForReview}
+            />
+            <Field
+              name="subjectSecondary"
+              component={RenderSelectField}
+              label={<FieldLabel text="Secondary subject" optional />}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              options={subjectOptions}
+              disabled={courseInReview}
+              optional
+            />
+            <Field
+              name="subjectTertiary"
+              component={RenderSelectField}
+              label={<FieldLabel text="Tertiary subject" optional />}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              options={subjectOptions}
+              disabled={courseInReview}
+              optional
+            />
           </Collapsible>
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
