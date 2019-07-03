@@ -223,6 +223,9 @@ export class BaseEditCourseForm extends React.Component {
             isOpen={open}
             onToggle={this.setCollapsible}
           >
+            <div className="mb-3">
+              <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
+            </div>
             <Field
               name="title"
               component={RenderInputTextField}
@@ -231,8 +234,6 @@ export class BaseEditCourseForm extends React.Component {
                 <FieldLabel
                   id="title.label"
                   text="Title"
-                  required
-                  requiredForSubmit
                   helpText={titleHelp}
                 />
               }
@@ -251,7 +252,6 @@ export class BaseEditCourseForm extends React.Component {
                 <FieldLabel
                   id="sdesc.label"
                   text="Short description"
-                  requiredForSubmit
                   helpText={
                     <div>
                       <p>An effective short description:</p>
@@ -292,7 +292,6 @@ export class BaseEditCourseForm extends React.Component {
                 <FieldLabel
                   id="ldesc.label"
                   text="Long description"
-                  requiredForSubmit
                   helpText={
                     <div>
                       <p>An effective long description:</p>
@@ -332,7 +331,6 @@ export class BaseEditCourseForm extends React.Component {
                 <FieldLabel
                   id="outcome.label"
                   text="What you will learn"
-                  requiredForSubmit
                   helpText={
                     <div>
                       <p>The skills and knowledge learners will acquire in this course.</p>
@@ -369,7 +367,6 @@ export class BaseEditCourseForm extends React.Component {
                 <FieldLabel
                   id="subject1.label"
                   text="Primary subject"
-                  requiredForSubmit
                   helpText={
                     <div>
                       <p>The subject of the course.</p>
@@ -402,6 +399,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
               disabled={courseInReview}
+              optional
             />
             <Field
               name="subjectTertiary"
@@ -410,6 +408,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
               disabled={courseInReview}
+              optional
             />
             <Field
               name="imageSrc"
@@ -418,7 +417,6 @@ export class BaseEditCourseForm extends React.Component {
                 <FieldLabel
                   id="image.label"
                   text="Image"
-                  requiredForSubmit
                   helpText={
                     <div>
                       <p>
@@ -485,6 +483,7 @@ export class BaseEditCourseForm extends React.Component {
                       </ol>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -499,7 +498,6 @@ export class BaseEditCourseForm extends React.Component {
                 <FieldLabel
                   id="level.label"
                   text="Course level"
-                  requiredForSubmit
                   // TODO: these descriptions should come from the server -- levels are defined in
                   //       the database and are not suitable for hardcoding like this.
                   helpText={
@@ -523,6 +521,7 @@ export class BaseEditCourseForm extends React.Component {
                       </dl>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -561,6 +560,7 @@ export class BaseEditCourseForm extends React.Component {
                       </p>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -589,6 +589,7 @@ export class BaseEditCourseForm extends React.Component {
                       </p>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -608,6 +609,7 @@ export class BaseEditCourseForm extends React.Component {
                       <p>Any additional information to be provided to learners.</p>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -664,6 +666,7 @@ export class BaseEditCourseForm extends React.Component {
                       </ul>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -723,6 +726,7 @@ export class BaseEditCourseForm extends React.Component {
                       </p>
                     </div>
                   }
+                  optional
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
@@ -747,7 +751,7 @@ export class BaseEditCourseForm extends React.Component {
               name="price"
               component={RenderInputTextField}
               type="number"
-              label={<FieldLabel text="Price" required requiredForSubmit />}
+              label={<FieldLabel text="Price" />}
               extraInput={{
                 onInvalid: this.openCollapsible,
                 min: 1.00,
