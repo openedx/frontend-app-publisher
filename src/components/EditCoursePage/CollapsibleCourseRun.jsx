@@ -155,7 +155,8 @@ class CollapsibleCourseRun extends React.Component {
           }
           extraInput={{
             onInvalid: this.openCollapsible,
-            min: getDateString((moment(courseRun.go_live_date) || moment())),
+            min: moment(courseRun.go_live_date).isBefore(moment()) ?
+              getDateString(courseRun.go_live_date) : getDateString(moment()),
           }}
           placeholder="mm/dd/yyyy"
           disabled={courseInReview}
@@ -168,7 +169,8 @@ class CollapsibleCourseRun extends React.Component {
           helpText={startDateHelp}
           disabled={courseInReview}
           required
-          minDate={getDateString(moment(courseRun.start))}
+          minDate={moment(courseRun.start).isBefore(moment()) ?
+            getDateString(courseRun.start) : getDateString(moment())}
           onInvalid={this.openCollapsible}
         />
         <Field
