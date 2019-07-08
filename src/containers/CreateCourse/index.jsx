@@ -3,7 +3,7 @@ import { getFormValues } from 'redux-form';
 
 import CreateCoursePage from '../../components/CreateCoursePage';
 import { fetchOrganizations } from '../../data/actions/publisherUserInfo';
-import { createCourse, clearCourseInfoErrors } from '../../data/actions/courseInfo';
+import { createCourse, clearCourseInfoErrors, clearCreateCourseStatus } from '../../data/actions/courseInfo';
 import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
 
 const mapStateToProps = (state, props) => ({
@@ -12,6 +12,7 @@ const mapStateToProps = (state, props) => ({
   initialValues: props.initialValues,
   formValues: getFormValues('create-course-form')(state),
   courseRunOptions: state.courseRunOptions,
+  clearCreateCourseStatus: props.clearCreateCourseStatus,
 });
 
 const mapDispatchToProps = {
@@ -19,6 +20,7 @@ const mapDispatchToProps = {
   fetchOrganizations,
   fetchCourseRunOptions,
   clearCourseInfoErrors,
+  clearCreateCourseStatus,
 };
 
 export default connect(

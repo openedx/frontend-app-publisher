@@ -4,18 +4,21 @@ import PropTypes from 'prop-types';
 import { Modal } from '@edx/paragon';
 
 
-const SubmitConfirmModal = ({
+const ConfirmationModal = ({
   onSubmit,
+  title,
+  body,
+  buttonLabel,
   ...passThroughProps
 }) => (
   <Modal
     {...passThroughProps}
-    title="Submit for Review?"
-    body="You will not be able to make edits while the course is in review, which can take up to 2 business days. Confirm your edits are complete."
+    title={title}
+    body={body}
     closeText="Cancel"
     buttons={[
       {
-        label: 'Submit',
+        label: buttonLabel,
         buttonType: 'primary',
         onClick: onSubmit,
       },
@@ -23,8 +26,11 @@ const SubmitConfirmModal = ({
   />
 );
 
-SubmitConfirmModal.propTypes = {
+ConfirmationModal.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  buttonLabel: PropTypes.string.isRequired,
 };
 
-export default SubmitConfirmModal;
+export default ConfirmationModal;

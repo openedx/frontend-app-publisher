@@ -2,7 +2,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Field, FieldArray } from 'redux-form';
-import { Collapsible } from '@edx/paragon';
+import { Collapsible, Hyperlink } from '@edx/paragon';
 
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
@@ -49,17 +49,27 @@ const formatCourseRunTitle = (courseRun) => {
           <span>{`${publishDate}`}</span>
         </div>
         <div className="course-run-studio-url">
-          {'Studio URL - '}
-          <a href={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}>
-            {`${courseRun.key}`}
-          </a>
+          <React.Fragment>
+            Studio URL -&nbsp;
+            <Hyperlink
+              destination={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}
+              target="_blank"
+            >
+              {courseRun.key}
+            </Hyperlink>
+          </React.Fragment>
         </div>
         {courseRun.marketing_url ?
           <div className="course-run-preview-url">
-            {'Preview URL - '}
-            <a href={`${courseRun.marketing_url}`}>
-              {'View about page'}
-            </a>
+            <React.Fragment>
+              Preview URL -&nbsp;
+              <Hyperlink
+                destination={`${courseRun.marketing_url}`}
+                target="_blank"
+              >
+                View about page
+              </Hyperlink>
+            </React.Fragment>
           </div> : null}
       </div>
     );
@@ -127,7 +137,7 @@ class CollapsibleCourseRun extends React.Component {
         onToggle={this.setCollapsible}
       >
         <div className="mb-3">
-          <span className="text-info" aria-hidden> All fields below are required for publication.</span>
+          <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
         </div>
         <Field
           name={`${courseId}.go_live_date`}
@@ -160,6 +170,7 @@ class CollapsibleCourseRun extends React.Component {
           }}
           placeholder="mm/dd/yyyy"
           disabled={courseInReview}
+          required={courseRunSubmitting}
         />
         <Field
           name={`${courseId}.start`}
@@ -338,6 +349,7 @@ class CollapsibleCourseRun extends React.Component {
                   </p>
                 </div>
               }
+              optional
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}
@@ -359,6 +371,7 @@ class CollapsibleCourseRun extends React.Component {
                   </p>
                 </div>
               }
+              optional
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}

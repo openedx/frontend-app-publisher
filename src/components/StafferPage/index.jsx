@@ -155,19 +155,19 @@ class StafferPage extends React.Component {
         <Helmet>
           <title>{titleText}</title>
         </Helmet>
-
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
+          { referrer &&
+            <StatusAlert
+              id="sent-from-edit-course-info"
+              alertType="info"
+              message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+              dismissible
+            />
+          }
           { showForm && (
             <div>
               <h2>{titleText}</h2>
-              { referrer &&
-                <StatusAlert
-                  id="sent-from-edit-course-info"
-                  alertType="info"
-                  message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
-                />
-              }
               <hr />
               <StafferForm
                 id="create-staffer-form"
