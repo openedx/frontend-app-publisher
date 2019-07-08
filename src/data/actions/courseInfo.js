@@ -91,10 +91,7 @@ function updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, i
     // This emits a redux action called CHANGE that will update currentFormValues.imageSrc
     change('imageSrc', initialImageSrc);
     for (let i = 0; i < initialCourseRuns.length; i += 1) {
-      // Status is modified directly because it is not a registeredField with the form, but
-      // is still used in comparison for deciding if the form is pristine.
-      // eslint-disable-next-line no-param-reassign
-      currentFormValues.course_runs[i].status = initialCourseRuns[i].status;
+      change(`course_runs[${i}].status`, initialCourseRuns[i].status);
     }
     // Need to reset courseInfo.courseSaved to false so we don't continuously
     // overwrite the currentFormValues.
