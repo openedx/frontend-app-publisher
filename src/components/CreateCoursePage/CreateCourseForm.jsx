@@ -88,7 +88,7 @@ class BaseCreateCourseForm extends React.Component {
                 id="number-label"
                 text="Number"
                 required
-                extraText="(Cannot edit after submission)"
+                extraText="Cannot edit after submission"
                 helpText={
                   <div>
                     <p>
