@@ -16,8 +16,6 @@ const mockClient = new MockAdapter(apiClient);
 apiClient.isAccessTokenExpired = jest.fn();
 apiClient.isAccessTokenExpired.mockReturnValue(false);
 
-const uuid = '11111111-1111-1111-1111-111111111111';
-
 
 describe('courseOptions fetch course actions', () => {
   afterEach(() => {
@@ -25,10 +23,10 @@ describe('courseOptions fetch course actions', () => {
   });
 
   it('handles fetch success', () => {
-    mockClient.onOptions(`http://localhost:18381/api/v1/courses/${uuid}/`)
+    mockClient.onOptions('http://localhost:18381/api/v1/courses/')
       .replyOnce(200, JSON.stringify({
         actions: {
-          PUT: {
+          POST: {
             level_type: {
               choices: [
                 { display_name: 'Beginner', value: 'beginner' },
@@ -51,10 +49,10 @@ describe('courseOptions fetch course actions', () => {
       }));
 
     const expectedActions = [
-      requestCourseOptions(uuid),
-      requestCourseOptionsSuccess(uuid, {
+      requestCourseOptions(),
+      requestCourseOptionsSuccess({
         actions: {
-          PUT: {
+          POST: {
             level_type: {
               choices: [
                 { display_name: 'Beginner', value: 'beginner' },
@@ -78,57 +76,37 @@ describe('courseOptions fetch course actions', () => {
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchCourseOptions(uuid)).then(() => {
+    return store.dispatch(fetchCourseOptions()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
 
   it('handles fetch error code', () => {
-    mockClient.onOptions(`http://localhost:18381/api/v1/courses/${uuid}/`)
+    mockClient.onOptions('http://localhost:18381/api/v1/courses/')
       .replyOnce(500, '');
 
     const expectedActions = [
-      requestCourseOptions(uuid),
-      requestCourseOptionsFail(
-        uuid,
-        ['Could not get course information.', 'Request failed with status code 500.'],
-      ),
+      requestCourseOptions(),
+      requestCourseOptionsFail(['Could not get course information.', 'Request failed with status code 500.']),
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchCourseOptions(uuid)).then(() => {
-      expect(store.getActions()).toEqual(expectedActions);
-    });
-  });
-
-  it('handles fetch with bad id', () => {
-    const expectedActions = [
-      requestCourseOptionsFail(
-        'test',
-        ['Could not get course information. test is not a valid course UUID.'],
-      ),
-    ];
-    const store = mockStore();
-
-    return store.dispatch(fetchCourseOptions('test')).then(() => {
+    return store.dispatch(fetchCourseOptions()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
 
   it('handles fetch with bad data', () => {
-    mockClient.onOptions(`http://localhost:18381/api/v1/courses/${uuid}/`)
+    mockClient.onOptions('http://localhost:18381/api/v1/courses/')
       .replyOnce(200, {});
 
     const expectedActions = [
-      requestCourseOptions(uuid),
-      requestCourseOptionsFail(
-        uuid,
-        ['Could not get course information.', 'Did not understand response.'],
-      ),
+      requestCourseOptions(),
+      requestCourseOptionsFail(['Could not get course information.', 'Did not understand response.']),
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchCourseOptions(uuid)).then(() => {
+    return store.dispatch(fetchCourseOptions()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

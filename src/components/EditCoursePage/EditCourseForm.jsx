@@ -99,15 +99,15 @@ export class BaseEditCourseForm extends React.Component {
       return [];
     }
 
-    return data.actions.PUT;
+    return data.actions.POST;
   }
 
-  getAddCourseRunButton(courseInReview, pristine, uuid) {
+  getAddCourseRunButton(disabled, pristine, uuid) {
     /** Disabling a Link is discouraged and disabling a button within a link results
      * in a Disabled button with a link that will still underline on hover.
      * This method will remove the Link when disabling the button.
      */
-    if (courseInReview) {
+    if (disabled) {
       return '';
     }
 
@@ -184,6 +184,7 @@ export class BaseEditCourseForm extends React.Component {
       courseStatuses,
       id,
       isSubmittingForReview,
+      editable,
       courseInfo,
     } = this.props;
     const {
@@ -213,6 +214,8 @@ export class BaseEditCourseForm extends React.Component {
     subjectOptions.unshift({ label: '--', value: '' });
     programOptions.unshift({ label: '--', value: '' });
 
+    const disabled = courseInReview || !editable;
+
     return (
       <div className="edit-course-form">
         <form id={id} onSubmit={handleSubmit}>
@@ -239,7 +242,7 @@ export class BaseEditCourseForm extends React.Component {
               }
               extraInput={{ onInvalid: this.openCollapsible }}
               required
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <div>
               <FieldLabel id="number" text="Number" className="mb-2" />
@@ -258,7 +261,7 @@ export class BaseEditCourseForm extends React.Component {
               }
               extraInput={{ onInvalid: this.openCollapsible }}
               options={this.getEnrollmentTrackOptions()}
-              disabled={courseInReview || !!entitlement.sku}
+              disabled={disabled || !!entitlement.sku}
             />
             {ENTITLEMENT_TRACKS.includes(currentFormValues.mode) && <Field
               name="price"
@@ -271,7 +274,7 @@ export class BaseEditCourseForm extends React.Component {
                 step: 0.01,
                 max: 10000.00,
               }}
-              disabled={courseInReview}
+              disabled={disabled}
               required={isSubmittingForReview}
             />}
             <Field
@@ -317,7 +320,7 @@ export class BaseEditCourseForm extends React.Component {
               requiredHeight={675}
               id="image"
               className="course-image"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <hr />
             <Field
@@ -358,7 +361,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={500}
               id="sdesc"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <Field
               name="full_description"
@@ -397,7 +400,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="ldesc"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <Field
               name="outcome"
@@ -433,7 +436,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="outcome"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <Field
               name="syllabus_raw"
@@ -490,7 +493,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={500}
               id="syllabus"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <Field
               name="prerequisites_raw"
@@ -528,7 +531,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={1000}
               id="prereq"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <Field
               name="learner_testimonials"
@@ -567,7 +570,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={500}
               id="learner-testimonials"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             <Field
               name="faq"
@@ -605,7 +608,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="faq"
-              disabled={courseInReview}
+              disabled={disabled}
             />
             {administrator && <Field
               name="additional_information"
@@ -625,7 +628,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               maxChars={2500}
               id="additional-information"
-              disabled={courseInReview}
+              disabled={disabled}
             />}
             {administrator && <Field
               name="videoSrc"
@@ -683,7 +686,7 @@ export class BaseEditCourseForm extends React.Component {
                 />
               }
               extraInput={{ onInvalid: this.openCollapsible }}
-              disabled={courseInReview}
+              disabled={disabled}
             />}
             <hr />
             <Field
@@ -720,7 +723,7 @@ export class BaseEditCourseForm extends React.Component {
               }
               extraInput={{ onInvalid: this.openCollapsible }}
               options={levelTypeOptions}
-              disabled={courseInReview}
+              disabled={disabled}
               required={isSubmittingForReview}
             />
             <Field
@@ -752,7 +755,7 @@ export class BaseEditCourseForm extends React.Component {
               }
               extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
-              disabled={courseInReview}
+              disabled={disabled}
               required={isSubmittingForReview}
             />
             <Field
@@ -761,7 +764,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Secondary subject" optional />}
               extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
-              disabled={courseInReview}
+              disabled={disabled}
               optional
             />
             <Field
@@ -770,7 +773,7 @@ export class BaseEditCourseForm extends React.Component {
               label={<FieldLabel text="Tertiary subject" optional />}
               extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
-              disabled={courseInReview}
+              disabled={disabled}
               optional
             />
           </Collapsible>
@@ -786,25 +789,27 @@ export class BaseEditCourseForm extends React.Component {
             courseSubmitting={submitting}
             {...this.props}
           />
-          {this.getAddCourseRunButton(courseInReview, pristine, uuid)}
-          <ButtonToolbar className="mt-3">
-            <ActionButton
-              disabled={courseInReview || submitting}
-              labels={{
-                default: 'Save & Continue Editing',
-                pending: 'Saving Course',
-                complete: 'Course Saved',
-              }}
-              state={submitState}
-              onClick={() => {
-               /* Bit of a hack used to clear old validation errors that might be around from
-                *  trying to submit for review with errors.
-                */
-               store.dispatch(stopSubmit(id));
-               store.dispatch(courseSubmittingInfo());
-              }}
-            />
-          </ButtonToolbar>
+          {this.getAddCourseRunButton(disabled, pristine, uuid)}
+          {editable &&
+            <ButtonToolbar className="mt-3">
+              <ActionButton
+                disabled={disabled || submitting}
+                labels={{
+                  default: 'Save & Continue Editing',
+                  pending: 'Saving Course',
+                  complete: 'Course Saved',
+                }}
+                state={submitState}
+                onClick={() => {
+                  /* Bit of a hack used to clear old validation errors that might be around from
+                   *  trying to submit for review with errors.
+                   */
+                  store.dispatch(stopSubmit(id));
+                  store.dispatch(courseSubmittingInfo());
+                }}
+              />
+            </ButtonToolbar>
+          }
         </form>
       </div>
     );
@@ -839,6 +844,7 @@ BaseEditCourseForm.propTypes = {
   courseStatuses: PropTypes.arrayOf(PropTypes.string),
   id: PropTypes.string.isRequired,
   isSubmittingForReview: PropTypes.bool,
+  editable: PropTypes.bool,
   courseInfo: PropTypes.shape({
     isSubmittingEdit: PropTypes.bool,
   }),
@@ -865,6 +871,7 @@ BaseEditCourseForm.defaultProps = {
   courseInReview: false,
   courseStatuses: [],
   isSubmittingForReview: false,
+  editable: false,
   courseInfo: {},
   courseSubmitInfo: {},
   initialValues: {

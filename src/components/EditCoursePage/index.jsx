@@ -264,6 +264,7 @@ class EditCoursePage extends React.Component {
           course_runs,
           uuid,
           owners,
+          editable,
         },
         showCreateStatusAlert,
       },
@@ -382,6 +383,11 @@ class EditCoursePage extends React.Component {
         />
 
         <PageContainer>
+          { showForm && !editable && <StatusAlert
+            alertType="secondary"
+            message="You have permission to view this course, but not edit. If you would like to edit the course, please contact your project coordinator."
+          /> }
+
           { showSpinner && <LoadingSpinner /> }
           { showReviewStatusAlert && <StatusAlert
             onClose={this.dismissAlert}
@@ -433,6 +439,7 @@ class EditCoursePage extends React.Component {
                 owners={owners}
                 isSubmittingForReview={isSubmittingForReview}
                 targetRun={targetRun}
+                editable={editable}
                 {...this.props}
               />
             </div>
