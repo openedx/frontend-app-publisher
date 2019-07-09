@@ -5,6 +5,9 @@ import {
   SORT_REQUEST,
   SORT_SUCCESS,
   SORT_FAILURE,
+  FILTER_REQUEST,
+  FILTER_SUCCESS,
+  FILTER_FAILURE,
   CLEAR_TABLE,
 } from '../constants/table';
 
@@ -53,6 +56,24 @@ const tableReducer = (state = {}, action) => {
         data: action.payload.data,
       });
     case SORT_FAILURE:
+      return updateTable(state, action.payload.tableId, {
+        loading: false,
+        error: action.payload.error,
+      });
+    case FILTER_REQUEST:
+      return updateTable(state, action.payload.tableId, {
+        loading: true,
+        error: null,
+      });
+    case FILTER_SUCCESS:
+      return updateTable(state, action.payload.tableId, {
+        loading: false,
+        error: null,
+        ordering: action.payload.ordering,
+        filter: action.payload.filter,
+        data: action.payload.data,
+      });
+    case FILTER_FAILURE:
       return updateTable(state, action.payload.tableId, {
         loading: false,
         error: action.payload.error,

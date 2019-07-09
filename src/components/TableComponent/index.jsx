@@ -22,12 +22,18 @@ class TableComponent extends React.Component {
     // also when the back button is used. We need to determine if this is a pagination or sorting
     // request as we handle these as slightly different actions in the action handlers.
     if (location.search !== prevProps.location.search) {
-      const { page: prevPage, ordering: prevOrdering } = qs.parse(prevProps.location.search);
-      const { page, ordering } = qs.parse(location.search);
+      const {
+        page: prevPage,
+        ordering: prevOrdering,
+        filter: prevFilter,
+      } = qs.parse(prevProps.location.search);
+      const { page, ordering, filter } = qs.parse(location.search);
       if (ordering !== prevOrdering) {
         this.props.sortTable(ordering);
       } else if (page !== prevPage) {
         this.props.paginateTable(parseInt(page, 10));
+      } else if (filter !== prevFilter) {
+        this.props.filterTable(filter);
       }
     }
   }
@@ -152,6 +158,7 @@ TableComponent.propTypes = {
   error: PropTypes.instanceOf(Error),
   paginateTable: PropTypes.func.isRequired,
   sortTable: PropTypes.func.isRequired,
+  filterTable: PropTypes.func.isRequired,
   clearTable: PropTypes.func.isRequired,
   location: PropTypes.shape({
     search: PropTypes.string,

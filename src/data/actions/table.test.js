@@ -8,6 +8,7 @@ import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService
 import {
   paginateTable,
   sortTable,
+  filterTable,
 } from './table';
 
 import {
@@ -17,6 +18,9 @@ import {
   SORT_REQUEST,
   SORT_SUCCESS,
   SORT_FAILURE,
+  FILTER_REQUEST,
+  FILTER_SUCCESS,
+  FILTER_FAILURE,
 } from '../constants/table';
 
 const mockStore = configureMockStore([thunk]);
@@ -235,194 +239,94 @@ describe('table actions', () => {
     });
   });
 
-  it('handles a success with all data preloaded for strings', () => {
-    const ordering = 'key';
-    const data = {
-      num_pages: 1,
-      results: [
-        {
-          key,
-        },
-        {
-          key,
-        },
-      ],
-    };
+  it('handles a filter request', () => {
+    const filter = 'key';
+    mockClient.onGet('http://localhost:18381/api/v1/courses/')
+      .replyOnce(200, JSON.stringify({
+        results: [
+          {
+            key,
+          },
+          {
+            key,
+          },
+        ],
+      }));
     const expectedActions = [
       {
         payload: {
-          ordering,
+          filter,
           tableId,
         },
-        type: SORT_REQUEST,
+        type: FILTER_REQUEST,
       },
       {
         payload: {
-          data,
-          ordering,
+          data: {
+            results: [
+              {
+                key,
+              },
+              {
+                key,
+              },
+            ],
+          },
+          filter,
           tableId,
         },
-        type: SORT_SUCCESS,
+        type: FILTER_SUCCESS,
       },
     ];
     const initialState = {
       table: {
-        [tableId]: {
-          data,
-        },
+        [tableId]: {}, // Just have an empty state for the table
       },
     };
     const store = mockStore(initialState);
 
-    store.dispatch(sortTable(
+    return store.dispatch(filterTable(
       tableId,
       DiscoveryDataApiService.fetchCourses,
-      ordering,
-    ));
-    return expect(store.getActions()).toEqual(expectedActions);
+      filter,
+    )).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  it('handles a success with all data preloaded for floats', () => {
-    const ordering = 'float';
-    const float = '1.0';
-    const data = {
-      num_pages: 1,
-      results: [
-        {
-          float,
-        },
-        {
-          float,
-        },
-      ],
-    };
+  it('handles a filter failure', () => {
+    const filter = 'key';
+    mockClient.onGet('http://localhost:18381/api/v1/courses/')
+      .replyOnce(500);
     const expectedActions = [
       {
         payload: {
-          ordering,
+          filter,
           tableId,
         },
-        type: SORT_REQUEST,
+        type: FILTER_REQUEST,
       },
       {
         payload: {
-          data,
-          ordering,
+          error: new Error('Request failed with status code 500'),
           tableId,
         },
-        type: SORT_SUCCESS,
+        type: FILTER_FAILURE,
       },
     ];
     const initialState = {
       table: {
-        [tableId]: {
-          data,
-        },
+        [tableId]: {}, // Just have an empty state for the table
       },
     };
     const store = mockStore(initialState);
 
-    store.dispatch(sortTable(
+    return store.dispatch(filterTable(
       tableId,
       DiscoveryDataApiService.fetchCourses,
-      ordering,
-    ));
-    return expect(store.getActions()).toEqual(expectedActions);
-  });
-
-  it('handles a success with all data preloaded for dates', () => {
-    const ordering = 'date';
-    const date = '1970-01-01';
-    const data = {
-      num_pages: 1,
-      results: [
-        {
-          date,
-        },
-        {
-          date,
-        },
-      ],
-    };
-    const expectedActions = [
-      {
-        payload: {
-          ordering,
-          tableId,
-        },
-        type: SORT_REQUEST,
-      },
-      {
-        payload: {
-          data,
-          ordering,
-          tableId,
-        },
-        type: SORT_SUCCESS,
-      },
-    ];
-    const initialState = {
-      table: {
-        [tableId]: {
-          data,
-        },
-      },
-    };
-    const store = mockStore(initialState);
-
-    store.dispatch(sortTable(
-      tableId,
-      DiscoveryDataApiService.fetchCourses,
-      ordering,
-    ));
-    return expect(store.getActions()).toEqual(expectedActions);
-  });
-
-  it('handles a success with all data preloaded for integers', () => {
-    const ordering = 'integer';
-    const integer = 1;
-    const data = {
-      num_pages: 1,
-      results: [
-        {
-          integer,
-        },
-        {
-          integer,
-        },
-      ],
-    };
-    const expectedActions = [
-      {
-        payload: {
-          ordering,
-          tableId,
-        },
-        type: SORT_REQUEST,
-      },
-      {
-        payload: {
-          data,
-          ordering,
-          tableId,
-        },
-        type: SORT_SUCCESS,
-      },
-    ];
-    const initialState = {
-      table: {
-        [tableId]: {
-          data,
-        },
-      },
-    };
-    const store = mockStore(initialState);
-
-    store.dispatch(sortTable(
-      tableId,
-      DiscoveryDataApiService.fetchCourses,
-      ordering,
-    ));
-    return expect(store.getActions()).toEqual(expectedActions);
+      filter,
+    )).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 });

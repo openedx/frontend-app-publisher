@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Hyperlink } from '@edx/paragon';
+import { Hyperlink, SearchField } from '@edx/paragon';
 import TableContainer from '../../containers/TableContainer';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import ButtonToolbar from '../ButtonToolbar';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
+import { getPageOptionsFromUrl, updateUrl } from '../../utils';
 
 const orgWhitelist = process.env.ORG_WHITELIST ? process.env.ORG_WHITELIST.split(',') : [];
 
@@ -60,6 +61,8 @@ class CourseTable extends React.Component {
       },
     ];
 
+    const pageOptions = getPageOptionsFromUrl();
+
     const formatCourseData = courses => courses.map(course => ({
       ...course,
       title: (<Link to={`/courses/${course.uuid}`}>{course.title}</Link>),
@@ -67,6 +70,7 @@ class CourseTable extends React.Component {
     }));
     const showDashboard = this.isOrgWhitelisted() || administrator;
     const oldPublisherLink = `${process.env.DISCOVERY_API_BASE_URL}/publisher/`;
+
     return (
       <PageContainer wide>
         <StatusAlert
@@ -84,11 +88,27 @@ class CourseTable extends React.Component {
         {showDashboard &&
         (
           <React.Fragment>
-            <ButtonToolbar className="mb-3">
-              <Link to="/courses/new">
-                <button className="btn btn-primary">New Course</button>
-              </Link>
-            </ButtonToolbar>
+            <div className="row">
+              <div className="col-6 ml-auto">
+                <ButtonToolbar className="mb-3" leftJustify>
+                  <Link to="/courses/new">
+                    <button className="btn btn-primary">New Course</button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div className="col-3" />
+              <div className="col-3">
+                <SearchField
+                  value={pageOptions.pubq}
+                  onClear={() => {
+                    updateUrl({ filter: null });
+                  }}
+                  onSubmit={(filter) => {
+                    updateUrl({ filter });
+                  }}
+                />
+              </div>
+            </div>
             <TableContainer
               id="courses"
               className="courses"
