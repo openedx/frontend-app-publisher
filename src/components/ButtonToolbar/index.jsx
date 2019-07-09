@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const ButtonToolbar = (props) => {
-  const { className } = props;
+  const { className, leftJustify } = props;
   const fullClassName = classNames(
-    'btn-toolbar justify-content-end',
+    `btn-toolbar ${leftJustify ? 'justify-content-start' : 'justify-content-end'}`,
     className,
   );
   const buttonList = React.Children.map(
@@ -27,11 +27,13 @@ const ButtonToolbar = (props) => {
 ButtonToolbar.defaultProps = {
   children: [],
   className: '',
+  leftJustify: false,
 };
 
 ButtonToolbar.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  leftJustify: PropTypes.bool,
 };
 
 export default ButtonToolbar;
