@@ -4,6 +4,7 @@ import {
   REQUEST_COURSE_INFO_FAIL,
   CLEAR_COURSE_INFO_ERRORS,
   CREATE_COURSE,
+  CREATE_COURSE_CANCEL,
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
   CREATE_COURSE_RUN,
@@ -55,6 +56,10 @@ function courseInfo(state = initialState, action) {
       return Object.assign({}, state, {
         isCreating: true,
         error: null,
+      });
+    case CREATE_COURSE_CANCEL:
+      return Object.assign({}, state, {
+        isCreating: false,
       });
     case CREATE_COURSE_SUCCESS:
       return Object.assign({}, state, {
