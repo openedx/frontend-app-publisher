@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import TableComponent from '../../components/TableComponent';
-import { paginateTable, sortTable, clearTable } from '../../data/actions/table';
+import { paginateTable, sortTable, filterTable, clearTable } from '../../data/actions/table';
 
 const mapStateToProps = (state, ownProps) => {
   const tableState = state.table[ownProps.id] || {};
@@ -22,6 +22,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   sortTable: (ordering) => {
     dispatch(sortTable(ownProps.id, ownProps.fetchMethod, ordering));
+  },
+  filterTable: (filter) => {
+    dispatch(filterTable(ownProps.id, ownProps.fetchMethod, filter));
   },
   clearTable: () => {
     dispatch(clearTable(ownProps.id));

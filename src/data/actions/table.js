@@ -7,6 +7,9 @@ import {
   SORT_REQUEST,
   SORT_SUCCESS,
   SORT_FAILURE,
+  FILTER_REQUEST,
+  FILTER_SUCCESS,
+  FILTER_FAILURE,
   CLEAR_TABLE,
 } from '../constants/table';
 
@@ -53,8 +56,34 @@ const sortSuccess = (tableId, ordering, data) => ({
     data,
   },
 });
+
 const sortFailure = (tableId, error) => ({
   type: SORT_FAILURE,
+  payload: {
+    tableId,
+    error,
+  },
+});
+
+const filterRequest = (tableId, filter) => ({
+  type: FILTER_REQUEST,
+  payload: {
+    tableId,
+    filter,
+  },
+});
+
+const filterSuccess = (tableId, filter, data) => ({
+  type: FILTER_SUCCESS,
+  payload: {
+    tableId,
+    filter,
+    data,
+  },
+});
+
+const filterFailure = (tableId, error) => ({
+  type: FILTER_FAILURE,
   payload: {
     tableId,
     error,
@@ -88,54 +117,34 @@ const paginateTable = (tableId, fetchMethod, pageNumber) => (
   }
 );
 
-const sortBy = (dataToSort, orderField) => {
-  const isFloatValue = value => !Number.isNaN(value) && !Number.isNaN(parseFloat(value));
-  const sortByOptions = (value1, value2) => {
-    let a = value1[orderField] || '';
-    let b = value2[orderField] || '';
-    if (typeof a === 'string' && typeof b === 'string') {
-      // if both are dates
-      if (!Number.isNaN(Date.parse(a)) && !Number.isNaN(Date.parse(b))) {
-        a = new Date(a).getTime();
-        b = new Date(b).getTime();
-        return a - b;
-      }
-      if (isFloatValue(a) && isFloatValue(b)) {
-        return parseFloat(a) - parseFloat(b);
-      }
-      // if neither can be parsed as a date or float
-      return a.localeCompare(b);
-    }
-    return a - b;
-  };
-  return dataToSort.sort(sortByOptions);
-};
-
 const sortTable = (tableId, fetchMethod, ordering) => (
-  (dispatch, getState) => {
-    const tableState = getState().table[tableId];
+  (dispatch) => {
     const options = {
       ...getPageOptionsFromUrl(),
       ordering,
     };
     dispatch(sortRequest(tableId, ordering));
 
-    // If we can sort client-side because we have all of the data, do that
-    if (tableState.data && tableState.data.num_pages === 1) {
-      const isDesc = ordering.startsWith('-');
-      const orderField = isDesc ? ordering.substring(1) : ordering;
-      const result = sortBy(tableState.data.results, orderField);
-
-      return dispatch(sortSuccess(tableId, ordering, {
-        ...tableState.data,
-        results: isDesc ? result.reverse() : result,
-      }));
-    }
-
     return fetchMethod(options).then((response) => {
       dispatch(sortSuccess(tableId, ordering, response.data));
     }).catch((error) => {
       dispatch(sortFailure(tableId, error));
+    });
+  }
+);
+
+const filterTable = (tableId, fetchMethod, filter) => (
+  (dispatch) => {
+    const options = {
+      ...getPageOptionsFromUrl(),
+      pubq: filter, // Internal API querystring param for title/key substring
+    };
+    dispatch(filterRequest(tableId, filter));
+
+    return fetchMethod(options).then((response) => {
+      dispatch(filterSuccess(tableId, filter, response.data));
+    }).catch((error) => {
+      dispatch(filterFailure(tableId, error));
     });
   }
 );
@@ -151,4 +160,5 @@ export {
   paginateTable,
   sortTable,
   clearTable,
+  filterTable,
 };

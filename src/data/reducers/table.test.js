@@ -5,6 +5,9 @@ import {
   SORT_REQUEST,
   SORT_SUCCESS,
   SORT_FAILURE,
+  FILTER_REQUEST,
+  FILTER_SUCCESS,
+  FILTER_FAILURE,
   CLEAR_TABLE,
 } from '../constants/table';
 
@@ -143,6 +146,68 @@ describe('table reducer', () => {
     const newError = 'A new error';
     expect(tableReducer(initialState, {
       type: SORT_FAILURE,
+      payload: {
+        tableId,
+        error: newError,
+      },
+    })).toEqual({
+      [tableId]: {
+        loading: false,
+        error: newError,
+        page: initialState[tableId].page,
+        ordering: initialState[tableId].ordering,
+        pageSize: initialState[tableId].pageSize,
+        data: initialState[tableId].data,
+      },
+    });
+  });
+
+  it('handles a FILTER_REQUEST', () => {
+    expect(tableReducer(initialState, {
+      type: FILTER_REQUEST,
+      payload: {
+        tableId,
+      },
+    })).toEqual({
+      [tableId]: {
+        loading: true,
+        error: null,
+        page: initialState[tableId].page,
+        ordering: initialState[tableId].ordering,
+        pageSize: initialState[tableId].pageSize,
+        data: initialState[tableId].data,
+      },
+    });
+  });
+
+  it('handles a FILTER_SUCCESS', () => {
+    const newFilter = 'key';
+    const newData = [{
+      key: 'NewKey',
+    }];
+    expect(tableReducer(initialState, {
+      type: FILTER_SUCCESS,
+      payload: {
+        tableId,
+        filter: newFilter,
+        data: newData,
+      },
+    })).toEqual({
+      [tableId]: {
+        loading: false,
+        error: null,
+        filter: newFilter,
+        data: newData,
+        page: initialState[tableId].page,
+        pageSize: initialState[tableId].pageSize,
+      },
+    });
+  });
+
+  it('handles a FILTER_FAILURE', () => {
+    const newError = 'A new error';
+    expect(tableReducer(initialState, {
+      type: FILTER_FAILURE,
       payload: {
         tableId,
         error: newError,

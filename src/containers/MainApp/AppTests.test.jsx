@@ -55,6 +55,9 @@ function renderAppWithState(initialRoute) {
         pageSize: 50,
       },
     },
+    darkMode: {
+      darkModeOn: false,
+    },
   };
 
   const AppWrapper = initialEntries => (
