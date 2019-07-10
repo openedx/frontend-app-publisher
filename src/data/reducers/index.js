@@ -11,6 +11,7 @@ import stafferInfo from './stafferInfo';
 import courseRunOptions from './courseRunOptions';
 import sourceInfo from './sourceInfo';
 import courseSubmitInfo from './courseSubmitInfo';
+import darkMode from './darkMode';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -32,4 +33,5 @@ export default history => combineReducers({
   table,
   sourceInfo,
   courseSubmitInfo,
+  darkMode,
 });

@@ -4,6 +4,9 @@ exports[`Header renders the correct header 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
+    darkModeOn={false}
+    location={Object {}}
+    toggleDarkMode={[Function]}
     username="test-username"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -172,6 +175,7 @@ ShallowWrapper {
                 Courses
               </Link>
             </div>,
+            undefined,
             <div
               className="col-auto justify-content-end"
             >
@@ -282,6 +286,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
+          undefined,
           Object {
             "instance": null,
             "key": undefined,
@@ -492,6 +497,7 @@ ShallowWrapper {
                   Courses
                 </Link>
               </div>,
+              undefined,
               <div
                 className="col-auto justify-content-end"
               >
@@ -599,6 +605,1661 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": "Courses",
                 "type": [Function],
+              },
+              "type": "div",
+            },
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <t
+                  buttonType="light"
+                  menuItems={
+                    Array [
+                      <button
+                        className="dropdown-button"
+                        onClick={[Function]}
+                      >
+                        Sign Out
+                      </button>,
+                    ]
+                  }
+                  title="test-username"
+                />,
+                "className": "col-auto justify-content-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "buttonType": "light",
+                  "iconElement": undefined,
+                  "menuItems": Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ],
+                  "title": "test-username",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "header",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`Header renders the header correctly when toggling is allowed, and dark mode is on 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header
+    darkModeOn={true}
+    location={
+      Object {
+        "search": "?bananas=1",
+      }
+    }
+    toggleDarkMode={[Function]}
+    username="test-username"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="container"
+      >
+        <div
+          className="row align-items-center"
+        >
+          <div
+            className="col-auto justify-content-start"
+          >
+            <withDeprecatedProps(Hyperlink)
+              content={
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              }
+            />
+            <span
+              className="badge badge-secondary beta"
+            >
+              Beta
+            </span>
+          </div>
+          <div
+            className="col"
+          >
+            <Link
+              replace={false}
+              to="/"
+            >
+              Courses
+            </Link>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <button
+              className="btn btn-primary"
+              onClick={[Function]}
+            >
+              Switch to 
+              light mode
+            </button>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <t
+              buttonType="light"
+              menuItems={
+                Array [
+                  <button
+                    className="dropdown-button"
+                    onClick={[Function]}
+                  >
+                    Sign Out
+                  </button>,
+                ]
+              }
+              title="test-username"
+            />
+          </div>
+        </div>
+      </div>,
+      "className": "site-header mb-3 py-3 border-bottom-blue",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row align-items-center"
+        >
+          <div
+            className="col-auto justify-content-start"
+          >
+            <withDeprecatedProps(Hyperlink)
+              content={
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              }
+            />
+            <span
+              className="badge badge-secondary beta"
+            >
+              Beta
+            </span>
+          </div>
+          <div
+            className="col"
+          >
+            <Link
+              replace={false}
+              to="/"
+            >
+              Courses
+            </Link>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <button
+              className="btn btn-primary"
+              onClick={[Function]}
+            >
+              Switch to 
+              light mode
+            </button>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <t
+              buttonType="light"
+              menuItems={
+                Array [
+                  <button
+                    className="dropdown-button"
+                    onClick={[Function]}
+                  >
+                    Sign Out
+                  </button>,
+                ]
+              }
+              title="test-username"
+            />
+          </div>
+        </div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-auto justify-content-start"
+            >
+              <withDeprecatedProps(Hyperlink)
+                content={
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                }
+              />
+              <span
+                className="badge badge-secondary beta"
+              >
+                Beta
+              </span>
+            </div>,
+            <div
+              className="col"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>
+            </div>,
+            <div
+              className="col-auto justify-content-end"
+            >
+              <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                light mode
+              </button>
+            </div>,
+            <div
+              className="col-auto justify-content-end"
+            >
+              <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />
+            </div>,
+          ],
+          "className": "row align-items-center",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <withDeprecatedProps(Hyperlink)
+                  content={
+                    <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />
+                  }
+                />,
+                <span
+                  className="badge badge-secondary beta"
+                >
+                  Beta
+                </span>,
+              ],
+              "className": "col-auto justify-content-start",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "content": <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />,
+                  "destination": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Beta",
+                  "className": "badge badge-secondary beta",
+                },
+                "ref": null,
+                "rendered": "Beta",
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>,
+              "className": "col",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Courses",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Courses",
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                light mode
+              </button>,
+              "className": "col-auto justify-content-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Switch to ",
+                  "light mode",
+                ],
+                "className": "btn btn-primary",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Switch to ",
+                "light mode",
+              ],
+              "type": "button",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />,
+              "className": "col-auto justify-content-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "buttonType": "light",
+                "iconElement": undefined,
+                "menuItems": Array [
+                  <button
+                    className="dropdown-button"
+                    onClick={[Function]}
+                  >
+                    Sign Out
+                  </button>,
+                ],
+                "title": "test-username",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "header",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+        >
+          <div
+            className="row align-items-center"
+          >
+            <div
+              className="col-auto justify-content-start"
+            >
+              <withDeprecatedProps(Hyperlink)
+                content={
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                }
+              />
+              <span
+                className="badge badge-secondary beta"
+              >
+                Beta
+              </span>
+            </div>
+            <div
+              className="col"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                light mode
+              </button>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />
+            </div>
+          </div>
+        </div>,
+        "className": "site-header mb-3 py-3 border-bottom-blue",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row align-items-center"
+          >
+            <div
+              className="col-auto justify-content-start"
+            >
+              <withDeprecatedProps(Hyperlink)
+                content={
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                }
+              />
+              <span
+                className="badge badge-secondary beta"
+              >
+                Beta
+              </span>
+            </div>
+            <div
+              className="col"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                light mode
+              </button>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />
+            </div>
+          </div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="col-auto justify-content-start"
+              >
+                <withDeprecatedProps(Hyperlink)
+                  content={
+                    <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />
+                  }
+                />
+                <span
+                  className="badge badge-secondary beta"
+                >
+                  Beta
+                </span>
+              </div>,
+              <div
+                className="col"
+              >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Courses
+                </Link>
+              </div>,
+              <div
+                className="col-auto justify-content-end"
+              >
+                <button
+                  className="btn btn-primary"
+                  onClick={[Function]}
+                >
+                  Switch to 
+                  light mode
+                </button>
+              </div>,
+              <div
+                className="col-auto justify-content-end"
+              >
+                <t
+                  buttonType="light"
+                  menuItems={
+                    Array [
+                      <button
+                        className="dropdown-button"
+                        onClick={[Function]}
+                      >
+                        Sign Out
+                      </button>,
+                    ]
+                  }
+                  title="test-username"
+                />
+              </div>,
+            ],
+            "className": "row align-items-center",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <withDeprecatedProps(Hyperlink)
+                    content={
+                      <img
+                        alt="edX logo"
+                        height="30"
+                        src="edx-sm.png"
+                        width="60"
+                      />
+                    }
+                  />,
+                  <span
+                    className="badge badge-secondary beta"
+                  >
+                    Beta
+                  </span>,
+                ],
+                "className": "col-auto justify-content-start",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "content": <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />,
+                    "destination": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Beta",
+                    "className": "badge badge-secondary beta",
+                  },
+                  "ref": null,
+                  "rendered": "Beta",
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Link
+                  replace={false}
+                  to="/"
+                >
+                  Courses
+                </Link>,
+                "className": "col",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Courses",
+                  "replace": false,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Courses",
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary"
+                  onClick={[Function]}
+                >
+                  Switch to 
+                  light mode
+                </button>,
+                "className": "col-auto justify-content-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Switch to ",
+                    "light mode",
+                  ],
+                  "className": "btn btn-primary",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Switch to ",
+                  "light mode",
+                ],
+                "type": "button",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <t
+                  buttonType="light"
+                  menuItems={
+                    Array [
+                      <button
+                        className="dropdown-button"
+                        onClick={[Function]}
+                      >
+                        Sign Out
+                      </button>,
+                    ]
+                  }
+                  title="test-username"
+                />,
+                "className": "col-auto justify-content-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "buttonType": "light",
+                  "iconElement": undefined,
+                  "menuItems": Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ],
+                  "title": "test-username",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "header",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`Header renders the header correctly when users pass a querystring param to allow dark mode toggling 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header
+    darkModeOn={false}
+    location={
+      Object {
+        "search": "?bananas=1",
+      }
+    }
+    toggleDarkMode={[Function]}
+    username="test-username"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="container"
+      >
+        <div
+          className="row align-items-center"
+        >
+          <div
+            className="col-auto justify-content-start"
+          >
+            <withDeprecatedProps(Hyperlink)
+              content={
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              }
+            />
+            <span
+              className="badge badge-secondary beta"
+            >
+              Beta
+            </span>
+          </div>
+          <div
+            className="col"
+          >
+            <Link
+              replace={false}
+              to="/"
+            >
+              Courses
+            </Link>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <button
+              className="btn btn-primary"
+              onClick={[Function]}
+            >
+              Switch to 
+              dark mode
+            </button>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <t
+              buttonType="light"
+              menuItems={
+                Array [
+                  <button
+                    className="dropdown-button"
+                    onClick={[Function]}
+                  >
+                    Sign Out
+                  </button>,
+                ]
+              }
+              title="test-username"
+            />
+          </div>
+        </div>
+      </div>,
+      "className": "site-header mb-3 py-3 border-bottom-blue",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row align-items-center"
+        >
+          <div
+            className="col-auto justify-content-start"
+          >
+            <withDeprecatedProps(Hyperlink)
+              content={
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              }
+            />
+            <span
+              className="badge badge-secondary beta"
+            >
+              Beta
+            </span>
+          </div>
+          <div
+            className="col"
+          >
+            <Link
+              replace={false}
+              to="/"
+            >
+              Courses
+            </Link>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <button
+              className="btn btn-primary"
+              onClick={[Function]}
+            >
+              Switch to 
+              dark mode
+            </button>
+          </div>
+          <div
+            className="col-auto justify-content-end"
+          >
+            <t
+              buttonType="light"
+              menuItems={
+                Array [
+                  <button
+                    className="dropdown-button"
+                    onClick={[Function]}
+                  >
+                    Sign Out
+                  </button>,
+                ]
+              }
+              title="test-username"
+            />
+          </div>
+        </div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-auto justify-content-start"
+            >
+              <withDeprecatedProps(Hyperlink)
+                content={
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                }
+              />
+              <span
+                className="badge badge-secondary beta"
+              >
+                Beta
+              </span>
+            </div>,
+            <div
+              className="col"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>
+            </div>,
+            <div
+              className="col-auto justify-content-end"
+            >
+              <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                dark mode
+              </button>
+            </div>,
+            <div
+              className="col-auto justify-content-end"
+            >
+              <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />
+            </div>,
+          ],
+          "className": "row align-items-center",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <withDeprecatedProps(Hyperlink)
+                  content={
+                    <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />
+                  }
+                />,
+                <span
+                  className="badge badge-secondary beta"
+                >
+                  Beta
+                </span>,
+              ],
+              "className": "col-auto justify-content-start",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "content": <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />,
+                  "destination": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Beta",
+                  "className": "badge badge-secondary beta",
+                },
+                "ref": null,
+                "rendered": "Beta",
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>,
+              "className": "col",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Courses",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Courses",
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                dark mode
+              </button>,
+              "className": "col-auto justify-content-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Switch to ",
+                  "dark mode",
+                ],
+                "className": "btn btn-primary",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Switch to ",
+                "dark mode",
+              ],
+              "type": "button",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />,
+              "className": "col-auto justify-content-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "buttonType": "light",
+                "iconElement": undefined,
+                "menuItems": Array [
+                  <button
+                    className="dropdown-button"
+                    onClick={[Function]}
+                  >
+                    Sign Out
+                  </button>,
+                ],
+                "title": "test-username",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "header",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+        >
+          <div
+            className="row align-items-center"
+          >
+            <div
+              className="col-auto justify-content-start"
+            >
+              <withDeprecatedProps(Hyperlink)
+                content={
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                }
+              />
+              <span
+                className="badge badge-secondary beta"
+              >
+                Beta
+              </span>
+            </div>
+            <div
+              className="col"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                dark mode
+              </button>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />
+            </div>
+          </div>
+        </div>,
+        "className": "site-header mb-3 py-3 border-bottom-blue",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row align-items-center"
+          >
+            <div
+              className="col-auto justify-content-start"
+            >
+              <withDeprecatedProps(Hyperlink)
+                content={
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                }
+              />
+              <span
+                className="badge badge-secondary beta"
+              >
+                Beta
+              </span>
+            </div>
+            <div
+              className="col"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Courses
+              </Link>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <button
+                className="btn btn-primary"
+                onClick={[Function]}
+              >
+                Switch to 
+                dark mode
+              </button>
+            </div>
+            <div
+              className="col-auto justify-content-end"
+            >
+              <t
+                buttonType="light"
+                menuItems={
+                  Array [
+                    <button
+                      className="dropdown-button"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>,
+                  ]
+                }
+                title="test-username"
+              />
+            </div>
+          </div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="col-auto justify-content-start"
+              >
+                <withDeprecatedProps(Hyperlink)
+                  content={
+                    <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />
+                  }
+                />
+                <span
+                  className="badge badge-secondary beta"
+                >
+                  Beta
+                </span>
+              </div>,
+              <div
+                className="col"
+              >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Courses
+                </Link>
+              </div>,
+              <div
+                className="col-auto justify-content-end"
+              >
+                <button
+                  className="btn btn-primary"
+                  onClick={[Function]}
+                >
+                  Switch to 
+                  dark mode
+                </button>
+              </div>,
+              <div
+                className="col-auto justify-content-end"
+              >
+                <t
+                  buttonType="light"
+                  menuItems={
+                    Array [
+                      <button
+                        className="dropdown-button"
+                        onClick={[Function]}
+                      >
+                        Sign Out
+                      </button>,
+                    ]
+                  }
+                  title="test-username"
+                />
+              </div>,
+            ],
+            "className": "row align-items-center",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <withDeprecatedProps(Hyperlink)
+                    content={
+                      <img
+                        alt="edX logo"
+                        height="30"
+                        src="edx-sm.png"
+                        width="60"
+                      />
+                    }
+                  />,
+                  <span
+                    className="badge badge-secondary beta"
+                  >
+                    Beta
+                  </span>,
+                ],
+                "className": "col-auto justify-content-start",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "content": <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />,
+                    "destination": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Beta",
+                    "className": "badge badge-secondary beta",
+                  },
+                  "ref": null,
+                  "rendered": "Beta",
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Link
+                  replace={false}
+                  to="/"
+                >
+                  Courses
+                </Link>,
+                "className": "col",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Courses",
+                  "replace": false,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Courses",
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-primary"
+                  onClick={[Function]}
+                >
+                  Switch to 
+                  dark mode
+                </button>,
+                "className": "col-auto justify-content-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Switch to ",
+                    "dark mode",
+                  ],
+                  "className": "btn btn-primary",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Switch to ",
+                  "dark mode",
+                ],
+                "type": "button",
               },
               "type": "div",
             },

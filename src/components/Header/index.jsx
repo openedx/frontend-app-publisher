@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import qs from 'query-string';
 import { Link } from 'react-router-dom';
 import { Dropdown, Hyperlink } from '@edx/paragon';
 
@@ -14,6 +15,18 @@ class Header extends React.Component {
   }
 
   render() {
+    const { darkModeOn } = this.props;
+
+    if (darkModeOn) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+
+    // Allow users to toggle dark mode on if they put in a querystring like ?bananas=1
+    const querystringParams = qs.parse(this.props.location.search);
+    const allowDarkModeToggle = querystringParams.bananas;
+
     return (
       <header className="site-header mb-3 py-3 border-bottom-blue">
         <div className="container">
@@ -25,6 +38,13 @@ class Header extends React.Component {
             <div className="col">
               <Link to="/">Courses</Link>
             </div>
+            {allowDarkModeToggle &&
+              <div className="col-auto justify-content-end">
+                <button className="btn btn-primary" onClick={this.props.toggleDarkMode}>
+                  Switch to {darkModeOn ? 'light mode' : 'dark mode'}
+                </button>
+              </div>
+            }
             <div className="col-auto justify-content-end">
               <Dropdown
                 title={this.props.username}
@@ -46,6 +66,17 @@ class Header extends React.Component {
 
 Header.propTypes = {
   username: PropTypes.string.isRequired,
+  darkModeOn: PropTypes.bool,
+  location: PropTypes.shape({
+    search: PropTypes.string,
+  }),
+  toggleDarkMode: PropTypes.func,
+};
+
+Header.defaultProps = {
+  darkModeOn: false,
+  location: {},
+  toggleDarkMode: () => {},
 };
 
 export default Header;
