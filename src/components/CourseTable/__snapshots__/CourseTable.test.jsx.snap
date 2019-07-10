@@ -46,20 +46,52 @@ ShallowWrapper {
           title={null}
         />,
         <React.Fragment>
-          <ButtonToolbar
-            className="mb-3"
+          <div
+            className="row"
           >
-            <Link
-              replace={false}
-              to="/courses/new"
+            <div
+              className="col-6 ml-auto"
             >
-              <button
-                className="btn btn-primary"
+              <ButtonToolbar
+                className="mb-3"
+                leftJustify={true}
               >
-                New Course
-              </button>
-            </Link>
-          </ButtonToolbar>
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>
+            </div>
+            <div
+              className="col-3"
+            />
+            <div
+              className="col-3"
+            >
+              <t
+                inputLabel="Search:"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClear={[Function]}
+                onFocus={[Function]}
+                onSubmit={[Function]}
+                placeholder=""
+                screenReaderText={
+                  Object {
+                    "clearButton": "Clear search",
+                    "searchButton": "Submit search",
+                  }
+                }
+                value=""
+              />
+            </div>
+          </div>
           <withRouter(Connect(TableComponent))
             className="courses"
             columns={
@@ -128,20 +160,52 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": Array [
-            <ButtonToolbar
-              className="mb-3"
+            <div
+              className="row"
             >
-              <Link
-                replace={false}
-                to="/courses/new"
+              <div
+                className="col-6 ml-auto"
               >
-                <button
-                  className="btn btn-primary"
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
                 >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>,
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-3"
+              />
+              <div
+                className="col-3"
+              >
+                <t
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>,
             <withRouter(Connect(TableComponent))
               className="courses"
               columns={
@@ -180,50 +244,191 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "host",
             "props": Object {
-              "children": <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
+              "children": Array [
+                <div
+                  className="col-6 ml-auto"
                 >
-                  New Course
-                </button>
-              </Link>,
-              "className": "mb-3",
+                  <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
+                  >
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>
+                </div>,
+                <div
+                  className="col-3"
+                />,
+                <div
+                  className="col-3"
+                >
+                  <t
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />
+                </div>,
+              ],
+              "className": "row",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>,
-                "replace": false,
-                "to": "/courses/new",
-              },
-              "ref": null,
-              "rendered": Object {
+            "rendered": Array [
+              Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "New Course",
-                  "className": "btn btn-primary",
+                  "children": <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
+                  >
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>,
+                  "className": "col-6 ml-auto",
                 },
                 "ref": null,
-                "rendered": "New Course",
-                "type": "button",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>,
+                    "className": "mb-3",
+                    "leftJustify": true,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>,
+                      "replace": false,
+                      "to": "/courses/new",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "New Course",
+                        "className": "btn btn-primary",
+                      },
+                      "ref": null,
+                      "rendered": "New Course",
+                      "type": "button",
+                    },
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                "type": "div",
               },
-              "type": [Function],
-            },
-            "type": [Function],
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "col-3",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <t
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />,
+                  "className": "col-3",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "inputLabel": "Search:",
+                    "onBlur": [Function],
+                    "onChange": [Function],
+                    "onClear": [Function],
+                    "onFocus": [Function],
+                    "onSubmit": [Function],
+                    "placeholder": "",
+                    "screenReaderText": Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    },
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -294,20 +499,52 @@ ShallowWrapper {
             title={null}
           />,
           <React.Fragment>
-            <ButtonToolbar
-              className="mb-3"
+            <div
+              className="row"
             >
-              <Link
-                replace={false}
-                to="/courses/new"
+              <div
+                className="col-6 ml-auto"
               >
-                <button
-                  className="btn btn-primary"
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
                 >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-3"
+              />
+              <div
+                className="col-3"
+              >
+                <t
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>
             <withRouter(Connect(TableComponent))
               className="courses"
               columns={
@@ -376,20 +613,52 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              <ButtonToolbar
-                className="mb-3"
+              <div
+                className="row"
               >
-                <Link
-                  replace={false}
-                  to="/courses/new"
+                <div
+                  className="col-6 ml-auto"
                 >
-                  <button
-                    className="btn btn-primary"
+                  <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
                   >
-                    New Course
-                  </button>
-                </Link>
-              </ButtonToolbar>,
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>
+                </div>
+                <div
+                  className="col-3"
+                />
+                <div
+                  className="col-3"
+                >
+                  <t
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />
+                </div>
+              </div>,
               <withRouter(Connect(TableComponent))
                 className="courses"
                 columns={
@@ -428,50 +697,191 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "host",
               "props": Object {
-                "children": <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
+                "children": Array [
+                  <div
+                    className="col-6 ml-auto"
                   >
-                    New Course
-                  </button>
-                </Link>,
-                "className": "mb-3",
+                    <ButtonToolbar
+                      className="mb-3"
+                      leftJustify={true}
+                    >
+                      <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>
+                    </ButtonToolbar>
+                  </div>,
+                  <div
+                    className="col-3"
+                  />,
+                  <div
+                    className="col-3"
+                  >
+                    <t
+                      inputLabel="Search:"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClear={[Function]}
+                      onFocus={[Function]}
+                      onSubmit={[Function]}
+                      placeholder=""
+                      screenReaderText={
+                        Object {
+                          "clearButton": "Clear search",
+                          "searchButton": "Submit search",
+                        }
+                      }
+                      value=""
+                    />
+                  </div>,
+                ],
+                "className": "row",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>,
-                  "replace": false,
-                  "to": "/courses/new",
-                },
-                "ref": null,
-                "rendered": Object {
+              "rendered": Array [
+                Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "New Course",
-                    "className": "btn btn-primary",
+                    "children": <ButtonToolbar
+                      className="mb-3"
+                      leftJustify={true}
+                    >
+                      <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>
+                    </ButtonToolbar>,
+                    "className": "col-6 ml-auto",
                   },
                   "ref": null,
-                  "rendered": "New Course",
-                  "type": "button",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>,
+                      "className": "mb-3",
+                      "leftJustify": true,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>,
+                        "replace": false,
+                        "to": "/courses/new",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "New Course",
+                          "className": "btn btn-primary",
+                        },
+                        "ref": null,
+                        "rendered": "New Course",
+                        "type": "button",
+                      },
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
-                "type": [Function],
-              },
-              "type": [Function],
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-3",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <t
+                      inputLabel="Search:"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClear={[Function]}
+                      onFocus={[Function]}
+                      onSubmit={[Function]}
+                      placeholder=""
+                      screenReaderText={
+                        Object {
+                          "clearButton": "Clear search",
+                          "searchButton": "Submit search",
+                        }
+                      }
+                      value=""
+                    />,
+                    "className": "col-3",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "inputLabel": "Search:",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onClear": [Function],
+                      "onFocus": [Function],
+                      "onSubmit": [Function],
+                      "placeholder": "",
+                      "screenReaderText": Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      },
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -590,20 +1000,52 @@ ShallowWrapper {
           title={null}
         />,
         <React.Fragment>
-          <ButtonToolbar
-            className="mb-3"
+          <div
+            className="row"
           >
-            <Link
-              replace={false}
-              to="/courses/new"
+            <div
+              className="col-6 ml-auto"
             >
-              <button
-                className="btn btn-primary"
+              <ButtonToolbar
+                className="mb-3"
+                leftJustify={true}
               >
-                New Course
-              </button>
-            </Link>
-          </ButtonToolbar>
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>
+            </div>
+            <div
+              className="col-3"
+            />
+            <div
+              className="col-3"
+            >
+              <t
+                inputLabel="Search:"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClear={[Function]}
+                onFocus={[Function]}
+                onSubmit={[Function]}
+                placeholder=""
+                screenReaderText={
+                  Object {
+                    "clearButton": "Clear search",
+                    "searchButton": "Submit search",
+                  }
+                }
+                value=""
+              />
+            </div>
+          </div>
           <withRouter(Connect(TableComponent))
             className="courses"
             columns={
@@ -672,20 +1114,52 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": Array [
-            <ButtonToolbar
-              className="mb-3"
+            <div
+              className="row"
             >
-              <Link
-                replace={false}
-                to="/courses/new"
+              <div
+                className="col-6 ml-auto"
               >
-                <button
-                  className="btn btn-primary"
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
                 >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>,
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-3"
+              />
+              <div
+                className="col-3"
+              >
+                <t
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>,
             <withRouter(Connect(TableComponent))
               className="courses"
               columns={
@@ -724,50 +1198,191 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "host",
             "props": Object {
-              "children": <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
+              "children": Array [
+                <div
+                  className="col-6 ml-auto"
                 >
-                  New Course
-                </button>
-              </Link>,
-              "className": "mb-3",
+                  <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
+                  >
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>
+                </div>,
+                <div
+                  className="col-3"
+                />,
+                <div
+                  className="col-3"
+                >
+                  <t
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />
+                </div>,
+              ],
+              "className": "row",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>,
-                "replace": false,
-                "to": "/courses/new",
-              },
-              "ref": null,
-              "rendered": Object {
+            "rendered": Array [
+              Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "New Course",
-                  "className": "btn btn-primary",
+                  "children": <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
+                  >
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>,
+                  "className": "col-6 ml-auto",
                 },
                 "ref": null,
-                "rendered": "New Course",
-                "type": "button",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>,
+                    "className": "mb-3",
+                    "leftJustify": true,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>,
+                      "replace": false,
+                      "to": "/courses/new",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "New Course",
+                        "className": "btn btn-primary",
+                      },
+                      "ref": null,
+                      "rendered": "New Course",
+                      "type": "button",
+                    },
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                "type": "div",
               },
-              "type": [Function],
-            },
-            "type": [Function],
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "col-3",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <t
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />,
+                  "className": "col-3",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "inputLabel": "Search:",
+                    "onBlur": [Function],
+                    "onChange": [Function],
+                    "onClear": [Function],
+                    "onFocus": [Function],
+                    "onSubmit": [Function],
+                    "placeholder": "",
+                    "screenReaderText": Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    },
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -838,20 +1453,52 @@ ShallowWrapper {
             title={null}
           />,
           <React.Fragment>
-            <ButtonToolbar
-              className="mb-3"
+            <div
+              className="row"
             >
-              <Link
-                replace={false}
-                to="/courses/new"
+              <div
+                className="col-6 ml-auto"
               >
-                <button
-                  className="btn btn-primary"
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
                 >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-3"
+              />
+              <div
+                className="col-3"
+              >
+                <t
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>
             <withRouter(Connect(TableComponent))
               className="courses"
               columns={
@@ -920,20 +1567,52 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              <ButtonToolbar
-                className="mb-3"
+              <div
+                className="row"
               >
-                <Link
-                  replace={false}
-                  to="/courses/new"
+                <div
+                  className="col-6 ml-auto"
                 >
-                  <button
-                    className="btn btn-primary"
+                  <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
                   >
-                    New Course
-                  </button>
-                </Link>
-              </ButtonToolbar>,
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>
+                </div>
+                <div
+                  className="col-3"
+                />
+                <div
+                  className="col-3"
+                >
+                  <t
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />
+                </div>
+              </div>,
               <withRouter(Connect(TableComponent))
                 className="courses"
                 columns={
@@ -972,50 +1651,191 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "host",
               "props": Object {
-                "children": <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
+                "children": Array [
+                  <div
+                    className="col-6 ml-auto"
                   >
-                    New Course
-                  </button>
-                </Link>,
-                "className": "mb-3",
+                    <ButtonToolbar
+                      className="mb-3"
+                      leftJustify={true}
+                    >
+                      <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>
+                    </ButtonToolbar>
+                  </div>,
+                  <div
+                    className="col-3"
+                  />,
+                  <div
+                    className="col-3"
+                  >
+                    <t
+                      inputLabel="Search:"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClear={[Function]}
+                      onFocus={[Function]}
+                      onSubmit={[Function]}
+                      placeholder=""
+                      screenReaderText={
+                        Object {
+                          "clearButton": "Clear search",
+                          "searchButton": "Submit search",
+                        }
+                      }
+                      value=""
+                    />
+                  </div>,
+                ],
+                "className": "row",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>,
-                  "replace": false,
-                  "to": "/courses/new",
-                },
-                "ref": null,
-                "rendered": Object {
+              "rendered": Array [
+                Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "New Course",
-                    "className": "btn btn-primary",
+                    "children": <ButtonToolbar
+                      className="mb-3"
+                      leftJustify={true}
+                    >
+                      <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>
+                    </ButtonToolbar>,
+                    "className": "col-6 ml-auto",
                   },
                   "ref": null,
-                  "rendered": "New Course",
-                  "type": "button",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>,
+                      "className": "mb-3",
+                      "leftJustify": true,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>,
+                        "replace": false,
+                        "to": "/courses/new",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "New Course",
+                          "className": "btn btn-primary",
+                        },
+                        "ref": null,
+                        "rendered": "New Course",
+                        "type": "button",
+                      },
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
-                "type": [Function],
-              },
-              "type": [Function],
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-3",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <t
+                      inputLabel="Search:"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClear={[Function]}
+                      onFocus={[Function]}
+                      onSubmit={[Function]}
+                      placeholder=""
+                      screenReaderText={
+                        Object {
+                          "clearButton": "Clear search",
+                          "searchButton": "Submit search",
+                        }
+                      }
+                      value=""
+                    />,
+                    "className": "col-3",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "inputLabel": "Search:",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onClear": [Function],
+                      "onFocus": [Function],
+                      "onSubmit": [Function],
+                      "placeholder": "",
+                      "screenReaderText": Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      },
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,

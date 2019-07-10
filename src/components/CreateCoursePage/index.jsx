@@ -6,6 +6,7 @@ import CreateCourseForm from './CreateCourseForm';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
+import ConfirmationModal from '../ConfirmationModal';
 
 class CreateCoursePage extends React.Component {
   constructor(props) {
@@ -13,8 +14,13 @@ class CreateCoursePage extends React.Component {
     this.handleCourseCreate = this.handleCourseCreate.bind(this);
     this.getCourseRunOptions = this.getCourseRunOptions.bind(this);
     this.parseOptions = this.parseOptions.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.cancelCreate = this.cancelCreate.bind(this);
+    this.continueCreate = this.continueCreate.bind(this);
     this.state = {
       startedFetching: false,
+      createConfirmVisible: false,
+      createCourseData: {},
     };
 
     if (props.courseInfo.error) {
@@ -63,6 +69,38 @@ class CreateCoursePage extends React.Component {
     return this.props.createCourse(courseData);
   }
 
+  showModal(options) {
+    this.setState({
+      createCourseData: options,
+      createConfirmVisible: true,
+    });
+  }
+
+  continueCreate() {
+    const {
+      createCourseData,
+    } = this.state;
+
+    this.setState({
+      createCourseData: {},
+      createConfirmVisible: false,
+    });
+
+    this.handleCourseCreate(createCourseData);
+  }
+
+  cancelCreate() {
+    const {
+      clearCreateCourseStatus,
+    } = this.props;
+
+    this.setState({
+      createCourseData: {},
+      createConfirmVisible: false,
+    });
+    return clearCreateCourseStatus();
+  }
+
   parseOptions(inChoices) {
     return inChoices.map(choice =>
       ({ label: choice.display_name, value: choice.value }));
@@ -89,6 +127,7 @@ class CreateCoursePage extends React.Component {
     } = this.props;
     const {
       startedFetching,
+      createConfirmVisible,
     } = this.state;
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
@@ -123,6 +162,15 @@ class CreateCoursePage extends React.Component {
           <title>Create a New Course</title>
         </Helmet>
 
+        <ConfirmationModal
+          title="Create a New Course?"
+          body="This will create a new course in studio. Confirm that your course number is correct, as it cannot be changed later."
+          buttonLabel="Create"
+          open={createConfirmVisible}
+          onSubmit={this.continueCreate}
+          onClose={this.cancelCreate}
+        />
+
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
           { showForm &&
@@ -130,7 +178,7 @@ class CreateCoursePage extends React.Component {
             <div>
               <CreateCourseForm
                 id="create-course-form"
-                onSubmit={this.handleCourseCreate}
+                onSubmit={this.showModal}
                 initialValues={initialValues}
                 currentFormValues={formValues}
                 organizations={organizations}
@@ -163,6 +211,7 @@ CreateCoursePage.defaultProps = {
   createCourse: () => {},
   formValues: {},
   clearCourseInfoErrors: () => null,
+  clearCreateCourseStatus: () => {},
 };
 
 CreateCoursePage.propTypes = {
@@ -197,6 +246,7 @@ CreateCoursePage.propTypes = {
   createCourse: PropTypes.func,
   formValues: PropTypes.shape({}),
   clearCourseInfoErrors: PropTypes.func,
+  clearCreateCourseStatus: PropTypes.func,
 };
 
 export default CreateCoursePage;

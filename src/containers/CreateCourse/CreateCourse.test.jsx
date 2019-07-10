@@ -46,6 +46,17 @@ const courseRunData = {
   error: null,
 };
 
+const courseData = {
+  org: 'edx',
+  title: 'Test Course',
+  number: 'test101',
+  enrollmentTrack: 'verified',
+  price: 100.00,
+  start: '2019-03-04',
+  end: '2020-03-04',
+  pacing_type: 'instructor_paced',
+};
+
 const initialState = {
   courseInfo: {},
   publisherUserInfo: {
@@ -60,16 +71,7 @@ const initialState = {
   },
   form: {
     'create-course-form': {
-      initial: {
-        org: 'edx',
-        title: 'Test Course',
-        number: 'test101',
-        enrollmentTrack: 'verified',
-        price: 100.00,
-        start: '2019-03-04',
-        end: '2019-03-19',
-        pacing_type: 'instructor_paced',
-      },
+      initial: { courseData },
     },
   },
 };
@@ -108,6 +110,37 @@ describe('Create Course View', () => {
     expect(wrapper.find('#create-error').props().message).toEqual(errorMessage.concat(<br />));
   });
 
+  it('Shows confirmation modal on form submission', () => {
+    const testState = jsonDeepCopy(initialState);
+    testState.publisherUserInfo.isFetching = false;
+    testState.publisherUserInfo.error = null;
+    testState.courseRunOptions.isFetching = false;
+    testState.courseRunOptions = courseRunData;
+
+    store = mockStore(testState);
+    const CourseCreatePageWrapper = props => (
+      <MemoryRouter>
+        <Provider store={store} >
+          <CreateCoursePage
+            {...props}
+            initialValues={courseData}
+          />
+        </Provider>
+      </MemoryRouter>
+    );
+
+    const wrapper = mount(<CourseCreatePageWrapper />);
+    const instance = (wrapper.find('CreateCoursePage')).instance();
+    const spy = jest.spyOn(instance, 'showModal');
+    instance.forceUpdate();
+
+    // Submit
+    const formWrapper = wrapper.find('#create-course-form');
+    formWrapper.find('ActionButton').simulate('submit');
+    expect(spy).toBeCalledTimes(1);
+    expect(wrapper.find('ConfirmationModal'));
+  });
+
   it('Submits the form with correct data', () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
@@ -121,16 +154,7 @@ describe('Create Course View', () => {
         <Provider store={store} >
           <CreateCoursePage
             {...props}
-            initialValues={{
-              org: 'edx',
-              title: 'Test Course',
-              number: 'test101',
-              enrollmentTrack: 'verified',
-              price: 100.00,
-              start: '2019-03-04',
-              end: '2020-03-04',
-              pacing_type: 'instructor_paced',
-            }}
+            initialValues={courseData}
           />
         </Provider>
       </MemoryRouter>
@@ -140,10 +164,9 @@ describe('Create Course View', () => {
     const instance = (wrapper.find('CreateCoursePage')).instance();
     const spy = jest.spyOn(instance, 'handleCourseCreate');
     instance.forceUpdate();
+    instance.showModal(courseData);
+    instance.continueCreate(courseData);
 
-    // Submit
-    const formWrapper = wrapper.find('#create-course-form');
-    formWrapper.find('ActionButton').simulate('submit');
     expect(spy).toBeCalledTimes(1);
   });
 });

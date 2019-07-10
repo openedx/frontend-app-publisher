@@ -75,7 +75,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>
         </div>,
         <Field
@@ -113,6 +113,7 @@ ShallowWrapper {
           name="test-course.go_live_date"
           normalize={[Function]}
           placeholder="mm/dd/yyyy"
+          required={false}
           type="date"
         />,
         <Field
@@ -406,7 +407,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />
           }
@@ -433,7 +434,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />
           }
@@ -463,6 +464,7 @@ ShallowWrapper {
         </div>,
         <ButtonToolbar
           className=""
+          leftJustify={false}
         >
           <ActionButton
             className=""
@@ -507,12 +509,15 @@ ShallowWrapper {
         <div
           className="course-run-studio-url"
         >
-          Studio URL - 
-          <a
-            href="undefined/course/edX101+DemoX"
-          >
-            edX101+DemoX
-          </a>
+          <React.Fragment>
+            Studio URL - 
+            <withDeprecatedProps(Hyperlink)
+              destination="undefined/course/edX101+DemoX"
+              target="_blank"
+            >
+              edX101+DemoX
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>
         </div>
       </div>,
     },
@@ -527,7 +532,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>,
           "className": "mb-3",
         },
@@ -538,11 +543,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-hidden": true,
-            "children": " All fields below are required for publication.",
+            "children": " All fields are required for publication unless otherwise specified.",
             "className": "text-info",
           },
           "ref": null,
-          "rendered": " All fields below are required for publication.",
+          "rendered": " All fields are required for publication unless otherwise specified.",
           "type": "span",
         },
         "type": "div",
@@ -582,6 +587,7 @@ ShallowWrapper {
           "name": "test-course.go_live_date",
           "normalize": [Function],
           "placeholder": "mm/dd/yyyy",
+          "required": false,
           "type": "date",
         },
         "ref": null,
@@ -1090,7 +1096,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_type.label"
-            optional={false}
+            optional={true}
             text="Expected Program Type"
           />,
           "name": "test-course.expected_program_type",
@@ -1122,7 +1128,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_name.label"
-            optional={false}
+            optional={true}
             text="Expected Program Name"
           />,
           "name": "test-course.expected_program_name",
@@ -1215,6 +1221,7 @@ ShallowWrapper {
             state="default"
           />,
           "className": "",
+          "leftJustify": false,
         },
         "ref": null,
         "rendered": Object {
@@ -1255,7 +1262,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>
           </div>,
           <Field
@@ -1293,6 +1300,7 @@ ShallowWrapper {
             name="test-course.go_live_date"
             normalize={[Function]}
             placeholder="mm/dd/yyyy"
+            required={false}
             type="date"
           />,
           <Field
@@ -1586,7 +1594,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_type.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Type"
               />
             }
@@ -1613,7 +1621,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_name.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Name"
               />
             }
@@ -1643,6 +1651,7 @@ ShallowWrapper {
           </div>,
           <ButtonToolbar
             className=""
+            leftJustify={false}
           >
             <ActionButton
               className=""
@@ -1687,12 +1696,15 @@ ShallowWrapper {
           <div
             className="course-run-studio-url"
           >
-            Studio URL - 
-            <a
-              href="undefined/course/edX101+DemoX"
-            >
-              edX101+DemoX
-            </a>
+            <React.Fragment>
+              Studio URL - 
+              <withDeprecatedProps(Hyperlink)
+                destination="undefined/course/edX101+DemoX"
+                target="_blank"
+              >
+                edX101+DemoX
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
           </div>
         </div>,
       },
@@ -1707,7 +1719,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>,
             "className": "mb-3",
           },
@@ -1718,11 +1730,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "aria-hidden": true,
-              "children": " All fields below are required for publication.",
+              "children": " All fields are required for publication unless otherwise specified.",
               "className": "text-info",
             },
             "ref": null,
-            "rendered": " All fields below are required for publication.",
+            "rendered": " All fields are required for publication unless otherwise specified.",
             "type": "span",
           },
           "type": "div",
@@ -1762,6 +1774,7 @@ ShallowWrapper {
             "name": "test-course.go_live_date",
             "normalize": [Function],
             "placeholder": "mm/dd/yyyy",
+            "required": false,
             "type": "date",
           },
           "ref": null,
@@ -2270,7 +2283,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />,
             "name": "test-course.expected_program_type",
@@ -2302,7 +2315,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />,
             "name": "test-course.expected_program_name",
@@ -2395,6 +2408,7 @@ ShallowWrapper {
               state="default"
             />,
             "className": "",
+            "leftJustify": false,
           },
           "ref": null,
           "rendered": Object {
@@ -2524,7 +2538,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>
         </div>,
         <Field
@@ -2562,6 +2576,7 @@ ShallowWrapper {
           name="test-course.go_live_date"
           normalize={[Function]}
           placeholder="mm/dd/yyyy"
+          required={false}
           type="date"
         />,
         <Field
@@ -2855,7 +2870,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />
           }
@@ -2882,7 +2897,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />
           }
@@ -2912,6 +2927,7 @@ ShallowWrapper {
         </div>,
         <ButtonToolbar
           className=""
+          leftJustify={false}
         >
           <ActionButton
             className=""
@@ -2956,12 +2972,15 @@ ShallowWrapper {
         <div
           className="course-run-studio-url"
         >
-          Studio URL - 
-          <a
-            href="undefined/course/edX101+DemoX"
-          >
-            edX101+DemoX
-          </a>
+          <React.Fragment>
+            Studio URL - 
+            <withDeprecatedProps(Hyperlink)
+              destination="undefined/course/edX101+DemoX"
+              target="_blank"
+            >
+              edX101+DemoX
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>
         </div>
       </div>,
     },
@@ -2976,7 +2995,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>,
           "className": "mb-3",
         },
@@ -2987,11 +3006,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-hidden": true,
-            "children": " All fields below are required for publication.",
+            "children": " All fields are required for publication unless otherwise specified.",
             "className": "text-info",
           },
           "ref": null,
-          "rendered": " All fields below are required for publication.",
+          "rendered": " All fields are required for publication unless otherwise specified.",
           "type": "span",
         },
         "type": "div",
@@ -3031,6 +3050,7 @@ ShallowWrapper {
           "name": "test-course.go_live_date",
           "normalize": [Function],
           "placeholder": "mm/dd/yyyy",
+          "required": false,
           "type": "date",
         },
         "ref": null,
@@ -3539,7 +3559,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_type.label"
-            optional={false}
+            optional={true}
             text="Expected Program Type"
           />,
           "name": "test-course.expected_program_type",
@@ -3571,7 +3591,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_name.label"
-            optional={false}
+            optional={true}
             text="Expected Program Name"
           />,
           "name": "test-course.expected_program_name",
@@ -3664,6 +3684,7 @@ ShallowWrapper {
             state="default"
           />,
           "className": "",
+          "leftJustify": false,
         },
         "ref": null,
         "rendered": Object {
@@ -3704,7 +3725,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>
           </div>,
           <Field
@@ -3742,6 +3763,7 @@ ShallowWrapper {
             name="test-course.go_live_date"
             normalize={[Function]}
             placeholder="mm/dd/yyyy"
+            required={false}
             type="date"
           />,
           <Field
@@ -4035,7 +4057,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_type.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Type"
               />
             }
@@ -4062,7 +4084,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_name.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Name"
               />
             }
@@ -4092,6 +4114,7 @@ ShallowWrapper {
           </div>,
           <ButtonToolbar
             className=""
+            leftJustify={false}
           >
             <ActionButton
               className=""
@@ -4136,12 +4159,15 @@ ShallowWrapper {
           <div
             className="course-run-studio-url"
           >
-            Studio URL - 
-            <a
-              href="undefined/course/edX101+DemoX"
-            >
-              edX101+DemoX
-            </a>
+            <React.Fragment>
+              Studio URL - 
+              <withDeprecatedProps(Hyperlink)
+                destination="undefined/course/edX101+DemoX"
+                target="_blank"
+              >
+                edX101+DemoX
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
           </div>
         </div>,
       },
@@ -4156,7 +4182,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>,
             "className": "mb-3",
           },
@@ -4167,11 +4193,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "aria-hidden": true,
-              "children": " All fields below are required for publication.",
+              "children": " All fields are required for publication unless otherwise specified.",
               "className": "text-info",
             },
             "ref": null,
-            "rendered": " All fields below are required for publication.",
+            "rendered": " All fields are required for publication unless otherwise specified.",
             "type": "span",
           },
           "type": "div",
@@ -4211,6 +4237,7 @@ ShallowWrapper {
             "name": "test-course.go_live_date",
             "normalize": [Function],
             "placeholder": "mm/dd/yyyy",
+            "required": false,
             "type": "date",
           },
           "ref": null,
@@ -4719,7 +4746,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />,
             "name": "test-course.expected_program_type",
@@ -4751,7 +4778,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />,
             "name": "test-course.expected_program_name",
@@ -4844,6 +4871,7 @@ ShallowWrapper {
               state="default"
             />,
             "className": "",
+            "leftJustify": false,
           },
           "ref": null,
           "rendered": Object {
@@ -4973,7 +5001,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>
         </div>,
         <Field
@@ -5011,6 +5039,7 @@ ShallowWrapper {
           name="test-course.go_live_date"
           normalize={[Function]}
           placeholder="mm/dd/yyyy"
+          required={null}
           type="date"
         />,
         <Field
@@ -5304,7 +5333,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />
           }
@@ -5331,7 +5360,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />
           }
@@ -5361,6 +5390,7 @@ ShallowWrapper {
         </div>,
         <ButtonToolbar
           className=""
+          leftJustify={false}
         >
           <ActionButton
             className=""
@@ -5405,12 +5435,15 @@ ShallowWrapper {
         <div
           className="course-run-studio-url"
         >
-          Studio URL - 
-          <a
-            href="undefined/course/edX101+DemoX"
-          >
-            edX101+DemoX
-          </a>
+          <React.Fragment>
+            Studio URL - 
+            <withDeprecatedProps(Hyperlink)
+              destination="undefined/course/edX101+DemoX"
+              target="_blank"
+            >
+              edX101+DemoX
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>
         </div>
       </div>,
     },
@@ -5425,7 +5458,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>,
           "className": "mb-3",
         },
@@ -5436,11 +5469,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-hidden": true,
-            "children": " All fields below are required for publication.",
+            "children": " All fields are required for publication unless otherwise specified.",
             "className": "text-info",
           },
           "ref": null,
-          "rendered": " All fields below are required for publication.",
+          "rendered": " All fields are required for publication unless otherwise specified.",
           "type": "span",
         },
         "type": "div",
@@ -5480,6 +5513,7 @@ ShallowWrapper {
           "name": "test-course.go_live_date",
           "normalize": [Function],
           "placeholder": "mm/dd/yyyy",
+          "required": null,
           "type": "date",
         },
         "ref": null,
@@ -5988,7 +6022,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_type.label"
-            optional={false}
+            optional={true}
             text="Expected Program Type"
           />,
           "name": "test-course.expected_program_type",
@@ -6020,7 +6054,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_name.label"
-            optional={false}
+            optional={true}
             text="Expected Program Name"
           />,
           "name": "test-course.expected_program_name",
@@ -6113,6 +6147,7 @@ ShallowWrapper {
             state="default"
           />,
           "className": "",
+          "leftJustify": false,
         },
         "ref": null,
         "rendered": Object {
@@ -6153,7 +6188,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>
           </div>,
           <Field
@@ -6191,6 +6226,7 @@ ShallowWrapper {
             name="test-course.go_live_date"
             normalize={[Function]}
             placeholder="mm/dd/yyyy"
+            required={null}
             type="date"
           />,
           <Field
@@ -6484,7 +6520,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_type.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Type"
               />
             }
@@ -6511,7 +6547,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_name.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Name"
               />
             }
@@ -6541,6 +6577,7 @@ ShallowWrapper {
           </div>,
           <ButtonToolbar
             className=""
+            leftJustify={false}
           >
             <ActionButton
               className=""
@@ -6585,12 +6622,15 @@ ShallowWrapper {
           <div
             className="course-run-studio-url"
           >
-            Studio URL - 
-            <a
-              href="undefined/course/edX101+DemoX"
-            >
-              edX101+DemoX
-            </a>
+            <React.Fragment>
+              Studio URL - 
+              <withDeprecatedProps(Hyperlink)
+                destination="undefined/course/edX101+DemoX"
+                target="_blank"
+              >
+                edX101+DemoX
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
           </div>
         </div>,
       },
@@ -6605,7 +6645,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>,
             "className": "mb-3",
           },
@@ -6616,11 +6656,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "aria-hidden": true,
-              "children": " All fields below are required for publication.",
+              "children": " All fields are required for publication unless otherwise specified.",
               "className": "text-info",
             },
             "ref": null,
-            "rendered": " All fields below are required for publication.",
+            "rendered": " All fields are required for publication unless otherwise specified.",
             "type": "span",
           },
           "type": "div",
@@ -6660,6 +6700,7 @@ ShallowWrapper {
             "name": "test-course.go_live_date",
             "normalize": [Function],
             "placeholder": "mm/dd/yyyy",
+            "required": null,
             "type": "date",
           },
           "ref": null,
@@ -7168,7 +7209,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />,
             "name": "test-course.expected_program_type",
@@ -7200,7 +7241,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />,
             "name": "test-course.expected_program_name",
@@ -7293,6 +7334,7 @@ ShallowWrapper {
               state="default"
             />,
             "className": "",
+            "leftJustify": false,
           },
           "ref": null,
           "rendered": Object {
@@ -7422,7 +7464,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>
         </div>,
         <Field
@@ -7460,6 +7502,7 @@ ShallowWrapper {
           name="test-course.go_live_date"
           normalize={[Function]}
           placeholder="mm/dd/yyyy"
+          required={null}
           type="date"
         />,
         <Field
@@ -7753,7 +7796,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />
           }
@@ -7780,7 +7823,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />
           }
@@ -7810,6 +7853,7 @@ ShallowWrapper {
         </div>,
         <ButtonToolbar
           className=""
+          leftJustify={false}
         >
           <ActionButton
             className=""
@@ -7854,12 +7898,15 @@ ShallowWrapper {
         <div
           className="course-run-studio-url"
         >
-          Studio URL - 
-          <a
-            href="undefined/course/edX101+DemoX"
-          >
-            edX101+DemoX
-          </a>
+          <React.Fragment>
+            Studio URL - 
+            <withDeprecatedProps(Hyperlink)
+              destination="undefined/course/edX101+DemoX"
+              target="_blank"
+            >
+              edX101+DemoX
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>
         </div>
       </div>,
     },
@@ -7874,7 +7921,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>,
           "className": "mb-3",
         },
@@ -7885,11 +7932,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-hidden": true,
-            "children": " All fields below are required for publication.",
+            "children": " All fields are required for publication unless otherwise specified.",
             "className": "text-info",
           },
           "ref": null,
-          "rendered": " All fields below are required for publication.",
+          "rendered": " All fields are required for publication unless otherwise specified.",
           "type": "span",
         },
         "type": "div",
@@ -7929,6 +7976,7 @@ ShallowWrapper {
           "name": "test-course.go_live_date",
           "normalize": [Function],
           "placeholder": "mm/dd/yyyy",
+          "required": null,
           "type": "date",
         },
         "ref": null,
@@ -8437,7 +8485,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_type.label"
-            optional={false}
+            optional={true}
             text="Expected Program Type"
           />,
           "name": "test-course.expected_program_type",
@@ -8469,7 +8517,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_name.label"
-            optional={false}
+            optional={true}
             text="Expected Program Name"
           />,
           "name": "test-course.expected_program_name",
@@ -8562,6 +8610,7 @@ ShallowWrapper {
             state="default"
           />,
           "className": "",
+          "leftJustify": false,
         },
         "ref": null,
         "rendered": Object {
@@ -8602,7 +8651,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>
           </div>,
           <Field
@@ -8640,6 +8689,7 @@ ShallowWrapper {
             name="test-course.go_live_date"
             normalize={[Function]}
             placeholder="mm/dd/yyyy"
+            required={null}
             type="date"
           />,
           <Field
@@ -8933,7 +8983,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_type.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Type"
               />
             }
@@ -8960,7 +9010,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_name.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Name"
               />
             }
@@ -8990,6 +9040,7 @@ ShallowWrapper {
           </div>,
           <ButtonToolbar
             className=""
+            leftJustify={false}
           >
             <ActionButton
               className=""
@@ -9034,12 +9085,15 @@ ShallowWrapper {
           <div
             className="course-run-studio-url"
           >
-            Studio URL - 
-            <a
-              href="undefined/course/edX101+DemoX"
-            >
-              edX101+DemoX
-            </a>
+            <React.Fragment>
+              Studio URL - 
+              <withDeprecatedProps(Hyperlink)
+                destination="undefined/course/edX101+DemoX"
+                target="_blank"
+              >
+                edX101+DemoX
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
           </div>
         </div>,
       },
@@ -9054,7 +9108,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>,
             "className": "mb-3",
           },
@@ -9065,11 +9119,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "aria-hidden": true,
-              "children": " All fields below are required for publication.",
+              "children": " All fields are required for publication unless otherwise specified.",
               "className": "text-info",
             },
             "ref": null,
-            "rendered": " All fields below are required for publication.",
+            "rendered": " All fields are required for publication unless otherwise specified.",
             "type": "span",
           },
           "type": "div",
@@ -9109,6 +9163,7 @@ ShallowWrapper {
             "name": "test-course.go_live_date",
             "normalize": [Function],
             "placeholder": "mm/dd/yyyy",
+            "required": null,
             "type": "date",
           },
           "ref": null,
@@ -9617,7 +9672,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />,
             "name": "test-course.expected_program_type",
@@ -9649,7 +9704,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />,
             "name": "test-course.expected_program_name",
@@ -9742,6 +9797,7 @@ ShallowWrapper {
               state="default"
             />,
             "className": "",
+            "leftJustify": false,
           },
           "ref": null,
           "rendered": Object {
@@ -9840,7 +9896,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>
         </div>,
         <Field
@@ -9878,6 +9934,7 @@ ShallowWrapper {
           name="test-course.go_live_date"
           normalize={[Function]}
           placeholder="mm/dd/yyyy"
+          required={false}
           type="date"
         />,
         <Field
@@ -10149,7 +10206,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />
           }
@@ -10176,7 +10233,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />
           }
@@ -10206,6 +10263,7 @@ ShallowWrapper {
         </div>,
         <ButtonToolbar
           className=""
+          leftJustify={false}
         >
           <ActionButton
             className=""
@@ -10250,12 +10308,13 @@ ShallowWrapper {
         <div
           className="course-run-studio-url"
         >
-          Studio URL - 
-          <a
-            href="undefined/course/undefined"
-          >
-            undefined
-          </a>
+          <React.Fragment>
+            Studio URL - 
+            <withDeprecatedProps(Hyperlink)
+              destination="undefined/course/undefined"
+              target="_blank"
+            />
+          </React.Fragment>
         </div>
       </div>,
     },
@@ -10270,7 +10329,7 @@ ShallowWrapper {
             aria-hidden={true}
             className="text-info"
           >
-             All fields below are required for publication.
+             All fields are required for publication unless otherwise specified.
           </span>,
           "className": "mb-3",
         },
@@ -10281,11 +10340,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-hidden": true,
-            "children": " All fields below are required for publication.",
+            "children": " All fields are required for publication unless otherwise specified.",
             "className": "text-info",
           },
           "ref": null,
-          "rendered": " All fields below are required for publication.",
+          "rendered": " All fields are required for publication unless otherwise specified.",
           "type": "span",
         },
         "type": "div",
@@ -10325,6 +10384,7 @@ ShallowWrapper {
           "name": "test-course.go_live_date",
           "normalize": [Function],
           "placeholder": "mm/dd/yyyy",
+          "required": false,
           "type": "date",
         },
         "ref": null,
@@ -10818,7 +10878,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_type.label"
-            optional={false}
+            optional={true}
             text="Expected Program Type"
           />,
           "name": "test-course.expected_program_type",
@@ -10850,7 +10910,7 @@ ShallowWrapper {
               </div>
             }
             id="test-course.expected_program_name.label"
-            optional={false}
+            optional={true}
             text="Expected Program Name"
           />,
           "name": "test-course.expected_program_name",
@@ -10943,6 +11003,7 @@ ShallowWrapper {
             state="default"
           />,
           "className": "",
+          "leftJustify": false,
         },
         "ref": null,
         "rendered": Object {
@@ -10983,7 +11044,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>
           </div>,
           <Field
@@ -11021,6 +11082,7 @@ ShallowWrapper {
             name="test-course.go_live_date"
             normalize={[Function]}
             placeholder="mm/dd/yyyy"
+            required={false}
             type="date"
           />,
           <Field
@@ -11292,7 +11354,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_type.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Type"
               />
             }
@@ -11319,7 +11381,7 @@ ShallowWrapper {
                   </div>
                 }
                 id="test-course.expected_program_name.label"
-                optional={false}
+                optional={true}
                 text="Expected Program Name"
               />
             }
@@ -11349,6 +11411,7 @@ ShallowWrapper {
           </div>,
           <ButtonToolbar
             className=""
+            leftJustify={false}
           >
             <ActionButton
               className=""
@@ -11393,12 +11456,13 @@ ShallowWrapper {
           <div
             className="course-run-studio-url"
           >
-            Studio URL - 
-            <a
-              href="undefined/course/undefined"
-            >
-              undefined
-            </a>
+            <React.Fragment>
+              Studio URL - 
+              <withDeprecatedProps(Hyperlink)
+                destination="undefined/course/undefined"
+                target="_blank"
+              />
+            </React.Fragment>
           </div>
         </div>,
       },
@@ -11413,7 +11477,7 @@ ShallowWrapper {
               aria-hidden={true}
               className="text-info"
             >
-               All fields below are required for publication.
+               All fields are required for publication unless otherwise specified.
             </span>,
             "className": "mb-3",
           },
@@ -11424,11 +11488,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "aria-hidden": true,
-              "children": " All fields below are required for publication.",
+              "children": " All fields are required for publication unless otherwise specified.",
               "className": "text-info",
             },
             "ref": null,
-            "rendered": " All fields below are required for publication.",
+            "rendered": " All fields are required for publication unless otherwise specified.",
             "type": "span",
           },
           "type": "div",
@@ -11468,6 +11532,7 @@ ShallowWrapper {
             "name": "test-course.go_live_date",
             "normalize": [Function],
             "placeholder": "mm/dd/yyyy",
+            "required": false,
             "type": "date",
           },
           "ref": null,
@@ -11961,7 +12026,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_type.label"
-              optional={false}
+              optional={true}
               text="Expected Program Type"
             />,
             "name": "test-course.expected_program_type",
@@ -11993,7 +12058,7 @@ ShallowWrapper {
                 </div>
               }
               id="test-course.expected_program_name.label"
-              optional={false}
+              optional={true}
               text="Expected Program Name"
             />,
             "name": "test-course.expected_program_name",
@@ -12086,6 +12151,7 @@ ShallowWrapper {
               state="default"
             />,
             "className": "",
+            "leftJustify": false,
           },
           "ref": null,
           "rendered": Object {

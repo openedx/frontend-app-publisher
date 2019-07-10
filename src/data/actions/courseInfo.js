@@ -13,6 +13,7 @@ import {
   UUID_REGEX,
   CLEAR_COURSE_INFO_ERRORS,
   CREATE_COURSE,
+  CREATE_COURSE_CANCEL,
   CREATE_COURSE_SUCCESS,
   CREATE_COURSE_FAIL,
   CREATE_COURSE_RUN,
@@ -53,6 +54,10 @@ function createCourseFail(error) {
   return { type: CREATE_COURSE_FAIL, error };
 }
 
+function createCourseCancel() {
+  return { type: CREATE_COURSE_CANCEL };
+}
+
 function createNewCourseRun(data) {
   return { type: CREATE_COURSE_RUN, data };
 }
@@ -79,6 +84,12 @@ function editCourseFail(error) {
 
 function clearCourseSaved() {
   return { type: CLEAR_COURSE_SAVED };
+}
+
+function clearCreateCourseStatus() {
+  return (dispatch) => {
+    dispatch(createCourseCancel());
+  };
 }
 
 function updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, initialCourseRuns) {
@@ -209,7 +220,9 @@ export {
   requestCourseInfo,
   clearCourseInfoErrors,
   clearCreateStatusAlert,
+  clearCreateCourseStatus,
   createNewCourse,
+  createCourseCancel,
   createCourseSuccess,
   createCourseFail,
   createNewCourseRun,

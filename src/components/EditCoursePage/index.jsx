@@ -9,7 +9,7 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, isValidDate } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
-import SubmitConfirmModal from '../SubmitConfirmModal';
+import ConfirmationModal from '../ConfirmationModal';
 
 class EditCoursePage extends React.Component {
   constructor(props) {
@@ -372,28 +372,30 @@ class EditCoursePage extends React.Component {
           <title>{`Course - ${title}`}</title>
         </Helmet>
 
-        <SubmitConfirmModal
+        <ConfirmationModal
+          title="Submit for Review?"
+          body="You will not be able to make edits while the course is in review, which can take up to 2 business days. Confirm your edits are complete."
+          buttonLabel="Submit"
           open={submitConfirmVisible}
           onSubmit={this.continueSubmit}
           onClose={this.cancelSubmit}
         />
 
-        { showReviewStatusAlert && <StatusAlert
-          onClose={this.dismissAlert}
-          dismissible
-          alertType="success"
-          message="Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete."
-        /> }
-
-        { showCreateStatusAlert && <StatusAlert
-          onClose={this.dismissAlert}
-          dismissible
-          alertType="success"
-          message="Course run has been created in studio. See link below."
-        /> }
-
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
+          { showReviewStatusAlert && <StatusAlert
+            onClose={this.dismissAlert}
+            dismissible
+            alertType="success"
+            message="Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete."
+          /> }
+
+          { showCreateStatusAlert && <StatusAlert
+            onClose={this.dismissAlert}
+            dismissible
+            alertType="success"
+            message="Course run has been created in studio. See link below."
+          /> }
           { showForm && (
             <div>
               <EditCourseForm

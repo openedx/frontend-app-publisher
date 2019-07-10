@@ -5,7 +5,7 @@ import { mount, shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import EditCoursePage from './index';
 
-import SubmitConfirmModal from '../SubmitConfirmModal';
+import ConfirmationModal from '../ConfirmationModal';
 import StatusAlert from '../StatusAlert';
 
 import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
@@ -620,7 +620,7 @@ describe('EditCoursePage', () => {
         submitConfirmVisible: true,
       });
 
-      const modal = wrapper.find(SubmitConfirmModal);
+      const modal = wrapper.find(ConfirmationModal);
       modal.find('.btn-secondary').simulate('click');
 
       expect(wrapper.find(EditCoursePage)
