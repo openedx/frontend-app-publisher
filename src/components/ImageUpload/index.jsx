@@ -74,6 +74,7 @@ class ImageUpload extends React.Component {
   render() {
     const {
       className,
+      disabled,
       id,
       input: {
         name,
@@ -104,7 +105,13 @@ class ImageUpload extends React.Component {
             />
           }
           <img src={this.state.value} alt="" className="uploaded-image" onLoad={this.sizeValidator} />
-          <input id={id} type="file" accept="image/jpeg, image/png" onChange={this.handleFilePicked} />
+          <input
+            id={id}
+            type="file"
+            accept="image/jpeg, image/png"
+            onChange={this.handleFilePicked}
+            disabled={disabled}
+          />
         </div>
       </div>
     );
@@ -113,6 +120,7 @@ class ImageUpload extends React.Component {
 
 ImageUpload.propTypes = {
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   maxImageSizeKilo: PropTypes.number.isRequired,
@@ -132,6 +140,7 @@ ImageUpload.propTypes = {
 
 ImageUpload.defaultProps = {
   className: '',
+  disabled: false,
 };
 
 export default ImageUpload;

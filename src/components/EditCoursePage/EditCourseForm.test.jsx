@@ -10,7 +10,7 @@ describe('BaseEditCourseForm', () => {
   const courseOptions = {
     data: {
       actions: {
-        PUT: {
+        POST: {
           level_type: {
             choices: [
               { display_name: 'Beginner', value: 'beginner' },
@@ -513,6 +513,7 @@ describe('BaseEditCourseForm', () => {
     mode: 'verified',
     price: '77',
     uuid: '11111111-1111-1111-1111-111111111111',
+    editable: true,
   };
   const entitlement = {
     mode: 'verified',

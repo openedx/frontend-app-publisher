@@ -12,7 +12,7 @@ describe('courseOptions reducer', () => {
 
   const courseData = {
     actions: {
-      PUT: {
+      POST: {
         level_type: {
           choices: [
             { display_name: 'Beginner', value: 'beginner' },
@@ -43,7 +43,7 @@ describe('courseOptions reducer', () => {
   });
 
   it('course options request works', () => {
-    expect(courseOptions(oldState, actions.requestCourseOptions('test')))
+    expect(courseOptions(oldState, actions.requestCourseOptions()))
       .toEqual({
         data: {},
         isFetching: true,
@@ -52,11 +52,11 @@ describe('courseOptions reducer', () => {
   });
 
   it('course options receive works', () => {
-    expect(courseOptions(oldState, actions.requestCourseOptionsSuccess('test', courseData)))
+    expect(courseOptions(oldState, actions.requestCourseOptionsSuccess(courseData)))
       .toEqual({
         data: {
           actions: {
-            PUT: {
+            POST: {
               level_type: {
                 choices: [
                   { display_name: 'Beginner', value: 'beginner' },
@@ -83,7 +83,7 @@ describe('courseOptions reducer', () => {
   });
 
   it('course options fail works', () => {
-    expect(courseOptions(oldState, actions.requestCourseOptionsFail('test', 'failure')))
+    expect(courseOptions(oldState, actions.requestCourseOptionsFail('failure')))
       .toEqual({
         data: {},
         isFetching: false,

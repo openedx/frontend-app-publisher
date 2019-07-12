@@ -109,6 +109,7 @@ class CollapsibleCourseRun extends React.Component {
       courseInReview,
       courseRun,
       courseSubmitting,
+      editable,
       isSubmittingForReview,
       languageOptions,
       programOptions,
@@ -128,6 +129,8 @@ class CollapsibleCourseRun extends React.Component {
     // Checks if the current course run is the one triggering submission for review
     const courseRunSubmitting = !courseRunInReview && isSubmittingForReview && targetRun &&
       (targetRun.key === courseRun.key);
+
+    const disabled = courseInReview || !editable;
 
     return (
       <Collapsible
@@ -169,7 +172,7 @@ class CollapsibleCourseRun extends React.Component {
               getDateString(courseRun.go_live_date) : getDateString(moment()),
           }}
           placeholder="mm/dd/yyyy"
-          disabled={courseInReview}
+          disabled={disabled}
           required={courseRunSubmitting}
         />
         <Field
@@ -178,7 +181,7 @@ class CollapsibleCourseRun extends React.Component {
           dateLabel="Start date"
           timeLabel="Start time"
           helpText={startDateHelp}
-          disabled={courseInReview}
+          disabled={disabled}
           required
           minDate={moment(courseRun.start).isBefore(moment()) ?
             getDateString(courseRun.start) : getDateString(moment())}
@@ -190,7 +193,7 @@ class CollapsibleCourseRun extends React.Component {
           dateLabel="End date"
           timeLabel="End time"
           helpText={endDateHelp}
-          disabled={courseInReview}
+          disabled={disabled}
           required
           minDate={getDateString(moment(courseRun.start).add(1, 'd') || moment())}
           onInvalid={this.openCollapsible}
@@ -209,7 +212,7 @@ class CollapsibleCourseRun extends React.Component {
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
+          disabled={disabled}
           required={courseRunSubmitting}
         />
         <FieldLabel
@@ -230,7 +233,7 @@ class CollapsibleCourseRun extends React.Component {
           name={`${courseId}.staff`}
           component={StaffList}
           extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
+          disabled={disabled}
           courseRunKey={courseRun.key}
           owners={owners}
           courseUuid={courseUuid}
@@ -262,7 +265,7 @@ class CollapsibleCourseRun extends React.Component {
                 min: 0,
                 max: 168,
               }}
-              disabled={courseInReview}
+              disabled={disabled}
               required={courseRunSubmitting}
             />
           </div>
@@ -290,7 +293,7 @@ class CollapsibleCourseRun extends React.Component {
                 min: 1,
                 max: 168,
               }}
-              disabled={courseInReview}
+              disabled={disabled}
               required={courseRunSubmitting}
             />
           </div>
@@ -311,7 +314,7 @@ class CollapsibleCourseRun extends React.Component {
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
+          disabled={disabled}
           required={courseRunSubmitting}
         />
         <Field
@@ -321,7 +324,7 @@ class CollapsibleCourseRun extends React.Component {
           options={languageOptions}
           label={<FieldLabel text="Content language" />}
           extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
+          disabled={disabled}
           required={courseRunSubmitting}
         />
         <FieldLabel text="Transcript languages" className="mb-2" />
@@ -330,7 +333,7 @@ class CollapsibleCourseRun extends React.Component {
           component={TranscriptLanguage}
           languageOptions={languageOptions}
           extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
+          disabled={disabled}
         />
         <Field
           name={`${courseId}.expected_program_type`}
@@ -353,7 +356,7 @@ class CollapsibleCourseRun extends React.Component {
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
+          disabled={disabled}
         />
         <Field
           name={`${courseId}.expected_program_name`}
@@ -375,7 +378,7 @@ class CollapsibleCourseRun extends React.Component {
             />
           }
           extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={courseInReview}
+          disabled={disabled}
         />
         <div>
           <FieldLabel
@@ -393,24 +396,26 @@ class CollapsibleCourseRun extends React.Component {
           />
           <div className="mb-3">{courseRun.has_ofac_restrictions ? 'Yes' : 'No'}</div>
         </div>
-        <ButtonToolbar>
-          <ActionButton
-            // only disable if *this run* is in review
-            disabled={courseSubmitting || courseRunInReview}
-            // Pass the submitting course run up to validate different fields based on status
-            onClick={() => store.dispatch(courseSubmittingInfo(courseRun))}
-            labels={{
-              default: courseRun.status === PUBLISHED ? 'Publish Run' : 'Submit Run for Review',
-              pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
-            }}
-            state={
-              (
-                courseSubmitting ||
-                (courseSubmitInfo && courseSubmitInfo.isSubmittingRunReview)
-              ) ? 'pending' : 'default'
-            }
-          />
-        </ButtonToolbar>
+        {editable &&
+          <ButtonToolbar>
+            <ActionButton
+              // only disable if *this run* is in review
+              disabled={courseSubmitting || courseRunInReview}
+              // Pass the submitting course run up to validate different fields based on status
+              onClick={() => store.dispatch(courseSubmittingInfo(courseRun))}
+              labels={{
+                default: courseRun.status === PUBLISHED ? 'Publish Run' : 'Submit Run for Review',
+                pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
+              }}
+              state={
+                (
+                  courseSubmitting ||
+                  (courseSubmitInfo && courseSubmitInfo.isSubmittingRunReview)
+                ) ? 'pending' : 'default'
+              }
+            />
+          </ButtonToolbar>
+        }
       </Collapsible>
     );
   }
@@ -425,6 +430,7 @@ CollapsibleCourseRun.propTypes = {
     isSubmittingRunReview: PropTypes.bool,
   }),
   courseUuid: PropTypes.string.isRequired,
+  editable: PropTypes.bool,
   isSubmittingForReview: PropTypes.bool,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
@@ -450,6 +456,7 @@ CollapsibleCourseRun.defaultProps = {
   courseSubmitInfo: {
     isSubmittingRunReview: false,
   },
+  editable: false,
   isSubmittingForReview: false,
   owners: [],
   sourceInfo: {},

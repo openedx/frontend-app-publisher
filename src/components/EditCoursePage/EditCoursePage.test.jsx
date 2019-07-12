@@ -77,7 +77,7 @@ describe('EditCoursePage', () => {
   const courseOptions = {
     data: {
       actions: {
-        PUT: {
+        POST: {
           level_type: {
             choices: [
               { display_name: 'Beginner', value: 'beginner' },
@@ -350,6 +350,7 @@ describe('EditCoursePage', () => {
       syllabus_raw: null,
       title: 'demo4004',
       videoSrc: null,
+      editable: true,
     };
 
     const expectedSendCourse = {
@@ -504,6 +505,7 @@ describe('EditCoursePage', () => {
 
     it('upon course submission, StatusAlert is set to appear', () => {
       const component = shallow(<EditCoursePage
+        courseInfo={{ data: { editable: true } }}
         courseSubmitInfo={{ showReviewStatusAlert: true }}
       />);
       const reviewAlert = component.find(StatusAlert);
@@ -513,7 +515,7 @@ describe('EditCoursePage', () => {
 
     it('upon course run creation, StatusAlert is set to appear', () => {
       const component = shallow(<EditCoursePage
-        courseInfo={{ data: { title: 'TestCourse101' }, showCreateStatusAlert: true }}
+        courseInfo={{ data: { title: 'TestCourse101', editable: true }, showCreateStatusAlert: true }}
       />);
       const createAlert = component.find(StatusAlert);
       const createMessage = 'Course run has been created in studio. See link below.';

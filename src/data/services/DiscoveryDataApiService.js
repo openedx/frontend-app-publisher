@@ -60,11 +60,11 @@ class DiscoveryDataApiService {
     return apiClient.post(url, data);
   }
 
-  static fetchCourseOptions(uuid) {
+  static fetchCourseOptions() {
     const queryParams = {
       editable: 1,
     };
-    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/${uuid}/`;
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/courses/`;
     return apiClient.options(url, {
       params: queryParams,
     });

@@ -33,7 +33,7 @@ const mapDispatchToProps = {
 const mergeProps = (stateProps, actionProps, { id }) => ({
   ...stateProps,
   fetchCourseInfo: () => actionProps.fetchCourseInfo(id),
-  fetchCourseOptions: () => actionProps.fetchCourseOptions(id),
+  fetchCourseOptions: () => actionProps.fetchCourseOptions(),
   fetchCourseRunOptions: () => actionProps.fetchCourseRunOptions(),
   editCourse: (courseData, courseRunData, submittingRunForReview) => (
     actionProps.editCourse(courseData, courseRunData, submittingRunForReview)),
