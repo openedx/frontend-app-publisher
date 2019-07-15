@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import { CreateCourseRunForm } from './CreateCourseRunForm';
 import CreateCourseRunPage from './index';
+import StatusAlert from '../StatusAlert';
 
 describe('CreateCourseRunPage', () => {
   it('renders html correctly', () => {
@@ -51,5 +53,31 @@ describe('CreateCourseRunPage', () => {
       }}
     />);
     expect(component).toMatchSnapshot();
+  });
+
+  it('refuses access to form when course is under review', () => {
+    const component = shallow(<CreateCourseRunPage
+      id="00000000-0000-0000-0000-000000000001"
+      courseInfo={{
+        data: {
+          course_runs: [{
+            status: 'review_by_legal',
+          }],
+          title: 'Test Course',
+        },
+        isFetching: false,
+        isCreating: false,
+        error: null,
+      }}
+    />);
+
+    // Confirm message is shown
+    const reviewAlert = component.find(StatusAlert);
+    const reviewMessage = 'Test Course has been submitted for review. No course runs can be added right now.';
+    expect(reviewAlert.props().message).toEqual(reviewMessage);
+
+    // And confirm that we don't show form
+    const form = component.find(CreateCourseRunForm);
+    expect(form).toHaveLength(0);
   });
 });
