@@ -4,7 +4,7 @@ import stafferInfo from './stafferInfo';
 
 
 describe('stafferInfo reducer', () => {
-  let initalState;
+  let initialState;
   const stafferData = {
     profile_image: 'blue.png',
     given_name: 'Fake',
@@ -31,10 +31,11 @@ describe('stafferInfo reducer', () => {
   };
 
   beforeEach(() => {
-    initalState = {
+    initialState = {
       data: {},
       isSaving: false,
       error: null,
+      returnToEditCourse: false,
     };
   });
 
@@ -44,104 +45,126 @@ describe('stafferInfo reducer', () => {
       isSaving: false,
       isFetching: false,
       error: null,
+      returnToEditCourse: false,
     });
   });
 
   // Create
   it('staffer create request works', () => {
-    expect(stafferInfo(initalState, actions.createNewStaffer(stafferData)))
+    expect(stafferInfo(initialState, actions.createNewStaffer(stafferData)))
       .toEqual({
         data: {},
         isSaving: true,
         error: null,
+        returnToEditCourse: false,
       });
   });
 
   it('staffer create receive works', () => {
-    expect(stafferInfo(initalState, actions.stafferCreateSuccess(stafferData)))
+    expect(stafferInfo(initialState, actions.stafferCreateSuccess(stafferData)))
       .toEqual({
         data: stafferData,
         isSaving: false,
         error: null,
+        returnToEditCourse: true,
       });
   });
 
   it('staffer create fail works', () => {
-    expect(stafferInfo(initalState, actions.stafferCreateFail('failure')))
+    expect(stafferInfo(initialState, actions.stafferCreateFail('failure')))
       .toEqual({
         data: {},
         isSaving: false,
         error: 'failure',
+        returnToEditCourse: false,
       });
   });
 
   // Request
   it('request staffer info works', () => {
-    expect(stafferInfo(initalState, actions.requestStafferInfo()))
+    expect(stafferInfo(initialState, actions.requestStafferInfo()))
       .toEqual({
         data: {},
         isSaving: false,
         isFetching: true,
         error: null,
+        returnToEditCourse: false,
       });
   });
 
   it('request staffer info success works', () => {
-    expect(stafferInfo(initalState, actions.requestStafferInfoSuccess(stafferData)))
+    expect(stafferInfo(initialState, actions.requestStafferInfoSuccess(stafferData)))
       .toEqual({
         data: stafferData,
         isSaving: false,
         isFetching: false,
         error: null,
+        returnToEditCourse: false,
       });
   });
 
   it('request staffer info fail works', () => {
-    expect(stafferInfo(initalState, actions.requestStafferInfoFail('failure')))
+    expect(stafferInfo(initialState, actions.requestStafferInfoFail('failure')))
       .toEqual({
         data: {},
         isSaving: false,
         isFetching: false,
         error: 'failure',
+        returnToEditCourse: false,
       });
   });
 
   // Edit
   it('staffer edit works', () => {
-    expect(stafferInfo(initalState, actions.editStafferInfo(stafferData)))
+    expect(stafferInfo(initialState, actions.editStafferInfo(stafferData)))
       .toEqual({
         data: {},
         isSaving: true,
         error: null,
+        returnToEditCourse: false,
       });
   });
 
   it('staffer edit success works', () => {
-    expect(stafferInfo(initalState, actions.editStafferInfoSuccess(stafferData)))
+    expect(stafferInfo(initialState, actions.editStafferInfoSuccess(stafferData)))
       .toEqual({
         data: stafferData,
         isSaving: false,
         error: null,
+        returnToEditCourse: true,
       });
   });
 
   it('staffer edit fail works', () => {
-    expect(stafferInfo(initalState, actions.editStafferInfoFail('failure')))
+    expect(stafferInfo(initialState, actions.editStafferInfoFail('failure')))
       .toEqual({
         data: {},
         isSaving: false,
         error: 'failure',
+        returnToEditCourse: false,
       });
   });
 
   // Reset
   it('staffer reset works', () => {
-    expect(stafferInfo(initalState, actions.resetStafferInfo()))
+    expect(stafferInfo(initialState, actions.resetStafferInfo()))
       .toEqual({
         data: {},
         isSaving: false,
         isFetching: false,
         error: null,
+        returnToEditCourse: false,
+      });
+  });
+
+  // Cancel
+  it('cancel edit works', () => {
+    expect(stafferInfo(initialState, actions.cancelStafferInfo()))
+      .toEqual({
+        data: {},
+        isSaving: false,
+        error: null,
+        returnToEditCourse: true,
       });
   });
 });

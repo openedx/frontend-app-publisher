@@ -87,15 +87,57 @@ class CollapsibleCourseRun extends React.Component {
 
     this.state = {
       open: false,
+      returnFromStaffPage: false,
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
     this.setCollapsible = this.setCollapsible.bind(this);
+    this.scrollToStaffPosition = this.scrollToStaffPosition.bind(this);
+  }
+
+  componentDidMount() {
+    const {
+      stafferInfo: { returnToEditCourse },
+      sourceInfo: { referringRun },
+      courseRun: { key },
+    } = this.props;
+
+    if (returnToEditCourse && referringRun === key) {
+      this.openCollapsible();
+      this.scrollToStaffPosition(returnToEditCourse);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const {
+      open,
+      returnFromStaffPage,
+    } = this.state;
+    const {
+      courseId,
+    } = this.props;
+    const {
+      returnFromStaffPage: wasReturnedFromStaff,
+    } = prevState;
+
+    if (open && returnFromStaffPage) {
+      this.scrollToStaffPosition(false);
+    }
+    if (wasReturnedFromStaff && !returnFromStaffPage) {
+      const element = document.getElementById(`${courseId}.staff.label`);
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
   }
 
   setCollapsible(open) {
     this.setState({
       open,
+    });
+  }
+
+  scrollToStaffPosition(focus) {
+    this.setState({
+      returnFromStaffPage: focus,
     });
   }
 

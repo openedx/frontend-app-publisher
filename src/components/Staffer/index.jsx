@@ -14,6 +14,7 @@ export const Staffer = ({
   onRemove,
   disabled,
   courseUuid,
+  courseRunKey,
 }) => (
   <React.Fragment>
     <div className="staffer-image-wrapper overflow-hidden">
@@ -37,7 +38,7 @@ export const Staffer = ({
         <Link
           to={`/instructors/${staffer.uuid}`}
           className="btn mr-1 p-0"
-          onClick={() => store.dispatch(sourceInfo(`/courses/${courseUuid}`))}
+          onClick={() => store.dispatch(sourceInfo(`/courses/${courseUuid}`, courseRunKey))}
         >
           <Icon
             id={`edit-icon-${staffer.uuid}`}
@@ -64,6 +65,7 @@ Staffer.propTypes = {
   }).isRequired,
   disabled: PropTypes.bool,
   courseUuid: PropTypes.string.isRequired,
+  courseRunKey: PropTypes.string.isRequired,
 };
 
 Staffer.defaultProps = {
