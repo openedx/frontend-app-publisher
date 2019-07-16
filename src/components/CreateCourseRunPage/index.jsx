@@ -1,7 +1,9 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import { IN_REVIEW_STATUS } from '../../data/constants';
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
@@ -84,6 +86,11 @@ class CreateCourseRunPage extends React.Component {
   render() {
     const {
       courseInfo,
+      courseInfo: {
+        data: {
+          course_runs,
+        },
+      },
       courseRunOptions,
       formValues,
     } = this.props;
@@ -103,10 +110,12 @@ class CreateCourseRunPage extends React.Component {
       });
     }
 
-    const showSpinner = !startedFetching || courseInfo.isFetching ||
-      courseRunOptions.isFetching;
-    const showForm = startedFetching && !courseInfo.isFetching &&
-      !courseRunOptions.isFetching;
+    const courseInReview = course_runs && course_runs.some(courseRun =>
+      IN_REVIEW_STATUS.includes(courseRun.status));
+
+    const showSpinner = !startedFetching || courseInfo.isFetching || courseRunOptions.isFetching;
+    const showForm = startedFetching && !courseInfo.isFetching && !courseRunOptions.isFetching &&
+      !courseInReview;
 
     return (
       <React.Fragment>
@@ -116,6 +125,12 @@ class CreateCourseRunPage extends React.Component {
 
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
+          { courseInReview &&
+            <StatusAlert
+              alertType="warning"
+              message={`${title} has been submitted for review. No course runs can be added right now.`}
+            />
+          }
           { showForm &&
           (
             <div>
