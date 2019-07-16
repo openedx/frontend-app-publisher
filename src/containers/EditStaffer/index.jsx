@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 
 import StafferPage from '../../components/StafferPage';
-import { fetchStafferInfo, editStaffer } from '../../data/actions/stafferInfo';
+import { fetchStafferInfo, editStaffer, cancelStafferInfo } from '../../data/actions/stafferInfo';
 import { fetchStafferOptions } from '../../data/actions/stafferOptions';
-
 
 const mapStateToProps = state => ({
   stafferOptions: state.stafferOptions,
@@ -16,12 +15,14 @@ const mergeProps = (stateProps, actionProps, { uuid }) => ({
   fetchStafferInfo: () => actionProps.fetchStafferInfo(uuid),
   fetchStafferOptions: () => actionProps.fetchStafferOptions(),
   editStaffer: (stafferData, referrer = null) => actionProps.editStaffer(stafferData, referrer),
+  cancelStafferInfo: () => actionProps.cancelStafferInfo(),
 });
 
 const mapDispatchToProps = {
   fetchStafferInfo,
   fetchStafferOptions,
   editStaffer,
+  cancelStafferInfo,
 };
 
 export default connect(

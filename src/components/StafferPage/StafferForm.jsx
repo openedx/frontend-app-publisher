@@ -36,6 +36,7 @@ const BaseStafferForm = ({
   isCreateForm,
   stafferOptions,
   sourceInfo: { referrer },
+  cancelStafferInfo,
 }) => {
   const formControlDisabled = pristine || isSaving;
 
@@ -141,6 +142,7 @@ const BaseStafferForm = ({
             className="btn btn-outline-primary form-cancel-btn"
             to={referrer || '/'}
             disabled={formControlDisabled}
+            onClick={cancelStafferInfo}
           >
             Cancel
           </Link>
@@ -174,12 +176,14 @@ BaseStafferForm.propTypes = {
   sourceInfo: PropTypes.shape({
     referrer: PropTypes.string,
   }).isRequired,
+  cancelStafferInfo: PropTypes.func,
 };
 
 BaseStafferForm.defaultProps = {
   stafferOptions: {},
   isSaving: false,
   isCreateForm: false,
+  cancelStafferInfo: () => {},
 };
 
 export default reduxForm({

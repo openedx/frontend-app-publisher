@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import StafferPage from '../../components/StafferPage';
-import { createStaffer, resetStafferInfo } from '../../data/actions/stafferInfo';
+import { createStaffer, resetStafferInfo, cancelStafferInfo } from '../../data/actions/stafferInfo';
 import { fetchStafferOptions } from '../../data/actions/stafferOptions';
 
 const mapStateToProps = state => ({
@@ -14,6 +14,7 @@ const mapDispatchToProps = {
   fetchStafferInfo: resetStafferInfo,
   fetchStafferOptions,
   createStaffer,
+  cancelStafferInfo,
 };
 
 export default connect(

@@ -8,6 +8,7 @@ import {
   EDIT_STAFFER_INFO,
   EDIT_STAFFER_INFO_SUCCESS,
   EDIT_STAFFER_INFO_FAIL,
+  CANCEL_STAFFER_INFO,
   RESET_STAFFER_INFO,
 } from '../constants/stafferInfo';
 
@@ -17,6 +18,7 @@ const initialState = {
   isSaving: false,
   isFetching: false,
   error: null,
+  returnToEditCourse: false,
 };
 
 function stafferInfo(state = initialState, action) {
@@ -53,6 +55,7 @@ function stafferInfo(state = initialState, action) {
         data: action.data,
         isSaving: false,
         error: null,
+        returnToEditCourse: true,
       });
     case CREATE_STAFFER_FAIL:
       return Object.assign({}, state, {
@@ -71,12 +74,17 @@ function stafferInfo(state = initialState, action) {
         data: action.data,
         isSaving: false,
         error: null,
+        returnToEditCourse: true,
       });
     case EDIT_STAFFER_INFO_FAIL:
       return Object.assign({}, state, {
         data: {},
         isSaving: false,
         error: action.error,
+      });
+    case CANCEL_STAFFER_INFO:
+      return Object.assign({}, state, {
+        returnToEditCourse: true,
       });
     case RESET_STAFFER_INFO:
       return initialState;
