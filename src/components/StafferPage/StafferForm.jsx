@@ -59,6 +59,7 @@ const BaseStafferForm = ({
                   </ul>
                 </div>
               }
+              extraText="Image must be 110x110 pixels in size."
             />
           }
           id="profile_image"

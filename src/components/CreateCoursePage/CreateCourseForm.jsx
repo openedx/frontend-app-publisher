@@ -2,6 +2,7 @@ import moment from 'moment';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -179,6 +180,14 @@ class BaseCreateCourseForm extends React.Component {
             }
           />
           <ButtonToolbar>
+            <Link to="/">
+              <button
+                className="btn btn-outline-primary"
+                disabled={isCreating}
+              >
+                Cancel
+              </button>
+            </Link>
             <ActionButton
               disabled={pristine}
               labels={{

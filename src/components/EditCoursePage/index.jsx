@@ -388,7 +388,6 @@ class EditCoursePage extends React.Component {
             message="You have permission to view this course, but not edit. If you would like to edit the course, please contact your project coordinator."
           /> }
 
-          { showSpinner && <LoadingSpinner /> }
           { showReviewStatusAlert && <StatusAlert
             onClose={this.dismissAlert}
             dismissible
@@ -402,6 +401,7 @@ class EditCoursePage extends React.Component {
             alertType="success"
             message="Course run has been created in studio. See link below."
           /> }
+          { showSpinner && <LoadingSpinner /> }
           { showForm && (
             <div>
               <EditCourseForm
