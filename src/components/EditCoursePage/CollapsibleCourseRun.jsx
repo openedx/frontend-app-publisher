@@ -31,11 +31,9 @@ const formatCourseRunTitle = (courseRun) => {
       labelItems.push(courseRun.pacing_type.split('_').map(pacingType =>
         pacingType.charAt(0).toUpperCase() + pacingType.slice(1)).join(' '));
     }
-    if (courseRun.go_live_date) {
+    if (courseRun.status !== PUBLISHED && courseRun.go_live_date) {
       const formattedDate = moment.utc(courseRun.go_live_date).format('MMM Do YYYY');
       publishDate = `Publish date is ${formattedDate}`;
-    } else {
-      publishDate = 'Unknown publish date';
     }
     return (
       <div className="course-run-label">
@@ -62,12 +60,11 @@ const formatCourseRunTitle = (courseRun) => {
         {courseRun.marketing_url ?
           <div className="course-run-preview-url">
             <React.Fragment>
-              Preview URL -&nbsp;
               <Hyperlink
                 destination={`${courseRun.marketing_url}`}
                 target="_blank"
               >
-                View about page
+                View Live Page
               </Hyperlink>
             </React.Fragment>
           </div> : null}
@@ -214,7 +211,7 @@ class CollapsibleCourseRun extends React.Component {
               getDateString(courseRun.go_live_date) : getDateString(moment()),
           }}
           placeholder="mm/dd/yyyy"
-          disabled={disabled}
+          disabled={disabled || courseRun.status === PUBLISHED}
           required={courseRunSubmitting}
         />
         <Field
@@ -350,7 +347,10 @@ class CollapsibleCourseRun extends React.Component {
               text="Length"
               helpText={
                 <div>
-                  <p>The length of the course, in weeks, rounded to the nearest whole number.</p>
+                  <p>
+                    The estimated number of weeks the learner should expect to spend on the course,
+                    rounded to the nearest whole number.
+                  </p>
                 </div>
               }
             />
@@ -389,7 +389,7 @@ class CollapsibleCourseRun extends React.Component {
               helpText={
                 <div>
                   <p>
-                    If this Course Run will potentially be part of a Program please set the
+                    If this Course Run will potentially be part of a Program, please set the
                     expected program type here.
                   </p>
                 </div>
@@ -411,7 +411,7 @@ class CollapsibleCourseRun extends React.Component {
               helpText={
                 <div>
                   <p>
-                    If this Course Run will potentially be part of a Program please set the
+                    If this Course Run will potentially be part of a Program, please set the
                     expected program name here.
                   </p>
                 </div>

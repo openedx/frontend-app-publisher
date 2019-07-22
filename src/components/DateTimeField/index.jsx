@@ -85,7 +85,7 @@ class DateTimeField extends React.Component {
           <InputText
             name={`${name}Time`}
             type="time"
-            value={time}
+            value={time || '12:00'}
             label={
               <FieldLabel
                 id={`${name}-time-label`}

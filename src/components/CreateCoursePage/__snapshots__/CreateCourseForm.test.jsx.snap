@@ -347,6 +347,17 @@ ShallowWrapper {
             className=""
             leftJustify={false}
           >
+            <Link
+              replace={false}
+              to="/"
+            >
+              <button
+                className="btn btn-outline-primary"
+                disabled={true}
+              >
+                Cancel
+              </button>
+            </Link>
             <ActionButton
               className=""
               disabled={false}
@@ -684,6 +695,17 @@ ShallowWrapper {
               className=""
               leftJustify={false}
             >
+              <Link
+                replace={false}
+                to="/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={true}
+                >
+                  Cancel
+                </button>
+              </Link>
               <ActionButton
                 className=""
                 disabled={false}
@@ -1051,40 +1073,85 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <ActionButton
-                className=""
-                disabled={false}
-                labels={
-                  Object {
-                    "default": "Create",
-                    "pending": "Creating",
+              "children": Array [
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={true}
+                  >
+                    Cancel
+                  </button>
+                </Link>,
+                <ActionButton
+                  className=""
+                  disabled={false}
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
                   }
-                }
-                primary={true}
-                state="pending"
-              />,
+                  primary={true}
+                  state="pending"
+                />,
+              ],
               "className": "",
               "leftJustify": false,
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "",
-                "disabled": false,
-                "labels": Object {
-                  "default": "Create",
-                  "pending": "Creating",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-outline-primary"
+                    disabled={true}
+                  >
+                    Cancel
+                  </button>,
+                  "replace": false,
+                  "to": "/",
                 },
-                "primary": true,
-                "state": "pending",
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": "btn btn-outline-primary",
+                    "disabled": true,
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": "button",
+                },
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "",
+                  "disabled": false,
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "primary": true,
+                  "state": "pending",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
         ],
@@ -1399,6 +1466,17 @@ ShallowWrapper {
               className=""
               leftJustify={false}
             >
+              <Link
+                replace={false}
+                to="/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={true}
+                >
+                  Cancel
+                </button>
+              </Link>
               <ActionButton
                 className=""
                 disabled={false}
@@ -1736,6 +1814,17 @@ ShallowWrapper {
                 className=""
                 leftJustify={false}
               >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={true}
+                  >
+                    Cancel
+                  </button>
+                </Link>
                 <ActionButton
                   className=""
                   disabled={false}
@@ -2103,40 +2192,85 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": <ActionButton
-                  className=""
-                  disabled={false}
-                  labels={
-                    Object {
-                      "default": "Create",
-                      "pending": "Creating",
+                "children": Array [
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <button
+                      className="btn btn-outline-primary"
+                      disabled={true}
+                    >
+                      Cancel
+                    </button>
+                  </Link>,
+                  <ActionButton
+                    className=""
+                    disabled={false}
+                    labels={
+                      Object {
+                        "default": "Create",
+                        "pending": "Creating",
+                      }
                     }
-                  }
-                  primary={true}
-                  state="pending"
-                />,
+                    primary={true}
+                    state="pending"
+                  />,
+                ],
                 "className": "",
                 "leftJustify": false,
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "",
-                  "disabled": false,
-                  "labels": Object {
-                    "default": "Create",
-                    "pending": "Creating",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-outline-primary"
+                      disabled={true}
+                    >
+                      Cancel
+                    </button>,
+                    "replace": false,
+                    "to": "/",
                   },
-                  "primary": true,
-                  "state": "pending",
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": "btn btn-outline-primary",
+                      "disabled": true,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": "button",
+                  },
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "",
+                    "disabled": false,
+                    "labels": Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    },
+                    "primary": true,
+                    "state": "pending",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],
@@ -2527,6 +2661,17 @@ ShallowWrapper {
             className=""
             leftJustify={false}
           >
+            <Link
+              replace={false}
+              to="/"
+            >
+              <button
+                className="btn btn-outline-primary"
+                disabled={false}
+              >
+                Cancel
+              </button>
+            </Link>
             <ActionButton
               className=""
               disabled={true}
@@ -2864,6 +3009,17 @@ ShallowWrapper {
               className=""
               leftJustify={false}
             >
+              <Link
+                replace={false}
+                to="/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={false}
+                >
+                  Cancel
+                </button>
+              </Link>
               <ActionButton
                 className=""
                 disabled={true}
@@ -3231,40 +3387,85 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <ActionButton
-                className=""
-                disabled={true}
-                labels={
-                  Object {
-                    "default": "Create",
-                    "pending": "Creating",
+              "children": Array [
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
+                  >
+                    Cancel
+                  </button>
+                </Link>,
+                <ActionButton
+                  className=""
+                  disabled={true}
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
                   }
-                }
-                primary={true}
-                state="default"
-              />,
+                  primary={true}
+                  state="default"
+                />,
+              ],
               "className": "",
               "leftJustify": false,
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "",
-                "disabled": true,
-                "labels": Object {
-                  "default": "Create",
-                  "pending": "Creating",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
+                  >
+                    Cancel
+                  </button>,
+                  "replace": false,
+                  "to": "/",
                 },
-                "primary": true,
-                "state": "default",
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": "btn btn-outline-primary",
+                    "disabled": false,
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": "button",
+                },
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "",
+                  "disabled": true,
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "primary": true,
+                  "state": "default",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
         ],
@@ -3579,6 +3780,17 @@ ShallowWrapper {
               className=""
               leftJustify={false}
             >
+              <Link
+                replace={false}
+                to="/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={false}
+                >
+                  Cancel
+                </button>
+              </Link>
               <ActionButton
                 className=""
                 disabled={true}
@@ -3916,6 +4128,17 @@ ShallowWrapper {
                 className=""
                 leftJustify={false}
               >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
+                  >
+                    Cancel
+                  </button>
+                </Link>
                 <ActionButton
                   className=""
                   disabled={true}
@@ -4283,40 +4506,85 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": <ActionButton
-                  className=""
-                  disabled={true}
-                  labels={
-                    Object {
-                      "default": "Create",
-                      "pending": "Creating",
+                "children": Array [
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <button
+                      className="btn btn-outline-primary"
+                      disabled={false}
+                    >
+                      Cancel
+                    </button>
+                  </Link>,
+                  <ActionButton
+                    className=""
+                    disabled={true}
+                    labels={
+                      Object {
+                        "default": "Create",
+                        "pending": "Creating",
+                      }
                     }
-                  }
-                  primary={true}
-                  state="default"
-                />,
+                    primary={true}
+                    state="default"
+                  />,
+                ],
                 "className": "",
                 "leftJustify": false,
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "",
-                  "disabled": true,
-                  "labels": Object {
-                    "default": "Create",
-                    "pending": "Creating",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-outline-primary"
+                      disabled={false}
+                    >
+                      Cancel
+                    </button>,
+                    "replace": false,
+                    "to": "/",
                   },
-                  "primary": true,
-                  "state": "default",
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": "btn btn-outline-primary",
+                      "disabled": false,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": "button",
+                  },
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "",
+                    "disabled": true,
+                    "labels": Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    },
+                    "primary": true,
+                    "state": "default",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],
@@ -4667,6 +4935,17 @@ ShallowWrapper {
             className=""
             leftJustify={false}
           >
+            <Link
+              replace={false}
+              to="/"
+            >
+              <button
+                className="btn btn-outline-primary"
+                disabled={false}
+              >
+                Cancel
+              </button>
+            </Link>
             <ActionButton
               className=""
               disabled={true}
@@ -4981,6 +5260,17 @@ ShallowWrapper {
               className=""
               leftJustify={false}
             >
+              <Link
+                replace={false}
+                to="/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={false}
+                >
+                  Cancel
+                </button>
+              </Link>
               <ActionButton
                 className=""
                 disabled={true}
@@ -5321,40 +5611,85 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <ActionButton
-                className=""
-                disabled={true}
-                labels={
-                  Object {
-                    "default": "Create",
-                    "pending": "Creating",
+              "children": Array [
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
+                  >
+                    Cancel
+                  </button>
+                </Link>,
+                <ActionButton
+                  className=""
+                  disabled={true}
+                  labels={
+                    Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    }
                   }
-                }
-                primary={true}
-                state="default"
-              />,
+                  primary={true}
+                  state="default"
+                />,
+              ],
               "className": "",
               "leftJustify": false,
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "className": "",
-                "disabled": true,
-                "labels": Object {
-                  "default": "Create",
-                  "pending": "Creating",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
+                  >
+                    Cancel
+                  </button>,
+                  "replace": false,
+                  "to": "/",
                 },
-                "primary": true,
-                "state": "default",
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cancel",
+                    "className": "btn btn-outline-primary",
+                    "disabled": false,
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": "button",
+                },
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "",
+                  "disabled": true,
+                  "labels": Object {
+                    "default": "Create",
+                    "pending": "Creating",
+                  },
+                  "primary": true,
+                  "state": "default",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
         ],
@@ -5645,6 +5980,17 @@ ShallowWrapper {
               className=""
               leftJustify={false}
             >
+              <Link
+                replace={false}
+                to="/"
+              >
+                <button
+                  className="btn btn-outline-primary"
+                  disabled={false}
+                >
+                  Cancel
+                </button>
+              </Link>
               <ActionButton
                 className=""
                 disabled={true}
@@ -5959,6 +6305,17 @@ ShallowWrapper {
                 className=""
                 leftJustify={false}
               >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <button
+                    className="btn btn-outline-primary"
+                    disabled={false}
+                  >
+                    Cancel
+                  </button>
+                </Link>
                 <ActionButton
                   className=""
                   disabled={true}
@@ -6299,40 +6656,85 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": <ActionButton
-                  className=""
-                  disabled={true}
-                  labels={
-                    Object {
-                      "default": "Create",
-                      "pending": "Creating",
+                "children": Array [
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <button
+                      className="btn btn-outline-primary"
+                      disabled={false}
+                    >
+                      Cancel
+                    </button>
+                  </Link>,
+                  <ActionButton
+                    className=""
+                    disabled={true}
+                    labels={
+                      Object {
+                        "default": "Create",
+                        "pending": "Creating",
+                      }
                     }
-                  }
-                  primary={true}
-                  state="default"
-                />,
+                    primary={true}
+                    state="default"
+                  />,
+                ],
                 "className": "",
                 "leftJustify": false,
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "",
-                  "disabled": true,
-                  "labels": Object {
-                    "default": "Create",
-                    "pending": "Creating",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-outline-primary"
+                      disabled={false}
+                    >
+                      Cancel
+                    </button>,
+                    "replace": false,
+                    "to": "/",
                   },
-                  "primary": true,
-                  "state": "default",
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Cancel",
+                      "className": "btn btn-outline-primary",
+                      "disabled": false,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": "button",
+                  },
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "",
+                    "disabled": true,
+                    "labels": Object {
+                      "default": "Create",
+                      "pending": "Creating",
+                    },
+                    "primary": true,
+                    "state": "default",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],

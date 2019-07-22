@@ -1,3 +1,4 @@
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -67,6 +68,7 @@ class CourseTable extends React.Component {
       ...course,
       title: (<Link to={`/courses/${course.uuid}`}>{course.title}</Link>),
       owners: course.owners ? course.owners.map(owners => owners.name).join(', ') : '',
+      modified: moment.utc(course.modified).format('MMM DD, YYYY'),
     }));
     const showDashboard = this.isOrgWhitelisted() || administrator;
     const oldPublisherLink = `${process.env.DISCOVERY_API_BASE_URL}/publisher/`;
