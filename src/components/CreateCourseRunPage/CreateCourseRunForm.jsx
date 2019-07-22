@@ -22,6 +22,7 @@ const BaseCreateCourseRunForm = ({
   getCourseRunOptions,
   parseOptions,
   currentFormValues,
+  courseRunLabels,
 }) => {
   const courseRunOptions = getCourseRunOptions();
   const { pacing_type: { choices } } = courseRunOptions;
@@ -37,6 +38,27 @@ const BaseCreateCourseRunForm = ({
         </Link>
       </div>
       <form onSubmit={handleSubmit}>
+        <Field
+          name="rerun"
+          type="text"
+          component={RenderSelectField}
+          options={courseRunLabels}
+          label={
+            <FieldLabel
+              id="rerun.label"
+              text="Select a run to copy"
+              helpText={
+                <div>
+                  <p>
+                    Select a run to copy as the starting point for your new studio instance.
+                    The newest run is listed first.
+                  </p>
+                </div>
+              }
+            />
+          }
+          required
+        />
         <Field
           name="start"
           component={DateTimeField}
@@ -93,6 +115,7 @@ const BaseCreateCourseRunForm = ({
 
 BaseCreateCourseRunForm.defaultProps = {
   currentFormValues: {},
+  courseRunLabels: [],
 };
 
 BaseCreateCourseRunForm.propTypes = {
@@ -104,6 +127,7 @@ BaseCreateCourseRunForm.propTypes = {
   getCourseRunOptions: PropTypes.func.isRequired,
   parseOptions: PropTypes.func.isRequired,
   currentFormValues: PropTypes.shape({}),
+  courseRunLabels: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 const CreateCourseRunForm = reduxForm({

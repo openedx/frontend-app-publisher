@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -8,6 +9,7 @@ import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
 import PageContainer from '../PageContainer';
+import { formatDate } from '../../utils';
 
 class CreateCourseRunPage extends React.Component {
   constructor(props) {
@@ -74,6 +76,7 @@ class CreateCourseRunPage extends React.Component {
       start: options.start,
       end: options.end,
       pacing_type: options.pacing_type,
+      rerun: options.rerun,
     };
     return createCourseRun(uuid, courseRunData);
   }
@@ -81,6 +84,16 @@ class CreateCourseRunPage extends React.Component {
   parseOptions(inChoices) {
     return inChoices.map(choice =>
       ({ label: choice.display_name, value: choice.value }));
+  }
+
+  parseCourseRunLabels(courseRuns) {
+    // Sort course runs by descending start dates
+    const sortedCourseRuns =
+      courseRuns.sort((run1, run2) => moment(run2.start).diff(moment(run1.start)));
+    return sortedCourseRuns.map((run) => {
+      const runTerm = run.key.split(/\+|\//).pop();
+      return ({ label: `Run starting ${formatDate(run.start)} (${runTerm})`, value: run.key });
+    });
   }
 
   render() {
@@ -116,6 +129,8 @@ class CreateCourseRunPage extends React.Component {
     const showSpinner = !startedFetching || courseInfo.isFetching || courseRunOptions.isFetching;
     const showForm = startedFetching && !courseInfo.isFetching && !courseRunOptions.isFetching &&
       !courseInReview;
+    const sortedRunLabels = course_runs && this.parseCourseRunLabels(course_runs);
+    const defaultRun = sortedRunLabels ? sortedRunLabels[0].value : '';
 
     return (
       <React.Fragment>
@@ -142,6 +157,10 @@ class CreateCourseRunPage extends React.Component {
                 getCourseRunOptions={this.getCourseRunOptions}
                 parseOptions={this.parseOptions}
                 currentFormValues={formValues}
+                courseRunLabels={sortedRunLabels}
+                initialValues={{
+                  rerun: defaultRun,
+                }}
               />
               {errorArray.length > 1 && (
                 <StatusAlert

@@ -8,7 +8,7 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
-import { getDateString, localTimeZone } from '../../utils/index';
+import { getDateString, localTimeZone, formatDate } from '../../utils/index';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -28,14 +28,14 @@ const formatCourseRunTitle = (courseRun) => {
     const labelItems = [];
     let publishDate = '';
     if (courseRun.start) {
-      labelItems.push(moment.utc(courseRun.start).format('MMM Do YYYY'));
+      labelItems.push(formatDate(courseRun.start));
     }
     if (courseRun.pacing_type) {
       labelItems.push(courseRun.pacing_type.split('_').map(pacingType =>
         pacingType.charAt(0).toUpperCase() + pacingType.slice(1)).join(' '));
     }
     if (courseRun.status !== PUBLISHED && courseRun.go_live_date) {
-      const formattedDate = moment.utc(courseRun.go_live_date).format('MMM Do YYYY');
+      const formattedDate = formatDate(courseRun.go_live_date);
       publishDate = `Publish date is ${formattedDate}`;
     }
     return (

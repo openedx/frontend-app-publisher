@@ -7,6 +7,7 @@ import history from '../data/history';
 const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 const getTimeString = date => (date ? moment.utc(date).format('HH:mm') : '');
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
+const formatDate = date => (date ? moment.utc(date).format('MMM DD, YYYY') : '');
 
 const isValidDate = (dateStr) => {
   const date = moment(dateStr);
@@ -98,6 +99,7 @@ const getErrorMessages = (error) => {
 export {
   getDateString,
   getTimeString,
+  formatDate,
   updateUrl,
   getPageOptionsFromUrl,
   jsonDeepCopy,
