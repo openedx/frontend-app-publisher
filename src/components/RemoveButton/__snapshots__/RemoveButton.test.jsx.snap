@@ -23,21 +23,33 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <button
-        aria-label="Test Label"
-        className="close float-none"
-        onClick={[Function]}
-        type="button"
-      >
-        <withDeprecatedProps(Icon)
-          className="fa fa-close"
-          id="remove-field"
-        />
-      </button>,
-      "className": "",
+      "aria-label": "Test Label",
+      "children": <withDeprecatedProps(Icon)
+        className="fa fa-close"
+        id="remove-field"
+      />,
+      "className": "close float-none",
+      "onClick": [Function],
+      "title": "Test Label",
+      "type": "button",
     },
     "ref": null,
     "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "className": "fa fa-close",
+        "id": "remove-field",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -49,6 +61,7 @@ ShallowWrapper {
         />,
         "className": "close float-none",
         "onClick": [Function],
+        "title": "Test Label",
         "type": "button",
       },
       "ref": null,
@@ -65,59 +78,6 @@ ShallowWrapper {
         "type": [Function],
       },
       "type": "button",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <button
-          aria-label="Test Label"
-          className="close float-none"
-          onClick={[Function]}
-          type="button"
-        >
-          <withDeprecatedProps(Icon)
-            className="fa fa-close"
-            id="remove-field"
-          />
-        </button>,
-        "className": "",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "aria-label": "Test Label",
-          "children": <withDeprecatedProps(Icon)
-            className="fa fa-close"
-            id="remove-field"
-          />,
-          "className": "close float-none",
-          "onClick": [Function],
-          "type": "button",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "className": "fa fa-close",
-            "id": "remove-field",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": "button",
-      },
-      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

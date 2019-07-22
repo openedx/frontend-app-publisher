@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import { Icon } from '@edx/paragon';
 
 const RemoveButton = ({
@@ -8,19 +10,18 @@ const RemoveButton = ({
   onRemove,
   targetFieldNumber,
 }) => (
-  <div className={className}>
-    <button
-      type="button"
-      className="close float-none"
-      aria-label={label}
-      onClick={() => onRemove(targetFieldNumber)}
-    >
-      <Icon
-        id="remove-field"
-        className="fa fa-close"
-      />
-    </button>
-  </div>
+  <button
+    type="button"
+    className={classNames('close float-none', className)}
+    aria-label={label}
+    title={label}
+    onClick={() => onRemove(targetFieldNumber)}
+  >
+    <Icon
+      id="remove-field"
+      className="fa fa-close"
+    />
+  </button>
 );
 
 RemoveButton.propTypes = {

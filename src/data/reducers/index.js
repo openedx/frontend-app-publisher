@@ -2,7 +2,9 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { reducer as formReducer } from 'redux-form';
 
+import courseEditors from './courseEditors';
 import courseInfo from './courseInfo';
+import organizationUsers from './organizationUsers';
 import table from './table';
 import publisherUserInfo from './publisherUserInfo';
 import courseOptions from './courseOptions';
@@ -22,7 +24,9 @@ export default history => combineReducers({
   // The authentication state is added as initialState when
   // creating the store in data/store.js.
   authentication: identityReducer,
+  courseEditors,
   courseInfo,
+  organizationUsers,
   publisherUserInfo,
   courseOptions,
   stafferInfo,
