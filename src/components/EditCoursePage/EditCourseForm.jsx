@@ -34,10 +34,14 @@ export class BaseEditCourseForm extends React.Component {
 
     this.state = {
       open: false,
+      collapsiblesOpen: [],
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
     this.setCollapsible = this.setCollapsible.bind(this);
+    this.toggleCourseRun = this.toggleCourseRun.bind(this);
+    this.collapseAllCourseRuns = this.collapseAllCourseRuns.bind(this);
+    this.setCourseRunCollapsibles = this.setCourseRunCollapsibles.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -55,6 +59,10 @@ export class BaseEditCourseForm extends React.Component {
       updateFormValuesAfterSave,
     } = this.props;
 
+    if (initialCourseRuns.length && !this.state.collapsiblesOpen.length) {
+      this.setCourseRunCollapsibles(initialCourseRuns);
+    }
+
     // If we are transitioning off of a "submit for review" state (which means that we just
     // finished turning fields into required so that html5 can flag them during validation) open
     // the collapsible if and only if there are course-level errors.
@@ -70,6 +78,11 @@ export class BaseEditCourseForm extends React.Component {
     if (courseSaved) {
       updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, initialCourseRuns);
     }
+  }
+
+  setCourseRunCollapsibles(initialCourseRuns) {
+    const collapsiblesOpen = initialCourseRuns.map(() => (false));
+    this.setState({ collapsiblesOpen });
   }
 
   setCollapsible(open) {
@@ -147,13 +160,23 @@ export class BaseEditCourseForm extends React.Component {
     return data.actions.POST;
   }
 
+  toggleCourseRun(index, value) {
+    const collapsiblesOpen = Object.assign([], this.state.collapsiblesOpen);
+    collapsiblesOpen[index] = value;
+    this.setState({ collapsiblesOpen });
+  }
+
+  collapseAllCourseRuns() {
+    const collapsiblesOpen = this.state.collapsiblesOpen.map(() => (false));
+    this.setState({ collapsiblesOpen });
+  }
+
   openCollapsible() {
     this.setCollapsible(true);
   }
 
-  parseOptions(inChoices) {
-    return inChoices.map(choice =>
-      ({ label: choice.display_name, value: choice.value }));
+  parseOptions(choices) {
+    return choices.map(choice => ({ label: choice.display_name, value: choice.value }));
   }
 
   formatCourseTitle(title, courseStatuses) {
@@ -186,6 +209,7 @@ export class BaseEditCourseForm extends React.Component {
       isSubmittingForReview,
       editable,
       courseInfo,
+      reset,
     } = this.props;
     const {
       open,
@@ -215,6 +239,19 @@ export class BaseEditCourseForm extends React.Component {
     programOptions.unshift({ label: '--', value: '' });
 
     const disabled = courseInReview || !editable;
+
+    const cancelButton = (
+      <button
+        onClick={() => {
+          this.setCollapsible(false);
+          reset();
+          this.collapseAllCourseRuns();
+        }}
+        className="btn btn-outline-primary"
+      >
+        Clear Edits
+      </button>
+    );
 
     return (
       <div className="edit-course-form">
@@ -787,11 +824,14 @@ export class BaseEditCourseForm extends React.Component {
             formId={id}
             courseUuid={uuid}
             courseSubmitting={submitting}
+            collapsiblesOpen={this.state.collapsiblesOpen}
+            onToggle={(index, value) => this.toggleCourseRun(index, value)}
             {...this.props}
           />
           {this.getAddCourseRunButton(disabled, pristine, uuid)}
           {editable &&
             <ButtonToolbar className="mt-3">
+              {submitState === 'default' ? cancelButton : null}
               <ActionButton
                 disabled={disabled || submitting}
                 labels={{
@@ -858,6 +898,7 @@ BaseEditCourseForm.propTypes = {
   }),
   change: PropTypes.func,
   updateFormValuesAfterSave: PropTypes.func,
+  reset: PropTypes.func.isRequired,
 };
 
 BaseEditCourseForm.defaultProps = {

@@ -131,6 +131,7 @@ class CreateCoursePage extends React.Component {
     } = this.state;
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
+    if (organizations.length === 1) initialValues.org = organizations[0].key;
 
     const errorArray = [];
     if (courseInfo.error) {

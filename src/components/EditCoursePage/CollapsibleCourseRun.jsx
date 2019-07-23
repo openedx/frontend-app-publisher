@@ -8,7 +8,7 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
-import { getDateString } from '../../utils/index';
+import { getDateString, localTimeZone } from '../../utils/index';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -19,6 +19,9 @@ import TranscriptLanguage from './TranscriptLanguage';
 
 import { DATE_FORMAT, IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
 import { endDateHelp, startDateHelp, pacingHelp } from '../../helpText';
+
+const determineStatus = courseRun => (courseRun.status === 'unpublished' && moment().isAfter(courseRun.end) ?
+  'archived' : courseRun.status);
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -42,7 +45,7 @@ const formatCourseRunTitle = (courseRun) => {
           TODO: After we have a way of determining if the course run has been edited, that should
           be added into the list of statuses being passed into the Pill component.
         */}
-        <Pill statuses={[courseRun.status]} />
+        <Pill statuses={[determineStatus(courseRun)]} />
         <div className="course-run-label">
           <span>{`${publishDate}`}</span>
         </div>
@@ -57,7 +60,7 @@ const formatCourseRunTitle = (courseRun) => {
             </Hyperlink>
           </React.Fragment>
         </div>
-        {courseRun.marketing_url ?
+        {courseRun.marketing_url && determineStatus(courseRun) !== 'archived' ?
           <div className="course-run-preview-url">
             <React.Fragment>
               <Hyperlink
@@ -160,9 +163,6 @@ class CollapsibleCourseRun extends React.Component {
       sourceInfo,
       courseSubmitInfo,
     } = this.props;
-    const {
-      open,
-    } = this.state;
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
     // Checks if the current course run is the one triggering submission for review
@@ -175,8 +175,8 @@ class CollapsibleCourseRun extends React.Component {
       <Collapsible
         title={formatCourseRunTitle(courseRun)}
         iconId={`collapsible-icon-${courseId}`}
-        isOpen={open}
-        onToggle={this.setCollapsible}
+        isOpen={this.props.isOpen}
+        onToggle={this.props.onToggle}
       >
         <div className="mb-3">
           <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
@@ -218,7 +218,7 @@ class CollapsibleCourseRun extends React.Component {
           name={`${courseId}.start`}
           component={DateTimeField}
           dateLabel="Start date"
-          timeLabel="Start time"
+          timeLabel={`Start time (${localTimeZone})`}
           helpText={startDateHelp}
           disabled={disabled}
           required
@@ -230,7 +230,7 @@ class CollapsibleCourseRun extends React.Component {
           name={`${courseId}.end`}
           component={DateTimeField}
           dateLabel="End date"
-          timeLabel="End time"
+          timeLabel={`End time (${localTimeZone})`}
           helpText={endDateHelp}
           disabled={disabled}
           required
@@ -490,6 +490,8 @@ CollapsibleCourseRun.propTypes = {
   sourceInfo: PropTypes.shape({}),
   stafferInfo: PropTypes.shape({}),
   targetRun: PropTypes.shape({}),
+  isOpen: PropTypes.bool,
+  onToggle: PropTypes.func.isRequired,
 };
 
 CollapsibleCourseRun.defaultProps = {
@@ -504,6 +506,7 @@ CollapsibleCourseRun.defaultProps = {
   sourceInfo: {},
   stafferInfo: {},
   targetRun: null,
+  isOpen: false,
 };
 
 export default CollapsibleCourseRun;
