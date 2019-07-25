@@ -6,7 +6,6 @@ import courseInfo from './courseInfo';
 import table from './table';
 import publisherUserInfo from './publisherUserInfo';
 import courseOptions from './courseOptions';
-import stafferOptions from './stafferOptions';
 import stafferInfo from './stafferInfo';
 import courseRunOptions from './courseRunOptions';
 import sourceInfo from './sourceInfo';
@@ -26,7 +25,6 @@ export default history => combineReducers({
   courseInfo,
   publisherUserInfo,
   courseOptions,
-  stafferOptions,
   stafferInfo,
   courseRunOptions,
   form: formReducer,

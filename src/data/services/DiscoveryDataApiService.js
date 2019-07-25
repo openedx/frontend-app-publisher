@@ -106,11 +106,6 @@ class DiscoveryDataApiService {
     return apiClient.post(url, data);
   }
 
-  static fetchStafferOptions() {
-    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/`;
-    return apiClient.options(url);
-  }
-
   static fetchStaffer(uuid) {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/people/${uuid}/`;
     return apiClient.get(url);

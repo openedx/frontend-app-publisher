@@ -1,27 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { extractOrgChoices, BaseStafferForm } from './StafferForm';
+import { BaseStafferForm } from './StafferForm';
 
-
-const stafferOptions = {
-  data: {
-    actions: {
-      POST: {
-        position: {
-          children: {
-            organization: {
-              choices: [
-                { display_name: 'edX', value: 1 },
-                { display_name: 'bananasX', value: 2 },
-              ],
-            },
-          },
-        },
-      },
-    },
-  },
-};
 
 const stafferInfo = {
   data: {
@@ -90,7 +71,6 @@ describe('StafferForm', () => {
       pristine
       submitting={false}
       isSaving={false}
-      stafferOptions={stafferOptions}
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
     />);
@@ -102,7 +82,6 @@ describe('StafferForm', () => {
       pristine={false}
       submitting
       isSaving={false}
-      stafferOptions={stafferOptions}
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
     />);
@@ -114,7 +93,6 @@ describe('StafferForm', () => {
       pristine={false}
       submitting={false}
       isSaving
-      stafferOptions={stafferOptions}
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
     />);
@@ -126,7 +104,6 @@ describe('StafferForm', () => {
       pristine
       submitting={false}
       isSaving={false}
-      stafferOptions={stafferOptions}
       stafferInfo={stafferInfo}
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
@@ -139,31 +116,9 @@ describe('StafferForm', () => {
       pristine
       submitting={false}
       isSaving={false}
-      stafferOptions={stafferOptions}
       handleSubmit={() => {}}
       sourceInfo={sourceInfo}
     />);
     expect(component).toMatchSnapshot();
-  });
-});
-
-describe('extractOrgChoices', () => {
-  it('extracts org choices from options', () => {
-    const choices = extractOrgChoices(stafferOptions);
-    expect(choices).toEqual([
-      { label: 'Select instructor organization', value: '' },
-      { label: 'edX', value: 1 },
-      { label: 'bananasX', value: 2 },
-    ]);
-  });
-
-  it('extracts empty list of org choices from empty options', () => {
-    const choices = extractOrgChoices({});
-    expect(choices).toEqual([]);
-  });
-
-  it('extracts empty list of org choices from junk options', () => {
-    const choices = extractOrgChoices({ junk: 'junk' });
-    expect(choices).toEqual([]);
   });
 });
