@@ -8,35 +8,20 @@ import AreasOfExpertise from './AreasOfExpertise';
 import SocialLinks from './SocialLinks';
 import ImageUpload from '../../components/ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
-import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 import { basicValidate } from '../../utils/validation';
 
 
-const extractOrgChoices = (stafferOptions) => {
-  const { data = {} } = stafferOptions;
-
-  if (!data.actions) {
-    return [];
-  }
-
-  const { choices = [] } = data.actions.POST.position.children.organization;
-
-  const defaultOption = [{ label: 'Select instructor organization', value: '' }];
-  return defaultOption.concat(choices
-    .map(choice => ({ label: choice.display_name, value: choice.value })));
-};
-
 const BaseStafferForm = ({
   handleSubmit,
   pristine,
   isSaving,
   isCreateForm,
-  stafferOptions,
   sourceInfo: { referrer },
   cancelStafferInfo,
+  organizationName,
 }) => {
   const formControlDisabled = pristine || isSaving;
 
@@ -107,10 +92,11 @@ const BaseStafferForm = ({
           required
         />
         <Field
-          name="position.organization_id"
-          component={RenderSelectField}
-          options={extractOrgChoices(stafferOptions)}
+          name="position.organization_override"
+          component={RenderInputTextField}
+          type="text"
           label={<FieldLabel text="Organization" />}
+          extraInput={{ value: organizationName }}
           required
         />
         <Field
@@ -165,29 +151,25 @@ const BaseStafferForm = ({
 };
 
 BaseStafferForm.propTypes = {
+  cancelStafferInfo: PropTypes.func,
   handleSubmit: PropTypes.func.isRequired,
-  pristine: PropTypes.bool.isRequired,
-  stafferOptions: PropTypes.shape({
-    data: PropTypes.shape(),
-    error: PropTypes.arrayOf(PropTypes.string),
-    isFetching: PropTypes.bool,
-  }),
   isSaving: PropTypes.bool,
   isCreateForm: PropTypes.bool,
+  organizationName: PropTypes.string,
+  pristine: PropTypes.bool.isRequired,
   sourceInfo: PropTypes.shape({
     referrer: PropTypes.string,
   }).isRequired,
-  cancelStafferInfo: PropTypes.func,
 };
 
 BaseStafferForm.defaultProps = {
-  stafferOptions: {},
+  cancelStafferInfo: () => {},
   isSaving: false,
   isCreateForm: false,
-  cancelStafferInfo: () => {},
+  organizationName: '',
 };
 
 export default reduxForm({
   form: 'staffer-form',
 })(BaseStafferForm);
-export { basicValidate, extractOrgChoices, BaseStafferForm };
+export { basicValidate, BaseStafferForm };

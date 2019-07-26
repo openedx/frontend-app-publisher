@@ -21,7 +21,6 @@ class StafferPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchStafferOptions();
     this.props.fetchStafferInfo();
     this.setStartedFetching();
   }
@@ -56,10 +55,14 @@ class StafferPage extends React.Component {
   }
 
   preparePosition(position) {
+    // If they add an override, we will null out any potential foreign key they used to have
+    // so we avoid the situation of a mismatch between having a foreign key to edX, but an
+    // override to "New OrgX" and both are present for the person.
+    const orgId = position.organization_override ? null : position.organization_id;
     return {
       title: position.title,
-      organization: position.organization_id,
-      organization_override: null,
+      organization: orgId,
+      organization_override: position.organization_override,
     };
   }
 
@@ -99,12 +102,11 @@ class StafferPage extends React.Component {
 
   render() {
     const {
-      stafferOptions,
       stafferInfo,
       sourceInfo,
     } = this.props;
 
-    if (!stafferOptions || !stafferInfo) {
+    if (!stafferInfo) {
       return (
         <StatusAlert
           id="error"
@@ -116,9 +118,7 @@ class StafferPage extends React.Component {
     }
 
     const { startedFetching } = this.state;
-    const showForm = (startedFetching
-      && !stafferOptions.isFetching
-      && !stafferInfo.isFetching);
+    const showForm = (startedFetching && !stafferInfo.isFetching);
     const showSpinner = !showForm;
     const isCreateForm = !this.props.editStaffer;
 
@@ -139,16 +139,8 @@ class StafferPage extends React.Component {
         }
       });
     }
-
-    if (stafferOptions.error) {
-      stafferOptions.error.forEach((error, index) => {
-        errorArray.push(error);
-        if (index < stafferOptions.error.length) {
-          errorArray.push(<br />);
-        }
-      });
-    }
     const { referrer } = sourceInfo;
+    const organizationName = (data && data.position && data.position.organization_name) || '';
 
     return (
       <React.Fragment>
@@ -175,6 +167,7 @@ class StafferPage extends React.Component {
                 isSaving={isSaving}
                 isCreateForm={isCreateForm}
                 initialValues={data}
+                organizationName={organizationName}
                 {...this.props}
               />
               { errorArray.length > 1 && (
@@ -195,9 +188,7 @@ class StafferPage extends React.Component {
 StafferPage.defaultProps = {
   createStaffer: () => {},
   editStaffer: null,
-  fetchStafferOptions: () => null,
   fetchStafferInfo: () => null,
-  stafferOptions: null,
   stafferInfo: null,
   sourceInfo: {},
 };
@@ -205,13 +196,7 @@ StafferPage.defaultProps = {
 StafferPage.propTypes = {
   createStaffer: PropTypes.func,
   editStaffer: PropTypes.func,
-  fetchStafferOptions: PropTypes.func,
   fetchStafferInfo: PropTypes.func,
-  stafferOptions: PropTypes.shape({
-    data: PropTypes.shape(),
-    error: PropTypes.arrayOf(PropTypes.string),
-    isFetching: PropTypes.bool,
-  }),
   stafferInfo: PropTypes.shape({
     isFetching: PropTypes.bool,
     isSaving: PropTypes.bool,

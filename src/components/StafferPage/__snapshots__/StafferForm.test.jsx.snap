@@ -8,36 +8,11 @@ ShallowWrapper {
     handleSubmit={[Function]}
     isCreateForm={false}
     isSaving={false}
+    organizationName=""
     pristine={true}
     sourceInfo={
       Object {
         "referrer": "courses/00000000-0000-0000-0000-000000000000",
-      }
-    }
-    stafferOptions={
-      Object {
-        "data": Object {
-          "actions": Object {
-            "POST": Object {
-              "position": Object {
-                "children": Object {
-                  "organization": Object {
-                    "choices": Array [
-                      Object {
-                        "display_name": "edX",
-                        "value": 1,
-                      },
-                      Object {
-                        "display_name": "bananasX",
-                        "value": 2,
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          },
-        },
       }
     }
     submitting={false}
@@ -165,6 +140,11 @@ ShallowWrapper {
         />
         <Field
           component={[Function]}
+          extraInput={
+            Object {
+              "value": "",
+            }
+          }
           label={
             <FieldLabel
               className=""
@@ -175,24 +155,9 @@ ShallowWrapper {
               text="Organization"
             />
           }
-          name="position.organization_id"
-          options={
-            Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ]
-          }
+          name="position.organization_override"
           required={true}
+          type="text"
         />
         <Field
           component={[Function]}
@@ -393,6 +358,11 @@ ShallowWrapper {
           />,
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -403,24 +373,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />,
           <Field
             component={[Function]}
@@ -644,6 +599,9 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "extraInput": Object {
+              "value": "",
+            },
             "label": <FieldLabel
               className=""
               extraText=""
@@ -652,22 +610,9 @@ ShallowWrapper {
               optional={false}
               text="Organization"
             />,
-            "name": "position.organization_id",
-            "options": Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ],
+            "name": "position.organization_override",
             "required": true,
+            "type": "text",
           },
           "ref": null,
           "rendered": null,
@@ -964,6 +909,11 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -974,24 +924,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />
           <Field
             component={[Function]}
@@ -1192,6 +1127,11 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
+              extraInput={
+                Object {
+                  "value": "",
+                }
+              }
               label={
                 <FieldLabel
                   className=""
@@ -1202,24 +1142,9 @@ ShallowWrapper {
                   text="Organization"
                 />
               }
-              name="position.organization_id"
-              options={
-                Array [
-                  Object {
-                    "label": "Select instructor organization",
-                    "value": "",
-                  },
-                  Object {
-                    "label": "edX",
-                    "value": 1,
-                  },
-                  Object {
-                    "label": "bananasX",
-                    "value": 2,
-                  },
-                ]
-              }
+              name="position.organization_override"
               required={true}
+              type="text"
             />,
             <Field
               component={[Function]}
@@ -1443,6 +1368,9 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
+              "extraInput": Object {
+                "value": "",
+              },
               "label": <FieldLabel
                 className=""
                 extraText=""
@@ -1451,22 +1379,9 @@ ShallowWrapper {
                 optional={false}
                 text="Organization"
               />,
-              "name": "position.organization_id",
-              "options": Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ],
+              "name": "position.organization_override",
               "required": true,
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -1683,6 +1598,7 @@ ShallowWrapper {
     handleSubmit={[Function]}
     isCreateForm={false}
     isSaving={false}
+    organizationName=""
     pristine={true}
     sourceInfo={
       Object {
@@ -1741,32 +1657,6 @@ ShallowWrapper {
         "error": null,
         "isFetching": false,
         "isSaving": false,
-      }
-    }
-    stafferOptions={
-      Object {
-        "data": Object {
-          "actions": Object {
-            "POST": Object {
-              "position": Object {
-                "children": Object {
-                  "organization": Object {
-                    "choices": Array [
-                      Object {
-                        "display_name": "edX",
-                        "value": 1,
-                      },
-                      Object {
-                        "display_name": "bananasX",
-                        "value": 2,
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          },
-        },
       }
     }
     submitting={false}
@@ -1894,6 +1784,11 @@ ShallowWrapper {
         />
         <Field
           component={[Function]}
+          extraInput={
+            Object {
+              "value": "",
+            }
+          }
           label={
             <FieldLabel
               className=""
@@ -1904,24 +1799,9 @@ ShallowWrapper {
               text="Organization"
             />
           }
-          name="position.organization_id"
-          options={
-            Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ]
-          }
+          name="position.organization_override"
           required={true}
+          type="text"
         />
         <Field
           component={[Function]}
@@ -2122,6 +2002,11 @@ ShallowWrapper {
           />,
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -2132,24 +2017,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />,
           <Field
             component={[Function]}
@@ -2373,6 +2243,9 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "extraInput": Object {
+              "value": "",
+            },
             "label": <FieldLabel
               className=""
               extraText=""
@@ -2381,22 +2254,9 @@ ShallowWrapper {
               optional={false}
               text="Organization"
             />,
-            "name": "position.organization_id",
-            "options": Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ],
+            "name": "position.organization_override",
             "required": true,
+            "type": "text",
           },
           "ref": null,
           "rendered": null,
@@ -2693,6 +2553,11 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -2703,24 +2568,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />
           <Field
             component={[Function]}
@@ -2921,6 +2771,11 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
+              extraInput={
+                Object {
+                  "value": "",
+                }
+              }
               label={
                 <FieldLabel
                   className=""
@@ -2931,24 +2786,9 @@ ShallowWrapper {
                   text="Organization"
                 />
               }
-              name="position.organization_id"
-              options={
-                Array [
-                  Object {
-                    "label": "Select instructor organization",
-                    "value": "",
-                  },
-                  Object {
-                    "label": "edX",
-                    "value": 1,
-                  },
-                  Object {
-                    "label": "bananasX",
-                    "value": 2,
-                  },
-                ]
-              }
+              name="position.organization_override"
               required={true}
+              type="text"
             />,
             <Field
               component={[Function]}
@@ -3172,6 +3012,9 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
+              "extraInput": Object {
+                "value": "",
+              },
               "label": <FieldLabel
                 className=""
                 extraText=""
@@ -3180,22 +3023,9 @@ ShallowWrapper {
                 optional={false}
                 text="Organization"
               />,
-              "name": "position.organization_id",
-              "options": Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ],
+              "name": "position.organization_override",
               "required": true,
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -3412,36 +3242,11 @@ ShallowWrapper {
     handleSubmit={[Function]}
     isCreateForm={false}
     isSaving={false}
+    organizationName=""
     pristine={true}
     sourceInfo={
       Object {
         "referrer": null,
-      }
-    }
-    stafferOptions={
-      Object {
-        "data": Object {
-          "actions": Object {
-            "POST": Object {
-              "position": Object {
-                "children": Object {
-                  "organization": Object {
-                    "choices": Array [
-                      Object {
-                        "display_name": "edX",
-                        "value": 1,
-                      },
-                      Object {
-                        "display_name": "bananasX",
-                        "value": 2,
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          },
-        },
       }
     }
     submitting={false}
@@ -3569,6 +3374,11 @@ ShallowWrapper {
         />
         <Field
           component={[Function]}
+          extraInput={
+            Object {
+              "value": "",
+            }
+          }
           label={
             <FieldLabel
               className=""
@@ -3579,24 +3389,9 @@ ShallowWrapper {
               text="Organization"
             />
           }
-          name="position.organization_id"
-          options={
-            Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ]
-          }
+          name="position.organization_override"
           required={true}
+          type="text"
         />
         <Field
           component={[Function]}
@@ -3797,6 +3592,11 @@ ShallowWrapper {
           />,
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -3807,24 +3607,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />,
           <Field
             component={[Function]}
@@ -4048,6 +3833,9 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "extraInput": Object {
+              "value": "",
+            },
             "label": <FieldLabel
               className=""
               extraText=""
@@ -4056,22 +3844,9 @@ ShallowWrapper {
               optional={false}
               text="Organization"
             />,
-            "name": "position.organization_id",
-            "options": Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ],
+            "name": "position.organization_override",
             "required": true,
+            "type": "text",
           },
           "ref": null,
           "rendered": null,
@@ -4368,6 +4143,11 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -4378,24 +4158,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />
           <Field
             component={[Function]}
@@ -4596,6 +4361,11 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
+              extraInput={
+                Object {
+                  "value": "",
+                }
+              }
               label={
                 <FieldLabel
                   className=""
@@ -4606,24 +4376,9 @@ ShallowWrapper {
                   text="Organization"
                 />
               }
-              name="position.organization_id"
-              options={
-                Array [
-                  Object {
-                    "label": "Select instructor organization",
-                    "value": "",
-                  },
-                  Object {
-                    "label": "edX",
-                    "value": 1,
-                  },
-                  Object {
-                    "label": "bananasX",
-                    "value": 2,
-                  },
-                ]
-              }
+              name="position.organization_override"
               required={true}
+              type="text"
             />,
             <Field
               component={[Function]}
@@ -4847,6 +4602,9 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
+              "extraInput": Object {
+                "value": "",
+              },
               "label": <FieldLabel
                 className=""
                 extraText=""
@@ -4855,22 +4613,9 @@ ShallowWrapper {
                 optional={false}
                 text="Organization"
               />,
-              "name": "position.organization_id",
-              "options": Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ],
+              "name": "position.organization_override",
               "required": true,
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -5087,36 +4832,11 @@ ShallowWrapper {
     handleSubmit={[Function]}
     isCreateForm={false}
     isSaving={true}
+    organizationName=""
     pristine={false}
     sourceInfo={
       Object {
         "referrer": null,
-      }
-    }
-    stafferOptions={
-      Object {
-        "data": Object {
-          "actions": Object {
-            "POST": Object {
-              "position": Object {
-                "children": Object {
-                  "organization": Object {
-                    "choices": Array [
-                      Object {
-                        "display_name": "edX",
-                        "value": 1,
-                      },
-                      Object {
-                        "display_name": "bananasX",
-                        "value": 2,
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          },
-        },
       }
     }
     submitting={false}
@@ -5244,6 +4964,11 @@ ShallowWrapper {
         />
         <Field
           component={[Function]}
+          extraInput={
+            Object {
+              "value": "",
+            }
+          }
           label={
             <FieldLabel
               className=""
@@ -5254,24 +4979,9 @@ ShallowWrapper {
               text="Organization"
             />
           }
-          name="position.organization_id"
-          options={
-            Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ]
-          }
+          name="position.organization_override"
           required={true}
+          type="text"
         />
         <Field
           component={[Function]}
@@ -5472,6 +5182,11 @@ ShallowWrapper {
           />,
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -5482,24 +5197,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />,
           <Field
             component={[Function]}
@@ -5723,6 +5423,9 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "extraInput": Object {
+              "value": "",
+            },
             "label": <FieldLabel
               className=""
               extraText=""
@@ -5731,22 +5434,9 @@ ShallowWrapper {
               optional={false}
               text="Organization"
             />,
-            "name": "position.organization_id",
-            "options": Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ],
+            "name": "position.organization_override",
             "required": true,
+            "type": "text",
           },
           "ref": null,
           "rendered": null,
@@ -6043,6 +5733,11 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -6053,24 +5748,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />
           <Field
             component={[Function]}
@@ -6271,6 +5951,11 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
+              extraInput={
+                Object {
+                  "value": "",
+                }
+              }
               label={
                 <FieldLabel
                   className=""
@@ -6281,24 +5966,9 @@ ShallowWrapper {
                   text="Organization"
                 />
               }
-              name="position.organization_id"
-              options={
-                Array [
-                  Object {
-                    "label": "Select instructor organization",
-                    "value": "",
-                  },
-                  Object {
-                    "label": "edX",
-                    "value": 1,
-                  },
-                  Object {
-                    "label": "bananasX",
-                    "value": 2,
-                  },
-                ]
-              }
+              name="position.organization_override"
               required={true}
+              type="text"
             />,
             <Field
               component={[Function]}
@@ -6522,6 +6192,9 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
+              "extraInput": Object {
+                "value": "",
+              },
               "label": <FieldLabel
                 className=""
                 extraText=""
@@ -6530,22 +6203,9 @@ ShallowWrapper {
                 optional={false}
                 text="Organization"
               />,
-              "name": "position.organization_id",
-              "options": Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ],
+              "name": "position.organization_override",
               "required": true,
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
@@ -6762,36 +6422,11 @@ ShallowWrapper {
     handleSubmit={[Function]}
     isCreateForm={false}
     isSaving={false}
+    organizationName=""
     pristine={false}
     sourceInfo={
       Object {
         "referrer": null,
-      }
-    }
-    stafferOptions={
-      Object {
-        "data": Object {
-          "actions": Object {
-            "POST": Object {
-              "position": Object {
-                "children": Object {
-                  "organization": Object {
-                    "choices": Array [
-                      Object {
-                        "display_name": "edX",
-                        "value": 1,
-                      },
-                      Object {
-                        "display_name": "bananasX",
-                        "value": 2,
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-          },
-        },
       }
     }
     submitting={true}
@@ -6919,6 +6554,11 @@ ShallowWrapper {
         />
         <Field
           component={[Function]}
+          extraInput={
+            Object {
+              "value": "",
+            }
+          }
           label={
             <FieldLabel
               className=""
@@ -6929,24 +6569,9 @@ ShallowWrapper {
               text="Organization"
             />
           }
-          name="position.organization_id"
-          options={
-            Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ]
-          }
+          name="position.organization_override"
           required={true}
+          type="text"
         />
         <Field
           component={[Function]}
@@ -7147,6 +6772,11 @@ ShallowWrapper {
           />,
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -7157,24 +6787,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />,
           <Field
             component={[Function]}
@@ -7398,6 +7013,9 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "extraInput": Object {
+              "value": "",
+            },
             "label": <FieldLabel
               className=""
               extraText=""
@@ -7406,22 +7024,9 @@ ShallowWrapper {
               optional={false}
               text="Organization"
             />,
-            "name": "position.organization_id",
-            "options": Array [
-              Object {
-                "label": "Select instructor organization",
-                "value": "",
-              },
-              Object {
-                "label": "edX",
-                "value": 1,
-              },
-              Object {
-                "label": "bananasX",
-                "value": 2,
-              },
-            ],
+            "name": "position.organization_override",
             "required": true,
+            "type": "text",
           },
           "ref": null,
           "rendered": null,
@@ -7718,6 +7323,11 @@ ShallowWrapper {
           />
           <Field
             component={[Function]}
+            extraInput={
+              Object {
+                "value": "",
+              }
+            }
             label={
               <FieldLabel
                 className=""
@@ -7728,24 +7338,9 @@ ShallowWrapper {
                 text="Organization"
               />
             }
-            name="position.organization_id"
-            options={
-              Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ]
-            }
+            name="position.organization_override"
             required={true}
+            type="text"
           />
           <Field
             component={[Function]}
@@ -7946,6 +7541,11 @@ ShallowWrapper {
             />,
             <Field
               component={[Function]}
+              extraInput={
+                Object {
+                  "value": "",
+                }
+              }
               label={
                 <FieldLabel
                   className=""
@@ -7956,24 +7556,9 @@ ShallowWrapper {
                   text="Organization"
                 />
               }
-              name="position.organization_id"
-              options={
-                Array [
-                  Object {
-                    "label": "Select instructor organization",
-                    "value": "",
-                  },
-                  Object {
-                    "label": "edX",
-                    "value": 1,
-                  },
-                  Object {
-                    "label": "bananasX",
-                    "value": 2,
-                  },
-                ]
-              }
+              name="position.organization_override"
               required={true}
+              type="text"
             />,
             <Field
               component={[Function]}
@@ -8197,6 +7782,9 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "component": [Function],
+              "extraInput": Object {
+                "value": "",
+              },
               "label": <FieldLabel
                 className=""
                 extraText=""
@@ -8205,22 +7793,9 @@ ShallowWrapper {
                 optional={false}
                 text="Organization"
               />,
-              "name": "position.organization_id",
-              "options": Array [
-                Object {
-                  "label": "Select instructor organization",
-                  "value": "",
-                },
-                Object {
-                  "label": "edX",
-                  "value": 1,
-                },
-                Object {
-                  "label": "bananasX",
-                  "value": 2,
-                },
-              ],
+              "name": "position.organization_override",
               "required": true,
+              "type": "text",
             },
             "ref": null,
             "rendered": null,
