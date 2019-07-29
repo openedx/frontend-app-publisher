@@ -8,6 +8,7 @@ const REVIEW_BY_INTERNAL = 'review_by_internal';
 const PUBLISHED = 'published';
 const REVIEWED = 'reviewed';
 const UNPUBLISHED = 'unpublished';
+const ARCHIVED = 'archived';
 const IN_REVIEW_STATUS = [REVIEW_BY_LEGAL, REVIEW_BY_INTERNAL];
 const POST_REVIEW_STATUSES = [PUBLISHED, REVIEWED];
 
@@ -23,6 +24,7 @@ export {
   PUBLISHED,
   REVIEWED,
   UNPUBLISHED,
+  ARCHIVED,
   IN_REVIEW_STATUS,
   POST_REVIEW_STATUSES,
   DATE_FORMAT,

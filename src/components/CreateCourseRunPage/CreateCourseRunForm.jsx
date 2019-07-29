@@ -11,7 +11,7 @@ import ActionButton from '../ActionButton';
 import { endDateHelp, startDateHelp, pacingHelp } from '../../helpText';
 import RenderSelectField from '../RenderSelectField';
 import DateTimeField from '../DateTimeField';
-import { getDateString } from '../../utils';
+import { getDateString, localTimeZone } from '../../utils';
 
 const BaseCreateCourseRunForm = ({
   handleSubmit,
@@ -41,7 +41,7 @@ const BaseCreateCourseRunForm = ({
           name="start"
           component={DateTimeField}
           dateLabel="Start date"
-          timeLabel="Start time"
+          timeLabel={`Start time (${localTimeZone})`}
           helpText={startDateHelp}
           required
           minDate={getDateString(moment())}
@@ -50,7 +50,7 @@ const BaseCreateCourseRunForm = ({
           name="end"
           component={DateTimeField}
           dateLabel="End date"
-          timeLabel="End time"
+          timeLabel={`End time (${localTimeZone})`}
           helpText={endDateHelp}
           required
           minDate={getDateString(moment(currentFormValues.start).add(1, 'd') || moment())}

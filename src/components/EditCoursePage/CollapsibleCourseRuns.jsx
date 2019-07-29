@@ -6,6 +6,8 @@ import CollapsibleCourseRun from './CollapsibleCourseRun';
 const CollapsibleCourseRuns = ({
   courseRuns,
   fields,
+  collapsiblesOpen,
+  onToggle,
   ...passThroughProps
 }) => (
   <div className="course-run-collapsible">
@@ -15,6 +17,8 @@ const CollapsibleCourseRuns = ({
         courseRun={courseRuns[index]}
         courseId={courseRun}
         key={courseRuns[index].key}
+        isOpen={collapsiblesOpen[index]}
+        onToggle={value => onToggle(index, value)}
       />
     ))}
   </div>
@@ -25,10 +29,13 @@ CollapsibleCourseRuns.propTypes = {
   fields: PropTypes.shape({
     remove: PropTypes.func,
   }).isRequired,
+  collapsiblesOpen: PropTypes.arrayOf(PropTypes.bool),
+  onToggle: PropTypes.func.isRequired,
 };
 
 CollapsibleCourseRuns.defaultProps = {
   courseRuns: [],
+  collapsiblesOpen: [],
 };
 
 export default CollapsibleCourseRuns;

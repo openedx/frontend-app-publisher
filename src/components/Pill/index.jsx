@@ -8,6 +8,7 @@ import {
   PUBLISHED,
   REVIEWED,
   UNPUBLISHED,
+  ARCHIVED,
 } from '../../data/constants';
 
 
@@ -15,6 +16,12 @@ const Pill = ({ statuses }) => {
   const pills = [];
   statuses.forEach((status) => {
     switch (status) {
+      case ARCHIVED:
+        pills.push({
+          text: 'Archived',
+          className: 'badge badge-light',
+        });
+        break;
       case UNPUBLISHED:
         pills.push({
           text: 'Unsubmitted',

@@ -1,10 +1,12 @@
 import moment from 'moment';
+import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
 
 const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 const getTimeString = date => (date ? moment.utc(date).format('HH:mm') : '');
+const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
 
 const isValidDate = (dateStr) => {
   const date = moment(dateStr);
@@ -102,4 +104,5 @@ export {
   getCourseNumber,
   getErrorMessages,
   isValidDate,
+  localTimeZone,
 };

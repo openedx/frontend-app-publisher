@@ -18,7 +18,7 @@ import {
 } from '../../data/constants';
 import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
-import { getDateString } from '../../utils';
+import { getDateString, localTimeZone } from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -31,13 +31,13 @@ class BaseCreateCourseForm extends React.Component {
   }
 
   processOrganizations(organizations) {
-    const orgSelectList = [{ label: 'Select organization', value: '' }];
+    let orgSelectList = [{ label: 'Select organization', value: '' }];
 
     if (organizations) {
-      organizations.forEach((org) => {
-        orgSelectList.push({ label: org.name, value: org.key });
-      });
+      const newOrgs = organizations.map(org => ({ label: org.name, value: org.key }));
+      orgSelectList = orgSelectList.concat(newOrgs);
     }
+
     return orgSelectList;
   }
 
@@ -152,7 +152,7 @@ class BaseCreateCourseForm extends React.Component {
             name="start"
             component={DateTimeField}
             dateLabel="Start date"
-            timeLabel="Start time"
+            timeLabel={`Start time (${localTimeZone})`}
             helpText={startDateHelp}
             required
             minDate={getDateString(moment())}
@@ -161,7 +161,7 @@ class BaseCreateCourseForm extends React.Component {
             name="end"
             component={DateTimeField}
             dateLabel="End date"
-            timeLabel="End time"
+            timeLabel={`End time (${localTimeZone})`}
             helpText={endDateHelp}
             required
             minDate={getDateString(moment(currentFormValues.start).add(1, 'd') || moment())}
