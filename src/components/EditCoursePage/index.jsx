@@ -8,7 +8,8 @@ import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, isValidDate } from '../../utils';
-import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
+import { IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
+  UNPUBLISHED } from '../../data/constants';
 import ConfirmationModal from '../ConfirmationModal';
 import SidePanes from '../SidePanes';
 
@@ -28,6 +29,7 @@ class EditCoursePage extends React.Component {
     this.cancelSubmit = this.cancelSubmit.bind(this);
     this.continueSubmit = this.continueSubmit.bind(this);
     this.dismissAlert = this.dismissAlert.bind(this);
+    this.displayReviewStatusAlert = this.displayReviewStatusAlert.bind(this);
   }
 
   componentDidMount() {
@@ -40,12 +42,9 @@ class EditCoursePage extends React.Component {
   componentDidUpdate(prevProps) {
     /* eslint-disable react/no-did-update-set-state */
     const { courseSubmitInfo: { targetRun } } = this.props;
-    const { key } = targetRun || {};
-
     const { courseSubmitInfo: { targetRun: prevRun } } = prevProps;
-    const { key: prevKey } = prevRun || {};
 
-    if (key !== prevKey) {
+    if (JSON.stringify(targetRun) !== JSON.stringify(prevRun)) {
       /* We can safely update state here since we are comparing the current props against previous
       *  props, ensuring that we won't end up in a continuous re-render loop.
       */
@@ -68,17 +67,21 @@ class EditCoursePage extends React.Component {
     return `edit-course-form-${this.props.courseInfo.data.uuid}`;
   }
 
-  prepareSendCourseRunData(courseData, targetRun) {
+  prepareSendCourseRunData(courseData) {
+    const { targetRun } = this.state;
     const sendCourseRuns = [];
     // Don't send any courses in review - backend will reject them
-    const modifiedCourseRuns =
-      courseData.course_runs.filter(run => !IN_REVIEW_STATUS.includes(run.status));
+    const modifiedCourseRuns = courseData.course_runs.filter(run => (
+      !IN_REVIEW_STATUS.includes(run.status)
+    ));
+
     modifiedCourseRuns.forEach((courseRun) => {
       let draft = true;
       if (targetRun && (courseRun.key === targetRun.key)) {
         // If a course run triggered the submission, mark it as not a draft
         draft = false;
       }
+
       sendCourseRuns.push({
         content_language: courseRun.content_language,
         draft,
@@ -104,7 +107,27 @@ class EditCoursePage extends React.Component {
     return sendCourseRuns;
   }
 
-  prepareSendCourseData(courseData, courseRuns, targetRun) {
+  prepareInternalReview(courseData) {
+    const { targetRun } = this.state;
+    const courseRun = courseData.course_runs.find(run => run.key === targetRun.key);
+    const editedRun = { key: courseRun.key };
+
+    if (targetRun.status === REVIEW_BY_LEGAL) {
+      if (courseRun.has_ofac_restrictions) {
+        editedRun.has_ofac_restrictions = JSON.parse(courseRun.has_ofac_restrictions);
+      }
+      if (courseRun.ofac_comment) {
+        editedRun.ofac_comment = courseRun.ofac_comment;
+      }
+      editedRun.status = REVIEW_BY_INTERNAL;
+    } else {
+      editedRun.status = REVIEWED;
+    }
+
+    return editedRun;
+  }
+
+  prepareSendCourseData(courseData, courseRuns) {
     const {
       courseInfo: {
         data: {
@@ -114,13 +137,15 @@ class EditCoursePage extends React.Component {
         },
       },
     } = this.props;
+    const { targetRun } = this.state;
 
     let updatingPublishedRun = false;
     if (targetRun) {
-      const submittedRun = courseRuns.find(run => run.key === targetRun.key);
+      const submittedRun = courseRuns.status ? courseRuns :
+        courseRuns.find(run => run.key === targetRun.key);
       // If we are updating a published course run, we need to also publish the course.
       // We want to use the same indicator of draft = false for consistency.
-      if (submittedRun.status === PUBLISHED) {
+      if (submittedRun && submittedRun.status === PUBLISHED) {
         updatingPublishedRun = true;
       }
     }
@@ -153,11 +178,9 @@ class EditCoursePage extends React.Component {
   }
 
   showModal(submitCourseData) {
-    const {
-      targetRun,
-    } = this.state;
-
-    if (targetRun && !(targetRun.status === PUBLISHED)) {
+    const { targetRun } = this.state;
+    if (targetRun && !(targetRun.status === PUBLISHED) &&
+      !IN_REVIEW_STATUS.includes(targetRun.status)) {
       // Submitting Run for review, show modal, and temporarily store form data until
       // we have a response for how to continue.
       this.setState({
@@ -217,17 +240,28 @@ class EditCoursePage extends React.Component {
         4. Renaming the image and video fields to correspond to what course-discovery is expecting
         5. Setting the uuid so we can create the url to send to course-discovery
     */
-    const {
-      editCourse,
-    } = this.props;
+    const { editCourse } = this.props;
     const { targetRun } = this.state;
+    const isInternalReview = targetRun && IN_REVIEW_STATUS.includes(targetRun.status);
     // Process course run info from courseData
-    const modifiedCourseRuns = this.prepareSendCourseRunData(courseData, targetRun);
-
+    const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData) :
+      this.prepareSendCourseRunData(courseData);
     // Process courseData to reduced data set
-    const courseEditData =
-      this.prepareSendCourseData(courseData, modifiedCourseRuns, targetRun);
+    const courseEditData = this.prepareSendCourseData(courseData, modifiedCourseRuns);
+
     return editCourse(courseEditData, modifiedCourseRuns, !!targetRun);
+  }
+
+  displayReviewStatusAlert(status) {
+    switch (status) {
+      case REVIEW_BY_LEGAL:
+        return 'Legal Review Complete. Course Run is now awaiting PC Review.';
+      case REVIEW_BY_INTERNAL:
+        return 'PC Review Complete.';
+      default:
+        return 'Course has been submitted for review. The course will be locked for the next two business days. ' +
+          'You will receive an email when the review is complete.';
+    }
   }
 
   render() {
@@ -321,6 +355,7 @@ class EditCoursePage extends React.Component {
       draft: courseRun.draft,
       marketing_url: courseRun.marketing_url,
       has_ofac_restrictions: courseRun.has_ofac_restrictions,
+      ofac_comment: courseRun.ofac_comment,
     }));
 
 
@@ -385,7 +420,7 @@ class EditCoursePage extends React.Component {
             onClose={this.dismissAlert}
             dismissible
             alertType="success"
-            message="Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete."
+            message={targetRun && this.displayReviewStatusAlert(targetRun.status)}
           /> }
 
           { showCreateStatusAlert && <StatusAlert

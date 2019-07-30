@@ -114,6 +114,21 @@ class DiscoveryDataApiService {
     return Promise.all(promises);
   }
 
+  static internalReviewEdit(courseRun) {
+    const queryParams = {
+      exclude_utm: 1,
+    };
+    const { key } = courseRun;
+    const body = Object.assign({}, courseRun);
+    const courseRunUrl = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/${key}/`;
+    // Remove key param from body for API validation
+    delete body.key;
+
+    return apiClient.patch(courseRunUrl, body, {
+      params: queryParams,
+    });
+  }
+
   static editCourse(courseData) {
     const { uuid } = courseData;
     const queryParams = {
