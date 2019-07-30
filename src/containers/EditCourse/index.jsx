@@ -44,6 +44,20 @@ const mergeProps = (stateProps, actionProps, { id }) => ({
   addCourseEditor: userId => actionProps.addCourseEditor(id, userId),
   fetchCourseEditors: () => actionProps.fetchCourseEditors(id),
   fetchCourseInfo: () => actionProps.fetchCourseInfo(id),
+  fetchCourseOptions: () => actionProps.fetchCourseOptions(),
+  fetchCourseRunOptions: () => actionProps.fetchCourseRunOptions(),
+  editCourse: (courseData, courseRunData, submittingRunForReview) => (
+    actionProps.editCourse(courseData, courseRunData, submittingRunForReview)),
+  clearSubmitStatus: () => (actionProps.clearSubmitStatus()),
+  clearCourseReviewAlert: () => (actionProps.clearCourseReviewAlert()),
+  clearCreateStatusAlert: () => (actionProps.clearCreateStatusAlert()),
+  updateFormValuesAfterSave: (change, currentFormValues, initialImageSrc, initialCourseRuns) => (
+    actionProps.updateFormValuesAfterSave(
+      change,
+      currentFormValues,
+      initialImageSrc,
+      initialCourseRuns,
+    )),
 });
 
 export default connect(

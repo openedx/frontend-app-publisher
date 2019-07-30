@@ -24,6 +24,13 @@ import {
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { courseSubmittingFailure, courseSubmittingSuccess } from './courseSubmitInfo';
 
+// These map to methods in the API service so that we can achieve dynamic function calling
+const ApiFunctionEnum = {
+  INTERNAL_REVIEW_FUNCTION: 'internalReviewEdit',
+  EDIT_RUNS_FUNCTION: 'editCourseRuns',
+};
+Object.freeze(ApiFunctionEnum);
+
 function requestCourseInfoFail(id, error) {
   return { type: REQUEST_COURSE_INFO_FAIL, id, error };
 }
@@ -174,6 +181,32 @@ function createCourse(courseData) {
   };
 }
 
+function handleCourseRuns(dispatch, courseRunData, course, submitReview) {
+  // status property will be present for internal review process because we pass the run
+  // object in directly, not as an array like we do with regular edits
+  const internalReview = !!courseRunData.status;
+  const functionCall = internalReview ? ApiFunctionEnum.INTERNAL_REVIEW_FUNCTION :
+    ApiFunctionEnum.EDIT_RUNS_FUNCTION;
+  // make course copy so we are not re-assigning properties of this functions original params
+  const newCourse = Object.assign({}, course);
+  DiscoveryDataApiService[functionCall](courseRunData).then((runResponse) => {
+    if (internalReview) {
+      // replace only one run here because only one was updated via API
+      const i = newCourse.course_runs.findIndex(run => run.key === courseRunData.key);
+      newCourse.course_runs[i] = runResponse.data;
+    } else {
+      // replace all runs here because we updated multiple runs via API
+      newCourse.course_runs = runResponse.map(courseRun => courseRun.data);
+    }
+    dispatch(editCourseSuccess(newCourse));
+    if (submitReview) dispatch(courseSubmittingSuccess());
+  }).catch((error) => {
+    dispatch(editCourseFail(['Course Run edit failed, please try again or contact support.']
+      .concat(getErrorMessages(error))));
+    if (submitReview) dispatch(courseSubmittingFailure());
+  });
+}
+
 function editCourse(courseData, courseRunData, submittingRunForReview = false) {
   const submitReview = submittingRunForReview;
   return (dispatch) => {
@@ -182,18 +215,7 @@ function editCourse(courseData, courseRunData, submittingRunForReview = false) {
     return DiscoveryDataApiService.editCourse(courseData)
       .then((response) => {
         const course = response.data;
-        DiscoveryDataApiService.editCourseRuns(courseRunData).then((runResponse) => {
-          course.course_runs = runResponse.map(courseRun => courseRun.data);
-          dispatch(editCourseSuccess(course));
-          if (submitReview) {
-            dispatch(courseSubmittingSuccess());
-          }
-        }).catch((error) => {
-          dispatch(editCourseFail(['Course Run edit failed, please try again or contact support.'].concat(getErrorMessages(error))));
-          if (submitReview) {
-            dispatch(courseSubmittingFailure());
-          }
-        });
+        handleCourseRuns(dispatch, courseRunData, course, submitReview);
       })
       .catch((error) => {
         dispatch(editCourseFail(['Course edit failed, please try again or contact support.'].concat(getErrorMessages(error))));

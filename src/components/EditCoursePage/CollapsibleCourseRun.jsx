@@ -17,8 +17,10 @@ import DateTimeField from '../DateTimeField';
 import store from '../../data/store';
 import TranscriptLanguage from './TranscriptLanguage';
 
-import { DATE_FORMAT, IN_REVIEW_STATUS, PUBLISHED } from '../../data/constants';
+import { DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
+  PUBLISHED } from '../../data/constants';
 import { endDateHelp, startDateHelp, pacingHelp } from '../../helpText';
+import RichEditor from '../RichEditor';
 
 const determineStatus = courseRun => (courseRun.status === 'unpublished' && moment().isAfter(courseRun.end) ?
   'archived' : courseRun.status);
@@ -93,6 +95,8 @@ class CollapsibleCourseRun extends React.Component {
     this.openCollapsible = this.openCollapsible.bind(this);
     this.setCollapsible = this.setCollapsible.bind(this);
     this.scrollToStaffPosition = this.scrollToStaffPosition.bind(this);
+    this.displayOfacRestriction = this.displayOfacRestriction.bind(this);
+    this.displayDefaultButtonLabel = this.displayDefaultButtonLabel.bind(this);
   }
 
   componentDidMount() {
@@ -145,6 +149,34 @@ class CollapsibleCourseRun extends React.Component {
     this.setCollapsible(true);
   }
 
+  displayOfacRestriction(restriction) {
+    switch (restriction) {
+      case false:
+        return 'No';
+      case true:
+        return 'Yes';
+      default:
+        return '--';
+    }
+  }
+
+  displayDefaultButtonLabel(status, isAdmin) {
+    if (isAdmin) {
+      switch (status) {
+        case REVIEW_BY_LEGAL:
+          return 'Save & Send to PC Review';
+        case REVIEW_BY_INTERNAL:
+          return 'PC Review Complete';
+        default:
+          break;
+      }
+    }
+    if (status === PUBLISHED) {
+      return 'Publish Run';
+    }
+    return 'Submit Run for Review';
+  }
+
   render() {
     const {
       courseId,
@@ -154,6 +186,7 @@ class CollapsibleCourseRun extends React.Component {
       editable,
       isSubmittingForReview,
       languageOptions,
+      ofacRestrictionOptions,
       programOptions,
       pacingTypeOptions,
       targetRun,
@@ -162,6 +195,9 @@ class CollapsibleCourseRun extends React.Component {
       stafferInfo,
       sourceInfo,
       courseSubmitInfo,
+      authentication: {
+        administrator,
+      },
     } = this.props;
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
@@ -422,31 +458,61 @@ class CollapsibleCourseRun extends React.Component {
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={disabled}
         />
-        <div>
-          <FieldLabel
-            id="number"
-            text="Course Embargo (OFAC) Restriction text added to the FAQ section"
-            className="mb-2"
-            helpText={
-              <div>
-                <p>
-                  Course embargo status for OFAC is managed internally, please contact
-                  support with questions.
-                </p>
-              </div>
-            }
-          />
-          <div className="mb-3">{courseRun.has_ofac_restrictions ? 'Yes' : 'No'}</div>
-        </div>
+        {(!administrator || !IN_REVIEW_STATUS.includes(courseRun.status)) &&
+          <div>
+            <FieldLabel
+              id="number"
+              text="Course Embargo (OFAC) Restriction text added to the FAQ section"
+              className="mb-2"
+              helpText={
+                <div>
+                  <p>
+                    Course embargo status for OFAC is managed internally, please contact
+                    support with questions.
+                  </p>
+                </div>
+              }
+            />
+            <div className="mb-3">
+              {this.displayOfacRestriction(courseRun.has_ofac_restrictions)}
+            </div>
+          </div>
+        }
+        {administrator && IN_REVIEW_STATUS.includes(courseRun.status) &&
+          <div>
+            Status: {courseRun.status === REVIEW_BY_LEGAL ? 'Legal Review' : 'PC Review'}
+            <div>
+              <Field
+                name={`${courseId}.has_ofac_restrictions`}
+                disabled={courseRun.status === REVIEW_BY_INTERNAL}
+                type="text"
+                component={RenderSelectField}
+                options={ofacRestrictionOptions}
+                label={<FieldLabel text="OFAC status" />}
+                extraInput={{ onInvalid: this.openCollapsible }}
+                required
+              />
+              <Field
+                name={`${courseId}.ofac_comment`}
+                disabled={courseRun.status === REVIEW_BY_INTERNAL}
+                component={RichEditor}
+                label={<FieldLabel text="Countries or additional notes" />}
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={500}
+                id="sdesc"
+              />
+            </div>
+          </div>
+        }
         {editable &&
           <ButtonToolbar>
             <ActionButton
               // only disable if *this run* is in review
-              disabled={courseSubmitting || courseRunInReview}
+              disabled={courseSubmitting || (courseRunInReview && !administrator)}
               // Pass the submitting course run up to validate different fields based on status
               onClick={() => store.dispatch(courseSubmittingInfo(courseRun))}
               labels={{
-                default: courseRun.status === PUBLISHED ? 'Publish Run' : 'Submit Run for Review',
+                default: this.displayDefaultButtonLabel(courseRun.status, administrator),
                 pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
               }}
               state={
@@ -492,6 +558,11 @@ CollapsibleCourseRun.propTypes = {
   targetRun: PropTypes.shape({}),
   isOpen: PropTypes.bool,
   onToggle: PropTypes.func.isRequired,
+  ofacRestrictionOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  })).isRequired,
+  authentication: PropTypes.shape({}),
 };
 
 CollapsibleCourseRun.defaultProps = {
@@ -507,6 +578,7 @@ CollapsibleCourseRun.defaultProps = {
   stafferInfo: {},
   targetRun: null,
   isOpen: false,
+  authentication: {},
 };
 
 export default CollapsibleCourseRun;

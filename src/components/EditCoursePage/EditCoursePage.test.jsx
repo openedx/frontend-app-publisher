@@ -8,7 +8,7 @@ import EditCoursePage from './index';
 import ConfirmationModal from '../ConfirmationModal';
 import StatusAlert from '../StatusAlert';
 
-import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
+import { PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED } from '../../data/constants';
 
 // Need to mock the Editor as we don't want to test TinyMCE
 jest.mock('@tinymce/tinymce-react');
@@ -510,8 +510,31 @@ describe('EditCoursePage', () => {
         courseInfo={{ data: { editable: true } }}
         courseSubmitInfo={{ showReviewStatusAlert: true }}
       />);
+      component.setState({ targetRun: { status: UNPUBLISHED } });
       const reviewAlert = component.find(StatusAlert);
       const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
+      expect(reviewAlert.props().message).toEqual(reviewMessage);
+    });
+
+    it('upon legal review submission, StatusAlert is set to appear', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={{ data: { editable: true } }}
+        courseSubmitInfo={{ showReviewStatusAlert: true }}
+      />);
+      component.setState({ targetRun: { status: REVIEW_BY_LEGAL } });
+      const reviewAlert = component.find(StatusAlert);
+      const reviewMessage = 'Legal Review Complete.  Course Run is now awaiting PC Review.';
+      expect(reviewAlert.props().message).toEqual(reviewMessage);
+    });
+
+    it('upon internal review submission, StatusAlert is set to appear', () => {
+      const component = shallow(<EditCoursePage
+        courseInfo={{ data: { editable: true } }}
+        courseSubmitInfo={{ showReviewStatusAlert: true }}
+      />);
+      component.setState({ targetRun: { status: REVIEW_BY_INTERNAL } });
+      const reviewAlert = component.find(StatusAlert);
+      const reviewMessage = 'PC Review Complete.';
       expect(reviewAlert.props().message).toEqual(reviewMessage);
     });
 
