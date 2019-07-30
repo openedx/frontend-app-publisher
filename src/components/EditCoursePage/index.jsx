@@ -10,6 +10,7 @@ import LoadingSpinner from '../LoadingSpinner';
 import { getCourseNumber, isValidDate } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
 import ConfirmationModal from '../ConfirmationModal';
+import SidePanes from '../SidePanes';
 
 class EditCoursePage extends React.Component {
   constructor(props) {
@@ -363,8 +364,7 @@ class EditCoursePage extends React.Component {
     }
     const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching ||
       courseRunOptions.isFetching;
-    const showForm = startedFetching && !courseInfo.isFetching && !courseOptions.isFetching &&
-      !courseRunOptions.isFetching;
+    const showForm = !showSpinner;
 
     return (
       <React.Fragment>
@@ -381,10 +381,22 @@ class EditCoursePage extends React.Component {
           onClose={this.cancelSubmit}
         />
 
-        <PageContainer>
+        <PageContainer
+          sidePanes={<SidePanes
+            hidden={!showForm}
+            addCourseEditor={editable && this.props.addCourseEditor}
+            courseEditors={this.props.courseEditors}
+            fetchCourseEditors={this.props.fetchCourseEditors}
+            fetchOrganizationUsers={!owners ? null : () => (
+              this.props.fetchOrganizationUsers(owners.map(owner => owner.uuid))
+            )}
+            organizationUsers={this.props.organizationUsers}
+            removeCourseEditor={editable && this.props.removeCourseEditor}
+          />}
+        >
           { showForm && !editable && <StatusAlert
             alertType="secondary"
-            message="You have permission to view this course, but not edit. If you would like to edit the course, please contact your project coordinator."
+            message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
           /> }
 
           { showReviewStatusAlert && <StatusAlert
@@ -402,46 +414,44 @@ class EditCoursePage extends React.Component {
           /> }
           { showSpinner && <LoadingSpinner /> }
           { showForm && (
-            <div>
-              <EditCourseForm
-                id={this.getFormId()}
-                onSubmit={this.showModal}
-                initialValues={{
-                  title,
-                  short_description,
-                  full_description,
-                  outcome,
-                  subjectPrimary,
-                  subjectSecondary,
-                  subjectTertiary,
-                  imageSrc,
-                  prerequisites_raw,
-                  level_type,
-                  learner_testimonials,
-                  faq,
-                  additional_information,
-                  syllabus_raw,
-                  videoSrc,
-                  mode,
-                  price,
-                  course_runs: minimalCourseRuns,
-                }}
-                number={number}
-                entitlement={entitlement || {}}
-                title={title}
-                courseRuns={minimalCourseRuns}
-                uuid={uuid}
-                currentFormValues={currentFormValues}
-                courseInfo={courseInfo}
-                courseInReview={courseInReview}
-                courseStatuses={courseStatuses}
-                owners={owners}
-                isSubmittingForReview={isSubmittingForReview}
-                targetRun={targetRun}
-                editable={editable}
-                {...this.props}
-              />
-            </div>
+            <EditCourseForm
+              id={this.getFormId()}
+              onSubmit={this.showModal}
+              initialValues={{
+                title,
+                short_description,
+                full_description,
+                outcome,
+                subjectPrimary,
+                subjectSecondary,
+                subjectTertiary,
+                imageSrc,
+                prerequisites_raw,
+                level_type,
+                learner_testimonials,
+                faq,
+                additional_information,
+                syllabus_raw,
+                videoSrc,
+                mode,
+                price,
+                course_runs: minimalCourseRuns,
+              }}
+              number={number}
+              entitlement={entitlement || {}}
+              title={title}
+              courseRuns={minimalCourseRuns}
+              uuid={uuid}
+              currentFormValues={currentFormValues}
+              courseInfo={courseInfo}
+              courseInReview={courseInReview}
+              courseStatuses={courseStatuses}
+              owners={owners}
+              isSubmittingForReview={isSubmittingForReview}
+              targetRun={targetRun}
+              editable={editable}
+              {...this.props}
+            />
           )}
           { errorArray.length > 0 && (
             <StatusAlert
@@ -457,23 +467,38 @@ class EditCoursePage extends React.Component {
 }
 
 EditCoursePage.defaultProps = {
+  addCourseEditor: () => null,
+  courseEditors: {
+    data: [],
+  },
   courseInfo: {
     data: {},
   },
   courseOptions: {},
   courseRunOptions: {},
+  fetchCourseEditors: () => null,
   fetchCourseInfo: () => null,
   fetchCourseOptions: () => null,
   fetchCourseRunOptions: () => null,
+  fetchOrganizationUsers: () => null,
   editCourse: () => null,
   clearSubmitStatus: () => {},
   clearCourseReviewAlert: () => {},
   clearCreateStatusAlert: () => {},
   courseSubmitInfo: {},
   formValues: () => {},
+  organizationUsers: {
+    data: [],
+  },
+  removeCourseEditor: () => null,
 };
 
 EditCoursePage.propTypes = {
+  addCourseEditor: PropTypes.func,
+  courseEditors: PropTypes.shape({
+    data: PropTypes.array,
+    isFetching: PropTypes.bool,
+  }),
   courseInfo: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
@@ -489,9 +514,11 @@ EditCoursePage.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  fetchCourseEditors: PropTypes.func,
   fetchCourseInfo: PropTypes.func,
   fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,
+  fetchOrganizationUsers: PropTypes.func,
   editCourse: PropTypes.func,
   clearSubmitStatus: PropTypes.func,
   clearCourseReviewAlert: PropTypes.func,
@@ -503,6 +530,11 @@ EditCoursePage.propTypes = {
     }),
   }),
   formValues: PropTypes.func,
+  organizationUsers: PropTypes.shape({
+    data: PropTypes.array,
+    isFetching: PropTypes.bool,
+  }),
+  removeCourseEditor: PropTypes.func,
 };
 
 export default EditCoursePage;

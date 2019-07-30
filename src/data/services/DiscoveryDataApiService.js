@@ -1,8 +1,10 @@
 import apiClient from '../apiClient';
 
+
 class DiscoveryDataApiService {
-  static discoveryBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/api/v1`;
   static autocompleteBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/admin/course_metadata`;
+  static discoveryBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/api/v1`;
+  static publisherBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/publisher/api`;
 
   static fetchCourse(uuid) {
     const queryParams = {
@@ -73,6 +75,29 @@ class DiscoveryDataApiService {
   static fetchCourseRunOptions() {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/`;
     return apiClient.options(url);
+  }
+
+  static addCourseEditor(data) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_editors/`;
+    return apiClient.post(url, data);
+  }
+
+  static removeCourseEditor(editorId) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_editors/${editorId}/`;
+    return apiClient.delete(url);
+  }
+
+  static fetchCourseEditors(courseId) {
+    const queryParams = {
+      course: courseId,
+    };
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_editors/`;
+    return apiClient.get(url, { params: queryParams });
+  }
+
+  static fetchOrganizationUsers(id) {
+    const url = `${DiscoveryDataApiService.publisherBaseUrl}/admins/organizations/${id}/users/`;
+    return apiClient.get(url);
   }
 
   static editCourseRuns(courseRunsData) {
