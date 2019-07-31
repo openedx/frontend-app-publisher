@@ -165,7 +165,7 @@ class CreateCoursePage extends React.Component {
 
         <ConfirmationModal
           title="Create a New Course?"
-          body="This will create a new course in studio. Confirm that your course number is correct, as it cannot be changed later."
+          body="This will create a new course in Studio."
           buttonLabel="Create"
           open={createConfirmVisible}
           onSubmit={this.continueCreate}

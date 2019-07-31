@@ -33,6 +33,33 @@ const enrollmentHelp = (
   </div>
 );
 
+const numberHelp = (
+  <div>
+    <p>
+      Maximum 10 characters. Characters can be letters, numbers, periods,
+      underscores, or hyphens.
+    </p>
+    <p>
+      If a course consists of several modules, the course number can have an
+      ending such as .1x or .2x.
+    </p>
+    <p>
+      <a
+        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn more.
+      </a>
+    </p>
+    <p><b>Examples:</b></p>
+    <ol>
+      <li>CS002x</li>
+      <li>BIO1.1x, BIO1.2x</li>
+    </ol>
+  </div>
+);
+
 const startDateHelp = (
   <div>
     <p>Start on a Tuesday, Wednesday, or Thursday.</p>
@@ -89,6 +116,7 @@ const pacingHelp = (
 export {
   endDateHelp,
   enrollmentHelp,
+  numberHelp,
   startDateHelp,
   titleHelp,
   pacingHelp,

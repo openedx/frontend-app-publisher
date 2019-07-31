@@ -683,6 +683,7 @@ ShallowWrapper {
         "learner_testimonials": "learner testimonials",
         "level_type": "advanced",
         "mode": "verified",
+        "number": "Test101x",
         "outcome": "learning outcomes",
         "prerequisites_raw": "prereq",
         "price": "77",
@@ -712,7 +713,6 @@ ShallowWrapper {
       }
     }
     isSubmittingForReview={true}
-    number="Test101x"
     pristine={true}
     submitting={false}
     title="Test Title"
@@ -831,21 +831,59 @@ ShallowWrapper {
             required={true}
             type="text"
           />
-          <div>
-            <FieldLabel
-              className="mb-2"
-              extraText=""
-              helpText=""
-              id="number"
-              optional={false}
-              text="Number"
-            />
-            <div
-              className="mb-3"
-            >
-              Test101x
-            </div>
-          </div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number.label"
+                optional={false}
+                text="Number"
+              />
+            }
+            name="number"
+            required={true}
+            type="text"
+          />
           <Field
             component={[Function]}
             disabled={true}
@@ -2295,6 +2333,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -2882,7 +2921,6 @@ ShallowWrapper {
             ]
           }
           name="course_runs"
-          number="Test101x"
           onToggle={[Function]}
           pacingTypeOptions={
             Array [
@@ -3031,21 +3069,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test101x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -4495,6 +4571,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -5082,7 +5159,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test101x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -5225,21 +5301,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />,
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test101x
-                </div>
-              </div>,
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />,
               <Field
                 component={[Function]}
                 disabled={true}
@@ -6112,56 +6226,59 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />,
-                  <div
-                    className="mb-3"
-                  >
-                    Test101x
-                  </div>,
-                ],
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />,
+                "name": "number",
+                "required": true,
+                "type": "text",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "className": "mb-2",
-                    "extraText": "",
-                    "helpText": "",
-                    "id": "number",
-                    "optional": false,
-                    "text": "Number",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Test101x",
-                    "className": "mb-3",
-                  },
-                  "ref": null,
-                  "rendered": "Test101x",
-                  "type": "div",
-                },
-              ],
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -7681,6 +7798,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -8261,7 +8379,6 @@ ShallowWrapper {
               },
             ],
             "name": "course_runs",
-            "number": "Test101x",
             "ofacRestrictionOptions": undefined,
             "onToggle": [Function],
             "pacingTypeOptions": Array [
@@ -8417,21 +8534,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test101x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -9881,6 +10036,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -10468,7 +10624,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test101x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -10617,21 +10772,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test101x
-                </div>
-              </div>
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
               <Field
                 component={[Function]}
                 disabled={true}
@@ -12081,6 +12274,7 @@ ShallowWrapper {
                   "learner_testimonials": "learner testimonials",
                   "level_type": "advanced",
                   "mode": "verified",
+                  "number": "Test101x",
                   "outcome": "learning outcomes",
                   "prerequisites_raw": "prereq",
                   "price": "77",
@@ -12668,7 +12862,6 @@ ShallowWrapper {
                 ]
               }
               name="course_runs"
-              number="Test101x"
               onToggle={[Function]}
               pacingTypeOptions={
                 Array [
@@ -12811,21 +13004,59 @@ ShallowWrapper {
                   required={true}
                   type="text"
                 />,
-                <div>
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />
-                  <div
-                    className="mb-3"
-                  >
-                    Test101x
-                  </div>
-                </div>,
+                <Field
+                  component={[Function]}
+                  disabled={true}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      extraText=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                          </p>
+                          <p>
+                            If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                          <p>
+                            <b>
+                              Examples:
+                            </b>
+                          </p>
+                          <ol>
+                            <li>
+                              CS002x
+                            </li>
+                            <li>
+                              BIO1.1x, BIO1.2x
+                            </li>
+                          </ol>
+                        </div>
+                      }
+                      id="number.label"
+                      optional={false}
+                      text="Number"
+                    />
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
                 <Field
                   component={[Function]}
                   disabled={true}
@@ -13698,56 +13929,59 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    <FieldLabel
-                      className="mb-2"
-                      extraText=""
-                      helpText=""
-                      id="number"
-                      optional={false}
-                      text="Number"
-                    />,
-                    <div
-                      className="mb-3"
-                    >
-                      Test101x
-                    </div>,
-                  ],
+                  "component": [Function],
+                  "disabled": true,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "className": "mb-2",
-                      "extraText": "",
-                      "helpText": "",
-                      "id": "number",
-                      "optional": false,
-                      "text": "Number",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Test101x",
-                      "className": "mb-3",
-                    },
-                    "ref": null,
-                    "rendered": "Test101x",
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                "rendered": null,
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -15267,6 +15501,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -15847,7 +16082,6 @@ ShallowWrapper {
                 },
               ],
               "name": "course_runs",
-              "number": "Test101x",
               "ofacRestrictionOptions": undefined,
               "onToggle": [Function],
               "pacingTypeOptions": Array [
@@ -16610,6 +16844,7 @@ ShallowWrapper {
         "learner_testimonials": "learner testimonials",
         "level_type": "advanced",
         "mode": "verified",
+        "number": "Test101x",
         "outcome": "learning outcomes",
         "prerequisites_raw": "prereq",
         "price": "77",
@@ -16642,6 +16877,7 @@ ShallowWrapper {
         "learner_testimonials": "learner testimonials",
         "level_type": "advanced",
         "mode": "verified",
+        "number": "Test101x",
         "outcome": "learning outcomes",
         "prerequisites_raw": "prereq",
         "price": "77",
@@ -16656,7 +16892,6 @@ ShallowWrapper {
       }
     }
     isSubmittingForReview={false}
-    number="Test103x"
     pristine={false}
     submitting={true}
     title="Test Title"
@@ -16775,21 +17010,59 @@ ShallowWrapper {
             required={true}
             type="text"
           />
-          <div>
-            <FieldLabel
-              className="mb-2"
-              extraText=""
-              helpText=""
-              id="number"
-              optional={false}
-              text="Number"
-            />
-            <div
-              className="mb-3"
-            >
-              Test103x
-            </div>
-          </div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number.label"
+                optional={false}
+                text="Number"
+              />
+            }
+            name="number"
+            required={true}
+            type="text"
+          />
           <Field
             component={[Function]}
             disabled={true}
@@ -18239,6 +18512,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -18272,6 +18546,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -18843,7 +19118,6 @@ ShallowWrapper {
             ]
           }
           name="course_runs"
-          number="Test103x"
           onToggle={[Function]}
           pacingTypeOptions={
             Array [
@@ -18992,21 +19266,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test103x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -20456,6 +20768,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -20489,6 +20802,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -21060,7 +21374,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test103x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -21203,21 +21516,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />,
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test103x
-                </div>
-              </div>,
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />,
               <Field
                 component={[Function]}
                 disabled={true}
@@ -22090,56 +22441,59 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />,
-                  <div
-                    className="mb-3"
-                  >
-                    Test103x
-                  </div>,
-                ],
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />,
+                "name": "number",
+                "required": true,
+                "type": "text",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "className": "mb-2",
-                    "extraText": "",
-                    "helpText": "",
-                    "id": "number",
-                    "optional": false,
-                    "text": "Number",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Test103x",
-                    "className": "mb-3",
-                  },
-                  "ref": null,
-                  "rendered": "Test103x",
-                  "type": "div",
-                },
-              ],
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -23659,6 +24013,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -23688,6 +24043,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -24256,7 +24612,6 @@ ShallowWrapper {
               },
             ],
             "name": "course_runs",
-            "number": "Test103x",
             "ofacRestrictionOptions": undefined,
             "onToggle": [Function],
             "pacingTypeOptions": Array [
@@ -24412,21 +24767,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test103x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -25876,6 +26269,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -25909,6 +26303,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -26480,7 +26875,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test103x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -26629,21 +27023,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test103x
-                </div>
-              </div>
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
               <Field
                 component={[Function]}
                 disabled={true}
@@ -28093,6 +28525,7 @@ ShallowWrapper {
                   "learner_testimonials": "learner testimonials",
                   "level_type": "advanced",
                   "mode": "verified",
+                  "number": "Test101x",
                   "outcome": "learning outcomes",
                   "prerequisites_raw": "prereq",
                   "price": "77",
@@ -28126,6 +28559,7 @@ ShallowWrapper {
                   "learner_testimonials": "learner testimonials",
                   "level_type": "advanced",
                   "mode": "verified",
+                  "number": "Test101x",
                   "outcome": "learning outcomes",
                   "prerequisites_raw": "prereq",
                   "price": "77",
@@ -28697,7 +29131,6 @@ ShallowWrapper {
                 ]
               }
               name="course_runs"
-              number="Test103x"
               onToggle={[Function]}
               pacingTypeOptions={
                 Array [
@@ -28840,21 +29273,59 @@ ShallowWrapper {
                   required={true}
                   type="text"
                 />,
-                <div>
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />
-                  <div
-                    className="mb-3"
-                  >
-                    Test103x
-                  </div>
-                </div>,
+                <Field
+                  component={[Function]}
+                  disabled={true}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      extraText=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                          </p>
+                          <p>
+                            If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                          <p>
+                            <b>
+                              Examples:
+                            </b>
+                          </p>
+                          <ol>
+                            <li>
+                              CS002x
+                            </li>
+                            <li>
+                              BIO1.1x, BIO1.2x
+                            </li>
+                          </ol>
+                        </div>
+                      }
+                      id="number.label"
+                      optional={false}
+                      text="Number"
+                    />
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
                 <Field
                   component={[Function]}
                   disabled={true}
@@ -29727,56 +30198,59 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    <FieldLabel
-                      className="mb-2"
-                      extraText=""
-                      helpText=""
-                      id="number"
-                      optional={false}
-                      text="Number"
-                    />,
-                    <div
-                      className="mb-3"
-                    >
-                      Test103x
-                    </div>,
-                  ],
+                  "component": [Function],
+                  "disabled": true,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "className": "mb-2",
-                      "extraText": "",
-                      "helpText": "",
-                      "id": "number",
-                      "optional": false,
-                      "text": "Number",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Test103x",
-                      "className": "mb-3",
-                    },
-                    "ref": null,
-                    "rendered": "Test103x",
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                "rendered": null,
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -31296,6 +31770,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -31325,6 +31800,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -31893,7 +32369,6 @@ ShallowWrapper {
                 },
               ],
               "name": "course_runs",
-              "number": "Test103x",
               "ofacRestrictionOptions": undefined,
               "onToggle": [Function],
               "pacingTypeOptions": Array [
@@ -32656,6 +33131,7 @@ ShallowWrapper {
         "learner_testimonials": "learner testimonials",
         "level_type": "advanced",
         "mode": "verified",
+        "number": "Test101x",
         "outcome": "learning outcomes",
         "prerequisites_raw": "prereq",
         "price": "77",
@@ -32688,6 +33164,7 @@ ShallowWrapper {
         "learner_testimonials": "learner testimonials",
         "level_type": "advanced",
         "mode": "verified",
+        "number": "Test101x",
         "outcome": "learning outcomes",
         "prerequisites_raw": "prereq",
         "price": "77",
@@ -32702,7 +33179,6 @@ ShallowWrapper {
       }
     }
     isSubmittingForReview={false}
-    number="Test102x"
     pristine={true}
     submitting={false}
     title="Test Title"
@@ -32821,21 +33297,59 @@ ShallowWrapper {
             required={true}
             type="text"
           />
-          <div>
-            <FieldLabel
-              className="mb-2"
-              extraText=""
-              helpText=""
-              id="number"
-              optional={false}
-              text="Number"
-            />
-            <div
-              className="mb-3"
-            >
-              Test102x
-            </div>
-          </div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number.label"
+                optional={false}
+                text="Number"
+              />
+            }
+            name="number"
+            required={true}
+            type="text"
+          />
           <Field
             component={[Function]}
             disabled={true}
@@ -34387,6 +34901,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -34420,6 +34935,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -34991,7 +35507,6 @@ ShallowWrapper {
             ]
           }
           name="course_runs"
-          number="Test102x"
           onToggle={[Function]}
           pacingTypeOptions={
             Array [
@@ -35140,21 +35655,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test102x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -36706,6 +37259,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -36739,6 +37293,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -37310,7 +37865,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test102x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -37453,21 +38007,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />,
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test102x
-                </div>
-              </div>,
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />,
               <Field
                 component={[Function]}
                 disabled={true}
@@ -38440,56 +39032,59 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />,
-                  <div
-                    className="mb-3"
-                  >
-                    Test102x
-                  </div>,
-                ],
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />,
+                "name": "number",
+                "required": true,
+                "type": "text",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "className": "mb-2",
-                    "extraText": "",
-                    "helpText": "",
-                    "id": "number",
-                    "optional": false,
-                    "text": "Number",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Test102x",
-                    "className": "mb-3",
-                  },
-                  "ref": null,
-                  "rendered": "Test102x",
-                  "type": "div",
-                },
-              ],
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -40117,6 +40712,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -40146,6 +40742,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -40714,7 +41311,6 @@ ShallowWrapper {
               },
             ],
             "name": "course_runs",
-            "number": "Test102x",
             "ofacRestrictionOptions": undefined,
             "onToggle": [Function],
             "pacingTypeOptions": Array [
@@ -40870,21 +41466,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test102x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -42436,6 +43070,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -42469,6 +43104,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -43040,7 +43676,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test102x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -43189,21 +43824,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test102x
-                </div>
-              </div>
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
               <Field
                 component={[Function]}
                 disabled={true}
@@ -44755,6 +45428,7 @@ ShallowWrapper {
                   "learner_testimonials": "learner testimonials",
                   "level_type": "advanced",
                   "mode": "verified",
+                  "number": "Test101x",
                   "outcome": "learning outcomes",
                   "prerequisites_raw": "prereq",
                   "price": "77",
@@ -44788,6 +45462,7 @@ ShallowWrapper {
                   "learner_testimonials": "learner testimonials",
                   "level_type": "advanced",
                   "mode": "verified",
+                  "number": "Test101x",
                   "outcome": "learning outcomes",
                   "prerequisites_raw": "prereq",
                   "price": "77",
@@ -45359,7 +46034,6 @@ ShallowWrapper {
                 ]
               }
               name="course_runs"
-              number="Test102x"
               onToggle={[Function]}
               pacingTypeOptions={
                 Array [
@@ -45502,21 +46176,59 @@ ShallowWrapper {
                   required={true}
                   type="text"
                 />,
-                <div>
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />
-                  <div
-                    className="mb-3"
-                  >
-                    Test102x
-                  </div>
-                </div>,
+                <Field
+                  component={[Function]}
+                  disabled={true}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      extraText=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                          </p>
+                          <p>
+                            If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                          <p>
+                            <b>
+                              Examples:
+                            </b>
+                          </p>
+                          <ol>
+                            <li>
+                              CS002x
+                            </li>
+                            <li>
+                              BIO1.1x, BIO1.2x
+                            </li>
+                          </ol>
+                        </div>
+                      }
+                      id="number.label"
+                      optional={false}
+                      text="Number"
+                    />
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
                 <Field
                   component={[Function]}
                   disabled={true}
@@ -46489,56 +47201,59 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    <FieldLabel
-                      className="mb-2"
-                      extraText=""
-                      helpText=""
-                      id="number"
-                      optional={false}
-                      text="Number"
-                    />,
-                    <div
-                      className="mb-3"
-                    >
-                      Test102x
-                    </div>,
-                  ],
+                  "component": [Function],
+                  "disabled": true,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "className": "mb-2",
-                      "extraText": "",
-                      "helpText": "",
-                      "id": "number",
-                      "optional": false,
-                      "text": "Number",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Test102x",
-                      "className": "mb-3",
-                    },
-                    "ref": null,
-                    "rendered": "Test102x",
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                "rendered": null,
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -48166,6 +48881,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -48195,6 +48911,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -48763,7 +49480,6 @@ ShallowWrapper {
                 },
               ],
               "name": "course_runs",
-              "number": "Test102x",
               "ofacRestrictionOptions": undefined,
               "onToggle": [Function],
               "pacingTypeOptions": Array [
@@ -49526,6 +50242,7 @@ ShallowWrapper {
         "learner_testimonials": "learner testimonials",
         "level_type": "advanced",
         "mode": "verified",
+        "number": "Test101x",
         "outcome": "learning outcomes",
         "prerequisites_raw": "prereq",
         "price": "77",
@@ -49558,6 +50275,7 @@ ShallowWrapper {
         "learner_testimonials": "learner testimonials",
         "level_type": "advanced",
         "mode": "verified",
+        "number": "Test101x",
         "outcome": "learning outcomes",
         "prerequisites_raw": "prereq",
         "price": "77",
@@ -49572,7 +50290,6 @@ ShallowWrapper {
       }
     }
     isSubmittingForReview={false}
-    number="Test102x"
     pristine={true}
     submitting={false}
     title="Test Title"
@@ -49691,21 +50408,59 @@ ShallowWrapper {
             required={true}
             type="text"
           />
-          <div>
-            <FieldLabel
-              className="mb-2"
-              extraText=""
-              helpText=""
-              id="number"
-              optional={false}
-              text="Number"
-            />
-            <div
-              className="mb-3"
-            >
-              Test102x
-            </div>
-          </div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number.label"
+                optional={false}
+                text="Number"
+              />
+            }
+            name="number"
+            required={true}
+            type="text"
+          />
           <Field
             component={[Function]}
             disabled={true}
@@ -51155,6 +51910,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -51188,6 +51944,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -51759,7 +52516,6 @@ ShallowWrapper {
             ]
           }
           name="course_runs"
-          number="Test102x"
           onToggle={[Function]}
           pacingTypeOptions={
             Array [
@@ -51908,21 +52664,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test102x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -53372,6 +54166,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -53405,6 +54200,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -53976,7 +54772,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test102x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -54119,21 +54914,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />,
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test102x
-                </div>
-              </div>,
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />,
               <Field
                 component={[Function]}
                 disabled={true}
@@ -55006,56 +55839,59 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />,
-                  <div
-                    className="mb-3"
-                  >
-                    Test102x
-                  </div>,
-                ],
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />,
+                "name": "number",
+                "required": true,
+                "type": "text",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "className": "mb-2",
-                    "extraText": "",
-                    "helpText": "",
-                    "id": "number",
-                    "optional": false,
-                    "text": "Number",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Test102x",
-                    "className": "mb-3",
-                  },
-                  "ref": null,
-                  "rendered": "Test102x",
-                  "type": "div",
-                },
-              ],
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -56575,6 +57411,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -56604,6 +57441,7 @@ ShallowWrapper {
               "learner_testimonials": "learner testimonials",
               "level_type": "advanced",
               "mode": "verified",
+              "number": "Test101x",
               "outcome": "learning outcomes",
               "prerequisites_raw": "prereq",
               "price": "77",
@@ -57172,7 +58010,6 @@ ShallowWrapper {
               },
             ],
             "name": "course_runs",
-            "number": "Test102x",
             "ofacRestrictionOptions": undefined,
             "onToggle": [Function],
             "pacingTypeOptions": Array [
@@ -57328,21 +58165,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test102x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -58792,6 +59667,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -58825,6 +59701,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -59396,7 +60273,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test102x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -59545,21 +60421,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test102x
-                </div>
-              </div>
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
               <Field
                 component={[Function]}
                 disabled={true}
@@ -61009,6 +61923,7 @@ ShallowWrapper {
                   "learner_testimonials": "learner testimonials",
                   "level_type": "advanced",
                   "mode": "verified",
+                  "number": "Test101x",
                   "outcome": "learning outcomes",
                   "prerequisites_raw": "prereq",
                   "price": "77",
@@ -61042,6 +61957,7 @@ ShallowWrapper {
                   "learner_testimonials": "learner testimonials",
                   "level_type": "advanced",
                   "mode": "verified",
+                  "number": "Test101x",
                   "outcome": "learning outcomes",
                   "prerequisites_raw": "prereq",
                   "price": "77",
@@ -61613,7 +62529,6 @@ ShallowWrapper {
                 ]
               }
               name="course_runs"
-              number="Test102x"
               onToggle={[Function]}
               pacingTypeOptions={
                 Array [
@@ -61756,21 +62671,59 @@ ShallowWrapper {
                   required={true}
                   type="text"
                 />,
-                <div>
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />
-                  <div
-                    className="mb-3"
-                  >
-                    Test102x
-                  </div>
-                </div>,
+                <Field
+                  component={[Function]}
+                  disabled={true}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      extraText=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                          </p>
+                          <p>
+                            If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                          <p>
+                            <b>
+                              Examples:
+                            </b>
+                          </p>
+                          <ol>
+                            <li>
+                              CS002x
+                            </li>
+                            <li>
+                              BIO1.1x, BIO1.2x
+                            </li>
+                          </ol>
+                        </div>
+                      }
+                      id="number.label"
+                      optional={false}
+                      text="Number"
+                    />
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
                 <Field
                   component={[Function]}
                   disabled={true}
@@ -62643,56 +63596,59 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    <FieldLabel
-                      className="mb-2"
-                      extraText=""
-                      helpText=""
-                      id="number"
-                      optional={false}
-                      text="Number"
-                    />,
-                    <div
-                      className="mb-3"
-                    >
-                      Test102x
-                    </div>,
-                  ],
+                  "component": [Function],
+                  "disabled": true,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "className": "mb-2",
-                      "extraText": "",
-                      "helpText": "",
-                      "id": "number",
-                      "optional": false,
-                      "text": "Number",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Test102x",
-                      "className": "mb-3",
-                    },
-                    "ref": null,
-                    "rendered": "Test102x",
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                "rendered": null,
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -64212,6 +65168,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -64241,6 +65198,7 @@ ShallowWrapper {
                 "learner_testimonials": "learner testimonials",
                 "level_type": "advanced",
                 "mode": "verified",
+                "number": "Test101x",
                 "outcome": "learning outcomes",
                 "prerequisites_raw": "prereq",
                 "price": "77",
@@ -64809,7 +65767,6 @@ ShallowWrapper {
                 },
               ],
               "name": "course_runs",
-              "number": "Test102x",
               "ofacRestrictionOptions": undefined,
               "onToggle": [Function],
               "pacingTypeOptions": Array [
@@ -65577,7 +66534,6 @@ ShallowWrapper {
       }
     }
     isSubmittingForReview={false}
-    number="Test101x"
     pristine={true}
     submitting={false}
     title="Test Title"
@@ -65696,21 +66652,59 @@ ShallowWrapper {
             required={true}
             type="text"
           />
-          <div>
-            <FieldLabel
-              className="mb-2"
-              extraText=""
-              helpText=""
-              id="number"
-              optional={false}
-              text="Number"
-            />
-            <div
-              className="mb-3"
-            >
-              Test101x
-            </div>
-          </div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
+              }
+            }
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                    </p>
+                    <p>
+                      If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                    </p>
+                    <p>
+                      <a
+                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Learn more.
+                      </a>
+                    </p>
+                    <p>
+                      <b>
+                        Examples:
+                      </b>
+                    </p>
+                    <ol>
+                      <li>
+                        CS002x
+                      </li>
+                      <li>
+                        BIO1.1x, BIO1.2x
+                      </li>
+                    </ol>
+                  </div>
+                }
+                id="number.label"
+                optional={false}
+                text="Number"
+              />
+            }
+            name="number"
+            required={true}
+            type="text"
+          />
           <Field
             component={[Function]}
             disabled={true}
@@ -67698,7 +68692,6 @@ ShallowWrapper {
             ]
           }
           name="course_runs"
-          number="Test101x"
           onToggle={[Function]}
           pacingTypeOptions={
             Array [
@@ -67847,21 +68840,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test101x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -69849,7 +70880,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test101x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -69992,21 +71022,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />,
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test101x
-                </div>
-              </div>,
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />,
               <Field
                 component={[Function]}
                 disabled={true}
@@ -70855,56 +71923,59 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />,
-                  <div
-                    className="mb-3"
-                  >
-                    Test101x
-                  </div>,
-                ],
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />,
+                "name": "number",
+                "required": true,
+                "type": "text",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "className": "mb-2",
-                    "extraText": "",
-                    "helpText": "",
-                    "id": "number",
-                    "optional": false,
-                    "text": "Number",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Test101x",
-                    "className": "mb-3",
-                  },
-                  "ref": null,
-                  "rendered": "Test101x",
-                  "type": "div",
-                },
-              ],
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -72954,7 +74025,6 @@ ShallowWrapper {
               },
             ],
             "name": "course_runs",
-            "number": "Test101x",
             "ofacRestrictionOptions": undefined,
             "onToggle": [Function],
             "pacingTypeOptions": Array [
@@ -73110,21 +74180,59 @@ ShallowWrapper {
               required={true}
               type="text"
             />
-            <div>
-              <FieldLabel
-                className="mb-2"
-                extraText=""
-                helpText=""
-                id="number"
-                optional={false}
-                text="Number"
-              />
-              <div
-                className="mb-3"
-              >
-                Test101x
-              </div>
-            </div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                      </p>
+                      <p>
+                        If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                      </p>
+                      <p>
+                        <a
+                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Learn more.
+                        </a>
+                      </p>
+                      <p>
+                        <b>
+                          Examples:
+                        </b>
+                      </p>
+                      <ol>
+                        <li>
+                          CS002x
+                        </li>
+                        <li>
+                          BIO1.1x, BIO1.2x
+                        </li>
+                      </ol>
+                    </div>
+                  }
+                  id="number.label"
+                  optional={false}
+                  text="Number"
+                />
+              }
+              name="number"
+              required={true}
+              type="text"
+            />
             <Field
               component={[Function]}
               disabled={true}
@@ -75112,7 +76220,6 @@ ShallowWrapper {
               ]
             }
             name="course_runs"
-            number="Test101x"
             onToggle={[Function]}
             pacingTypeOptions={
               Array [
@@ -75261,21 +76368,59 @@ ShallowWrapper {
                 required={true}
                 type="text"
               />
-              <div>
-                <FieldLabel
-                  className="mb-2"
-                  extraText=""
-                  helpText=""
-                  id="number"
-                  optional={false}
-                  text="Number"
-                />
-                <div
-                  className="mb-3"
-                >
-                  Test101x
-                </div>
-              </div>
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />
+                }
+                name="number"
+                required={true}
+                type="text"
+              />
               <Field
                 component={[Function]}
                 disabled={true}
@@ -77263,7 +78408,6 @@ ShallowWrapper {
                 ]
               }
               name="course_runs"
-              number="Test101x"
               onToggle={[Function]}
               pacingTypeOptions={
                 Array [
@@ -77406,21 +78550,59 @@ ShallowWrapper {
                   required={true}
                   type="text"
                 />,
-                <div>
-                  <FieldLabel
-                    className="mb-2"
-                    extraText=""
-                    helpText=""
-                    id="number"
-                    optional={false}
-                    text="Number"
-                  />
-                  <div
-                    className="mb-3"
-                  >
-                    Test101x
-                  </div>
-                </div>,
+                <Field
+                  component={[Function]}
+                  disabled={true}
+                  extraInput={
+                    Object {
+                      "onInvalid": [Function],
+                    }
+                  }
+                  label={
+                    <FieldLabel
+                      className=""
+                      extraText=""
+                      helpText={
+                        <div>
+                          <p>
+                            Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                          </p>
+                          <p>
+                            If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                          <p>
+                            <b>
+                              Examples:
+                            </b>
+                          </p>
+                          <ol>
+                            <li>
+                              CS002x
+                            </li>
+                            <li>
+                              BIO1.1x, BIO1.2x
+                            </li>
+                          </ol>
+                        </div>
+                      }
+                      id="number.label"
+                      optional={false}
+                      text="Number"
+                    />
+                  }
+                  name="number"
+                  required={true}
+                  type="text"
+                />,
                 <Field
                   component={[Function]}
                   disabled={true}
@@ -78269,56 +79451,59 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    <FieldLabel
-                      className="mb-2"
-                      extraText=""
-                      helpText=""
-                      id="number"
-                      optional={false}
-                      text="Number"
-                    />,
-                    <div
-                      className="mb-3"
-                    >
-                      Test101x
-                    </div>,
-                  ],
+                  "component": [Function],
+                  "disabled": true,
+                  "extraInput": Object {
+                    "onInvalid": [Function],
+                  },
+                  "label": <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+                        </p>
+                        <p>
+                          If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <b>
+                            Examples:
+                          </b>
+                        </p>
+                        <ol>
+                          <li>
+                            CS002x
+                          </li>
+                          <li>
+                            BIO1.1x, BIO1.2x
+                          </li>
+                        </ol>
+                      </div>
+                    }
+                    id="number.label"
+                    optional={false}
+                    text="Number"
+                  />,
+                  "name": "number",
+                  "required": true,
+                  "type": "text",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "className": "mb-2",
-                      "extraText": "",
-                      "helpText": "",
-                      "id": "number",
-                      "optional": false,
-                      "text": "Number",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Test101x",
-                      "className": "mb-3",
-                    },
-                    "ref": null,
-                    "rendered": "Test101x",
-                    "type": "div",
-                  },
-                ],
-                "type": "div",
+                "rendered": null,
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -80368,7 +81553,6 @@ ShallowWrapper {
                 },
               ],
               "name": "course_runs",
-              "number": "Test101x",
               "ofacRestrictionOptions": undefined,
               "onToggle": [Function],
               "pacingTypeOptions": Array [

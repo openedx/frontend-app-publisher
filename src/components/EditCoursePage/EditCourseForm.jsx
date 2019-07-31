@@ -22,7 +22,7 @@ import {
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
-import { enrollmentHelp, titleHelp } from '../../helpText';
+import { enrollmentHelp, numberHelp, titleHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import store from '../../data/store';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
@@ -196,7 +196,6 @@ export class BaseEditCourseForm extends React.Component {
         administrator,
       },
       handleSubmit,
-      number,
       entitlement,
       currentFormValues,
       submitting,
@@ -283,10 +282,21 @@ export class BaseEditCourseForm extends React.Component {
               required
               disabled={disabled}
             />
-            <div>
-              <FieldLabel id="number" text="Number" className="mb-2" />
-              <div className="mb-3">{number}</div>
-            </div>
+            <Field
+              name="number"
+              component={RenderInputTextField}
+              type="text"
+              label={
+                <FieldLabel
+                  id="number.label"
+                  text="Number"
+                  helpText={numberHelp}
+                />
+              }
+              extraInput={{ onInvalid: this.openCollapsible }}
+              required
+              disabled={disabled}
+            />
             <Field
               name="mode"
               component={RenderSelectField}
@@ -864,7 +874,6 @@ BaseEditCourseForm.propTypes = {
     administrator: PropTypes.bool,
   }),
   handleSubmit: PropTypes.func.isRequired,
-  number: PropTypes.string.isRequired,
   currentFormValues: PropTypes.shape({}),
   title: PropTypes.string.isRequired,
   entitlement: PropTypes.shape({

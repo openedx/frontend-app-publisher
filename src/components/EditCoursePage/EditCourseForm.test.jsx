@@ -496,6 +496,7 @@ describe('BaseEditCourseForm', () => {
   };
   const initialValuesFull = {
     title: 'Test Title',
+    number: 'Test101x',
     short_description: 'short desc',
     full_description: 'long desc',
     outcome: 'learning outcomes',
@@ -527,7 +528,6 @@ describe('BaseEditCourseForm', () => {
         title: initialValuesFull.title,
       }}
       title={initialValuesFull.title}
-      number="Test101x"
       entitlement={undefined}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
@@ -544,7 +544,6 @@ describe('BaseEditCourseForm', () => {
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
-      number="Test102x"
       entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
@@ -564,7 +563,6 @@ describe('BaseEditCourseForm', () => {
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
-      number="Test102x"
       entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
@@ -581,7 +579,6 @@ describe('BaseEditCourseForm', () => {
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
-      number="Test103x"
       entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
@@ -599,7 +596,6 @@ describe('BaseEditCourseForm', () => {
       handleSubmit={() => null}
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
-      number="Test101x"
       entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
@@ -616,7 +612,6 @@ describe('BaseEditCourseForm', () => {
       handleSubmit={() => null}
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
-      number="Test101x"
       entitlement={entitlement}
       courseStatuses={[IN_LEGAL_REVIEW]}
       courseOptions={courseOptions}
@@ -639,7 +634,6 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
-      number="Test101x"
       entitlement={entitlement}
       courseStatuses={[REVIEWED]}
       courseOptions={courseOptions}
@@ -659,7 +653,6 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
-      number="Test101x"
       entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}

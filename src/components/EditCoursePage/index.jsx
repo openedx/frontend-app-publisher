@@ -133,7 +133,6 @@ class EditCoursePage extends React.Component {
     const {
       courseInfo: {
         data: {
-          key,
           uuid,
           entitlements,
         },
@@ -163,9 +162,9 @@ class EditCoursePage extends React.Component {
       faq: courseData.faq,
       full_description: courseData.full_description,
       image: courseData.imageSrc,
-      key,
       learner_testimonials: courseData.learner_testimonials,
       level_type: courseData.level_type,
+      number: courseData.number,
       outcome: courseData.outcome,
       short_description: courseData.short_description,
       subjects: [
@@ -456,6 +455,7 @@ class EditCoursePage extends React.Component {
               onSubmit={this.showModal}
               initialValues={{
                 title,
+                number,
                 short_description,
                 full_description,
                 outcome,
@@ -474,7 +474,6 @@ class EditCoursePage extends React.Component {
                 price,
                 course_runs: minimalCourseRuns,
               }}
-              number={number}
               entitlement={entitlement || {}}
               title={title}
               courseRuns={minimalCourseRuns}
