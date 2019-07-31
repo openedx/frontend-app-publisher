@@ -62,6 +62,7 @@ describe('CreateCourseRunPage', () => {
         data: {
           course_runs: [{
             status: 'review_by_legal',
+            key: 'course-v1:edX+cs101+2T2019',
           }],
           title: 'Test Course',
         },

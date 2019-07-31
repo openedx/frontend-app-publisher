@@ -11,7 +11,7 @@ class DateTimeField extends React.Component {
     super(props);
     this.state = {
       date: getDateString(this.props.input.value) || '',
-      time: getTimeString(this.props.input.value) || '',
+      time: getTimeString(this.props.input.value) || '12:00',
     };
     this.concatDateTime = this.concatDateTime.bind(this);
     this.updateDate = this.updateDate.bind(this);

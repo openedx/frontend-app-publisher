@@ -92,6 +92,7 @@ class EditCoursePage extends React.Component {
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
         pacing_type: courseRun.pacing_type,
+        rerun: courseRun.rerun ? courseRun.rerun : null,
         // Reduce Staff list to just the UUID
         staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
         start: isValidDate(courseRun.start) ? courseRun.start : null,
@@ -204,7 +205,6 @@ class EditCoursePage extends React.Component {
     clearCourseReviewAlert();
     clearCreateStatusAlert();
   }
-
 
   handleCourseSubmit(courseData) {
     /*
