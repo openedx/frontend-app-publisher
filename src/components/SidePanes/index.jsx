@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import UsersPane from './UsersPane';
-
+import CommentsPane from './CommentsPane';
 
 function SidePanes(props) {
   return (
@@ -17,14 +17,24 @@ function SidePanes(props) {
         organizationUsers={props.organizationUsers}
         removeCourseEditor={props.removeCourseEditor}
       />
+      <CommentsPane
+        addComment={props.addComment}
+        comments={props.comments}
+        fetchComments={props.fetchComments}
+        courseUuid={props.courseUuid}
+      />
     </div>
   );
 }
 
 SidePanes.defaultProps = {
+  addComment: () => null,
   addCourseEditor: () => null,
   className: '',
+  comments: {},
   courseEditors: {},
+  courseUuid: '',
+  fetchComments: () => null,
   fetchCourseEditors: () => null,
   fetchOrganizationRoles: null,
   fetchOrganizationUsers: null,
@@ -35,9 +45,13 @@ SidePanes.defaultProps = {
 };
 
 SidePanes.propTypes = {
+  addComment: PropTypes.func,
   addCourseEditor: PropTypes.func,
   className: PropTypes.string,
+  comments: PropTypes.shape(),
   courseEditors: PropTypes.shape(),
+  courseUuid: PropTypes.string,
+  fetchComments: PropTypes.func,
   fetchCourseEditors: PropTypes.func,
   fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,

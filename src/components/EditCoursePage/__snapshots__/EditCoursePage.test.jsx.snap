@@ -4,10 +4,16 @@ exports[`EditCoursePage renders html correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -22,6 +28,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -80,13 +87,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -116,10 +131,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -136,6 +157,7 @@ ShallowWrapper {
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={Object {}}
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -261,10 +283,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -281,6 +309,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -329,13 +358,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid=""
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -378,10 +415,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -398,6 +439,7 @@ ShallowWrapper {
               "editCourse": [Function],
               "editable": undefined,
               "entitlement": Object {},
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -484,13 +526,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid=""
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -520,10 +570,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -540,6 +596,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -665,10 +722,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -685,6 +748,7 @@ ShallowWrapper {
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={Object {}}
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -733,13 +797,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -782,10 +854,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -802,6 +878,7 @@ ShallowWrapper {
                 "editCourse": [Function],
                 "editable": undefined,
                 "entitlement": Object {},
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -889,10 +966,16 @@ exports[`EditCoursePage renders page correctly while fetching 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -921,6 +1004,7 @@ ShallowWrapper {
     }
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -979,32 +1063,7 @@ ShallowWrapper {
         />,
         <PageContainer
           className=""
-          sidePanes={
-            <SidePanes
-              addCourseEditor={[Function]}
-              className=""
-              courseEditors={
-                Object {
-                  "data": Array [],
-                }
-              }
-              fetchCourseEditors={[Function]}
-              fetchOrganizationRoles={null}
-              fetchOrganizationUsers={null}
-              hidden={true}
-              organizationRoles={
-                Object {
-                  "data": Array [],
-                }
-              }
-              organizationUsers={
-                Object {
-                  "data": Array [],
-                }
-              }
-              removeCourseEditor={[Function]}
-            />
-          }
+          sidePanes={false}
           wide={false}
         />,
       ],
@@ -1092,30 +1151,7 @@ ShallowWrapper {
             false,
           ],
           "className": "",
-          "sidePanes": <SidePanes
-            addCourseEditor={[Function]}
-            className=""
-            courseEditors={
-              Object {
-                "data": Array [],
-              }
-            }
-            fetchCourseEditors={[Function]}
-            fetchOrganizationRoles={null}
-            fetchOrganizationUsers={null}
-            hidden={true}
-            organizationRoles={
-              Object {
-                "data": Array [],
-              }
-            }
-            organizationUsers={
-              Object {
-                "data": Array [],
-              }
-            }
-            removeCourseEditor={[Function]}
-          />,
+          "sidePanes": false,
           "wide": false,
         },
         "ref": null,
@@ -1160,32 +1196,7 @@ ShallowWrapper {
           />,
           <PageContainer
             className=""
-            sidePanes={
-              <SidePanes
-                addCourseEditor={[Function]}
-                className=""
-                courseEditors={
-                  Object {
-                    "data": Array [],
-                  }
-                }
-                fetchCourseEditors={[Function]}
-                fetchOrganizationRoles={null}
-                fetchOrganizationUsers={null}
-                hidden={true}
-                organizationRoles={
-                  Object {
-                    "data": Array [],
-                  }
-                }
-                organizationUsers={
-                  Object {
-                    "data": Array [],
-                  }
-                }
-                removeCourseEditor={[Function]}
-              />
-            }
+            sidePanes={false}
             wide={false}
           />,
         ],
@@ -1273,30 +1284,7 @@ ShallowWrapper {
               false,
             ],
             "className": "",
-            "sidePanes": <SidePanes
-              addCourseEditor={[Function]}
-              className=""
-              courseEditors={
-                Object {
-                  "data": Array [],
-                }
-              }
-              fetchCourseEditors={[Function]}
-              fetchOrganizationRoles={null}
-              fetchOrganizationUsers={null}
-              hidden={true}
-              organizationRoles={
-                Object {
-                  "data": Array [],
-                }
-              }
-              organizationUsers={
-                Object {
-                  "data": Array [],
-                }
-              }
-              removeCourseEditor={[Function]}
-            />,
+            "sidePanes": false,
             "wide": false,
           },
           "ref": null,
@@ -1342,10 +1330,16 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -1416,6 +1410,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -1474,13 +1469,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid="00000000-0000-0000-0000-000000000000"
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -1510,10 +1513,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -1594,6 +1603,7 @@ ShallowWrapper {
                 "sku": "000000D",
               }
             }
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -1722,10 +1732,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -1806,6 +1822,7 @@ ShallowWrapper {
                   "sku": "000000D",
                 }
               }
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -1857,13 +1874,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid="00000000-0000-0000-0000-000000000000"
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -1906,10 +1931,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -1988,6 +2017,7 @@ ShallowWrapper {
                 "price": "77.00",
                 "sku": "000000D",
               },
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -2074,13 +2104,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid="00000000-0000-0000-0000-000000000000"
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -2110,10 +2148,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -2194,6 +2238,7 @@ ShallowWrapper {
                   "sku": "000000D",
                 }
               }
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -2322,10 +2367,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -2406,6 +2457,7 @@ ShallowWrapper {
                     "sku": "000000D",
                   }
                 }
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -2457,13 +2509,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid="00000000-0000-0000-0000-000000000000"
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -2506,10 +2566,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -2588,6 +2652,7 @@ ShallowWrapper {
                   "price": "77.00",
                   "sku": "000000D",
                 },
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -2675,10 +2740,16 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -2798,6 +2869,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -2856,13 +2928,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid="00000000-0000-0000-0000-000000000000"
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -2892,10 +2972,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -3025,6 +3111,7 @@ ShallowWrapper {
                 "sku": "000000D",
               }
             }
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -3153,10 +3240,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -3286,6 +3379,7 @@ ShallowWrapper {
                   "sku": "000000D",
                 }
               }
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -3337,13 +3431,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid="00000000-0000-0000-0000-000000000000"
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -3386,10 +3488,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -3515,6 +3621,7 @@ ShallowWrapper {
                 "price": "77.00",
                 "sku": "000000D",
               },
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -3601,13 +3708,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid="00000000-0000-0000-0000-000000000000"
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -3637,10 +3752,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -3770,6 +3891,7 @@ ShallowWrapper {
                   "sku": "000000D",
                 }
               }
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -3898,10 +4020,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -4031,6 +4159,7 @@ ShallowWrapper {
                     "sku": "000000D",
                   }
                 }
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -4082,13 +4211,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid="00000000-0000-0000-0000-000000000000"
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -4131,10 +4268,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -4260,6 +4401,7 @@ ShallowWrapper {
                   "price": "77.00",
                   "sku": "000000D",
                 },
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -4347,10 +4489,16 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -4369,6 +4517,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -4427,13 +4576,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -4463,10 +4620,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -4487,6 +4650,7 @@ ShallowWrapper {
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={Object {}}
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -4627,10 +4791,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -4651,6 +4821,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -4713,13 +4884,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid=""
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -4762,10 +4941,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -4786,6 +4969,7 @@ ShallowWrapper {
               "editCourse": [Function],
               "editable": undefined,
               "entitlement": Object {},
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -4892,13 +5076,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid=""
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -4928,10 +5120,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -4952,6 +5150,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -5092,10 +5291,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -5116,6 +5321,7 @@ ShallowWrapper {
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={Object {}}
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -5178,13 +5384,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -5227,10 +5441,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -5251,6 +5469,7 @@ ShallowWrapper {
                 "editCourse": [Function],
                 "editable": undefined,
                 "entitlement": Object {},
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -5358,10 +5577,16 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -5549,6 +5774,7 @@ ShallowWrapper {
     }
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -5607,13 +5833,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid="00000000-0000-0000-0000-000000000000"
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -5643,10 +5877,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -5844,6 +6084,7 @@ ShallowWrapper {
                 "sku": "000000D",
               }
             }
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -5972,10 +6213,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -6173,6 +6420,7 @@ ShallowWrapper {
                   "sku": "000000D",
                 }
               }
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -6224,13 +6472,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid="00000000-0000-0000-0000-000000000000"
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -6273,10 +6529,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -6468,6 +6728,7 @@ ShallowWrapper {
                 "price": "77.00",
                 "sku": "000000D",
               },
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -6554,13 +6815,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid="00000000-0000-0000-0000-000000000000"
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -6590,10 +6859,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -6791,6 +7066,7 @@ ShallowWrapper {
                   "sku": "000000D",
                 }
               }
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -6919,10 +7195,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -7120,6 +7402,7 @@ ShallowWrapper {
                     "sku": "000000D",
                   }
                 }
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -7171,13 +7454,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid="00000000-0000-0000-0000-000000000000"
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -7220,10 +7511,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -7415,6 +7710,7 @@ ShallowWrapper {
                   "price": "77.00",
                   "sku": "000000D",
                 },
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -7502,10 +7798,16 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -7540,6 +7842,7 @@ ShallowWrapper {
     }
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -7598,13 +7901,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -7634,10 +7945,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -7674,6 +7991,7 @@ ShallowWrapper {
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={Object {}}
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -7818,10 +8136,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -7858,6 +8182,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -7924,13 +8249,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid=""
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -7973,10 +8306,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -8009,6 +8346,7 @@ ShallowWrapper {
               "editCourse": [Function],
               "editable": undefined,
               "entitlement": Object {},
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -8119,13 +8457,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid=""
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -8155,10 +8501,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -8195,6 +8547,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -8339,10 +8692,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -8379,6 +8738,7 @@ ShallowWrapper {
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={Object {}}
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -8445,13 +8805,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -8494,10 +8862,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -8530,6 +8902,7 @@ ShallowWrapper {
                 "editCourse": [Function],
                 "editable": undefined,
                 "entitlement": Object {},
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -8641,10 +9014,16 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -8708,6 +9087,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -8766,13 +9146,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -8802,10 +9190,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -8871,6 +9265,7 @@ ShallowWrapper {
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={Object {}}
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -8996,10 +9391,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -9065,6 +9466,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -9113,13 +9515,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid=""
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -9162,10 +9572,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -9229,6 +9643,7 @@ ShallowWrapper {
               "editCourse": [Function],
               "editable": undefined,
               "entitlement": Object {},
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -9315,13 +9730,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid=""
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -9351,10 +9774,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -9420,6 +9849,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -9545,10 +9975,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -9614,6 +10050,7 @@ ShallowWrapper {
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={Object {}}
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -9662,13 +10099,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -9711,10 +10156,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -9778,6 +10227,7 @@ ShallowWrapper {
                 "editCourse": [Function],
                 "editable": undefined,
                 "entitlement": Object {},
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -9865,10 +10315,16 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -9891,6 +10347,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -9949,13 +10406,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -9985,10 +10450,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -10013,6 +10484,7 @@ ShallowWrapper {
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={Object {}}
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -10153,10 +10625,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -10181,6 +10659,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -10243,13 +10722,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid=""
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -10292,10 +10779,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -10318,6 +10809,7 @@ ShallowWrapper {
               "editCourse": [Function],
               "editable": undefined,
               "entitlement": Object {},
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -10424,13 +10916,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid=""
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -10460,10 +10960,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -10488,6 +10994,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -10628,10 +11135,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -10656,6 +11169,7 @@ ShallowWrapper {
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={Object {}}
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -10718,13 +11232,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -10767,10 +11289,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -10793,6 +11319,7 @@ ShallowWrapper {
                 "editCourse": [Function],
                 "editable": undefined,
                 "entitlement": Object {},
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -10900,10 +11427,16 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -10986,6 +11519,7 @@ ShallowWrapper {
     }
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -11044,13 +11578,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -11080,10 +11622,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -11168,6 +11716,7 @@ ShallowWrapper {
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={Object {}}
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -11293,10 +11842,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -11381,6 +11936,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -11429,13 +11985,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid=""
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -11478,10 +12042,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -11564,6 +12132,7 @@ ShallowWrapper {
               "editCourse": [Function],
               "editable": undefined,
               "entitlement": Object {},
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -11650,13 +12219,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid=""
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -11686,10 +12263,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -11774,6 +12357,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -11899,10 +12483,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -11987,6 +12577,7 @@ ShallowWrapper {
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={Object {}}
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -12035,13 +12626,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -12084,10 +12683,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -12170,6 +12773,7 @@ ShallowWrapper {
                 "editCourse": [Function],
                 "editable": undefined,
                 "entitlement": Object {},
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -12257,10 +12861,16 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -12283,6 +12893,7 @@ ShallowWrapper {
     }
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -12341,13 +12952,21 @@ ShallowWrapper {
           className=""
           sidePanes={
             <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -12377,10 +12996,16 @@ ShallowWrapper {
             title={null}
           />
           <Connect(ReduxForm)
+            addComment={[Function]}
             addCourseEditor={[Function]}
             clearCourseReviewAlert={[Function]}
             clearCreateStatusAlert={[Function]}
             clearSubmitStatus={[Function]}
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
@@ -12405,6 +13030,7 @@ ShallowWrapper {
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={Object {}}
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchCourseInfo={[Function]}
             fetchCourseOptions={[Function]}
@@ -12545,10 +13171,16 @@ ShallowWrapper {
               title={null}
             />,
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -12573,6 +13205,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -12635,13 +13268,21 @@ ShallowWrapper {
           ],
           "className": "",
           "sidePanes": <SidePanes
+            addComment={[Function]}
             addCourseEditor={[Function]}
             className=""
+            comments={
+              Object {
+                "data": Array [],
+              }
+            }
             courseEditors={
               Object {
                 "data": Array [],
               }
             }
+            courseUuid=""
+            fetchComments={[Function]}
             fetchCourseEditors={[Function]}
             fetchOrganizationRoles={null}
             fetchOrganizationUsers={null}
@@ -12684,10 +13325,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "addComment": [Function],
               "addCourseEditor": [Function],
               "clearCourseReviewAlert": [Function],
               "clearCreateStatusAlert": [Function],
               "clearSubmitStatus": [Function],
+              "comments": Object {
+                "data": Array [],
+              },
               "courseEditors": Object {
                 "data": Array [],
               },
@@ -12710,6 +13355,7 @@ ShallowWrapper {
               "editCourse": [Function],
               "editable": undefined,
               "entitlement": Object {},
+              "fetchComments": [Function],
               "fetchCourseEditors": [Function],
               "fetchCourseInfo": [Function],
               "fetchCourseOptions": [Function],
@@ -12816,13 +13462,21 @@ ShallowWrapper {
             className=""
             sidePanes={
               <SidePanes
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 className=""
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
                   }
                 }
+                courseUuid=""
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchOrganizationRoles={null}
                 fetchOrganizationUsers={null}
@@ -12852,10 +13506,16 @@ ShallowWrapper {
               title={null}
             />
             <Connect(ReduxForm)
+              addComment={[Function]}
               addCourseEditor={[Function]}
               clearCourseReviewAlert={[Function]}
               clearCreateStatusAlert={[Function]}
               clearSubmitStatus={[Function]}
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
@@ -12880,6 +13540,7 @@ ShallowWrapper {
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={Object {}}
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchCourseInfo={[Function]}
               fetchCourseOptions={[Function]}
@@ -13020,10 +13681,16 @@ ShallowWrapper {
                 title={null}
               />,
               <Connect(ReduxForm)
+                addComment={[Function]}
                 addCourseEditor={[Function]}
                 clearCourseReviewAlert={[Function]}
                 clearCreateStatusAlert={[Function]}
                 clearSubmitStatus={[Function]}
+                comments={
+                  Object {
+                    "data": Array [],
+                  }
+                }
                 courseEditors={
                   Object {
                     "data": Array [],
@@ -13048,6 +13715,7 @@ ShallowWrapper {
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={Object {}}
+                fetchComments={[Function]}
                 fetchCourseEditors={[Function]}
                 fetchCourseInfo={[Function]}
                 fetchCourseOptions={[Function]}
@@ -13110,13 +13778,21 @@ ShallowWrapper {
             ],
             "className": "",
             "sidePanes": <SidePanes
+              addComment={[Function]}
               addCourseEditor={[Function]}
               className=""
+              comments={
+                Object {
+                  "data": Array [],
+                }
+              }
               courseEditors={
                 Object {
                   "data": Array [],
                 }
               }
+              courseUuid=""
+              fetchComments={[Function]}
               fetchCourseEditors={[Function]}
               fetchOrganizationRoles={null}
               fetchOrganizationUsers={null}
@@ -13159,10 +13835,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "addComment": [Function],
                 "addCourseEditor": [Function],
                 "clearCourseReviewAlert": [Function],
                 "clearCreateStatusAlert": [Function],
                 "clearSubmitStatus": [Function],
+                "comments": Object {
+                  "data": Array [],
+                },
                 "courseEditors": Object {
                   "data": Array [],
                 },
@@ -13185,6 +13865,7 @@ ShallowWrapper {
                 "editCourse": [Function],
                 "editable": undefined,
                 "entitlement": Object {},
+                "fetchComments": [Function],
                 "fetchCourseEditors": [Function],
                 "fetchCourseInfo": [Function],
                 "fetchCourseOptions": [Function],
@@ -13292,10 +13973,16 @@ exports[`EditCoursePage renders page correctly with no courseInfo 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -13306,6 +13993,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -13403,10 +14091,16 @@ exports[`EditCoursePage renders page correctly with no courseOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -13421,6 +14115,7 @@ ShallowWrapper {
     courseRunOptions={Object {}}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
@@ -13518,10 +14213,16 @@ exports[`EditCoursePage renders page correctly with no courseRunOptions 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditCoursePage
+    addComment={[Function]}
     addCourseEditor={[Function]}
     clearCourseReviewAlert={[Function]}
     clearCreateStatusAlert={[Function]}
     clearSubmitStatus={[Function]}
+    comments={
+      Object {
+        "data": Array [],
+      }
+    }
     courseEditors={
       Object {
         "data": Array [],
@@ -13536,6 +14237,7 @@ ShallowWrapper {
     courseRunOptions={null}
     courseSubmitInfo={Object {}}
     editCourse={[Function]}
+    fetchComments={[Function]}
     fetchCourseEditors={[Function]}
     fetchCourseInfo={[Function]}
     fetchCourseOptions={[Function]}
