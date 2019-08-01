@@ -500,7 +500,8 @@ class EditCoursePage extends React.Component {
         </div>
         { showSpinner && <LoadingSpinner /> }
         <PageContainer
-          sidePanes={<SidePanes
+          sidePanes={showForm && <SidePanes
+            courseUuid={uuid}
             hidden={!showForm}
             addCourseEditor={editable && this.props.addCourseEditor}
             courseEditors={this.props.courseEditors}
@@ -514,6 +515,9 @@ class EditCoursePage extends React.Component {
             organizationRoles={this.props.organizationRoles}
             organizationUsers={this.props.organizationUsers}
             removeCourseEditor={editable && this.props.removeCourseEditor}
+            addComment={this.props.addComment}
+            comments={this.props.comments}
+            fetchComments={this.props.fetchComments}
           />}
         >
           { showForm && !editable && <StatusAlert
@@ -555,7 +559,11 @@ class EditCoursePage extends React.Component {
 }
 
 EditCoursePage.defaultProps = {
+  addComment: () => null,
   addCourseEditor: () => null,
+  comments: {
+    data: [],
+  },
   courseEditors: {
     data: [],
   },
@@ -564,6 +572,7 @@ EditCoursePage.defaultProps = {
   },
   courseOptions: {},
   courseRunOptions: {},
+  fetchComments: () => null,
   fetchCourseEditors: () => null,
   fetchCourseInfo: () => null,
   fetchCourseOptions: () => null,
@@ -586,7 +595,14 @@ EditCoursePage.defaultProps = {
 };
 
 EditCoursePage.propTypes = {
+  addComment: PropTypes.func,
   addCourseEditor: PropTypes.func,
+  comments: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape()),
+    isFetching: PropTypes.bool,
+    isCreating: PropTypes.bool,
+    error: PropTypes.arrayOf(PropTypes.string),
+  }),
   courseEditors: PropTypes.shape({
     data: PropTypes.array,
     isFetching: PropTypes.bool,
@@ -606,6 +622,7 @@ EditCoursePage.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  fetchComments: PropTypes.func,
   fetchCourseEditors: PropTypes.func,
   fetchCourseInfo: PropTypes.func,
   fetchCourseOptions: PropTypes.func,

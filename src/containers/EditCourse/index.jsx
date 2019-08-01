@@ -9,10 +9,11 @@ import { fetchCourseOptions } from '../../data/actions/courseOptions';
 import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
 import { fetchOrganizationRoles } from '../../data/actions/organizationRoles';
 import { fetchOrganizationUsers } from '../../data/actions/organizationUsers';
-
+import { addComment, fetchComments } from '../../data/actions/comments';
 
 const mapStateToProps = state => ({
   authentication: state.authentication,
+  comments: state.comments,
   courseEditors: state.courseEditors,
   courseInfo: state.courseInfo,
   courseOptions: state.courseOptions,
@@ -27,6 +28,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   addCourseEditor,
+  addComment,
+  fetchComments,
   fetchCourseEditors,
   fetchCourseInfo,
   fetchCourseOptions,
@@ -47,6 +50,8 @@ const mergeProps = (stateProps, actionProps, { id }) => ({
   addCourseEditor: userId => actionProps.addCourseEditor(id, userId),
   fetchCourseEditors: () => actionProps.fetchCourseEditors(id),
   fetchCourseInfo: () => actionProps.fetchCourseInfo(id),
+  addComment: comment => actionProps.addComment(comment),
+  fetchComments: () => actionProps.fetchComments(id),
 });
 
 export default connect(

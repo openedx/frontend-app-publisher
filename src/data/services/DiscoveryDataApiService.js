@@ -123,6 +123,19 @@ class DiscoveryDataApiService {
     return Promise.all(promises);
   }
 
+  static fetchComments(id) {
+    const queryParams = {
+      course_uuid: id,
+    };
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/comments/`;
+    return apiClient.get(url, { params: queryParams });
+  }
+
+  static createComment(data) {
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/comments/`;
+    return apiClient.post(url, data);
+  }
+
   static internalReviewEdit(courseRun) {
     const queryParams = {
       exclude_utm: 1,
