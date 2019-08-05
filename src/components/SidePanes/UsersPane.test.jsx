@@ -103,7 +103,7 @@ describe('UsersPane', () => {
 
   it('allows adding an editor', () => {
     const mockCallback = jest.fn();
-    const wrapper = shallow(<UsersPane
+    const wrapper = mount(<UsersPane
       addCourseEditor={mockCallback}
       courseEditors={basicCourseEditors}
       organizationUsers={basicOrganizationUsers}
@@ -112,8 +112,8 @@ describe('UsersPane', () => {
     const startAddButton = wrapper.find('.usersPane-startAdd');
     startAddButton.simulate('click');
 
-    const select = wrapper.find('select');
-    expect(select.html()).toEqual('<select autofocus=""><option value="14">New User (new@example.com)</option></select>');
+    const selectOption = wrapper.find('option');
+    expect(selectOption.html()).toEqual('<option value="14">New User (new@example.com)</option>');
 
     const addButton = wrapper.find('.usersPane-add');
     addButton.simulate('click');

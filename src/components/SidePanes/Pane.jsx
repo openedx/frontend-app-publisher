@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Pane(props) {
   return (
-    <div className="card">
+    <div className="card mb-3">
       <div className="card-header bg-primary text-white">{props.title}</div>
       <div className="card-body">
         {props.children}

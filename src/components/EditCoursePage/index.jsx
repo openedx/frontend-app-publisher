@@ -380,7 +380,22 @@ class EditCoursePage extends React.Component {
           onSubmit={this.continueSubmit}
           onClose={this.cancelSubmit}
         />
+        <div className="container my-3">
+          { showReviewStatusAlert && <StatusAlert
+            onClose={this.dismissAlert}
+            dismissible
+            alertType="success"
+            message="Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete."
+          /> }
 
+          { showCreateStatusAlert && <StatusAlert
+            onClose={this.dismissAlert}
+            dismissible
+            alertType="success"
+            message="Course run has been created in studio. See link below."
+          /> }
+        </div>
+        { showSpinner && <LoadingSpinner /> }
         <PageContainer
           sidePanes={<SidePanes
             hidden={!showForm}
@@ -398,21 +413,6 @@ class EditCoursePage extends React.Component {
             alertType="secondary"
             message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
           /> }
-
-          { showReviewStatusAlert && <StatusAlert
-            onClose={this.dismissAlert}
-            dismissible
-            alertType="success"
-            message="Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete."
-          /> }
-
-          { showCreateStatusAlert && <StatusAlert
-            onClose={this.dismissAlert}
-            dismissible
-            alertType="success"
-            message="Course run has been created in studio. See link below."
-          /> }
-          { showSpinner && <LoadingSpinner /> }
           { showForm && (
             <EditCourseForm
               id={this.getFormId()}
