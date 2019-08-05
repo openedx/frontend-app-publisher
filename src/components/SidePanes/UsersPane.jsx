@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon } from '@edx/paragon';
+import { Icon, InputSelect } from '@edx/paragon';
 
 import Pane from './Pane';
 import User from './User';
+import FieldLabel from '../FieldLabel';
 
 
 class UsersPane extends React.Component {
@@ -23,6 +24,7 @@ class UsersPane extends React.Component {
     };
 
     this.addUser = this.addUser.bind(this);
+    this.resetEditorChoice = this.resetEditorChoice.bind(this);
     this.startAddingUser = this.startAddingUser.bind(this);
   }
 
@@ -41,6 +43,10 @@ class UsersPane extends React.Component {
 
   addUser() {
     this.props.addCourseEditor(this.state.newEditorChoice);
+    this.resetEditorChoice();
+  }
+
+  resetEditorChoice() {
     this.setState({
       addingUser: false,
       newEditorChoice: 0,
@@ -113,17 +119,31 @@ class UsersPane extends React.Component {
             }
             {addingUser &&
               <div className="mt-2">
-                {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
-                <select onChange={this.editorChoiceChanged} autoFocus>
-                  {editorChoices.map(user => (
-                    <option key={user.id} value={user.id}>{this.displayName(user)}</option>
-                  ))}
-                </select>
+                <hr />
+                <InputSelect
+                  name="add_editor"
+                  label={
+                    <FieldLabel
+                      id="add_editor.label"
+                      text="Select an editor:"
+                    />
+                  }
+                  options={
+                    editorChoices.map(user => ({ label: this.displayName(user), value: user.id }))
+                  }
+                  onChange={this.editorChoiceChanged}
+                />
                 <button
                   className="btn btn-primary btn-sm align-baseline ml-1 usersPane-add"
                   onClick={this.addUser}
                 >
                   Add
+                </button>
+                <button
+                  className="btn btn-outline-primary btn-sm align-baseline ml-1 usersPane-cancel"
+                  onClick={this.resetEditorChoice}
+                >
+                  Cancel
                 </button>
               </div>
             }

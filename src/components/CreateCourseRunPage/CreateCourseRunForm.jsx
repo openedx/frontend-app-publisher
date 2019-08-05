@@ -57,7 +57,6 @@ const BaseCreateCourseRunForm = ({
               }
             />
           }
-          required
         />
         <Field
           name="start"

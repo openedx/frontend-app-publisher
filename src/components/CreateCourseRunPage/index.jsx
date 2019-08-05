@@ -129,8 +129,9 @@ class CreateCourseRunPage extends React.Component {
     const showSpinner = !startedFetching || courseInfo.isFetching || courseRunOptions.isFetching;
     const showForm = startedFetching && !courseInfo.isFetching && !courseRunOptions.isFetching &&
       !courseInReview;
-    const sortedRunLabels = course_runs && this.parseCourseRunLabels(course_runs);
-    const defaultRun = sortedRunLabels ? sortedRunLabels[0].value : '';
+    const sortedRunLabels = (showForm &&
+      (course_runs ? this.parseCourseRunLabels(course_runs) : []));
+    const defaultRun = (showForm && (sortedRunLabels.length ? sortedRunLabels[0].value : ''));
 
     return (
       <React.Fragment>
