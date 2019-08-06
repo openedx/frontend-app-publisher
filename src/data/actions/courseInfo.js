@@ -25,11 +25,10 @@ import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { courseSubmittingFailure, courseSubmittingSuccess } from './courseSubmitInfo';
 
 // These map to methods in the API service so that we can achieve dynamic function calling
-const ApiFunctionEnum = {
+const ApiFunctionEnum = Object.freeze({
   INTERNAL_REVIEW_FUNCTION: 'internalReviewEdit',
   EDIT_RUNS_FUNCTION: 'editCourseRuns',
-};
-Object.freeze(ApiFunctionEnum);
+});
 
 function requestCourseInfoFail(id, error) {
   return { type: REQUEST_COURSE_INFO_FAIL, id, error };
