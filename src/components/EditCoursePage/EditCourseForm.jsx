@@ -218,6 +218,8 @@ export class BaseEditCourseForm extends React.Component {
     const courseOptions = this.getCourseOptions();
     const courseRunOptions = this.getCourseRunOptions();
     const levelTypeOptions = courseOptions && this.parseOptions(courseOptions.level_type.choices);
+    const ofacRestrictionOptions = (courseRunOptions && courseRunOptions.has_ofac_restrictions &&
+      this.parseOptions(courseRunOptions.has_ofac_restrictions.choices));
     const subjectOptions = courseOptions && this.parseOptions(courseOptions.subjects.child.choices);
     const pacingTypeOptions = (courseRunOptions &&
       this.parseOptions(courseRunOptions.pacing_type.choices));
@@ -225,6 +227,8 @@ export class BaseEditCourseForm extends React.Component {
       this.parseOptions(courseRunOptions.content_language.choices));
     const programOptions = (courseRunOptions &&
       this.parseOptions(courseRunOptions.expected_program_type.choices));
+
+    const disabled = courseInReview || !editable;
 
     let submitState = 'default';
     if (submitting || (courseInfo && courseInfo.isSubmittingEdit)) {
@@ -237,8 +241,6 @@ export class BaseEditCourseForm extends React.Component {
     levelTypeOptions.unshift({ label: '--', value: '' });
     subjectOptions.unshift({ label: '--', value: '' });
     programOptions.unshift({ label: '--', value: '' });
-
-    const disabled = courseInReview || !editable;
 
     const cancelButton = (
       <button
@@ -819,6 +821,7 @@ export class BaseEditCourseForm extends React.Component {
             name="course_runs"
             component={CollapsibleCourseRuns}
             languageOptions={languageOptions}
+            ofacRestrictionOptions={ofacRestrictionOptions}
             programOptions={programOptions}
             pacingTypeOptions={pacingTypeOptions}
             formId={id}
