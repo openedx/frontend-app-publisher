@@ -26,6 +26,7 @@ class UsersPane extends React.Component {
     this.addUser = this.addUser.bind(this);
     this.resetEditorChoice = this.resetEditorChoice.bind(this);
     this.startAddingUser = this.startAddingUser.bind(this);
+    this.editorChoiceChanged = this.editorChoiceChanged.bind(this);
   }
 
   componentDidMount() {
@@ -69,9 +70,9 @@ class UsersPane extends React.Component {
     return organizationUsers.data.filter(user => !editorIds.has(user.id));
   }
 
-  editorChoiceChanged(event) {
+  editorChoiceChanged(value) {
     this.setState({
-      newEditorChoice: event.target.value,
+      newEditorChoice: value,
     });
   }
 
