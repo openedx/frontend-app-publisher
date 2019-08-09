@@ -91,15 +91,14 @@ class CourseTable extends React.Component {
         (
           <React.Fragment>
             <div className="row">
-              <div className="col-6 ml-auto">
+              <div className="col-7 float-left">
                 <ButtonToolbar className="mb-3" leftJustify>
                   <Link to="/courses/new">
                     <button className="btn btn-primary">New Course</button>
                   </Link>
                 </ButtonToolbar>
               </div>
-              <div className="col-3" />
-              <div className="col-3">
+              <div className="col-5 float-right">
                 <SearchField
                   value={pageOptions.pubq}
                   onClear={() => {
