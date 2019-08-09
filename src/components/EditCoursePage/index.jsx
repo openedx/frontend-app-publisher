@@ -28,7 +28,8 @@ class EditCoursePage extends React.Component {
     this.showModal = this.showModal.bind(this);
     this.cancelSubmit = this.cancelSubmit.bind(this);
     this.continueSubmit = this.continueSubmit.bind(this);
-    this.dismissAlert = this.dismissAlert.bind(this);
+    this.dismissReviewStatusAlert = this.dismissReviewStatusAlert.bind(this);
+    this.dismissCreateStatusAlert = this.dismissCreateStatusAlert.bind(this);
     this.displayReviewStatusAlert = this.displayReviewStatusAlert.bind(this);
   }
 
@@ -56,7 +57,8 @@ class EditCoursePage extends React.Component {
   }
 
   componentWillUnmount() {
-    this.dismissAlert();
+    this.dismissCreateStatusAlert();
+    this.dismissReviewStatusAlert();
   }
 
   setStartedFetching() {
@@ -219,13 +221,13 @@ class EditCoursePage extends React.Component {
     return clearSubmitStatus();
   }
 
-  dismissAlert() {
-    const {
-      clearCourseReviewAlert,
-      clearCreateStatusAlert,
-    } = this.props;
-
+  dismissReviewStatusAlert() {
+    const { clearCourseReviewAlert } = this.props;
     clearCourseReviewAlert();
+  }
+
+  dismissCreateStatusAlert() {
+    const { clearCreateStatusAlert } = this.props;
     clearCreateStatusAlert();
   }
 
@@ -417,14 +419,14 @@ class EditCoursePage extends React.Component {
         />
         <div className="container my-3">
           { showReviewStatusAlert && <StatusAlert
-            onClose={this.dismissAlert}
+            onClose={this.dismissReviewStatusAlert}
             dismissible
             alertType="success"
             message={targetRun && this.displayReviewStatusAlert(targetRun.status)}
           /> }
 
           { showCreateStatusAlert && <StatusAlert
-            onClose={this.dismissAlert}
+            onClose={this.dismissCreateStatusAlert}
             dismissible
             alertType="success"
             message="Course run has been created in studio. See link below."
