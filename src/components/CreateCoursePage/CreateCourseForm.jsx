@@ -12,13 +12,14 @@ import FieldLabel from '../FieldLabel';
 
 import {
   AUDIT_TRACK,
+  DATE_INPUT_PATTERN,
   ENTITLEMENT_TRACKS,
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
 import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
-import { getDateString, localTimeZone } from '../../utils';
+import { isSafari, localTimeZone, getDateWithDashes } from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -148,24 +149,59 @@ class BaseCreateCourseForm extends React.Component {
           />}
           <h2>First run of your Course</h2>
           <hr />
-          <Field
-            name="start"
-            component={DateTimeField}
-            dateLabel="Start date"
-            timeLabel={`Start time (${localTimeZone})`}
-            helpText={startDateHelp}
-            required
-            minDate={getDateString(moment())}
-          />
-          <Field
-            name="end"
-            component={DateTimeField}
-            dateLabel="End date"
-            timeLabel={`End time (${localTimeZone})`}
-            helpText={endDateHelp}
-            required
-            minDate={getDateString(moment(currentFormValues.start).add(1, 'd') || moment())}
-          />
+          {/* TODO this should be refactored when paragon supports safari */}
+          {/* text inputs for safari */}
+          {isSafari ?
+            <div>
+              <Field
+                name="start"
+                type="text"
+                component={DateTimeField}
+                dateLabel="Start date"
+                timeLabel={`Start time (${localTimeZone})`}
+                helpText={startDateHelp}
+                required
+                maxLength="10"
+                pattern={DATE_INPUT_PATTERN}
+                placeholder="yyyy/mm/dd"
+              />
+              <Field
+                name="end"
+                type="text"
+                component={DateTimeField}
+                dateLabel="End date"
+                timeLabel={`End time (${localTimeZone})`}
+                helpText={endDateHelp}
+                required
+                maxLength="10"
+                pattern={DATE_INPUT_PATTERN}
+                placeholder="yyyy/mm/dd"
+              />
+            </div> :
+            // date inputs for all browsers besides safari
+            <div>
+              <Field
+                name="start"
+                type="date"
+                component={DateTimeField}
+                dateLabel="Start date"
+                timeLabel={`Start time (${localTimeZone})`}
+                helpText={startDateHelp}
+                required
+                minDate={getDateWithDashes(moment())}
+              />
+              <Field
+                name="end"
+                type="date"
+                component={DateTimeField}
+                dateLabel="End date"
+                timeLabel={`End time (${localTimeZone})`}
+                helpText={endDateHelp}
+                required
+                minDate={getDateWithDashes(moment(currentFormValues.start).add(1, 'd') || moment())}
+              />
+            </div>
+          }
           <Field
             name="pacing_type"
             type="text"

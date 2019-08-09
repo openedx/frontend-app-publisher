@@ -268,45 +268,59 @@ ShallowWrapper {
             First run of your Course
           </h2>
           <hr />
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-01"
-            name="start"
-            required={true}
-            timeLabel="Start time (UTC)"
-          />
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-02"
-            name="end"
-            required={true}
-            timeLabel="End time (UTC)"
-          />
+          <div>
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="start"
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="end"
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>
           <Field
             component={[Function]}
             label={
@@ -616,45 +630,59 @@ ShallowWrapper {
               First run of your Course
             </h2>,
             <hr />,
-            <Field
-              component={[Function]}
-              dateLabel="Start date"
-              helpText={
-                <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-01"
-              name="start"
-              required={true}
-              timeLabel="Start time (UTC)"
-            />,
-            <Field
-              component={[Function]}
-              dateLabel="End date"
-              helpText={
-                <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-02"
-              name="end"
-              required={true}
-              timeLabel="End time (UTC)"
-            />,
+            <div>
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="start"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="end"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />
+            </div>,
             <Field
               component={[Function]}
               label={
@@ -980,53 +1008,129 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "component": [Function],
-              "dateLabel": "Start date",
-              "helpText": <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>,
-              "minDate": "2001-01-01",
-              "name": "start",
-              "required": true,
-              "timeLabel": "Start time (UTC)",
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  dateLabel="Start date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="start"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="Start time (UTC)"
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  dateLabel="End date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="end"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="End time (UTC)"
+                  type="text"
+                />,
+              ],
             },
             "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "dateLabel": "End date",
-              "helpText": <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>,
-              "minDate": "2001-01-02",
-              "name": "end",
-              "required": true,
-              "timeLabel": "End time (UTC)",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "dateLabel": "Start date",
+                  "helpText": <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>,
+                  "maxLength": "10",
+                  "name": "start",
+                  "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                  "placeholder": "yyyy/mm/dd",
+                  "required": true,
+                  "timeLabel": "Start time (UTC)",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "dateLabel": "End date",
+                  "helpText": <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>,
+                  "maxLength": "10",
+                  "name": "end",
+                  "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                  "placeholder": "yyyy/mm/dd",
+                  "required": true,
+                  "timeLabel": "End time (UTC)",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -1387,45 +1491,59 @@ ShallowWrapper {
               First run of your Course
             </h2>
             <hr />
-            <Field
-              component={[Function]}
-              dateLabel="Start date"
-              helpText={
-                <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-01"
-              name="start"
-              required={true}
-              timeLabel="Start time (UTC)"
-            />
-            <Field
-              component={[Function]}
-              dateLabel="End date"
-              helpText={
-                <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-02"
-              name="end"
-              required={true}
-              timeLabel="End time (UTC)"
-            />
+            <div>
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="start"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="end"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />
+            </div>
             <Field
               component={[Function]}
               label={
@@ -1735,45 +1853,59 @@ ShallowWrapper {
                 First run of your Course
               </h2>,
               <hr />,
-              <Field
-                component={[Function]}
-                dateLabel="Start date"
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major holidays.
-                    </p>
-                    <p>
-                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                minDate="2001-01-01"
-                name="start"
-                required={true}
-                timeLabel="Start time (UTC)"
-              />,
-              <Field
-                component={[Function]}
-                dateLabel="End date"
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                minDate="2001-01-02"
-                name="end"
-                required={true}
-                timeLabel="End time (UTC)"
-              />,
+              <div>
+                <Field
+                  component={[Function]}
+                  dateLabel="Start date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="start"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="Start time (UTC)"
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  dateLabel="End date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="end"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="End time (UTC)"
+                  type="text"
+                />
+              </div>,
               <Field
                 component={[Function]}
                 label={
@@ -2099,53 +2231,129 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "host",
               "props": Object {
-                "component": [Function],
-                "dateLabel": "Start date",
-                "helpText": <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>,
-                "minDate": "2001-01-01",
-                "name": "start",
-                "required": true,
-                "timeLabel": "Start time (UTC)",
+                "children": Array [
+                  <Field
+                    component={[Function]}
+                    dateLabel="Start date"
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major holidays.
+                        </p>
+                        <p>
+                          Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    maxLength="10"
+                    name="start"
+                    pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                    placeholder="yyyy/mm/dd"
+                    required={true}
+                    timeLabel="Start time (UTC)"
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    dateLabel="End date"
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    maxLength="10"
+                    name="end"
+                    pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                    placeholder="yyyy/mm/dd"
+                    required={true}
+                    timeLabel="End time (UTC)"
+                    type="text"
+                  />,
+                ],
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "dateLabel": "End date",
-                "helpText": <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>,
-                "minDate": "2001-01-02",
-                "name": "end",
-                "required": true,
-                "timeLabel": "End time (UTC)",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "dateLabel": "Start date",
+                    "helpText": <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>,
+                    "maxLength": "10",
+                    "name": "start",
+                    "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                    "placeholder": "yyyy/mm/dd",
+                    "required": true,
+                    "timeLabel": "Start time (UTC)",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "dateLabel": "End date",
+                    "helpText": <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>,
+                    "maxLength": "10",
+                    "name": "end",
+                    "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                    "placeholder": "yyyy/mm/dd",
+                    "required": true,
+                    "timeLabel": "End time (UTC)",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -2582,45 +2790,59 @@ ShallowWrapper {
             First run of your Course
           </h2>
           <hr />
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-01"
-            name="start"
-            required={true}
-            timeLabel="Start time (UTC)"
-          />
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-02"
-            name="end"
-            required={true}
-            timeLabel="End time (UTC)"
-          />
+          <div>
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="start"
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="end"
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>
           <Field
             component={[Function]}
             label={
@@ -2930,45 +3152,59 @@ ShallowWrapper {
               First run of your Course
             </h2>,
             <hr />,
-            <Field
-              component={[Function]}
-              dateLabel="Start date"
-              helpText={
-                <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-01"
-              name="start"
-              required={true}
-              timeLabel="Start time (UTC)"
-            />,
-            <Field
-              component={[Function]}
-              dateLabel="End date"
-              helpText={
-                <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-02"
-              name="end"
-              required={true}
-              timeLabel="End time (UTC)"
-            />,
+            <div>
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="start"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="end"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />
+            </div>,
             <Field
               component={[Function]}
               label={
@@ -3294,53 +3530,129 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "component": [Function],
-              "dateLabel": "Start date",
-              "helpText": <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>,
-              "minDate": "2001-01-01",
-              "name": "start",
-              "required": true,
-              "timeLabel": "Start time (UTC)",
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  dateLabel="Start date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="start"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="Start time (UTC)"
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  dateLabel="End date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="end"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="End time (UTC)"
+                  type="text"
+                />,
+              ],
             },
             "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "dateLabel": "End date",
-              "helpText": <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>,
-              "minDate": "2001-01-02",
-              "name": "end",
-              "required": true,
-              "timeLabel": "End time (UTC)",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "dateLabel": "Start date",
+                  "helpText": <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>,
+                  "maxLength": "10",
+                  "name": "start",
+                  "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                  "placeholder": "yyyy/mm/dd",
+                  "required": true,
+                  "timeLabel": "Start time (UTC)",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "dateLabel": "End date",
+                  "helpText": <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>,
+                  "maxLength": "10",
+                  "name": "end",
+                  "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                  "placeholder": "yyyy/mm/dd",
+                  "required": true,
+                  "timeLabel": "End time (UTC)",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -3701,45 +4013,59 @@ ShallowWrapper {
               First run of your Course
             </h2>
             <hr />
-            <Field
-              component={[Function]}
-              dateLabel="Start date"
-              helpText={
-                <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-01"
-              name="start"
-              required={true}
-              timeLabel="Start time (UTC)"
-            />
-            <Field
-              component={[Function]}
-              dateLabel="End date"
-              helpText={
-                <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-02"
-              name="end"
-              required={true}
-              timeLabel="End time (UTC)"
-            />
+            <div>
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="start"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="end"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />
+            </div>
             <Field
               component={[Function]}
               label={
@@ -4049,45 +4375,59 @@ ShallowWrapper {
                 First run of your Course
               </h2>,
               <hr />,
-              <Field
-                component={[Function]}
-                dateLabel="Start date"
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major holidays.
-                    </p>
-                    <p>
-                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                minDate="2001-01-01"
-                name="start"
-                required={true}
-                timeLabel="Start time (UTC)"
-              />,
-              <Field
-                component={[Function]}
-                dateLabel="End date"
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                minDate="2001-01-02"
-                name="end"
-                required={true}
-                timeLabel="End time (UTC)"
-              />,
+              <div>
+                <Field
+                  component={[Function]}
+                  dateLabel="Start date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="start"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="Start time (UTC)"
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  dateLabel="End date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="end"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="End time (UTC)"
+                  type="text"
+                />
+              </div>,
               <Field
                 component={[Function]}
                 label={
@@ -4413,53 +4753,129 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "host",
               "props": Object {
-                "component": [Function],
-                "dateLabel": "Start date",
-                "helpText": <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>,
-                "minDate": "2001-01-01",
-                "name": "start",
-                "required": true,
-                "timeLabel": "Start time (UTC)",
+                "children": Array [
+                  <Field
+                    component={[Function]}
+                    dateLabel="Start date"
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major holidays.
+                        </p>
+                        <p>
+                          Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    maxLength="10"
+                    name="start"
+                    pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                    placeholder="yyyy/mm/dd"
+                    required={true}
+                    timeLabel="Start time (UTC)"
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    dateLabel="End date"
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    maxLength="10"
+                    name="end"
+                    pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                    placeholder="yyyy/mm/dd"
+                    required={true}
+                    timeLabel="End time (UTC)"
+                    type="text"
+                  />,
+                ],
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "dateLabel": "End date",
-                "helpText": <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>,
-                "minDate": "2001-01-02",
-                "name": "end",
-                "required": true,
-                "timeLabel": "End time (UTC)",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "dateLabel": "Start date",
+                    "helpText": <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>,
+                    "maxLength": "10",
+                    "name": "start",
+                    "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                    "placeholder": "yyyy/mm/dd",
+                    "required": true,
+                    "timeLabel": "Start time (UTC)",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "dateLabel": "End date",
+                    "helpText": <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>,
+                    "maxLength": "10",
+                    "name": "end",
+                    "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                    "placeholder": "yyyy/mm/dd",
+                    "required": true,
+                    "timeLabel": "End time (UTC)",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -4856,45 +5272,59 @@ ShallowWrapper {
             First run of your Course
           </h2>
           <hr />
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-01"
-            name="start"
-            required={true}
-            timeLabel="Start time (UTC)"
-          />
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-02"
-            name="end"
-            required={true}
-            timeLabel="End time (UTC)"
-          />
+          <div>
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="start"
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="end"
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>
           <Field
             component={[Function]}
             label={
@@ -5181,45 +5611,59 @@ ShallowWrapper {
               First run of your Course
             </h2>,
             <hr />,
-            <Field
-              component={[Function]}
-              dateLabel="Start date"
-              helpText={
-                <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-01"
-              name="start"
-              required={true}
-              timeLabel="Start time (UTC)"
-            />,
-            <Field
-              component={[Function]}
-              dateLabel="End date"
-              helpText={
-                <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-02"
-              name="end"
-              required={true}
-              timeLabel="End time (UTC)"
-            />,
+            <div>
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="start"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="end"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />
+            </div>,
             <Field
               component={[Function]}
               label={
@@ -5518,53 +5962,129 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "component": [Function],
-              "dateLabel": "Start date",
-              "helpText": <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>,
-              "minDate": "2001-01-01",
-              "name": "start",
-              "required": true,
-              "timeLabel": "Start time (UTC)",
+              "children": Array [
+                <Field
+                  component={[Function]}
+                  dateLabel="Start date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="start"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="Start time (UTC)"
+                  type="text"
+                />,
+                <Field
+                  component={[Function]}
+                  dateLabel="End date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="end"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="End time (UTC)"
+                  type="text"
+                />,
+              ],
             },
             "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "dateLabel": "End date",
-              "helpText": <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>,
-              "minDate": "2001-01-02",
-              "name": "end",
-              "required": true,
-              "timeLabel": "End time (UTC)",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "dateLabel": "Start date",
+                  "helpText": <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>,
+                  "maxLength": "10",
+                  "name": "start",
+                  "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                  "placeholder": "yyyy/mm/dd",
+                  "required": true,
+                  "timeLabel": "Start time (UTC)",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "dateLabel": "End date",
+                  "helpText": <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>,
+                  "maxLength": "10",
+                  "name": "end",
+                  "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                  "placeholder": "yyyy/mm/dd",
+                  "required": true,
+                  "timeLabel": "End time (UTC)",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -5901,45 +6421,59 @@ ShallowWrapper {
               First run of your Course
             </h2>
             <hr />
-            <Field
-              component={[Function]}
-              dateLabel="Start date"
-              helpText={
-                <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-01"
-              name="start"
-              required={true}
-              timeLabel="Start time (UTC)"
-            />
-            <Field
-              component={[Function]}
-              dateLabel="End date"
-              helpText={
-                <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>
-              }
-              minDate="2001-01-02"
-              name="end"
-              required={true}
-              timeLabel="End time (UTC)"
-            />
+            <div>
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="start"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="end"
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />
+            </div>
             <Field
               component={[Function]}
               label={
@@ -6226,45 +6760,59 @@ ShallowWrapper {
                 First run of your Course
               </h2>,
               <hr />,
-              <Field
-                component={[Function]}
-                dateLabel="Start date"
-                helpText={
-                  <div>
-                    <p>
-                      Start on a Tuesday, Wednesday, or Thursday.
-                    </p>
-                    <p>
-                      Avoid major holidays.
-                    </p>
-                    <p>
-                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                    </p>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                minDate="2001-01-01"
-                name="start"
-                required={true}
-                timeLabel="Start time (UTC)"
-              />,
-              <Field
-                component={[Function]}
-                dateLabel="End date"
-                helpText={
-                  <div>
-                    <p>
-                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                    </p>
-                  </div>
-                }
-                minDate="2001-01-02"
-                name="end"
-                required={true}
-                timeLabel="End time (UTC)"
-              />,
+              <div>
+                <Field
+                  component={[Function]}
+                  dateLabel="Start date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="start"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="Start time (UTC)"
+                  type="text"
+                />
+                <Field
+                  component={[Function]}
+                  dateLabel="End date"
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>
+                  }
+                  maxLength="10"
+                  name="end"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required={true}
+                  timeLabel="End time (UTC)"
+                  type="text"
+                />
+              </div>,
               <Field
                 component={[Function]}
                 label={
@@ -6563,53 +7111,129 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "host",
               "props": Object {
-                "component": [Function],
-                "dateLabel": "Start date",
-                "helpText": <div>
-                  <p>
-                    Start on a Tuesday, Wednesday, or Thursday.
-                  </p>
-                  <p>
-                    Avoid major holidays.
-                  </p>
-                  <p>
-                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                  </p>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                  </p>
-                </div>,
-                "minDate": "2001-01-01",
-                "name": "start",
-                "required": true,
-                "timeLabel": "Start time (UTC)",
+                "children": Array [
+                  <Field
+                    component={[Function]}
+                    dateLabel="Start date"
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          Start on a Tuesday, Wednesday, or Thursday.
+                        </p>
+                        <p>
+                          Avoid major holidays.
+                        </p>
+                        <p>
+                          Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    maxLength="10"
+                    name="start"
+                    pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                    placeholder="yyyy/mm/dd"
+                    required={true}
+                    timeLabel="Start time (UTC)"
+                    type="text"
+                  />,
+                  <Field
+                    component={[Function]}
+                    dateLabel="End date"
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                        </p>
+                      </div>
+                    }
+                    maxLength="10"
+                    name="end"
+                    pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                    placeholder="yyyy/mm/dd"
+                    required={true}
+                    timeLabel="End time (UTC)"
+                    type="text"
+                  />,
+                ],
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "dateLabel": "End date",
-                "helpText": <div>
-                  <p>
-                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                  </p>
-                </div>,
-                "minDate": "2001-01-02",
-                "name": "end",
-                "required": true,
-                "timeLabel": "End time (UTC)",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "dateLabel": "Start date",
+                    "helpText": <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        Start on a Tuesday, Wednesday, or Thursday.
+                      </p>
+                      <p>
+                        Avoid major holidays.
+                      </p>
+                      <p>
+                        Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                      </p>
+                    </div>,
+                    "maxLength": "10",
+                    "name": "start",
+                    "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                    "placeholder": "yyyy/mm/dd",
+                    "required": true,
+                    "timeLabel": "Start time (UTC)",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "dateLabel": "End date",
+                    "helpText": <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                      </p>
+                    </div>,
+                    "maxLength": "10",
+                    "name": "end",
+                    "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                    "placeholder": "yyyy/mm/dd",
+                    "required": true,
+                    "timeLabel": "End time (UTC)",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,

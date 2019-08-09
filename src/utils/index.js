@@ -4,10 +4,15 @@ import qs from 'query-string';
 
 import history from '../data/history';
 
-const getDateString = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
+const getDateWithDashes = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
+const getDateWithSlashes = date => (date ? moment.utc(date).format('YYYY/MM/DD') : '');
 const getTimeString = date => (date ? moment.utc(date).format('HH:mm') : '');
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
 const formatDate = date => (date ? moment.utc(date).format('MMM DD, YYYY') : '');
+
+const isSafari = /constructor/i.test(window.HTMLElement) ||
+  (p => (p.toString() === '[object SafariRemoteNotification]'))(!window['safari'] || /* eslint dot-notation: 0 */
+    (typeof safari !== 'undefined' && safari.pushNotification)); /* eslint no-undef: 0 */
 
 const isValidDate = (dateStr) => {
   const date = moment(dateStr);
@@ -97,7 +102,8 @@ const getErrorMessages = (error) => {
 };
 
 export {
-  getDateString,
+  getDateWithDashes,
+  getDateWithSlashes,
   getTimeString,
   formatDate,
   updateUrl,
@@ -107,4 +113,5 @@ export {
   getErrorMessages,
   isValidDate,
   localTimeZone,
+  isSafari,
 };
