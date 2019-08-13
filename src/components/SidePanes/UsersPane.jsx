@@ -31,12 +31,18 @@ class UsersPane extends React.Component {
 
   componentDidMount() {
     this.props.fetchCourseEditors();
+    if (this.props.fetchOrganizationRoles) {
+      this.props.fetchOrganizationRoles('project_coordinator');
+    }
     if (this.props.fetchOrganizationUsers) {
       this.props.fetchOrganizationUsers();
     }
   }
 
   componentDidUpdate(prevProps) {
+    if (!prevProps.fetchOrganizationRoles && this.props.fetchOrganizationRoles) {
+      this.props.fetchOrganizationRoles('project_coordinator');
+    }
     if (!prevProps.fetchOrganizationUsers && this.props.fetchOrganizationUsers) {
       this.props.fetchOrganizationUsers();
     }
@@ -80,6 +86,7 @@ class UsersPane extends React.Component {
     const {
       addCourseEditor,
       courseEditors,
+      organizationRoles,
       organizationUsers,
       removeCourseEditor,
     } = this.props;
@@ -89,7 +96,8 @@ class UsersPane extends React.Component {
 
     const editorChoices = this.editorChoices();
     const hasEditor = courseEditors.data.length > 0;
-    const showSpinner = courseEditors.isFetching;
+    const showSpinner = courseEditors.isFetching || organizationRoles.isFetching;
+    const showPCs = !showSpinner && !organizationRoles.error && organizationRoles.data.length > 0;
     const showEditors = !showSpinner && !courseEditors.error && !organizationUsers.error;
     const showAddButton = addCourseEditor && !addingUser && !organizationUsers.isFetching &&
       editorChoices.length > 0;
@@ -99,8 +107,20 @@ class UsersPane extends React.Component {
         {showSpinner &&
           <Icon className="fa fa-circle-o-notch fa-spin fa-fw" />
         }
+        {showPCs &&
+          <div className="mb-2">
+            <div className="font-weight-bold">Project Coordinators</div>
+            {organizationRoles.data.map(role => (
+              <User
+                key={role.id}
+                userId={role.id}
+                name={this.displayName(role.user)}
+              />
+            ))}
+          </div>
+        }
         {showEditors &&
-          <React.Fragment>
+          <div>
             <div className="font-weight-bold">Course Editors</div>
             {courseEditors.data.map(editor => (
               <User
@@ -148,7 +168,7 @@ class UsersPane extends React.Component {
                 </button>
               </div>
             }
-          </React.Fragment>
+          </div>
         }
       </Pane>
     );
@@ -159,12 +179,20 @@ UsersPane.defaultProps = {
   addCourseEditor: null,
   courseEditors: {
     data: [],
+    error: null,
     isFetching: false,
   },
   fetchCourseEditors: () => null,
+  fetchOrganizationRoles: null,
   fetchOrganizationUsers: null,
+  organizationRoles: {
+    data: [],
+    error: null,
+    isFetching: false,
+  },
   organizationUsers: {
     data: [],
+    error: null,
     isFetching: false,
   },
   removeCourseEditor: null,
@@ -174,12 +202,20 @@ UsersPane.propTypes = {
   addCourseEditor: PropTypes.func,
   courseEditors: PropTypes.shape({
     data: PropTypes.array,
+    error: PropTypes.array,
     isFetching: PropTypes.bool,
   }),
   fetchCourseEditors: PropTypes.func,
+  fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
+  organizationRoles: PropTypes.shape({
+    data: PropTypes.array,
+    error: PropTypes.array,
+    isFetching: PropTypes.bool,
+  }),
   organizationUsers: PropTypes.shape({
     data: PropTypes.array,
+    error: PropTypes.array,
     isFetching: PropTypes.bool,
   }),
   removeCourseEditor: PropTypes.func,

@@ -42,6 +42,20 @@ describe('UsersPane', () => {
     error: null,
     isFetching: false,
   };
+  const basicOrganizationRoles = {
+    data: [
+      {
+        id: 2,
+        role: 'project_coordinator',
+        user: {
+          full_name: 'PC 1',
+          email: 'pc@example.com',
+        },
+      },
+    ],
+    error: null,
+    isFetching: false,
+  };
   const basicOrganizationUsers = {
     data: [
       {
@@ -119,5 +133,14 @@ describe('UsersPane', () => {
     addButton.simulate('click');
     expect(mockCallback.mock.calls.length).toBe(1);
     expect(mockCallback.mock.calls[0][0]).toBe(14); // new editor's user id
+  });
+
+  it('shows PC', () => {
+    const wrapper = shallow(<UsersPane
+      organizationRoles={basicOrganizationRoles}
+    />);
+    const users = wrapper.find(User);
+    expect(users).toHaveLength(1);
+    expect(users.at(0).prop('name')).toEqual('PC 1 (pc@example.com)');
   });
 });

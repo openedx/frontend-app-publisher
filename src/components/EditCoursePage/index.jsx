@@ -439,9 +439,13 @@ class EditCoursePage extends React.Component {
             addCourseEditor={editable && this.props.addCourseEditor}
             courseEditors={this.props.courseEditors}
             fetchCourseEditors={this.props.fetchCourseEditors}
+            fetchOrganizationRoles={!owners ? null : role => (
+              this.props.fetchOrganizationRoles(owners.map(owner => owner.uuid), role)
+            )}
             fetchOrganizationUsers={!owners ? null : () => (
               this.props.fetchOrganizationUsers(owners.map(owner => owner.uuid))
             )}
+            organizationRoles={this.props.organizationRoles}
             organizationUsers={this.props.organizationUsers}
             removeCourseEditor={editable && this.props.removeCourseEditor}
           />}
@@ -517,6 +521,7 @@ EditCoursePage.defaultProps = {
   fetchCourseInfo: () => null,
   fetchCourseOptions: () => null,
   fetchCourseRunOptions: () => null,
+  fetchOrganizationRoles: () => null,
   fetchOrganizationUsers: () => null,
   editCourse: () => null,
   clearSubmitStatus: () => {},
@@ -524,6 +529,9 @@ EditCoursePage.defaultProps = {
   clearCreateStatusAlert: () => {},
   courseSubmitInfo: {},
   formValues: () => {},
+  organizationRoles: {
+    data: [],
+  },
   organizationUsers: {
     data: [],
   },
@@ -555,6 +563,7 @@ EditCoursePage.propTypes = {
   fetchCourseInfo: PropTypes.func,
   fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,
+  fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
   editCourse: PropTypes.func,
   clearSubmitStatus: PropTypes.func,
@@ -567,9 +576,11 @@ EditCoursePage.propTypes = {
     }),
   }),
   formValues: PropTypes.func,
+  organizationRoles: PropTypes.shape({
+    data: PropTypes.array,
+  }),
   organizationUsers: PropTypes.shape({
     data: PropTypes.array,
-    isFetching: PropTypes.bool,
   }),
   removeCourseEditor: PropTypes.func,
 };
