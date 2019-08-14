@@ -174,6 +174,7 @@ class EditCoursePage extends React.Component {
         courseData.subjectTertiary,
       ].filter(subject => !!subject),
       title: courseData.title,
+      url_slug: courseData.url_slug,
       uuid,
       video: { src: courseData.videoSrc },
     };
@@ -284,6 +285,7 @@ class EditCoursePage extends React.Component {
       courseInfo: {
         data: {
           title,
+          url_slug,
           key,
           short_description,
           full_description,
@@ -476,6 +478,7 @@ class EditCoursePage extends React.Component {
                 videoSrc,
                 mode,
                 price,
+                url_slug,
                 course_runs: minimalCourseRuns,
               }}
               number={number}
