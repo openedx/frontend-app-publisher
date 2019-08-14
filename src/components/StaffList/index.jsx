@@ -296,6 +296,7 @@ class StaffList extends React.Component {
             renderSuggestion={this.renderSuggestion}
             inputProps={inputProps}
             onSuggestionSelected={this.onSuggestionEntered}
+            alwaysRenderSuggestions={searchString.length > 2}
             id="staff-search"
           />
         </label>
