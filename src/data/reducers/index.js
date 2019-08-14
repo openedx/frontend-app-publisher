@@ -4,6 +4,7 @@ import { reducer as formReducer } from 'redux-form';
 
 import courseEditors from './courseEditors';
 import courseInfo from './courseInfo';
+import organizationRoles from './organizationRoles';
 import organizationUsers from './organizationUsers';
 import table from './table';
 import publisherUserInfo from './publisherUserInfo';
@@ -26,6 +27,7 @@ export default history => combineReducers({
   authentication: identityReducer,
   courseEditors,
   courseInfo,
+  organizationRoles,
   organizationUsers,
   publisherUserInfo,
   courseOptions,

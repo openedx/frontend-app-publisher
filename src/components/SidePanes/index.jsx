@@ -11,7 +11,9 @@ function SidePanes(props) {
         addCourseEditor={props.addCourseEditor}
         courseEditors={props.courseEditors}
         fetchCourseEditors={props.fetchCourseEditors}
+        fetchOrganizationRoles={props.fetchOrganizationRoles}
         fetchOrganizationUsers={props.fetchOrganizationUsers}
+        organizationRoles={props.organizationRoles}
         organizationUsers={props.organizationUsers}
         removeCourseEditor={props.removeCourseEditor}
       />
@@ -24,8 +26,10 @@ SidePanes.defaultProps = {
   className: '',
   courseEditors: {},
   fetchCourseEditors: () => null,
-  fetchOrganizationUsers: () => null,
+  fetchOrganizationRoles: null,
+  fetchOrganizationUsers: null,
   hidden: false,
+  organizationRoles: {},
   organizationUsers: {},
   removeCourseEditor: () => null,
 };
@@ -35,8 +39,10 @@ SidePanes.propTypes = {
   className: PropTypes.string,
   courseEditors: PropTypes.shape(),
   fetchCourseEditors: PropTypes.func,
+  fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
   hidden: PropTypes.bool,
+  organizationRoles: PropTypes.shape(),
   organizationUsers: PropTypes.shape(),
   removeCourseEditor: PropTypes.func,
 };

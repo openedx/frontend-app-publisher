@@ -7,6 +7,7 @@ import { clearSubmitStatus, clearCourseReviewAlert } from '../../data/actions/co
 import { addCourseEditor, fetchCourseEditors, removeCourseEditor } from '../../data/actions/courseEditors';
 import { fetchCourseOptions } from '../../data/actions/courseOptions';
 import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
+import { fetchOrganizationRoles } from '../../data/actions/organizationRoles';
 import { fetchOrganizationUsers } from '../../data/actions/organizationUsers';
 
 
@@ -17,6 +18,7 @@ const mapStateToProps = state => ({
   courseOptions: state.courseOptions,
   courseRunOptions: state.courseRunOptions,
   courseSubmitInfo: state.courseSubmitInfo,
+  organizationRoles: state.organizationRoles,
   organizationUsers: state.organizationUsers,
   sourceInfo: state.sourceInfo,
   stafferInfo: state.stafferInfo,
@@ -29,6 +31,7 @@ const mapDispatchToProps = {
   fetchCourseInfo,
   fetchCourseOptions,
   fetchCourseRunOptions,
+  fetchOrganizationRoles,
   fetchOrganizationUsers,
   editCourse,
   clearSubmitStatus,

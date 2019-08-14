@@ -95,6 +95,15 @@ class DiscoveryDataApiService {
     return apiClient.get(url, { params: queryParams });
   }
 
+  static fetchOrganizationRoles(id, role) {
+    const queryParams = {};
+    if (role) {
+      queryParams.role = role;
+    }
+    const url = `${DiscoveryDataApiService.publisherBaseUrl}/admins/organizations/${id}/roles/`;
+    return apiClient.get(url, { params: queryParams });
+  }
+
   static fetchOrganizationUsers(id) {
     const url = `${DiscoveryDataApiService.publisherBaseUrl}/admins/organizations/${id}/users/`;
     return apiClient.get(url);
