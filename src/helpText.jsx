@@ -1,12 +1,28 @@
 import React from 'react';
+import { isSafari } from './utils';
 
 /**
  * This file holds a few jsx constants to share helpText between different components.
  * Please keep it sorted for ease of use.
  */
 
+const publishDateHelp = (
+  <div>
+    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
+    <p>The scheduled date for when the course run will be live and published.</p>
+    <p>
+      To publish as soon as possible, set the publish date to today.
+      Please note that changes may take 48 hours to go live.
+    </p>
+    <p>
+      If you don’t have a publish date yet, set to 1 year in the future.
+    </p>
+  </div>
+);
+
 const endDateHelp = (
   <div>
+    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
     <p>
       If you are unsure of the exact date, specify a day that is close to the
       estimated end date. For example, if your course will end near the end
@@ -35,6 +51,7 @@ const enrollmentHelp = (
 
 const startDateHelp = (
   <div>
+    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
     <p>Start on a Tuesday, Wednesday, or Thursday.</p>
     <p>Avoid major holidays.</p>
     <p>
@@ -92,4 +109,5 @@ export {
   startDateHelp,
   titleHelp,
   pacingHelp,
+  publishDateHelp,
 };

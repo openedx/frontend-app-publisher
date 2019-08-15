@@ -81,87 +81,105 @@ ShallowWrapper {
              All fields are required for publication unless otherwise specified.
           </span>
         </div>,
-        <Field
-          component={[Function]}
-          disabled={true}
-          extraInput={
-            Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
-            }
-          }
-          format={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
-                  <p>
-                    The scheduled date for when the course run will be live and published.
-                  </p>
-                  <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                  </p>
-                  <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
-                  </p>
-                </div>
+        <div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
               }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />
-          }
-          name="test-course.go_live_date"
-          normalize={[Function]}
-          placeholder="mm/dd/yyyy"
-          required={false}
-          type="date"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="Start date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-01"
-          name="test-course.start"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="Start time (UTC)"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="End date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-02"
-          name="test-course.end"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="End time (UTC)"
-        />,
+            }
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />
+            }
+            maxLength="10"
+            name="test-course.go_live_date"
+            normalize={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={false}
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="Start date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major holidays.
+                </p>
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.start"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="Start time (UTC)"
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="End date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.end"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="End time (UTC)"
+            type="text"
+          />
+        </div>,
         <hr />,
         <Field
           component={[Function]}
@@ -542,99 +560,225 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "component": [Function],
-          "disabled": true,
-          "extraInput": Object {
-            "min": "1999-12-31",
-            "onInvalid": [Function],
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={false}
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": true,
+              "extraInput": Object {
+                "onInvalid": [Function],
+              },
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />,
+              "maxLength": "10",
+              "name": "test-course.go_live_date",
+              "normalize": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": false,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "format": [Function],
-          "label": <FieldLabel
-            className=""
-            extraText=""
-            helpText={
-              <div>
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "Start date",
+              "disabled": true,
+              "helpText": <div>
                 <p>
-                  The scheduled date for when the course run will be live and published.
+                  Required Format: yyyy/mm/dd
                 </p>
                 <p>
-                  To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                  Start on a Tuesday, Wednesday, or Thursday.
                 </p>
                 <p>
-                  If you don’t have a publish date yet, set to 1 year in the future.
+                  Avoid major holidays.
                 </p>
-              </div>
-            }
-            id="test-course.go_live_date.label"
-            optional={false}
-            text="Publish date"
-          />,
-          "name": "test-course.go_live_date",
-          "normalize": [Function],
-          "placeholder": "mm/dd/yyyy",
-          "required": false,
-          "type": "date",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "Start date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-01",
-          "name": "test-course.start",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "Start time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "End date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-02",
-          "name": "test-course.end",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "End time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.start",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "Start time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "End date",
+              "disabled": true,
+              "helpText": <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.end",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "End time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -1211,87 +1355,105 @@ ShallowWrapper {
                All fields are required for publication unless otherwise specified.
             </span>
           </div>,
-          <Field
-            component={[Function]}
-            disabled={true}
-            extraInput={
-              Object {
-                "min": "1999-12-31",
-                "onInvalid": [Function],
-              }
-            }
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      The scheduled date for when the course run will be live and published.
-                    </p>
-                    <p>
-                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                    </p>
-                    <p>
-                      If you don’t have a publish date yet, set to 1 year in the future.
-                    </p>
-                  </div>
+          <div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
                 }
-                id="test-course.go_live_date.label"
-                optional={false}
-                text="Publish date"
-              />
-            }
-            name="test-course.go_live_date"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
-            required={false}
-            type="date"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-01"
-            name="test-course.start"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="Start time (UTC)"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-02"
-            name="test-course.end"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="End time (UTC)"
-          />,
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={false}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>,
           <hr />,
           <Field
             component={[Function]}
@@ -1672,99 +1834,225 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "component": [Function],
-            "disabled": true,
-            "extraInput": Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          The scheduled date for when the course run will be live and published.
+                        </p>
+                        <p>
+                          To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                        </p>
+                        <p>
+                          If you don’t have a publish date yet, set to 1 year in the future.
+                        </p>
+                      </div>
+                    }
+                    id="test-course.go_live_date.label"
+                    optional={false}
+                    text="Publish date"
+                  />
+                }
+                maxLength="10"
+                name="test-course.go_live_date"
+                normalize={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={false}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.start"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.end"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />,
+                "maxLength": "10",
+                "name": "test-course.go_live_date",
+                "normalize": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": false,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "format": [Function],
-            "label": <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "Start date",
+                "disabled": true,
+                "helpText": <div>
                   <p>
-                    The scheduled date for when the course run will be live and published.
+                    Required Format: yyyy/mm/dd
                   </p>
                   <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    Start on a Tuesday, Wednesday, or Thursday.
                   </p>
                   <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
+                    Avoid major holidays.
                   </p>
-                </div>
-              }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />,
-            "name": "test-course.go_live_date",
-            "normalize": [Function],
-            "placeholder": "mm/dd/yyyy",
-            "required": false,
-            "type": "date",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "Start date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-01",
-            "name": "test-course.start",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "Start time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "End date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-02",
-            "name": "test-course.end",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "End time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.start",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "Start time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "End date",
+                "disabled": true,
+                "helpText": <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.end",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "End time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -2433,87 +2721,105 @@ ShallowWrapper {
              All fields are required for publication unless otherwise specified.
           </span>
         </div>,
-        <Field
-          component={[Function]}
-          disabled={true}
-          extraInput={
-            Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
-            }
-          }
-          format={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
-                  <p>
-                    The scheduled date for when the course run will be live and published.
-                  </p>
-                  <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                  </p>
-                  <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
-                  </p>
-                </div>
+        <div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
               }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />
-          }
-          name="test-course.go_live_date"
-          normalize={[Function]}
-          placeholder="mm/dd/yyyy"
-          required={false}
-          type="date"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="Start date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-01"
-          name="test-course.start"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="Start time (UTC)"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="End date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-02"
-          name="test-course.end"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="End time (UTC)"
-        />,
+            }
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />
+            }
+            maxLength="10"
+            name="test-course.go_live_date"
+            normalize={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={false}
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="Start date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major holidays.
+                </p>
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.start"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="Start time (UTC)"
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="End date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.end"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="End time (UTC)"
+            type="text"
+          />
+        </div>,
         <hr />,
         <Field
           component={[Function]}
@@ -2894,99 +3200,225 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "component": [Function],
-          "disabled": true,
-          "extraInput": Object {
-            "min": "1999-12-31",
-            "onInvalid": [Function],
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={false}
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": true,
+              "extraInput": Object {
+                "onInvalid": [Function],
+              },
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />,
+              "maxLength": "10",
+              "name": "test-course.go_live_date",
+              "normalize": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": false,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "format": [Function],
-          "label": <FieldLabel
-            className=""
-            extraText=""
-            helpText={
-              <div>
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "Start date",
+              "disabled": true,
+              "helpText": <div>
                 <p>
-                  The scheduled date for when the course run will be live and published.
+                  Required Format: yyyy/mm/dd
                 </p>
                 <p>
-                  To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                  Start on a Tuesday, Wednesday, or Thursday.
                 </p>
                 <p>
-                  If you don’t have a publish date yet, set to 1 year in the future.
+                  Avoid major holidays.
                 </p>
-              </div>
-            }
-            id="test-course.go_live_date.label"
-            optional={false}
-            text="Publish date"
-          />,
-          "name": "test-course.go_live_date",
-          "normalize": [Function],
-          "placeholder": "mm/dd/yyyy",
-          "required": false,
-          "type": "date",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "Start date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-01",
-          "name": "test-course.start",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "Start time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "End date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-02",
-          "name": "test-course.end",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "End time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.start",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "Start time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "End date",
+              "disabled": true,
+              "helpText": <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.end",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "End time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -3563,87 +3995,105 @@ ShallowWrapper {
                All fields are required for publication unless otherwise specified.
             </span>
           </div>,
-          <Field
-            component={[Function]}
-            disabled={true}
-            extraInput={
-              Object {
-                "min": "1999-12-31",
-                "onInvalid": [Function],
-              }
-            }
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      The scheduled date for when the course run will be live and published.
-                    </p>
-                    <p>
-                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                    </p>
-                    <p>
-                      If you don’t have a publish date yet, set to 1 year in the future.
-                    </p>
-                  </div>
+          <div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
                 }
-                id="test-course.go_live_date.label"
-                optional={false}
-                text="Publish date"
-              />
-            }
-            name="test-course.go_live_date"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
-            required={false}
-            type="date"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-01"
-            name="test-course.start"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="Start time (UTC)"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-02"
-            name="test-course.end"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="End time (UTC)"
-          />,
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={false}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>,
           <hr />,
           <Field
             component={[Function]}
@@ -4024,99 +4474,225 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "component": [Function],
-            "disabled": true,
-            "extraInput": Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          The scheduled date for when the course run will be live and published.
+                        </p>
+                        <p>
+                          To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                        </p>
+                        <p>
+                          If you don’t have a publish date yet, set to 1 year in the future.
+                        </p>
+                      </div>
+                    }
+                    id="test-course.go_live_date.label"
+                    optional={false}
+                    text="Publish date"
+                  />
+                }
+                maxLength="10"
+                name="test-course.go_live_date"
+                normalize={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={false}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.start"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.end"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />,
+                "maxLength": "10",
+                "name": "test-course.go_live_date",
+                "normalize": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": false,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "format": [Function],
-            "label": <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "Start date",
+                "disabled": true,
+                "helpText": <div>
                   <p>
-                    The scheduled date for when the course run will be live and published.
+                    Required Format: yyyy/mm/dd
                   </p>
                   <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    Start on a Tuesday, Wednesday, or Thursday.
                   </p>
                   <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
+                    Avoid major holidays.
                   </p>
-                </div>
-              }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />,
-            "name": "test-course.go_live_date",
-            "normalize": [Function],
-            "placeholder": "mm/dd/yyyy",
-            "required": false,
-            "type": "date",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "Start date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-01",
-            "name": "test-course.start",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "Start time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "End date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-02",
-            "name": "test-course.end",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "End time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.start",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "Start time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "End date",
+                "disabled": true,
+                "helpText": <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.end",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "End time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -4785,87 +5361,105 @@ ShallowWrapper {
              All fields are required for publication unless otherwise specified.
           </span>
         </div>,
-        <Field
-          component={[Function]}
-          disabled={true}
-          extraInput={
-            Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
-            }
-          }
-          format={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
-                  <p>
-                    The scheduled date for when the course run will be live and published.
-                  </p>
-                  <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                  </p>
-                  <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
-                  </p>
-                </div>
+        <div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
               }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />
-          }
-          name="test-course.go_live_date"
-          normalize={[Function]}
-          placeholder="mm/dd/yyyy"
-          required={null}
-          type="date"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="Start date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-01"
-          name="test-course.start"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="Start time (UTC)"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="End date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-02"
-          name="test-course.end"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="End time (UTC)"
-        />,
+            }
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />
+            }
+            maxLength="10"
+            name="test-course.go_live_date"
+            normalize={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={null}
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="Start date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major holidays.
+                </p>
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.start"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="Start time (UTC)"
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="End date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.end"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="End time (UTC)"
+            type="text"
+          />
+        </div>,
         <hr />,
         <Field
           component={[Function]}
@@ -5246,99 +5840,225 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "component": [Function],
-          "disabled": true,
-          "extraInput": Object {
-            "min": "1999-12-31",
-            "onInvalid": [Function],
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={null}
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": true,
+              "extraInput": Object {
+                "onInvalid": [Function],
+              },
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />,
+              "maxLength": "10",
+              "name": "test-course.go_live_date",
+              "normalize": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": null,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "format": [Function],
-          "label": <FieldLabel
-            className=""
-            extraText=""
-            helpText={
-              <div>
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "Start date",
+              "disabled": true,
+              "helpText": <div>
                 <p>
-                  The scheduled date for when the course run will be live and published.
+                  Required Format: yyyy/mm/dd
                 </p>
                 <p>
-                  To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                  Start on a Tuesday, Wednesday, or Thursday.
                 </p>
                 <p>
-                  If you don’t have a publish date yet, set to 1 year in the future.
+                  Avoid major holidays.
                 </p>
-              </div>
-            }
-            id="test-course.go_live_date.label"
-            optional={false}
-            text="Publish date"
-          />,
-          "name": "test-course.go_live_date",
-          "normalize": [Function],
-          "placeholder": "mm/dd/yyyy",
-          "required": null,
-          "type": "date",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "Start date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-01",
-          "name": "test-course.start",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "Start time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "End date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-02",
-          "name": "test-course.end",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "End time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.start",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "Start time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "End date",
+              "disabled": true,
+              "helpText": <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.end",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "End time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -5915,87 +6635,105 @@ ShallowWrapper {
                All fields are required for publication unless otherwise specified.
             </span>
           </div>,
-          <Field
-            component={[Function]}
-            disabled={true}
-            extraInput={
-              Object {
-                "min": "1999-12-31",
-                "onInvalid": [Function],
-              }
-            }
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      The scheduled date for when the course run will be live and published.
-                    </p>
-                    <p>
-                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                    </p>
-                    <p>
-                      If you don’t have a publish date yet, set to 1 year in the future.
-                    </p>
-                  </div>
+          <div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
                 }
-                id="test-course.go_live_date.label"
-                optional={false}
-                text="Publish date"
-              />
-            }
-            name="test-course.go_live_date"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
-            required={null}
-            type="date"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-01"
-            name="test-course.start"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="Start time (UTC)"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-02"
-            name="test-course.end"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="End time (UTC)"
-          />,
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={null}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>,
           <hr />,
           <Field
             component={[Function]}
@@ -6376,99 +7114,225 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "component": [Function],
-            "disabled": true,
-            "extraInput": Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          The scheduled date for when the course run will be live and published.
+                        </p>
+                        <p>
+                          To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                        </p>
+                        <p>
+                          If you don’t have a publish date yet, set to 1 year in the future.
+                        </p>
+                      </div>
+                    }
+                    id="test-course.go_live_date.label"
+                    optional={false}
+                    text="Publish date"
+                  />
+                }
+                maxLength="10"
+                name="test-course.go_live_date"
+                normalize={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={null}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.start"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.end"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />,
+                "maxLength": "10",
+                "name": "test-course.go_live_date",
+                "normalize": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": null,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "format": [Function],
-            "label": <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "Start date",
+                "disabled": true,
+                "helpText": <div>
                   <p>
-                    The scheduled date for when the course run will be live and published.
+                    Required Format: yyyy/mm/dd
                   </p>
                   <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    Start on a Tuesday, Wednesday, or Thursday.
                   </p>
                   <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
+                    Avoid major holidays.
                   </p>
-                </div>
-              }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />,
-            "name": "test-course.go_live_date",
-            "normalize": [Function],
-            "placeholder": "mm/dd/yyyy",
-            "required": null,
-            "type": "date",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "Start date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-01",
-            "name": "test-course.start",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "Start time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "End date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-02",
-            "name": "test-course.end",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "End time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.start",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "Start time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "End date",
+                "disabled": true,
+                "helpText": <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.end",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "End time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -7137,87 +8001,105 @@ ShallowWrapper {
              All fields are required for publication unless otherwise specified.
           </span>
         </div>,
-        <Field
-          component={[Function]}
-          disabled={true}
-          extraInput={
-            Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
-            }
-          }
-          format={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
-                  <p>
-                    The scheduled date for when the course run will be live and published.
-                  </p>
-                  <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                  </p>
-                  <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
-                  </p>
-                </div>
+        <div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
               }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />
-          }
-          name="test-course.go_live_date"
-          normalize={[Function]}
-          placeholder="mm/dd/yyyy"
-          required={null}
-          type="date"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="Start date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-01"
-          name="test-course.start"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="Start time (UTC)"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="End date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2000-01-02"
-          name="test-course.end"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="End time (UTC)"
-        />,
+            }
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />
+            }
+            maxLength="10"
+            name="test-course.go_live_date"
+            normalize={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={null}
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="Start date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major holidays.
+                </p>
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.start"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="Start time (UTC)"
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="End date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.end"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="End time (UTC)"
+            type="text"
+          />
+        </div>,
         <hr />,
         <Field
           component={[Function]}
@@ -7598,99 +8480,225 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "component": [Function],
-          "disabled": true,
-          "extraInput": Object {
-            "min": "1999-12-31",
-            "onInvalid": [Function],
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={null}
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": true,
+              "extraInput": Object {
+                "onInvalid": [Function],
+              },
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />,
+              "maxLength": "10",
+              "name": "test-course.go_live_date",
+              "normalize": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": null,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "format": [Function],
-          "label": <FieldLabel
-            className=""
-            extraText=""
-            helpText={
-              <div>
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "Start date",
+              "disabled": true,
+              "helpText": <div>
                 <p>
-                  The scheduled date for when the course run will be live and published.
+                  Required Format: yyyy/mm/dd
                 </p>
                 <p>
-                  To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                  Start on a Tuesday, Wednesday, or Thursday.
                 </p>
                 <p>
-                  If you don’t have a publish date yet, set to 1 year in the future.
+                  Avoid major holidays.
                 </p>
-              </div>
-            }
-            id="test-course.go_live_date.label"
-            optional={false}
-            text="Publish date"
-          />,
-          "name": "test-course.go_live_date",
-          "normalize": [Function],
-          "placeholder": "mm/dd/yyyy",
-          "required": null,
-          "type": "date",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "Start date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-01",
-          "name": "test-course.start",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "Start time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "End date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2000-01-02",
-          "name": "test-course.end",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "End time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.start",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "Start time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "End date",
+              "disabled": true,
+              "helpText": <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.end",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "End time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -8267,87 +9275,105 @@ ShallowWrapper {
                All fields are required for publication unless otherwise specified.
             </span>
           </div>,
-          <Field
-            component={[Function]}
-            disabled={true}
-            extraInput={
-              Object {
-                "min": "1999-12-31",
-                "onInvalid": [Function],
-              }
-            }
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      The scheduled date for when the course run will be live and published.
-                    </p>
-                    <p>
-                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                    </p>
-                    <p>
-                      If you don’t have a publish date yet, set to 1 year in the future.
-                    </p>
-                  </div>
+          <div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
                 }
-                id="test-course.go_live_date.label"
-                optional={false}
-                text="Publish date"
-              />
-            }
-            name="test-course.go_live_date"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
-            required={null}
-            type="date"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-01"
-            name="test-course.start"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="Start time (UTC)"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2000-01-02"
-            name="test-course.end"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="End time (UTC)"
-          />,
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={null}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>,
           <hr />,
           <Field
             component={[Function]}
@@ -8728,99 +9754,225 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "component": [Function],
-            "disabled": true,
-            "extraInput": Object {
-              "min": "1999-12-31",
-              "onInvalid": [Function],
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          The scheduled date for when the course run will be live and published.
+                        </p>
+                        <p>
+                          To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                        </p>
+                        <p>
+                          If you don’t have a publish date yet, set to 1 year in the future.
+                        </p>
+                      </div>
+                    }
+                    id="test-course.go_live_date.label"
+                    optional={false}
+                    text="Publish date"
+                  />
+                }
+                maxLength="10"
+                name="test-course.go_live_date"
+                normalize={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={null}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.start"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.end"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />,
+                "maxLength": "10",
+                "name": "test-course.go_live_date",
+                "normalize": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": null,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "format": [Function],
-            "label": <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "Start date",
+                "disabled": true,
+                "helpText": <div>
                   <p>
-                    The scheduled date for when the course run will be live and published.
+                    Required Format: yyyy/mm/dd
                   </p>
                   <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    Start on a Tuesday, Wednesday, or Thursday.
                   </p>
                   <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
+                    Avoid major holidays.
                   </p>
-                </div>
-              }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />,
-            "name": "test-course.go_live_date",
-            "normalize": [Function],
-            "placeholder": "mm/dd/yyyy",
-            "required": null,
-            "type": "date",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "Start date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-01",
-            "name": "test-course.start",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "Start time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "End date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2000-01-02",
-            "name": "test-course.end",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "End time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.start",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "Start time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "End date",
+                "disabled": true,
+                "helpText": <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.end",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "End time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -9458,87 +10610,105 @@ ShallowWrapper {
              All fields are required for publication unless otherwise specified.
           </span>
         </div>,
-        <Field
-          component={[Function]}
-          disabled={true}
-          extraInput={
-            Object {
-              "min": "2001-01-01",
-              "onInvalid": [Function],
-            }
-          }
-          format={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
-                  <p>
-                    The scheduled date for when the course run will be live and published.
-                  </p>
-                  <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                  </p>
-                  <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
-                  </p>
-                </div>
+        <div>
+          <Field
+            component={[Function]}
+            disabled={true}
+            extraInput={
+              Object {
+                "onInvalid": [Function],
               }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />
-          }
-          name="test-course.go_live_date"
-          normalize={[Function]}
-          placeholder="mm/dd/yyyy"
-          required={false}
-          type="date"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="Start date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2001-01-01"
-          name="test-course.start"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="Start time (UTC)"
-        />,
-        <Field
-          component={[Function]}
-          dateLabel="End date"
-          disabled={true}
-          helpText={
-            <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>
-          }
-          minDate="2001-01-02"
-          name="test-course.end"
-          onInvalid={[Function]}
-          required={true}
-          timeLabel="End time (UTC)"
-        />,
+            }
+            format={[Function]}
+            label={
+              <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />
+            }
+            maxLength="10"
+            name="test-course.go_live_date"
+            normalize={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={false}
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="Start date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  Start on a Tuesday, Wednesday, or Thursday.
+                </p>
+                <p>
+                  Avoid major holidays.
+                </p>
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.start"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="Start time (UTC)"
+            type="text"
+          />
+          <Field
+            component={[Function]}
+            dateLabel="End date"
+            disabled={true}
+            helpText={
+              <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>
+            }
+            maxLength="10"
+            name="test-course.end"
+            onInvalid={[Function]}
+            pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+            placeholder="yyyy/mm/dd"
+            required={true}
+            timeLabel="End time (UTC)"
+            type="text"
+          />
+        </div>,
         <hr />,
         <Field
           component={[Function]}
@@ -9895,99 +11065,225 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "component": [Function],
-          "disabled": true,
-          "extraInput": Object {
-            "min": "2001-01-01",
-            "onInvalid": [Function],
+          "children": Array [
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
+                }
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={false}
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />,
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "disabled": true,
+              "extraInput": Object {
+                "onInvalid": [Function],
+              },
+              "format": [Function],
+              "label": <FieldLabel
+                className=""
+                extraText=""
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      The scheduled date for when the course run will be live and published.
+                    </p>
+                    <p>
+                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    </p>
+                    <p>
+                      If you don’t have a publish date yet, set to 1 year in the future.
+                    </p>
+                  </div>
+                }
+                id="test-course.go_live_date.label"
+                optional={false}
+                text="Publish date"
+              />,
+              "maxLength": "10",
+              "name": "test-course.go_live_date",
+              "normalize": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": false,
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "format": [Function],
-          "label": <FieldLabel
-            className=""
-            extraText=""
-            helpText={
-              <div>
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "Start date",
+              "disabled": true,
+              "helpText": <div>
                 <p>
-                  The scheduled date for when the course run will be live and published.
+                  Required Format: yyyy/mm/dd
                 </p>
                 <p>
-                  To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                  Start on a Tuesday, Wednesday, or Thursday.
                 </p>
                 <p>
-                  If you don’t have a publish date yet, set to 1 year in the future.
+                  Avoid major holidays.
                 </p>
-              </div>
-            }
-            id="test-course.go_live_date.label"
-            optional={false}
-            text="Publish date"
-          />,
-          "name": "test-course.go_live_date",
-          "normalize": [Function],
-          "placeholder": "mm/dd/yyyy",
-          "required": false,
-          "type": "date",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "Start date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2001-01-01",
-          "name": "test-course.start",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "Start time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "dateLabel": "End date",
-          "disabled": true,
-          "helpText": <div>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>,
-          "minDate": "2001-01-02",
-          "name": "test-course.end",
-          "onInvalid": [Function],
-          "required": true,
-          "timeLabel": "End time (UTC)",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+                <p>
+                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.start",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "Start time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "dateLabel": "End date",
+              "disabled": true,
+              "helpText": <div>
+                <p>
+                  Required Format: yyyy/mm/dd
+                </p>
+                <p>
+                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                </p>
+              </div>,
+              "maxLength": "10",
+              "name": "test-course.end",
+              "onInvalid": [Function],
+              "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+              "placeholder": "yyyy/mm/dd",
+              "required": true,
+              "timeLabel": "End time (UTC)",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -10549,87 +11845,105 @@ ShallowWrapper {
                All fields are required for publication unless otherwise specified.
             </span>
           </div>,
-          <Field
-            component={[Function]}
-            disabled={true}
-            extraInput={
-              Object {
-                "min": "2001-01-01",
-                "onInvalid": [Function],
-              }
-            }
-            format={[Function]}
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText={
-                  <div>
-                    <p>
-                      The scheduled date for when the course run will be live and published.
-                    </p>
-                    <p>
-                      To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-                    </p>
-                    <p>
-                      If you don’t have a publish date yet, set to 1 year in the future.
-                    </p>
-                  </div>
+          <div>
+            <Field
+              component={[Function]}
+              disabled={true}
+              extraInput={
+                Object {
+                  "onInvalid": [Function],
                 }
-                id="test-course.go_live_date.label"
-                optional={false}
-                text="Publish date"
-              />
-            }
-            name="test-course.go_live_date"
-            normalize={[Function]}
-            placeholder="mm/dd/yyyy"
-            required={false}
-            type="date"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="Start date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  Start on a Tuesday, Wednesday, or Thursday.
-                </p>
-                <p>
-                  Avoid major holidays.
-                </p>
-                <p>
-                  Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-                </p>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-01"
-            name="test-course.start"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="Start time (UTC)"
-          />,
-          <Field
-            component={[Function]}
-            dateLabel="End date"
-            disabled={true}
-            helpText={
-              <div>
-                <p>
-                  If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-                </p>
-              </div>
-            }
-            minDate="2001-01-02"
-            name="test-course.end"
-            onInvalid={[Function]}
-            required={true}
-            timeLabel="End time (UTC)"
-          />,
+              }
+              format={[Function]}
+              label={
+                <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />
+              }
+              maxLength="10"
+              name="test-course.go_live_date"
+              normalize={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={false}
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="Start date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    Start on a Tuesday, Wednesday, or Thursday.
+                  </p>
+                  <p>
+                    Avoid major holidays.
+                  </p>
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.start"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="Start time (UTC)"
+              type="text"
+            />
+            <Field
+              component={[Function]}
+              dateLabel="End date"
+              disabled={true}
+              helpText={
+                <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>
+              }
+              maxLength="10"
+              name="test-course.end"
+              onInvalid={[Function]}
+              pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+              placeholder="yyyy/mm/dd"
+              required={true}
+              timeLabel="End time (UTC)"
+              type="text"
+            />
+          </div>,
           <hr />,
           <Field
             component={[Function]}
@@ -10986,99 +12300,225 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "component": [Function],
-            "disabled": true,
-            "extraInput": Object {
-              "min": "2001-01-01",
-              "onInvalid": [Function],
+            "children": Array [
+              <Field
+                component={[Function]}
+                disabled={true}
+                extraInput={
+                  Object {
+                    "onInvalid": [Function],
+                  }
+                }
+                format={[Function]}
+                label={
+                  <FieldLabel
+                    className=""
+                    extraText=""
+                    helpText={
+                      <div>
+                        <p>
+                          Required Format: yyyy/mm/dd
+                        </p>
+                        <p>
+                          The scheduled date for when the course run will be live and published.
+                        </p>
+                        <p>
+                          To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                        </p>
+                        <p>
+                          If you don’t have a publish date yet, set to 1 year in the future.
+                        </p>
+                      </div>
+                    }
+                    id="test-course.go_live_date.label"
+                    optional={false}
+                    text="Publish date"
+                  />
+                }
+                maxLength="10"
+                name="test-course.go_live_date"
+                normalize={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={false}
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="Start date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      Start on a Tuesday, Wednesday, or Thursday.
+                    </p>
+                    <p>
+                      Avoid major holidays.
+                    </p>
+                    <p>
+                      Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.start"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="Start time (UTC)"
+                type="text"
+              />,
+              <Field
+                component={[Function]}
+                dateLabel="End date"
+                disabled={true}
+                helpText={
+                  <div>
+                    <p>
+                      Required Format: yyyy/mm/dd
+                    </p>
+                    <p>
+                      If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                    </p>
+                  </div>
+                }
+                maxLength="10"
+                name="test-course.end"
+                onInvalid={[Function]}
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                required={true}
+                timeLabel="End time (UTC)"
+                type="text"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "disabled": true,
+                "extraInput": Object {
+                  "onInvalid": [Function],
+                },
+                "format": [Function],
+                "label": <FieldLabel
+                  className=""
+                  extraText=""
+                  helpText={
+                    <div>
+                      <p>
+                        Required Format: yyyy/mm/dd
+                      </p>
+                      <p>
+                        The scheduled date for when the course run will be live and published.
+                      </p>
+                      <p>
+                        To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                      </p>
+                      <p>
+                        If you don’t have a publish date yet, set to 1 year in the future.
+                      </p>
+                    </div>
+                  }
+                  id="test-course.go_live_date.label"
+                  optional={false}
+                  text="Publish date"
+                />,
+                "maxLength": "10",
+                "name": "test-course.go_live_date",
+                "normalize": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": false,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "format": [Function],
-            "label": <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <div>
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "Start date",
+                "disabled": true,
+                "helpText": <div>
                   <p>
-                    The scheduled date for when the course run will be live and published.
+                    Required Format: yyyy/mm/dd
                   </p>
                   <p>
-                    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+                    Start on a Tuesday, Wednesday, or Thursday.
                   </p>
                   <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
+                    Avoid major holidays.
                   </p>
-                </div>
-              }
-              id="test-course.go_live_date.label"
-              optional={false}
-              text="Publish date"
-            />,
-            "name": "test-course.go_live_date",
-            "normalize": [Function],
-            "placeholder": "mm/dd/yyyy",
-            "required": false,
-            "type": "date",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "Start date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                Start on a Tuesday, Wednesday, or Thursday.
-              </p>
-              <p>
-                Avoid major holidays.
-              </p>
-              <p>
-                Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-              </p>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2001-01-01",
-            "name": "test-course.start",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "Start time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "dateLabel": "End date",
-            "disabled": true,
-            "helpText": <div>
-              <p>
-                If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-              </p>
-            </div>,
-            "minDate": "2001-01-02",
-            "name": "test-course.end",
-            "onInvalid": [Function],
-            "required": true,
-            "timeLabel": "End time (UTC)",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+                  <p>
+                    Dates are editable after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.start",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "Start time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "dateLabel": "End date",
+                "disabled": true,
+                "helpText": <div>
+                  <p>
+                    Required Format: yyyy/mm/dd
+                  </p>
+                  <p>
+                    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+                  </p>
+                </div>,
+                "maxLength": "10",
+                "name": "test-course.end",
+                "onInvalid": [Function],
+                "pattern": "20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])",
+                "placeholder": "yyyy/mm/dd",
+                "required": true,
+                "timeLabel": "End time (UTC)",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,

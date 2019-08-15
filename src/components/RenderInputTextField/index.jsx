@@ -10,11 +10,17 @@ const RenderInputTextField = ({
   type,
   disabled,
   required,
+  maxLength,
+  placeholder,
+  pattern,
   meta: { touched, error },
 }) => (
   <InputText
     {...input}
     {...extraInput}
+    placeholder={placeholder}
+    maxLength={maxLength}
+    pattern={pattern}
     name={name}
     label={label}
     type={type}
@@ -31,6 +37,9 @@ RenderInputTextField.defaultProps = {
   name: '',
   disabled: false,
   required: false,
+  maxLength: '',
+  placeholder: '',
+  pattern: null,
 };
 
 RenderInputTextField.propTypes = {
@@ -45,6 +54,9 @@ RenderInputTextField.propTypes = {
   }).isRequired,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
+  maxLength: PropTypes.string,
+  placeholder: PropTypes.string,
+  pattern: PropTypes.string,
 };
 
 export default RenderInputTextField;

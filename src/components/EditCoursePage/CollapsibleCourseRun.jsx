@@ -8,7 +8,7 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
-import { getDateString, localTimeZone, formatDate } from '../../utils/index';
+import { localTimeZone, formatDate, isSafari, getDateWithDashes, getDateWithSlashes } from '../../utils/index';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -17,9 +17,11 @@ import DateTimeField from '../DateTimeField';
 import store from '../../data/store';
 import TranscriptLanguage from './TranscriptLanguage';
 
-import { DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
-  PUBLISHED } from '../../data/constants';
-import { endDateHelp, startDateHelp, pacingHelp } from '../../helpText';
+import {
+  DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
+  PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER,
+} from '../../data/constants';
+import { endDateHelp, startDateHelp, pacingHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
 const determineStatus = courseRun => (courseRun.status === 'unpublished' && moment().isAfter(courseRun.end) ?
@@ -97,6 +99,8 @@ class CollapsibleCourseRun extends React.Component {
     this.scrollToStaffPosition = this.scrollToStaffPosition.bind(this);
     this.displayOfacRestriction = this.displayOfacRestriction.bind(this);
     this.displayDefaultButtonLabel = this.displayDefaultButtonLabel.bind(this);
+    this.formatDate = this.formatDate.bind(this);
+    this.normalizeDate = this.normalizeDate.bind(this);
   }
 
   componentDidMount() {
@@ -177,6 +181,27 @@ class CollapsibleCourseRun extends React.Component {
     return 'Submit Run for Review';
   }
 
+  formatDate(date) {
+    if (date) {
+      if (date.includes('T') &&
+        date.split('T')[0].match(FORMAT_DATE_MATCHER)) {
+        return getDateWithSlashes(date);
+      }
+      return date;
+    }
+    return '';
+  }
+
+  normalizeDate(date) {
+    if (date) {
+      if (date.match(NORMALIZE_DATE_MATCHER)) {
+        return moment.utc(date).format(DATE_FORMAT);
+      }
+      return date;
+    }
+    return '';
+  }
+
   render() {
     const {
       courseId,
@@ -217,62 +242,112 @@ class CollapsibleCourseRun extends React.Component {
         <div className="mb-3">
           <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
         </div>
-        <Field
-          name={`${courseId}.go_live_date`}
-          type="date"
-          component={RenderInputTextField}
-          format={value => getDateString(value)}
-          normalize={value => moment.utc(value).format(DATE_FORMAT)}
-          label={
-            <FieldLabel
-              id={`${courseId}.go_live_date.label`}
-              text="Publish date"
-              helpText={
-                <div>
-                  <p>The scheduled date for when the course run will be live and published.</p>
-                  <p>
-                    To publish as soon as possible, set the publish date to today.
-                    Please note that changes may take 48 hours to go live.
-                  </p>
-                  <p>
-                    If you don’t have a publish date yet, set to 1 year in the future.
-                  </p>
-                </div>
+        {/* TODO this should be refactored when paragon supports safari */}
+        {/* text inputs for safari */}
+        {isSafari ?
+          <div>
+            <Field
+              name={`${courseId}.go_live_date`}
+              type="text"
+              component={RenderInputTextField}
+              format={date => this.formatDate(date)}
+              normalize={date => this.normalizeDate(date)}
+              pattern={DATE_INPUT_PATTERN}
+              maxLength="10"
+              label={
+                <FieldLabel
+                  id={`${courseId}.go_live_date.label`}
+                  text="Publish date"
+                  helpText={publishDateHelp}
+                />
               }
+              extraInput={{
+                onInvalid: this.openCollapsible,
+              }}
+              placeholder="yyyy/mm/dd"
+              disabled={disabled || courseRun.status === PUBLISHED}
+              required={courseRunSubmitting}
             />
-          }
-          extraInput={{
-            onInvalid: this.openCollapsible,
-            min: moment(courseRun.go_live_date).isBefore(moment()) ?
-              getDateString(courseRun.go_live_date) : getDateString(moment()),
-          }}
-          placeholder="mm/dd/yyyy"
-          disabled={disabled || courseRun.status === PUBLISHED}
-          required={courseRunSubmitting}
-        />
-        <Field
-          name={`${courseId}.start`}
-          component={DateTimeField}
-          dateLabel="Start date"
-          timeLabel={`Start time (${localTimeZone})`}
-          helpText={startDateHelp}
-          disabled={disabled}
-          required
-          minDate={moment(courseRun.start).isBefore(moment()) ?
-            getDateString(courseRun.start) : getDateString(moment())}
-          onInvalid={this.openCollapsible}
-        />
-        <Field
-          name={`${courseId}.end`}
-          component={DateTimeField}
-          dateLabel="End date"
-          timeLabel={`End time (${localTimeZone})`}
-          helpText={endDateHelp}
-          disabled={disabled}
-          required
-          minDate={getDateString(moment(courseRun.start).add(1, 'd') || moment())}
-          onInvalid={this.openCollapsible}
-        />
+            <Field
+              name={`${courseId}.start`}
+              type="text"
+              component={DateTimeField}
+              dateLabel="Start date"
+              timeLabel={`Start time (${localTimeZone})`}
+              helpText={startDateHelp}
+              disabled={disabled}
+              required
+              onInvalid={this.openCollapsible}
+              maxLength="10"
+              pattern={DATE_INPUT_PATTERN}
+              placeholder="yyyy/mm/dd"
+            />
+            <Field
+              name={`${courseId}.end`}
+              type="text"
+              component={DateTimeField}
+              dateLabel="End date"
+              timeLabel={`End time (${localTimeZone})`}
+              helpText={endDateHelp}
+              disabled={disabled}
+              required
+              onInvalid={this.openCollapsible}
+              maxLength="10"
+              pattern={DATE_INPUT_PATTERN}
+              placeholder="yyyy/mm/dd"
+            />
+          </div> :
+          // date inputs for all browsers besides safari
+          <div>
+            <Field
+              name={`${courseId}.go_live_date`}
+              type="date"
+              component={RenderInputTextField}
+              format={value => getDateWithDashes(value)}
+              normalize={value => moment.utc(value).format(DATE_FORMAT)}
+              label={
+                <FieldLabel
+                  id={`${courseId}.go_live_date.label`}
+                  text="Publish date"
+                  helpText={publishDateHelp}
+                />
+              }
+              extraInput={{
+                onInvalid: this.openCollapsible,
+                min: moment(courseRun.go_live_date).isBefore(moment()) ?
+                  getDateWithDashes(courseRun.go_live_date) : getDateWithDashes(moment()),
+              }}
+              placeholder="mm/dd/yyyy"
+              disabled={disabled || courseRun.status === PUBLISHED}
+              required={courseRunSubmitting}
+            />
+            <Field
+              name={`${courseId}.start`}
+              type="date"
+              component={DateTimeField}
+              dateLabel="Start date"
+              timeLabel={`Start time (${localTimeZone})`}
+              helpText={startDateHelp}
+              disabled={disabled}
+              required
+              minDate={moment(courseRun.start).isBefore(moment()) ?
+                getDateWithDashes(courseRun.start) : getDateWithDashes(moment())}
+              onInvalid={this.openCollapsible}
+            />
+            <Field
+              name={`${courseId}.end`}
+              type="date"
+              component={DateTimeField}
+              dateLabel="End date"
+              timeLabel={`End time (${localTimeZone})`}
+              helpText={endDateHelp}
+              disabled={disabled}
+              required
+              minDate={getDateWithDashes(moment(courseRun.start).add(1, 'd') || moment())}
+              onInvalid={this.openCollapsible}
+            />
+          </div>
+        }
         <hr />
         <Field
           name={`${courseId}.pacing_type`}
@@ -569,7 +644,7 @@ CollapsibleCourseRun.propTypes = {
   onToggle: PropTypes.func.isRequired,
   ofacRestrictionOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.boolean,
   })).isRequired,
   authentication: PropTypes.shape({}),
 };

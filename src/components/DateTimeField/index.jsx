@@ -2,20 +2,26 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { InputText } from '@edx/paragon';
-import { getDateString, getTimeString } from '../../utils/index';
+import { getDateWithDashes, getDateWithSlashes, getTimeString } from '../../utils/index';
 import FieldLabel from '../FieldLabel';
-import { DATE_FORMAT } from '../../data/constants';
+import { DATE_FORMAT, FORMAT_DATE_MATCHER } from '../../data/constants';
 
 class DateTimeField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: getDateString(this.props.input.value) || '',
+      date: getDateWithDashes(this.props.input.value),
       time: getTimeString(this.props.input.value) || '12:00',
     };
     this.concatDateTime = this.concatDateTime.bind(this);
     this.updateDate = this.updateDate.bind(this);
     this.updateTime = this.updateTime.bind(this);
+    this.getValue = this.getValue.bind(this);
+  }
+
+  getValue(type, date) {
+    if (type === 'date') return getDateWithDashes(date);
+    return (date.match(FORMAT_DATE_MATCHER)) ? getDateWithSlashes(date) : date;
   }
 
   concatDateTime(date, time) {
@@ -51,6 +57,10 @@ class DateTimeField extends React.Component {
       required,
       minDate,
       onInvalid,
+      maxLength,
+      type,
+      pattern,
+      placeholder,
     } = this.props;
 
     const {
@@ -63,8 +73,8 @@ class DateTimeField extends React.Component {
         <div className="col-6">
           <InputText
             name={`${name}Date`}
-            type="date"
-            value={getDateString(date)}
+            type={type}
+            value={this.getValue(type, date)}
             label={
               <FieldLabel
                 id={`${name}-date-label`}
@@ -73,7 +83,9 @@ class DateTimeField extends React.Component {
                 helpText={helpText}
               />
             }
-            placeholder="mm/dd/yyyy"
+            placeholder={placeholder}
+            pattern={pattern}
+            maxLength={maxLength}
             required={required}
             disabled={disabled}
             onChange={e => this.updateDate(e)}
@@ -117,6 +129,10 @@ DateTimeField.propTypes = {
   }).isRequired,
   minDate: PropTypes.string,
   onInvalid: PropTypes.func,
+  maxLength: PropTypes.string,
+  type: PropTypes.string,
+  pattern: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 DateTimeField.defaultProps = {
@@ -124,6 +140,10 @@ DateTimeField.defaultProps = {
   required: false,
   minDate: '',
   onInvalid: () => {},
+  maxLength: '',
+  type: '',
+  pattern: '',
+  placeholder: '',
 };
 
 export default DateTimeField;
