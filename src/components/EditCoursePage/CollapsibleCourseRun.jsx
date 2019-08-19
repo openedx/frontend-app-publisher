@@ -8,7 +8,8 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
-import { localTimeZone, formatDate, isSafari, getDateWithDashes, getDateWithSlashes } from '../../utils/index';
+import { localTimeZone, formatDate, isSafari, getDateWithDashes, getDateWithSlashes,
+  isNonExemptChanged, isPristine } from '../../utils/index';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -19,7 +20,7 @@ import TranscriptLanguage from './TranscriptLanguage';
 
 import {
   DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
-  PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER,
+  PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
 import { endDateHelp, startDateHelp, pacingHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
@@ -164,8 +165,19 @@ class CollapsibleCourseRun extends React.Component {
     }
   }
 
-  displayDefaultButtonLabel(status, isAdmin) {
-    if (isAdmin) {
+  displayDefaultButtonLabel() {
+    const {
+      authentication: {
+        administrator,
+      },
+      courseRun: {
+        key,
+        status,
+      },
+      currentFormValues,
+      initialValues,
+    } = this.props;
+    if (administrator) {
       switch (status) {
         case REVIEW_BY_LEGAL:
           return 'Save & Send to PC Review';
@@ -177,6 +189,13 @@ class CollapsibleCourseRun extends React.Component {
     }
     if (status === PUBLISHED) {
       return 'Publish Run';
+    }
+    if (status === REVIEWED) {
+      if (initialValues.course_runs && currentFormValues.course_runs) {
+        return isNonExemptChanged(initialValues, currentFormValues, key) ||
+        isNonExemptChanged(initialValues, currentFormValues) ? 'Re-Submit Run for Review' : 'Update Run';
+      }
+      return 'Update Run';
     }
     return 'Submit Run for Review';
   }
@@ -223,6 +242,8 @@ class CollapsibleCourseRun extends React.Component {
       authentication: {
         administrator,
       },
+      initialValues,
+      currentFormValues,
     } = this.props;
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
@@ -592,11 +613,13 @@ class CollapsibleCourseRun extends React.Component {
           <ButtonToolbar>
             <ActionButton
               // only disable if *this run* is in review
-              disabled={courseSubmitting || (courseRunInReview && !administrator)}
+              disabled={courseSubmitting || (courseRunInReview && !administrator) ||
+              (courseRun.status === REVIEWED && isPristine(initialValues, currentFormValues) &&
+                isPristine(initialValues, currentFormValues, courseRun.key))}
               // Pass the submitting course run up to validate different fields based on status
               onClick={() => store.dispatch(courseSubmittingInfo(courseRun))}
               labels={{
-                default: this.displayDefaultButtonLabel(courseRun.status, administrator),
+                default: this.displayDefaultButtonLabel(),
                 pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
               }}
               state={
@@ -644,9 +667,15 @@ CollapsibleCourseRun.propTypes = {
   onToggle: PropTypes.func.isRequired,
   ofacRestrictionOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
-    value: PropTypes.boolean,
+    value: PropTypes.bool,
   })).isRequired,
   authentication: PropTypes.shape({}),
+  currentFormValues: PropTypes.shape({
+    course_runs: PropTypes.arrayOf(PropTypes.shape({})),
+  }).isRequired,
+  initialValues: PropTypes.shape({
+    course_runs: PropTypes.arrayOf(PropTypes.shape({})),
+  }).isRequired,
 };
 
 CollapsibleCourseRun.defaultProps = {

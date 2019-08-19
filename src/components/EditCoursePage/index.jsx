@@ -7,7 +7,7 @@ import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { getCourseNumber, isValidDate } from '../../utils';
+import { getCourseNumber, isValidDate, isNonExemptChanged } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
   UNPUBLISHED } from '../../data/constants';
 import ConfirmationModal from '../ConfirmationModal';
@@ -31,6 +31,9 @@ class EditCoursePage extends React.Component {
     this.dismissReviewStatusAlert = this.dismissReviewStatusAlert.bind(this);
     this.dismissCreateStatusAlert = this.dismissCreateStatusAlert.bind(this);
     this.displayReviewStatusAlert = this.displayReviewStatusAlert.bind(this);
+    this.handleModalForReviewedRun = this.handleModalForReviewedRun.bind(this);
+    this.buildInitialValues = this.buildInitialValues.bind(this);
+    this.buildCourseRuns = this.buildCourseRuns.bind(this);
   }
 
   componentDidMount() {
@@ -180,22 +183,6 @@ class EditCoursePage extends React.Component {
     };
   }
 
-  showModal(submitCourseData) {
-    const { targetRun } = this.state;
-    if (targetRun && !(targetRun.status === PUBLISHED) &&
-      !IN_REVIEW_STATUS.includes(targetRun.status)) {
-      // Submitting Run for review, show modal, and temporarily store form data until
-      // we have a response for how to continue.
-      this.setState({
-        submitCourseData,
-        submitConfirmVisible: true, // show modal
-      });
-    } else {
-      // Edit submission, no modal required.
-      this.handleCourseSubmit(submitCourseData);
-    }
-  }
-
   continueSubmit() {
     const {
       submitCourseData,
@@ -256,14 +243,146 @@ class EditCoursePage extends React.Component {
   }
 
   displayReviewStatusAlert(status) {
+    const { courseInfo: { data: { course_runs } } } = this.props;
+    const { targetRun: { key } } = this.state;
+    const runFromAPI = course_runs ? course_runs.find(run => run.key === key) : {};
     switch (status) {
       case REVIEW_BY_LEGAL:
         return 'Legal Review Complete. Course Run is now awaiting PC Review.';
       case REVIEW_BY_INTERNAL:
         return 'PC Review Complete.';
       default:
+        if (status === REVIEWED && runFromAPI.status === REVIEWED) {
+          return 'Course Run Updated.';
+        }
         return 'Course has been submitted for review. The course will be locked for the next two business days. ' +
           'You will receive an email when the review is complete.';
+    }
+  }
+
+  buildCourseRuns() {
+    const {
+      courseInfo: {
+        data: {
+          course_runs,
+        },
+      },
+    } = this.props;
+
+    return course_runs && course_runs.map(courseRun => ({
+      key: courseRun.key,
+      start: courseRun.start,
+      end: courseRun.end,
+      expected_program_type: courseRun.expected_program_type,
+      expected_program_name: courseRun.expected_program_name,
+      go_live_date: courseRun.go_live_date,
+      min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
+      max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',
+      pacing_type: courseRun.pacing_type,
+      content_language: courseRun.content_language ? courseRun.content_language : 'en-us',
+      transcript_languages: courseRun.transcript_languages.length ? courseRun.transcript_languages : ['en-us'],
+      weeks_to_complete: typeof courseRun.weeks_to_complete === 'number' ? String(courseRun.weeks_to_complete) : '',
+      staff: courseRun.staff,
+      status: courseRun.status,
+      draft: courseRun.draft,
+      marketing_url: courseRun.marketing_url,
+      has_ofac_restrictions: courseRun.has_ofac_restrictions,
+      ofac_comment: courseRun.ofac_comment,
+    }));
+  }
+
+  buildInitialValues() {
+    const {
+      courseInfo: {
+        data: {
+          title,
+          url_slug,
+          short_description,
+          full_description,
+          outcome,
+          subjects,
+          image,
+          prerequisites_raw,
+          level_type,
+          learner_testimonials,
+          faq,
+          additional_information,
+          syllabus_raw,
+          video,
+          entitlements,
+        },
+      },
+    } = this.props;
+    const subjectMap = subjects && subjects.map(x => x.slug);
+    const subjectPrimary = subjectMap && subjectMap[0];
+    const subjectSecondary = subjectMap && subjectMap[1];
+    const subjectTertiary = subjectMap && subjectMap[2];
+    const imageSrc = image && image.src;
+    const videoSrc = video && video.src;
+    const entitlement = entitlements && entitlements[0];
+    const mode = entitlement && entitlement.mode;
+    const price = entitlement && entitlement.price;
+
+    return {
+      title,
+      short_description,
+      full_description,
+      outcome,
+      subjectPrimary,
+      subjectSecondary,
+      subjectTertiary,
+      imageSrc,
+      prerequisites_raw,
+      level_type,
+      learner_testimonials,
+      faq,
+      additional_information,
+      syllabus_raw,
+      videoSrc,
+      mode,
+      price,
+      url_slug,
+      course_runs: this.buildCourseRuns(),
+    };
+  }
+
+  handleModalForReviewedRun(submitCourseData) {
+    const {
+      formValues,
+    } = this.props;
+    const {
+      targetRun: {
+        key,
+      },
+    } = this.state;
+    const currentValues = formValues(this.getFormId());
+    const initialValues = this.buildInitialValues();
+    if (isNonExemptChanged(initialValues, currentValues, key) ||
+      isNonExemptChanged(initialValues, currentValues)) {
+      this.setState({
+        submitCourseData,
+        submitConfirmVisible: true, // show modal
+      });
+    } else {
+      this.handleCourseSubmit(submitCourseData);
+    }
+  }
+
+  showModal(submitCourseData) {
+    const { targetRun } = this.state;
+    if (targetRun && targetRun.status === REVIEWED) {
+      this.handleModalForReviewedRun(submitCourseData);
+    } else if (targetRun && !(targetRun.status === PUBLISHED) &&
+      !IN_REVIEW_STATUS.includes(targetRun.status)) {
+      // Submitting Run for review, show modal, and temporarily store form data until
+      // we have a response for how to continue.
+      this.setState({
+        submitCourseData,
+        submitConfirmVisible: true, // show modal
+      });
+    } else {
+      // Edit submission, no modal required.
+      this.handleCourseSubmit(submitCourseData);
     }
   }
 
@@ -285,20 +404,7 @@ class EditCoursePage extends React.Component {
       courseInfo: {
         data: {
           title,
-          url_slug,
           key,
-          short_description,
-          full_description,
-          outcome,
-          subjects,
-          image,
-          prerequisites_raw,
-          level_type,
-          learner_testimonials,
-          faq,
-          additional_information,
-          syllabus_raw,
-          video,
           entitlements,
           course_runs,
           uuid,
@@ -321,10 +427,10 @@ class EditCoursePage extends React.Component {
       targetRun,
     } = this.state;
     const currentFormValues = formValues(this.getFormId());
-
     const courseStatuses = [];
     const courseInReview = course_runs && course_runs.some(courseRun =>
       IN_REVIEW_STATUS.includes(courseRun.status));
+
     if (courseInReview) {
       courseStatuses.push(IN_REVIEW_STATUS[0]);
     }
@@ -332,49 +438,17 @@ class EditCoursePage extends React.Component {
       courseStatuses.push(PUBLISHED);
     }
     if (course_runs && !courseStatuses.includes(PUBLISHED) &&
-        course_runs.some(courseRun => REVIEWED === courseRun.status)) {
+      course_runs.some(courseRun => REVIEWED === courseRun.status)) {
       courseStatuses.push(REVIEWED);
     }
     if (course_runs && !courseStatuses.includes(PUBLISHED) &&
-        !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !courseStatuses.includes(REVIEWED) &&
-        course_runs.some(courseRun => UNPUBLISHED === courseRun.status)) {
+      !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !courseStatuses.includes(REVIEWED) &&
+      course_runs.some(courseRun => UNPUBLISHED === courseRun.status)) {
       courseStatuses.push(UNPUBLISHED);
     }
 
-    const minimalCourseRuns = course_runs && course_runs.map(courseRun => ({
-      key: courseRun.key,
-      start: courseRun.start,
-      end: courseRun.end,
-      expected_program_type: courseRun.expected_program_type,
-      expected_program_name: courseRun.expected_program_name,
-      go_live_date: courseRun.go_live_date,
-      min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
-      max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',
-      pacing_type: courseRun.pacing_type,
-      content_language: courseRun.content_language ? courseRun.content_language : 'en-us',
-      transcript_languages: courseRun.transcript_languages.length ? courseRun.transcript_languages : ['en-us'],
-      weeks_to_complete: typeof courseRun.weeks_to_complete === 'number' ? String(courseRun.weeks_to_complete) : '',
-      staff: courseRun.staff,
-      status: courseRun.status,
-      draft: courseRun.draft,
-      marketing_url: courseRun.marketing_url,
-      has_ofac_restrictions: courseRun.has_ofac_restrictions,
-      ofac_comment: courseRun.ofac_comment,
-    }));
-
-
-    // If we want to keep a lot of the logic in the lower return,
-    // we have to do all this '&&' logic to make sure the data is there.
     const number = key && getCourseNumber(key);
-    const subjectMap = subjects && subjects.map(x => x.slug);
-    const subjectPrimary = subjectMap && subjectMap[0];
-    const subjectSecondary = subjectMap && subjectMap[1];
-    const subjectTertiary = subjectMap && subjectMap[2];
-    const imageSrc = image && image.src;
-    const videoSrc = video && video.src;
     const entitlement = entitlements && entitlements[0];
-    const mode = entitlement && entitlement.mode;
-    const price = entitlement && entitlement.price;
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -460,31 +534,11 @@ class EditCoursePage extends React.Component {
             <EditCourseForm
               id={this.getFormId()}
               onSubmit={this.showModal}
-              initialValues={{
-                title,
-                short_description,
-                full_description,
-                outcome,
-                subjectPrimary,
-                subjectSecondary,
-                subjectTertiary,
-                imageSrc,
-                prerequisites_raw,
-                level_type,
-                learner_testimonials,
-                faq,
-                additional_information,
-                syllabus_raw,
-                videoSrc,
-                mode,
-                price,
-                url_slug,
-                course_runs: minimalCourseRuns,
-              }}
+              initialValues={this.buildInitialValues()}
               number={number}
               entitlement={entitlement || {}}
               title={title}
-              courseRuns={minimalCourseRuns}
+              courseRuns={this.buildCourseRuns()}
               uuid={uuid}
               currentFormValues={currentFormValues}
               courseInfo={courseInfo}
