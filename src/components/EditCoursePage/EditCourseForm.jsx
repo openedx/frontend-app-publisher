@@ -22,7 +22,7 @@ import {
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
-import { enrollmentHelp, titleHelp } from '../../helpText';
+import { enrollmentHelp, titleHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import store from '../../data/store';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
@@ -52,8 +52,8 @@ export class BaseEditCourseForm extends React.Component {
       },
       courseSubmitInfo,
       currentFormValues,
+      initialValues,
       initialValues: {
-        imageSrc: initialImageSrc,
         course_runs: initialCourseRuns,
       },
       updateFormValuesAfterSave,
@@ -76,7 +76,7 @@ export class BaseEditCourseForm extends React.Component {
     }
 
     if (courseSaved) {
-      updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, initialCourseRuns);
+      updateFormValuesAfterSave(change, currentFormValues, initialValues);
     }
   }
 
@@ -282,6 +282,21 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               required
               disabled={disabled}
+            />
+            <Field
+              name="url_slug"
+              component={RenderInputTextField}
+              type="text"
+              label={
+                <FieldLabel
+                  id="slug.label"
+                  text="URL slug"
+                  optional
+                  helpText={urlSlugHelp}
+                />
+              }
+              disabled={disabled}
+              optional
             />
             <div>
               <FieldLabel id="number" text="Number" className="mb-2" />

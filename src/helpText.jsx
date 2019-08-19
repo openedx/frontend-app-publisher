@@ -89,6 +89,26 @@ const titleHelp = (
   </div>
 );
 
+const urlSlugHelp = (
+  <div>
+    <p><b>This field is currently not in use</b></p>
+    <p>
+      This field is optional. If left blank, edX will automatically
+      create a URL slug based on the course title.
+    </p>
+    <p>
+      This URL slug can be changed, and learners who visit an older
+      URL will be redirected to the current URL.
+    </p>
+    <p><b>What is a URL slug?</b></p>
+    <p>
+      In the example URL www.edx.org/course/math-101, the URL slug is “math-101.”
+      Using URL slugs that are short and easily understandable helps learners find and
+      remember course pages, and also drives higher rankings in search engine results.
+    </p>
+  </div>
+);
+
 const pacingHelp = (
   <div>
     <p>
@@ -110,4 +130,5 @@ export {
   titleHelp,
   pacingHelp,
   publishDateHelp,
+  urlSlugHelp,
 };

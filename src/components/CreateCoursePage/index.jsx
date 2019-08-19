@@ -60,6 +60,7 @@ class CreateCoursePage extends React.Component {
       number: options.number,
       mode: options.enrollmentTrack,
       price: options.price,
+      url_slug: options.url_slug,
       course_run: {
         start: options.start,
         end: options.end,

@@ -98,15 +98,21 @@ function clearCreateCourseStatus() {
   };
 }
 
-function updateFormValuesAfterSave(change, currentFormValues, initialImageSrc, initialCourseRuns) {
+function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
   /*
     We need to overwrite imageSrc and course run statuses because they are changed
     in the backend so the form does not have the updated values by default.
     * This will allow the form to return to being pristine after saving. *
   */
   return (dispatch) => {
+    const {
+      imageSrc: initialImageSrc,
+      url_slug: initialUrlSlug,
+      course_runs: initialCourseRuns,
+    } = initialValues;
     // This emits a redux action called CHANGE that will update currentFormValues.imageSrc
     change('imageSrc', initialImageSrc);
+    change('url_slug', initialUrlSlug);
     for (let i = 0; i < initialCourseRuns.length; i += 1) {
       change(`course_runs[${i}].status`, initialCourseRuns[i].status);
     }
