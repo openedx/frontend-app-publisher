@@ -252,7 +252,7 @@ class EditCoursePage extends React.Component {
       case REVIEW_BY_INTERNAL:
         return 'PC Review Complete.';
       default:
-        if (status === REVIEWED && runFromAPI.status === REVIEWED) {
+        if (status === PUBLISHED || (status === REVIEWED && runFromAPI.status === REVIEWED)) {
           return 'Course Run Updated.';
         }
         return 'Course has been submitted for review. The course will be locked for the next two business days. ' +
