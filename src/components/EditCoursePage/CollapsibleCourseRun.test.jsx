@@ -119,6 +119,8 @@ describe('Collapsible Course Run', () => {
       courseRun={unpublishedCourseRun}
       courseId="test-course"
       courseUuid="11111111-1111-1111-1111-111111111111"
+      currentFormValues={{}}
+      initialValues={{}}
       editable
     />);
 

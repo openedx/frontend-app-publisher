@@ -3,6 +3,7 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
+import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS } from '../data/constants';
 
 const getDateWithDashes = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment.utc(date).format('YYYY/MM/DD') : '');
@@ -101,6 +102,56 @@ const getErrorMessages = (error) => {
   return ['Unknown error.'];
 };
 
+const isNonExemptChanged = (initialValues, currentFormValues, runKey) => {
+  // if run key is present, we are checking if the non exempt fields have been changed
+  if (runKey) {
+    const { course_runs: initialRuns } = initialValues;
+    const { course_runs: currentRuns } = currentFormValues;
+    if (currentRuns) {
+      const index = currentRuns.findIndex(run => run.key === runKey);
+      return COURSE_RUN_NON_EXEMPT_FIELDS.some(field => (
+        initialRuns[index][field] !== currentRuns[index][field]
+      ));
+    }
+    return false;
+  }
+  // if no run key preset, we are checking that no fields besides the course exempt
+  // fields are changed
+  return Object.keys(currentFormValues).some((key) => {
+    if (key !== 'course_runs' && !COURSE_EXEMPT_FIELDS.includes(key)) {
+      if (key === 'price') {
+        return Number(initialValues[key]).toFixed(2) !== Number(currentFormValues[key]).toFixed(2);
+      }
+      return initialValues[key] !== currentFormValues[key];
+    }
+    return false;
+  });
+};
+
+const isPristine = (initialValues, currentFormValues, runKey) => {
+  // if run key is present, we are checking pristine state for a single course run form
+  if (runKey) {
+    const { course_runs: initialRuns } = initialValues;
+    const { course_runs: currentRuns } = currentFormValues;
+    if (currentRuns) {
+      const index = currentRuns.findIndex(run => run.key === runKey);
+
+      return JSON.stringify(initialRuns[index]) === JSON.stringify(currentRuns[index]);
+    }
+    return true;
+  }
+  // if no run key preset, we are checking the pristine state of course level fields
+  return Object.keys(initialValues).every((key) => {
+    if (key !== 'course_runs') {
+      if (key === 'price') {
+        return Number(initialValues[key]).toFixed(2) === Number(currentFormValues[key]).toFixed(2);
+      }
+      return initialValues[key] === currentFormValues[key];
+    }
+    return true;
+  });
+};
+
 export {
   getDateWithDashes,
   getDateWithSlashes,
@@ -114,4 +165,6 @@ export {
   isValidDate,
   localTimeZone,
   isSafari,
+  isNonExemptChanged,
+  isPristine,
 };
