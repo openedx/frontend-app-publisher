@@ -17,7 +17,7 @@ import {
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
-import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp, urlSlugHelp } from '../../helpText';
+import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
 import { isSafari, localTimeZone, getDateWithDashes } from '../../utils';
 
@@ -80,20 +80,6 @@ class BaseCreateCourseForm extends React.Component {
               />
             }
             required
-          />
-          <Field
-            name="url_slug"
-            component={RenderInputTextField}
-            type="text"
-            label={
-              <FieldLabel
-                id="slug-label"
-                text="URL Slug"
-                optional
-                helpText={urlSlugHelp}
-              />
-            }
-            optional
           />
           <Field
             name="number"

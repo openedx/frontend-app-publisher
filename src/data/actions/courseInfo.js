@@ -107,12 +107,10 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
   return (dispatch) => {
     const {
       imageSrc: initialImageSrc,
-      url_slug: initialUrlSlug,
       course_runs: initialCourseRuns,
     } = initialValues;
     // This emits a redux action called CHANGE that will update currentFormValues.imageSrc
     change('imageSrc', initialImageSrc);
-    change('url_slug', initialUrlSlug);
     for (let i = 0; i < initialCourseRuns.length; i += 1) {
       change(`course_runs[${i}].status`, initialCourseRuns[i].status);
     }

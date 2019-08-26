@@ -24,7 +24,6 @@ class DiscoveryDataApiService {
       'title',
       'modified',
       'owners',
-      'url_slug',
     ];
     const queryParams = {
       page: 1,
