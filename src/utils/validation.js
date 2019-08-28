@@ -76,9 +76,10 @@ const editCourseValidate = (values, props) => {
   const { targetRun } = props;
 
   if (!targetRun || targetRun.status === PUBLISHED) {
-    return undefined;
+    return {};
   }
 
+  let hasError = false;
   const errors = {};
 
   // Validate all the fields required for submission at the top level of the form
@@ -86,6 +87,7 @@ const editCourseValidate = (values, props) => {
   courseRequiredFields.forEach((fieldName) => {
     const value = values[fieldName];
     if (!value) {
+      hasError = true;
       errors[fieldName] = requiredMessage;
     }
   });
@@ -109,6 +111,9 @@ const editCourseValidate = (values, props) => {
           }
         }
       });
+      if (Object.keys(runErrors).length > 0) {
+        hasError = true;
+      }
       errors.course_runs.push(runErrors);
     } else {
       errors.course_runs.push(null);
@@ -117,11 +122,11 @@ const editCourseValidate = (values, props) => {
 
   // If needed, reset our state variable isSubmittingRunReview, which indicates that we are
   // validating for a submit-for-review (when we check required-for-submit properties).
-  if (errors !== {} && store.getState().courseSubmitInfo.isSubmittingRunReview) {
+  if (hasError && store.getState().courseSubmitInfo.isSubmittingRunReview) {
     store.dispatch(courseSubmittingFailure(errors));
   }
 
-  return errors;
+  return hasError ? errors : {};
 };
 
 export {

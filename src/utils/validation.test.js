@@ -90,7 +90,7 @@ describe('editCourseValidate', () => {
 
   it('does not return errors if there is no target run', () => {
     const targetRun = null;
-    expect(editCourseValidate({}, { targetRun })).toBe(undefined);
+    expect(editCourseValidate({}, { targetRun })).toEqual({});
   });
 
   it('does not return errors if the target run is published', () => {
@@ -98,7 +98,7 @@ describe('editCourseValidate', () => {
       status: PUBLISHED,
       key: 'TestRun',
     };
-    expect(editCourseValidate({}, { targetRun })).toBe(undefined);
+    expect(editCourseValidate({}, { targetRun })).toEqual({});
   });
 
   it('returns errors for missing course level fields', () => {
@@ -150,10 +150,7 @@ describe('editCourseValidate', () => {
         },
       ],
     };
-    const expectedErrors = {
-      course_runs: [null],
-    };
-    expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual(expectedErrors);
+    expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual({});
   });
 
   it('returns errors on submitting course runs with missing transcript languages', () => {
