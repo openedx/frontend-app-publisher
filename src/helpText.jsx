@@ -100,6 +100,10 @@ const urlSlugHelp = (
       This URL slug can be changed, and learners who visit an older
       URL will be redirected to the current URL.
     </p>
+    <p>
+      If you find that a given URL slug is already in use, we recommend adding your
+      school or institution name to the slug to ensure uniqueness
+    </p>
     <p><b>What is a URL slug?</b></p>
     <p>
       In the example URL www.edx.org/course/math-101, the URL slug is “math-101.”
