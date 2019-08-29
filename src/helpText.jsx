@@ -55,7 +55,7 @@ const startDateHelp = (
     <p>Start on a Tuesday, Wednesday, or Thursday.</p>
     <p>Avoid major holidays.</p>
     <p>
-      Dates are editable after the course is created, rounded to the nearest term.
+      Dates are editable in Studio after the course is created, rounded to the nearest term.
       If your courses start on January - May 2020, the URL will end in 1T2020.
     </p>
     <p>
