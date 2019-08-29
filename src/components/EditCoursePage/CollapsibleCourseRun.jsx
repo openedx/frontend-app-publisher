@@ -22,7 +22,7 @@ import {
   DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
-import { endDateHelp, startDateHelp, pacingHelp, publishDateHelp } from '../../helpText';
+import { startDateHelp, pacingHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
 const determineStatus = courseRun => (courseRun.status === 'unpublished' && moment().isAfter(courseRun.end) ?
@@ -296,12 +296,7 @@ class CollapsibleCourseRun extends React.Component {
               dateLabel="Start date"
               timeLabel={`Start time (${localTimeZone})`}
               helpText={startDateHelp}
-              disabled={disabled}
-              required
-              onInvalid={this.openCollapsible}
-              maxLength="10"
-              pattern={DATE_INPUT_PATTERN}
-              placeholder="yyyy/mm/dd"
+              disabled
             />
             <Field
               name={`${courseId}.end`}
@@ -309,13 +304,7 @@ class CollapsibleCourseRun extends React.Component {
               component={DateTimeField}
               dateLabel="End date"
               timeLabel={`End time (${localTimeZone})`}
-              helpText={endDateHelp}
-              disabled={disabled}
-              required
-              onInvalid={this.openCollapsible}
-              maxLength="10"
-              pattern={DATE_INPUT_PATTERN}
-              placeholder="yyyy/mm/dd"
+              disabled
             />
           </div> :
           // date inputs for all browsers besides safari
@@ -349,11 +338,7 @@ class CollapsibleCourseRun extends React.Component {
               dateLabel="Start date"
               timeLabel={`Start time (${localTimeZone})`}
               helpText={startDateHelp}
-              disabled={disabled}
-              required
-              minDate={moment(courseRun.start).isBefore(moment()) ?
-                getDateWithDashes(courseRun.start) : getDateWithDashes(moment())}
-              onInvalid={this.openCollapsible}
+              disabled
             />
             <Field
               name={`${courseId}.end`}
@@ -361,11 +346,7 @@ class CollapsibleCourseRun extends React.Component {
               component={DateTimeField}
               dateLabel="End date"
               timeLabel={`End time (${localTimeZone})`}
-              helpText={endDateHelp}
-              disabled={disabled}
-              required
-              minDate={getDateWithDashes(moment(courseRun.start).add(1, 'd') || moment())}
-              onInvalid={this.openCollapsible}
+              disabled
             />
           </div>
         }
