@@ -22,7 +22,7 @@ import {
   DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
-import { startDateHelp, pacingHelp, publishDateHelp } from '../../helpText';
+import { dateEditHelp, pacingHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
 const determineStatus = courseRun => (courseRun.status === 'unpublished' && moment().isAfter(courseRun.end) ?
@@ -253,6 +253,8 @@ class CollapsibleCourseRun extends React.Component {
 
     const disabled = courseInReview || !editable;
 
+    const courseDateEditHelp = dateEditHelp(courseRun);
+
     return (
       <Collapsible
         title={formatCourseRunTitle(courseRun)}
@@ -295,7 +297,7 @@ class CollapsibleCourseRun extends React.Component {
               component={DateTimeField}
               dateLabel="Start date"
               timeLabel={`Start time (${localTimeZone})`}
-              helpText={startDateHelp}
+              helpText={courseDateEditHelp}
               disabled
             />
             <Field
@@ -304,6 +306,7 @@ class CollapsibleCourseRun extends React.Component {
               component={DateTimeField}
               dateLabel="End date"
               timeLabel={`End time (${localTimeZone})`}
+              helpText={courseDateEditHelp}
               disabled
             />
           </div> :
@@ -337,7 +340,7 @@ class CollapsibleCourseRun extends React.Component {
               component={DateTimeField}
               dateLabel="Start date"
               timeLabel={`Start time (${localTimeZone})`}
-              helpText={startDateHelp}
+              helpText={courseDateEditHelp}
               disabled
             />
             <Field
@@ -346,6 +349,7 @@ class CollapsibleCourseRun extends React.Component {
               component={DateTimeField}
               dateLabel="End date"
               timeLabel={`End time (${localTimeZone})`}
+              helpText={courseDateEditHelp}
               disabled
             />
           </div>
