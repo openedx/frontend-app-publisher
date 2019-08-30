@@ -20,6 +20,24 @@ const publishDateHelp = (
   </div>
 );
 
+function dateEditHelp(courseRun) {
+  return (
+    <div>
+      <p>Course run dates are editable in Studio.</p>
+      <p>
+        <a
+          href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}#schedule`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Edit dates.
+        </a>.
+      </p>
+    </div>
+  );
+}
+
+
 const endDateHelp = (
   <div>
     { isSafari && <p>Required Format: yyyy/mm/dd</p> }
@@ -124,6 +142,7 @@ const pacingHelp = (
 );
 
 export {
+  dateEditHelp,
   endDateHelp,
   enrollmentHelp,
   startDateHelp,
