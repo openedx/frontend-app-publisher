@@ -949,6 +949,7 @@ const EditCourseForm = compose(
   reduxForm({
     enableReinitialize: true, // Reload staff changes when returning from editing /creating staffers
     keepDirtyOnReinitialize: true, // Don't wipe out changes on reinitialization
+    updateUnregisteredFields: true,
     destroyOnUnmount: false, // Keep the form state in redux when editing / creating staffers
     onSubmitFail: handleCourseEditFail, // Send focus to first non-input field with errors
     // Run the sync validation when a run is submitting for review and regular submission process

@@ -18,8 +18,6 @@ class EditCoursePage extends React.Component {
     super(props);
     this.state = {
       startedFetching: false,
-      targetRun: null,
-      isSubmittingForReview: false,
       submitConfirmVisible: false,
       submitCourseData: {},
     };
@@ -43,22 +41,6 @@ class EditCoursePage extends React.Component {
     this.setStartedFetching();
   }
 
-  componentDidUpdate(prevProps) {
-    /* eslint-disable react/no-did-update-set-state */
-    const { courseSubmitInfo: { targetRun } } = this.props;
-    const { courseSubmitInfo: { targetRun: prevRun } } = prevProps;
-
-    if (JSON.stringify(targetRun) !== JSON.stringify(prevRun)) {
-      /* We can safely update state here since we are comparing the current props against previous
-      *  props, ensuring that we won't end up in a continuous re-render loop.
-      */
-      this.setState({
-        targetRun,
-        isSubmittingForReview: targetRun && targetRun.status !== PUBLISHED,
-      });
-    }
-  }
-
   componentWillUnmount() {
     this.dismissCreateStatusAlert();
     this.dismissReviewStatusAlert();
@@ -73,7 +55,7 @@ class EditCoursePage extends React.Component {
   }
 
   prepareSendCourseRunData(courseData) {
-    const { targetRun } = this.state;
+    const { courseSubmitInfo: { targetRun } } = this.props;
     const sendCourseRuns = [];
     // Don't send any courses in review - backend will reject them
     const modifiedCourseRuns = courseData.course_runs.filter(run => (
@@ -113,7 +95,7 @@ class EditCoursePage extends React.Component {
   }
 
   prepareInternalReview(courseData) {
-    const { targetRun } = this.state;
+    const { courseSubmitInfo: { targetRun } } = this.props;
     const courseRun = courseData.course_runs.find(run => run.key === targetRun.key);
     const editedRun = { key: courseRun.key };
 
@@ -141,8 +123,10 @@ class EditCoursePage extends React.Component {
           entitlements,
         },
       },
+      courseSubmitInfo: {
+        targetRun,
+      },
     } = this.props;
-    const { targetRun } = this.state;
 
     let updatingPublishedRun = false;
     if (targetRun) {
@@ -230,8 +214,12 @@ class EditCoursePage extends React.Component {
         4. Renaming the image and video fields to correspond to what course-discovery is expecting
         5. Setting the uuid so we can create the url to send to course-discovery
     */
-    const { editCourse } = this.props;
-    const { targetRun } = this.state;
+    const {
+      courseSubmitInfo: {
+        targetRun,
+      },
+      editCourse,
+    } = this.props;
     const isInternalReview = targetRun && IN_REVIEW_STATUS.includes(targetRun.status);
     // Process course run info from courseData
     const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData) :
@@ -243,8 +231,10 @@ class EditCoursePage extends React.Component {
   }
 
   displayReviewStatusAlert(status) {
-    const { courseInfo: { data: { course_runs } } } = this.props;
-    const { targetRun: { key } } = this.state;
+    const {
+      courseInfo: { data: { course_runs } },
+      courseSubmitInfo: { targetRun: { key } },
+    } = this.props;
     const runFromAPI = course_runs ? course_runs.find(run => run.key === key) : {};
     switch (status) {
       case REVIEW_BY_LEGAL:
@@ -348,13 +338,13 @@ class EditCoursePage extends React.Component {
 
   handleModalForReviewedRun(submitCourseData) {
     const {
+      courseSubmitInfo: {
+        targetRun: {
+          key,
+        },
+      },
       formValues,
     } = this.props;
-    const {
-      targetRun: {
-        key,
-      },
-    } = this.state;
     const currentValues = formValues(this.getFormId());
     const initialValues = this.buildInitialValues();
     if (isNonExemptChanged(initialValues, currentValues, key) ||
@@ -369,7 +359,11 @@ class EditCoursePage extends React.Component {
   }
 
   showModal(submitCourseData) {
-    const { targetRun } = this.state;
+    const {
+      courseSubmitInfo: {
+        targetRun,
+      },
+    } = this.props;
     if (targetRun && targetRun.status === REVIEWED) {
       this.handleModalForReviewedRun(submitCourseData);
     } else if (targetRun && !(targetRun.status === PUBLISHED) &&
@@ -418,13 +412,12 @@ class EditCoursePage extends React.Component {
       formValues,
       courseSubmitInfo: {
         showReviewStatusAlert,
+        targetRun,
       },
     } = this.props;
     const {
-      isSubmittingForReview,
       startedFetching,
       submitConfirmVisible,
-      targetRun,
     } = this.state;
     const currentFormValues = formValues(this.getFormId());
     const courseStatuses = [];
@@ -545,7 +538,7 @@ class EditCoursePage extends React.Component {
               courseInReview={courseInReview}
               courseStatuses={courseStatuses}
               owners={owners}
-              isSubmittingForReview={isSubmittingForReview}
+              isSubmittingForReview={targetRun && targetRun.status !== PUBLISHED}
               targetRun={targetRun}
               editable={editable}
               {...this.props}
@@ -628,6 +621,7 @@ EditCoursePage.propTypes = {
   clearCreateStatusAlert: PropTypes.func,
   courseSubmitInfo: PropTypes.shape({
     targetRun: PropTypes.shape({
+      key: PropTypes.string,
       uuid: PropTypes.string,
       status: PropTypes.string,
     }),

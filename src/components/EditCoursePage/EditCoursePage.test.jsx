@@ -429,14 +429,12 @@ describe('EditCoursePage', () => {
       // const component = mount(EditCoursePageWrapper());
       component.setState({
         submitConfirmVisible: false,
-        targetRun: null,
       });
 
       component.instance().handleCourseSubmit = mockHandleCourseSubmit;
       component.update();
 
       component.instance().showModal(courseData);
-      expect(component.state().targetRun).toEqual(null);
       expect(component.state().submitConfirmVisible).toEqual(false);
       expect(mockHandleCourseSubmit).toHaveBeenCalled();
     });
@@ -444,18 +442,19 @@ describe('EditCoursePage', () => {
     it('sets state correctly and does not show modal with PUBLISHED target run', () => {
       const component = shallow(<EditCoursePage
         courseInfo={courseInfo}
+        courseSubmitInfo={{
+          targetRun: publishedCourseRun,
+        }}
       />);
 
       component.setState({
         submitConfirmVisible: false,
-        targetRun: publishedCourseRun,
       });
 
       component.instance().handleCourseSubmit = mockHandleCourseSubmit;
       component.update();
 
       component.instance().showModal(courseData);
-      expect(component.state().targetRun).toEqual(publishedCourseRun);
       expect(component.state().submitConfirmVisible).toEqual(false);
       expect(mockHandleCourseSubmit).toHaveBeenCalled();
     });
@@ -463,18 +462,19 @@ describe('EditCoursePage', () => {
     it('sets state correctly and shows modal with UNPUBLISHED target run', () => {
       const component = shallow(<EditCoursePage
         courseInfo={courseInfo}
+        courseSubmitInfo={{
+          targetRun: unpublishedCourseRun,
+        }}
       />);
 
       component.setState({
         submitConfirmVisible: false,
-        targetRun: unpublishedCourseRun,
       });
 
       component.instance().handleCourseSubmit = mockHandleCourseSubmit;
       component.update();
 
       component.instance().showModal(courseData);
-      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
       expect(component.state().submitConfirmVisible).toEqual(true);
       expect(component.state().submitCourseData).toEqual(courseData);
       expect(mockHandleCourseSubmit).not.toHaveBeenCalled();
@@ -483,23 +483,23 @@ describe('EditCoursePage', () => {
     it('sets state correctly when modal shown and continue submit called', () => {
       const component = shallow(<EditCoursePage
         courseInfo={courseInfo}
+        courseSubmitInfo={{
+          targetRun: unpublishedCourseRun,
+        }}
       />);
 
       component.setState({
         submitConfirmVisible: true,
-        targetRun: unpublishedCourseRun,
       });
 
       component.instance().handleCourseSubmit = mockHandleCourseSubmit;
       component.update();
 
       component.instance().showModal(courseData);
-      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
       expect(component.state().submitConfirmVisible).toEqual(true);
       expect(component.state().submitCourseData).toEqual(courseData);
 
       component.instance().continueSubmit(courseData);
-      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
       expect(component.state().submitConfirmVisible).toEqual(false);
       expect(component.state().submitCourseData).toEqual({});
       expect(mockHandleCourseSubmit).toHaveBeenCalled();
@@ -508,9 +508,11 @@ describe('EditCoursePage', () => {
     it('upon course submission, StatusAlert is set to appear', () => {
       const component = shallow(<EditCoursePage
         courseInfo={{ data: { editable: true } }}
-        courseSubmitInfo={{ showReviewStatusAlert: true }}
+        courseSubmitInfo={{
+          showReviewStatusAlert: true,
+          targetRun: unpublishedCourseRun,
+        }}
       />);
-      component.setState({ targetRun: { status: UNPUBLISHED } });
       const reviewAlert = component.find(StatusAlert);
       const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
       expect(reviewAlert.props().message).toEqual(reviewMessage);
@@ -519,9 +521,11 @@ describe('EditCoursePage', () => {
     it('upon legal review submission, StatusAlert is set to appear', () => {
       const component = shallow(<EditCoursePage
         courseInfo={{ data: { editable: true } }}
-        courseSubmitInfo={{ showReviewStatusAlert: true }}
+        courseSubmitInfo={{
+          showReviewStatusAlert: true,
+          targetRun: { status: REVIEW_BY_LEGAL },
+        }}
       />);
-      component.setState({ targetRun: { status: REVIEW_BY_LEGAL } });
       const reviewAlert = component.find(StatusAlert);
       const reviewMessage = 'Legal Review Complete. Course Run is now awaiting PC Review.';
       expect(reviewAlert.props().message).toEqual(reviewMessage);
@@ -530,9 +534,11 @@ describe('EditCoursePage', () => {
     it('upon internal review submission, StatusAlert is set to appear', () => {
       const component = shallow(<EditCoursePage
         courseInfo={{ data: { editable: true } }}
-        courseSubmitInfo={{ showReviewStatusAlert: true }}
+        courseSubmitInfo={{
+          showReviewStatusAlert: true,
+          targetRun: { status: REVIEW_BY_INTERNAL },
+        }}
       />);
-      component.setState({ targetRun: { status: REVIEW_BY_INTERNAL } });
       const reviewAlert = component.find(StatusAlert);
       const reviewMessage = 'PC Review Complete.';
       expect(reviewAlert.props().message).toEqual(reviewMessage);
@@ -559,12 +565,10 @@ describe('EditCoursePage', () => {
 
       component.setState({
         submitConfirmVisible: true,
-        targetRun: null,
       });
       component.update();
 
       component.instance().handleCourseSubmit(courseData);
-      expect(component.state().targetRun).toEqual(null);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
         expectedSendCourseRuns,
@@ -580,11 +584,13 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseSubmitInfo={{
+          targetRun: publishedCourseRun,
+        }}
       />);
 
       component.setState({
         submitConfirmVisible: true,
-        targetRun: publishedCourseRun,
       });
       component.update();
 
@@ -592,7 +598,6 @@ describe('EditCoursePage', () => {
       expectedSendCourse.draft = false;
 
       component.instance().handleCourseSubmit(courseData);
-      expect(component.state().targetRun).toEqual(publishedCourseRun);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
         expectedSendCourseRuns,
@@ -608,18 +613,19 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseSubmitInfo={{
+          targetRun: unpublishedCourseRun,
+        }}
       />);
 
       component.setState({
         submitConfirmVisible: true,
-        targetRun: unpublishedCourseRun,
       });
       component.update();
 
       expectedSendCourseRuns[0].draft = false;
 
       component.instance().handleCourseSubmit(courseData);
-      expect(component.state().targetRun).toEqual(unpublishedCourseRun);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
         expectedSendCourseRuns,
