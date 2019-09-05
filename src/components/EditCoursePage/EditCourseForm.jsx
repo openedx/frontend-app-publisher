@@ -69,7 +69,7 @@ export class BaseEditCourseForm extends React.Component {
     const stoppingRunReview = prevProps.courseSubmitInfo.isSubmittingRunReview &&
                               !courseSubmitInfo.isSubmittingRunReview;
     const hasCourseErrors = courseSubmitInfo.errors &&
-                            courseSubmitInfo.errors !== {} &&
+                            Object.keys(courseSubmitInfo.errors).length &&
                             Object.keys(courseSubmitInfo.errors) !== ['course_runs'];
     if (stoppingRunReview && hasCourseErrors) {
       this.openCollapsible();
@@ -845,6 +845,7 @@ export class BaseEditCourseForm extends React.Component {
             collapsiblesOpen={this.state.collapsiblesOpen}
             onToggle={(index, value) => this.toggleCourseRun(index, value)}
             {...this.props}
+            validate={() => {}} // override method from our props, we don't want to pass it down
           />
           {this.getAddCourseRunButton(disabled, pristine, uuid)}
           {editable &&
