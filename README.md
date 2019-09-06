@@ -1,6 +1,6 @@
-# publisher-frontend
+# frontend-app-publisher
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/edx/publisher-frontend.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/edx/frontend-app-publisher.svg)](https://greenkeeper.io/)
 
 Publisher frontend to manage course creation and marketing content curation.
 

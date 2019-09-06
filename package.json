@@ -1,8 +1,8 @@
 {
-  "name": "edx-publisher-frontend",
+  "name": "edx-frontend-app-publisher",
   "version": "0.1.0",
   "description": "Frontend for the Publisher Application",
-  "repository": "https://github.com/edx/publisher-frontend",
+  "repository": "https://github.com/edx/frontend-app-publisher",
   "scripts": {
     "build": "NODE_ENV=production BABEL_ENV=production webpack --config=config/webpack.prod.config.js",
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
