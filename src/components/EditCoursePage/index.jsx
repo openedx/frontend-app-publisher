@@ -72,7 +72,6 @@ class EditCoursePage extends React.Component {
       sendCourseRuns.push({
         content_language: courseRun.content_language,
         draft,
-        end: isValidDate(courseRun.end) ? courseRun.end : null,
         expected_program_type: courseRun.expected_program_type ?
           courseRun.expected_program_type : null,
         expected_program_name: courseRun.expected_program_name ?
@@ -81,11 +80,9 @@ class EditCoursePage extends React.Component {
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
-        pacing_type: courseRun.pacing_type,
         rerun: courseRun.rerun ? courseRun.rerun : null,
         // Reduce Staff list to just the UUID
         staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
-        start: isValidDate(courseRun.start) ? courseRun.start : null,
         status: courseRun.status,
         transcript_languages: courseRun.transcript_languages,
         weeks_to_complete: courseRun.weeks_to_complete ? courseRun.weeks_to_complete : null,
