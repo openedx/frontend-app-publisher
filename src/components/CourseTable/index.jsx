@@ -55,11 +55,6 @@ class CourseTable extends React.Component {
         key: 'owners',
         columnSortable: false,
       },
-      {
-        label: 'Modified',
-        key: 'modified',
-        columnSortable: true,
-      },
     ];
 
     const pageOptions = getPageOptionsFromUrl();
