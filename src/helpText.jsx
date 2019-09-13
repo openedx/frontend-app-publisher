@@ -37,7 +37,6 @@ function dateEditHelp(courseRun) {
   );
 }
 
-
 const endDateHelp = (
   <div>
     { isSafari && <p>Required Format: yyyy/mm/dd</p> }
@@ -63,6 +62,37 @@ const enrollmentHelp = (
       >
         Learn more.
       </a>
+    </p>
+  </div>
+);
+
+function pacingEditHelp(courseRun) {
+  return (
+    <div>
+      <p>Pacing type is editable in Studio.</p>
+      <p>
+        <a
+          href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Edit pacing type.
+        </a>.
+      </p>
+    </div>
+  );
+}
+
+const pacingHelp = (
+  <div>
+    <p>
+      Instructor-paced courses include individual assignments that have specific
+      due dates before the course end date.
+    </p>
+    <p>
+      Self-paced courses do not have individual assignments that have specific
+      due dates before the course end date. All assignments are due on the
+      course end date.
     </p>
   </div>
 );
@@ -127,26 +157,13 @@ const urlSlugHelp = (
   </div>
 );
 
-const pacingHelp = (
-  <div>
-    <p>
-      Instructor-paced courses include individual assignments that have specific
-      due dates before the course end date.
-    </p>
-    <p>
-      Self-paced courses do not have individual assignments that have specific
-      due dates before the course end date. All assignments are due on the
-      course end date.
-    </p>
-  </div>
-);
-
 export {
   dateEditHelp,
   endDateHelp,
   enrollmentHelp,
   startDateHelp,
   titleHelp,
+  pacingEditHelp,
   pacingHelp,
   publishDateHelp,
   urlSlugHelp,

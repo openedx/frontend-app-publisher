@@ -22,7 +22,7 @@ import {
   DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
-import { dateEditHelp, pacingHelp, publishDateHelp } from '../../helpText';
+import { dateEditHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
 const determineStatus = courseRun => (courseRun.status === 'unpublished' && moment().isAfter(courseRun.end) ?
@@ -254,6 +254,7 @@ class CollapsibleCourseRun extends React.Component {
     const disabled = courseInReview || !editable;
 
     const courseDateEditHelp = dateEditHelp(courseRun);
+    const coursePacingEditHelp = pacingEditHelp(courseRun);
 
     return (
       <Collapsible
@@ -364,12 +365,10 @@ class CollapsibleCourseRun extends React.Component {
             <FieldLabel
               id={`${courseId}.pacing_type.label`}
               text="Course pacing"
-              helpText={pacingHelp}
+              helpText={coursePacingEditHelp}
             />
           }
-          extraInput={{ onInvalid: this.openCollapsible }}
-          disabled={disabled}
-          required={courseRunSubmitting}
+          disabled
         />
         <FieldLabel
           id={`${courseId}.staff.label`}
