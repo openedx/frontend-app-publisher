@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "config:base",
+    "schedule:earlyMondays"
+  ],
+  "statusCheckVerify": true,
+  "ignoreDeps": [
+    "babel-loader"
+  ],
+  "rebaseStalePrs": true
+}
