@@ -100,7 +100,7 @@ class CourseTable extends React.Component {
                     updateUrl({ filter: null });
                   }}
                   onSubmit={(filter) => {
-                    updateUrl({ filter });
+                    updateUrl({ filter, page: 1 });
                   }}
                 />
               </div>
