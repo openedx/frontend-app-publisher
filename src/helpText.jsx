@@ -25,6 +25,10 @@ function dateEditHelp(courseRun) {
     <div>
       <p>Course run dates are editable in Studio.</p>
       <p>
+        Please note that changes in Studio may take up to a business day to be reflected here.
+        For questions, contact your project coordinator.
+      </p>
+      <p>
         <a
           href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}#schedule`}
           target="_blank"
@@ -69,14 +73,18 @@ const enrollmentHelp = (
 function pacingEditHelp(courseRun) {
   return (
     <div>
-      <p>Pacing type is editable in Studio.</p>
+      <p>Course pacing is editable in Studio.</p>
+      <p>
+        Please note that changes in Studio may take up to a business day to be reflected here.
+        For questions, contact your project coordinator.
+      </p>
       <p>
         <a
           href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Edit pacing type.
+          Edit course pacing.
         </a>.
       </p>
     </div>
