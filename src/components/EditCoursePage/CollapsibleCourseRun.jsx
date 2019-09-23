@@ -8,8 +8,8 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
-import { localTimeZone, formatDate, isSafari, getDateWithDashes, getDateWithSlashes,
-  isNonExemptChanged, isPristine } from '../../utils/index';
+import { courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
+  getDateWithSlashes, isNonExemptChanged, isPristine } from '../../utils/index';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -25,8 +25,7 @@ import {
 import { dateEditHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
-const determineStatus = courseRun => (courseRun.status === 'unpublished' && moment().isAfter(courseRun.end) ?
-  'archived' : courseRun.status);
+const determineStatus = run => (courseRunIsArchived(run) ? 'archived' : run.status);
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {

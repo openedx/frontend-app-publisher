@@ -7,7 +7,7 @@ import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { getCourseNumber, isValidDate, isNonExemptChanged } from '../../utils';
+import { courseRunIsArchived, getCourseNumber, isValidDate, isNonExemptChanged } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
   UNPUBLISHED } from '../../data/constants';
 import ConfirmationModal from '../ConfirmationModal';
@@ -55,12 +55,48 @@ class EditCoursePage extends React.Component {
   }
 
   prepareSendCourseRunData(courseData) {
-    const { courseSubmitInfo: { targetRun } } = this.props;
+    const {
+      courseInfo: {
+        data: {
+          entitlements,
+        },
+      },
+      courseSubmitInfo: {
+        targetRun,
+      },
+    } = this.props;
+
     const sendCourseRuns = [];
-    // Don't send any courses in review - backend will reject them
-    const modifiedCourseRuns = courseData.course_runs.filter(run => (
-      !IN_REVIEW_STATUS.includes(run.status)
-    ));
+    const initialCourseRunValues = this.buildCourseRuns();
+    const entitlement = entitlements && entitlements[0];
+    const initialMode = entitlement && entitlement.mode;
+    const initialPrice = entitlement && entitlement.price;
+
+    const modifiedCourseRuns = courseData.course_runs.filter((run, i) => {
+      // If we are submitting a run for review or re-publishing a run, it should
+      // always get through to the backend
+      if (targetRun && (run.key === targetRun.key)) {
+        return true;
+      }
+
+      // Don't send any courses in review - backend will reject them
+      if (IN_REVIEW_STATUS.includes(run.status)) {
+        return false;
+      }
+
+      // send runs if they have changed OR the course mode or price has
+      // changed and the run is NOT "archived" (we care about the mode and
+      // price because those are passed down to the course runs' seats)
+      const runHasChanges = JSON.stringify(initialCourseRunValues[i]) !== JSON.stringify(run);
+      const courseModeChanged = initialMode !== courseData.mode;
+      const coursePriceChanged = initialPrice !== courseData.price;
+      if (runHasChanges ||
+        ((courseModeChanged || coursePriceChanged) && !courseRunIsArchived(run))) {
+        return true;
+      }
+
+      return false;
+    });
 
     modifiedCourseRuns.forEach((courseRun) => {
       let draft = true;
@@ -223,7 +259,6 @@ class EditCoursePage extends React.Component {
       this.prepareSendCourseRunData(courseData);
     // Process courseData to reduced data set
     const courseEditData = this.prepareSendCourseData(courseData, modifiedCourseRuns);
-
     return editCourse(courseEditData, modifiedCourseRuns, !!targetRun);
   }
 
