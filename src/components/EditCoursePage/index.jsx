@@ -396,6 +396,7 @@ class EditCoursePage extends React.Component {
         data: {
           title,
           key,
+          key_for_reruns,
           entitlements,
           course_runs,
           uuid,
@@ -437,7 +438,8 @@ class EditCoursePage extends React.Component {
       courseStatuses.push(UNPUBLISHED);
     }
 
-    const number = key && getCourseNumber(key);
+    const numberKey = key_for_reruns || key;
+    const number = numberKey && getCourseNumber(numberKey);
     const entitlement = entitlements && entitlements[0];
 
     const errorArray = [];
