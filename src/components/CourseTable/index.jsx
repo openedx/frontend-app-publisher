@@ -47,7 +47,7 @@ class CourseTable extends React.Component {
       },
       {
         label: 'Course Number',
-        key: 'key',
+        key: 'number',
         columnSortable: true,
       },
       {
@@ -64,6 +64,7 @@ class CourseTable extends React.Component {
       title: (<Link to={`/courses/${course.uuid}`}>{course.title}</Link>),
       owners: course.owners ? course.owners.map(owners => owners.name).join(', ') : '',
       modified: moment.utc(course.modified).format('MMM DD, YYYY'),
+      number: course.key_for_reruns || course.key,
     }));
     const showDashboard = this.isOrgWhitelisted() || administrator;
     const oldPublisherLink = `${process.env.DISCOVERY_API_BASE_URL}/publisher/`;

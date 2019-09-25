@@ -21,6 +21,7 @@ class DiscoveryDataApiService {
     const fields = [
       'uuid',
       'key',
+      'key_for_reruns',
       'title',
       'modified',
       'owners',
