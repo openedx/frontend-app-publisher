@@ -1349,6 +1349,52 @@ ShallowWrapper {
       Object {
         "data": Object {
           "additional_information": "",
+          "course_runs": Array [
+            Object {
+              "content_language": "en-us",
+              "draft": undefined,
+              "end": "2019-08-14T00:00:00Z",
+              "expected_program_name": "Test Program Name",
+              "expected_program_type": "micromasters",
+              "go_live_date": "2019-05-06T00:00:00Z",
+              "has_ofac_restrictions": false,
+              "key": "edX101+DemoX+T2",
+              "marketing_url": null,
+              "max_effort": 123,
+              "min_effort": 10,
+              "ofac_comment": "",
+              "pacing_type": "instructor_paced",
+              "staff": Array [],
+              "start": "2019-05-14T00:00:00Z",
+              "status": "unpublished",
+              "transcript_languages": Array [
+                "en-us",
+              ],
+              "weeks_to_complete": 100,
+            },
+            Object {
+              "content_language": "en-us",
+              "draft": undefined,
+              "end": "2019-08-14T00:00:00Z",
+              "expected_program_name": "",
+              "expected_program_type": null,
+              "go_live_date": "2019-05-06T00:00:00Z",
+              "has_ofac_restrictions": false,
+              "key": "edX101+DemoX+T1",
+              "marketing_url": null,
+              "max_effort": 123,
+              "min_effort": 10,
+              "ofac_comment": "",
+              "pacing_type": "instructor_paced",
+              "staff": Array [],
+              "start": "2019-05-14T00:00:00Z",
+              "status": "published",
+              "transcript_languages": Array [
+                "en-us",
+              ],
+              "weeks_to_complete": 100,
+            },
+          ],
           "entitlements": Array [
             Object {
               "currency": "USD",
@@ -1528,10 +1574,57 @@ ShallowWrapper {
                 "data": Array [],
               }
             }
+            courseInReview={false}
             courseInfo={
               Object {
                 "data": Object {
                   "additional_information": "",
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                  ],
                   "entitlements": Array [
                     Object {
                       "currency": "USD",
@@ -1591,7 +1684,59 @@ ShallowWrapper {
             }
             courseOptions={Object {}}
             courseRunOptions={Object {}}
-            courseStatuses={Array []}
+            courseRuns={
+              Array [
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "Test Program Name",
+                  "expected_program_type": "micromasters",
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T2",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "unpublished",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "",
+                  "expected_program_type": null,
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T1",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "published",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+              ]
+            }
+            courseStatuses={
+              Array [
+                "published",
+              ]
+            }
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={
@@ -1615,7 +1760,52 @@ ShallowWrapper {
             initialValues={
               Object {
                 "additional_information": "",
-                "course_runs": undefined,
+                "course_runs": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
                 "faq": "",
                 "full_description": "<p>long desc</p>",
                 "imageSrc": "http://path/to/image/woo.small",
@@ -1747,10 +1937,57 @@ ShallowWrapper {
                   "data": Array [],
                 }
               }
+              courseInReview={false}
               courseInfo={
                 Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -1810,7 +2047,59 @@ ShallowWrapper {
               }
               courseOptions={Object {}}
               courseRunOptions={Object {}}
-              courseStatuses={Array []}
+              courseRuns={
+                Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ]
+              }
+              courseStatuses={
+                Array [
+                  "published",
+                ]
+              }
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={
@@ -1834,7 +2123,52 @@ ShallowWrapper {
               initialValues={
                 Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -1942,10 +2276,56 @@ ShallowWrapper {
               "courseEditors": Object {
                 "data": Array [],
               },
-              "courseInReview": undefined,
+              "courseInReview": false,
               "courseInfo": Object {
                 "data": Object {
                   "additional_information": "",
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                  ],
                   "entitlements": Array [
                     Object {
                       "currency": "USD",
@@ -2004,8 +2384,55 @@ ShallowWrapper {
               },
               "courseOptions": Object {},
               "courseRunOptions": Object {},
-              "courseRuns": undefined,
-              "courseStatuses": Array [],
+              "courseRuns": Array [
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "Test Program Name",
+                  "expected_program_type": "micromasters",
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T2",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "unpublished",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "",
+                  "expected_program_type": null,
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T1",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "published",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+              ],
+              "courseStatuses": Array [
+                "published",
+              ],
               "courseSubmitInfo": Object {},
               "currentFormValues": undefined,
               "editCourse": [Function],
@@ -2028,7 +2455,52 @@ ShallowWrapper {
               "id": "edit-course-form-00000000-0000-0000-0000-000000000000",
               "initialValues": Object {
                 "additional_information": "",
-                "course_runs": undefined,
+                "course_runs": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
                 "faq": "",
                 "full_description": "<p>long desc</p>",
                 "imageSrc": "http://path/to/image/woo.small",
@@ -2163,10 +2635,57 @@ ShallowWrapper {
                   "data": Array [],
                 }
               }
+              courseInReview={false}
               courseInfo={
                 Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -2226,7 +2745,59 @@ ShallowWrapper {
               }
               courseOptions={Object {}}
               courseRunOptions={Object {}}
-              courseStatuses={Array []}
+              courseRuns={
+                Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ]
+              }
+              courseStatuses={
+                Array [
+                  "published",
+                ]
+              }
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={
@@ -2250,7 +2821,52 @@ ShallowWrapper {
               initialValues={
                 Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -2382,10 +2998,57 @@ ShallowWrapper {
                     "data": Array [],
                   }
                 }
+                courseInReview={false}
                 courseInfo={
                   Object {
                     "data": Object {
                       "additional_information": "",
+                      "course_runs": Array [
+                        Object {
+                          "content_language": "en-us",
+                          "draft": undefined,
+                          "end": "2019-08-14T00:00:00Z",
+                          "expected_program_name": "Test Program Name",
+                          "expected_program_type": "micromasters",
+                          "go_live_date": "2019-05-06T00:00:00Z",
+                          "has_ofac_restrictions": false,
+                          "key": "edX101+DemoX+T2",
+                          "marketing_url": null,
+                          "max_effort": 123,
+                          "min_effort": 10,
+                          "ofac_comment": "",
+                          "pacing_type": "instructor_paced",
+                          "staff": Array [],
+                          "start": "2019-05-14T00:00:00Z",
+                          "status": "unpublished",
+                          "transcript_languages": Array [
+                            "en-us",
+                          ],
+                          "weeks_to_complete": 100,
+                        },
+                        Object {
+                          "content_language": "en-us",
+                          "draft": undefined,
+                          "end": "2019-08-14T00:00:00Z",
+                          "expected_program_name": "",
+                          "expected_program_type": null,
+                          "go_live_date": "2019-05-06T00:00:00Z",
+                          "has_ofac_restrictions": false,
+                          "key": "edX101+DemoX+T1",
+                          "marketing_url": null,
+                          "max_effort": 123,
+                          "min_effort": 10,
+                          "ofac_comment": "",
+                          "pacing_type": "instructor_paced",
+                          "staff": Array [],
+                          "start": "2019-05-14T00:00:00Z",
+                          "status": "published",
+                          "transcript_languages": Array [
+                            "en-us",
+                          ],
+                          "weeks_to_complete": 100,
+                        },
+                      ],
                       "entitlements": Array [
                         Object {
                           "currency": "USD",
@@ -2445,7 +3108,59 @@ ShallowWrapper {
                 }
                 courseOptions={Object {}}
                 courseRunOptions={Object {}}
-                courseStatuses={Array []}
+                courseRuns={
+                  Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ]
+                }
+                courseStatuses={
+                  Array [
+                    "published",
+                  ]
+                }
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={
@@ -2469,7 +3184,52 @@ ShallowWrapper {
                 initialValues={
                   Object {
                     "additional_information": "",
-                    "course_runs": undefined,
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": "123",
+                        "min_effort": "10",
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": "100",
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": "123",
+                        "min_effort": "10",
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": "100",
+                      },
+                    ],
                     "faq": "",
                     "full_description": "<p>long desc</p>",
                     "imageSrc": "http://path/to/image/woo.small",
@@ -2577,10 +3337,56 @@ ShallowWrapper {
                 "courseEditors": Object {
                   "data": Array [],
                 },
-                "courseInReview": undefined,
+                "courseInReview": false,
                 "courseInfo": Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -2639,8 +3445,55 @@ ShallowWrapper {
                 },
                 "courseOptions": Object {},
                 "courseRunOptions": Object {},
-                "courseRuns": undefined,
-                "courseStatuses": Array [],
+                "courseRuns": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
+                "courseStatuses": Array [
+                  "published",
+                ],
                 "courseSubmitInfo": Object {},
                 "currentFormValues": undefined,
                 "editCourse": [Function],
@@ -2663,7 +3516,52 @@ ShallowWrapper {
                 "id": "edit-course-form-00000000-0000-0000-0000-000000000000",
                 "initialValues": Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -2759,6 +3657,52 @@ ShallowWrapper {
       Object {
         "data": Object {
           "additional_information": "",
+          "course_runs": Array [
+            Object {
+              "content_language": "en-us",
+              "draft": undefined,
+              "end": "2019-08-14T00:00:00Z",
+              "expected_program_name": "Test Program Name",
+              "expected_program_type": "micromasters",
+              "go_live_date": "2019-05-06T00:00:00Z",
+              "has_ofac_restrictions": false,
+              "key": "edX101+DemoX+T2",
+              "marketing_url": null,
+              "max_effort": 123,
+              "min_effort": 10,
+              "ofac_comment": "",
+              "pacing_type": "instructor_paced",
+              "staff": Array [],
+              "start": "2019-05-14T00:00:00Z",
+              "status": "unpublished",
+              "transcript_languages": Array [
+                "en-us",
+              ],
+              "weeks_to_complete": 100,
+            },
+            Object {
+              "content_language": "en-us",
+              "draft": undefined,
+              "end": "2019-08-14T00:00:00Z",
+              "expected_program_name": "",
+              "expected_program_type": null,
+              "go_live_date": "2019-05-06T00:00:00Z",
+              "has_ofac_restrictions": false,
+              "key": "edX101+DemoX+T1",
+              "marketing_url": null,
+              "max_effort": 123,
+              "min_effort": 10,
+              "ofac_comment": "",
+              "pacing_type": "instructor_paced",
+              "staff": Array [],
+              "start": "2019-05-14T00:00:00Z",
+              "status": "published",
+              "transcript_languages": Array [
+                "en-us",
+              ],
+              "weeks_to_complete": 100,
+            },
+          ],
           "entitlements": Array [
             Object {
               "currency": "USD",
@@ -2987,10 +3931,57 @@ ShallowWrapper {
                 "data": Array [],
               }
             }
+            courseInReview={false}
             courseInfo={
               Object {
                 "data": Object {
                   "additional_information": "",
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                  ],
                   "entitlements": Array [
                     Object {
                       "currency": "USD",
@@ -3099,7 +4090,59 @@ ShallowWrapper {
               }
             }
             courseRunOptions={Object {}}
-            courseStatuses={Array []}
+            courseRuns={
+              Array [
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "Test Program Name",
+                  "expected_program_type": "micromasters",
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T2",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "unpublished",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "",
+                  "expected_program_type": null,
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T1",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "published",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+              ]
+            }
+            courseStatuses={
+              Array [
+                "published",
+              ]
+            }
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={
@@ -3123,7 +4166,52 @@ ShallowWrapper {
             initialValues={
               Object {
                 "additional_information": "",
-                "course_runs": undefined,
+                "course_runs": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
                 "faq": "",
                 "full_description": "<p>long desc</p>",
                 "imageSrc": "http://path/to/image/woo.small",
@@ -3255,10 +4343,57 @@ ShallowWrapper {
                   "data": Array [],
                 }
               }
+              courseInReview={false}
               courseInfo={
                 Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -3367,7 +4502,59 @@ ShallowWrapper {
                 }
               }
               courseRunOptions={Object {}}
-              courseStatuses={Array []}
+              courseRuns={
+                Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ]
+              }
+              courseStatuses={
+                Array [
+                  "published",
+                ]
+              }
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={
@@ -3391,7 +4578,52 @@ ShallowWrapper {
               initialValues={
                 Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -3499,10 +4731,56 @@ ShallowWrapper {
               "courseEditors": Object {
                 "data": Array [],
               },
-              "courseInReview": undefined,
+              "courseInReview": false,
               "courseInfo": Object {
                 "data": Object {
                   "additional_information": "",
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                  ],
                   "entitlements": Array [
                     Object {
                       "currency": "USD",
@@ -3608,8 +4886,55 @@ ShallowWrapper {
                 "isFetching": false,
               },
               "courseRunOptions": Object {},
-              "courseRuns": undefined,
-              "courseStatuses": Array [],
+              "courseRuns": Array [
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "Test Program Name",
+                  "expected_program_type": "micromasters",
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T2",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "unpublished",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "",
+                  "expected_program_type": null,
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T1",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "published",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+              ],
+              "courseStatuses": Array [
+                "published",
+              ],
               "courseSubmitInfo": Object {},
               "currentFormValues": undefined,
               "editCourse": [Function],
@@ -3632,7 +4957,52 @@ ShallowWrapper {
               "id": "edit-course-form-00000000-0000-0000-0000-000000000000",
               "initialValues": Object {
                 "additional_information": "",
-                "course_runs": undefined,
+                "course_runs": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
                 "faq": "",
                 "full_description": "<p>long desc</p>",
                 "imageSrc": "http://path/to/image/woo.small",
@@ -3767,10 +5137,57 @@ ShallowWrapper {
                   "data": Array [],
                 }
               }
+              courseInReview={false}
               courseInfo={
                 Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -3879,7 +5296,59 @@ ShallowWrapper {
                 }
               }
               courseRunOptions={Object {}}
-              courseStatuses={Array []}
+              courseRuns={
+                Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ]
+              }
+              courseStatuses={
+                Array [
+                  "published",
+                ]
+              }
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={
@@ -3903,7 +5372,52 @@ ShallowWrapper {
               initialValues={
                 Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -4035,10 +5549,57 @@ ShallowWrapper {
                     "data": Array [],
                   }
                 }
+                courseInReview={false}
                 courseInfo={
                   Object {
                     "data": Object {
                       "additional_information": "",
+                      "course_runs": Array [
+                        Object {
+                          "content_language": "en-us",
+                          "draft": undefined,
+                          "end": "2019-08-14T00:00:00Z",
+                          "expected_program_name": "Test Program Name",
+                          "expected_program_type": "micromasters",
+                          "go_live_date": "2019-05-06T00:00:00Z",
+                          "has_ofac_restrictions": false,
+                          "key": "edX101+DemoX+T2",
+                          "marketing_url": null,
+                          "max_effort": 123,
+                          "min_effort": 10,
+                          "ofac_comment": "",
+                          "pacing_type": "instructor_paced",
+                          "staff": Array [],
+                          "start": "2019-05-14T00:00:00Z",
+                          "status": "unpublished",
+                          "transcript_languages": Array [
+                            "en-us",
+                          ],
+                          "weeks_to_complete": 100,
+                        },
+                        Object {
+                          "content_language": "en-us",
+                          "draft": undefined,
+                          "end": "2019-08-14T00:00:00Z",
+                          "expected_program_name": "",
+                          "expected_program_type": null,
+                          "go_live_date": "2019-05-06T00:00:00Z",
+                          "has_ofac_restrictions": false,
+                          "key": "edX101+DemoX+T1",
+                          "marketing_url": null,
+                          "max_effort": 123,
+                          "min_effort": 10,
+                          "ofac_comment": "",
+                          "pacing_type": "instructor_paced",
+                          "staff": Array [],
+                          "start": "2019-05-14T00:00:00Z",
+                          "status": "published",
+                          "transcript_languages": Array [
+                            "en-us",
+                          ],
+                          "weeks_to_complete": 100,
+                        },
+                      ],
                       "entitlements": Array [
                         Object {
                           "currency": "USD",
@@ -4147,7 +5708,59 @@ ShallowWrapper {
                   }
                 }
                 courseRunOptions={Object {}}
-                courseStatuses={Array []}
+                courseRuns={
+                  Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ]
+                }
+                courseStatuses={
+                  Array [
+                    "published",
+                  ]
+                }
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={
@@ -4171,7 +5784,52 @@ ShallowWrapper {
                 initialValues={
                   Object {
                     "additional_information": "",
-                    "course_runs": undefined,
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": "123",
+                        "min_effort": "10",
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": "100",
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": "123",
+                        "min_effort": "10",
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": "100",
+                      },
+                    ],
                     "faq": "",
                     "full_description": "<p>long desc</p>",
                     "imageSrc": "http://path/to/image/woo.small",
@@ -4279,10 +5937,56 @@ ShallowWrapper {
                 "courseEditors": Object {
                   "data": Array [],
                 },
-                "courseInReview": undefined,
+                "courseInReview": false,
                 "courseInfo": Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -4388,8 +6092,55 @@ ShallowWrapper {
                   "isFetching": false,
                 },
                 "courseRunOptions": Object {},
-                "courseRuns": undefined,
-                "courseStatuses": Array [],
+                "courseRuns": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
+                "courseStatuses": Array [
+                  "published",
+                ],
                 "courseSubmitInfo": Object {},
                 "currentFormValues": undefined,
                 "editCourse": [Function],
@@ -4412,7 +6163,52 @@ ShallowWrapper {
                 "id": "edit-course-form-00000000-0000-0000-0000-000000000000",
                 "initialValues": Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -5596,6 +7392,52 @@ ShallowWrapper {
       Object {
         "data": Object {
           "additional_information": "",
+          "course_runs": Array [
+            Object {
+              "content_language": "en-us",
+              "draft": undefined,
+              "end": "2019-08-14T00:00:00Z",
+              "expected_program_name": "Test Program Name",
+              "expected_program_type": "micromasters",
+              "go_live_date": "2019-05-06T00:00:00Z",
+              "has_ofac_restrictions": false,
+              "key": "edX101+DemoX+T2",
+              "marketing_url": null,
+              "max_effort": 123,
+              "min_effort": 10,
+              "ofac_comment": "",
+              "pacing_type": "instructor_paced",
+              "staff": Array [],
+              "start": "2019-05-14T00:00:00Z",
+              "status": "unpublished",
+              "transcript_languages": Array [
+                "en-us",
+              ],
+              "weeks_to_complete": 100,
+            },
+            Object {
+              "content_language": "en-us",
+              "draft": undefined,
+              "end": "2019-08-14T00:00:00Z",
+              "expected_program_name": "",
+              "expected_program_type": null,
+              "go_live_date": "2019-05-06T00:00:00Z",
+              "has_ofac_restrictions": false,
+              "key": "edX101+DemoX+T1",
+              "marketing_url": null,
+              "max_effort": 123,
+              "min_effort": 10,
+              "ofac_comment": "",
+              "pacing_type": "instructor_paced",
+              "staff": Array [],
+              "start": "2019-05-14T00:00:00Z",
+              "status": "published",
+              "transcript_languages": Array [
+                "en-us",
+              ],
+              "weeks_to_complete": 100,
+            },
+          ],
           "entitlements": Array [
             Object {
               "currency": "USD",
@@ -5892,10 +7734,57 @@ ShallowWrapper {
                 "data": Array [],
               }
             }
+            courseInReview={false}
             courseInfo={
               Object {
                 "data": Object {
                   "additional_information": "",
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                  ],
                   "entitlements": Array [
                     Object {
                       "currency": "USD",
@@ -6072,7 +7961,59 @@ ShallowWrapper {
                 "isFetching": false,
               }
             }
-            courseStatuses={Array []}
+            courseRuns={
+              Array [
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "Test Program Name",
+                  "expected_program_type": "micromasters",
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T2",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "unpublished",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "",
+                  "expected_program_type": null,
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T1",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "published",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+              ]
+            }
+            courseStatuses={
+              Array [
+                "published",
+              ]
+            }
             courseSubmitInfo={Object {}}
             editCourse={[Function]}
             entitlement={
@@ -6096,7 +8037,52 @@ ShallowWrapper {
             initialValues={
               Object {
                 "additional_information": "",
-                "course_runs": undefined,
+                "course_runs": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
                 "faq": "",
                 "full_description": "<p>long desc</p>",
                 "imageSrc": "http://path/to/image/woo.small",
@@ -6228,10 +8214,57 @@ ShallowWrapper {
                   "data": Array [],
                 }
               }
+              courseInReview={false}
               courseInfo={
                 Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -6408,7 +8441,59 @@ ShallowWrapper {
                   "isFetching": false,
                 }
               }
-              courseStatuses={Array []}
+              courseRuns={
+                Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ]
+              }
+              courseStatuses={
+                Array [
+                  "published",
+                ]
+              }
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={
@@ -6432,7 +8517,52 @@ ShallowWrapper {
               initialValues={
                 Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -6540,10 +8670,56 @@ ShallowWrapper {
               "courseEditors": Object {
                 "data": Array [],
               },
-              "courseInReview": undefined,
+              "courseInReview": false,
               "courseInfo": Object {
                 "data": Object {
                   "additional_information": "",
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": 123,
+                      "min_effort": 10,
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": 100,
+                    },
+                  ],
                   "entitlements": Array [
                     Object {
                       "currency": "USD",
@@ -6715,8 +8891,55 @@ ShallowWrapper {
                 "error": null,
                 "isFetching": false,
               },
-              "courseRuns": undefined,
-              "courseStatuses": Array [],
+              "courseRuns": Array [
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "Test Program Name",
+                  "expected_program_type": "micromasters",
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T2",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "unpublished",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+                Object {
+                  "content_language": "en-us",
+                  "draft": undefined,
+                  "end": "2019-08-14T00:00:00Z",
+                  "expected_program_name": "",
+                  "expected_program_type": null,
+                  "go_live_date": "2019-05-06T00:00:00Z",
+                  "has_ofac_restrictions": false,
+                  "key": "edX101+DemoX+T1",
+                  "marketing_url": null,
+                  "max_effort": "123",
+                  "min_effort": "10",
+                  "ofac_comment": "",
+                  "pacing_type": "instructor_paced",
+                  "staff": Array [],
+                  "start": "2019-05-14T00:00:00Z",
+                  "status": "published",
+                  "transcript_languages": Array [
+                    "en-us",
+                  ],
+                  "weeks_to_complete": "100",
+                },
+              ],
+              "courseStatuses": Array [
+                "published",
+              ],
               "courseSubmitInfo": Object {},
               "currentFormValues": undefined,
               "editCourse": [Function],
@@ -6739,7 +8962,52 @@ ShallowWrapper {
               "id": "edit-course-form-00000000-0000-0000-0000-000000000000",
               "initialValues": Object {
                 "additional_information": "",
-                "course_runs": undefined,
+                "course_runs": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
                 "faq": "",
                 "full_description": "<p>long desc</p>",
                 "imageSrc": "http://path/to/image/woo.small",
@@ -6874,10 +9142,57 @@ ShallowWrapper {
                   "data": Array [],
                 }
               }
+              courseInReview={false}
               courseInfo={
                 Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -7054,7 +9369,59 @@ ShallowWrapper {
                   "isFetching": false,
                 }
               }
-              courseStatuses={Array []}
+              courseRuns={
+                Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ]
+              }
+              courseStatuses={
+                Array [
+                  "published",
+                ]
+              }
               courseSubmitInfo={Object {}}
               editCourse={[Function]}
               entitlement={
@@ -7078,7 +9445,52 @@ ShallowWrapper {
               initialValues={
                 Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",
@@ -7210,10 +9622,57 @@ ShallowWrapper {
                     "data": Array [],
                   }
                 }
+                courseInReview={false}
                 courseInfo={
                   Object {
                     "data": Object {
                       "additional_information": "",
+                      "course_runs": Array [
+                        Object {
+                          "content_language": "en-us",
+                          "draft": undefined,
+                          "end": "2019-08-14T00:00:00Z",
+                          "expected_program_name": "Test Program Name",
+                          "expected_program_type": "micromasters",
+                          "go_live_date": "2019-05-06T00:00:00Z",
+                          "has_ofac_restrictions": false,
+                          "key": "edX101+DemoX+T2",
+                          "marketing_url": null,
+                          "max_effort": 123,
+                          "min_effort": 10,
+                          "ofac_comment": "",
+                          "pacing_type": "instructor_paced",
+                          "staff": Array [],
+                          "start": "2019-05-14T00:00:00Z",
+                          "status": "unpublished",
+                          "transcript_languages": Array [
+                            "en-us",
+                          ],
+                          "weeks_to_complete": 100,
+                        },
+                        Object {
+                          "content_language": "en-us",
+                          "draft": undefined,
+                          "end": "2019-08-14T00:00:00Z",
+                          "expected_program_name": "",
+                          "expected_program_type": null,
+                          "go_live_date": "2019-05-06T00:00:00Z",
+                          "has_ofac_restrictions": false,
+                          "key": "edX101+DemoX+T1",
+                          "marketing_url": null,
+                          "max_effort": 123,
+                          "min_effort": 10,
+                          "ofac_comment": "",
+                          "pacing_type": "instructor_paced",
+                          "staff": Array [],
+                          "start": "2019-05-14T00:00:00Z",
+                          "status": "published",
+                          "transcript_languages": Array [
+                            "en-us",
+                          ],
+                          "weeks_to_complete": 100,
+                        },
+                      ],
                       "entitlements": Array [
                         Object {
                           "currency": "USD",
@@ -7390,7 +9849,59 @@ ShallowWrapper {
                     "isFetching": false,
                   }
                 }
-                courseStatuses={Array []}
+                courseRuns={
+                  Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ]
+                }
+                courseStatuses={
+                  Array [
+                    "published",
+                  ]
+                }
                 courseSubmitInfo={Object {}}
                 editCourse={[Function]}
                 entitlement={
@@ -7414,7 +9925,52 @@ ShallowWrapper {
                 initialValues={
                   Object {
                     "additional_information": "",
-                    "course_runs": undefined,
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": "123",
+                        "min_effort": "10",
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": "100",
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": "123",
+                        "min_effort": "10",
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": "100",
+                      },
+                    ],
                     "faq": "",
                     "full_description": "<p>long desc</p>",
                     "imageSrc": "http://path/to/image/woo.small",
@@ -7522,10 +10078,56 @@ ShallowWrapper {
                 "courseEditors": Object {
                   "data": Array [],
                 },
-                "courseInReview": undefined,
+                "courseInReview": false,
                 "courseInfo": Object {
                   "data": Object {
                     "additional_information": "",
+                    "course_runs": Array [
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "Test Program Name",
+                        "expected_program_type": "micromasters",
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T2",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "unpublished",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                      Object {
+                        "content_language": "en-us",
+                        "draft": undefined,
+                        "end": "2019-08-14T00:00:00Z",
+                        "expected_program_name": "",
+                        "expected_program_type": null,
+                        "go_live_date": "2019-05-06T00:00:00Z",
+                        "has_ofac_restrictions": false,
+                        "key": "edX101+DemoX+T1",
+                        "marketing_url": null,
+                        "max_effort": 123,
+                        "min_effort": 10,
+                        "ofac_comment": "",
+                        "pacing_type": "instructor_paced",
+                        "staff": Array [],
+                        "start": "2019-05-14T00:00:00Z",
+                        "status": "published",
+                        "transcript_languages": Array [
+                          "en-us",
+                        ],
+                        "weeks_to_complete": 100,
+                      },
+                    ],
                     "entitlements": Array [
                       Object {
                         "currency": "USD",
@@ -7697,8 +10299,55 @@ ShallowWrapper {
                   "error": null,
                   "isFetching": false,
                 },
-                "courseRuns": undefined,
-                "courseStatuses": Array [],
+                "courseRuns": Array [
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "Test Program Name",
+                    "expected_program_type": "micromasters",
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T2",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "unpublished",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                  Object {
+                    "content_language": "en-us",
+                    "draft": undefined,
+                    "end": "2019-08-14T00:00:00Z",
+                    "expected_program_name": "",
+                    "expected_program_type": null,
+                    "go_live_date": "2019-05-06T00:00:00Z",
+                    "has_ofac_restrictions": false,
+                    "key": "edX101+DemoX+T1",
+                    "marketing_url": null,
+                    "max_effort": "123",
+                    "min_effort": "10",
+                    "ofac_comment": "",
+                    "pacing_type": "instructor_paced",
+                    "staff": Array [],
+                    "start": "2019-05-14T00:00:00Z",
+                    "status": "published",
+                    "transcript_languages": Array [
+                      "en-us",
+                    ],
+                    "weeks_to_complete": "100",
+                  },
+                ],
+                "courseStatuses": Array [
+                  "published",
+                ],
                 "courseSubmitInfo": Object {},
                 "currentFormValues": undefined,
                 "editCourse": [Function],
@@ -7721,7 +10370,52 @@ ShallowWrapper {
                 "id": "edit-course-form-00000000-0000-0000-0000-000000000000",
                 "initialValues": Object {
                   "additional_information": "",
-                  "course_runs": undefined,
+                  "course_runs": Array [
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "Test Program Name",
+                      "expected_program_type": "micromasters",
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T2",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "unpublished",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                    Object {
+                      "content_language": "en-us",
+                      "draft": undefined,
+                      "end": "2019-08-14T00:00:00Z",
+                      "expected_program_name": "",
+                      "expected_program_type": null,
+                      "go_live_date": "2019-05-06T00:00:00Z",
+                      "has_ofac_restrictions": false,
+                      "key": "edX101+DemoX+T1",
+                      "marketing_url": null,
+                      "max_effort": "123",
+                      "min_effort": "10",
+                      "ofac_comment": "",
+                      "pacing_type": "instructor_paced",
+                      "staff": Array [],
+                      "start": "2019-05-14T00:00:00Z",
+                      "status": "published",
+                      "transcript_languages": Array [
+                        "en-us",
+                      ],
+                      "weeks_to_complete": "100",
+                    },
+                  ],
                   "faq": "",
                   "full_description": "<p>long desc</p>",
                   "imageSrc": "http://path/to/image/woo.small",

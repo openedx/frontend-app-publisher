@@ -10,6 +10,7 @@ const getDateWithSlashes = date => (date ? moment.utc(date).format('YYYY/MM/DD')
 const getTimeString = date => (date ? moment.utc(date).format('HH:mm') : '');
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
 const formatDate = date => (date ? moment.utc(date).format('MMM DD, YYYY') : '');
+const courseRunIsArchived = run => run.status === 'unpublished' && moment().isAfter(run.end);
 
 const isSafari = /constructor/i.test(window.HTMLElement) ||
   (p => (p.toString() === '[object SafariRemoteNotification]'))(!window['safari'] || /* eslint dot-notation: 0 */
@@ -153,6 +154,7 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
 };
 
 export {
+  courseRunIsArchived,
   getDateWithDashes,
   getDateWithSlashes,
   getTimeString,

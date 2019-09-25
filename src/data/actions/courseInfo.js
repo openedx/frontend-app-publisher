@@ -194,14 +194,11 @@ function handleCourseRuns(dispatch, courseRunData, course, submitReview) {
   // make course copy so we are not re-assigning properties of this functions original params
   const newCourse = Object.assign({}, course);
   DiscoveryDataApiService[functionCall](courseRunData).then((runResponse) => {
-    if (internalReview) {
-      // replace only one run here because only one was updated via API
-      const i = newCourse.course_runs.findIndex(run => run.key === courseRunData.key);
-      newCourse.course_runs[i] = runResponse.data;
-    } else {
-      // replace all runs here because we updated multiple runs via API
-      newCourse.course_runs = runResponse.map(courseRun => courseRun.data);
-    }
+    // replace any runs that changed here because we updated the runs via API
+    runResponse.forEach((response) => {
+      const i = newCourse.course_runs.findIndex(run => run.key === response.data.key);
+      newCourse.course_runs[i] = response.data;
+    });
     dispatch(editCourseSuccess(newCourse));
     if (submitReview) dispatch(courseSubmittingSuccess());
   }).catch((error) => {
