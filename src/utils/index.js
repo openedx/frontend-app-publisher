@@ -1,3 +1,4 @@
+import stringify from 'fast-json-stable-stringify';
 import moment from 'moment';
 import 'moment-timezone';
 import qs from 'query-string';
@@ -67,6 +68,7 @@ const getPageOptionsFromUrl = () => {
 };
 
 const jsonDeepCopy = src => JSON.parse(JSON.stringify(src));
+const jsonDeepEqual = (a, b) => stringify(a) === stringify(b);
 
 const getCourseNumber = (courseKeyFragment) => {
   const COURSE_KEY_FRAGMENT_REGEX = /\+|\//;
@@ -137,7 +139,7 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
     if (currentRuns) {
       const index = currentRuns.findIndex(run => run.key === runKey);
 
-      return JSON.stringify(initialRuns[index]) === JSON.stringify(currentRuns[index]);
+      return jsonDeepEqual(initialRuns[index], currentRuns[index]);
     }
     return true;
   }
@@ -162,6 +164,7 @@ export {
   updateUrl,
   getPageOptionsFromUrl,
   jsonDeepCopy,
+  jsonDeepEqual,
   getCourseNumber,
   getErrorMessages,
   isValidDate,

@@ -7,7 +7,8 @@ import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { courseRunIsArchived, getCourseNumber, isValidDate, isNonExemptChanged } from '../../utils';
+import { courseRunIsArchived, getCourseNumber, isValidDate, isNonExemptChanged,
+  jsonDeepEqual } from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
   UNPUBLISHED } from '../../data/constants';
 import ConfirmationModal from '../ConfirmationModal';
@@ -87,7 +88,7 @@ class EditCoursePage extends React.Component {
       // send runs if they have changed OR the course mode or price has
       // changed and the run is NOT "archived" (we care about the mode and
       // price because those are passed down to the course runs' seats)
-      const runHasChanges = JSON.stringify(initialCourseRunValues[i]) !== JSON.stringify(run);
+      const runHasChanges = !jsonDeepEqual(initialCourseRunValues[i], run);
       const courseModeChanged = initialMode !== courseData.mode;
       const coursePriceChanged = initialPrice !== courseData.price;
       if (runHasChanges ||
