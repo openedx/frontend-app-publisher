@@ -619,6 +619,7 @@ describe('EditCoursePage', () => {
         expectedSendCourse,
         [],
         false,
+        false,
       );
     });
 
@@ -647,6 +648,7 @@ describe('EditCoursePage', () => {
         expectedSendCourse,
         expectedSendCourseRuns,
         false,
+        false,
       );
     });
 
@@ -672,6 +674,7 @@ describe('EditCoursePage', () => {
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
         [expectedSendCourseRuns[1]],
+        false,
         false,
       );
     });
@@ -702,6 +705,7 @@ describe('EditCoursePage', () => {
         expectedSendCourse,
         [expectedSendCourseRuns[1]],
         true,
+        false,
       );
     });
 
@@ -730,6 +734,7 @@ describe('EditCoursePage', () => {
         expectedSendCourse,
         [expectedSendCourseRuns[0]],
         true,
+        false,
       );
     });
 
@@ -760,6 +765,7 @@ describe('EditCoursePage', () => {
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
         [expectedSendCourseRuns[1]],
+        false,
         false,
       );
     });
