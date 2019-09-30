@@ -1,5 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -86,6 +87,9 @@ class CourseTable extends React.Component {
         {showDashboard &&
         (
           <React.Fragment>
+            <Helmet>
+              <title>{`Publisher Beta | ${process.env.SITE_NAME}`}</title>
+            </Helmet>
             <div className="row">
               <div className="col-7 float-left">
                 <ButtonToolbar className="mb-3" leftJustify>
