@@ -509,10 +509,6 @@ class EditCoursePage extends React.Component {
 
     return (
       <React.Fragment>
-        <Helmet>
-          <title>{`Course - ${title}`}</title>
-        </Helmet>
-
         <ConfirmationModal
           title="Submit for Review?"
           body="You will not be able to make edits while the course is in review, which can take up to 2 business days. Confirm your edits are complete."
@@ -563,25 +559,30 @@ class EditCoursePage extends React.Component {
             message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
           /> }
           { showForm && (
-            <EditCourseForm
-              id={this.getFormId()}
-              onSubmit={this.showModal}
-              initialValues={this.buildInitialValues()}
-              number={number}
-              entitlement={entitlement || {}}
-              title={title}
-              courseRuns={this.buildCourseRuns()}
-              uuid={uuid}
-              currentFormValues={currentFormValues}
-              courseInfo={courseInfo}
-              courseInReview={courseInReview}
-              courseStatuses={courseStatuses}
-              owners={owners}
-              isSubmittingForReview={targetRun && targetRun.status !== PUBLISHED}
-              targetRun={targetRun}
-              editable={editable}
-              {...this.props}
-            />
+            <React.Fragment>
+              <Helmet>
+                <title>{`Course - ${title}`}</title>
+              </Helmet>
+              <EditCourseForm
+                id={this.getFormId()}
+                onSubmit={this.showModal}
+                initialValues={this.buildInitialValues()}
+                number={number}
+                entitlement={entitlement || {}}
+                title={title}
+                courseRuns={this.buildCourseRuns()}
+                uuid={uuid}
+                currentFormValues={currentFormValues}
+                courseInfo={courseInfo}
+                courseInReview={courseInReview}
+                courseStatuses={courseStatuses}
+                owners={owners}
+                isSubmittingForReview={targetRun && targetRun.status !== PUBLISHED}
+                targetRun={targetRun}
+                editable={editable}
+                {...this.props}
+              />
+            </React.Fragment>
           )}
           { errorArray.length > 0 && (
             <StatusAlert
