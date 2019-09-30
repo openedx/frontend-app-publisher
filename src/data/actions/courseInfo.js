@@ -24,12 +24,6 @@ import {
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { courseSubmittingFailure, courseSubmittingSuccess } from './courseSubmitInfo';
 
-// These map to methods in the API service so that we can achieve dynamic function calling
-const ApiFunctionEnum = Object.freeze({
-  INTERNAL_REVIEW_FUNCTION: 'internalReviewEdit',
-  EDIT_RUNS_FUNCTION: 'editCourseRuns',
-});
-
 function requestCourseInfoFail(id, error) {
   return { type: REQUEST_COURSE_INFO_FAIL, id, error };
 }
@@ -184,16 +178,14 @@ function createCourse(courseData) {
   };
 }
 
-function handleCourseRuns(dispatch, courseRunData, course, submitReview) {
-  // We'll use the presence of the course run status property to signal an internal
-  // review process because it is only present when we pass in a single run for internal
-  // review, rather than an array of runs on a regular edit
-  const internalReview = !!courseRunData.status;
-  const functionCall = internalReview ? ApiFunctionEnum.INTERNAL_REVIEW_FUNCTION :
-    ApiFunctionEnum.EDIT_RUNS_FUNCTION;
+function handleCourseRuns(dispatch, courseRunData, course, submitReview, internalReview) {
   // make course copy so we are not re-assigning properties of this functions original params
   const newCourse = Object.assign({}, course);
-  DiscoveryDataApiService[functionCall](courseRunData).then((runResponse) => {
+  let sendData = DiscoveryDataApiService.editCourseRuns;
+  if (internalReview) {
+    sendData = data => Promise.all([DiscoveryDataApiService.internalReviewEdit(data)]);
+  }
+  sendData(courseRunData).then((runResponse) => {
     // replace any runs that changed here because we updated the runs via API
     runResponse.forEach((response) => {
       const i = newCourse.course_runs.findIndex(run => run.key === response.data.key);
@@ -208,19 +200,18 @@ function handleCourseRuns(dispatch, courseRunData, course, submitReview) {
   });
 }
 
-function editCourse(courseData, courseRunData, submittingRunForReview = false) {
-  const submitReview = submittingRunForReview;
+function editCourse(courseData, courseRunData, submittingRunForReview, isInternalReview) {
   return (dispatch) => {
     dispatch(editCourseInfo(courseData));
     // Send edit course PATCH
     return DiscoveryDataApiService.editCourse(courseData)
       .then((response) => {
         const course = response.data;
-        handleCourseRuns(dispatch, courseRunData, course, submitReview);
+        handleCourseRuns(dispatch, courseRunData, course, submittingRunForReview, isInternalReview);
       })
       .catch((error) => {
         dispatch(editCourseFail(['Course edit failed, please try again or contact support.'].concat(getErrorMessages(error))));
-        if (submitReview) {
+        if (submittingRunForReview) {
           dispatch(courseSubmittingFailure());
         }
       });

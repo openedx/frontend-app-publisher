@@ -260,7 +260,7 @@ class EditCoursePage extends React.Component {
       this.prepareSendCourseRunData(courseData);
     // Process courseData to reduced data set
     const courseEditData = this.prepareSendCourseData(courseData, modifiedCourseRuns);
-    return editCourse(courseEditData, modifiedCourseRuns, !!targetRun);
+    return editCourse(courseEditData, modifiedCourseRuns, !!targetRun, !!isInternalReview);
   }
 
   displayReviewStatusAlert(status) {
