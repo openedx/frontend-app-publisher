@@ -17,6 +17,7 @@ import '../../sass/App.scss';
 import Header from '../../containers/Header';
 import FooterLogo from '../../../assets/edx-footer.png';
 import CourseDashboard from '../../containers/CourseDashboard';
+import CourseRunRedirectComponent from '../../components/CourseRunRedirect';
 import CreateCourse from '../../containers/CreateCourse';
 import CreateCourseRun from '../../containers/CreateCourseRun';
 import CreateStaffer from '../../containers/CreateStaffer';
@@ -63,6 +64,14 @@ const MainApp = () => (
     <Header />
     <main>
       <Switch>
+        <PrivateRoute
+          path="/course-runs/:key"
+          exact
+          authenticatedAPIClient={apiClient}
+          render={({ match: { params: { key } } }) => (
+            <CourseRunRedirectComponent courseRunKey={key} />
+          )}
+        />
         <PrivateRoute
           path="/courses/new"
           exact

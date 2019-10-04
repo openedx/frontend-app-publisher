@@ -17,6 +17,18 @@ class DiscoveryDataApiService {
     });
   }
 
+  static fetchCourseRun(key, params) {
+    const queryParams = {
+      editable: 1,
+      exclude_utm: 1,
+      ...params,
+    };
+    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_runs/${key}`;
+    return apiClient.get(url, {
+      params: queryParams,
+    });
+  }
+
   static fetchCourses(options) {
     const fields = [
       'uuid',

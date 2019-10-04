@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import './PageContainer.scss';
 
 const PageContainer = (props) => {
-  const containerClasses = classNames('container my-3', props.className);
+  const containerClasses = classNames('container my-3 content-container', props.className);
   const colClasses = classNames('col', { 'col-xl-6 col-9': !props.wide });
 
   return (
