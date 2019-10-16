@@ -119,7 +119,15 @@ class DiscoveryDataApiService {
 
   static fetchOrganizationUsers(id) {
     const url = `${DiscoveryDataApiService.publisherBaseUrl}/admins/organizations/${id}/users/`;
-    return apiClient.get(url);
+    return new Promise((resolve, reject) => apiClient.get(url)
+      .then(response => resolve(response))
+      .catch((error) => {
+        if (error.response.status === 404) {
+          resolve(null);
+        } else {
+          reject(error);
+        }
+      }));
   }
 
   static editCourseRuns(courseRunsData) {
