@@ -9,6 +9,7 @@ import ConfirmationModal from '../ConfirmationModal';
 import StatusAlert from '../StatusAlert';
 
 import { PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED } from '../../data/constants';
+import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 // Need to mock the Editor as we don't want to test TinyMCE
 jest.mock('@tinymce/tinymce-react');
@@ -36,12 +37,14 @@ describe('EditCoursePage', () => {
           content_language: 'en-us',
           transcript_languages: ['en-us'],
           weeks_to_complete: 100,
+          seats: [],
           staff: [],
           status: UNPUBLISHED,
           draft: undefined,
           marketing_url: null,
           has_ofac_restrictions: false,
           ofac_comment: '',
+          run_type: null,
         },
         {
           key: 'edX101+DemoX+T1',
@@ -56,12 +59,14 @@ describe('EditCoursePage', () => {
           content_language: 'en-us',
           transcript_languages: ['en-us'],
           weeks_to_complete: 100,
+          seats: [],
           staff: [],
           status: PUBLISHED,
           draft: undefined,
           marketing_url: null,
           has_ofac_restrictions: false,
           ofac_comment: '',
+          run_type: null,
         },
       ],
       entitlements: [
@@ -108,6 +113,7 @@ describe('EditCoursePage', () => {
       ],
       syllabus_raw: '',
       title: 'Test title',
+      type: null,
       uuid: '00000000-0000-0000-0000-000000000000',
       video: {
         src: 'https://www.video.information/watch?v=cVsQLlk-T0s',
@@ -116,92 +122,6 @@ describe('EditCoursePage', () => {
       },
     },
     showCreateStatusAlert: false,
-    isFetching: false,
-    error: null,
-  };
-  const courseOptions = {
-    data: {
-      actions: {
-        POST: {
-          level_type: {
-            choices: [
-              { display_name: 'Beginner', value: 'beginner' },
-              { display_name: 'Intermediate', value: 'intermediate' },
-              { display_name: 'Advanced', value: 'advanced' },
-            ],
-          },
-          subjects: {
-            child: {
-              choices: [
-                { display_name: 'Business', value: 'business' },
-                { display_name: 'Chemistry', value: 'chemistry' },
-                { display_name: 'English', value: 'english' },
-                { display_name: 'Security', value: 'security' },
-              ],
-            },
-          },
-        },
-      },
-    },
-    isFetching: false,
-    error: null,
-  };
-  const courseRunOptions = {
-    data: {
-      actions: {
-        POST: {
-          pacing_type: {
-            type: 'choice',
-            required: false,
-            read_only: false,
-            label: 'Pacing type',
-            choices: [{
-              display_name: 'Instructor-paced',
-              value: 'instructor_paced',
-            }, {
-              display_name: 'Self-paced',
-              value: 'self_paced',
-            }],
-          },
-          content_language: {
-            type: 'field',
-            required: false,
-            read_only: false,
-            label: 'Content language',
-            help_text: 'Language in which the course is administered',
-            choices: [{
-              display_name: 'Afrikaans',
-              value: 'af',
-            }, {
-              display_name: 'Arabic - United Arab Emirates',
-              value: 'ar-ae',
-            }],
-          },
-          expected_program_type: {
-            type: 'field',
-            required: false,
-            read_only: false,
-            label: 'Expected Program Type',
-            choices: [{
-              display_name: 'Professional Certificate',
-              value: 'professional-certificate',
-            },
-            {
-              display_name: 'MicroMasters',
-              value: 'micromasters',
-            },
-            {
-              display_name: 'XSeries',
-              value: 'xseries',
-            },
-            {
-              display_name: 'Masters',
-              value: 'masters',
-            }],
-          },
-        },
-      },
-    },
     isFetching: false,
     error: null,
   };
@@ -359,12 +279,14 @@ describe('EditCoursePage', () => {
       content_language: 'en-us',
       transcript_languages: ['en-us'],
       weeks_to_complete: '100',
+      seats: [],
       staff: [],
       status: PUBLISHED,
       draft: undefined,
       marketing_url: null,
       has_ofac_restrictions: false,
       ofac_comment: '',
+      run_type: null,
     };
 
     const unpublishedCourseRun = Object.assign(
@@ -396,6 +318,7 @@ describe('EditCoursePage', () => {
       subjectTertiary: undefined,
       syllabus_raw: null,
       title: 'demo4004',
+      type: null,
       url_slug: 'demo4004',
       videoSrc: null,
       editable: true,
@@ -413,10 +336,12 @@ describe('EditCoursePage', () => {
       level_type: 'Basic',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
+      price: defaultPrice,
       short_description: '<p>Short</p>',
       subjects: ['basket-weaving'],
       syllabus_raw: null,
       title: 'demo4004',
+      type: null,
       url_slug: 'demo4004',
       uuid: '00000000-0000-0000-0000-000000000000',
       video: { src: null },
@@ -432,7 +357,9 @@ describe('EditCoursePage', () => {
         key: 'edX101+DemoX+T2',
         max_effort: '123',
         min_effort: '10',
+        price: defaultPrice,
         rerun: null,
+        run_type: null,
         staff: [],
         status: UNPUBLISHED,
         transcript_languages: ['en-us'],
@@ -447,7 +374,9 @@ describe('EditCoursePage', () => {
         key: 'edX101+DemoX+T1',
         max_effort: '123',
         min_effort: '10',
+        price: defaultPrice,
         rerun: null,
+        run_type: null,
         staff: [],
         status: PUBLISHED,
         transcript_languages: ['en-us'],
@@ -465,9 +394,12 @@ describe('EditCoursePage', () => {
       courseData.course_runs[0].status = UNPUBLISHED;
 
       expectedSendCourseRuns[0].draft = true;
+      expectedSendCourseRuns[0].price = defaultPrice;
       expectedSendCourseRuns[1].draft = true;
+      expectedSendCourseRuns[1].price = defaultPrice;
       expectedSendCourse.draft = true;
       expectedSendCourse.entitlements[0].price = defaultPrice;
+      expectedSendCourse.price = defaultPrice;
     });
 
     it('sets state correctly and does not show modal with no target run', () => {
@@ -644,6 +576,9 @@ describe('EditCoursePage', () => {
       courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
 
       expectedSendCourse.entitlements[0].price = '500.00';
+      expectedSendCourse.price = '500.00';
+      expectedSendCourseRuns[0].price = '500.00';
+      expectedSendCourseRuns[1].price = '500.00';
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
@@ -671,6 +606,8 @@ describe('EditCoursePage', () => {
 
       courseData.price = '500.00';
       expectedSendCourse.entitlements[0].price = '500.00';
+      expectedSendCourse.price = '500.00';
+      expectedSendCourseRuns[1].price = '500.00';
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
@@ -762,6 +699,8 @@ describe('EditCoursePage', () => {
       courseData.course_runs[0].status = REVIEW_BY_INTERNAL;
 
       expectedSendCourse.entitlements[0].price = '500.00';
+      expectedSendCourse.price = '500.00';
+      expectedSendCourseRuns[1].price = '500.00';
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(

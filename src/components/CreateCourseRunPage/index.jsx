@@ -15,8 +15,6 @@ class CreateCourseRunPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleCourseCreate = this.handleCourseCreate.bind(this);
-    this.getCourseRunOptions = this.getCourseRunOptions.bind(this);
-    this.parseOptions = this.parseOptions.bind(this);
     this.state = {
       startedFetching: false,
     };
@@ -29,35 +27,32 @@ class CreateCourseRunPage extends React.Component {
   componentDidMount() {
     const {
       courseInfo,
+      courseOptions,
+      courseRunOptions,
+      fetchCourseInfo,
+      fetchCourseOptions,
+      fetchCourseRunOptions,
       id,
     } = this.props;
-    if (!courseInfo ||
-        Object.entries(courseInfo.data).length === 0 ||
-        courseInfo.data.uuid !== id) {
+    if (!courseInfo.data || (courseInfo.data &&
+        (Object.keys(courseInfo.data).length === 0 ||
+        courseInfo.data.uuid !== id))) {
       // We need to request Course data
-      this.props.fetchCourseInfo(id);
+      fetchCourseInfo(id);
     }
-    this.props.fetchCourseRunOptions();
+    if (!courseOptions.data || (courseOptions.data &&
+        Object.keys(courseOptions.data).length === 0)) {
+      fetchCourseOptions();
+    }
+    if (!courseRunOptions.data || (courseRunOptions.data &&
+        Object.keys(courseRunOptions.data).length === 0)) {
+      fetchCourseRunOptions();
+    }
     this.setStartedFetching();
   }
 
   setStartedFetching() {
     this.setState({ startedFetching: true });
-  }
-
-  getCourseRunOptions() {
-    const { courseRunOptions } = this.props;
-
-    if (!courseRunOptions) {
-      return [];
-    }
-    const { data } = courseRunOptions;
-
-    if (!data || !data.actions) {
-      return [];
-    }
-
-    return data.actions.POST;
   }
 
   handleCourseCreate(options) {
@@ -81,11 +76,6 @@ class CreateCourseRunPage extends React.Component {
     return createCourseRun(uuid, courseRunData);
   }
 
-  parseOptions(inChoices) {
-    return inChoices.map(choice =>
-      ({ label: choice.display_name, value: choice.value }));
-  }
-
   parseCourseRunLabels(courseRuns) {
     // Sort course runs by descending start dates
     const sortedCourseRuns =
@@ -102,8 +92,10 @@ class CreateCourseRunPage extends React.Component {
       courseInfo: {
         data: {
           course_runs,
+          type,
         },
       },
+      courseOptions,
       courseRunOptions,
       formValues,
     } = this.props;
@@ -126,9 +118,10 @@ class CreateCourseRunPage extends React.Component {
     const courseInReview = course_runs && course_runs.some(courseRun =>
       IN_REVIEW_STATUS.includes(courseRun.status));
 
-    const showSpinner = !startedFetching || courseInfo.isFetching || courseRunOptions.isFetching;
-    const showForm = startedFetching && !courseInfo.isFetching && !courseRunOptions.isFetching &&
-      !courseInReview;
+    const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching ||
+      courseRunOptions.isFetching;
+    const showForm = startedFetching && !courseInfo.isFetching && !courseOptions.isFetching &&
+      !courseRunOptions.isFetching && !courseInReview;
     const sortedRunLabels = (showForm &&
       (course_runs ? this.parseCourseRunLabels(course_runs) : []));
     const defaultRun = (showForm && (sortedRunLabels.length ? sortedRunLabels[0].value : ''));
@@ -155,13 +148,14 @@ class CreateCourseRunPage extends React.Component {
                 title={title}
                 uuid={uuid}
                 isCreating={courseInfo.isCreating}
-                getCourseRunOptions={this.getCourseRunOptions}
-                parseOptions={this.parseOptions}
                 currentFormValues={formValues}
                 courseRunLabels={sortedRunLabels}
+                courseOptions={courseOptions}
+                courseRunOptions={courseRunOptions}
                 initialValues={{
                   rerun: defaultRun,
                 }}
+                courseTypeUuid={type}
               />
               {errorArray.length > 1 && (
                 <StatusAlert
@@ -181,9 +175,11 @@ class CreateCourseRunPage extends React.Component {
 
 CreateCourseRunPage.defaultProps = {
   initialValues: {},
-  fetchCourseInfo: () => null,
-  fetchCourseRunOptions: () => null,
-  courseInfo: null,
+  fetchCourseInfo: () => {},
+  fetchCourseOptions: () => {},
+  fetchCourseRunOptions: () => {},
+  courseInfo: {},
+  courseOptions: {},
   courseRunOptions: {},
   createCourseRun: () => {},
   clearCourseInfoErrors: () => null,
@@ -200,7 +196,13 @@ CreateCourseRunPage.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,
+  courseOptions: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),

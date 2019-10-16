@@ -7,44 +7,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import CreateCoursePage from './index';
 import { jsonDeepCopy } from '../../utils';
-
-const courseRunData = {
-  data: {
-    actions: {
-      POST: {
-        pacing_type: {
-          type: 'choice',
-          required: false,
-          read_only: false,
-          label: 'Pacing type',
-          choices: [{
-            display_name: 'Instructor-paced',
-            value: 'instructor_paced',
-          }, {
-            display_name: 'Self-paced',
-            value: 'self_paced',
-          }],
-        },
-        content_language: {
-          type: 'field',
-          required: false,
-          read_only: false,
-          label: 'Content language',
-          help_text: 'Language in which the course is administered',
-          choices: [{
-            display_name: 'Afrikaans',
-            value: 'af',
-          }, {
-            display_name: 'Arabic - United Arab Emirates',
-            value: 'ar-ae',
-          }],
-        },
-      },
-    },
-  },
-  isFetching: false,
-  error: null,
-};
+import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 const courseData = {
   org: 'edx',
@@ -61,6 +24,11 @@ const initialState = {
   courseInfo: {},
   publisherUserInfo: {
     organizations: [],
+    isFetching: true,
+    error: null,
+  },
+  courseOptions: {
+    data: {},
     isFetching: true,
     error: null,
   },
@@ -104,6 +72,7 @@ describe('Create Course View', () => {
     const errorMessage = ['organization failure'];
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = errorMessage;
+    testState.courseOptions.isFetching = false;
     testState.courseRunOptions.isFetching = false;
     const wrapper = createWrapper(testState).dive();
     expect(wrapper.find('#create-error')).toHaveLength(1);
@@ -114,8 +83,10 @@ describe('Create Course View', () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
+    testState.courseOptions.isFetching = false;
+    testState.courseOptions = courseOptions;
     testState.courseRunOptions.isFetching = false;
-    testState.courseRunOptions = courseRunData;
+    testState.courseRunOptions = courseRunOptions;
 
     store = mockStore(testState);
     const CourseCreatePageWrapper = props => (
@@ -145,8 +116,10 @@ describe('Create Course View', () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
+    testState.courseOptions.isFetching = false;
+    testState.courseOptions = courseOptions;
     testState.courseRunOptions.isFetching = false;
-    testState.courseRunOptions = courseRunData;
+    testState.courseRunOptions = courseRunOptions;
 
     store = mockStore(testState);
     const CourseCreatePageWrapper = props => (

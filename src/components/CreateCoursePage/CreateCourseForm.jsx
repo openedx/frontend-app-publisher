@@ -19,7 +19,7 @@ import {
 } from '../../data/constants';
 import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
-import { isSafari, localTimeZone, getDateWithDashes } from '../../utils';
+import { isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
   getEnrollmentTrackOptions() {
@@ -49,12 +49,20 @@ class BaseCreateCourseForm extends React.Component {
       organizations,
       pristine,
       isCreating,
-      getCourseRunOptions,
-      parseOptions,
+      usingCourseType,
+      courseOptions,
+      courseRunOptions,
     } = this.props;
-    const courseRunOptions = getCourseRunOptions();
-    const { pacing_type: { choices } } = courseRunOptions;
-    const pacingTypeOptions = courseRunOptions && parseOptions(choices);
+    const courseOptionsData = getOptionsData(courseOptions);
+    const parsedTypeOptions = courseOptionsData &&
+      parseCourseTypeOptions(courseOptionsData.type.type_options);
+    const { courseTypeOptions } = parsedTypeOptions;
+    const { courseRunTypeOptions } = parsedTypeOptions;
+    const { entitlementUUIDS } = parsedTypeOptions;
+    const courseRunOptionsData = getOptionsData(courseRunOptions);
+    const { pacing_type: { choices } } = courseRunOptionsData;
+    const pacingTypeOptions = courseRunOptionsData && parseOptions(choices);
+
     return (
       <div className="create-course-form">
         <h2>Create New Course</h2>
@@ -121,32 +129,68 @@ class BaseCreateCourseForm extends React.Component {
             }
             required
           />
-          <Field
-            name="enrollmentTrack"
-            component={RenderSelectField}
-            options={this.getEnrollmentTrackOptions()}
-            label={
-              <FieldLabel
-                id="enrollment-track-label"
-                text="Enrollment track"
+          {usingCourseType ? (
+            <React.Fragment>
+              <Field
+                name="type"
+                component={RenderSelectField}
+                options={courseTypeOptions}
+                label={
+                  <FieldLabel
+                    id="course-type-label"
+                    text="Course Type TODO"
+                    required
+                    helpText={(<div><p>TODO: Come up with type helpText</p></div>)}
+                  />
+                }
                 required
-                helpText={enrollmentHelp}
               />
-            }
-            required
-          />
-          {ENTITLEMENT_TRACKS.includes(currentFormValues.enrollmentTrack) && <Field
-            name="price"
-            component={RenderInputTextField}
-            extraInput={{
-              min: 1.00,
-              step: 0.01,
-              max: 10000.00,
-            }}
-            type="number"
-            label={<FieldLabel text="Price (USD)" required />}
-            required
-          />}
+              {entitlementUUIDS.includes(currentFormValues.type) &&
+                <Field
+                  name="price"
+                  component={RenderInputTextField}
+                  extraInput={{
+                    min: 1.00,
+                    step: 0.01,
+                    max: 10000.00,
+                  }}
+                  type="number"
+                  label={<FieldLabel text="Price (USD)" required />}
+                  required
+                />
+              }
+            </React.Fragment>) : (
+              <React.Fragment>
+                <Field
+                  name="enrollmentTrack"
+                  component={RenderSelectField}
+                  options={this.getEnrollmentTrackOptions()}
+                  label={
+                    <FieldLabel
+                      id="enrollment-track-label"
+                      text="Enrollment track"
+                      required
+                      helpText={enrollmentHelp}
+                    />
+                  }
+                  required
+                />
+                {ENTITLEMENT_TRACKS.includes(currentFormValues.enrollmentTrack) &&
+                  <Field
+                    name="price"
+                    component={RenderInputTextField}
+                    extraInput={{
+                      min: 1.00,
+                      step: 0.01,
+                      max: 10000.00,
+                    }}
+                    type="number"
+                    label={<FieldLabel text="Price (USD)" required />}
+                    required
+                  />
+                }
+              </React.Fragment>)
+          }
           <h2>First run of your Course</h2>
           <hr />
           {/* TODO this should be refactored when paragon supports safari */}
@@ -202,6 +246,22 @@ class BaseCreateCourseForm extends React.Component {
               />
             </div>
           }
+          {usingCourseType &&
+            <Field
+              name="run_type"
+              component={RenderSelectField}
+              options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course Type first', value: '' }]}
+              label={
+                <FieldLabel
+                  id="course-run-type-label"
+                  text="Course Run Type TODO"
+                  required
+                  helpText={(<div><p>TODO: Come up with run type text AND helpText</p></div>)}
+                />
+              }
+              required
+            />
+          }
           <Field
             name="pacing_type"
             type="text"
@@ -243,6 +303,7 @@ BaseCreateCourseForm.defaultProps = {
   isCreating: false,
   pristine: true,
   currentFormValues: {},
+  usingCourseType: false,
 };
 
 BaseCreateCourseForm.propTypes = {
@@ -263,8 +324,17 @@ BaseCreateCourseForm.propTypes = {
   })).isRequired,
   pristine: PropTypes.bool,
   isCreating: PropTypes.bool,
-  getCourseRunOptions: PropTypes.func.isRequired,
-  parseOptions: PropTypes.func.isRequired,
+  courseOptions: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }).isRequired,
+  courseRunOptions: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }).isRequired,
+  usingCourseType: PropTypes.bool,
 };
 
 export default reduxForm({

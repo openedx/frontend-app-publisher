@@ -90,12 +90,10 @@ class CollapsibleCourseRun extends React.Component {
     super(props);
 
     this.state = {
-      open: false,
       returnFromStaffPage: false,
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
-    this.setCollapsible = this.setCollapsible.bind(this);
     this.scrollToStaffPosition = this.scrollToStaffPosition.bind(this);
     this.displayOfacRestriction = this.displayOfacRestriction.bind(this);
     this.displayDefaultButtonLabel = this.displayDefaultButtonLabel.bind(this);
@@ -137,12 +135,6 @@ class CollapsibleCourseRun extends React.Component {
     }
   }
 
-  setCollapsible(open) {
-    this.setState({
-      open,
-    });
-  }
-
   scrollToStaffPosition(focus) {
     this.setState({
       returnFromStaffPage: focus,
@@ -150,7 +142,7 @@ class CollapsibleCourseRun extends React.Component {
   }
 
   openCollapsible() {
-    this.setCollapsible(true);
+    this.props.onToggle(true);
   }
 
   displayOfacRestriction(restriction) {
@@ -223,6 +215,7 @@ class CollapsibleCourseRun extends React.Component {
   render() {
     const {
       courseId,
+      type,
       courseInReview,
       courseRun,
       courseSubmitting,
@@ -243,6 +236,9 @@ class CollapsibleCourseRun extends React.Component {
       },
       initialValues,
       currentFormValues,
+      isOpen,
+      onToggle,
+      courseRunTypeOptions,
     } = this.props;
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
@@ -251,6 +247,8 @@ class CollapsibleCourseRun extends React.Component {
       (targetRun.key === courseRun.key);
 
     const disabled = courseInReview || !editable;
+    const seatHasSku = courseRun.seats &&
+      courseRun.seats.reduce((hasSku, seat) => !!seat.sku || hasSku, false);
 
     const courseDateEditHelp = dateEditHelp(courseRun);
     const coursePacingEditHelp = pacingEditHelp(courseRun);
@@ -259,8 +257,8 @@ class CollapsibleCourseRun extends React.Component {
       <Collapsible
         title={formatCourseRunTitle(courseRun)}
         iconId={`collapsible-icon-${courseId}`}
-        isOpen={this.props.isOpen}
-        onToggle={this.props.onToggle}
+        isOpen={isOpen}
+        onToggle={onToggle}
       >
         <div className="mb-3">
           <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
@@ -355,6 +353,25 @@ class CollapsibleCourseRun extends React.Component {
           </div>
         }
         <hr />
+        {type &&
+          <Field
+            name={`${courseId}.run_type`}
+            component={RenderSelectField}
+            options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course Type first', value: '' }]}
+            extraInput={{ onInvalid: this.openCollapsible }}
+            label={
+              <FieldLabel
+                id="run_type.label"
+                text="Course Run Type TODO"
+                helpText={(<div><p>TODO: Come up with run type text AND helpText</p></div>)}
+              />
+            }
+            // If any of the seats have a SKU, then ecom products exist and
+            // changing shouldn't be allowed
+            disabled={disabled || seatHasSku}
+            required
+          />
+        }
         <Field
           name={`${courseId}.pacing_type`}
           type="text"
@@ -628,6 +645,8 @@ CollapsibleCourseRun.propTypes = {
     isSubmittingRunReview: PropTypes.bool,
   }),
   courseUuid: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  courseRunTypeOptions: PropTypes.shape({}),
   editable: PropTypes.bool,
   isSubmittingForReview: PropTypes.bool,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
@@ -655,6 +674,7 @@ CollapsibleCourseRun.propTypes = {
   authentication: PropTypes.shape({}),
   currentFormValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
+    type: PropTypes.string,
   }).isRequired,
   initialValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
@@ -667,6 +687,8 @@ CollapsibleCourseRun.defaultProps = {
   courseSubmitInfo: {
     isSubmittingRunReview: false,
   },
+  type: '',
+  courseRunTypeOptions: {},
   editable: false,
   isSubmittingForReview: false,
   owners: [],

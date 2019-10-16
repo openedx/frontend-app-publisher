@@ -117,7 +117,9 @@ class EditCoursePage extends React.Component {
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
+        price: courseData.price,
         rerun: courseRun.rerun ? courseRun.rerun : null,
+        run_type: courseRun.run_type,
         // Reduce Staff list to just the UUID
         staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
         status: courseRun.status,
@@ -189,6 +191,7 @@ class EditCoursePage extends React.Component {
       level_type: courseData.level_type,
       outcome: courseData.outcome,
       prerequisites_raw: courseData.prerequisites_raw,
+      price: courseData.price,
       short_description: courseData.short_description,
       subjects: [
         courseData.subjectPrimary,
@@ -197,6 +200,7 @@ class EditCoursePage extends React.Component {
       ].filter(subject => !!subject),
       syllabus_raw: courseData.syllabus_raw,
       title: courseData.title,
+      type: courseData.type,
       url_slug: courseData.url_slug,
       uuid,
       video: { src: courseData.videoSrc },
@@ -313,6 +317,8 @@ class EditCoursePage extends React.Component {
       marketing_url: courseRun.marketing_url,
       has_ofac_restrictions: courseRun.has_ofac_restrictions,
       ofac_comment: courseRun.ofac_comment,
+      run_type: courseRun.run_type,
+      seats: courseRun.seats,
     }));
   }
 
@@ -335,6 +341,7 @@ class EditCoursePage extends React.Component {
           syllabus_raw,
           video,
           entitlements,
+          type,
         },
       },
     } = this.props;
@@ -366,6 +373,7 @@ class EditCoursePage extends React.Component {
       videoSrc,
       mode,
       price,
+      type,
       url_slug,
       course_runs: this.buildCourseRuns(),
     };
@@ -440,6 +448,7 @@ class EditCoursePage extends React.Component {
           uuid,
           owners,
           editable,
+          type,
         },
         showCreateStatusAlert,
       },
@@ -582,6 +591,7 @@ class EditCoursePage extends React.Component {
                 isSubmittingForReview={targetRun && targetRun.status !== PUBLISHED}
                 targetRun={targetRun}
                 editable={editable}
+                type={type}
                 {...this.props}
               />
             </React.Fragment>
@@ -615,9 +625,9 @@ EditCoursePage.defaultProps = {
   courseRunOptions: {},
   fetchComments: () => null,
   fetchCourseEditors: () => null,
-  fetchCourseInfo: () => null,
-  fetchCourseOptions: () => null,
-  fetchCourseRunOptions: () => null,
+  fetchCourseInfo: () => {},
+  fetchCourseOptions: () => {},
+  fetchCourseRunOptions: () => {},
   fetchOrganizationRoles: () => null,
   fetchOrganizationUsers: () => null,
   editCourse: () => null,

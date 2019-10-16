@@ -12,8 +12,6 @@ class CreateCoursePage extends React.Component {
   constructor(props) {
     super(props);
     this.handleCourseCreate = this.handleCourseCreate.bind(this);
-    this.getCourseRunOptions = this.getCourseRunOptions.bind(this);
-    this.parseOptions = this.parseOptions.bind(this);
     this.showModal = this.showModal.bind(this);
     this.cancelCreate = this.cancelCreate.bind(this);
     this.continueCreate = this.continueCreate.bind(this);
@@ -30,27 +28,13 @@ class CreateCoursePage extends React.Component {
 
   componentDidMount() {
     this.props.fetchOrganizations();
+    this.props.fetchCourseOptions();
     this.props.fetchCourseRunOptions();
     this.setStartedFetching();
   }
 
   setStartedFetching() {
     this.setState({ startedFetching: true });
-  }
-
-  getCourseRunOptions() {
-    const { courseRunOptions } = this.props;
-
-    if (!courseRunOptions) {
-      return [];
-    }
-    const { data } = courseRunOptions;
-
-    if (!data || !data.actions) {
-      return [];
-    }
-
-    return data.actions.POST;
   }
 
   handleCourseCreate(options) {
@@ -60,10 +44,13 @@ class CreateCoursePage extends React.Component {
       number: options.number,
       mode: options.enrollmentTrack,
       price: options.price,
+      type: options.type,
       course_run: {
         start: options.start,
         end: options.end,
         pacing_type: options.pacing_type,
+        price: options.price,
+        run_type: options.run_type,
       },
     };
     return this.props.createCourse(courseData);
@@ -101,11 +88,6 @@ class CreateCoursePage extends React.Component {
     return clearCreateCourseStatus();
   }
 
-  parseOptions(inChoices) {
-    return inChoices.map(choice =>
-      ({ label: choice.display_name, value: choice.value }));
-  }
-
   render() {
     if (!this.props.publisherUserInfo) {
       return (
@@ -123,6 +105,7 @@ class CreateCoursePage extends React.Component {
       courseInfo,
       publisherUserInfo,
       formValues,
+      courseOptions,
       courseRunOptions,
     } = this.props;
     const {
@@ -153,9 +136,9 @@ class CreateCoursePage extends React.Component {
     }
 
     const showSpinner = !startedFetching || publisherUserInfo.isFetching ||
-      courseRunOptions.isFetching;
+      courseOptions.isFetching || courseRunOptions.isFetching;
     const showForm = startedFetching && !publisherUserInfo.isFetching &&
-      !courseRunOptions.isFetching;
+      !courseOptions.isFetching && !courseRunOptions.isFetching;
 
     return (
       <React.Fragment>
@@ -183,9 +166,11 @@ class CreateCoursePage extends React.Component {
                 initialValues={initialValues}
                 currentFormValues={formValues}
                 organizations={organizations}
+                // TODO: Add in logic here to decide when course type is being used
+                usingCourseType={false}
                 isCreating={courseInfo.isCreating}
-                getCourseRunOptions={this.getCourseRunOptions}
-                parseOptions={this.parseOptions}
+                courseOptions={courseOptions}
+                courseRunOptions={courseRunOptions}
               />
               {errorArray.length > 1 && (
                 <StatusAlert
@@ -206,7 +191,9 @@ CreateCoursePage.defaultProps = {
   initialValues: {},
   publisherUserInfo: {},
   fetchOrganizations: () => {},
-  fetchCourseRunOptions: () => null,
+  fetchCourseOptions: () => {},
+  fetchCourseRunOptions: () => {},
+  courseOptions: {},
   courseRunOptions: {},
   courseInfo: {},
   createCourse: () => {},
@@ -238,7 +225,13 @@ CreateCoursePage.propTypes = {
     }),
   }),
   fetchOrganizations: PropTypes.func,
+  fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,
+  courseOptions: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
