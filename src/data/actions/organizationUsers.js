@@ -29,9 +29,11 @@ function fetchOrganizationUsers(ids) {
         // First, combine all the responses, removing duplicates
         const users = {};
         responses.forEach((response) => {
-          response.data.results.forEach((user) => {
-            users[user.id] = user;
-          });
+          if (response) {
+            response.data.results.forEach((user) => {
+              users[user.id] = user;
+            });
+          }
         });
 
         // Now we have an object that maps id -> full_names without duplicates.
@@ -45,7 +47,8 @@ function fetchOrganizationUsers(ids) {
         dispatch(requestOrganizationUsersSuccess(usersArray));
       })
       .catch((error) => {
-        const msg = ['Could not get organization users.'].concat(getErrorMessages(error));
+        const msg = ['A problem occurred while retrieving users for this organization.']
+          .concat(getErrorMessages(error));
         dispatch(requestOrganizationUsersFail(msg));
       });
   };

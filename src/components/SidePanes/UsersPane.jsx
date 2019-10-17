@@ -6,6 +6,7 @@ import { Icon, InputSelect } from '@edx/paragon';
 import Pane from './Pane';
 import User from './User';
 import FieldLabel from '../FieldLabel';
+import StatusAlert from '../StatusAlert';
 
 
 class UsersPane extends React.Component {
@@ -118,6 +119,9 @@ class UsersPane extends React.Component {
               />
             ))}
           </div>
+        }
+        {!showEditors && Array.isArray(organizationUsers.error) && organizationUsers.error.length &&
+          <StatusAlert alertType="warning" message={organizationUsers.error[0]} />
         }
         {showEditors &&
           <div>
