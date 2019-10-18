@@ -46,16 +46,17 @@ class Header extends React.Component {
               </div>
             }
             <div className="col-auto justify-content-end">
-              <Dropdown
-                title={this.props.username}
-                menuItems={[
-                  <button
-                    className="dropdown-button"
+              <Dropdown>
+                <Dropdown.Button>{this.props.username}</Dropdown.Button>
+                <Dropdown.Menu className="dropdown-menu-right">
+                  <Dropdown.Item
+                    type="button"
                     onClick={() => apiClient.logout(process.env.STUDIO_BASE_URL)}
-                  >Sign Out
-                  </button>,
-                ]}
-              />
+                  >
+                    Sign Out
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </div>
           </div>
         </div>
