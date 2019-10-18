@@ -258,8 +258,7 @@ class CollapsibleCourseRun extends React.Component {
     return (
       <Collapsible
         title={formatCourseRunTitle(courseRun)}
-        iconId={`collapsible-icon-${courseId}`}
-        isOpen={this.props.isOpen}
+        open={this.props.isOpen}
         onToggle={this.props.onToggle}
       >
         <div className="mb-3">
