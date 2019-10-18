@@ -242,7 +242,7 @@ export class BaseEditCourseForm extends React.Component {
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
-            isOpen={open}
+            open={open}
             onToggle={this.setCollapsible}
           >
             <div className="mb-3">
