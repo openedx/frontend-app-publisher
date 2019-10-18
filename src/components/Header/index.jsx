@@ -32,7 +32,9 @@ class Header extends React.Component {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-auto justify-content-start">
-              <Hyperlink content={this.renderLogo()} destination={process.env.STUDIO_BASE_URL} />
+              <Hyperlink destination={process.env.STUDIO_BASE_URL}>
+                {this.renderLogo()}
+              </Hyperlink>
               <span className="badge badge-secondary beta">Beta</span>
             </div>
             <div className="col">
