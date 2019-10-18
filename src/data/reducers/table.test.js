@@ -1,244 +1,95 @@
 import {
-  PAGINATION_REQUEST,
-  PAGINATION_SUCCESS,
-  PAGINATION_FAILURE,
-  SORT_REQUEST,
-  SORT_SUCCESS,
-  SORT_FAILURE,
-  FILTER_REQUEST,
-  FILTER_SUCCESS,
-  FILTER_FAILURE,
+  UPDATE_TABLE_REQUEST,
+  UPDATE_TABLE_SUCCESS,
+  UPDATE_TABLE_FAILURE,
   CLEAR_TABLE,
+  FETCH_EDITOR_OPTIONS_SUCCESS, FETCH_EDITOR_OPTIONS_FAILURE,
 } from '../constants/table';
 
 import tableReducer from './table';
 
 describe('table reducer', () => {
-  const tableId = 'TableID';
   const initialState = { // overwritten as old state for actions
-    [tableId]: {
-      loading: false,
-      error: 'Some Error',
-      ordering: 'key',
-      page: 1,
-      pageSize: 1,
-      data: [{
-        key: 'TableID',
-      }],
-    },
+    loading: false,
+    error: null,
+    data: {},
+    editorFilterOptions: [],
+    editorFilterOptionsError: null,
   };
 
   it('handles a default state', () => {
     expect(tableReducer(initialState, {})).toEqual(initialState);
   });
 
-  it('handles a PAGINATION_REQUEST', () => {
-    const newPage = 100;
+  it('handles a UPDATE_TABLE_REQUEST', () => {
     expect(tableReducer(initialState, {
-      type: PAGINATION_REQUEST,
-      payload: {
-        tableId,
-        page: newPage,
-      },
+      type: UPDATE_TABLE_REQUEST,
     })).toEqual({
-      [tableId]: {
-        loading: true,
-        error: null,
-        page: newPage,
-        ordering: initialState[tableId].ordering,
-        pageSize: initialState[tableId].pageSize,
-        data: initialState[tableId].data,
-      },
+      ...initialState,
+      loading: true,
+      error: null,
     });
   });
 
-  it('handles a PAGINATION_SUCCESS', () => {
-    const newOrdering = '-key';
-    const newPage = 100;
-    const newPageSize = 200;
-    const newData = [{
-      key: 'NewKey',
-    }];
+  it('handles a UPDATE_TABLE_SUCCESS', () => {
+    const newData = {
+      results: 'NewResults',
+    };
     expect(tableReducer(initialState, {
-      type: PAGINATION_SUCCESS,
+      type: UPDATE_TABLE_SUCCESS,
       payload: {
-        tableId,
-        ordering: newOrdering,
-        page: newPage,
-        pageSize: newPageSize,
         data: newData,
       },
     })).toEqual({
-      [tableId]: {
-        loading: false,
-        page: newPage,
-        ordering: newOrdering,
-        pageSize: newPageSize,
-        data: newData,
-        error: null,
-      },
+      ...initialState,
+      data: newData,
     });
   });
 
-  it('handles a PAGINATION_FAILURE', () => {
+  it('handles a UPDATE_TABLE_FAILURE', () => {
     const newError = 'A new error';
     expect(tableReducer(initialState, {
-      type: PAGINATION_FAILURE,
+      type: UPDATE_TABLE_FAILURE,
       payload: {
-        tableId,
         error: newError,
       },
     })).toEqual({
-      [tableId]: {
-        loading: false,
-        error: newError,
-        page: initialState[tableId].page,
-        ordering: initialState[tableId].ordering,
-        pageSize: initialState[tableId].pageSize,
-        data: initialState[tableId].data,
-      },
-    });
-  });
-
-  it('handles a SORT_REQUEST', () => {
-    expect(tableReducer(initialState, {
-      type: SORT_REQUEST,
-      payload: {
-        tableId,
-      },
-    })).toEqual({
-      [tableId]: {
-        loading: true,
-        error: null,
-        page: initialState[tableId].page,
-        ordering: initialState[tableId].ordering,
-        pageSize: initialState[tableId].pageSize,
-        data: initialState[tableId].data,
-      },
-    });
-  });
-
-  it('handles a SORT_SUCCESS', () => {
-    const newOrdering = '-key';
-    const newData = [{
-      key: 'NewKey',
-    }];
-    expect(tableReducer(initialState, {
-      type: SORT_SUCCESS,
-      payload: {
-        tableId,
-        ordering: newOrdering,
-        data: newData,
-      },
-    })).toEqual({
-      [tableId]: {
-        loading: false,
-        error: null,
-        ordering: newOrdering,
-        data: newData,
-        page: initialState[tableId].page,
-        pageSize: initialState[tableId].pageSize,
-      },
-    });
-  });
-
-  it('handles a SORT_FAILURE', () => {
-    const newError = 'A new error';
-    expect(tableReducer(initialState, {
-      type: SORT_FAILURE,
-      payload: {
-        tableId,
-        error: newError,
-      },
-    })).toEqual({
-      [tableId]: {
-        loading: false,
-        error: newError,
-        page: initialState[tableId].page,
-        ordering: initialState[tableId].ordering,
-        pageSize: initialState[tableId].pageSize,
-        data: initialState[tableId].data,
-      },
-    });
-  });
-
-  it('handles a FILTER_REQUEST', () => {
-    expect(tableReducer(initialState, {
-      type: FILTER_REQUEST,
-      payload: {
-        tableId,
-      },
-    })).toEqual({
-      [tableId]: {
-        loading: true,
-        error: null,
-        page: initialState[tableId].page,
-        ordering: initialState[tableId].ordering,
-        pageSize: initialState[tableId].pageSize,
-        data: initialState[tableId].data,
-      },
-    });
-  });
-
-  it('handles a FILTER_SUCCESS', () => {
-    const newFilter = 'key';
-    const newData = [{
-      key: 'NewKey',
-    }];
-    expect(tableReducer(initialState, {
-      type: FILTER_SUCCESS,
-      payload: {
-        tableId,
-        filter: newFilter,
-        data: newData,
-      },
-    })).toEqual({
-      [tableId]: {
-        loading: false,
-        error: null,
-        filter: newFilter,
-        data: newData,
-        page: initialState[tableId].page,
-        pageSize: initialState[tableId].pageSize,
-      },
-    });
-  });
-
-  it('handles a FILTER_FAILURE', () => {
-    const newError = 'A new error';
-    expect(tableReducer(initialState, {
-      type: FILTER_FAILURE,
-      payload: {
-        tableId,
-        error: newError,
-      },
-    })).toEqual({
-      [tableId]: {
-        loading: false,
-        error: newError,
-        page: initialState[tableId].page,
-        ordering: initialState[tableId].ordering,
-        pageSize: initialState[tableId].pageSize,
-        data: initialState[tableId].data,
-      },
+      ...initialState,
+      error: newError,
     });
   });
 
   it('handles a CLEAR_TABLE', () => {
     expect(tableReducer(initialState, {
       type: CLEAR_TABLE,
+    })).toEqual({
+      ...initialState,
+    });
+  });
+
+  it('handles a FETCH_EDITOR_OPTIONS_SUCCESS', () => {
+    const newEditor = { name: 'new-editor' };
+    expect(tableReducer(initialState, {
+      type: FETCH_EDITOR_OPTIONS_SUCCESS,
       payload: {
-        tableId,
+        editors: [newEditor],
       },
     })).toEqual({
-      [tableId]: {
-        loading: false,
-        error: null,
-        ordering: null,
-        data: null,
-        page: initialState[tableId].page,
-        pageSize: initialState[tableId].pageSize,
+      ...initialState,
+      editorFilterOptions: [newEditor],
+    });
+  });
+
+  it('handles a FETCH_EDITOR_OPTIONS_FAILURE', () => {
+    const editorError = 'editor-error';
+    expect(tableReducer(initialState, {
+      type: FETCH_EDITOR_OPTIONS_FAILURE,
+      payload: {
+        error: editorError,
       },
+    })).toEqual({
+      ...initialState,
+      editorFilterOptionsError: editorError,
     });
   });
 });

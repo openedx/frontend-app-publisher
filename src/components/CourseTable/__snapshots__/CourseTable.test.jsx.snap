@@ -58,7 +58,7 @@ ShallowWrapper {
             className="row"
           >
             <div
-              className="col-7 float-left"
+              className="col-2 float-left"
             >
               <ButtonToolbar
                 className="mb-3"
@@ -75,6 +75,52 @@ ShallowWrapper {
                   </button>
                 </Link>
               </ButtonToolbar>
+            </div>
+            <div
+              className="col-5 float-right pt-1"
+            >
+              <StateManager
+                closeMenuOnSelect={false}
+                defaultInputValue=""
+                defaultMenuIsOpen={false}
+                defaultValue={null}
+                isMulti={true}
+                maxMenuHeight="30vh"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Course Run Statuses",
+                      "options": Array [
+                        Object {
+                          "color": "#E2C018",
+                          "label": "Unsubmitted",
+                          "value": "unpublished",
+                        },
+                        Object {
+                          "color": "#e7e7e7",
+                          "label": "In review",
+                          "value": "in_review",
+                        },
+                        Object {
+                          "color": "#008100",
+                          "label": "Published",
+                          "value": "published",
+                        },
+                      ],
+                    },
+                  ]
+                }
+                placeholder="Filters..."
+                styles={
+                  Object {
+                    "multiValue": [Function],
+                    "multiValueLabel": [Function],
+                    "option": [Function],
+                  }
+                }
+                value={Array []}
+              />
             </div>
             <div
               className="col-5 float-right"
@@ -113,14 +159,17 @@ ShallowWrapper {
                 },
                 Object {
                   "columnSortable": false,
-                  "key": "owners",
-                  "label": "Owner",
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
                 },
               ]
             }
-            fetchMethod={[Function]}
             formatData={[Function]}
-            id="courses"
             tableSortable={true}
           />
         </React.Fragment>,
@@ -173,7 +222,7 @@ ShallowWrapper {
               className="row"
             >
               <div
-                className="col-7 float-left"
+                className="col-2 float-left"
               >
                 <ButtonToolbar
                   className="mb-3"
@@ -190,6 +239,52 @@ ShallowWrapper {
                     </button>
                   </Link>
                 </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
               </div>
               <div
                 className="col-5 float-right"
@@ -228,14 +323,17 @@ ShallowWrapper {
                   },
                   Object {
                     "columnSortable": false,
-                    "key": "owners",
-                    "label": "Owner",
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
                   },
                 ]
               }
-              fetchMethod={[Function]}
               formatData={[Function]}
-              id="courses"
               tableSortable={true}
             />,
           ],
@@ -274,7 +372,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <div
-                  className="col-7 float-left"
+                  className="col-2 float-left"
                 >
                   <ButtonToolbar
                     className="mb-3"
@@ -291,6 +389,52 @@ ShallowWrapper {
                       </button>
                     </Link>
                   </ButtonToolbar>
+                </div>,
+                <div
+                  className="col-5 float-right pt-1"
+                >
+                  <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />
                 </div>,
                 <div
                   className="col-5 float-right"
@@ -337,7 +481,7 @@ ShallowWrapper {
                       </button>
                     </Link>
                   </ButtonToolbar>,
-                  "className": "col-7 float-left",
+                  "className": "col-2 float-left",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -387,6 +531,104 @@ ShallowWrapper {
                     },
                     "type": [Function],
                   },
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />,
+                  "className": "col-5 float-right pt-1",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "closeMenuOnSelect": false,
+                    "defaultInputValue": "",
+                    "defaultMenuIsOpen": false,
+                    "defaultValue": null,
+                    "isMulti": true,
+                    "maxMenuHeight": "30vh",
+                    "onChange": [Function],
+                    "options": Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                        ],
+                      },
+                    ],
+                    "placeholder": "Filters...",
+                    "styles": Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    },
+                    "value": Array [],
+                  },
+                  "ref": null,
+                  "rendered": null,
                   "type": [Function],
                 },
                 "type": "div",
@@ -461,13 +703,16 @@ ShallowWrapper {
                 },
                 Object {
                   "columnSortable": false,
-                  "key": "owners",
-                  "label": "Owner",
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
                 },
               ],
-              "fetchMethod": [Function],
               "formatData": [Function],
-              "id": "courses",
               "tableSortable": true,
             },
             "ref": null,
@@ -518,7 +763,7 @@ ShallowWrapper {
               className="row"
             >
               <div
-                className="col-7 float-left"
+                className="col-2 float-left"
               >
                 <ButtonToolbar
                   className="mb-3"
@@ -535,6 +780,52 @@ ShallowWrapper {
                     </button>
                   </Link>
                 </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
               </div>
               <div
                 className="col-5 float-right"
@@ -573,14 +864,17 @@ ShallowWrapper {
                   },
                   Object {
                     "columnSortable": false,
-                    "key": "owners",
-                    "label": "Owner",
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
                   },
                 ]
               }
-              fetchMethod={[Function]}
               formatData={[Function]}
-              id="courses"
               tableSortable={true}
             />
           </React.Fragment>,
@@ -633,7 +927,7 @@ ShallowWrapper {
                 className="row"
               >
                 <div
-                  className="col-7 float-left"
+                  className="col-2 float-left"
                 >
                   <ButtonToolbar
                     className="mb-3"
@@ -650,6 +944,52 @@ ShallowWrapper {
                       </button>
                     </Link>
                   </ButtonToolbar>
+                </div>
+                <div
+                  className="col-5 float-right pt-1"
+                >
+                  <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />
                 </div>
                 <div
                   className="col-5 float-right"
@@ -688,14 +1028,17 @@ ShallowWrapper {
                     },
                     Object {
                       "columnSortable": false,
-                      "key": "owners",
-                      "label": "Owner",
+                      "key": "course_run_statuses",
+                      "label": "States",
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "course_editor_names",
+                      "label": "Course Editors",
                     },
                   ]
                 }
-                fetchMethod={[Function]}
                 formatData={[Function]}
-                id="courses"
                 tableSortable={true}
               />,
             ],
@@ -734,7 +1077,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <div
-                    className="col-7 float-left"
+                    className="col-2 float-left"
                   >
                     <ButtonToolbar
                       className="mb-3"
@@ -751,6 +1094,52 @@ ShallowWrapper {
                         </button>
                       </Link>
                     </ButtonToolbar>
+                  </div>,
+                  <div
+                    className="col-5 float-right pt-1"
+                  >
+                    <StateManager
+                      closeMenuOnSelect={false}
+                      defaultInputValue=""
+                      defaultMenuIsOpen={false}
+                      defaultValue={null}
+                      isMulti={true}
+                      maxMenuHeight="30vh"
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Course Run Statuses",
+                            "options": Array [
+                              Object {
+                                "color": "#E2C018",
+                                "label": "Unsubmitted",
+                                "value": "unpublished",
+                              },
+                              Object {
+                                "color": "#e7e7e7",
+                                "label": "In review",
+                                "value": "in_review",
+                              },
+                              Object {
+                                "color": "#008100",
+                                "label": "Published",
+                                "value": "published",
+                              },
+                            ],
+                          },
+                        ]
+                      }
+                      placeholder="Filters..."
+                      styles={
+                        Object {
+                          "multiValue": [Function],
+                          "multiValueLabel": [Function],
+                          "option": [Function],
+                        }
+                      }
+                      value={Array []}
+                    />
                   </div>,
                   <div
                     className="col-5 float-right"
@@ -797,7 +1186,7 @@ ShallowWrapper {
                         </button>
                       </Link>
                     </ButtonToolbar>,
-                    "className": "col-7 float-left",
+                    "className": "col-2 float-left",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -847,6 +1236,104 @@ ShallowWrapper {
                       },
                       "type": [Function],
                     },
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <StateManager
+                      closeMenuOnSelect={false}
+                      defaultInputValue=""
+                      defaultMenuIsOpen={false}
+                      defaultValue={null}
+                      isMulti={true}
+                      maxMenuHeight="30vh"
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Course Run Statuses",
+                            "options": Array [
+                              Object {
+                                "color": "#E2C018",
+                                "label": "Unsubmitted",
+                                "value": "unpublished",
+                              },
+                              Object {
+                                "color": "#e7e7e7",
+                                "label": "In review",
+                                "value": "in_review",
+                              },
+                              Object {
+                                "color": "#008100",
+                                "label": "Published",
+                                "value": "published",
+                              },
+                            ],
+                          },
+                        ]
+                      }
+                      placeholder="Filters..."
+                      styles={
+                        Object {
+                          "multiValue": [Function],
+                          "multiValueLabel": [Function],
+                          "option": [Function],
+                        }
+                      }
+                      value={Array []}
+                    />,
+                    "className": "col-5 float-right pt-1",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "closeMenuOnSelect": false,
+                      "defaultInputValue": "",
+                      "defaultMenuIsOpen": false,
+                      "defaultValue": null,
+                      "isMulti": true,
+                      "maxMenuHeight": "30vh",
+                      "onChange": [Function],
+                      "options": Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ],
+                      "placeholder": "Filters...",
+                      "styles": Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      },
+                      "value": Array [],
+                    },
+                    "ref": null,
+                    "rendered": null,
                     "type": [Function],
                   },
                   "type": "div",
@@ -921,13 +1408,16 @@ ShallowWrapper {
                   },
                   Object {
                     "columnSortable": false,
-                    "key": "owners",
-                    "label": "Owner",
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
                   },
                 ],
-                "fetchMethod": [Function],
                 "formatData": [Function],
-                "id": "courses",
                 "tableSortable": true,
               },
               "ref": null,
@@ -1026,7 +1516,7 @@ ShallowWrapper {
             className="row"
           >
             <div
-              className="col-7 float-left"
+              className="col-2 float-left"
             >
               <ButtonToolbar
                 className="mb-3"
@@ -1043,6 +1533,52 @@ ShallowWrapper {
                   </button>
                 </Link>
               </ButtonToolbar>
+            </div>
+            <div
+              className="col-5 float-right pt-1"
+            >
+              <StateManager
+                closeMenuOnSelect={false}
+                defaultInputValue=""
+                defaultMenuIsOpen={false}
+                defaultValue={null}
+                isMulti={true}
+                maxMenuHeight="30vh"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Course Run Statuses",
+                      "options": Array [
+                        Object {
+                          "color": "#E2C018",
+                          "label": "Unsubmitted",
+                          "value": "unpublished",
+                        },
+                        Object {
+                          "color": "#e7e7e7",
+                          "label": "In review",
+                          "value": "in_review",
+                        },
+                        Object {
+                          "color": "#008100",
+                          "label": "Published",
+                          "value": "published",
+                        },
+                      ],
+                    },
+                  ]
+                }
+                placeholder="Filters..."
+                styles={
+                  Object {
+                    "multiValue": [Function],
+                    "multiValueLabel": [Function],
+                    "option": [Function],
+                  }
+                }
+                value={Array []}
+              />
             </div>
             <div
               className="col-5 float-right"
@@ -1081,14 +1617,17 @@ ShallowWrapper {
                 },
                 Object {
                   "columnSortable": false,
-                  "key": "owners",
-                  "label": "Owner",
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
                 },
               ]
             }
-            fetchMethod={[Function]}
             formatData={[Function]}
-            id="courses"
             tableSortable={true}
           />
         </React.Fragment>,
@@ -1141,7 +1680,7 @@ ShallowWrapper {
               className="row"
             >
               <div
-                className="col-7 float-left"
+                className="col-2 float-left"
               >
                 <ButtonToolbar
                   className="mb-3"
@@ -1158,6 +1697,52 @@ ShallowWrapper {
                     </button>
                   </Link>
                 </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
               </div>
               <div
                 className="col-5 float-right"
@@ -1196,14 +1781,17 @@ ShallowWrapper {
                   },
                   Object {
                     "columnSortable": false,
-                    "key": "owners",
-                    "label": "Owner",
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
                   },
                 ]
               }
-              fetchMethod={[Function]}
               formatData={[Function]}
-              id="courses"
               tableSortable={true}
             />,
           ],
@@ -1242,7 +1830,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <div
-                  className="col-7 float-left"
+                  className="col-2 float-left"
                 >
                   <ButtonToolbar
                     className="mb-3"
@@ -1259,6 +1847,52 @@ ShallowWrapper {
                       </button>
                     </Link>
                   </ButtonToolbar>
+                </div>,
+                <div
+                  className="col-5 float-right pt-1"
+                >
+                  <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />
                 </div>,
                 <div
                   className="col-5 float-right"
@@ -1305,7 +1939,7 @@ ShallowWrapper {
                       </button>
                     </Link>
                   </ButtonToolbar>,
-                  "className": "col-7 float-left",
+                  "className": "col-2 float-left",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -1355,6 +1989,104 @@ ShallowWrapper {
                     },
                     "type": [Function],
                   },
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />,
+                  "className": "col-5 float-right pt-1",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "closeMenuOnSelect": false,
+                    "defaultInputValue": "",
+                    "defaultMenuIsOpen": false,
+                    "defaultValue": null,
+                    "isMulti": true,
+                    "maxMenuHeight": "30vh",
+                    "onChange": [Function],
+                    "options": Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                        ],
+                      },
+                    ],
+                    "placeholder": "Filters...",
+                    "styles": Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    },
+                    "value": Array [],
+                  },
+                  "ref": null,
+                  "rendered": null,
                   "type": [Function],
                 },
                 "type": "div",
@@ -1429,13 +2161,16 @@ ShallowWrapper {
                 },
                 Object {
                   "columnSortable": false,
-                  "key": "owners",
-                  "label": "Owner",
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
                 },
               ],
-              "fetchMethod": [Function],
               "formatData": [Function],
-              "id": "courses",
               "tableSortable": true,
             },
             "ref": null,
@@ -1486,7 +2221,7 @@ ShallowWrapper {
               className="row"
             >
               <div
-                className="col-7 float-left"
+                className="col-2 float-left"
               >
                 <ButtonToolbar
                   className="mb-3"
@@ -1503,6 +2238,52 @@ ShallowWrapper {
                     </button>
                   </Link>
                 </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
               </div>
               <div
                 className="col-5 float-right"
@@ -1541,14 +2322,17 @@ ShallowWrapper {
                   },
                   Object {
                     "columnSortable": false,
-                    "key": "owners",
-                    "label": "Owner",
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
                   },
                 ]
               }
-              fetchMethod={[Function]}
               formatData={[Function]}
-              id="courses"
               tableSortable={true}
             />
           </React.Fragment>,
@@ -1601,7 +2385,7 @@ ShallowWrapper {
                 className="row"
               >
                 <div
-                  className="col-7 float-left"
+                  className="col-2 float-left"
                 >
                   <ButtonToolbar
                     className="mb-3"
@@ -1618,6 +2402,52 @@ ShallowWrapper {
                       </button>
                     </Link>
                   </ButtonToolbar>
+                </div>
+                <div
+                  className="col-5 float-right pt-1"
+                >
+                  <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />
                 </div>
                 <div
                   className="col-5 float-right"
@@ -1656,14 +2486,17 @@ ShallowWrapper {
                     },
                     Object {
                       "columnSortable": false,
-                      "key": "owners",
-                      "label": "Owner",
+                      "key": "course_run_statuses",
+                      "label": "States",
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "course_editor_names",
+                      "label": "Course Editors",
                     },
                   ]
                 }
-                fetchMethod={[Function]}
                 formatData={[Function]}
-                id="courses"
                 tableSortable={true}
               />,
             ],
@@ -1702,7 +2535,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <div
-                    className="col-7 float-left"
+                    className="col-2 float-left"
                   >
                     <ButtonToolbar
                       className="mb-3"
@@ -1719,6 +2552,52 @@ ShallowWrapper {
                         </button>
                       </Link>
                     </ButtonToolbar>
+                  </div>,
+                  <div
+                    className="col-5 float-right pt-1"
+                  >
+                    <StateManager
+                      closeMenuOnSelect={false}
+                      defaultInputValue=""
+                      defaultMenuIsOpen={false}
+                      defaultValue={null}
+                      isMulti={true}
+                      maxMenuHeight="30vh"
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Course Run Statuses",
+                            "options": Array [
+                              Object {
+                                "color": "#E2C018",
+                                "label": "Unsubmitted",
+                                "value": "unpublished",
+                              },
+                              Object {
+                                "color": "#e7e7e7",
+                                "label": "In review",
+                                "value": "in_review",
+                              },
+                              Object {
+                                "color": "#008100",
+                                "label": "Published",
+                                "value": "published",
+                              },
+                            ],
+                          },
+                        ]
+                      }
+                      placeholder="Filters..."
+                      styles={
+                        Object {
+                          "multiValue": [Function],
+                          "multiValueLabel": [Function],
+                          "option": [Function],
+                        }
+                      }
+                      value={Array []}
+                    />
                   </div>,
                   <div
                     className="col-5 float-right"
@@ -1765,7 +2644,7 @@ ShallowWrapper {
                         </button>
                       </Link>
                     </ButtonToolbar>,
-                    "className": "col-7 float-left",
+                    "className": "col-2 float-left",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1815,6 +2694,104 @@ ShallowWrapper {
                       },
                       "type": [Function],
                     },
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <StateManager
+                      closeMenuOnSelect={false}
+                      defaultInputValue=""
+                      defaultMenuIsOpen={false}
+                      defaultValue={null}
+                      isMulti={true}
+                      maxMenuHeight="30vh"
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Course Run Statuses",
+                            "options": Array [
+                              Object {
+                                "color": "#E2C018",
+                                "label": "Unsubmitted",
+                                "value": "unpublished",
+                              },
+                              Object {
+                                "color": "#e7e7e7",
+                                "label": "In review",
+                                "value": "in_review",
+                              },
+                              Object {
+                                "color": "#008100",
+                                "label": "Published",
+                                "value": "published",
+                              },
+                            ],
+                          },
+                        ]
+                      }
+                      placeholder="Filters..."
+                      styles={
+                        Object {
+                          "multiValue": [Function],
+                          "multiValueLabel": [Function],
+                          "option": [Function],
+                        }
+                      }
+                      value={Array []}
+                    />,
+                    "className": "col-5 float-right pt-1",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "closeMenuOnSelect": false,
+                      "defaultInputValue": "",
+                      "defaultMenuIsOpen": false,
+                      "defaultValue": null,
+                      "isMulti": true,
+                      "maxMenuHeight": "30vh",
+                      "onChange": [Function],
+                      "options": Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                          ],
+                        },
+                      ],
+                      "placeholder": "Filters...",
+                      "styles": Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      },
+                      "value": Array [],
+                    },
+                    "ref": null,
+                    "rendered": null,
                     "type": [Function],
                   },
                   "type": "div",
@@ -1889,13 +2866,16 @@ ShallowWrapper {
                   },
                   Object {
                     "columnSortable": false,
-                    "key": "owners",
-                    "label": "Owner",
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
                   },
                 ],
-                "fetchMethod": [Function],
                 "formatData": [Function],
-                "id": "courses",
                 "tableSortable": true,
               },
               "ref": null,

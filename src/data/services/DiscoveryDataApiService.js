@@ -1,4 +1,5 @@
 import apiClient from '../apiClient';
+import { PAGE_SIZE } from '../constants/table';
 
 
 class DiscoveryDataApiService {
@@ -36,11 +37,12 @@ class DiscoveryDataApiService {
       'key_for_reruns',
       'title',
       'modified',
-      'owners',
+      'editors',
+      'course_run_statuses',
     ];
     const queryParams = {
       page: 1,
-      page_size: 50,
+      page_size: PAGE_SIZE,
       fields: fields.join(),
       editable: 1,
       exclude_utm: 1,
@@ -98,6 +100,15 @@ class DiscoveryDataApiService {
   static removeCourseEditor(editorId) {
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/course_editors/${editorId}/`;
     return apiClient.delete(url);
+  }
+
+  static fetchUsersForCurrentUser() {
+    const queryParams = {
+      page: 1,
+      page_size: 250,
+    };
+    const url = `${DiscoveryDataApiService.publisherBaseUrl}/admins/organizations/users/`;
+    return apiClient.get(url, { params: queryParams });
   }
 
   static fetchCourseEditors(courseId) {

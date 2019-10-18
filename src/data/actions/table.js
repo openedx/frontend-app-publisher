@@ -1,164 +1,119 @@
+import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { getPageOptionsFromUrl } from '../../utils';
 
 import {
-  PAGINATION_REQUEST,
-  PAGINATION_SUCCESS,
-  PAGINATION_FAILURE,
-  SORT_REQUEST,
-  SORT_SUCCESS,
-  SORT_FAILURE,
-  FILTER_REQUEST,
-  FILTER_SUCCESS,
-  FILTER_FAILURE,
   CLEAR_TABLE,
+  FETCH_EDITOR_OPTIONS_SUCCESS,
+  FETCH_EDITOR_OPTIONS_FAILURE,
+  UPDATE_TABLE_REQUEST,
+  UPDATE_TABLE_SUCCESS,
+  UPDATE_TABLE_FAILURE,
 } from '../constants/table';
 
-const paginationRequest = (tableId, page, pageSize) => ({
-  type: PAGINATION_REQUEST,
+const fetchEditorFilterOptionsSuccess = editors => ({
+  type: FETCH_EDITOR_OPTIONS_SUCCESS,
   payload: {
-    tableId,
-    page,
-    pageSize,
+    editors,
   },
 });
 
-const paginationSuccess = (tableId, data, ordering, page, pageSize) => ({
-  type: PAGINATION_SUCCESS,
+const fetchEditorFilterOptionsFailure = error => ({
+  type: FETCH_EDITOR_OPTIONS_FAILURE,
   payload: {
-    tableId,
-    data,
-    ordering,
-    page,
-    pageSize,
-  },
-});
-const paginationFailure = (tableId, error) => ({
-  type: PAGINATION_FAILURE,
-  payload: {
-    tableId,
     error,
   },
 });
 
-const sortRequest = (tableId, ordering) => ({
-  type: SORT_REQUEST,
-  payload: {
-    tableId,
-    ordering, // ordering passed for tracking purposes by beacon in data/store.js
-  },
+const clearTable = () => ({
+  type: CLEAR_TABLE,
 });
 
-const sortSuccess = (tableId, ordering, data) => ({
-  type: SORT_SUCCESS,
+const updateTableRequest = () => ({
+  type: UPDATE_TABLE_REQUEST,
+});
+
+const updateTableSuccess = data => ({
+  type: UPDATE_TABLE_SUCCESS,
   payload: {
-    tableId,
-    ordering,
     data,
   },
 });
 
-const sortFailure = (tableId, error) => ({
-  type: SORT_FAILURE,
+const updateTableFailure = error => ({
+  type: UPDATE_TABLE_FAILURE,
   payload: {
-    tableId,
     error,
   },
 });
 
-const filterRequest = (tableId, filter) => ({
-  type: FILTER_REQUEST,
-  payload: {
-    tableId,
-    filter,
-  },
-});
+const fetchEditorFilterOptions = () => (
+  dispatch => (
+    DiscoveryDataApiService.fetchUsersForCurrentUser().then((response) => {
+      const users = response.data.results.map(user => ({ id: user.id, name: user.full_name }));
+      dispatch(fetchEditorFilterOptionsSuccess(users));
+    }).catch((error) => {
+      dispatch(fetchEditorFilterOptionsFailure(error));
+    })
+  )
+);
 
-const filterSuccess = (tableId, filter, data) => ({
-  type: FILTER_SUCCESS,
-  payload: {
-    tableId,
-    filter,
-    data,
-  },
-});
-
-const filterFailure = (tableId, error) => ({
-  type: FILTER_FAILURE,
-  payload: {
-    tableId,
-    error,
-  },
-});
-
-const paginateTable = (tableId, fetchMethod, pageNumber) => (
+const paginateTable = pageNumber => (
   (dispatch) => {
     const options = getPageOptionsFromUrl();
     if (pageNumber) {
       options.page = pageNumber;
     }
-    dispatch(paginationRequest(tableId, options.page, options.page_size));
-    return fetchMethod(options).then((response) => {
-      dispatch(paginationSuccess(
-        tableId, response.data, options.ordering,
-        options.page, options.page_size,
-      ));
+    dispatch(updateTableRequest());
+    return DiscoveryDataApiService.fetchCourses(options).then((response) => {
+      dispatch(updateTableSuccess(response.data));
     }).catch((error) => {
       // This endpoint returns a 404 if no data exists,
       // so we convert it to an empty response here.
       if (error.response && error.response.status === 404) {
-        dispatch(paginationSuccess(
-          tableId, { results: [] }, options.ordering,
-          options.page, options.page_size,
-        ));
+        dispatch(updateTableSuccess({ results: [] }));
         return;
       }
-      dispatch(paginationFailure(tableId, error));
+      dispatch(updateTableFailure(error));
     });
   }
 );
 
-const sortTable = (tableId, fetchMethod, ordering) => (
+const sortTable = ordering => (
   (dispatch) => {
     const options = {
       ...getPageOptionsFromUrl(),
       ordering,
     };
-    dispatch(sortRequest(tableId, ordering));
+    dispatch(updateTableRequest());
 
-    return fetchMethod(options).then((response) => {
-      dispatch(sortSuccess(tableId, ordering, response.data));
+    return DiscoveryDataApiService.fetchCourses(options).then((response) => {
+      dispatch(updateTableSuccess(response.data));
     }).catch((error) => {
-      dispatch(sortFailure(tableId, error));
+      dispatch(updateTableFailure(error));
     });
   }
 );
 
-const filterTable = (tableId, fetchMethod, filter) => (
+const filterTable = filter => (
   (dispatch) => {
     const options = {
       ...getPageOptionsFromUrl(),
-      pubq: filter, // Internal API querystring param for title/key substring
+      ...filter, // Internal API querystring param for title/key substring
     };
-    dispatch(filterRequest(tableId, filter));
+    dispatch(updateTableRequest());
 
-    return fetchMethod(options).then((response) => {
-      dispatch(filterSuccess(tableId, filter, response.data));
+    return DiscoveryDataApiService.fetchCourses(options).then((response) => {
+      dispatch(updateTableSuccess(response.data));
     }).catch((error) => {
-      dispatch(filterFailure(tableId, error));
+      dispatch(updateTableFailure(error));
     });
   }
 );
-
-const clearTable = tableId => dispatch => (dispatch({
-  type: CLEAR_TABLE,
-  payload: {
-    tableId,
-  },
-}));
 
 export {
   paginateTable,
   sortTable,
   clearTable,
   filterTable,
+  fetchEditorFilterOptions,
 };

@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-
 import { Pagination, Table } from '@edx/paragon';
 import 'font-awesome/css/font-awesome.css';
 
+import './TableComponent.scss';
+
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
-import { getErrorMessages, updateUrl } from '../../utils';
+import { getErrorMessages, getPageOptionsFromUrl, updateUrl } from '../../utils';
 
 class TableComponent extends React.Component {
   componentDidMount() {
     // Get initial data
     this.props.paginateTable();
+    this.props.fetchEditorFilterOptions();
   }
 
   componentDidUpdate(prevProps) {
@@ -26,14 +28,26 @@ class TableComponent extends React.Component {
         page: prevPage,
         ordering: prevOrdering,
         filter: prevFilter,
+        editors: prevEditors,
+        course_run_statuses: prevCourseRunStatuses,
       } = qs.parse(prevProps.location.search);
-      const { page, ordering, filter } = qs.parse(location.search);
+      const {
+        page,
+        ordering,
+        filter,
+        editors,
+        course_run_statuses: courseRunStatuses,
+      } = qs.parse(location.search);
       if (ordering !== prevOrdering) {
         this.props.sortTable(ordering);
       } else if (page !== prevPage) {
         this.props.paginateTable(parseInt(page, 10));
       } else if (filter !== prevFilter) {
-        this.props.filterTable(filter);
+        this.props.filterTable({ pubq: filter });
+      } else if (editors !== prevEditors) {
+        this.props.filterTable(editors);
+      } else if (courseRunStatuses !== prevCourseRunStatuses) {
+        this.props.filterTable(courseRunStatuses);
       }
     }
   }
@@ -45,14 +59,12 @@ class TableComponent extends React.Component {
   renderTableContent() {
     const {
       className,
-      currentPage,
       pageCount,
       tableSortable,
       data,
-      ordering,
       formatData,
-      id,
       loading,
+      location,
     } = this.props;
 
     const columnConfig = this.props.columns.map(column => ({
@@ -67,16 +79,18 @@ class TableComponent extends React.Component {
     let sortColumn;
 
     if (tableSortable) {
+      const { ordering } = qs.parse(location.search);
       sortDirection = ordering && ordering.indexOf('-') !== -1 ? 'desc' : 'asc';
       sortColumn = (ordering && ordering.replace('-', '')) || columnConfig[0].key;
     }
+
+    const paginationOptions = getPageOptionsFromUrl();
 
     return (
       <div className={className}>
         {loading && <LoadingSpinner />}
         <div className="table-responsive">
           <Table
-            id={id}
             className="table-sm table-striped"
             columns={columnConfig}
             data={formatData(data)}
@@ -85,14 +99,15 @@ class TableComponent extends React.Component {
             defaultSortDirection={sortDirection}
           />
         </div>
-        <div className="mt-2 d-flex justify-content-center">
-          <Pagination
-            paginationLabel={`${id}-pagination`}
-            pageCount={pageCount}
-            currentPage={currentPage}
-            onPageSelect={page => updateUrl({ page })}
-          />
-        </div>
+        { pageCount > 1 &&
+          <div className="mt-2 d-flex justify-content-center">
+            <Pagination
+              pageCount={pageCount}
+              currentPage={paginationOptions.page}
+              onPageSelect={page => updateUrl({ page })}
+            />
+          </div>
+        }
       </div>
     );
   }
@@ -143,7 +158,6 @@ class TableComponent extends React.Component {
 
 TableComponent.propTypes = {
   // Props expected from consumer
-  id: PropTypes.string.isRequired,
   className: PropTypes.string,
   columns: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   formatData: PropTypes.func.isRequired,
@@ -151,9 +165,7 @@ TableComponent.propTypes = {
 
   // Props expected from TableContainer / redux store
   data: PropTypes.arrayOf(PropTypes.shape({})),
-  currentPage: PropTypes.number,
   pageCount: PropTypes.number.isRequired,
-  ordering: PropTypes.string,
   loading: PropTypes.bool,
   error: PropTypes.instanceOf(Error),
   paginateTable: PropTypes.func.isRequired,
@@ -163,14 +175,13 @@ TableComponent.propTypes = {
   location: PropTypes.shape({
     search: PropTypes.string,
   }).isRequired,
+  fetchEditorFilterOptions: PropTypes.func.isRequired,
 };
 
 TableComponent.defaultProps = {
   className: '',
   tableSortable: false,
   data: undefined,
-  ordering: undefined,
-  currentPage: undefined,
   error: null,
   loading: false,
 };
