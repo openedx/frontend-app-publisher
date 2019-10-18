@@ -75,7 +75,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <div
@@ -156,7 +156,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.start"
-            timeLabel="Start time (UTC)"
+            timeLabel="Start time (EST)"
             type="text"
           />
           <Field
@@ -184,7 +184,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.end"
-            timeLabel="End time (UTC)"
+            timeLabel="End time (EST)"
             type="text"
           />
         </div>,
@@ -500,11 +500,71 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "expandedTitle": undefined,
+      "className": undefined,
       "iconId": "collapsible-icon-test-course",
-      "isCollapsible": undefined,
+      "iconWhenClosed": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f067",
+              "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "plus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
+      "iconWhenOpen": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f068",
+              "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "minus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
       "isOpen": false,
-      "onToggle": [Function],
+      "onToggle": undefined,
+      "styling": "card",
       "title": <div
         className="course-run-label"
       >
@@ -644,7 +704,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />,
             <Field
@@ -672,7 +732,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />,
           ],
@@ -752,7 +812,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.start",
-              "timeLabel": "Start time (UTC)",
+              "timeLabel": "Start time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -786,7 +846,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.end",
-              "timeLabel": "End time (UTC)",
+              "timeLabel": "End time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -1360,13 +1420,92 @@ ShallowWrapper {
       undefined,
       false,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Advanced": [Function],
+      "Body": [Function],
+      "Trigger": [Function],
+      "Visible": [Function],
+      "defaultProps": Object {
+        "className": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "styling": "card",
+      },
+      "propTypes": Object {
+        "children": [Function],
+        "className": [Function],
+        "iconWhenClosed": [Function],
+        "iconWhenOpen": [Function],
+        "styling": [Function],
+        "title": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <div
@@ -1447,7 +1586,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />
             <Field
@@ -1475,7 +1614,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />
           </div>,
@@ -1791,11 +1930,71 @@ ShallowWrapper {
           undefined,
           false,
         ],
-        "expandedTitle": undefined,
+        "className": undefined,
         "iconId": "collapsible-icon-test-course",
-        "isCollapsible": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
         "isOpen": false,
-        "onToggle": [Function],
+        "onToggle": undefined,
+        "styling": "card",
         "title": <div
           className="course-run-label"
         >
@@ -1935,7 +2134,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.start"
-                timeLabel="Start time (UTC)"
+                timeLabel="Start time (EST)"
                 type="text"
               />,
               <Field
@@ -1963,7 +2162,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.end"
-                timeLabel="End time (UTC)"
+                timeLabel="End time (EST)"
                 type="text"
               />,
             ],
@@ -2043,7 +2242,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.start",
-                "timeLabel": "Start time (UTC)",
+                "timeLabel": "Start time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -2077,7 +2276,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.end",
-                "timeLabel": "End time (UTC)",
+                "timeLabel": "End time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -2651,7 +2850,86 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Advanced": [Function],
+        "Body": [Function],
+        "Trigger": [Function],
+        "Visible": [Function],
+        "defaultProps": Object {
+          "className": undefined,
+          "iconWhenClosed": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f067",
+                  "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "plus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "iconWhenOpen": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f068",
+                  "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "minus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "styling": "card",
+        },
+        "propTypes": Object {
+          "children": [Function],
+          "className": [Function],
+          "iconWhenClosed": [Function],
+          "iconWhenOpen": [Function],
+          "styling": [Function],
+          "title": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -2756,7 +3034,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <div
@@ -2837,7 +3115,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.start"
-            timeLabel="Start time (UTC)"
+            timeLabel="Start time (EST)"
             type="text"
           />
           <Field
@@ -2865,7 +3143,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.end"
-            timeLabel="End time (UTC)"
+            timeLabel="End time (EST)"
             type="text"
           />
         </div>,
@@ -3181,11 +3459,71 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "expandedTitle": undefined,
+      "className": undefined,
       "iconId": "collapsible-icon-test-course",
-      "isCollapsible": undefined,
+      "iconWhenClosed": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f067",
+              "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "plus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
+      "iconWhenOpen": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f068",
+              "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "minus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
       "isOpen": false,
-      "onToggle": [Function],
+      "onToggle": undefined,
+      "styling": "card",
       "title": <div
         className="course-run-label"
       >
@@ -3325,7 +3663,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />,
             <Field
@@ -3353,7 +3691,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />,
           ],
@@ -3433,7 +3771,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.start",
-              "timeLabel": "Start time (UTC)",
+              "timeLabel": "Start time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -3467,7 +3805,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.end",
-              "timeLabel": "End time (UTC)",
+              "timeLabel": "End time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -4041,13 +4379,92 @@ ShallowWrapper {
       undefined,
       false,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Advanced": [Function],
+      "Body": [Function],
+      "Trigger": [Function],
+      "Visible": [Function],
+      "defaultProps": Object {
+        "className": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "styling": "card",
+      },
+      "propTypes": Object {
+        "children": [Function],
+        "className": [Function],
+        "iconWhenClosed": [Function],
+        "iconWhenOpen": [Function],
+        "styling": [Function],
+        "title": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <div
@@ -4128,7 +4545,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />
             <Field
@@ -4156,7 +4573,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />
           </div>,
@@ -4472,11 +4889,71 @@ ShallowWrapper {
           undefined,
           false,
         ],
-        "expandedTitle": undefined,
+        "className": undefined,
         "iconId": "collapsible-icon-test-course",
-        "isCollapsible": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
         "isOpen": false,
-        "onToggle": [Function],
+        "onToggle": undefined,
+        "styling": "card",
         "title": <div
           className="course-run-label"
         >
@@ -4616,7 +5093,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.start"
-                timeLabel="Start time (UTC)"
+                timeLabel="Start time (EST)"
                 type="text"
               />,
               <Field
@@ -4644,7 +5121,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.end"
-                timeLabel="End time (UTC)"
+                timeLabel="End time (EST)"
                 type="text"
               />,
             ],
@@ -4724,7 +5201,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.start",
-                "timeLabel": "Start time (UTC)",
+                "timeLabel": "Start time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -4758,7 +5235,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.end",
-                "timeLabel": "End time (UTC)",
+                "timeLabel": "End time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -5332,7 +5809,86 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Advanced": [Function],
+        "Body": [Function],
+        "Trigger": [Function],
+        "Visible": [Function],
+        "defaultProps": Object {
+          "className": undefined,
+          "iconWhenClosed": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f067",
+                  "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "plus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "iconWhenOpen": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f068",
+                  "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "minus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "styling": "card",
+        },
+        "propTypes": Object {
+          "children": [Function],
+          "className": [Function],
+          "iconWhenClosed": [Function],
+          "iconWhenOpen": [Function],
+          "styling": [Function],
+          "title": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -5437,7 +5993,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <div
@@ -5518,7 +6074,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.start"
-            timeLabel="Start time (UTC)"
+            timeLabel="Start time (EST)"
             type="text"
           />
           <Field
@@ -5546,7 +6102,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.end"
-            timeLabel="End time (UTC)"
+            timeLabel="End time (EST)"
             type="text"
           />
         </div>,
@@ -5862,11 +6418,71 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "expandedTitle": undefined,
+      "className": undefined,
       "iconId": "collapsible-icon-test-course",
-      "isCollapsible": undefined,
+      "iconWhenClosed": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f067",
+              "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "plus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
+      "iconWhenOpen": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f068",
+              "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "minus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
       "isOpen": false,
-      "onToggle": [Function],
+      "onToggle": undefined,
+      "styling": "card",
       "title": <div
         className="course-run-label"
       >
@@ -6006,7 +6622,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />,
             <Field
@@ -6034,7 +6650,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />,
           ],
@@ -6114,7 +6730,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.start",
-              "timeLabel": "Start time (UTC)",
+              "timeLabel": "Start time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -6148,7 +6764,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.end",
-              "timeLabel": "End time (UTC)",
+              "timeLabel": "End time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -6722,13 +7338,92 @@ ShallowWrapper {
       undefined,
       false,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Advanced": [Function],
+      "Body": [Function],
+      "Trigger": [Function],
+      "Visible": [Function],
+      "defaultProps": Object {
+        "className": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "styling": "card",
+      },
+      "propTypes": Object {
+        "children": [Function],
+        "className": [Function],
+        "iconWhenClosed": [Function],
+        "iconWhenOpen": [Function],
+        "styling": [Function],
+        "title": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <div
@@ -6809,7 +7504,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />
             <Field
@@ -6837,7 +7532,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />
           </div>,
@@ -7153,11 +7848,71 @@ ShallowWrapper {
           undefined,
           false,
         ],
-        "expandedTitle": undefined,
+        "className": undefined,
         "iconId": "collapsible-icon-test-course",
-        "isCollapsible": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
         "isOpen": false,
-        "onToggle": [Function],
+        "onToggle": undefined,
+        "styling": "card",
         "title": <div
           className="course-run-label"
         >
@@ -7297,7 +8052,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.start"
-                timeLabel="Start time (UTC)"
+                timeLabel="Start time (EST)"
                 type="text"
               />,
               <Field
@@ -7325,7 +8080,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.end"
-                timeLabel="End time (UTC)"
+                timeLabel="End time (EST)"
                 type="text"
               />,
             ],
@@ -7405,7 +8160,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.start",
-                "timeLabel": "Start time (UTC)",
+                "timeLabel": "Start time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -7439,7 +8194,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.end",
-                "timeLabel": "End time (UTC)",
+                "timeLabel": "End time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -8013,7 +8768,86 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Advanced": [Function],
+        "Body": [Function],
+        "Trigger": [Function],
+        "Visible": [Function],
+        "defaultProps": Object {
+          "className": undefined,
+          "iconWhenClosed": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f067",
+                  "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "plus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "iconWhenOpen": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f068",
+                  "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "minus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "styling": "card",
+        },
+        "propTypes": Object {
+          "children": [Function],
+          "className": [Function],
+          "iconWhenClosed": [Function],
+          "iconWhenOpen": [Function],
+          "styling": [Function],
+          "title": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -8118,7 +8952,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <div
@@ -8199,7 +9033,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.start"
-            timeLabel="Start time (UTC)"
+            timeLabel="Start time (EST)"
             type="text"
           />
           <Field
@@ -8227,7 +9061,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.end"
-            timeLabel="End time (UTC)"
+            timeLabel="End time (EST)"
             type="text"
           />
         </div>,
@@ -8543,11 +9377,71 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "expandedTitle": undefined,
+      "className": undefined,
       "iconId": "collapsible-icon-test-course",
-      "isCollapsible": undefined,
+      "iconWhenClosed": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f067",
+              "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "plus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
+      "iconWhenOpen": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f068",
+              "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "minus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
       "isOpen": false,
-      "onToggle": [Function],
+      "onToggle": undefined,
+      "styling": "card",
       "title": <div
         className="course-run-label"
       >
@@ -8687,7 +9581,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />,
             <Field
@@ -8715,7 +9609,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />,
           ],
@@ -8795,7 +9689,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.start",
-              "timeLabel": "Start time (UTC)",
+              "timeLabel": "Start time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -8829,7 +9723,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.end",
-              "timeLabel": "End time (UTC)",
+              "timeLabel": "End time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -9403,13 +10297,92 @@ ShallowWrapper {
       undefined,
       false,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Advanced": [Function],
+      "Body": [Function],
+      "Trigger": [Function],
+      "Visible": [Function],
+      "defaultProps": Object {
+        "className": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "styling": "card",
+      },
+      "propTypes": Object {
+        "children": [Function],
+        "className": [Function],
+        "iconWhenClosed": [Function],
+        "iconWhenOpen": [Function],
+        "styling": [Function],
+        "title": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <div
@@ -9490,7 +10463,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />
             <Field
@@ -9518,7 +10491,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />
           </div>,
@@ -9834,11 +10807,71 @@ ShallowWrapper {
           undefined,
           false,
         ],
-        "expandedTitle": undefined,
+        "className": undefined,
         "iconId": "collapsible-icon-test-course",
-        "isCollapsible": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
         "isOpen": false,
-        "onToggle": [Function],
+        "onToggle": undefined,
+        "styling": "card",
         "title": <div
           className="course-run-label"
         >
@@ -9978,7 +11011,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.start"
-                timeLabel="Start time (UTC)"
+                timeLabel="Start time (EST)"
                 type="text"
               />,
               <Field
@@ -10006,7 +11039,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.end"
-                timeLabel="End time (UTC)"
+                timeLabel="End time (EST)"
                 type="text"
               />,
             ],
@@ -10086,7 +11119,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.start",
-                "timeLabel": "Start time (UTC)",
+                "timeLabel": "Start time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -10120,7 +11153,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.end",
-                "timeLabel": "End time (UTC)",
+                "timeLabel": "End time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -10694,7 +11727,86 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Advanced": [Function],
+        "Body": [Function],
+        "Trigger": [Function],
+        "Visible": [Function],
+        "defaultProps": Object {
+          "className": undefined,
+          "iconWhenClosed": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f067",
+                  "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "plus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "iconWhenOpen": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f068",
+                  "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "minus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "styling": "card",
+        },
+        "propTypes": Object {
+          "children": [Function],
+          "className": [Function],
+          "iconWhenClosed": [Function],
+          "iconWhenOpen": [Function],
+          "styling": [Function],
+          "title": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -10865,7 +11977,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <div
@@ -10946,7 +12058,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.start"
-            timeLabel="Start time (UTC)"
+            timeLabel="Start time (EST)"
             type="text"
           />
           <Field
@@ -10974,7 +12086,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.end"
-            timeLabel="End time (UTC)"
+            timeLabel="End time (EST)"
             type="text"
           />
         </div>,
@@ -11345,11 +12457,71 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "expandedTitle": undefined,
+      "className": undefined,
       "iconId": "collapsible-icon-test-course",
-      "isCollapsible": undefined,
+      "iconWhenClosed": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f067",
+              "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "plus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
+      "iconWhenOpen": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f068",
+              "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "minus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
       "isOpen": false,
-      "onToggle": [Function],
+      "onToggle": undefined,
+      "styling": "card",
       "title": <div
         className="course-run-label"
       >
@@ -11489,7 +12661,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />,
             <Field
@@ -11517,7 +12689,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />,
           ],
@@ -11597,7 +12769,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.start",
-              "timeLabel": "Start time (UTC)",
+              "timeLabel": "Start time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -11631,7 +12803,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.end",
-              "timeLabel": "End time (UTC)",
+              "timeLabel": "End time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -12262,13 +13434,92 @@ ShallowWrapper {
       undefined,
       false,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Advanced": [Function],
+      "Body": [Function],
+      "Trigger": [Function],
+      "Visible": [Function],
+      "defaultProps": Object {
+        "className": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "styling": "card",
+      },
+      "propTypes": Object {
+        "children": [Function],
+        "className": [Function],
+        "iconWhenClosed": [Function],
+        "iconWhenOpen": [Function],
+        "styling": [Function],
+        "title": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <div
@@ -12349,7 +13600,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />
             <Field
@@ -12377,7 +13628,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />
           </div>,
@@ -12748,11 +13999,71 @@ ShallowWrapper {
           undefined,
           false,
         ],
-        "expandedTitle": undefined,
+        "className": undefined,
         "iconId": "collapsible-icon-test-course",
-        "isCollapsible": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
         "isOpen": false,
-        "onToggle": [Function],
+        "onToggle": undefined,
+        "styling": "card",
         "title": <div
           className="course-run-label"
         >
@@ -12892,7 +14203,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.start"
-                timeLabel="Start time (UTC)"
+                timeLabel="Start time (EST)"
                 type="text"
               />,
               <Field
@@ -12920,7 +14231,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.end"
-                timeLabel="End time (UTC)"
+                timeLabel="End time (EST)"
                 type="text"
               />,
             ],
@@ -13000,7 +14311,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.start",
-                "timeLabel": "Start time (UTC)",
+                "timeLabel": "Start time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -13034,7 +14345,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.end",
-                "timeLabel": "End time (UTC)",
+                "timeLabel": "End time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -13665,7 +14976,86 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Advanced": [Function],
+        "Body": [Function],
+        "Trigger": [Function],
+        "Visible": [Function],
+        "defaultProps": Object {
+          "className": undefined,
+          "iconWhenClosed": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f067",
+                  "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "plus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "iconWhenOpen": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f068",
+                  "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "minus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "styling": "card",
+        },
+        "propTypes": Object {
+          "children": [Function],
+          "className": [Function],
+          "iconWhenClosed": [Function],
+          "iconWhenOpen": [Function],
+          "styling": [Function],
+          "title": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -13844,7 +15234,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <div
@@ -13925,7 +15315,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.start"
-            timeLabel="Start time (UTC)"
+            timeLabel="Start time (EST)"
             type="text"
           />
           <Field
@@ -13953,7 +15343,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.end"
-            timeLabel="End time (UTC)"
+            timeLabel="End time (EST)"
             type="text"
           />
         </div>,
@@ -14350,11 +15740,71 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "expandedTitle": undefined,
+      "className": undefined,
       "iconId": "collapsible-icon-test-course",
-      "isCollapsible": undefined,
+      "iconWhenClosed": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f067",
+              "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "plus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
+      "iconWhenOpen": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f068",
+              "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "minus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
       "isOpen": false,
-      "onToggle": [Function],
+      "onToggle": undefined,
+      "styling": "card",
       "title": <div
         className="course-run-label"
       >
@@ -14494,7 +15944,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />,
             <Field
@@ -14522,7 +15972,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />,
           ],
@@ -14602,7 +16052,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.start",
-              "timeLabel": "Start time (UTC)",
+              "timeLabel": "Start time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -14636,7 +16086,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.end",
-              "timeLabel": "End time (UTC)",
+              "timeLabel": "End time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -15297,13 +16747,92 @@ ShallowWrapper {
       undefined,
       false,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Advanced": [Function],
+      "Body": [Function],
+      "Trigger": [Function],
+      "Visible": [Function],
+      "defaultProps": Object {
+        "className": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "styling": "card",
+      },
+      "propTypes": Object {
+        "children": [Function],
+        "className": [Function],
+        "iconWhenClosed": [Function],
+        "iconWhenOpen": [Function],
+        "styling": [Function],
+        "title": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <div
@@ -15384,7 +16913,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />
             <Field
@@ -15412,7 +16941,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />
           </div>,
@@ -15809,11 +17338,71 @@ ShallowWrapper {
           undefined,
           false,
         ],
-        "expandedTitle": undefined,
+        "className": undefined,
         "iconId": "collapsible-icon-test-course",
-        "isCollapsible": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
         "isOpen": false,
-        "onToggle": [Function],
+        "onToggle": undefined,
+        "styling": "card",
         "title": <div
           className="course-run-label"
         >
@@ -15953,7 +17542,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.start"
-                timeLabel="Start time (UTC)"
+                timeLabel="Start time (EST)"
                 type="text"
               />,
               <Field
@@ -15981,7 +17570,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.end"
-                timeLabel="End time (UTC)"
+                timeLabel="End time (EST)"
                 type="text"
               />,
             ],
@@ -16061,7 +17650,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.start",
-                "timeLabel": "Start time (UTC)",
+                "timeLabel": "Start time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -16095,7 +17684,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.end",
-                "timeLabel": "End time (UTC)",
+                "timeLabel": "End time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -16756,7 +18345,86 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Advanced": [Function],
+        "Body": [Function],
+        "Trigger": [Function],
+        "Visible": [Function],
+        "defaultProps": Object {
+          "className": undefined,
+          "iconWhenClosed": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f067",
+                  "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "plus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "iconWhenOpen": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f068",
+                  "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "minus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "styling": "card",
+        },
+        "propTypes": Object {
+          "children": [Function],
+          "className": [Function],
+          "iconWhenClosed": [Function],
+          "iconWhenOpen": [Function],
+          "styling": [Function],
+          "title": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -16826,7 +18494,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <div
@@ -16907,7 +18575,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.start"
-            timeLabel="Start time (UTC)"
+            timeLabel="Start time (EST)"
             type="text"
           />
           <Field
@@ -16935,7 +18603,7 @@ ShallowWrapper {
               </div>
             }
             name="test-course.end"
-            timeLabel="End time (UTC)"
+            timeLabel="End time (EST)"
             type="text"
           />
         </div>,
@@ -17229,11 +18897,71 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "expandedTitle": undefined,
+      "className": undefined,
       "iconId": "collapsible-icon-test-course",
-      "isCollapsible": undefined,
+      "iconWhenClosed": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f067",
+              "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "plus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
+      "iconWhenOpen": <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f068",
+              "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+            ],
+            "iconName": "minus",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />,
       "isOpen": false,
-      "onToggle": [Function],
+      "onToggle": undefined,
+      "styling": "card",
       "title": <div
         className="course-run-label"
       >
@@ -17371,7 +19099,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />,
             <Field
@@ -17399,7 +19127,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />,
           ],
@@ -17479,7 +19207,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.start",
-              "timeLabel": "Start time (UTC)",
+              "timeLabel": "Start time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -17513,7 +19241,7 @@ ShallowWrapper {
                 </p>
               </div>,
               "name": "test-course.end",
-              "timeLabel": "End time (UTC)",
+              "timeLabel": "End time (EST)",
               "type": "text",
             },
             "ref": null,
@@ -18072,13 +19800,92 @@ ShallowWrapper {
       undefined,
       false,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Advanced": [Function],
+      "Body": [Function],
+      "Trigger": [Function],
+      "Visible": [Function],
+      "defaultProps": Object {
+        "className": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "styling": "card",
+      },
+      "propTypes": Object {
+        "children": [Function],
+        "className": [Function],
+        "iconWhenClosed": [Function],
+        "iconWhenOpen": [Function],
+        "styling": [Function],
+        "title": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <div
@@ -18159,7 +19966,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.start"
-              timeLabel="Start time (UTC)"
+              timeLabel="Start time (EST)"
               type="text"
             />
             <Field
@@ -18187,7 +19994,7 @@ ShallowWrapper {
                 </div>
               }
               name="test-course.end"
-              timeLabel="End time (UTC)"
+              timeLabel="End time (EST)"
               type="text"
             />
           </div>,
@@ -18481,11 +20288,71 @@ ShallowWrapper {
           undefined,
           false,
         ],
-        "expandedTitle": undefined,
+        "className": undefined,
         "iconId": "collapsible-icon-test-course",
-        "isCollapsible": undefined,
+        "iconWhenClosed": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f067",
+                "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "plus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
+        "iconWhenOpen": <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Object {
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f068",
+                "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+              ],
+              "iconName": "minus",
+              "prefix": "fas",
+            }
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />,
         "isOpen": false,
-        "onToggle": [Function],
+        "onToggle": undefined,
+        "styling": "card",
         "title": <div
           className="course-run-label"
         >
@@ -18623,7 +20490,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.start"
-                timeLabel="Start time (UTC)"
+                timeLabel="Start time (EST)"
                 type="text"
               />,
               <Field
@@ -18651,7 +20518,7 @@ ShallowWrapper {
                   </div>
                 }
                 name="test-course.end"
-                timeLabel="End time (UTC)"
+                timeLabel="End time (EST)"
                 type="text"
               />,
             ],
@@ -18731,7 +20598,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.start",
-                "timeLabel": "Start time (UTC)",
+                "timeLabel": "Start time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -18765,7 +20632,7 @@ ShallowWrapper {
                   </p>
                 </div>,
                 "name": "test-course.end",
-                "timeLabel": "End time (UTC)",
+                "timeLabel": "End time (EST)",
                 "type": "text",
               },
               "ref": null,
@@ -19324,7 +21191,86 @@ ShallowWrapper {
         undefined,
         false,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Advanced": [Function],
+        "Body": [Function],
+        "Trigger": [Function],
+        "Visible": [Function],
+        "defaultProps": Object {
+          "className": undefined,
+          "iconWhenClosed": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f067",
+                  "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "plus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "iconWhenOpen": <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  448,
+                  512,
+                  Array [],
+                  "f068",
+                  "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
+                ],
+                "iconName": "minus",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />,
+          "styling": "card",
+        },
+        "propTypes": Object {
+          "children": [Function],
+          "className": [Function],
+          "iconWhenClosed": [Function],
+          "iconWhenOpen": [Function],
+          "styling": [Function],
+          "title": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
