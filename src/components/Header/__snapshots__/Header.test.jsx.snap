@@ -61,19 +61,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <withDeprecatedProps(Dropdown)
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>
       </div>,
@@ -120,19 +125,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <withDeprecatedProps(Dropdown)
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>,
         "className": "container",
@@ -177,19 +187,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>,
           ],
           "className": "row align-items-center",
@@ -289,19 +304,24 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />,
+              "children": <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>,
               "className": "col-auto justify-content-end",
             },
             "ref": null,
@@ -310,18 +330,71 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "menuItems": Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
+                "children": Array [
+                  <DropdownButton
+                    className="btn-light"
                   >
-                    Sign Out
-                  </button>,
+                    test-username
+                  </DropdownButton>,
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>,
                 ],
-                "title": "test-username",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "test-username",
+                    "className": "btn-light",
+                  },
+                  "ref": null,
+                  "rendered": "test-username",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>,
+                    "className": "dropdown-menu-right",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Sign Out",
+                      "className": null,
+                      "onClick": [Function],
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Sign Out",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": "div",
@@ -377,19 +450,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>
         </div>,
@@ -436,19 +514,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>,
           "className": "container",
@@ -493,19 +576,24 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-end"
               >
-                <withDeprecatedProps(Dropdown)
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />
+                <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>
               </div>,
             ],
             "className": "row align-items-center",
@@ -605,19 +693,24 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <withDeprecatedProps(Dropdown)
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />,
+                "children": <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>,
                 "className": "col-auto justify-content-end",
               },
               "ref": null,
@@ -626,18 +719,71 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "menuItems": Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
+                  "children": Array [
+                    <DropdownButton
+                      className="btn-light"
                     >
-                      Sign Out
-                    </button>,
+                      test-username
+                    </DropdownButton>,
+                    <DropdownMenu
+                      className="dropdown-menu-right"
+                    >
+                      <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>
+                    </DropdownMenu>,
                   ],
-                  "title": "test-username",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "test-username",
+                      "className": "btn-light",
+                    },
+                    "ref": null,
+                    "rendered": "test-username",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>,
+                      "className": "dropdown-menu-right",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "Sign Out",
+                        "className": null,
+                        "onClick": [Function],
+                        "type": "button",
+                      },
+                      "ref": null,
+                      "rendered": "Sign Out",
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
               "type": "div",
@@ -753,19 +899,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <withDeprecatedProps(Dropdown)
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>
       </div>,
@@ -823,19 +974,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <withDeprecatedProps(Dropdown)
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>,
         "className": "container",
@@ -890,19 +1046,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>,
           ],
           "className": "row align-items-center",
@@ -1037,19 +1198,24 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />,
+              "children": <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>,
               "className": "col-auto justify-content-end",
             },
             "ref": null,
@@ -1058,18 +1224,71 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "menuItems": Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
+                "children": Array [
+                  <DropdownButton
+                    className="btn-light"
                   >
-                    Sign Out
-                  </button>,
+                    test-username
+                  </DropdownButton>,
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>,
                 ],
-                "title": "test-username",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "test-username",
+                    "className": "btn-light",
+                  },
+                  "ref": null,
+                  "rendered": "test-username",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>,
+                    "className": "dropdown-menu-right",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Sign Out",
+                      "className": null,
+                      "onClick": [Function],
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Sign Out",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": "div",
@@ -1136,19 +1355,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>
         </div>,
@@ -1206,19 +1430,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>,
           "className": "container",
@@ -1273,19 +1502,24 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-end"
               >
-                <withDeprecatedProps(Dropdown)
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />
+                <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>
               </div>,
             ],
             "className": "row align-items-center",
@@ -1420,19 +1654,24 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <withDeprecatedProps(Dropdown)
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />,
+                "children": <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>,
                 "className": "col-auto justify-content-end",
               },
               "ref": null,
@@ -1441,18 +1680,71 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "menuItems": Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
+                  "children": Array [
+                    <DropdownButton
+                      className="btn-light"
                     >
-                      Sign Out
-                    </button>,
+                      test-username
+                    </DropdownButton>,
+                    <DropdownMenu
+                      className="dropdown-menu-right"
+                    >
+                      <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>
+                    </DropdownMenu>,
                   ],
-                  "title": "test-username",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "test-username",
+                      "className": "btn-light",
+                    },
+                    "ref": null,
+                    "rendered": "test-username",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>,
+                      "className": "dropdown-menu-right",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "Sign Out",
+                        "className": null,
+                        "onClick": [Function],
+                        "type": "button",
+                      },
+                      "ref": null,
+                      "rendered": "Sign Out",
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
               "type": "div",
@@ -1568,19 +1860,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <withDeprecatedProps(Dropdown)
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>
       </div>,
@@ -1638,19 +1935,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <withDeprecatedProps(Dropdown)
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>,
         "className": "container",
@@ -1705,19 +2007,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>,
           ],
           "className": "row align-items-center",
@@ -1852,19 +2159,24 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />,
+              "children": <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>,
               "className": "col-auto justify-content-end",
             },
             "ref": null,
@@ -1873,18 +2185,71 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "menuItems": Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
+                "children": Array [
+                  <DropdownButton
+                    className="btn-light"
                   >
-                    Sign Out
-                  </button>,
+                    test-username
+                  </DropdownButton>,
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>,
                 ],
-                "title": "test-username",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "test-username",
+                    "className": "btn-light",
+                  },
+                  "ref": null,
+                  "rendered": "test-username",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>,
+                    "className": "dropdown-menu-right",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Sign Out",
+                      "className": null,
+                      "onClick": [Function],
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Sign Out",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": "div",
@@ -1951,19 +2316,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>
         </div>,
@@ -2021,19 +2391,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <withDeprecatedProps(Dropdown)
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>,
           "className": "container",
@@ -2088,19 +2463,24 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-end"
               >
-                <withDeprecatedProps(Dropdown)
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />
+                <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>
               </div>,
             ],
             "className": "row align-items-center",
@@ -2235,19 +2615,24 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <withDeprecatedProps(Dropdown)
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />,
+                "children": <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>,
                 "className": "col-auto justify-content-end",
               },
               "ref": null,
@@ -2256,18 +2641,71 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "menuItems": Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
+                  "children": Array [
+                    <DropdownButton
+                      className="btn-light"
                     >
-                      Sign Out
-                    </button>,
+                      test-username
+                    </DropdownButton>,
+                    <DropdownMenu
+                      className="dropdown-menu-right"
+                    >
+                      <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>
+                    </DropdownMenu>,
                   ],
-                  "title": "test-username",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "test-username",
+                      "className": "btn-light",
+                    },
+                    "ref": null,
+                    "rendered": "test-username",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>,
+                      "className": "dropdown-menu-right",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "Sign Out",
+                        "className": null,
+                        "onClick": [Function],
+                        "type": "button",
+                      },
+                      "ref": null,
+                      "rendered": "Sign Out",
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
               "type": "div",
