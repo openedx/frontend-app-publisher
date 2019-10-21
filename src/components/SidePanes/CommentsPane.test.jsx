@@ -104,4 +104,16 @@ describe('CommentsPane', () => {
     expect(commentAlert);
     expect(wrapper.state().showEmptyCommentAlert).toEqual(true);
   });
+
+  it('displays status alert on error response', () => {
+    const errorCommentThread = Object.assign(emptyCommentThread, { error: 'TestErrorMessage' });
+
+    const wrapper = shallow(<CommentsPane
+      comments={errorCommentThread}
+      fetchComments={mockFetch}
+    />);
+
+    const commentAlert = wrapper.find(StatusAlert);
+    expect(commentAlert);
+  });
 });

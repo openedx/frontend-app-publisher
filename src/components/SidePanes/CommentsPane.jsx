@@ -28,10 +28,11 @@ class CommentsPane extends React.Component {
 
   componentDidUpdate(prevProps) {
     // Reload the comment thread when a new comment has been added
-    if (prevProps.comments.isCreating && !this.props.comments.isCreating) {
-      this.props.fetchComments(this.props.courseUuid);
+    if (!this.props.comments.error) {
+      if (prevProps.comments.isCreating && !this.props.comments.isCreating) {
+        this.props.fetchComments(this.props.courseUuid);
+      }
     }
-
     // Scroll to the most recent comments on load
     if (prevProps.comments.isFetching && !this.props.comments.isFetching) {
       this.scrollToBottom();
@@ -90,7 +91,7 @@ class CommentsPane extends React.Component {
 
     const showSpinner = comments.isFetching;
     const hasComments = comments.data.length > 0;
-    const showComments = !showSpinner && hasComments && !comments.error;
+    const showComments = !showSpinner && hasComments;
     const commentThread = !comments.isFetching && hasComments
       && this.parseComments(comments.data);
 
@@ -101,6 +102,11 @@ class CommentsPane extends React.Component {
         <div className="scroll-comments mb-1 overflow-auto border-top border-bottom border-light">
           {!hasComments && !showSpinner && <div className="text-muted" >No comments</div>}
           {showComments && commentThread}
+          {!!comments.error && <StatusAlert
+            alertType="danger"
+            message={comments.error}
+            dismissible
+          />}
           <div
             id="endOfCommentThread"
             style={{ float: 'left', clear: 'both' }}
