@@ -32,16 +32,14 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-start"
           >
-            <withDeprecatedProps(Hyperlink)
-              content={
-                <img
-                  alt="edX logo"
-                  height="30"
-                  src="edx-sm.png"
-                  width="60"
-                />
-              }
-            />
+            <withDeprecatedProps(Hyperlink)>
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </withDeprecatedProps(Hyperlink)>
             <span
               className="badge badge-secondary beta"
             >
@@ -61,20 +59,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <t
-              buttonType="light"
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>
       </div>,
@@ -92,16 +94,14 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-start"
           >
-            <withDeprecatedProps(Hyperlink)
-              content={
-                <img
-                  alt="edX logo"
-                  height="30"
-                  src="edx-sm.png"
-                  width="60"
-                />
-              }
-            />
+            <withDeprecatedProps(Hyperlink)>
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </withDeprecatedProps(Hyperlink)>
             <span
               className="badge badge-secondary beta"
             >
@@ -121,20 +121,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <t
-              buttonType="light"
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>,
         "className": "container",
@@ -149,16 +153,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -179,20 +181,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>,
           ],
           "className": "row align-items-center",
@@ -205,16 +211,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <withDeprecatedProps(Hyperlink)
-                  content={
-                    <img
-                      alt="edX logo"
-                      height="30"
-                      src="edx-sm.png"
-                      width="60"
-                    />
-                  }
-                />,
+                <withDeprecatedProps(Hyperlink)>
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                </withDeprecatedProps(Hyperlink)>,
                 <span
                   className="badge badge-secondary beta"
                 >
@@ -230,7 +234,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "content": <img
+                  "children": <img
                     alt="edX logo"
                     height="30"
                     src="edx-sm.png"
@@ -239,7 +243,20 @@ ShallowWrapper {
                   "destination": undefined,
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "edX logo",
+                    "height": "30",
+                    "src": "edx-sm.png",
+                    "width": "60",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
                 "type": [Function],
               },
               Object {
@@ -292,20 +309,24 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />,
+              "children": <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>,
               "className": "col-auto justify-content-end",
             },
             "ref": null,
@@ -314,20 +335,71 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "buttonType": "light",
-                "iconElement": undefined,
-                "menuItems": Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
+                "children": Array [
+                  <DropdownButton
+                    className="btn-light"
                   >
-                    Sign Out
-                  </button>,
+                    test-username
+                  </DropdownButton>,
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>,
                 ],
-                "title": "test-username",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "test-username",
+                    "className": "btn-light",
+                  },
+                  "ref": null,
+                  "rendered": "test-username",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>,
+                    "className": "dropdown-menu-right",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Sign Out",
+                      "className": null,
+                      "onClick": [Function],
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Sign Out",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": "div",
@@ -354,16 +426,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -383,20 +453,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>
         </div>,
@@ -414,16 +488,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -443,20 +515,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>,
           "className": "container",
@@ -471,16 +547,14 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-start"
               >
-                <withDeprecatedProps(Hyperlink)
-                  content={
-                    <img
-                      alt="edX logo"
-                      height="30"
-                      src="edx-sm.png"
-                      width="60"
-                    />
-                  }
-                />
+                <withDeprecatedProps(Hyperlink)>
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                </withDeprecatedProps(Hyperlink)>
                 <span
                   className="badge badge-secondary beta"
                 >
@@ -501,20 +575,24 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-end"
               >
-                <t
-                  buttonType="light"
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />
+                <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>
               </div>,
             ],
             "className": "row align-items-center",
@@ -527,16 +605,14 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <withDeprecatedProps(Hyperlink)
-                    content={
-                      <img
-                        alt="edX logo"
-                        height="30"
-                        src="edx-sm.png"
-                        width="60"
-                      />
-                    }
-                  />,
+                  <withDeprecatedProps(Hyperlink)>
+                    <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />
+                  </withDeprecatedProps(Hyperlink)>,
                   <span
                     className="badge badge-secondary beta"
                   >
@@ -552,7 +628,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "content": <img
+                    "children": <img
                       alt="edX logo"
                       height="30"
                       src="edx-sm.png"
@@ -561,7 +637,20 @@ ShallowWrapper {
                     "destination": undefined,
                   },
                   "ref": null,
-                  "rendered": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "edX logo",
+                      "height": "30",
+                      "src": "edx-sm.png",
+                      "width": "60",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   "type": [Function],
                 },
                 Object {
@@ -614,20 +703,24 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <t
-                  buttonType="light"
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />,
+                "children": <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>,
                 "className": "col-auto justify-content-end",
               },
               "ref": null,
@@ -636,20 +729,71 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "buttonType": "light",
-                  "iconElement": undefined,
-                  "menuItems": Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
+                  "children": Array [
+                    <DropdownButton
+                      className="btn-light"
                     >
-                      Sign Out
-                    </button>,
+                      test-username
+                    </DropdownButton>,
+                    <DropdownMenu
+                      className="dropdown-menu-right"
+                    >
+                      <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>
+                    </DropdownMenu>,
                   ],
-                  "title": "test-username",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "test-username",
+                      "className": "btn-light",
+                    },
+                    "ref": null,
+                    "rendered": "test-username",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>,
+                      "className": "dropdown-menu-right",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "Sign Out",
+                        "className": null,
+                        "onClick": [Function],
+                        "type": "button",
+                      },
+                      "ref": null,
+                      "rendered": "Sign Out",
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
               "type": "div",
@@ -725,16 +869,14 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-start"
           >
-            <withDeprecatedProps(Hyperlink)
-              content={
-                <img
-                  alt="edX logo"
-                  height="30"
-                  src="edx-sm.png"
-                  width="60"
-                />
-              }
-            />
+            <withDeprecatedProps(Hyperlink)>
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </withDeprecatedProps(Hyperlink)>
             <span
               className="badge badge-secondary beta"
             >
@@ -765,20 +907,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <t
-              buttonType="light"
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>
       </div>,
@@ -796,16 +942,14 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-start"
           >
-            <withDeprecatedProps(Hyperlink)
-              content={
-                <img
-                  alt="edX logo"
-                  height="30"
-                  src="edx-sm.png"
-                  width="60"
-                />
-              }
-            />
+            <withDeprecatedProps(Hyperlink)>
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </withDeprecatedProps(Hyperlink)>
             <span
               className="badge badge-secondary beta"
             >
@@ -836,20 +980,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <t
-              buttonType="light"
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>,
         "className": "container",
@@ -864,16 +1012,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -904,20 +1050,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>,
           ],
           "className": "row align-items-center",
@@ -930,16 +1080,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <withDeprecatedProps(Hyperlink)
-                  content={
-                    <img
-                      alt="edX logo"
-                      height="30"
-                      src="edx-sm.png"
-                      width="60"
-                    />
-                  }
-                />,
+                <withDeprecatedProps(Hyperlink)>
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                </withDeprecatedProps(Hyperlink)>,
                 <span
                   className="badge badge-secondary beta"
                 >
@@ -955,7 +1103,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "content": <img
+                  "children": <img
                     alt="edX logo"
                     height="30"
                     src="edx-sm.png"
@@ -964,7 +1112,20 @@ ShallowWrapper {
                   "destination": undefined,
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "edX logo",
+                    "height": "30",
+                    "src": "edx-sm.png",
+                    "width": "60",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
                 "type": [Function],
               },
               Object {
@@ -1052,20 +1213,24 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />,
+              "children": <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>,
               "className": "col-auto justify-content-end",
             },
             "ref": null,
@@ -1074,20 +1239,71 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "buttonType": "light",
-                "iconElement": undefined,
-                "menuItems": Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
+                "children": Array [
+                  <DropdownButton
+                    className="btn-light"
                   >
-                    Sign Out
-                  </button>,
+                    test-username
+                  </DropdownButton>,
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>,
                 ],
-                "title": "test-username",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "test-username",
+                    "className": "btn-light",
+                  },
+                  "ref": null,
+                  "rendered": "test-username",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>,
+                    "className": "dropdown-menu-right",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Sign Out",
+                      "className": null,
+                      "onClick": [Function],
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Sign Out",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": "div",
@@ -1114,16 +1330,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -1154,20 +1368,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>
         </div>,
@@ -1185,16 +1403,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -1225,20 +1441,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>,
           "className": "container",
@@ -1253,16 +1473,14 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-start"
               >
-                <withDeprecatedProps(Hyperlink)
-                  content={
-                    <img
-                      alt="edX logo"
-                      height="30"
-                      src="edx-sm.png"
-                      width="60"
-                    />
-                  }
-                />
+                <withDeprecatedProps(Hyperlink)>
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                </withDeprecatedProps(Hyperlink)>
                 <span
                   className="badge badge-secondary beta"
                 >
@@ -1293,20 +1511,24 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-end"
               >
-                <t
-                  buttonType="light"
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />
+                <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>
               </div>,
             ],
             "className": "row align-items-center",
@@ -1319,16 +1541,14 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <withDeprecatedProps(Hyperlink)
-                    content={
-                      <img
-                        alt="edX logo"
-                        height="30"
-                        src="edx-sm.png"
-                        width="60"
-                      />
-                    }
-                  />,
+                  <withDeprecatedProps(Hyperlink)>
+                    <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />
+                  </withDeprecatedProps(Hyperlink)>,
                   <span
                     className="badge badge-secondary beta"
                   >
@@ -1344,7 +1564,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "content": <img
+                    "children": <img
                       alt="edX logo"
                       height="30"
                       src="edx-sm.png"
@@ -1353,7 +1573,20 @@ ShallowWrapper {
                     "destination": undefined,
                   },
                   "ref": null,
-                  "rendered": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "edX logo",
+                      "height": "30",
+                      "src": "edx-sm.png",
+                      "width": "60",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   "type": [Function],
                 },
                 Object {
@@ -1441,20 +1674,24 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <t
-                  buttonType="light"
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />,
+                "children": <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>,
                 "className": "col-auto justify-content-end",
               },
               "ref": null,
@@ -1463,20 +1700,71 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "buttonType": "light",
-                  "iconElement": undefined,
-                  "menuItems": Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
+                  "children": Array [
+                    <DropdownButton
+                      className="btn-light"
                     >
-                      Sign Out
-                    </button>,
+                      test-username
+                    </DropdownButton>,
+                    <DropdownMenu
+                      className="dropdown-menu-right"
+                    >
+                      <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>
+                    </DropdownMenu>,
                   ],
-                  "title": "test-username",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "test-username",
+                      "className": "btn-light",
+                    },
+                    "ref": null,
+                    "rendered": "test-username",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>,
+                      "className": "dropdown-menu-right",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "Sign Out",
+                        "className": null,
+                        "onClick": [Function],
+                        "type": "button",
+                      },
+                      "ref": null,
+                      "rendered": "Sign Out",
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
               "type": "div",
@@ -1552,16 +1840,14 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-start"
           >
-            <withDeprecatedProps(Hyperlink)
-              content={
-                <img
-                  alt="edX logo"
-                  height="30"
-                  src="edx-sm.png"
-                  width="60"
-                />
-              }
-            />
+            <withDeprecatedProps(Hyperlink)>
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </withDeprecatedProps(Hyperlink)>
             <span
               className="badge badge-secondary beta"
             >
@@ -1592,20 +1878,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <t
-              buttonType="light"
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>
       </div>,
@@ -1623,16 +1913,14 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-start"
           >
-            <withDeprecatedProps(Hyperlink)
-              content={
-                <img
-                  alt="edX logo"
-                  height="30"
-                  src="edx-sm.png"
-                  width="60"
-                />
-              }
-            />
+            <withDeprecatedProps(Hyperlink)>
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </withDeprecatedProps(Hyperlink)>
             <span
               className="badge badge-secondary beta"
             >
@@ -1663,20 +1951,24 @@ ShallowWrapper {
           <div
             className="col-auto justify-content-end"
           >
-            <t
-              buttonType="light"
-              menuItems={
-                Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
-                  >
-                    Sign Out
-                  </button>,
-                ]
-              }
-              title="test-username"
-            />
+            <withDeprecatedProps(Dropdown)>
+              <DropdownButton
+                className="btn-light"
+              >
+                test-username
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <DropdownItem
+                  className={null}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Sign Out
+                </DropdownItem>
+              </DropdownMenu>
+            </withDeprecatedProps(Dropdown)>
           </div>
         </div>,
         "className": "container",
@@ -1691,16 +1983,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -1731,20 +2021,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>,
           ],
           "className": "row align-items-center",
@@ -1757,16 +2051,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <withDeprecatedProps(Hyperlink)
-                  content={
-                    <img
-                      alt="edX logo"
-                      height="30"
-                      src="edx-sm.png"
-                      width="60"
-                    />
-                  }
-                />,
+                <withDeprecatedProps(Hyperlink)>
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                </withDeprecatedProps(Hyperlink)>,
                 <span
                   className="badge badge-secondary beta"
                 >
@@ -1782,7 +2074,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "content": <img
+                  "children": <img
                     alt="edX logo"
                     height="30"
                     src="edx-sm.png"
@@ -1791,7 +2083,20 @@ ShallowWrapper {
                   "destination": undefined,
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "edX logo",
+                    "height": "30",
+                    "src": "edx-sm.png",
+                    "width": "60",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
                 "type": [Function],
               },
               Object {
@@ -1879,20 +2184,24 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />,
+              "children": <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>,
               "className": "col-auto justify-content-end",
             },
             "ref": null,
@@ -1901,20 +2210,71 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "buttonType": "light",
-                "iconElement": undefined,
-                "menuItems": Array [
-                  <button
-                    className="dropdown-button"
-                    onClick={[Function]}
+                "children": Array [
+                  <DropdownButton
+                    className="btn-light"
                   >
-                    Sign Out
-                  </button>,
+                    test-username
+                  </DropdownButton>,
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>,
                 ],
-                "title": "test-username",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "test-username",
+                    "className": "btn-light",
+                  },
+                  "ref": null,
+                  "rendered": "test-username",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>,
+                    "className": "dropdown-menu-right",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Sign Out",
+                      "className": null,
+                      "onClick": [Function],
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Sign Out",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": "div",
@@ -1941,16 +2301,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -1981,20 +2339,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>
         </div>,
@@ -2012,16 +2374,14 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-start"
             >
-              <withDeprecatedProps(Hyperlink)
-                content={
-                  <img
-                    alt="edX logo"
-                    height="30"
-                    src="edx-sm.png"
-                    width="60"
-                  />
-                }
-              />
+              <withDeprecatedProps(Hyperlink)>
+                <img
+                  alt="edX logo"
+                  height="30"
+                  src="edx-sm.png"
+                  width="60"
+                />
+              </withDeprecatedProps(Hyperlink)>
               <span
                 className="badge badge-secondary beta"
               >
@@ -2052,20 +2412,24 @@ ShallowWrapper {
             <div
               className="col-auto justify-content-end"
             >
-              <t
-                buttonType="light"
-                menuItems={
-                  Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
-                    >
-                      Sign Out
-                    </button>,
-                  ]
-                }
-                title="test-username"
-              />
+              <withDeprecatedProps(Dropdown)>
+                <DropdownButton
+                  className="btn-light"
+                >
+                  test-username
+                </DropdownButton>
+                <DropdownMenu
+                  className="dropdown-menu-right"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sign Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </withDeprecatedProps(Dropdown)>
             </div>
           </div>,
           "className": "container",
@@ -2080,16 +2444,14 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-start"
               >
-                <withDeprecatedProps(Hyperlink)
-                  content={
-                    <img
-                      alt="edX logo"
-                      height="30"
-                      src="edx-sm.png"
-                      width="60"
-                    />
-                  }
-                />
+                <withDeprecatedProps(Hyperlink)>
+                  <img
+                    alt="edX logo"
+                    height="30"
+                    src="edx-sm.png"
+                    width="60"
+                  />
+                </withDeprecatedProps(Hyperlink)>
                 <span
                   className="badge badge-secondary beta"
                 >
@@ -2120,20 +2482,24 @@ ShallowWrapper {
               <div
                 className="col-auto justify-content-end"
               >
-                <t
-                  buttonType="light"
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />
+                <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>
               </div>,
             ],
             "className": "row align-items-center",
@@ -2146,16 +2512,14 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <withDeprecatedProps(Hyperlink)
-                    content={
-                      <img
-                        alt="edX logo"
-                        height="30"
-                        src="edx-sm.png"
-                        width="60"
-                      />
-                    }
-                  />,
+                  <withDeprecatedProps(Hyperlink)>
+                    <img
+                      alt="edX logo"
+                      height="30"
+                      src="edx-sm.png"
+                      width="60"
+                    />
+                  </withDeprecatedProps(Hyperlink)>,
                   <span
                     className="badge badge-secondary beta"
                   >
@@ -2171,7 +2535,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "content": <img
+                    "children": <img
                       alt="edX logo"
                       height="30"
                       src="edx-sm.png"
@@ -2180,7 +2544,20 @@ ShallowWrapper {
                     "destination": undefined,
                   },
                   "ref": null,
-                  "rendered": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "edX logo",
+                      "height": "30",
+                      "src": "edx-sm.png",
+                      "width": "60",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   "type": [Function],
                 },
                 Object {
@@ -2268,20 +2645,24 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <t
-                  buttonType="light"
-                  menuItems={
-                    Array [
-                      <button
-                        className="dropdown-button"
-                        onClick={[Function]}
-                      >
-                        Sign Out
-                      </button>,
-                    ]
-                  }
-                  title="test-username"
-                />,
+                "children": <withDeprecatedProps(Dropdown)>
+                  <DropdownButton
+                    className="btn-light"
+                  >
+                    test-username
+                  </DropdownButton>
+                  <DropdownMenu
+                    className="dropdown-menu-right"
+                  >
+                    <DropdownItem
+                      className={null}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Sign Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </withDeprecatedProps(Dropdown)>,
                 "className": "col-auto justify-content-end",
               },
               "ref": null,
@@ -2290,20 +2671,71 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "buttonType": "light",
-                  "iconElement": undefined,
-                  "menuItems": Array [
-                    <button
-                      className="dropdown-button"
-                      onClick={[Function]}
+                  "children": Array [
+                    <DropdownButton
+                      className="btn-light"
                     >
-                      Sign Out
-                    </button>,
+                      test-username
+                    </DropdownButton>,
+                    <DropdownMenu
+                      className="dropdown-menu-right"
+                    >
+                      <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>
+                    </DropdownMenu>,
                   ],
-                  "title": "test-username",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "test-username",
+                      "className": "btn-light",
+                    },
+                    "ref": null,
+                    "rendered": "test-username",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <DropdownItem
+                        className={null}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign Out
+                      </DropdownItem>,
+                      "className": "dropdown-menu-right",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "Sign Out",
+                        "className": null,
+                        "onClick": [Function],
+                        "type": "button",
+                      },
+                      "ref": null,
+                      "rendered": "Sign Out",
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
               "type": "div",
