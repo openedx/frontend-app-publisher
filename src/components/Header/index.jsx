@@ -32,9 +32,7 @@ class Header extends React.Component {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-auto justify-content-start">
-              <Hyperlink destination={process.env.STUDIO_BASE_URL}>
-                {this.renderLogo()}
-              </Hyperlink>
+              <Hyperlink content={this.renderLogo()} destination={process.env.STUDIO_BASE_URL} />
               <span className="badge badge-secondary beta">Beta</span>
             </div>
             <div className="col">
@@ -48,17 +46,16 @@ class Header extends React.Component {
               </div>
             }
             <div className="col-auto justify-content-end">
-              <Dropdown>
-                <Dropdown.Button>{this.props.username}</Dropdown.Button>
-                <Dropdown.Menu className="dropdown-menu-right">
-                  <Dropdown.Item
-                    type="button"
+              <Dropdown
+                title={this.props.username}
+                menuItems={[
+                  <button
+                    className="dropdown-button"
                     onClick={() => apiClient.logout(process.env.STUDIO_BASE_URL)}
-                  >
-                    Sign Out
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+                  >Sign Out
+                  </button>,
+                ]}
+              />
             </div>
           </div>
         </div>
