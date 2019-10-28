@@ -33,6 +33,7 @@ const publishedCourseRun = {
   status: 'published',
   key: 'edX101+DemoX',
   has_ofac_restrictions: false,
+  seats: [],
 };
 
 const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'unpublished' });
@@ -110,6 +111,37 @@ describe('Collapsible Course Run', () => {
     childFields.forEach((field) => {
       expect(field.prop('disabled')).toBeTrue();
     });
+  });
+
+  it('renders with run type disabled once a sku exists', () => {
+    const seat = {
+      type: 'verified',
+      price: '149.00',
+      sku: '',
+    };
+    const updatedCourseRun = Object.assign({}, publishedCourseRun, { seats: [seat] });
+    const componentNoSku = shallow(<CollapsibleCourseRun
+      languageOptions={[]}
+      pacingTypeOptions={[]}
+      courseRun={updatedCourseRun}
+      courseId="test-course"
+      courseUuid="11111111-1111-1111-1111-111111111111"
+    />);
+
+    let disabledFields = componentNoSku.find({ disabled: true });
+    expect(disabledFields.length === 0);
+
+    updatedCourseRun.seats[0].sku = 'ABCDEF';
+    const componentWithSku = shallow(<CollapsibleCourseRun
+      languageOptions={[]}
+      pacingTypeOptions={[]}
+      courseRun={updatedCourseRun}
+      courseId="test-course"
+      courseUuid="11111111-1111-1111-1111-111111111111"
+    />);
+
+    disabledFields = componentWithSku.find({ disabled: true });
+    expect(disabledFields.length === 1);
   });
 
   it('handles submission when called from a course run', () => {

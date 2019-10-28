@@ -4,7 +4,7 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
-import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS } from '../data/constants';
+import { AUDIT_TRACK, COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS } from '../data/constants';
 
 const getDateWithDashes = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment.utc(date).format('YYYY/MM/DD') : '');
@@ -155,6 +155,43 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
   });
 };
 
+const parseOptions = inChoices => inChoices.map(choice =>
+  ({ label: choice.display_name, value: choice.value }));
+
+const getOptionsData = (options) => {
+  if (!options) {
+    return [];
+  }
+  const { data } = options;
+  if (!data || !data.actions) {
+    return [];
+  }
+  return data.actions.POST;
+};
+
+const parseCourseTypeOptions = (typeOptions) => {
+  const courseRunTypeOptions = {};
+  const entitlementUUIDS = [];
+  const courseTypeOptions = [{ label: 'Select enrollment track', value: '' }].concat(typeOptions.map((type) => {
+    courseRunTypeOptions[type.uuid] = [{ label: 'Select enrollment track', value: '' }].concat(type.course_run_types.map(courseRunType => (
+      { label: courseRunType.name, value: courseRunType.uuid }
+    )));
+    // This should be changed to remove the part about AUDIT_TRACK once we stop
+    // creating draft Audit entitlements. Right now, this is used to decide if we
+    // show the price on the course create/edit form.
+    if (type.entitlement_types.length && !(type.entitlement_types.length === 1 &&
+            type.entitlement_types[0] === AUDIT_TRACK.key)) {
+      entitlementUUIDS.push(type.uuid);
+    }
+    return { label: type.name, value: type.uuid };
+  }));
+  return {
+    entitlementUUIDS,
+    courseRunTypeOptions,
+    courseTypeOptions,
+  };
+};
+
 export {
   courseRunIsArchived,
   getDateWithDashes,
@@ -172,4 +209,7 @@ export {
   isSafari,
   isNonExemptChanged,
   isPristine,
+  parseOptions,
+  getOptionsData,
+  parseCourseTypeOptions,
 };

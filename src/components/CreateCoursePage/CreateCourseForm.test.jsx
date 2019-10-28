@@ -2,28 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { BaseCreateCourseForm } from './CreateCourseForm';
+import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 const organizations = [
   { name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' },
 ];
-
-const courseRunOptionsReturn = {
-  pacing_type: {
-    type: 'choice',
-    required: false,
-    read_only: false,
-    label: 'Pacing type',
-    choices: [{
-      display_name: 'Instructor-paced',
-      value: 'instructor_paced',
-    }, {
-      display_name: 'Self-paced',
-      value: 'self_paced',
-    }],
-  },
-};
-const parseOptionsReturn = [{ label: 'Instructor-paced', value: 'instructor_paced' },
-  { label: 'Self-paced', value: 'self_paced' }];
 
 Date.now = jest.fn(() => new Date(Date.UTC(2001, 0, 1)).valueOf());
 
@@ -33,6 +16,7 @@ describe('CreateCourseForm', () => {
     title: 'Hello',
     number: 'edx101',
     enrollmentTrack: 'verified',
+    type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
     price: 100.00,
   };
 
@@ -41,8 +25,8 @@ describe('CreateCourseForm', () => {
       handleSubmit={() => {}}
       initialValues={{}}
       organizations={organizations}
-      getCourseRunOptions={() => courseRunOptionsReturn}
-      parseOptions={() => parseOptionsReturn}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -53,8 +37,21 @@ describe('CreateCourseForm', () => {
       initialValues={initialValues}
       currentFormValues={initialValues}
       organizations={organizations}
-      getCourseRunOptions={() => courseRunOptionsReturn}
-      parseOptions={() => parseOptionsReturn}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders html correctly with data and using Course Type', () => {
+    const component = shallow(<BaseCreateCourseForm
+      handleSubmit={() => {}}
+      initialValues={initialValues}
+      currentFormValues={initialValues}
+      organizations={organizations}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      usingCourseType
     />);
     expect(component).toMatchSnapshot();
   });
@@ -68,8 +65,8 @@ describe('CreateCourseForm', () => {
       initialValues={{}}
       currentFormValues={initialValues}
       organizations={organizations}
-      getCourseRunOptions={() => courseRunOptionsReturn}
-      parseOptions={() => parseOptionsReturn}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
     />);
     expect(component).toMatchSnapshot();
   });

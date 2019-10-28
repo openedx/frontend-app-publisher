@@ -24,6 +24,7 @@ import {
 } from '../../data/constants';
 import { enrollmentHelp, titleHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
+import { getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 import store from '../../data/store';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 
@@ -99,22 +100,6 @@ export class BaseEditCourseForm extends React.Component {
     ];
   }
 
-  getCourseOptions() {
-    const { courseOptions } = this.props;
-
-    if (!courseOptions) {
-      return [];
-    }
-
-    const { data } = courseOptions;
-
-    if (!data || !data.actions) {
-      return [];
-    }
-
-    return data.actions.POST;
-  }
-
   getAddCourseRunButton(disabled, pristine, uuid) {
     /** Disabling a Link is discouraged and disabling a button within a link results
      * in a Disabled button with a link that will still underline on hover.
@@ -144,22 +129,6 @@ export class BaseEditCourseForm extends React.Component {
     return buttonWrapper;
   }
 
-  getCourseRunOptions() {
-    const { courseRunOptions } = this.props;
-
-    if (!courseRunOptions) {
-      return [];
-    }
-
-    const { data } = courseRunOptions;
-
-    if (!data || !data.actions) {
-      return [];
-    }
-
-    return data.actions.POST;
-  }
-
   toggleCourseRun(index, value) {
     const collapsiblesOpen = Object.assign([], this.state.collapsiblesOpen);
     collapsiblesOpen[index] = value;
@@ -173,10 +142,6 @@ export class BaseEditCourseForm extends React.Component {
 
   openCollapsible() {
     this.setCollapsible(true);
-  }
-
-  parseOptions(choices) {
-    return choices.map(choice => ({ label: choice.display_name, value: choice.value }));
   }
 
   formatCourseTitle(title, courseStatuses) {
@@ -203,6 +168,7 @@ export class BaseEditCourseForm extends React.Component {
       title,
       pristine,
       uuid,
+      type,
       courseInReview,
       courseStatuses,
       id,
@@ -210,23 +176,35 @@ export class BaseEditCourseForm extends React.Component {
       editable,
       courseInfo,
       reset,
+      courseOptions,
+      courseRunOptions,
     } = this.props;
     const {
       open,
     } = this.state;
 
-    const courseOptions = this.getCourseOptions();
-    const courseRunOptions = this.getCourseRunOptions();
-    const levelTypeOptions = courseOptions && this.parseOptions(courseOptions.level_type.choices);
-    const ofacRestrictionOptions = (courseRunOptions && courseRunOptions.has_ofac_restrictions &&
-      this.parseOptions(courseRunOptions.has_ofac_restrictions.choices));
-    const subjectOptions = courseOptions && this.parseOptions(courseOptions.subjects.child.choices);
-    const pacingTypeOptions = (courseRunOptions &&
-      this.parseOptions(courseRunOptions.pacing_type.choices));
-    const languageOptions = (courseRunOptions &&
-      this.parseOptions(courseRunOptions.content_language.choices));
-    const programOptions = (courseRunOptions &&
-      this.parseOptions(courseRunOptions.expected_program_type.choices));
+    const courseOptionsData = getOptionsData(courseOptions);
+    const courseRunOptionsData = getOptionsData(courseRunOptions);
+    const levelTypeOptions = courseOptionsData &&
+      parseOptions(courseOptionsData.level_type.choices);
+    const ofacRestrictionOptions = (courseRunOptionsData &&
+      courseRunOptionsData.has_ofac_restrictions &&
+      parseOptions(courseRunOptionsData.has_ofac_restrictions.choices));
+    const subjectOptions = courseOptionsData &&
+      parseOptions(courseOptionsData.subjects.child.choices);
+    const pacingTypeOptions = (courseRunOptionsData &&
+      parseOptions(courseRunOptionsData.pacing_type.choices));
+    const languageOptions = (courseRunOptionsData &&
+      parseOptions(courseRunOptionsData.content_language.choices));
+    const programOptions = (courseRunOptionsData &&
+      parseOptions(courseRunOptionsData.expected_program_type.choices));
+    const parsedTypeOptions = courseOptionsData &&
+      parseCourseTypeOptions(courseOptionsData.type.type_options);
+    const {
+      courseTypeOptions,
+      courseRunTypeOptions,
+      entitlementUUIDS,
+    } = parsedTypeOptions;
 
     const disabled = courseInReview || !editable;
 
@@ -302,35 +280,74 @@ export class BaseEditCourseForm extends React.Component {
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
             </div>
-            <Field
-              name="mode"
-              component={RenderSelectField}
-              label={
-                <FieldLabel
-                  id="mode.label"
-                  text="Enrollment track"
-                  helpText={enrollmentHelp}
-                  extraText="Cannot edit after submission"
+            {type ? (
+              <React.Fragment>
+                <Field
+                  name="type"
+                  component={RenderSelectField}
+                  options={courseTypeOptions}
+                  label={
+                    <FieldLabel
+                      id="type.label"
+                      text="Course Type TODO"
+                      helpText={(<div><p>TODO: Come up with type text AND helpText</p></div>)}
+                      extraText="Cannot edit after submission"
+                    />
+                  }
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  disabled={disabled || !!entitlement.sku}
                 />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              options={this.getEnrollmentTrackOptions()}
-              disabled={disabled || !!entitlement.sku}
-            />
-            {ENTITLEMENT_TRACKS.includes(currentFormValues.mode) && <Field
-              name="price"
-              component={RenderInputTextField}
-              type="number"
-              label={<FieldLabel text="Price" />}
-              extraInput={{
-                onInvalid: this.openCollapsible,
-                min: 1.00,
-                step: 0.01,
-                max: 10000.00,
-              }}
-              disabled={disabled}
-              required={isSubmittingForReview}
-            />}
+                {entitlementUUIDS.includes(currentFormValues.type) &&
+                  <Field
+                    name="price"
+                    component={RenderInputTextField}
+                    type="number"
+                    label={<FieldLabel text="Price (USD)" />}
+                    extraInput={{
+                      onInvalid: this.openCollapsible,
+                      min: 1.00,
+                      step: 0.01,
+                      max: 10000.00,
+                    }}
+                    disabled={disabled}
+                    required={isSubmittingForReview}
+                  />
+                }
+              </React.Fragment>) : (
+                <React.Fragment>
+                  <Field
+                    name="mode"
+                    component={RenderSelectField}
+                    label={
+                      <FieldLabel
+                        id="mode.label"
+                        text="Enrollment track"
+                        helpText={enrollmentHelp}
+                        extraText="Cannot edit after submission"
+                      />
+                  }
+                    extraInput={{ onInvalid: this.openCollapsible }}
+                    options={this.getEnrollmentTrackOptions()}
+                    disabled={disabled || !!entitlement.sku}
+                  />
+                  {ENTITLEMENT_TRACKS.includes(currentFormValues.mode) &&
+                    <Field
+                      name="price"
+                      component={RenderInputTextField}
+                      type="number"
+                      label={<FieldLabel text="Price (USD)" />}
+                      extraInput={{
+                        onInvalid: this.openCollapsible,
+                        min: 1.00,
+                        step: 0.01,
+                        max: 10000.00,
+                      }}
+                      disabled={disabled}
+                      required={isSubmittingForReview}
+                    />
+                  }
+                </React.Fragment>)
+            }
             <Field
               name="imageSrc"
               component={ImageUpload}
@@ -664,84 +681,88 @@ export class BaseEditCourseForm extends React.Component {
               id="faq"
               disabled={disabled}
             />
-            {administrator && <Field
-              name="additional_information"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="additional-info.label"
-                  text="Additional information"
-                  helpText={
-                    <div>
-                      <p>Any additional information to be provided to learners.</p>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={2500}
-              id="additional-information"
-              disabled={disabled}
-            />}
-            {administrator && <Field
-              name="videoSrc"
-              component={RenderInputTextField}
-              type="url"
-              label={
-                <FieldLabel
-                  id="video.label"
-                  text="About video link"
-                  helpText={
-                    <div>
-                      <p>
-                        The About video should excite and entice potential students to take your
-                        course. Think of it as a movie trailer or TV show promotion. The video
-                        should be compelling, and exhibit the instructor’s personality.
-                      </p>
-                      <p>
-                        The ideal length is 30–90 seconds (learners typically watch an average
-                        of 30 seconds).
-                      </p>
-                      <p>
-                        The About video should be produced and edited, using elements such as
-                        graphics and stock footage.
-                      </p>
-                      <p>The About video should answer these key questions.</p>
-                      <ul>
-                        <li>Why should a learner register?</li>
-                        <li>What topics and concepts are covered?</li>
-                        <li>Who is teaching the course?</li>
-                        <li>What institution is delivering the course?</li>
-                      </ul>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p>
-                        <span>Visit</span>
-                        <a
-                          href="www.youtube.com/user/EdXOnline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          edX’s YouTube channel
-                        </a>
-                        <span>for examples of other About videos.</span>
-                      </p>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              disabled={disabled}
-            />}
+            {administrator &&
+              <Field
+                name="additional_information"
+                component={RichEditor}
+                label={
+                  <FieldLabel
+                    id="additional-info.label"
+                    text="Additional information"
+                    helpText={
+                      <div>
+                        <p>Any additional information to be provided to learners.</p>
+                      </div>
+                    }
+                    optional
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={2500}
+                id="additional-information"
+                disabled={disabled}
+              />
+            }
+            {administrator &&
+              <Field
+                name="videoSrc"
+                component={RenderInputTextField}
+                type="url"
+                label={
+                  <FieldLabel
+                    id="video.label"
+                    text="About video link"
+                    helpText={
+                      <div>
+                        <p>
+                          The About video should excite and entice potential students to take your
+                          course. Think of it as a movie trailer or TV show promotion. The video
+                          should be compelling, and exhibit the instructor’s personality.
+                        </p>
+                        <p>
+                          The ideal length is 30–90 seconds (learners typically watch an average
+                          of 30 seconds).
+                        </p>
+                        <p>
+                          The About video should be produced and edited, using elements such as
+                          graphics and stock footage.
+                        </p>
+                        <p>The About video should answer these key questions.</p>
+                        <ul>
+                          <li>Why should a learner register?</li>
+                          <li>What topics and concepts are covered?</li>
+                          <li>Who is teaching the course?</li>
+                          <li>What institution is delivering the course?</li>
+                        </ul>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p>
+                          <span>Visit</span>
+                          <a
+                            href="www.youtube.com/user/EdXOnline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            edX’s YouTube channel
+                          </a>
+                          <span>for examples of other About videos.</span>
+                        </p>
+                      </div>
+                    }
+                    optional
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                disabled={disabled}
+              />
+            }
             <hr />
             <Field
               name="level_type"
@@ -844,6 +865,7 @@ export class BaseEditCourseForm extends React.Component {
             courseSubmitting={submitting}
             collapsiblesOpen={this.state.collapsiblesOpen}
             onToggle={(index, value) => this.toggleCourseRun(index, value)}
+            courseRunTypeOptions={courseRunTypeOptions}
             {...this.props}
             validate={() => {}} // override method from our props, we don't want to pass it down
           />
@@ -918,6 +940,7 @@ BaseEditCourseForm.propTypes = {
   change: PropTypes.func,
   updateFormValuesAfterSave: PropTypes.func,
   reset: PropTypes.func.isRequired,
+  type: PropTypes.string,
 };
 
 BaseEditCourseForm.defaultProps = {
@@ -938,6 +961,7 @@ BaseEditCourseForm.defaultProps = {
     course_runs: [],
     imageSrc: '',
   },
+  type: '',
   change: () => null,
   updateFormValuesAfterSave: () => null,
 };
