@@ -33,6 +33,7 @@ ShallowWrapper {
       ]
     }
     error={null}
+    fetchEditorFilterOptions={[Function]}
     fetchMethod={[Function]}
     formatData={[Function]}
     id="test"
@@ -102,29 +103,8 @@ ShallowWrapper {
                 ]
               }
               defaultSortDirection="asc"
-              defaultSortedColumn="col1"
-              id="test"
+              defaultSortedColumn="key"
               tableSortable={true}
-            />
-          </div>
-          <div
-            className="mt-2 d-flex justify-content-center"
-          >
-            <t
-              buttonLabels={
-                Object {
-                  "currentPage": "Current Page",
-                  "next": "Next",
-                  "page": "Page",
-                  "pageOfCount": "of",
-                  "previous": "Previous",
-                }
-              }
-              currentPage={1}
-              maxPagesDisplayed={7}
-              onPageSelect={[Function]}
-              pageCount={1}
-              paginationLabel="test-pagination"
             />
           </div>
         </div>,
@@ -176,31 +156,11 @@ ShallowWrapper {
                   ]
                 }
                 defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortedColumn="key"
                 tableSortable={true}
               />
             </div>,
-            <div
-              className="mt-2 d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
-              />
-            </div>,
+            false,
           ],
           "className": "test",
         },
@@ -243,8 +203,7 @@ ShallowWrapper {
                   ]
                 }
                 defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortedColumn="key"
                 tableSortable={true}
               />,
               "className": "table-responsive",
@@ -281,8 +240,7 @@ ShallowWrapper {
                   },
                 ],
                 "defaultSortDirection": "asc",
-                "defaultSortedColumn": "col1",
-                "id": "test",
+                "defaultSortedColumn": "key",
                 "tableSortable": true,
               },
               "ref": null,
@@ -291,55 +249,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
-              />,
-              "className": "mt-2 d-flex justify-content-center",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "buttonLabels": Object {
-                  "currentPage": "Current Page",
-                  "next": "Next",
-                  "page": "Page",
-                  "pageOfCount": "of",
-                  "previous": "Previous",
-                },
-                "className": undefined,
-                "currentPage": 1,
-                "maxPagesDisplayed": 7,
-                "onPageSelect": [Function],
-                "pageCount": 1,
-                "paginationLabel": "test-pagination",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": "div",
-          },
+          false,
         ],
         "type": "div",
       },
@@ -393,29 +303,8 @@ ShallowWrapper {
                   ]
                 }
                 defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortedColumn="key"
                 tableSortable={true}
-              />
-            </div>
-            <div
-              className="mt-2 d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
               />
             </div>
           </div>,
@@ -467,31 +356,11 @@ ShallowWrapper {
                     ]
                   }
                   defaultSortDirection="asc"
-                  defaultSortedColumn="col1"
-                  id="test"
+                  defaultSortedColumn="key"
                   tableSortable={true}
                 />
               </div>,
-              <div
-                className="mt-2 d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  pageCount={1}
-                  paginationLabel="test-pagination"
-                />
-              </div>,
+              false,
             ],
             "className": "test",
           },
@@ -534,8 +403,7 @@ ShallowWrapper {
                     ]
                   }
                   defaultSortDirection="asc"
-                  defaultSortedColumn="col1"
-                  id="test"
+                  defaultSortedColumn="key"
                   tableSortable={true}
                 />,
                 "className": "table-responsive",
@@ -572,8 +440,7 @@ ShallowWrapper {
                     },
                   ],
                   "defaultSortDirection": "asc",
-                  "defaultSortedColumn": "col1",
-                  "id": "test",
+                  "defaultSortedColumn": "key",
                   "tableSortable": true,
                 },
                 "ref": null,
@@ -582,55 +449,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  pageCount={1}
-                  paginationLabel="test-pagination"
-                />,
-                "className": "mt-2 d-flex justify-content-center",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "buttonLabels": Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  },
-                  "className": undefined,
-                  "currentPage": 1,
-                  "maxPagesDisplayed": 7,
-                  "onPageSelect": [Function],
-                  "pageCount": 1,
-                  "paginationLabel": "test-pagination",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": "div",
-            },
+            false,
           ],
           "type": "div",
         },
@@ -698,6 +517,7 @@ ShallowWrapper {
       ]
     }
     error={null}
+    fetchEditorFilterOptions={[Function]}
     fetchMethod={[Function]}
     formatData={[Function]}
     id="test"
@@ -766,30 +586,9 @@ ShallowWrapper {
                   },
                 ]
               }
-              defaultSortDirection="asc"
-              defaultSortedColumn="col1"
-              id="test"
+              defaultSortDirection="desc"
+              defaultSortedColumn="key"
               tableSortable={true}
-            />
-          </div>
-          <div
-            className="mt-2 d-flex justify-content-center"
-          >
-            <t
-              buttonLabels={
-                Object {
-                  "currentPage": "Current Page",
-                  "next": "Next",
-                  "page": "Page",
-                  "pageOfCount": "of",
-                  "previous": "Previous",
-                }
-              }
-              currentPage={1}
-              maxPagesDisplayed={7}
-              onPageSelect={[Function]}
-              pageCount={1}
-              paginationLabel="test-pagination"
             />
           </div>
         </div>,
@@ -840,32 +639,12 @@ ShallowWrapper {
                     },
                   ]
                 }
-                defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortDirection="desc"
+                defaultSortedColumn="key"
                 tableSortable={true}
               />
             </div>,
-            <div
-              className="mt-2 d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
-              />
-            </div>,
+            false,
           ],
           "className": "test",
         },
@@ -907,9 +686,8 @@ ShallowWrapper {
                     },
                   ]
                 }
-                defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortDirection="desc"
+                defaultSortedColumn="key"
                 tableSortable={true}
               />,
               "className": "table-responsive",
@@ -945,9 +723,8 @@ ShallowWrapper {
                     "col2": "Test22",
                   },
                 ],
-                "defaultSortDirection": "asc",
-                "defaultSortedColumn": "col1",
-                "id": "test",
+                "defaultSortDirection": "desc",
+                "defaultSortedColumn": "key",
                 "tableSortable": true,
               },
               "ref": null,
@@ -956,55 +733,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
-              />,
-              "className": "mt-2 d-flex justify-content-center",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "buttonLabels": Object {
-                  "currentPage": "Current Page",
-                  "next": "Next",
-                  "page": "Page",
-                  "pageOfCount": "of",
-                  "previous": "Previous",
-                },
-                "className": undefined,
-                "currentPage": 1,
-                "maxPagesDisplayed": 7,
-                "onPageSelect": [Function],
-                "pageCount": 1,
-                "paginationLabel": "test-pagination",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": "div",
-          },
+          false,
         ],
         "type": "div",
       },
@@ -1057,30 +786,9 @@ ShallowWrapper {
                     },
                   ]
                 }
-                defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortDirection="desc"
+                defaultSortedColumn="key"
                 tableSortable={true}
-              />
-            </div>
-            <div
-              className="mt-2 d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
               />
             </div>
           </div>,
@@ -1131,32 +839,12 @@ ShallowWrapper {
                       },
                     ]
                   }
-                  defaultSortDirection="asc"
-                  defaultSortedColumn="col1"
-                  id="test"
+                  defaultSortDirection="desc"
+                  defaultSortedColumn="key"
                   tableSortable={true}
                 />
               </div>,
-              <div
-                className="mt-2 d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  pageCount={1}
-                  paginationLabel="test-pagination"
-                />
-              </div>,
+              false,
             ],
             "className": "test",
           },
@@ -1198,9 +886,8 @@ ShallowWrapper {
                       },
                     ]
                   }
-                  defaultSortDirection="asc"
-                  defaultSortedColumn="col1"
-                  id="test"
+                  defaultSortDirection="desc"
+                  defaultSortedColumn="key"
                   tableSortable={true}
                 />,
                 "className": "table-responsive",
@@ -1236,9 +923,8 @@ ShallowWrapper {
                       "col2": "Test22",
                     },
                   ],
-                  "defaultSortDirection": "asc",
-                  "defaultSortedColumn": "col1",
-                  "id": "test",
+                  "defaultSortDirection": "desc",
+                  "defaultSortedColumn": "key",
                   "tableSortable": true,
                 },
                 "ref": null,
@@ -1247,55 +933,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  pageCount={1}
-                  paginationLabel="test-pagination"
-                />,
-                "className": "mt-2 d-flex justify-content-center",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "buttonLabels": Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  },
-                  "className": undefined,
-                  "currentPage": 1,
-                  "maxPagesDisplayed": 7,
-                  "onPageSelect": [Function],
-                  "pageCount": 1,
-                  "paginationLabel": "test-pagination",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": "div",
-            },
+            false,
           ],
           "type": "div",
         },
@@ -1363,6 +1001,7 @@ ShallowWrapper {
       ]
     }
     error={null}
+    fetchEditorFilterOptions={[Function]}
     fetchMethod={[Function]}
     formatData={[Function]}
     id="test"
@@ -1432,29 +1071,8 @@ ShallowWrapper {
                 ]
               }
               defaultSortDirection="asc"
-              defaultSortedColumn="col1"
-              id="test"
+              defaultSortedColumn="key"
               tableSortable={true}
-            />
-          </div>
-          <div
-            className="mt-2 d-flex justify-content-center"
-          >
-            <t
-              buttonLabels={
-                Object {
-                  "currentPage": "Current Page",
-                  "next": "Next",
-                  "page": "Page",
-                  "pageOfCount": "of",
-                  "previous": "Previous",
-                }
-              }
-              currentPage={1}
-              maxPagesDisplayed={7}
-              onPageSelect={[Function]}
-              pageCount={1}
-              paginationLabel="test-pagination"
             />
           </div>
         </div>,
@@ -1506,31 +1124,11 @@ ShallowWrapper {
                   ]
                 }
                 defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortedColumn="key"
                 tableSortable={true}
               />
             </div>,
-            <div
-              className="mt-2 d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
-              />
-            </div>,
+            false,
           ],
           "className": "test",
         },
@@ -1573,8 +1171,7 @@ ShallowWrapper {
                   ]
                 }
                 defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortedColumn="key"
                 tableSortable={true}
               />,
               "className": "table-responsive",
@@ -1611,8 +1208,7 @@ ShallowWrapper {
                   },
                 ],
                 "defaultSortDirection": "asc",
-                "defaultSortedColumn": "col1",
-                "id": "test",
+                "defaultSortedColumn": "key",
                 "tableSortable": true,
               },
               "ref": null,
@@ -1621,55 +1217,7 @@ ShallowWrapper {
             },
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
-              />,
-              "className": "mt-2 d-flex justify-content-center",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "buttonLabels": Object {
-                  "currentPage": "Current Page",
-                  "next": "Next",
-                  "page": "Page",
-                  "pageOfCount": "of",
-                  "previous": "Previous",
-                },
-                "className": undefined,
-                "currentPage": 1,
-                "maxPagesDisplayed": 7,
-                "onPageSelect": [Function],
-                "pageCount": 1,
-                "paginationLabel": "test-pagination",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": "div",
-          },
+          false,
         ],
         "type": "div",
       },
@@ -1723,29 +1271,8 @@ ShallowWrapper {
                   ]
                 }
                 defaultSortDirection="asc"
-                defaultSortedColumn="col1"
-                id="test"
+                defaultSortedColumn="key"
                 tableSortable={true}
-              />
-            </div>
-            <div
-              className="mt-2 d-flex justify-content-center"
-            >
-              <t
-                buttonLabels={
-                  Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  }
-                }
-                currentPage={1}
-                maxPagesDisplayed={7}
-                onPageSelect={[Function]}
-                pageCount={1}
-                paginationLabel="test-pagination"
               />
             </div>
           </div>,
@@ -1797,31 +1324,11 @@ ShallowWrapper {
                     ]
                   }
                   defaultSortDirection="asc"
-                  defaultSortedColumn="col1"
-                  id="test"
+                  defaultSortedColumn="key"
                   tableSortable={true}
                 />
               </div>,
-              <div
-                className="mt-2 d-flex justify-content-center"
-              >
-                <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  pageCount={1}
-                  paginationLabel="test-pagination"
-                />
-              </div>,
+              false,
             ],
             "className": "test",
           },
@@ -1864,8 +1371,7 @@ ShallowWrapper {
                     ]
                   }
                   defaultSortDirection="asc"
-                  defaultSortedColumn="col1"
-                  id="test"
+                  defaultSortedColumn="key"
                   tableSortable={true}
                 />,
                 "className": "table-responsive",
@@ -1902,8 +1408,7 @@ ShallowWrapper {
                     },
                   ],
                   "defaultSortDirection": "asc",
-                  "defaultSortedColumn": "col1",
-                  "id": "test",
+                  "defaultSortedColumn": "key",
                   "tableSortable": true,
                 },
                 "ref": null,
@@ -1912,55 +1417,7 @@ ShallowWrapper {
               },
               "type": "div",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <t
-                  buttonLabels={
-                    Object {
-                      "currentPage": "Current Page",
-                      "next": "Next",
-                      "page": "Page",
-                      "pageOfCount": "of",
-                      "previous": "Previous",
-                    }
-                  }
-                  currentPage={1}
-                  maxPagesDisplayed={7}
-                  onPageSelect={[Function]}
-                  pageCount={1}
-                  paginationLabel="test-pagination"
-                />,
-                "className": "mt-2 d-flex justify-content-center",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "buttonLabels": Object {
-                    "currentPage": "Current Page",
-                    "next": "Next",
-                    "page": "Page",
-                    "pageOfCount": "of",
-                    "previous": "Previous",
-                  },
-                  "className": undefined,
-                  "currentPage": 1,
-                  "maxPagesDisplayed": 7,
-                  "onPageSelect": [Function],
-                  "pageCount": 1,
-                  "paginationLabel": "test-pagination",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": "div",
-            },
+            false,
           ],
           "type": "div",
         },
@@ -2016,6 +1473,7 @@ ShallowWrapper {
       ]
     }
     error={null}
+    fetchEditorFilterOptions={[Function]}
     fetchMethod={[Function]}
     formatData={[Function]}
     id="test"
@@ -2132,6 +1590,7 @@ ShallowWrapper {
     }
     data={Array []}
     error={null}
+    fetchEditorFilterOptions={[Function]}
     fetchMethod={[Function]}
     formatData={[Function]}
     id="test"
@@ -2311,6 +1770,7 @@ ShallowWrapper {
       ]
     }
     error={[Error: Test error]}
+    fetchEditorFilterOptions={[Function]}
     fetchMethod={[Function]}
     formatData={[Function]}
     id="test"
@@ -2506,6 +1966,7 @@ ShallowWrapper {
       ]
     }
     error={null}
+    fetchEditorFilterOptions={[Function]}
     fetchMethod={[Function]}
     formatData={[Function]}
     id="test"

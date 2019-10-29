@@ -6,6 +6,7 @@ import { fetchOrganizations } from '../../data/actions/publisherUserInfo';
 const mapStateToProps = state => ({
   authentication: state.authentication,
   publisherUserInfo: state.publisherUserInfo,
+  editorFilterOptions: state.table.editorFilterOptions,
 });
 
 const mapDispatchToProps = {

@@ -4,7 +4,9 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
+
 import { AUDIT_TRACK, COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS } from '../data/constants';
+import { PAGE_SIZE } from '../data/constants/table';
 
 const getDateWithDashes = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment.utc(date).format('YYYY/MM/DD') : '');
@@ -53,10 +55,12 @@ const getPageOptionsFromUrl = () => {
   // TODO: this will not support multiple tables paging on a single page. Will need to prefix url
   // params with table id (or some other mechanism) if this becomes a feature requirement
   const defaults = {
-    pageSize: 50,
+    pageSize: PAGE_SIZE,
     page: 1,
     ordering: undefined,
     filter: undefined,
+    editors: undefined,
+    course_run_statuses: undefined,
   };
   const query = qs.parse(window.location.search);
   return {
@@ -64,6 +68,8 @@ const getPageOptionsFromUrl = () => {
     page: parseInt(query.page, 10) || defaults.page,
     ordering: query.ordering || defaults.ordering,
     pubq: query.filter || defaults.filter,
+    editors: query.editors || defaults.editors,
+    course_run_statuses: query.course_run_statuses || defaults.course_run_statuses,
   };
 };
 

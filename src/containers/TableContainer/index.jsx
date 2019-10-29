@@ -2,32 +2,36 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import TableComponent from '../../components/TableComponent';
-import { paginateTable, sortTable, filterTable, clearTable } from '../../data/actions/table';
+import { paginateTable, sortTable, fetchEditorFilterOptions, filterTable, clearTable } from '../../data/actions/table';
+import { PAGE_SIZE } from '../../data/constants/table';
 
-const mapStateToProps = (state, ownProps) => {
-  const tableState = state.table[ownProps.id] || {};
+const mapStateToProps = (state) => {
+  const tableState = state.table || {};
   return {
     data: tableState.data && tableState.data.results,
-    currentPage: tableState.data && tableState.page,
-    pageCount: (tableState.data && Math.ceil(tableState.data.count / tableState.pageSize)) || 1,
-    ordering: tableState.ordering,
+    pageCount: (tableState.data && Math.ceil(tableState.data.count / PAGE_SIZE)) || 1,
     loading: tableState.loading,
     error: tableState.error,
+    editorFilterOptions: tableState.editorFilterOptions,
+    editorFilterOptionsError: tableState.editorFilterOptionsError,
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
   paginateTable: (pageNumber) => {
-    dispatch(paginateTable(ownProps.id, ownProps.fetchMethod, pageNumber));
+    dispatch(paginateTable(pageNumber));
   },
   sortTable: (ordering) => {
-    dispatch(sortTable(ownProps.id, ownProps.fetchMethod, ordering));
+    dispatch(sortTable(ordering));
   },
   filterTable: (filter) => {
-    dispatch(filterTable(ownProps.id, ownProps.fetchMethod, filter));
+    dispatch(filterTable(filter));
   },
   clearTable: () => {
-    dispatch(clearTable(ownProps.id));
+    dispatch(clearTable());
+  },
+  fetchEditorFilterOptions: () => {
+    dispatch(fetchEditorFilterOptions());
   },
 });
 

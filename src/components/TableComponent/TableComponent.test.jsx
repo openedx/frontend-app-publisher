@@ -43,6 +43,7 @@ describe('CourseTable', () => {
       sortTable={() => true}
       clearTable={() => true}
       location={{ search: '?page=1&ordering=key' }}
+      fetchEditorFilterOptions={() => true}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -61,6 +62,7 @@ describe('CourseTable', () => {
       sortTable={() => true}
       clearTable={() => true}
       location={{ search: '?page=1&ordering=key' }}
+      fetchEditorFilterOptions={() => true}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -79,6 +81,7 @@ describe('CourseTable', () => {
       clearTable={() => true}
       location={{ search: '?page=1&ordering=key' }}
       loading
+      fetchEditorFilterOptions={() => true}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -97,6 +100,7 @@ describe('CourseTable', () => {
       clearTable={() => true}
       location={{ search: '?page=1&ordering=key' }}
       data={[]}
+      fetchEditorFilterOptions={() => true}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -115,6 +119,7 @@ describe('CourseTable', () => {
       clearTable={() => true}
       location={{ search: '?page=1&ordering=key' }}
       data={mockFetch()}
+      fetchEditorFilterOptions={() => true}
     />);
     expect(component).toMatchSnapshot();
   });
@@ -133,6 +138,7 @@ describe('CourseTable', () => {
       clearTable={() => true}
       location={{ search: '?page=1&ordering=key' }}
       data={mockFetch()}
+      fetchEditorFilterOptions={() => true}
     />);
     component.setProps({
       location: {
@@ -156,6 +162,7 @@ describe('CourseTable', () => {
       clearTable={() => true}
       location={{ search: '?page=1&ordering=key' }}
       data={mockFetch()}
+      fetchEditorFilterOptions={() => true}
     />);
     component.setProps({
       location: {

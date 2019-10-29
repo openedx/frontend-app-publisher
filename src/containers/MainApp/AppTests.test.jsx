@@ -33,6 +33,8 @@ const courseData = {
           marketing_url: null,
         },
       ],
+      course_run_statuses: [],
+      editors: [],
       modified: '2019-04-30T16:31:08.182755Z',
     },
   ],
@@ -46,14 +48,11 @@ function renderAppWithState(initialRoute) {
   const initialState = {
     authentication,
     table: {
-      courses: {
-        data: courseData,
-        error: null,
-        loading: false,
-        ordering: undefined,
-        page: 1,
-        pageSize: 50,
-      },
+      data: courseData,
+      error: null,
+      loading: false,
+      editorFilterOptions: [],
+      editorFilterOptionsError: null,
     },
     darkMode: {
       darkModeOn: false,
