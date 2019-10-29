@@ -13,7 +13,7 @@ import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import { getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
-import { UNPUBLISHED, PUBLISHED } from '../../data/constants';
+import { UNPUBLISHED, PUBLISHED, REVIEWED } from '../../data/constants';
 
 const orgWhitelist = process.env.ORG_WHITELIST ? process.env.ORG_WHITELIST.split(',') : [];
 const dot = color => ({
@@ -37,9 +37,10 @@ class CourseTable extends React.Component {
       {
         label: 'Course Run Statuses',
         options: [
-          { value: UNPUBLISHED, label: 'Unsubmitted', color: '#E2C018' },
           { value: 'in_review', label: 'In review', color: '#e7e7e7' },
           { value: PUBLISHED, label: 'Published', color: '#008100' },
+          { value: REVIEWED, label: 'Scheduled', color: '#0075b4' },
+          { value: UNPUBLISHED, label: 'Unsubmitted', color: '#E2C018' },
         ],
       },
     ],
@@ -208,7 +209,10 @@ class CourseTable extends React.Component {
                         { ...styles, backgroundColor: data.color || '#e7e7e7', opacity: 0.7 }
                       ),
                       multiValueLabel: (styles, { data }) => (
-                        { ...styles, color: data.label === 'Published' ? '#ffffff' : '#000000' }
+                        {
+                          ...styles,
+                          color: data.label === 'Published' || data.label === 'Scheduled' ? '#ffffff' : '#000000',
+                        }
                       ),
                     }
                   }
