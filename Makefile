@@ -20,7 +20,8 @@ npm-install-%: ## install specified % npm package on the cookie-cutter container
 	docker exec npm install $* --save-dev
 	git add package.json
 
-restart: down up
+restart:
+	docker-compose restart
 
 restart-attached: down up-attached
 

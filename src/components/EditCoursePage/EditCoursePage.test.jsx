@@ -45,6 +45,7 @@ describe('EditCoursePage', () => {
           has_ofac_restrictions: false,
           ofac_comment: '',
           run_type: null,
+          external_key: null,
         },
         {
           key: 'edX101+DemoX+T1',
@@ -67,6 +68,7 @@ describe('EditCoursePage', () => {
           has_ofac_restrictions: false,
           ofac_comment: '',
           run_type: null,
+          external_key: null,
         },
       ],
       entitlements: [
@@ -287,6 +289,7 @@ describe('EditCoursePage', () => {
       has_ofac_restrictions: false,
       ofac_comment: '',
       run_type: null,
+      external_key: null,
     };
 
     const unpublishedCourseRun = Object.assign(
@@ -353,6 +356,7 @@ describe('EditCoursePage', () => {
         draft: true,
         expected_program_type: 'micromasters',
         expected_program_name: 'Test Program Name',
+        external_key: null,
         go_live_date: '2019-05-06T00:00:00Z',
         key: 'edX101+DemoX+T2',
         max_effort: '123',
@@ -370,6 +374,7 @@ describe('EditCoursePage', () => {
         draft: true,
         expected_program_type: null,
         expected_program_name: '',
+        external_key: null,
         go_live_date: '2019-05-06T00:00:00Z',
         key: 'edX101+DemoX+T1',
         max_effort: '123',

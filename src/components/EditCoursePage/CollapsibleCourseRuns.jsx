@@ -16,6 +16,7 @@ const CollapsibleCourseRuns = ({
         {...passThroughProps}
         courseRun={courseRuns[index]}
         courseId={courseRun}
+        index={index}
         key={courseRuns[index].key}
         isOpen={collapsiblesOpen[index]}
         onToggle={value => onToggle(index, value)}

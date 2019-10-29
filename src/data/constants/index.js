@@ -1,6 +1,7 @@
 const VERIFIED_TRACK = Object.freeze({ name: 'Verified and Audit', key: 'verified' });
 const AUDIT_TRACK = Object.freeze({ name: 'Audit Only', key: 'audit' });
 const PROFESSIONAL_TRACK = Object.freeze({ name: 'Professional Only', key: 'professional' });
+const MASTERS_TRACK = Object.freeze({ key: 'masters' });
 const ENTITLEMENT_TRACKS = Object.freeze(['verified', 'professional']);
 
 const REVIEW_BY_LEGAL = 'review_by_legal';
@@ -23,6 +24,7 @@ export {
   VERIFIED_TRACK,
   AUDIT_TRACK,
   PROFESSIONAL_TRACK,
+  MASTERS_TRACK,
   ENTITLEMENT_TRACKS,
   REVIEW_BY_LEGAL,
   REVIEW_BY_INTERNAL,

@@ -56,22 +56,30 @@ ShallowWrapper {
                 },
               },
               "type": Object {
-                "label": "Type",
-                "read_only": false,
-                "required": false,
-                "type": "field",
                 "type_options": Array [
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "credit",
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Credit",
                         "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                       },
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -85,10 +93,17 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -102,6 +117,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "professional",
+                        ],
                         "name": "Professional Only",
                         "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                       },
@@ -115,6 +133,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -1206,22 +1227,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -1235,10 +1264,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -1252,6 +1288,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -1265,6 +1304,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -1513,6 +1555,25 @@ ShallowWrapper {
                 "value": "masters",
               },
             ]
+          }
+          runTypeModes={
+            Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            }
           }
           submitting={false}
           title="Test Title"
@@ -2463,22 +2524,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -2492,10 +2561,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -2509,6 +2585,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -2522,6 +2601,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -2770,6 +2852,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -4803,22 +4904,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -4832,10 +4941,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -4849,6 +4965,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -4862,6 +4981,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -5093,6 +5215,23 @@ ShallowWrapper {
                 "value": "masters",
               },
             ],
+            "runTypeModes": Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            },
             "submitting": false,
             "title": "Test Title",
             "type": null,
@@ -6052,22 +6191,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -6081,10 +6228,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -6098,6 +6252,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -6111,6 +6268,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -6359,6 +6519,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -7309,22 +7488,30 @@ ShallowWrapper {
                           },
                         },
                         "type": Object {
-                          "label": "Type",
-                          "read_only": false,
-                          "required": false,
-                          "type": "field",
                           "type_options": Array [
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "credit",
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Credit",
                                   "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -7338,10 +7525,17 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -7355,6 +7549,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "professional",
+                                  ],
                                   "name": "Professional Only",
                                   "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                                 },
@@ -7368,6 +7565,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -7616,6 +7816,25 @@ ShallowWrapper {
                     "value": "masters",
                   },
                 ]
+              }
+              runTypeModes={
+                Object {
+                  "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                    "verified",
+                    "audit",
+                  ],
+                  "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                    "professional",
+                  ],
+                  "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                    "audit",
+                  ],
+                  "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                    "credit",
+                    "verified",
+                    "audit",
+                  ],
+                }
               }
               submitting={false}
               title="Test Title"
@@ -9649,22 +9868,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -9678,10 +9905,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -9695,6 +9929,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -9708,6 +9945,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -9939,6 +10179,23 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ],
+              "runTypeModes": Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              },
               "submitting": false,
               "title": "Test Title",
               "type": null,
@@ -10041,22 +10298,30 @@ ShallowWrapper {
                 },
               },
               "type": Object {
-                "label": "Type",
-                "read_only": false,
-                "required": false,
-                "type": "field",
                 "type_options": Array [
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "credit",
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Credit",
                         "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                       },
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -10070,10 +10335,17 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -10087,6 +10359,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "professional",
+                        ],
                         "name": "Professional Only",
                         "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                       },
@@ -10100,6 +10375,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -11209,22 +11487,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -11238,10 +11524,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -11255,6 +11548,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -11268,6 +11564,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -11534,6 +11833,25 @@ ShallowWrapper {
                 "value": "masters",
               },
             ]
+          }
+          runTypeModes={
+            Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            }
           }
           submitting={true}
           title="Test Title"
@@ -12484,22 +12802,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -12513,10 +12839,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -12530,6 +12863,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -12543,6 +12879,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -12809,6 +13148,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={true}
             title="Test Title"
@@ -14842,22 +15200,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -14871,10 +15237,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -14888,6 +15261,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -14901,6 +15277,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -15150,6 +15529,23 @@ ShallowWrapper {
                 "value": "masters",
               },
             ],
+            "runTypeModes": Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            },
             "submitting": true,
             "title": "Test Title",
             "type": null,
@@ -16109,22 +16505,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -16138,10 +16542,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -16155,6 +16566,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -16168,6 +16582,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -16434,6 +16851,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={true}
             title="Test Title"
@@ -17384,22 +17820,30 @@ ShallowWrapper {
                           },
                         },
                         "type": Object {
-                          "label": "Type",
-                          "read_only": false,
-                          "required": false,
-                          "type": "field",
                           "type_options": Array [
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "credit",
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Credit",
                                   "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -17413,10 +17857,17 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -17430,6 +17881,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "professional",
+                                  ],
                                   "name": "Professional Only",
                                   "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                                 },
@@ -17443,6 +17897,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -17709,6 +18166,25 @@ ShallowWrapper {
                     "value": "masters",
                   },
                 ]
+              }
+              runTypeModes={
+                Object {
+                  "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                    "verified",
+                    "audit",
+                  ],
+                  "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                    "professional",
+                  ],
+                  "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                    "audit",
+                  ],
+                  "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                    "credit",
+                    "verified",
+                    "audit",
+                  ],
+                }
               }
               submitting={true}
               title="Test Title"
@@ -19742,22 +20218,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -19771,10 +20255,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -19788,6 +20279,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -19801,6 +20295,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -20050,6 +20547,23 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ],
+              "runTypeModes": Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              },
               "submitting": true,
               "title": "Test Title",
               "type": null,
@@ -20152,22 +20666,30 @@ ShallowWrapper {
                 },
               },
               "type": Object {
-                "label": "Type",
-                "read_only": false,
-                "required": false,
-                "type": "field",
                 "type_options": Array [
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "credit",
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Credit",
                         "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                       },
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -20181,10 +20703,17 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -20198,6 +20727,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "professional",
+                        ],
                         "name": "Professional Only",
                         "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                       },
@@ -20211,6 +20743,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -21461,22 +21996,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -21490,10 +22033,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -21507,6 +22057,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -21520,6 +22073,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -21786,6 +22342,25 @@ ShallowWrapper {
                 "value": "masters",
               },
             ]
+          }
+          runTypeModes={
+            Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            }
           }
           submitting={false}
           title="Test Title"
@@ -22877,22 +23452,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -22906,10 +23489,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -22923,6 +23513,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -22936,6 +23529,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -23202,6 +23798,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -25525,22 +26140,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -25554,10 +26177,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -25571,6 +26201,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -25584,6 +26217,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -25833,6 +26469,23 @@ ShallowWrapper {
                 "value": "masters",
               },
             ],
+            "runTypeModes": Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            },
             "submitting": false,
             "title": "Test Title",
             "type": null,
@@ -26933,22 +27586,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -26962,10 +27623,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -26979,6 +27647,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -26992,6 +27663,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -27258,6 +27932,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -28349,22 +29042,30 @@ ShallowWrapper {
                           },
                         },
                         "type": Object {
-                          "label": "Type",
-                          "read_only": false,
-                          "required": false,
-                          "type": "field",
                           "type_options": Array [
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "credit",
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Credit",
                                   "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -28378,10 +29079,17 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -28395,6 +29103,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "professional",
+                                  ],
                                   "name": "Professional Only",
                                   "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                                 },
@@ -28408,6 +29119,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -28674,6 +29388,25 @@ ShallowWrapper {
                     "value": "masters",
                   },
                 ]
+              }
+              runTypeModes={
+                Object {
+                  "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                    "verified",
+                    "audit",
+                  ],
+                  "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                    "professional",
+                  ],
+                  "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                    "audit",
+                  ],
+                  "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                    "credit",
+                    "verified",
+                    "audit",
+                  ],
+                }
               }
               submitting={false}
               title="Test Title"
@@ -30997,22 +31730,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -31026,10 +31767,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -31043,6 +31791,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -31056,6 +31807,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -31305,6 +32059,23 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ],
+              "runTypeModes": Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              },
               "submitting": false,
               "title": "Test Title",
               "type": null,
@@ -31407,22 +32178,30 @@ ShallowWrapper {
                 },
               },
               "type": Object {
-                "label": "Type",
-                "read_only": false,
-                "required": false,
-                "type": "field",
                 "type_options": Array [
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "credit",
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Credit",
                         "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                       },
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -31436,10 +32215,17 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -31453,6 +32239,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "professional",
+                        ],
                         "name": "Professional Only",
                         "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                       },
@@ -31466,6 +32255,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -32574,22 +33366,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -32603,10 +33403,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -32620,6 +33427,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -32633,6 +33443,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -32899,6 +33712,25 @@ ShallowWrapper {
                 "value": "masters",
               },
             ]
+          }
+          runTypeModes={
+            Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            }
           }
           submitting={false}
           title="Test Title"
@@ -33848,22 +34680,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -33877,10 +34717,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -33894,6 +34741,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -33907,6 +34757,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -34173,6 +35026,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -36203,22 +37075,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -36232,10 +37112,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -36249,6 +37136,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -36262,6 +37152,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -36511,6 +37404,23 @@ ShallowWrapper {
                 "value": "masters",
               },
             ],
+            "runTypeModes": Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            },
             "submitting": false,
             "title": "Test Title",
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
@@ -37469,22 +38379,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -37498,10 +38416,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -37515,6 +38440,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -37528,6 +38456,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -37794,6 +38725,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -38743,22 +39693,30 @@ ShallowWrapper {
                           },
                         },
                         "type": Object {
-                          "label": "Type",
-                          "read_only": false,
-                          "required": false,
-                          "type": "field",
                           "type_options": Array [
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "credit",
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Credit",
                                   "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -38772,10 +39730,17 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -38789,6 +39754,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "professional",
+                                  ],
                                   "name": "Professional Only",
                                   "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                                 },
@@ -38802,6 +39770,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -39068,6 +40039,25 @@ ShallowWrapper {
                     "value": "masters",
                   },
                 ]
+              }
+              runTypeModes={
+                Object {
+                  "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                    "verified",
+                    "audit",
+                  ],
+                  "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                    "professional",
+                  ],
+                  "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                    "audit",
+                  ],
+                  "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                    "credit",
+                    "verified",
+                    "audit",
+                  ],
+                }
               }
               submitting={false}
               title="Test Title"
@@ -41098,22 +42088,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -41127,10 +42125,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -41144,6 +42149,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -41157,6 +42165,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -41406,6 +42417,23 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ],
+              "runTypeModes": Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              },
               "submitting": false,
               "title": "Test Title",
               "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
@@ -41508,22 +42536,30 @@ ShallowWrapper {
                 },
               },
               "type": Object {
-                "label": "Type",
-                "read_only": false,
-                "required": false,
-                "type": "field",
                 "type_options": Array [
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "credit",
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Credit",
                         "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                       },
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -41537,10 +42573,17 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -41554,6 +42597,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "professional",
+                        ],
                         "name": "Professional Only",
                         "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                       },
@@ -41567,6 +42613,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -42676,22 +43725,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -42705,10 +43762,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -42722,6 +43786,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -42735,6 +43802,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -43001,6 +44071,25 @@ ShallowWrapper {
                 "value": "masters",
               },
             ]
+          }
+          runTypeModes={
+            Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            }
           }
           submitting={false}
           title="Test Title"
@@ -43951,22 +45040,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -43980,10 +45077,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -43997,6 +45101,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -44010,6 +45117,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -44276,6 +45386,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -46309,22 +47438,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -46338,10 +47475,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -46355,6 +47499,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -46368,6 +47515,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -46617,6 +47767,23 @@ ShallowWrapper {
                 "value": "masters",
               },
             ],
+            "runTypeModes": Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            },
             "submitting": false,
             "title": "Test Title",
             "type": null,
@@ -47576,22 +48743,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -47605,10 +48780,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -47622,6 +48804,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -47635,6 +48820,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -47901,6 +49089,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -48851,22 +50058,30 @@ ShallowWrapper {
                           },
                         },
                         "type": Object {
-                          "label": "Type",
-                          "read_only": false,
-                          "required": false,
-                          "type": "field",
                           "type_options": Array [
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "credit",
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Credit",
                                   "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -48880,10 +50095,17 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -48897,6 +50119,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "professional",
+                                  ],
                                   "name": "Professional Only",
                                   "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                                 },
@@ -48910,6 +50135,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -49176,6 +50404,25 @@ ShallowWrapper {
                     "value": "masters",
                   },
                 ]
+              }
+              runTypeModes={
+                Object {
+                  "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                    "verified",
+                    "audit",
+                  ],
+                  "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                    "professional",
+                  ],
+                  "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                    "audit",
+                  ],
+                  "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                    "credit",
+                    "verified",
+                    "audit",
+                  ],
+                }
               }
               submitting={false}
               title="Test Title"
@@ -51209,22 +52456,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -51238,10 +52493,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -51255,6 +52517,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -51268,6 +52533,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -51517,6 +52785,23 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ],
+              "runTypeModes": Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              },
               "submitting": false,
               "title": "Test Title",
               "type": null,
@@ -51619,22 +52904,30 @@ ShallowWrapper {
                 },
               },
               "type": Object {
-                "label": "Type",
-                "read_only": false,
-                "required": false,
-                "type": "field",
                 "type_options": Array [
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "credit",
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Credit",
                         "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                       },
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -51648,10 +52941,17 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "verified",
+                          "audit",
+                        ],
                         "name": "Verified and Audit",
                         "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                       },
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -51665,6 +52965,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "professional",
+                        ],
                         "name": "Professional Only",
                         "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                       },
@@ -51678,6 +52981,9 @@ ShallowWrapper {
                   Object {
                     "course_run_types": Array [
                       Object {
+                        "modes": Array [
+                          "audit",
+                        ],
                         "name": "Audit Only",
                         "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                       },
@@ -52719,22 +54025,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -52748,10 +54062,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -52765,6 +54086,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -52778,6 +54102,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -53001,6 +54328,25 @@ ShallowWrapper {
                 "value": "masters",
               },
             ]
+          }
+          runTypeModes={
+            Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            }
           }
           submitting={false}
           title="Test Title"
@@ -53926,22 +55272,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -53955,10 +55309,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -53972,6 +55333,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -53985,6 +55349,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -54208,6 +55575,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -56164,22 +57550,30 @@ ShallowWrapper {
                       },
                     },
                     "type": Object {
-                      "label": "Type",
-                      "read_only": false,
-                      "required": false,
-                      "type": "field",
                       "type_options": Array [
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "credit",
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Credit",
                               "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                             },
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -56193,10 +57587,17 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "verified",
+                                "audit",
+                              ],
                               "name": "Verified and Audit",
                               "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                             },
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -56210,6 +57611,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "professional",
+                              ],
                               "name": "Professional Only",
                               "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                             },
@@ -56223,6 +57627,9 @@ ShallowWrapper {
                         Object {
                           "course_run_types": Array [
                             Object {
+                              "modes": Array [
+                                "audit",
+                              ],
                               "name": "Audit Only",
                               "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                             },
@@ -56431,6 +57838,23 @@ ShallowWrapper {
                 "value": "masters",
               },
             ],
+            "runTypeModes": Object {
+              "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                "verified",
+                "audit",
+              ],
+              "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                "professional",
+              ],
+              "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                "audit",
+              ],
+              "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                "credit",
+                "verified",
+                "audit",
+              ],
+            },
             "submitting": false,
             "title": "Test Title",
             "type": null,
@@ -57365,22 +58789,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -57394,10 +58826,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -57411,6 +58850,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -57424,6 +58866,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -57647,6 +59092,25 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ]
+            }
+            runTypeModes={
+              Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              }
             }
             submitting={false}
             title="Test Title"
@@ -58572,22 +60036,30 @@ ShallowWrapper {
                           },
                         },
                         "type": Object {
-                          "label": "Type",
-                          "read_only": false,
-                          "required": false,
-                          "type": "field",
                           "type_options": Array [
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "credit",
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Credit",
                                   "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -58601,10 +60073,17 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "verified",
+                                    "audit",
+                                  ],
                                   "name": "Verified and Audit",
                                   "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                                 },
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -58618,6 +60097,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "professional",
+                                  ],
                                   "name": "Professional Only",
                                   "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                                 },
@@ -58631,6 +60113,9 @@ ShallowWrapper {
                             Object {
                               "course_run_types": Array [
                                 Object {
+                                  "modes": Array [
+                                    "audit",
+                                  ],
                                   "name": "Audit Only",
                                   "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                                 },
@@ -58854,6 +60339,25 @@ ShallowWrapper {
                     "value": "masters",
                   },
                 ]
+              }
+              runTypeModes={
+                Object {
+                  "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                    "verified",
+                    "audit",
+                  ],
+                  "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                    "professional",
+                  ],
+                  "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                    "audit",
+                  ],
+                  "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                    "credit",
+                    "verified",
+                    "audit",
+                  ],
+                }
               }
               submitting={false}
               title="Test Title"
@@ -60810,22 +62314,30 @@ ShallowWrapper {
                         },
                       },
                       "type": Object {
-                        "label": "Type",
-                        "read_only": false,
-                        "required": false,
-                        "type": "field",
                         "type_options": Array [
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "credit",
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Credit",
                                 "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                               },
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -60839,10 +62351,17 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "verified",
+                                  "audit",
+                                ],
                                 "name": "Verified and Audit",
                                 "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                               },
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -60856,6 +62375,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "professional",
+                                ],
                                 "name": "Professional Only",
                                 "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                               },
@@ -60869,6 +62391,9 @@ ShallowWrapper {
                           Object {
                             "course_run_types": Array [
                               Object {
+                                "modes": Array [
+                                  "audit",
+                                ],
                                 "name": "Audit Only",
                                 "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                               },
@@ -61077,6 +62602,23 @@ ShallowWrapper {
                   "value": "masters",
                 },
               ],
+              "runTypeModes": Object {
+                "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": Array [
+                  "verified",
+                  "audit",
+                ],
+                "6cebfc50-abca-4674-b4c7-249b31af6ddb": Array [
+                  "professional",
+                ],
+                "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": Array [
+                  "audit",
+                ],
+                "f17e29d6-4648-4bb5-a199-97dc40f904aa": Array [
+                  "credit",
+                  "verified",
+                  "audit",
+                ],
+              },
               "submitting": false,
               "title": "Test Title",
               "type": null,
