@@ -2,13 +2,6 @@ import { mapStateToProps } from './index';
 
 describe('TableContainer', () => {
   it('should have default map state to props', () => {
-    // const tableId = 'TestId';
-    // const count = 1;
-    // const page = 1;
-    // const pageSize = 1;
-    // const ordering = 'key';
-    // const loading = false;
-    // const error = null;
     const initialState = {
       table: {
         loading: false,

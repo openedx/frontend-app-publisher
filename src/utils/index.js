@@ -57,7 +57,7 @@ const getPageOptionsFromUrl = () => {
   const defaults = {
     pageSize: PAGE_SIZE,
     page: 1,
-    ordering: undefined,
+    ordering: 'title',
     filter: undefined,
     editors: undefined,
     course_run_statuses: undefined,
