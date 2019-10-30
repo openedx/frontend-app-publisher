@@ -15,7 +15,7 @@ import { getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
 import { UNPUBLISHED, PUBLISHED, REVIEWED } from '../../data/constants';
 
-const orgWhitelist = process.env.ORG_WHITELIST ? process.env.ORG_WHITELIST.split(',') : [];
+const orgBlacklist = process.env.ORG_BLACKLIST ? process.env.ORG_BLACKLIST.split(',') : [];
 const dot = color => ({
   alignItems: 'center',
   display: 'flex',
@@ -108,16 +108,11 @@ class CourseTable extends React.Component {
 
   isOrgWhitelisted() {
     const userOrgs = this.props.publisherUserInfo.organizations;
-    if (!orgWhitelist || (orgWhitelist && orgWhitelist.length === 0)) {
-      // No Whitelist specified allow all orgs
+    if (!orgBlacklist || (orgBlacklist && orgBlacklist.length === 0)) {
+      // No Blacklist specified allow all orgs
       return true;
     }
-    for (let i = 0; i < userOrgs.length; i += 1) {
-      if (orgWhitelist.includes(userOrgs[i].key)) {
-        return true;
-      }
-    }
-    return false;
+    return userOrgs.any(org => !orgBlacklist.includes(org.key));
   }
 
   render() {
