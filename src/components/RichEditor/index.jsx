@@ -82,6 +82,7 @@ class RichEditor extends React.Component {
               plugins: 'legacyoutput link lists',
               statusbar: false,
               toolbar: 'undo redo | bold italic underline | bullist numlist | link',
+              entity_encoding: 'raw',
             }}
             onChange={this.updateCharCount}
             onKeyUp={this.updateCharCount}
