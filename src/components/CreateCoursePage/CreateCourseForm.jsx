@@ -22,6 +22,7 @@ import DateTimeField from '../DateTimeField';
 import { isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
+  // DISCO-1399: Can remove this function since we will get it from the Course Type OPTIONS
   getEnrollmentTrackOptions() {
     return [
       { label: 'Select enrollment track', value: '' },
@@ -49,6 +50,7 @@ class BaseCreateCourseForm extends React.Component {
       organizations,
       pristine,
       isCreating,
+      // DISCO-1399: remove usingCourseType
       usingCourseType,
       courseOptions,
       courseRunOptions,
@@ -129,6 +131,8 @@ class BaseCreateCourseForm extends React.Component {
             }
             required
           />
+          {// DISCO-1399: We don't need this ternary operator anymore. Just show the Course Type
+          }
           {usingCourseType ? (
             <React.Fragment>
               <Field
@@ -245,6 +249,8 @@ class BaseCreateCourseForm extends React.Component {
                 minDate={getDateWithDashes(moment(currentFormValues.start).add(1, 'd') || moment())}
               />
             </div>
+          }
+          {// DISCO-1399: We don't need this ternary operator anymore. Just show the Run Type
           }
           {usingCourseType &&
             <Field

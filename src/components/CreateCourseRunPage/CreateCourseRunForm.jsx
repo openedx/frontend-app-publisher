@@ -117,6 +117,8 @@ const BaseCreateCourseRunForm = ({
             />
           </div>
         }
+        {// DISCO-1399: Remove && and just show Run Type
+        }
         {!!courseTypeUuid &&
           <Field
             name="run_type"

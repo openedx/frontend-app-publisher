@@ -60,6 +60,7 @@ class EditCoursePage extends React.Component {
       courseInfo: {
         data: {
           entitlements,
+          type: initialType,
         },
       },
       courseSubmitInfo: {
@@ -70,6 +71,7 @@ class EditCoursePage extends React.Component {
     const sendCourseRuns = [];
     const initialCourseRunValues = this.buildCourseRuns();
     const entitlement = entitlements && entitlements[0];
+    // DISCO-1399: I think you just need price so remove initialMode
     const initialMode = entitlement && entitlement.mode;
     const initialPrice = entitlement && entitlement.price;
 
@@ -89,10 +91,13 @@ class EditCoursePage extends React.Component {
       // changed and the run is NOT "archived" (we care about the mode and
       // price because those are passed down to the course runs' seats)
       const runHasChanges = !jsonDeepEqual(initialCourseRunValues[i], run);
+      // DISCO-1399: Remove this in place of courseTypeChanged
       const courseModeChanged = initialMode !== courseData.mode;
+      const courseTypeChanged = initialType !== courseData.type;
       const coursePriceChanged = initialPrice !== courseData.price;
       if (runHasChanges ||
-        ((courseModeChanged || coursePriceChanged) && !courseRunIsArchived(run))) {
+        ((courseModeChanged || courseTypeChanged || coursePriceChanged) &&
+          !courseRunIsArchived(run))) {
         return true;
       }
 
@@ -113,6 +118,7 @@ class EditCoursePage extends React.Component {
           courseRun.expected_program_type : null,
         expected_program_name: courseRun.expected_program_name ?
           courseRun.expected_program_name : '',
+        external_key: courseRun.external_key,
         go_live_date: isValidDate(courseRun.go_live_date) ? courseRun.go_live_date : null,
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
@@ -156,6 +162,7 @@ class EditCoursePage extends React.Component {
         data: {
           key,
           uuid,
+          // DISCO-1399: Should be able to stop pulling this in
           entitlements,
         },
       },
@@ -178,9 +185,11 @@ class EditCoursePage extends React.Component {
     return {
       additional_information: courseData.additional_information,
       draft: !updatingPublishedRun,
+      // DISCO-1399: Don't think we need to send the whole entitlements list anymore
       entitlements: [{
         mode: courseData.mode,
         price: courseData.price,
+        // DISCO-1399: I'm not sure we need to send sku, look into that
         sku: entitlements && entitlements[0] && entitlements[0].sku,
       }],
       faq: courseData.faq,
@@ -304,6 +313,7 @@ class EditCoursePage extends React.Component {
       end: courseRun.end,
       expected_program_type: courseRun.expected_program_type,
       expected_program_name: courseRun.expected_program_name,
+      external_key: courseRun.external_key,
       go_live_date: courseRun.go_live_date,
       min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
       max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',
@@ -352,6 +362,7 @@ class EditCoursePage extends React.Component {
     const imageSrc = image && image.src;
     const videoSrc = video && video.src;
     const entitlement = entitlements && entitlements[0];
+    // DISCO-1399: Don't need mode anymore
     const mode = entitlement && entitlement.mode;
     const price = entitlement && entitlement.price;
 

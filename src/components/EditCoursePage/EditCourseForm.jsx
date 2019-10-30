@@ -92,6 +92,7 @@ export class BaseEditCourseForm extends React.Component {
     });
   }
 
+  // DISCO-1399: Don't need this anymore. We just use Course Type OPTIONS
   getEnrollmentTrackOptions() {
     return [
       { label: AUDIT_TRACK.name, value: AUDIT_TRACK.key },
@@ -204,6 +205,7 @@ export class BaseEditCourseForm extends React.Component {
       courseTypeOptions,
       courseRunTypeOptions,
       entitlementUUIDS,
+      runTypeModes,
     } = parsedTypeOptions;
 
     const disabled = courseInReview || !editable;
@@ -280,6 +282,8 @@ export class BaseEditCourseForm extends React.Component {
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
             </div>
+            {// DISCO-1399: Get rid of ternary operator and just show Course Type
+            }
             {type ? (
               <React.Fragment>
                 <Field
@@ -866,6 +870,7 @@ export class BaseEditCourseForm extends React.Component {
             collapsiblesOpen={this.state.collapsiblesOpen}
             onToggle={(index, value) => this.toggleCourseRun(index, value)}
             courseRunTypeOptions={courseRunTypeOptions}
+            runTypeModes={runTypeModes}
             {...this.props}
             validate={() => {}} // override method from our props, we don't want to pass it down
           />

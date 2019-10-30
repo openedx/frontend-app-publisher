@@ -42,6 +42,7 @@ class CreateCoursePage extends React.Component {
       org: options.org,
       title: options.title,
       number: options.number,
+      // DISCO-1399 Mode doesn't need to be sent anymore
       mode: options.enrollmentTrack,
       price: options.price,
       type: options.type,
@@ -166,6 +167,7 @@ class CreateCoursePage extends React.Component {
                 initialValues={initialValues}
                 currentFormValues={formValues}
                 organizations={organizations}
+                // DISCO-1399: Remove usingCourseType
                 // TODO: Add in logic here to decide when course type is being used
                 usingCourseType={false}
                 isCreating={courseInfo.isCreating}

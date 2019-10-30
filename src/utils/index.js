@@ -4,8 +4,7 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
-
-import { AUDIT_TRACK, COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS } from '../data/constants';
+import { AUDIT_TRACK, COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
 import { PAGE_SIZE } from '../data/constants/table';
 
 const getDateWithDashes = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
@@ -177,11 +176,13 @@ const getOptionsData = (options) => {
 
 const parseCourseTypeOptions = (typeOptions) => {
   const courseRunTypeOptions = {};
+  const runTypeModes = {};
   const entitlementUUIDS = [];
   const courseTypeOptions = [{ label: 'Select enrollment track', value: '' }].concat(typeOptions.map((type) => {
-    courseRunTypeOptions[type.uuid] = [{ label: 'Select enrollment track', value: '' }].concat(type.course_run_types.map(courseRunType => (
-      { label: courseRunType.name, value: courseRunType.uuid }
-    )));
+    courseRunTypeOptions[type.uuid] = [{ label: 'Select enrollment track', value: '' }].concat(type.course_run_types.map((courseRunType) => {
+      runTypeModes[courseRunType.uuid] = courseRunType.modes;
+      return { label: courseRunType.name, value: courseRunType.uuid };
+    }));
     // This should be changed to remove the part about AUDIT_TRACK once we stop
     // creating draft Audit entitlements. Right now, this is used to decide if we
     // show the price on the course create/edit form.
@@ -195,8 +196,12 @@ const parseCourseTypeOptions = (typeOptions) => {
     entitlementUUIDS,
     courseRunTypeOptions,
     courseTypeOptions,
+    runTypeModes,
   };
 };
+
+const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid &&
+  !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
 
 export {
   courseRunIsArchived,
@@ -218,4 +223,5 @@ export {
   parseOptions,
   getOptionsData,
   parseCourseTypeOptions,
+  hasMastersTrack,
 };

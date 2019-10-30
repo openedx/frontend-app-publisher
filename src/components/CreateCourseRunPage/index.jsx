@@ -72,6 +72,7 @@ class CreateCourseRunPage extends React.Component {
       end: options.end,
       pacing_type: options.pacing_type,
       rerun: options.rerun,
+      run_type: options.run_type,
     };
     return createCourseRun(uuid, courseRunData);
   }

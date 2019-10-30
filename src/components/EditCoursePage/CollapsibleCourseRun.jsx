@@ -9,7 +9,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import { courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
-  getDateWithSlashes, isNonExemptChanged, isPristine } from '../../utils/index';
+  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack } from '../../utils';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -91,6 +91,7 @@ class CollapsibleCourseRun extends React.Component {
 
     this.state = {
       returnFromStaffPage: false,
+      hasExternalKey: undefined,
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -121,6 +122,9 @@ class CollapsibleCourseRun extends React.Component {
     } = this.state;
     const {
       courseId,
+      currentFormValues,
+      index,
+      runTypeModes,
     } = this.props;
     const {
       returnFromStaffPage: wasReturnedFromStaff,
@@ -132,6 +136,14 @@ class CollapsibleCourseRun extends React.Component {
     if (wasReturnedFromStaff && !returnFromStaffPage) {
       const element = document.getElementById(`${courseId}.staff.label`);
       element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+
+    // We initialize hasExternalKey to null and then the function will reevaluate it into
+    // a boolean which will be our exit state
+    if (prevState.hasExternalKey === undefined && currentFormValues.course_runs) {
+      const hasExternalKey =
+        hasMastersTrack(currentFormValues.course_runs[index].run_type, runTypeModes);
+      this.setState({ hasExternalKey }); // eslint-disable-line react/no-did-update-set-state
     }
   }
 
@@ -240,6 +252,7 @@ class CollapsibleCourseRun extends React.Component {
       onToggle,
       courseRunTypeOptions,
     } = this.props;
+    const { hasExternalKey } = this.state;
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
     // Checks if the current course run is the one triggering submission for review
@@ -353,6 +366,8 @@ class CollapsibleCourseRun extends React.Component {
           </div>
         }
         <hr />
+        {// DISCO-1399: Get rid of && operator and just show Run Type
+        }
         {type &&
           <Field
             name={`${courseId}.run_type`}
@@ -361,7 +376,7 @@ class CollapsibleCourseRun extends React.Component {
             extraInput={{ onInvalid: this.openCollapsible }}
             label={
               <FieldLabel
-                id="run_type.label"
+                id={`${courseId}.run_type.label`}
                 text="Course Run Type TODO"
                 helpText={(<div><p>TODO: Come up with run type text AND helpText</p></div>)}
               />
@@ -554,6 +569,30 @@ class CollapsibleCourseRun extends React.Component {
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={disabled}
         />
+        {hasExternalKey &&
+          <Field
+            name={`${courseId}.external_key`}
+            component={RenderInputTextField}
+            type="text"
+            label={
+              <FieldLabel
+                id={`${courseId}.external_key.label`}
+                text="Institution Course ID"
+                helpText={
+                  <div>
+                    <p>
+                      Only fill in this field if you are planning to integrate with your
+                      Institution’s systems through edX registrar service.
+                    </p>
+                  </div>
+                }
+                optional
+              />
+            }
+            extraInput={{ onInvalid: this.openCollapsible }}
+            disabled={disabled}
+          />
+        }
         {(!administrator || !IN_REVIEW_STATUS.includes(courseRun.status)) &&
           <div>
             <FieldLabel
@@ -645,8 +684,10 @@ CollapsibleCourseRun.propTypes = {
     isSubmittingRunReview: PropTypes.bool,
   }),
   courseUuid: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   type: PropTypes.string,
   courseRunTypeOptions: PropTypes.shape({}),
+  runTypeModes: PropTypes.shape({}),
   editable: PropTypes.bool,
   isSubmittingForReview: PropTypes.bool,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
@@ -689,6 +730,7 @@ CollapsibleCourseRun.defaultProps = {
   },
   type: '',
   courseRunTypeOptions: {},
+  runTypeModes: {},
   editable: false,
   isSubmittingForReview: false,
   owners: [],
