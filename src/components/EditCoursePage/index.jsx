@@ -118,7 +118,7 @@ class EditCoursePage extends React.Component {
           courseRun.expected_program_type : null,
         expected_program_name: courseRun.expected_program_name ?
           courseRun.expected_program_name : '',
-        external_key: courseRun.external_key,
+        external_key: courseRun.external_key ? courseRun.external_key : '',
         go_live_date: isValidDate(courseRun.go_live_date) ? courseRun.go_live_date : null,
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
