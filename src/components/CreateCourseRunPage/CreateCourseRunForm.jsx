@@ -8,7 +8,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import ActionButton from '../ActionButton';
 
-import { endDateHelp, startDateHelp, pacingHelp } from '../../helpText';
+import { endDateHelp, enrollmentHelp, startDateHelp, pacingHelp } from '../../helpText';
 import RenderSelectField from '../RenderSelectField';
 import DateTimeField from '../DateTimeField';
 import { getDateWithDashes, getOptionsData, isSafari, localTimeZone, parseCourseTypeOptions, parseOptions } from '../../utils';
@@ -127,9 +127,9 @@ const BaseCreateCourseRunForm = ({
             label={
               <FieldLabel
                 id="run_type.label"
-                text="Course Run Type TODO"
+                text="Course run enrollment track"
                 required
-                helpText={(<div><p>TODO: Come up with run type helpText</p></div>)}
+                helpText={enrollmentHelp}
               />
             }
             required

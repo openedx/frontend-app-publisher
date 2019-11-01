@@ -22,7 +22,7 @@ import {
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
-import { enrollmentHelp, titleHelp, urlSlugHelp } from '../../helpText';
+import { enrollmentHelp, titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import { getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 import store from '../../data/store';
@@ -293,8 +293,8 @@ export class BaseEditCourseForm extends React.Component {
                   label={
                     <FieldLabel
                       id="type.label"
-                      text="Course Type TODO"
-                      helpText={(<div><p>TODO: Come up with type text AND helpText</p></div>)}
+                      text="Course enrollment track"
+                      helpText={typeHelp}
                       extraText="Cannot edit after submission"
                     />
                   }

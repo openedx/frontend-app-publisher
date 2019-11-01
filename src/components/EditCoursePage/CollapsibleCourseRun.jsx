@@ -22,7 +22,7 @@ import {
   DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
-import { dateEditHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
+import { dateEditHelp, enrollmentHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
 const determineStatus = run => (courseRunIsArchived(run) ? 'archived' : run.status);
@@ -372,13 +372,14 @@ class CollapsibleCourseRun extends React.Component {
           <Field
             name={`${courseId}.run_type`}
             component={RenderSelectField}
-            options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course Type first', value: '' }]}
+            options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course enrollment track first', value: '' }]}
             extraInput={{ onInvalid: this.openCollapsible }}
             label={
               <FieldLabel
                 id={`${courseId}.run_type.label`}
-                text="Course Run Type TODO"
-                helpText={(<div><p>TODO: Come up with run type text AND helpText</p></div>)}
+                text="Course run enrollment track"
+                helpText={enrollmentHelp}
+                extraText="Cannot edit after submission"
               />
             }
             // If any of the seats have a SKU, then ecom products exist and

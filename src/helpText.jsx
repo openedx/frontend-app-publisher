@@ -52,6 +52,8 @@ const endDateHelp = (
   </div>
 );
 
+// DISCO-1399: Update this help text to say "... whether a course run offers..."
+// You can probably also just rename this to something like runTypeHelp
 const enrollmentHelp = (
   <div>
     <p>
@@ -145,6 +147,20 @@ const titleHelp = (
   </div>
 );
 
+const typeHelp = (
+  <div>
+    <p>
+      The Course enrollment track determines what enrollment tracks are eligible
+      for the course runs.
+    </p>
+    <p><b>Example:</b></p>
+    <p>
+      The Verified and Audit selection will allow course runs to either be
+      Verified and Audit or Audit only.
+    </p>
+  </div>
+);
+
 const urlSlugHelp = (
   <div>
     <p><b>This field is currently not in use</b></p>
@@ -170,9 +186,10 @@ export {
   endDateHelp,
   enrollmentHelp,
   startDateHelp,
-  titleHelp,
   pacingEditHelp,
   pacingHelp,
   publishDateHelp,
+  titleHelp,
+  typeHelp,
   urlSlugHelp,
 };
