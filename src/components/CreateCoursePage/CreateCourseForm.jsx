@@ -17,7 +17,7 @@ import {
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
-import { endDateHelp, enrollmentHelp, startDateHelp, titleHelp, pacingHelp } from '../../helpText';
+import { endDateHelp, enrollmentHelp, pacingHelp, startDateHelp, titleHelp, typeHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
 import { isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 
@@ -142,9 +142,9 @@ class BaseCreateCourseForm extends React.Component {
                 label={
                   <FieldLabel
                     id="course-type-label"
-                    text="Course Type TODO"
+                    text="Course enrollment track"
                     required
-                    helpText={(<div><p>TODO: Come up with type helpText</p></div>)}
+                    helpText={typeHelp}
                   />
                 }
                 required
@@ -256,13 +256,13 @@ class BaseCreateCourseForm extends React.Component {
             <Field
               name="run_type"
               component={RenderSelectField}
-              options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course Type first', value: '' }]}
+              options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course enrollment track first', value: '' }]}
               label={
                 <FieldLabel
                   id="course-run-type-label"
-                  text="Course Run Type TODO"
+                  text="Course run enrollment track"
                   required
-                  helpText={(<div><p>TODO: Come up with run type text AND helpText</p></div>)}
+                  helpText={enrollmentHelp}
                 />
               }
               required
