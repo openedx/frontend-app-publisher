@@ -9,7 +9,7 @@ import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
 import PageContainer from '../PageContainer';
-import { formatDate } from '../../utils';
+import { buildInitialPrices, formatDate } from '../../utils';
 
 class CreateCourseRunPage extends React.Component {
   constructor(props) {
@@ -62,6 +62,7 @@ class CreateCourseRunPage extends React.Component {
           key,
           uuid,
           entitlements,
+          course_runs,
         },
       },
       createCourseRun,
@@ -69,12 +70,14 @@ class CreateCourseRunPage extends React.Component {
 
     const entitlement = entitlements && entitlements[0];
     const price = entitlement && entitlement.price;
+    const prices = buildInitialPrices(entitlements, course_runs);
     const courseRunData = {
       course: key,
       start: options.start,
       end: options.end,
       pacing_type: options.pacing_type,
       price,
+      prices,
       rerun: options.rerun,
       run_type: options.run_type,
     };

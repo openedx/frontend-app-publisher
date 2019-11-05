@@ -9,6 +9,7 @@ import RenderSelectField from '../RenderSelectField';
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
+import PriceList from '../PriceList';
 
 import {
   AUDIT_TRACK,
@@ -60,7 +61,7 @@ class BaseCreateCourseForm extends React.Component {
       parseCourseTypeOptions(courseOptionsData.type.type_options);
     const { courseTypeOptions } = parsedTypeOptions;
     const { courseRunTypeOptions } = parsedTypeOptions;
-    const { entitlementUUIDS } = parsedTypeOptions;
+    const { priceLabels } = parsedTypeOptions;
     const courseRunOptionsData = getOptionsData(courseRunOptions);
     const { pacing_type: { choices } } = courseRunOptionsData;
     const pacingTypeOptions = courseRunOptionsData && parseOptions(choices);
@@ -149,20 +150,10 @@ class BaseCreateCourseForm extends React.Component {
                 }
                 required
               />
-              {entitlementUUIDS.includes(currentFormValues.type) &&
-                <Field
-                  name="price"
-                  component={RenderInputTextField}
-                  extraInput={{
-                    min: 1.00,
-                    step: 0.01,
-                    max: 10000.00,
-                  }}
-                  type="number"
-                  label={<FieldLabel text="Price (USD)" required />}
-                  required
-                />
-              }
+              <PriceList
+                priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
+                required
+              />
             </React.Fragment>) : (
               <React.Fragment>
                 <Field

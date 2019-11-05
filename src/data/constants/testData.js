@@ -25,6 +25,50 @@ const courseOptions = {
                 },
               ],
               entitlement_types: ['verified'],
+              tracks: [
+                {
+                  seat_type: {
+                    name: 'Credit',
+                    slug: 'credit',
+                  },
+                  mode: {
+                    name: 'Credit',
+                    slug: 'credit',
+                    is_id_verified: true,
+                    is_credit_eligible: true,
+                    certificate_type: 'credit',
+                    payee: 'platform',
+                  },
+                },
+                {
+                  seat_type: {
+                    name: 'Verified',
+                    slug: 'verified',
+                  },
+                  mode: {
+                    name: 'Verified',
+                    slug: 'verified',
+                    is_id_verified: true,
+                    is_credit_eligible: false,
+                    certificate_type: 'verified',
+                    payee: 'platform',
+                  },
+                },
+                {
+                  seat_type: {
+                    name: 'Audit',
+                    slug: 'audit',
+                  },
+                  mode: {
+                    name: 'Audit',
+                    slug: 'audit',
+                    is_id_verified: false,
+                    is_credit_eligible: false,
+                    certificate_type: '',
+                    payee: '',
+                  },
+                },
+              ],
             },
             {
               uuid: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
@@ -43,6 +87,36 @@ const courseOptions = {
                 },
               ],
               entitlement_types: ['verified'],
+              tracks: [
+                {
+                  seat_type: {
+                    name: 'Verified',
+                    slug: 'verified',
+                  },
+                  mode: {
+                    name: 'Verified',
+                    slug: 'verified',
+                    is_id_verified: true,
+                    is_credit_eligible: false,
+                    certificate_type: 'verified',
+                    payee: 'platform',
+                  },
+                },
+                {
+                  seat_type: {
+                    name: 'Audit',
+                    slug: 'audit',
+                  },
+                  mode: {
+                    name: 'Audit',
+                    slug: 'audit',
+                    is_id_verified: false,
+                    is_credit_eligible: false,
+                    certificate_type: '',
+                    payee: '',
+                  },
+                },
+              ],
             },
             {
               uuid: 'fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e',
@@ -55,6 +129,22 @@ const courseOptions = {
                 },
               ],
               entitlement_types: ['professional'],
+              tracks: [
+                {
+                  seat_type: {
+                    name: 'Professional',
+                    slug: 'professional',
+                  },
+                  mode: {
+                    name: 'Professional',
+                    slug: 'professional',
+                    is_id_verified: true,
+                    is_credit_eligible: false,
+                    certificate_type: 'professional',
+                    payee: 'platform',
+                  },
+                },
+              ],
             },
             {
               uuid: '03e09c15-4127-4031-bc02-e20fcbdf09f0',
@@ -67,6 +157,22 @@ const courseOptions = {
                 },
               ],
               entitlement_types: ['audit'],
+              tracks: [
+                {
+                  seat_type: {
+                    name: 'Audit',
+                    slug: 'audit',
+                  },
+                  mode: {
+                    name: 'Audit',
+                    slug: 'audit',
+                    is_id_verified: false,
+                    is_credit_eligible: false,
+                    certificate_type: '',
+                    payee: '',
+                  },
+                },
+              ],
             },
           ],
         },
