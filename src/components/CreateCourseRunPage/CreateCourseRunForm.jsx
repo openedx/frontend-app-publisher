@@ -8,7 +8,8 @@ import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import ActionButton from '../ActionButton';
 
-import { endDateHelp, enrollmentHelp, startDateHelp, pacingHelp } from '../../helpText';
+import { endDateHelp, enrollmentHelp, startDateHelp, pacingHelp, keyHelp } from '../../helpText';
+import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import DateTimeField from '../DateTimeField';
 import { getDateWithDashes, getOptionsData, isSafari, localTimeZone, parseOptions } from '../../utils';
@@ -25,6 +26,7 @@ const BaseCreateCourseRunForm = ({
   currentFormValues,
   courseRunLabels,
   courseTypeUuid,
+  canSetRunKey,
 }) => {
   const courseRunOptionsData = getOptionsData(courseRunOptions);
   const { pacing_type: { choices } } = courseRunOptionsData;
@@ -60,6 +62,21 @@ const BaseCreateCourseRunForm = ({
             />
           }
         />
+        {canSetRunKey &&
+        <Field
+          name="courseRunKey"
+          component={RenderInputTextField}
+          type="text"
+          pattern="[a-zA-Z0-9-]+"
+          label={
+            <FieldLabel
+              id="courseRunKey-label"
+              text="Run Key"
+              helpText={keyHelp}
+            />
+          }
+        />
+        }
         {/* TODO this should be refactored when paragon supports safari */}
         {/* text inputs for safari */}
         {isSafari ?
@@ -190,6 +207,7 @@ BaseCreateCourseRunForm.propTypes = {
     isFetching: PropTypes.bool,
   }),
   courseRunTypeOptions: PropTypes.arrayOf(PropTypes.shape({})),
+  canSetRunKey: PropTypes.bool.isRequired,
 };
 
 const CreateCourseRunForm = reduxForm({

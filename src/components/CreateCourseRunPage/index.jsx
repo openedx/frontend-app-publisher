@@ -80,6 +80,7 @@ class CreateCourseRunPage extends React.Component {
       prices,
       rerun: options.rerun,
       run_type: options.run_type,
+      term: options.courseRunKey,
     };
     return createCourseRun(uuid, courseRunData);
   }
@@ -112,6 +113,8 @@ class CreateCourseRunPage extends React.Component {
     } = this.state;
     const title = courseInfo.data && courseInfo.data.title ? courseInfo.data.title : '';
     const uuid = courseInfo.data && courseInfo.data.uuid ? courseInfo.data.uuid : '';
+    const canSetRunKey = courseInfo.data && courseInfo.data.owners &&
+      !courseInfo.data.owners.some(o => o.auto_generate_course_run_keys);
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -173,6 +176,7 @@ class CreateCourseRunPage extends React.Component {
                   run_type: defaultRunType,
                 }}
                 courseTypeUuid={type}
+                canSetRunKey={canSetRunKey}
               />
               {errorArray.length > 1 && (
                 <StatusAlert
