@@ -52,10 +52,15 @@ class CourseTable extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { editorFilterOptions } = this.props;
+    const {
+      authentication: {
+        administrator,
+      },
+      editorFilterOptions,
+    } = this.props;
     const prevEditorFilterOptions = prevProps.editorFilterOptions;
 
-    if (editorFilterOptions !== prevEditorFilterOptions) {
+    if (editorFilterOptions !== prevEditorFilterOptions && !administrator) {
       this.state.filterGroups.push({
         label: 'Course Editors',
         options: editorFilterOptions.map(editor => ({ value: editor.id, label: editor.name })),
