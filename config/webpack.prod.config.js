@@ -6,8 +6,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackNewRelicPlugin = require('html-webpack-new-relic-plugin');
-const NewRelicSourceMapPlugin = require('new-relic-source-map-webpack-plugin');
 
 module.exports = Merge.smart(commonConfig, {
   mode: 'production',
@@ -147,22 +145,6 @@ module.exports = Merge.smart(commonConfig, {
       ENTERPRISE_MARKETING_UTM_CAMPAIGN: null,
       ENTERPRISE_MARKETING_FOOTER_UTM_MEDIUM: null,
       ORG_WHITELIST: '', // CSV string 'edx,edx2'
-      NEW_RELIC_ADMIN_KEY: null,
-      NEW_RELIC_APP_ID: null,
-      NEW_RELIC_LICENSE_KEY: null,
-    }),
-    new HtmlWebpackNewRelicPlugin({
-      // This plugin fixes an issue where the newrelic script will break if
-      //  not added directly to the HTML.
-      // We use non empty strings as defaults here to prevent errors for empty configs
-      license: process.env.NEW_RELIC_LICENSE_KEY || 'fake_app',
-      applicationID: process.env.NEW_RELIC_APP_ID || 'fake_license',
-    }),
-    new NewRelicSourceMapPlugin({
-      applicationId: process.env.NEW_RELIC_APP_ID,
-      nrAdminKey: process.env.NEW_RELIC_ADMIN_KEY,
-      staticAssetUrl: process.env.BASE_URL,
-      noop: typeof process.env.NEW_RELIC_ADMIN_KEY === 'undefined', // upload source maps in prod builds only
     }),
   ],
 });
