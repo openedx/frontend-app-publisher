@@ -576,6 +576,7 @@ describe('EditCoursePage', () => {
       component.setState({
         submitConfirmVisible: true,
       });
+      component.instance().getData = jest.fn();
       component.update();
 
       component.instance().handleCourseSubmit(courseData);
@@ -584,6 +585,7 @@ describe('EditCoursePage', () => {
         [],
         false,
         false,
+        component.instance().getData,
       );
     });
 
@@ -600,6 +602,7 @@ describe('EditCoursePage', () => {
       component.setState({
         submitConfirmVisible: true,
       });
+      component.instance().getData = jest.fn();
       component.update();
 
       courseData.price = '500.00';
@@ -622,6 +625,7 @@ describe('EditCoursePage', () => {
         expectedSendCourseRuns,
         false,
         false,
+        component.instance().getData,
       );
     });
 
@@ -638,6 +642,7 @@ describe('EditCoursePage', () => {
       component.setState({
         submitConfirmVisible: true,
       });
+      component.instance().getData = jest.fn();
       component.update();
 
       courseData.price = '500.00';
@@ -656,6 +661,7 @@ describe('EditCoursePage', () => {
         [expectedSendCourseRuns[1]],
         false,
         false,
+        component.instance().getData,
       );
     });
 
@@ -676,6 +682,7 @@ describe('EditCoursePage', () => {
       component.setState({
         submitConfirmVisible: true,
       });
+      component.instance().getData = jest.fn();
       component.update();
 
       const myCourseData = jsonDeepCopy(courseData);
@@ -706,6 +713,7 @@ describe('EditCoursePage', () => {
         [myExpectedCourseRun0, myExpectedCourseRun1],
         false,
         false,
+        component.instance().getData,
       );
     });
 
@@ -725,6 +733,7 @@ describe('EditCoursePage', () => {
       component.setState({
         submitConfirmVisible: true,
       });
+      component.instance().getData = jest.fn();
       component.update();
 
       expectedSendCourseRuns[1].draft = false;
@@ -736,6 +745,7 @@ describe('EditCoursePage', () => {
         [expectedSendCourseRuns[1]],
         true,
         false,
+        component.instance().getData,
       );
     });
 
@@ -755,6 +765,7 @@ describe('EditCoursePage', () => {
       component.setState({
         submitConfirmVisible: true,
       });
+      component.instance().getData = jest.fn();
       component.update();
 
       expectedSendCourseRuns[0].draft = false;
@@ -765,6 +776,7 @@ describe('EditCoursePage', () => {
         [expectedSendCourseRuns[0]],
         true,
         false,
+        component.instance().getData,
       );
     });
 
@@ -781,6 +793,7 @@ describe('EditCoursePage', () => {
       component.setState({
         submitConfirmVisible: true,
       });
+      component.instance().getData = jest.fn();
       component.update();
 
       // Course changed so it should send saves for all non-archived runs, but this run is
@@ -804,6 +817,7 @@ describe('EditCoursePage', () => {
         [expectedSendCourseRuns[1]],
         false,
         false,
+        component.instance().getData,
       );
     });
 
