@@ -304,74 +304,9 @@ ShallowWrapper {
           optional={false}
           text="Test Title"
         />
-        <ForwardRef
-          iconWhenClosed={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
-          iconWhenOpen={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
+        <CustomCollapsible
           onToggle={[Function]}
           open={false}
-          styling="card"
           title={
             <React.Fragment>
               Course: Test Title
@@ -1227,7 +1162,7 @@ ShallowWrapper {
               ]
             }
           />
-        </ForwardRef>
+        </CustomCollapsible>
         <FieldLabel
           className="mt-4 mb-2 h2"
           extraText=""
@@ -1665,74 +1600,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />,
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -2588,7 +2458,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>,
+          </CustomCollapsible>,
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -3883,70 +3753,8 @@ ShallowWrapper {
                 }
               />,
             ],
-            "className": undefined,
-            "iconWhenClosed": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
-            "iconWhenOpen": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
             "onToggle": [Function],
             "open": false,
-            "styling": "card",
             "title": <React.Fragment>
               Course: Test Title
               <Pill
@@ -5017,86 +4825,7 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Advanced": [Function],
-            "Body": [Function],
-            "Trigger": [Function],
-            "Visible": [Function],
-            "defaultProps": Object {
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "styling": "card",
-            },
-            "propTypes": Object {
-              "children": [Function],
-              "className": [Function],
-              "iconWhenClosed": [Function],
-              "iconWhenOpen": [Function],
-              "styling": [Function],
-              "title": [Function],
-            },
-            "render": [Function],
-          },
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -5534,74 +5263,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -6457,7 +6121,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>
+          </CustomCollapsible>
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -6895,74 +6559,9 @@ ShallowWrapper {
               optional={false}
               text="Test Title"
             />,
-            <ForwardRef
-              iconWhenClosed={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
-              iconWhenOpen={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
+            <CustomCollapsible
               onToggle={[Function]}
               open={false}
-              styling="card"
               title={
                 <React.Fragment>
                   Course: Test Title
@@ -7818,7 +7417,7 @@ ShallowWrapper {
                   ]
                 }
               />
-            </ForwardRef>,
+            </CustomCollapsible>,
             <FieldLabel
               className="mt-4 mb-2 h2"
               extraText=""
@@ -9113,70 +8712,8 @@ ShallowWrapper {
                   }
                 />,
               ],
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
               "onToggle": [Function],
               "open": false,
-              "styling": "card",
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
@@ -10247,86 +9784,7 @@ ShallowWrapper {
                 "type": [Function],
               },
             ],
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "Advanced": [Function],
-              "Body": [Function],
-              "Trigger": [Function],
-              "Visible": [Function],
-              "defaultProps": Object {
-                "className": undefined,
-                "iconWhenClosed": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "iconWhenOpen": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "styling": "card",
-              },
-              "propTypes": Object {
-                "children": [Function],
-                "className": [Function],
-                "iconWhenClosed": [Function],
-                "iconWhenOpen": [Function],
-                "styling": [Function],
-                "title": [Function],
-              },
-              "render": [Function],
-            },
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -11096,74 +10554,9 @@ ShallowWrapper {
           optional={false}
           text="Test Title"
         />
-        <ForwardRef
-          iconWhenClosed={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
-          iconWhenOpen={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
+        <CustomCollapsible
           onToggle={[Function]}
           open={false}
-          styling="card"
           title={
             <React.Fragment>
               Course: Test Title
@@ -12019,7 +11412,7 @@ ShallowWrapper {
               ]
             }
           />
-        </ForwardRef>
+        </CustomCollapsible>
         <FieldLabel
           className="mt-4 mb-2 h2"
           extraText=""
@@ -12475,74 +11868,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />,
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -13398,7 +12726,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>,
+          </CustomCollapsible>,
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -14711,70 +14039,8 @@ ShallowWrapper {
                 }
               />,
             ],
-            "className": undefined,
-            "iconWhenClosed": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
-            "iconWhenOpen": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
             "onToggle": [Function],
             "open": false,
-            "styling": "card",
             "title": <React.Fragment>
               Course: Test Title
               <Pill
@@ -15845,86 +15111,7 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Advanced": [Function],
-            "Body": [Function],
-            "Trigger": [Function],
-            "Visible": [Function],
-            "defaultProps": Object {
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "styling": "card",
-            },
-            "propTypes": Object {
-              "children": [Function],
-              "className": [Function],
-              "iconWhenClosed": [Function],
-              "iconWhenOpen": [Function],
-              "styling": [Function],
-              "title": [Function],
-            },
-            "render": [Function],
-          },
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -16380,74 +15567,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -17303,7 +16425,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>
+          </CustomCollapsible>
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -17759,74 +16881,9 @@ ShallowWrapper {
               optional={false}
               text="Test Title"
             />,
-            <ForwardRef
-              iconWhenClosed={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
-              iconWhenOpen={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
+            <CustomCollapsible
               onToggle={[Function]}
               open={false}
-              styling="card"
               title={
                 <React.Fragment>
                   Course: Test Title
@@ -18682,7 +17739,7 @@ ShallowWrapper {
                   ]
                 }
               />
-            </ForwardRef>,
+            </CustomCollapsible>,
             <FieldLabel
               className="mt-4 mb-2 h2"
               extraText=""
@@ -19995,70 +19052,8 @@ ShallowWrapper {
                   }
                 />,
               ],
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
               "onToggle": [Function],
               "open": false,
-              "styling": "card",
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
@@ -21129,86 +20124,7 @@ ShallowWrapper {
                 "type": [Function],
               },
             ],
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "Advanced": [Function],
-              "Body": [Function],
-              "Trigger": [Function],
-              "Visible": [Function],
-              "defaultProps": Object {
-                "className": undefined,
-                "iconWhenClosed": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "iconWhenOpen": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "styling": "card",
-              },
-              "propTypes": Object {
-                "children": [Function],
-                "className": [Function],
-                "iconWhenClosed": [Function],
-                "iconWhenOpen": [Function],
-                "styling": [Function],
-                "title": [Function],
-              },
-              "render": [Function],
-            },
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -21996,74 +20912,9 @@ ShallowWrapper {
           optional={false}
           text="Test Title"
         />
-        <ForwardRef
-          iconWhenClosed={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
-          iconWhenOpen={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
+        <CustomCollapsible
           onToggle={[Function]}
           open={false}
-          styling="card"
           title={
             <React.Fragment>
               Course: Test Title
@@ -23060,7 +21911,7 @@ ShallowWrapper {
               ]
             }
           />
-        </ForwardRef>
+        </CustomCollapsible>
         <FieldLabel
           className="mt-4 mb-2 h2"
           extraText=""
@@ -23516,74 +22367,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />,
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -24580,7 +23366,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>,
+          </CustomCollapsible>,
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -26031,70 +24817,8 @@ ShallowWrapper {
                 }
               />,
             ],
-            "className": undefined,
-            "iconWhenClosed": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
-            "iconWhenOpen": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
             "onToggle": [Function],
             "open": false,
-            "styling": "card",
             "title": <React.Fragment>
               Course: Test Title
               <Pill
@@ -27317,86 +26041,7 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Advanced": [Function],
-            "Body": [Function],
-            "Trigger": [Function],
-            "Visible": [Function],
-            "defaultProps": Object {
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "styling": "card",
-            },
-            "propTypes": Object {
-              "children": [Function],
-              "className": [Function],
-              "iconWhenClosed": [Function],
-              "iconWhenOpen": [Function],
-              "styling": [Function],
-              "title": [Function],
-            },
-            "render": [Function],
-          },
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -27852,74 +26497,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -28916,7 +27496,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>
+          </CustomCollapsible>
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -29372,74 +27952,9 @@ ShallowWrapper {
               optional={false}
               text="Test Title"
             />,
-            <ForwardRef
-              iconWhenClosed={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
-              iconWhenOpen={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
+            <CustomCollapsible
               onToggle={[Function]}
               open={false}
-              styling="card"
               title={
                 <React.Fragment>
                   Course: Test Title
@@ -30436,7 +28951,7 @@ ShallowWrapper {
                   ]
                 }
               />
-            </ForwardRef>,
+            </CustomCollapsible>,
             <FieldLabel
               className="mt-4 mb-2 h2"
               extraText=""
@@ -31887,70 +30402,8 @@ ShallowWrapper {
                   }
                 />,
               ],
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
               "onToggle": [Function],
               "open": false,
-              "styling": "card",
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
@@ -33173,86 +31626,7 @@ ShallowWrapper {
                 "type": [Function],
               },
             ],
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "Advanced": [Function],
-              "Body": [Function],
-              "Trigger": [Function],
-              "Visible": [Function],
-              "defaultProps": Object {
-                "className": undefined,
-                "iconWhenClosed": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "iconWhenOpen": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "styling": "card",
-              },
-              "propTypes": Object {
-                "children": [Function],
-                "className": [Function],
-                "iconWhenClosed": [Function],
-                "iconWhenOpen": [Function],
-                "styling": [Function],
-                "title": [Function],
-              },
-              "render": [Function],
-            },
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -34040,74 +32414,9 @@ ShallowWrapper {
           optional={false}
           text="Test Title"
         />
-        <ForwardRef
-          iconWhenClosed={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
-          iconWhenOpen={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
+        <CustomCollapsible
           onToggle={[Function]}
           open={false}
-          styling="card"
           title={
             <React.Fragment>
               Course: Test Title
@@ -34970,7 +33279,7 @@ ShallowWrapper {
               ]
             }
           />
-        </ForwardRef>
+        </CustomCollapsible>
         <FieldLabel
           className="mt-4 mb-2 h2"
           extraText=""
@@ -35426,74 +33735,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />,
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -36356,7 +34600,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>,
+          </CustomCollapsible>,
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -37676,70 +35920,8 @@ ShallowWrapper {
                 }
               />,
             ],
-            "className": undefined,
-            "iconWhenClosed": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
-            "iconWhenOpen": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
             "onToggle": [Function],
             "open": false,
-            "styling": "card",
             "title": <React.Fragment>
               Course: Test Title
               <Pill
@@ -38824,86 +37006,7 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Advanced": [Function],
-            "Body": [Function],
-            "Trigger": [Function],
-            "Visible": [Function],
-            "defaultProps": Object {
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "styling": "card",
-            },
-            "propTypes": Object {
-              "children": [Function],
-              "className": [Function],
-              "iconWhenClosed": [Function],
-              "iconWhenOpen": [Function],
-              "styling": [Function],
-              "title": [Function],
-            },
-            "render": [Function],
-          },
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -39359,74 +37462,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -40289,7 +38327,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>
+          </CustomCollapsible>
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -40745,74 +38783,9 @@ ShallowWrapper {
               optional={false}
               text="Test Title"
             />,
-            <ForwardRef
-              iconWhenClosed={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
-              iconWhenOpen={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
+            <CustomCollapsible
               onToggle={[Function]}
               open={false}
-              styling="card"
               title={
                 <React.Fragment>
                   Course: Test Title
@@ -41675,7 +39648,7 @@ ShallowWrapper {
                   ]
                 }
               />
-            </ForwardRef>,
+            </CustomCollapsible>,
             <FieldLabel
               className="mt-4 mb-2 h2"
               extraText=""
@@ -42995,70 +40968,8 @@ ShallowWrapper {
                   }
                 />,
               ],
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
               "onToggle": [Function],
               "open": false,
-              "styling": "card",
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
@@ -44143,86 +42054,7 @@ ShallowWrapper {
                 "type": [Function],
               },
             ],
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "Advanced": [Function],
-              "Body": [Function],
-              "Trigger": [Function],
-              "Visible": [Function],
-              "defaultProps": Object {
-                "className": undefined,
-                "iconWhenClosed": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "iconWhenOpen": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "styling": "card",
-              },
-              "propTypes": Object {
-                "children": [Function],
-                "className": [Function],
-                "iconWhenClosed": [Function],
-                "iconWhenOpen": [Function],
-                "styling": [Function],
-                "title": [Function],
-              },
-              "render": [Function],
-            },
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -45010,74 +42842,9 @@ ShallowWrapper {
           optional={false}
           text="Test Title"
         />
-        <ForwardRef
-          iconWhenClosed={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
-          iconWhenOpen={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
+        <CustomCollapsible
           onToggle={[Function]}
           open={false}
-          styling="card"
           title={
             <React.Fragment>
               Course: Test Title
@@ -45933,7 +43700,7 @@ ShallowWrapper {
               ]
             }
           />
-        </ForwardRef>
+        </CustomCollapsible>
         <FieldLabel
           className="mt-4 mb-2 h2"
           extraText=""
@@ -46389,74 +44156,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />,
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -47312,7 +45014,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>,
+          </CustomCollapsible>,
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -48625,70 +46327,8 @@ ShallowWrapper {
                 }
               />,
             ],
-            "className": undefined,
-            "iconWhenClosed": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
-            "iconWhenOpen": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
             "onToggle": [Function],
             "open": false,
-            "styling": "card",
             "title": <React.Fragment>
               Course: Test Title
               <Pill
@@ -49759,86 +47399,7 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Advanced": [Function],
-            "Body": [Function],
-            "Trigger": [Function],
-            "Visible": [Function],
-            "defaultProps": Object {
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "styling": "card",
-            },
-            "propTypes": Object {
-              "children": [Function],
-              "className": [Function],
-              "iconWhenClosed": [Function],
-              "iconWhenOpen": [Function],
-              "styling": [Function],
-              "title": [Function],
-            },
-            "render": [Function],
-          },
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -50294,74 +47855,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -51217,7 +48713,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>
+          </CustomCollapsible>
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -51673,74 +49169,9 @@ ShallowWrapper {
               optional={false}
               text="Test Title"
             />,
-            <ForwardRef
-              iconWhenClosed={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
-              iconWhenOpen={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
+            <CustomCollapsible
               onToggle={[Function]}
               open={false}
-              styling="card"
               title={
                 <React.Fragment>
                   Course: Test Title
@@ -52596,7 +50027,7 @@ ShallowWrapper {
                   ]
                 }
               />
-            </ForwardRef>,
+            </CustomCollapsible>,
             <FieldLabel
               className="mt-4 mb-2 h2"
               extraText=""
@@ -53909,70 +51340,8 @@ ShallowWrapper {
                   }
                 />,
               ],
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
               "onToggle": [Function],
               "open": false,
-              "styling": "card",
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
@@ -55043,86 +52412,7 @@ ShallowWrapper {
                 "type": [Function],
               },
             ],
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "Advanced": [Function],
-              "Body": [Function],
-              "Trigger": [Function],
-              "Visible": [Function],
-              "defaultProps": Object {
-                "className": undefined,
-                "iconWhenClosed": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "iconWhenOpen": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "styling": "card",
-              },
-              "propTypes": Object {
-                "children": [Function],
-                "className": [Function],
-                "iconWhenClosed": [Function],
-                "iconWhenOpen": [Function],
-                "styling": [Function],
-                "title": [Function],
-              },
-              "render": [Function],
-            },
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -55867,74 +53157,9 @@ ShallowWrapper {
           optional={false}
           text="Test Title"
         />
-        <ForwardRef
-          iconWhenClosed={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
-          iconWhenOpen={
-            <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />
-          }
+        <CustomCollapsible
           onToggle={[Function]}
           open={false}
-          styling="card"
           title={
             <React.Fragment>
               Course: Test Title
@@ -56765,7 +53990,7 @@ ShallowWrapper {
               ]
             }
           />
-        </ForwardRef>
+        </CustomCollapsible>
         <FieldLabel
           className="mt-4 mb-2 h2"
           extraText=""
@@ -57178,74 +54403,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />,
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -58076,7 +55236,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>,
+          </CustomCollapsible>,
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -59321,70 +56481,8 @@ ShallowWrapper {
                 }
               />,
             ],
-            "className": undefined,
-            "iconWhenClosed": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f067",
-                    "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "plus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
-            "iconWhenOpen": <FontAwesomeIcon
-              border={false}
-              className=""
-              fixedWidth={false}
-              flip={null}
-              icon={
-                Object {
-                  "icon": Array [
-                    448,
-                    512,
-                    Array [],
-                    "f068",
-                    "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                  ],
-                  "iconName": "minus",
-                  "prefix": "fas",
-                }
-              }
-              inverse={false}
-              listItem={false}
-              mask={null}
-              pull={null}
-              pulse={false}
-              rotation={null}
-              size={null}
-              spin={false}
-              symbol={false}
-              title=""
-              transform={null}
-            />,
             "onToggle": [Function],
             "open": false,
-            "styling": "card",
             "title": <React.Fragment>
               Course: Test Title
               <Pill
@@ -60403,86 +57501,7 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Advanced": [Function],
-            "Body": [Function],
-            "Trigger": [Function],
-            "Visible": [Function],
-            "defaultProps": Object {
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "styling": "card",
-            },
-            "propTypes": Object {
-              "children": [Function],
-              "className": [Function],
-              "iconWhenClosed": [Function],
-              "iconWhenOpen": [Function],
-              "styling": [Function],
-              "title": [Function],
-            },
-            "render": [Function],
-          },
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -60897,74 +57916,9 @@ ShallowWrapper {
             optional={false}
             text="Test Title"
           />
-          <ForwardRef
-            iconWhenClosed={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
-            iconWhenOpen={
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />
-            }
+          <CustomCollapsible
             onToggle={[Function]}
             open={false}
-            styling="card"
             title={
               <React.Fragment>
                 Course: Test Title
@@ -61795,7 +58749,7 @@ ShallowWrapper {
                 ]
               }
             />
-          </ForwardRef>
+          </CustomCollapsible>
           <FieldLabel
             className="mt-4 mb-2 h2"
             extraText=""
@@ -62208,74 +59162,9 @@ ShallowWrapper {
               optional={false}
               text="Test Title"
             />,
-            <ForwardRef
-              iconWhenClosed={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
-              iconWhenOpen={
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              }
+            <CustomCollapsible
               onToggle={[Function]}
               open={false}
-              styling="card"
               title={
                 <React.Fragment>
                   Course: Test Title
@@ -63106,7 +59995,7 @@ ShallowWrapper {
                   ]
                 }
               />
-            </ForwardRef>,
+            </CustomCollapsible>,
             <FieldLabel
               className="mt-4 mb-2 h2"
               extraText=""
@@ -64351,70 +61240,8 @@ ShallowWrapper {
                   }
                 />,
               ],
-              "className": undefined,
-              "iconWhenClosed": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f067",
-                      "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "plus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
-              "iconWhenOpen": <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Object {
-                    "icon": Array [
-                      448,
-                      512,
-                      Array [],
-                      "f068",
-                      "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                    ],
-                    "iconName": "minus",
-                    "prefix": "fas",
-                  }
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
-              />,
               "onToggle": [Function],
               "open": false,
-              "styling": "card",
               "title": <React.Fragment>
                 Course: Test Title
                 <Pill
@@ -65433,86 +62260,7 @@ ShallowWrapper {
                 "type": [Function],
               },
             ],
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "Advanced": [Function],
-              "Body": [Function],
-              "Trigger": [Function],
-              "Visible": [Function],
-              "defaultProps": Object {
-                "className": undefined,
-                "iconWhenClosed": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f067",
-                        "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "plus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "iconWhenOpen": <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        448,
-                        512,
-                        Array [],
-                        "f068",
-                        "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z",
-                      ],
-                      "iconName": "minus",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />,
-                "styling": "card",
-              },
-              "propTypes": Object {
-                "children": [Function],
-                "className": [Function],
-                "iconWhenClosed": [Function],
-                "iconWhenOpen": [Function],
-                "styling": [Function],
-                "title": [Function],
-              },
-              "render": [Function],
-            },
+            "type": [Function],
           },
           Object {
             "instance": null,
