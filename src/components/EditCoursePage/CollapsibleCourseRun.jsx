@@ -270,8 +270,8 @@ class CollapsibleCourseRun extends React.Component {
     return (
       <Collapsible
         title={formatCourseRunTitle(courseRun)}
-        open={this.props.isOpen}
-        onToggle={this.props.onToggle}
+        open={isOpen}
+        onToggle={onToggle}
       >
         <div className="mb-3">
           <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
