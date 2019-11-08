@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import CreateCourseRunPage from './index';
 import StatusAlert from '../StatusAlert';
+import { courseOptions } from '../../data/constants/testData';
 
 describe('CreateCourseRunPage', () => {
   it('renders html correctly', () => {
@@ -15,6 +16,21 @@ describe('CreateCourseRunPage', () => {
         isCreating: false,
         error: null,
       }}
+    />);
+    expect(component).toMatchSnapshot();
+  });
+  it('renders html correctly with Course Type', () => {
+    const component = shallow(<CreateCourseRunPage
+      id="00000000-0000-0000-0000-000000000001"
+      courseInfo={{
+        data: {
+          type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+        },
+        isFetching: false,
+        isCreating: false,
+        error: null,
+      }}
+      courseOptions={courseOptions}
     />);
     expect(component).toMatchSnapshot();
   });

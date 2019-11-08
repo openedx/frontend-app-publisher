@@ -9,7 +9,7 @@ import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
 import PageContainer from '../PageContainer';
-import { buildInitialPrices, formatDate } from '../../utils';
+import { buildInitialPrices, formatDate, getOptionsData, parseCourseTypeOptions } from '../../utils';
 
 class CreateCourseRunPage extends React.Component {
   constructor(props) {
@@ -134,6 +134,12 @@ class CreateCourseRunPage extends React.Component {
       (course_runs ? this.parseCourseRunLabels(course_runs) : []));
     const defaultRun = (showForm && (sortedRunLabels.length ? sortedRunLabels[0].value : ''));
 
+    const courseOptionsData = showForm && getOptionsData(courseOptions);
+    const parsedTypeOptions = courseOptionsData && courseOptionsData.type &&
+      parseCourseTypeOptions(courseOptionsData.type.type_options);
+    const courseRunTypeOptions = parsedTypeOptions && parsedTypeOptions.courseRunTypeOptions;
+    const defaultRunType = courseRunTypeOptions && courseRunTypeOptions[type][1].value;
+
     return (
       <React.Fragment>
         <Helmet>
@@ -160,8 +166,10 @@ class CreateCourseRunPage extends React.Component {
                 courseRunLabels={sortedRunLabels}
                 courseOptions={courseOptions}
                 courseRunOptions={courseRunOptions}
+                courseRunTypeOptions={courseRunTypeOptions ? courseRunTypeOptions[type] : []}
                 initialValues={{
                   rerun: defaultRun,
+                  run_type: defaultRunType,
                 }}
                 courseTypeUuid={type}
               />

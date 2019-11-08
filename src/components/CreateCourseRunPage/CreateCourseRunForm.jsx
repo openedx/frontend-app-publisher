@@ -11,7 +11,7 @@ import ActionButton from '../ActionButton';
 import { endDateHelp, enrollmentHelp, startDateHelp, pacingHelp } from '../../helpText';
 import RenderSelectField from '../RenderSelectField';
 import DateTimeField from '../DateTimeField';
-import { getDateWithDashes, getOptionsData, isSafari, localTimeZone, parseCourseTypeOptions, parseOptions } from '../../utils';
+import { getDateWithDashes, getOptionsData, isSafari, localTimeZone, parseOptions } from '../../utils';
 import { DATE_INPUT_PATTERN } from '../../data/constants';
 
 const BaseCreateCourseRunForm = ({
@@ -20,16 +20,12 @@ const BaseCreateCourseRunForm = ({
   isCreating,
   title,
   uuid,
-  courseOptions,
   courseRunOptions,
+  courseRunTypeOptions,
   currentFormValues,
   courseRunLabels,
   courseTypeUuid,
 }) => {
-  const courseOptionsData = getOptionsData(courseOptions);
-  const parsedTypeOptions = courseOptionsData &&
-    parseCourseTypeOptions(courseOptionsData.type.type_options);
-  const { courseRunTypeOptions } = parsedTypeOptions;
   const courseRunOptionsData = getOptionsData(courseRunOptions);
   const { pacing_type: { choices } } = courseRunOptionsData;
   const pacingTypeOptions = courseRunOptionsData && parseOptions(choices);
@@ -123,7 +119,7 @@ const BaseCreateCourseRunForm = ({
           <Field
             name="run_type"
             component={RenderSelectField}
-            options={courseRunTypeOptions[courseTypeUuid]}
+            options={courseRunTypeOptions}
             label={
               <FieldLabel
                 id="run_type.label"
@@ -174,8 +170,8 @@ const BaseCreateCourseRunForm = ({
 BaseCreateCourseRunForm.defaultProps = {
   currentFormValues: {},
   courseRunLabels: [],
-  courseOptions: {},
   courseRunOptions: {},
+  courseRunTypeOptions: [],
   courseTypeUuid: '',
 };
 
@@ -188,16 +184,12 @@ BaseCreateCourseRunForm.propTypes = {
   currentFormValues: PropTypes.shape({}),
   courseRunLabels: PropTypes.arrayOf(PropTypes.shape({})),
   courseTypeUuid: PropTypes.string,
-  courseOptions: PropTypes.shape({
-    data: PropTypes.shape(),
-    error: PropTypes.arrayOf(PropTypes.string),
-    isFetching: PropTypes.bool,
-  }),
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  courseRunTypeOptions: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 const CreateCourseRunForm = reduxForm({

@@ -23,6 +23,29 @@ import DateTimeField from '../DateTimeField';
 import { isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
+  componentDidUpdate(prevProps) {
+    const {
+      change,
+      courseOptions,
+      currentFormValues: {
+        type: currentType,
+      },
+      usingCourseType,
+    } = this.props;
+    const {
+      currentFormValues: {
+        type: prevType,
+      },
+    } = prevProps;
+    // DISCO-1399: Remove the usingCourseType
+    if (usingCourseType && currentType !== prevType) {
+      const courseOptionsData = getOptionsData(courseOptions);
+      const parsedTypeOptions = courseOptionsData &&
+        parseCourseTypeOptions(courseOptionsData.type.type_options);
+      const { courseRunTypeOptions } = parsedTypeOptions;
+      change('run_type', courseRunTypeOptions[currentType][1].value);
+    }
+  }
   // DISCO-1399: Can remove this function since we will get it from the Course Type OPTIONS
   getEnrollmentTrackOptions() {
     return [
@@ -297,6 +320,7 @@ class BaseCreateCourseForm extends React.Component {
 }
 
 BaseCreateCourseForm.defaultProps = {
+  change: () => null,
   isCreating: false,
   pristine: true,
   currentFormValues: {},
@@ -304,6 +328,7 @@ BaseCreateCourseForm.defaultProps = {
 };
 
 BaseCreateCourseForm.propTypes = {
+  change: PropTypes.func,
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
     org: PropTypes.string,

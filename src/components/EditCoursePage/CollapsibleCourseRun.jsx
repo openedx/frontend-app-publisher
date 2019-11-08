@@ -123,7 +123,9 @@ class CollapsibleCourseRun extends React.Component {
     } = this.state;
     const {
       courseId,
-      currentFormValues,
+      currentFormValues: {
+        course_runs: courseRuns,
+      },
       index,
       runTypeModes,
     } = this.props;
@@ -141,9 +143,8 @@ class CollapsibleCourseRun extends React.Component {
 
     // We initialize hasExternalKey to null and then the function will reevaluate it into
     // a boolean which will be our exit state
-    if (prevState.hasExternalKey === undefined && currentFormValues.course_runs) {
-      const hasExternalKey =
-        hasMastersTrack(currentFormValues.course_runs[index].run_type, runTypeModes);
+    if (prevState.hasExternalKey === undefined && courseRuns) {
+      const hasExternalKey = hasMastersTrack(courseRuns[index].run_type, runTypeModes);
       this.setState({ hasExternalKey }); // eslint-disable-line react/no-did-update-set-state
     }
   }
