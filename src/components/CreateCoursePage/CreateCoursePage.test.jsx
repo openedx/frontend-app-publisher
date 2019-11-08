@@ -130,4 +130,22 @@ describe('CreateCoursePage', () => {
     />);
     expect(component).toMatchSnapshot();
   });
+  it('isOrgWhitelisted is true with organization in Type Whitelist', () => {
+    const component = shallow(<CreateCoursePage
+      fetchOrganizations={() => null}
+      publisherUserInfo={{
+        // See src/setupTest.js for where fakeOrgX is defined in process.env.TYPE_WHITELIST
+        organizations: [{ name: 'Fake Org', key: 'fakeOrgX' }],
+        error: null,
+        isFetching: false,
+      }}
+      courseInfo={{
+        error: null,
+        isCreating: false,
+        data: {},
+      }}
+      createCourse={() => null}
+    />);
+    expect(component.instance().isOrgWhitelisted()).toEqual(true);
+  });
 });

@@ -9,3 +9,4 @@ Enzyme.configure({ adapter: new Adapter() });
 // Jest does not use webpack so we need to set these so for testing
 process.env.DISCOVERY_API_BASE_URL = 'http://localhost:18381';
 process.env.ORG_BLACKLIST = ['fake1'];
+process.env.TYPE_WHITELIST = ['fakeOrgX'];
