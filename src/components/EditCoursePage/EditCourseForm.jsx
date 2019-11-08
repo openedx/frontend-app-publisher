@@ -4,7 +4,7 @@ import { Field, FieldArray, reduxForm, stopSubmit } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Collapsible, Icon } from '@edx/paragon';
+import { Icon } from '@edx/paragon';
 
 import ActionButton from '../../components/ActionButton';
 import ButtonToolbar from '../../components/ButtonToolbar';
@@ -15,7 +15,9 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import Pill from '../../components/Pill';
+import Collapsible from '../Collapsible';
 import PriceList from '../../components/PriceList';
+
 
 import {
   AUDIT_TRACK,
@@ -243,7 +245,7 @@ export class BaseEditCourseForm extends React.Component {
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses)}
             key="Test Key"
-            isOpen={open}
+            open={open}
             onToggle={this.setCollapsible}
           >
             <div className="mb-3">

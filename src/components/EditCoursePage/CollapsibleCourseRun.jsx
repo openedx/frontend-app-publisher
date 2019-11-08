@@ -2,7 +2,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Field, FieldArray } from 'redux-form';
-import { Collapsible, Hyperlink } from '@edx/paragon';
+import { Hyperlink } from '@edx/paragon';
 
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
@@ -17,6 +17,7 @@ import StaffList from '../StaffList';
 import DateTimeField from '../DateTimeField';
 import store from '../../data/store';
 import TranscriptLanguage from './TranscriptLanguage';
+import Collapsible from '../Collapsible';
 
 import {
   DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
@@ -269,8 +270,7 @@ class CollapsibleCourseRun extends React.Component {
     return (
       <Collapsible
         title={formatCourseRunTitle(courseRun)}
-        iconId={`collapsible-icon-${courseId}`}
-        isOpen={isOpen}
+        open={isOpen}
         onToggle={onToggle}
       >
         <div className="mb-3">
