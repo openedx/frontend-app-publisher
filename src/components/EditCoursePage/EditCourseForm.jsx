@@ -15,6 +15,7 @@ import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import RichEditor from '../../components/RichEditor';
 import Pill from '../../components/Pill';
+import PriceList from '../../components/PriceList';
 
 import {
   AUDIT_TRACK,
@@ -204,7 +205,7 @@ export class BaseEditCourseForm extends React.Component {
     const {
       courseTypeOptions,
       courseRunTypeOptions,
-      entitlementUUIDS,
+      priceLabels,
       runTypeModes,
     } = parsedTypeOptions;
 
@@ -301,22 +302,12 @@ export class BaseEditCourseForm extends React.Component {
                   extraInput={{ onInvalid: this.openCollapsible }}
                   disabled={disabled || !!entitlement.sku}
                 />
-                {entitlementUUIDS.includes(currentFormValues.type) &&
-                  <Field
-                    name="price"
-                    component={RenderInputTextField}
-                    type="number"
-                    label={<FieldLabel text="Price (USD)" />}
-                    extraInput={{
-                      onInvalid: this.openCollapsible,
-                      min: 1.00,
-                      step: 0.01,
-                      max: 10000.00,
-                    }}
-                    disabled={disabled}
-                    required={isSubmittingForReview}
-                  />
-                }
+                <PriceList
+                  priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  disabled={disabled}
+                  required={isSubmittingForReview}
+                />
               </React.Fragment>) : (
                 <React.Fragment>
                   <Field
@@ -685,6 +676,10 @@ export class BaseEditCourseForm extends React.Component {
               id="faq"
               disabled={disabled}
             />
+            {/*
+              Do not open up access to additional_information. It is not validated like the other
+              HTML fields and should not be directly edited by course teams.
+            */}
             {administrator &&
               <Field
                 name="additional_information"

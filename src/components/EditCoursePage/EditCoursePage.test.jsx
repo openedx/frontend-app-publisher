@@ -10,6 +10,7 @@ import StatusAlert from '../StatusAlert';
 
 import { PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
+import { jsonDeepCopy } from '../../utils';
 
 // Need to mock the Editor as we don't want to test TinyMCE
 jest.mock('@tinymce/tinymce-react');
@@ -17,7 +18,7 @@ jest.mock('@tinymce/tinymce-react');
 const mockStore = configureStore();
 
 describe('EditCoursePage', () => {
-  const defaultPrice = '77.00';
+  const defaultPrice = '77';
   const defaultEnd = '2019-08-14T00:00:00Z';
 
   const courseInfo = {
@@ -340,6 +341,10 @@ describe('EditCoursePage', () => {
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       price: defaultPrice,
+      prices: {
+        professional: defaultPrice,
+        verified: defaultPrice,
+      },
       short_description: '<p>Short</p>',
       subjects: ['basket-weaving'],
       syllabus_raw: null,
@@ -362,6 +367,10 @@ describe('EditCoursePage', () => {
         max_effort: '123',
         min_effort: '10',
         price: defaultPrice,
+        prices: {
+          professional: defaultPrice,
+          verified: defaultPrice,
+        },
         rerun: null,
         run_type: null,
         staff: [],
@@ -380,6 +389,10 @@ describe('EditCoursePage', () => {
         max_effort: '123',
         min_effort: '10',
         price: defaultPrice,
+        prices: {
+          professional: defaultPrice,
+          verified: defaultPrice,
+        },
         rerun: null,
         run_type: null,
         staff: [],
@@ -400,11 +413,23 @@ describe('EditCoursePage', () => {
 
       expectedSendCourseRuns[0].draft = true;
       expectedSendCourseRuns[0].price = defaultPrice;
+      expectedSendCourseRuns[0].prices = {
+        professional: defaultPrice,
+        verified: defaultPrice,
+      };
       expectedSendCourseRuns[1].draft = true;
       expectedSendCourseRuns[1].price = defaultPrice;
+      expectedSendCourseRuns[1].prices = {
+        professional: defaultPrice,
+        verified: defaultPrice,
+      };
       expectedSendCourse.draft = true;
       expectedSendCourse.entitlements[0].price = defaultPrice;
       expectedSendCourse.price = defaultPrice;
+      expectedSendCourse.prices = {
+        professional: defaultPrice,
+        verified: defaultPrice,
+      };
     });
 
     it('sets state correctly and does not show modal with no target run', () => {
@@ -580,10 +605,16 @@ describe('EditCoursePage', () => {
       courseData.price = '500.00';
       courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
 
-      expectedSendCourse.entitlements[0].price = '500.00';
-      expectedSendCourse.price = '500.00';
-      expectedSendCourseRuns[0].price = '500.00';
-      expectedSendCourseRuns[1].price = '500.00';
+      expectedSendCourse.entitlements[0].price = '500';
+      expectedSendCourse.price = '500';
+      expectedSendCourse.prices = {
+        professional: '500',
+        verified: '500',
+      };
+      expectedSendCourseRuns[0].price = expectedSendCourse.price;
+      expectedSendCourseRuns[0].prices = expectedSendCourse.prices;
+      expectedSendCourseRuns[1].price = expectedSendCourse.price;
+      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
@@ -610,14 +641,69 @@ describe('EditCoursePage', () => {
       component.update();
 
       courseData.price = '500.00';
-      expectedSendCourse.entitlements[0].price = '500.00';
-      expectedSendCourse.price = '500.00';
-      expectedSendCourseRuns[1].price = '500.00';
+      expectedSendCourse.entitlements[0].price = '500';
+      expectedSendCourse.price = '500';
+      expectedSendCourse.prices = {
+        professional: '500',
+        verified: '500',
+      };
+      expectedSendCourseRuns[1].price = expectedSendCourse.price;
+      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
         [expectedSendCourseRuns[1]],
+        false,
+        false,
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (with type)', () => {
+      const mockEditCourse = jest.fn();
+
+      const myCourseInfo = jsonDeepCopy(courseInfo);
+      myCourseInfo.data.type = '9521aa7d-801b-4a67-92c3-716ea30f5086'; // credit
+      myCourseInfo.data.course_runs[0].end = '5000-08-12T12:34:56Z'; // make this active
+      myCourseInfo.data.course_runs[0].type = 'f17e29d6-4648-4bb5-a199-97dc40f904aa'; // credit
+      myCourseInfo.data.course_runs[1].type = '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c'; // verified
+
+      const component = shallow(<EditCoursePage
+        courseInfo={myCourseInfo}
+        courseOptions={courseOptions}
+        editCourse={mockEditCourse}
+      />);
+      component.setState({
+        submitConfirmVisible: true,
+      });
+      component.update();
+
+      const myCourseData = jsonDeepCopy(courseData);
+      delete myCourseData.price;
+      myCourseData.type = myCourseInfo.data.type;
+      myCourseData.prices = {};
+      myCourseData.prices.credit = '500';
+      myCourseData.prices.verified = '10';
+
+      const myExpectedSendCourse = jsonDeepCopy(expectedSendCourse);
+      myExpectedSendCourse.type = myCourseData.type;
+      myExpectedSendCourse.entitlements[0].price = '10';
+      myExpectedSendCourse.price = '10';
+      myExpectedSendCourse.prices = {
+        credit: '500',
+        verified: '10',
+      };
+      const myExpectedCourseRun0 = jsonDeepCopy(expectedSendCourseRuns[0]);
+      myExpectedCourseRun0.price = myExpectedSendCourse.price;
+      myExpectedCourseRun0.prices = myExpectedSendCourse.prices;
+      const myExpectedCourseRun1 = jsonDeepCopy(expectedSendCourseRuns[1]);
+      myExpectedCourseRun1.price = myExpectedSendCourse.price;
+      myExpectedCourseRun1.prices = myExpectedSendCourse.prices;
+
+      component.instance().handleCourseSubmit(myCourseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        myExpectedSendCourse,
+        [myExpectedCourseRun0, myExpectedCourseRun1],
         false,
         false,
       );
@@ -703,9 +789,14 @@ describe('EditCoursePage', () => {
       courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
       courseData.course_runs[0].status = REVIEW_BY_INTERNAL;
 
-      expectedSendCourse.entitlements[0].price = '500.00';
-      expectedSendCourse.price = '500.00';
-      expectedSendCourseRuns[1].price = '500.00';
+      expectedSendCourse.entitlements[0].price = '500';
+      expectedSendCourse.price = '500';
+      expectedSendCourse.prices = {
+        professional: '500',
+        verified: '500',
+      };
+      expectedSendCourseRuns[1].price = expectedSendCourse.price;
+      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(

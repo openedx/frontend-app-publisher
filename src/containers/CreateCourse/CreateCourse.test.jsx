@@ -14,7 +14,7 @@ const courseData = {
   title: 'Test Course',
   number: 'test101',
   enrollmentTrack: 'verified',
-  price: 100.00,
+  price: '100.00',
   start: '2019-03-04',
   end: '2020-03-04',
   pacing_type: 'instructor_paced',

@@ -4,7 +4,7 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
-import { AUDIT_TRACK, COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
+import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
 import { PAGE_SIZE } from '../data/constants/table';
 
 const getDateWithDashes = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
@@ -177,28 +177,89 @@ const getOptionsData = (options) => {
 const parseCourseTypeOptions = (typeOptions) => {
   const courseRunTypeOptions = {};
   const runTypeModes = {};
-  const entitlementUUIDS = [];
-  const courseTypeOptions = [{ label: 'Select enrollment track', value: '' }].concat(typeOptions.map((type) => {
-    courseRunTypeOptions[type.uuid] = [{ label: 'Select enrollment track', value: '' }].concat(type.course_run_types.map((courseRunType) => {
+  const priceLabels = {};
+  const initialSelect = [{ label: 'Select enrollment track', value: '' }];
+  const courseTypeOptions = initialSelect.concat(typeOptions.map((type) => {
+    const runTypeOptions = type.course_run_types.map((courseRunType) => {
       runTypeModes[courseRunType.uuid] = courseRunType.modes;
       return { label: courseRunType.name, value: courseRunType.uuid };
-    }));
-    // This should be changed to remove the part about AUDIT_TRACK once we stop
-    // creating draft Audit entitlements. Right now, this is used to decide if we
-    // show the price on the course create/edit form.
-    if (type.entitlement_types.length && !(type.entitlement_types.length === 1 &&
-            type.entitlement_types[0] === AUDIT_TRACK.key)) {
-      entitlementUUIDS.push(type.uuid);
-    }
+    });
+    courseRunTypeOptions[type.uuid] = initialSelect.concat(runTypeOptions);
+
+    const typePrices = {};
+    type.tracks.forEach((track) => {
+      if (track.mode.payee && track.seat_type !== null) {
+        typePrices[track.seat_type.slug] = track.seat_type.name;
+      }
+    });
+    priceLabels[type.uuid] = typePrices;
+
     return { label: type.name, value: type.uuid };
   }));
   return {
-    entitlementUUIDS,
+    priceLabels,
     courseRunTypeOptions,
     courseTypeOptions,
     runTypeModes,
   };
 };
+
+const formatPriceData = (formData, courseOptions) => {
+  const priceData = {
+    price: 0, // DISCO-1399 - we can stop sending single price
+    prices: {},
+  };
+
+  if (!formData.type) { // DISCO-1399 can drop this format support
+    priceData.price = formData.price.replace(/\.00$/, '');
+    priceData.prices['professional'] = priceData.price;
+    priceData.prices['verified'] = priceData.price;
+    return priceData;
+  }
+
+  const courseOptionsData = getOptionsData(courseOptions);
+  if (!courseOptionsData) {
+    return priceData;
+  }
+  const parsedTypeOptions = parseCourseTypeOptions(courseOptionsData.type.type_options);
+  const priceLabels = parsedTypeOptions.priceLabels[formData.type];
+
+  // formData is going to potentially have more seat types than we need, so we pare down here
+  Object.keys(priceLabels).forEach((seatType) => {
+    if (formData.prices[seatType]) {
+      // We strip trailing zeros to ease comparisons between formatted data
+      priceData.price = formData.prices[seatType].replace(/\.00$/, '');
+      priceData.prices[seatType] = priceData.price;
+    }
+  });
+
+  return priceData;
+};
+
+const buildInitialPrices = (entitlements, courseRuns) => {
+  const prices = {};
+
+  if (courseRuns) {
+    // Go through each seat and set a price based on it. We overwrite earlier types/prices this
+    // way, which is intentional. If for some reason there's a disagreement, we want the newer
+    // values (which will be later in the run list).
+    courseRuns.forEach((courseRun) => {
+      courseRun.seats.forEach((seat) => {
+        prices[seat.type] = seat.price;
+      });
+    });
+  }
+
+  if (entitlements) {
+    // prefer entitlement price in case it differs by doing these last
+    entitlements.forEach((entitlement) => {
+      prices[entitlement.mode] = entitlement.price;
+    });
+  }
+
+  return prices;
+};
+
 
 const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid &&
   !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
@@ -223,5 +284,7 @@ export {
   parseOptions,
   getOptionsData,
   parseCourseTypeOptions,
+  formatPriceData,
+  buildInitialPrices,
   hasMastersTrack,
 };

@@ -7,8 +7,10 @@ import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
-import { courseRunIsArchived, getCourseNumber, isValidDate, isNonExemptChanged,
-  jsonDeepEqual } from '../../utils';
+import {
+  buildInitialPrices, courseRunIsArchived, formatPriceData, getCourseNumber, isValidDate,
+  isNonExemptChanged, jsonDeepEqual,
+} from '../../utils';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
   UNPUBLISHED } from '../../data/constants';
 import ConfirmationModal from '../ConfirmationModal';
@@ -59,10 +61,12 @@ class EditCoursePage extends React.Component {
     const {
       courseInfo: {
         data: {
+          course_runs: initialCourseRuns,
           entitlements,
           type: initialType,
         },
       },
+      courseOptions,
       courseSubmitInfo: {
         targetRun,
       },
@@ -73,7 +77,18 @@ class EditCoursePage extends React.Component {
     const entitlement = entitlements && entitlements[0];
     // DISCO-1399: I think you just need price so remove initialMode
     const initialMode = entitlement && entitlement.mode;
-    const initialPrice = entitlement && entitlement.price;
+    const priceData = formatPriceData(courseData, courseOptions);
+    const fakeInitialPriceForm = {
+      type: initialType,
+      price: entitlement && entitlement.price,
+      prices: buildInitialPrices(entitlements, initialCourseRuns),
+    };
+    const initialPriceData = formatPriceData(fakeInitialPriceForm, courseOptions);
+
+    // DISCO-1399: Remove this in place of courseTypeChanged
+    const courseModeChanged = initialMode !== courseData.mode;
+    const courseTypeChanged = initialType !== courseData.type;
+    const coursePriceChanged = !jsonDeepEqual(initialPriceData, priceData);
 
     const modifiedCourseRuns = courseData.course_runs.filter((run, i) => {
       // If we are submitting a run for review or re-publishing a run, it should
@@ -91,17 +106,9 @@ class EditCoursePage extends React.Component {
       // changed and the run is NOT "archived" (we care about the mode and
       // price because those are passed down to the course runs' seats)
       const runHasChanges = !jsonDeepEqual(initialCourseRunValues[i], run);
-      // DISCO-1399: Remove this in place of courseTypeChanged
-      const courseModeChanged = initialMode !== courseData.mode;
-      const courseTypeChanged = initialType !== courseData.type;
-      const coursePriceChanged = initialPrice !== courseData.price;
-      if (runHasChanges ||
+      return runHasChanges ||
         ((courseModeChanged || courseTypeChanged || coursePriceChanged) &&
-          !courseRunIsArchived(run))) {
-        return true;
-      }
-
-      return false;
+          !courseRunIsArchived(run));
     });
 
     modifiedCourseRuns.forEach((courseRun) => {
@@ -123,7 +130,7 @@ class EditCoursePage extends React.Component {
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
-        price: courseData.price,
+        ...priceData,
         rerun: courseRun.rerun ? courseRun.rerun : null,
         run_type: courseRun.run_type,
         // Reduce Staff list to just the UUID
@@ -166,6 +173,7 @@ class EditCoursePage extends React.Component {
           entitlements,
         },
       },
+      courseOptions,
       courseSubmitInfo: {
         targetRun,
       },
@@ -182,13 +190,15 @@ class EditCoursePage extends React.Component {
       }
     }
 
+    const priceData = formatPriceData(courseData, courseOptions);
+
     return {
       additional_information: courseData.additional_information,
       draft: !updatingPublishedRun,
       // DISCO-1399: Don't think we need to send the whole entitlements list anymore
       entitlements: [{
         mode: courseData.mode,
-        price: courseData.price,
+        price: priceData.price,
         // DISCO-1399: I'm not sure we need to send sku, look into that
         sku: entitlements && entitlements[0] && entitlements[0].sku,
       }],
@@ -200,7 +210,7 @@ class EditCoursePage extends React.Component {
       level_type: courseData.level_type,
       outcome: courseData.outcome,
       prerequisites_raw: courseData.prerequisites_raw,
-      price: courseData.price,
+      ...priceData,
       short_description: courseData.short_description,
       subjects: [
         courseData.subjectPrimary,
@@ -352,6 +362,7 @@ class EditCoursePage extends React.Component {
           video,
           entitlements,
           type,
+          course_runs,
         },
       },
     } = this.props;
@@ -365,6 +376,7 @@ class EditCoursePage extends React.Component {
     // DISCO-1399: Don't need mode anymore
     const mode = entitlement && entitlement.mode;
     const price = entitlement && entitlement.price;
+    const prices = buildInitialPrices(entitlements, course_runs);
 
     return {
       title,
@@ -384,6 +396,7 @@ class EditCoursePage extends React.Component {
       videoSrc,
       mode,
       price,
+      prices,
       type,
       url_slug,
       course_runs: this.buildCourseRuns(),

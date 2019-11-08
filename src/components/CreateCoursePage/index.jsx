@@ -8,6 +8,8 @@ import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import ConfirmationModal from '../ConfirmationModal';
 
+import { formatPriceData } from '../../utils';
+
 class CreateCoursePage extends React.Component {
   constructor(props) {
     super(props);
@@ -38,19 +40,20 @@ class CreateCoursePage extends React.Component {
   }
 
   handleCourseCreate(options) {
+    const priceData = formatPriceData(options, this.props.courseOptions);
     const courseData = {
+      ...priceData,
       org: options.org,
       title: options.title,
       number: options.number,
       // DISCO-1399 Mode doesn't need to be sent anymore
       mode: options.enrollmentTrack,
-      price: options.price,
       type: options.type,
       course_run: {
+        ...priceData, // might be sending more than we need to, but :shrug:
         start: options.start,
         end: options.end,
         pacing_type: options.pacing_type,
-        price: options.price,
         run_type: options.run_type,
       },
     };
