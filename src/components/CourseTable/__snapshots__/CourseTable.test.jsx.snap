@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CourseTable hides table and button when not whitelisted 1`] = `
+exports[`CourseTable displays table and button when no blacklist exists 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CourseTable
@@ -10,7 +10,195 @@ ShallowWrapper {
       }
     }
     fetchOrganizations={[Function]}
-    publisherUserInfo={Object {}}
+    publisherUserInfo={
+      Object {
+        "organizations": Array [
+          Object {
+            "key": "fake1",
+            "name": "fake_name1",
+          },
+        ],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <StatusAlert
+          alertType="warning"
+          className=""
+          dismissible={false}
+          iconClassNames={Array []}
+          message={
+            <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
+          }
+          onClose={[Function]}
+          title={null}
+        />,
+        false,
+      ],
+      "className": "",
+      "sidePanes": undefined,
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "alertType": "warning",
+          "className": "",
+          "dismissible": false,
+          "iconClassNames": Array [],
+          "message": <React.Fragment>
+            This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+            <withDeprecatedProps(Hyperlink)
+              destination="http://localhost:18381/publisher/"
+            >
+              Click here to access the older version of Publisher.
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>,
+          "onClose": [Function],
+          "title": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      false,
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <StatusAlert
+            alertType="warning"
+            className=""
+            dismissible={false}
+            iconClassNames={Array []}
+            message={
+              <React.Fragment>
+                This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+                <withDeprecatedProps(Hyperlink)
+                  destination="http://localhost:18381/publisher/"
+                >
+                  Click here to access the older version of Publisher.
+                </withDeprecatedProps(Hyperlink)>
+              </React.Fragment>
+            }
+            onClose={[Function]}
+            title={null}
+          />,
+          false,
+        ],
+        "className": "",
+        "sidePanes": undefined,
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alertType": "warning",
+            "className": "",
+            "dismissible": false,
+            "iconClassNames": Array [],
+            "message": <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>,
+            "onClose": [Function],
+            "title": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        false,
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`CourseTable displays table and button when not blacklisted 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CourseTable
+    authentication={
+      Object {
+        "administrator": false,
+      }
+    }
+    fetchOrganizations={[Function]}
+    publisherUserInfo={
+      Object {
+        "organizations": Array [
+          Object {
+            "key": "fake2",
+            "name": "fake_name2",
+          },
+        ],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -1508,6 +1696,1697 @@ ShallowWrapper {
 }
 `;
 
+exports[`CourseTable displays table and button when user has no orgs 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CourseTable
+    authentication={
+      Object {
+        "administrator": false,
+      }
+    }
+    fetchOrganizations={[Function]}
+    publisherUserInfo={
+      Object {
+        "organizations": Array [],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <StatusAlert
+          alertType="warning"
+          className=""
+          dismissible={false}
+          iconClassNames={Array []}
+          message={
+            <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
+          }
+          onClose={[Function]}
+          title={null}
+        />,
+        <React.Fragment>
+          <HelmetWrapper
+            defer={true}
+            encodeSpecialCharacters={true}
+          >
+            <title>
+              Publisher Beta | undefined
+            </title>
+          </HelmetWrapper>
+          <div
+            className="row"
+          >
+            <div
+              className="col-2 float-left"
+            >
+              <ButtonToolbar
+                className="mb-3"
+                leftJustify={true}
+              >
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>
+            </div>
+            <div
+              className="col-5 float-right pt-1"
+            >
+              <StateManager
+                closeMenuOnSelect={false}
+                defaultInputValue=""
+                defaultMenuIsOpen={false}
+                defaultValue={null}
+                isMulti={true}
+                maxMenuHeight="30vh"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Course Run Statuses",
+                      "options": Array [
+                        Object {
+                          "color": "#e7e7e7",
+                          "label": "In review",
+                          "value": "in_review",
+                        },
+                        Object {
+                          "color": "#008100",
+                          "label": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "color": "#0075b4",
+                          "label": "Scheduled",
+                          "value": "reviewed",
+                        },
+                        Object {
+                          "color": "#E2C018",
+                          "label": "Unsubmitted",
+                          "value": "unpublished",
+                        },
+                      ],
+                    },
+                  ]
+                }
+                placeholder="Filters..."
+                styles={
+                  Object {
+                    "multiValue": [Function],
+                    "multiValueLabel": [Function],
+                    "option": [Function],
+                  }
+                }
+                value={Array []}
+              />
+            </div>
+            <div
+              className="col-5 float-right"
+            >
+              <SearchField
+                inputLabel="Search:"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClear={[Function]}
+                onFocus={[Function]}
+                onSubmit={[Function]}
+                placeholder=""
+                screenReaderText={
+                  Object {
+                    "clearButton": "Clear search",
+                    "searchButton": "Submit search",
+                  }
+                }
+                value=""
+              />
+            </div>
+          </div>
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "number",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
+                },
+              ]
+            }
+            formatData={[Function]}
+            tableSortable={true}
+          />
+        </React.Fragment>,
+      ],
+      "className": "",
+      "sidePanes": undefined,
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "alertType": "warning",
+          "className": "",
+          "dismissible": false,
+          "iconClassNames": Array [],
+          "message": <React.Fragment>
+            This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+            <withDeprecatedProps(Hyperlink)
+              destination="http://localhost:18381/publisher/"
+            >
+              Click here to access the older version of Publisher.
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>,
+          "onClose": [Function],
+          "title": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <HelmetWrapper
+              defer={true}
+              encodeSpecialCharacters={true}
+            >
+              <title>
+                Publisher Beta | undefined
+              </title>
+            </HelmetWrapper>,
+            <div
+              className="row"
+            >
+              <div
+                className="col-2 float-left"
+              >
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
+                >
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                          Object {
+                            "color": "#0075b4",
+                            "label": "Scheduled",
+                            "value": "reviewed",
+                          },
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
+              </div>
+              <div
+                className="col-5 float-right"
+              >
+                <SearchField
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>,
+            <withRouter(Connect(TableComponent))
+              className="courses"
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "number",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
+                  },
+                ]
+              }
+              formatData={[Function]}
+              tableSortable={true}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <title>
+                Publisher Beta | undefined
+              </title>,
+              "defer": true,
+              "encodeSpecialCharacters": true,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Publisher Beta | undefined",
+              },
+              "ref": null,
+              "rendered": "Publisher Beta | undefined",
+              "type": "title",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="col-2 float-left"
+                >
+                  <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
+                  >
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>
+                </div>,
+                <div
+                  className="col-5 float-right pt-1"
+                >
+                  <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                            Object {
+                              "color": "#0075b4",
+                              "label": "Scheduled",
+                              "value": "reviewed",
+                            },
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />
+                </div>,
+                <div
+                  className="col-5 float-right"
+                >
+                  <SearchField
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />
+                </div>,
+              ],
+              "className": "row",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
+                  >
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>,
+                  "className": "col-2 float-left",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>,
+                    "className": "mb-3",
+                    "leftJustify": true,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>,
+                      "replace": false,
+                      "to": "/courses/new",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "New Course",
+                        "className": "btn btn-primary",
+                      },
+                      "ref": null,
+                      "rendered": "New Course",
+                      "type": "button",
+                    },
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                            Object {
+                              "color": "#0075b4",
+                              "label": "Scheduled",
+                              "value": "reviewed",
+                            },
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />,
+                  "className": "col-5 float-right pt-1",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "closeMenuOnSelect": false,
+                    "defaultInputValue": "",
+                    "defaultMenuIsOpen": false,
+                    "defaultValue": null,
+                    "isMulti": true,
+                    "maxMenuHeight": "30vh",
+                    "onChange": [Function],
+                    "options": Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                          Object {
+                            "color": "#0075b4",
+                            "label": "Scheduled",
+                            "value": "reviewed",
+                          },
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                        ],
+                      },
+                    ],
+                    "placeholder": "Filters...",
+                    "styles": Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    },
+                    "value": Array [],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <SearchField
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />,
+                  "className": "col-5 float-right",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "inputLabel": "Search:",
+                    "onBlur": [Function],
+                    "onChange": [Function],
+                    "onClear": [Function],
+                    "onFocus": [Function],
+                    "onSubmit": [Function],
+                    "placeholder": "",
+                    "screenReaderText": Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    },
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "courses",
+              "columns": Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "number",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
+                },
+              ],
+              "formatData": [Function],
+              "tableSortable": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": Symbol(react.fragment),
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <StatusAlert
+            alertType="warning"
+            className=""
+            dismissible={false}
+            iconClassNames={Array []}
+            message={
+              <React.Fragment>
+                This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+                <withDeprecatedProps(Hyperlink)
+                  destination="http://localhost:18381/publisher/"
+                >
+                  Click here to access the older version of Publisher.
+                </withDeprecatedProps(Hyperlink)>
+              </React.Fragment>
+            }
+            onClose={[Function]}
+            title={null}
+          />,
+          <React.Fragment>
+            <HelmetWrapper
+              defer={true}
+              encodeSpecialCharacters={true}
+            >
+              <title>
+                Publisher Beta | undefined
+              </title>
+            </HelmetWrapper>
+            <div
+              className="row"
+            >
+              <div
+                className="col-2 float-left"
+              >
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
+                >
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                          Object {
+                            "color": "#0075b4",
+                            "label": "Scheduled",
+                            "value": "reviewed",
+                          },
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unpublished",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
+              </div>
+              <div
+                className="col-5 float-right"
+              >
+                <SearchField
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>
+            <withRouter(Connect(TableComponent))
+              className="courses"
+              columns={
+                Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "number",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
+                  },
+                ]
+              }
+              formatData={[Function]}
+              tableSortable={true}
+            />
+          </React.Fragment>,
+        ],
+        "className": "",
+        "sidePanes": undefined,
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alertType": "warning",
+            "className": "",
+            "dismissible": false,
+            "iconClassNames": Array [],
+            "message": <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>,
+            "onClose": [Function],
+            "title": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <HelmetWrapper
+                defer={true}
+                encodeSpecialCharacters={true}
+              >
+                <title>
+                  Publisher Beta | undefined
+                </title>
+              </HelmetWrapper>,
+              <div
+                className="row"
+              >
+                <div
+                  className="col-2 float-left"
+                >
+                  <ButtonToolbar
+                    className="mb-3"
+                    leftJustify={true}
+                  >
+                    <Link
+                      replace={false}
+                      to="/courses/new"
+                    >
+                      <button
+                        className="btn btn-primary"
+                      >
+                        New Course
+                      </button>
+                    </Link>
+                  </ButtonToolbar>
+                </div>
+                <div
+                  className="col-5 float-right pt-1"
+                >
+                  <StateManager
+                    closeMenuOnSelect={false}
+                    defaultInputValue=""
+                    defaultMenuIsOpen={false}
+                    defaultValue={null}
+                    isMulti={true}
+                    maxMenuHeight="30vh"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                            Object {
+                              "color": "#0075b4",
+                              "label": "Scheduled",
+                              "value": "reviewed",
+                            },
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                          ],
+                        },
+                      ]
+                    }
+                    placeholder="Filters..."
+                    styles={
+                      Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      }
+                    }
+                    value={Array []}
+                  />
+                </div>
+                <div
+                  className="col-5 float-right"
+                >
+                  <SearchField
+                    inputLabel="Search:"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    onSubmit={[Function]}
+                    placeholder=""
+                    screenReaderText={
+                      Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      }
+                    }
+                    value=""
+                  />
+                </div>
+              </div>,
+              <withRouter(Connect(TableComponent))
+                className="courses"
+                columns={
+                  Array [
+                    Object {
+                      "columnSortable": true,
+                      "key": "title",
+                      "label": "Course Name",
+                    },
+                    Object {
+                      "columnSortable": true,
+                      "key": "number",
+                      "label": "Course Number",
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "course_run_statuses",
+                      "label": "States",
+                    },
+                    Object {
+                      "columnSortable": false,
+                      "key": "course_editor_names",
+                      "label": "Course Editors",
+                    },
+                  ]
+                }
+                formatData={[Function]}
+                tableSortable={true}
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <title>
+                  Publisher Beta | undefined
+                </title>,
+                "defer": true,
+                "encodeSpecialCharacters": true,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Publisher Beta | undefined",
+                },
+                "ref": null,
+                "rendered": "Publisher Beta | undefined",
+                "type": "title",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="col-2 float-left"
+                  >
+                    <ButtonToolbar
+                      className="mb-3"
+                      leftJustify={true}
+                    >
+                      <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>
+                    </ButtonToolbar>
+                  </div>,
+                  <div
+                    className="col-5 float-right pt-1"
+                  >
+                    <StateManager
+                      closeMenuOnSelect={false}
+                      defaultInputValue=""
+                      defaultMenuIsOpen={false}
+                      defaultValue={null}
+                      isMulti={true}
+                      maxMenuHeight="30vh"
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Course Run Statuses",
+                            "options": Array [
+                              Object {
+                                "color": "#e7e7e7",
+                                "label": "In review",
+                                "value": "in_review",
+                              },
+                              Object {
+                                "color": "#008100",
+                                "label": "Published",
+                                "value": "published",
+                              },
+                              Object {
+                                "color": "#0075b4",
+                                "label": "Scheduled",
+                                "value": "reviewed",
+                              },
+                              Object {
+                                "color": "#E2C018",
+                                "label": "Unsubmitted",
+                                "value": "unpublished",
+                              },
+                            ],
+                          },
+                        ]
+                      }
+                      placeholder="Filters..."
+                      styles={
+                        Object {
+                          "multiValue": [Function],
+                          "multiValueLabel": [Function],
+                          "option": [Function],
+                        }
+                      }
+                      value={Array []}
+                    />
+                  </div>,
+                  <div
+                    className="col-5 float-right"
+                  >
+                    <SearchField
+                      inputLabel="Search:"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClear={[Function]}
+                      onFocus={[Function]}
+                      onSubmit={[Function]}
+                      placeholder=""
+                      screenReaderText={
+                        Object {
+                          "clearButton": "Clear search",
+                          "searchButton": "Submit search",
+                        }
+                      }
+                      value=""
+                    />
+                  </div>,
+                ],
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <ButtonToolbar
+                      className="mb-3"
+                      leftJustify={true}
+                    >
+                      <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>
+                    </ButtonToolbar>,
+                    "className": "col-2 float-left",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/courses/new"
+                      >
+                        <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>
+                      </Link>,
+                      "className": "mb-3",
+                      "leftJustify": true,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <button
+                          className="btn btn-primary"
+                        >
+                          New Course
+                        </button>,
+                        "replace": false,
+                        "to": "/courses/new",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "New Course",
+                          "className": "btn btn-primary",
+                        },
+                        "ref": null,
+                        "rendered": "New Course",
+                        "type": "button",
+                      },
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <StateManager
+                      closeMenuOnSelect={false}
+                      defaultInputValue=""
+                      defaultMenuIsOpen={false}
+                      defaultValue={null}
+                      isMulti={true}
+                      maxMenuHeight="30vh"
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Course Run Statuses",
+                            "options": Array [
+                              Object {
+                                "color": "#e7e7e7",
+                                "label": "In review",
+                                "value": "in_review",
+                              },
+                              Object {
+                                "color": "#008100",
+                                "label": "Published",
+                                "value": "published",
+                              },
+                              Object {
+                                "color": "#0075b4",
+                                "label": "Scheduled",
+                                "value": "reviewed",
+                              },
+                              Object {
+                                "color": "#E2C018",
+                                "label": "Unsubmitted",
+                                "value": "unpublished",
+                              },
+                            ],
+                          },
+                        ]
+                      }
+                      placeholder="Filters..."
+                      styles={
+                        Object {
+                          "multiValue": [Function],
+                          "multiValueLabel": [Function],
+                          "option": [Function],
+                        }
+                      }
+                      value={Array []}
+                    />,
+                    "className": "col-5 float-right pt-1",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "closeMenuOnSelect": false,
+                      "defaultInputValue": "",
+                      "defaultMenuIsOpen": false,
+                      "defaultValue": null,
+                      "isMulti": true,
+                      "maxMenuHeight": "30vh",
+                      "onChange": [Function],
+                      "options": Array [
+                        Object {
+                          "label": "Course Run Statuses",
+                          "options": Array [
+                            Object {
+                              "color": "#e7e7e7",
+                              "label": "In review",
+                              "value": "in_review",
+                            },
+                            Object {
+                              "color": "#008100",
+                              "label": "Published",
+                              "value": "published",
+                            },
+                            Object {
+                              "color": "#0075b4",
+                              "label": "Scheduled",
+                              "value": "reviewed",
+                            },
+                            Object {
+                              "color": "#E2C018",
+                              "label": "Unsubmitted",
+                              "value": "unpublished",
+                            },
+                          ],
+                        },
+                      ],
+                      "placeholder": "Filters...",
+                      "styles": Object {
+                        "multiValue": [Function],
+                        "multiValueLabel": [Function],
+                        "option": [Function],
+                      },
+                      "value": Array [],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <SearchField
+                      inputLabel="Search:"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClear={[Function]}
+                      onFocus={[Function]}
+                      onSubmit={[Function]}
+                      placeholder=""
+                      screenReaderText={
+                        Object {
+                          "clearButton": "Clear search",
+                          "searchButton": "Submit search",
+                        }
+                      }
+                      value=""
+                    />,
+                    "className": "col-5 float-right",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "inputLabel": "Search:",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onClear": [Function],
+                      "onFocus": [Function],
+                      "onSubmit": [Function],
+                      "placeholder": "",
+                      "screenReaderText": Object {
+                        "clearButton": "Clear search",
+                        "searchButton": "Submit search",
+                      },
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "courses",
+                "columns": Array [
+                  Object {
+                    "columnSortable": true,
+                    "key": "title",
+                    "label": "Course Name",
+                  },
+                  Object {
+                    "columnSortable": true,
+                    "key": "number",
+                    "label": "Course Number",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_run_statuses",
+                    "label": "States",
+                  },
+                  Object {
+                    "columnSortable": false,
+                    "key": "course_editor_names",
+                    "label": "Course Editors",
+                  },
+                ],
+                "formatData": [Function],
+                "tableSortable": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": Symbol(react.fragment),
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`CourseTable hides table and button when blacklisted 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CourseTable
+    authentication={
+      Object {
+        "administrator": false,
+      }
+    }
+    fetchOrganizations={[Function]}
+    publisherUserInfo={
+      Object {
+        "organizations": Array [
+          Object {
+            "key": "fake1",
+            "name": "fake_name1",
+          },
+        ],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <StatusAlert
+          alertType="warning"
+          className=""
+          dismissible={false}
+          iconClassNames={Array []}
+          message={
+            <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>
+          }
+          onClose={[Function]}
+          title={null}
+        />,
+        false,
+      ],
+      "className": "",
+      "sidePanes": undefined,
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "alertType": "warning",
+          "className": "",
+          "dismissible": false,
+          "iconClassNames": Array [],
+          "message": <React.Fragment>
+            This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+            <withDeprecatedProps(Hyperlink)
+              destination="http://localhost:18381/publisher/"
+            >
+              Click here to access the older version of Publisher.
+            </withDeprecatedProps(Hyperlink)>
+          </React.Fragment>,
+          "onClose": [Function],
+          "title": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      false,
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <StatusAlert
+            alertType="warning"
+            className=""
+            dismissible={false}
+            iconClassNames={Array []}
+            message={
+              <React.Fragment>
+                This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+                <withDeprecatedProps(Hyperlink)
+                  destination="http://localhost:18381/publisher/"
+                >
+                  Click here to access the older version of Publisher.
+                </withDeprecatedProps(Hyperlink)>
+              </React.Fragment>
+            }
+            onClose={[Function]}
+            title={null}
+          />,
+          false,
+        ],
+        "className": "",
+        "sidePanes": undefined,
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alertType": "warning",
+            "className": "",
+            "dismissible": false,
+            "iconClassNames": Array [],
+            "message": <React.Fragment>
+              This is a beta version of the new Publisher tool. Please do not use this tool unless edX has asked you to be in the beta testing group. 
+              <withDeprecatedProps(Hyperlink)
+                destination="http://localhost:18381/publisher/"
+              >
+                Click here to access the older version of Publisher.
+              </withDeprecatedProps(Hyperlink)>
+            </React.Fragment>,
+            "onClose": [Function],
+            "title": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        false,
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
 exports[`CourseTable shows a table 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
@@ -1518,7 +3397,11 @@ ShallowWrapper {
       }
     }
     fetchOrganizations={[Function]}
-    publisherUserInfo={Object {}}
+    publisherUserInfo={
+      Object {
+        "organizations": Array [],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

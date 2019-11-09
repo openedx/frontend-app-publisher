@@ -111,13 +111,13 @@ class CourseTable extends React.Component {
     updateUrl({ ...params, page: 1 });
   }
 
-  isOrgWhitelisted() {
+  isOrgBlacklisted() {
     const userOrgs = this.props.publisherUserInfo.organizations;
     if (!orgBlacklist || (orgBlacklist && orgBlacklist.length === 0)) {
-      // No Blacklist specified allow all orgs
-      return true;
+      // No Blacklist specified - allow all orgs
+      return false;
     }
-    return userOrgs.any(org => !orgBlacklist.includes(org.key));
+    return userOrgs.some(org => orgBlacklist.includes(org.key));
   }
 
   render() {
@@ -161,9 +161,8 @@ class CourseTable extends React.Component {
       course_run_statuses: (<Pill statuses={course.course_run_statuses} />),
       course_editor_names: course.editors ? course.editors.map(editor => editor.user.full_name).join(', ') : '',
     }));
-    const showDashboard = this.isOrgWhitelisted() || administrator;
+    const showDashboard = !this.isOrgBlacklisted() || administrator;
     const oldPublisherLink = `${process.env.DISCOVERY_API_BASE_URL}/publisher/`;
-
     return (
       <PageContainer wide>
         <StatusAlert
@@ -248,7 +247,9 @@ CourseTable.defaultProps = {
     administrator: false,
   },
   fetchOrganizations: () => {},
-  publisherUserInfo: {},
+  publisherUserInfo: {
+    organizations: [],
+  },
 };
 
 CourseTable.propTypes = {
