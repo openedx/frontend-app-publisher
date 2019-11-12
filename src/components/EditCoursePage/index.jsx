@@ -35,18 +35,23 @@ class EditCoursePage extends React.Component {
     this.handleModalForReviewedRun = this.handleModalForReviewedRun.bind(this);
     this.buildInitialValues = this.buildInitialValues.bind(this);
     this.buildCourseRuns = this.buildCourseRuns.bind(this);
+    this.getData = this.getData.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchCourseInfo();
-    this.props.fetchCourseOptions();
-    this.props.fetchCourseRunOptions();
-    this.setStartedFetching();
+    this.getData();
   }
 
   componentWillUnmount() {
     this.dismissCreateStatusAlert();
     this.dismissReviewStatusAlert();
+  }
+
+  getData() {
+    this.props.fetchCourseInfo();
+    this.props.fetchCourseOptions();
+    this.props.fetchCourseRunOptions();
+    this.setStartedFetching();
   }
 
   setStartedFetching() {
@@ -285,7 +290,13 @@ class EditCoursePage extends React.Component {
       this.prepareSendCourseRunData(courseData);
     // Process courseData to reduced data set
     const courseEditData = this.prepareSendCourseData(courseData, modifiedCourseRuns);
-    return editCourse(courseEditData, modifiedCourseRuns, !!targetRun, !!isInternalReview);
+    return editCourse(
+      courseEditData,
+      modifiedCourseRuns,
+      !!targetRun,
+      !!isInternalReview,
+      this.getData,
+    );
   }
 
   displayReviewStatusAlert(status) {

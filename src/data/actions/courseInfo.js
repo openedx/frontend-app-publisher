@@ -178,7 +178,14 @@ function createCourse(courseData) {
   };
 }
 
-function handleCourseRuns(dispatch, courseRunData, course, submitReview, internalReview) {
+function handleCourseRuns(
+  dispatch,
+  courseRunData,
+  course,
+  submitReview,
+  internalReview,
+  refreshData,
+) {
   // make course copy so we are not re-assigning properties of this functions original params
   const newCourse = Object.assign({}, course);
   let sendData = DiscoveryDataApiService.editCourseRuns;
@@ -192,7 +199,12 @@ function handleCourseRuns(dispatch, courseRunData, course, submitReview, interna
       newCourse.course_runs[i] = response.data;
     });
     dispatch(editCourseSuccess(newCourse));
-    if (submitReview) dispatch(courseSubmittingSuccess());
+    if (submitReview) {
+      dispatch(courseSubmittingSuccess());
+    }
+    if (internalReview) {
+      refreshData();
+    }
   }).catch((error) => {
     dispatch(editCourseFail(['Course Run edit failed, please try again or contact support.']
       .concat(getErrorMessages(error))));
@@ -200,14 +212,27 @@ function handleCourseRuns(dispatch, courseRunData, course, submitReview, interna
   });
 }
 
-function editCourse(courseData, courseRunData, submittingRunForReview, isInternalReview) {
+function editCourse(
+  courseData,
+  courseRunData,
+  submittingRunForReview,
+  isInternalReview,
+  refreshData,
+) {
   return (dispatch) => {
     dispatch(editCourseInfo(courseData));
     // Send edit course PATCH
     return DiscoveryDataApiService.editCourse(courseData)
       .then((response) => {
         const course = response.data;
-        handleCourseRuns(dispatch, courseRunData, course, submittingRunForReview, isInternalReview);
+        handleCourseRuns(
+          dispatch,
+          courseRunData,
+          course,
+          submittingRunForReview,
+          isInternalReview,
+          refreshData,
+        );
       })
       .catch((error) => {
         dispatch(editCourseFail(['Course edit failed, please try again or contact support.'].concat(getErrorMessages(error))));
