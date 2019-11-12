@@ -138,7 +138,8 @@ class CreateCourseRunPage extends React.Component {
     const parsedTypeOptions = courseOptionsData && courseOptionsData.type &&
       parseCourseTypeOptions(courseOptionsData.type.type_options);
     const courseRunTypeOptions = parsedTypeOptions && parsedTypeOptions.courseRunTypeOptions;
-    const defaultRunType = courseRunTypeOptions && courseRunTypeOptions[type][1].value;
+    const defaultRunType = courseRunTypeOptions && courseRunTypeOptions[type] &&
+      courseRunTypeOptions[type][1] && courseRunTypeOptions[type][1].value;
 
     return (
       <React.Fragment>
