@@ -16,6 +16,7 @@ describe('CreateCourseRunPage', () => {
         isCreating: false,
         error: null,
       }}
+      courseOptions={courseOptions}
     />);
     expect(component).toMatchSnapshot();
   });
