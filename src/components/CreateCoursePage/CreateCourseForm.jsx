@@ -18,23 +18,31 @@ import {
   PROFESSIONAL_TRACK,
   VERIFIED_TRACK,
 } from '../../data/constants';
-import { endDateHelp, enrollmentHelp, pacingHelp, startDateHelp, titleHelp, typeHelp } from '../../helpText';
+import { endDateHelp, enrollmentHelp, pacingHelp, startDateHelp, titleHelp, typeHelp, keyHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
 import { isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { canSetRunKey: false };
+  }
+
   componentDidUpdate(prevProps) {
     const {
       change,
       courseOptions,
       currentFormValues: {
         type: currentType,
+        org: currentOrg,
       },
       usingCourseType,
+      organizations,
     } = this.props;
     const {
       currentFormValues: {
         type: prevType,
+        org: previousOrg,
       },
     } = prevProps;
     // DISCO-1399: Remove the usingCourseType
@@ -45,7 +53,18 @@ class BaseCreateCourseForm extends React.Component {
       const { courseRunTypeOptions } = parsedTypeOptions;
       change('run_type', courseRunTypeOptions[currentType][1].value);
     }
+    if (currentOrg !== previousOrg) {
+      const selectedOrganization = organizations.find(org => org.key === currentOrg);
+      if (selectedOrganization) {
+        this.setRunKeyState(selectedOrganization);
+      }
+    }
   }
+
+  setRunKeyState(selectedOrganization) {
+    this.setState({ canSetRunKey: !selectedOrganization.auto_generate_course_run_keys });
+  }
+
   // DISCO-1399: Can remove this function since we will get it from the Course Type OPTIONS
   getEnrollmentTrackOptions() {
     return [
@@ -60,7 +79,9 @@ class BaseCreateCourseForm extends React.Component {
     let orgSelectList = [{ label: 'Select organization', value: '' }];
 
     if (organizations) {
-      const newOrgs = organizations.map(org => ({ label: org.name, value: org.key }));
+      const newOrgs = organizations.map(org => (
+        { label: org.name, value: org.key, autoGenerateKey: org.auto_generate_course_run_keys }
+      ));
       orgSelectList = orgSelectList.concat(newOrgs);
     }
 
@@ -79,6 +100,7 @@ class BaseCreateCourseForm extends React.Component {
       courseOptions,
       courseRunOptions,
     } = this.props;
+    const { canSetRunKey } = this.state;
     const courseOptionsData = getOptionsData(courseOptions);
     const parsedTypeOptions = courseOptionsData &&
       parseCourseTypeOptions(courseOptionsData.type.type_options);
@@ -211,6 +233,21 @@ class BaseCreateCourseForm extends React.Component {
           }
           <h2>First run of your Course</h2>
           <hr />
+          {canSetRunKey &&
+            <Field
+              name="courseRunKey"
+              component={RenderInputTextField}
+              type="text"
+              pattern="[a-zA-Z0-9-]+"
+              label={
+                <FieldLabel
+                  id="courseRunKey-label"
+                  text="Run Key"
+                  helpText={keyHelp}
+                />
+              }
+            />
+          }
           {/* TODO this should be refactored when paragon supports safari */}
           {/* text inputs for safari */}
           {isSafari ?

@@ -55,6 +55,7 @@ class CreateCoursePage extends React.Component {
         end: options.end,
         pacing_type: options.pacing_type,
         run_type: options.run_type,
+        term: options.courseRunKey,
       },
     };
     return this.props.createCourse(courseData);

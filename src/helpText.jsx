@@ -93,6 +93,15 @@ function pacingEditHelp(courseRun) {
   );
 }
 
+const keyHelp = (
+  <div>
+    <p>Letters and Numbers only.</p>
+    <p>If left blank, the key will get its value from the start date</p>
+    <p>This field will produce the following for this run&#39;s key:</p>
+    <p>course-v1:organization+course-number+run-key</p>
+  </div>
+);
+
 const pacingHelp = (
   <div>
     <p>
@@ -192,4 +201,5 @@ export {
   titleHelp,
   typeHelp,
   urlSlugHelp,
+  keyHelp,
 };
