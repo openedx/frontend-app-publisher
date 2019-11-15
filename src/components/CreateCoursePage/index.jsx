@@ -10,6 +10,7 @@ import ConfirmationModal from '../ConfirmationModal';
 
 import { formatPriceData } from '../../utils';
 
+const typeWhiteList = process.env.TYPE_WHITELIST ? process.env.TYPE_WHITELIST.split(',') : [];
 class CreateCoursePage extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +38,15 @@ class CreateCoursePage extends React.Component {
 
   setStartedFetching() {
     this.setState({ startedFetching: true });
+  }
+
+  isOrgWhitelisted() {
+    const userOrgs = this.props.publisherUserInfo.organizations;
+    if (typeWhiteList.length > 0 && typeWhiteList[0] === '-') {
+      const typeBlackList = typeWhiteList.slice(1);
+      return userOrgs.some(org => !typeBlackList.includes(org.key));
+    }
+    return userOrgs.some(org => typeWhiteList.includes(org.key));
   }
 
   handleCourseCreate(options) {
@@ -173,7 +183,7 @@ class CreateCoursePage extends React.Component {
                 organizations={organizations}
                 // DISCO-1399: Remove usingCourseType
                 // TODO: Add in logic here to decide when course type is being used
-                usingCourseType={false}
+                usingCourseType={this.isOrgWhitelisted()}
                 isCreating={courseInfo.isCreating}
                 courseOptions={courseOptions}
                 courseRunOptions={courseRunOptions}
@@ -195,7 +205,9 @@ class CreateCoursePage extends React.Component {
 
 CreateCoursePage.defaultProps = {
   initialValues: {},
-  publisherUserInfo: {},
+  publisherUserInfo: {
+    organizations: [],
+  },
   fetchOrganizations: () => {},
   fetchCourseOptions: () => {},
   fetchCourseRunOptions: () => {},
