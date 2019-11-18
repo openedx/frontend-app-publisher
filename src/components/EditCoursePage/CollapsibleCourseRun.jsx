@@ -267,6 +267,14 @@ class CollapsibleCourseRun extends React.Component {
 
     const courseDateEditHelp = dateEditHelp(courseRun);
     const coursePacingEditHelp = pacingEditHelp(courseRun);
+    // DISCO-1399: Simplify this line and if statement to not worry about if type is defined.
+    const runTypeOptions = currentFormValues && currentFormValues.type &&
+      courseRunTypeOptions[currentFormValues.type];
+    // Handle mismatches between CourseType and CourseRunType
+    if (currentFormValues && currentFormValues.type && courseRun.run_type &&
+      runTypeOptions.every(option => option.value !== courseRun.run_type)) {
+      runTypeOptions.push({ label: '--', value: courseRun.run_type });
+    }
 
     return (
       <Collapsible
@@ -373,7 +381,7 @@ class CollapsibleCourseRun extends React.Component {
           <Field
             name={`${courseId}.run_type`}
             component={RenderSelectField}
-            options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course enrollment track first', value: '' }]}
+            options={currentFormValues.type ? runTypeOptions : [{ label: 'Select Course enrollment track first', value: '' }]}
             extraInput={{ onInvalid: this.openCollapsible }}
             label={
               <FieldLabel
