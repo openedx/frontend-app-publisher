@@ -1,7 +1,8 @@
 import {
   COURSE_SUBMITTING_CANCEL,
   COURSE_SUBMITTING_FAILURE,
-  COURSE_SUBMITTING_INFO,
+  COURSE_SUBMIT_RUN,
+  COURSE_RUN_SUBMITTING,
   CLEAR_REVIEW_ALERT,
   COURSE_SUBMITTING_SUCCESS,
 } from '../constants/courseSubmitInfo';
@@ -16,11 +17,15 @@ const initialState = {
 
 function courseSubmitInfo(state = initialState, action) {
   switch (action.type) {
-    case COURSE_SUBMITTING_INFO:
+    case COURSE_SUBMIT_RUN:
       return Object.assign({}, state, {
         targetRun: action.targetRun,
-        isSubmittingRunReview: (action.targetRun != null),
+        isSubmittingRunReview: false,
         errors: null,
+      });
+    case COURSE_RUN_SUBMITTING:
+      return Object.assign({}, state, {
+        isSubmittingRunReview: true,
       });
     case COURSE_SUBMITTING_SUCCESS:
       return Object.assign({}, state, {

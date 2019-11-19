@@ -11,8 +11,10 @@ import {
   buildInitialPrices, courseRunIsArchived, formatPriceData, getCourseNumber, isValidDate,
   isNonExemptChanged, jsonDeepEqual,
 } from '../../utils';
+import { courseRunSubmitting } from '../../data/actions/courseSubmitInfo';
 import { IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
   UNPUBLISHED } from '../../data/constants';
+import store from '../../data/store';
 import ConfirmationModal from '../ConfirmationModal';
 import SidePanes from '../SidePanes';
 
@@ -448,6 +450,7 @@ class EditCoursePage extends React.Component {
       !IN_REVIEW_STATUS.includes(targetRun.status)) {
       // Submitting Run for review, show modal, and temporarily store form data until
       // we have a response for how to continue.
+      store.dispatch(courseRunSubmitting());
       this.setState({
         submitCourseData,
         submitConfirmVisible: true, // show modal

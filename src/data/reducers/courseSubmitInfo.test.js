@@ -1,12 +1,12 @@
 import courseSubmitInfoReducer from './courseSubmitInfo';
-import { courseSubmittingInfo, courseSubmittingFailure } from '../actions/courseSubmitInfo';
+import { courseRunSubmitting, courseSubmitRun, courseSubmittingFailure } from '../actions/courseSubmitInfo';
 
 
-describe('courseSubmittingInfo reducer', () => {
-  let initalState;
+describe('courseSubmitRun reducer', () => {
+  let initialState;
 
   beforeEach(() => {
-    initalState = {
+    initialState = {
       errors: null,
       targetRun: null,
       isSubmittingRunReview: false,
@@ -22,23 +22,32 @@ describe('courseSubmittingInfo reducer', () => {
     });
   });
 
-  it('courseSubmittingInfo action works with targetRun', () => {
-    const targetRun = {
-      key: 'edX101+DemoX',
-    };
-
-    expect(courseSubmitInfoReducer(initalState, courseSubmittingInfo(targetRun)))
+  it('courseRunSubmitting action sets isSubmittingRunReview boolean', () => {
+    expect(courseSubmitInfoReducer(initialState, courseRunSubmitting()))
       .toEqual({
         errors: null,
-        targetRun,
+        targetRun: null,
         isSubmittingRunReview: true,
       });
   });
 
-  it('courseSubmittingInfo action works without targetRun', () => {
+  it('courseSubmitRun action works with targetRun', () => {
+    const targetRun = {
+      key: 'edX101+DemoX',
+    };
+
+    expect(courseSubmitInfoReducer(initialState, courseSubmitRun(targetRun)))
+      .toEqual({
+        errors: null,
+        targetRun,
+        isSubmittingRunReview: false,
+      });
+  });
+
+  it('courseSubmitRun action works without targetRun', () => {
     const targetRun = null;
 
-    expect(courseSubmitInfoReducer(initalState, courseSubmittingInfo(targetRun)))
+    expect(courseSubmitInfoReducer(initialState, courseSubmitRun(targetRun)))
       .toEqual({
         errors: null,
         targetRun,

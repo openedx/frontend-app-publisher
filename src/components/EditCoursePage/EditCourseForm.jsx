@@ -29,7 +29,7 @@ import { enrollmentHelp, titleHelp, typeHelp, urlSlugHelp } from '../../helpText
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import { getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 import store from '../../data/store';
-import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
+import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -888,7 +888,7 @@ export class BaseEditCourseForm extends React.Component {
                    *  trying to submit for review with errors.
                    */
                   store.dispatch(stopSubmit(id));
-                  store.dispatch(courseSubmittingInfo());
+                  store.dispatch(courseSubmitRun());
                 }}
               />
             </ButtonToolbar>

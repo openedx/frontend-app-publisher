@@ -6,7 +6,7 @@ import { Hyperlink } from '@edx/paragon';
 
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
-import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
+import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import { courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
   getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack } from '../../utils';
@@ -666,7 +666,7 @@ class CollapsibleCourseRun extends React.Component {
               (courseRun.status === REVIEWED && isPristine(initialValues, currentFormValues) &&
                 isPristine(initialValues, currentFormValues, courseRun.key))}
               // Pass the submitting course run up to validate different fields based on status
-              onClick={() => store.dispatch(courseSubmittingInfo(courseRun))}
+              onClick={() => store.dispatch(courseSubmitRun(courseRun))}
               labels={{
                 default: this.displayDefaultButtonLabel(),
                 pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
