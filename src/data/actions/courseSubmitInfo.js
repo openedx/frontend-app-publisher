@@ -1,7 +1,8 @@
 import {
   COURSE_SUBMITTING_CANCEL,
   COURSE_SUBMITTING_SUCCESS,
-  COURSE_SUBMITTING_INFO,
+  COURSE_SUBMIT_RUN,
+  COURSE_RUN_SUBMITTING,
   COURSE_SUBMITTING_FAILURE,
   CLEAR_REVIEW_ALERT,
 } from '../constants/courseSubmitInfo';
@@ -14,8 +15,12 @@ function courseSubmittingFailure(errors) {
   return { type: COURSE_SUBMITTING_FAILURE, errors };
 }
 
-function courseSubmittingInfo(targetRun = null) {
-  return { type: COURSE_SUBMITTING_INFO, targetRun };
+function courseSubmitRun(targetRun = null) {
+  return { type: COURSE_SUBMIT_RUN, targetRun };
+}
+
+function courseRunSubmitting() {
+  return { type: COURSE_RUN_SUBMITTING };
 }
 
 function courseSubmittingSuccess() {
@@ -41,7 +46,8 @@ function clearCourseReviewAlert() {
 export {
   courseSubmittingCancel,
   courseSubmittingFailure,
-  courseSubmittingInfo,
+  courseSubmitRun,
+  courseRunSubmitting,
   courseSubmittingSuccess,
   clearCourseReviewAlert,
   clearSubmitStatus,

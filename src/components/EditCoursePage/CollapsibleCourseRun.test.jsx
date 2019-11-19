@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import CollapsibleCourseRun from './CollapsibleCourseRun';
-import { courseSubmittingInfo } from '../../data/actions/courseSubmitInfo';
+import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import { AUDIT_TRACK, MASTERS_TRACK, VERIFIED_TRACK } from '../../data/constants';
 
 import store from '../../data/store';
@@ -226,6 +226,6 @@ describe('Collapsible Course Run', () => {
 
     const mockDispatch = jest.spyOn(store, 'dispatch');
     component.find('ActionButton').simulate('click');
-    expect(mockDispatch).toHaveBeenCalledWith(courseSubmittingInfo(unpublishedCourseRun));
+    expect(mockDispatch).toHaveBeenCalledWith(courseSubmitRun(unpublishedCourseRun));
   });
 });

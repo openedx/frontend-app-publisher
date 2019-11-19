@@ -1,5 +1,6 @@
 import {
-  courseSubmittingInfo,
+  courseSubmitRun,
+  courseRunSubmitting,
   courseSubmittingCancel,
   courseSubmittingFailure,
   courseSubmittingSuccess,
@@ -8,27 +9,35 @@ import {
 import * as types from '../constants/courseSubmitInfo';
 
 
-describe('courseSubmittingInfo actions', () => {
+describe('courseSubmitInfo actions', () => {
   const targetRun = {
     key: 'edX101+DemoX',
   };
 
   it('handles submitting from the course page without a target run', () => {
     const expectedAction = {
-      type: types.COURSE_SUBMITTING_INFO,
+      type: types.COURSE_SUBMIT_RUN,
       targetRun: null,
     };
 
-    expect(courseSubmittingInfo()).toEqual(expectedAction);
+    expect(courseSubmitRun()).toEqual(expectedAction);
   });
 
   it('handles submitting from the course page with a target run', () => {
     const expectedAction = {
-      type: types.COURSE_SUBMITTING_INFO,
+      type: types.COURSE_SUBMIT_RUN,
       targetRun,
     };
 
-    expect(courseSubmittingInfo(targetRun)).toEqual(expectedAction);
+    expect(courseSubmitRun(targetRun)).toEqual(expectedAction);
+  });
+
+  it('handles submitting', () => {
+    const expectedAction = {
+      type: types.COURSE_RUN_SUBMITTING,
+    };
+
+    expect(courseRunSubmitting()).toEqual(expectedAction);
   });
 
   it('handles Cancel submit', () => {
