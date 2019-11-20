@@ -9,7 +9,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import { courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
-  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack } from '../../utils';
+  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual } from '../../utils';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -640,7 +640,7 @@ class CollapsibleCourseRun extends React.Component {
                   />
                 }
                 extraInput={{ onInvalid: this.openCollapsible }}
-                required
+                required={jsonDeepEqual(courseSubmitInfo.targetRun, courseRun)}
               />
               <Field
                 name={`${courseId}.ofac_comment`}
