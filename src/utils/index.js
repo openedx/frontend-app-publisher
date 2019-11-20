@@ -211,7 +211,7 @@ const formatPriceData = (formData, courseOptions) => {
   };
 
   if (!formData.type) { // DISCO-1399 can drop this format support
-    priceData.price = formData.price.replace(/\.00$/, '');
+    priceData.price = formData.price ? formData.price.replace(/\.00$/, '') : 0;
     priceData.prices['professional'] = priceData.price;
     priceData.prices['verified'] = priceData.price;
     return priceData;
