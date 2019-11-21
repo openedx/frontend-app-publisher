@@ -213,10 +213,7 @@ class DiscoveryDataApiService {
   }
 
   static autocompletePerson(text, organizationKeys) {
-    const queryString = [`?q=${text}`];
-    if (organizationKeys) {
-      organizationKeys.reduce((accumulator, key) => accumulator.push(key), queryString);
-    }
+    const queryString = [`?q=${text}`].concat(organizationKeys);
     const url = `${DiscoveryDataApiService.discoveryBaseUrl}/search/person_typeahead/${queryString.join('&org=')}`;
     return apiClient.get(url);
   }
