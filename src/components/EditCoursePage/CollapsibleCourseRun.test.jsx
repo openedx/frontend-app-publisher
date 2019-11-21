@@ -189,10 +189,11 @@ describe('Collapsible Course Run', () => {
       currentFormValues={currentFormValues}
       courseRunTypeOptions={courseRunTypeOptions}
       index={0}
+      editable
     />);
 
-    let disabledFields = componentNoSku.find({ disabled: true });
-    expect(disabledFields.length === 0);
+    let disabledFields = componentNoSku.find({ name: 'test-course.run_type', disabled: true });
+    expect(disabledFields).toHaveLength(0);
 
     updatedCourseRun.seats[0].sku = 'ABCDEF';
     const componentWithSku = shallow(<CollapsibleCourseRun
@@ -205,10 +206,11 @@ describe('Collapsible Course Run', () => {
       currentFormValues={currentFormValues}
       courseRunTypeOptions={courseRunTypeOptions}
       index={0}
+      editable
     />);
 
-    disabledFields = componentWithSku.find({ disabled: true });
-    expect(disabledFields.length === 1);
+    disabledFields = componentWithSku.find({ name: 'test-course.run_type', disabled: true });
+    expect(disabledFields).toHaveLength(1);
   });
 
   it('handles submission when called from a course run', () => {

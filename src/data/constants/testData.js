@@ -12,16 +12,19 @@ const courseOptions = {
                   uuid: 'f17e29d6-4648-4bb5-a199-97dc40f904aa',
                   name: 'Credit',
                   modes: ['credit', 'verified', 'audit'],
+                  is_marketable: true,
                 },
                 {
                   uuid: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
                   name: 'Verified and Audit',
                   modes: ['verified', 'audit'],
+                  is_marketable: true,
                 },
                 {
                   uuid: 'cfacfc62-54bd-4e1b-939a-5a94f12fbd8d',
                   name: 'Audit Only',
                   modes: ['audit'],
+                  is_marketable: true,
                 },
               ],
               entitlement_types: ['verified'],
@@ -71,19 +74,46 @@ const courseOptions = {
               ],
             },
             {
+              uuid: '7b41992e-f268-4331-8ba9-72acb0880454',
+              name: 'Masters Only',
+              course_run_types: [
+                {
+                  uuid: 'f394732f-ba43-4260-8ada-06a9f18e7160',
+                  name: 'Masters Only',
+                  modes: ['masters'],
+                  is_marketable: false,
+                },
+              ],
+              entitlement_types: [],
+              tracks: [
+                {
+                  seat_type: null,
+                  mode: {
+                    name: 'Masters',
+                    slug: 'masters',
+                    is_id_verified: false,
+                    is_credit_eligible: false,
+                    certificate_type: '',
+                    payee: 'organization',
+                  },
+                },
+              ],
+            },
+            {
               uuid: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
               name: 'Verified and Audit',
               course_run_types: [
                 {
                   uuid: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
                   name: 'Verified and Audit',
-                  modes: [
-                    'verified', 'audit'],
+                  modes: ['verified', 'audit'],
+                  is_marketable: true,
                 },
                 {
                   uuid: 'cfacfc62-54bd-4e1b-939a-5a94f12fbd8d',
                   name: 'Audit Only',
                   modes: ['audit'],
+                  is_marketable: true,
                 },
               ],
               entitlement_types: ['verified'],
@@ -126,6 +156,7 @@ const courseOptions = {
                   uuid: '6cebfc50-abca-4674-b4c7-249b31af6ddb',
                   name: 'Professional Only',
                   modes: ['professional'],
+                  is_marketable: true,
                 },
               ],
               entitlement_types: ['professional'],
@@ -154,6 +185,7 @@ const courseOptions = {
                   uuid: 'cfacfc62-54bd-4e1b-939a-5a94f12fbd8d',
                   name: 'Audit Only',
                   modes: ['audit'],
+                  is_marketable: true,
                 },
               ],
               entitlement_types: ['audit'],

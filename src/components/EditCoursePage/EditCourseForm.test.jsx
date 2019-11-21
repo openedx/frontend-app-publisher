@@ -189,8 +189,8 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const disabledFields = component.find({ disabled: true });
-    expect(disabledFields.length === 1);
+    const disabledFields = component.find({ name: 'mode', disabled: true });
+    expect(disabledFields).toHaveLength(1);
   });
 
   it('renders with course type disabled after being reviewed', () => {
@@ -211,8 +211,8 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const disabledFields = component.find({ disabled: true });
-    expect(disabledFields.length === 1);
+    const disabledFields = component.find({ name: 'type', disabled: true });
+    expect(disabledFields).toHaveLength(1);
   });
 
   it('renders with mode disabled once a sku exists, even if course is unpublished', () => {
@@ -232,8 +232,8 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const disabledFields = component.find({ disabled: true });
-    expect(disabledFields.length === 1);
+    const disabledFields = component.find({ name: 'mode', disabled: true });
+    expect(disabledFields).toHaveLength(1);
   });
 
   it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
@@ -254,7 +254,41 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const disabledFields = component.find({ disabled: true });
-    expect(disabledFields.length === 1);
+    const disabledFields = component.find({ name: 'type', disabled: true });
+    expect(disabledFields).toHaveLength(1);
+  });
+
+  it('no marketing fields if course type is not marketable', () => {
+    const initialValuesWithMasters = {
+      ...initialValuesFull,
+      type: '7b41992e-f268-4331-8ba9-72acb0880454',
+    };
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesWithMasters.title}
+      initialValues={initialValuesWithMasters}
+      currentFormValues={initialValuesWithMasters}
+      number="Masters101x"
+      entitlement={entitlement}
+      courseStatuses={[UNPUBLISHED]}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesWithMasters.uuid}
+      type={initialValuesWithMasters.type}
+      id="edit-course-form"
+    />);
+
+    const invisible = [
+      'short_description', 'full_description', 'outcome', 'syllabus_raw', 'prerequisites_raw',
+      'learner_testimonials', 'faq', 'additional_information', 'videoSrc',
+    ];
+    invisible.forEach((name) => {
+      const fields = component.find({ name });
+      expect(fields).toHaveLength(0);
+    });
+
+    // Just sanity check that a field we still want there is there:
+    const fields = component.find({ name: 'imageSrc' });
+    expect(fields).toHaveLength(1);
   });
 });

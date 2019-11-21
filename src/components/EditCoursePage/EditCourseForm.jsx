@@ -207,11 +207,15 @@ export class BaseEditCourseForm extends React.Component {
     const {
       courseTypeOptions,
       courseRunTypeOptions,
+      courseTypes,
       priceLabels,
       runTypeModes,
     } = parsedTypeOptions;
 
     const disabled = courseInReview || !editable;
+    // DISCO-1399: Simplify this line and if statement to not worry about if type is defined.
+    const showMarketingFields = !currentFormValues.type ||
+      courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
 
     let submitState = 'default';
     if (submitting || (courseInfo && courseInfo.isSubmittingEdit)) {
@@ -390,309 +394,289 @@ export class BaseEditCourseForm extends React.Component {
               className="course-image"
               disabled={disabled}
             />
-            <hr />
-            <Field
-              name="short_description"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="sdesc.label"
-                  text="Short description"
-                  helpText={
-                    <div>
-                      <p>An effective short description:</p>
-                      <ul>
-                        <li>Contains 25–50 words.</li>
-                        <li>Functions as a tagline.</li>
-                        <li>Conveys compelling reasons to take the course.</li>
-                        <li>Follows SEO guidelines.</li>
-                        <li>Targets a global audience.</li>
-                      </ul>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-short-description-guidelines"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p><b>Example:</b></p>
-                      <p>
-                        The first MOOC to teach positive psychology. Learn science-based
-                        principles and practices for a happy, meaningful life.
-                      </p>
-                    </div>
-                  }
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={500}
-              id="sdesc"
-              disabled={disabled}
-            />
-            <Field
-              name="full_description"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="ldesc.label"
-                  text="Long description"
-                  helpText={
-                    <div>
-                      <p>An effective long description:</p>
-                      <ul>
-                        <li>Contains 150–300 words.</li>
-                        <li>Is easy to skim.</li>
-                        <li>Uses bullet points instead of dense text paragraphs.</li>
-                        <li>Follows SEO guidelines.</li>
-                        <li>Targets a global audience.</li>
-                      </ul>
-                      <p>
-                        The first four lines are visible when the About page opens. Learners can
-                        select “See More” to view the full description.
-                      </p>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-long-description-guidelines"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                    </div>
-                  }
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={2500}
-              id="ldesc"
-              disabled={disabled}
-            />
-            <Field
-              name="outcome"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="outcome.label"
-                  text="What you will learn"
-                  helpText={
-                    <div>
-                      <p>The skills and knowledge learners will acquire in this course.</p>
-                      <p>Format each item as a bullet with four to ten words.</p>
-                      <p><b>Example:</b></p>
-                      <ul>
-                        <li>Basic R Programming</li>
-                        <li>An applied understanding of linear and logistic regression</li>
-                        <li>Application of text analytics</li>
-                        <li>Linear and integer optimization</li>
-                      </ul>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#what-you-will-learn-guidelines"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                    </div>
-                  }
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={2500}
-              id="outcome"
-              disabled={disabled}
-            />
-            <Field
-              name="syllabus_raw"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="syllabus.label"
-                  text="Syllabus"
-                  helpText={
-                    <div>
-                      <p>
-                        A review of content covered in your course, organized by week or module.
-                      </p>
-                      <ul>
-                        <li>Focus on topics and content.</li>
-                        <li>
-                          Do not include detailed information about course logistics, such as
-                          grading, communication policies, and reading lists.
-                        </li>
-                        <li>Format items as either paragraphs or a bulleted list.</li>
-                      </ul>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p><b>Example:</b></p>
-                      <ul>
-                        <li>
-                          <p>Week 1: From Calculator to Computer</p>
-                          <p>
-                            Introduction to basic programming concepts, such as values and
-                            expressions, as well as making decisions when implementing algorithms
-                            and developing programs.
-                          </p>
-                        </li>
-                        <li>
-                          <p>Week 2: State Transformation</p>
-                          <p>
-                            Introduction to state transformation, including representation of data
-                            and programs as well as conditional repetition.
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={500}
-              id="syllabus"
-              disabled={disabled}
-            />
-            <Field
-              name="prerequisites_raw"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="prereq.label"
-                  text="Prerequisites"
-                  helpText={
-                    <div>
-                      <p>
-                        Specific knowledge learners must have to be successful in the course.
-                        If the course has no prerequisites, enter “None”.
-                      </p>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#skill-and-knowledge-prerequisites"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p><b>Examples:</b></p>
-                      <ul>
-                        <li>Secondary school (high school) algebra; basic mathematics concepts</li>
-                        <li>Graduate-level understanding of Keynesian economics</li>
-                        <li>Basic algebra</li>
-                      </ul>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={1000}
-              id="prereq"
-              disabled={disabled}
-            />
-            <Field
-              name="learner_testimonials"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="testimonials.label"
-                  text="Learner testimonials"
-                  helpText={
-                    <div>
-                      <p>
-                        A quote from a learner in the course, demonstrating the value of taking
-                        the course.
-                      </p>
-                      <p>Should be no more than 25–50 words in length.</p>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#learner-testimonial-guidelines"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p><b>Example:</b></p>
-                      <p>
-                        “Brilliant course! It’s definitely the best introduction to electronics
-                        in the world! Interesting material, clean explanations, well prepared
-                        quizzes, challenging homework, and fun labs.” – Previous Student
-                      </p>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={500}
-              id="learner-testimonials"
-              disabled={disabled}
-            />
-            <Field
-              name="faq"
-              component={RichEditor}
-              label={
-                <FieldLabel
-                  id="faq.label"
-                  text="Frequently asked questions"
-                  helpText={
-                    <div>
-                      <p>Any frequently asked questions and the answers to those questions.</p>
-                      <p>
-                        <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#faq-guidelines"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more.
-                        </a>
-                      </p>
-                      <p><b>Example:</b></p>
-                      <strong>Do I need to know any programming languages before I start?</strong>
-                      <p>
-                        No, this course is designed for beginners.
-                      </p>
-                      <strong>What version of Swift will I be learning?</strong>
-                      <p>
-                        Swift version 4.
-                      </p>
-                    </div>
-                  }
-                  optional
-                />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              maxChars={2500}
-              id="faq"
-              disabled={disabled}
-            />
-            {/*
-              Do not open up access to additional_information. It is not validated like the other
-              HTML fields and should not be directly edited by course teams.
-            */}
-            {administrator &&
+            {showMarketingFields &&
+            <React.Fragment>
+              <hr />
               <Field
-                name="additional_information"
+                name="short_description"
                 component={RichEditor}
                 label={
                   <FieldLabel
-                    id="additional-info.label"
-                    text="Additional information"
+                    id="sdesc.label"
+                    text="Short description"
                     helpText={
                       <div>
-                        <p>Any additional information to be provided to learners.</p>
+                        <p>An effective short description:</p>
+                        <ul>
+                          <li>Contains 25–50 words.</li>
+                          <li>Functions as a tagline.</li>
+                          <li>Conveys compelling reasons to take the course.</li>
+                          <li>Follows SEO guidelines.</li>
+                          <li>Targets a global audience.</li>
+                        </ul>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-short-description-guidelines"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p><b>Example:</b></p>
+                        <p>
+                          The first MOOC to teach positive psychology. Learn science-based
+                          principles and practices for a happy, meaningful life.
+                        </p>
+                      </div>
+                    }
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={500}
+                id="sdesc"
+                disabled={disabled}
+              />
+              <Field
+                name="full_description"
+                component={RichEditor}
+                label={
+                  <FieldLabel
+                    id="ldesc.label"
+                    text="Long description"
+                    helpText={
+                      <div>
+                        <p>An effective long description:</p>
+                        <ul>
+                          <li>Contains 150–300 words.</li>
+                          <li>Is easy to skim.</li>
+                          <li>Uses bullet points instead of dense text paragraphs.</li>
+                          <li>Follows SEO guidelines.</li>
+                          <li>Targets a global audience.</li>
+                        </ul>
+                        <p>
+                          The first four lines are visible when the About page opens. Learners can
+                          select “See More” to view the full description.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-long-description-guidelines"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={2500}
+                id="ldesc"
+                disabled={disabled}
+              />
+              <Field
+                name="outcome"
+                component={RichEditor}
+                label={
+                  <FieldLabel
+                    id="outcome.label"
+                    text="What you will learn"
+                    helpText={
+                      <div>
+                        <p>The skills and knowledge learners will acquire in this course.</p>
+                        <p>Format each item as a bullet with four to ten words.</p>
+                        <p><b>Example:</b></p>
+                        <ul>
+                          <li>Basic R Programming</li>
+                          <li>An applied understanding of linear and logistic regression</li>
+                          <li>Application of text analytics</li>
+                          <li>Linear and integer optimization</li>
+                        </ul>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#what-you-will-learn-guidelines"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                      </div>
+                    }
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={2500}
+                id="outcome"
+                disabled={disabled}
+              />
+              <Field
+                name="syllabus_raw"
+                component={RichEditor}
+                label={
+                  <FieldLabel
+                    id="syllabus.label"
+                    text="Syllabus"
+                    helpText={
+                      <div>
+                        <p>
+                          A review of content covered in your course, organized by week or module.
+                        </p>
+                        <ul>
+                          <li>Focus on topics and content.</li>
+                          <li>
+                            Do not include detailed information about course logistics, such as
+                            grading, communication policies, and reading lists.
+                          </li>
+                          <li>Format items as either paragraphs or a bulleted list.</li>
+                        </ul>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p><b>Example:</b></p>
+                        <ul>
+                          <li>
+                            <p>Week 1: From Calculator to Computer</p>
+                            <p>
+                              Introduction to basic programming concepts, such as values and
+                              expressions, as well as making decisions when implementing algorithms
+                              and developing programs.
+                            </p>
+                          </li>
+                          <li>
+                            <p>Week 2: State Transformation</p>
+                            <p>
+                              Introduction to state transformation, including representation of data
+                              and programs as well as conditional repetition.
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                    optional
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={500}
+                id="syllabus"
+                disabled={disabled}
+              />
+              <Field
+                name="prerequisites_raw"
+                component={RichEditor}
+                label={
+                  <FieldLabel
+                    id="prereq.label"
+                    text="Prerequisites"
+                    helpText={
+                      <div>
+                        <p>
+                          Specific knowledge learners must have to be successful in the course.
+                          If the course has no prerequisites, enter “None”.
+                        </p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#skill-and-knowledge-prerequisites"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p><b>Examples:</b></p>
+                        <ul>
+                          <li>
+                            Secondary school (high school) algebra;
+                            basic mathematics concepts
+                          </li>
+                          <li>Graduate-level understanding of Keynesian economics</li>
+                          <li>Basic algebra</li>
+                        </ul>
+                      </div>
+                    }
+                    optional
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={1000}
+                id="prereq"
+                disabled={disabled}
+              />
+              <Field
+                name="learner_testimonials"
+                component={RichEditor}
+                label={
+                  <FieldLabel
+                    id="testimonials.label"
+                    text="Learner testimonials"
+                    helpText={
+                      <div>
+                        <p>
+                          A quote from a learner in the course, demonstrating the value of taking
+                          the course.
+                        </p>
+                        <p>Should be no more than 25–50 words in length.</p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#learner-testimonial-guidelines"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p><b>Example:</b></p>
+                        <p>
+                          “Brilliant course! It’s definitely the best introduction to electronics
+                          in the world! Interesting material, clean explanations, well prepared
+                          quizzes, challenging homework, and fun labs.” – Previous Student
+                        </p>
+                      </div>
+                    }
+                    optional
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                maxChars={500}
+                id="learner-testimonials"
+                disabled={disabled}
+              />
+              <Field
+                name="faq"
+                component={RichEditor}
+                label={
+                  <FieldLabel
+                    id="faq.label"
+                    text="Frequently asked questions"
+                    helpText={
+                      <div>
+                        <p>Any frequently asked questions and the answers to those questions.</p>
+                        <p>
+                          <a
+                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#faq-guidelines"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Learn more.
+                          </a>
+                        </p>
+                        <p><b>Example:</b></p>
+                        <strong>Do I need to know any programming languages before I start?</strong>
+                        <p>
+                          No, this course is designed for beginners.
+                        </p>
+                        <strong>What version of Swift will I be learning?</strong>
+                        <p>
+                          Swift version 4.
+                        </p>
                       </div>
                     }
                     optional
@@ -700,69 +684,96 @@ export class BaseEditCourseForm extends React.Component {
                 }
                 extraInput={{ onInvalid: this.openCollapsible }}
                 maxChars={2500}
-                id="additional-information"
+                id="faq"
                 disabled={disabled}
               />
-            }
-            {administrator &&
-              <Field
-                name="videoSrc"
-                component={RenderInputTextField}
-                type="url"
-                label={
-                  <FieldLabel
-                    id="video.label"
-                    text="About video link"
-                    helpText={
-                      <div>
-                        <p>
-                          The About video should excite and entice potential students to take your
-                          course. Think of it as a movie trailer or TV show promotion. The video
-                          should be compelling, and exhibit the instructor’s personality.
-                        </p>
-                        <p>
-                          The ideal length is 30–90 seconds (learners typically watch an average
-                          of 30 seconds).
-                        </p>
-                        <p>
-                          The About video should be produced and edited, using elements such as
-                          graphics and stock footage.
-                        </p>
-                        <p>The About video should answer these key questions.</p>
-                        <ul>
-                          <li>Why should a learner register?</li>
-                          <li>What topics and concepts are covered?</li>
-                          <li>Who is teaching the course?</li>
-                          <li>What institution is delivering the course?</li>
-                        </ul>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Learn more.
-                          </a>
-                        </p>
-                        <p>
-                          <span>Visit</span>
-                          <a
-                            href="www.youtube.com/user/EdXOnline"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            edX’s YouTube channel
-                          </a>
-                          <span>for examples of other About videos.</span>
-                        </p>
-                      </div>
-                    }
-                    optional
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                disabled={disabled}
-              />
+              {/*
+                Do not open up access to additional_information. It is not validated like the other
+                HTML fields and should not be directly edited by course teams.
+              */}
+              {administrator &&
+                <Field
+                  name="additional_information"
+                  component={RichEditor}
+                  label={
+                    <FieldLabel
+                      id="additional-info.label"
+                      text="Additional information"
+                      helpText={
+                        <div>
+                          <p>Any additional information to be provided to learners.</p>
+                        </div>
+                      }
+                      optional
+                    />
+                  }
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={2500}
+                  id="additional-information"
+                  disabled={disabled}
+                />
+              }
+              {administrator &&
+                <Field
+                  name="videoSrc"
+                  component={RenderInputTextField}
+                  type="url"
+                  label={
+                    <FieldLabel
+                      id="video.label"
+                      text="About video link"
+                      helpText={
+                        <div>
+                          <p>
+                            The About video should excite and entice potential students to take your
+                            course. Think of it as a movie trailer or TV show promotion. The video
+                            should be compelling, and exhibit the instructor’s personality.
+                          </p>
+                          <p>
+                            The ideal length is 30–90 seconds (learners typically watch an average
+                            of 30 seconds).
+                          </p>
+                          <p>
+                            The About video should be produced and edited, using elements such as
+                            graphics and stock footage.
+                          </p>
+                          <p>The About video should answer these key questions.</p>
+                          <ul>
+                            <li>Why should a learner register?</li>
+                            <li>What topics and concepts are covered?</li>
+                            <li>Who is teaching the course?</li>
+                            <li>What institution is delivering the course?</li>
+                          </ul>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Learn more.
+                            </a>
+                          </p>
+                          <p>
+                            <span>Visit</span>
+                            <a
+                              href="www.youtube.com/user/EdXOnline"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              edX’s YouTube channel
+                            </a>
+                            <span>for examples of other About videos.</span>
+                          </p>
+                        </div>
+                      }
+                      optional
+                    />
+                  }
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  disabled={disabled}
+                />
+              }
+            </React.Fragment>
             }
             <hr />
             <Field

@@ -175,11 +175,14 @@ const getOptionsData = (options) => {
 };
 
 const parseCourseTypeOptions = (typeOptions) => {
+  const courseTypes = {};
   const courseRunTypeOptions = {};
   const runTypeModes = {};
   const priceLabels = {};
   const initialSelect = [{ label: 'Select enrollment track', value: '' }];
   const courseTypeOptions = initialSelect.concat(typeOptions.map((type) => {
+    courseTypes[type.uuid] = type;
+
     const runTypeOptions = type.course_run_types.map((courseRunType) => {
       runTypeModes[courseRunType.uuid] = courseRunType.modes;
       return { label: courseRunType.name, value: courseRunType.uuid };
@@ -200,6 +203,7 @@ const parseCourseTypeOptions = (typeOptions) => {
     priceLabels,
     courseRunTypeOptions,
     courseTypeOptions,
+    courseTypes,
     runTypeModes,
   };
 };
