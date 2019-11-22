@@ -13,7 +13,7 @@ import PageContainer from '../PageContainer';
 import StatusAlert from '../StatusAlert';
 import { getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
-import { UNPUBLISHED, PUBLISHED, REVIEWED } from '../../data/constants';
+import { PUBLISHED, REVIEWED } from '../../data/constants';
 
 const orgBlacklist = process.env.ORG_BLACKLIST ? process.env.ORG_BLACKLIST.split(',') : [];
 const dot = color => ({
@@ -40,7 +40,7 @@ class CourseTable extends React.Component {
           { value: 'in_review', label: 'In review', color: '#e7e7e7' },
           { value: PUBLISHED, label: 'Published', color: '#008100' },
           { value: REVIEWED, label: 'Scheduled', color: '#0075b4' },
-          { value: UNPUBLISHED, label: 'Unsubmitted', color: '#E2C018' },
+          { value: 'unsubmitted', label: 'Unsubmitted', color: '#E2C018' },
         ],
       },
     ],
