@@ -104,33 +104,26 @@ export class BaseEditCourseForm extends React.Component {
     ];
   }
 
-  getAddCourseRunButton(disabled, pristine, uuid) {
+  getAddCourseRunButton(disabled, uuid) {
+    let courseRunButton = (
+      <button className="btn btn-block rounded mt-3 new-run-button" disabled={disabled}>
+        <Icon className="fa fa-plus" /> Add Course Run
+      </button>
+    );
+
     /** Disabling a Link is discouraged and disabling a button within a link results
      * in a Disabled button with a link that will still underline on hover.
-     * This method will remove the Link when disabling the button.
+     * So only add the Link if the button is enabled.
      */
-    if (disabled) {
-      return '';
-    }
-
-    const courseRunButton = (
-      <button className="btn btn-block rounded mt-3 new-run-button" disabled={!pristine}>
-        <Icon className="fa fa-plus" /> Add Course Run
-      </button>);
-
-    let buttonWrapper = (
-      <Link to={`/courses/${uuid}/rerun`}>
-        {courseRunButton}
-      </Link>);
-
-    if (!pristine) {
-      buttonWrapper = (
-        <React.Fragment>
+    if (!disabled) {
+      courseRunButton = (
+        <Link to={`/courses/${uuid}/rerun`}>
           {courseRunButton}
-        </React.Fragment>
+        </Link>
       );
     }
-    return buttonWrapper;
+
+    return courseRunButton;
   }
 
   toggleCourseRun(index, value) {
@@ -882,7 +875,7 @@ export class BaseEditCourseForm extends React.Component {
             {...this.props}
             validate={() => {}} // override method from our props, we don't want to pass it down
           />
-          {this.getAddCourseRunButton(disabled, pristine, uuid)}
+          {this.getAddCourseRunButton(disabled || !pristine, uuid)}
           {editable &&
             <ButtonToolbar className="mt-3">
               {submitState === 'default' ? cancelButton : null}
