@@ -35,7 +35,6 @@ class Header extends React.Component {
               <Hyperlink destination={process.env.STUDIO_BASE_URL}>
                 {this.renderLogo()}
               </Hyperlink>
-              <span className="badge badge-secondary beta">Beta</span>
             </div>
             <div className="col">
               <Link to="/">Courses</Link>
