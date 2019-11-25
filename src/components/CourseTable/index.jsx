@@ -6,11 +6,10 @@ import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import qs from 'query-string';
 
-import { Hyperlink, SearchField } from '@edx/paragon';
+import { SearchField } from '@edx/paragon';
 import TableContainer from '../../containers/TableContainer';
 import ButtonToolbar from '../ButtonToolbar';
 import PageContainer from '../PageContainer';
-import StatusAlert from '../StatusAlert';
 import { getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
 import { PUBLISHED, REVIEWED } from '../../data/constants';
@@ -162,26 +161,13 @@ class CourseTable extends React.Component {
       course_editor_names: course.editors ? course.editors.map(editor => editor.user.full_name).join(', ') : '',
     }));
     const showDashboard = !this.isOrgBlacklisted() || administrator;
-    const oldPublisherLink = `${process.env.DISCOVERY_API_BASE_URL}/publisher/`;
     return (
       <PageContainer wide>
-        <StatusAlert
-          alertType="warning"
-          message={
-            <React.Fragment>
-              This is a beta version of the new Publisher tool. Please do not use this tool unless
-              edX has asked you to be in the beta testing group.&nbsp;
-              <Hyperlink destination={oldPublisherLink}>
-                Click here to access the older version of Publisher.
-              </Hyperlink>
-            </React.Fragment>
-          }
-        />
         {showDashboard &&
         (
           <React.Fragment>
             <Helmet>
-              <title>{`Publisher Beta | ${process.env.SITE_NAME}`}</title>
+              <title>{`Publisher | ${process.env.SITE_NAME}`}</title>
             </Helmet>
             <div className="row">
               <div className="col-2 float-left">
