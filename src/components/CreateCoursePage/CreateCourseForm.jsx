@@ -244,6 +244,7 @@ class BaseCreateCourseForm extends React.Component {
                   id="courseRunKey-label"
                   text="Run Key"
                   helpText={keyHelp}
+                  optional
                 />
               }
             />

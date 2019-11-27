@@ -73,6 +73,7 @@ const BaseCreateCourseRunForm = ({
               id="courseRunKey-label"
               text="Run Key"
               helpText={keyHelp}
+              optional
             />
           }
         />
