@@ -95,10 +95,18 @@ function pacingEditHelp(courseRun) {
 
 const keyHelp = (
   <div>
-    <p>Letters and Numbers only.</p>
-    <p>If left blank, the key will get its value from the start date</p>
-    <p>This field will produce the following for this run&#39;s key:</p>
-    <p>course-v1:organization+course-number+run-key</p>
+    <p>
+      The Run Key refers to the term in each Course ID.
+    </p>
+    <p>Example:</p>
+    <ul>
+      <li> If your course ID is course-v1:edX+DemoX+1T2020, then ‘1T2020’ is the Run Key.</li>
+    </ul>
+    <p>
+      If this field is left blank, the Run Key value will be based on the start
+      date of the course.
+    </p>
+    <p>Letters and Numbers only, please.</p>
   </div>
 );
 
