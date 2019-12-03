@@ -10,7 +10,6 @@ import ConfirmationModal from '../ConfirmationModal';
 
 import { formatPriceData } from '../../utils';
 
-const typeWhiteList = process.env.TYPE_WHITELIST ? process.env.TYPE_WHITELIST.split(',') : [];
 class CreateCoursePage extends React.Component {
   constructor(props) {
     super(props);
@@ -40,15 +39,6 @@ class CreateCoursePage extends React.Component {
     this.setState({ startedFetching: true });
   }
 
-  isOrgWhitelisted() {
-    const userOrgs = this.props.publisherUserInfo.organizations;
-    if (typeWhiteList.length > 0 && typeWhiteList[0] === '-') {
-      const typeBlackList = typeWhiteList.slice(1);
-      return userOrgs.some(org => !typeBlackList.includes(org.key));
-    }
-    return userOrgs.some(org => typeWhiteList.includes(org.key));
-  }
-
   handleCourseCreate(options) {
     const priceData = formatPriceData(options, this.props.courseOptions);
     const courseData = {
@@ -56,8 +46,6 @@ class CreateCoursePage extends React.Component {
       org: options.org,
       title: options.title,
       number: options.number,
-      // DISCO-1399 Mode doesn't need to be sent anymore
-      mode: options.enrollmentTrack,
       type: options.type,
       course_run: {
         ...priceData, // might be sending more than we need to, but :shrug:
@@ -181,9 +169,6 @@ class CreateCoursePage extends React.Component {
                 initialValues={initialValues}
                 currentFormValues={formValues}
                 organizations={organizations}
-                // DISCO-1399: Remove usingCourseType
-                // TODO: Add in logic here to decide when course type is being used
-                usingCourseType={this.isOrgWhitelisted()}
                 isCreating={courseInfo.isCreating}
                 courseOptions={courseOptions}
                 courseRunOptions={courseRunOptions}
@@ -225,8 +210,8 @@ CreateCoursePage.propTypes = {
     org: PropTypes.string,
     title: PropTypes.string,
     number: PropTypes.string,
-    enrollmentTrack: PropTypes.string,
-    price: PropTypes.number,
+    type: PropTypes.string,
+    prices: PropTypes.shape(),
     start: PropTypes.string,
     end: PropTypes.string,
     pacing_type: PropTypes.string,
