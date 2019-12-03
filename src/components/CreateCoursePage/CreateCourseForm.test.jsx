@@ -15,9 +15,10 @@ describe('CreateCourseForm', () => {
     org: 'edx',
     title: 'Hello',
     number: 'edx101',
-    enrollmentTrack: 'verified',
     type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
-    price: 100.00,
+    prices: {
+      verified: '100.00',
+    },
   };
 
   it('renders html correctly with no orgs', () => {
@@ -39,19 +40,6 @@ describe('CreateCourseForm', () => {
       organizations={organizations}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
-    />);
-    expect(component).toMatchSnapshot();
-  });
-
-  it('renders html correctly with data and using Course Type', () => {
-    const component = shallow(<BaseCreateCourseForm
-      handleSubmit={() => {}}
-      initialValues={initialValues}
-      currentFormValues={initialValues}
-      organizations={organizations}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      usingCourseType
     />);
     expect(component).toMatchSnapshot();
   });

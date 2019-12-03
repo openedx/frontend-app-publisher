@@ -147,7 +147,6 @@ module.exports = Merge.smart(commonConfig, {
       ENTERPRISE_MARKETING_UTM_CAMPAIGN: null,
       ENTERPRISE_MARKETING_FOOTER_UTM_MEDIUM: null,
       ORG_BLACKLIST: '', // CSV string 'edx,edx2'
-      TYPE_WHITELIST: '', // CSV string 'edx,edx2'
       NEW_RELIC_ADMIN_KEY: null,
       NEW_RELIC_APP_ID: null,
       NEW_RELIC_LICENSE_KEY: null,

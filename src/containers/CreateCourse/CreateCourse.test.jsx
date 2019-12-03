@@ -13,8 +13,10 @@ const courseData = {
   org: 'edx',
   title: 'Test Course',
   number: 'test101',
-  enrollmentTrack: 'verified',
-  price: '100.00',
+  type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+  prices: {
+    verified: '100.00',
+  },
   start: '2019-03-04',
   end: '2020-03-04',
   pacing_type: 'instructor_paced',

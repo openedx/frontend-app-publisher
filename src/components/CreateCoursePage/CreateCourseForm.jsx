@@ -12,11 +12,7 @@ import FieldLabel from '../FieldLabel';
 import PriceList from '../PriceList';
 
 import {
-  AUDIT_TRACK,
   DATE_INPUT_PATTERN,
-  ENTITLEMENT_TRACKS,
-  PROFESSIONAL_TRACK,
-  VERIFIED_TRACK,
 } from '../../data/constants';
 import { endDateHelp, enrollmentHelp, pacingHelp, startDateHelp, titleHelp, typeHelp, keyHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
@@ -36,7 +32,6 @@ class BaseCreateCourseForm extends React.Component {
         type: currentType,
         org: currentOrg,
       },
-      usingCourseType,
       organizations,
     } = this.props;
     const {
@@ -45,8 +40,7 @@ class BaseCreateCourseForm extends React.Component {
         org: previousOrg,
       },
     } = prevProps;
-    // DISCO-1399: Remove the usingCourseType
-    if (usingCourseType && currentType !== prevType) {
+    if (currentType !== prevType) {
       const courseOptionsData = getOptionsData(courseOptions);
       const parsedTypeOptions = courseOptionsData &&
         parseCourseTypeOptions(courseOptionsData.type.type_options);
@@ -63,16 +57,6 @@ class BaseCreateCourseForm extends React.Component {
 
   setRunKeyState(selectedOrganization) {
     this.setState({ canSetRunKey: !selectedOrganization.auto_generate_course_run_keys });
-  }
-
-  // DISCO-1399: Can remove this function since we will get it from the Course Type OPTIONS
-  getEnrollmentTrackOptions() {
-    return [
-      { label: 'Select enrollment track', value: '' },
-      { label: VERIFIED_TRACK.name, value: VERIFIED_TRACK.key },
-      { label: AUDIT_TRACK.name, value: AUDIT_TRACK.key },
-      { label: PROFESSIONAL_TRACK.name, value: PROFESSIONAL_TRACK.key },
-    ];
   }
 
   processOrganizations(organizations) {
@@ -95,8 +79,6 @@ class BaseCreateCourseForm extends React.Component {
       organizations,
       pristine,
       isCreating,
-      // DISCO-1399: remove usingCourseType
-      usingCourseType,
       courseOptions,
       courseRunOptions,
     } = this.props;
@@ -177,60 +159,24 @@ class BaseCreateCourseForm extends React.Component {
             }
             required
           />
-          {// DISCO-1399: We don't need this ternary operator anymore. Just show the Course Type
-          }
-          {usingCourseType ? (
-            <React.Fragment>
-              <Field
-                name="type"
-                component={RenderSelectField}
-                options={courseTypeOptions}
-                label={
-                  <FieldLabel
-                    id="course-type-label"
-                    text="Course enrollment track"
-                    required
-                    helpText={typeHelp}
-                  />
-                }
+          <Field
+            name="type"
+            component={RenderSelectField}
+            options={courseTypeOptions}
+            label={
+              <FieldLabel
+                id="course-type-label"
+                text="Course enrollment track"
                 required
+                helpText={typeHelp}
               />
-              <PriceList
-                priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
-                required
-              />
-            </React.Fragment>) : (
-              <React.Fragment>
-                <Field
-                  name="enrollmentTrack"
-                  component={RenderSelectField}
-                  options={this.getEnrollmentTrackOptions()}
-                  label={
-                    <FieldLabel
-                      id="enrollment-track-label"
-                      text="Enrollment track"
-                      required
-                      helpText={enrollmentHelp}
-                    />
-                  }
-                  required
-                />
-                {ENTITLEMENT_TRACKS.includes(currentFormValues.enrollmentTrack) &&
-                  <Field
-                    name="price"
-                    component={RenderInputTextField}
-                    extraInput={{
-                      min: 1.00,
-                      step: 0.01,
-                      max: 10000.00,
-                    }}
-                    type="number"
-                    label={<FieldLabel text="Price (USD)" required />}
-                    required
-                  />
-                }
-              </React.Fragment>)
-          }
+            }
+            required
+          />
+          <PriceList
+            priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
+            required
+          />
           <h2>First run of your Course</h2>
           <hr />
           {canSetRunKey &&
@@ -302,24 +248,20 @@ class BaseCreateCourseForm extends React.Component {
               />
             </div>
           }
-          {// DISCO-1399: We don't need this ternary operator anymore. Just show the Run Type
-          }
-          {usingCourseType &&
-            <Field
-              name="run_type"
-              component={RenderSelectField}
-              options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course enrollment track first', value: '' }]}
-              label={
-                <FieldLabel
-                  id="course-run-type-label"
-                  text="Course run enrollment track"
-                  required
-                  helpText={enrollmentHelp}
-                />
-              }
-              required
-            />
-          }
+          <Field
+            name="run_type"
+            component={RenderSelectField}
+            options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course enrollment track first', value: '' }]}
+            label={
+              <FieldLabel
+                id="course-run-type-label"
+                text="Course run enrollment track"
+                required
+                helpText={enrollmentHelp}
+              />
+            }
+            required
+          />
           <Field
             name="pacing_type"
             type="text"
@@ -362,7 +304,6 @@ BaseCreateCourseForm.defaultProps = {
   isCreating: false,
   pristine: true,
   currentFormValues: {},
-  usingCourseType: false,
 };
 
 BaseCreateCourseForm.propTypes = {
@@ -372,8 +313,8 @@ BaseCreateCourseForm.propTypes = {
     org: PropTypes.string,
     title: PropTypes.string,
     number: PropTypes.string,
-    enrollmentTrack: PropTypes.string,
-    price: PropTypes.number,
+    type: PropTypes.string,
+    prices: PropTypes.shape(),
     start: PropTypes.string,
     end: PropTypes.string,
   }).isRequired,
@@ -394,7 +335,6 @@ BaseCreateCourseForm.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }).isRequired,
-  usingCourseType: PropTypes.bool,
 };
 
 export default reduxForm({
