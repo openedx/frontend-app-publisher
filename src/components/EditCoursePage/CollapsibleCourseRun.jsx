@@ -20,13 +20,13 @@ import TranscriptLanguage from './TranscriptLanguage';
 import Collapsible from '../Collapsible';
 
 import {
-  DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
+  ARCHIVED, DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
 import { dateEditHelp, enrollmentHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
-const determineStatus = run => (courseRunIsArchived(run) ? 'archived' : run.status);
+const determineStatus = run => (courseRunIsArchived(run) ? ARCHIVED : run.status);
 
 const formatCourseRunTitle = (courseRun) => {
   if (courseRun) {
@@ -65,14 +65,14 @@ const formatCourseRunTitle = (courseRun) => {
             </Hyperlink>
           </React.Fragment>
         </div>
-        {courseRun.marketing_url && determineStatus(courseRun) !== 'archived' ?
+        {courseRun.marketing_url && determineStatus(courseRun) !== ARCHIVED ?
           <div className="course-run-preview-url">
             <React.Fragment>
               <Hyperlink
                 destination={`${courseRun.marketing_url}`}
                 target="_blank"
               >
-                View Live Page
+                {determineStatus(courseRun) === PUBLISHED ? 'View Live Page' : 'View Preview Page'}
               </Hyperlink>
             </React.Fragment>
           </div> : null}
