@@ -13,7 +13,6 @@ import { formatDate, getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
 import { PUBLISHED, REVIEWED } from '../../data/constants';
 
-const orgBlacklist = process.env.ORG_BLACKLIST ? process.env.ORG_BLACKLIST.split(',') : [];
 const dot = color => ({
   alignItems: 'center',
   display: 'flex',
@@ -109,21 +108,7 @@ class CourseTable extends React.Component {
     updateUrl({ ...params, page: 1 });
   }
 
-  isOrgBlacklisted() {
-    const userOrgs = this.props.publisherUserInfo.organizations;
-    if (!orgBlacklist || (orgBlacklist && orgBlacklist.length === 0)) {
-      // No Blacklist specified - allow all orgs
-      return false;
-    }
-    return userOrgs.some(org => orgBlacklist.includes(org.key));
-  }
-
   render() {
-    const {
-      authentication: {
-        administrator,
-      },
-    } = this.props;
     const { selectedFilters, filterGroups } = this.state;
 
     const courseTableColumns = [
@@ -159,69 +144,65 @@ class CourseTable extends React.Component {
       course_run_statuses: (<Pill statuses={course.course_run_statuses} />),
       course_editor_names: course.editors ? course.editors.map(editor => editor.user.full_name).join(', ') : '',
     }));
-    const showDashboard = !this.isOrgBlacklisted() || administrator;
     return (
       <PageContainer wide>
-        {showDashboard &&
-        (
-          <React.Fragment>
-            <Helmet>
-              <title>{`Publisher | ${process.env.SITE_NAME}`}</title>
-            </Helmet>
-            <div className="row">
-              <div className="col-2 float-left">
-                <ButtonToolbar className="mb-3" leftJustify>
-                  <Link to="/courses/new">
-                    <button className="btn btn-primary">New Course</button>
-                  </Link>
-                </ButtonToolbar>
-              </div>
-              <div className="col-5 float-right pt-1">
-                <Select
-                  closeMenuOnSelect={false}
-                  value={selectedFilters}
-                  options={filterGroups}
-                  onChange={filters => this.updateFilterQueryParamsInUrl(filters === null ?
-                    [] : filters)}
-                  isMulti
-                  maxMenuHeight="30vh"
-                  placeholder="Filters..."
-                  styles={
-                    {
-                      option: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
-                      multiValue: (styles, { data }) => (
-                        { ...styles, backgroundColor: data.color || '#e7e7e7', opacity: 0.7 }
-                      ),
-                      multiValueLabel: (styles, { data }) => (
-                        {
-                          ...styles,
-                          color: data.label === 'Published' || data.label === 'Scheduled' ? '#ffffff' : '#000000',
-                        }
-                      ),
-                    }
-                  }
-                />
-              </div>
-              <div className="col-5 float-right">
-                <SearchField
-                  value={pageOptions.pubq}
-                  onClear={() => {
-                    updateUrl({ filter: null });
-                  }}
-                  onSubmit={(filter) => {
-                    updateUrl({ filter, page: 1 });
-                  }}
-                />
-              </div>
+        <React.Fragment>
+          <Helmet>
+            <title>{`Publisher | ${process.env.SITE_NAME}`}</title>
+          </Helmet>
+          <div className="row">
+            <div className="col-2 float-left">
+              <ButtonToolbar className="mb-3" leftJustify>
+                <Link to="/courses/new">
+                  <button className="btn btn-primary">New Course</button>
+                </Link>
+              </ButtonToolbar>
             </div>
-            <TableContainer
-              className="courses"
-              columns={courseTableColumns}
-              formatData={formatCourseData}
-              tableSortable
-            />
-          </React.Fragment>
-        )}
+            <div className="col-5 float-right pt-1">
+              <Select
+                closeMenuOnSelect={false}
+                value={selectedFilters}
+                options={filterGroups}
+                onChange={filters => this.updateFilterQueryParamsInUrl(filters === null ?
+                  [] : filters)}
+                isMulti
+                maxMenuHeight="30vh"
+                placeholder="Filters..."
+                styles={
+                  {
+                    option: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+                    multiValue: (styles, { data }) => (
+                      { ...styles, backgroundColor: data.color || '#e7e7e7', opacity: 0.7 }
+                    ),
+                    multiValueLabel: (styles, { data }) => (
+                      {
+                        ...styles,
+                        color: data.label === 'Published' || data.label === 'Scheduled' ? '#ffffff' : '#000000',
+                      }
+                    ),
+                  }
+                }
+              />
+            </div>
+            <div className="col-5 float-right">
+              <SearchField
+                value={pageOptions.pubq}
+                onClear={() => {
+                  updateUrl({ filter: null });
+                }}
+                onSubmit={(filter) => {
+                  updateUrl({ filter, page: 1 });
+                }}
+              />
+            </div>
+          </div>
+          <TableContainer
+            className="courses"
+            columns={courseTableColumns}
+            formatData={formatCourseData}
+            tableSortable
+          />
+        </React.Fragment>
       </PageContainer>
     );
   }

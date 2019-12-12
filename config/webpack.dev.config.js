@@ -125,7 +125,6 @@ module.exports = Merge.smart(commonConfig, {
       ENTERPRISE_MARKETING_UTM_SOURCE: 'example.com',
       ENTERPRISE_MARKETING_UTM_CAMPAIGN: 'example.com Referral',
       ENTERPRISE_MARKETING_FOOTER_UTM_MEDIUM: 'Footer',
-      ORG_BLACKLIST: '', // CSV string 'edx,edx2'
     }),
     // when the --hot option is not passed in as part of the command
     // the HotModuleReplacementPlugin has to be specified in the Webpack configuration
