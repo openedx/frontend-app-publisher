@@ -45,7 +45,7 @@ describe('EditCoursePage', () => {
           marketing_url: null,
           has_ofac_restrictions: false,
           ofac_comment: '',
-          run_type: null,
+          run_type: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
           external_key: null,
         },
         {
@@ -68,7 +68,7 @@ describe('EditCoursePage', () => {
           marketing_url: null,
           has_ofac_restrictions: false,
           ofac_comment: '',
-          run_type: null,
+          run_type: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
           external_key: null,
         },
       ],
@@ -116,7 +116,7 @@ describe('EditCoursePage', () => {
       ],
       syllabus_raw: '',
       title: 'Test title',
-      type: null,
+      type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       uuid: '00000000-0000-0000-0000-000000000000',
       video: {
         src: 'https://www.video.information/watch?v=cVsQLlk-T0s',
@@ -289,7 +289,7 @@ describe('EditCoursePage', () => {
       marketing_url: null,
       has_ofac_restrictions: false,
       ofac_comment: '',
-      run_type: null,
+      run_type: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
       external_key: null,
     };
 
@@ -312,17 +312,18 @@ describe('EditCoursePage', () => {
       imageSrc: 'http://image.jpg',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
-      mode: 'verified',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
-      price: defaultPrice,
+      prices: {
+        verified: defaultPrice,
+      },
       short_description: '<p>Short</p>',
       subjectPrimary: 'basket-weaving',
       subjectSecondary: undefined,
       subjectTertiary: undefined,
       syllabus_raw: null,
       title: 'demo4004',
-      type: null,
+      type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       url_slug: 'demo4004',
       videoSrc: null,
       editable: true,
@@ -331,7 +332,6 @@ describe('EditCoursePage', () => {
     const expectedSendCourse = {
       additional_information: '<p>Stuff</p>',
       draft: true,
-      entitlements: [{ mode: 'verified', price: defaultPrice, sku: '000000D' }],
       faq: '<p>Help?</p>',
       full_description: '<p>Long</p>',
       image: 'http://image.jpg',
@@ -340,16 +340,14 @@ describe('EditCoursePage', () => {
       level_type: 'Basic',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
-      price: defaultPrice,
       prices: {
-        professional: defaultPrice,
         verified: defaultPrice,
       },
       short_description: '<p>Short</p>',
       subjects: ['basket-weaving'],
       syllabus_raw: null,
       title: 'demo4004',
-      type: null,
+      type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       url_slug: 'demo4004',
       uuid: '00000000-0000-0000-0000-000000000000',
       video: { src: null },
@@ -366,13 +364,11 @@ describe('EditCoursePage', () => {
         key: 'edX101+DemoX+T2',
         max_effort: '123',
         min_effort: '10',
-        price: defaultPrice,
         prices: {
-          professional: defaultPrice,
           verified: defaultPrice,
         },
         rerun: null,
-        run_type: null,
+        run_type: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
         staff: [],
         status: UNPUBLISHED,
         transcript_languages: ['en-us'],
@@ -388,13 +384,11 @@ describe('EditCoursePage', () => {
         key: 'edX101+DemoX+T1',
         max_effort: '123',
         min_effort: '10',
-        price: defaultPrice,
         prices: {
-          professional: defaultPrice,
           verified: defaultPrice,
         },
         rerun: null,
-        run_type: null,
+        run_type: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
         staff: [],
         status: PUBLISHED,
         transcript_languages: ['en-us'],
@@ -407,27 +401,22 @@ describe('EditCoursePage', () => {
     beforeEach(() => {
       mockHandleCourseSubmit.mockClear();
 
-      courseData.price = defaultPrice;
       courseData.course_runs[0].end = defaultEnd;
       courseData.course_runs[0].status = UNPUBLISHED;
+      courseData.prices = {
+        verified: defaultPrice,
+      };
 
       expectedSendCourseRuns[0].draft = true;
-      expectedSendCourseRuns[0].price = defaultPrice;
       expectedSendCourseRuns[0].prices = {
-        professional: defaultPrice,
         verified: defaultPrice,
       };
       expectedSendCourseRuns[1].draft = true;
-      expectedSendCourseRuns[1].price = defaultPrice;
       expectedSendCourseRuns[1].prices = {
-        professional: defaultPrice,
         verified: defaultPrice,
       };
       expectedSendCourse.draft = true;
-      expectedSendCourse.entitlements[0].price = defaultPrice;
-      expectedSendCourse.price = defaultPrice;
       expectedSendCourse.prices = {
-        professional: defaultPrice,
         verified: defaultPrice,
       };
     });
@@ -571,6 +560,7 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseOptions={courseOptions}
       />);
 
       component.setState({
@@ -597,6 +587,7 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseOptions={courseOptions}
       />);
 
       component.setState({
@@ -605,18 +596,11 @@ describe('EditCoursePage', () => {
       component.instance().getData = jest.fn();
       component.update();
 
-      courseData.price = '500.00';
+      courseData.prices.verified = '500.00';
       courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
 
-      expectedSendCourse.entitlements[0].price = '500';
-      expectedSendCourse.price = '500';
-      expectedSendCourse.prices = {
-        professional: '500',
-        verified: '500',
-      };
-      expectedSendCourseRuns[0].price = expectedSendCourse.price;
+      expectedSendCourse.prices.verified = '500';
       expectedSendCourseRuns[0].prices = expectedSendCourse.prices;
-      expectedSendCourseRuns[1].price = expectedSendCourse.price;
       expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(courseData);
@@ -637,6 +621,7 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseOptions={courseOptions}
       />);
 
       component.setState({
@@ -645,14 +630,8 @@ describe('EditCoursePage', () => {
       component.instance().getData = jest.fn();
       component.update();
 
-      courseData.price = '500.00';
-      expectedSendCourse.entitlements[0].price = '500';
-      expectedSendCourse.price = '500';
-      expectedSendCourse.prices = {
-        professional: '500',
-        verified: '500',
-      };
-      expectedSendCourseRuns[1].price = expectedSendCourse.price;
+      courseData.prices.verified = '500.00';
+      expectedSendCourse.prices.verified = '500';
       expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(courseData);
@@ -694,17 +673,13 @@ describe('EditCoursePage', () => {
 
       const myExpectedSendCourse = jsonDeepCopy(expectedSendCourse);
       myExpectedSendCourse.type = myCourseData.type;
-      myExpectedSendCourse.entitlements[0].price = '10';
-      myExpectedSendCourse.price = '10';
       myExpectedSendCourse.prices = {
         credit: '500',
         verified: '10',
       };
       const myExpectedCourseRun0 = jsonDeepCopy(expectedSendCourseRuns[0]);
-      myExpectedCourseRun0.price = myExpectedSendCourse.price;
       myExpectedCourseRun0.prices = myExpectedSendCourse.prices;
       const myExpectedCourseRun1 = jsonDeepCopy(expectedSendCourseRuns[1]);
-      myExpectedCourseRun1.price = myExpectedSendCourse.price;
       myExpectedCourseRun1.prices = myExpectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(myCourseData);
@@ -725,6 +700,7 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseOptions={courseOptions}
         courseSubmitInfo={{
           targetRun: publishedCourseRun,
         }}
@@ -757,6 +733,7 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseOptions={courseOptions}
         courseSubmitInfo={{
           targetRun: unpublishedCourseRun,
         }}
@@ -788,6 +765,7 @@ describe('EditCoursePage', () => {
       const component = shallow(<EditCoursePage
         {...props}
         courseInfo={courseInfo}
+        courseOptions={courseOptions}
       />);
 
       component.setState({
@@ -798,17 +776,11 @@ describe('EditCoursePage', () => {
 
       // Course changed so it should send saves for all non-archived runs, but this run is
       // in review so it won't be sent.
-      courseData.price = '500.00';
+      courseData.prices.verified = '500.00';
       courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
       courseData.course_runs[0].status = REVIEW_BY_INTERNAL;
 
-      expectedSendCourse.entitlements[0].price = '500';
-      expectedSendCourse.price = '500';
-      expectedSendCourse.prices = {
-        professional: '500',
-        verified: '500',
-      };
-      expectedSendCourseRuns[1].price = expectedSendCourse.price;
+      expectedSendCourse.prices.verified = '500';
       expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(courseData);

@@ -81,19 +81,13 @@ class EditCoursePage extends React.Component {
 
     const sendCourseRuns = [];
     const initialCourseRunValues = this.buildCourseRuns();
-    const entitlement = entitlements && entitlements[0];
-    // DISCO-1399: I think you just need price so remove initialMode
-    const initialMode = entitlement && entitlement.mode;
     const priceData = formatPriceData(courseData, courseOptions);
     const fakeInitialPriceForm = {
       type: initialType,
-      price: entitlement && entitlement.price,
       prices: buildInitialPrices(entitlements, initialCourseRuns),
     };
     const initialPriceData = formatPriceData(fakeInitialPriceForm, courseOptions);
 
-    // DISCO-1399: Remove this in place of courseTypeChanged
-    const courseModeChanged = initialMode !== courseData.mode;
     const courseTypeChanged = initialType !== courseData.type;
     const coursePriceChanged = !jsonDeepEqual(initialPriceData, priceData);
 
@@ -109,13 +103,12 @@ class EditCoursePage extends React.Component {
         return false;
       }
 
-      // send runs if they have changed OR the course mode or price has
-      // changed and the run is NOT "archived" (we care about the mode and
+      // send runs if they have changed OR the course type or price has
+      // changed and the run is NOT "archived" (we care about the type and
       // price because those are passed down to the course runs' seats)
       const runHasChanges = !jsonDeepEqual(initialCourseRunValues[i], run);
       return runHasChanges ||
-        ((courseModeChanged || courseTypeChanged || coursePriceChanged) &&
-          !courseRunIsArchived(run));
+        ((courseTypeChanged || coursePriceChanged) && !courseRunIsArchived(run));
     });
 
     modifiedCourseRuns.forEach((courseRun) => {
@@ -176,8 +169,6 @@ class EditCoursePage extends React.Component {
         data: {
           key,
           uuid,
-          // DISCO-1399: Should be able to stop pulling this in
-          entitlements,
         },
       },
       courseOptions,
@@ -202,13 +193,6 @@ class EditCoursePage extends React.Component {
     return {
       additional_information: courseData.additional_information,
       draft: !updatingPublishedRun,
-      // DISCO-1399: Don't think we need to send the whole entitlements list anymore
-      entitlements: [{
-        mode: courseData.mode,
-        price: priceData.price,
-        // DISCO-1399: I'm not sure we need to send sku, look into that
-        sku: entitlements && entitlements[0] && entitlements[0].sku,
-      }],
       faq: courseData.faq,
       full_description: courseData.full_description,
       image: courseData.imageSrc,
@@ -385,10 +369,6 @@ class EditCoursePage extends React.Component {
     const subjectTertiary = subjectMap && subjectMap[2];
     const imageSrc = image && image.src;
     const videoSrc = video && video.src;
-    const entitlement = entitlements && entitlements[0];
-    // DISCO-1399: Don't need mode anymore
-    const mode = entitlement && entitlement.mode;
-    const price = entitlement && entitlement.price;
     const prices = buildInitialPrices(entitlements, course_runs);
 
     return {
@@ -407,8 +387,6 @@ class EditCoursePage extends React.Component {
       additional_information,
       syllabus_raw,
       videoSrc,
-      mode,
-      price,
       prices,
       type,
       url_slug,

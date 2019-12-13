@@ -52,12 +52,10 @@ const endDateHelp = (
   </div>
 );
 
-// DISCO-1399: Update this help text to say "... whether a course run offers..."
-// You can probably also just rename this to something like runTypeHelp
-const enrollmentHelp = (
+const runTypeHelp = (
   <div>
     <p>
-      The enrollment track determines whether a course offers a paid
+      The enrollment track determines whether a course run offers a paid
       certificate and what sort of verification is required.
     </p>
     <p>
@@ -201,7 +199,7 @@ const urlSlugHelp = (
 export {
   dateEditHelp,
   endDateHelp,
-  enrollmentHelp,
+  runTypeHelp,
   startDateHelp,
   pacingEditHelp,
   pacingHelp,

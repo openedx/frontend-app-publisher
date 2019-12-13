@@ -110,6 +110,21 @@ const getErrorMessages = (error) => {
   return ['Unknown error.'];
 };
 
+// Compares two price objects (objects like {verified: '20', credit: '50.5'})
+const pricesEqual = (initialPrices, currentPrices) => {
+  const initialKeys = Object.keys(initialPrices);
+  const currentKeys = Object.keys(currentPrices);
+  if (!jsonDeepEqual(initialKeys, currentKeys)) {
+    return false;
+  }
+
+  return initialKeys.every((key) => {
+    const initialNumber = Number(initialPrices[key]).toFixed(2);
+    const currentNumber = Number(currentPrices[key]).toFixed(2);
+    return initialNumber === currentNumber;
+  });
+};
+
 const isNonExemptChanged = (initialValues, currentFormValues, runKey) => {
   // if run key is present, we are checking if the non exempt fields have been changed
   if (runKey) {
@@ -127,8 +142,8 @@ const isNonExemptChanged = (initialValues, currentFormValues, runKey) => {
   // fields are changed
   return Object.keys(currentFormValues).some((key) => {
     if (key !== 'course_runs' && !COURSE_EXEMPT_FIELDS.includes(key)) {
-      if (key === 'price') {
-        return Number(initialValues[key]).toFixed(2) !== Number(currentFormValues[key]).toFixed(2);
+      if (key === 'prices') {
+        return !pricesEqual(initialValues[key], currentFormValues[key]);
       }
       return initialValues[key] !== currentFormValues[key];
     }
@@ -151,8 +166,8 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
   // if no run key preset, we are checking the pristine state of course level fields
   return Object.keys(initialValues).every((key) => {
     if (key !== 'course_runs') {
-      if (key === 'price') {
-        return Number(initialValues[key]).toFixed(2) === Number(currentFormValues[key]).toFixed(2);
+      if (key === 'prices') {
+        return pricesEqual(initialValues[key], currentFormValues[key]);
       }
       return initialValues[key] === currentFormValues[key];
     }
@@ -210,16 +225,8 @@ const parseCourseTypeOptions = (typeOptions) => {
 
 const formatPriceData = (formData, courseOptions) => {
   const priceData = {
-    price: 0, // DISCO-1399 - we can stop sending single price
     prices: {},
   };
-
-  if (!formData.type) { // DISCO-1399 can drop this format support
-    priceData.price = formData.price ? formData.price.replace(/\.00$/, '') : 0;
-    priceData.prices['professional'] = priceData.price;
-    priceData.prices['verified'] = priceData.price;
-    return priceData;
-  }
 
   const courseOptionsData = getOptionsData(courseOptions);
   if (!courseOptionsData) {
@@ -232,8 +239,7 @@ const formatPriceData = (formData, courseOptions) => {
   Object.keys(priceLabels).forEach((seatType) => {
     if (formData.prices[seatType]) {
       // We strip trailing zeros to ease comparisons between formatted data
-      priceData.price = formData.prices[seatType].replace(/\.00$/, '');
-      priceData.prices[seatType] = priceData.price;
+      priceData.prices[seatType] = formData.prices[seatType].replace(/\.00$/, '');
     }
   });
 
