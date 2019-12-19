@@ -25,8 +25,8 @@ class DateTimeField extends React.Component {
   }
 
   concatDateTime(date, time) {
-    const datetime = moment.utc(`${date} ${time}`, 'YYYY/MM/DD HH:mm').format(DATE_FORMAT);
-    this.props.input.onChange(datetime);
+    const datetime = moment(`${date} ${time}`, 'YYYY/MM/DD HH:mm');
+    this.props.input.onChange(datetime.utc().format(DATE_FORMAT));
   }
 
   updateDate(value) {

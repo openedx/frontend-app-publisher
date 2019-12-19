@@ -7,11 +7,11 @@ import history from '../data/history';
 import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
 import { PAGE_SIZE } from '../data/constants/table';
 
-const getDateWithDashes = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
-const getDateWithSlashes = date => (date ? moment.utc(date).format('YYYY/MM/DD') : '');
-const getTimeString = date => (date ? moment.utc(date).format('HH:mm') : '');
+const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : '');
+const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '');
+const getTimeString = date => (date ? moment(date).format('HH:mm') : '');
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
-const formatDate = date => (date ? moment.utc(date).format('MMM DD, YYYY') : '');
+const formatDate = date => (date ? moment(date).format('MMM DD, YYYY') : '');
 const courseRunIsArchived = run => run.status === 'unpublished' && moment().isAfter(run.end);
 
 const isSafari = /constructor/i.test(window.HTMLElement) ||
