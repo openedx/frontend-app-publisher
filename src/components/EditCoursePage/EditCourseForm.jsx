@@ -18,14 +18,7 @@ import Pill from '../../components/Pill';
 import Collapsible from '../Collapsible';
 import PriceList from '../../components/PriceList';
 
-
-import {
-  AUDIT_TRACK,
-  ENTITLEMENT_TRACKS,
-  PROFESSIONAL_TRACK,
-  VERIFIED_TRACK,
-} from '../../data/constants';
-import { enrollmentHelp, titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
+import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import { getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 import store from '../../data/store';
@@ -95,15 +88,6 @@ export class BaseEditCourseForm extends React.Component {
     });
   }
 
-  // DISCO-1399: Don't need this anymore. We just use Course Type OPTIONS
-  getEnrollmentTrackOptions() {
-    return [
-      { label: AUDIT_TRACK.name, value: AUDIT_TRACK.key },
-      { label: VERIFIED_TRACK.name, value: VERIFIED_TRACK.key },
-      { label: PROFESSIONAL_TRACK.name, value: PROFESSIONAL_TRACK.key },
-    ];
-  }
-
   getAddCourseRunButton(disabled, uuid) {
     let courseRunButton = (
       <button className="btn btn-block rounded mt-3 new-run-button" disabled={disabled}>
@@ -165,7 +149,6 @@ export class BaseEditCourseForm extends React.Component {
       title,
       pristine,
       uuid,
-      type,
       courseInReview,
       courseStatuses,
       id,
@@ -206,7 +189,6 @@ export class BaseEditCourseForm extends React.Component {
     } = parsedTypeOptions;
 
     const disabled = courseInReview || !editable;
-    // DISCO-1399: Simplify this line and if statement to not worry about if type is defined.
     const showMarketingFields = !currentFormValues.type ||
       courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
 
@@ -282,66 +264,27 @@ export class BaseEditCourseForm extends React.Component {
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
             </div>
-            {// DISCO-1399: Get rid of ternary operator and just show Course Type
-            }
-            {type ? (
-              <React.Fragment>
-                <Field
-                  name="type"
-                  component={RenderSelectField}
-                  options={courseTypeOptions}
-                  label={
-                    <FieldLabel
-                      id="type.label"
-                      text="Course enrollment track"
-                      helpText={typeHelp}
-                      extraText="Cannot edit after submission"
-                    />
-                  }
-                  extraInput={{ onInvalid: this.openCollapsible }}
-                  disabled={disabled || !!entitlement.sku}
+            <Field
+              name="type"
+              component={RenderSelectField}
+              options={courseTypeOptions}
+              label={
+                <FieldLabel
+                  id="type.label"
+                  text="Course enrollment track"
+                  helpText={typeHelp}
+                  extraText="Cannot edit after submission"
                 />
-                <PriceList
-                  priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
-                  extraInput={{ onInvalid: this.openCollapsible }}
-                  disabled={disabled}
-                  required={isSubmittingForReview}
-                />
-              </React.Fragment>) : (
-                <React.Fragment>
-                  <Field
-                    name="mode"
-                    component={RenderSelectField}
-                    label={
-                      <FieldLabel
-                        id="mode.label"
-                        text="Enrollment track"
-                        helpText={enrollmentHelp}
-                        extraText="Cannot edit after submission"
-                      />
-                  }
-                    extraInput={{ onInvalid: this.openCollapsible }}
-                    options={this.getEnrollmentTrackOptions()}
-                    disabled={disabled || !!entitlement.sku}
-                  />
-                  {ENTITLEMENT_TRACKS.includes(currentFormValues.mode) &&
-                    <Field
-                      name="price"
-                      component={RenderInputTextField}
-                      type="number"
-                      label={<FieldLabel text="Price (USD)" />}
-                      extraInput={{
-                        onInvalid: this.openCollapsible,
-                        min: 1.00,
-                        step: 0.01,
-                        max: 10000.00,
-                      }}
-                      disabled={disabled}
-                      required={isSubmittingForReview}
-                    />
-                  }
-                </React.Fragment>)
-            }
+              }
+              extraInput={{ onInvalid: this.openCollapsible }}
+              disabled={disabled || !!entitlement.sku}
+            />
+            <PriceList
+              priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              disabled={disabled}
+              required={isSubmittingForReview}
+            />
             <Field
               name="imageSrc"
               component={ImageUpload}

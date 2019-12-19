@@ -68,15 +68,12 @@ class CreateCourseRunPage extends React.Component {
       createCourseRun,
     } = this.props;
 
-    const entitlement = entitlements && entitlements[0];
-    const price = entitlement && entitlement.price;
     const prices = buildInitialPrices(entitlements, course_runs);
     const courseRunData = {
       course: key,
       start: options.start,
       end: options.end,
       pacing_type: options.pacing_type,
-      price,
       prices,
       rerun: options.rerun,
       run_type: options.run_type,

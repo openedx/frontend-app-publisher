@@ -14,7 +14,7 @@ import PriceList from '../PriceList';
 import {
   DATE_INPUT_PATTERN,
 } from '../../data/constants';
-import { endDateHelp, enrollmentHelp, pacingHelp, startDateHelp, titleHelp, typeHelp, keyHelp } from '../../helpText';
+import { endDateHelp, runTypeHelp, pacingHelp, startDateHelp, titleHelp, typeHelp, keyHelp } from '../../helpText';
 import DateTimeField from '../DateTimeField';
 import { isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
 
@@ -257,7 +257,7 @@ class BaseCreateCourseForm extends React.Component {
                 id="course-run-type-label"
                 text="Course run enrollment track"
                 required
-                helpText={enrollmentHelp}
+                helpText={runTypeHelp}
               />
             }
             required

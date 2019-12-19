@@ -8,7 +8,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import ActionButton from '../ActionButton';
 
-import { endDateHelp, enrollmentHelp, startDateHelp, pacingHelp, keyHelp } from '../../helpText';
+import { endDateHelp, runTypeHelp, startDateHelp, pacingHelp, keyHelp } from '../../helpText';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import DateTimeField from '../DateTimeField';
@@ -25,7 +25,6 @@ const BaseCreateCourseRunForm = ({
   courseRunTypeOptions,
   currentFormValues,
   courseRunLabels,
-  courseTypeUuid,
   canSetRunKey,
 }) => {
   const courseRunOptionsData = getOptionsData(courseRunOptions);
@@ -131,24 +130,20 @@ const BaseCreateCourseRunForm = ({
             />
           </div>
         }
-        {// DISCO-1399: Remove && and just show Run Type
-        }
-        {!!courseTypeUuid &&
-          <Field
-            name="run_type"
-            component={RenderSelectField}
-            options={courseRunTypeOptions}
-            label={
-              <FieldLabel
-                id="run_type.label"
-                text="Course run enrollment track"
-                required
-                helpText={enrollmentHelp}
-              />
-            }
-            required
-          />
-        }
+        <Field
+          name="run_type"
+          component={RenderSelectField}
+          options={courseRunTypeOptions}
+          label={
+            <FieldLabel
+              id="run_type.label"
+              text="Course run enrollment track"
+              required
+              helpText={runTypeHelp}
+            />
+          }
+          required
+        />
         <Field
           name="pacing_type"
           type="text"
@@ -190,7 +185,6 @@ BaseCreateCourseRunForm.defaultProps = {
   courseRunLabels: [],
   courseRunOptions: {},
   courseRunTypeOptions: [],
-  courseTypeUuid: '',
 };
 
 BaseCreateCourseRunForm.propTypes = {
@@ -201,7 +195,6 @@ BaseCreateCourseRunForm.propTypes = {
   isCreating: PropTypes.bool.isRequired,
   currentFormValues: PropTypes.shape({}),
   courseRunLabels: PropTypes.arrayOf(PropTypes.shape({})),
-  courseTypeUuid: PropTypes.string,
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),

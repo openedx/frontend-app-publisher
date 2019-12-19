@@ -24,15 +24,12 @@ describe('BaseEditCourseForm', () => {
     additional_information: 'additional info',
     syllabus_raw: 'syllabus',
     videoSrc: 'https://www.video.src/watch?v=fdsafd',
-    mode: 'verified',
-    price: '77',
-    type: null,
+    prices: {
+      verified: '77',
+    },
+    type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
     uuid: '11111111-1111-1111-1111-111111111111',
     editable: true,
-  };
-  const entitlement = {
-    mode: 'verified',
-    price: '77',
   };
 
   it('renders html correctly with minimal data', () => {
@@ -43,7 +40,6 @@ describe('BaseEditCourseForm', () => {
       }}
       title={initialValuesFull.title}
       number="Test101x"
-      entitlement={undefined}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -54,38 +50,18 @@ describe('BaseEditCourseForm', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('renders html correctly with all data present and verified entitlement', () => {
+  it('renders html correctly with all data present', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
       number="Test102x"
-      entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
       type={initialValuesFull.type}
-      id="edit-course-form"
-    />);
-    expect(component).toMatchSnapshot();
-  });
-
-  it('renders html correctly with all data present and type defined', () => {
-    const initialValuesUpdated = Object.assign({}, initialValuesFull, { type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b' });
-    const component = shallow(<BaseEditCourseForm
-      handleSubmit={() => null}
-      initialValues={initialValuesUpdated}
-      currentFormValues={initialValuesUpdated}
-      title={initialValuesUpdated.title}
-      number="Test102x"
-      entitlement={entitlement}
-      courseStatuses={[UNPUBLISHED]}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      uuid={initialValuesUpdated.uuid}
-      type={initialValuesUpdated.type}
       id="edit-course-form"
     />);
     expect(component).toMatchSnapshot();
@@ -101,7 +77,6 @@ describe('BaseEditCourseForm', () => {
       currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
       number="Test102x"
-      entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -119,7 +94,6 @@ describe('BaseEditCourseForm', () => {
       currentFormValues={initialValuesFull}
       title={initialValuesFull.title}
       number="Test103x"
-      entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -138,7 +112,6 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
       number="Test101x"
-      entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -156,7 +129,6 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
       number="Test101x"
-      entitlement={entitlement}
       courseStatuses={[IN_LEGAL_REVIEW]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
@@ -172,42 +144,19 @@ describe('BaseEditCourseForm', () => {
     });
   });
 
-  it('renders with mode disabled after being reviewed', () => {
-    entitlement.sku = 'ABC1234';
+  it('renders with course type disabled after being reviewed', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
       number="Test101x"
-      entitlement={entitlement}
+      entitlement={{ sku: 'ABC1234' }}
       courseStatuses={[REVIEWED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
       type={initialValuesFull.type}
-      id="edit-course-form"
-    />);
-
-    const disabledFields = component.find({ name: 'mode', disabled: true });
-    expect(disabledFields).toHaveLength(1);
-  });
-
-  it('renders with course type disabled after being reviewed', () => {
-    const initialValuesUpdated = Object.assign({}, initialValuesFull, { type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b' });
-    entitlement.sku = 'ABC1234';
-    const component = shallow(<BaseEditCourseForm
-      handleSubmit={() => null}
-      title={initialValuesUpdated.title}
-      initialValues={initialValuesUpdated}
-      currentFormValues={initialValuesUpdated}
-      number="Test101x"
-      entitlement={entitlement}
-      courseStatuses={[REVIEWED]}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      uuid={initialValuesUpdated.uuid}
-      type={initialValuesUpdated.type}
       id="edit-course-form"
     />);
 
@@ -215,42 +164,19 @@ describe('BaseEditCourseForm', () => {
     expect(disabledFields).toHaveLength(1);
   });
 
-  it('renders with mode disabled once a sku exists, even if course is unpublished', () => {
-    entitlement.sku = 'ABC1234';
+  it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
       number="Test101x"
-      entitlement={entitlement}
+      entitlement={{ sku: 'ABC1234' }}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
       type={initialValuesFull.type}
-      id="edit-course-form"
-    />);
-
-    const disabledFields = component.find({ name: 'mode', disabled: true });
-    expect(disabledFields).toHaveLength(1);
-  });
-
-  it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
-    const initialValuesUpdated = Object.assign({}, initialValuesFull, { type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b' });
-    entitlement.sku = 'ABC1234';
-    const component = shallow(<BaseEditCourseForm
-      handleSubmit={() => null}
-      title={initialValuesUpdated.title}
-      initialValues={initialValuesUpdated}
-      currentFormValues={initialValuesUpdated}
-      number="Test101x"
-      entitlement={entitlement}
-      courseStatuses={[UNPUBLISHED]}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      uuid={initialValuesUpdated.uuid}
-      type={initialValuesUpdated.type}
       id="edit-course-form"
     />);
 
@@ -269,7 +195,6 @@ describe('BaseEditCourseForm', () => {
       initialValues={initialValuesWithMasters}
       currentFormValues={initialValuesWithMasters}
       number="Masters101x"
-      entitlement={entitlement}
       courseStatuses={[UNPUBLISHED]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}

@@ -23,7 +23,7 @@ import {
   ARCHIVED, DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
-import { dateEditHelp, enrollmentHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
+import { dateEditHelp, runTypeHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
 import RichEditor from '../RichEditor';
 
 const determineStatus = run => (courseRunIsArchived(run) ? ARCHIVED : run.status);
@@ -229,7 +229,6 @@ class CollapsibleCourseRun extends React.Component {
   render() {
     const {
       courseId,
-      type,
       courseInReview,
       courseRun,
       courseSubmitting,
@@ -267,11 +266,10 @@ class CollapsibleCourseRun extends React.Component {
 
     const courseDateEditHelp = dateEditHelp(courseRun);
     const coursePacingEditHelp = pacingEditHelp(courseRun);
-    // DISCO-1399: Simplify this line and if statement to not worry about if type is defined.
-    const runTypeOptions = currentFormValues && currentFormValues.type &&
-      courseRunTypeOptions[currentFormValues.type];
+    const runType = currentFormValues && currentFormValues.type;
+    const runTypeOptions = runType && courseRunTypeOptions[runType];
     // Handle mismatches between CourseType and CourseRunType
-    if (currentFormValues && currentFormValues.type && courseRun.run_type &&
+    if (courseRun.run_type && runTypeOptions &&
       runTypeOptions.every(option => option.value !== courseRun.run_type)) {
       runTypeOptions.push({ label: '--', value: courseRun.run_type });
     }
@@ -375,28 +373,24 @@ class CollapsibleCourseRun extends React.Component {
           </div>
         }
         <hr />
-        {// DISCO-1399: Get rid of && operator and just show Run Type
-        }
-        {type &&
-          <Field
-            name={`${courseId}.run_type`}
-            component={RenderSelectField}
-            options={currentFormValues.type ? runTypeOptions : [{ label: 'Select Course enrollment track first', value: '' }]}
-            extraInput={{ onInvalid: this.openCollapsible }}
-            label={
-              <FieldLabel
-                id={`${courseId}.run_type.label`}
-                text="Course run enrollment track"
-                helpText={enrollmentHelp}
-                extraText="Cannot edit after submission"
-              />
-            }
-            // If any of the seats have a SKU, then ecom products exist and
-            // changing shouldn't be allowed
-            disabled={disabled || seatHasSku}
-            required
-          />
-        }
+        <Field
+          name={`${courseId}.run_type`}
+          component={RenderSelectField}
+          options={runType ? runTypeOptions : [{ label: 'Select Course enrollment track first', value: '' }]}
+          extraInput={{ onInvalid: this.openCollapsible }}
+          label={
+            <FieldLabel
+              id={`${courseId}.run_type.label`}
+              text="Course run enrollment track"
+              helpText={runTypeHelp}
+              extraText="Cannot edit after submission"
+            />
+          }
+          // If any of the seats have a SKU, then ecom products exist and
+          // changing shouldn't be allowed
+          disabled={disabled || seatHasSku}
+          required
+        />
         <Field
           name={`${courseId}.pacing_type`}
           type="text"
@@ -695,7 +689,6 @@ CollapsibleCourseRun.propTypes = {
   }),
   courseUuid: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  type: PropTypes.string,
   courseRunTypeOptions: PropTypes.shape({}),
   runTypeModes: PropTypes.shape({}),
   editable: PropTypes.bool,
@@ -738,7 +731,6 @@ CollapsibleCourseRun.defaultProps = {
   courseSubmitInfo: {
     isSubmittingRunReview: false,
   },
-  type: '',
   courseRunTypeOptions: {},
   runTypeModes: {},
   editable: false,
