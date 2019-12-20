@@ -1,4 +1,3 @@
-import moment from 'moment';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import React from 'react';
@@ -10,7 +9,7 @@ import { SearchField } from '@edx/paragon';
 import TableContainer from '../../containers/TableContainer';
 import ButtonToolbar from '../ButtonToolbar';
 import PageContainer from '../PageContainer';
-import { getPageOptionsFromUrl, updateUrl } from '../../utils';
+import { formatDate, getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
 import { PUBLISHED, REVIEWED } from '../../data/constants';
 
@@ -155,7 +154,7 @@ class CourseTable extends React.Component {
     const formatCourseData = courses => courses.map(course => ({
       ...course,
       title: (<Link to={`/courses/${course.uuid}`}>{course.title}</Link>),
-      modified: moment.utc(course.modified).format('MMM DD, YYYY'),
+      modified: formatDate(course.modified),
       number: course.key_for_reruns || course.key,
       course_run_statuses: (<Pill statuses={course.course_run_statuses} />),
       course_editor_names: course.editors ? course.editors.map(editor => editor.user.full_name).join(', ') : '',
