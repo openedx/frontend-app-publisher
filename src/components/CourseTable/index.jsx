@@ -53,9 +53,11 @@ class CourseTable extends React.Component {
       authentication: {
         administrator,
       },
-      editorFilterOptions,
+      table: {
+        editorFilterOptions,
+      },
     } = this.props;
-    const prevEditorFilterOptions = prevProps.editorFilterOptions;
+    const prevEditorFilterOptions = prevProps.table.editorFilterOptions;
 
     if (editorFilterOptions !== prevEditorFilterOptions && !administrator) {
       this.state.filterGroups.push({
@@ -108,8 +110,69 @@ class CourseTable extends React.Component {
     updateUrl({ ...params, page: 1 });
   }
 
-  render() {
+  renderTableHeader() {
     const { selectedFilters, filterGroups } = this.state;
+    const pageOptions = getPageOptionsFromUrl();
+
+    return (
+      <React.Fragment>
+        <div className="row">
+          <div className="col-2 float-left">
+            <ButtonToolbar className="mb-3" leftJustify>
+              <Link to="/courses/new">
+                <button className="btn btn-primary">New Course</button>
+              </Link>
+            </ButtonToolbar>
+          </div>
+          <div className="col-5 float-right pt-1">
+            <Select
+              closeMenuOnSelect={false}
+              value={selectedFilters}
+              options={filterGroups}
+              onChange={filters => this.updateFilterQueryParamsInUrl(filters === null ?
+                [] : filters)}
+              isMulti
+              maxMenuHeight="30vh"
+              placeholder="Filters..."
+              styles={
+                {
+                  option: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+                  multiValue: (styles, { data }) => (
+                    { ...styles, backgroundColor: data.color || '#e7e7e7', opacity: 0.7 }
+                  ),
+                  multiValueLabel: (styles, { data }) => (
+                    {
+                      ...styles,
+                      color: data.label === 'Published' || data.label === 'Scheduled' ? '#ffffff' : '#000000',
+                    }
+                  ),
+                }
+              }
+            />
+          </div>
+          <div className="col-5 float-right">
+            <SearchField
+              value={pageOptions.pubq}
+              onClear={() => {
+                updateUrl({ filter: null });
+              }}
+              onSubmit={(filter) => {
+                updateUrl({ filter, page: 1 });
+              }}
+            />
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+
+  render() {
+    const {
+      table: {
+        error,
+        loading,
+      },
+    } = this.props;
 
     const courseTableColumns = [
       {
@@ -133,9 +196,6 @@ class CourseTable extends React.Component {
         columnSortable: false,
       },
     ];
-
-    const pageOptions = getPageOptionsFromUrl();
-
     const formatCourseData = courses => courses.map(course => ({
       ...course,
       title: (<Link to={`/courses/${course.uuid}`}>{course.title}</Link>),
@@ -144,65 +204,19 @@ class CourseTable extends React.Component {
       course_run_statuses: (<Pill statuses={course.course_run_statuses} />),
       course_editor_names: course.editors ? course.editors.map(editor => editor.user.full_name).join(', ') : '',
     }));
+
     return (
       <PageContainer wide>
-        <React.Fragment>
-          <Helmet>
-            <title>{`Publisher | ${process.env.SITE_NAME}`}</title>
-          </Helmet>
-          <div className="row">
-            <div className="col-2 float-left">
-              <ButtonToolbar className="mb-3" leftJustify>
-                <Link to="/courses/new">
-                  <button className="btn btn-primary">New Course</button>
-                </Link>
-              </ButtonToolbar>
-            </div>
-            <div className="col-5 float-right pt-1">
-              <Select
-                closeMenuOnSelect={false}
-                value={selectedFilters}
-                options={filterGroups}
-                onChange={filters => this.updateFilterQueryParamsInUrl(filters === null ?
-                  [] : filters)}
-                isMulti
-                maxMenuHeight="30vh"
-                placeholder="Filters..."
-                styles={
-                  {
-                    option: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
-                    multiValue: (styles, { data }) => (
-                      { ...styles, backgroundColor: data.color || '#e7e7e7', opacity: 0.7 }
-                    ),
-                    multiValueLabel: (styles, { data }) => (
-                      {
-                        ...styles,
-                        color: data.label === 'Published' || data.label === 'Scheduled' ? '#ffffff' : '#000000',
-                      }
-                    ),
-                  }
-                }
-              />
-            </div>
-            <div className="col-5 float-right">
-              <SearchField
-                value={pageOptions.pubq}
-                onClear={() => {
-                  updateUrl({ filter: null });
-                }}
-                onSubmit={(filter) => {
-                  updateUrl({ filter, page: 1 });
-                }}
-              />
-            </div>
-          </div>
-          <TableContainer
-            className="courses"
-            columns={courseTableColumns}
-            formatData={formatCourseData}
-            tableSortable
-          />
-        </React.Fragment>
+        <Helmet>
+          <title>{`Publisher | ${process.env.SITE_NAME}`}</title>
+        </Helmet>
+        {!loading && !error && this.renderTableHeader()}
+        <TableContainer
+          className="courses"
+          columns={courseTableColumns}
+          formatData={formatCourseData}
+          tableSortable
+        />
       </PageContainer>
     );
   }
@@ -216,6 +230,11 @@ CourseTable.defaultProps = {
   publisherUserInfo: {
     organizations: [],
   },
+  table: {
+    error: null,
+    loading: false,
+    editorFilterOptions: [],
+  },
 };
 
 CourseTable.propTypes = {
@@ -228,13 +247,17 @@ CourseTable.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
-  editorFilterOptions: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    full_name: PropTypes.string,
-  })).isRequired,
   location: PropTypes.shape({
     search: PropTypes.string,
   }).isRequired,
+  table: PropTypes.shape({
+    error: PropTypes.arrayOf(PropTypes.string),
+    loading: PropTypes.bool,
+    editorFilterOptions: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      full_name: PropTypes.string,
+    })),
+  }),
 };
 
 export default CourseTable;
