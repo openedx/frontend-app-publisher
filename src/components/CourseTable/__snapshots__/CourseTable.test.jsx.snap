@@ -20,6 +20,13 @@ ShallowWrapper {
         ],
       }
     }
+    table={
+      Object {
+        "editorFilterOptions": Array [],
+        "error": null,
+        "loading": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -35,7 +42,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <React.Fragment>
+      "children": Array [
         <HelmetWrapper
           defer={true}
           encodeSpecialCharacters={true}
@@ -43,150 +50,8 @@ ShallowWrapper {
           <title>
             Publisher | undefined
           </title>
-        </HelmetWrapper>
-        <div
-          className="row"
-        >
-          <div
-            className="col-2 float-left"
-          >
-            <ButtonToolbar
-              className="mb-3"
-              leftJustify={true}
-            >
-              <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>
-          </div>
-          <div
-            className="col-5 float-right pt-1"
-          >
-            <StateManager
-              closeMenuOnSelect={false}
-              defaultInputValue=""
-              defaultMenuIsOpen={false}
-              defaultValue={null}
-              isMulti={true}
-              maxMenuHeight="30vh"
-              onChange={[Function]}
-              options={
-                Array [
-                  Object {
-                    "label": "Course Run Statuses",
-                    "options": Array [
-                      Object {
-                        "color": "#e7e7e7",
-                        "label": "In review",
-                        "value": "in_review",
-                      },
-                      Object {
-                        "color": "#008100",
-                        "label": "Published",
-                        "value": "published",
-                      },
-                      Object {
-                        "color": "#0075b4",
-                        "label": "Scheduled",
-                        "value": "reviewed",
-                      },
-                      Object {
-                        "color": "#E2C018",
-                        "label": "Unsubmitted",
-                        "value": "unsubmitted",
-                      },
-                    ],
-                  },
-                ]
-              }
-              placeholder="Filters..."
-              styles={
-                Object {
-                  "multiValue": [Function],
-                  "multiValueLabel": [Function],
-                  "option": [Function],
-                }
-              }
-              value={Array []}
-            />
-          </div>
-          <div
-            className="col-5 float-right"
-          >
-            <SearchField
-              inputLabel="Search:"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClear={[Function]}
-              onFocus={[Function]}
-              onSubmit={[Function]}
-              placeholder=""
-              screenReaderText={
-                Object {
-                  "clearButton": "Clear search",
-                  "searchButton": "Submit search",
-                }
-              }
-              value=""
-            />
-          </div>
-        </div>
-        <withRouter(Connect(TableComponent))
-          className="courses"
-          columns={
-            Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ]
-          }
-          formatData={[Function]}
-          tableSortable={true}
-        />
-      </React.Fragment>,
-      "className": "",
-      "sidePanes": undefined,
-      "wide": true,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-          >
-            <title>
-              Publisher | undefined
-            </title>
-          </HelmetWrapper>,
+        </HelmetWrapper>,
+        <React.Fragment>
           <div
             className="row"
           >
@@ -280,66 +145,171 @@ ShallowWrapper {
                 value=""
               />
             </div>
-          </div>,
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
+          </div>
+        </React.Fragment>,
+        <withRouter(Connect(TableComponent))
+          className="courses"
+          columns={
+            Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ]
+          }
+          formatData={[Function]}
+          tableSortable={true}
+        />,
+      ],
+      "className": "",
+      "sidePanes": undefined,
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <title>
+            Publisher | undefined
+          </title>,
+          "defer": true,
+          "encodeSpecialCharacters": true,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "children": <title>
-              Publisher | undefined
-            </title>,
-            "defer": true,
-            "encodeSpecialCharacters": true,
+            "children": "Publisher | undefined",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Publisher | undefined",
-            },
-            "ref": null,
-            "rendered": "Publisher | undefined",
-            "type": "title",
-          },
-          "type": [Function],
+          "rendered": "Publisher | undefined",
+          "type": "title",
         },
-        Object {
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <div
+            className="row"
+          >
+            <div
+              className="col-2 float-left"
+            >
+              <ButtonToolbar
+                className="mb-3"
+                leftJustify={true}
+              >
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>
+            </div>
+            <div
+              className="col-5 float-right pt-1"
+            >
+              <StateManager
+                closeMenuOnSelect={false}
+                defaultInputValue=""
+                defaultMenuIsOpen={false}
+                defaultValue={null}
+                isMulti={true}
+                maxMenuHeight="30vh"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Course Run Statuses",
+                      "options": Array [
+                        Object {
+                          "color": "#e7e7e7",
+                          "label": "In review",
+                          "value": "in_review",
+                        },
+                        Object {
+                          "color": "#008100",
+                          "label": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "color": "#0075b4",
+                          "label": "Scheduled",
+                          "value": "reviewed",
+                        },
+                        Object {
+                          "color": "#E2C018",
+                          "label": "Unsubmitted",
+                          "value": "unsubmitted",
+                        },
+                      ],
+                    },
+                  ]
+                }
+                placeholder="Filters..."
+                styles={
+                  Object {
+                    "multiValue": [Function],
+                    "multiValueLabel": [Function],
+                    "option": [Function],
+                  }
+                }
+                value={Array []}
+              />
+            </div>
+            <div
+              className="col-5 float-right"
+            >
+              <SearchField
+                inputLabel="Search:"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClear={[Function]}
+                onFocus={[Function]}
+                onSubmit={[Function]}
+                placeholder=""
+                screenReaderText={
+                  Object {
+                    "clearButton": "Clear search",
+                    "searchButton": "Submit search",
+                  }
+                }
+                value=""
+              />
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
@@ -673,44 +643,44 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "className": "courses",
-            "columns": Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ],
-            "formatData": [Function],
-            "tableSortable": true,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+        "type": Symbol(react.fragment),
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "className": "courses",
+          "columns": Array [
+            Object {
+              "columnSortable": true,
+              "key": "title",
+              "label": "Course Name",
+            },
+            Object {
+              "columnSortable": true,
+              "key": "number",
+              "label": "Course Number",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_run_statuses",
+              "label": "States",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_editor_names",
+              "label": "Course Editors",
+            },
+          ],
+          "formatData": [Function],
+          "tableSortable": true,
         },
-      ],
-      "type": Symbol(react.fragment),
-    },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -719,7 +689,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <React.Fragment>
+        "children": Array [
           <HelmetWrapper
             defer={true}
             encodeSpecialCharacters={true}
@@ -727,150 +697,8 @@ ShallowWrapper {
             <title>
               Publisher | undefined
             </title>
-          </HelmetWrapper>
-          <div
-            className="row"
-          >
-            <div
-              className="col-2 float-left"
-            >
-              <ButtonToolbar
-                className="mb-3"
-                leftJustify={true}
-              >
-                <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>
-                </Link>
-              </ButtonToolbar>
-            </div>
-            <div
-              className="col-5 float-right pt-1"
-            >
-              <StateManager
-                closeMenuOnSelect={false}
-                defaultInputValue=""
-                defaultMenuIsOpen={false}
-                defaultValue={null}
-                isMulti={true}
-                maxMenuHeight="30vh"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "label": "Course Run Statuses",
-                      "options": Array [
-                        Object {
-                          "color": "#e7e7e7",
-                          "label": "In review",
-                          "value": "in_review",
-                        },
-                        Object {
-                          "color": "#008100",
-                          "label": "Published",
-                          "value": "published",
-                        },
-                        Object {
-                          "color": "#0075b4",
-                          "label": "Scheduled",
-                          "value": "reviewed",
-                        },
-                        Object {
-                          "color": "#E2C018",
-                          "label": "Unsubmitted",
-                          "value": "unsubmitted",
-                        },
-                      ],
-                    },
-                  ]
-                }
-                placeholder="Filters..."
-                styles={
-                  Object {
-                    "multiValue": [Function],
-                    "multiValueLabel": [Function],
-                    "option": [Function],
-                  }
-                }
-                value={Array []}
-              />
-            </div>
-            <div
-              className="col-5 float-right"
-            >
-              <SearchField
-                inputLabel="Search:"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClear={[Function]}
-                onFocus={[Function]}
-                onSubmit={[Function]}
-                placeholder=""
-                screenReaderText={
-                  Object {
-                    "clearButton": "Clear search",
-                    "searchButton": "Submit search",
-                  }
-                }
-                value=""
-              />
-            </div>
-          </div>
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />
-        </React.Fragment>,
-        "className": "",
-        "sidePanes": undefined,
-        "wide": true,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": Array [
-            <HelmetWrapper
-              defer={true}
-              encodeSpecialCharacters={true}
-            >
-              <title>
-                Publisher | undefined
-              </title>
-            </HelmetWrapper>,
+          </HelmetWrapper>,
+          <React.Fragment>
             <div
               className="row"
             >
@@ -964,66 +792,171 @@ ShallowWrapper {
                   value=""
                 />
               </div>
-            </div>,
-            <withRouter(Connect(TableComponent))
-              className="courses"
-              columns={
-                Array [
-                  Object {
-                    "columnSortable": true,
-                    "key": "title",
-                    "label": "Course Name",
-                  },
-                  Object {
-                    "columnSortable": true,
-                    "key": "number",
-                    "label": "Course Number",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_run_statuses",
-                    "label": "States",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_editor_names",
-                    "label": "Course Editors",
-                  },
-                ]
-              }
-              formatData={[Function]}
-              tableSortable={true}
-            />,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
+            </div>
+          </React.Fragment>,
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "number",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
+                },
+              ]
+            }
+            formatData={[Function]}
+            tableSortable={true}
+          />,
+        ],
+        "className": "",
+        "sidePanes": undefined,
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <title>
+              Publisher | undefined
+            </title>,
+            "defer": true,
+            "encodeSpecialCharacters": true,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "children": <title>
-                Publisher | undefined
-              </title>,
-              "defer": true,
-              "encodeSpecialCharacters": true,
+              "children": "Publisher | undefined",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Publisher | undefined",
-              },
-              "ref": null,
-              "rendered": "Publisher | undefined",
-              "type": "title",
-            },
-            "type": [Function],
+            "rendered": "Publisher | undefined",
+            "type": "title",
           },
-          Object {
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <div
+              className="row"
+            >
+              <div
+                className="col-2 float-left"
+              >
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
+                >
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                          Object {
+                            "color": "#0075b4",
+                            "label": "Scheduled",
+                            "value": "reviewed",
+                          },
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unsubmitted",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
+              </div>
+              <div
+                className="col-5 float-right"
+              >
+                <SearchField
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -1357,44 +1290,44 @@ ShallowWrapper {
             ],
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "className": "courses",
-              "columns": Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ],
-              "formatData": [Function],
-              "tableSortable": true,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+          "type": Symbol(react.fragment),
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "className": "courses",
+            "columns": Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ],
+            "formatData": [Function],
+            "tableSortable": true,
           },
-        ],
-        "type": Symbol(react.fragment),
-      },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": [Function],
     },
   ],
@@ -1440,6 +1373,13 @@ ShallowWrapper {
         "organizations": Array [],
       }
     }
+    table={
+      Object {
+        "editorFilterOptions": Array [],
+        "error": null,
+        "loading": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -1455,7 +1395,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <React.Fragment>
+      "children": Array [
         <HelmetWrapper
           defer={true}
           encodeSpecialCharacters={true}
@@ -1463,150 +1403,8 @@ ShallowWrapper {
           <title>
             Publisher | undefined
           </title>
-        </HelmetWrapper>
-        <div
-          className="row"
-        >
-          <div
-            className="col-2 float-left"
-          >
-            <ButtonToolbar
-              className="mb-3"
-              leftJustify={true}
-            >
-              <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>
-          </div>
-          <div
-            className="col-5 float-right pt-1"
-          >
-            <StateManager
-              closeMenuOnSelect={false}
-              defaultInputValue=""
-              defaultMenuIsOpen={false}
-              defaultValue={null}
-              isMulti={true}
-              maxMenuHeight="30vh"
-              onChange={[Function]}
-              options={
-                Array [
-                  Object {
-                    "label": "Course Run Statuses",
-                    "options": Array [
-                      Object {
-                        "color": "#e7e7e7",
-                        "label": "In review",
-                        "value": "in_review",
-                      },
-                      Object {
-                        "color": "#008100",
-                        "label": "Published",
-                        "value": "published",
-                      },
-                      Object {
-                        "color": "#0075b4",
-                        "label": "Scheduled",
-                        "value": "reviewed",
-                      },
-                      Object {
-                        "color": "#E2C018",
-                        "label": "Unsubmitted",
-                        "value": "unsubmitted",
-                      },
-                    ],
-                  },
-                ]
-              }
-              placeholder="Filters..."
-              styles={
-                Object {
-                  "multiValue": [Function],
-                  "multiValueLabel": [Function],
-                  "option": [Function],
-                }
-              }
-              value={Array []}
-            />
-          </div>
-          <div
-            className="col-5 float-right"
-          >
-            <SearchField
-              inputLabel="Search:"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClear={[Function]}
-              onFocus={[Function]}
-              onSubmit={[Function]}
-              placeholder=""
-              screenReaderText={
-                Object {
-                  "clearButton": "Clear search",
-                  "searchButton": "Submit search",
-                }
-              }
-              value=""
-            />
-          </div>
-        </div>
-        <withRouter(Connect(TableComponent))
-          className="courses"
-          columns={
-            Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ]
-          }
-          formatData={[Function]}
-          tableSortable={true}
-        />
-      </React.Fragment>,
-      "className": "",
-      "sidePanes": undefined,
-      "wide": true,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-          >
-            <title>
-              Publisher | undefined
-            </title>
-          </HelmetWrapper>,
+        </HelmetWrapper>,
+        <React.Fragment>
           <div
             className="row"
           >
@@ -1700,66 +1498,171 @@ ShallowWrapper {
                 value=""
               />
             </div>
-          </div>,
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
+          </div>
+        </React.Fragment>,
+        <withRouter(Connect(TableComponent))
+          className="courses"
+          columns={
+            Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ]
+          }
+          formatData={[Function]}
+          tableSortable={true}
+        />,
+      ],
+      "className": "",
+      "sidePanes": undefined,
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <title>
+            Publisher | undefined
+          </title>,
+          "defer": true,
+          "encodeSpecialCharacters": true,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "children": <title>
-              Publisher | undefined
-            </title>,
-            "defer": true,
-            "encodeSpecialCharacters": true,
+            "children": "Publisher | undefined",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Publisher | undefined",
-            },
-            "ref": null,
-            "rendered": "Publisher | undefined",
-            "type": "title",
-          },
-          "type": [Function],
+          "rendered": "Publisher | undefined",
+          "type": "title",
         },
-        Object {
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <div
+            className="row"
+          >
+            <div
+              className="col-2 float-left"
+            >
+              <ButtonToolbar
+                className="mb-3"
+                leftJustify={true}
+              >
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>
+            </div>
+            <div
+              className="col-5 float-right pt-1"
+            >
+              <StateManager
+                closeMenuOnSelect={false}
+                defaultInputValue=""
+                defaultMenuIsOpen={false}
+                defaultValue={null}
+                isMulti={true}
+                maxMenuHeight="30vh"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Course Run Statuses",
+                      "options": Array [
+                        Object {
+                          "color": "#e7e7e7",
+                          "label": "In review",
+                          "value": "in_review",
+                        },
+                        Object {
+                          "color": "#008100",
+                          "label": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "color": "#0075b4",
+                          "label": "Scheduled",
+                          "value": "reviewed",
+                        },
+                        Object {
+                          "color": "#E2C018",
+                          "label": "Unsubmitted",
+                          "value": "unsubmitted",
+                        },
+                      ],
+                    },
+                  ]
+                }
+                placeholder="Filters..."
+                styles={
+                  Object {
+                    "multiValue": [Function],
+                    "multiValueLabel": [Function],
+                    "option": [Function],
+                  }
+                }
+                value={Array []}
+              />
+            </div>
+            <div
+              className="col-5 float-right"
+            >
+              <SearchField
+                inputLabel="Search:"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClear={[Function]}
+                onFocus={[Function]}
+                onSubmit={[Function]}
+                placeholder=""
+                screenReaderText={
+                  Object {
+                    "clearButton": "Clear search",
+                    "searchButton": "Submit search",
+                  }
+                }
+                value=""
+              />
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
@@ -2093,44 +1996,44 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "className": "courses",
-            "columns": Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ],
-            "formatData": [Function],
-            "tableSortable": true,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+        "type": Symbol(react.fragment),
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "className": "courses",
+          "columns": Array [
+            Object {
+              "columnSortable": true,
+              "key": "title",
+              "label": "Course Name",
+            },
+            Object {
+              "columnSortable": true,
+              "key": "number",
+              "label": "Course Number",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_run_statuses",
+              "label": "States",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_editor_names",
+              "label": "Course Editors",
+            },
+          ],
+          "formatData": [Function],
+          "tableSortable": true,
         },
-      ],
-      "type": Symbol(react.fragment),
-    },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -2139,7 +2042,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <React.Fragment>
+        "children": Array [
           <HelmetWrapper
             defer={true}
             encodeSpecialCharacters={true}
@@ -2147,150 +2050,8 @@ ShallowWrapper {
             <title>
               Publisher | undefined
             </title>
-          </HelmetWrapper>
-          <div
-            className="row"
-          >
-            <div
-              className="col-2 float-left"
-            >
-              <ButtonToolbar
-                className="mb-3"
-                leftJustify={true}
-              >
-                <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>
-                </Link>
-              </ButtonToolbar>
-            </div>
-            <div
-              className="col-5 float-right pt-1"
-            >
-              <StateManager
-                closeMenuOnSelect={false}
-                defaultInputValue=""
-                defaultMenuIsOpen={false}
-                defaultValue={null}
-                isMulti={true}
-                maxMenuHeight="30vh"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "label": "Course Run Statuses",
-                      "options": Array [
-                        Object {
-                          "color": "#e7e7e7",
-                          "label": "In review",
-                          "value": "in_review",
-                        },
-                        Object {
-                          "color": "#008100",
-                          "label": "Published",
-                          "value": "published",
-                        },
-                        Object {
-                          "color": "#0075b4",
-                          "label": "Scheduled",
-                          "value": "reviewed",
-                        },
-                        Object {
-                          "color": "#E2C018",
-                          "label": "Unsubmitted",
-                          "value": "unsubmitted",
-                        },
-                      ],
-                    },
-                  ]
-                }
-                placeholder="Filters..."
-                styles={
-                  Object {
-                    "multiValue": [Function],
-                    "multiValueLabel": [Function],
-                    "option": [Function],
-                  }
-                }
-                value={Array []}
-              />
-            </div>
-            <div
-              className="col-5 float-right"
-            >
-              <SearchField
-                inputLabel="Search:"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClear={[Function]}
-                onFocus={[Function]}
-                onSubmit={[Function]}
-                placeholder=""
-                screenReaderText={
-                  Object {
-                    "clearButton": "Clear search",
-                    "searchButton": "Submit search",
-                  }
-                }
-                value=""
-              />
-            </div>
-          </div>
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />
-        </React.Fragment>,
-        "className": "",
-        "sidePanes": undefined,
-        "wide": true,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": Array [
-            <HelmetWrapper
-              defer={true}
-              encodeSpecialCharacters={true}
-            >
-              <title>
-                Publisher | undefined
-              </title>
-            </HelmetWrapper>,
+          </HelmetWrapper>,
+          <React.Fragment>
             <div
               className="row"
             >
@@ -2384,66 +2145,171 @@ ShallowWrapper {
                   value=""
                 />
               </div>
-            </div>,
-            <withRouter(Connect(TableComponent))
-              className="courses"
-              columns={
-                Array [
-                  Object {
-                    "columnSortable": true,
-                    "key": "title",
-                    "label": "Course Name",
-                  },
-                  Object {
-                    "columnSortable": true,
-                    "key": "number",
-                    "label": "Course Number",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_run_statuses",
-                    "label": "States",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_editor_names",
-                    "label": "Course Editors",
-                  },
-                ]
-              }
-              formatData={[Function]}
-              tableSortable={true}
-            />,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
+            </div>
+          </React.Fragment>,
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "number",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
+                },
+              ]
+            }
+            formatData={[Function]}
+            tableSortable={true}
+          />,
+        ],
+        "className": "",
+        "sidePanes": undefined,
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <title>
+              Publisher | undefined
+            </title>,
+            "defer": true,
+            "encodeSpecialCharacters": true,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "children": <title>
-                Publisher | undefined
-              </title>,
-              "defer": true,
-              "encodeSpecialCharacters": true,
+              "children": "Publisher | undefined",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Publisher | undefined",
-              },
-              "ref": null,
-              "rendered": "Publisher | undefined",
-              "type": "title",
-            },
-            "type": [Function],
+            "rendered": "Publisher | undefined",
+            "type": "title",
           },
-          Object {
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <div
+              className="row"
+            >
+              <div
+                className="col-2 float-left"
+              >
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
+                >
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                          Object {
+                            "color": "#0075b4",
+                            "label": "Scheduled",
+                            "value": "reviewed",
+                          },
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unsubmitted",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
+              </div>
+              <div
+                className="col-5 float-right"
+              >
+                <SearchField
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -2777,44 +2643,44 @@ ShallowWrapper {
             ],
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "className": "courses",
-              "columns": Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ],
-              "formatData": [Function],
-              "tableSortable": true,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+          "type": Symbol(react.fragment),
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "className": "courses",
+            "columns": Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ],
+            "formatData": [Function],
+            "tableSortable": true,
           },
-        ],
-        "type": Symbol(react.fragment),
-      },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": [Function],
     },
   ],
@@ -2865,6 +2731,13 @@ ShallowWrapper {
         ],
       }
     }
+    table={
+      Object {
+        "editorFilterOptions": Array [],
+        "error": null,
+        "loading": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -2880,7 +2753,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <React.Fragment>
+      "children": Array [
         <HelmetWrapper
           defer={true}
           encodeSpecialCharacters={true}
@@ -2888,150 +2761,8 @@ ShallowWrapper {
           <title>
             Publisher | undefined
           </title>
-        </HelmetWrapper>
-        <div
-          className="row"
-        >
-          <div
-            className="col-2 float-left"
-          >
-            <ButtonToolbar
-              className="mb-3"
-              leftJustify={true}
-            >
-              <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>
-          </div>
-          <div
-            className="col-5 float-right pt-1"
-          >
-            <StateManager
-              closeMenuOnSelect={false}
-              defaultInputValue=""
-              defaultMenuIsOpen={false}
-              defaultValue={null}
-              isMulti={true}
-              maxMenuHeight="30vh"
-              onChange={[Function]}
-              options={
-                Array [
-                  Object {
-                    "label": "Course Run Statuses",
-                    "options": Array [
-                      Object {
-                        "color": "#e7e7e7",
-                        "label": "In review",
-                        "value": "in_review",
-                      },
-                      Object {
-                        "color": "#008100",
-                        "label": "Published",
-                        "value": "published",
-                      },
-                      Object {
-                        "color": "#0075b4",
-                        "label": "Scheduled",
-                        "value": "reviewed",
-                      },
-                      Object {
-                        "color": "#E2C018",
-                        "label": "Unsubmitted",
-                        "value": "unsubmitted",
-                      },
-                    ],
-                  },
-                ]
-              }
-              placeholder="Filters..."
-              styles={
-                Object {
-                  "multiValue": [Function],
-                  "multiValueLabel": [Function],
-                  "option": [Function],
-                }
-              }
-              value={Array []}
-            />
-          </div>
-          <div
-            className="col-5 float-right"
-          >
-            <SearchField
-              inputLabel="Search:"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClear={[Function]}
-              onFocus={[Function]}
-              onSubmit={[Function]}
-              placeholder=""
-              screenReaderText={
-                Object {
-                  "clearButton": "Clear search",
-                  "searchButton": "Submit search",
-                }
-              }
-              value=""
-            />
-          </div>
-        </div>
-        <withRouter(Connect(TableComponent))
-          className="courses"
-          columns={
-            Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ]
-          }
-          formatData={[Function]}
-          tableSortable={true}
-        />
-      </React.Fragment>,
-      "className": "",
-      "sidePanes": undefined,
-      "wide": true,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-          >
-            <title>
-              Publisher | undefined
-            </title>
-          </HelmetWrapper>,
+        </HelmetWrapper>,
+        <React.Fragment>
           <div
             className="row"
           >
@@ -3125,66 +2856,171 @@ ShallowWrapper {
                 value=""
               />
             </div>
-          </div>,
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
+          </div>
+        </React.Fragment>,
+        <withRouter(Connect(TableComponent))
+          className="courses"
+          columns={
+            Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ]
+          }
+          formatData={[Function]}
+          tableSortable={true}
+        />,
+      ],
+      "className": "",
+      "sidePanes": undefined,
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <title>
+            Publisher | undefined
+          </title>,
+          "defer": true,
+          "encodeSpecialCharacters": true,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "children": <title>
-              Publisher | undefined
-            </title>,
-            "defer": true,
-            "encodeSpecialCharacters": true,
+            "children": "Publisher | undefined",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Publisher | undefined",
-            },
-            "ref": null,
-            "rendered": "Publisher | undefined",
-            "type": "title",
-          },
-          "type": [Function],
+          "rendered": "Publisher | undefined",
+          "type": "title",
         },
-        Object {
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <div
+            className="row"
+          >
+            <div
+              className="col-2 float-left"
+            >
+              <ButtonToolbar
+                className="mb-3"
+                leftJustify={true}
+              >
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>
+            </div>
+            <div
+              className="col-5 float-right pt-1"
+            >
+              <StateManager
+                closeMenuOnSelect={false}
+                defaultInputValue=""
+                defaultMenuIsOpen={false}
+                defaultValue={null}
+                isMulti={true}
+                maxMenuHeight="30vh"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Course Run Statuses",
+                      "options": Array [
+                        Object {
+                          "color": "#e7e7e7",
+                          "label": "In review",
+                          "value": "in_review",
+                        },
+                        Object {
+                          "color": "#008100",
+                          "label": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "color": "#0075b4",
+                          "label": "Scheduled",
+                          "value": "reviewed",
+                        },
+                        Object {
+                          "color": "#E2C018",
+                          "label": "Unsubmitted",
+                          "value": "unsubmitted",
+                        },
+                      ],
+                    },
+                  ]
+                }
+                placeholder="Filters..."
+                styles={
+                  Object {
+                    "multiValue": [Function],
+                    "multiValueLabel": [Function],
+                    "option": [Function],
+                  }
+                }
+                value={Array []}
+              />
+            </div>
+            <div
+              className="col-5 float-right"
+            >
+              <SearchField
+                inputLabel="Search:"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClear={[Function]}
+                onFocus={[Function]}
+                onSubmit={[Function]}
+                placeholder=""
+                screenReaderText={
+                  Object {
+                    "clearButton": "Clear search",
+                    "searchButton": "Submit search",
+                  }
+                }
+                value=""
+              />
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
@@ -3518,44 +3354,44 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "className": "courses",
-            "columns": Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ],
-            "formatData": [Function],
-            "tableSortable": true,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+        "type": Symbol(react.fragment),
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "className": "courses",
+          "columns": Array [
+            Object {
+              "columnSortable": true,
+              "key": "title",
+              "label": "Course Name",
+            },
+            Object {
+              "columnSortable": true,
+              "key": "number",
+              "label": "Course Number",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_run_statuses",
+              "label": "States",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_editor_names",
+              "label": "Course Editors",
+            },
+          ],
+          "formatData": [Function],
+          "tableSortable": true,
         },
-      ],
-      "type": Symbol(react.fragment),
-    },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -3564,7 +3400,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <React.Fragment>
+        "children": Array [
           <HelmetWrapper
             defer={true}
             encodeSpecialCharacters={true}
@@ -3572,150 +3408,8 @@ ShallowWrapper {
             <title>
               Publisher | undefined
             </title>
-          </HelmetWrapper>
-          <div
-            className="row"
-          >
-            <div
-              className="col-2 float-left"
-            >
-              <ButtonToolbar
-                className="mb-3"
-                leftJustify={true}
-              >
-                <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>
-                </Link>
-              </ButtonToolbar>
-            </div>
-            <div
-              className="col-5 float-right pt-1"
-            >
-              <StateManager
-                closeMenuOnSelect={false}
-                defaultInputValue=""
-                defaultMenuIsOpen={false}
-                defaultValue={null}
-                isMulti={true}
-                maxMenuHeight="30vh"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "label": "Course Run Statuses",
-                      "options": Array [
-                        Object {
-                          "color": "#e7e7e7",
-                          "label": "In review",
-                          "value": "in_review",
-                        },
-                        Object {
-                          "color": "#008100",
-                          "label": "Published",
-                          "value": "published",
-                        },
-                        Object {
-                          "color": "#0075b4",
-                          "label": "Scheduled",
-                          "value": "reviewed",
-                        },
-                        Object {
-                          "color": "#E2C018",
-                          "label": "Unsubmitted",
-                          "value": "unsubmitted",
-                        },
-                      ],
-                    },
-                  ]
-                }
-                placeholder="Filters..."
-                styles={
-                  Object {
-                    "multiValue": [Function],
-                    "multiValueLabel": [Function],
-                    "option": [Function],
-                  }
-                }
-                value={Array []}
-              />
-            </div>
-            <div
-              className="col-5 float-right"
-            >
-              <SearchField
-                inputLabel="Search:"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClear={[Function]}
-                onFocus={[Function]}
-                onSubmit={[Function]}
-                placeholder=""
-                screenReaderText={
-                  Object {
-                    "clearButton": "Clear search",
-                    "searchButton": "Submit search",
-                  }
-                }
-                value=""
-              />
-            </div>
-          </div>
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />
-        </React.Fragment>,
-        "className": "",
-        "sidePanes": undefined,
-        "wide": true,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": Array [
-            <HelmetWrapper
-              defer={true}
-              encodeSpecialCharacters={true}
-            >
-              <title>
-                Publisher | undefined
-              </title>
-            </HelmetWrapper>,
+          </HelmetWrapper>,
+          <React.Fragment>
             <div
               className="row"
             >
@@ -3809,66 +3503,171 @@ ShallowWrapper {
                   value=""
                 />
               </div>
-            </div>,
-            <withRouter(Connect(TableComponent))
-              className="courses"
-              columns={
-                Array [
-                  Object {
-                    "columnSortable": true,
-                    "key": "title",
-                    "label": "Course Name",
-                  },
-                  Object {
-                    "columnSortable": true,
-                    "key": "number",
-                    "label": "Course Number",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_run_statuses",
-                    "label": "States",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_editor_names",
-                    "label": "Course Editors",
-                  },
-                ]
-              }
-              formatData={[Function]}
-              tableSortable={true}
-            />,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
+            </div>
+          </React.Fragment>,
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "number",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
+                },
+              ]
+            }
+            formatData={[Function]}
+            tableSortable={true}
+          />,
+        ],
+        "className": "",
+        "sidePanes": undefined,
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <title>
+              Publisher | undefined
+            </title>,
+            "defer": true,
+            "encodeSpecialCharacters": true,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "children": <title>
-                Publisher | undefined
-              </title>,
-              "defer": true,
-              "encodeSpecialCharacters": true,
+              "children": "Publisher | undefined",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Publisher | undefined",
-              },
-              "ref": null,
-              "rendered": "Publisher | undefined",
-              "type": "title",
-            },
-            "type": [Function],
+            "rendered": "Publisher | undefined",
+            "type": "title",
           },
-          Object {
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <div
+              className="row"
+            >
+              <div
+                className="col-2 float-left"
+              >
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
+                >
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                          Object {
+                            "color": "#0075b4",
+                            "label": "Scheduled",
+                            "value": "reviewed",
+                          },
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unsubmitted",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
+              </div>
+              <div
+                className="col-5 float-right"
+              >
+                <SearchField
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -4202,44 +4001,44 @@ ShallowWrapper {
             ],
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "className": "courses",
-              "columns": Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ],
-              "formatData": [Function],
-              "tableSortable": true,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+          "type": Symbol(react.fragment),
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "className": "courses",
+            "columns": Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ],
+            "formatData": [Function],
+            "tableSortable": true,
           },
-        ],
-        "type": Symbol(react.fragment),
-      },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": [Function],
     },
   ],
@@ -4285,6 +4084,13 @@ ShallowWrapper {
         "organizations": Array [],
       }
     }
+    table={
+      Object {
+        "editorFilterOptions": Array [],
+        "error": null,
+        "loading": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -4300,7 +4106,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <React.Fragment>
+      "children": Array [
         <HelmetWrapper
           defer={true}
           encodeSpecialCharacters={true}
@@ -4308,150 +4114,8 @@ ShallowWrapper {
           <title>
             Publisher | undefined
           </title>
-        </HelmetWrapper>
-        <div
-          className="row"
-        >
-          <div
-            className="col-2 float-left"
-          >
-            <ButtonToolbar
-              className="mb-3"
-              leftJustify={true}
-            >
-              <Link
-                replace={false}
-                to="/courses/new"
-              >
-                <button
-                  className="btn btn-primary"
-                >
-                  New Course
-                </button>
-              </Link>
-            </ButtonToolbar>
-          </div>
-          <div
-            className="col-5 float-right pt-1"
-          >
-            <StateManager
-              closeMenuOnSelect={false}
-              defaultInputValue=""
-              defaultMenuIsOpen={false}
-              defaultValue={null}
-              isMulti={true}
-              maxMenuHeight="30vh"
-              onChange={[Function]}
-              options={
-                Array [
-                  Object {
-                    "label": "Course Run Statuses",
-                    "options": Array [
-                      Object {
-                        "color": "#e7e7e7",
-                        "label": "In review",
-                        "value": "in_review",
-                      },
-                      Object {
-                        "color": "#008100",
-                        "label": "Published",
-                        "value": "published",
-                      },
-                      Object {
-                        "color": "#0075b4",
-                        "label": "Scheduled",
-                        "value": "reviewed",
-                      },
-                      Object {
-                        "color": "#E2C018",
-                        "label": "Unsubmitted",
-                        "value": "unsubmitted",
-                      },
-                    ],
-                  },
-                ]
-              }
-              placeholder="Filters..."
-              styles={
-                Object {
-                  "multiValue": [Function],
-                  "multiValueLabel": [Function],
-                  "option": [Function],
-                }
-              }
-              value={Array []}
-            />
-          </div>
-          <div
-            className="col-5 float-right"
-          >
-            <SearchField
-              inputLabel="Search:"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClear={[Function]}
-              onFocus={[Function]}
-              onSubmit={[Function]}
-              placeholder=""
-              screenReaderText={
-                Object {
-                  "clearButton": "Clear search",
-                  "searchButton": "Submit search",
-                }
-              }
-              value=""
-            />
-          </div>
-        </div>
-        <withRouter(Connect(TableComponent))
-          className="courses"
-          columns={
-            Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ]
-          }
-          formatData={[Function]}
-          tableSortable={true}
-        />
-      </React.Fragment>,
-      "className": "",
-      "sidePanes": undefined,
-      "wide": true,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-          >
-            <title>
-              Publisher | undefined
-            </title>
-          </HelmetWrapper>,
+        </HelmetWrapper>,
+        <React.Fragment>
           <div
             className="row"
           >
@@ -4545,66 +4209,171 @@ ShallowWrapper {
                 value=""
               />
             </div>
-          </div>,
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
+          </div>
+        </React.Fragment>,
+        <withRouter(Connect(TableComponent))
+          className="courses"
+          columns={
+            Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ]
+          }
+          formatData={[Function]}
+          tableSortable={true}
+        />,
+      ],
+      "className": "",
+      "sidePanes": undefined,
+      "wide": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <title>
+            Publisher | undefined
+          </title>,
+          "defer": true,
+          "encodeSpecialCharacters": true,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "children": <title>
-              Publisher | undefined
-            </title>,
-            "defer": true,
-            "encodeSpecialCharacters": true,
+            "children": "Publisher | undefined",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Publisher | undefined",
-            },
-            "ref": null,
-            "rendered": "Publisher | undefined",
-            "type": "title",
-          },
-          "type": [Function],
+          "rendered": "Publisher | undefined",
+          "type": "title",
         },
-        Object {
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <div
+            className="row"
+          >
+            <div
+              className="col-2 float-left"
+            >
+              <ButtonToolbar
+                className="mb-3"
+                leftJustify={true}
+              >
+                <Link
+                  replace={false}
+                  to="/courses/new"
+                >
+                  <button
+                    className="btn btn-primary"
+                  >
+                    New Course
+                  </button>
+                </Link>
+              </ButtonToolbar>
+            </div>
+            <div
+              className="col-5 float-right pt-1"
+            >
+              <StateManager
+                closeMenuOnSelect={false}
+                defaultInputValue=""
+                defaultMenuIsOpen={false}
+                defaultValue={null}
+                isMulti={true}
+                maxMenuHeight="30vh"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Course Run Statuses",
+                      "options": Array [
+                        Object {
+                          "color": "#e7e7e7",
+                          "label": "In review",
+                          "value": "in_review",
+                        },
+                        Object {
+                          "color": "#008100",
+                          "label": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "color": "#0075b4",
+                          "label": "Scheduled",
+                          "value": "reviewed",
+                        },
+                        Object {
+                          "color": "#E2C018",
+                          "label": "Unsubmitted",
+                          "value": "unsubmitted",
+                        },
+                      ],
+                    },
+                  ]
+                }
+                placeholder="Filters..."
+                styles={
+                  Object {
+                    "multiValue": [Function],
+                    "multiValueLabel": [Function],
+                    "option": [Function],
+                  }
+                }
+                value={Array []}
+              />
+            </div>
+            <div
+              className="col-5 float-right"
+            >
+              <SearchField
+                inputLabel="Search:"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClear={[Function]}
+                onFocus={[Function]}
+                onSubmit={[Function]}
+                placeholder=""
+                screenReaderText={
+                  Object {
+                    "clearButton": "Clear search",
+                    "searchButton": "Submit search",
+                  }
+                }
+                value=""
+              />
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
@@ -4938,44 +4707,44 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "className": "courses",
-            "columns": Array [
-              Object {
-                "columnSortable": true,
-                "key": "title",
-                "label": "Course Name",
-              },
-              Object {
-                "columnSortable": true,
-                "key": "number",
-                "label": "Course Number",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_run_statuses",
-                "label": "States",
-              },
-              Object {
-                "columnSortable": false,
-                "key": "course_editor_names",
-                "label": "Course Editors",
-              },
-            ],
-            "formatData": [Function],
-            "tableSortable": true,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+        "type": Symbol(react.fragment),
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "className": "courses",
+          "columns": Array [
+            Object {
+              "columnSortable": true,
+              "key": "title",
+              "label": "Course Name",
+            },
+            Object {
+              "columnSortable": true,
+              "key": "number",
+              "label": "Course Number",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_run_statuses",
+              "label": "States",
+            },
+            Object {
+              "columnSortable": false,
+              "key": "course_editor_names",
+              "label": "Course Editors",
+            },
+          ],
+          "formatData": [Function],
+          "tableSortable": true,
         },
-      ],
-      "type": Symbol(react.fragment),
-    },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -4984,7 +4753,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <React.Fragment>
+        "children": Array [
           <HelmetWrapper
             defer={true}
             encodeSpecialCharacters={true}
@@ -4992,150 +4761,8 @@ ShallowWrapper {
             <title>
               Publisher | undefined
             </title>
-          </HelmetWrapper>
-          <div
-            className="row"
-          >
-            <div
-              className="col-2 float-left"
-            >
-              <ButtonToolbar
-                className="mb-3"
-                leftJustify={true}
-              >
-                <Link
-                  replace={false}
-                  to="/courses/new"
-                >
-                  <button
-                    className="btn btn-primary"
-                  >
-                    New Course
-                  </button>
-                </Link>
-              </ButtonToolbar>
-            </div>
-            <div
-              className="col-5 float-right pt-1"
-            >
-              <StateManager
-                closeMenuOnSelect={false}
-                defaultInputValue=""
-                defaultMenuIsOpen={false}
-                defaultValue={null}
-                isMulti={true}
-                maxMenuHeight="30vh"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "label": "Course Run Statuses",
-                      "options": Array [
-                        Object {
-                          "color": "#e7e7e7",
-                          "label": "In review",
-                          "value": "in_review",
-                        },
-                        Object {
-                          "color": "#008100",
-                          "label": "Published",
-                          "value": "published",
-                        },
-                        Object {
-                          "color": "#0075b4",
-                          "label": "Scheduled",
-                          "value": "reviewed",
-                        },
-                        Object {
-                          "color": "#E2C018",
-                          "label": "Unsubmitted",
-                          "value": "unsubmitted",
-                        },
-                      ],
-                    },
-                  ]
-                }
-                placeholder="Filters..."
-                styles={
-                  Object {
-                    "multiValue": [Function],
-                    "multiValueLabel": [Function],
-                    "option": [Function],
-                  }
-                }
-                value={Array []}
-              />
-            </div>
-            <div
-              className="col-5 float-right"
-            >
-              <SearchField
-                inputLabel="Search:"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClear={[Function]}
-                onFocus={[Function]}
-                onSubmit={[Function]}
-                placeholder=""
-                screenReaderText={
-                  Object {
-                    "clearButton": "Clear search",
-                    "searchButton": "Submit search",
-                  }
-                }
-                value=""
-              />
-            </div>
-          </div>
-          <withRouter(Connect(TableComponent))
-            className="courses"
-            columns={
-              Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ]
-            }
-            formatData={[Function]}
-            tableSortable={true}
-          />
-        </React.Fragment>,
-        "className": "",
-        "sidePanes": undefined,
-        "wide": true,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": Array [
-            <HelmetWrapper
-              defer={true}
-              encodeSpecialCharacters={true}
-            >
-              <title>
-                Publisher | undefined
-              </title>
-            </HelmetWrapper>,
+          </HelmetWrapper>,
+          <React.Fragment>
             <div
               className="row"
             >
@@ -5229,66 +4856,171 @@ ShallowWrapper {
                   value=""
                 />
               </div>
-            </div>,
-            <withRouter(Connect(TableComponent))
-              className="courses"
-              columns={
-                Array [
-                  Object {
-                    "columnSortable": true,
-                    "key": "title",
-                    "label": "Course Name",
-                  },
-                  Object {
-                    "columnSortable": true,
-                    "key": "number",
-                    "label": "Course Number",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_run_statuses",
-                    "label": "States",
-                  },
-                  Object {
-                    "columnSortable": false,
-                    "key": "course_editor_names",
-                    "label": "Course Editors",
-                  },
-                ]
-              }
-              formatData={[Function]}
-              tableSortable={true}
-            />,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
+            </div>
+          </React.Fragment>,
+          <withRouter(Connect(TableComponent))
+            className="courses"
+            columns={
+              Array [
+                Object {
+                  "columnSortable": true,
+                  "key": "title",
+                  "label": "Course Name",
+                },
+                Object {
+                  "columnSortable": true,
+                  "key": "number",
+                  "label": "Course Number",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_run_statuses",
+                  "label": "States",
+                },
+                Object {
+                  "columnSortable": false,
+                  "key": "course_editor_names",
+                  "label": "Course Editors",
+                },
+              ]
+            }
+            formatData={[Function]}
+            tableSortable={true}
+          />,
+        ],
+        "className": "",
+        "sidePanes": undefined,
+        "wide": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <title>
+              Publisher | undefined
+            </title>,
+            "defer": true,
+            "encodeSpecialCharacters": true,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "children": <title>
-                Publisher | undefined
-              </title>,
-              "defer": true,
-              "encodeSpecialCharacters": true,
+              "children": "Publisher | undefined",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Publisher | undefined",
-              },
-              "ref": null,
-              "rendered": "Publisher | undefined",
-              "type": "title",
-            },
-            "type": [Function],
+            "rendered": "Publisher | undefined",
+            "type": "title",
           },
-          Object {
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <div
+              className="row"
+            >
+              <div
+                className="col-2 float-left"
+              >
+                <ButtonToolbar
+                  className="mb-3"
+                  leftJustify={true}
+                >
+                  <Link
+                    replace={false}
+                    to="/courses/new"
+                  >
+                    <button
+                      className="btn btn-primary"
+                    >
+                      New Course
+                    </button>
+                  </Link>
+                </ButtonToolbar>
+              </div>
+              <div
+                className="col-5 float-right pt-1"
+              >
+                <StateManager
+                  closeMenuOnSelect={false}
+                  defaultInputValue=""
+                  defaultMenuIsOpen={false}
+                  defaultValue={null}
+                  isMulti={true}
+                  maxMenuHeight="30vh"
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Course Run Statuses",
+                        "options": Array [
+                          Object {
+                            "color": "#e7e7e7",
+                            "label": "In review",
+                            "value": "in_review",
+                          },
+                          Object {
+                            "color": "#008100",
+                            "label": "Published",
+                            "value": "published",
+                          },
+                          Object {
+                            "color": "#0075b4",
+                            "label": "Scheduled",
+                            "value": "reviewed",
+                          },
+                          Object {
+                            "color": "#E2C018",
+                            "label": "Unsubmitted",
+                            "value": "unsubmitted",
+                          },
+                        ],
+                      },
+                    ]
+                  }
+                  placeholder="Filters..."
+                  styles={
+                    Object {
+                      "multiValue": [Function],
+                      "multiValueLabel": [Function],
+                      "option": [Function],
+                    }
+                  }
+                  value={Array []}
+                />
+              </div>
+              <div
+                className="col-5 float-right"
+              >
+                <SearchField
+                  inputLabel="Search:"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClear={[Function]}
+                  onFocus={[Function]}
+                  onSubmit={[Function]}
+                  placeholder=""
+                  screenReaderText={
+                    Object {
+                      "clearButton": "Clear search",
+                      "searchButton": "Submit search",
+                    }
+                  }
+                  value=""
+                />
+              </div>
+            </div>,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -5622,44 +5354,44 @@ ShallowWrapper {
             ],
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "className": "courses",
-              "columns": Array [
-                Object {
-                  "columnSortable": true,
-                  "key": "title",
-                  "label": "Course Name",
-                },
-                Object {
-                  "columnSortable": true,
-                  "key": "number",
-                  "label": "Course Number",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_run_statuses",
-                  "label": "States",
-                },
-                Object {
-                  "columnSortable": false,
-                  "key": "course_editor_names",
-                  "label": "Course Editors",
-                },
-              ],
-              "formatData": [Function],
-              "tableSortable": true,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+          "type": Symbol(react.fragment),
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "className": "courses",
+            "columns": Array [
+              Object {
+                "columnSortable": true,
+                "key": "title",
+                "label": "Course Name",
+              },
+              Object {
+                "columnSortable": true,
+                "key": "number",
+                "label": "Course Number",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_run_statuses",
+                "label": "States",
+              },
+              Object {
+                "columnSortable": false,
+                "key": "course_editor_names",
+                "label": "Course Editors",
+              },
+            ],
+            "formatData": [Function],
+            "tableSortable": true,
           },
-        ],
-        "type": Symbol(react.fragment),
-      },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": [Function],
     },
   ],
