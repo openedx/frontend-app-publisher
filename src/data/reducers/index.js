@@ -15,6 +15,7 @@ import courseRunOptions from './courseRunOptions';
 import sourceInfo from './sourceInfo';
 import courseSubmitInfo from './courseSubmitInfo';
 import darkMode from './darkMode';
+import formOptions from './formOptions';
 
 const identityReducer = (state) => {
   const newState = { ...state };
@@ -36,6 +37,7 @@ export default history => combineReducers({
   stafferInfo,
   courseRunOptions,
   form: formReducer,
+  formOptions,
   table,
   sourceInfo,
   courseSubmitInfo,
