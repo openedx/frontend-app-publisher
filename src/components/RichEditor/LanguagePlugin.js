@@ -1,8 +1,5 @@
 import tinymce from 'tinymce/tinymce.min';
-import { BROWSER_DEFAULT, languages } from '../../data/constants/formOptions';
-import updateFormLanguage from '../../data/actions/formOptions';
-import { getLanguageforEditor } from '../../data/reducers/formOptions';
-import store from '../../data/store';
+import { BROWSER_DEFAULT, languages } from './editorConstants';
 
 tinymce.PluginManager.add('language', (editor) => {
   const replaceText = (newText) => {
@@ -33,7 +30,7 @@ tinymce.PluginManager.add('language', (editor) => {
 
   const openDialog = (buttonApi) => {
     const selectedNode = editor.selection.getNode();
-    const state = store.getState();
+    const currentLang = selectedNode.lang ? selectedNode.lang : BROWSER_DEFAULT;
     return editor.windowManager.open({
       title: 'Language plugin',
       body: {
@@ -41,7 +38,7 @@ tinymce.PluginManager.add('language', (editor) => {
         items: [
           {
             type: 'htmlpanel', // component type
-            html: `<div>Current language: ${languages[getLanguageforEditor(state, editor.id)].nativeName}</div>`,
+            html: `<div>Current language: ${languages[currentLang].nativeName}</div>`,
           },
           {
             type: 'selectbox',
@@ -82,7 +79,6 @@ tinymce.PluginManager.add('language', (editor) => {
         } else if (selectedNode.lang) {
           resetLanguage(selectedNode);
         }
-        store.dispatch(updateFormLanguage(data.language, editor.id));
         buttonApi.setActive(data.language !== BROWSER_DEFAULT);
         api.close();
       },
@@ -96,20 +92,18 @@ tinymce.PluginManager.add('language', (editor) => {
     },
     onSetup(buttonApi) {
       editor.addShortcut('Meta+L', 'Switch to default language', () => {
-        const state = store.getState();
-        if (getLanguageforEditor(state, editor.id) !== BROWSER_DEFAULT) {
+        const selectedNode = editor.selection.getNode();
+        const currentLang = selectedNode.lang ? selectedNode.lang : BROWSER_DEFAULT;
+        if (currentLang !== BROWSER_DEFAULT) {
           resetLanguage();
           buttonApi.setActive(false);
-          store.dispatch(updateFormLanguage(BROWSER_DEFAULT, editor.id));
         }
       });
       const updateCurrentLanguage = () => {
         const selectedNode = editor.selection.getNode();
         if (selectedNode.lang) {
-          store.dispatch(updateFormLanguage(selectedNode.lang, editor.id));
           buttonApi.setActive(true);
         } else {
-          store.dispatch(updateFormLanguage(BROWSER_DEFAULT, editor.id));
           buttonApi.setActive(false);
         }
       };
