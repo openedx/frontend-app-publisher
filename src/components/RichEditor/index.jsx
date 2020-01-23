@@ -9,7 +9,7 @@ import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/themes/silver/theme';
 import 'style-loader!tinymce/skins/ui/oxide/skin.min.css'; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved
-import './LanguagePlugin';
+import 'tinymce-language-selector';
 import StatusAlert from '../StatusAlert';
 
 
@@ -84,7 +84,7 @@ class RichEditor extends React.Component {
               statusbar: false,
               toolbar: 'undo redo | bold italic underline | bullist numlist | link | language',
               entity_encoding: 'raw',
-              extended_valid_elements: 'span[lang]',
+              extended_valid_elements: 'span[lang|id] -span',
             }}
             onChange={this.updateCharCount}
             onKeyUp={this.updateCharCount}

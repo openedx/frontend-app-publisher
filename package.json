@@ -59,6 +59,7 @@
     "stylelint-declaration-use-variable": "1.7.0",
     "stylelint-scss": "3.11.1",
     "tinymce": "5.0.16",
+    "tinymce-language-selector": "1.0.2",
     "validator": "10.11.0",
     "whatwg-fetch": "3.0.0"
   },
@@ -124,7 +125,7 @@
       "/node_modules/"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!(@edx/paragon)/).*/"
+      "/node_modules/(?!(tinymce-language-selector|@edx/paragon)/).*/"
     ],
     "globals": {
       "courseContext": {}
