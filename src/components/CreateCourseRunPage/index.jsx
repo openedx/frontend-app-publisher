@@ -179,6 +179,7 @@ class CreateCourseRunPage extends React.Component {
                 <StatusAlert
                   id="create-error"
                   alertType="danger"
+                  className="mt-3"
                   message={errorArray}
                 />
               ) }
