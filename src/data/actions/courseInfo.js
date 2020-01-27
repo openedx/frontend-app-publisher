@@ -155,9 +155,11 @@ function createCourseRun(courseUuid, courseRunData) {
       })
       .catch((error) => {
         let errorList;
-        if (error.response && error.response.status === 504) {
+        if (!error.response || error.response.status === 504) {
           // See DISCO-1548. Basically, a course is so large that nginx kills requests before Studio
           // can finish copying content. So we add a custom message about this case.
+          // In prod/stage, we see an 'undefined' response (axios eating it?) but the server does
+          // return a 504 for this case. So handle both response values.
           errorList = ['Due to the quantity of content in this course, we anticipate a longer wait time for the creation of a new course run in Publisher. The run is now available in Studio in the meantime. Please check back in a business day or contact your Project Coordinator for help.'];
         } else {
           errorList = ['Course Run create failed, please try again or contact support.'].concat(getErrorMessages(error));
