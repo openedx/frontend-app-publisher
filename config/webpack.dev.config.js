@@ -23,6 +23,7 @@ module.exports = Merge.smart(commonConfig, {
         test: /\.(js|jsx)$/,
         include: [
           path.resolve(__dirname, '../src'),
+          path.resolve(__dirname, '../node_modules/tinymce-language-selector'),
         ],
         loader: 'babel-loader',
         options: {
