@@ -376,7 +376,7 @@ class CollapsibleCourseRun extends React.Component {
         <Field
           name={`${courseId}.run_type`}
           component={RenderSelectField}
-          options={runType ? runTypeOptions : [{ label: 'Select Course enrollment track first', value: '' }]}
+          options={runTypeOptions || [{ label: 'Select Course enrollment track first', value: '' }]}
           extraInput={{ onInvalid: this.openCollapsible }}
           label={
             <FieldLabel
