@@ -12,8 +12,8 @@
     "prepublishOnly": "npm run build",
     "start": "NODE_ENV=development BABEL_ENV=development node_modules/.bin/webpack-dev-server --config=config/webpack.dev.config.js --progress",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
-    "test": "TZ=GMT NODE_ENV=test jest --coverage --runInBand",
-    "snapshot": "TZ=GMT jest --updateSnapshot",
+    "test": "NODE_ENV=test jest --coverage --runInBand",
+    "snapshot": "jest --updateSnapshot",
     "stylelint": "stylelint '**/*.scss'"
   },
   "license": "AGPL-3.0",
@@ -58,7 +58,7 @@
     "redux-thunk": "2.3.0",
     "stylelint-declaration-use-variable": "1.7.0",
     "stylelint-scss": "3.11.1",
-    "tinymce": "5.1.4",
+    "tinymce": "5.0.16",
     "tinymce-language-selector": "1.0.4",
     "validator": "10.11.0",
     "whatwg-fetch": "3.0.0"
