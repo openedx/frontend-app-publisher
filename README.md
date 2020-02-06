@@ -1,13 +1,15 @@
 # frontend-app-publisher
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/edx/frontend-app-publisher.svg)](https://greenkeeper.io/)
-
-Publisher frontend to manage course creation and marketing content curation.
+Publisher integrates with the course discovery, ecommerce, and Studio services and can be used to
+create new courses and course runs which will be pushed out to Studio for content authoring. Inside
+of Publisher, the course team can manage ecommerce products, marketing information, and creation of
+new course runs within a course.
 
 # Important Note
 
-This repository is in early Alpha stages of development and will be for the foreseeable future. Until then it is
-not recommended for use in production.
+At this point in time, there is no standard process for installing Microfrontends in a production
+setting, but Publisher is still being provided so the community can become more familiar with it and
+possibly configure and install it on their own.
 
 # Development Environment
 
@@ -20,6 +22,10 @@ This application requires an edx-platform instance for authentication. For local
 You should be able to view it in a web browser at `localhost:18400`.
 
 ## Running Tests
+
+Note: The assumption behind running any of these commands is that the user is
+already shelled into the container using the `make frontend-app-publisher-shell`
+command in devstack.
 
 Currently we are using Jest and Enzyme for our testing
 

@@ -1,3 +1,7 @@
+# The assumption behind running any of these make commands is that the user is
+# already shelled into the container using the `make frontend-app-publisher-shell`
+# command in devstack
+
 npm-install-%: ## install specified % npm package on the cookie-cutter container
 	npm install $* --save-dev
 	git add package.json
