@@ -178,7 +178,6 @@ const typeHelp = (
 
 const urlSlugHelp = (
   <div>
-    <p><b>This field is currently not in use</b></p>
     <p>
       This field is optional. If left blank, edX will automatically
       create a URL slug based on the course title.

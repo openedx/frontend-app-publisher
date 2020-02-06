@@ -245,7 +245,7 @@ export class BaseEditCourseForm extends React.Component {
               required
               disabled={disabled}
             />
-            {administrator && <Field
+            <Field
               name="url_slug"
               component={RenderInputTextField}
               type="text"
@@ -257,9 +257,9 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={urlSlugHelp}
                 />
               }
-              disabled={disabled}
+              disabled={disabled || !administrator}
               optional
-            />}
+            />
             <div>
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
