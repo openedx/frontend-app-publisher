@@ -9,7 +9,9 @@ import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
 import StatusAlert from '../StatusAlert';
 import PageContainer from '../PageContainer';
-import { buildInitialPrices, formatDate, getOptionsData, parseCourseTypeOptions } from '../../utils';
+import {
+  buildInitialPrices, formatDate, getOptionsData, parseCourseTypeOptions,
+} from '../../utils';
 
 class CreateCourseRunPage extends React.Component {
   constructor(props) {
@@ -34,18 +36,18 @@ class CreateCourseRunPage extends React.Component {
       fetchCourseRunOptions,
       id,
     } = this.props;
-    if (!courseInfo.data || (courseInfo.data &&
-        (Object.keys(courseInfo.data).length === 0 ||
-        courseInfo.data.uuid !== id))) {
+    if (!courseInfo.data || (courseInfo.data
+        && (Object.keys(courseInfo.data).length === 0
+        || courseInfo.data.uuid !== id))) {
       // We need to request Course data
       fetchCourseInfo(id);
     }
-    if (!courseOptions.data || (courseOptions.data &&
-        Object.keys(courseOptions.data).length === 0)) {
+    if (!courseOptions.data || (courseOptions.data
+        && Object.keys(courseOptions.data).length === 0)) {
       fetchCourseOptions();
     }
-    if (!courseRunOptions.data || (courseRunOptions.data &&
-        Object.keys(courseRunOptions.data).length === 0)) {
+    if (!courseRunOptions.data || (courseRunOptions.data
+        && Object.keys(courseRunOptions.data).length === 0)) {
       fetchCourseRunOptions();
     }
     this.setStartedFetching();
@@ -84,8 +86,7 @@ class CreateCourseRunPage extends React.Component {
 
   parseCourseRunLabels(courseRuns) {
     // Sort course runs by descending start dates
-    const sortedCourseRuns =
-      courseRuns.sort((run1, run2) => moment(run2.start).diff(moment(run1.start)));
+    const sortedCourseRuns = courseRuns.sort((run1, run2) => moment(run2.start).diff(moment(run1.start)));
     return sortedCourseRuns.map((run) => {
       const runTerm = run.key.split(/\+|\//).pop();
       return ({ label: `Run starting ${formatDate(run.start)} (${runTerm})`, value: run.key });
@@ -110,8 +111,8 @@ class CreateCourseRunPage extends React.Component {
     } = this.state;
     const title = courseInfo.data && courseInfo.data.title ? courseInfo.data.title : '';
     const uuid = courseInfo.data && courseInfo.data.uuid ? courseInfo.data.uuid : '';
-    const canSetRunKey = courseInfo.data && courseInfo.data.owners &&
-      !courseInfo.data.owners.some(o => o.auto_generate_course_run_keys);
+    const canSetRunKey = courseInfo.data && courseInfo.data.owners
+      && !courseInfo.data.owners.some(o => o.auto_generate_course_run_keys);
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -123,40 +124,40 @@ class CreateCourseRunPage extends React.Component {
       });
     }
 
-    const courseInReview = course_runs && course_runs.some(courseRun =>
-      IN_REVIEW_STATUS.includes(courseRun.status));
+    const courseInReview = course_runs && course_runs.some(courseRun => IN_REVIEW_STATUS.includes(courseRun.status));
 
-    const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching ||
-      courseRunOptions.isFetching;
-    const showForm = startedFetching && !courseInfo.isFetching && !courseOptions.isFetching &&
-      !courseRunOptions.isFetching && !courseInReview;
-    const sortedRunLabels = (showForm &&
-      (course_runs ? this.parseCourseRunLabels(course_runs) : []));
+    const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching
+      || courseRunOptions.isFetching;
+    const showForm = startedFetching && !courseInfo.isFetching && !courseOptions.isFetching
+      && !courseRunOptions.isFetching && !courseInReview;
+    const sortedRunLabels = (showForm
+      && (course_runs ? this.parseCourseRunLabels(course_runs) : []));
     const defaultRun = (showForm && (sortedRunLabels.length ? sortedRunLabels[0].value : ''));
 
     const courseOptionsData = showForm && getOptionsData(courseOptions);
-    const parsedTypeOptions = courseOptionsData && courseOptionsData.type &&
-      parseCourseTypeOptions(courseOptionsData.type.type_options);
+    const parsedTypeOptions = courseOptionsData && courseOptionsData.type
+      && parseCourseTypeOptions(courseOptionsData.type.type_options);
     const courseRunTypeOptions = parsedTypeOptions && parsedTypeOptions.courseRunTypeOptions;
-    const defaultRunType = courseRunTypeOptions && courseRunTypeOptions[type] &&
-      courseRunTypeOptions[type][1] && courseRunTypeOptions[type][1].value;
+    const defaultRunType = courseRunTypeOptions && courseRunTypeOptions[type]
+      && courseRunTypeOptions[type][1] && courseRunTypeOptions[type][1].value;
 
     return (
-      <React.Fragment>
+      <>
         <Helmet>
           Create Course Run
         </Helmet>
 
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
-          { courseInReview &&
+          { courseInReview
+            && (
             <StatusAlert
               alertType="warning"
               message={`${title} has been submitted for review. No course runs can be added right now.`}
             />
-          }
-          { showForm &&
-          (
+            )}
+          { showForm
+          && (
             <div>
               <CreateCourseRunForm
                 onSubmit={this.handleCourseCreate}
@@ -187,7 +188,7 @@ class CreateCourseRunPage extends React.Component {
           )}
         </PageContainer>
 
-      </React.Fragment>
+      </>
     );
   }
 }
@@ -213,6 +214,7 @@ CreateCourseRunPage.propTypes = {
   courseInfo: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
+    isCreating: PropTypes.bool,
     isFetching: PropTypes.bool,
   }),
   fetchCourseOptions: PropTypes.func,

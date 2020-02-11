@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FieldArray } from 'redux-form';
 
 import CollapsibleCourseRun from './CollapsibleCourseRun';
 
@@ -26,10 +27,10 @@ const CollapsibleCourseRuns = ({
 );
 
 CollapsibleCourseRuns.propTypes = {
-  courseRuns: PropTypes.arrayOf(PropTypes.shape({})),
-  fields: PropTypes.shape({
-    remove: PropTypes.func,
-  }).isRequired,
+  courseRuns: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string,
+  })),
+  fields: PropTypes.instanceOf(FieldArray).isRequired,
   collapsiblesOpen: PropTypes.arrayOf(PropTypes.bool),
   onToggle: PropTypes.func.isRequired,
 };

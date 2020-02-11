@@ -197,7 +197,7 @@ function handleCourseRuns(
   refreshData,
 ) {
   // make course copy so we are not re-assigning properties of this functions original params
-  const newCourse = Object.assign({}, course);
+  const newCourse = { ...course };
   let sendData = DiscoveryDataApiService.editCourseRuns;
   if (internalReview) {
     sendData = data => Promise.all([DiscoveryDataApiService.internalReviewEdit(data)]);
@@ -218,7 +218,7 @@ function handleCourseRuns(
   }).catch((error) => {
     dispatch(editCourseFail(['Course Run edit failed, please try again or contact support.']
       .concat(getErrorMessages(error))));
-    if (submitReview) dispatch(courseSubmittingFailure());
+    if (submitReview) { dispatch(courseSubmittingFailure()); }
   });
 }
 

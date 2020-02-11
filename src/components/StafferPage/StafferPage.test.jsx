@@ -1,12 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import StafferPage from './index';
 
 describe('StafferPage', () => {
   it('renders html correctly', () => {
     const component = shallow(<StafferPage stafferInfo={{}} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly when given a referrer', () => {
@@ -16,7 +17,7 @@ describe('StafferPage', () => {
         referrer: '/course/11111111-1111-1111-111111111111',
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with staffer info error', () => {
@@ -27,14 +28,14 @@ describe('StafferPage', () => {
         isSaving: false,
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with no stafferInfo', () => {
     const component = shallow(<StafferPage
       createStaffer={() => null}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly while fetching', () => {
@@ -46,7 +47,7 @@ describe('StafferPage', () => {
         isFetching: true,
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly while creating', () => {
@@ -57,6 +58,6 @@ describe('StafferPage', () => {
         isSaving: true,
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

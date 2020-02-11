@@ -16,32 +16,34 @@ const initialState = {
 function courseEditors(state = initialState, action) {
   switch (action.type) {
     case ADD_COURSE_EDITOR_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: state.data.concat(action.data),
         error: null,
         isFetching: false,
-      });
+      };
     case REMOVE_COURSE_EDITOR_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: state.data.filter(item => item.id !== action.editorId),
         error: null,
         isFetching: false,
-      });
+      };
     case REQUEST_COURSE_EDITORS:
-      return Object.assign({}, state, {
-        isFetching: true,
-      });
+      return { ...state, isFetching: true };
     case REQUEST_COURSE_EDITORS_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         error: action.error,
         isFetching: false,
-      });
+      };
     case REQUEST_COURSE_EDITORS_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         error: null,
         isFetching: false,
-      });
+      };
     default:
       return state;
   }

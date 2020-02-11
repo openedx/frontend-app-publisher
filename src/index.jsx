@@ -1,4 +1,5 @@
-import 'babel-polyfill';
+import 'core-js';
+import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -32,4 +33,3 @@ apiClient.ensurePublicOrAuthenticationAndCookies(
     ReactDOM.render(<App />, document.getElementById('root'));
   },
 );
-

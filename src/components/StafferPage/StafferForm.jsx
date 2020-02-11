@@ -3,12 +3,12 @@ import { Field, FieldArray, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import ActionButton from '../../components/ActionButton';
+import ActionButton from '../ActionButton';
 import AreasOfExpertise from './AreasOfExpertise';
 import SocialLinks from './SocialLinks';
-import ImageUpload from '../../components/ImageUpload';
+import ImageUpload from '../ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
-import RichEditor from '../../components/RichEditor';
+import RichEditor from '../RichEditor';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 import { basicValidate } from '../../utils/validation';
@@ -31,11 +31,11 @@ const BaseStafferForm = ({
         <Field
           name="profile_image.medium.url"
           component={ImageUpload}
-          label={
+          label={(
             <FieldLabel
               id="image.label"
               text="Image"
-              helpText={
+              helpText={(
                 <div>
                   <p>Image Requirements:</p>
                   <ul>
@@ -43,10 +43,10 @@ const BaseStafferForm = ({
                     <li>The image size must be less than 256KB.</li>
                   </ul>
                 </div>
-              }
+              )}
               extraText="Image must be 110x110 pixels in size."
             />
-          }
+          )}
           id="profile_image"
           maxImageSizeKilo={256}
           requiredWidth={110}
@@ -72,11 +72,11 @@ const BaseStafferForm = ({
           name="position.title"
           component={RenderInputTextField}
           type="text"
-          label={
+          label={(
             <FieldLabel
               id="title.label"
               text="Title"
-              helpText={
+              helpText={(
                 <div>
                   <p>Instructor&apos;s title at your organization.</p>
                   <p><b>Examples:</b></p>
@@ -86,9 +86,9 @@ const BaseStafferForm = ({
                     <li>Director</li>
                   </ul>
                 </div>
-              }
+              )}
             />
-          }
+          )}
           required
         />
         <Field

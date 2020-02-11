@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import { Field } from 'redux-form';
 
 import { BaseEditCourseForm } from './EditCourseForm';
-import { IN_LEGAL_REVIEW, REVIEWED, UNPUBLISHED } from '../../data/constants';
+import { REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 
@@ -47,7 +48,7 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly with all data present', () => {
@@ -64,7 +65,7 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly with administrator being true', () => {
@@ -84,7 +85,7 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly while submitting', () => {
@@ -103,7 +104,7 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when submitting for review', () => {
@@ -120,7 +121,7 @@ describe('BaseEditCourseForm', () => {
       isSubmittingForReview
       id="edit-course-form"
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders with disabled fields if course is in review', () => {
@@ -129,7 +130,7 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
       number="Test101x"
-      courseStatuses={[IN_LEGAL_REVIEW]}
+      courseStatuses={[REVIEW_BY_LEGAL]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}

@@ -14,23 +14,26 @@ const initialState = {
 function organizationRoles(state = initialState, action) {
   switch (action.type) {
     case REQUEST_ORGANIZATION_ROLES:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: [],
         error: null,
         isFetching: true,
-      });
+      };
     case REQUEST_ORGANIZATION_ROLES_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: [],
         error: action.error,
         isFetching: false,
-      });
+      };
     case REQUEST_ORGANIZATION_ROLES_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         error: null,
         isFetching: false,
-      });
+      };
     default:
       return state;
   }

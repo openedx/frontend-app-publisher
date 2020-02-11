@@ -48,6 +48,7 @@ class FieldHelp extends React.Component {
     return (
       <span id={this.props.id} className={this.props.className}>
         <button
+          type="button"
           className="btn btn-link py-0 px-1 align-baseline"
           onClick={this.toggleToolTip}
           onBlur={this.closeToolTip}

@@ -1,141 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RenderSelectField renders html for select field 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withDeprecatedProps(asInput)
-    disabled={false}
-    isValid={true}
-    label="TestLabel"
-    name="Test"
-    options={
-      Array [
-        "one",
-        "two",
-        "three",
-      ]
-    }
-    required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    validationMessage=""
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": undefined,
-      "className": undefined,
-      "dangerIconDescription": "",
-      "description": undefined,
-      "disabled": false,
-      "id": undefined,
-      "inline": false,
-      "inputGroupAppend": undefined,
-      "inputGroupPrepend": undefined,
-      "inputRef": undefined,
-      "isValid": true,
-      "label": "TestLabel",
-      "name": "Test",
-      "onBlur": [Function],
-      "onChange": [Function],
-      "onKeyPress": [Function],
-      "options": Array [
-        "one",
-        "two",
-        "three",
-      ],
-      "required": false,
-      "themes": Array [
-        "danger",
-      ],
-      "type": undefined,
-      "validationMessage": "",
-      "validator": undefined,
-      "value": "",
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": undefined,
-        "className": undefined,
-        "dangerIconDescription": "",
-        "description": undefined,
-        "disabled": false,
-        "id": undefined,
-        "inline": false,
-        "inputGroupAppend": undefined,
-        "inputGroupPrepend": undefined,
-        "inputRef": undefined,
-        "isValid": true,
-        "label": "TestLabel",
-        "name": "Test",
-        "onBlur": [Function],
-        "onChange": [Function],
-        "onKeyPress": [Function],
-        "options": Array [
-          "one",
-          "two",
-          "three",
-        ],
-        "required": false,
-        "themes": Array [
-          "danger",
-        ],
-        "type": undefined,
-        "validationMessage": "",
-        "validator": undefined,
-        "value": "",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "context": Object {},
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+<asInput(withDeprecatedProps(InputSelect))
+  dangerIconDescription=""
+  disabled={false}
+  inline={false}
+  isValid={true}
+  label="TestLabel"
+  name="Test"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  options={
+    Array [
+      "one",
+      "two",
+      "three",
+    ]
+  }
+  required={false}
+  themes={
+    Array [
+      "danger",
+    ]
+  }
+  validationMessage=""
+  value=""
+/>
 `;

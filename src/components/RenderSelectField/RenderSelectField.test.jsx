@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import RenderSelectField from './index';
 
@@ -12,6 +13,6 @@ describe('RenderSelectField', () => {
       options={['one', 'two', 'three']}
       meta={{ touched: false, error: '' }}
     />).dive();
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

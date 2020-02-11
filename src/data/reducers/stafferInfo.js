@@ -24,68 +24,75 @@ const initialState = {
 function stafferInfo(state = initialState, action) {
   switch (action.type) {
     case REQUEST_STAFFER_INFO:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isSaving: false,
         isFetching: true,
         error: null,
-      });
+      };
     case REQUEST_STAFFER_INFO_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         isSaving: false,
         isFetching: false,
         error: null,
-      });
+      };
     case REQUEST_STAFFER_INFO_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isSaving: false,
         isFetching: false,
         error: action.error,
-      });
+      };
     case CREATE_STAFFER:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isSaving: true,
         error: null,
-      });
+      };
     case CREATE_STAFFER_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         isSaving: false,
         error: null,
         returnToEditCourse: true,
-      });
+      };
     case CREATE_STAFFER_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isSaving: false,
         error: action.error,
-      });
+      };
     case EDIT_STAFFER_INFO:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isSaving: true,
         error: null,
-      });
+      };
     case EDIT_STAFFER_INFO_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         isSaving: false,
         error: null,
         returnToEditCourse: true,
-      });
+      };
     case EDIT_STAFFER_INFO_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isSaving: false,
         error: action.error,
-      });
+      };
     case CANCEL_STAFFER_INFO:
-      return Object.assign({}, state, {
-        returnToEditCourse: true,
-      });
+      return { ...state, returnToEditCourse: true };
     case RESET_STAFFER_INFO:
       return initialState;
     default:

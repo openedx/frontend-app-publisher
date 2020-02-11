@@ -99,7 +99,8 @@ class TableComponent extends React.Component {
             defaultSortDirection={sortDirection}
           />
         </div>
-        { pageCount > 1 &&
+        { pageCount > 1
+          && (
           <div className="mt-2 d-flex justify-content-center">
             <Pagination
               pageCount={pageCount}
@@ -107,7 +108,7 @@ class TableComponent extends React.Component {
               onPageSelect={page => updateUrl({ page })}
             />
           </div>
-        }
+          )}
       </div>
     );
   }
@@ -149,14 +150,13 @@ class TableComponent extends React.Component {
     } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         {error && this.renderErrorMessage()}
         {loading && !data && this.renderLoadingMessage()}
-        {!loading && !error && data && data.length === 0 &&
-          this.renderEmptyDataMessage()
-        }
+        {!loading && !error && data && data.length === 0
+          && this.renderEmptyDataMessage()}
         {data && data.length > 0 && this.renderTableContent()}
-      </React.Fragment>
+      </>
     );
   }
 }

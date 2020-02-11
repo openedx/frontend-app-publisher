@@ -117,7 +117,7 @@ class CreateCoursePage extends React.Component {
     } = this.state;
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
-    if (organizations.length === 1) initialValues.org = organizations[0].key;
+    if (organizations.length === 1) { initialValues.org = organizations[0].key; }
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -138,13 +138,13 @@ class CreateCoursePage extends React.Component {
       });
     }
 
-    const showSpinner = !startedFetching || publisherUserInfo.isFetching ||
-      courseOptions.isFetching || courseRunOptions.isFetching;
-    const showForm = startedFetching && !publisherUserInfo.isFetching &&
-      !courseOptions.isFetching && !courseRunOptions.isFetching;
+    const showSpinner = !startedFetching || publisherUserInfo.isFetching
+      || courseOptions.isFetching || courseRunOptions.isFetching;
+    const showForm = startedFetching && !publisherUserInfo.isFetching
+      && !courseOptions.isFetching && !courseRunOptions.isFetching;
 
     return (
-      <React.Fragment>
+      <>
         <Helmet>
           <title>Create a New Course</title>
         </Helmet>
@@ -160,8 +160,8 @@ class CreateCoursePage extends React.Component {
 
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
-          { showForm &&
-          (
+          { showForm
+          && (
             <div>
               <CreateCourseForm
                 id="create-course-form"
@@ -183,7 +183,7 @@ class CreateCoursePage extends React.Component {
             </div>
           )}
         </PageContainer>
-      </React.Fragment>
+      </>
     );
   }
 }
@@ -226,6 +226,7 @@ CreateCoursePage.propTypes = {
     data: PropTypes.shape({
       uuid: PropTypes.string,
     }),
+    isCreating: PropTypes.bool,
   }),
   fetchOrganizations: PropTypes.func,
   fetchCourseOptions: PropTypes.func,

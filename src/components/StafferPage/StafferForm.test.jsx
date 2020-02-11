@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { BaseStafferForm } from './StafferForm';
 
@@ -74,7 +75,7 @@ describe('StafferForm', () => {
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly when submitting', () => {
@@ -85,7 +86,7 @@ describe('StafferForm', () => {
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly when creating', () => {
@@ -96,7 +97,7 @@ describe('StafferForm', () => {
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly with staffer info', () => {
@@ -108,7 +109,7 @@ describe('StafferForm', () => {
       handleSubmit={() => {}}
       sourceInfo={noReferrerSourceInfo}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when sent from the edit course page', () => {
@@ -119,6 +120,6 @@ describe('StafferForm', () => {
       handleSubmit={() => {}}
       sourceInfo={sourceInfo}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

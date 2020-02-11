@@ -7,14 +7,15 @@ function User(props) {
   return (
     <div>
       {props.name}
-      {props.onRemove &&
+      {props.onRemove
+        && (
         <RemoveButton
           className="align-text-bottom ml-1"
           label="Remove"
           targetFieldNumber={props.userId}
           onRemove={props.onRemove}
         />
-      }
+        )}
     </div>
   );
 }

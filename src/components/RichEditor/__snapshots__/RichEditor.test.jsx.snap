@@ -1,1375 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RichEditor shows a rich text editor and an error 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RichEditor
-    disabled={false}
+<div
+  className="form-group"
+>
+  <div
+    className="mb-2"
     id="rich-text-editor-test"
-    input={
-      Object {
-        "onChange": [Function],
-        "value": null,
-      }
-    }
-    label="Rich Text Editor Test"
-    maxChars={500}
-    meta={
-      Object {
-        "error": "Required",
-        "touched": true,
-      }
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <div
-          className="mb-2"
-          id="rich-text-editor-test"
-          tabIndex="-1"
-        >
-          Rich Text Editor Test
-        </div>,
-        undefined,
-        <div
-          aria-labelledby="rich-text-editor-test"
-          className=""
-        >
-          <Editor
-            disabled={false}
-            init={
-              Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              }
-            }
-            initialValue={null}
-            onChange={[Function]}
-            onInit={[Function]}
-            onKeyUp={[Function]}
-          />
-          <span>
-            Recommended character limit (including spaces) is
-      500. 500 characters remaining.
-          </span>
-        </div>,
-      ],
-      "className": "form-group",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Rich Text Editor Test",
-          "className": "mb-2",
-          "id": "rich-text-editor-test",
-          "name": undefined,
-          "tabIndex": "-1",
-        },
-        "ref": null,
-        "rendered": "Rich Text Editor Test",
-        "type": "div",
-      },
-      undefined,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "aria-labelledby": "rich-text-editor-test",
-          "children": Array [
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue={null}
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />,
-            <span>
-              Recommended character limit (including spaces) is
-      500. 500 characters remaining.
-            </span>,
-          ],
-          "className": "",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "disabled": false,
-              "init": Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              },
-              "initialValue": null,
-              "onChange": [Function],
-              "onInit": [Function],
-              "onKeyUp": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-            },
-            "ref": null,
-            "rendered": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-            "type": "span",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="mb-2"
-            id="rich-text-editor-test"
-            tabIndex="-1"
-          >
-            Rich Text Editor Test
-          </div>,
-          undefined,
-          <div
-            aria-labelledby="rich-text-editor-test"
-            className=""
-          >
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue={null}
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />
-            <span>
-              Recommended character limit (including spaces) is
-      500. 500 characters remaining.
-            </span>
-          </div>,
-        ],
-        "className": "form-group",
-      },
-      "ref": null,
-      "rendered": Array [
+    tabIndex="-1"
+  >
+    Rich Text Editor Test
+  </div>
+  <div
+    aria-labelledby="rich-text-editor-test"
+    className=""
+  >
+    <Editor
+      disabled={false}
+      init={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Rich Text Editor Test",
-            "className": "mb-2",
-            "id": "rich-text-editor-test",
-            "name": undefined,
-            "tabIndex": "-1",
-          },
-          "ref": null,
-          "rendered": "Rich Text Editor Test",
-          "type": "div",
-        },
-        undefined,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "aria-labelledby": "rich-text-editor-test",
-            "children": Array [
-              <Editor
-                disabled={false}
-                init={
-                  Object {
-                    "branding": false,
-                    "entity_encoding": "raw",
-                    "extended_valid_elements": "span[lang|id] -span",
-                    "menubar": false,
-                    "plugins": "legacyoutput link lists language",
-                    "statusbar": false,
-                    "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                  }
-                }
-                initialValue={null}
-                onChange={[Function]}
-                onInit={[Function]}
-                onKeyUp={[Function]}
-              />,
-              <span>
-                Recommended character limit (including spaces) is
+          "branding": false,
+          "entity_encoding": "raw",
+          "extended_valid_elements": "span[lang|id] -span",
+          "menubar": false,
+          "plugins": "legacyoutput link lists language",
+          "statusbar": false,
+          "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
+        }
+      }
+      initialValue={null}
+      onChange={[Function]}
+      onInit={[Function]}
+      onKeyUp={[Function]}
+    />
+    <span>
+      Recommended character limit (including spaces) is
       500. 500 characters remaining.
-              </span>,
-            ],
-            "className": "",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "disabled": false,
-                "init": Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                },
-                "initialValue": null,
-                "onChange": [Function],
-                "onInit": [Function],
-                "onKeyUp": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-              },
-              "ref": null,
-              "rendered": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-              "type": "span",
-            },
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+    </span>
+  </div>
+</div>
 `;
 
 exports[`RichEditor shows a rich text editor with default text value 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RichEditor
-    disabled={false}
+<div
+  className="form-group"
+>
+  <div
+    className="mb-2"
     id="rich-text-editor-test"
-    input={
-      Object {
-        "onChange": [Function],
-        "value": "<p>Prior text<p>",
-      }
-    }
-    label={
-      <strong>
-        Rich Text Editor Test
-      </strong>
-    }
-    maxChars={2500}
-    meta={
-      Object {
-        "error": "",
-        "touched": false,
-      }
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <div
-          className="mb-2"
-          id="rich-text-editor-test"
-          tabIndex="-1"
-        >
-          <strong>
-            Rich Text Editor Test
-          </strong>
-        </div>,
-        undefined,
-        <div
-          aria-labelledby="rich-text-editor-test"
-          className=""
-        >
-          <Editor
-            disabled={false}
-            init={
-              Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              }
-            }
-            initialValue="<p>Prior text<p>"
-            onChange={[Function]}
-            onInit={[Function]}
-            onKeyUp={[Function]}
-          />
-          <span>
-            Recommended character limit (including spaces) is
-      2500. 2500 characters remaining.
-          </span>
-        </div>,
-      ],
-      "className": "form-group",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <strong>
-            Rich Text Editor Test
-          </strong>,
-          "className": "mb-2",
-          "id": "rich-text-editor-test",
-          "name": undefined,
-          "tabIndex": "-1",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Rich Text Editor Test",
-          },
-          "ref": null,
-          "rendered": "Rich Text Editor Test",
-          "type": "strong",
-        },
-        "type": "div",
-      },
-      undefined,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "aria-labelledby": "rich-text-editor-test",
-          "children": Array [
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue="<p>Prior text<p>"
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />,
-            <span>
-              Recommended character limit (including spaces) is
-      2500. 2500 characters remaining.
-            </span>,
-          ],
-          "className": "",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "disabled": false,
-              "init": Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              },
-              "initialValue": "<p>Prior text<p>",
-              "onChange": [Function],
-              "onInit": [Function],
-              "onKeyUp": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Recommended character limit (including spaces) is
-      2500. 2500 characters remaining.",
-            },
-            "ref": null,
-            "rendered": "Recommended character limit (including spaces) is
-      2500. 2500 characters remaining.",
-            "type": "span",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="mb-2"
-            id="rich-text-editor-test"
-            tabIndex="-1"
-          >
-            <strong>
-              Rich Text Editor Test
-            </strong>
-          </div>,
-          undefined,
-          <div
-            aria-labelledby="rich-text-editor-test"
-            className=""
-          >
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue="<p>Prior text<p>"
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />
-            <span>
-              Recommended character limit (including spaces) is
-      2500. 2500 characters remaining.
-            </span>
-          </div>,
-        ],
-        "className": "form-group",
-      },
-      "ref": null,
-      "rendered": Array [
+    tabIndex="-1"
+  >
+    <strong>
+      Rich Text Editor Test
+    </strong>
+  </div>
+  <div
+    aria-labelledby="rich-text-editor-test"
+    className=""
+  >
+    <Editor
+      disabled={false}
+      init={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <strong>
-              Rich Text Editor Test
-            </strong>,
-            "className": "mb-2",
-            "id": "rich-text-editor-test",
-            "name": undefined,
-            "tabIndex": "-1",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Rich Text Editor Test",
-            },
-            "ref": null,
-            "rendered": "Rich Text Editor Test",
-            "type": "strong",
-          },
-          "type": "div",
-        },
-        undefined,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "aria-labelledby": "rich-text-editor-test",
-            "children": Array [
-              <Editor
-                disabled={false}
-                init={
-                  Object {
-                    "branding": false,
-                    "entity_encoding": "raw",
-                    "extended_valid_elements": "span[lang|id] -span",
-                    "menubar": false,
-                    "plugins": "legacyoutput link lists language",
-                    "statusbar": false,
-                    "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                  }
-                }
-                initialValue="<p>Prior text<p>"
-                onChange={[Function]}
-                onInit={[Function]}
-                onKeyUp={[Function]}
-              />,
-              <span>
-                Recommended character limit (including spaces) is
+          "branding": false,
+          "entity_encoding": "raw",
+          "extended_valid_elements": "span[lang|id] -span",
+          "menubar": false,
+          "plugins": "legacyoutput link lists language",
+          "statusbar": false,
+          "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
+        }
+      }
+      initialValue="<p>Prior text<p>"
+      onChange={[Function]}
+      onInit={[Function]}
+      onKeyUp={[Function]}
+    />
+    <span>
+      Recommended character limit (including spaces) is
       2500. 2500 characters remaining.
-              </span>,
-            ],
-            "className": "",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "disabled": false,
-                "init": Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                },
-                "initialValue": "<p>Prior text<p>",
-                "onChange": [Function],
-                "onInit": [Function],
-                "onKeyUp": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Recommended character limit (including spaces) is
-      2500. 2500 characters remaining.",
-              },
-              "ref": null,
-              "rendered": "Recommended character limit (including spaces) is
-      2500. 2500 characters remaining.",
-              "type": "span",
-            },
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+    </span>
+  </div>
+</div>
 `;
 
 exports[`RichEditor shows a rich text editor with no default text value 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RichEditor
-    disabled={false}
+<div
+  className="form-group"
+>
+  <div
+    className="mb-2"
     id="rich-text-editor-test"
-    input={
-      Object {
-        "onChange": [Function],
-        "value": null,
-      }
-    }
-    label="Rich Text Editor Test"
-    maxChars={500}
-    meta={
-      Object {
-        "error": "",
-        "touched": false,
-      }
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <div
-          className="mb-2"
-          id="rich-text-editor-test"
-          tabIndex="-1"
-        >
-          Rich Text Editor Test
-        </div>,
-        undefined,
-        <div
-          aria-labelledby="rich-text-editor-test"
-          className=""
-        >
-          <Editor
-            disabled={false}
-            init={
-              Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              }
-            }
-            initialValue={null}
-            onChange={[Function]}
-            onInit={[Function]}
-            onKeyUp={[Function]}
-          />
-          <span>
-            Recommended character limit (including spaces) is
-      500. 500 characters remaining.
-          </span>
-        </div>,
-      ],
-      "className": "form-group",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Rich Text Editor Test",
-          "className": "mb-2",
-          "id": "rich-text-editor-test",
-          "name": undefined,
-          "tabIndex": "-1",
-        },
-        "ref": null,
-        "rendered": "Rich Text Editor Test",
-        "type": "div",
-      },
-      undefined,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "aria-labelledby": "rich-text-editor-test",
-          "children": Array [
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue={null}
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />,
-            <span>
-              Recommended character limit (including spaces) is
-      500. 500 characters remaining.
-            </span>,
-          ],
-          "className": "",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "disabled": false,
-              "init": Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              },
-              "initialValue": null,
-              "onChange": [Function],
-              "onInit": [Function],
-              "onKeyUp": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-            },
-            "ref": null,
-            "rendered": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-            "type": "span",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="mb-2"
-            id="rich-text-editor-test"
-            tabIndex="-1"
-          >
-            Rich Text Editor Test
-          </div>,
-          undefined,
-          <div
-            aria-labelledby="rich-text-editor-test"
-            className=""
-          >
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue={null}
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />
-            <span>
-              Recommended character limit (including spaces) is
-      500. 500 characters remaining.
-            </span>
-          </div>,
-        ],
-        "className": "form-group",
-      },
-      "ref": null,
-      "rendered": Array [
+    tabIndex="-1"
+  >
+    Rich Text Editor Test
+  </div>
+  <div
+    aria-labelledby="rich-text-editor-test"
+    className=""
+  >
+    <Editor
+      disabled={false}
+      init={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Rich Text Editor Test",
-            "className": "mb-2",
-            "id": "rich-text-editor-test",
-            "name": undefined,
-            "tabIndex": "-1",
-          },
-          "ref": null,
-          "rendered": "Rich Text Editor Test",
-          "type": "div",
-        },
-        undefined,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "aria-labelledby": "rich-text-editor-test",
-            "children": Array [
-              <Editor
-                disabled={false}
-                init={
-                  Object {
-                    "branding": false,
-                    "entity_encoding": "raw",
-                    "extended_valid_elements": "span[lang|id] -span",
-                    "menubar": false,
-                    "plugins": "legacyoutput link lists language",
-                    "statusbar": false,
-                    "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                  }
-                }
-                initialValue={null}
-                onChange={[Function]}
-                onInit={[Function]}
-                onKeyUp={[Function]}
-              />,
-              <span>
-                Recommended character limit (including spaces) is
+          "branding": false,
+          "entity_encoding": "raw",
+          "extended_valid_elements": "span[lang|id] -span",
+          "menubar": false,
+          "plugins": "legacyoutput link lists language",
+          "statusbar": false,
+          "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
+        }
+      }
+      initialValue={null}
+      onChange={[Function]}
+      onInit={[Function]}
+      onKeyUp={[Function]}
+    />
+    <span>
+      Recommended character limit (including spaces) is
       500. 500 characters remaining.
-              </span>,
-            ],
-            "className": "",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "disabled": false,
-                "init": Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                },
-                "initialValue": null,
-                "onChange": [Function],
-                "onInit": [Function],
-                "onKeyUp": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-              },
-              "ref": null,
-              "rendered": "Recommended character limit (including spaces) is
-      500. 500 characters remaining.",
-              "type": "span",
-            },
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+    </span>
+  </div>
+</div>
 `;
 
 exports[`RichEditor shows a rich text editor with no maxChars 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RichEditor
-    disabled={false}
+<div
+  className="form-group"
+>
+  <div
+    className="mb-2"
     id="rich-text-editor-test"
-    input={
-      Object {
-        "onChange": [Function],
-        "value": "<p>Prior text<p>",
-      }
-    }
-    label={
-      <strong>
-        Rich Text Editor Test
-      </strong>
-    }
-    maxChars={null}
-    meta={
-      Object {
-        "error": "",
-        "touched": false,
-      }
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <div
-          className="mb-2"
-          id="rich-text-editor-test"
-          tabIndex="-1"
-        >
-          <strong>
-            Rich Text Editor Test
-          </strong>
-        </div>,
-        undefined,
-        <div
-          aria-labelledby="rich-text-editor-test"
-          className=""
-        >
-          <Editor
-            disabled={false}
-            init={
-              Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              }
-            }
-            initialValue="<p>Prior text<p>"
-            onChange={[Function]}
-            onInit={[Function]}
-            onKeyUp={[Function]}
-          />
-        </div>,
-      ],
-      "className": "form-group",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <strong>
-            Rich Text Editor Test
-          </strong>,
-          "className": "mb-2",
-          "id": "rich-text-editor-test",
-          "name": undefined,
-          "tabIndex": "-1",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Rich Text Editor Test",
-          },
-          "ref": null,
-          "rendered": "Rich Text Editor Test",
-          "type": "strong",
-        },
-        "type": "div",
-      },
-      undefined,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "aria-labelledby": "rich-text-editor-test",
-          "children": Array [
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue="<p>Prior text<p>"
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />,
-            null,
-          ],
-          "className": "",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "disabled": false,
-              "init": Object {
-                "branding": false,
-                "entity_encoding": "raw",
-                "extended_valid_elements": "span[lang|id] -span",
-                "menubar": false,
-                "plugins": "legacyoutput link lists language",
-                "statusbar": false,
-                "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-              },
-              "initialValue": "<p>Prior text<p>",
-              "onChange": [Function],
-              "onInit": [Function],
-              "onKeyUp": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          null,
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="mb-2"
-            id="rich-text-editor-test"
-            tabIndex="-1"
-          >
-            <strong>
-              Rich Text Editor Test
-            </strong>
-          </div>,
-          undefined,
-          <div
-            aria-labelledby="rich-text-editor-test"
-            className=""
-          >
-            <Editor
-              disabled={false}
-              init={
-                Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                }
-              }
-              initialValue="<p>Prior text<p>"
-              onChange={[Function]}
-              onInit={[Function]}
-              onKeyUp={[Function]}
-            />
-          </div>,
-        ],
-        "className": "form-group",
-      },
-      "ref": null,
-      "rendered": Array [
+    tabIndex="-1"
+  >
+    <strong>
+      Rich Text Editor Test
+    </strong>
+  </div>
+  <div
+    aria-labelledby="rich-text-editor-test"
+    className=""
+  >
+    <Editor
+      disabled={false}
+      init={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <strong>
-              Rich Text Editor Test
-            </strong>,
-            "className": "mb-2",
-            "id": "rich-text-editor-test",
-            "name": undefined,
-            "tabIndex": "-1",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Rich Text Editor Test",
-            },
-            "ref": null,
-            "rendered": "Rich Text Editor Test",
-            "type": "strong",
-          },
-          "type": "div",
-        },
-        undefined,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "aria-labelledby": "rich-text-editor-test",
-            "children": Array [
-              <Editor
-                disabled={false}
-                init={
-                  Object {
-                    "branding": false,
-                    "entity_encoding": "raw",
-                    "extended_valid_elements": "span[lang|id] -span",
-                    "menubar": false,
-                    "plugins": "legacyoutput link lists language",
-                    "statusbar": false,
-                    "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                  }
-                }
-                initialValue="<p>Prior text<p>"
-                onChange={[Function]}
-                onInit={[Function]}
-                onKeyUp={[Function]}
-              />,
-              null,
-            ],
-            "className": "",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "disabled": false,
-                "init": Object {
-                  "branding": false,
-                  "entity_encoding": "raw",
-                  "extended_valid_elements": "span[lang|id] -span",
-                  "menubar": false,
-                  "plugins": "legacyoutput link lists language",
-                  "statusbar": false,
-                  "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
-                },
-                "initialValue": "<p>Prior text<p>",
-                "onChange": [Function],
-                "onInit": [Function],
-                "onKeyUp": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            null,
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+          "branding": false,
+          "entity_encoding": "raw",
+          "extended_valid_elements": "span[lang|id] -span",
+          "menubar": false,
+          "plugins": "legacyoutput link lists language",
+          "statusbar": false,
+          "toolbar": "undo redo | bold italic underline | bullist numlist | link | language",
+        }
+      }
+      initialValue="<p>Prior text<p>"
+      onChange={[Function]}
+      onInit={[Function]}
+      onKeyUp={[Function]}
+    />
+  </div>
+</div>
 `;

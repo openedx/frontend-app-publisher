@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import ImageUpload from './index';
 
@@ -23,7 +24,7 @@ describe('ImageUpload', () => {
       requiredWidth={1134}
       requiredHeight={675}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows an image upload with prior image', () => {
@@ -44,7 +45,7 @@ describe('ImageUpload', () => {
       requiredHeight={110}
       requiredWidth={110}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows an image upload and an error', () => {
@@ -65,6 +66,6 @@ describe('ImageUpload', () => {
       requiredWidth={1134}
       requiredHeight={675}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

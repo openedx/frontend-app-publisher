@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'redux-form';
+import { Field, FieldArray } from 'redux-form';
 
 import RenderInputTextField from '../RenderInputTextField';
-import RemoveButton from '../../components/RemoveButton';
+import RemoveButton from '../RemoveButton';
 import FieldLabel from '../FieldLabel';
 
 
@@ -61,9 +61,7 @@ class AreasOfExpertise extends React.Component {
 }
 
 AreasOfExpertise.propTypes = {
-  fields: PropTypes.shape({
-    remove: PropTypes.func,
-  }).isRequired,
+  fields: PropTypes.instanceOf(FieldArray).isRequired,
 };
 
 export default AreasOfExpertise;

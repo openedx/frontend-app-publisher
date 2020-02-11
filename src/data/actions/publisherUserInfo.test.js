@@ -5,7 +5,6 @@ import apiClient from '../apiClient';
 
 import * as types from '../constants/publisherUserInfo';
 import * as actions from './publisherUserInfo';
-import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { getErrorMessages } from '../../utils';
 
 const mockStore = configureMockStore([thunk]);
@@ -52,7 +51,7 @@ describe('publisherUserInfo fetch organizations actions', () => {
   });
 
   it('handles fetch success', () => {
-    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/organizations/`;
+    const url = `${process.env.DISCOVERY_API_BASE_URL}/api/v1/organizations/`;
 
     const data = { results: [testData] };
 
@@ -71,7 +70,7 @@ describe('publisherUserInfo fetch organizations actions', () => {
   });
 
   it('handles fetch fails', () => {
-    const url = `${DiscoveryDataApiService.discoveryBaseUrl}/organizations/`;
+    const url = `${process.env.DISCOVERY_API_BASE_URL}/api/v1/organizations/`;
 
     const error = 'Request failed with status code 404';
     const expectedError = ['Unable to retrieve user Organizations, please contact support.'].concat(getErrorMessages(error));

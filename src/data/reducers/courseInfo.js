@@ -31,87 +31,91 @@ const initialState = {
 function courseInfo(state = initialState, action) {
   switch (action.type) {
     case REQUEST_COURSE_INFO_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isFetching: false,
         error: action.error,
-      });
+      };
     case REQUEST_COURSE_INFO_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         isFetching: false,
         error: null,
-      });
+      };
     case REQUEST_COURSE_INFO:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: {},
         isFetching: true,
         error: null,
-      });
+      };
     case CLEAR_COURSE_INFO_ERRORS:
-      return Object.assign({}, state, {
-        error: null,
-      });
+      return { ...state, error: null };
     case CREATE_COURSE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isCreating: true,
         error: null,
-      });
+      };
     case CREATE_COURSE_CANCEL:
-      return Object.assign({}, state, {
-        isCreating: false,
-      });
+      return { ...state, isCreating: false };
     case CREATE_COURSE_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         error: null,
-      });
+      };
     case CREATE_COURSE_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isCreating: false,
         error: action.error,
-      });
+      };
     case CREATE_COURSE_RUN:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isCreating: true,
         error: null,
-      });
+      };
     case CREATE_COURSE_RUN_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isCreating: false,
         showCreateStatusAlert: true,
         error: null,
-      });
+      };
     case CREATE_COURSE_RUN_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isCreating: false,
         error: action.error,
-      });
+      };
     case EDIT_COURSE_INFO:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isSubmittingEdit: true,
         error: null,
-      });
+      };
     case EDIT_COURSE_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         isSubmittingEdit: false,
         error: null,
         courseSaved: true,
-      });
+      };
     case EDIT_COURSE_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isSubmittingEdit: false,
         error: action.error,
-      });
+      };
     case CLEAR_COURSE_SAVED:
-      return Object.assign({}, state, {
-        courseSaved: false,
-      });
+      return { ...state, courseSaved: false };
     case CLEAR_COURSE_RUN_ALERT:
-      return Object.assign({}, state, {
-        showCreateStatusAlert: false,
-      });
+      return { ...state, showCreateStatusAlert: false };
     default:
       return state;
   }

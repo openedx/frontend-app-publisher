@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import CollapsibleCourseRun from './CollapsibleCourseRun';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
@@ -48,7 +49,7 @@ const publishedCourseRun = {
   run_type: '00000000-0000-4000-0000-000000000000',
 };
 
-const unpublishedCourseRun = Object.assign({}, publishedCourseRun, { status: 'unpublished' });
+const unpublishedCourseRun = { ...publishedCourseRun, status: 'unpublished' };
 
 const currentFormValues = {
   course_runs: [publishedCourseRun, unpublishedCourseRun],
@@ -66,7 +67,7 @@ describe('Collapsible Course Run', () => {
       courseId="test-course"
       courseUuid="11111111-1111-1111-1111-111111111111"
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when given a published course run', () => {
@@ -78,7 +79,7 @@ describe('Collapsible Course Run', () => {
       courseUuid="11111111-1111-1111-1111-111111111111"
       index={0}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when given an unpublished course run', () => {
@@ -90,7 +91,7 @@ describe('Collapsible Course Run', () => {
       courseUuid="11111111-1111-1111-1111-111111111111"
       index={1}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly with a course run type', () => {
@@ -105,7 +106,7 @@ describe('Collapsible Course Run', () => {
       courseRunTypeOptions={courseRunTypeOptions}
       index={1}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly with external key field enabled', () => {
@@ -128,7 +129,7 @@ describe('Collapsible Course Run', () => {
     />);
     // Triggers an update so hasExternalKey is set
     component.setProps({});
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when submitting for review', () => {
@@ -141,7 +142,7 @@ describe('Collapsible Course Run', () => {
       isSubmittingForReview
       index={1}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when submitting for review and given a matching target run', () => {
@@ -154,7 +155,7 @@ describe('Collapsible Course Run', () => {
       isSubmittingForReview
       index={0}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders fields as disabled when course is in review', () => {
@@ -178,7 +179,7 @@ describe('Collapsible Course Run', () => {
       price: '149.00',
       sku: '',
     };
-    const updatedCourseRun = Object.assign({}, publishedCourseRun, { seats: [seat] });
+    const updatedCourseRun = { ...publishedCourseRun, seats: [seat] };
     const componentNoSku = shallow(<CollapsibleCourseRun
       languageOptions={[]}
       pacingTypeOptions={[]}

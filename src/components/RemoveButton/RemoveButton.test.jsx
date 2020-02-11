@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import RemoveButton from './index';
 
@@ -15,7 +16,7 @@ const defaultProps = {
 describe('RemoveButton', () => {
   it('renders correctly', () => {
     const component = shallow(<RemoveButton {...defaultProps} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('calls the `onRemove` function with the target field number when the button is clicked', () => {

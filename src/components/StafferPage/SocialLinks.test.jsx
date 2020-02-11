@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import SocialLinks from './SocialLinks';
 
@@ -17,12 +18,12 @@ jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn());
 describe('Social links', () => {
   it('renders correctly with no fields', () => {
     const component = shallow(<SocialLinks fields={[]} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when given fields', () => {
     const component = shallow(<SocialLinks fields={[{}]} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('adds fields when the add button is pushed', () => {

@@ -38,8 +38,8 @@ function fetchOrganizationRoles(ids, role) {
         // Let's make it an array instead and sort it.
         const rolesArray = Object.values(roles);
         rolesArray.sort((a, b) => (
-          a.user.full_name.localeCompare(b.user.full_name) ||
-          a.user.email.localeCompare(b.user.email)
+          a.user.full_name.localeCompare(b.user.full_name)
+          || a.user.email.localeCompare(b.user.email)
         ));
 
         // And finally dispatch the resulting sorted array

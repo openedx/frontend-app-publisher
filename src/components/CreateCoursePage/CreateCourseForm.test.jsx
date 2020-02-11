@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { BaseCreateCourseForm } from './CreateCourseForm';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
@@ -29,7 +30,7 @@ describe('CreateCourseForm', () => {
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly with data', () => {
@@ -41,7 +42,7 @@ describe('CreateCourseForm', () => {
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders html correctly while submitting', () => {
@@ -56,6 +57,6 @@ describe('CreateCourseForm', () => {
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

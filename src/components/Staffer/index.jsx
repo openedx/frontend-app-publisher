@@ -16,7 +16,7 @@ export const Staffer = ({
   courseUuid,
   courseRunKey,
 }) => (
-  <React.Fragment>
+  <>
     <div className="staffer-image-wrapper overflow-hidden">
       <img src={staffer.profile_image_url} className="rounded-circle w-25" alt="" />
     </div>
@@ -33,8 +33,9 @@ export const Staffer = ({
           screenReaderText={`Remove ${getStafferName(staffer)}`}
         />
       </button>
-      { !disabled &&
+      { !disabled
         // Don't show the edit link at all if fields should be disabled
+        && (
         <Link
           to={`/instructors/${staffer.uuid}`}
           className="btn mr-1 p-0"
@@ -47,12 +48,12 @@ export const Staffer = ({
             title="Edit"
           />
         </Link>
-      }
+        )}
       <span className="name font-weight-bold">
         {getStafferName(staffer)}
       </span>
     </div>
-  </React.Fragment>
+  </>
 );
 
 Staffer.propTypes = {

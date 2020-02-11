@@ -1,13 +1,13 @@
 // This is the prod Webpack config. All settings here should prefer smaller,
 // optimized bundles at the expense of a longer build time.
 const Merge = require('webpack-merge');
-const commonConfig = require('./webpack.common.config.js');
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackNewRelicPlugin = require('html-webpack-new-relic-plugin');
 const NewRelicSourceMapPlugin = require('new-relic-source-map-webpack-plugin');
+const commonConfig = require('./webpack.common.config.js');
 
 module.exports = Merge.smart(commonConfig, {
   mode: 'production',
@@ -20,7 +20,7 @@ module.exports = Merge.smart(commonConfig, {
     // Specify file-by-file rules to Webpack. Some file-types need a particular kind of loader.
     rules: [
       // The babel-loader transforms newer ES2015+ syntax to older ES5 for older browsers.
-      // Babel is configured with the .babelrc file at the root of the project.
+      // Babel is configured with the babel.config.json file at the root of the project.
       {
         test: /\.(js|jsx)$/,
         include: [

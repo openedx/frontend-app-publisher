@@ -39,13 +39,14 @@ class Header extends React.Component {
             <div className="col">
               <Link to="/">Courses</Link>
             </div>
-            {allowDarkModeToggle &&
+            {allowDarkModeToggle
+              && (
               <div className="col-auto justify-content-end">
-                <button className="btn btn-primary" onClick={this.props.toggleDarkMode}>
+                <button type="button" className="btn btn-primary" onClick={this.props.toggleDarkMode}>
                   Switch to {darkModeOn ? 'light mode' : 'dark mode'}
                 </button>
               </div>
-            }
+              )}
             <div className="col-auto justify-content-end">
               <Dropdown>
                 <Dropdown.Button>{this.props.username}</Dropdown.Button>

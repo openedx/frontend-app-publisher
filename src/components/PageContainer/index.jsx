@@ -14,11 +14,12 @@ const PageContainer = (props) => {
           {props.children}
         </div>
 
-        {props.sidePanes &&
+        {props.sidePanes
+          && (
           <div className="col-3">
             {props.sidePanes}
           </div>
-        }
+          )}
       </div>
     </div>
   );

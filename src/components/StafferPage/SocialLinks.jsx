@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'redux-form';
+import { Field, FieldArray } from 'redux-form';
 
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
-import RemoveButton from '../../components/RemoveButton';
+import RemoveButton from '../RemoveButton';
 import FieldLabel from '../FieldLabel';
 
 
@@ -89,9 +89,7 @@ class SocialLinks extends React.Component {
 }
 
 SocialLinks.propTypes = {
-  fields: PropTypes.shape({
-    remove: PropTypes.func,
-  }).isRequired,
+  fields: PropTypes.instanceOf(FieldArray).isRequired,
 };
 
 export default SocialLinks;

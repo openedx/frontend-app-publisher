@@ -100,15 +100,15 @@ class UsersPane extends React.Component {
     const showSpinner = courseEditors.isFetching || organizationRoles.isFetching;
     const showPCs = !showSpinner && !organizationRoles.error && organizationRoles.data.length > 0;
     const showEditors = !showSpinner && !courseEditors.error && !organizationUsers.error;
-    const showAddButton = addCourseEditor && !addingUser && !organizationUsers.isFetching &&
-      editorChoices.length > 0;
+    const showAddButton = addCourseEditor && !addingUser && !organizationUsers.isFetching
+      && editorChoices.length > 0;
 
     return (
       <Pane title="Users">
-        {showSpinner &&
-          <Icon className="fa fa-circle-o-notch fa-spin fa-fw" />
-        }
-        {showPCs &&
+        {showSpinner
+          && <Icon className="fa fa-circle-o-notch fa-spin fa-fw" />}
+        {showPCs
+          && (
           <div className="mb-2">
             <div className="font-weight-bold">Project Coordinators</div>
             {organizationRoles.data.map(role => (
@@ -119,11 +119,11 @@ class UsersPane extends React.Component {
               />
             ))}
           </div>
-        }
-        {!showEditors && Array.isArray(organizationUsers.error) && organizationUsers.error.length &&
-          <StatusAlert alertType="warning" message={organizationUsers.error[0]} />
-        }
-        {showEditors &&
+          )}
+        {!showEditors && Array.isArray(organizationUsers.error) && organizationUsers.error.length
+          && <StatusAlert alertType="warning" message={organizationUsers.error[0]} />}
+        {showEditors
+          && (
           <div>
             <div className="font-weight-bold">Course Editors</div>
             {courseEditors.data.map(editor => (
@@ -134,46 +134,49 @@ class UsersPane extends React.Component {
                 onRemove={removeCourseEditor}
               />
             ))}
-            {hasEditor ||
-              <div>All team members</div>
-            }
-            {showAddButton &&
-              <button className="btn btn-link p-0 usersPane-startAdd" onClick={this.startAddingUser}>
+            {hasEditor
+              || <div>All team members</div>}
+            {showAddButton
+              && (
+              <button type="button" className="btn btn-link p-0 usersPane-startAdd" onClick={this.startAddingUser}>
                 <Icon className="fa fa-plus" /> {hasEditor ? 'Add editor' : 'Set editor'}
               </button>
-            }
-            {addingUser &&
+              )}
+            {addingUser
+              && (
               <div className="mt-2">
                 <hr />
                 <InputSelect
                   name="add_editor"
-                  label={
+                  label={(
                     <FieldLabel
                       id="add_editor.label"
                       text="Select an editor:"
                     />
-                  }
+                  )}
                   options={
                     editorChoices.map(user => ({ label: this.displayName(user), value: user.id }))
                   }
                   onChange={this.editorChoiceChanged}
                 />
                 <button
+                  type="button"
                   className="btn btn-primary btn-sm align-baseline ml-1 usersPane-add"
                   onClick={this.addUser}
                 >
                   Add
                 </button>
                 <button
+                  type="button"
                   className="btn btn-outline-primary btn-sm align-baseline ml-1 usersPane-cancel"
                   onClick={this.resetEditorChoice}
                 >
                   Cancel
                 </button>
               </div>
-            }
+              )}
           </div>
-        }
+          )}
       </Pane>
     );
   }

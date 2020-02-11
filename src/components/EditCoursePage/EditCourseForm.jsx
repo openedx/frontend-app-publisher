@@ -1,22 +1,24 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Field, FieldArray, reduxForm, stopSubmit } from 'redux-form';
+import {
+  Field, FieldArray, reduxForm, stopSubmit,
+} from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Icon } from '@edx/paragon';
 
-import ActionButton from '../../components/ActionButton';
-import ButtonToolbar from '../../components/ButtonToolbar';
+import ActionButton from '../ActionButton';
+import ButtonToolbar from '../ButtonToolbar';
 import CollapsibleCourseRuns from './CollapsibleCourseRuns';
 import FieldLabel from '../FieldLabel';
-import ImageUpload from '../../components/ImageUpload';
+import ImageUpload from '../ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
-import RichEditor from '../../components/RichEditor';
-import Pill from '../../components/Pill';
+import RichEditor from '../RichEditor';
+import Pill from '../Pill';
 import Collapsible from '../Collapsible';
-import PriceList from '../../components/PriceList';
+import PriceList from '../PriceList';
 
 import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
@@ -63,11 +65,11 @@ export class BaseEditCourseForm extends React.Component {
     // If we are transitioning off of a "submit for review" state (which means that we just
     // finished turning fields into required so that html5 can flag them during validation) open
     // the collapsible if and only if there are course-level errors.
-    const stoppingRunReview = prevProps.courseSubmitInfo.isSubmittingRunReview &&
-                              !courseSubmitInfo.isSubmittingRunReview;
-    const hasCourseErrors = courseSubmitInfo.errors &&
-                            Object.keys(courseSubmitInfo.errors).length &&
-                            Object.keys(courseSubmitInfo.errors) !== ['course_runs'];
+    const stoppingRunReview = prevProps.courseSubmitInfo.isSubmittingRunReview
+                              && !courseSubmitInfo.isSubmittingRunReview;
+    const hasCourseErrors = courseSubmitInfo.errors
+                            && Object.keys(courseSubmitInfo.errors).length
+                            && Object.keys(courseSubmitInfo.errors) !== ['course_runs'];
     if (stoppingRunReview && hasCourseErrors) {
       this.openCollapsible();
     }
@@ -78,7 +80,7 @@ export class BaseEditCourseForm extends React.Component {
   }
 
   setCourseRunCollapsibles(initialCourseRuns) {
-    const collapsiblesOpen = initialCourseRuns.map(() => (false));
+    const collapsiblesOpen = initialCourseRuns.map(() => false);
     this.setState({ collapsiblesOpen });
   }
 
@@ -90,7 +92,11 @@ export class BaseEditCourseForm extends React.Component {
 
   getAddCourseRunButton(disabled, uuid) {
     let courseRunButton = (
-      <button className="btn btn-block rounded mt-3 new-run-button" disabled={disabled}>
+      <button
+        type="button"
+        className="btn btn-block rounded mt-3 new-run-button"
+        disabled={disabled}
+      >
         <Icon className="fa fa-plus" /> Add Course Run
       </button>
     );
@@ -111,14 +117,17 @@ export class BaseEditCourseForm extends React.Component {
   }
 
   toggleCourseRun(index, value) {
-    const collapsiblesOpen = Object.assign([], this.state.collapsiblesOpen);
-    collapsiblesOpen[index] = value;
-    this.setState({ collapsiblesOpen });
+    this.setState(prevState => {
+      const collapsiblesOpen = [...prevState.collapsiblesOpen];
+      collapsiblesOpen[index] = value;
+      return { collapsiblesOpen };
+    });
   }
 
   collapseAllCourseRuns() {
-    const collapsiblesOpen = this.state.collapsiblesOpen.map(() => (false));
-    this.setState({ collapsiblesOpen });
+    this.setState(prevState => ({
+      collapsiblesOpen: prevState.collapsiblesOpen.map(() => false),
+    }));
   }
 
   openCollapsible() {
@@ -129,10 +138,10 @@ export class BaseEditCourseForm extends React.Component {
     // TODO: After we have a way of determining if the course has been edited, that should be
     // added into the list of statuses being passed into the Pill component.
     return (
-      <React.Fragment>
+      <>
         {`Course: ${title}`}
         <Pill statuses={courseStatuses} />
-      </React.Fragment>
+      </>
     );
   }
 
@@ -165,21 +174,21 @@ export class BaseEditCourseForm extends React.Component {
 
     const courseOptionsData = getOptionsData(courseOptions);
     const courseRunOptionsData = getOptionsData(courseRunOptions);
-    const levelTypeOptions = courseOptionsData &&
-      parseOptions(courseOptionsData.level_type.choices);
-    const ofacRestrictionOptions = (courseRunOptionsData &&
-      courseRunOptionsData.has_ofac_restrictions &&
-      parseOptions(courseRunOptionsData.has_ofac_restrictions.choices));
-    const subjectOptions = courseOptionsData &&
-      parseOptions(courseOptionsData.subjects.child.choices);
-    const pacingTypeOptions = (courseRunOptionsData &&
-      parseOptions(courseRunOptionsData.pacing_type.choices));
-    const languageOptions = (courseRunOptionsData &&
-      parseOptions(courseRunOptionsData.content_language.choices));
-    const programOptions = (courseRunOptionsData &&
-      parseOptions(courseRunOptionsData.expected_program_type.choices));
-    const parsedTypeOptions = courseOptionsData &&
-      parseCourseTypeOptions(courseOptionsData.type.type_options);
+    const levelTypeOptions = courseOptionsData
+      && parseOptions(courseOptionsData.level_type.choices);
+    const ofacRestrictionOptions = (courseRunOptionsData
+      && courseRunOptionsData.has_ofac_restrictions
+      && parseOptions(courseRunOptionsData.has_ofac_restrictions.choices));
+    const subjectOptions = courseOptionsData
+      && parseOptions(courseOptionsData.subjects.child.choices);
+    const pacingTypeOptions = (courseRunOptionsData
+      && parseOptions(courseRunOptionsData.pacing_type.choices));
+    const languageOptions = (courseRunOptionsData
+      && parseOptions(courseRunOptionsData.content_language.choices));
+    const programOptions = (courseRunOptionsData
+      && parseOptions(courseRunOptionsData.expected_program_type.choices));
+    const parsedTypeOptions = courseOptionsData
+      && parseCourseTypeOptions(courseOptionsData.type.type_options);
     const {
       courseTypeOptions,
       courseRunTypeOptions,
@@ -189,8 +198,8 @@ export class BaseEditCourseForm extends React.Component {
     } = parsedTypeOptions;
 
     const disabled = courseInReview || !editable;
-    const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type] ||
-      courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
+    const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type]
+      || courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
 
     let submitState = 'default';
     if (submitting || (courseInfo && courseInfo.isSubmittingEdit)) {
@@ -206,6 +215,7 @@ export class BaseEditCourseForm extends React.Component {
 
     const cancelButton = (
       <button
+        type="button"
         onClick={() => {
           this.setCollapsible(false);
           reset();
@@ -234,13 +244,13 @@ export class BaseEditCourseForm extends React.Component {
               name="title"
               component={RenderInputTextField}
               type="text"
-              label={
+              label={(
                 <FieldLabel
                   id="title.label"
                   text="Title"
                   helpText={titleHelp}
                 />
-              }
+              )}
               extraInput={{ onInvalid: this.openCollapsible }}
               required
               disabled={disabled}
@@ -249,14 +259,14 @@ export class BaseEditCourseForm extends React.Component {
               name="url_slug"
               component={RenderInputTextField}
               type="text"
-              label={
+              label={(
                 <FieldLabel
                   id="slug.label"
                   text="URL slug"
                   optional
                   helpText={urlSlugHelp}
                 />
-              }
+              )}
               disabled={disabled || !administrator}
               optional
             />
@@ -268,14 +278,14 @@ export class BaseEditCourseForm extends React.Component {
               name="type"
               component={RenderSelectField}
               options={courseTypeOptions}
-              label={
+              label={(
                 <FieldLabel
                   id="type.label"
                   text="Course enrollment track"
                   helpText={typeHelp}
                   extraText="Cannot edit after submission"
                 />
-              }
+              )}
               extraInput={{ onInvalid: this.openCollapsible }}
               disabled={disabled || !!entitlement.sku}
             />
@@ -288,11 +298,11 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="imageSrc"
               component={ImageUpload}
-              label={
+              label={(
                 <FieldLabel
                   id="image.label"
                   text="Image"
-                  helpText={
+                  helpText={(
                     <div>
                       <p>
                         An eye-catching, colorful image that captures the essence of your course.
@@ -318,10 +328,10 @@ export class BaseEditCourseForm extends React.Component {
                         </a>
                       </p>
                     </div>
-                  }
+                  )}
                   extraText="Image must be 1134x675 pixels in size."
                 />
-              }
+              )}
               extraInput={{ onInvalid: this.openCollapsible }}
               maxImageSizeKilo={1000}
               requiredWidth={1134}
@@ -330,335 +340,338 @@ export class BaseEditCourseForm extends React.Component {
               className="course-image"
               disabled={disabled}
             />
-            {showMarketingFields &&
-            <React.Fragment>
-              <hr />
-              <Field
-                name="short_description"
-                component={RichEditor}
-                label={
-                  <FieldLabel
-                    id="sdesc.label"
-                    text="Short description"
-                    helpText={
-                      <div>
-                        <p>An effective short description:</p>
-                        <ul>
-                          <li>Contains 25–50 words.</li>
-                          <li>Functions as a tagline.</li>
-                          <li>Conveys compelling reasons to take the course.</li>
-                          <li>Follows SEO guidelines.</li>
-                          <li>Targets a global audience.</li>
-                        </ul>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-short-description-guidelines"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+            {showMarketingFields
+            && (
+              <>
+                <hr />
+                <Field
+                  name="short_description"
+                  component={RichEditor}
+                  label={(
+                    <FieldLabel
+                      id="sdesc.label"
+                      text="Short description"
+                      helpText={(
+                        <div>
+                          <p>An effective short description:</p>
+                          <ul>
+                            <li>Contains 25–50 words.</li>
+                            <li>Functions as a tagline.</li>
+                            <li>Conveys compelling reasons to take the course.</li>
+                            <li>Follows SEO guidelines.</li>
+                            <li>Targets a global audience.</li>
+                          </ul>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-short-description-guidelines"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                             Learn more.
-                          </a>
-                        </p>
-                        <p><b>Example:</b></p>
-                        <p>
+                            </a>
+                          </p>
+                          <p><b>Example:</b></p>
+                          <p>
                           The first MOOC to teach positive psychology. Learn science-based
                           principles and practices for a happy, meaningful life.
-                        </p>
-                      </div>
-                    }
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                maxChars={500}
-                id="sdesc"
-                disabled={disabled}
-              />
-              <Field
-                name="full_description"
-                component={RichEditor}
-                label={
-                  <FieldLabel
-                    id="ldesc.label"
-                    text="Long description"
-                    helpText={
-                      <div>
-                        <p>An effective long description:</p>
-                        <ul>
-                          <li>Contains 150–300 words.</li>
-                          <li>Is easy to skim.</li>
-                          <li>Uses bullet points instead of dense text paragraphs.</li>
-                          <li>Follows SEO guidelines.</li>
-                          <li>Targets a global audience.</li>
-                        </ul>
-                        <p>
+                          </p>
+                        </div>
+                    )}
+                    />
+                )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={500}
+                  id="sdesc"
+                  disabled={disabled}
+                />
+                <Field
+                  name="full_description"
+                  component={RichEditor}
+                  label={(
+                    <FieldLabel
+                      id="ldesc.label"
+                      text="Long description"
+                      helpText={(
+                        <div>
+                          <p>An effective long description:</p>
+                          <ul>
+                            <li>Contains 150–300 words.</li>
+                            <li>Is easy to skim.</li>
+                            <li>Uses bullet points instead of dense text paragraphs.</li>
+                            <li>Follows SEO guidelines.</li>
+                            <li>Targets a global audience.</li>
+                          </ul>
+                          <p>
                           The first four lines are visible when the About page opens. Learners can
                           select “See More” to view the full description.
-                        </p>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-long-description-guidelines"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-long-description-guidelines"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                             Learn more.
-                          </a>
-                        </p>
-                      </div>
-                    }
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                maxChars={2500}
-                id="ldesc"
-                disabled={disabled}
-              />
-              <Field
-                name="outcome"
-                component={RichEditor}
-                label={
-                  <FieldLabel
-                    id="outcome.label"
-                    text="What you will learn"
-                    helpText={
-                      <div>
-                        <p>The skills and knowledge learners will acquire in this course.</p>
-                        <p>Format each item as a bullet with four to ten words.</p>
-                        <p><b>Example:</b></p>
-                        <ul>
-                          <li>Basic R Programming</li>
-                          <li>An applied understanding of linear and logistic regression</li>
-                          <li>Application of text analytics</li>
-                          <li>Linear and integer optimization</li>
-                        </ul>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#what-you-will-learn-guidelines"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                            </a>
+                          </p>
+                        </div>
+                    )}
+                    />
+                )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={2500}
+                  id="ldesc"
+                  disabled={disabled}
+                />
+                <Field
+                  name="outcome"
+                  component={RichEditor}
+                  label={(
+                    <FieldLabel
+                      id="outcome.label"
+                      text="What you will learn"
+                      helpText={(
+                        <div>
+                          <p>The skills and knowledge learners will acquire in this course.</p>
+                          <p>Format each item as a bullet with four to ten words.</p>
+                          <p><b>Example:</b></p>
+                          <ul>
+                            <li>Basic R Programming</li>
+                            <li>An applied understanding of linear and logistic regression</li>
+                            <li>Application of text analytics</li>
+                            <li>Linear and integer optimization</li>
+                          </ul>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#what-you-will-learn-guidelines"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                             Learn more.
-                          </a>
-                        </p>
-                      </div>
-                    }
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                maxChars={2500}
-                id="outcome"
-                disabled={disabled}
-              />
-              <Field
-                name="syllabus_raw"
-                component={RichEditor}
-                label={
-                  <FieldLabel
-                    id="syllabus.label"
-                    text="Syllabus"
-                    helpText={
-                      <div>
-                        <p>
+                            </a>
+                          </p>
+                        </div>
+                    )}
+                    />
+                )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={2500}
+                  id="outcome"
+                  disabled={disabled}
+                />
+                <Field
+                  name="syllabus_raw"
+                  component={RichEditor}
+                  label={(
+                    <FieldLabel
+                      id="syllabus.label"
+                      text="Syllabus"
+                      helpText={(
+                        <div>
+                          <p>
                           A review of content covered in your course, organized by week or module.
-                        </p>
-                        <ul>
-                          <li>Focus on topics and content.</li>
-                          <li>
+                          </p>
+                          <ul>
+                            <li>Focus on topics and content.</li>
+                            <li>
                             Do not include detailed information about course logistics, such as
                             grading, communication policies, and reading lists.
-                          </li>
-                          <li>Format items as either paragraphs or a bulleted list.</li>
-                        </ul>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                            </li>
+                            <li>Format items as either paragraphs or a bulleted list.</li>
+                          </ul>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                             Learn more.
-                          </a>
-                        </p>
-                        <p><b>Example:</b></p>
-                        <ul>
-                          <li>
-                            <p>Week 1: From Calculator to Computer</p>
-                            <p>
+                            </a>
+                          </p>
+                          <p><b>Example:</b></p>
+                          <ul>
+                            <li>
+                              <p>Week 1: From Calculator to Computer</p>
+                              <p>
                               Introduction to basic programming concepts, such as values and
                               expressions, as well as making decisions when implementing algorithms
                               and developing programs.
-                            </p>
-                          </li>
-                          <li>
-                            <p>Week 2: State Transformation</p>
-                            <p>
+                              </p>
+                            </li>
+                            <li>
+                              <p>Week 2: State Transformation</p>
+                              <p>
                               Introduction to state transformation, including representation of data
                               and programs as well as conditional repetition.
-                            </p>
-                          </li>
-                        </ul>
-                      </div>
-                    }
-                    optional
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                maxChars={500}
-                id="syllabus"
-                disabled={disabled}
-              />
-              <Field
-                name="prerequisites_raw"
-                component={RichEditor}
-                label={
-                  <FieldLabel
-                    id="prereq.label"
-                    text="Prerequisites"
-                    helpText={
-                      <div>
-                        <p>
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                    )}
+                      optional
+                    />
+                )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={500}
+                  id="syllabus"
+                  disabled={disabled}
+                />
+                <Field
+                  name="prerequisites_raw"
+                  component={RichEditor}
+                  label={(
+                    <FieldLabel
+                      id="prereq.label"
+                      text="Prerequisites"
+                      helpText={(
+                        <div>
+                          <p>
                           Specific knowledge learners must have to be successful in the course.
                           If the course has no prerequisites, enter “None”.
-                        </p>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#skill-and-knowledge-prerequisites"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                          </p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#skill-and-knowledge-prerequisites"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                             Learn more.
-                          </a>
-                        </p>
-                        <p><b>Examples:</b></p>
-                        <ul>
-                          <li>
+                            </a>
+                          </p>
+                          <p><b>Examples:</b></p>
+                          <ul>
+                            <li>
                             Secondary school (high school) algebra;
                             basic mathematics concepts
-                          </li>
-                          <li>Graduate-level understanding of Keynesian economics</li>
-                          <li>Basic algebra</li>
-                        </ul>
-                      </div>
-                    }
-                    optional
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                maxChars={1000}
-                id="prereq"
-                disabled={disabled}
-              />
-              <Field
-                name="learner_testimonials"
-                component={RichEditor}
-                label={
-                  <FieldLabel
-                    id="testimonials.label"
-                    text="Learner testimonials"
-                    helpText={
-                      <div>
-                        <p>
+                            </li>
+                            <li>Graduate-level understanding of Keynesian economics</li>
+                            <li>Basic algebra</li>
+                          </ul>
+                        </div>
+                    )}
+                      optional
+                    />
+                )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={1000}
+                  id="prereq"
+                  disabled={disabled}
+                />
+                <Field
+                  name="learner_testimonials"
+                  component={RichEditor}
+                  label={(
+                    <FieldLabel
+                      id="testimonials.label"
+                      text="Learner testimonials"
+                      helpText={(
+                        <div>
+                          <p>
                           A quote from a learner in the course, demonstrating the value of taking
                           the course.
-                        </p>
-                        <p>Should be no more than 25–50 words in length.</p>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#learner-testimonial-guidelines"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                          </p>
+                          <p>Should be no more than 25–50 words in length.</p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#learner-testimonial-guidelines"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                             Learn more.
-                          </a>
-                        </p>
-                        <p><b>Example:</b></p>
-                        <p>
+                            </a>
+                          </p>
+                          <p><b>Example:</b></p>
+                          <p>
                           “Brilliant course! It’s definitely the best introduction to electronics
                           in the world! Interesting material, clean explanations, well prepared
                           quizzes, challenging homework, and fun labs.” – Previous Student
-                        </p>
-                      </div>
-                    }
-                    optional
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                maxChars={500}
-                id="learner-testimonials"
-                disabled={disabled}
-              />
-              <Field
-                name="faq"
-                component={RichEditor}
-                label={
-                  <FieldLabel
-                    id="faq.label"
-                    text="Frequently asked questions"
-                    helpText={
-                      <div>
-                        <p>Any frequently asked questions and the answers to those questions.</p>
-                        <p>
-                          <a
-                            href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#faq-guidelines"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                          </p>
+                        </div>
+                    )}
+                      optional
+                    />
+                )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={500}
+                  id="learner-testimonials"
+                  disabled={disabled}
+                />
+                <Field
+                  name="faq"
+                  component={RichEditor}
+                  label={(
+                    <FieldLabel
+                      id="faq.label"
+                      text="Frequently asked questions"
+                      helpText={(
+                        <div>
+                          <p>Any frequently asked questions and the answers to those questions.</p>
+                          <p>
+                            <a
+                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#faq-guidelines"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                             Learn more.
-                          </a>
-                        </p>
-                        <p><b>Example:</b></p>
-                        <strong>Do I need to know any programming languages before I start?</strong>
-                        <p>
+                            </a>
+                          </p>
+                          <p><b>Example:</b></p>
+                          <strong>Do I need to know any programming languages before I start?</strong>
+                          <p>
                           No, this course is designed for beginners.
-                        </p>
-                        <strong>What version of Swift will I be learning?</strong>
-                        <p>
+                          </p>
+                          <strong>What version of Swift will I be learning?</strong>
+                          <p>
                           Swift version 4.
-                        </p>
-                      </div>
-                    }
-                    optional
-                  />
-                }
-                extraInput={{ onInvalid: this.openCollapsible }}
-                maxChars={2500}
-                id="faq"
-                disabled={disabled}
-              />
-              {/*
+                          </p>
+                        </div>
+                    )}
+                      optional
+                    />
+                )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  maxChars={2500}
+                  id="faq"
+                  disabled={disabled}
+                />
+                {/*
                 Do not open up access to additional_information. It is not validated like the other
                 HTML fields and should not be directly edited by course teams.
               */}
-              {administrator &&
+                {administrator
+                && (
                 <Field
                   name="additional_information"
                   component={RichEditor}
-                  label={
+                  label={(
                     <FieldLabel
                       id="additional-info.label"
                       text="Additional information"
-                      helpText={
+                      helpText={(
                         <div>
                           <p>Any additional information to be provided to learners.</p>
                         </div>
-                      }
+                      )}
                       optional
                     />
-                  }
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={2500}
                   id="additional-information"
                   disabled={disabled}
                 />
-              }
-              {administrator &&
+                )}
+                {administrator
+                && (
                 <Field
                   name="videoSrc"
                   component={RenderInputTextField}
                   type="url"
-                  label={
+                  label={(
                     <FieldLabel
                       id="video.label"
                       text="About video link"
-                      helpText={
+                      helpText={(
                         <div>
                           <p>
                             The About video should excite and entice potential students to take your
@@ -701,27 +714,27 @@ export class BaseEditCourseForm extends React.Component {
                             <span>for examples of other About videos.</span>
                           </p>
                         </div>
-                      }
+                      )}
                       optional
                     />
-                  }
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   disabled={disabled}
                 />
-              }
-            </React.Fragment>
-            }
+                )}
+              </>
+            )}
             <hr />
             <Field
               name="level_type"
               component={RenderSelectField}
-              label={
+              label={(
                 <FieldLabel
                   id="level.label"
                   text="Course level"
                   // TODO: these descriptions should come from the server -- levels are defined in
                   //       the database and are not suitable for hardcoding like this.
-                  helpText={
+                  helpText={(
                     <div>
                       <dl>
                         <dt>Introductory</dt>
@@ -741,9 +754,9 @@ export class BaseEditCourseForm extends React.Component {
                         </dd>
                       </dl>
                     </div>
-                  }
+                  )}
                 />
-              }
+              )}
               extraInput={{ onInvalid: this.openCollapsible }}
               options={levelTypeOptions}
               disabled={disabled}
@@ -752,11 +765,11 @@ export class BaseEditCourseForm extends React.Component {
             <Field
               name="subjectPrimary"
               component={RenderSelectField}
-              label={
+              label={(
                 <FieldLabel
                   id="subject1.label"
                   text="Primary subject"
-                  helpText={
+                  helpText={(
                     <div>
                       <p>The subject of the course.</p>
                       <p>
@@ -773,9 +786,9 @@ export class BaseEditCourseForm extends React.Component {
                         </a>
                       </p>
                     </div>
-                  }
+                  )}
                 />
-              }
+              )}
               extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
               disabled={disabled}
@@ -819,7 +832,8 @@ export class BaseEditCourseForm extends React.Component {
             validate={() => {}} // override method from our props, we don't want to pass it down
           />
           {this.getAddCourseRunButton(disabled || !pristine, uuid)}
-          {editable &&
+          {editable
+            && (
             <ButtonToolbar className="mt-3">
               {submitState === 'default' ? cancelButton : null}
               <ActionButton
@@ -839,7 +853,7 @@ export class BaseEditCourseForm extends React.Component {
                 }}
               />
             </ButtonToolbar>
-          }
+            )}
         </form>
       </div>
     );
@@ -852,7 +866,9 @@ BaseEditCourseForm.propTypes = {
   }),
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
-  currentFormValues: PropTypes.shape({}),
+  currentFormValues: PropTypes.shape({
+    type: PropTypes.string,
+  }),
   title: PropTypes.string.isRequired,
   entitlement: PropTypes.shape({
     sku: PropTypes.string,
@@ -876,6 +892,7 @@ BaseEditCourseForm.propTypes = {
   isSubmittingForReview: PropTypes.bool,
   editable: PropTypes.bool,
   courseInfo: PropTypes.shape({
+    courseSaved: PropTypes.bool,
     isSubmittingEdit: PropTypes.bool,
   }),
   courseSubmitInfo: PropTypes.shape({
@@ -930,10 +947,10 @@ const EditCourseForm = compose(
     shouldError: (params) => {
       const { nextProps, props } = params;
       return (
-        props.submitting ||
-        (nextProps && nextProps.submitting) ||
-        props.targetRun ||
-        (nextProps && nextProps.targetRun)
+        props.submitting
+        || (nextProps && nextProps.submitting)
+        || props.targetRun
+        || (nextProps && nextProps.targetRun)
       );
     },
     validate: editCourseValidate,

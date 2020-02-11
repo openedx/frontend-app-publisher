@@ -8,9 +8,7 @@ const initialState = {
 function darkMode(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_DARK_MODE:
-      return Object.assign({}, state, {
-        darkModeOn: !state.darkModeOn,
-      });
+      return { ...state, darkModeOn: !state.darkModeOn };
     default:
       return state;
   }
