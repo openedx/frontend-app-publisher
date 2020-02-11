@@ -1,5 +1,3 @@
-import { getErrorMessages } from '../../utils';
-
 import {
   CREATE_COMMENT,
   CREATE_COMMENT_FAIL,
@@ -38,14 +36,10 @@ function requestCommentsSuccess(id, data) {
 function addComment(commentData) {
   return (dispatch) => {
     dispatch(createNewComment(commentData));
-
-    return DiscoveryDataApiService.createComment(commentData)
-      .then((response) => {
-        dispatch(createCommentSuccess(response.data));
-      })
-      .catch((error) => {
-        dispatch(createCommentFail(['Comment create failed, please try again or contact support.'].concat(getErrorMessages(error))));
-      });
+    DiscoveryDataApiService.createComment(commentData).subscribe(
+      comment => dispatch(createCommentSuccess(comment)),
+      error => dispatch(createCommentFail(error)),
+    );
   };
 }
 
@@ -55,22 +49,13 @@ function fetchComments(id) {
     if (!UUID_REGEX.test(id)) {
       const error = [`Could not get course comments. ${id} is not a valid course UUID.`];
       dispatch(requestCommentsFail(id, error));
-      return Promise.resolve(); // early exit with empty promise
+    } else {
+      dispatch(requestComments(id));
+      DiscoveryDataApiService.fetchComments(id).subscribe(
+        comments => dispatch(requestCommentsSuccess(id, comments)),
+        error => dispatch(requestCommentsFail(id, error)),
+      );
     }
-
-    dispatch(requestComments(id));
-
-    return DiscoveryDataApiService.fetchComments(id)
-      .then((response) => {
-        const comments = response.data;
-        dispatch(requestCommentsSuccess(id, comments));
-      })
-      .catch((error) => {
-        dispatch(requestCommentsFail(
-          id,
-          ['Could not get course comments.'].concat(getErrorMessages(error)),
-        ));
-      });
   };
 }
 

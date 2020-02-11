@@ -25,20 +25,10 @@ function fetchCourseOptions() {
   return (dispatch) => {
     dispatch(requestCourseOptions());
 
-    return DiscoveryDataApiService.fetchCourseOptions()
-      .then((response) => {
-        const course = response.data;
-
-        // Confirm it looks vaguely correct
-        if (!course || !('actions' in course)) {
-          throw Error('Did not understand response.');
-        }
-
-        dispatch(requestCourseOptionsSuccess(course));
-      })
-      .catch((error) => {
-        dispatch(requestCourseOptionsFail(['Could not get course information.'].concat(getErrorMessages(error))));
-      });
+    return DiscoveryDataApiService.fetchCourseOptions().subscribe(
+      options => dispatch(requestCourseOptionsSuccess(options)),
+      error => dispatch(requestCourseOptionsFail(error)),
+    );
   };
 }
 export {

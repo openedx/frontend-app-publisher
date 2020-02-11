@@ -23,20 +23,10 @@ function fetchCourseRunOptions() {
   return (dispatch) => {
     dispatch(requestCourseRunOptions());
 
-    return DiscoveryDataApiService.fetchCourseRunOptions()
-      .then((response) => {
-        const courseRun = response.data;
-
-        // Confirm it looks vaguely correct
-        if (!courseRun || !('actions' in courseRun)) {
-          throw Error('Did not understand response.');
-        }
-
-        dispatch(requestCourseRunOptionsSuccess(courseRun));
-      })
-      .catch((error) => {
-        dispatch(requestCourseRunOptionsFail(['Could not get course run information.'].concat(getErrorMessages(error))));
-      });
+    return DiscoveryDataApiService.fetchCourseRunOptions().subscribe(
+      options => dispatch(requestCourseRunOptionsSuccess(options)),
+      error => dispatch(requestCourseRunOptionsFail(error)),
+    );
   };
 }
 export {

@@ -126,6 +126,7 @@ class UsersPane extends React.Component {
         {showEditors &&
           <div>
             <div className="font-weight-bold">Course Editors</div>
+            {}
             {courseEditors.data.map(editor => (
               <User
                 key={editor.id}

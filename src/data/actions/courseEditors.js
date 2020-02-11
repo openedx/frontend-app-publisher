@@ -7,9 +7,6 @@ import {
 } from '../constants/courseEditors';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
-import { getErrorMessages } from '../../utils';
-
-
 function addCourseEditorSuccess(data) {
   return { type: ADD_COURSE_EDITOR_SUCCESS, data };
 }
@@ -34,15 +31,10 @@ function fetchCourseEditors(id) {
   return (dispatch) => {
     dispatch(requestCourseEditors());
 
-    return DiscoveryDataApiService.fetchCourseEditors(id)
-      .then((response) => {
-        const editors = response.data.results;
-        dispatch(requestCourseEditorsSuccess(editors));
-      })
-      .catch((error) => {
-        const msg = ['Could not get course editors.'].concat(getErrorMessages(error));
-        dispatch(requestCourseEditorsFail(msg));
-      });
+    DiscoveryDataApiService.fetchCourseEditors(id).subscribe(
+      editors => dispatch(requestCourseEditorsSuccess(editors)),
+      error => dispatch(requestCourseEditorsFail(error)),
+    );
   };
 }
 
@@ -50,17 +42,13 @@ function addCourseEditor(courseId, userId) {
   return (dispatch) => {
     dispatch(requestCourseEditors());
 
-    return DiscoveryDataApiService.addCourseEditor({
+    DiscoveryDataApiService.addCourseEditor({
       course: courseId,
       user_id: userId,
-    })
-      .then((response) => {
-        dispatch(addCourseEditorSuccess(response.data));
-      })
-      .catch((error) => {
-        const msg = ['Could not add course editor.'].concat(getErrorMessages(error));
-        dispatch(requestCourseEditorsFail(msg));
-      });
+    }).subscribe(
+      editor => dispatch(addCourseEditorSuccess(editor)),
+      error => requestCourseEditorsFail(error)
+    );
   };
 }
 
@@ -68,14 +56,10 @@ function removeCourseEditor(editorId) {
   return (dispatch) => {
     dispatch(requestCourseEditors());
 
-    return DiscoveryDataApiService.removeCourseEditor(editorId)
-      .then(() => {
-        dispatch(removeCourseEditorSuccess(editorId));
-      })
-      .catch((error) => {
-        const msg = ['Could not remove course editor.'].concat(getErrorMessages(error));
-        dispatch(requestCourseEditorsFail(msg));
-      });
+    return DiscoveryDataApiService.removeCourseEditor(editorId).subscribe(
+      () => dispatch(removeCourseEditorSuccess(editorId)),
+      error => dispatch(requestCourseEditorsFail(error)),
+    );
   };
 }
 

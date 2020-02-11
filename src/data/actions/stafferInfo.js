@@ -14,7 +14,6 @@ import {
   RESET_STAFFER_INFO,
 } from '../constants/stafferInfo';
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
-import { getErrorMessages } from '../../utils';
 
 export function createNewStaffer(stafferData) {
   return { type: CREATE_STAFFER, stafferData };
@@ -32,19 +31,15 @@ export function createStaffer(stafferData, referrer = null) {
   return (dispatch) => {
     dispatch(createNewStaffer(stafferData));
     // Send create staffer POST
-    return DiscoveryDataApiService.createStaffer(stafferData)
-      .then((response) => {
-        const staffer = response.data;
+    DiscoveryDataApiService.createStaffer(stafferData).subscribe(
+      (staffer) => {
         dispatch(stafferCreateSuccess(staffer));
-
-        // Redirect to referring page after a successful create
         if (referrer) {
           dispatch(push(referrer));
         }
-      })
-      .catch((error) => {
-        dispatch(stafferCreateFail(['Instructor create failed, please try again or contact support.'].concat(getErrorMessages(error))));
-      });
+      },
+      error => dispatch(stafferCreateFail(error)),
+    );
   };
 }
 
@@ -63,21 +58,10 @@ export function requestStafferInfo() {
 export function fetchStafferInfo(uuid) {
   return (dispatch) => {
     dispatch(requestStafferInfo(uuid));
-
-    return DiscoveryDataApiService.fetchStaffer(uuid)
-      .then((response) => {
-        const stafferInfo = response.data;
-
-        // Confirm it looks vaguely correct
-        if (!stafferInfo || !('family_name' in stafferInfo)) {
-          throw Error('Did not understand response.');
-        }
-
-        dispatch(requestStafferInfoSuccess(stafferInfo));
-      })
-      .catch((error) => {
-        dispatch(requestStafferInfoFail(['Could not get instructor information.'].concat(getErrorMessages(error))));
-      });
+    DiscoveryDataApiService.fetchStaffer(uuid).subscribe(
+      stafferInfo => dispatch(requestStafferInfoSuccess(stafferInfo)),
+      error => dispatch(requestStafferInfoFail(error)),
+    );
   };
 }
 
@@ -97,19 +81,15 @@ export function editStaffer(stafferData, referrer = null) {
   return (dispatch) => {
     dispatch(editStafferInfo(stafferData));
     // Send edit course PATCH
-    return DiscoveryDataApiService.editStaffer(stafferData)
-      .then((response) => {
-        const staffer = response.data;
+    return DiscoveryDataApiService.editStaffer(stafferData).subscribe(
+      (staffer) => {
         dispatch(editStafferInfoSuccess(staffer));
-
-        // Redirect to referring page after a successful edit
         if (referrer) {
           dispatch(push(referrer));
         }
-      })
-      .catch((error) => {
-        dispatch(editStafferInfoFail(['Edit instructor failed, please try again or contact support.'].concat(getErrorMessages(error))));
-      });
+      },
+      error => dispatch(editStafferInfoFail(error)),
+    );
   };
 }
 

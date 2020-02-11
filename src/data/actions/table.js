@@ -48,12 +48,10 @@ const updateTableFailure = error => ({
 
 const fetchEditorFilterOptions = () => (
   dispatch => (
-    DiscoveryDataApiService.fetchUsersForCurrentUser().then((response) => {
-      const users = response.data.results.map(user => ({ id: user.id, name: user.full_name }));
-      dispatch(fetchEditorFilterOptionsSuccess(users));
-    }).catch((error) => {
-      dispatch(fetchEditorFilterOptionsFailure(error));
-    })
+    DiscoveryDataApiService.fetchUsersForCurrentUser().subscribe(
+      users => dispatch(fetchEditorFilterOptionsSuccess(users)),
+      error => dispatch(fetchEditorFilterOptionsFailure(error)),
+    )
   )
 );
 
@@ -64,17 +62,15 @@ const paginateTable = pageNumber => (
       options.page = pageNumber;
     }
     dispatch(updateTableRequest());
-    return DiscoveryDataApiService.fetchCourses(options).then((response) => {
-      dispatch(updateTableSuccess(response.data));
-    }).catch((error) => {
-      // This endpoint returns a 404 if no data exists,
-      // so we convert it to an empty response here.
-      if (error.response && error.response.status === 404) {
-        dispatch(updateTableSuccess({ results: [] }));
-        return;
-      }
-      dispatch(updateTableFailure(error));
-    });
+    DiscoveryDataApiService.fetchCourses(options).subscribe(
+      data => dispatch(updateTableSuccess(data)),
+      (error) => {
+        if (error.response && error.response.status === 404) {
+          dispatch(updateTableSuccess({ results: [] }));
+        }
+        dispatch(updateTableFailure(error));
+      },
+    );
   }
 );
 
@@ -85,12 +81,10 @@ const sortTable = ordering => (
       ordering,
     };
     dispatch(updateTableRequest());
-
-    return DiscoveryDataApiService.fetchCourses(options).then((response) => {
-      dispatch(updateTableSuccess(response.data));
-    }).catch((error) => {
-      dispatch(updateTableFailure(error));
-    });
+    DiscoveryDataApiService.fetchCourses(options).subscribe(
+      data => dispatch(updateTableSuccess(data)),
+      error => dispatch(updateTableFailure(error)),
+    );
   }
 );
 
@@ -101,12 +95,10 @@ const filterTable = filter => (
       ...filter, // Internal API querystring param for title/key substring
     };
     dispatch(updateTableRequest());
-
-    return DiscoveryDataApiService.fetchCourses(options).then((response) => {
-      dispatch(updateTableSuccess(response.data));
-    }).catch((error) => {
-      dispatch(updateTableFailure(error));
-    });
+    DiscoveryDataApiService.fetchCourses(options).subscribe(
+      data => dispatch(updateTableSuccess(data)),
+      error => dispatch(updateTableFailure(error)),
+    );
   }
 );
 

@@ -120,22 +120,13 @@ function fetchCourseInfo(id) {
     if (!UUID_REGEX.test(id)) {
       const error = [`Could not get course information. ${id} is not a valid course UUID.`];
       dispatch(requestCourseInfoFail(id, error));
-      return Promise.resolve(); // early exit with empty promise
+    } else {
+      dispatch(requestCourseInfo(id));
+      DiscoveryDataApiService.fetchCourse(id).subscribe(
+        course => dispatch(requestCourseInfoSuccess(id, course)),
+        error => dispatch(requestCourseInfoFail(id, error)),
+      );
     }
-
-    dispatch(requestCourseInfo(id));
-
-    return DiscoveryDataApiService.fetchCourse(id)
-      .then((response) => {
-        const course = response.data;
-        dispatch(requestCourseInfoSuccess(id, course));
-      })
-      .catch((error) => {
-        dispatch(requestCourseInfoFail(
-          id,
-          ['Could not get course information.'].concat(getErrorMessages(error)),
-        ));
-      });
   };
 }
 
@@ -144,28 +135,15 @@ function createCourseRun(courseUuid, courseRunData) {
     dispatch(createNewCourseRun(courseRunData));
     if (!courseRunData.course) {
       dispatch(createCourseRunFail(['Course Run create failed, please try again or contact support. Course create incomplete.']));
-      return null;
+    } else {
+      DiscoveryDataApiService.createCourseRun(courseRunData).subscribe(
+        courseRun => ([
+          dispatch(createCourseRunSuccess(courseRun)),
+          dispatch(push(`/courses/${courseUuid}`)),
+        ]),
+        error => dispatch(createCourseRunFail(error)),
+      );
     }
-
-    return DiscoveryDataApiService.createCourseRun(courseRunData)
-      .then((response) => {
-        const courseRun = response.data;
-        dispatch(createCourseRunSuccess(courseRun));
-        return dispatch(push(`/courses/${courseUuid}`));
-      })
-      .catch((error) => {
-        let errorList;
-        if (!error.response || error.response.status === 504) {
-          // See DISCO-1548. Basically, a course is so large that nginx kills requests before Studio
-          // can finish copying content. So we add a custom message about this case.
-          // In prod/stage, we see an 'undefined' response (axios eating it?) but the server does
-          // return a 504 for this case. So handle both response values.
-          errorList = ['Due to the quantity of content in this course, we anticipate a longer wait time for the creation of a new course run in Publisher. The run is now available in Studio in the meantime. Please check back in a business day or contact your Project Coordinator for help.'];
-        } else {
-          errorList = ['Course Run create failed, please try again or contact support.'].concat(getErrorMessages(error));
-        }
-        dispatch(createCourseRunFail(errorList));
-      });
   };
 }
 
@@ -174,17 +152,15 @@ function createCourse(courseData) {
     dispatch(createNewCourse(courseData));
     dispatch(createNewCourseRun(courseData.course_run));
 
-    return DiscoveryDataApiService.createCourse(courseData)
-      .then((response) => {
-        const course = response.data;
+    return DiscoveryDataApiService.createCourse(courseData).subscribe(
+      (course) => {
         dispatch(createCourseSuccess(course));
         const courseRun = course.course_runs[0];
         dispatch(createCourseRunSuccess(courseRun));
-        return dispatch(push(`/courses/${course.uuid}`));
-      })
-      .catch((error) => {
-        dispatch(createCourseFail(['Creation failed, please try again or contact support.'].concat(getErrorMessages(error))));
-      });
+        dispatch(push(`/courses/${course.uuid}`));
+      },
+      error => dispatch(createCourseFail(error)),
+    );
   };
 }
 
