@@ -1,4 +1,5 @@
-import 'babel-polyfill';
+import 'core-js';
+import 'regenerator-runtime/runtime';
 import React from 'react';
 import { Switch } from 'react-router-dom';
 import { PrivateRoute } from '@edx/frontend-auth';
@@ -13,17 +14,17 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../sass/App.scss';
-import Header from '../../containers/Header';
+import Header from '../Header';
 import FooterLogo from '../../../assets/edx-footer.png';
-import CourseDashboard from '../../containers/CourseDashboard';
+import CourseDashboard from '../CourseDashboard';
 import CourseRunRedirectComponent from '../../components/CourseRunRedirect';
-import CreateCourse from '../../containers/CreateCourse';
-import CreateCourseRun from '../../containers/CreateCourseRun';
-import CreateStaffer from '../../containers/CreateStaffer';
-import EditStaffer from '../../containers/EditStaffer';
+import CreateCourse from '../CreateCourse';
+import CreateCourseRun from '../CreateCourseRun';
+import CreateStaffer from '../CreateStaffer';
+import EditStaffer from '../EditStaffer';
 
 import apiClient from '../../data/apiClient';
-import EditCourse from '../../containers/EditCourse';
+import EditCourse from '../EditCourse';
 
 const socialLinks = [
   {

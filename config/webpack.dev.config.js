@@ -18,7 +18,7 @@ module.exports = Merge.smart(commonConfig, {
     // Specify file-by-file rules to Webpack. Some file-types need a particular kind of loader.
     rules: [
       // The babel-loader transforms newer ES2015+ syntax to older ES5 for older browsers.
-      // Babel is configured with the .babelrc file at the root of the project.
+      // Babel is configured with the babel.config.json file at the root of the project.
       {
         test: /\.(js|jsx)$/,
         include: [

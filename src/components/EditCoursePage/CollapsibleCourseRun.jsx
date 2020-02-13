@@ -8,8 +8,10 @@ import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
-import { courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
-  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual } from '../../utils';
+import {
+  courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
+  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual,
+} from '../../utils';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
@@ -23,7 +25,9 @@ import {
   ARCHIVED, DATE_FORMAT, IN_REVIEW_STATUS, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL,
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
-import { dateEditHelp, runTypeHelp, pacingEditHelp, publishDateHelp } from '../../helpText';
+import {
+  dateEditHelp, runTypeHelp, pacingEditHelp, publishDateHelp,
+} from '../../helpText';
 import RichEditor from '../RichEditor';
 
 const determineStatus = run => (courseRunIsArchived(run) ? ARCHIVED : run.status);
@@ -36,8 +40,7 @@ const formatCourseRunTitle = (courseRun) => {
       labelItems.push(formatDate(courseRun.start));
     }
     if (courseRun.pacing_type) {
-      labelItems.push(courseRun.pacing_type.split('_').map(pacingType =>
-        pacingType.charAt(0).toUpperCase() + pacingType.slice(1)).join(' '));
+      labelItems.push(courseRun.pacing_type.split('_').map(pacingType => pacingType.charAt(0).toUpperCase() + pacingType.slice(1)).join(' '));
     }
     if (courseRun.status !== PUBLISHED && courseRun.go_live_date) {
       const formattedDate = formatDate(courseRun.go_live_date);
@@ -55,7 +58,7 @@ const formatCourseRunTitle = (courseRun) => {
           <span>{`${publishDate}`}</span>
         </div>
         <div className="course-run-studio-url">
-          <React.Fragment>
+          <>
             Studio URL -&nbsp;
             <Hyperlink
               destination={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}
@@ -63,19 +66,21 @@ const formatCourseRunTitle = (courseRun) => {
             >
               {courseRun.key}
             </Hyperlink>
-          </React.Fragment>
+          </>
         </div>
-        {courseRun.marketing_url && determineStatus(courseRun) !== ARCHIVED ?
-          <div className="course-run-preview-url">
-            <React.Fragment>
-              <Hyperlink
-                destination={`${courseRun.marketing_url}`}
-                target="_blank"
-              >
-                {determineStatus(courseRun) === PUBLISHED ? 'View Live Page' : 'View Preview Page'}
-              </Hyperlink>
-            </React.Fragment>
-          </div> : null}
+        {courseRun.marketing_url && determineStatus(courseRun) !== ARCHIVED
+          ? (
+            <div className="course-run-preview-url">
+              <>
+                <Hyperlink
+                  destination={`${courseRun.marketing_url}`}
+                  target="_blank"
+                >
+                  {determineStatus(courseRun) === PUBLISHED ? 'View Live Page' : 'View Preview Page'}
+                </Hyperlink>
+              </>
+            </div>
+          ) : null}
       </div>
     );
   }
@@ -197,8 +202,8 @@ class CollapsibleCourseRun extends React.Component {
     }
     if (status === REVIEWED) {
       if (initialValues.course_runs && currentFormValues.course_runs) {
-        return isNonExemptChanged(initialValues, currentFormValues, key) ||
-        isNonExemptChanged(initialValues, currentFormValues) ? 'Re-Submit Run for Review' : 'Update Run';
+        return isNonExemptChanged(initialValues, currentFormValues, key)
+        || isNonExemptChanged(initialValues, currentFormValues) ? 'Re-Submit Run for Review' : 'Update Run';
       }
       return 'Update Run';
     }
@@ -207,8 +212,8 @@ class CollapsibleCourseRun extends React.Component {
 
   formatDate(date) {
     if (date) {
-      if (date.includes('T') &&
-        date.split('T')[0].match(FORMAT_DATE_MATCHER)) {
+      if (date.includes('T')
+        && date.split('T')[0].match(FORMAT_DATE_MATCHER)) {
         return getDateWithSlashes(date);
       }
       return date;
@@ -257,20 +262,20 @@ class CollapsibleCourseRun extends React.Component {
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
     // Checks if the current course run is the one triggering submission for review
-    const courseRunSubmitting = !courseRunInReview && isSubmittingForReview && targetRun &&
-      (targetRun.key === courseRun.key);
+    const courseRunSubmitting = !courseRunInReview && isSubmittingForReview && targetRun
+      && (targetRun.key === courseRun.key);
 
     const disabled = courseInReview || !editable;
-    const seatHasSku = courseRun.seats &&
-      courseRun.seats.reduce((hasSku, seat) => !!seat.sku || hasSku, false);
+    const seatHasSku = courseRun.seats
+      && courseRun.seats.reduce((hasSku, seat) => !!seat.sku || hasSku, false);
 
     const courseDateEditHelp = dateEditHelp(courseRun);
     const coursePacingEditHelp = pacingEditHelp(courseRun);
     const runType = currentFormValues && currentFormValues.type;
     const runTypeOptions = runType && courseRunTypeOptions[runType];
     // Handle mismatches between CourseType and CourseRunType
-    if (courseRun.run_type && runTypeOptions &&
-      runTypeOptions.every(option => option.value !== courseRun.run_type)) {
+    if (courseRun.run_type && runTypeOptions
+      && runTypeOptions.every(option => option.value !== courseRun.run_type)) {
       runTypeOptions.push({ label: '--', value: courseRun.run_type });
     }
 
@@ -285,107 +290,110 @@ class CollapsibleCourseRun extends React.Component {
         </div>
         {/* TODO this should be refactored when paragon supports safari */}
         {/* text inputs for safari */}
-        {isSafari ?
-          <div>
-            <Field
-              name={`${courseId}.go_live_date`}
-              type="text"
-              component={RenderInputTextField}
-              format={date => this.formatDate(date)}
-              normalize={date => this.normalizeDate(date)}
-              pattern={DATE_INPUT_PATTERN}
-              maxLength="10"
-              label={
-                <FieldLabel
-                  id={`${courseId}.go_live_date.label`}
-                  text="Publish date"
-                  helpText={publishDateHelp}
-                />
-              }
-              extraInput={{
-                onInvalid: this.openCollapsible,
-              }}
-              placeholder="yyyy/mm/dd"
-              disabled={disabled || courseRun.status === PUBLISHED}
-              required={courseRunSubmitting}
-            />
-            <Field
-              name={`${courseId}.start`}
-              type="text"
-              component={DateTimeField}
-              dateLabel="Start date"
-              timeLabel={`Start time (${localTimeZone})`}
-              helpText={courseDateEditHelp}
-              disabled
-            />
-            <Field
-              name={`${courseId}.end`}
-              type="text"
-              component={DateTimeField}
-              dateLabel="End date"
-              timeLabel={`End time (${localTimeZone})`}
-              helpText={courseDateEditHelp}
-              disabled
-            />
-          </div> :
+        {isSafari
+          ? (
+            <div>
+              <Field
+                name={`${courseId}.go_live_date`}
+                type="text"
+                component={RenderInputTextField}
+                format={date => this.formatDate(date)}
+                normalize={date => this.normalizeDate(date)}
+                pattern={DATE_INPUT_PATTERN}
+                maxLength="10"
+                label={(
+                  <FieldLabel
+                    id={`${courseId}.go_live_date.label`}
+                    text="Publish date"
+                    helpText={publishDateHelp}
+                  />
+                )}
+                extraInput={{
+                  onInvalid: this.openCollapsible,
+                }}
+                placeholder="yyyy/mm/dd"
+                disabled={disabled || courseRun.status === PUBLISHED}
+                required={courseRunSubmitting}
+              />
+              <Field
+                name={`${courseId}.start`}
+                type="text"
+                component={DateTimeField}
+                dateLabel="Start date"
+                timeLabel={`Start time (${localTimeZone})`}
+                helpText={courseDateEditHelp}
+                disabled
+              />
+              <Field
+                name={`${courseId}.end`}
+                type="text"
+                component={DateTimeField}
+                dateLabel="End date"
+                timeLabel={`End time (${localTimeZone})`}
+                helpText={courseDateEditHelp}
+                disabled
+              />
+            </div>
+          )
           // date inputs for all browsers besides safari
-          <div>
-            <Field
-              name={`${courseId}.go_live_date`}
-              type="date"
-              component={RenderInputTextField}
-              format={value => getDateWithDashes(value)}
-              normalize={value => moment(value).utc().format(DATE_FORMAT)}
-              label={
-                <FieldLabel
-                  id={`${courseId}.go_live_date.label`}
-                  text="Publish date"
-                  helpText={publishDateHelp}
-                />
-              }
-              extraInput={{
-                onInvalid: this.openCollapsible,
-                min: moment(courseRun.go_live_date).isBefore(moment()) ?
-                  getDateWithDashes(courseRun.go_live_date) : getDateWithDashes(moment()),
-              }}
-              placeholder="mm/dd/yyyy"
-              disabled={disabled || courseRun.status === PUBLISHED}
-              required={courseRunSubmitting}
-            />
-            <Field
-              name={`${courseId}.start`}
-              type="date"
-              component={DateTimeField}
-              dateLabel="Start date"
-              timeLabel={`Start time (${localTimeZone})`}
-              helpText={courseDateEditHelp}
-              disabled
-            />
-            <Field
-              name={`${courseId}.end`}
-              type="date"
-              component={DateTimeField}
-              dateLabel="End date"
-              timeLabel={`End time (${localTimeZone})`}
-              helpText={courseDateEditHelp}
-              disabled
-            />
-          </div>
-        }
+          : (
+            <div>
+              <Field
+                name={`${courseId}.go_live_date`}
+                type="date"
+                component={RenderInputTextField}
+                format={value => getDateWithDashes(value)}
+                normalize={value => moment(value).utc().format(DATE_FORMAT)}
+                label={(
+                  <FieldLabel
+                    id={`${courseId}.go_live_date.label`}
+                    text="Publish date"
+                    helpText={publishDateHelp}
+                  />
+                )}
+                extraInput={{
+                  onInvalid: this.openCollapsible,
+                  min: moment(courseRun.go_live_date).isBefore(moment())
+                    ? getDateWithDashes(courseRun.go_live_date) : getDateWithDashes(moment()),
+                }}
+                placeholder="mm/dd/yyyy"
+                disabled={disabled || courseRun.status === PUBLISHED}
+                required={courseRunSubmitting}
+              />
+              <Field
+                name={`${courseId}.start`}
+                type="date"
+                component={DateTimeField}
+                dateLabel="Start date"
+                timeLabel={`Start time (${localTimeZone})`}
+                helpText={courseDateEditHelp}
+                disabled
+              />
+              <Field
+                name={`${courseId}.end`}
+                type="date"
+                component={DateTimeField}
+                dateLabel="End date"
+                timeLabel={`End time (${localTimeZone})`}
+                helpText={courseDateEditHelp}
+                disabled
+              />
+            </div>
+          )}
         <hr />
         <Field
           name={`${courseId}.run_type`}
           component={RenderSelectField}
           options={runTypeOptions || [{ label: 'Select Course enrollment track first', value: '' }]}
           extraInput={{ onInvalid: this.openCollapsible }}
-          label={
+          label={(
             <FieldLabel
               id={`${courseId}.run_type.label`}
               text="Course run enrollment track"
               helpText={runTypeHelp}
               extraText="Cannot edit after submission"
             />
-          }
+          )}
           // If any of the seats have a SKU, then ecom products exist and
           // changing shouldn't be allowed
           disabled={disabled || seatHasSku}
@@ -396,20 +404,20 @@ class CollapsibleCourseRun extends React.Component {
           type="text"
           component={RenderSelectField}
           options={pacingTypeOptions}
-          label={
+          label={(
             <FieldLabel
               id={`${courseId}.pacing_type.label`}
               text="Course pacing"
               helpText={coursePacingEditHelp}
             />
-          }
+          )}
           disabled
         />
         <FieldLabel
           id={`${courseId}.staff.label`}
           text="Staff"
           className="mb-2"
-          helpText={
+          helpText={(
             <div>
               <p>The primary instructor or instructors for the course.</p>
               <p>
@@ -417,7 +425,7 @@ class CollapsibleCourseRun extends React.Component {
                 displayed on course pages. You can drag and drop to reorder instructors.
               </p>
             </div>
-          }
+          )}
         />
         <Field
           name={`${courseId}.staff`}
@@ -436,20 +444,20 @@ class CollapsibleCourseRun extends React.Component {
               name={`${courseId}.min_effort`}
               type="number"
               component={RenderInputTextField}
-              label={
+              label={(
                 <FieldLabel
                   id={`${courseId}.min_effort.label`}
                   text="Minimum effort"
-                  helpText={
+                  helpText={(
                     <div>
                       <p>
                         The minimum number of hours per week the learner should expect to spend
                         on the course.
                       </p>
                     </div>
-                  }
+                  )}
                 />
-              }
+              )}
               extraInput={{
                 onInvalid: this.openCollapsible,
                 min: 0,
@@ -464,20 +472,20 @@ class CollapsibleCourseRun extends React.Component {
               name={`${courseId}.max_effort`}
               type="number"
               component={RenderInputTextField}
-              label={
+              label={(
                 <FieldLabel
                   id={`${courseId}.max_effort.label`}
                   text="Maximum effort"
-                  helpText={
+                  helpText={(
                     <div>
                       <p>
                         The maximum number of hours per week the learner should expect to spend
                         on the course.
                       </p>
                     </div>
-                  }
+                  )}
                 />
-              }
+              )}
               extraInput={{
                 onInvalid: this.openCollapsible,
                 min: 1,
@@ -492,20 +500,20 @@ class CollapsibleCourseRun extends React.Component {
           name={`${courseId}.weeks_to_complete`}
           type="number"
           component={RenderInputTextField}
-          label={
+          label={(
             <FieldLabel
               id={`${courseId}.weeks_to_complete.label`}
               text="Length"
-              helpText={
+              helpText={(
                 <div>
                   <p>
                     The estimated number of weeks the learner should expect to spend on the course,
                     rounded to the nearest whole number.
                   </p>
                 </div>
-              }
+              )}
             />
-          }
+          )}
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={disabled}
           required={courseRunSubmitting}
@@ -533,21 +541,21 @@ class CollapsibleCourseRun extends React.Component {
           type="text"
           component={RenderSelectField}
           options={programOptions}
-          label={
+          label={(
             <FieldLabel
               id={`${courseId}.expected_program_type.label`}
               text="Expected Program Type"
-              helpText={
+              helpText={(
                 <div>
                   <p>
                     If this Course Run will potentially be part of a Program, please set the
                     expected program type here.
                   </p>
                 </div>
-              }
+              )}
               optional
             />
-          }
+          )}
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={disabled}
         />
@@ -555,69 +563,72 @@ class CollapsibleCourseRun extends React.Component {
           name={`${courseId}.expected_program_name`}
           component={RenderInputTextField}
           type="text"
-          label={
+          label={(
             <FieldLabel
               id={`${courseId}.expected_program_name.label`}
               text="Expected Program Name"
-              helpText={
+              helpText={(
                 <div>
                   <p>
                     If this Course Run will potentially be part of a Program, please set the
                     expected program name here.
                   </p>
                 </div>
-              }
+              )}
               optional
             />
-          }
+          )}
           extraInput={{ onInvalid: this.openCollapsible }}
           disabled={disabled}
         />
-        {hasExternalKey &&
+        {hasExternalKey
+          && (
           <Field
             name={`${courseId}.external_key`}
             component={RenderInputTextField}
             type="text"
-            label={
+            label={(
               <FieldLabel
                 id={`${courseId}.external_key.label`}
                 text="Institution Course ID"
-                helpText={
+                helpText={(
                   <div>
                     <p>
                       Only fill in this field if you are planning to integrate with your
                       Institution’s systems through edX registrar service.
                     </p>
                   </div>
-                }
+                )}
                 optional
               />
-            }
+            )}
             extraInput={{ onInvalid: this.openCollapsible }}
             disabled={disabled}
           />
-        }
-        {(!administrator || !IN_REVIEW_STATUS.includes(courseRun.status)) &&
+          )}
+        {(!administrator || !IN_REVIEW_STATUS.includes(courseRun.status))
+          && (
           <div>
             <FieldLabel
               id="ofac-notice-label"
               text="Course Embargo (OFAC) Restriction text added to the FAQ section"
               className="mb-2"
-              helpText={
+              helpText={(
                 <div>
                   <p>
                     Course embargo status for OFAC is managed internally, please contact
                     support with questions.
                   </p>
                 </div>
-              }
+              )}
             />
             <div className="mb-3">
               {this.displayOfacRestriction(courseRun.has_ofac_restrictions)}
             </div>
           </div>
-        }
-        {administrator && IN_REVIEW_STATUS.includes(courseRun.status) &&
+          )}
+        {administrator && IN_REVIEW_STATUS.includes(courseRun.status)
+          && (
           <div>
             Status: {courseRun.status === REVIEW_BY_LEGAL ? 'Legal Review' : 'PC Review'}
             <div>
@@ -627,12 +638,12 @@ class CollapsibleCourseRun extends React.Component {
                 type="text"
                 component={RenderSelectField}
                 options={ofacRestrictionOptions}
-                label={
+                label={(
                   <FieldLabel
                     id={`${courseId}.has_ofac_restrictions.label`}
                     text="OFAC status"
                   />
-                }
+                )}
                 extraInput={{ onInvalid: this.openCollapsible }}
                 required={jsonDeepEqual(courseSubmitInfo.targetRun, courseRun)}
               />
@@ -640,25 +651,26 @@ class CollapsibleCourseRun extends React.Component {
                 name={`${courseId}.ofac_comment`}
                 disabled={courseRun.status === REVIEW_BY_INTERNAL}
                 component={RichEditor}
-                label={
+                label={(
                   <FieldLabel
                     id={`${courseId}.ofac_comment.label`}
                     text="Countries or additional notes"
                   />
-                }
+                )}
                 extraInput={{ onInvalid: this.openCollapsible }}
                 maxChars={500}
               />
             </div>
           </div>
-        }
-        {editable &&
+          )}
+        {editable
+          && (
           <ButtonToolbar>
             <ActionButton
               // only disable if *this run* is in review
-              disabled={courseSubmitting || (courseRunInReview && !administrator) ||
-              (courseRun.status === REVIEWED && isPristine(initialValues, currentFormValues) &&
-                isPristine(initialValues, currentFormValues, courseRun.key))}
+              disabled={courseSubmitting || (courseRunInReview && !administrator)
+              || (courseRun.status === REVIEWED && isPristine(initialValues, currentFormValues)
+                && isPristine(initialValues, currentFormValues, courseRun.key))}
               // Pass the submitting course run up to validate different fields based on status
               onClick={() => store.dispatch(courseSubmitRun(courseRun))}
               labels={{
@@ -667,13 +679,13 @@ class CollapsibleCourseRun extends React.Component {
               }}
               state={
                 (
-                  courseSubmitting ||
-                  (courseSubmitInfo && courseSubmitInfo.isSubmittingRunReview)
+                  courseSubmitting
+                  || (courseSubmitInfo && courseSubmitInfo.isSubmittingRunReview)
                 ) ? 'pending' : 'default'
               }
             />
           </ButtonToolbar>
-        }
+          )}
       </Collapsible>
     );
   }
@@ -682,10 +694,20 @@ class CollapsibleCourseRun extends React.Component {
 CollapsibleCourseRun.propTypes = {
   courseId: PropTypes.string.isRequired,
   courseInReview: PropTypes.bool,
-  courseRun: PropTypes.shape({}).isRequired,
+  courseRun: PropTypes.shape({
+    go_live_date: PropTypes.string,
+    has_ofac_restrictions: PropTypes.bool,
+    key: PropTypes.string,
+    run_type: PropTypes.string,
+    seats: PropTypes.arrayOf(PropTypes.shape({
+      sku: PropTypes.string,
+    })),
+    status: PropTypes.string,
+  }).isRequired,
   courseSubmitting: PropTypes.bool,
   courseSubmitInfo: PropTypes.shape({
     isSubmittingRunReview: PropTypes.bool,
+    targetRun: PropTypes.shape(),
   }),
   courseUuid: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
@@ -706,16 +728,24 @@ CollapsibleCourseRun.propTypes = {
     label: PropTypes.string,
     value: PropTypes.string,
   })).isRequired,
-  sourceInfo: PropTypes.shape({}),
-  stafferInfo: PropTypes.shape({}),
-  targetRun: PropTypes.shape({}),
+  sourceInfo: PropTypes.shape({
+    referringRun: PropTypes.string,
+  }),
+  stafferInfo: PropTypes.shape({
+    returnToEditCourse: PropTypes.bool,
+  }),
+  targetRun: PropTypes.shape({
+    key: PropTypes.string,
+  }),
   isOpen: PropTypes.bool,
   onToggle: PropTypes.func.isRequired,
   ofacRestrictionOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.bool,
   })).isRequired,
-  authentication: PropTypes.shape({}),
+  authentication: PropTypes.shape({
+    administrator: PropTypes.bool,
+  }),
   currentFormValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
     type: PropTypes.string,

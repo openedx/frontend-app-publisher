@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { BaseCreateCourseRunForm } from './CreateCourseRunForm';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
@@ -20,7 +21,7 @@ describe('CreateCourseRunForm', () => {
       isCreating={false}
       courseRunOptions={courseRunOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
   it('renders html correctly with Course Type', () => {
     const courseTypeUuid = '8a8f30e1-23ce-4ed3-a361-1325c656b67b';
@@ -40,7 +41,7 @@ describe('CreateCourseRunForm', () => {
       courseRunOptions={courseRunOptions}
       courseTypeUuid={courseTypeUuid}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
   it('renders html correctly when creating', () => {
     const component = shallow(<BaseCreateCourseRunForm
@@ -54,6 +55,6 @@ describe('CreateCourseRunForm', () => {
       isCreating
       courseRunOptions={courseRunOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import CreateCourseRunPage from './index';
@@ -18,7 +19,7 @@ describe('CreateCourseRunPage', () => {
       }}
       courseOptions={courseOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
   it('renders html correctly with Course Type', () => {
     const component = shallow(<CreateCourseRunPage
@@ -33,7 +34,7 @@ describe('CreateCourseRunPage', () => {
       }}
       courseOptions={courseOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
   it('renders html correctly when fetching', () => {
     const component = shallow(<CreateCourseRunPage
@@ -45,7 +46,7 @@ describe('CreateCourseRunPage', () => {
         error: null,
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
   it('renders html correctly when creating', () => {
     const component = shallow(<CreateCourseRunPage
@@ -57,7 +58,7 @@ describe('CreateCourseRunPage', () => {
         error: null,
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
   it('renders html correctly when error', () => {
     const component = shallow(<CreateCourseRunPage
@@ -69,7 +70,7 @@ describe('CreateCourseRunPage', () => {
         error: ['failed'],
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('refuses access to form when course is under review', () => {

@@ -59,8 +59,8 @@ class ImageUpload extends React.Component {
       },
     } = this.props;
 
-    if (!pristine && (event.target.naturalWidth !== requiredWidth ||
-        event.target.naturalHeight !== requiredHeight)) {
+    if (!pristine && (event.target.naturalWidth !== requiredWidth
+        || event.target.naturalHeight !== requiredHeight)) {
       this.updateValue('');
       this.setState({
         sizeValidationError: `That image has the wrong dimensions. Please upload
@@ -92,18 +92,20 @@ class ImageUpload extends React.Component {
       <div className={classNames('form-group', className)}>
         <div name={name} tabIndex={-1}>
           <label htmlFor={id} className="w-100 p-0">{label}</label>  {/* eslint-disable-line jsx-a11y/label-has-for */}
-          {sizeValidationError &&
+          {sizeValidationError
+            && (
             <StatusAlert
               alertType="warning"
               message={sizeValidationError}
             />
-          }
-          {submitFailed && error &&
+            )}
+          {submitFailed && error
+            && (
             <StatusAlert
               alertType="danger"
               message={error}
             />
-          }
+            )}
           <img src={this.state.value} alt="" className="uploaded-image" onLoad={this.sizeValidator} />
           <input
             id={id}

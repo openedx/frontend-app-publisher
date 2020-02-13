@@ -61,12 +61,13 @@ class RichEditor extends React.Component {
     return (
       <div className="form-group">
         <div id={id} name={name} tabIndex="-1" className="mb-2">{label}</div>
-        {submitFailed && error &&
+        {submitFailed && error
+          && (
           <StatusAlert
             alertType="danger"
             message={error}
           />
-        }
+          )}
         {/*
           We are using aria-labelledby here instead of a <label> tag because the TinyMCE Editor
           adds an iframe instead of a standard tag that would be used with <label>. This was

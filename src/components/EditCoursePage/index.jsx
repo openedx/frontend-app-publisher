@@ -12,8 +12,10 @@ import {
   isNonExemptChanged, jsonDeepEqual,
 } from '../../utils';
 import { courseRunSubmitting } from '../../data/actions/courseSubmitInfo';
-import { IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
-  UNPUBLISHED } from '../../data/constants';
+import {
+  IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
+  UNPUBLISHED,
+} from '../../data/constants';
 import store from '../../data/store';
 import ConfirmationModal from '../ConfirmationModal';
 import SidePanes from '../SidePanes';
@@ -107,8 +109,8 @@ class EditCoursePage extends React.Component {
       // changed and the run is NOT "archived" (we care about the type and
       // price because those are passed down to the course runs' seats)
       const runHasChanges = !jsonDeepEqual(initialCourseRunValues[i], run);
-      return runHasChanges ||
-        ((courseTypeChanged || coursePriceChanged) && !courseRunIsArchived(run));
+      return runHasChanges
+        || ((courseTypeChanged || coursePriceChanged) && !courseRunIsArchived(run));
     });
 
     modifiedCourseRuns.forEach((courseRun) => {
@@ -121,10 +123,10 @@ class EditCoursePage extends React.Component {
       sendCourseRuns.push({
         content_language: courseRun.content_language,
         draft,
-        expected_program_type: courseRun.expected_program_type ?
-          courseRun.expected_program_type : null,
-        expected_program_name: courseRun.expected_program_name ?
-          courseRun.expected_program_name : '',
+        expected_program_type: courseRun.expected_program_type
+          ? courseRun.expected_program_type : null,
+        expected_program_name: courseRun.expected_program_name
+          ? courseRun.expected_program_name : '',
         external_key: courseRun.external_key ? courseRun.external_key : '',
         go_live_date: isValidDate(courseRun.go_live_date) ? courseRun.go_live_date : null,
         key: courseRun.key,
@@ -179,8 +181,8 @@ class EditCoursePage extends React.Component {
 
     let updatingPublishedRun = false;
     if (targetRun) {
-      const submittedRun = courseRuns.status ? courseRuns :
-        courseRuns.find(run => run.key === targetRun.key);
+      const submittedRun = courseRuns.status ? courseRuns
+        : courseRuns.find(run => run.key === targetRun.key);
       // If we are updating a published course run, we need to also publish the course.
       // We want to use the same indicator of draft = false for consistency.
       if (submittedRun && submittedRun.status === PUBLISHED) {
@@ -272,8 +274,8 @@ class EditCoursePage extends React.Component {
     } = this.props;
     const isInternalReview = targetRun && IN_REVIEW_STATUS.includes(targetRun.status);
     // Process course run info from courseData
-    const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData) :
-      this.prepareSendCourseRunData(courseData);
+    const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData)
+      : this.prepareSendCourseRunData(courseData);
     // Process courseData to reduced data set
     const courseEditData = this.prepareSendCourseData(courseData, modifiedCourseRuns);
     return editCourse(
@@ -300,8 +302,8 @@ class EditCoursePage extends React.Component {
         if (status === PUBLISHED || (status === REVIEWED && runFromAPI.status === REVIEWED)) {
           return 'Course Run Updated.';
         }
-        return 'Course has been submitted for review. The course will be locked for the next two business days. ' +
-          'You will receive an email when the review is complete.';
+        return 'Course has been submitted for review. The course will be locked for the next two business days. '
+          + 'You will receive an email when the review is complete.';
     }
   }
 
@@ -405,8 +407,8 @@ class EditCoursePage extends React.Component {
     } = this.props;
     const currentValues = formValues(this.getFormId());
     const initialValues = this.buildInitialValues();
-    if (isNonExemptChanged(initialValues, currentValues, key) ||
-      isNonExemptChanged(initialValues, currentValues)) {
+    if (isNonExemptChanged(initialValues, currentValues, key)
+      || isNonExemptChanged(initialValues, currentValues)) {
       this.setState({
         submitCourseData,
         submitConfirmVisible: true, // show modal
@@ -424,8 +426,8 @@ class EditCoursePage extends React.Component {
     } = this.props;
     if (targetRun && targetRun.status === REVIEWED) {
       this.handleModalForReviewedRun(submitCourseData);
-    } else if (targetRun && !(targetRun.status === PUBLISHED) &&
-      !IN_REVIEW_STATUS.includes(targetRun.status)) {
+    } else if (targetRun && !(targetRun.status === PUBLISHED)
+      && !IN_REVIEW_STATUS.includes(targetRun.status)) {
       // Submitting Run for review, show modal, and temporarily store form data until
       // we have a response for how to continue.
       store.dispatch(courseRunSubmitting());
@@ -482,8 +484,7 @@ class EditCoursePage extends React.Component {
     } = this.state;
     const currentFormValues = formValues(this.getFormId());
     const courseStatuses = [];
-    const courseInReview = course_runs && course_runs.some(courseRun =>
-      IN_REVIEW_STATUS.includes(courseRun.status));
+    const courseInReview = course_runs && course_runs.some(courseRun => IN_REVIEW_STATUS.includes(courseRun.status));
 
     if (courseInReview) {
       courseStatuses.push(IN_REVIEW_STATUS[0]);
@@ -491,13 +492,13 @@ class EditCoursePage extends React.Component {
     if (course_runs && course_runs.some(courseRun => PUBLISHED === courseRun.status)) {
       courseStatuses.push(PUBLISHED);
     }
-    if (course_runs && !courseStatuses.includes(PUBLISHED) &&
-      course_runs.some(courseRun => REVIEWED === courseRun.status)) {
+    if (course_runs && !courseStatuses.includes(PUBLISHED)
+      && course_runs.some(courseRun => REVIEWED === courseRun.status)) {
       courseStatuses.push(REVIEWED);
     }
-    if (course_runs && !courseStatuses.includes(PUBLISHED) &&
-      !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !courseStatuses.includes(REVIEWED) &&
-      course_runs.some(courseRun => UNPUBLISHED === courseRun.status)) {
+    if (course_runs && !courseStatuses.includes(PUBLISHED)
+      && !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !courseStatuses.includes(REVIEWED)
+      && course_runs.some(courseRun => UNPUBLISHED === courseRun.status)) {
       courseStatuses.push(UNPUBLISHED);
     }
 
@@ -530,12 +531,12 @@ class EditCoursePage extends React.Component {
         }
       });
     }
-    const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching ||
-      courseRunOptions.isFetching;
+    const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching
+      || courseRunOptions.isFetching;
     const showForm = !showSpinner;
 
     return (
-      <React.Fragment>
+      <>
         <ConfirmationModal
           title="Submit for Review?"
           body="You will not be able to make edits while the course is in review, which can take up to 2 business days. Confirm your edits are complete."
@@ -545,23 +546,28 @@ class EditCoursePage extends React.Component {
           onClose={this.cancelSubmit}
         />
         <div className="container my-3">
-          { showReviewStatusAlert && <StatusAlert
+          { showReviewStatusAlert && (
+          <StatusAlert
             onClose={this.dismissReviewStatusAlert}
             dismissible
             alertType="success"
             message={targetRun && this.displayReviewStatusAlert(targetRun.status)}
-          /> }
+          />
+          ) }
 
-          { showCreateStatusAlert && <StatusAlert
+          { showCreateStatusAlert && (
+          <StatusAlert
             onClose={this.dismissCreateStatusAlert}
             dismissible
             alertType="success"
             message="Course run has been created in studio. See link below."
-          /> }
+          />
+          ) }
         </div>
         { showSpinner && <LoadingSpinner /> }
         <PageContainer
-          sidePanes={showForm && <SidePanes
+          sidePanes={showForm && (
+          <SidePanes
             courseUuid={uuid}
             hidden={!showForm}
             addCourseEditor={editable && this.props.addCourseEditor}
@@ -579,14 +585,17 @@ class EditCoursePage extends React.Component {
             addComment={this.props.addComment}
             comments={this.props.comments}
             fetchComments={this.props.fetchComments}
-          />}
+          />
+          )}
         >
-          { showForm && !editable && <StatusAlert
+          { showForm && !editable && (
+          <StatusAlert
             alertType="secondary"
             message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
-          /> }
+          />
+          ) }
           { showForm && (
-            <React.Fragment>
+            <>
               <Helmet>
                 <title>{`Course - ${title}`}</title>
               </Helmet>
@@ -610,7 +619,7 @@ class EditCoursePage extends React.Component {
                 type={type}
                 {...this.props}
               />
-            </React.Fragment>
+            </>
           )}
           { errorArray.length > 0 && (
             <StatusAlert
@@ -620,7 +629,7 @@ class EditCoursePage extends React.Component {
             />
           )}
         </PageContainer>
-      </React.Fragment>
+      </>
     );
   }
 }
@@ -678,6 +687,7 @@ EditCoursePage.propTypes = {
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
+    showCreateStatusAlert: PropTypes.bool,
   }),
   courseOptions: PropTypes.shape({
     data: PropTypes.shape(),
@@ -701,6 +711,7 @@ EditCoursePage.propTypes = {
   clearCourseReviewAlert: PropTypes.func,
   clearCreateStatusAlert: PropTypes.func,
   courseSubmitInfo: PropTypes.shape({
+    showReviewStatusAlert: PropTypes.bool,
     targetRun: PropTypes.shape({
       key: PropTypes.string,
       uuid: PropTypes.string,

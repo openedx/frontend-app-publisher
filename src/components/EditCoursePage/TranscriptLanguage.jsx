@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'redux-form';
+import { Field, FieldArray } from 'redux-form';
 
 import RenderSelectField from '../RenderSelectField';
 import RemoveButton from '../RemoveButton';
@@ -31,12 +31,13 @@ class TranscriptLanguage extends React.Component {
     return (
       // Set tabindex to -1 to allow programmatic shifting of focus for validation
       <div className="transcript-languages mb-3" name={fields.name} tabIndex="-1">
-        {submitFailed && error &&
+        {submitFailed && error
+          && (
           <StatusAlert
             alertType="danger"
             message={error}
           />
-        }
+          )}
         <ul className="list-group p-0 m-0 container-fluid">
           {fields.map((language, index) => (
             <li className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0" key={language}>
@@ -76,10 +77,7 @@ class TranscriptLanguage extends React.Component {
 }
 
 TranscriptLanguage.propTypes = {
-  fields: PropTypes.shape({
-    remove: PropTypes.func,
-    name: PropTypes.string,
-  }).isRequired,
+  fields: PropTypes.instanceOf(FieldArray).isRequired,
   languageOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string,

@@ -8,11 +8,15 @@ import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import ActionButton from '../ActionButton';
 
-import { endDateHelp, runTypeHelp, startDateHelp, pacingHelp, keyHelp } from '../../helpText';
+import {
+  endDateHelp, runTypeHelp, startDateHelp, pacingHelp, keyHelp,
+} from '../../helpText';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import DateTimeField from '../DateTimeField';
-import { getDateWithDashes, getOptionsData, isSafari, localTimeZone, parseOptions } from '../../utils';
+import {
+  getDateWithDashes, getOptionsData, isSafari, localTimeZone, parseOptions,
+} from '../../utils';
 import { DATE_INPUT_PATTERN } from '../../data/constants';
 
 const BaseCreateCourseRunForm = ({
@@ -46,102 +50,106 @@ const BaseCreateCourseRunForm = ({
           type="text"
           component={RenderSelectField}
           options={courseRunLabels}
-          label={
+          label={(
             <FieldLabel
               id="rerun.label"
               text="Select a run to copy"
-              helpText={
+              helpText={(
                 <div>
                   <p>
                     Select a run to copy as the starting point for your new studio instance.
                     The newest run is listed first.
                   </p>
                 </div>
-              }
+              )}
             />
-          }
+          )}
         />
-        {canSetRunKey &&
+        {canSetRunKey
+        && (
         <Field
           name="courseRunKey"
           component={RenderInputTextField}
           type="text"
           pattern="[a-zA-Z0-9-]+"
-          label={
+          label={(
             <FieldLabel
               id="courseRunKey-label"
               text="Run Key"
               helpText={keyHelp}
               optional
             />
-          }
+          )}
         />
-        }
+        )}
         {/* TODO this should be refactored when paragon supports safari */}
         {/* text inputs for safari */}
-        {isSafari ?
-          <div>
-            <Field
-              name="start"
-              type="text"
-              component={DateTimeField}
-              dateLabel="Start date"
-              timeLabel={`Start time (${localTimeZone})`}
-              helpText={startDateHelp}
-              required
-              maxLength="10"
-              pattern={DATE_INPUT_PATTERN}
-              placeholder="yyyy/mm/dd"
-            />
-            <Field
-              name="end"
-              type="text"
-              component={DateTimeField}
-              dateLabel="End date"
-              timeLabel={`End time (${localTimeZone})`}
-              helpText={endDateHelp}
-              required
-              maxLength="10"
-              pattern={DATE_INPUT_PATTERN}
-              placeholder="yyyy/mm/dd"
-            />
-          </div> :
+        {isSafari
+          ? (
+            <div>
+              <Field
+                name="start"
+                type="text"
+                component={DateTimeField}
+                dateLabel="Start date"
+                timeLabel={`Start time (${localTimeZone})`}
+                helpText={startDateHelp}
+                required
+                maxLength="10"
+                pattern={DATE_INPUT_PATTERN}
+                placeholder="yyyy/mm/dd"
+              />
+              <Field
+                name="end"
+                type="text"
+                component={DateTimeField}
+                dateLabel="End date"
+                timeLabel={`End time (${localTimeZone})`}
+                helpText={endDateHelp}
+                required
+                maxLength="10"
+                pattern={DATE_INPUT_PATTERN}
+                placeholder="yyyy/mm/dd"
+              />
+            </div>
+          )
           // date inputs for all browsers besides safari
-          <div>
-            <Field
-              name="start"
-              type="date"
-              component={DateTimeField}
-              dateLabel="Start date"
-              timeLabel={`Start time (${localTimeZone})`}
-              helpText={startDateHelp}
-              required
-              minDate={getDateWithDashes(moment())}
-            />
-            <Field
-              name="end"
-              type="date"
-              component={DateTimeField}
-              dateLabel="End date"
-              timeLabel={`End time (${localTimeZone})`}
-              helpText={endDateHelp}
-              required
-              minDate={getDateWithDashes(moment(currentFormValues.start).add(1, 'd') || moment())}
-            />
-          </div>
-        }
+          : (
+            <div>
+              <Field
+                name="start"
+                type="date"
+                component={DateTimeField}
+                dateLabel="Start date"
+                timeLabel={`Start time (${localTimeZone})`}
+                helpText={startDateHelp}
+                required
+                minDate={getDateWithDashes(moment())}
+              />
+              <Field
+                name="end"
+                type="date"
+                component={DateTimeField}
+                dateLabel="End date"
+                timeLabel={`End time (${localTimeZone})`}
+                helpText={endDateHelp}
+                required
+                minDate={getDateWithDashes(moment(currentFormValues.start).add(1, 'd') || moment())}
+              />
+            </div>
+          )}
         <Field
           name="run_type"
           component={RenderSelectField}
           options={courseRunTypeOptions}
-          label={
+          label={(
             <FieldLabel
               id="run_type.label"
               text="Course run enrollment track"
               required
               helpText={runTypeHelp}
             />
-          }
+          )}
           required
         />
         <Field
@@ -149,17 +157,18 @@ const BaseCreateCourseRunForm = ({
           type="text"
           component={RenderSelectField}
           options={pacingTypeOptions}
-          label={
+          label={(
             <FieldLabel
               id="pacing_type.label"
               text="Course pacing"
               helpText={pacingHelp}
             />
-          }
+          )}
         />
         <ButtonToolbar>
           <Link to={`/courses/${uuid}`}>
             <button
+              type="button"
               className="btn btn-outline-primary"
               disabled={isCreating}
             >
@@ -193,7 +202,9 @@ BaseCreateCourseRunForm.propTypes = {
   uuid: PropTypes.string.isRequired,
   pristine: PropTypes.bool.isRequired,
   isCreating: PropTypes.bool.isRequired,
-  currentFormValues: PropTypes.shape({}),
+  currentFormValues: PropTypes.shape({
+    start: PropTypes.string,
+  }),
   courseRunLabels: PropTypes.arrayOf(PropTypes.shape({})),
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),

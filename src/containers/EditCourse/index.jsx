@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import { getFormValues } from 'redux-form';
 
 import EditCoursePage from '../../components/EditCoursePage';
-import { updateFormValuesAfterSave, editCourse, fetchCourseInfo, clearCreateStatusAlert } from '../../data/actions/courseInfo';
+import {
+  updateFormValuesAfterSave, editCourse, fetchCourseInfo, clearCreateStatusAlert,
+} from '../../data/actions/courseInfo';
 import { clearSubmitStatus, clearCourseReviewAlert } from '../../data/actions/courseSubmitInfo';
 import { addCourseEditor, fetchCourseEditors, removeCourseEditor } from '../../data/actions/courseEditors';
 import { fetchCourseOptions } from '../../data/actions/courseOptions';

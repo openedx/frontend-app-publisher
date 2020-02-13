@@ -69,7 +69,7 @@ describe('CommentsPane', () => {
     />);
     const comments = wrapper.find(Comment);
     expect(comments).toHaveLength(0);
-    expect(wrapper.contains(<div className="text-muted" >No comments</div>)).toEqual(true);
+    expect(wrapper.contains(<div className="text-muted">No comments</div>)).toEqual(true);
   });
 
   it('allows adding a comment', () => {

@@ -43,10 +43,10 @@ class CommentsPane extends React.Component {
     this.setState({ showEmptyCommentAlert: false });
   }
 
-  scrollToBottom = () => {
+  scrollToBottom() {
     const element = document.getElementById('endOfCommentThread');
     element.scrollIntoView({ behavior: 'auto', block: 'end' });
-  };
+  }
 
   handleUpdateCommentBody(value) {
     this.setState({ newCommentBody: value });
@@ -71,14 +71,15 @@ class CommentsPane extends React.Component {
 
   parseComments(comments) {
     return (
-      comments.map(comment =>
-        (<Comment
-          user={(comment.user.first_name && comment.user.last_name) ?
-            `${comment.user.first_name} ${comment.user.last_name}` : comment.user.username}
+      comments.map(comment => (
+        <Comment
+          user={(comment.user.first_name && comment.user.last_name)
+            ? `${comment.user.first_name} ${comment.user.last_name}` : comment.user.username}
           timestamp={formatDate(comment.created)}
           commentBody={comment.comment}
           courseRunKey={comment.course_run_key}
-        />)));
+        />
+      )));
   }
 
   render() {
@@ -98,20 +99,24 @@ class CommentsPane extends React.Component {
     return (
       <Pane className="mt-1" title="Comments">
         {showSpinner && <Icon className="fa fa-circle-o-notch fa-spin fa-fw" />}
-        {!showSpinner &&
+        {!showSpinner
+        && (
         <div className="scroll-comments mb-1 overflow-auto border-top border-bottom border-light">
-          {!hasComments && !showSpinner && <div className="text-muted" >No comments</div>}
+          {!hasComments && !showSpinner && <div className="text-muted">No comments</div>}
           {showComments && commentThread}
-          {!!comments.error && <StatusAlert
+          {!!comments.error && (
+          <StatusAlert
             alertType="danger"
             message={comments.error}
             dismissible
-          />}
+          />
+          )}
           <div
             id="endOfCommentThread"
             style={{ float: 'left', clear: 'both' }}
           />
-        </div>}
+        </div>
+        )}
         <div className="leave-comment m-0">
           <div className="row">
             <div className="col align-center">
@@ -126,6 +131,7 @@ class CommentsPane extends React.Component {
           <div className="row">
             <div className="col align-left">
               <button
+                type="button"
                 className="btn btn-primary btn-sm mt-0 float-right"
                 onClick={this.handleAddComment}
                 disabled={this.state.disabled}
@@ -134,7 +140,8 @@ class CommentsPane extends React.Component {
               </button>
             </div>
           </div>
-          {showEmptyCommentAlert &&
+          {showEmptyCommentAlert
+          && (
           <div className="mt-3">
             <StatusAlert
               alertType="danger"
@@ -142,7 +149,8 @@ class CommentsPane extends React.Component {
               dismissible
               message="Comment cannot be blank."
             />
-          </div>}
+          </div>
+          )}
         </div>
       </Pane>
     );

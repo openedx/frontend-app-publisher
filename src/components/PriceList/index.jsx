@@ -12,7 +12,7 @@ const PriceList = ({
   priceLabels,
   required,
 }) => (
-  <React.Fragment>
+  <>
     {Object.keys(priceLabels).map(seatType => (
       <Field
         key={seatType}
@@ -25,15 +25,17 @@ const PriceList = ({
           ...extraInput,
         }}
         type="number"
-        label={<FieldLabel
-          text={`${priceLabels[seatType]} Price (USD)`}
-          required
-        />}
+        label={(
+          <FieldLabel
+            text={`${priceLabels[seatType]} Price (USD)`}
+            required
+          />
+)}
         disabled={disabled}
         required={required}
       />
     ))}
-  </React.Fragment>
+  </>
 );
 
 PriceList.propTypes = {

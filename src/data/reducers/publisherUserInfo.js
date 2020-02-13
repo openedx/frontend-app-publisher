@@ -14,23 +14,26 @@ const initialState = {
 function publisherUserInfo(state = initialState, action) {
   switch (action.type) {
     case REQUEST_USER_ORGANIZATIONS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         organizations: [],
         isFetching: true,
         error: null,
-      });
+      };
     case REQUEST_USER_ORGANIZATIONS_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         organizations: action.data,
         isFetching: false,
         error: null,
-      });
+      };
     case REQUEST_USER_ORGANIZATIONS_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         organizations: [],
         isFetching: false,
         error: action.error,
-      });
+      };
     default:
       return state;
   }

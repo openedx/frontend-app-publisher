@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { Staffer } from './index';
 
@@ -18,7 +19,7 @@ const defaultProps = {
 describe('Staffer', () => {
   it('renders the staffer', () => {
     const component = shallow(<Staffer {...defaultProps} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('calls onRemove when the delete button is clicked', () => {

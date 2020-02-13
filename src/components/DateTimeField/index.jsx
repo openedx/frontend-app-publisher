@@ -20,7 +20,7 @@ class DateTimeField extends React.Component {
   }
 
   getValue(type, date) {
-    if (type === 'date') return getDateWithDashes(date);
+    if (type === 'date') { return getDateWithDashes(date); }
     return (date.match(FORMAT_DATE_MATCHER)) ? getDateWithSlashes(date) : date;
   }
 
@@ -75,14 +75,14 @@ class DateTimeField extends React.Component {
             name={`${name}Date`}
             type={type}
             value={this.getValue(type, date)}
-            label={
+            label={(
               <FieldLabel
                 id={`${name}-date-label`}
                 text={dateLabel}
                 required
                 helpText={helpText}
               />
-            }
+            )}
             placeholder={placeholder}
             pattern={pattern}
             maxLength={maxLength}
@@ -98,13 +98,13 @@ class DateTimeField extends React.Component {
             name={`${name}Time`}
             type="time"
             value={time || '12:00'}
-            label={
+            label={(
               <FieldLabel
                 id={`${name}-time-label`}
                 text={timeLabel}
                 required
               />
-            }
+            )}
             placeholder="HH:mm"
             required={required}
             disabled={disabled}

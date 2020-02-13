@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import MockAdapter from 'axios-mock-adapter';
 
 import apiClient from '../../data/apiClient';
@@ -66,18 +67,16 @@ const newStaffer = {
   family_name: 'McPerson',
 };
 
-const referredProps = Object.assign(
-  {},
-  defaultProps,
-  {
-    stafferInfo: {
-      data: newStaffer,
-    },
-    sourceInfo: {
-      referringRun: 'DemoX+TestCourse',
-    },
+const referredProps = {
+
+  ...defaultProps,
+  stafferInfo: {
+    data: newStaffer,
   },
-);
+  sourceInfo: {
+    referringRun: 'DemoX+TestCourse',
+  },
+};
 
 jest.mock('../Staffer', () => ({
   Staffer: () => <div className="mock-staffer" />,
@@ -95,27 +94,25 @@ describe('StaffList', () => {
 
   it('renders a list of staff members and an autocomplete input', () => {
     const component = shallow(<StaffList {...defaultProps} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly with referred props', () => {
     const component = shallow(<StaffList {...referredProps} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly with an error after failed submission', () => {
-    const metaFailedProps = Object.assign(
-      {},
-      defaultProps,
-      {
-        meta: {
-          submitFailed: true,
-          error: 'This field is required',
-        },
+    const metaFailedProps = {
+
+      ...defaultProps,
+      meta: {
+        submitFailed: true,
+        error: 'This field is required',
       },
-    );
+    };
     const component = shallow(<StaffList {...metaFailedProps} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('gets/clears suggestions for autocomplete', (done) => {

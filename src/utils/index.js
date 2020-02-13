@@ -14,9 +14,9 @@ const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
 const formatDate = date => (date ? moment(date).format('MMM DD, YYYY') : '');
 const courseRunIsArchived = run => run.status === 'unpublished' && moment().isAfter(run.end);
 
-const isSafari = /constructor/i.test(window.HTMLElement) ||
-  (p => (p.toString() === '[object SafariRemoteNotification]'))(!window['safari'] || /* eslint dot-notation: 0 */
-    (typeof safari !== 'undefined' && safari.pushNotification)); /* eslint no-undef: 0 */
+const isSafari = /constructor/i.test(window.HTMLElement)
+  || (p => (p.toString() === '[object SafariRemoteNotification]'))(!window['safari'] /* eslint dot-notation: 0 */
+    || (typeof safari !== 'undefined' && safari.pushNotification)); /* eslint no-undef: 0 */
 
 const isValidDate = (dateStr) => {
   const date = moment(dateStr);
@@ -104,7 +104,8 @@ const getErrorMessages = (error) => {
       error.response && (error.response.data || error.response.message)
     ) || error.message || error;
     return [addPeriodToString(message)];
-  } else if (typeof error === 'string') {
+  }
+  if (typeof error === 'string') {
     return [addPeriodToString(error)];
   }
   return ['Unknown error.'];
@@ -175,8 +176,7 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
   });
 };
 
-const parseOptions = inChoices => inChoices.map(choice =>
-  ({ label: choice.display_name, value: choice.value }));
+const parseOptions = inChoices => inChoices.map(choice => ({ label: choice.display_name, value: choice.value }));
 
 const getOptionsData = (options) => {
   if (!options) {
@@ -271,8 +271,8 @@ const buildInitialPrices = (entitlements, courseRuns) => {
 };
 
 
-const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid &&
-  !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
+const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid
+  && !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
 
 export {
   courseRunIsArchived,

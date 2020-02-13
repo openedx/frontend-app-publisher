@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import RichEditor from './index';
 
@@ -16,7 +17,7 @@ describe('RichEditor', () => {
       maxChars={500}
       meta={{ touched: false, error: '' }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows a rich text editor with default text value', () => {
@@ -30,7 +31,7 @@ describe('RichEditor', () => {
       maxChars={2500}
       meta={{ touched: false, error: '' }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows a rich text editor with no maxChars', () => {
@@ -43,7 +44,7 @@ describe('RichEditor', () => {
       }}
       meta={{ touched: false, error: '' }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows a rich text editor and an error', () => {
@@ -57,6 +58,6 @@ describe('RichEditor', () => {
       maxChars={500}
       meta={{ touched: true, error: 'Required' }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

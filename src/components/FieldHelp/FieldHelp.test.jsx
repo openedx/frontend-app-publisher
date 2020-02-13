@@ -27,4 +27,3 @@ describe('FieldHelp', () => {
     expect(data.prop('data-tip')).toMatch(/<p>\s*Hello World\s*<\/p>/);
   });
 });
-

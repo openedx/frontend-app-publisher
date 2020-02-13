@@ -29,20 +29,23 @@ const dot = color => ({
 });
 
 class CourseTable extends React.Component {
-  state = {
-    filterGroups: [
-      {
-        label: 'Course Run Statuses',
-        options: [
-          { value: 'in_review', label: 'In review', color: '#e7e7e7' },
-          { value: PUBLISHED, label: 'Published', color: '#008100' },
-          { value: REVIEWED, label: 'Scheduled', color: '#0075b4' },
-          { value: 'unsubmitted', label: 'Unsubmitted', color: '#E2C018' },
-        ],
-      },
-    ],
-    selectedFilters: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      filterGroups: [
+        {
+          label: 'Course Run Statuses',
+          options: [
+            { value: 'in_review', label: 'In review', color: '#e7e7e7' },
+            { value: PUBLISHED, label: 'Published', color: '#008100' },
+            { value: REVIEWED, label: 'Scheduled', color: '#0075b4' },
+            { value: 'unsubmitted', label: 'Unsubmitted', color: '#E2C018' },
+          ],
+        },
+      ],
+      selectedFilters: [],
+    };
+  }
 
   componentDidMount() {
     this.props.fetchOrganizations();
@@ -82,29 +85,36 @@ class CourseTable extends React.Component {
   getSelectedFiltersFromUrl() {
     const pageOptions = getPageOptionsFromUrl();
 
-    const courseRunStatusesFromQuery = pageOptions.course_run_statuses ?
-      pageOptions.course_run_statuses.split(',') : null;
-    const selectedCourseRunStatuses = courseRunStatusesFromQuery ?
-      this.state.filterGroups.find(group => (
-        group.label === 'Course Run Statuses'
-      )).options.filter(option => courseRunStatusesFromQuery.includes(option.value)) : [];
+    const courseRunStatusesFromQuery = pageOptions.course_run_statuses
+      ? pageOptions.course_run_statuses.split(',') : null;
 
     const editorsFromQuery = pageOptions.editors ? pageOptions.editors.split(',') : null;
     const selectedEditors = editorsFromQuery ? this.state.filterGroups.find(group => (
       group.label === 'Course Editors'
     )).options.filter(option => editorsFromQuery.includes(option.value.toString())) : [];
 
-    this.setState({
-      selectedFilters: selectedCourseRunStatuses.concat(selectedEditors),
-    });
+    if (courseRunStatusesFromQuery) {
+      this.setState({
+        selectedFilters: [selectedEditors],
+      });
+    } else {
+      this.setState(prevState => ({
+        selectedFilters: prevState.filterGroups.find(group => (
+          group.label === 'Course Run Statuses'
+        ))
+          .options
+          .filter(option => courseRunStatusesFromQuery.includes(option.value))
+          .concat(selectedEditors),
+      }));
+    }
   }
 
   updateFilterQueryParamsInUrl(selectedFilters) {
     const courseRunStatusParams = selectedFilters.filter(filter => !Number.isInteger(filter.value));
     const editorParams = selectedFilters.filter(filter => Number.isInteger(filter.value));
     const params = {
-      course_run_statuses: courseRunStatusParams.length ?
-        courseRunStatusParams.map(filter => filter.value).toString() : null,
+      course_run_statuses: courseRunStatusParams.length
+        ? courseRunStatusParams.map(filter => filter.value).toString() : null,
       editors: editorParams.length ? editorParams.map(filter => filter.value).toString() : null,
     };
     updateUrl({ ...params, page: 1 });
@@ -115,12 +125,12 @@ class CourseTable extends React.Component {
     const pageOptions = getPageOptionsFromUrl();
 
     return (
-      <React.Fragment>
+      <>
         <div className="row">
           <div className="col-2 float-left">
             <ButtonToolbar className="mb-3" leftJustify>
               <Link to="/courses/new">
-                <button className="btn btn-primary">New Course</button>
+                <button type="button" className="btn btn-primary">New Course</button>
               </Link>
             </ButtonToolbar>
           </div>
@@ -129,8 +139,8 @@ class CourseTable extends React.Component {
               closeMenuOnSelect={false}
               value={selectedFilters}
               options={filterGroups}
-              onChange={filters => this.updateFilterQueryParamsInUrl(filters === null ?
-                [] : filters)}
+              onChange={filters => this.updateFilterQueryParamsInUrl(filters === null
+                ? [] : filters)}
               isMulti
               maxMenuHeight="30vh"
               placeholder="Filters..."
@@ -162,7 +172,7 @@ class CourseTable extends React.Component {
             />
           </div>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 

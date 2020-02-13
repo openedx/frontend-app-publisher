@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import TableComponent from '../../components/TableComponent';
-import { paginateTable, sortTable, fetchEditorFilterOptions, filterTable, clearTable } from '../../data/actions/table';
+import {
+  paginateTable, sortTable, fetchEditorFilterOptions, filterTable, clearTable,
+} from '../../data/actions/table';
 import { PAGE_SIZE } from '../../data/constants/table';
 
 const mapStateToProps = (state) => {

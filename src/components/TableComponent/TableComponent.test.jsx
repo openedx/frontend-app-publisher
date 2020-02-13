@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import TableComponent from './index';
 
@@ -45,7 +46,7 @@ describe('CourseTable', () => {
       location={{ search: '?page=1&ordering=key' }}
       fetchEditorFilterOptions={() => true}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows an error', () => {
@@ -64,7 +65,7 @@ describe('CourseTable', () => {
       location={{ search: '?page=1&ordering=key' }}
       fetchEditorFilterOptions={() => true}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows loading', () => {
@@ -83,7 +84,7 @@ describe('CourseTable', () => {
       loading
       fetchEditorFilterOptions={() => true}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows an empty table', () => {
@@ -102,7 +103,7 @@ describe('CourseTable', () => {
       data={[]}
       fetchEditorFilterOptions={() => true}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows a populated table', () => {
@@ -121,7 +122,7 @@ describe('CourseTable', () => {
       data={mockFetch()}
       fetchEditorFilterOptions={() => true}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows a populated table after a component update for page', () => {
@@ -145,7 +146,7 @@ describe('CourseTable', () => {
         search: '?page=2&ordering=key',
       },
     });
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('shows a populated table after a component update for ordering', () => {
@@ -169,6 +170,6 @@ describe('CourseTable', () => {
         search: '?page=1&ordering=-key',
       },
     });
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

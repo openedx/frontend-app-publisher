@@ -93,12 +93,17 @@ class StaffList extends React.Component {
     if (result.destination.index === result.source.index) {
       return;
     }
-    const newStaffList = Array.from(this.state.staffList);
-    const [removed] = newStaffList.splice(result.source.index, 1);
-    newStaffList.splice(result.destination.index, 0, removed);
-    this.setState({
-      staffList: newStaffList,
-    }, () => this.props.input.onChange(this.state.staffList));
+
+    const removeFromStaffList = prevState => {
+      const newStaffList = Array.from(prevState.staffList);
+      const [removed] = newStaffList.splice(result.source.index, 1);
+      newStaffList.splice(result.destination.index, 0, removed);
+      return newStaffList;
+    };
+
+    this.setState(prevState => ({
+      staffList: removeFromStaffList(prevState),
+    }), () => this.props.input.onChange(this.state.staffList));
   }
 
   /**
@@ -109,7 +114,6 @@ class StaffList extends React.Component {
    * @param suggestion - the entered suggestion
    */
   onSuggestionEntered(event, { suggestion }) {
-    const { staffList } = this.state;
     // clear search string to allow for another staffer to be added.
     this.setState({ searchString: '' });
     if (suggestion.item_text) {
@@ -120,15 +124,19 @@ class StaffList extends React.Component {
       return;
     }
 
-    const newStaffList = Array.from(this.state.staffList);
-    // if instructor NOT already selected
-    if (!staffList.some(staff => staff.uuid === suggestion.uuid)) {
-      newStaffList.push(suggestion); // add to component state
-    }
+    const addToStaffList = prevState => {
+      const newStaffList = Array.from(prevState.staffList);
+      // if instructor NOT already selected
+      if (!newStaffList.some(staff => staff.uuid === suggestion.uuid)) {
+        newStaffList.push(suggestion); // add to component state
+      }
+      return newStaffList;
+    };
+
     // add to form state (trigger change action)
-    this.setState({
-      staffList: newStaffList,
-    }, () => this.props.input.onChange(this.state.staffList));
+    this.setState(prevState => ({
+      staffList: addToStaffList(prevState),
+    }), () => this.props.input.onChange(this.state.staffList));
   }
 
   /**
@@ -164,17 +172,17 @@ class StaffList extends React.Component {
       const containsNewStaffer = this.state.staffList
         .some(staffer => staffer.uuid === newStaffer.uuid);
       if (!containsNewStaffer) {
-        this.setState({
-          staffList: this.state.staffList.concat(newStaffer),
-        }, () => input.onChange(this.state.staffList));
+        this.setState(prevState => ({
+          staffList: prevState.staffList.concat(newStaffer),
+        }), () => input.onChange(this.state.staffList));
       }
     }
   }
 
   handleRemove(uuid) {
-    this.setState({
-      staffList: this.state.staffList.filter(staffer => staffer.uuid !== uuid),
-    }, () => this.props.input.onChange(this.state.staffList));
+    this.setState(prevState => ({
+      staffList: prevState.staffList.filter(staffer => staffer.uuid !== uuid),
+    }), () => this.props.input.onChange(this.state.staffList));
   }
 
   handleAutosuggestEnterEvent(event) {
@@ -247,12 +255,13 @@ class StaffList extends React.Component {
     return (
       // Set tabIndex to -1 to allow programmatic shifting of focus for validation
       <div name={name} tabIndex="-1">
-        {submitFailed && error &&
+        {submitFailed && error
+          && (
           <StatusAlert
             alertType="danger"
             message={error}
           />
-        }
+          )}
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable droppableId="StaffList" direction="vertical">
             {provided => (
@@ -285,7 +294,7 @@ class StaffList extends React.Component {
             )}
           </Droppable>
         </DragDropContext>
-        {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
+        {/* eslint-disable jsx-a11y/label-has-associated-control,jsx-a11y/no-noninteractive-element-interactions */}
         <label className="w-100" id="label-staff-search" htmlFor="staff-search" onKeyDown={this.handleAutosuggestEnterEvent}>
           <strong>Search or add new instructor:</strong>
           <Autosuggest

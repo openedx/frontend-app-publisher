@@ -2,13 +2,16 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import EditCoursePage from './index';
 
 import ConfirmationModal from '../ConfirmationModal';
 import StatusAlert from '../StatusAlert';
 
-import { PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED } from '../../data/constants';
+import {
+  PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED,
+} from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 import { jsonDeepCopy } from '../../utils';
 
@@ -131,7 +134,7 @@ describe('EditCoursePage', () => {
 
   it('renders html correctly', () => {
     const component = shallow(<EditCoursePage />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly while fetching', () => {
@@ -152,14 +155,14 @@ describe('EditCoursePage', () => {
         error: null,
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseInfo', () => {
     const component = shallow(<EditCoursePage
       courseInfo={courseInfo}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseInfo error', () => {
@@ -170,21 +173,21 @@ describe('EditCoursePage', () => {
         error: ['Course Info error.'],
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with no courseInfo', () => {
     const component = shallow(<EditCoursePage
       courseInfo={null}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseOptions', () => {
     const component = shallow(<EditCoursePage
       courseOptions={courseOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseOptions error', () => {
@@ -195,14 +198,14 @@ describe('EditCoursePage', () => {
         error: ['Course Options error.'],
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with no courseOptions', () => {
     const component = shallow(<EditCoursePage
       courseOptions={null}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseInfo and courseOptions', () => {
@@ -210,21 +213,21 @@ describe('EditCoursePage', () => {
       courseInfo={courseInfo}
       courseOptions={courseOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseRunOptions', () => {
     const component = shallow(<EditCoursePage
       courseRunOptions={courseRunOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with no courseRunOptions', () => {
     const component = shallow(<EditCoursePage
       courseRunOptions={null}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseRunOptions error', () => {
@@ -235,7 +238,7 @@ describe('EditCoursePage', () => {
         error: ['Course Run Options error.'],
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseInfo, courseOptions, and courseRunOptions', () => {
@@ -244,7 +247,7 @@ describe('EditCoursePage', () => {
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders page correctly with courseInfo, courseOptions, and courseRunOptions errors', () => {
@@ -265,7 +268,7 @@ describe('EditCoursePage', () => {
         error: ['Course Run Options error.'],
       }}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   describe('EditCoursePage submission handling', () => {
@@ -293,16 +296,14 @@ describe('EditCoursePage', () => {
       external_key: null,
     };
 
-    const unpublishedCourseRun = Object.assign(
-      {},
-      publishedCourseRun,
-      {
-        key: 'edX101+DemoX+T2',
-        status: UNPUBLISHED,
-        expected_program_type: 'micromasters',
-        expected_program_name: 'Test Program Name',
-      },
-    );
+    const unpublishedCourseRun = {
+
+      ...publishedCourseRun,
+      key: 'edX101+DemoX+T2',
+      status: UNPUBLISHED,
+      expected_program_type: 'micromasters',
+      expected_program_name: 'Test Program Name',
+    };
 
     const courseData = {
       additional_information: '<p>Stuff</p>',

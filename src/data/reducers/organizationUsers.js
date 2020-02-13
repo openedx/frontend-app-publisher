@@ -14,23 +14,26 @@ const initialState = {
 function organizationUsers(state = initialState, action) {
   switch (action.type) {
     case REQUEST_ORGANIZATION_USERS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: [],
         error: null,
         isFetching: true,
-      });
+      };
     case REQUEST_ORGANIZATION_USERS_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: [],
         error: action.error,
         isFetching: false,
-      });
+      };
     case REQUEST_ORGANIZATION_USERS_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         data: action.data,
         error: null,
         isFetching: false,
-      });
+      };
     default:
       return state;
   }

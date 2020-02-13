@@ -19,25 +19,26 @@ const StatusAlert = (props) => {
       className={className}
       alertType={alertType}
       dismissible={dismissible}
-      dialog={
+      dialog={(
         <div className={
           classNames({
             'd-flex': iconClassNames.length > 0,
-          })}
+          })
+}
         >
-          {iconClassNames.length > 0 &&
+          {iconClassNames.length > 0
+            && (
             <div className="icon mr-2">
               <Icon className={iconClassNames} />
             </div>
-          }
+            )}
           <div className="message">
-            {title &&
-              <span className="title">{title}</span>
-            }
+            {title
+              && <span className="title">{title}</span>}
             {message}
           </div>
         </div>
-      }
+      )}
       onClose={onClose}
       open
     />

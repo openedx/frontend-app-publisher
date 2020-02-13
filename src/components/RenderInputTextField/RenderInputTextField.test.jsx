@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import RenderInputTextField from './index';
 
@@ -12,7 +13,7 @@ describe('RenderInputTextField', () => {
       label="TestLabel"
       meta={{ touched: false, error: '' }}
     />).dive();
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
   it('renders html for number type', () => {
     const component = shallow(<RenderInputTextField
@@ -22,6 +23,6 @@ describe('RenderInputTextField', () => {
       label="TestLabel"
       meta={{ touched: false, error: '' }}
     />).dive();
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

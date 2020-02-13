@@ -1,267 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RenderInputTextField renders html for number type 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withDeprecatedProps(asInput)
-    disabled={false}
-    isValid={true}
-    label="TestLabel"
-    maxLength=""
-    name="Test"
-    pattern={null}
-    placeholder=""
-    required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    type="number"
-    validationMessage=""
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": undefined,
-      "className": undefined,
-      "dangerIconDescription": "",
-      "description": undefined,
-      "disabled": false,
-      "id": undefined,
-      "inline": false,
-      "inputGroupAppend": undefined,
-      "inputGroupPrepend": undefined,
-      "inputRef": undefined,
-      "isValid": true,
-      "label": "TestLabel",
-      "maxLength": "",
-      "name": "Test",
-      "onBlur": [Function],
-      "onChange": [Function],
-      "onKeyPress": [Function],
-      "pattern": null,
-      "placeholder": "",
-      "required": false,
-      "themes": Array [
-        "danger",
-      ],
-      "type": "number",
-      "validationMessage": "",
-      "validator": undefined,
-      "value": "",
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": undefined,
-        "className": undefined,
-        "dangerIconDescription": "",
-        "description": undefined,
-        "disabled": false,
-        "id": undefined,
-        "inline": false,
-        "inputGroupAppend": undefined,
-        "inputGroupPrepend": undefined,
-        "inputRef": undefined,
-        "isValid": true,
-        "label": "TestLabel",
-        "maxLength": "",
-        "name": "Test",
-        "onBlur": [Function],
-        "onChange": [Function],
-        "onKeyPress": [Function],
-        "pattern": null,
-        "placeholder": "",
-        "required": false,
-        "themes": Array [
-          "danger",
-        ],
-        "type": "number",
-        "validationMessage": "",
-        "validator": undefined,
-        "value": "",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "context": Object {},
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+<asInput(withDeprecatedProps(InputText))
+  dangerIconDescription=""
+  disabled={false}
+  inline={false}
+  isValid={true}
+  label="TestLabel"
+  maxLength=""
+  name="Test"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  pattern={null}
+  placeholder=""
+  required={false}
+  themes={
+    Array [
+      "danger",
+    ]
+  }
+  type="number"
+  validationMessage=""
+  value=""
+/>
 `;
 
 exports[`RenderInputTextField renders html for text 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withDeprecatedProps(asInput)
-    disabled={false}
-    isValid={true}
-    label="TestLabel"
-    maxLength=""
-    name="Test"
-    pattern={null}
-    placeholder=""
-    required={false}
-    themes={
-      Array [
-        "danger",
-      ]
-    }
-    type="text"
-    validationMessage=""
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": undefined,
-      "className": undefined,
-      "dangerIconDescription": "",
-      "description": undefined,
-      "disabled": false,
-      "id": undefined,
-      "inline": false,
-      "inputGroupAppend": undefined,
-      "inputGroupPrepend": undefined,
-      "inputRef": undefined,
-      "isValid": true,
-      "label": "TestLabel",
-      "maxLength": "",
-      "name": "Test",
-      "onBlur": [Function],
-      "onChange": [Function],
-      "onKeyPress": [Function],
-      "pattern": null,
-      "placeholder": "",
-      "required": false,
-      "themes": Array [
-        "danger",
-      ],
-      "type": "text",
-      "validationMessage": "",
-      "validator": undefined,
-      "value": "",
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": undefined,
-        "className": undefined,
-        "dangerIconDescription": "",
-        "description": undefined,
-        "disabled": false,
-        "id": undefined,
-        "inline": false,
-        "inputGroupAppend": undefined,
-        "inputGroupPrepend": undefined,
-        "inputRef": undefined,
-        "isValid": true,
-        "label": "TestLabel",
-        "maxLength": "",
-        "name": "Test",
-        "onBlur": [Function],
-        "onChange": [Function],
-        "onKeyPress": [Function],
-        "pattern": null,
-        "placeholder": "",
-        "required": false,
-        "themes": Array [
-          "danger",
-        ],
-        "type": "text",
-        "validationMessage": "",
-        "validator": undefined,
-        "value": "",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "context": Object {},
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+<asInput(withDeprecatedProps(InputText))
+  dangerIconDescription=""
+  disabled={false}
+  inline={false}
+  isValid={true}
+  label="TestLabel"
+  maxLength=""
+  name="Test"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  pattern={null}
+  placeholder=""
+  required={false}
+  themes={
+    Array [
+      "danger",
+    ]
+  }
+  type="text"
+  validationMessage=""
+  value=""
+/>
 `;

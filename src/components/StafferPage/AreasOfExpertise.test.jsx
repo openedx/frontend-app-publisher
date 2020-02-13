@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import AreasOfExpertise from './AreasOfExpertise';
 
@@ -17,12 +18,12 @@ jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn());
 describe('Areas Of Expertise', () => {
   it('renders correctly with no fields', () => {
     const component = shallow(<AreasOfExpertise fields={[]} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when given fields', () => {
     const component = shallow(<AreasOfExpertise fields={[{}]} />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('adds fields when the add button is pushed', () => {

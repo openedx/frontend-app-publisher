@@ -1,362 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PriceList renders with price labels 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PriceList
+<Fragment>
+  <Field
+    component={[Function]}
     disabled={false}
-    extraInput={Object {}}
-    priceLabels={
+    extraInput={
       Object {
-        "a": "A",
-        "b": "B",
+        "max": 10000,
+        "min": 1,
+        "step": 0.01,
       }
     }
+    key="a"
+    label={
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText=""
+        id={null}
+        optional={false}
+        required={true}
+        text="A Price (USD)"
+      />
+    }
+    name="prices.a"
     required={false}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "children": Array [
-        <Field
-          component={[Function]}
-          disabled={false}
-          extraInput={
-            Object {
-              "max": 10000,
-              "min": 1,
-              "step": 0.01,
-            }
-          }
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="A Price (USD)"
-            />
-          }
-          name="prices.a"
-          required={false}
-          type="number"
-        />,
-        <Field
-          component={[Function]}
-          disabled={false}
-          extraInput={
-            Object {
-              "max": 10000,
-              "min": 1,
-              "step": 0.01,
-            }
-          }
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="B Price (USD)"
-            />
-          }
-          name="prices.b"
-          required={false}
-          type="number"
-        />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
+    type="number"
+  />
+  <Field
+    component={[Function]}
+    disabled={false}
+    extraInput={
       Object {
-        "instance": null,
-        "key": "a",
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "disabled": false,
-          "extraInput": Object {
-            "max": 10000,
-            "min": 1,
-            "step": 0.01,
-          },
-          "label": <FieldLabel
-            className=""
-            extraText=""
-            helpText=""
-            id={null}
-            optional={false}
-            required={true}
-            text="A Price (USD)"
-          />,
-          "name": "prices.a",
-          "required": false,
-          "type": "number",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "b",
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "disabled": false,
-          "extraInput": Object {
-            "max": 10000,
-            "min": 1,
-            "step": 0.01,
-          },
-          "label": <FieldLabel
-            className=""
-            extraText=""
-            helpText=""
-            id={null}
-            optional={false}
-            required={true}
-            text="B Price (USD)"
-          />,
-          "name": "prices.b",
-          "required": false,
-          "type": "number",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": Symbol(react.fragment),
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <Field
-            component={[Function]}
-            disabled={false}
-            extraInput={
-              Object {
-                "max": 10000,
-                "min": 1,
-                "step": 0.01,
-              }
-            }
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText=""
-                id={null}
-                optional={false}
-                required={true}
-                text="A Price (USD)"
-              />
-            }
-            name="prices.a"
-            required={false}
-            type="number"
-          />,
-          <Field
-            component={[Function]}
-            disabled={false}
-            extraInput={
-              Object {
-                "max": 10000,
-                "min": 1,
-                "step": 0.01,
-              }
-            }
-            label={
-              <FieldLabel
-                className=""
-                extraText=""
-                helpText=""
-                id={null}
-                optional={false}
-                required={true}
-                text="B Price (USD)"
-              />
-            }
-            name="prices.b"
-            required={false}
-            type="number"
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": "a",
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "disabled": false,
-            "extraInput": Object {
-              "max": 10000,
-              "min": 1,
-              "step": 0.01,
-            },
-            "label": <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="A Price (USD)"
-            />,
-            "name": "prices.a",
-            "required": false,
-            "type": "number",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "b",
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "disabled": false,
-            "extraInput": Object {
-              "max": 10000,
-              "min": 1,
-              "step": 0.01,
-            },
-            "label": <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="B Price (USD)"
-            />,
-            "name": "prices.b",
-            "required": false,
-            "type": "number",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": Symbol(react.fragment),
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
+        "max": 10000,
+        "min": 1,
+        "step": 0.01,
+      }
+    }
+    key="b"
+    label={
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText=""
+        id={null}
+        optional={false}
+        required={true}
+        text="B Price (USD)"
+      />
+    }
+    name="prices.b"
+    required={false}
+    type="number"
+  />
+</Fragment>
 `;
 
-exports[`PriceList renders without any price labels 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PriceList
-    disabled={false}
-    extraInput={Object {}}
-    priceLabels={Object {}}
-    required={false}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "children": Array [],
-    },
-    "ref": null,
-    "rendered": Array [],
-    "type": Symbol(react.fragment),
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [],
-      },
-      "ref": null,
-      "rendered": Array [],
-      "type": Symbol(react.fragment),
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
-`;
+exports[`PriceList renders without any price labels 1`] = `<Fragment />`;

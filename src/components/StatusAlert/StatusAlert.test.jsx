@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import StatusAlert from './index';
 
@@ -9,6 +10,6 @@ describe('StatusAlert', () => {
       alertType="Test"
       message="Test Message"
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

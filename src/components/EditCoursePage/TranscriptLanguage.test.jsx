@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import TranscriptLanguage from './TranscriptLanguage';
 
@@ -35,7 +36,7 @@ describe('Transcript Language', () => {
       languageOptions={languageOptions}
       meta={meta}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly when given fields', () => {
@@ -44,7 +45,7 @@ describe('Transcript Language', () => {
       languageOptions={languageOptions}
       meta={meta}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders correctly with an error after failed submission', () => {
@@ -53,7 +54,7 @@ describe('Transcript Language', () => {
       languageOptions={languageOptions}
       meta={metaFailed}
     />);
-    expect(component).toMatchSnapshot();
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('adds fields when the add button is pushed', () => {

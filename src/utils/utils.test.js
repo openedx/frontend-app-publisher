@@ -101,7 +101,7 @@ describe('getCourseError', () => {
 
 describe('isNonExemptChanged', () => {
   it('returns true when a non exempt course field is changed', () => {
-    const newCurrentValues = Object.assign({}, currentValues, { title: 'Changed Title' });
+    const newCurrentValues = { ...currentValues, title: 'Changed Title' };
     expect(utils.isNonExemptChanged(initialValues, newCurrentValues)).toEqual(true);
   });
 
@@ -124,7 +124,7 @@ describe('isPristine', () => {
   });
 
   it('returns false when course level fields are changed', () => {
-    const newCurrentValues = Object.assign({}, currentValues, { title: 'Changed Title' });
+    const newCurrentValues = { ...currentValues, title: 'Changed Title' };
     expect(utils.isPristine(initialValues, newCurrentValues)).toEqual(false);
   });
 

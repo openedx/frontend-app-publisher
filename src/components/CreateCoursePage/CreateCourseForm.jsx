@@ -14,9 +14,13 @@ import PriceList from '../PriceList';
 import {
   DATE_INPUT_PATTERN,
 } from '../../data/constants';
-import { endDateHelp, runTypeHelp, pacingHelp, startDateHelp, titleHelp, typeHelp, keyHelp } from '../../helpText';
+import {
+  endDateHelp, runTypeHelp, pacingHelp, startDateHelp, titleHelp, typeHelp, keyHelp,
+} from '../../helpText';
 import DateTimeField from '../DateTimeField';
-import { isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
+import {
+  isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions,
+} from '../../utils';
 
 class BaseCreateCourseForm extends React.Component {
   constructor(props) {
@@ -42,8 +46,8 @@ class BaseCreateCourseForm extends React.Component {
     } = prevProps;
     if (currentType !== prevType) {
       const courseOptionsData = getOptionsData(courseOptions);
-      const parsedTypeOptions = courseOptionsData &&
-        parseCourseTypeOptions(courseOptionsData.type.type_options);
+      const parsedTypeOptions = courseOptionsData
+        && parseCourseTypeOptions(courseOptionsData.type.type_options);
       const { courseRunTypeOptions } = parsedTypeOptions;
       change('run_type', courseRunTypeOptions[currentType][1].value);
     }
@@ -84,8 +88,8 @@ class BaseCreateCourseForm extends React.Component {
     } = this.props;
     const { canSetRunKey } = this.state;
     const courseOptionsData = getOptionsData(courseOptions);
-    const parsedTypeOptions = courseOptionsData &&
-      parseCourseTypeOptions(courseOptionsData.type.type_options);
+    const parsedTypeOptions = courseOptionsData
+      && parseCourseTypeOptions(courseOptionsData.type.type_options);
     const { courseTypeOptions } = parsedTypeOptions;
     const { courseRunTypeOptions } = parsedTypeOptions;
     const { priceLabels } = parsedTypeOptions;
@@ -109,27 +113,27 @@ class BaseCreateCourseForm extends React.Component {
             name="title"
             component={RenderInputTextField}
             type="text"
-            label={
+            label={(
               <FieldLabel
                 id="title-label"
                 text="Title"
                 required
                 helpText={titleHelp}
               />
-            }
+            )}
             required
           />
           <Field
             name="number"
             component={RenderInputTextField}
             type="text"
-            label={
+            label={(
               <FieldLabel
                 id="number-label"
                 text="Number"
                 required
                 extraText="Cannot edit after submission"
-                helpText={
+                helpText={(
                   <div>
                     <p>
                       Maximum 10 characters. Characters can be letters, numbers, periods,
@@ -154,23 +158,23 @@ class BaseCreateCourseForm extends React.Component {
                       <li>BIO1.1x, BIO1.2x</li>
                     </ol>
                   </div>
-                }
+                )}
               />
-            }
+            )}
             required
           />
           <Field
             name="type"
             component={RenderSelectField}
             options={courseTypeOptions}
-            label={
+            label={(
               <FieldLabel
                 id="course-type-label"
                 text="Course enrollment track"
                 required
                 helpText={typeHelp}
               />
-            }
+            )}
             required
           />
           <PriceList
@@ -179,87 +183,91 @@ class BaseCreateCourseForm extends React.Component {
           />
           <h2>First run of your Course</h2>
           <hr />
-          {canSetRunKey &&
+          {canSetRunKey
+            && (
             <Field
               name="courseRunKey"
               component={RenderInputTextField}
               type="text"
               pattern="[a-zA-Z0-9-]+"
-              label={
+              label={(
                 <FieldLabel
                   id="courseRunKey-label"
                   text="Run Key"
                   helpText={keyHelp}
                   optional
                 />
-              }
+              )}
             />
-          }
+            )}
           {/* TODO this should be refactored when paragon supports safari */}
           {/* text inputs for safari */}
-          {isSafari ?
-            <div>
-              <Field
-                name="start"
-                type="text"
-                component={DateTimeField}
-                dateLabel="Start date"
-                timeLabel={`Start time (${localTimeZone})`}
-                helpText={startDateHelp}
-                required
-                maxLength="10"
-                pattern={DATE_INPUT_PATTERN}
-                placeholder="yyyy/mm/dd"
-              />
-              <Field
-                name="end"
-                type="text"
-                component={DateTimeField}
-                dateLabel="End date"
-                timeLabel={`End time (${localTimeZone})`}
-                helpText={endDateHelp}
-                required
-                maxLength="10"
-                pattern={DATE_INPUT_PATTERN}
-                placeholder="yyyy/mm/dd"
-              />
-            </div> :
+          {isSafari
+            ? (
+              <div>
+                <Field
+                  name="start"
+                  type="text"
+                  component={DateTimeField}
+                  dateLabel="Start date"
+                  timeLabel={`Start time (${localTimeZone})`}
+                  helpText={startDateHelp}
+                  required
+                  maxLength="10"
+                  pattern={DATE_INPUT_PATTERN}
+                  placeholder="yyyy/mm/dd"
+                />
+                <Field
+                  name="end"
+                  type="text"
+                  component={DateTimeField}
+                  dateLabel="End date"
+                  timeLabel={`End time (${localTimeZone})`}
+                  helpText={endDateHelp}
+                  required
+                  maxLength="10"
+                  pattern={DATE_INPUT_PATTERN}
+                  placeholder="yyyy/mm/dd"
+                />
+              </div>
+            )
             // date inputs for all browsers besides safari
-            <div>
-              <Field
-                name="start"
-                type="date"
-                component={DateTimeField}
-                dateLabel="Start date"
-                timeLabel={`Start time (${localTimeZone})`}
-                helpText={startDateHelp}
-                required
-                minDate={getDateWithDashes(moment())}
-              />
-              <Field
-                name="end"
-                type="date"
-                component={DateTimeField}
-                dateLabel="End date"
-                timeLabel={`End time (${localTimeZone})`}
-                helpText={endDateHelp}
-                required
-                minDate={getDateWithDashes(moment(currentFormValues.start).add(1, 'd') || moment())}
-              />
-            </div>
-          }
+            : (
+              <div>
+                <Field
+                  name="start"
+                  type="date"
+                  component={DateTimeField}
+                  dateLabel="Start date"
+                  timeLabel={`Start time (${localTimeZone})`}
+                  helpText={startDateHelp}
+                  required
+                  minDate={getDateWithDashes(moment())}
+                />
+                <Field
+                  name="end"
+                  type="date"
+                  component={DateTimeField}
+                  dateLabel="End date"
+                  timeLabel={`End time (${localTimeZone})`}
+                  helpText={endDateHelp}
+                  required
+                  minDate={getDateWithDashes(moment(currentFormValues.start).add(1, 'd') || moment())}
+                />
+              </div>
+            )}
           <Field
             name="run_type"
             component={RenderSelectField}
             options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course enrollment track first', value: '' }]}
-            label={
+            label={(
               <FieldLabel
                 id="course-run-type-label"
                 text="Course run enrollment track"
                 required
                 helpText={runTypeHelp}
               />
-            }
+            )}
             required
           />
           <Field
@@ -267,17 +275,18 @@ class BaseCreateCourseForm extends React.Component {
             type="text"
             component={RenderSelectField}
             options={pacingTypeOptions}
-            label={
+            label={(
               <FieldLabel
                 id="pacing_type.label"
                 text="Course pacing"
                 helpText={pacingHelp}
               />
-            }
+            )}
           />
           <ButtonToolbar>
             <Link to="/">
               <button
+                type="button"
                 className="btn btn-outline-primary"
                 disabled={isCreating}
               >
@@ -318,7 +327,11 @@ BaseCreateCourseForm.propTypes = {
     start: PropTypes.string,
     end: PropTypes.string,
   }).isRequired,
-  currentFormValues: PropTypes.shape({}),
+  currentFormValues: PropTypes.shape({
+    org: PropTypes.string,
+    type: PropTypes.string,
+    start: PropTypes.string,
+  }),
   organizations: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,

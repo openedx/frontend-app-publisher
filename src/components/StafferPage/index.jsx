@@ -143,20 +143,21 @@ class StafferPage extends React.Component {
     const organizationName = (data && data.position && data.position.organization_name) || '';
 
     return (
-      <React.Fragment>
+      <>
         <Helmet>
           <title>{titleText}</title>
         </Helmet>
         <PageContainer>
           { showSpinner && <LoadingSpinner /> }
-          { referrer &&
+          { referrer
+            && (
             <StatusAlert
               id="sent-from-edit-course-info"
               alertType="info"
               message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
               dismissible
             />
-          }
+            )}
           { showForm && (
             <div>
               <h2>{titleText}</h2>
@@ -180,7 +181,7 @@ class StafferPage extends React.Component {
             </div>
           )}
         </PageContainer>
-      </React.Fragment>
+      </>
     );
   }
 }
