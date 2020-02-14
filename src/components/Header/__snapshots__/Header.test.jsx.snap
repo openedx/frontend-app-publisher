@@ -14,44 +14,92 @@ exports[`Header renders the correct header 1`] = `
         className="col-auto justify-content-start"
       >
         <withDeprecatedProps(Hyperlink)>
-          <img
-            alt="edX logo"
-            height="30"
-            src="edx-sm.png"
-            width="60"
-          />
+          <Hyperlink
+            externalLinkAlternativeText="Opens in a new window"
+            externalLinkTitle="Opens in a new window"
+            onClick={[Function]}
+            target="_self"
+          >
+            <a
+              onClick={[Function]}
+              target="_self"
+            >
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </a>
+          </Hyperlink>
         </withDeprecatedProps(Hyperlink)>
       </div>
       <div
         className="col"
       >
         <Link
-          replace={false}
           to="/"
         >
-          Courses
+          <LinkAnchor
+            href="/"
+            navigate={[Function]}
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              Courses
+            </a>
+          </LinkAnchor>
         </Link>
       </div>
       <div
         className="col-auto justify-content-end"
       >
         <withDeprecatedProps(Dropdown)>
-          <DropdownButton
-            className="btn-light"
-          >
-            test-username
-          </DropdownButton>
-          <DropdownMenu
-            className="dropdown-menu-right"
-          >
-            <DropdownItem
-              className={null}
-              onClick={[Function]}
-              type="button"
+          <Dropdown>
+            <div
+              className="dropdown"
             >
-              Sign Out
-            </DropdownItem>
-          </DropdownMenu>
+              <DropdownButton
+                className="btn-light"
+              >
+                <button
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  className="dropdown-toggle btn btn-light"
+                  id="pgn__dropdown-trigger-0"
+                  onClick={[Function]}
+                >
+                  test-username
+                </button>
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <div
+                  aria-hidden={true}
+                  aria-labelledby="pgn__dropdown-trigger-0"
+                  className="dropdown-menu dropdown-menu-right"
+                  onKeyDown={[Function]}
+                  role="menu"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <button
+                      className="dropdown-item"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>
+                  </DropdownItem>
+                </div>
+              </DropdownMenu>
+            </div>
+          </Dropdown>
         </withDeprecatedProps(Dropdown)>
       </div>
     </div>
@@ -73,22 +121,43 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
         className="col-auto justify-content-start"
       >
         <withDeprecatedProps(Hyperlink)>
-          <img
-            alt="edX logo"
-            height="30"
-            src="edx-sm.png"
-            width="60"
-          />
+          <Hyperlink
+            externalLinkAlternativeText="Opens in a new window"
+            externalLinkTitle="Opens in a new window"
+            onClick={[Function]}
+            target="_self"
+          >
+            <a
+              onClick={[Function]}
+              target="_self"
+            >
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </a>
+          </Hyperlink>
         </withDeprecatedProps(Hyperlink)>
       </div>
       <div
         className="col"
       >
         <Link
-          replace={false}
           to="/"
         >
-          Courses
+          <LinkAnchor
+            href="/"
+            navigate={[Function]}
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              Courses
+            </a>
+          </LinkAnchor>
         </Link>
       </div>
       <div
@@ -107,22 +176,49 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
         className="col-auto justify-content-end"
       >
         <withDeprecatedProps(Dropdown)>
-          <DropdownButton
-            className="btn-light"
-          >
-            test-username
-          </DropdownButton>
-          <DropdownMenu
-            className="dropdown-menu-right"
-          >
-            <DropdownItem
-              className={null}
-              onClick={[Function]}
-              type="button"
+          <Dropdown>
+            <div
+              className="dropdown"
             >
-              Sign Out
-            </DropdownItem>
-          </DropdownMenu>
+              <DropdownButton
+                className="btn-light"
+              >
+                <button
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  className="dropdown-toggle btn btn-light"
+                  id="pgn__dropdown-trigger-2"
+                  onClick={[Function]}
+                >
+                  test-username
+                </button>
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <div
+                  aria-hidden={true}
+                  aria-labelledby="pgn__dropdown-trigger-2"
+                  className="dropdown-menu dropdown-menu-right"
+                  onKeyDown={[Function]}
+                  role="menu"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <button
+                      className="dropdown-item"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>
+                  </DropdownItem>
+                </div>
+              </DropdownMenu>
+            </div>
+          </Dropdown>
         </withDeprecatedProps(Dropdown)>
       </div>
     </div>
@@ -144,22 +240,43 @@ exports[`Header renders the header correctly when users pass a querystring param
         className="col-auto justify-content-start"
       >
         <withDeprecatedProps(Hyperlink)>
-          <img
-            alt="edX logo"
-            height="30"
-            src="edx-sm.png"
-            width="60"
-          />
+          <Hyperlink
+            externalLinkAlternativeText="Opens in a new window"
+            externalLinkTitle="Opens in a new window"
+            onClick={[Function]}
+            target="_self"
+          >
+            <a
+              onClick={[Function]}
+              target="_self"
+            >
+              <img
+                alt="edX logo"
+                height="30"
+                src="edx-sm.png"
+                width="60"
+              />
+            </a>
+          </Hyperlink>
         </withDeprecatedProps(Hyperlink)>
       </div>
       <div
         className="col"
       >
         <Link
-          replace={false}
           to="/"
         >
-          Courses
+          <LinkAnchor
+            href="/"
+            navigate={[Function]}
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              Courses
+            </a>
+          </LinkAnchor>
         </Link>
       </div>
       <div
@@ -178,22 +295,49 @@ exports[`Header renders the header correctly when users pass a querystring param
         className="col-auto justify-content-end"
       >
         <withDeprecatedProps(Dropdown)>
-          <DropdownButton
-            className="btn-light"
-          >
-            test-username
-          </DropdownButton>
-          <DropdownMenu
-            className="dropdown-menu-right"
-          >
-            <DropdownItem
-              className={null}
-              onClick={[Function]}
-              type="button"
+          <Dropdown>
+            <div
+              className="dropdown"
             >
-              Sign Out
-            </DropdownItem>
-          </DropdownMenu>
+              <DropdownButton
+                className="btn-light"
+              >
+                <button
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  className="dropdown-toggle btn btn-light"
+                  id="pgn__dropdown-trigger-1"
+                  onClick={[Function]}
+                >
+                  test-username
+                </button>
+              </DropdownButton>
+              <DropdownMenu
+                className="dropdown-menu-right"
+              >
+                <div
+                  aria-hidden={true}
+                  aria-labelledby="pgn__dropdown-trigger-1"
+                  className="dropdown-menu dropdown-menu-right"
+                  onKeyDown={[Function]}
+                  role="menu"
+                >
+                  <DropdownItem
+                    className={null}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <button
+                      className="dropdown-item"
+                      onClick={[Function]}
+                    >
+                      Sign Out
+                    </button>
+                  </DropdownItem>
+                </div>
+              </DropdownMenu>
+            </div>
+          </Dropdown>
         </withDeprecatedProps(Dropdown)>
       </div>
     </div>

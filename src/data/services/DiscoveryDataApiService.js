@@ -1,4 +1,5 @@
-import apiClient from '../apiClient';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+
 import { PAGE_SIZE } from '../constants/table';
 
 const discoveryBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/api/v1`;
@@ -12,7 +13,7 @@ class DiscoveryDataApiService {
       exclude_utm: 1,
     };
     const url = `${discoveryBaseUrl}/courses/${uuid}/`;
-    return apiClient.get(url, {
+    return getAuthenticatedHttpClient().get(url, {
       params: queryParams,
     });
   }
@@ -24,7 +25,7 @@ class DiscoveryDataApiService {
       ...params,
     };
     const url = `${discoveryBaseUrl}/course_runs/${key}`;
-    return apiClient.get(url, {
+    return getAuthenticatedHttpClient().get(url, {
       params: queryParams,
     });
   }
@@ -48,7 +49,7 @@ class DiscoveryDataApiService {
       ...options,
     };
     const url = `${discoveryBaseUrl}/courses/`;
-    return apiClient.get(url, {
+    return getAuthenticatedHttpClient().get(url, {
       params: queryParams,
     });
   }
@@ -60,7 +61,7 @@ class DiscoveryDataApiService {
       limit: 500,
     };
     const url = `${discoveryBaseUrl}/organizations/`;
-    return apiClient.get(url, {
+    return getAuthenticatedHttpClient().get(url, {
       params: queryParams,
     });
   }
@@ -68,12 +69,12 @@ class DiscoveryDataApiService {
   static createCourse(data) {
     const url = `${discoveryBaseUrl}/courses/`;
     // POST to Course endpoint to create
-    return apiClient.post(url, data);
+    return getAuthenticatedHttpClient().post(url, data);
   }
 
   static createCourseRun(data) {
     const url = `${discoveryBaseUrl}/course_runs/`;
-    return apiClient.post(url, data);
+    return getAuthenticatedHttpClient().post(url, data);
   }
 
   static fetchCourseOptions() {
@@ -81,24 +82,24 @@ class DiscoveryDataApiService {
       editable: 1,
     };
     const url = `${discoveryBaseUrl}/courses/`;
-    return apiClient.options(url, {
+    return getAuthenticatedHttpClient().options(url, {
       params: queryParams,
     });
   }
 
   static fetchCourseRunOptions() {
     const url = `${discoveryBaseUrl}/course_runs/`;
-    return apiClient.options(url);
+    return getAuthenticatedHttpClient().options(url);
   }
 
   static addCourseEditor(data) {
     const url = `${discoveryBaseUrl}/course_editors/`;
-    return apiClient.post(url, data);
+    return getAuthenticatedHttpClient().post(url, data);
   }
 
   static removeCourseEditor(editorId) {
     const url = `${discoveryBaseUrl}/course_editors/${editorId}/`;
-    return apiClient.delete(url);
+    return getAuthenticatedHttpClient().delete(url);
   }
 
   static fetchUsersForCurrentUser() {
@@ -107,7 +108,7 @@ class DiscoveryDataApiService {
       page_size: 250,
     };
     const url = `${publisherBaseUrl}/admins/organizations/users/`;
-    return apiClient.get(url, { params: queryParams });
+    return getAuthenticatedHttpClient().get(url, { params: queryParams });
   }
 
   static fetchCourseEditors(courseId) {
@@ -115,7 +116,7 @@ class DiscoveryDataApiService {
       course: courseId,
     };
     const url = `${discoveryBaseUrl}/course_editors/`;
-    return apiClient.get(url, { params: queryParams });
+    return getAuthenticatedHttpClient().get(url, { params: queryParams });
   }
 
   static fetchOrganizationRoles(id, role) {
@@ -124,12 +125,12 @@ class DiscoveryDataApiService {
       queryParams.role = role;
     }
     const url = `${publisherBaseUrl}/admins/organizations/${id}/roles/`;
-    return apiClient.get(url, { params: queryParams });
+    return getAuthenticatedHttpClient().get(url, { params: queryParams });
   }
 
   static fetchOrganizationUsers(id) {
     const url = `${publisherBaseUrl}/admins/organizations/${id}/users/`;
-    return new Promise((resolve, reject) => apiClient.get(url)
+    return new Promise((resolve, reject) => getAuthenticatedHttpClient().get(url)
       .then(response => resolve(response))
       .catch((error) => {
         if (error.response.status === 404) {
@@ -147,7 +148,7 @@ class DiscoveryDataApiService {
     // Create a promises array to handle all of the new/modified course runs
     const promises = courseRunsData.map((courseRun) => {
       const courseRunUrl = `${discoveryBaseUrl}/course_runs/${courseRun.key}/`;
-      return apiClient.patch(courseRunUrl, courseRun, {
+      return getAuthenticatedHttpClient().patch(courseRunUrl, courseRun, {
         params: queryParams,
       });
     });
@@ -159,12 +160,12 @@ class DiscoveryDataApiService {
       course_uuid: id,
     };
     const url = `${discoveryBaseUrl}/comments/`;
-    return apiClient.get(url, { params: queryParams });
+    return getAuthenticatedHttpClient().get(url, { params: queryParams });
   }
 
   static createComment(data) {
     const url = `${discoveryBaseUrl}/comments/`;
-    return apiClient.post(url, data);
+    return getAuthenticatedHttpClient().post(url, data);
   }
 
   static internalReviewEdit(courseRun) {
@@ -177,7 +178,7 @@ class DiscoveryDataApiService {
     // Remove key param from body for API validation
     delete body.key;
 
-    return apiClient.patch(courseRunUrl, body, {
+    return getAuthenticatedHttpClient().patch(courseRunUrl, body, {
       params: queryParams,
     });
   }
@@ -188,7 +189,7 @@ class DiscoveryDataApiService {
       exclude_utm: 1,
     };
     const url = `${discoveryBaseUrl}/courses/${uuid}/`;
-    return apiClient.patch(url, courseData, {
+    return getAuthenticatedHttpClient().patch(url, courseData, {
       params: queryParams,
     });
   }
@@ -196,25 +197,25 @@ class DiscoveryDataApiService {
   static createStaffer(data) {
     const url = `${discoveryBaseUrl}/people/`;
     // POST to People endpoint to create
-    return apiClient.post(url, data);
+    return getAuthenticatedHttpClient().post(url, data);
   }
 
   static fetchStaffer(uuid) {
     const url = `${discoveryBaseUrl}/people/${uuid}/`;
-    return apiClient.get(url);
+    return getAuthenticatedHttpClient().get(url);
   }
 
   static editStaffer(stafferData) {
     const { uuid } = stafferData;
     const url = `${discoveryBaseUrl}/people/${uuid}/`;
     // PATCH to People endpoint to update
-    return apiClient.patch(url, stafferData);
+    return getAuthenticatedHttpClient().patch(url, stafferData);
   }
 
   static autocompletePerson(text, organizationKeys) {
     const queryString = [`?q=${text}`].concat(organizationKeys);
     const url = `${discoveryBaseUrl}/search/person_typeahead/${queryString.join('&org=')}`;
-    return apiClient.get(url);
+    return getAuthenticatedHttpClient().get(url);
   }
 }
 

@@ -4,10 +4,15 @@ import { mount, shallow } from 'enzyme';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
+import axios from 'axios';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 import CreateCoursePage from './index';
 import { jsonDeepCopy } from '../../utils';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
+
+jest.mock('@edx/frontend-platform/auth');
+getAuthenticatedHttpClient.mockReturnValue(axios);
 
 const courseData = {
   org: 'edx',
@@ -65,7 +70,7 @@ describe('Create Course View', () => {
   it('shows spinner while loading', () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = true;
-    const wrapper = createWrapper(testState).dive();
+    const wrapper = createWrapper(testState).find('CreateCoursePage').dive();
     expect(wrapper.find('LoadingSpinner').dive()).toHaveLength(1);
   });
 
@@ -76,7 +81,7 @@ describe('Create Course View', () => {
     testState.publisherUserInfo.error = errorMessage;
     testState.courseOptions.isFetching = false;
     testState.courseRunOptions.isFetching = false;
-    const wrapper = createWrapper(testState).dive();
+    const wrapper = createWrapper(testState).find('CreateCoursePage').dive();
     expect(wrapper.find('#create-error')).toHaveLength(1);
     expect(wrapper.find('#create-error').props().message).toEqual(errorMessage.concat(<br />));
   });

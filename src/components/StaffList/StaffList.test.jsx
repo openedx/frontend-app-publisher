@@ -1,14 +1,17 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
+import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
-import apiClient from '../../data/apiClient';
 import StaffList from './index';
 
-const mockClient = new MockAdapter(apiClient);
-apiClient.isAccessTokenExpired = jest.fn();
-apiClient.isAccessTokenExpired.mockReturnValue(false);
+const mockClient = new MockAdapter(axios);
+
+jest.mock('@edx/frontend-platform/auth');
+getAuthenticatedHttpClient.mockReturnValue(axios);
+
 
 const input = {
   value: [

@@ -9,7 +9,7 @@ import {
 
 
 const initialState = {
-  data: {},
+  data: [],
   isFetching: false,
   isCreating: false,
   error: null,
@@ -39,14 +39,14 @@ function comments(state = initialState, action) {
     case REQUEST_COMMENTS:
       return {
         ...state,
-        data: {},
+        data: [],
         isFetching: true,
         error: null,
       };
     case REQUEST_COMMENTS_FAIL:
       return {
         ...state,
-        data: {},
+        data: [],
         isFetching: false,
         error: action.error,
       };
