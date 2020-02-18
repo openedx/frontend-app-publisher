@@ -93,9 +93,9 @@ class CourseTable extends React.Component {
       group.label === 'Course Editors'
     )).options.filter(option => editorsFromQuery.includes(option.value.toString())) : [];
 
-    if (courseRunStatusesFromQuery) {
+    if (!courseRunStatusesFromQuery) {
       this.setState({
-        selectedFilters: [selectedEditors],
+        selectedFilters: selectedEditors,
       });
     } else {
       this.setState(prevState => ({
