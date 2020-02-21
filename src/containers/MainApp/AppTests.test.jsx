@@ -82,14 +82,8 @@ function renderAppWithState(initialRoute) {
 }
 
 describe('App', () => {
-  let screen;
-
-  beforeEach(() => {
-    process.env.STUDIO_BASE_URL = 'http://localhost:18010/';
-  });
-
   it('renders entire Course Dashboard at route / with course list', () => {
-    screen = renderAppWithState(['/']);
+    const screen = renderAppWithState(['/']);
 
     // New Course Button should be present
     expect(screen.find('div.btn-group a button').text()).toEqual('New Course');
