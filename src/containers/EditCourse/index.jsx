@@ -46,14 +46,14 @@ const mapDispatchToProps = {
   updateFormValuesAfterSave,
 };
 
-const mergeProps = (stateProps, actionProps, { id }) => ({
+const mergeProps = (stateProps, actionProps, { uuid }) => ({
   ...stateProps,
   ...actionProps,
-  addCourseEditor: userId => actionProps.addCourseEditor(id, userId),
-  fetchCourseEditors: () => actionProps.fetchCourseEditors(id),
-  fetchCourseInfo: () => actionProps.fetchCourseInfo(id),
+  addCourseEditor: userId => actionProps.addCourseEditor(uuid, userId),
+  fetchCourseEditors: () => actionProps.fetchCourseEditors(uuid),
+  fetchCourseInfo: () => actionProps.fetchCourseInfo(uuid),
   addComment: comment => actionProps.addComment(comment),
-  fetchComments: () => actionProps.fetchComments(id),
+  fetchComments: () => actionProps.fetchComments(uuid),
 });
 
 export default connect(

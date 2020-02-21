@@ -34,13 +34,13 @@ class CreateCourseRunPage extends React.Component {
       fetchCourseInfo,
       fetchCourseOptions,
       fetchCourseRunOptions,
-      id,
+      uuid,
     } = this.props;
     if (!courseInfo.data || (courseInfo.data
         && (Object.keys(courseInfo.data).length === 0
-        || courseInfo.data.uuid !== id))) {
+        || courseInfo.data.uuid !== uuid))) {
       // We need to request Course data
-      fetchCourseInfo(id);
+      fetchCourseInfo(uuid);
     }
     if (!courseOptions.data || (courseOptions.data
         && Object.keys(courseOptions.data).length === 0)) {
@@ -229,7 +229,7 @@ CreateCourseRunPage.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
-  id: PropTypes.string.isRequired,
+  uuid: PropTypes.string.isRequired,
   createCourseRun: PropTypes.func,
   clearCourseInfoErrors: PropTypes.func,
   formValues: PropTypes.shape({}),

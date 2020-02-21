@@ -1,8 +1,13 @@
-import apiClient from '../apiClient';
+import axios from 'axios';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+
 import DiscoveryDataApiService from './DiscoveryDataApiService';
 
+jest.mock('@edx/frontend-platform/auth');
+getAuthenticatedHttpClient.mockReturnValue(axios);
+
 describe('fetchOrganizationUsers', () => {
-  const get = jest.spyOn(apiClient, 'get');
+  const get = jest.spyOn(axios, 'get');
 
   it('should resolve on a 404 response with null', () => {
     get.mockRejectedValue({ response: { status: 404 } });

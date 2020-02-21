@@ -6,7 +6,6 @@ import toggleDarkMode from '../../data/actions/darkMode';
 
 
 const mapStateToProps = state => ({
-  username: state.authentication.username,
   darkModeOn: state.darkMode.darkModeOn,
 });
 

@@ -3,11 +3,17 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { mount } from 'enzyme';
-import { IntlProvider } from 'react-intl';
+import axios from 'axios';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
+import { AppContext } from '@edx/frontend-platform/react';
 
 import configureStore from 'redux-mock-store';
 import MainApp from './index';
 import TableComponent from '../../components/TableComponent/index';
+
+jest.mock('@edx/frontend-platform/auth');
+getAuthenticatedHttpClient.mockReturnValue(axios);
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -41,12 +47,7 @@ const courseData = {
 };
 
 function renderAppWithState(initialRoute) {
-  const authentication = {
-    userId: 9,
-    username: 'user9',
-  };
   const initialState = {
-    authentication,
     table: {
       data: courseData,
       error: null,
@@ -62,9 +63,18 @@ function renderAppWithState(initialRoute) {
   const AppWrapper = initialEntries => (
     <IntlProvider locale="en">
       <Provider store={mockStore(initialState)}>
-        <MemoryRouter initialEntries={initialEntries}>
-          <MainApp />
-        </MemoryRouter>
+        <AppContext.Provider
+          store={mockStore(initialState)}
+          value={{
+            authenticatedUser: {
+              username: 'user9',
+            },
+          }}
+        >
+          <MemoryRouter initialEntries={initialEntries}>
+            <MainApp />
+          </MemoryRouter>
+        </AppContext.Provider>
       </Provider>
     </IntlProvider>
   );

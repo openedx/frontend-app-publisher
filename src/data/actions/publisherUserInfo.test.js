@@ -1,16 +1,19 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import apiClient from '../apiClient';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 import * as types from '../constants/publisherUserInfo';
 import * as actions from './publisherUserInfo';
 import { getErrorMessages } from '../../utils';
 
 const mockStore = configureMockStore([thunk]);
-const mockClient = new MockAdapter(apiClient);
-apiClient.isAccessTokenExpired = jest.fn();
-apiClient.isAccessTokenExpired.mockReturnValue(false);
+const mockClient = new MockAdapter(axios);
+
+jest.mock('@edx/frontend-platform/auth');
+getAuthenticatedHttpClient.mockReturnValue(axios);
+
 const testData = {
   uuid: '4c30506c-4150-4243-90a1-4e62f1ce3718',
   key: 'edx',
