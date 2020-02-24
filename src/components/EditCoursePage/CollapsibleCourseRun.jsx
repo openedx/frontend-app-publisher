@@ -2,6 +2,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Field, FieldArray } from 'redux-form';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { Hyperlink } from '@edx/paragon';
 
 import ActionButton from '../ActionButton';
@@ -177,9 +178,6 @@ class CollapsibleCourseRun extends React.Component {
 
   displayDefaultButtonLabel() {
     const {
-      authentication: {
-        administrator,
-      },
       courseRun: {
         key,
         status,
@@ -187,6 +185,8 @@ class CollapsibleCourseRun extends React.Component {
       currentFormValues,
       initialValues,
     } = this.props;
+    const { administrator } = getAuthenticatedUser();
+
     if (administrator) {
       switch (status) {
         case REVIEW_BY_LEGAL:
@@ -249,9 +249,6 @@ class CollapsibleCourseRun extends React.Component {
       stafferInfo,
       sourceInfo,
       courseSubmitInfo,
-      authentication: {
-        administrator,
-      },
       initialValues,
       currentFormValues,
       isOpen,
@@ -259,6 +256,7 @@ class CollapsibleCourseRun extends React.Component {
       courseRunTypeOptions,
     } = this.props;
     const { hasExternalKey } = this.state;
+    const { administrator } = getAuthenticatedUser();
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
     // Checks if the current course run is the one triggering submission for review
@@ -743,9 +741,6 @@ CollapsibleCourseRun.propTypes = {
     label: PropTypes.string,
     value: PropTypes.bool,
   })).isRequired,
-  authentication: PropTypes.shape({
-    administrator: PropTypes.bool,
-  }),
   currentFormValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
     type: PropTypes.string,
@@ -770,7 +765,6 @@ CollapsibleCourseRun.defaultProps = {
   stafferInfo: {},
   targetRun: null,
   isOpen: false,
-  authentication: {},
 };
 
 export default CollapsibleCourseRun;

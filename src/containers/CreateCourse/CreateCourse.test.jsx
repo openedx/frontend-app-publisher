@@ -4,15 +4,10 @@ import { mount, shallow } from 'enzyme';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import axios from 'axios';
-import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 import CreateCoursePage from './index';
 import { jsonDeepCopy } from '../../utils';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
-
-jest.mock('@edx/frontend-platform/auth');
-getAuthenticatedHttpClient.mockReturnValue(axios);
 
 const courseData = {
   org: 'edx',

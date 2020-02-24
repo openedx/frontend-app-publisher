@@ -14,7 +14,6 @@ import { fetchOrganizationUsers } from '../../data/actions/organizationUsers';
 import { addComment, fetchComments } from '../../data/actions/comments';
 
 const mapStateToProps = state => ({
-  authentication: state.authentication,
   comments: state.comments,
   courseEditors: state.courseEditors,
   courseInfo: state.courseInfo,

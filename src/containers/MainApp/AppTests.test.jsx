@@ -3,17 +3,12 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { mount } from 'enzyme';
-import axios from 'axios';
-import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { AppContext } from '@edx/frontend-platform/react';
 
 import configureStore from 'redux-mock-store';
 import MainApp from './index';
 import TableComponent from '../../components/TableComponent/index';
-
-jest.mock('@edx/frontend-platform/auth');
-getAuthenticatedHttpClient.mockReturnValue(axios);
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);

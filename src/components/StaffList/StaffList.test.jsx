@@ -3,14 +3,10 @@ import { mount, shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 import StaffList from './index';
 
 const mockClient = new MockAdapter(axios);
-
-jest.mock('@edx/frontend-platform/auth');
-getAuthenticatedHttpClient.mockReturnValue(axios);
 
 
 const input = {
