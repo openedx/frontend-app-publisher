@@ -1,10 +1,6 @@
 import axios from 'axios';
-import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 import DiscoveryDataApiService from './DiscoveryDataApiService';
-
-jest.mock('@edx/frontend-platform/auth');
-getAuthenticatedHttpClient.mockReturnValue(axios);
 
 describe('fetchOrganizationUsers', () => {
   const get = jest.spyOn(axios, 'get');

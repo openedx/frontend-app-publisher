@@ -4,8 +4,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import qs from 'query-string';
-
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { SearchField } from '@edx/paragon';
+
 import TableContainer from '../../containers/TableContainer';
 import ButtonToolbar from '../ButtonToolbar';
 import PageContainer from '../PageContainer';
@@ -53,13 +54,11 @@ class CourseTable extends React.Component {
 
   componentDidUpdate(prevProps) {
     const {
-      authentication: {
-        administrator,
-      },
       table: {
         editorFilterOptions,
       },
     } = this.props;
+    const { administrator } = getAuthenticatedUser();
     const prevEditorFilterOptions = prevProps.table.editorFilterOptions;
 
     if (editorFilterOptions !== prevEditorFilterOptions && !administrator) {
@@ -233,9 +232,6 @@ class CourseTable extends React.Component {
 }
 
 CourseTable.defaultProps = {
-  authentication: {
-    administrator: false,
-  },
   fetchOrganizations: () => {},
   publisherUserInfo: {
     organizations: [],
@@ -248,9 +244,6 @@ CourseTable.defaultProps = {
 };
 
 CourseTable.propTypes = {
-  authentication: PropTypes.shape({
-    administrator: PropTypes.bool,
-  }),
   fetchOrganizations: PropTypes.func,
   publisherUserInfo: PropTypes.shape({
     organizations: PropTypes.array,

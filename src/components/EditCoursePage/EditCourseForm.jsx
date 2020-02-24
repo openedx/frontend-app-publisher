@@ -6,6 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { Icon } from '@edx/paragon';
 
 import ActionButton from '../ActionButton';
@@ -147,9 +148,6 @@ export class BaseEditCourseForm extends React.Component {
 
   render() {
     const {
-      authentication: {
-        administrator,
-      },
       handleSubmit,
       number,
       entitlement,
@@ -171,6 +169,7 @@ export class BaseEditCourseForm extends React.Component {
     const {
       open,
     } = this.state;
+    const { administrator } = getAuthenticatedUser();
 
     const courseOptionsData = getOptionsData(courseOptions);
     const courseRunOptionsData = getOptionsData(courseRunOptions);
@@ -861,9 +860,6 @@ export class BaseEditCourseForm extends React.Component {
 }
 
 BaseEditCourseForm.propTypes = {
-  authentication: PropTypes.shape({
-    administrator: PropTypes.bool,
-  }),
   handleSubmit: PropTypes.func.isRequired,
   number: PropTypes.string.isRequired,
   currentFormValues: PropTypes.shape({
@@ -910,9 +906,6 @@ BaseEditCourseForm.propTypes = {
 };
 
 BaseEditCourseForm.defaultProps = {
-  authentication: {
-    administrator: false,
-  },
   currentFormValues: {},
   entitlement: { sku: null },
   submitting: false,

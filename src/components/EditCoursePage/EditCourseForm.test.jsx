@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { Field } from 'redux-form';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import { BaseEditCourseForm } from './EditCourseForm';
 import { REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED } from '../../data/constants';
@@ -32,6 +33,10 @@ describe('BaseEditCourseForm', () => {
     uuid: '11111111-1111-1111-1111-111111111111',
     editable: true,
   };
+
+  beforeEach(() => {
+    getAuthenticatedUser.mockReturnValue({ administrator: false });
+  });
 
   it('renders html correctly with minimal data', () => {
     const component = shallow(<BaseEditCourseForm
@@ -69,10 +74,8 @@ describe('BaseEditCourseForm', () => {
   });
 
   it('renders html correctly with administrator being true', () => {
+    getAuthenticatedUser.mockReturnValue({ administrator: true });
     const component = shallow(<BaseEditCourseForm
-      authentication={{
-        administrator: true,
-      }}
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}

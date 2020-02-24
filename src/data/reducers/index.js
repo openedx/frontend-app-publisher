@@ -16,16 +16,8 @@ import sourceInfo from './sourceInfo';
 import courseSubmitInfo from './courseSubmitInfo';
 import darkMode from './darkMode';
 
-const identityReducer = (state) => {
-  const newState = { ...state };
-  return newState;
-};
-
 export default history => combineReducers({
   router: connectRouter(history),
-  // The authentication state is added as initialState when
-  // creating the store in data/store.js.
-  authentication: identityReducer,
   comments,
   courseEditors,
   courseInfo,
