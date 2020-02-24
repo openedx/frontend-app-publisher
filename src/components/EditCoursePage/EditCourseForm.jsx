@@ -367,16 +367,16 @@ export class BaseEditCourseForm extends React.Component {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                            Learn more.
+                              Learn more.
                             </a>
                           </p>
                           <p><b>Example:</b></p>
                           <p>
-                          The first MOOC to teach positive psychology. Learn science-based
-                          principles and practices for a happy, meaningful life.
+                            The first MOOC to teach positive psychology. Learn science-based
+                            principles and practices for a happy, meaningful life.
                           </p>
                         </div>
-                    )}
+                      )}
                     />
                 )}
                   extraInput={{ onInvalid: this.openCollapsible }}
@@ -402,8 +402,8 @@ export class BaseEditCourseForm extends React.Component {
                             <li>Targets a global audience.</li>
                           </ul>
                           <p>
-                          The first four lines are visible when the About page opens. Learners can
-                          select “See More” to view the full description.
+                            The first four lines are visible when the About page opens. Learners can
+                            select “See More” to view the full description.
                           </p>
                           <p>
                             <a
@@ -411,11 +411,11 @@ export class BaseEditCourseForm extends React.Component {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                            Learn more.
+                              Learn more.
                             </a>
                           </p>
                         </div>
-                    )}
+                      )}
                     />
                 )}
                   extraInput={{ onInvalid: this.openCollapsible }}
@@ -447,7 +447,7 @@ export class BaseEditCourseForm extends React.Component {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                            Learn more.
+                              Learn more.
                             </a>
                           </p>
                         </div>
@@ -469,13 +469,13 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={(
                         <div>
                           <p>
-                          A review of content covered in your course, organized by week or module.
+                            A review of content covered in your course, organized by week or module.
                           </p>
                           <ul>
                             <li>Focus on topics and content.</li>
                             <li>
-                            Do not include detailed information about course logistics, such as
-                            grading, communication policies, and reading lists.
+                              Do not include detailed information about course logistics, such as
+                              grading, communication policies, and reading lists.
                             </li>
                             <li>Format items as either paragraphs or a bulleted list.</li>
                           </ul>
@@ -485,7 +485,7 @@ export class BaseEditCourseForm extends React.Component {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                            Learn more.
+                              Learn more.
                             </a>
                           </p>
                           <p><b>Example:</b></p>
@@ -493,16 +493,16 @@ export class BaseEditCourseForm extends React.Component {
                             <li>
                               <p>Week 1: From Calculator to Computer</p>
                               <p>
-                              Introduction to basic programming concepts, such as values and
-                              expressions, as well as making decisions when implementing algorithms
-                              and developing programs.
+                                Introduction to basic programming concepts, such as values and
+                                expressions, as well as making decisions when implementing algorithms
+                                and developing programs.
                               </p>
                             </li>
                             <li>
                               <p>Week 2: State Transformation</p>
                               <p>
-                              Introduction to state transformation, including representation of data
-                              and programs as well as conditional repetition.
+                                Introduction to state transformation, including representation of data
+                                and programs as well as conditional repetition.
                               </p>
                             </li>
                           </ul>
@@ -526,8 +526,8 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={(
                         <div>
                           <p>
-                          Specific knowledge learners must have to be successful in the course.
-                          If the course has no prerequisites, enter “None”.
+                            Specific knowledge learners must have to be successful in the course.
+                            If the course has no prerequisites, enter “None”.
                           </p>
                           <p>
                             <a
@@ -535,14 +535,14 @@ export class BaseEditCourseForm extends React.Component {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                            Learn more.
+                              Learn more.
                             </a>
                           </p>
                           <p><b>Examples:</b></p>
                           <ul>
                             <li>
-                            Secondary school (high school) algebra;
-                            basic mathematics concepts
+                              Secondary school (high school) algebra;
+                              basic mathematics concepts
                             </li>
                             <li>Graduate-level understanding of Keynesian economics</li>
                             <li>Basic algebra</li>
@@ -567,8 +567,8 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={(
                         <div>
                           <p>
-                          A quote from a learner in the course, demonstrating the value of taking
-                          the course.
+                            A quote from a learner in the course, demonstrating the value of taking
+                            the course.
                           </p>
                           <p>Should be no more than 25–50 words in length.</p>
                           <p>
@@ -577,14 +577,14 @@ export class BaseEditCourseForm extends React.Component {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                            Learn more.
+                              Learn more.
                             </a>
                           </p>
                           <p><b>Example:</b></p>
                           <p>
-                          “Brilliant course! It’s definitely the best introduction to electronics
-                          in the world! Interesting material, clean explanations, well prepared
-                          quizzes, challenging homework, and fun labs.” – Previous Student
+                            “Brilliant course! It’s definitely the best introduction to electronics
+                            in the world! Interesting material, clean explanations, well prepared
+                            quizzes, challenging homework, and fun labs.” – Previous Student
                           </p>
                         </div>
                     )}
@@ -612,17 +612,17 @@ export class BaseEditCourseForm extends React.Component {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                            Learn more.
+                              Learn more.
                             </a>
                           </p>
                           <p><b>Example:</b></p>
                           <strong>Do I need to know any programming languages before I start?</strong>
                           <p>
-                          No, this course is designed for beginners.
+                            No, this course is designed for beginners.
                           </p>
                           <strong>What version of Swift will I be learning?</strong>
                           <p>
-                          Swift version 4.
+                            Swift version 4.
                           </p>
                         </div>
                     )}
