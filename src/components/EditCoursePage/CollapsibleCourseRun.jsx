@@ -5,8 +5,7 @@ import { Field, FieldArray } from 'redux-form';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { Hyperlink } from '@edx/paragon';
 
-import ActionButton from '../ActionButton';
-import ButtonToolbar from '../ButtonToolbar';
+import CourseRunButtonToolbar from './CourseRunButtonToolbar';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import {
@@ -104,7 +103,6 @@ class CollapsibleCourseRun extends React.Component {
     this.openCollapsible = this.openCollapsible.bind(this);
     this.scrollToStaffPosition = this.scrollToStaffPosition.bind(this);
     this.displayOfacRestriction = this.displayOfacRestriction.bind(this);
-    this.displayDefaultButtonLabel = this.displayDefaultButtonLabel.bind(this);
     this.formatDate = this.formatDate.bind(this);
     this.normalizeDate = this.normalizeDate.bind(this);
   }
@@ -176,40 +174,6 @@ class CollapsibleCourseRun extends React.Component {
     }
   }
 
-  displayDefaultButtonLabel() {
-    const {
-      courseRun: {
-        key,
-        status,
-      },
-      currentFormValues,
-      initialValues,
-    } = this.props;
-    const { administrator } = getAuthenticatedUser();
-
-    if (administrator) {
-      switch (status) {
-        case REVIEW_BY_LEGAL:
-          return 'Save & Send to PC Review';
-        case REVIEW_BY_INTERNAL:
-          return 'PC Review Complete';
-        default:
-          break;
-      }
-    }
-    if (status === PUBLISHED) {
-      return 'Publish Run';
-    }
-    if (status === REVIEWED) {
-      if (initialValues.course_runs && currentFormValues.course_runs) {
-        return isNonExemptChanged(initialValues, currentFormValues, key)
-        || isNonExemptChanged(initialValues, currentFormValues) ? 'Re-Submit Run for Review' : 'Update Run';
-      }
-      return 'Update Run';
-    }
-    return 'Submit Run for Review';
-  }
-
   formatDate(date) {
     if (date) {
       if (date.includes('T')
@@ -276,6 +240,9 @@ class CollapsibleCourseRun extends React.Component {
       && runTypeOptions.every(option => option.value !== courseRun.run_type)) {
       runTypeOptions.push({ label: '--', value: courseRun.run_type });
     }
+
+    const pristine = initialValues && isPristine(initialValues, currentFormValues)
+      && isPristine(initialValues, currentFormValues, courseRun.key);
 
     return (
       <Collapsible
@@ -661,29 +628,22 @@ class CollapsibleCourseRun extends React.Component {
             </div>
           </div>
           )}
-        {editable
-          && (
-          <ButtonToolbar>
-            <ActionButton
-              // only disable if *this run* is in review
-              disabled={courseSubmitting || (courseRunInReview && !administrator)
-              || (courseRun.status === REVIEWED && isPristine(initialValues, currentFormValues)
-                && isPristine(initialValues, currentFormValues, courseRun.key))}
-              // Pass the submitting course run up to validate different fields based on status
-              onClick={() => store.dispatch(courseSubmitRun(courseRun))}
-              labels={{
-                default: this.displayDefaultButtonLabel(),
-                pending: courseRun.status === PUBLISHED ? 'Publishing Run' : 'Submitting Run for Review',
-              }}
-              state={
-                (
-                  courseSubmitting
-                  || (courseSubmitInfo && courseSubmitInfo.isSubmittingRunReview)
-                ) ? 'pending' : 'default'
-              }
-            />
-          </ButtonToolbar>
-          )}
+        <CourseRunButtonToolbar
+          // only disable if *this run* is in review
+          disabled={courseSubmitting || (courseRunInReview && !administrator)
+            || (courseRun.status === REVIEWED && pristine)}
+          editable={editable}
+          hasNonExemptChanges={initialValues && initialValues.course_runs
+            && currentFormValues.course_runs
+            && (isNonExemptChanged(initialValues, currentFormValues, courseRun.key)
+                || isNonExemptChanged(initialValues, currentFormValues))}
+          // Pass the submitting course run up to validate different fields based on status
+          onSubmit={() => store.dispatch(courseSubmitRun(courseRun))}
+          pristine={pristine}
+          submitting={courseSubmitting
+            || (courseSubmitInfo && courseSubmitInfo.isSubmittingRunReview)}
+          status={courseRun.status}
+        />
       </Collapsible>
     );
   }
