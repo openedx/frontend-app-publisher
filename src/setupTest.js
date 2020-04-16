@@ -29,3 +29,7 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
+
+// Disable all react-beautiful-dnd development warnings.
+// See https://github.com/atlassian/react-beautiful-dnd/issues/1593
+window['__react-beautiful-dnd-disable-dev-warnings'] = true;

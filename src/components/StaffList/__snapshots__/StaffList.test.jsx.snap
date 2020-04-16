@@ -10,9 +10,12 @@ exports[`StaffList renders a list of staff members and an autocomplete input 1`]
     <Connect(Droppable)
       direction="vertical"
       droppableId="StaffList"
+      getContainerForClone={[Function]}
       ignoreContainerClipping={false}
       isCombineEnabled={false}
       isDropDisabled={false}
+      mode="standard"
+      renderClone={null}
       type="DEFAULT"
     >
       <Component />
@@ -93,9 +96,12 @@ exports[`StaffList renders correctly with an error after failed submission 1`] =
     <Connect(Droppable)
       direction="vertical"
       droppableId="StaffList"
+      getContainerForClone={[Function]}
       ignoreContainerClipping={false}
       isCombineEnabled={false}
       isDropDisabled={false}
+      mode="standard"
+      renderClone={null}
       type="DEFAULT"
     >
       <Component />
@@ -167,9 +173,12 @@ exports[`StaffList renders correctly with referred props 1`] = `
     <Connect(Droppable)
       direction="vertical"
       droppableId="StaffList"
+      getContainerForClone={[Function]}
       ignoreContainerClipping={false}
       isCombineEnabled={false}
       isDropDisabled={false}
+      mode="standard"
+      renderClone={null}
       type="DEFAULT"
     >
       <Component />
