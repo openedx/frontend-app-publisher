@@ -377,7 +377,7 @@ describe('EditCoursePage', () => {
       },
       {
         content_language: 'en-us',
-        draft: true,
+        draft: false,
         expected_program_type: null,
         expected_program_name: '',
         external_key: '',
@@ -412,11 +412,11 @@ describe('EditCoursePage', () => {
       expectedSendCourseRuns[0].prices = {
         verified: defaultPrice,
       };
-      expectedSendCourseRuns[1].draft = true;
+      expectedSendCourseRuns[1].draft = false;
       expectedSendCourseRuns[1].prices = {
         verified: defaultPrice,
       };
-      expectedSendCourse.draft = true;
+      expectedSendCourse.draft = false;
       expectedSendCourse.prices = {
         verified: defaultPrice,
       };
@@ -714,7 +714,6 @@ describe('EditCoursePage', () => {
       component.update();
 
       expectedSendCourseRuns[1].draft = false;
-      expectedSendCourse.draft = false;
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(

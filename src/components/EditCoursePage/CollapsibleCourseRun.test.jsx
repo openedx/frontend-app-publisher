@@ -228,7 +228,7 @@ describe('Collapsible Course Run', () => {
     />);
 
     const mockDispatch = jest.spyOn(store, 'dispatch');
-    component.find('ActionButton').simulate('click');
+    component.find('CourseRunButtonToolbar').simulate('submit');
     expect(mockDispatch).toHaveBeenCalledWith(courseSubmitRun(unpublishedCourseRun));
   });
 });

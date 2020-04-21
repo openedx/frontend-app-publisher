@@ -115,8 +115,10 @@ class EditCoursePage extends React.Component {
 
     modifiedCourseRuns.forEach((courseRun) => {
       let draft = true;
-      if (targetRun && (courseRun.key === targetRun.key)) {
-        // If a course run triggered the submission, mark it as not a draft
+      const isTargetRun = targetRun && (courseRun.key === targetRun.key);
+      if (isTargetRun || courseRun.status === PUBLISHED) {
+        // If a course run triggered the submission, mark it as not a draft, or if we are
+        // republishing content that has changed.
         draft = false;
       }
 
@@ -165,7 +167,7 @@ class EditCoursePage extends React.Component {
     return editedRun;
   }
 
-  prepareSendCourseData(courseData, courseRuns) {
+  prepareSendCourseData(courseData) {
     const {
       courseInfo: {
         data: {
@@ -174,27 +176,17 @@ class EditCoursePage extends React.Component {
         },
       },
       courseOptions,
-      courseSubmitInfo: {
-        targetRun,
-      },
     } = this.props;
 
-    let updatingPublishedRun = false;
-    if (targetRun) {
-      const submittedRun = courseRuns.status ? courseRuns
-        : courseRuns.find(run => run.key === targetRun.key);
-      // If we are updating a published course run, we need to also publish the course.
-      // We want to use the same indicator of draft = false for consistency.
-      if (submittedRun && submittedRun.status === PUBLISHED) {
-        updatingPublishedRun = true;
-      }
-    }
+    // If we have an existing published course run, we need to also publish the course.
+    // We want to use the same indicator of draft = false for consistency.
+    const hasPublishedRun = courseData.course_runs.some(r => r.status === PUBLISHED);
 
     const priceData = formatPriceData(courseData, courseOptions);
 
     return {
       additional_information: courseData.additional_information,
-      draft: !updatingPublishedRun,
+      draft: !hasPublishedRun,
       faq: courseData.faq,
       full_description: courseData.full_description,
       image: courseData.imageSrc,
@@ -277,7 +269,7 @@ class EditCoursePage extends React.Component {
     const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData)
       : this.prepareSendCourseRunData(courseData);
     // Process courseData to reduced data set
-    const courseEditData = this.prepareSendCourseData(courseData, modifiedCourseRuns);
+    const courseEditData = this.prepareSendCourseData(courseData);
     return editCourse(
       courseEditData,
       modifiedCourseRuns,

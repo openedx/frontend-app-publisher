@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Course Run Button Toolbar default parameters 1`] = `""`;
+
+exports[`Course Run Button Toolbar editable 1`] = `
+<ButtonToolbar
+  className=""
+  leftJustify={false}
+>
+  <CourseRunSubmitButton
+    disabled={false}
+    hasNonExemptChanges={false}
+    onSubmit={[Function]}
+    status="unpublished"
+    submitting={false}
+  />
+</ButtonToolbar>
+`;
+
+exports[`Course Run Button Toolbar published pristine 1`] = `""`;
+
+exports[`Course Run Button Toolbar published with changes 1`] = `
+<div
+  className="font-italic text-center"
+>
+  To publish changes, click ‘Save & Re-Publish’ below.
+</div>
+`;

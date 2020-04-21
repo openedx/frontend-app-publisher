@@ -9,9 +9,8 @@ import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { Icon } from '@edx/paragon';
 
-import ActionButton from '../ActionButton';
-import ButtonToolbar from '../ButtonToolbar';
 import CollapsibleCourseRuns from './CollapsibleCourseRuns';
+import CourseButtonToolbar from './CourseButtonToolbar';
 import FieldLabel from '../FieldLabel';
 import ImageUpload from '../ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
@@ -21,9 +20,12 @@ import Pill from '../Pill';
 import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
+import { PUBLISHED } from '../../data/constants';
 import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
-import { getOptionsData, parseCourseTypeOptions, parseOptions } from '../../utils';
+import {
+  getOptionsData, isPristine, parseCourseTypeOptions, parseOptions,
+} from '../../utils';
 import store from '../../data/store';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 
@@ -165,6 +167,7 @@ export class BaseEditCourseForm extends React.Component {
       reset,
       courseOptions,
       courseRunOptions,
+      initialValues,
     } = this.props;
     const {
       open,
@@ -200,31 +203,15 @@ export class BaseEditCourseForm extends React.Component {
     const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type]
       || courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
 
-    let submitState = 'default';
-    if (submitting || (courseInfo && courseInfo.isSubmittingEdit)) {
-      submitState = 'pending';
-    } else if (pristine) {
-      submitState = 'complete';
-    }
+    const courseIsPristine = isPristine(initialValues, currentFormValues);
+    const publishedContentChanged = initialValues.course_runs
+      && initialValues.course_runs.some(run => (run.status === PUBLISHED
+        && (!courseIsPristine || !isPristine(initialValues, currentFormValues, run.key))));
 
     languageOptions.unshift({ label: '--', value: '' });
     levelTypeOptions.unshift({ label: '--', value: '' });
     subjectOptions.unshift({ label: '--', value: '' });
     programOptions.unshift({ label: '--', value: '' });
-
-    const cancelButton = (
-      <button
-        type="button"
-        onClick={() => {
-          this.setCollapsible(false);
-          reset();
-          this.collapseAllCourseRuns();
-        }}
-        className="btn btn-outline-primary"
-      >
-        Clear Edits
-      </button>
-    );
 
     return (
       <div className="edit-course-form">
@@ -831,28 +818,26 @@ export class BaseEditCourseForm extends React.Component {
             validate={() => {}} // override method from our props, we don't want to pass it down
           />
           {this.getAddCourseRunButton(disabled || !pristine, uuid)}
-          {editable
-            && (
-            <ButtonToolbar className="mt-3">
-              {submitState === 'default' ? cancelButton : null}
-              <ActionButton
-                disabled={disabled || submitting}
-                labels={{
-                  default: 'Save & Continue Editing',
-                  pending: 'Saving Course',
-                  complete: 'Course Saved',
-                }}
-                state={submitState}
-                onClick={() => {
-                  /* Bit of a hack used to clear old validation errors that might be around from
-                   *  trying to submit for review with errors.
-                   */
-                  store.dispatch(stopSubmit(id));
-                  store.dispatch(courseSubmitRun());
-                }}
-              />
-            </ButtonToolbar>
-            )}
+          <CourseButtonToolbar
+            className="mt-3"
+            disabled={disabled || submitting}
+            editable={editable}
+            onClear={() => {
+              this.setCollapsible(false);
+              reset();
+              this.collapseAllCourseRuns();
+            }}
+            onSave={() => {
+              /* Bit of a hack used to clear old validation errors that might be around from
+               *  trying to submit for review with errors.
+               */
+              store.dispatch(stopSubmit(id));
+              store.dispatch(courseSubmitRun());
+            }}
+            pristine={pristine}
+            publishedContentChanged={publishedContentChanged}
+            submitting={submitting || (courseInfo && courseInfo.isSubmittingEdit)}
+          />
         </form>
       </div>
     );
