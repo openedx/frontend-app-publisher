@@ -2,7 +2,7 @@
 import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import { IN_REVIEW_STATUS } from '../../data/constants';
 import { CreateCourseRunForm } from './CreateCourseRunForm';
