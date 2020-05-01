@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
