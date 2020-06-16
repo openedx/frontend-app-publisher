@@ -798,6 +798,30 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
+            <Field
+            name="collaboratorLogo"
+            component={CollaboratorLogoUpload}
+            label={(
+              <FieldLabel
+                id="collaboratorLogo.label"
+                text="Collaborator Logo"
+                helpText={(
+                  <div>
+                    <p>
+                      Logos to highlight collaborating organizations.
+                    </p>
+                    <ul>
+                      <li>New collaborator logos must be XX pixels in size.</li>
+                      <li>File size must not exceed XX.</li>
+                      <li>The image must be a JPEG or PNG file.</li>
+                      <li>To elaborate on the support, please include additional information in the “About this course” section. Please avoid including statements that the course is jointly offered or that the 3rd party is collaborating or partnering with edX.</li>
+                      <li>Course teams are responsible for securing any necessary permissions for use of third-party logos.</li>
+                    </ul>
+                  </div>
+                )}
+                extraText="Image must be XX pixels in size."
+              />
+            )}
           </Collapsible>
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
