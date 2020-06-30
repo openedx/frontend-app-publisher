@@ -6,8 +6,4 @@ const config = createConfig('jest', {
   ],
 });
 
-config.transformIgnorePatterns = [
-  '/node_modules/(?!(tinymce-language-selector|@edx))/',
-];
-
 module.exports = config;
