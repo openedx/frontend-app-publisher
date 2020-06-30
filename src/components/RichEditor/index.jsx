@@ -9,7 +9,7 @@ import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/themes/silver/theme';
 import 'style-loader!tinymce/skins/ui/oxide/skin.min.css'; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved
-import 'tinymce-language-selector';
+import '@edx/tinymce-language-selector';
 import StatusAlert from '../StatusAlert';
 
 
