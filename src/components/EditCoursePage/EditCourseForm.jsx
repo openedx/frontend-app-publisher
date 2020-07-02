@@ -187,8 +187,8 @@ export class BaseEditCourseForm extends React.Component {
       && parseOptions(courseRunOptionsData.pacing_type.choices));
     const languageOptions = (courseRunOptionsData
       && parseOptions(courseRunOptionsData.content_language.choices));
-    // const programOptions = (courseRunOptionsData
-    //   && parseOptions(courseRunOptionsData.expected_program_type.choices));
+    const programOptions = (courseRunOptionsData
+      && parseOptions(courseRunOptionsData.expected_program_type.choices));
     const parsedTypeOptions = courseOptionsData
       && parseCourseTypeOptions(courseOptionsData.type.type_options);
     const {
@@ -211,7 +211,7 @@ export class BaseEditCourseForm extends React.Component {
     languageOptions.unshift({ label: '--', value: '' });
     levelTypeOptions.unshift({ label: '--', value: '' });
     subjectOptions.unshift({ label: '--', value: '' });
-    // programOptions.unshift({ label: '--', value: '' });
+    programOptions.unshift({ label: '--', value: '' });
 
     return (
       <div className="edit-course-form">
@@ -798,9 +798,9 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
-{/*            <Field
+            <Field
               name="collaboratorLogo"
-              component={CollaboratorLogoUpload}
+              component={ImageUpload}
               label={(
                 <FieldLabel
                   id="collaboratorLogo.label"
@@ -819,16 +819,18 @@ export class BaseEditCourseForm extends React.Component {
                       </ul>
                     </div>
                   )}
-                  extraText="Image must be XX pixels in size."
+                  extraText="Image must be 80 pixels in width."
                 />
               )} 
               extraInput={{ onInvalid: this.openCollapsible }}
-              maxImageSizeKilo={1000}
-              requiredWidth={1134}
-              requiredHeight={675}
+              maxImageSizeKilo={100}
+              requiredWidth={80}
+              requiredHeight={80}
+              id="collaborator-image"
               className="collaborator-logo"
               disabled={disabled}
-            />*/}
+              optional
+            />
           </Collapsible>
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
@@ -836,7 +838,7 @@ export class BaseEditCourseForm extends React.Component {
             component={CollapsibleCourseRuns}
             languageOptions={languageOptions}
             ofacRestrictionOptions={ofacRestrictionOptions}
-            programOptions={[]}
+            programOptions={programOptions}
             pacingTypeOptions={pacingTypeOptions}
             formId={id}
             courseUuid={uuid}
