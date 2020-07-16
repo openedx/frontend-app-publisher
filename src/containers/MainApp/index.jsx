@@ -12,7 +12,8 @@ import CreateCourse from '../CreateCourse';
 import CreateCourseRun from '../CreateCourseRun';
 import CreateStaffer from '../CreateStaffer';
 import EditStaffer from '../EditStaffer';
-
+import CreateCollaborator from '../CreateCollaborator';
+import EditCollaborator from '../EditCollaborator';
 import EditCourse from '../EditCourse';
 
 const MainApp = () => (
@@ -50,6 +51,16 @@ const MainApp = () => (
           render={({ match }) => (
             <EditStaffer uuid={match.params.uuid} />
           )}
+        />
+        <Route
+          path="/collaborators/new"
+          exact
+          component={CreateCollaborator}
+        />
+        <Route
+          path="/collaborators/:uuid"
+          exact
+          component={EditCollaborator}
         />
         <Route
           path="/courses/:uuid"

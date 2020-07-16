@@ -93,6 +93,7 @@ describe('EditCoursePage', () => {
         description: null,
       },
       key: 'edX+Test101x',
+      collaborators: [],
       learner_testimonials: null,
       level_type: 'intermediate',
       outcome: '<p>learn</p>',

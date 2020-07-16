@@ -55,6 +55,7 @@ class EditCoursePage extends React.Component {
     this.props.fetchCourseInfo();
     this.props.fetchCourseOptions();
     this.props.fetchCourseRunOptions();
+    this.props.fetchCollaboratorOptions();
     this.setStartedFetching();
   }
 
@@ -197,6 +198,9 @@ class EditCoursePage extends React.Component {
       prerequisites_raw: courseData.prerequisites_raw,
       ...priceData,
       short_description: courseData.short_description,
+      // Reduce collaborator list to just the UUID
+      collaborators: courseData.collaborators
+        ? courseData.collaborators.map(staffer => staffer.uuid) : courseData.collaborators,
       subjects: [
         courseData.subjectPrimary,
         courseData.subjectSecondary,
@@ -344,6 +348,7 @@ class EditCoursePage extends React.Component {
           outcome,
           subjects,
           image,
+          collaborators,
           prerequisites_raw,
           level_type,
           learner_testimonials,
@@ -384,6 +389,7 @@ class EditCoursePage extends React.Component {
       prices,
       type,
       url_slug,
+      collaborators,
       course_runs: this.buildCourseRuns(),
     };
   }
@@ -647,6 +653,7 @@ EditCoursePage.defaultProps = {
   fetchCourseRunOptions: () => {},
   fetchOrganizationRoles: () => null,
   fetchOrganizationUsers: () => null,
+  fetchCollaboratorOptions: () => null,
   editCourse: () => null,
   clearSubmitStatus: () => {},
   clearCourseReviewAlert: () => {},
@@ -660,6 +667,7 @@ EditCoursePage.defaultProps = {
     data: [],
   },
   removeCourseEditor: () => null,
+  collaboratorInfo: {},
 };
 
 EditCoursePage.propTypes = {
@@ -698,6 +706,7 @@ EditCoursePage.propTypes = {
   fetchCourseRunOptions: PropTypes.func,
   fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
+  fetchCollaboratorOptions: PropTypes.func,
   editCourse: PropTypes.func,
   clearSubmitStatus: PropTypes.func,
   clearCourseReviewAlert: PropTypes.func,
@@ -718,6 +727,7 @@ EditCoursePage.propTypes = {
     data: PropTypes.array,
   }),
   removeCourseEditor: PropTypes.func,
+  collaboratorInfo: PropTypes.shape({}),
 };
 
 export default EditCoursePage;

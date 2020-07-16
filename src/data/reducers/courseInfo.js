@@ -16,6 +16,7 @@ import {
   CLEAR_COURSE_SAVED,
   CLEAR_COURSE_RUN_ALERT,
 } from '../constants/courseInfo';
+import { formatCollaboratorOptions } from '../../utils';
 
 
 const initialState = {
@@ -40,7 +41,8 @@ function courseInfo(state = initialState, action) {
     case REQUEST_COURSE_INFO_SUCCESS:
       return {
         ...state,
-        data: action.data,
+        data: action.data.collaborators
+          ? Object.assign(action.data, formatCollaboratorOptions(action.data.collaborators)) : action.data,
         isFetching: false,
         error: null,
       };
