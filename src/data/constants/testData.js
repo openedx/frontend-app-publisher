@@ -292,7 +292,16 @@ const courseRunOptions = {
   error: null,
 };
 
+const collaboratorOptions = {
+  data: {
+    results: [],
+  },
+  error: null,
+  isFetching: false,
+};
+
 export {
   courseOptions,
   courseRunOptions,
+  collaboratorOptions,
 };

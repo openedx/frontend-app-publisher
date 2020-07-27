@@ -183,6 +183,22 @@ class DiscoveryDataApiService {
     });
   }
 
+  static createCollaborator(data) {
+    const url = `${discoveryBaseUrl}/collaborators/`;
+    return getAuthenticatedHttpClient().post(url, data);
+  }
+
+  static editCollaborator(collaboratorData) {
+    const { uuid } = collaboratorData;
+    const url = `${discoveryBaseUrl}/collaborators/${uuid}/`;
+    return getAuthenticatedHttpClient().patch(url, collaboratorData);
+  }
+
+  static fetchCollaborators() {
+    const url = `${discoveryBaseUrl}/collaborators/`;
+    return getAuthenticatedHttpClient().get(url);
+  }
+
   static editCourse(courseData) {
     const { uuid } = courseData;
     const queryParams = {

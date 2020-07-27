@@ -189,6 +189,10 @@ const getOptionsData = (options) => {
   return data.actions.POST;
 };
 
+const formatCollaboratorOptions = (options) => (
+  options.map(({ name, uuid, image: { original: { url } } }) => ({ name, uuid, image_url: url }))
+);
+
 const parseCourseTypeOptions = (typeOptions) => {
   const courseTypes = {};
   const courseRunTypeOptions = {};
@@ -297,4 +301,5 @@ export {
   formatPriceData,
   buildInitialPrices,
   hasMastersTrack,
+  formatCollaboratorOptions,
 };

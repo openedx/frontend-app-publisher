@@ -230,6 +230,36 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
         }
         required={true}
       />
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText={
+          <div>
+            <p>
+              Course teams are responsible for securing any necessary permissions for use of third-party logos.
+            </p>
+            <p>
+              To elaborate on the support, please include additional information in the “About this course” section. Please avoid including statements that the course is jointly offered or that the 3rd party is collaborating or partnering with edX.
+            </p>
+          </div>
+        }
+        id="collaborators.label"
+        optional={true}
+        text="Collaborators"
+      />
+      <Field
+        component={[Function]}
+        createNewUrl="/collaborators/new"
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="collaborator"
+        name="collaborators"
+        newItemInfo={Object {}}
+        newItemText="Add New Collaborator"
+        referrer="/courses/11111111-1111-1111-1111-111111111111"
+        renderItemComponent={[Function]}
+        renderSuggestion={[Function]}
+      />
       <Field
         className="course-image"
         component={[Function]}
@@ -921,6 +951,16 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
     />
     <FieldArray
       change={[Function]}
+      collaboratorInfo={Object {}}
+      collaboratorOptions={
+        Object {
+          "data": Object {
+            "results": Array [],
+          },
+          "error": Array [],
+          "isFetching": false,
+        }
+      }
       collapsiblesOpen={Array []}
       component={[Function]}
       courseInReview={false}
@@ -1732,6 +1772,36 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
         }
         required={false}
       />
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText={
+          <div>
+            <p>
+              Course teams are responsible for securing any necessary permissions for use of third-party logos.
+            </p>
+            <p>
+              To elaborate on the support, please include additional information in the “About this course” section. Please avoid including statements that the course is jointly offered or that the 3rd party is collaborating or partnering with edX.
+            </p>
+          </div>
+        }
+        id="collaborators.label"
+        optional={true}
+        text="Collaborators"
+      />
+      <Field
+        component={[Function]}
+        createNewUrl="/collaborators/new"
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="collaborator"
+        name="collaborators"
+        newItemInfo={Object {}}
+        newItemText="Add New Collaborator"
+        referrer="/courses/11111111-1111-1111-1111-111111111111"
+        renderItemComponent={[Function]}
+        renderSuggestion={[Function]}
+      />
       <Field
         className="course-image"
         component={[Function]}
@@ -2423,6 +2493,16 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
     />
     <FieldArray
       change={[Function]}
+      collaboratorInfo={Object {}}
+      collaboratorOptions={
+        Object {
+          "data": Object {
+            "results": Array [],
+          },
+          "error": Array [],
+          "isFetching": false,
+        }
+      }
       collapsiblesOpen={Array []}
       component={[Function]}
       courseInReview={false}
@@ -3253,6 +3333,36 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         }
         required={false}
       />
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText={
+          <div>
+            <p>
+              Course teams are responsible for securing any necessary permissions for use of third-party logos.
+            </p>
+            <p>
+              To elaborate on the support, please include additional information in the “About this course” section. Please avoid including statements that the course is jointly offered or that the 3rd party is collaborating or partnering with edX.
+            </p>
+          </div>
+        }
+        id="collaborators.label"
+        optional={true}
+        text="Collaborators"
+      />
+      <Field
+        component={[Function]}
+        createNewUrl="/collaborators/new"
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="collaborator"
+        name="collaborators"
+        newItemInfo={Object {}}
+        newItemText="Add New Collaborator"
+        referrer="/courses/11111111-1111-1111-1111-111111111111"
+        renderItemComponent={[Function]}
+        renderSuggestion={[Function]}
+      />
       <Field
         className="course-image"
         component={[Function]}
@@ -4046,6 +4156,16 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
     />
     <FieldArray
       change={[Function]}
+      collaboratorInfo={Object {}}
+      collaboratorOptions={
+        Object {
+          "data": Object {
+            "results": Array [],
+          },
+          "error": Array [],
+          "isFetching": false,
+        }
+      }
       collapsiblesOpen={Array []}
       component={[Function]}
       courseInReview={false}
@@ -4876,6 +4996,36 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
         }
         required={false}
       />
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText={
+          <div>
+            <p>
+              Course teams are responsible for securing any necessary permissions for use of third-party logos.
+            </p>
+            <p>
+              To elaborate on the support, please include additional information in the “About this course” section. Please avoid including statements that the course is jointly offered or that the 3rd party is collaborating or partnering with edX.
+            </p>
+          </div>
+        }
+        id="collaborators.label"
+        optional={true}
+        text="Collaborators"
+      />
+      <Field
+        component={[Function]}
+        createNewUrl="/collaborators/new"
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="collaborator"
+        name="collaborators"
+        newItemInfo={Object {}}
+        newItemText="Add New Collaborator"
+        referrer="/courses/11111111-1111-1111-1111-111111111111"
+        renderItemComponent={[Function]}
+        renderSuggestion={[Function]}
+      />
       <Field
         className="course-image"
         component={[Function]}
@@ -5567,6 +5717,16 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
     />
     <FieldArray
       change={[Function]}
+      collaboratorInfo={Object {}}
+      collaboratorOptions={
+        Object {
+          "data": Object {
+            "results": Array [],
+          },
+          "error": Array [],
+          "isFetching": false,
+        }
+      }
       collapsiblesOpen={Array []}
       component={[Function]}
       courseInReview={false}
@@ -6393,6 +6553,36 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
         priceLabels={Object {}}
         required={false}
       />
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText={
+          <div>
+            <p>
+              Course teams are responsible for securing any necessary permissions for use of third-party logos.
+            </p>
+            <p>
+              To elaborate on the support, please include additional information in the “About this course” section. Please avoid including statements that the course is jointly offered or that the 3rd party is collaborating or partnering with edX.
+            </p>
+          </div>
+        }
+        id="collaborators.label"
+        optional={true}
+        text="Collaborators"
+      />
+      <Field
+        component={[Function]}
+        createNewUrl="/collaborators/new"
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="collaborator"
+        name="collaborators"
+        newItemInfo={Object {}}
+        newItemText="Add New Collaborator"
+        referrer="/courses/11111111-1111-1111-1111-111111111111"
+        renderItemComponent={[Function]}
+        renderSuggestion={[Function]}
+      />
       <Field
         className="course-image"
         component={[Function]}
@@ -7084,6 +7274,16 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
     />
     <FieldArray
       change={[Function]}
+      collaboratorInfo={Object {}}
+      collaboratorOptions={
+        Object {
+          "data": Object {
+            "results": Array [],
+          },
+          "error": Array [],
+          "isFetching": false,
+        }
+      }
       collapsiblesOpen={Array []}
       component={[Function]}
       courseInReview={false}

@@ -24,10 +24,15 @@ import { PUBLISHED } from '../../data/constants';
 import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import {
+  formatCollaboratorOptions,
   getOptionsData, isPristine, parseCourseTypeOptions, parseOptions,
 } from '../../utils';
 import store from '../../data/store';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
+import ListField from '../ListField';
+import { Collaborator } from '../Collaborator';
+import renderSuggestion from '../Collaborator/renderSuggestion';
+import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 
 
 export class BaseEditCourseForm extends React.Component {
@@ -168,6 +173,8 @@ export class BaseEditCourseForm extends React.Component {
       courseOptions,
       courseRunOptions,
       initialValues,
+      collaboratorOptions,
+      collaboratorInfo,
     } = this.props;
     const {
       open,
@@ -189,6 +196,16 @@ export class BaseEditCourseForm extends React.Component {
       && parseOptions(courseRunOptionsData.content_language.choices));
     const programOptions = (courseRunOptionsData
       && parseOptions(courseRunOptionsData.expected_program_type.choices));
+
+
+    const {
+      data: {
+        results: allResults,
+      },
+    } = collaboratorOptions;
+
+    const allCollaborators = formatCollaboratorOptions(allResults);
+
     const parsedTypeOptions = courseOptionsData
       && parseCourseTypeOptions(courseOptionsData.type.type_options);
     const {
@@ -198,7 +215,6 @@ export class BaseEditCourseForm extends React.Component {
       priceLabels,
       runTypeModes,
     } = parsedTypeOptions;
-
     const disabled = courseInReview || !editable;
     const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type]
       || courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
@@ -280,6 +296,36 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               disabled={disabled}
               required={isSubmittingForReview}
+            />
+            <FieldLabel
+              id="collaborators.label"
+              text="Collaborators"
+              helpText={(
+                <div>
+                  <p>
+                    Course teams are responsible for securing any necessary permissions for use of third-party logos.
+                  </p>
+                  <p>
+                    To elaborate on the support, please include additional information in the “About this course”
+                    section. Please avoid including statements that the course is jointly offered or that the 3rd party
+                    is collaborating or partnering with edX.
+                  </p>
+                </div>
+              )}
+              optional
+            />
+            <Field
+              name="collaborators"
+              component={ListField}
+              fetchSuggestions={fetchCollabSuggestions(allCollaborators)}
+              createNewUrl="/collaborators/new"
+              referrer={`/courses/${uuid}`}
+              itemType="collaborator"
+              renderItemComponent={Collaborator}
+              renderSuggestion={renderSuggestion}
+              disabled={disabled}
+              newItemText="Add New Collaborator"
+              newItemInfo={collaboratorInfo}
             />
             <Field
               name="imageSrc"
@@ -859,6 +905,11 @@ BaseEditCourseForm.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }).isRequired,
+  collaboratorOptions: PropTypes.shape({
+    data: PropTypes.shape(),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
@@ -883,11 +934,19 @@ BaseEditCourseForm.propTypes = {
   initialValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
     imageSrc: PropTypes.string,
+    collaborators: PropTypes.arrayOf(PropTypes.shape(
+      {
+        uuid: PropTypes.string.isRequired,
+      },
+    )),
   }),
   change: PropTypes.func,
   updateFormValuesAfterSave: PropTypes.func,
   reset: PropTypes.func.isRequired,
   type: PropTypes.string,
+  collaboratorInfo: PropTypes.shape({
+    returnToEditCourse: PropTypes.bool,
+  }),
 };
 
 BaseEditCourseForm.defaultProps = {
@@ -908,6 +967,14 @@ BaseEditCourseForm.defaultProps = {
   type: '',
   change: () => null,
   updateFormValuesAfterSave: () => null,
+  collaboratorInfo: {},
+  collaboratorOptions: {
+    data: {
+      results: [],
+    },
+    error: [],
+    isFetching: false,
+  },
 };
 
 const EditCourseForm = compose(

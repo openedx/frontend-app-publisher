@@ -17,3 +17,6 @@ snapshot:
 
 lint:
 	bash -c 'npm run lint && npm run stylelint'
+
+eslint-fix:
+	bash -c 'npm run lint-fix'

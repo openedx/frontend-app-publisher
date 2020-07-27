@@ -6,68 +6,77 @@ import { Link } from 'react-router-dom';
 import sourceInfo from '../../data/actions/sourceInfo';
 import store from '../../data/store';
 
-export const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name || ''}`;
 
-export const Staffer = ({
-  item,
+// default exported components don't play nicely with React.createElement
+// eslint-disable-next-line import/prefer-default-export
+export const Collaborator = ({
+  item: {
+    image_url: imageUrl,
+    uuid,
+    name,
+  },
   onRemove,
   disabled,
   referrer,
-  courseRunKey,
 }) => (
   <>
     <div className="staffer-image-wrapper overflow-hidden">
-      <img src={item.profile_image_url} className="rounded-circle w-25" alt="" />
+      <img src={imageUrl} className="rounded-circle w-25" alt="" />
     </div>
     <div className="staffer-details">
       <button
         type="button"
         className="btn js-delete-btn mr-1 p-0"
-        onClick={() => onRemove(item.uuid)}
+        onClick={() => onRemove(uuid)}
         disabled={disabled}
       >
         <Icon
-          id={`delete-icon-${item.uuid}`}
+          id={`delete-icon-${uuid}`}
           className="fa fa-trash fa-fw text-danger"
-          screenReaderText={`Remove ${getStafferName(item)}`}
+          screenReaderText={`Remove ${name}`}
         />
       </button>
       { !disabled
-        // Don't show the edit link at all if fields should be disabled
-        && (
+      // Don't show the edit link at all if fields should be disabled
+      && (
         <Link
-          to={`/instructors/${item.uuid}`}
+          to={{
+            pathname: `/collaborators/${uuid}`,
+            state: {
+              name,
+              imageUrl,
+              uuid,
+            },
+          }}
           className="btn mr-1 p-0"
-          onClick={() => store.dispatch(sourceInfo(referrer, courseRunKey))}
+          onClick={() => store.dispatch(sourceInfo(referrer))}
         >
           <Icon
-            id={`edit-icon-${item.uuid}`}
+            id={`edit-icon-${uuid}`}
             className="fa fa-edit fa-fw"
-            screenReaderText={`Edit ${getStafferName(item)}`}
+            screenReaderText={`Edit ${name}`}
             title="Edit"
           />
         </Link>
-        )}
+      )}
       <span className="name font-weight-bold">
-        {getStafferName(item)}
+        {name}
       </span>
     </div>
   </>
 );
 
-Staffer.propTypes = {
+Collaborator.propTypes = {
   onRemove: PropTypes.func.isRequired,
   item: PropTypes.shape({
     uuid: PropTypes.string.isRequired,
-    given_name: PropTypes.string.isRequired,
-    family_name: PropTypes.string,
-    profile_image_url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
   }).isRequired,
   disabled: PropTypes.bool,
   referrer: PropTypes.string.isRequired,
-  courseRunKey: PropTypes.string.isRequired,
 };
 
-Staffer.defaultProps = {
+Collaborator.defaultProps = {
   disabled: false,
 };
