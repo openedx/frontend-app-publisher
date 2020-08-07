@@ -80,7 +80,6 @@ const collaboratorReferredProps = {
   },
 };
 
-
 const stafferInput = {
   value: [
     {

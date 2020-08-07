@@ -1,6 +1,5 @@
 import TOGGLE_DARK_MODE from '../constants/darkMode';
 
-
 const initialState = {
   darkModeOn: false,
 };

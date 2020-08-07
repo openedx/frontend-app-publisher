@@ -10,10 +10,8 @@ import {
   fetchCourseOptions,
 } from './courseOptions';
 
-
 const mockStore = configureMockStore([thunk]);
 const mockClient = new MockAdapter(axios);
-
 
 describe('courseOptions fetch course actions', () => {
   afterEach(() => {

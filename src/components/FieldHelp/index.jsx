@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import jsxToString from 'jsx-to-string';
 import ReactTooltip from 'react-tooltip';
 
-
 class FieldHelp extends React.Component {
   constructor(props) {
     super(props);

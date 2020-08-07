@@ -7,7 +7,6 @@ import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
 
-
 class StafferPage extends React.Component {
   constructor(props) {
     super(props);

@@ -4,7 +4,6 @@ import {
   REQUEST_ORGANIZATION_ROLES_SUCCESS,
 } from '../constants/organizationRoles';
 
-
 const initialState = {
   data: [],
   error: null,

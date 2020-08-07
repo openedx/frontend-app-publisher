@@ -7,7 +7,6 @@ import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
 import { getErrorMessages } from '../../utils';
 
-
 function requestOrganizationUsers() {
   return { type: REQUEST_ORGANIZATION_USERS };
 }

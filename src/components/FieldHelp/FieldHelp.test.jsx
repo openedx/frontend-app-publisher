@@ -3,7 +3,6 @@ import { mount, shallow } from 'enzyme';
 import ReactTooltip from 'react-tooltip';
 import FieldHelp from './index';
 
-
 jest.mock('react-tooltip');
 
 describe('FieldHelp', () => {

@@ -7,7 +7,6 @@ import {
   REQUEST_COMMENTS_SUCCESS,
 } from '../constants/comments';
 
-
 const initialState = {
   data: [],
   isFetching: false,

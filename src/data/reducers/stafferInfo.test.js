@@ -2,7 +2,6 @@ import * as actions from '../actions/stafferInfo';
 
 import stafferInfo from './stafferInfo';
 
-
 describe('stafferInfo reducer', () => {
   let initialState;
   const stafferData = {

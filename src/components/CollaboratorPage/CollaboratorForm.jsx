@@ -10,7 +10,6 @@ import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 import { basicValidate } from '../../utils/validation';
 
-
 const BaseCollaboratorForm = ({
   handleSubmit,
   pristine,

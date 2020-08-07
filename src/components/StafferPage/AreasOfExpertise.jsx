@@ -6,7 +6,6 @@ import RenderInputTextField from '../RenderInputTextField';
 import RemoveButton from '../RemoveButton';
 import FieldLabel from '../FieldLabel';
 
-
 class AreasOfExpertise extends React.Component {
   constructor(props) {
     super(props);

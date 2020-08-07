@@ -9,7 +9,6 @@ import {
   RESET_COLLABORATOR_INFO,
 } from '../constants/collaboratorInfo';
 
-
 const initialState = {
   data: {},
   isSaving: false,

@@ -6,7 +6,6 @@ import CollaboratorForm from './CollaboratorForm';
 import StatusAlert from '../StatusAlert';
 import PageContainer from '../PageContainer';
 
-
 class CollaboratorPage extends React.Component {
   constructor(props) {
     super(props);

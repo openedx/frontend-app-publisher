@@ -8,7 +8,6 @@ import { getErrorMessages } from '../../utils';
 
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
-
 function requestCourseOptionsFail(error) {
   return { type: REQUEST_COURSE_OPTIONS_FAIL, error };
 }

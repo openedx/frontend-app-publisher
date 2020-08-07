@@ -7,7 +7,6 @@ import {
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { getErrorMessages } from '../../utils';
 
-
 export function requestCollaboratorOptions(data) {
   return { type: REQUEST_COLLABORATOR_OPTIONS, data };
 }

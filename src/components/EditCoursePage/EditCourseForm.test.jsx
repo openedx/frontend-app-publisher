@@ -8,7 +8,6 @@ import { BaseEditCourseForm } from './EditCourseForm';
 import { REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
-
 describe('BaseEditCourseForm', () => {
   const initialValuesFull = {
     title: 'Test Title',

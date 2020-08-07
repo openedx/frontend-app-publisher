@@ -5,7 +5,6 @@ import { Field } from 'redux-form';
 import RenderInputTextField from '../RenderInputTextField';
 import FieldLabel from '../FieldLabel';
 
-
 const PriceList = ({
   disabled,
   extraInput,

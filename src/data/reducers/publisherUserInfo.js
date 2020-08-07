@@ -4,7 +4,6 @@ import {
   REQUEST_USER_ORGANIZATIONS_FAIL,
 } from '../constants/publisherUserInfo';
 
-
 const initialState = {
   organizations: [],
   isFetching: true,

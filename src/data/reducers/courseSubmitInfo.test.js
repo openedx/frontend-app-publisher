@@ -1,7 +1,6 @@
 import courseSubmitInfoReducer from './courseSubmitInfo';
 import { courseRunSubmitting, courseSubmitRun, courseSubmittingFailure } from '../actions/courseSubmitInfo';
 
-
 describe('courseSubmitRun reducer', () => {
   let initialState;
 

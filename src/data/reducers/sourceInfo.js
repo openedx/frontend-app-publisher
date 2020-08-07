@@ -1,6 +1,5 @@
 import SEND_FROM_EDIT_PAGE from '../constants/sourceInfo';
 
-
 const initialState = {
   referrer: null,
   referringRun: null,

@@ -6,7 +6,6 @@ import {
   REQUEST_COURSE_EDITORS_SUCCESS,
 } from '../constants/courseEditors';
 
-
 const initialState = {
   data: [],
   error: null,

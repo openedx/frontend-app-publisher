@@ -4,7 +4,6 @@ import {
   REQUEST_COLLABORATOR_OPTIONS_FAIL,
 } from '../constants/collaboratorOptions';
 
-
 const initialState = {
   data: {},
   isFetching: false,

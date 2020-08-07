@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import SocialLinks from './SocialLinks';
 
-
 /*
 *  Disable console errors for this test file so that we don't receive warnings
 *  about fields being an array rather than an object. This prop change is

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RemoveButton from '../RemoveButton';
 
-
 function User(props) {
   return (
     <div>

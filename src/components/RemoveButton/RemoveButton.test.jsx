@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import RemoveButton from './index';
 
-
 const mockOnRemove = jest.fn(targetFieldNumber => targetFieldNumber);
 
 const defaultProps = {

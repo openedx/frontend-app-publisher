@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 function Pane(props) {
   return (
     <div className="card mb-3">

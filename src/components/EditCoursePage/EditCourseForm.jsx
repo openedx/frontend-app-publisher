@@ -34,7 +34,6 @@ import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 
-
 export class BaseEditCourseForm extends React.Component {
   constructor(props) {
     super(props);
@@ -196,7 +195,6 @@ export class BaseEditCourseForm extends React.Component {
       && parseOptions(courseRunOptionsData.content_language.choices));
     const programOptions = (courseRunOptionsData
       && parseOptions(courseRunOptionsData.expected_program_type.choices));
-
 
     const {
       data: {

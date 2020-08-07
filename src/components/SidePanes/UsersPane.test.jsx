@@ -6,7 +6,6 @@ import RemoveButton from '../RemoveButton';
 import User from './User';
 import UsersPane from './UsersPane';
 
-
 describe('UsersPane', () => {
   const basicCourseEditors = {
     data: [

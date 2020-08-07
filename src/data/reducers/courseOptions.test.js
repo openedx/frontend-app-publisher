@@ -2,7 +2,6 @@ import * as actions from '../actions/courseOptions';
 
 import courseOptions from './courseOptions';
 
-
 describe('courseOptions reducer', () => {
   const oldState = { // overwritten as old state for actions
     data: { nope: 'bad data' },

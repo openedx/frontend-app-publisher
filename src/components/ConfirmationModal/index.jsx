@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { Modal } from '@edx/paragon';
 
-
 const ConfirmationModal = ({
   onSubmit,
   title,

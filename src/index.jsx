@@ -15,7 +15,6 @@ import store from './data/store';
 import MainApp from './containers/MainApp';
 import history from './data/history';
 
-
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={store}>

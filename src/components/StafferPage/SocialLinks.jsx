@@ -7,7 +7,6 @@ import RenderSelectField from '../RenderSelectField';
 import RemoveButton from '../RemoveButton';
 import FieldLabel from '../FieldLabel';
 
-
 class SocialLinks extends React.Component {
   constructor(props) {
     super(props);

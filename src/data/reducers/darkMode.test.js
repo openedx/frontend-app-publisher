@@ -1,7 +1,6 @@
 import darkMode from './darkMode';
 import toggleDarkMode from '../actions/darkMode';
 
-
 describe('darkMode reducer', () => {
   let initalState;
 

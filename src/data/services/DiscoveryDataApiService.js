@@ -5,7 +5,6 @@ import { PAGE_SIZE } from '../constants/table';
 const discoveryBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/api/v1`;
 const publisherBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/publisher/api`;
 
-
 class DiscoveryDataApiService {
   static fetchCourse(uuid) {
     const queryParams = {

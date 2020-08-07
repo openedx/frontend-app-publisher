@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import StatusAlert from '../StatusAlert';
 
-
 class ImageUpload extends React.Component {
   constructor(props) {
     super(props);

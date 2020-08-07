@@ -12,7 +12,6 @@ import {
   RESET_STAFFER_INFO,
 } from '../constants/stafferInfo';
 
-
 const initialState = {
   data: {},
   isSaving: false,
