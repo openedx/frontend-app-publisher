@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import { BaseStafferForm } from './StafferForm';
 
-
 const stafferInfo = {
   data: {
     uuid: '14d7368b-51dc-42de-9952-0870bcd1f5f1',

@@ -274,7 +274,6 @@ const buildInitialPrices = (entitlements, courseRuns) => {
   return prices;
 };
 
-
 const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid
   && !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
 

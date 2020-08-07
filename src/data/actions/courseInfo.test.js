@@ -28,7 +28,6 @@ const mockClient = new MockAdapter(axios);
 
 const uuid = '11111111-1111-1111-1111-111111111111';
 
-
 describe('courseInfo fetch course actions', () => {
   afterEach(() => {
     mockClient.reset();

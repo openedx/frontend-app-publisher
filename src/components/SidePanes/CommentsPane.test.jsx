@@ -5,7 +5,6 @@ import Comment from './Comment';
 import CommentsPane from './CommentsPane';
 import StatusAlert from '../StatusAlert';
 
-
 describe('CommentsPane', () => {
   const mockFetch = jest.fn();
   const basicCommentThread = {

@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import ImageUpload from './index';
 
-
 describe('ImageUpload', () => {
   it('shows an image upload with no prior image', () => {
     const component = shallow(<ImageUpload

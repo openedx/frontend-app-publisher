@@ -4,7 +4,6 @@ import {
   REQUEST_ORGANIZATION_USERS_SUCCESS,
 } from '../constants/organizationUsers';
 
-
 const initialState = {
   data: [],
   error: null,

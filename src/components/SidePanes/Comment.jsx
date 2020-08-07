@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 function Comment(props) {
   return (
     <div className="card overflow-auto m-0 border-0">

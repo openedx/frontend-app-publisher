@@ -1,7 +1,6 @@
 import sourceInfo from './sourceInfo';
 import sourceInfoAction from '../actions/sourceInfo';
 
-
 describe('sourceInfo reducer', () => {
   let initalState;
 

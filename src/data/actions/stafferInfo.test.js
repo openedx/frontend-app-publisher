@@ -11,7 +11,6 @@ import {
 } from './stafferInfo';
 import * as types from '../constants/stafferInfo';
 
-
 describe('stafferInfo create staffer actions', () => {
   it('should start new staffer creation', () => {
     const stafferData = { name: 'test staffer data' };

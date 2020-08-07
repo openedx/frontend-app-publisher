@@ -60,7 +60,6 @@ const createWrapper = (state) => {
   />);
 };
 
-
 describe('Create Course View', () => {
   it('shows spinner while loading', () => {
     const testState = jsonDeepCopy(initialState);

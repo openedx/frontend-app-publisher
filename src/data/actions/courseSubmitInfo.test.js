@@ -8,7 +8,6 @@ import {
 } from './courseSubmitInfo';
 import * as types from '../constants/courseSubmitInfo';
 
-
 describe('courseSubmitInfo actions', () => {
   const targetRun = {
     key: 'edX101+DemoX',

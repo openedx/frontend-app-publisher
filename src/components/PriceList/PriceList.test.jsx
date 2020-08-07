@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import PriceList from './index';
 
-
 describe('PriceList', () => {
   it('renders without any price labels', () => {
     const component = shallow(<PriceList priceLabels={{}} />);

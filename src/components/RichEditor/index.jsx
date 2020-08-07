@@ -12,7 +12,6 @@ import 'style-loader!tinymce/skins/ui/oxide/skin.min.css'; // eslint-disable-lin
 import '@edx/tinymce-language-selector';
 import StatusAlert from '../StatusAlert';
 
-
 class RichEditor extends React.Component {
   constructor(props) {
     super(props);

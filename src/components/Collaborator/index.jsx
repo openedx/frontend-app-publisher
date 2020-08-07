@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import sourceInfo from '../../data/actions/sourceInfo';
 import store from '../../data/store';
 
-
 // default exported components don't play nicely with React.createElement
 // eslint-disable-next-line import/prefer-default-export
 export const Collaborator = ({

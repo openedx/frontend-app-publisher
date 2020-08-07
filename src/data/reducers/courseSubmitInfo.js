@@ -7,7 +7,6 @@ import {
   COURSE_SUBMITTING_SUCCESS,
 } from '../constants/courseSubmitInfo';
 
-
 const initialState = {
   targetRun: null,
   isSubmittingRunReview: false,

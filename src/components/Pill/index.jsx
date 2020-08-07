@@ -11,7 +11,6 @@ import {
   ARCHIVED,
 } from '../../data/constants';
 
-
 const Pill = ({ statuses }) => {
   const pills = [];
   statuses.forEach((status) => {

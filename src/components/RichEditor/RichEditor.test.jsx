@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import RichEditor from './index';
 
-
 describe('RichEditor', () => {
   it('shows a rich text editor with no default text value', () => {
     const component = shallow(<RichEditor

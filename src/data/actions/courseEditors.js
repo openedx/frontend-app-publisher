@@ -9,7 +9,6 @@ import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 
 import { getErrorMessages } from '../../utils';
 
-
 function addCourseEditorSuccess(data) {
   return { type: ADD_COURSE_EDITOR_SUCCESS, data };
 }

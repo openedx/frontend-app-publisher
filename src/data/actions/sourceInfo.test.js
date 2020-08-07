@@ -1,7 +1,6 @@
 import sourceInfo from './sourceInfo';
 import SEND_FROM_EDIT_PAGE from '../constants/sourceInfo';
 
-
 describe('sourceInfo actions', () => {
   const courseUuid = '00000000-0000-0000-0000-000000000000';
   const referrer = `/courses/${courseUuid}/edit`;

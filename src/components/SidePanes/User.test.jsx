@@ -5,7 +5,6 @@ import RemoveButton from '../RemoveButton';
 
 import User from './User';
 
-
 describe('User', () => {
   it('shows a remove button iff onRemove is set', () => {
     const baseArguments = {

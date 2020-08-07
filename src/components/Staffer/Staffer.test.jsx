@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import { Staffer } from './index';
 
-
 const defaultProps = {
   onRemove: jest.fn(),
   item: {

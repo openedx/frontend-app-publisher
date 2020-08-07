@@ -18,7 +18,6 @@ import {
 } from '../constants/courseInfo';
 import { formatCollaboratorOptions } from '../../utils';
 
-
 const initialState = {
   data: {},
   isFetching: false,

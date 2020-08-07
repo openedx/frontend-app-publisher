@@ -8,7 +8,6 @@ import User from './User';
 import FieldLabel from '../FieldLabel';
 import StatusAlert from '../StatusAlert';
 
-
 class UsersPane extends React.Component {
   displayName(user) {
     if (user.email) {

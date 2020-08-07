@@ -4,7 +4,6 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import Pill from './index';
 
-
 describe('Pill', () => {
   it('renders without any statuses', () => {
     const component = shallow(<Pill statuses={[]} />);

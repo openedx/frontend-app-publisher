@@ -452,7 +452,6 @@ const courseRunData = {
   },
 };
 
-
 describe('courseRunOptions fetch courseRun actions', () => {
   afterEach(() => {
     mockClient.reset();

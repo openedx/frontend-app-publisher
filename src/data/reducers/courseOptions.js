@@ -4,7 +4,6 @@ import {
   REQUEST_COURSE_OPTIONS,
 } from '../constants/courseOptions';
 
-
 const initialState = {
   data: {},
   isFetching: false,

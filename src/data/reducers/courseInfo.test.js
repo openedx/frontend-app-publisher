@@ -2,7 +2,6 @@ import * as actions from '../actions/courseInfo';
 
 import courseInfo from './courseInfo';
 
-
 describe('courseInfo reducer', () => {
   let initialState;
   const courseData = {
