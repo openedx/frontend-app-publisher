@@ -133,7 +133,7 @@ class CourseTable extends React.Component {
               </Link>
             </ButtonToolbar>
           </div>
-          <div className="col-5 float-right pt-1">
+          <div className="col-5 float-right">
             <Select
               closeMenuOnSelect={false}
               value={selectedFilters}
@@ -168,6 +168,7 @@ class CourseTable extends React.Component {
               onSubmit={(filter) => {
                 updateUrl({ filter, page: 1 });
               }}
+              placeholder="Search"
             />
           </div>
         </div>

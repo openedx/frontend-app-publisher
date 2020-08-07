@@ -5,7 +5,7 @@ import './PageContainer.scss';
 
 const PageContainer = (props) => {
   const containerClasses = classNames('container my-3 content-container', props.className);
-  const colClasses = classNames('col', { 'col-xl-6 col-9': !props.wide });
+  const colClasses = classNames('col', { 'col-xl-7 col-9': !props.wide });
 
   return (
     <div className={containerClasses}>
