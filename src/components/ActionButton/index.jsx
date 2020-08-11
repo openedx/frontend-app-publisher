@@ -8,10 +8,9 @@ const ActionButton = ({ className, primary, ...passThroughProps }) => (
   <StatefulButton
     {...passThroughProps}
     type="submit"
+    variant={primary ? 'primary' : 'outline-primary'}
     className={classNames({
       btn: true,
-      'btn-primary': primary,
-      'btn-outline-primary': !primary,
       'form-submit-btn': true,
     }, className)}
   />

@@ -4,7 +4,7 @@ import qs from 'query-string';
 import { Link } from 'react-router-dom';
 import { redirectToLogout } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
-import { Dropdown, Hyperlink } from '@edx/paragon';
+import { Dropdown, DropdownButton, Hyperlink } from '@edx/paragon';
 
 import EdxLogo from '../../../assets/edx-sm.png';
 
@@ -42,17 +42,17 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
             </div>
             )}
           <div className="col-auto justify-content-end">
-            <Dropdown>
-              <Dropdown.Button>{authenticatedUser.username}</Dropdown.Button>
-              <Dropdown.Menu className="dropdown-menu-right">
-                <Dropdown.Item
-                  type="button"
-                  onClick={() => redirectToLogout(process.env.STUDIO_BASE_URL)}
-                >
-                  Sign Out
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            <DropdownButton
+              alignRight
+              title={authenticatedUser.username}
+              variant="light"
+            >
+              <Dropdown.Item
+                onClick={() => redirectToLogout(process.env.STUDIO_BASE_URL)}
+              >
+                Sign Out
+              </Dropdown.Item>
+            </DropdownButton>
           </div>
         </div>
       </div>
