@@ -34,7 +34,7 @@ const BaseCollaboratorForm = ({
                 <div>
                   <p>Image Requirements:</p>
                   <ul>
-                    <li>The image dimensions must be 80px × 80px.</li>
+                    <li>The image dimensions must be 200px × 100px.</li>
                     <li>The image size must be less than 256KB.</li>
                   </ul>
                 </div>
@@ -44,8 +44,8 @@ const BaseCollaboratorForm = ({
           )}
           id="logo_image"
           maxImageSizeKilo={256}
-          requiredWidth={80}
-          requiredHeight={80}
+          requiredWidth={200}
+          requiredHeight={100}
           className="collaborator-image"
           required={isCreateForm}
         />
