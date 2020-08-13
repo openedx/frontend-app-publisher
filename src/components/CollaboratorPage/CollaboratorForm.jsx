@@ -39,7 +39,7 @@ const BaseCollaboratorForm = ({
                   </ul>
                 </div>
               )}
-              extraText="Image must be 80x80 pixels in size."
+              extraText="Image must be 200x100 pixels in size."
             />
           )}
           id="logo_image"

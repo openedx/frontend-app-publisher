@@ -7,7 +7,7 @@ export default (suggestion) => (
       <img
         src={suggestion.image_url || NewInstructorImage}
         alt={`logo for ${suggestion.name}`}
-        className="rounded-circle w-100"
+        className="w-100"
       />
     </div>
     <div className="m-1 p-1 w-75">

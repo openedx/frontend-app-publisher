@@ -20,7 +20,7 @@ export const Collaborator = ({
 }) => (
   <>
     <div className="staffer-image-wrapper overflow-hidden">
-      <img src={imageUrl} className="rounded-circle w-25" alt="" />
+      <img src={imageUrl} className="w-25" alt="" />
     </div>
     <div className="staffer-details">
       <button
