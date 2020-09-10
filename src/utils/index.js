@@ -190,7 +190,7 @@ const getOptionsData = (options) => {
 };
 
 const formatCollaboratorOptions = (options) => (
-  options.map(({ name, uuid, image: { original: { url } } }) => ({ name, uuid, image_url: url }))
+  options.map(({ name = '', uuid, image: { original: { url } = { url: '' } } }) => ({ name, uuid, image_url: url }))
 );
 
 const parseCourseTypeOptions = (typeOptions) => {
