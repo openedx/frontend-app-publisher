@@ -123,25 +123,6 @@ export class BaseEditCourseForm extends React.Component {
     return courseRunButton;
   }
 
-  toggleCourseRun(index, value) {
-    this.setState(prevState => {
-      const collapsiblesOpen = [...prevState.collapsiblesOpen];
-      collapsiblesOpen[index] = value;
-      return { collapsiblesOpen };
-    });
-  }
-
-  collapseAllCourseRuns() {
-    this.setState(prevState => ({
-      collapsiblesOpen: prevState.collapsiblesOpen.map(() => false),
-    }));
-  }
-
-  openCollapsible() {
-    this.setCollapsible(true);
-  }
-
-
   getLinkComponent(courseStatuses, courseInfo) {
     if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data.url_slug) {
       return (
@@ -168,9 +149,8 @@ export class BaseEditCourseForm extends React.Component {
           </Hyperlink>
         </div>
       );
-    } else {
-      return 'No Preview Link Available';
-    }
+    } 
+    return 'No Preview Link Available';
   }
 
   formatCourseTitle(title, courseStatuses, courseInfo) {
@@ -185,6 +165,24 @@ export class BaseEditCourseForm extends React.Component {
         </div>
       </>
     );
+  }
+
+  toggleCourseRun(index, value) {
+    this.setState(prevState => {
+      const collapsiblesOpen = [...prevState.collapsiblesOpen];
+      collapsiblesOpen[index] = value;
+      return { collapsiblesOpen };
+    });
+  }
+
+  collapseAllCourseRuns() {
+    this.setState(prevState => ({
+      collapsiblesOpen: prevState.collapsiblesOpen.map(() => false),
+    }));
+  }
+
+  openCollapsible() {
+    this.setCollapsible(true);
   }
 
   render() {
