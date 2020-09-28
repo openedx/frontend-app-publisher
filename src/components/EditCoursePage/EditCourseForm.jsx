@@ -138,7 +138,6 @@ export class BaseEditCourseForm extends React.Component {
       );
     } 
     if (courseStatuses.includes(PUBLISHED) && courseInfo.data.marketing_url) {
-      // if there's one published course run, means course is published on prospectus
       return (
         <div>
           Already published -&nbsp;
