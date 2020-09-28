@@ -71,19 +71,6 @@ const formatCourseRunTitle = (courseRun) => {
             </Hyperlink>
           </>
         </div>
-        {courseRun.marketing_url && determineStatus(courseRun) !== ARCHIVED
-          ? (
-            <div className="course-run-preview-url">
-              <>
-                <Hyperlink
-                  destination={`${courseRun.marketing_url}`}
-                  target="_blank"
-                >
-                  {determineStatus(courseRun) === PUBLISHED ? 'View Live Page' : 'View Preview Page'}
-                </Hyperlink>
-              </>
-            </div>
-          ) : null}
       </div>
     );
   }
