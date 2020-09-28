@@ -136,7 +136,8 @@ export class BaseEditCourseForm extends React.Component {
           <span className="d-block">Any changes will go live when the website next builds</span>
         </>
       );
-    } else if (courseStatuses.includes(PUBLISHED) && courseInfo.data.marketing_url) {
+    } 
+    if (courseStatuses.includes(PUBLISHED) && courseInfo.data.marketing_url) {
       // if there's one published course run, means course is published on prospectus
       return (
         <div>
@@ -149,7 +150,7 @@ export class BaseEditCourseForm extends React.Component {
           </Hyperlink>
         </div>
       );
-    } 
+    }
     return 'No Preview Link Available';
   }
 
