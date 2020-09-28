@@ -136,7 +136,7 @@ export class BaseEditCourseForm extends React.Component {
           <span className="d-block">Any changes will go live when the website next builds</span>
         </>
       );
-    } 
+    }
     if (courseStatuses.includes(PUBLISHED) && courseInfo.data && courseInfo.data.marketing_url) {
       return (
         <div>
