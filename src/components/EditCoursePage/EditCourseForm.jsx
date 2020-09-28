@@ -133,7 +133,7 @@ export class BaseEditCourseForm extends React.Component {
           >
             View Preview Page
           </Hyperlink>
-          <span className="text-info">Any changes will go live when the website next builds</span>
+          <span className="d-block">Any changes will go live when the website next builds</span>
         </>
       );
     } else if (courseStatuses.includes(PUBLISHED) && courseInfo.data.marketing_url) {
