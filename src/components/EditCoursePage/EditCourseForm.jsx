@@ -124,7 +124,7 @@ export class BaseEditCourseForm extends React.Component {
   }
 
   getLinkComponent(courseStatuses, courseInfo) {
-    if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data.url_slug) {
+    if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data && courseInfo.data.url_slug) {
       return (
         <>
           <Hyperlink
@@ -137,7 +137,7 @@ export class BaseEditCourseForm extends React.Component {
         </>
       );
     } 
-    if (courseStatuses.includes(PUBLISHED) && courseInfo.data.marketing_url) {
+    if (courseStatuses.includes(PUBLISHED) && courseInfo.data && courseInfo.data.marketing_url) {
       return (
         <div>
           Already published -&nbsp;
