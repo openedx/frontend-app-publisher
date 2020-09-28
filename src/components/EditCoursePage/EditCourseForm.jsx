@@ -126,15 +126,15 @@ export class BaseEditCourseForm extends React.Component {
   getLinkComponent(courseStatuses, courseInfo) {
     if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data.url_slug) {
       return (
-        <div>
-          Any changes will go live when the website next builds -&nbsp;
+        <>
           <Hyperlink
             destination={`edx.org/course/preview/${courseInfo.data.url_slug}`}
             target="_blank"
           >
             View Preview Page
           </Hyperlink>
-        </div>
+          <span className="text-info">Any changes will go live when the website next builds</span>
+        </>
       );
     } else if (courseStatuses.includes(PUBLISHED) && courseInfo.data.marketing_url) {
       // if there's one published course run, means course is published on prospectus
