@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Icon } from '@edx/paragon';
+import { Icon, Hyperlink } from '@edx/paragon';
 
 import CollapsibleCourseRuns from './CollapsibleCourseRuns';
 import CourseButtonToolbar from './CourseButtonToolbar';
@@ -20,7 +20,7 @@ import Pill from '../Pill';
 import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
-import { PUBLISHED } from '../../data/constants';
+import { PUBLISHED, REVIEWED } from '../../data/constants';
 import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import {
@@ -123,6 +123,50 @@ export class BaseEditCourseForm extends React.Component {
     return courseRunButton;
   }
 
+  getLinkComponent(courseStatuses, courseInfo) {
+    if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data && courseInfo.data.url_slug) {
+      return (
+        <>
+          <Hyperlink
+            destination={`edx.org/course/preview/${courseInfo.data.url_slug}`}
+            target="_blank"
+          >
+            View Preview Page
+          </Hyperlink>
+          <span className="d-block">Any changes will go live when the website next builds</span>
+        </>
+      );
+    }
+    if (courseStatuses.includes(PUBLISHED) && courseInfo.data && courseInfo.data.marketing_url) {
+      return (
+        <div>
+          Already published -&nbsp;
+          <Hyperlink
+            destination={courseInfo.data.marketing_url}
+            target="_blank"
+          >
+            View Live Page
+          </Hyperlink>
+        </div>
+      );
+    }
+    return 'No Preview Link Available';
+  }
+
+  formatCourseTitle(title, courseStatuses, courseInfo) {
+    // TODO: After we have a way of determining if the course has been edited, that should be
+    // added into the list of statuses being passed into the Pill component.
+    return (
+      <>
+        {`Course: ${title}`}
+        <Pill statuses={courseStatuses} />
+        <div className="course-preview-url">
+          { this.getLinkComponent(courseStatuses, courseInfo) }
+        </div>
+      </>
+    );
+  }
+
   toggleCourseRun(index, value) {
     this.setState(prevState => {
       const collapsiblesOpen = [...prevState.collapsiblesOpen];
@@ -139,17 +183,6 @@ export class BaseEditCourseForm extends React.Component {
 
   openCollapsible() {
     this.setCollapsible(true);
-  }
-
-  formatCourseTitle(title, courseStatuses) {
-    // TODO: After we have a way of determining if the course has been edited, that should be
-    // added into the list of statuses being passed into the Pill component.
-    return (
-      <>
-        {`Course: ${title}`}
-        <Pill statuses={courseStatuses} />
-      </>
-    );
   }
 
   render() {
@@ -232,7 +265,7 @@ export class BaseEditCourseForm extends React.Component {
         <form id={id} onSubmit={handleSubmit}>
           <FieldLabel text={title} className="mb-2 h2" />
           <Collapsible
-            title={this.formatCourseTitle(title, courseStatuses)}
+            title={this.formatCourseTitle(title, courseStatuses, courseInfo)}
             key="Test Key"
             open={open}
             onToggle={this.setCollapsible}
