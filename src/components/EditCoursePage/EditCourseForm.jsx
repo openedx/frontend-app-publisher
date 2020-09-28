@@ -143,7 +143,7 @@ export class BaseEditCourseForm extends React.Component {
 
 
   getLinkComponent(courseStatuses, courseInfo) {
-    if (courseStatuses[0] === REVIEWED && courseInfo.data.url_slug) {
+    if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data.url_slug) {
       return (
         <div>
           Any changes will go live when the website next builds -&nbsp;
@@ -155,7 +155,8 @@ export class BaseEditCourseForm extends React.Component {
           </Hyperlink>
         </div>
       );
-    } else if (courseStatuses[0] === PUBLISHED && courseInfo.data.marketing_url) {
+    } else if (courseStatuses.includes(PUBLISHED) && courseInfo.data.marketing_url) {
+      // if there's one published course run, means course is published on prospectus
       return (
         <div>
           Already published -&nbsp;
