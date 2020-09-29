@@ -124,11 +124,12 @@ export class BaseEditCourseForm extends React.Component {
   }
 
   getLinkComponent(courseStatuses, courseInfo) {
+    courseStatuses = ['reviewed'];
     if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data && courseInfo.data.url_slug) {
       return (
         <>
           <Hyperlink
-            destination={`edx.org/course/preview/${courseInfo.data.url_slug}`}
+            destination={`https://www.edx.org/preview/course/${courseInfo.data.url_slug}`}
             target="_blank"
           >
             View Preview Page
