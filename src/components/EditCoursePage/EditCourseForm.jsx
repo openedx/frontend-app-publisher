@@ -124,7 +124,6 @@ export class BaseEditCourseForm extends React.Component {
   }
 
   getLinkComponent(courseStatuses, courseInfo) {
-    courseStatuses = ['reviewed'];
     if (courseStatuses.length === 1 && courseStatuses[0] === REVIEWED && courseInfo.data && courseInfo.data.url_slug) {
       return (
         <>
