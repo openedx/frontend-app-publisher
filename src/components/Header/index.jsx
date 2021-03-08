@@ -6,7 +6,7 @@ import { redirectToLogout } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
 import { Dropdown, DropdownButton, Hyperlink } from '@edx/paragon';
 
-import EdxLogo from '../../../assets/edx-sm.png';
+import EdxLogo from '../../../assets/edx-rebrand-logo.png';
 
 const Header = ({ darkModeOn, location, toggleDarkMode }) => {
   const { authenticatedUser } = useContext(AppContext);
