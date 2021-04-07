@@ -6,8 +6,6 @@ import { redirectToLogout } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
 import { Dropdown, DropdownButton, Hyperlink } from '@edx/paragon';
 
-import EdxLogo from '../../../assets/edx-rebrand-logo.png';
-
 const Header = ({ darkModeOn, location, toggleDarkMode }) => {
   const { authenticatedUser } = useContext(AppContext);
 
@@ -27,7 +25,7 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
         <div className="row align-items-center">
           <div className="col-auto justify-content-start">
             <Hyperlink destination={process.env.STUDIO_BASE_URL}>
-              <img src={EdxLogo} alt="edX logo" height="30" width="60" />
+              <img src={process.env.LOGO_URL} alt="edX logo" height="30" width="60" />
             </Hyperlink>
           </div>
           <div className="col">
