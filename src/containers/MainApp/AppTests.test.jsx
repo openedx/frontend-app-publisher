@@ -64,6 +64,7 @@ function renderAppWithState(initialRoute) {
             authenticatedUser: {
               username: 'user9',
             },
+            config: {},
           }}
         >
           <MemoryRouter initialEntries={initialEntries}>
