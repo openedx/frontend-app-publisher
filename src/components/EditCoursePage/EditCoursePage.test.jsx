@@ -815,7 +815,7 @@ describe('EditCoursePage', () => {
       });
 
       const modal = wrapper.find(ConfirmationModal);
-      modal.find('.btn-secondary').simulate('click');
+      modal.find('.btn-link').simulate('click');
 
       expect(wrapper.find(EditCoursePage)
         .instance().state.submitConfirmVisible)
