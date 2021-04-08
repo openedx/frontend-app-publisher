@@ -76,7 +76,6 @@ exports[`Header renders the correct header 1`] = `
             >
               <div
                 className="dropdown"
-                onKeyDown={[Function]}
               >
                 <DropdownToggle
                   variant="light"
@@ -103,6 +102,7 @@ exports[`Header renders the correct header 1`] = `
                   </Button>
                 </DropdownToggle>
                 <DropdownMenu
+                  align="left"
                   alignRight={false}
                   flip={true}
                 />
@@ -204,7 +204,6 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
             >
               <div
                 className="dropdown"
-                onKeyDown={[Function]}
               >
                 <DropdownToggle
                   variant="light"
@@ -231,6 +230,7 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
                   </Button>
                 </DropdownToggle>
                 <DropdownMenu
+                  align="left"
                   alignRight={false}
                   flip={true}
                 />
@@ -332,7 +332,6 @@ exports[`Header renders the header correctly when users pass a querystring param
             >
               <div
                 className="dropdown"
-                onKeyDown={[Function]}
               >
                 <DropdownToggle
                   variant="light"
@@ -359,6 +358,7 @@ exports[`Header renders the header correctly when users pass a querystring param
                   </Button>
                 </DropdownToggle>
                 <DropdownMenu
+                  align="left"
                   alignRight={false}
                   flip={true}
                 />
