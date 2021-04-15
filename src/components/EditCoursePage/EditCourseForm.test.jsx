@@ -31,6 +31,13 @@ describe('BaseEditCourseForm', () => {
     type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
     uuid: '11111111-1111-1111-1111-111111111111',
     editable: true,
+    skill_names: [],
+  };
+
+  const courseInfo = {
+    data: {
+      skill_names: [],
+    },
   };
 
   beforeEach(() => {
@@ -46,6 +53,7 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       number="Test101x"
       courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -63,6 +71,81 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       number="Test102x"
       courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      id="edit-course-form"
+    />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('renders html correctly with skills data when any of the owners has the flag enabled', () => {
+    const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
+    const courseInfoWithSkills = {
+      data: {
+        skill_names: skillNames,
+      },
+    };
+    const initialValuesWithSkills = {
+      title: initialValuesFull.title,
+      skill_names: skillNames,
+    };
+    const owners = [
+      {
+        enable_skills_in_publisher: true,
+      },
+      {
+        enable_skills_in_publisher: false,
+      },
+    ];
+
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      initialValues={initialValuesWithSkills}
+      owners={owners}
+      title={initialValuesFull.title}
+      number="Test101x"
+      courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfoWithSkills}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      id="edit-course-form"
+    />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('does not render skills data when all of the owners has the flag disabled', () => {
+    const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
+    const courseInfoWithSkills = {
+      data: {
+        skill_names: skillNames,
+      },
+    };
+    const initialValuesWithSkills = {
+      title: initialValuesFull.title,
+      skill_names: skillNames,
+    };
+    const owners = [
+      {
+        enable_skills_in_publisher: false,
+      },
+      {
+        enable_skills_in_publisher: false,
+      },
+    ];
+
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      initialValues={initialValuesWithSkills}
+      owners={owners}
+      title={initialValuesFull.title}
+      number="Test101x"
+      courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfoWithSkills}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -81,6 +164,7 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       number="Test102x"
       courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -98,6 +182,7 @@ describe('BaseEditCourseForm', () => {
       title={initialValuesFull.title}
       number="Test103x"
       courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       pristine={false}
@@ -116,6 +201,7 @@ describe('BaseEditCourseForm', () => {
       currentFormValues={initialValuesFull}
       number="Test101x"
       courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -133,6 +219,7 @@ describe('BaseEditCourseForm', () => {
       currentFormValues={initialValuesFull}
       number="Test101x"
       courseStatuses={[REVIEW_BY_LEGAL]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -156,6 +243,7 @@ describe('BaseEditCourseForm', () => {
       number="Test101x"
       entitlement={{ sku: 'ABC1234' }}
       courseStatuses={[REVIEWED]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -176,6 +264,7 @@ describe('BaseEditCourseForm', () => {
       number="Test101x"
       entitlement={{ sku: 'ABC1234' }}
       courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesFull.uuid}
@@ -199,6 +288,7 @@ describe('BaseEditCourseForm', () => {
       currentFormValues={initialValuesWithMasters}
       number="Masters101x"
       courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
       uuid={initialValuesWithMasters.uuid}

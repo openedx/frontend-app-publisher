@@ -11,6 +11,7 @@ import { Icon, Hyperlink } from '@edx/paragon';
 
 import CollapsibleCourseRuns from './CollapsibleCourseRuns';
 import CourseButtonToolbar from './CourseButtonToolbar';
+import CourseSkills from './CourseSkills';
 import FieldLabel from '../FieldLabel';
 import ImageUpload from '../ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
@@ -201,6 +202,12 @@ export class BaseEditCourseForm extends React.Component {
       isSubmittingForReview,
       editable,
       courseInfo,
+      courseInfo: {
+        data: {
+          skill_names: skillNames,
+        },
+      },
+      owners,
       reset,
       courseOptions,
       courseRunOptions,
@@ -213,6 +220,8 @@ export class BaseEditCourseForm extends React.Component {
     } = this.state;
     const { administrator } = getAuthenticatedUser();
 
+    const enableSkillsInPublisher = owners && owners.some(owner => owner.enable_skills_in_publisher);
+    const displaySkills = enableSkillsInPublisher && (skillNames && skillNames.length > 0);
     const courseOptionsData = getOptionsData(courseOptions);
     const courseRunOptionsData = getOptionsData(courseRunOptions);
     const levelTypeOptions = courseOptionsData
@@ -875,6 +884,32 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
+            {displaySkills
+            && (
+            <Field
+              name="skill_names"
+              component={CourseSkills}
+              label={(
+                <FieldLabel
+                  id="skills.label"
+                  text="Skills"
+                  helpText={(
+                    <div>
+                      <p>
+                        edX partners with Emsi, the labor market data company, to automatically tag your courses with
+                        in-demand skills from their library of 30,000 skills based on the content in your about page.
+                        If you want to experiment with what skills show up, you can edit and submit changes to your
+                        about page description.
+                      </p>
+                    </div>
+                  )}
+                />
+              )}
+              disabled
+              id="skills"
+              className="course-skill"
+            />
+            )}
           </Collapsible>
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
@@ -957,6 +992,9 @@ BaseEditCourseForm.propTypes = {
   courseInfo: PropTypes.shape({
     courseSaved: PropTypes.bool,
     isSubmittingEdit: PropTypes.bool,
+    data: PropTypes.shape({
+      skill_names: PropTypes.arrayOf(PropTypes.string),
+    }),
   }),
   courseSubmitInfo: PropTypes.shape({
     errors: PropTypes.shape({}),
@@ -965,6 +1003,7 @@ BaseEditCourseForm.propTypes = {
   initialValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
     imageSrc: PropTypes.string,
+    skill_names: PropTypes.arrayOf(PropTypes.string),
     collaborators: PropTypes.arrayOf(PropTypes.shape(
       {
         uuid: PropTypes.string.isRequired,
@@ -978,6 +1017,7 @@ BaseEditCourseForm.propTypes = {
   collaboratorInfo: PropTypes.shape({
     returnToEditCourse: PropTypes.bool,
   }),
+  owners: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 BaseEditCourseForm.defaultProps = {
@@ -986,6 +1026,7 @@ BaseEditCourseForm.defaultProps = {
   submitting: false,
   pristine: true,
   courseInReview: false,
+  owners: [],
   courseStatuses: [],
   isSubmittingForReview: false,
   editable: false,
@@ -994,6 +1035,7 @@ BaseEditCourseForm.defaultProps = {
   initialValues: {
     course_runs: [],
     imageSrc: '',
+    skill_names: [],
   },
   type: '',
   change: () => null,

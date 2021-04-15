@@ -359,6 +359,7 @@ class EditCoursePage extends React.Component {
           entitlements,
           type,
           course_runs,
+          skill_names,
         },
       },
     } = this.props;
@@ -391,6 +392,7 @@ class EditCoursePage extends React.Component {
       url_slug,
       collaborators,
       course_runs: this.buildCourseRuns(),
+      skill_names,
     };
   }
 
