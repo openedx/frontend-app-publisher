@@ -127,6 +127,7 @@ describe('EditCoursePage', () => {
         description: null,
         image: null,
       },
+      skill_names: [],
     },
     showCreateStatusAlert: false,
     isFetching: false,
