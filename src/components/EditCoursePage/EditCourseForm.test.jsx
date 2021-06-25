@@ -81,7 +81,7 @@ describe('BaseEditCourseForm', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
-  it('renders html correctly with skills data when any of the owners has the flag enabled', () => {
+  it('renders html correctly with skills data when skills are available', () => {
     const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
     const courseInfoWithSkills = {
       data: {
@@ -92,56 +92,10 @@ describe('BaseEditCourseForm', () => {
       title: initialValuesFull.title,
       skill_names: skillNames,
     };
-    const owners = [
-      {
-        enable_skills_in_publisher: true,
-      },
-      {
-        enable_skills_in_publisher: false,
-      },
-    ];
 
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesWithSkills}
-      owners={owners}
-      title={initialValuesFull.title}
-      number="Test101x"
-      courseStatuses={[UNPUBLISHED]}
-      courseInfo={courseInfoWithSkills}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      uuid={initialValuesFull.uuid}
-      type={initialValuesFull.type}
-      id="edit-course-form"
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
-  });
-
-  it('does not render skills data when all of the owners has the flag disabled', () => {
-    const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
-    const courseInfoWithSkills = {
-      data: {
-        skill_names: skillNames,
-      },
-    };
-    const initialValuesWithSkills = {
-      title: initialValuesFull.title,
-      skill_names: skillNames,
-    };
-    const owners = [
-      {
-        enable_skills_in_publisher: false,
-      },
-      {
-        enable_skills_in_publisher: false,
-      },
-    ];
-
-    const component = shallow(<BaseEditCourseForm
-      handleSubmit={() => null}
-      initialValues={initialValuesWithSkills}
-      owners={owners}
       title={initialValuesFull.title}
       number="Test101x"
       courseStatuses={[UNPUBLISHED]}
