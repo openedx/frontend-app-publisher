@@ -207,7 +207,6 @@ export class BaseEditCourseForm extends React.Component {
           skill_names: skillNames,
         },
       },
-      owners,
       reset,
       courseOptions,
       courseRunOptions,
@@ -220,8 +219,6 @@ export class BaseEditCourseForm extends React.Component {
     } = this.state;
     const { administrator } = getAuthenticatedUser();
 
-    const enableSkillsInPublisher = owners && owners.some(owner => owner.enable_skills_in_publisher);
-    const displaySkills = enableSkillsInPublisher && (skillNames && skillNames.length > 0);
     const courseOptionsData = getOptionsData(courseOptions);
     const courseRunOptionsData = getOptionsData(courseRunOptions);
     const levelTypeOptions = courseOptionsData
@@ -884,7 +881,7 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
-            {displaySkills
+            {skillNames?.length > 0
             && (
             <Field
               name="skill_names"
@@ -1017,7 +1014,6 @@ BaseEditCourseForm.propTypes = {
   collaboratorInfo: PropTypes.shape({
     returnToEditCourse: PropTypes.bool,
   }),
-  owners: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 BaseEditCourseForm.defaultProps = {
@@ -1026,7 +1022,6 @@ BaseEditCourseForm.defaultProps = {
   submitting: false,
   pristine: true,
   courseInReview: false,
-  owners: [],
   courseStatuses: [],
   isSubmittingForReview: false,
   editable: false,
