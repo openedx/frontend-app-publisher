@@ -326,6 +326,7 @@ BaseCreateCourseForm.propTypes = {
     prices: PropTypes.shape(),
     start: PropTypes.string,
     end: PropTypes.string,
+    upgrade_deadline_override: PropTypes.string,
   }).isRequired,
   currentFormValues: PropTypes.shape({
     org: PropTypes.string,

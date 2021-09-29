@@ -14,7 +14,7 @@ import {
 import { courseRunSubmitting } from '../../data/actions/courseSubmitInfo';
 import {
   IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
-  UNPUBLISHED,
+  UNPUBLISHED, AUDIT_TRACK,
 } from '../../data/constants';
 import store from '../../data/store';
 import ConfirmationModal from '../ConfirmationModal';
@@ -132,6 +132,8 @@ class EditCoursePage extends React.Component {
           ? courseRun.expected_program_name : '',
         external_key: courseRun.external_key ? courseRun.external_key : '',
         go_live_date: isValidDate(courseRun.go_live_date) ? courseRun.go_live_date : null,
+        upgrade_deadline_override: isValidDate(courseRun.upgrade_deadline_override)
+          ? courseRun.upgrade_deadline_override : null,
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
@@ -312,10 +314,28 @@ class EditCoursePage extends React.Component {
       },
     } = this.props;
 
+    const getUpgradeDeadlineOverride = (seats) => {
+      const nonAuditSeat = seats.filter(seat => seat.type !== AUDIT_TRACK.key)[0];
+      return nonAuditSeat.upgrade_deadline_override;
+    };
+
+    const buildSeats = (seats) => (
+      seats.length > 0 && seats.map(seat => ({
+        bulk_sku: seat.bulk_sku,
+        credit_hours: seat.credit_hours,
+        credit_provider: seat.credit_provider,
+        currency: seat.currency,
+        price: seat.price,
+        sku: seat.sku,
+        type: seat.type,
+      }))
+    );
+
     return course_runs && course_runs.map(courseRun => ({
       key: courseRun.key,
       start: courseRun.start,
       end: courseRun.end,
+      upgrade_deadline_override: courseRun.seats.length > 0 ? getUpgradeDeadlineOverride(courseRun.seats) : null,
       expected_program_type: courseRun.expected_program_type,
       expected_program_name: courseRun.expected_program_name,
       external_key: courseRun.external_key,
@@ -333,7 +353,7 @@ class EditCoursePage extends React.Component {
       has_ofac_restrictions: courseRun.has_ofac_restrictions,
       ofac_comment: courseRun.ofac_comment,
       run_type: courseRun.run_type,
-      seats: courseRun.seats,
+      seats: buildSeats(courseRun.seats),
     }));
   }
 

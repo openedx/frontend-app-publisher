@@ -23,6 +23,7 @@ const mockStore = configureStore();
 describe('EditCoursePage', () => {
   const defaultPrice = '77';
   const defaultEnd = '2019-08-14T00:00:00Z';
+  const defaultUpgradeDeadlineOverride = '2019-09-14T00:00:00Z';
 
   const courseInfo = {
     data: {
@@ -32,6 +33,7 @@ describe('EditCoursePage', () => {
           key: 'edX101+DemoX+T2',
           start: '2019-05-14T00:00:00Z',
           end: defaultEnd,
+          upgrade_deadline_override: '2019-05-10T00:00:00Z',
           expected_program_type: 'micromasters',
           expected_program_name: 'Test Program Name',
           go_live_date: '2019-05-06T00:00:00Z',
@@ -55,6 +57,7 @@ describe('EditCoursePage', () => {
           key: 'edX101+DemoX+T1',
           start: '2019-05-14T00:00:00Z',
           end: defaultEnd,
+          upgrade_deadline_override: '2019-05-10T00:00:00Z',
           expected_program_type: null,
           expected_program_name: '',
           go_live_date: '2019-05-06T00:00:00Z',
@@ -278,6 +281,7 @@ describe('EditCoursePage', () => {
       key: 'edX101+DemoX+T1',
       start: '2019-05-14T00:00:00Z',
       end: defaultEnd,
+      upgrade_deadline_override: defaultUpgradeDeadlineOverride,
       expected_program_type: null,
       expected_program_name: '',
       go_live_date: '2019-05-06T00:00:00Z',
@@ -376,6 +380,7 @@ describe('EditCoursePage', () => {
         status: UNPUBLISHED,
         transcript_languages: ['en-us'],
         weeks_to_complete: '100',
+        upgrade_deadline_override: defaultUpgradeDeadlineOverride,
       },
       {
         content_language: 'en-us',
@@ -396,6 +401,7 @@ describe('EditCoursePage', () => {
         status: PUBLISHED,
         transcript_languages: ['en-us'],
         weeks_to_complete: '100',
+        upgrade_deadline_override: defaultUpgradeDeadlineOverride,
       },
     ];
 
@@ -406,11 +412,13 @@ describe('EditCoursePage', () => {
 
       courseData.course_runs[0].end = defaultEnd;
       courseData.course_runs[0].status = UNPUBLISHED;
+      courseData.course_runs[0].upgrade_deadline_override = defaultUpgradeDeadlineOverride;
       courseData.prices = {
         verified: defaultPrice,
       };
 
       expectedSendCourseRuns[0].draft = true;
+      expectedSendCourseRuns[0].upgrade_deadline_override = defaultUpgradeDeadlineOverride;
       expectedSendCourseRuns[0].prices = {
         verified: defaultPrice,
       };
@@ -575,7 +583,7 @@ describe('EditCoursePage', () => {
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
-        [],
+        expectedSendCourseRuns,
         false,
         false,
         component.instance().getData,
@@ -635,12 +643,13 @@ describe('EditCoursePage', () => {
 
       courseData.prices.verified = '500.00';
       expectedSendCourse.prices.verified = '500';
+      expectedSendCourseRuns[0].prices = expectedSendCourse.prices;
       expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
 
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
-        [expectedSendCourseRuns[1]],
+        expectedSendCourseRuns,
         false,
         false,
         component.instance().getData,
@@ -720,7 +729,7 @@ describe('EditCoursePage', () => {
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
-        [expectedSendCourseRuns[1]],
+        expectedSendCourseRuns,
         true,
         false,
         component.instance().getData,
@@ -752,7 +761,7 @@ describe('EditCoursePage', () => {
       component.instance().handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourse,
-        [expectedSendCourseRuns[0]],
+        expectedSendCourseRuns,
         true,
         false,
         component.instance().getData,
