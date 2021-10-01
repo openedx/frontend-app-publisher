@@ -316,7 +316,7 @@ class EditCoursePage extends React.Component {
 
     const getUpgradeDeadlineOverride = (seats) => {
       const nonAuditSeat = seats.filter(seat => seat.type !== AUDIT_TRACK.key)[0];
-      return nonAuditSeat.upgrade_deadline_override;
+      return nonAuditSeat ? nonAuditSeat.upgrade_deadline_override : null;
     };
 
     const buildSeats = (seats) => (
