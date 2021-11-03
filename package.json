@@ -4,13 +4,11 @@
   "description": "Frontend for the Publisher Application",
   "repository": "https://github.com/edx/frontend-app-publisher",
   "browserslist": [
-    "last 2 versions",
-    "ie 11"
+    "extends @edx/browserslist-config"
   ],
   "scripts": {
     "build": "fedx-scripts webpack",
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
-    "is-es5": "es-check es5 ./dist/*.js",
     "lint": "fedx-scripts eslint --ext .jsx,.js .",
     "lint-fix": "fedx-scripts eslint --ext .jsx,.js . --fix",
     "prepush": "npm run lint; npm run stylelint",
@@ -64,6 +62,7 @@
     "tinymce": "5.10.3"
   },
   "devDependencies": {
+    "@edx/browserslist-config": "1.0.2",
     "@edx/frontend-build": "9.1.4",
     "@edx/stylelint-config-edx": "2.0.0",
     "axios": "0.26.1",
