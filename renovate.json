@@ -1,8 +1,20 @@
 {
   "extends": [
     "config:base",
-    "schedule:earlyMondays"
+    ":automergeLinters",
+    ":automergeTesters",
+    ":automergeMinor",
+    ":noUnscheduledUpdates",
+    ":semanticCommits"
   ],
-  "statusCheckVerify": true,
-  "rebaseStalePrs": true
+  "rebaseStalePrs": true,
+  "schedule": [
+    "every weekday"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["node", "npm"],
+      "enabled": false
+    }
+  ]
 }
