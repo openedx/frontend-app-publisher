@@ -123,7 +123,7 @@ class ListField extends React.Component {
     if (selectedValue.item_text) {
       return selectedValue.item_text;
     }
-    return selectedValue.name;
+    return `${selectedValue.given_name} ${selectedValue.family_name}`;
   }
 
   updateList() {
