@@ -16,14 +16,18 @@ exports[`Header renders the correct header 1`] = `
         <withDeprecatedProps(Hyperlink)
           destination="http://localhost:18010"
         >
-          <Hyperlink
+          <ForwardRef
             destination="http://localhost:18010"
-            externalLinkAlternativeText="Opens in a new window"
-            externalLinkTitle="Opens in a new window"
+            externalLinkAlternativeText="in a new tab"
+            externalLinkTitle="Opens in a new tab"
+            isInline={false}
             onClick={[Function]}
+            showLaunchIcon={true}
             target="_self"
+            variant="default"
           >
             <a
+              className="pgn__hyperlink default-link standalone-link"
               href="http://localhost:18010"
               onClick={[Function]}
               target="_self"
@@ -35,7 +39,7 @@ exports[`Header renders the correct header 1`] = `
                 width="60"
               />
             </a>
-          </Hyperlink>
+          </ForwardRef>
         </withDeprecatedProps(Hyperlink)>
       </div>
       <div
@@ -132,14 +136,18 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
         <withDeprecatedProps(Hyperlink)
           destination="http://localhost:18010"
         >
-          <Hyperlink
+          <ForwardRef
             destination="http://localhost:18010"
-            externalLinkAlternativeText="Opens in a new window"
-            externalLinkTitle="Opens in a new window"
+            externalLinkAlternativeText="in a new tab"
+            externalLinkTitle="Opens in a new tab"
+            isInline={false}
             onClick={[Function]}
+            showLaunchIcon={true}
             target="_self"
+            variant="default"
           >
             <a
+              className="pgn__hyperlink default-link standalone-link"
               href="http://localhost:18010"
               onClick={[Function]}
               target="_self"
@@ -151,7 +159,7 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
                 width="60"
               />
             </a>
-          </Hyperlink>
+          </ForwardRef>
         </withDeprecatedProps(Hyperlink)>
       </div>
       <div
@@ -260,14 +268,18 @@ exports[`Header renders the header correctly when users pass a querystring param
         <withDeprecatedProps(Hyperlink)
           destination="http://localhost:18010"
         >
-          <Hyperlink
+          <ForwardRef
             destination="http://localhost:18010"
-            externalLinkAlternativeText="Opens in a new window"
-            externalLinkTitle="Opens in a new window"
+            externalLinkAlternativeText="in a new tab"
+            externalLinkTitle="Opens in a new tab"
+            isInline={false}
             onClick={[Function]}
+            showLaunchIcon={true}
             target="_self"
+            variant="default"
           >
             <a
+              className="pgn__hyperlink default-link standalone-link"
               href="http://localhost:18010"
               onClick={[Function]}
               target="_self"
@@ -279,7 +291,7 @@ exports[`Header renders the header correctly when users pass a querystring param
                 width="60"
               />
             </a>
-          </Hyperlink>
+          </ForwardRef>
         </withDeprecatedProps(Hyperlink)>
       </div>
       <div
