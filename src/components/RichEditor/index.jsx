@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import { Editor } from '@tinymce/tinymce-react';
 import 'tinymce/tinymce.min';
+import 'tinymce/icons/default';
 import 'tinymce/plugins/legacyoutput';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
