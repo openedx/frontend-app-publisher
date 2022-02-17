@@ -99,7 +99,9 @@ const editCourseValidate = (values, props) => {
     const isSubmittingRun = run.key === targetKey;
     if (isSubmittingRun) {
       // naive check to deteremine if track is executive education or not
-      const isExecutiveEducation = "prices.executive-education" in registeredFields && registeredFields['prices.executive-education'].count;
+      const isExecutiveEducation = registeredFields
+        && registeredFields['prices.executive-education']
+        && registeredFields['prices.executive-education'].count;
 
       const runRequiredFields = isExecutiveEducation ? ['transcript_languages'] : ['transcript_languages', 'staff'];
       const runErrors = {};
