@@ -218,4 +218,34 @@ describe('editCourseValidate', () => {
     };
     expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual(expectedErrors);
   });
+  it('returns no error on submitting executive education course runs with missing staff', () => {
+    const values = {
+      short_description: 'Short',
+      full_description: 'Full',
+      outcome: 'Outcome',
+      imageSrc: 'base64;encodedimage',
+      course_runs: [
+        {
+          key: 'NonSubmittingTestRun',
+        },
+        {
+          key: 'TestRun',
+          transcript_languages: [
+            {
+              dummy_field: 'Transcript languages dummy field',
+            },
+          ],
+          staff: [],
+        },
+      ],
+    };
+    expect(editCourseValidate(values, {
+      targetRun: unpublishedTargetRun,
+      registeredFields: {
+        'prices.executive-education': {
+          count: 1,
+        },
+      },
+    })).toEqual({});
+  });
 });
