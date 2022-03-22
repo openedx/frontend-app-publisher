@@ -33,3 +33,8 @@ Object.defineProperty(window, 'matchMedia', {
 // Disable all react-beautiful-dnd development warnings.
 // See https://github.com/atlassian/react-beautiful-dnd/issues/1593
 window['__react-beautiful-dnd-disable-dev-warnings'] = true;
+
+// Upgrading to Node16 shows unhandledPromiseRejection warnings as errors so adding a handler
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason.stack);
+});
