@@ -218,7 +218,7 @@ describe('editCourseValidate', () => {
     };
     expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual(expectedErrors);
   });
-  it('returns no error on submitting executive education course runs with missing staff', () => {
+  it('returns no error on submitting 2U executive education course runs with missing staff', () => {
     const values = {
       short_description: 'Short',
       full_description: 'Full',
@@ -242,7 +242,7 @@ describe('editCourseValidate', () => {
     expect(editCourseValidate(values, {
       targetRun: unpublishedTargetRun,
       registeredFields: {
-        'prices.executive-education': {
+        'prices.paid-executive-education': {
           count: 1,
         },
       },
