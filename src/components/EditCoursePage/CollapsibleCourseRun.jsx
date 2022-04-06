@@ -294,7 +294,7 @@ class CollapsibleCourseRun extends React.Component {
                 component={DateTimeField}
                 dateLabel="Upgrade deadline override date"
                 timeLabel={`Upgrade deadline override time (${utcTimeZone})`}
-                utcTimeZone={true}
+                utcTimeZone
                 helpText={courseDateEditHelp}
                 disabled={!administrator || disabled}
               />
@@ -349,7 +349,7 @@ class CollapsibleCourseRun extends React.Component {
                 component={DateTimeField}
                 dateLabel="Upgrade deadline override date"
                 timeLabel={`Upgrade deadline override time (${utcTimeZone})`}
-                utcTimeZone={true}
+                utcTimeZone
                 helpText={courseDateEditHelp}
                 disabled={!administrator || disabled}
               />
