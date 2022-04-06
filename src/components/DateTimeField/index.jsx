@@ -36,8 +36,7 @@ class DateTimeField extends React.Component {
     let datetime = moment(`${date} ${time}`, 'YYYY/MM/DD HH:mm');
     if (this.props.utcTimeZone) {
       datetime = datetime.format(DATE_FORMAT);
-    }
-    else {
+    } else {
       datetime = datetime.utc().format(DATE_FORMAT);
     }
     this.props.input.onChange(datetime);
