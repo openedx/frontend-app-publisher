@@ -11,6 +11,9 @@ const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : ''
 const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '');
 const getTimeString = date => (date ? moment(date).format('HH:mm') : '');
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
+const getDateWithDashesUTC = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
+const getTimeStringUTC = date => (date ? moment.utc(date).format('HH:mm') : '');
+const utcTimeZone = moment.utc().zoneAbbr();
 const formatDate = date => (date ? moment(date).format('MMM DD, YYYY') : '');
 const courseRunIsArchived = run => run.status === 'unpublished' && moment().isAfter(run.end);
 
@@ -282,6 +285,8 @@ export {
   getDateWithDashes,
   getDateWithSlashes,
   getTimeString,
+  getDateWithDashesUTC,
+  getTimeStringUTC,
   formatDate,
   updateUrl,
   getPageOptionsFromUrl,
@@ -291,6 +296,7 @@ export {
   getErrorMessages,
   isValidDate,
   localTimeZone,
+  utcTimeZone,
   isSafari,
   isNonExemptChanged,
   isPristine,

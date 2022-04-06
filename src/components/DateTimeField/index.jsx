@@ -2,7 +2,13 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { InputText } from '@edx/paragon';
-import { getDateWithDashes, getDateWithSlashes, getTimeString } from '../../utils/index';
+import {
+  getDateWithDashes,
+  getDateWithSlashes,
+  getTimeString,
+  getDateWithDashesUTC,
+  getTimeStringUTC,
+} from '../../utils/index';
 import FieldLabel from '../FieldLabel';
 import { DATE_FORMAT, FORMAT_DATE_MATCHER } from '../../data/constants';
 
@@ -10,8 +16,10 @@ class DateTimeField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: getDateWithDashes(this.props.input.value),
-      time: getTimeString(this.props.input.value) || '12:00',
+      date: this.props.utcTimeZone ? getDateWithDashesUTC(this.props.input.value) :
+          getDateWithDashes(this.props.input.value),
+      time: this.props.utcTimeZone ? getTimeStringUTC(this.props.input.value) || '12:00' :
+          getTimeString(this.props.input.value) || '12:00',
     };
     this.concatDateTime = this.concatDateTime.bind(this);
     this.updateDate = this.updateDate.bind(this);
@@ -25,8 +33,12 @@ class DateTimeField extends React.Component {
   }
 
   concatDateTime(date, time) {
-    const datetime = moment(`${date} ${time}`, 'YYYY/MM/DD HH:mm');
-    this.props.input.onChange(datetime.utc().format(DATE_FORMAT));
+    let datetime = moment(`${date} ${time}`, 'YYYY/MM/DD HH:mm');
+    if (this.props.utcTimeZone)
+      datetime = datetime.format(DATE_FORMAT)
+    else
+      datetime = datetime.utc().format(DATE_FORMAT)
+    this.props.input.onChange(datetime);
   }
 
   updateDate(value) {
@@ -128,6 +140,7 @@ DateTimeField.propTypes = {
     onChange: PropTypes.func.isRequired,
   }).isRequired,
   minDate: PropTypes.string,
+  utcTimeZone: PropTypes.bool,
   onInvalid: PropTypes.func,
   maxLength: PropTypes.string,
   type: PropTypes.string,
@@ -140,6 +153,7 @@ DateTimeField.defaultProps = {
   required: false,
   minDate: '',
   onInvalid: () => {},
+  utcTimeZone: false,
   maxLength: '',
   type: '',
   pattern: '',

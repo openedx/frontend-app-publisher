@@ -10,7 +10,7 @@ import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import {
   courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
-  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual,
+  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual, utcTimeZone,
 } from '../../utils';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
@@ -293,7 +293,8 @@ class CollapsibleCourseRun extends React.Component {
                 type="date"
                 component={DateTimeField}
                 dateLabel="Upgrade deadline override date"
-                timeLabel={`Upgrade deadline override time (${localTimeZone})`}
+                timeLabel={`Upgrade deadline override time (${utcTimeZone})`}
+                utcTimeZone={true}
                 helpText={courseDateEditHelp}
                 disabled={!administrator || disabled}
               />
@@ -347,7 +348,8 @@ class CollapsibleCourseRun extends React.Component {
                 type="date"
                 component={DateTimeField}
                 dateLabel="Upgrade deadline override date"
-                timeLabel={`Upgrade deadline override time (${localTimeZone})`}
+                timeLabel={`Upgrade deadline override time (${utcTimeZone})`}
+                utcTimeZone={true}
                 helpText={courseDateEditHelp}
                 disabled={!administrator || disabled}
               />
