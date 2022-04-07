@@ -19,7 +19,7 @@ class DateTimeField extends React.Component {
       date: this.props.utcTimeZone
         ? getDateWithDashesUTC(this.props.input.value)
         : getDateWithDashes(this.props.input.value),
-      time: ( this.props.utcTimeZone
+      time: (this.props.utcTimeZone
         ? getTimeStringUTC(this.props.input.value)
         : getTimeString(this.props.input.value)) || '12:00',
     };
@@ -36,9 +36,9 @@ class DateTimeField extends React.Component {
 
   concatDateTime(date, time) {
     let datetime = moment(`${date} ${time}`, 'YYYY/MM/DD HH:mm');
-    this.props.utcTimeZone
-      ? datetime = datetime.format(DATE_FORMAT)
-      : datetime = datetime.utc().format(DATE_FORMAT);
+    datetime = this.props.utcTimeZone
+      ? datetime.format(DATE_FORMAT)
+      : datetime.utc().format(DATE_FORMAT);
     this.props.input.onChange(datetime);
   }
 
