@@ -33,7 +33,7 @@ jobs:
         node-version: ${{ matrix.node }}
 
     - name: Install NPM
-      run: npm install -g npm@8.5.0
+      run: npm install -g npm@${{ matrix.npm }}
 
     - name: Install Dependencies
       run: npm ci
