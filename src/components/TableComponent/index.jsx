@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import { Pagination, Table } from '@edx/paragon';
+import { Pagination, DataTable } from '@edx/paragon';
 import 'font-awesome/css/font-awesome.css';
 
 import './TableComponent.scss';
@@ -90,11 +90,11 @@ class TableComponent extends React.Component {
       <div className={className}>
         {loading && <LoadingSpinner />}
         <div className="table-responsive">
-          <Table
+          <DataTable
             className="table-sm table-striped"
             columns={columnConfig}
             data={formatData(data)}
-            tableSortable={tableSortable}
+            isSortable={tableSortable}
             defaultSortedColumn={sortColumn}
             defaultSortDirection={sortDirection}
           />
