@@ -4,7 +4,9 @@ import qs from 'query-string';
 import { Link } from 'react-router-dom';
 import { redirectToLogout } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
-import { Dropdown, DropdownButton, Hyperlink } from '@edx/paragon';
+import {
+  Dropdown, Hyperlink, AvatarButton,
+} from '@edx/paragon';
 
 const Header = ({ darkModeOn, location, toggleDarkMode }) => {
   const { authenticatedUser } = useContext(AppContext);
@@ -24,7 +26,7 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-auto justify-content-start">
-            <Hyperlink destination={process.env.STUDIO_BASE_URL}>
+            <Hyperlink destination={process.env.BASE_URL}>
               <img src={process.env.LOGO_URL} alt="edX logo" height="30" width="60" />
             </Hyperlink>
           </div>
@@ -40,17 +42,22 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
             </div>
             )}
           <div className="col-auto justify-content-end">
-            <DropdownButton
-              alignRight
-              title={authenticatedUser.username}
-              variant="light"
-            >
-              <Dropdown.Item
-                onClick={() => redirectToLogout(process.env.STUDIO_BASE_URL)}
-              >
-                Sign Out
-              </Dropdown.Item>
-            </DropdownButton>
+            <>
+              <Dropdown>
+                <Dropdown.Toggle as={AvatarButton}>
+                  {authenticatedUser.username}
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => redirectToLogout(process.env.LMS_BASE_URL)}
+                    key="dropdown-logout"
+                  >
+                    Sign Out
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </>
           </div>
         </div>
       </div>
