@@ -60,6 +60,7 @@ class TableComponent extends React.Component {
     const {
       className,
       pageCount,
+      itemCount,
       tableSortable,
       data,
       formatData,
@@ -69,12 +70,11 @@ class TableComponent extends React.Component {
 
     const columnConfig = this.props.columns.map(column => ({
       ...column,
-      onSort: column.columnSortable ? direction => updateUrl({
+      onSort: !column.columnSortable ? direction => updateUrl({
         page: 1,
         ordering: direction === 'desc' ? `-${column.key}` : column.key,
       }) : null,
     }));
-
     let sortDirection;
     let sortColumn;
 
@@ -95,6 +95,7 @@ class TableComponent extends React.Component {
             columns={columnConfig}
             data={formatData(data)}
             isSortable={tableSortable}
+            itemCount={itemCount}
             defaultSortedColumn={sortColumn}
             defaultSortDirection={sortDirection}
           />
@@ -171,6 +172,7 @@ TableComponent.propTypes = {
   // Props expected from TableContainer / redux store
   data: PropTypes.arrayOf(PropTypes.shape({})),
   pageCount: PropTypes.number.isRequired,
+  itemCount: PropTypes.number.isRequired,
   loading: PropTypes.bool,
   error: PropTypes.instanceOf(Error),
   paginateTable: PropTypes.func.isRequired,

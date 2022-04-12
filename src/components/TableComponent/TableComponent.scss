@@ -6,7 +6,7 @@ tbody {
 }
 
 tbody {
-  height: 50vh;
+  height: auto;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -35,6 +35,11 @@ tbody {
 
 td,
 th {
-  width: 25vw;
   max-width: 25vw;
+  width: 25vw;
+}
+
+/* Manually override data table max width for td to accomodate full width size*/ 
+td.pgn__data-table-cell-wrap {
+    max-width: 25vw;
 }

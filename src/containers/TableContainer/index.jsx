@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
   return {
     data: tableState.data && tableState.data.results,
     pageCount: (tableState.data && Math.ceil(tableState.data.count / PAGE_SIZE)) || 1,
+    itemCount: (tableState.data && tableState.data.count) || 0,
     loading: tableState.loading,
     error: tableState.error,
     editorFilterOptions: tableState.editorFilterOptions,

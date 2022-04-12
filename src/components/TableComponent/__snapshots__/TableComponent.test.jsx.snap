@@ -8,7 +8,13 @@ exports[`CourseTable shows a populated table 1`] = `
     <div
       className="table-responsive"
     >
-      <withDeprecatedProps(TableDeprecated)
+      <DataTable
+        EmptyTableComponent={[Function]}
+        FilterStatusComponent={[Function]}
+        RowStatusComponent={[Function]}
+        SelectionStatusComponent={[Function]}
+        additionalColumns={Array []}
+        bulkActions={Array []}
         className="table-sm table-striped"
         columns={
           Array [
@@ -16,13 +22,13 @@ exports[`CourseTable shows a populated table 1`] = `
               "columnSortable": true,
               "key": "col1",
               "label": "Col 1",
-              "onSort": [Function],
+              "onSort": null,
             },
             Object {
               "columnSortable": false,
               "key": "col2",
               "label": "Col 2",
-              "onSort": null,
+              "onSort": [Function],
             },
           ]
         }
@@ -38,9 +44,33 @@ exports[`CourseTable shows a populated table 1`] = `
             },
           ]
         }
+        dataViewToggleOptions={
+          Object {
+            "defaultActiveStateValue": "card",
+            "isDataViewToggleEnabled": false,
+            "onDataViewToggle": [Function],
+            "togglePlacement": "left",
+          }
+        }
+        defaultColumnValues={Object {}}
         defaultSortDirection="asc"
         defaultSortedColumn="key"
-        tableSortable={true}
+        fetchData={null}
+        initialState={Object {}}
+        initialTableOptions={Object {}}
+        isExpandable={false}
+        isFilterable={false}
+        isLoading={false}
+        isPaginated={false}
+        isSelectable={false}
+        isSortable={true}
+        itemCount={2}
+        manualFilters={false}
+        manualPagination={false}
+        manualSortBy={false}
+        numBreakoutFilters={1}
+        showFiltersInSidebar={false}
+        tableActions={Array []}
       />
     </div>
   </div>
@@ -55,7 +85,13 @@ exports[`CourseTable shows a populated table after a component update for orderi
     <div
       className="table-responsive"
     >
-      <withDeprecatedProps(TableDeprecated)
+      <DataTable
+        EmptyTableComponent={[Function]}
+        FilterStatusComponent={[Function]}
+        RowStatusComponent={[Function]}
+        SelectionStatusComponent={[Function]}
+        additionalColumns={Array []}
+        bulkActions={Array []}
         className="table-sm table-striped"
         columns={
           Array [
@@ -63,13 +99,13 @@ exports[`CourseTable shows a populated table after a component update for orderi
               "columnSortable": true,
               "key": "col1",
               "label": "Col 1",
-              "onSort": [Function],
+              "onSort": null,
             },
             Object {
               "columnSortable": false,
               "key": "col2",
               "label": "Col 2",
-              "onSort": null,
+              "onSort": [Function],
             },
           ]
         }
@@ -85,9 +121,33 @@ exports[`CourseTable shows a populated table after a component update for orderi
             },
           ]
         }
+        dataViewToggleOptions={
+          Object {
+            "defaultActiveStateValue": "card",
+            "isDataViewToggleEnabled": false,
+            "onDataViewToggle": [Function],
+            "togglePlacement": "left",
+          }
+        }
+        defaultColumnValues={Object {}}
         defaultSortDirection="desc"
         defaultSortedColumn="key"
-        tableSortable={true}
+        fetchData={null}
+        initialState={Object {}}
+        initialTableOptions={Object {}}
+        isExpandable={false}
+        isFilterable={false}
+        isLoading={false}
+        isPaginated={false}
+        isSelectable={false}
+        isSortable={true}
+        itemCount={2}
+        manualFilters={false}
+        manualPagination={false}
+        manualSortBy={false}
+        numBreakoutFilters={1}
+        showFiltersInSidebar={false}
+        tableActions={Array []}
       />
     </div>
   </div>
@@ -102,7 +162,13 @@ exports[`CourseTable shows a populated table after a component update for page 1
     <div
       className="table-responsive"
     >
-      <withDeprecatedProps(TableDeprecated)
+      <DataTable
+        EmptyTableComponent={[Function]}
+        FilterStatusComponent={[Function]}
+        RowStatusComponent={[Function]}
+        SelectionStatusComponent={[Function]}
+        additionalColumns={Array []}
+        bulkActions={Array []}
         className="table-sm table-striped"
         columns={
           Array [
@@ -110,13 +176,13 @@ exports[`CourseTable shows a populated table after a component update for page 1
               "columnSortable": true,
               "key": "col1",
               "label": "Col 1",
-              "onSort": [Function],
+              "onSort": null,
             },
             Object {
               "columnSortable": false,
               "key": "col2",
               "label": "Col 2",
-              "onSort": null,
+              "onSort": [Function],
             },
           ]
         }
@@ -132,9 +198,33 @@ exports[`CourseTable shows a populated table after a component update for page 1
             },
           ]
         }
+        dataViewToggleOptions={
+          Object {
+            "defaultActiveStateValue": "card",
+            "isDataViewToggleEnabled": false,
+            "onDataViewToggle": [Function],
+            "togglePlacement": "left",
+          }
+        }
+        defaultColumnValues={Object {}}
         defaultSortDirection="asc"
         defaultSortedColumn="key"
-        tableSortable={true}
+        fetchData={null}
+        initialState={Object {}}
+        initialTableOptions={Object {}}
+        isExpandable={false}
+        isFilterable={false}
+        isLoading={false}
+        isPaginated={false}
+        isSelectable={false}
+        isSortable={true}
+        itemCount={2}
+        manualFilters={false}
+        manualPagination={false}
+        manualSortBy={false}
+        numBreakoutFilters={1}
+        showFiltersInSidebar={false}
+        tableActions={Array []}
       />
     </div>
   </div>

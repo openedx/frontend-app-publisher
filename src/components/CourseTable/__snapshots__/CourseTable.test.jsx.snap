@@ -127,24 +127,28 @@ exports[`CourseTable displays table and button when not blacklisted 1`] = `
     columns={
       Array [
         Object {
-          "columnSortable": true,
+          "Header": "Course Name",
+          "accessor": "title",
+          "disableSortBy": false,
           "key": "title",
-          "label": "Course Name",
         },
         Object {
-          "columnSortable": true,
+          "Header": "Course Number",
+          "accessor": "number",
+          "disableSortBy": false,
           "key": "number",
-          "label": "Course Number",
         },
         Object {
-          "columnSortable": false,
+          "Header": "States",
+          "accessor": "course_run_statuses",
+          "disableSortBy": true,
           "key": "course_run_statuses",
-          "label": "States",
         },
         Object {
-          "columnSortable": false,
+          "Header": "Course Editors",
+          "accessor": "course_editor_names",
+          "disableSortBy": true,
           "key": "course_editor_names",
-          "label": "Course Editors",
         },
       ]
     }
@@ -281,24 +285,28 @@ exports[`CourseTable displays table and button when user has no orgs 1`] = `
     columns={
       Array [
         Object {
-          "columnSortable": true,
+          "Header": "Course Name",
+          "accessor": "title",
+          "disableSortBy": false,
           "key": "title",
-          "label": "Course Name",
         },
         Object {
-          "columnSortable": true,
+          "Header": "Course Number",
+          "accessor": "number",
+          "disableSortBy": false,
           "key": "number",
-          "label": "Course Number",
         },
         Object {
-          "columnSortable": false,
+          "Header": "States",
+          "accessor": "course_run_statuses",
+          "disableSortBy": true,
           "key": "course_run_statuses",
-          "label": "States",
         },
         Object {
-          "columnSortable": false,
+          "Header": "Course Editors",
+          "accessor": "course_editor_names",
+          "disableSortBy": true,
           "key": "course_editor_names",
-          "label": "Course Editors",
         },
       ]
     }
@@ -435,24 +443,28 @@ exports[`CourseTable hides table and button when blacklisted 1`] = `
     columns={
       Array [
         Object {
-          "columnSortable": true,
+          "Header": "Course Name",
+          "accessor": "title",
+          "disableSortBy": false,
           "key": "title",
-          "label": "Course Name",
         },
         Object {
-          "columnSortable": true,
+          "Header": "Course Number",
+          "accessor": "number",
+          "disableSortBy": false,
           "key": "number",
-          "label": "Course Number",
         },
         Object {
-          "columnSortable": false,
+          "Header": "States",
+          "accessor": "course_run_statuses",
+          "disableSortBy": true,
           "key": "course_run_statuses",
-          "label": "States",
         },
         Object {
-          "columnSortable": false,
+          "Header": "Course Editors",
+          "accessor": "course_editor_names",
+          "disableSortBy": true,
           "key": "course_editor_names",
-          "label": "Course Editors",
         },
       ]
     }
@@ -589,24 +601,28 @@ exports[`CourseTable shows a table 1`] = `
     columns={
       Array [
         Object {
-          "columnSortable": true,
+          "Header": "Course Name",
+          "accessor": "title",
+          "disableSortBy": false,
           "key": "title",
-          "label": "Course Name",
         },
         Object {
-          "columnSortable": true,
+          "Header": "Course Number",
+          "accessor": "number",
+          "disableSortBy": false,
           "key": "number",
-          "label": "Course Number",
         },
         Object {
-          "columnSortable": false,
+          "Header": "States",
+          "accessor": "course_run_statuses",
+          "disableSortBy": true,
           "key": "course_run_statuses",
-          "label": "States",
         },
         Object {
-          "columnSortable": false,
+          "Header": "Course Editors",
+          "accessor": "course_editor_names",
+          "disableSortBy": true,
           "key": "course_editor_names",
-          "label": "Course Editors",
         },
       ]
     }
