@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import { Pagination, Table } from '@edx/paragon';
+import { Pagination, DataTable } from '@edx/paragon';
 import 'font-awesome/css/font-awesome.css';
 
 import './TableComponent.scss';
@@ -60,6 +60,7 @@ class TableComponent extends React.Component {
     const {
       className,
       pageCount,
+      itemCount,
       tableSortable,
       data,
       formatData,
@@ -69,12 +70,11 @@ class TableComponent extends React.Component {
 
     const columnConfig = this.props.columns.map(column => ({
       ...column,
-      onSort: column.columnSortable ? direction => updateUrl({
+      onSort: !column.columnSortable ? direction => updateUrl({
         page: 1,
         ordering: direction === 'desc' ? `-${column.key}` : column.key,
       }) : null,
     }));
-
     let sortDirection;
     let sortColumn;
 
@@ -90,11 +90,12 @@ class TableComponent extends React.Component {
       <div className={className}>
         {loading && <LoadingSpinner />}
         <div className="table-responsive">
-          <Table
+          <DataTable
             className="table-sm table-striped"
             columns={columnConfig}
             data={formatData(data)}
-            tableSortable={tableSortable}
+            isSortable={tableSortable}
+            itemCount={itemCount}
             defaultSortedColumn={sortColumn}
             defaultSortDirection={sortDirection}
           />
@@ -171,6 +172,7 @@ TableComponent.propTypes = {
   // Props expected from TableContainer / redux store
   data: PropTypes.arrayOf(PropTypes.shape({})),
   pageCount: PropTypes.number.isRequired,
+  itemCount: PropTypes.number.isRequired,
   loading: PropTypes.bool,
   error: PropTypes.instanceOf(Error),
   paginateTable: PropTypes.func.isRequired,

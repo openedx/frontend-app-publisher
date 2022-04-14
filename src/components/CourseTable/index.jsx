@@ -186,24 +186,28 @@ class CourseTable extends React.Component {
 
     const courseTableColumns = [
       {
-        label: 'Course Name',
+        Header: 'Course Name',
         key: 'title',
-        columnSortable: true,
+        disableSortBy: false,
+        accessor: 'title',
       },
       {
-        label: 'Course Number',
+        Header: 'Course Number',
         key: 'number',
-        columnSortable: true,
+        disableSortBy: false,
+        accessor: 'number',
       },
       {
-        label: 'States',
+        Header: 'States',
         key: 'course_run_statuses',
-        columnSortable: false,
+        accessor: 'course_run_statuses',
+        disableSortBy: true,
       },
       {
-        label: 'Course Editors',
+        Header: 'Course Editors',
         key: 'course_editor_names',
-        columnSortable: false,
+        accessor: 'course_editor_names',
+        disableSortBy: true,
       },
     ];
     const formatCourseData = courses => courses.map(course => ({
