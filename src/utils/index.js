@@ -63,6 +63,7 @@ const getPageOptionsFromUrl = () => {
     filter: undefined,
     editors: undefined,
     course_run_statuses: undefined,
+    course_type: 'open-courses',
   };
   const query = qs.parse(window.location.search);
   return {
@@ -72,6 +73,7 @@ const getPageOptionsFromUrl = () => {
     pubq: query.filter || defaults.filter,
     editors: query.editors || defaults.editors,
     course_run_statuses: query.course_run_statuses || defaults.course_run_statuses,
+    course_type: query.course_type || defaults.course_type,
   };
 };
 
