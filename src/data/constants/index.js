@@ -20,6 +20,8 @@ const DATE_INPUT_PATTERN = '20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01]
 const FORMAT_DATE_MATCHER = /20\d{2}-(0\d{1}|1[0-2])-([0-2]\d{1}|3[0-1])/;
 const NORMALIZE_DATE_MATCHER = /20\d{2}\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])/;
 
+const EXECUTIVE_EDUCATION_SLUG = 'executive-education-2u';
+
 export {
   VERIFIED_TRACK,
   AUDIT_TRACK,
@@ -40,4 +42,5 @@ export {
   NORMALIZE_DATE_MATCHER,
   COURSE_EXEMPT_FIELDS,
   COURSE_RUN_NON_EXEMPT_FIELDS,
+  EXECUTIVE_EDUCATION_SLUG,
 };

@@ -21,7 +21,7 @@ import Pill from '../Pill';
 import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
-import { PUBLISHED, REVIEWED } from '../../data/constants';
+import { PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG } from '../../data/constants';
 import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
 import {
@@ -34,6 +34,7 @@ import ListField from '../ListField';
 import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
+import AdditionalMetadataFields from './AdditionalMetadataFields';
 
 export class BaseEditCourseForm extends React.Component {
   constructor(props) {
@@ -205,6 +206,7 @@ export class BaseEditCourseForm extends React.Component {
       courseInfo: {
         data: {
           skill_names: skillNames,
+          course_type: courseType,
         },
       },
       reset,
@@ -908,6 +910,9 @@ export class BaseEditCourseForm extends React.Component {
             />
             )}
           </Collapsible>
+          {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
+            <AdditionalMetadataFields disabled={disabled} />
+          )}
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
             name="course_runs"
@@ -991,6 +996,7 @@ BaseEditCourseForm.propTypes = {
     isSubmittingEdit: PropTypes.bool,
     data: PropTypes.shape({
       skill_names: PropTypes.arrayOf(PropTypes.string),
+      course_type: PropTypes.string,
     }),
   }),
   courseSubmitInfo: PropTypes.shape({

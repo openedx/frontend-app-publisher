@@ -14,7 +14,7 @@ import {
 import { courseRunSubmitting } from '../../data/actions/courseSubmitInfo';
 import {
   IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
-  UNPUBLISHED, AUDIT_TRACK,
+  UNPUBLISHED, AUDIT_TRACK, EXECUTIVE_EDUCATION_SLUG,
 } from '../../data/constants';
 import store from '../../data/store';
 import ConfirmationModal from '../ConfirmationModal';
@@ -170,6 +170,27 @@ class EditCoursePage extends React.Component {
     return editedRun;
   }
 
+  formatAdditionalMetadataFields(courseData) {
+    return {
+      external_url: courseData.additional_metadata.external_url,
+      external_identifier: courseData.additional_metadata.external_identifier,
+      lead_capture_form_url: courseData.additional_metadata.lead_capture_form_url,
+      organic_url: courseData.additional_metadata.organic_url,
+      certificate_info: {
+        heading: courseData.additional_metadata.certificate_info_heading,
+        blurb: courseData.additional_metadata.certificate_info_blurb,
+      },
+      facts: [{
+        heading: courseData.additional_metadata.facts_1_heading,
+        blurb: courseData.additional_metadata.facts_1_blurb,
+      },
+      {
+        heading: courseData.additional_metadata.facts_2_heading,
+        blurb: courseData.additional_metadata.facts_2_blurb,
+      }],
+    };
+  }
+
   prepareSendCourseData(courseData) {
     const {
       courseInfo: {
@@ -187,7 +208,7 @@ class EditCoursePage extends React.Component {
 
     const priceData = formatPriceData(courseData, courseOptions);
 
-    return {
+    const formattedCourseData = {
       additional_information: courseData.additional_information,
       draft: !hasPublishedRun,
       faq: courseData.faq,
@@ -215,6 +236,10 @@ class EditCoursePage extends React.Component {
       uuid,
       video: { src: courseData.videoSrc },
     };
+    if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
+      formattedCourseData.additional_metadata = this.formatAdditionalMetadataFields(courseData);
+    }
+    return formattedCourseData;
   }
 
   continueSubmit() {
@@ -305,6 +330,32 @@ class EditCoursePage extends React.Component {
     }
   }
 
+  buildAdditionalMetadata() {
+    const {
+      courseInfo: {
+        data: {
+          additional_metadata,
+        },
+      },
+    } = this.props;
+    if (additional_metadata) {
+      return {
+        certificate_info: additional_metadata.certificate_info,
+        external_identifier: additional_metadata.external_identifier,
+        external_url: additional_metadata.external_url,
+        lead_capture_form_url: additional_metadata.lead_capture_form_url,
+        organic_url: additional_metadata.organic_url,
+        certificate_info_heading: additional_metadata.certificate_info?.heading,
+        certificate_info_blurb: additional_metadata.certificate_info?.blurb,
+        facts_1_heading: additional_metadata.facts[0]?.heading,
+        facts_1_blurb: additional_metadata.facts[0]?.blurb,
+        facts_2_heading: additional_metadata.facts[1]?.heading,
+        facts_2_blurb: additional_metadata.facts[1]?.blurb,
+      };
+    }
+    return {};
+  }
+
   buildCourseRuns() {
     const {
       courseInfo: {
@@ -377,6 +428,7 @@ class EditCoursePage extends React.Component {
           syllabus_raw,
           video,
           entitlements,
+          course_type,
           type,
           course_runs,
           skill_names,
@@ -408,11 +460,13 @@ class EditCoursePage extends React.Component {
       syllabus_raw,
       videoSrc,
       prices,
+      course_type,
       type,
       url_slug,
       collaborators,
       course_runs: this.buildCourseRuns(),
       skill_names,
+      additional_metadata: this.buildAdditionalMetadata(),
     };
   }
 
