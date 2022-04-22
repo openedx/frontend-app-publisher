@@ -1,9 +1,15 @@
+import React from 'react';
+
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React from 'react';
+
 import { Field, FieldArray } from 'redux-form';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Hyperlink } from '@edx/paragon';
+import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import { faCopy as solidCopy } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Hyperlink, Tooltip, OverlayTrigger } from '@edx/paragon';
 
 import CourseRunButtonToolbar from './CourseRunButtonToolbar';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
@@ -35,10 +41,16 @@ import fetchStaffSuggestions from '../Staffer/fetchStaffSuggestions';
 
 const determineStatus = run => (courseRunIsArchived(run) ? ARCHIVED : run.status);
 
-const formatCourseRunTitle = (courseRun) => {
+const formatCourseRunTitle = (courseRun, copied, setCopied) => {
   if (courseRun) {
     const labelItems = [];
     let publishDate = '';
+
+    const handleClick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
     if (courseRun.start) {
       labelItems.push(formatDate(courseRun.start));
     }
@@ -69,6 +81,18 @@ const formatCourseRunTitle = (courseRun) => {
             >
               {courseRun.key}
             </Hyperlink>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>{copied ? 'Course key copied!' : 'Copy course key'}</Tooltip>}
+            >
+              <CopyToClipboard text={courseRun.key} onCopy={() => setCopied()}>
+                <FontAwesomeIcon
+                  className="text-primary ml-2"
+                  icon={copied ? solidCopy : faCopy}
+                  onClick={handleClick}
+                />
+              </CopyToClipboard>
+            </OverlayTrigger>
           </>
         </div>
       </div>
@@ -86,6 +110,7 @@ class CollapsibleCourseRun extends React.Component {
     super(props);
 
     this.state = {
+      copied: false,
       returnFromStaffPage: false,
       hasExternalKey: undefined,
     };
@@ -141,6 +166,16 @@ class CollapsibleCourseRun extends React.Component {
       const hasExternalKey = hasMastersTrack(courseRuns[index].run_type, runTypeModes);
       this.setState({ hasExternalKey }); // eslint-disable-line react/no-did-update-set-state
     }
+  }
+
+  setCopied = () => {
+    this.setState({
+      copied: true,
+    });
+
+    setTimeout(() => {
+      this.setState({ copied: false });
+    }, 1800);
   }
 
   scrollToStaffPosition(focus) {
@@ -209,7 +244,7 @@ class CollapsibleCourseRun extends React.Component {
       onToggle,
       courseRunTypeOptions,
     } = this.props;
-    const { hasExternalKey } = this.state;
+    const { copied, hasExternalKey } = this.state;
     const { administrator } = getAuthenticatedUser();
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
@@ -236,7 +271,7 @@ class CollapsibleCourseRun extends React.Component {
 
     return (
       <Collapsible
-        title={formatCourseRunTitle(courseRun)}
+        title={formatCourseRunTitle(courseRun, copied, this.setCopied)}
         open={isOpen}
         onToggle={onToggle}
       >
