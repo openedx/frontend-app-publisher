@@ -10,7 +10,7 @@ import ConfirmationModal from '../ConfirmationModal';
 import StatusAlert from '../StatusAlert';
 
 import {
-  PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED,
+  PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED, EXECUTIVE_EDUCATION_SLUG,
 } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 import { jsonDeepCopy } from '../../utils';
@@ -28,6 +28,24 @@ describe('EditCoursePage', () => {
   const courseInfo = {
     data: {
       additional_information: '',
+      additional_metadata: {
+        external_url: 'https://www.external_url.com',
+        external_identifier: '2U_external_identifier',
+        lead_capture_form_url: 'https://www.lead_capture_url.com',
+        organic_url: 'https://www.organic_url.com',
+        certificate_info: {
+          heading: 'heading',
+          blurb: 'blurb',
+        },
+        facts: [{
+          heading: 'facts_1_heading',
+          blurb: 'facts_1_blurb',
+        },
+        {
+          heading: 'facts_2_heading',
+          blurb: 'facts_2_blurb',
+        }],
+      },
       course_runs: [
         {
           key: 'edX101+DemoX+T2',
@@ -313,6 +331,18 @@ describe('EditCoursePage', () => {
 
     const courseData = {
       additional_information: '<p>Stuff</p>',
+      additional_metadata: {
+        external_url: 'https://www.external_url.com',
+        external_identifier: '2U_external_identifier',
+        lead_capture_form_url: 'https://www.lead_capture_url.com',
+        organic_url: 'https://www.organic_url.com',
+        certificate_info_heading: 'heading',
+        certificate_info_blurb: 'blurb',
+        facts_1_heading: 'facts_1_heading',
+        facts_1_blurb: 'facts_1_blurb',
+        facts_2_heading: 'facts_2_heading',
+        facts_2_blurb: 'facts_2_blurb',
+      },
       course_runs: [unpublishedCourseRun, publishedCourseRun],
       faq: '<p>Help?</p>',
       full_description: '<p>Long</p>',
@@ -833,6 +863,76 @@ describe('EditCoursePage', () => {
       expect(wrapper.find(EditCoursePage)
         .instance().state.submitCourseData)
         .toEqual({});
+    });
+
+    const expectedSendCourseExEdCourses = {
+      additional_information: '<p>Stuff</p>',
+      additional_metadata: {
+        external_url: 'https://www.external_url.com',
+        external_identifier: '2U_external_identifier',
+        lead_capture_form_url: 'https://www.lead_capture_url.com',
+        organic_url: 'https://www.organic_url.com',
+        certificate_info: {
+          heading: 'heading',
+          blurb: 'blurb',
+        },
+        facts: [{
+          heading: 'facts_1_heading',
+          blurb: 'facts_1_blurb',
+        },
+        {
+          heading: 'facts_2_heading',
+          blurb: 'facts_2_blurb',
+        }],
+      },
+      draft: false,
+      collaborators: undefined,
+      faq: '<p>Help?</p>',
+      full_description: '<p>Long</p>',
+      image: 'http://image.jpg',
+      key: 'edX+Test101x',
+      learner_testimonials: '<p>I learned stuff!</p>',
+      level_type: 'Basic',
+      outcome: '<p>Stuff</p>',
+      prerequisites_raw: '',
+      prices: {
+        verified: defaultPrice,
+      },
+      short_description: '<p>Short</p>',
+      subjects: ['basket-weaving'],
+      syllabus_raw: null,
+      title: 'demo4004',
+      type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+      url_slug: 'demo4004',
+      uuid: '00000000-0000-0000-0000-000000000000',
+      video: { src: null },
+    };
+
+    it('handleCourseSubmit properly for executive education courses, will add additional metadata fields', () => {
+      const mockEditCourse = jest.fn();
+      const props = {
+        editCourse: mockEditCourse,
+      };
+      const component = shallow(<EditCoursePage
+        {...props}
+        courseInfo={courseInfo}
+        courseOptions={courseOptions}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+      });
+      component.instance().getData = jest.fn();
+      component.update();
+      courseData.course_type = EXECUTIVE_EDUCATION_SLUG;
+      component.instance().handleCourseSubmit(courseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourseExEdCourses,
+        expectedSendCourseRuns,
+        false,
+        false,
+        component.instance().getData,
+      );
     });
   });
 });
