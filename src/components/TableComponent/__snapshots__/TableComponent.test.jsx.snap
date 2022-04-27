@@ -235,20 +235,66 @@ exports[`CourseTable shows a table 1`] = `<Fragment />`;
 
 exports[`CourseTable shows an empty table 1`] = `
 <Fragment>
-  <StatusAlert
-    alertType="warning"
-    className=""
-    dismissible={false}
-    iconClassNames={
-      Array [
-        "fa",
-        "fa-exclamation-circle",
-      ]
-    }
-    message="There are no results."
-    onClose={[Function]}
-    title={null}
-  />
+  <div
+    className="test"
+  >
+    <div
+      className="table-responsive"
+    >
+      <DataTable
+        EmptyTableComponent={[Function]}
+        FilterStatusComponent={[Function]}
+        RowStatusComponent={[Function]}
+        SelectionStatusComponent={[Function]}
+        additionalColumns={Array []}
+        bulkActions={Array []}
+        className="table-sm table-striped"
+        columns={
+          Array [
+            Object {
+              "columnSortable": true,
+              "key": "col1",
+              "label": "Col 1",
+              "onSort": null,
+            },
+            Object {
+              "columnSortable": false,
+              "key": "col2",
+              "label": "Col 2",
+              "onSort": [Function],
+            },
+          ]
+        }
+        data={Array []}
+        dataViewToggleOptions={
+          Object {
+            "defaultActiveStateValue": "card",
+            "isDataViewToggleEnabled": false,
+            "onDataViewToggle": [Function],
+            "togglePlacement": "left",
+          }
+        }
+        defaultColumnValues={Object {}}
+        defaultSortDirection="asc"
+        defaultSortedColumn="key"
+        fetchData={null}
+        initialState={Object {}}
+        initialTableOptions={Object {}}
+        isExpandable={false}
+        isFilterable={false}
+        isLoading={false}
+        isPaginated={false}
+        isSelectable={false}
+        isSortable={true}
+        manualFilters={false}
+        manualPagination={false}
+        manualSortBy={false}
+        numBreakoutFilters={1}
+        showFiltersInSidebar={false}
+        tableActions={Array []}
+      />
+    </div>
+  </div>
 </Fragment>
 `;
 
