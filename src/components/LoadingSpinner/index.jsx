@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@edx/paragon';
+import { Spinner } from '@edx/paragon';
 import PropTypes from 'prop-types';
 
 const LoadingSpinner = props => (
@@ -7,10 +7,7 @@ const LoadingSpinner = props => (
     <div>
       { props.message }
     </div>
-    <Icon
-      id="spinner"
-      className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"
-    />
+    <Spinner animation="border" className="mie-3" screenReaderText="loading" />
   </div>
 );
 

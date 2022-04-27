@@ -7,9 +7,10 @@ exports[`LoadingSpinner shows a loading spinner 1`] = `
   <div>
     Loading…
   </div>
-  <withDeprecatedProps(Icon)
-    className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"
-    id="spinner"
+  <ForwardRef
+    animation="border"
+    className="mie-3"
+    screenReaderText="loading"
   />
 </div>
 `;

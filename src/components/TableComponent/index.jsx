@@ -154,9 +154,7 @@ class TableComponent extends React.Component {
       <>
         {error && this.renderErrorMessage()}
         {loading && !data && this.renderLoadingMessage()}
-        {!loading && !error && data && data.length === 0
-          && this.renderEmptyDataMessage()}
-        {data && data.length > 0 && this.renderTableContent()}
+        {data && this.renderTableContent()}
       </>
     );
   }
