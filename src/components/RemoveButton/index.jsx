@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { Icon } from '@edx/paragon';
+import { CloseSmall } from '@edx/paragon/icons';
 
 const RemoveButton = ({
   className,
@@ -19,7 +20,7 @@ const RemoveButton = ({
   >
     <Icon
       id="remove-field"
-      className="fa fa-close"
+      src={CloseSmall}
     />
   </button>
 );

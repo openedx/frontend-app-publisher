@@ -5,16 +5,17 @@ import RemoveButton from '../RemoveButton';
 function User(props) {
   return (
     <div>
-      {props.name}
+      <span className="text-gray-800">{props.name}</span>
       {props.onRemove
         && (
         <RemoveButton
-          className="align-text-bottom ml-1"
+          className="align-text-top"
           label="Remove"
           targetFieldNumber={props.userId}
           onRemove={props.onRemove}
         />
         )}
+      <p className="text-gray-500"><sub>{props.email}</sub></p>
     </div>
   );
 }
@@ -25,6 +26,7 @@ User.defaultProps = {
 
 User.propTypes = {
   name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   onRemove: PropTypes.func,
   userId: PropTypes.number.isRequired,
 };

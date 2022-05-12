@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Icon, InputSelect } from '@edx/paragon';
+import { Add } from '@edx/paragon/icons';
 
 import Pane from './Pane';
 import User from './User';
@@ -109,12 +110,13 @@ class UsersPane extends React.Component {
         {showPCs
           && (
           <div className="mb-2">
-            <div className="font-weight-bold">Project Coordinators</div>
+            <div className="font-weight-bold text-dark-700">Project coordinators</div>
             {organizationRoles.data.map(role => (
               <User
                 key={role.id}
                 userId={role.id}
-                name={this.displayName(role.user)}
+                name={role.user.full_name}
+                email={role.user.email}
               />
             ))}
           </div>
@@ -124,12 +126,13 @@ class UsersPane extends React.Component {
         {showEditors
           && (
           <div>
-            <div className="font-weight-bold">Course Editors</div>
+            <div className="font-weight-bold text-dark-700">Course editors</div>
             {courseEditors.data.map(editor => (
               <User
                 key={editor.id}
                 userId={editor.id}
-                name={this.displayName(editor.user)}
+                name={editor.user.full_name}
+                email={editor.user.email}
                 onRemove={removeCourseEditor}
               />
             ))}
@@ -137,8 +140,8 @@ class UsersPane extends React.Component {
               || <div>All team members</div>}
             {showAddButton
               && (
-              <button type="button" className="btn btn-link p-0 usersPane-startAdd" onClick={this.startAddingUser}>
-                <Icon className="fa fa-plus" /> {hasEditor ? 'Add editor' : 'Set editor'}
+              <button type="button" className="btn btn-link text-dark-900 p-0 usersPane-startAdd" onClick={this.startAddingUser}>
+                <Icon src={Add} /> {hasEditor ? 'Add editor' : 'Set editor'}
               </button>
               )}
             {addingUser
