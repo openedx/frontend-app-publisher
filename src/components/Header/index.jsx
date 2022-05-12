@@ -19,7 +19,13 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
 
   // Allow users to toggle dark mode on if they put in a querystring like ?bananas=1
   const querystringParams = qs.parse(location.search);
+  const { pathname } = location;
   const allowDarkModeToggle = querystringParams.bananas;
+
+  function disableLink(courseType) {
+    const courseTypeFromURL = querystringParams.course_type ? querystringParams.course_type : '';
+    return (courseTypeFromURL === courseType && pathname === '/') ? 'disabled-link' : '';
+  }
 
   return (
     <header className="site-header mb-3 py-3 border-bottom-blue">
@@ -30,9 +36,16 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
               <img src={process.env.LOGO_URL} alt="edX logo" height="30" width="60" />
             </Hyperlink>
           </div>
-          <div className="col">
-            <Link to="/">Courses</Link>
+          <div className="col-auto justify-content-start">
+            <Link to="/" className={disableLink('')}>Open Courses</Link>
           </div>
+          <div className="col-auto justify-content-start">
+            <Link to="/?course_type=executive-education-2u" className={disableLink('executive-education-2u')}>Executive Education</Link>
+          </div>
+          <div className="col-auto justify-content-start">
+            <Link to="/?course_type=bootcamp-2u" className={disableLink('bootcamp-2u')}>Bootcamps</Link>
+          </div>
+
           {allowDarkModeToggle
             && (
             <div className="col-auto justify-content-end">
@@ -41,7 +54,7 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
               </button>
             </div>
             )}
-          <div className="col-auto justify-content-end">
+          <div className="col-auto justify-content-end ml-auto">
             <>
               <Dropdown>
                 <Dropdown.Toggle as={AvatarButton}>
@@ -69,6 +82,7 @@ Header.propTypes = {
   darkModeOn: PropTypes.bool,
   location: PropTypes.shape({
     search: PropTypes.string,
+    pathname: PropTypes.string,
   }),
   toggleDarkMode: PropTypes.func,
 };

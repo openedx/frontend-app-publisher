@@ -59,6 +59,7 @@ class CourseTable extends React.Component {
       },
     } = this.props;
     const { administrator } = getAuthenticatedUser();
+    const { selectedFilters } = this.state;
     const prevEditorFilterOptions = prevProps.table.editorFilterOptions;
 
     if (editorFilterOptions !== prevEditorFilterOptions && !administrator) {
@@ -71,13 +72,18 @@ class CourseTable extends React.Component {
     const {
       editors: prevEditors,
       course_run_statuses: prevCourseRunStatuses,
+      course_type: prevCourseType,
     } = qs.parse(prevProps.location.search);
     const {
       editors,
       course_run_statuses: courseRunStatuses,
+      course_type: courseType,
     } = qs.parse(this.props.location.search);
     if ((editors !== prevEditors) || (courseRunStatuses !== prevCourseRunStatuses)) {
       this.getSelectedFiltersFromUrl();
+    }
+    if (courseType !== prevCourseType) {
+      this.updateFilterQueryParamsInUrl(selectedFilters);
     }
   }
 
