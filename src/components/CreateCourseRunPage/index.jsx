@@ -159,6 +159,15 @@ class CreateCourseRunPage extends React.Component {
           { showForm
           && (
             <div>
+              {errorArray.length > 1 && (
+                <StatusAlert
+                  id="create-error"
+                  alertType="danger"
+                  className="mt-3"
+                  message={errorArray}
+                  dismissible
+                />
+              ) }
               <CreateCourseRunForm
                 onSubmit={this.handleCourseCreate}
                 title={title}
@@ -176,14 +185,6 @@ class CreateCourseRunPage extends React.Component {
                 courseTypeUuid={type}
                 canSetRunKey={canSetRunKey}
               />
-              {errorArray.length > 1 && (
-                <StatusAlert
-                  id="create-error"
-                  alertType="danger"
-                  className="mt-3"
-                  message={errorArray}
-                />
-              ) }
             </div>
           )}
         </PageContainer>

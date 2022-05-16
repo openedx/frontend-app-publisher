@@ -397,6 +397,21 @@ exports[`CreateCourseRunPage renders html correctly when error 1`] = `
     wide={false}
   >
     <div>
+      <StatusAlert
+        alertType="danger"
+        className="mt-3"
+        dismissible={true}
+        iconClassNames={Array []}
+        id="create-error"
+        message={
+          Array [
+            "failed",
+            <br />,
+          ]
+        }
+        onClose={[Function]}
+        title={null}
+      />
       <ReduxForm
         courseOptions={Object {}}
         courseRunLabels={Array []}
@@ -429,21 +444,6 @@ exports[`CreateCourseRunPage renders html correctly when error 1`] = `
         touchOnChange={false}
         updateUnregisteredFields={false}
         uuid=""
-      />
-      <StatusAlert
-        alertType="danger"
-        className="mt-3"
-        dismissible={false}
-        iconClassNames={Array []}
-        id="create-error"
-        message={
-          Array [
-            "failed",
-            <br />,
-          ]
-        }
-        onClose={[Function]}
-        title={null}
       />
     </div>
   </PageContainer>

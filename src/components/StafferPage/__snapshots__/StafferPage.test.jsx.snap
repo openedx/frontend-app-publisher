@@ -226,6 +226,21 @@ exports[`StafferPage renders page correctly with staffer info error 1`] = `
         Create New Instructor
       </h2>
       <hr />
+      <StatusAlert
+        alertType="danger"
+        className=""
+        dismissible={true}
+        iconClassNames={Array []}
+        id="create-staffer-error"
+        message={
+          Array [
+            "Fail",
+            <br />,
+          ]
+        }
+        onClose={[Function]}
+        title={null}
+      />
       <ReduxForm
         createStaffer={[Function]}
         destroyOnUnmount={true}
@@ -260,21 +275,6 @@ exports[`StafferPage renders page correctly with staffer info error 1`] = `
         touchOnBlur={true}
         touchOnChange={false}
         updateUnregisteredFields={false}
-      />
-      <StatusAlert
-        alertType="danger"
-        className=""
-        dismissible={false}
-        iconClassNames={Array []}
-        id="create-staffer-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
-        onClose={[Function]}
-        title={null}
       />
     </div>
   </PageContainer>

@@ -161,6 +161,14 @@ class StafferPage extends React.Component {
             <div>
               <h2>{titleText}</h2>
               <hr />
+              { errorArray.length > 1 && (
+                <StatusAlert
+                  id="create-staffer-error"
+                  alertType="danger"
+                  message={errorArray}
+                  dismissible
+                />
+              )}
               <StafferForm
                 id="create-staffer-form"
                 onSubmit={handleSubmit}
@@ -170,13 +178,6 @@ class StafferPage extends React.Component {
                 organizationName={organizationName}
                 {...this.props}
               />
-              { errorArray.length > 1 && (
-                <StatusAlert
-                  id="create-staffer-error"
-                  alertType="danger"
-                  message={errorArray}
-                />
-              )}
             </div>
           )}
         </PageContainer>

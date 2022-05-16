@@ -163,6 +163,14 @@ class CreateCoursePage extends React.Component {
           { showForm
           && (
             <div>
+              {errorArray.length > 1 && (
+                <StatusAlert
+                  id="create-error"
+                  alertType="danger"
+                  message={errorArray}
+                  dismissible
+                />
+              ) }
               <CreateCourseForm
                 id="create-course-form"
                 onSubmit={this.showModal}
@@ -173,13 +181,6 @@ class CreateCoursePage extends React.Component {
                 courseOptions={courseOptions}
                 courseRunOptions={courseRunOptions}
               />
-              {errorArray.length > 1 && (
-                <StatusAlert
-                  id="create-error"
-                  alertType="danger"
-                  message={errorArray}
-                />
-              ) }
             </div>
           )}
         </PageContainer>

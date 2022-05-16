@@ -105,6 +105,21 @@ exports[`CreateCoursePage renders page correctly with course create error 1`] = 
     wide={false}
   >
     <div>
+      <StatusAlert
+        alertType="danger"
+        className=""
+        dismissible={true}
+        iconClassNames={Array []}
+        id="create-error"
+        message={
+          Array [
+            "Fail",
+            <br />,
+          ]
+        }
+        onClose={[Function]}
+        title={null}
+      />
       <ReduxForm
         courseOptions={Object {}}
         courseRunOptions={Object {}}
@@ -141,21 +156,6 @@ exports[`CreateCoursePage renders page correctly with course create error 1`] = 
         touchOnBlur={true}
         touchOnChange={false}
         updateUnregisteredFields={false}
-      />
-      <StatusAlert
-        alertType="danger"
-        className=""
-        dismissible={false}
-        iconClassNames={Array []}
-        id="create-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
-        onClose={[Function]}
-        title={null}
       />
     </div>
   </PageContainer>
@@ -328,6 +328,21 @@ exports[`CreateCoursePage renders page correctly with org error 1`] = `
     wide={false}
   >
     <div>
+      <StatusAlert
+        alertType="danger"
+        className=""
+        dismissible={true}
+        iconClassNames={Array []}
+        id="create-error"
+        message={
+          Array [
+            "Fail",
+            <br />,
+          ]
+        }
+        onClose={[Function]}
+        title={null}
+      />
       <ReduxForm
         courseOptions={Object {}}
         courseRunOptions={Object {}}
@@ -364,21 +379,6 @@ exports[`CreateCoursePage renders page correctly with org error 1`] = `
         touchOnBlur={true}
         touchOnChange={false}
         updateUnregisteredFields={false}
-      />
-      <StatusAlert
-        alertType="danger"
-        className=""
-        dismissible={false}
-        iconClassNames={Array []}
-        id="create-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
-        onClose={[Function]}
-        title={null}
       />
     </div>
   </PageContainer>
