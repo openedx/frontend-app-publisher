@@ -248,4 +248,34 @@ describe('editCourseValidate', () => {
       },
     })).toEqual({});
   });
+  it('returns no error on submitting 2U bootcamp runs with missing staff', () => {
+    const values = {
+      short_description: 'Short',
+      full_description: 'Full',
+      outcome: 'Outcome',
+      imageSrc: 'base64;encodedimage',
+      course_runs: [
+        {
+          key: 'NonSubmittingTestRun',
+        },
+        {
+          key: 'TestRun',
+          transcript_languages: [
+            {
+              dummy_field: 'Transcript languages dummy field',
+            },
+          ],
+          staff: [],
+        },
+      ],
+    };
+    expect(editCourseValidate(values, {
+      targetRun: unpublishedTargetRun,
+      registeredFields: {
+        'prices.paid-bootcamp': {
+          count: 1,
+        },
+      },
+    })).toEqual({});
+  });
 });

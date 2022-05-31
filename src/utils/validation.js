@@ -103,7 +103,12 @@ const editCourseValidate = (values, props) => {
         && registeredFields['prices.paid-executive-education']
         && registeredFields['prices.paid-executive-education'].count;
 
-      const runRequiredFields = isExecutiveEducation ? ['transcript_languages'] : ['transcript_languages', 'staff'];
+      // naive check to deteremine if track is bootcamp or not
+      const isBootcamp = registeredFields
+        && registeredFields['prices.paid-bootcamp']
+        && registeredFields['prices.paid-bootcamp'].count;
+
+      const runRequiredFields = (isExecutiveEducation || isBootcamp) ? ['transcript_languages'] : ['transcript_languages', 'staff'];
       const runErrors = {};
       runRequiredFields.forEach((fieldName) => {
         const value = run[fieldName];
