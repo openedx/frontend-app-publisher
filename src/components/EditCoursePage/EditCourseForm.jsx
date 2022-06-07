@@ -909,6 +909,32 @@ export class BaseEditCourseForm extends React.Component {
               className="course-skill"
             />
             )}
+            <Field
+              name="organization_short_code_override"
+              component={RenderInputTextField}
+              label={<FieldLabel text="Organization Short Code Override" optional />}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              disabled={disabled}
+              optional
+            />
+            <Field
+              name="organization_logo_override_url"
+              component={ImageUpload}
+              label={(
+                <FieldLabel
+                  id="organization_logo_override.label"
+                  text="Organization Logo Override"
+                />
+              )}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              id="organization-logo-override"
+              className="course-image"
+              maxImageSizeKilo={256}
+              requiredWidth={110}
+              requiredHeight={110}
+              disabled={disabled}
+              optional
+            />
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
             <AdditionalMetadataFields disabled={disabled} />
@@ -997,6 +1023,8 @@ BaseEditCourseForm.propTypes = {
     data: PropTypes.shape({
       skill_names: PropTypes.arrayOf(PropTypes.string),
       course_type: PropTypes.string,
+      organization_logo_override_url: PropTypes.string,
+      organization_short_code_override: PropTypes.string,
     }),
   }),
   courseSubmitInfo: PropTypes.shape({

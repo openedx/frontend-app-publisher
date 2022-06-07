@@ -219,6 +219,8 @@ class EditCoursePage extends React.Component {
       key,
       learner_testimonials: courseData.learner_testimonials,
       level_type: courseData.level_type,
+      organization_logo_override: courseData.organization_logo_override_url,
+      organization_short_code_override: courseData.organization_short_code_override,
       outcome: courseData.outcome,
       prerequisites_raw: courseData.prerequisites_raw,
       ...priceData,
@@ -436,6 +438,8 @@ class EditCoursePage extends React.Component {
           type,
           course_runs,
           skill_names,
+          organization_short_code_override,
+          organization_logo_override_url,
         },
       },
     } = this.props;
@@ -471,6 +475,8 @@ class EditCoursePage extends React.Component {
       course_runs: this.buildCourseRuns(),
       skill_names,
       additional_metadata: this.buildAdditionalMetadata(),
+      organization_short_code_override,
+      organization_logo_override_url,
     };
   }
 
