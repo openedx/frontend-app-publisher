@@ -45,6 +45,9 @@ jobs:
     - name: Verify Es5
       run: npm run is-es5
 
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+
     - name: Send failure notification
       if: ${{ failure() }}
       uses: dawidd6/action-send-mail@v3
@@ -58,6 +61,3 @@ jobs:
         from: github-actions <github-actions@edx.org>
         body: CI workflow in ${{github.repository}} failed! For details see "github.com/${{
           github.repository }}/actions/runs/${{ github.run_id }}"
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
