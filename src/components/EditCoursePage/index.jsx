@@ -235,6 +235,7 @@ class EditCoursePage extends React.Component {
       url_slug: courseData.url_slug,
       uuid,
       video: { src: courseData.videoSrc },
+      enterprise_subscription_inclusion: courseData.enterprise_subscription_inclusion,
     };
     if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
       formattedCourseData.additional_metadata = this.formatAdditionalMetadataFields(courseData);
@@ -432,6 +433,7 @@ class EditCoursePage extends React.Component {
           type,
           course_runs,
           skill_names,
+          enterprise_subscription_inclusion,
         },
       },
     } = this.props;
@@ -467,6 +469,7 @@ class EditCoursePage extends React.Component {
       course_runs: this.buildCourseRuns(),
       skill_names,
       additional_metadata: this.buildAdditionalMetadata(),
+      enterprise_subscription_inclusion,
     };
   }
 
@@ -541,6 +544,7 @@ class EditCoursePage extends React.Component {
           owners,
           editable,
           type,
+          enterprise_subscription_inclusion,
         },
         showCreateStatusAlert,
       },
@@ -659,6 +663,7 @@ class EditCoursePage extends React.Component {
             addComment={this.props.addComment}
             comments={this.props.comments}
             fetchComments={this.props.fetchComments}
+            enterpriseSubscriptionInclusion={enterprise_subscription_inclusion}
           />
           )}
         >

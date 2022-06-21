@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import UsersPane from './UsersPane';
 import CommentsPane from './CommentsPane';
+import CatalogInclusionPane from './CatalogInclusionPane';
 
 function SidePanes(props) {
   return (
@@ -16,6 +17,10 @@ function SidePanes(props) {
         organizationRoles={props.organizationRoles}
         organizationUsers={props.organizationUsers}
         removeCourseEditor={props.removeCourseEditor}
+      />
+      <CatalogInclusionPane
+        courseUuid={props.courseUuid}
+        subInclusion={props.enterpriseSubscriptionInclusion}
       />
       <CommentsPane
         addComment={props.addComment}
@@ -59,6 +64,7 @@ SidePanes.propTypes = {
   organizationRoles: PropTypes.shape(),
   organizationUsers: PropTypes.shape(),
   removeCourseEditor: PropTypes.func,
+  enterpriseSubscriptionInclusion: PropTypes.bool.isRequired,
 };
 
 export default SidePanes;
