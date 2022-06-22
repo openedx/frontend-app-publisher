@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import UsersPane from './UsersPane';
 import CommentsPane from './CommentsPane';
 import CatalogInclusionPane from './CatalogInclusionPane';
 
 function SidePanes(props) {
+  const isEdxStaff = getAuthenticatedUser().administrator;
+
   return (
     <div className={props.className} hidden={props.hidden}>
       <UsersPane
@@ -18,10 +21,12 @@ function SidePanes(props) {
         organizationUsers={props.organizationUsers}
         removeCourseEditor={props.removeCourseEditor}
       />
+      { isEdxStaff && (
       <CatalogInclusionPane
         courseUuid={props.courseUuid}
         subInclusion={props.enterpriseSubscriptionInclusion}
       />
+      )}
       <CommentsPane
         addComment={props.addComment}
         comments={props.comments}

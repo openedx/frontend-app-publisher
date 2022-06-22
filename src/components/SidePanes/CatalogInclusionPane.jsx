@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Form, Spinner } from '@edx/paragon';
 
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
-
 import Pane from './Pane';
 
 const CatalogInclusionPane = ({ courseUuid, subInclusion }) => {
@@ -18,11 +17,8 @@ const CatalogInclusionPane = ({ courseUuid, subInclusion }) => {
       uuid: courseUuid,
       enterprise_subscription_inclusion: !(inclusion),
     };
-    console.log("DATA ", data);
-
     try {
       await DiscoveryDataApiService.editCourse(data);
-      console.log("DATA ", data);
       setInclusion(!(inclusion));
       setIsLoading(false);
     } catch (err) {
