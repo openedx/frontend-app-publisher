@@ -44,10 +44,9 @@ describe('<CatalogInclusionPane />', () => {
       />,
     );
     const toggle = screen.getByTestId('course-inclusion-switch');
+    expect(toggle).not.toBeChecked();
     userEvent.click(toggle);
-    const spinner = screen.getByTestId('course-inclusion-loading');
-    expect(spinner);
-    await waitForElementToBeRemoved(spinner);
+    expect(DiscoveryDataApiService.editCourse).toBeCalledWith(response);
 
     await waitFor(() => {
       expect(toggle).toBeChecked();
