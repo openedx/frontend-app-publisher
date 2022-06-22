@@ -47,6 +47,8 @@ describe('<CatalogInclusionPane />', () => {
     expect(toggle).not.toBeChecked();
     userEvent.click(toggle);
     const spinner = screen.getByTestId('course-inclusion-loading');
+    expect(spinner);
+
     await waitForElementToBeRemoved(spinner);
 
     await waitFor(() => {
