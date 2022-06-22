@@ -45,6 +45,8 @@ describe('EditCoursePage', () => {
           heading: 'facts_2_heading',
           blurb: 'facts_2_blurb',
         }],
+        start_date: '2019-05-10T00:00:00Z',
+        registration_deadline: '2019-05-10T00:00:00Z',
       },
       course_runs: [
         {
@@ -342,6 +344,8 @@ describe('EditCoursePage', () => {
         facts_1_blurb: 'facts_1_blurb',
         facts_2_heading: 'facts_2_heading',
         facts_2_blurb: 'facts_2_blurb',
+        start_date: '2019-05-10T00:00:00Z',
+        registration_deadline: '2019-05-10T00:00:00Z',
       },
       course_runs: [unpublishedCourseRun, publishedCourseRun],
       faq: '<p>Help?</p>',
@@ -884,6 +888,8 @@ describe('EditCoursePage', () => {
           heading: 'facts_2_heading',
           blurb: 'facts_2_blurb',
         }],
+        start_date: '2019-05-10T00:00:00Z',
+        registration_deadline: '2019-05-10T00:00:00Z',
       },
       draft: false,
       collaborators: undefined,
