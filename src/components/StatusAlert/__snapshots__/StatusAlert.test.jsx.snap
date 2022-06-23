@@ -1,22 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StatusAlert shows a status alert 1`] = `
-<withDeprecatedProps(StatusAlert)
-  alertType="Test"
+<ForwardRef
   className=""
-  dialog={
-    <div
-      className=""
-    >
-      <div
-        className="message"
-      >
-        Test Message
-      </div>
-    </div>
-  }
+  closeLabel="Dismiss"
   dismissible={false}
   onClose={[Function]}
-  open={true}
-/>
+  show={true}
+  stacked={false}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="Test"
+>
+  <div
+    className="message"
+  >
+    <AlertHeading
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "DivStyledAsH4",
+          "render": [Function],
+        }
+      }
+      bsPrefix="alert-heading"
+    />
+    <p>
+      Test Message
+    </p>
+  </div>
+</ForwardRef>
 `;

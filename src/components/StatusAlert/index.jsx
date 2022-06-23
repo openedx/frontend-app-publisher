@@ -1,7 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { StatusAlert as Alert, Icon } from '@edx/paragon';
+import { Alert, Icon } from '@edx/paragon';
 
 const StatusAlert = (props) => {
   const {
@@ -13,35 +12,26 @@ const StatusAlert = (props) => {
     dismissible,
     onClose,
   } = props;
+  const showIcon = () => (
+    <div className="icon mr-2">
+      <Icon className={iconClassNames} />
+    </div>
+  );
 
   return (
     <Alert
       className={className}
-      alertType={alertType}
+      variant={alertType}
       dismissible={dismissible}
-      dialog={(
-        <div className={
-          classNames({
-            'd-flex': iconClassNames.length > 0,
-          })
-}
-        >
-          {iconClassNames.length > 0
-            && (
-            <div className="icon mr-2">
-              <Icon className={iconClassNames} />
-            </div>
-            )}
-          <div className="message">
-            {title
-              && <span className="title">{title}</span>}
-            {message}
-          </div>
-        </div>
-      )}
       onClose={onClose}
-      open
-    />
+      {...iconClassNames.length > 0 && { icon: showIcon }}
+      show
+    >
+      <div className="message">
+        <Alert.Heading>{title}</Alert.Heading>
+        <p>{message}</p>
+      </div>
+    </Alert>
   );
 };
 
