@@ -12,6 +12,8 @@ import CatalogInclusionPane from './CatalogInclusionPane';
 
 jest.mock('../../data/services/DiscoveryDataApiService', () => ({
   editCourse: jest.fn(),
+  fetchCourses: jest.fn(),
+  fetchUsersForCurrentUser: jest.fn(),
 }));
 
 const mockUuid = 'test-enterprise-id';
@@ -20,11 +22,10 @@ const mockInclusion = false;
 const response = { uuid: mockUuid, enterprise_subscription_inclusion: true };
 
 describe('<CatalogInclusionPane />', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
+  beforeEach(() => {
+    getAuthenticatedUser.mockReturnValue({ administrator: true });
   });
   test('renders catalog inclusion pane', () => {
-    getAuthenticatedUser.mockReturnValue({ administrator: true });
     render(
       <CatalogInclusionPane
         courseUuid={mockUuid}
@@ -36,7 +37,6 @@ describe('<CatalogInclusionPane />', () => {
   });
   test('test toggle switch', async () => {
     DiscoveryDataApiService.editCourse.mockResolvedValue(response);
-    getAuthenticatedUser.mockReturnValue({ administrator: true });
     render(
       <CatalogInclusionPane
         courseUuid={mockUuid}
@@ -53,7 +53,6 @@ describe('<CatalogInclusionPane />', () => {
     });
   });
   test('test error', async () => {
-    getAuthenticatedUser.mockReturnValue({ administrator: true });
     DiscoveryDataApiService.editCourse.mockRejectedValue();
     render(
       <CatalogInclusionPane

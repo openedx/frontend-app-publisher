@@ -151,6 +151,8 @@ describe('EditCoursePage', () => {
         image: null,
       },
       skill_names: [],
+      organization_logo_override_url: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
     },
     showCreateStatusAlert: false,
     isFetching: false,
@@ -353,6 +355,8 @@ describe('EditCoursePage', () => {
       imageSrc: 'http://image.jpg',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      organization_logo_override_url: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
@@ -379,6 +383,8 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      organization_logo_override: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
@@ -899,6 +905,8 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      organization_logo_override: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
