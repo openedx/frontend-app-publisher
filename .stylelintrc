@@ -1,7 +1,7 @@
 {
   "plugins": [
     "stylelint-scss",
-    "stylelint-declaration-use-variable"
+    "stylelint-declaration-strict-value"
   ],
   "extends": "@edx/stylelint-config-edx",
   "rules": {
@@ -25,7 +25,7 @@
         "only-of-namespace"
       ]
     }],
-    "sh-waqar/declaration-use-variable": [["/color/", { "ignoreValues": ["inherit", "transparent"] }]],
+    "stylelint-declaration-strict-value": [["/color/", { "ignoreValues": ["inherit", "transparent"] }]],
     "property-no-vendor-prefix": [true]
   }
 }
