@@ -2,10 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
-import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import {
   buildInitialPrices, courseRunIsArchived, formatPriceData, getCourseNumber, isValidDate,
@@ -528,13 +528,18 @@ class EditCoursePage extends React.Component {
   render() {
     if (!this.props.courseInfo || !this.props.courseOptions || !this.props.courseRunOptions) {
       return (
-        <StatusAlert
+        <Alert
           id="error"
-          alertType="danger"
-          title="Course Edit Form failed to load: "
-          message="Course information unavailable. Please try reloading the page and if the error
-           persists, please contact support."
-        />
+          variant="danger"
+          title=""
+          message=""
+        >
+          <Alert.Heading>Course Edit Form failed to load: </Alert.Heading>
+          <p>
+            Course information unavailable. Please try reloading the page and if the error
+            persists, please contact support.
+          </p>
+        </Alert>
       );
     }
 
@@ -631,21 +636,23 @@ class EditCoursePage extends React.Component {
         />
         <div className="container my-3">
           { showReviewStatusAlert && (
-          <StatusAlert
+          <Alert
             onClose={this.dismissReviewStatusAlert}
             dismissible
-            alertType="success"
-            message={targetRun && this.displayReviewStatusAlert(targetRun.status)}
-          />
+            variant="success"
+          >
+            {targetRun && this.displayReviewStatusAlert(targetRun.status)}
+          </Alert>
           ) }
 
           { showCreateStatusAlert && (
-          <StatusAlert
+          <Alert
             onClose={this.dismissCreateStatusAlert}
             dismissible
-            alertType="success"
-            message="Course run has been created in studio. See link below."
-          />
+            variant="success"
+          >
+            Course run has been created in studio. See link below.
+          </Alert>
           ) }
         </div>
         { showSpinner && <LoadingSpinner /> }
@@ -673,10 +680,10 @@ class EditCoursePage extends React.Component {
           )}
         >
           { showForm && !editable && (
-          <StatusAlert
-            alertType="secondary"
-            message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
-          />
+          <Alert variant="secondary">
+            You have permission to view this course, but not edit. If you would like to edit the course, please
+            contact a course editor.
+          </Alert>
           ) }
           { showForm && (
             <>
@@ -706,11 +713,12 @@ class EditCoursePage extends React.Component {
             </>
           )}
           { errorArray.length > 0 && (
-            <StatusAlert
+            <Alert
               id="error"
-              alertType="danger"
-              message={errorArray}
-            />
+              variant="danger"
+            >
+              {errorArray}
+            </Alert>
           )}
         </PageContainer>
       </>

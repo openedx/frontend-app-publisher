@@ -15,15 +15,30 @@ exports[`ImageUpload shows an image upload and an error 1`] = `
       Image Error Test
     </label>
       
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="Required"
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Required
+    </ForwardRef>
     <img
       alt=""
       className="uploaded-image"

@@ -65,16 +65,31 @@ exports[`StafferPage renders html correctly when given a referrer 1`] = `
     className=""
     wide={false}
   >
-    <StatusAlert
-      alertType="info"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={true}
-      iconClassNames={Array []}
       id="sent-from-edit-course-info"
-      message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="info"
+    >
+      The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information.
+    </ForwardRef>
     <div>
       <h2>
         Create New Instructor
@@ -195,16 +210,47 @@ exports[`StafferPage renders page correctly while fetching 1`] = `
 `;
 
 exports[`StafferPage renders page correctly with no stafferInfo 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
+  closeLabel="Dismiss"
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="Could not get instructor information"
+  message=""
   onClose={[Function]}
-  title="Could not load page"
-/>
+  show={true}
+  stacked={false}
+  title=""
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Could not load page
+  </AlertHeading>
+  <p>
+    Could not get instructor information
+  </p>
+</ForwardRef>
 `;
 
 exports[`StafferPage renders page correctly with staffer info error 1`] = `
@@ -261,21 +307,32 @@ exports[`StafferPage renders page correctly with staffer info error 1`] = `
         touchOnChange={false}
         updateUnregisteredFields={false}
       />
-      <StatusAlert
-        alertType="danger"
-        className=""
+      <ForwardRef
+        closeLabel="Dismiss"
         dismissible={false}
-        iconClassNames={Array []}
         id="create-staffer-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
         onClose={[Function]}
-        title={null}
-      />
+        show={true}
+        stacked={false}
+        transition={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "appear": false,
+              "in": false,
+              "mountOnEnter": false,
+              "timeout": 300,
+              "unmountOnExit": false,
+            },
+            "displayName": "Fade",
+            "render": [Function],
+          }
+        }
+        variant="danger"
+      >
+        Fail
+        <br />
+      </ForwardRef>
     </div>
   </PageContainer>
 </Fragment>

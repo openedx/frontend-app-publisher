@@ -300,25 +300,32 @@ exports[`CourseTable shows an empty table 1`] = `
 
 exports[`CourseTable shows an error 1`] = `
 <Fragment>
-  <StatusAlert
-    alertType="danger"
-    className=""
+  <ForwardRef
+    closeLabel="Dismiss"
     dismissible={false}
-    iconClassNames={
-      Array [
-        "fa",
-        "fa-times-circle",
-      ]
-    }
-    message={
-      Array [
-        "Unable to load data: ",
-        "Test error.",
-      ]
-    }
+    icon={[Function]}
     onClose={[Function]}
-    title={null}
-  />
+    show={true}
+    stacked={false}
+    transition={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "defaultProps": Object {
+          "appear": false,
+          "in": false,
+          "mountOnEnter": false,
+          "timeout": 300,
+          "unmountOnExit": false,
+        },
+        "displayName": "Fade",
+        "render": [Function],
+      }
+    }
+    variant="danger"
+  >
+    Unable to load data: 
+    Test error.
+  </ForwardRef>
 </Fragment>
 `;
 

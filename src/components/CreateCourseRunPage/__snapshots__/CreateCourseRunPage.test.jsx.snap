@@ -430,21 +430,33 @@ exports[`CreateCourseRunPage renders html correctly when error 1`] = `
         updateUnregisteredFields={false}
         uuid=""
       />
-      <StatusAlert
-        alertType="danger"
+      <ForwardRef
         className="mt-3"
+        closeLabel="Dismiss"
         dismissible={false}
-        iconClassNames={Array []}
         id="create-error"
-        message={
-          Array [
-            "failed",
-            <br />,
-          ]
-        }
         onClose={[Function]}
-        title={null}
-      />
+        show={true}
+        stacked={false}
+        transition={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "appear": false,
+              "in": false,
+              "mountOnEnter": false,
+              "timeout": 300,
+              "unmountOnExit": false,
+            },
+            "displayName": "Fade",
+            "render": [Function],
+          }
+        }
+        variant="danger"
+      >
+        failed
+        <br />
+      </ForwardRef>
     </div>
   </PageContainer>
 </Fragment>

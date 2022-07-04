@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
+import { Alert } from '@edx/paragon';
+
 import EditCoursePage from './index';
 
 import ConfirmationModal from '../ConfirmationModal';
-import StatusAlert from '../StatusAlert';
 
 import {
   PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED, EXECUTIVE_EDUCATION_SLUG,
@@ -563,9 +564,9 @@ describe('EditCoursePage', () => {
           targetRun: unpublishedCourseRun,
         }}
       />);
-      const reviewAlert = component.find(StatusAlert);
+      const reviewAlert = component.find(Alert);
       const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
-      expect(reviewAlert.props().message).toEqual(reviewMessage);
+      expect(reviewAlert.text()).toEqual(reviewMessage);
     });
 
     it('upon legal review submission, StatusAlert is set to appear', () => {
@@ -576,9 +577,9 @@ describe('EditCoursePage', () => {
           targetRun: { status: REVIEW_BY_LEGAL },
         }}
       />);
-      const reviewAlert = component.find(StatusAlert);
+      const reviewAlert = component.find(Alert);
       const reviewMessage = 'Legal Review Complete. Course Run is now awaiting PC Review.';
-      expect(reviewAlert.props().message).toEqual(reviewMessage);
+      expect(reviewAlert.text()).toEqual(reviewMessage);
     });
 
     it('upon internal review submission, StatusAlert is set to appear', () => {
@@ -589,18 +590,18 @@ describe('EditCoursePage', () => {
           targetRun: { status: REVIEW_BY_INTERNAL },
         }}
       />);
-      const reviewAlert = component.find(StatusAlert);
+      const reviewAlert = component.find(Alert);
       const reviewMessage = 'PC Review Complete.';
-      expect(reviewAlert.props().message).toEqual(reviewMessage);
+      expect(reviewAlert.text()).toEqual(reviewMessage);
     });
 
     it('upon course run creation, StatusAlert is set to appear', () => {
       const component = shallow(<EditCoursePage
         courseInfo={{ data: { title: 'TestCourse101', editable: true }, showCreateStatusAlert: true }}
       />);
-      const createAlert = component.find(StatusAlert);
+      const createAlert = component.find(Alert);
       const createMessage = 'Course run has been created in studio. See link below.';
-      expect(createAlert.props().message).toEqual(createMessage);
+      expect(createAlert.text()).toEqual(createMessage);
     });
 
     it('handleCourseSubmit properly prepares course data for Save Edits case with no changes', () => {
