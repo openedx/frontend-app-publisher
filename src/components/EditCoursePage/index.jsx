@@ -238,6 +238,8 @@ class EditCoursePage extends React.Component {
       type: courseData.type,
       url_slug: courseData.url_slug,
       uuid,
+      value_per_click_usa: courseData.value_per_click_usa,
+      value_per_click_international: courseData.value_per_click_international,
       video: { src: courseData.videoSrc },
       enterprise_subscription_inclusion: courseData.enterprise_subscription_inclusion,
     };
@@ -442,6 +444,8 @@ class EditCoursePage extends React.Component {
           enterprise_subscription_inclusion,
           organization_short_code_override,
           organization_logo_override_url,
+          value_per_click_usa,
+          value_per_click_international,
         },
       },
     } = this.props;
@@ -480,6 +484,8 @@ class EditCoursePage extends React.Component {
       enterprise_subscription_inclusion,
       organization_short_code_override,
       organization_logo_override_url,
+      value_per_click_usa,
+      value_per_click_international,
     };
   }
 

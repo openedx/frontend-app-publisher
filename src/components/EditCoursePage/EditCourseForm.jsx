@@ -66,7 +66,6 @@ export class BaseEditCourseForm extends React.Component {
       },
       updateFormValuesAfterSave,
     } = this.props;
-
     if (initialCourseRuns.length && !this.state.collapsiblesOpen.length) {
       this.setCourseRunCollapsibles(initialCourseRuns);
     }
@@ -188,6 +187,7 @@ export class BaseEditCourseForm extends React.Component {
   }
 
   render() {
+    console.log('props', this.props);
     const {
       handleSubmit,
       number,
@@ -255,6 +255,7 @@ export class BaseEditCourseForm extends React.Component {
       runTypeModes,
     } = parsedTypeOptions;
     const disabled = courseInReview || !editable;
+    console.log({currentFormValues});
     const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type]
       || courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
 
@@ -932,6 +933,22 @@ export class BaseEditCourseForm extends React.Component {
               maxImageSizeKilo={256}
               requiredWidth={110}
               requiredHeight={110}
+              disabled={disabled}
+              optional
+            />
+            <Field
+              name="value_per_click_usa"
+              component={RenderInputTextField}
+              label={<FieldLabel text="Value Per Click USA" optional />}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              disabled={disabled}
+              optional
+            />
+            <Field
+              name="value_per_click_international"
+              component={RenderInputTextField}
+              label={<FieldLabel text="Value Per Click International" optional />}
+              extraInput={{ onInvalid: this.openCollapsible }}
               disabled={disabled}
               optional
             />
