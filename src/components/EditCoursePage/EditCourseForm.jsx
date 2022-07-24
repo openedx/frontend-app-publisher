@@ -255,7 +255,6 @@ export class BaseEditCourseForm extends React.Component {
       runTypeModes,
     } = parsedTypeOptions;
     const disabled = courseInReview || !editable;
-    console.log({currentFormValues});
     const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type]
       || courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
 
