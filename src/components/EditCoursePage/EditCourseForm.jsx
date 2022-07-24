@@ -936,22 +936,26 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
-            <Field
-              name="value_per_click_usa"
-              component={RenderInputTextField}
-              label={<FieldLabel text="Value Per Click USA" optional />}
-              extraInput={{ onInvalid: this.openCollapsible }}
-              disabled={disabled}
-              optional
-            />
-            <Field
-              name="value_per_click_international"
-              component={RenderInputTextField}
-              label={<FieldLabel text="Value Per Click International" optional />}
-              extraInput={{ onInvalid: this.openCollapsible }}
-              disabled={disabled}
-              optional
-            />
+            {administrator && (
+              <>
+                <Field
+                  name="value_per_click_usa"
+                  component={RenderInputTextField}
+                  label={<FieldLabel text="Value Per Click USA" optional />}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  disabled={disabled}
+                  optional
+                />
+                <Field
+                  name="value_per_click_international"
+                  component={RenderInputTextField}
+                  label={<FieldLabel text="Value Per Click International" optional />}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  disabled={disabled}
+                  optional
+                />
+              </>
+            )}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
             <AdditionalMetadataFields disabled={disabled} />
@@ -1042,6 +1046,8 @@ BaseEditCourseForm.propTypes = {
       course_type: PropTypes.string,
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
+      value_per_click_usa: PropTypes.number,
+      value_per_click_international: PropTypes.number,
     }),
   }),
   courseSubmitInfo: PropTypes.shape({
