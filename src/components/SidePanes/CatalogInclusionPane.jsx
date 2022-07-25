@@ -6,12 +6,12 @@ import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import Pane from './Pane';
 
-const CatalogInclusionPane = ({
+function CatalogInclusionPane({
   courseUuid,
   draftStatuses,
   orgInclusion,
   subInclusion,
-}) => {
+}) {
   const [inclusion, setInclusion] = useState(subInclusion);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -79,7 +79,7 @@ const CatalogInclusionPane = ({
       </Form>
     </Pane>
   );
-};
+}
 
 CatalogInclusionPane.propTypes = {
   courseUuid: PropTypes.string.isRequired,
