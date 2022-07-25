@@ -217,7 +217,7 @@ CreateCoursePage.propTypes = {
     pacing_type: PropTypes.string,
   }),
   publisherUserInfo: PropTypes.shape({
-    organizations: PropTypes.array,
+    organizations: PropTypes.arrayOf(PropTypes.shape({})),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),

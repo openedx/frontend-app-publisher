@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-function publisherUserInfo(state = initialState, action) {
+function publisherUserInfo(state = initialState, action = {}) {
   switch (action.type) {
     case REQUEST_USER_ORGANIZATIONS:
       return {

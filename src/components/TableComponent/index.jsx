@@ -133,16 +133,6 @@ class TableComponent extends React.Component {
     );
   }
 
-  renderEmptyDataMessage() {
-    return (
-      <StatusAlert
-        alertType="warning"
-        iconClassNames={['fa', 'fa-exclamation-circle']}
-        message="There are no results."
-      />
-    );
-  }
-
   render() {
     const {
       data,

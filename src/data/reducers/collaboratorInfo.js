@@ -17,7 +17,7 @@ const initialState = {
   returnToEditCourse: false,
 };
 
-function CollaboratorInfo(state = initialState, action) {
+function CollaboratorInfo(state = initialState, action = {}) {
   switch (action.type) {
     case CREATE_COLLABORATOR:
       return {

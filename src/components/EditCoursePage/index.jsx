@@ -51,6 +51,60 @@ class EditCoursePage extends React.Component {
     this.dismissReviewStatusAlert();
   }
 
+  handleCourseSubmit(courseData) {
+    /*
+      Need to do some pre-processing before sending anything to course-discovery.
+      This includes:
+        1. Only sending the uuid from the array of staff objects
+        2. Only including subjects that have values
+        3. Putting the entitlement into an array and also adding in the sku
+          (required for updating price)
+        4. Renaming the image and video fields to correspond to what course-discovery is expecting
+        5. Setting the uuid so we can create the url to send to course-discovery
+    */
+    const {
+      courseSubmitInfo: {
+        targetRun,
+      },
+      editCourse,
+    } = this.props;
+    const isInternalReview = targetRun && IN_REVIEW_STATUS.includes(targetRun.status);
+    // Process course run info from courseData
+    const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData)
+      : this.prepareSendCourseRunData(courseData);
+    // Process courseData to reduced data set
+    const courseEditData = this.prepareSendCourseData(courseData);
+    return editCourse(
+      courseEditData,
+      modifiedCourseRuns,
+      !!targetRun,
+      !!isInternalReview,
+      this.getData,
+    );
+  }
+
+  handleModalForReviewedRun(submitCourseData) {
+    const {
+      courseSubmitInfo: {
+        targetRun: {
+          key,
+        },
+      },
+      formValues,
+    } = this.props;
+    const currentValues = formValues(this.getFormId());
+    const initialValues = this.buildInitialValues();
+    if (isNonExemptChanged(initialValues, currentValues, key)
+      || isNonExemptChanged(initialValues, currentValues)) {
+      this.setState({
+        submitCourseData,
+        submitConfirmVisible: true, // show modal
+      });
+    } else {
+      this.handleCourseSubmit(submitCourseData);
+    }
+  }
+
   getData() {
     this.props.fetchCourseInfo();
     this.props.fetchCourseOptions();
@@ -282,38 +336,6 @@ class EditCoursePage extends React.Component {
     clearCreateStatusAlert();
   }
 
-  handleCourseSubmit(courseData) {
-    /*
-      Need to do some pre-processing before sending anything to course-discovery.
-      This includes:
-        1. Only sending the uuid from the array of staff objects
-        2. Only including subjects that have values
-        3. Putting the entitlement into an array and also adding in the sku
-          (required for updating price)
-        4. Renaming the image and video fields to correspond to what course-discovery is expecting
-        5. Setting the uuid so we can create the url to send to course-discovery
-    */
-    const {
-      courseSubmitInfo: {
-        targetRun,
-      },
-      editCourse,
-    } = this.props;
-    const isInternalReview = targetRun && IN_REVIEW_STATUS.includes(targetRun.status);
-    // Process course run info from courseData
-    const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData)
-      : this.prepareSendCourseRunData(courseData);
-    // Process courseData to reduced data set
-    const courseEditData = this.prepareSendCourseData(courseData);
-    return editCourse(
-      courseEditData,
-      modifiedCourseRuns,
-      !!targetRun,
-      !!isInternalReview,
-      this.getData,
-    );
-  }
-
   displayReviewStatusAlert(status) {
     const {
       courseInfo: { data: { course_runs } },
@@ -478,28 +500,6 @@ class EditCoursePage extends React.Component {
       organization_short_code_override,
       organization_logo_override_url,
     };
-  }
-
-  handleModalForReviewedRun(submitCourseData) {
-    const {
-      courseSubmitInfo: {
-        targetRun: {
-          key,
-        },
-      },
-      formValues,
-    } = this.props;
-    const currentValues = formValues(this.getFormId());
-    const initialValues = this.buildInitialValues();
-    if (isNonExemptChanged(initialValues, currentValues, key)
-      || isNonExemptChanged(initialValues, currentValues)) {
-      this.setState({
-        submitCourseData,
-        submitConfirmVisible: true, // show modal
-      });
-    } else {
-      this.handleCourseSubmit(submitCourseData);
-    }
   }
 
   showModal(submitCourseData) {
@@ -766,7 +766,7 @@ EditCoursePage.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
   }),
   courseEditors: PropTypes.shape({
-    data: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
     isFetching: PropTypes.bool,
   }),
   courseInfo: PropTypes.shape({
@@ -807,10 +807,10 @@ EditCoursePage.propTypes = {
   }),
   formValues: PropTypes.func,
   organizationRoles: PropTypes.shape({
-    data: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
   }),
   organizationUsers: PropTypes.shape({
-    data: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
   }),
   removeCourseEditor: PropTypes.func,
   collaboratorInfo: PropTypes.shape({}),

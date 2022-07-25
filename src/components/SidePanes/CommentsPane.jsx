@@ -39,15 +39,6 @@ class CommentsPane extends React.Component {
     }
   }
 
-  dismissEmptyCommentAlert() {
-    this.setState({ showEmptyCommentAlert: false });
-  }
-
-  scrollToBottom() {
-    const element = document.getElementById('endOfCommentThread');
-    element.scrollIntoView({ behavior: 'auto', block: 'end' });
-  }
-
   handleUpdateCommentBody(value) {
     this.setState({ newCommentBody: value });
   }
@@ -67,6 +58,15 @@ class CommentsPane extends React.Component {
       this.props.addComment(newComment);
       this.setState({ newCommentBody: '', showEmptyCommentAlert: false });
     }
+  }
+
+  scrollToBottom() {
+    const element = document.getElementById('endOfCommentThread');
+    element.scrollIntoView({ behavior: 'auto', block: 'end' });
+  }
+
+  dismissEmptyCommentAlert() {
+    this.setState({ showEmptyCommentAlert: false });
   }
 
   parseComments(comments) {

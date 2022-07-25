@@ -15,7 +15,7 @@ const initialState = {
   editorFilterOptionsError: null,
 };
 
-const tableReducer = (state = initialState, action) => {
+const tableReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_TABLE_REQUEST:
       return {

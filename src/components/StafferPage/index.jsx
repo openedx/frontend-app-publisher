@@ -24,6 +24,30 @@ class StafferPage extends React.Component {
     this.setStartedFetching();
   }
 
+  handleStafferCreate(fieldValues) {
+    const {
+      createStaffer,
+      sourceInfo: { referrer },
+    } = this.props;
+
+    const stafferData = this.prepareStafferData(fieldValues);
+    createStaffer(stafferData, referrer);
+  }
+
+  handleStafferEdit(fieldValues) {
+    const {
+      editStaffer,
+      sourceInfo: { referrer },
+    } = this.props;
+
+    const stafferData = this.prepareStafferData(fieldValues);
+    if (!stafferData.profile_image.startsWith('data:')) {
+      // Only send profile_image if a new one is being uploaded
+      delete stafferData.profile_image;
+    }
+    editStaffer(stafferData, referrer);
+  }
+
   setStartedFetching() {
     this.setState({ startedFetching: true });
   }
@@ -73,30 +97,6 @@ class StafferPage extends React.Component {
       urls_detailed: this.prepareSocialLinks(fieldValues.urls_detailed),
       position: this.preparePosition(fieldValues.position),
     };
-  }
-
-  handleStafferCreate(fieldValues) {
-    const {
-      createStaffer,
-      sourceInfo: { referrer },
-    } = this.props;
-
-    const stafferData = this.prepareStafferData(fieldValues);
-    createStaffer(stafferData, referrer);
-  }
-
-  handleStafferEdit(fieldValues) {
-    const {
-      editStaffer,
-      sourceInfo: { referrer },
-    } = this.props;
-
-    const stafferData = this.prepareStafferData(fieldValues);
-    if (!stafferData.profile_image.startsWith('data:')) {
-      // Only send profile_image if a new one is being uploaded
-      delete stafferData.profile_image;
-    }
-    editStaffer(stafferData, referrer);
   }
 
   render() {

@@ -14,7 +14,7 @@ const initialState = {
   errors: null,
 };
 
-function courseSubmitInfo(state = initialState, action) {
+function courseSubmitInfo(state = initialState, action = {}) {
   switch (action.type) {
     case COURSE_SUBMIT_RUN:
       return {

@@ -255,7 +255,7 @@ CourseTable.defaultProps = {
 CourseTable.propTypes = {
   fetchOrganizations: PropTypes.func,
   publisherUserInfo: PropTypes.shape({
-    organizations: PropTypes.array,
+    organizations: PropTypes.arrayOf(PropTypes.shape({})),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),

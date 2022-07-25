@@ -16,11 +16,6 @@ class ImageUpload extends React.Component {
     this.sizeValidator = this.sizeValidator.bind(this);
   }
 
-  updateValue(value) {
-    this.setState({ value });
-    this.props.input.onChange(value);
-  }
-
   handleFilePicked(event) {
     const {
       maxImageSizeKilo,
@@ -47,6 +42,11 @@ class ImageUpload extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     }
+  }
+
+  updateValue(value) {
+    this.setState({ value });
+    this.props.input.onChange(value);
   }
 
   sizeValidator(event) {
