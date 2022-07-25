@@ -10,6 +10,7 @@ describe('Header', () => {
   const HeaderWrapper = props => (
     mount(
       <AppContext.Provider
+        // eslint-disable-next-line react/jsx-no-constructed-context-values
         value={{
           authenticatedUser: {
             username: 'test-username',

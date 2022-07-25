@@ -129,15 +129,17 @@ class DiscoveryDataApiService {
 
   static fetchOrganizationUsers(id) {
     const url = `${publisherBaseUrl}/admins/organizations/${id}/users/`;
-    return new Promise((resolve, reject) => getAuthenticatedHttpClient().get(url)
-      .then(response => resolve(response))
-      .catch((error) => {
-        if (error.response.status === 404) {
-          resolve(null);
-        } else {
-          reject(error);
-        }
-      }));
+    return new Promise((resolve, reject) => {
+      getAuthenticatedHttpClient().get(url)
+        .then(response => resolve(response))
+        .catch((error) => {
+          if (error.response.status === 404) {
+            resolve(null);
+          } else {
+            reject(error);
+          }
+        });
+    });
   }
 
   static editCourseRuns(courseRunsData) {
