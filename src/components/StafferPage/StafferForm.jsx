@@ -13,7 +13,7 @@ import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 import { basicValidate } from '../../utils/validation';
 
-const BaseStafferForm = ({
+function BaseStafferForm({
   handleSubmit,
   pristine,
   isSaving,
@@ -21,7 +21,7 @@ const BaseStafferForm = ({
   sourceInfo: { referrer },
   cancelStafferInfo,
   organizationName,
-}) => {
+}) {
   const formControlDisabled = pristine || isSaving;
 
   return (
@@ -147,7 +147,7 @@ const BaseStafferForm = ({
       </form>
     </div>
   );
-};
+}
 
 BaseStafferForm.propTypes = {
   cancelStafferInfo: PropTypes.func,

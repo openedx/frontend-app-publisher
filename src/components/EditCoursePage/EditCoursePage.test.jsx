@@ -845,18 +845,20 @@ describe('EditCoursePage', () => {
     });
 
     it('submit modal can be cancelled', () => {
-      const EditCoursePageWrapper = props => (
-        <MemoryRouter>
-          <Provider store={mockStore()}>
-            <EditCoursePage
-              {...props}
-              courseInfo={courseInfo}
-              courseOptions={courseOptions}
-              courseRunOptions={courseRunOptions}
-            />
-          </Provider>
-        </MemoryRouter>
-      );
+      function EditCoursePageWrapper(props) {
+        return (
+          <MemoryRouter>
+            <Provider store={mockStore()}>
+              <EditCoursePage
+                {...props}
+                courseInfo={courseInfo}
+                courseOptions={courseOptions}
+                courseRunOptions={courseRunOptions}
+              />
+            </Provider>
+          </MemoryRouter>
+        );
+      }
 
       const wrapper = mount(EditCoursePageWrapper());
 

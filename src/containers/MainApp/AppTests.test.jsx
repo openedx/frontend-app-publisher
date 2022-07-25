@@ -55,25 +55,27 @@ function renderAppWithState(initialRoute) {
     },
   };
 
-  const AppWrapper = initialEntries => (
-    <IntlProvider locale="en">
-      <Provider store={mockStore(initialState)}>
-        <AppContext.Provider
-          store={mockStore(initialState)}
-          value={{
-            authenticatedUser: {
-              username: 'user9',
-            },
-            config: {},
-          }}
-        >
-          <MemoryRouter initialEntries={initialEntries}>
-            <MainApp />
-          </MemoryRouter>
-        </AppContext.Provider>
-      </Provider>
-    </IntlProvider>
-  );
+  function AppWrapper(initialEntries) {
+    return (
+      <IntlProvider locale="en">
+        <Provider store={mockStore(initialState)}>
+          <AppContext.Provider
+            store={mockStore(initialState)}
+            value={{
+              authenticatedUser: {
+                username: 'user9',
+              },
+              config: {},
+            }}
+          >
+            <MemoryRouter initialEntries={initialEntries}>
+              <MainApp />
+            </MemoryRouter>
+          </AppContext.Provider>
+        </Provider>
+      </IntlProvider>
+    );
+  }
   return mount(AppWrapper(initialRoute));
 }
 

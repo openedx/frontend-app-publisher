@@ -10,14 +10,14 @@ import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 import { basicValidate } from '../../utils/validation';
 
-const BaseCollaboratorForm = ({
+function BaseCollaboratorForm({
   handleSubmit,
   pristine,
   isSaving,
   isCreateForm,
   sourceInfo: { referrer },
   cancelCollaboratorInfo,
-}) => {
+}) {
   const formControlDisabled = pristine || isSaving;
 
   return (
@@ -80,7 +80,7 @@ const BaseCollaboratorForm = ({
       </form>
     </div>
   );
-};
+}
 
 BaseCollaboratorForm.propTypes = {
   cancelCollaboratorInfo: PropTypes.func,

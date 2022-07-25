@@ -8,7 +8,7 @@ import {
   Dropdown, Hyperlink, AvatarButton,
 } from '@edx/paragon';
 
-const Header = ({ darkModeOn, location, toggleDarkMode }) => {
+function Header({ darkModeOn, location, toggleDarkMode }) {
   const { authenticatedUser } = useContext(AppContext);
 
   if (darkModeOn) {
@@ -55,28 +55,26 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
             </div>
             )}
           <div className="col-auto justify-content-end ml-auto">
-            <>
-              <Dropdown>
-                <Dropdown.Toggle as={AvatarButton}>
-                  {authenticatedUser.username}
-                </Dropdown.Toggle>
+            <Dropdown>
+              <Dropdown.Toggle as={AvatarButton}>
+                {authenticatedUser.username}
+              </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => redirectToLogout(process.env.LMS_BASE_URL)}
-                    key="dropdown-logout"
-                  >
-                    Sign Out
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </>
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => redirectToLogout(process.env.LMS_BASE_URL)}
+                  key="dropdown-logout"
+                >
+                  Sign Out
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
       </div>
     </header>
   );
-};
+}
 
 Header.propTypes = {
   darkModeOn: PropTypes.bool,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { InputText } from '@edx/paragon';
 
-const RenderInputTextField = ({
+function RenderInputTextField({
   input,
   extraInput,
   name,
@@ -14,23 +14,25 @@ const RenderInputTextField = ({
   placeholder,
   pattern,
   meta: { touched, error },
-}) => (
-  <InputText
-    {...input}
-    {...extraInput}
-    placeholder={placeholder}
-    maxLength={maxLength}
-    pattern={pattern}
-    name={name}
-    label={label}
-    type={type}
-    disabled={disabled}
-    required={required}
-    isValid={!(touched && error)}
-    validationMessage={error}
-    themes={['danger']}
-  />
-);
+}) {
+  return (
+    <InputText
+      {...input}
+      {...extraInput}
+      placeholder={placeholder}
+      maxLength={maxLength}
+      pattern={pattern}
+      name={name}
+      label={label}
+      type={type}
+      disabled={disabled}
+      required={required}
+      isValid={!(touched && error)}
+      validationMessage={error}
+      themes={['danger']}
+    />
+  );
+}
 
 RenderInputTextField.defaultProps = {
   extraInput: {},

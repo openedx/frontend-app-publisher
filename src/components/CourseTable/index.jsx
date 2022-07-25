@@ -130,55 +130,53 @@ class CourseTable extends React.Component {
     const pageOptions = getPageOptionsFromUrl();
 
     return (
-      <>
-        <div className="row">
-          <div className="col-2 float-left">
-            <ButtonToolbar className="mb-3" leftJustify>
-              <Link to="/courses/new">
-                <button type="button" className="btn btn-primary">New Course</button>
-              </Link>
-            </ButtonToolbar>
-          </div>
-          <div className="col-5 float-right">
-            <Select
-              closeMenuOnSelect={false}
-              value={selectedFilters}
-              options={filterGroups}
-              onChange={filters => this.updateFilterQueryParamsInUrl(filters === null
-                ? [] : filters)}
-              isMulti
-              maxMenuHeight="30vh"
-              placeholder="Filters..."
-              styles={
-                {
-                  option: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
-                  multiValue: (styles, { data }) => (
-                    { ...styles, backgroundColor: data.color || '#e7e7e7', opacity: 0.7 }
-                  ),
-                  multiValueLabel: (styles, { data }) => (
-                    {
-                      ...styles,
-                      color: data.label === 'Published' || data.label === 'Scheduled' ? '#ffffff' : '#000000',
-                    }
-                  ),
-                }
-              }
-            />
-          </div>
-          <div className="col-5 float-right">
-            <SearchField
-              value={pageOptions.pubq}
-              onClear={() => {
-                updateUrl({ filter: null });
-              }}
-              onSubmit={(filter) => {
-                updateUrl({ filter, page: 1 });
-              }}
-              placeholder="Search"
-            />
-          </div>
+      <div className="row">
+        <div className="col-2 float-left">
+          <ButtonToolbar className="mb-3" leftJustify>
+            <Link to="/courses/new">
+              <button type="button" className="btn btn-primary">New Course</button>
+            </Link>
+          </ButtonToolbar>
         </div>
-      </>
+        <div className="col-5 float-right">
+          <Select
+            closeMenuOnSelect={false}
+            value={selectedFilters}
+            options={filterGroups}
+            onChange={filters => this.updateFilterQueryParamsInUrl(filters === null
+              ? [] : filters)}
+            isMulti
+            maxMenuHeight="30vh"
+            placeholder="Filters..."
+            styles={
+              {
+                option: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+                multiValue: (styles, { data }) => (
+                  { ...styles, backgroundColor: data.color || '#e7e7e7', opacity: 0.7 }
+                ),
+                multiValueLabel: (styles, { data }) => (
+                  {
+                    ...styles,
+                    color: data.label === 'Published' || data.label === 'Scheduled' ? '#ffffff' : '#000000',
+                  }
+                ),
+              }
+            }
+          />
+        </div>
+        <div className="col-5 float-right">
+          <SearchField
+            value={pageOptions.pubq}
+            onClear={() => {
+              updateUrl({ filter: null });
+            }}
+            onSubmit={(filter) => {
+              updateUrl({ filter, page: 1 });
+            }}
+            placeholder="Search"
+          />
+        </div>
+      </div>
     );
   }
 

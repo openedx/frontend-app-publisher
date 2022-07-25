@@ -8,31 +8,32 @@ import store from '../../data/store';
 
 export const getStafferName = staffer => `${staffer.given_name} ${staffer.family_name || ''}`;
 
-export const Staffer = ({
+export function Staffer({
   item,
   onRemove,
   disabled,
   referrer,
   courseRunKey,
-}) => (
-  <>
-    <div className="staffer-image-wrapper overflow-hidden">
-      <img src={item.profile_image_url} className="rounded-circle w-25" alt="" />
-    </div>
-    <div className="staffer-details">
-      <button
-        type="button"
-        className="btn js-delete-btn mr-1 p-0"
-        onClick={() => onRemove(item.uuid)}
-        disabled={disabled}
-      >
-        <Icon
-          id={`delete-icon-${item.uuid}`}
-          className="fa fa-trash fa-fw text-danger"
-          screenReaderText={`Remove ${getStafferName(item)}`}
-        />
-      </button>
-      { !disabled
+}) {
+  return (
+    <>
+      <div className="staffer-image-wrapper overflow-hidden">
+        <img src={item.profile_image_url} className="rounded-circle w-25" alt="" />
+      </div>
+      <div className="staffer-details">
+        <button
+          type="button"
+          className="btn js-delete-btn mr-1 p-0"
+          onClick={() => onRemove(item.uuid)}
+          disabled={disabled}
+        >
+          <Icon
+            id={`delete-icon-${item.uuid}`}
+            className="fa fa-trash fa-fw text-danger"
+            screenReaderText={`Remove ${getStafferName(item)}`}
+          />
+        </button>
+        { !disabled
         // Don't show the edit link at all if fields should be disabled
         && (
         <Link
@@ -48,12 +49,13 @@ export const Staffer = ({
           />
         </Link>
         )}
-      <span className="name font-weight-bold">
-        {getStafferName(item)}
-      </span>
-    </div>
-  </>
-);
+        <span className="name font-weight-bold">
+          {getStafferName(item)}
+        </span>
+      </div>
+    </>
+  );
+}
 
 Staffer.propTypes = {
   onRemove: PropTypes.func.isRequired,

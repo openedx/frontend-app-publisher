@@ -19,7 +19,7 @@ import {
 } from '../../utils';
 import { DATE_INPUT_PATTERN } from '../../data/constants';
 
-const BaseCreateCourseRunForm = ({
+function BaseCreateCourseRunForm({
   handleSubmit,
   pristine,
   isCreating,
@@ -30,7 +30,7 @@ const BaseCreateCourseRunForm = ({
   currentFormValues,
   courseRunLabels,
   canSetRunKey,
-}) => {
+}) {
   const courseRunOptionsData = getOptionsData(courseRunOptions);
   const { pacing_type: { choices } } = courseRunOptionsData;
   const pacingTypeOptions = courseRunOptionsData && parseOptions(choices);
@@ -187,7 +187,7 @@ const BaseCreateCourseRunForm = ({
       </form>
     </div>
   );
-};
+}
 
 BaseCreateCourseRunForm.defaultProps = {
   currentFormValues: {},

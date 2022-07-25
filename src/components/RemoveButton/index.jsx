@@ -4,25 +4,27 @@ import classNames from 'classnames';
 
 import { Icon } from '@edx/paragon';
 
-const RemoveButton = ({
+function RemoveButton({
   className,
   label,
   onRemove,
   targetFieldNumber,
-}) => (
-  <button
-    type="button"
-    className={classNames('close float-none', className)}
-    aria-label={label}
-    title={label}
-    onClick={() => onRemove(targetFieldNumber)}
-  >
-    <Icon
-      id="remove-field"
-      className="fa fa-close"
-    />
-  </button>
-);
+}) {
+  return (
+    <button
+      type="button"
+      className={classNames('close float-none', className)}
+      aria-label={label}
+      title={label}
+      onClick={() => onRemove(targetFieldNumber)}
+    >
+      <Icon
+        id="remove-field"
+        className="fa fa-close"
+      />
+    </button>
+  );
+}
 
 RemoveButton.propTypes = {
   className: PropTypes.string,

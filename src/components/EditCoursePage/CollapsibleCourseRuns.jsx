@@ -4,27 +4,29 @@ import { FieldArray } from 'redux-form';
 
 import CollapsibleCourseRun from './CollapsibleCourseRun';
 
-const CollapsibleCourseRuns = ({
+function CollapsibleCourseRuns({
   courseRuns,
   fields,
   collapsiblesOpen,
   onToggle,
   ...passThroughProps
-}) => (
-  <div className="course-run-collapsible">
-    {fields.map((courseRun, index) => (
-      <CollapsibleCourseRun
-        {...passThroughProps}
-        courseRun={courseRuns[index]}
-        courseId={courseRun}
-        index={index}
-        key={courseRuns[index].key}
-        isOpen={collapsiblesOpen[index]}
-        onToggle={value => onToggle(index, value)}
-      />
-    ))}
-  </div>
-);
+}) {
+  return (
+    <div className="course-run-collapsible">
+      {fields.map((courseRun, index) => (
+        <CollapsibleCourseRun
+          {...passThroughProps}
+          courseRun={courseRuns[index]}
+          courseId={courseRun}
+          index={index}
+          key={courseRuns[index].key}
+          isOpen={collapsiblesOpen[index]}
+          onToggle={value => onToggle(index, value)}
+        />
+      ))}
+    </div>
+  );
+}
 
 CollapsibleCourseRuns.propTypes = {
   courseRuns: PropTypes.arrayOf(PropTypes.shape({

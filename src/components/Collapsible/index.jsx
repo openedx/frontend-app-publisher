@@ -4,7 +4,7 @@ import { Collapsible } from '@edx/paragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-const CustomCollapsibleBody = ({ children }) => {
+function CustomCollapsibleBody({ children }) {
   const { isOpen } = useContext(Collapsible.Context);
   const style = {
     overflow: 'hidden',
@@ -18,7 +18,7 @@ const CustomCollapsibleBody = ({ children }) => {
       </div>
     </div>
   );
-};
+}
 
 CustomCollapsibleBody.propTypes = {
   children: PropTypes.node,
@@ -28,20 +28,22 @@ CustomCollapsibleBody.defaultProps = {
   children: undefined,
 };
 
-const CustomCollapsible = ({ children, title, ...props }) => (
-  <Collapsible.Advanced className="collapsible-card" {...props}>
-    <Collapsible.Trigger className="collapsible-trigger d-flex">
-      <span className="flex-grow-1">{title}</span>
-      <Collapsible.Visible whenClosed>
-        <FontAwesomeIcon icon={faPlus} />
-      </Collapsible.Visible>
-      <Collapsible.Visible whenOpen>
-        <FontAwesomeIcon icon={faMinus} />
-      </Collapsible.Visible>
-    </Collapsible.Trigger>
-    <CustomCollapsibleBody>{children}</CustomCollapsibleBody>
-  </Collapsible.Advanced>
-);
+function CustomCollapsible({ children, title, ...props }) {
+  return (
+    <Collapsible.Advanced className="collapsible-card" {...props}>
+      <Collapsible.Trigger className="collapsible-trigger d-flex">
+        <span className="flex-grow-1">{title}</span>
+        <Collapsible.Visible whenClosed>
+          <FontAwesomeIcon icon={faPlus} />
+        </Collapsible.Visible>
+        <Collapsible.Visible whenOpen>
+          <FontAwesomeIcon icon={faMinus} />
+        </Collapsible.Visible>
+      </Collapsible.Trigger>
+      <CustomCollapsibleBody>{children}</CustomCollapsibleBody>
+    </Collapsible.Advanced>
+  );
+}
 
 CustomCollapsible.propTypes = {
   children: PropTypes.node,
