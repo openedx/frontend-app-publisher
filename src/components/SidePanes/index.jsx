@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import UsersPane from './UsersPane';
 import CommentsPane from './CommentsPane';
+import CatalogInclusionPane from './CatalogInclusionPane';
 
 function SidePanes(props) {
+  const isEdxStaff = getAuthenticatedUser().administrator;
+  let orgInclusionList = false;
+
+  if (isEdxStaff) {
+    const incList = props.organizations.map(element => element.enterprise_subscription_inclusion);
+    orgInclusionList = incList.every(orgInclusion => orgInclusion === true);
+  }
+
   return (
     <div className={props.className} hidden={props.hidden}>
       <UsersPane
@@ -17,6 +27,14 @@ function SidePanes(props) {
         organizationUsers={props.organizationUsers}
         removeCourseEditor={props.removeCourseEditor}
       />
+      { isEdxStaff && (
+      <CatalogInclusionPane
+        courseUuid={props.courseUuid}
+        subInclusion={props.enterpriseSubscriptionInclusion}
+        draftStatuses={props.draft}
+        orgInclusion={orgInclusionList}
+      />
+      )}
       <CommentsPane
         addComment={props.addComment}
         comments={props.comments}
@@ -39,6 +57,7 @@ SidePanes.defaultProps = {
   fetchOrganizationRoles: null,
   fetchOrganizationUsers: null,
   hidden: false,
+  organizations: {},
   organizationRoles: {},
   organizationUsers: {},
   removeCourseEditor: () => null,
@@ -51,11 +70,14 @@ SidePanes.propTypes = {
   comments: PropTypes.shape(),
   courseEditors: PropTypes.shape(),
   courseUuid: PropTypes.string,
+  draft: PropTypes.arrayOf(PropTypes.string).isRequired,
+  enterpriseSubscriptionInclusion: PropTypes.bool.isRequired,
   fetchComments: PropTypes.func,
   fetchCourseEditors: PropTypes.func,
   fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
   hidden: PropTypes.bool,
+  organizations: PropTypes.arrayOf(PropTypes.string),
   organizationRoles: PropTypes.shape(),
   organizationUsers: PropTypes.shape(),
   removeCourseEditor: PropTypes.func,

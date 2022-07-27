@@ -239,6 +239,7 @@ class EditCoursePage extends React.Component {
       url_slug: courseData.url_slug,
       uuid,
       video: { src: courseData.videoSrc },
+      enterprise_subscription_inclusion: courseData.enterprise_subscription_inclusion,
     };
     if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
       formattedCourseData.additional_metadata = this.formatAdditionalMetadataFields(courseData);
@@ -438,6 +439,7 @@ class EditCoursePage extends React.Component {
           type,
           course_runs,
           skill_names,
+          enterprise_subscription_inclusion,
           organization_short_code_override,
           organization_logo_override_url,
         },
@@ -475,6 +477,7 @@ class EditCoursePage extends React.Component {
       course_runs: this.buildCourseRuns(),
       skill_names,
       additional_metadata: this.buildAdditionalMetadata(),
+      enterprise_subscription_inclusion,
       organization_short_code_override,
       organization_logo_override_url,
     };
@@ -556,6 +559,7 @@ class EditCoursePage extends React.Component {
           owners,
           editable,
           type,
+          enterprise_subscription_inclusion,
         },
         showCreateStatusAlert,
       },
@@ -660,9 +664,11 @@ class EditCoursePage extends React.Component {
           sidePanes={showForm && (
           <SidePanes
             courseUuid={uuid}
+            draft={courseStatuses}
             hidden={!showForm}
             addCourseEditor={editable && this.props.addCourseEditor}
             courseEditors={this.props.courseEditors}
+            organizations={owners}
             fetchCourseEditors={this.props.fetchCourseEditors}
             fetchOrganizationRoles={!owners ? null : role => (
               this.props.fetchOrganizationRoles(owners.map(owner => owner.uuid), role)
@@ -676,6 +682,7 @@ class EditCoursePage extends React.Component {
             addComment={this.props.addComment}
             comments={this.props.comments}
             fetchComments={this.props.fetchComments}
+            enterpriseSubscriptionInclusion={enterprise_subscription_inclusion}
           />
           )}
         >
