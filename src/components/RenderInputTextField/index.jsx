@@ -15,7 +15,7 @@ const RenderInputTextField = ({
   pattern,
   meta: { touched, error },
 }) => (
-  <Form.Group controlId={`${name}-text-label`}>
+  <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
     <Form.Label>
       {label}
     </Form.Label>
@@ -31,7 +31,7 @@ const RenderInputTextField = ({
       disabled={disabled}
       required={required}
     />
-    {!(touched && error) && (
+    {touched && error && (
     <Form.Control.Feedback>
       {error}
     </Form.Control.Feedback>
