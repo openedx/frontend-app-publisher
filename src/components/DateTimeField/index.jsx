@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { InputText } from '@edx/paragon';
+import { Form } from '@edx/paragon';
 import {
   getDateWithDashes,
   getDateWithSlashes,
@@ -84,45 +84,50 @@ class DateTimeField extends React.Component {
     return (
       <div className="row">
         <div className="col-6">
-          <InputText
-            name={`${name}Date`}
-            type={type}
-            value={this.getValue(type, date)}
-            label={(
+          <Form.Group controlId={`${name}-date-label`}>
+            <Form.Label>
               <FieldLabel
                 id={`${name}-date-label`}
                 text={dateLabel}
                 required
                 helpText={helpText}
               />
-            )}
-            placeholder={placeholder}
-            pattern={pattern}
-            maxLength={maxLength}
-            required={required}
-            disabled={disabled}
-            onChange={e => this.updateDate(e)}
-            min={minDate}
-            onInvalid={onInvalid}
-          />
+            </Form.Label>
+            <Form.Control
+              name={`${name}Date`}
+              type={type}
+              value={this.getValue(type, date)}
+              id={`${name}-date-label`}
+              placeholder={placeholder}
+              pattern={pattern}
+              maxLength={maxLength}
+              required={required}
+              disabled={disabled}
+              onChange={event => this.updateDate(event.target.value)}
+              min={minDate}
+              onInvalid={onInvalid}
+            />
+          </Form.Group>
         </div>
         <div className="col-6">
-          <InputText
-            name={`${name}Time`}
-            type="time"
-            value={time || '12:00'}
-            label={(
+          <Form.Group controlId={`${name}-date-label`}>
+            <Form.Label>
               <FieldLabel
                 id={`${name}-time-label`}
                 text={timeLabel}
                 required
               />
-            )}
-            placeholder="HH:mm"
-            required={required}
-            disabled={disabled}
-            onChange={e => this.updateTime(e)}
-          />
+            </Form.Label>
+            <Form.Control
+              name={`${name}Time`}
+              type="time"
+              value={time || '12:00'}
+              placeholder="HH:mm"
+              required={required}
+              disabled={disabled}
+              onChange={event => this.updateDate(event.target.value)}
+            />
+          </Form.Group>
         </div>
       </div>
     );
@@ -157,7 +162,7 @@ DateTimeField.defaultProps = {
   utcTimeZone: false,
   maxLength: '',
   type: '',
-  pattern: '',
+  pattern: 'dd/mm/yyyy',
   placeholder: '',
 };
 
