@@ -937,7 +937,7 @@ export class BaseEditCourseForm extends React.Component {
             {administrator && (
               <>
                 <Field
-                  name="value_per_click_usa"
+                  name="in_year_value_data.per_click_usa"
                   component={RenderInputTextField}
                   label={<FieldLabel text="Value Per Click USA" optional />}
                   extraInput={{ onInvalid: this.openCollapsible }}
@@ -945,7 +945,7 @@ export class BaseEditCourseForm extends React.Component {
                   optional
                 />
                 <Field
-                  name="value_per_click_international"
+                  name="in_year_value_data.per_click_international"
                   component={RenderInputTextField}
                   label={<FieldLabel text="Value Per Click International" optional />}
                   extraInput={{ onInvalid: this.openCollapsible }}
@@ -1044,8 +1044,12 @@ BaseEditCourseForm.propTypes = {
       course_type: PropTypes.string,
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
-      value_per_click_usa: PropTypes.number,
-      value_per_click_international: PropTypes.number,
+      in_year_value_data: PropTypes.shape({
+        'per_click_usa': PropTypes.number,
+        'per_click_international': PropTypes.number,
+        'per_lead_usa': PropTypes.number,
+        'per_lead_international': PropTypes.number,
+      }),
     }),
   }),
   courseSubmitInfo: PropTypes.shape({

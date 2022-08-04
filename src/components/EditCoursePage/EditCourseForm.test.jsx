@@ -34,8 +34,12 @@ describe('BaseEditCourseForm', () => {
     skill_names: [],
     organization_logo_override: 'http://image.src.small',
     organization_short_code_override: 'test short code',
-    value_per_click_usa: '10',
-    value_per_click_international: '20',
+    in_year_value_data = {
+      'per_click_usa': 150,
+      'per_click_international': 125,
+      'per_lead_usa': 150,
+      'per_lead_international': 125
+    }
   };
 
   const courseInfo = {
