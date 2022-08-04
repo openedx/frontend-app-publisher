@@ -1,53 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RenderInputTextField renders html for number type 1`] = `
-<asInput(withDeprecatedProps(InputText))
-  dangerIconDescription=""
-  disabled={false}
-  inline={false}
-  isValid={true}
-  label="TestLabel"
-  maxLength=""
-  name="Test"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onKeyPress={[Function]}
-  pattern={null}
-  placeholder=""
-  required={false}
-  themes={
-    Array [
-      "danger",
-    ]
-  }
-  type="number"
-  validationMessage=""
-  value=""
-/>
+<div
+  className="pgn__form-group"
+>
+  <FormGroupContextProvider
+    controlId="Test-text-label"
+    isInvalid={false}
+    isValid={false}
+  >
+    <FormLabel
+      isInline={false}
+    >
+      TestLabel
+    </FormLabel>
+    <ForwardRef
+      as="input"
+      disabled={false}
+      id="Test-text-label"
+      maxLength=""
+      name="Test"
+      pattern={null}
+      placeholder=""
+      plaintext={false}
+      required={false}
+      type="number"
+    />
+  </FormGroupContextProvider>
+</div>
 `;
 
 exports[`RenderInputTextField renders html for text 1`] = `
-<asInput(withDeprecatedProps(InputText))
-  dangerIconDescription=""
-  disabled={false}
-  inline={false}
-  isValid={true}
-  label="TestLabel"
-  maxLength=""
-  name="Test"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onKeyPress={[Function]}
-  pattern={null}
-  placeholder=""
-  required={false}
-  themes={
-    Array [
-      "danger",
-    ]
-  }
-  type="text"
-  validationMessage=""
-  value=""
-/>
+<div
+  className="pgn__form-group"
+>
+  <FormGroupContextProvider
+    controlId="Test-text-label"
+    isInvalid={false}
+    isValid={false}
+  >
+    <FormLabel
+      isInline={false}
+    >
+      TestLabel
+    </FormLabel>
+    <ForwardRef
+      as="input"
+      disabled={false}
+      id="Test-text-label"
+      maxLength=""
+      name="Test"
+      pattern={null}
+      placeholder=""
+      plaintext={false}
+      required={false}
+      type="text"
+    />
+  </FormGroupContextProvider>
+</div>
 `;
