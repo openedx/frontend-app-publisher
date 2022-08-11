@@ -4375,6 +4375,40 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         optional={true}
         type="number"
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="In-Year U.S. Value Per Click (USD)"
+          />
+        }
+        name="in_year_value.per_click_usa"
+        optional={true}
+        type="number"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="In-Year International Value Per Click (USD)"
+          />
+        }
+        name="in_year_value.per_click_international"
+        optional={true}
+        type="number"
+      />
     </CustomCollapsible>
     <FieldLabel
       className="mt-4 mb-2 h2"
@@ -5015,40 +5049,6 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       pristine={true}
       publishedContentChanged={false}
       submitting={false}
-    />
-    <Field
-      component={[Function]}
-      disabled={true}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id={null}
-          optional={true}
-          text="In-Year U.S. Value Per Click (USD)"
-        />
-      }
-      name="in_year_value.per_click_usa"
-      optional={true}
-      type="number"
-    />
-    <Field
-      component={[Function]}
-      disabled={true}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id={null}
-          optional={true}
-          text="In-Year International Value Per Click (USD)"
-        />
-      }
-      name="in_year_value.per_click_international"
-      optional={true}
-      type="number"
     />
   </form>
 </div>
