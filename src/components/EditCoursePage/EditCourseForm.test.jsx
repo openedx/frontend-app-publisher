@@ -37,6 +37,8 @@ describe('BaseEditCourseForm', () => {
     in_year_value: {
       per_click_usa: 100,
       per_click_international: 100,
+      per_lead_usa: 100,
+      per_lead_international: 100,
     },
   };
 
