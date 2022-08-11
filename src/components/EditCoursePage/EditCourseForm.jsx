@@ -978,6 +978,26 @@ export class BaseEditCourseForm extends React.Component {
             publishedContentChanged={publishedContentChanged}
             submitting={submitting || (courseInfo && courseInfo.isSubmittingEdit)}
           />
+          {administrator && (
+            <>
+              <Field
+                name="in_year_value.per_click_usa"
+                component={RenderInputTextField}
+                type="number"
+                label={<FieldLabel text="In-Year U.S. Value Per Click (USD)" optional />}
+                disabled={disabled}
+                optional
+              />
+              <Field
+                name="in_year_value.per_click_international"
+                component={RenderInputTextField}
+                type="number"
+                label={<FieldLabel text="In-Year International Value Per Click (USD)" optional />}
+                disabled={disabled}
+                optional
+              />
+            </>
+          )}
         </form>
       </div>
     );
