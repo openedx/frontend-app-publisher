@@ -935,6 +935,26 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
+            {administrator && (
+              <>
+                <Field
+                  name="in_year_value.per_lead_usa"
+                  component={RenderInputTextField}
+                  type="number"
+                  label={<FieldLabel text="In-Year U.S. Value Per Lead (USD)" optional />}
+                  disabled={disabled}
+                  optional
+                />
+                <Field
+                  name="in_year_value.per_lead_international"
+                  component={RenderInputTextField}
+                  type="number"
+                  label={<FieldLabel text="In-Year International Value Per Lead (USD)" optional />}
+                  disabled={disabled}
+                  optional
+                />
+              </>
+            )}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
             <AdditionalMetadataFields disabled={disabled} />

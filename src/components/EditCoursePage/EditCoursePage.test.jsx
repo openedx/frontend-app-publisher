@@ -938,10 +938,53 @@ describe('EditCoursePage', () => {
       });
       component.instance().getData = jest.fn();
       component.update();
-      courseData.course_type = EXECUTIVE_EDUCATION_SLUG;
-      component.instance().handleCourseSubmit(courseData);
+
+      const execEdCourseData = { ...courseData, course_type: EXECUTIVE_EDUCATION_SLUG };
+      component.instance().handleCourseSubmit(execEdCourseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourseExEdCourses,
+        expectedSendCourseRuns,
+        false,
+        false,
+        component.instance().getData,
+      );
+    });
+
+    it('sends in_year_value when at least one value is present', () => {
+      const mockEditCourse = jest.fn();
+      const props = { editCourse: mockEditCourse };
+
+      const inYearValue = {
+        per_lead_usa: '100',
+        per_lead_international: null,
+      };
+      const courseInfoInYearValue = { ...courseInfo, in_year_value: inYearValue };
+
+      // Values are converted to integers before sending
+      const expectedSendCourseInYearValue = {
+        ...expectedSendCourse,
+        in_year_value: {
+          per_lead_usa: 100,
+          per_lead_international: 0,
+        },
+      };
+
+      const component = shallow(<EditCoursePage
+        {...props}
+        courseInfo={courseInfoInYearValue}
+        courseOptions={courseOptions}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+      });
+      component.instance().getData = jest.fn();
+      component.update();
+
+      const courseDataInYearValue = { ...courseData, in_year_value: inYearValue };
+      component.instance().handleCourseSubmit(courseDataInYearValue);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourseInYearValue,
         expectedSendCourseRuns,
         false,
         false,
