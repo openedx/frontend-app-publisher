@@ -191,7 +191,7 @@ class EditCoursePage extends React.Component {
       }],
       start_date: courseData.additional_metadata.start_date,
       registration_deadline: courseData.additional_metadata.registration_deadline,
-      variant_id: variant_id,
+      variant_id,
     };
   }
 
