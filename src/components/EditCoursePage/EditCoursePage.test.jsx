@@ -955,10 +955,10 @@ describe('EditCoursePage', () => {
       const props = { editCourse: mockEditCourse };
 
       const inYearValue = {
-        per_lead_usa: '100',
-        per_lead_international: null,
         per_click_usa: null,
         per_click_international: null,
+        per_lead_usa: '100',
+        per_lead_international: null,
       };
       const courseInfoInYearValue = { ...courseInfo, in_year_value: inYearValue };
 
@@ -966,10 +966,10 @@ describe('EditCoursePage', () => {
       const expectedSendCourseInYearValue = {
         ...expectedSendCourse,
         in_year_value: {
-          per_lead_usa: 100,
-          per_lead_international: 0,
           per_click_usa: 0,
           per_click_international: 0,
+          per_lead_usa: 100,
+          per_lead_international: 0,
         },
       };
 
