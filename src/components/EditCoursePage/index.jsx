@@ -198,11 +198,15 @@ class EditCoursePage extends React.Component {
       return {
         per_lead_international: Number(courseData.in_year_value.per_lead_international),
         per_lead_usa: Number(courseData.in_year_value.per_lead_usa),
+        per_click_international: Number(courseData.in_year_value.per_click_international),
+        per_click_usa: Number(courseData.in_year_value.per_click_usa),
       };
     }
     return {
       per_lead_international: null,
       per_lead_usa: null,
+      per_click_international: null,
+      per_click_usa: null,
     };
   }
 
@@ -258,12 +262,10 @@ class EditCoursePage extends React.Component {
     if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
       formattedCourseData.additional_metadata = this.formatAdditionalMetadataFields(courseData);
     }
-
     // Check for values to prevent a new entry being created unnecessarily
     if (courseData.in_year_value && Object.values(courseData.in_year_value).some(value => value !== null)) {
       formattedCourseData.in_year_value = this.formatValueFields(courseData);
     }
-
     return formattedCourseData;
   }
 
