@@ -190,7 +190,6 @@ class EditCoursePage extends React.Component {
       }],
       start_date: courseData.additional_metadata.start_date,
       registration_deadline: courseData.additional_metadata.registration_deadline,
-      variant_id: courseData.additional_metadata.variant_id,
     };
   }
 
@@ -381,7 +380,6 @@ class EditCoursePage extends React.Component {
         facts_2_blurb: additional_metadata.facts[1]?.blurb,
         start_date: additional_metadata.start_date,
         registration_deadline: additional_metadata.registration_deadline,
-        variant_id: additional_metadata.variant_id,
       };
     }
     return {};
