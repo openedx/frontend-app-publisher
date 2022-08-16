@@ -193,6 +193,23 @@ class EditCoursePage extends React.Component {
     };
   }
 
+  formatValueFields(courseData) {
+    if (courseData?.in_year_value) {
+      return {
+        per_lead_international: Number(courseData.in_year_value.per_lead_international),
+        per_lead_usa: Number(courseData.in_year_value.per_lead_usa),
+        per_click_international: Number(courseData.in_year_value.per_click_international),
+        per_click_usa: Number(courseData.in_year_value.per_click_usa),
+      };
+    }
+    return {
+      per_lead_international: null,
+      per_lead_usa: null,
+      per_click_international: null,
+      per_click_usa: null,
+    };
+  }
+
   prepareSendCourseData(courseData) {
     const {
       courseInfo: {
@@ -241,8 +258,13 @@ class EditCoursePage extends React.Component {
       video: { src: courseData.videoSrc },
       enterprise_subscription_inclusion: courseData.enterprise_subscription_inclusion,
     };
+
     if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
       formattedCourseData.additional_metadata = this.formatAdditionalMetadataFields(courseData);
+    }
+    // Check for values to prevent a new entry being created unnecessarily
+    if (courseData.in_year_value && Object.values(courseData.in_year_value).some(value => value !== null)) {
+      formattedCourseData.in_year_value = this.formatValueFields(courseData);
     }
     return formattedCourseData;
   }
@@ -415,6 +437,10 @@ class EditCoursePage extends React.Component {
     }));
   }
 
+  buildInYearValue() {
+    return this.formatValueFields(this.props.courseInfo.data);
+  }
+
   buildInitialValues() {
     const {
       courseInfo: {
@@ -480,6 +506,7 @@ class EditCoursePage extends React.Component {
       enterprise_subscription_inclusion,
       organization_short_code_override,
       organization_logo_override_url,
+      in_year_value: this.buildInYearValue(),
     };
   }
 
