@@ -171,7 +171,7 @@ class EditCoursePage extends React.Component {
   }
 
   formatAdditionalMetadataFields(courseData) {
-    const variant_id = courseData.additional_metadata.variant_id ? courseData.additional_metadata.variant_id : null;
+    const variantId = courseData.additional_metadata.variant_id || null;
     return {
       external_url: courseData.additional_metadata.external_url,
       external_identifier: courseData.additional_metadata.external_identifier,
@@ -191,7 +191,7 @@ class EditCoursePage extends React.Component {
       }],
       start_date: courseData.additional_metadata.start_date,
       registration_deadline: courseData.additional_metadata.registration_deadline,
-      variant_id,
+      variant_id: variantId,
     };
   }
 
