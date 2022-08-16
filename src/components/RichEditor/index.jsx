@@ -9,8 +9,10 @@ import 'tinymce/plugins/legacyoutput';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/themes/silver/theme';
-import 'style-loader!tinymce/skins/ui/oxide/skin.min.css'; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved
 import '@edx/tinymce-language-selector';
+import 'tinymce/skins/ui/oxide/skin.css';
+import contentCss from 'tinymce/skins/content/default/content.min.css';
+import contentUiCss from 'tinymce/skins/ui/oxide/content.min.css';
 import StatusAlert from '../StatusAlert';
 
 class RichEditor extends React.Component {
@@ -58,6 +60,14 @@ class RichEditor extends React.Component {
     const characterLimitMessage = `Recommended character limit (including spaces) is
       ${maxChars}. ${remainingChars} characters remaining.`;
 
+    let contentStyle;
+    // In the test environment this causes an error so set styles to empty since they aren't needed for testing.
+    try {
+      contentStyle = [contentCss, contentUiCss].join('\n');
+    } catch (err) {
+      contentStyle = '';
+    }
+
     return (
       <div className="form-group">
         <div id={id} name={name} tabIndex="-1" className="mb-2">{label}</div>
@@ -86,6 +96,8 @@ class RichEditor extends React.Component {
               toolbar: 'undo redo | bold italic underline | bullist numlist | link | language',
               entity_encoding: 'raw',
               extended_valid_elements: 'span[lang|id] -span',
+              content_css: false,
+              content_style: contentStyle,
             }}
             onChange={this.updateCharCount}
             onKeyUp={this.updateCharCount}
