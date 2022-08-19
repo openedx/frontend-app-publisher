@@ -1044,6 +1044,68 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
                     },
                   ],
                 },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
                 "subjects": Object {
                   "child": Object {
                     "choices": Array [
@@ -1465,6 +1527,16 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -2654,6 +2726,68 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
                     },
                   ],
                 },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
                 "subjects": Object {
                   "child": Object {
                     "choices": Array [
@@ -3075,6 +3209,16 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -3118,6 +3262,16 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -4341,6 +4495,139 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         requiredHeight={110}
         requiredWidth={110}
       />
+      <FieldLabel
+        className="mb-2"
+        extraText=""
+        helpText=""
+        id={null}
+        optional={false}
+        text="Location Restriction"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.restriction_type.label"
+            optional={false}
+            text="Restriction Type"
+          />
+        }
+        name="location_restriction.restriction_type"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": undefined,
+            },
+            Object {
+              "label": undefined,
+              "value": undefined,
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "multiple": true,
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.countries.label"
+            optional={false}
+            text="Countries"
+          />
+        }
+        name="location_restriction.countries"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": "AF",
+            },
+            Object {
+              "label": undefined,
+              "value": "AX",
+            },
+            Object {
+              "label": undefined,
+              "value": "DZ",
+            },
+            Object {
+              "label": undefined,
+              "value": "AS",
+            },
+            Object {
+              "label": undefined,
+              "value": "AD",
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "multiple": true,
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.states.label"
+            optional={false}
+            text="States"
+          />
+        }
+        name="location_restriction.states"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": "AL",
+            },
+            Object {
+              "label": undefined,
+              "value": "AZ",
+            },
+            Object {
+              "label": undefined,
+              "value": "AR",
+            },
+            Object {
+              "label": undefined,
+              "value": "CA",
+            },
+            Object {
+              "label": undefined,
+              "value": "CO",
+            },
+          ]
+        }
+        required={false}
+      />
       <Field
         component={[Function]}
         disabled={true}
@@ -4460,6 +4747,68 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -4882,6 +5231,16 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -4925,6 +5284,16 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -6098,6 +6467,68 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
                     },
                   ],
                 },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
                 "subjects": Object {
                   "child": Object {
                     "choices": Array [
@@ -6519,6 +6950,16 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -6562,6 +7003,16 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -7730,6 +8181,68 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -9329,6 +9842,68 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
