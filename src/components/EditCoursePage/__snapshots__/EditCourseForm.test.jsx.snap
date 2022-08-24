@@ -945,6 +945,53 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           ]
         }
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Organization Short Code Override"
+          />
+        }
+        name="organization_short_code_override"
+        optional={true}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        id="organization-logo-override"
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="organization_logo_override.label"
+            optional={false}
+            text="Organization Logo Override"
+          />
+        }
+        maxImageSizeKilo={256}
+        name="organization_logo_override_url"
+        optional={true}
+        requiredHeight={110}
+        requiredWidth={110}
+      />
     </CustomCollapsible>
     <FieldLabel
       className="mt-4 mb-2 h2"
@@ -996,6 +1043,68 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -1410,8 +1519,26 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           "faq": "frequently asked questions",
           "full_description": "long desc",
           "imageSrc": "http://image.src.small",
+          "in_year_value": Object {
+            "per_click_international": 100,
+            "per_click_usa": 100,
+            "per_lead_international": 100,
+            "per_lead_usa": 100,
+          },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
+          "organization_logo_override": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
           "prerequisites_raw": "prereq",
           "prices": Object {
@@ -2500,6 +2627,53 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           ]
         }
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Organization Short Code Override"
+          />
+        }
+        name="organization_short_code_override"
+        optional={true}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        id="organization-logo-override"
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="organization_logo_override.label"
+            optional={false}
+            text="Organization Logo Override"
+          />
+        }
+        maxImageSizeKilo={256}
+        name="organization_logo_override_url"
+        optional={true}
+        requiredHeight={110}
+        requiredWidth={110}
+      />
     </CustomCollapsible>
     <FieldLabel
       className="mt-4 mb-2 h2"
@@ -2551,6 +2725,68 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -2965,8 +3201,26 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           "faq": "frequently asked questions",
           "full_description": "long desc",
           "imageSrc": "http://image.src.small",
+          "in_year_value": Object {
+            "per_click_international": 100,
+            "per_click_usa": 100,
+            "per_lead_international": 100,
+            "per_lead_usa": 100,
+          },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
+          "organization_logo_override": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
           "prerequisites_raw": "prereq",
           "prices": Object {
@@ -3000,8 +3254,26 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           "faq": "frequently asked questions",
           "full_description": "long desc",
           "imageSrc": "http://image.src.small",
+          "in_year_value": Object {
+            "per_click_international": 100,
+            "per_click_usa": 100,
+            "per_lead_international": 100,
+            "per_lead_usa": 100,
+          },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
+          "organization_logo_override": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
           "prerequisites_raw": "prereq",
           "prices": Object {
@@ -4176,6 +4448,254 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           ]
         }
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Organization Short Code Override"
+          />
+        }
+        name="organization_short_code_override"
+        optional={true}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        id="organization-logo-override"
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="organization_logo_override.label"
+            optional={false}
+            text="Organization Logo Override"
+          />
+        }
+        maxImageSizeKilo={256}
+        name="organization_logo_override_url"
+        optional={true}
+        requiredHeight={110}
+        requiredWidth={110}
+      />
+      <FieldLabel
+        className="mb-2"
+        extraText=""
+        helpText=""
+        id={null}
+        optional={false}
+        text="Location Restriction"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.restriction_type.label"
+            optional={false}
+            text="Restriction Type"
+          />
+        }
+        name="location_restriction.restriction_type"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": undefined,
+            },
+            Object {
+              "label": undefined,
+              "value": undefined,
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "multiple": true,
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.countries.label"
+            optional={false}
+            text="Countries"
+          />
+        }
+        name="location_restriction.countries"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": "AF",
+            },
+            Object {
+              "label": undefined,
+              "value": "AX",
+            },
+            Object {
+              "label": undefined,
+              "value": "DZ",
+            },
+            Object {
+              "label": undefined,
+              "value": "AS",
+            },
+            Object {
+              "label": undefined,
+              "value": "AD",
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "multiple": true,
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.states.label"
+            optional={false}
+            text="States"
+          />
+        }
+        name="location_restriction.states"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": "AL",
+            },
+            Object {
+              "label": undefined,
+              "value": "AZ",
+            },
+            Object {
+              "label": undefined,
+              "value": "AR",
+            },
+            Object {
+              "label": undefined,
+              "value": "CA",
+            },
+            Object {
+              "label": undefined,
+              "value": "CO",
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="In-Year U.S. Value Per Lead (USD)"
+          />
+        }
+        name="in_year_value.per_lead_usa"
+        optional={true}
+        type="number"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="In-Year International Value Per Lead (USD)"
+          />
+        }
+        name="in_year_value.per_lead_international"
+        optional={true}
+        type="number"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="In-Year U.S. Value Per Click (USD)"
+          />
+        }
+        name="in_year_value.per_click_usa"
+        optional={true}
+        type="number"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="In-Year International Value Per Click (USD)"
+          />
+        }
+        name="in_year_value.per_click_international"
+        optional={true}
+        type="number"
+      />
     </CustomCollapsible>
     <FieldLabel
       className="mt-4 mb-2 h2"
@@ -4227,6 +4747,68 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -4641,8 +5223,26 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           "faq": "frequently asked questions",
           "full_description": "long desc",
           "imageSrc": "http://image.src.small",
+          "in_year_value": Object {
+            "per_click_international": 100,
+            "per_click_usa": 100,
+            "per_lead_international": 100,
+            "per_lead_usa": 100,
+          },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
+          "organization_logo_override": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
           "prerequisites_raw": "prereq",
           "prices": Object {
@@ -4676,8 +5276,26 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           "faq": "frequently asked questions",
           "full_description": "long desc",
           "imageSrc": "http://image.src.small",
+          "in_year_value": Object {
+            "per_click_international": 100,
+            "per_click_usa": 100,
+            "per_lead_international": 100,
+            "per_lead_usa": 100,
+          },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
+          "organization_logo_override": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
           "prerequisites_raw": "prereq",
           "prices": Object {
@@ -5750,6 +6368,53 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           ]
         }
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Organization Short Code Override"
+          />
+        }
+        name="organization_short_code_override"
+        optional={true}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        id="organization-logo-override"
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="organization_logo_override.label"
+            optional={false}
+            text="Organization Logo Override"
+          />
+        }
+        maxImageSizeKilo={256}
+        name="organization_logo_override_url"
+        optional={true}
+        requiredHeight={110}
+        requiredWidth={110}
+      />
     </CustomCollapsible>
     <FieldLabel
       className="mt-4 mb-2 h2"
@@ -5801,6 +6466,68 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -6215,8 +6942,26 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           "faq": "frequently asked questions",
           "full_description": "long desc",
           "imageSrc": "http://image.src.small",
+          "in_year_value": Object {
+            "per_click_international": 100,
+            "per_click_usa": 100,
+            "per_lead_international": 100,
+            "per_lead_usa": 100,
+          },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
+          "organization_logo_override": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
           "prerequisites_raw": "prereq",
           "prices": Object {
@@ -6250,8 +6995,26 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           "faq": "frequently asked questions",
           "full_description": "long desc",
           "imageSrc": "http://image.src.small",
+          "in_year_value": Object {
+            "per_click_international": 100,
+            "per_click_usa": 100,
+            "per_lead_international": 100,
+            "per_lead_usa": 100,
+          },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
+          "organization_logo_override": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
           "prerequisites_raw": "prereq",
           "prices": Object {
@@ -7320,6 +8083,53 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
           ]
         }
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Organization Short Code Override"
+          />
+        }
+        name="organization_short_code_override"
+        optional={true}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        id="organization-logo-override"
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="organization_logo_override.label"
+            optional={false}
+            text="Organization Logo Override"
+          />
+        }
+        maxImageSizeKilo={256}
+        name="organization_logo_override_url"
+        optional={true}
+        requiredHeight={110}
+        requiredWidth={110}
+      />
     </CustomCollapsible>
     <FieldLabel
       className="mt-4 mb-2 h2"
@@ -7371,6 +8181,68 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -8867,6 +9739,53 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
         }
         name="skill_names"
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Organization Short Code Override"
+          />
+        }
+        name="organization_short_code_override"
+        optional={true}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        id="organization-logo-override"
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="organization_logo_override.label"
+            optional={false}
+            text="Organization Logo Override"
+          />
+        }
+        maxImageSizeKilo={256}
+        name="organization_logo_override_url"
+        optional={true}
+        requiredHeight={110}
+        requiredWidth={110}
+      />
     </CustomCollapsible>
     <FieldLabel
       className="mt-4 mb-2 h2"
@@ -8923,6 +9842,68 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {

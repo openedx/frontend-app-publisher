@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import RenderInputTextField from '../RenderInputTextField';
 import FieldLabel from '../FieldLabel';
 import RichEditor from '../RichEditor';
+import { utcTimeZone } from '../../utils';
+import DateTimeField from '../DateTimeField';
 
 function AdditionalMetadataFields(props) {
   const {
@@ -41,6 +43,13 @@ function AdditionalMetadataFields(props) {
           label=<FieldLabel id="organic_url.label" text="Organic URL" />
           disabled={disabled}
           required
+        />
+        <Field
+          name="additional_metadata.variant_id"
+          component={RenderInputTextField}
+          label=<FieldLabel id="variant_id.label" text="Course Variant Id" />
+          disabled={disabled}
+          required={false}
         />
         <FieldLabel text="Fact 1" className="h3 font-weight-normal" />
         <Field
@@ -86,6 +95,25 @@ function AdditionalMetadataFields(props) {
           label=<FieldLabel id="certificate-info.blurb" text="Description" />
           disabled={disabled}
           required
+        />
+        <Field
+          name="additional_metadata.start_date"
+          type="date"
+          component={DateTimeField}
+          dateLabel="Start Date"
+          timeLabel={`Start Time (${utcTimeZone})`}
+          utcTimeZone
+          disabled={disabled}
+          required
+        />
+        <Field
+          name="additional_metadata.registration_deadline"
+          type="date"
+          component={DateTimeField}
+          dateLabel="Registration Deadline Date"
+          timeLabel={`Registration Deadline Time (${utcTimeZone})`}
+          utcTimeZone
+          disabled={disabled}
         />
       </div>
     </div>

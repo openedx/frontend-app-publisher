@@ -171,6 +171,7 @@ class EditCoursePage extends React.Component {
   }
 
   formatAdditionalMetadataFields(courseData) {
+    const variantId = courseData.additional_metadata.variant_id || null;
     return {
       external_url: courseData.additional_metadata.external_url,
       external_identifier: courseData.additional_metadata.external_identifier,
@@ -188,6 +189,41 @@ class EditCoursePage extends React.Component {
         heading: courseData.additional_metadata.facts_2_heading,
         blurb: courseData.additional_metadata.facts_2_blurb,
       }],
+      start_date: courseData.additional_metadata.start_date,
+      registration_deadline: courseData.additional_metadata.registration_deadline,
+      variant_id: variantId,
+    };
+  }
+
+  formatValueFields(courseData) {
+    if (courseData?.in_year_value) {
+      return {
+        per_lead_international: Number(courseData.in_year_value.per_lead_international),
+        per_lead_usa: Number(courseData.in_year_value.per_lead_usa),
+        per_click_international: Number(courseData.in_year_value.per_click_international),
+        per_click_usa: Number(courseData.in_year_value.per_click_usa),
+      };
+    }
+    return {
+      per_lead_international: null,
+      per_lead_usa: null,
+      per_click_international: null,
+      per_click_usa: null,
+    };
+  }
+
+  formatLocationRestrictionFields(courseData) {
+    if (courseData?.location_restriction) {
+      return {
+        restriction_type: courseData.location_restriction.restriction_type,
+        countries: courseData.location_restriction.countries,
+        states: courseData.location_restriction.states,
+      };
+    }
+    return {
+      restriction_type: null,
+      countries: null,
+      states: null,
     };
   }
 
@@ -217,6 +253,9 @@ class EditCoursePage extends React.Component {
       key,
       learner_testimonials: courseData.learner_testimonials,
       level_type: courseData.level_type,
+      location_restriction: courseData.location_restriction,
+      organization_logo_override: courseData.organization_logo_override_url,
+      organization_short_code_override: courseData.organization_short_code_override,
       outcome: courseData.outcome,
       prerequisites_raw: courseData.prerequisites_raw,
       ...priceData,
@@ -235,10 +274,18 @@ class EditCoursePage extends React.Component {
       url_slug: courseData.url_slug,
       uuid,
       video: { src: courseData.videoSrc },
+      enterprise_subscription_inclusion: courseData.enterprise_subscription_inclusion,
     };
+
     if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
       formattedCourseData.additional_metadata = this.formatAdditionalMetadataFields(courseData);
     }
+
+    // Check for values to prevent a new entry being created unnecessarily
+    if (courseData.in_year_value && Object.values(courseData.in_year_value).some(value => value !== null)) {
+      formattedCourseData.in_year_value = this.formatValueFields(courseData);
+    }
+
     return formattedCourseData;
   }
 
@@ -351,6 +398,9 @@ class EditCoursePage extends React.Component {
         facts_1_blurb: additional_metadata.facts[0]?.blurb,
         facts_2_heading: additional_metadata.facts[1]?.heading,
         facts_2_blurb: additional_metadata.facts[1]?.blurb,
+        start_date: additional_metadata.start_date,
+        registration_deadline: additional_metadata.registration_deadline,
+        variant_id: additional_metadata.variant_id,
       };
     }
     return {};
@@ -408,6 +458,14 @@ class EditCoursePage extends React.Component {
     }));
   }
 
+  buildInYearValue() {
+    return this.formatValueFields(this.props.courseInfo.data);
+  }
+
+  buildLocationRestriction() {
+    return this.formatLocationRestrictionFields(this.props.courseInfo.data);
+  }
+
   buildInitialValues() {
     const {
       courseInfo: {
@@ -432,6 +490,9 @@ class EditCoursePage extends React.Component {
           type,
           course_runs,
           skill_names,
+          enterprise_subscription_inclusion,
+          organization_short_code_override,
+          organization_logo_override_url,
         },
       },
     } = this.props;
@@ -467,6 +528,11 @@ class EditCoursePage extends React.Component {
       course_runs: this.buildCourseRuns(),
       skill_names,
       additional_metadata: this.buildAdditionalMetadata(),
+      enterprise_subscription_inclusion,
+      organization_short_code_override,
+      organization_logo_override_url,
+      location_restriction: this.buildLocationRestriction(),
+      in_year_value: this.buildInYearValue(),
     };
   }
 
@@ -541,6 +607,7 @@ class EditCoursePage extends React.Component {
           owners,
           editable,
           type,
+          enterprise_subscription_inclusion,
         },
         showCreateStatusAlert,
       },
@@ -643,9 +710,11 @@ class EditCoursePage extends React.Component {
           sidePanes={showForm && (
           <SidePanes
             courseUuid={uuid}
+            draft={courseStatuses}
             hidden={!showForm}
             addCourseEditor={editable && this.props.addCourseEditor}
             courseEditors={this.props.courseEditors}
+            organizations={owners}
             fetchCourseEditors={this.props.fetchCourseEditors}
             fetchOrganizationRoles={!owners ? null : role => (
               this.props.fetchOrganizationRoles(owners.map(owner => owner.uuid), role)
@@ -659,6 +728,7 @@ class EditCoursePage extends React.Component {
             addComment={this.props.addComment}
             comments={this.props.comments}
             fetchComments={this.props.fetchComments}
+            enterpriseSubscriptionInclusion={enterprise_subscription_inclusion}
           />
           )}
         >

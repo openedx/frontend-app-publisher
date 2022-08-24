@@ -45,6 +45,9 @@ describe('EditCoursePage', () => {
           heading: 'facts_2_heading',
           blurb: 'facts_2_blurb',
         }],
+        start_date: '2019-05-10T00:00:00Z',
+        registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [
         {
@@ -149,6 +152,15 @@ describe('EditCoursePage', () => {
         image: null,
       },
       skill_names: [],
+      organization_logo_override_url: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
     },
     showCreateStatusAlert: false,
     isFetching: false,
@@ -342,6 +354,9 @@ describe('EditCoursePage', () => {
         facts_1_blurb: 'facts_1_blurb',
         facts_2_heading: 'facts_2_heading',
         facts_2_blurb: 'facts_2_blurb',
+        start_date: '2019-05-10T00:00:00Z',
+        registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [unpublishedCourseRun, publishedCourseRun],
       faq: '<p>Help?</p>',
@@ -349,6 +364,15 @@ describe('EditCoursePage', () => {
       imageSrc: 'http://image.jpg',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
+      organization_logo_override_url: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
@@ -375,6 +399,15 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
+      organization_logo_override: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
@@ -884,6 +917,9 @@ describe('EditCoursePage', () => {
           heading: 'facts_2_heading',
           blurb: 'facts_2_blurb',
         }],
+        start_date: '2019-05-10T00:00:00Z',
+        registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       draft: false,
       collaborators: undefined,
@@ -893,6 +929,15 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
+      organization_logo_override: 'http://image.src.small',
+      organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
@@ -924,10 +969,57 @@ describe('EditCoursePage', () => {
       });
       component.instance().getData = jest.fn();
       component.update();
-      courseData.course_type = EXECUTIVE_EDUCATION_SLUG;
-      component.instance().handleCourseSubmit(courseData);
+
+      const execEdCourseData = { ...courseData, course_type: EXECUTIVE_EDUCATION_SLUG };
+      component.instance().handleCourseSubmit(execEdCourseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourseExEdCourses,
+        expectedSendCourseRuns,
+        false,
+        false,
+        component.instance().getData,
+      );
+    });
+
+    it('sends in_year_value when at least one value is present', () => {
+      const mockEditCourse = jest.fn();
+      const props = { editCourse: mockEditCourse };
+
+      const inYearValue = {
+        per_click_usa: null,
+        per_click_international: null,
+        per_lead_usa: '100',
+        per_lead_international: null,
+      };
+      const courseInfoInYearValue = { ...courseInfo, in_year_value: inYearValue };
+
+      // Values are converted to integers before sending
+      const expectedSendCourseInYearValue = {
+        ...expectedSendCourse,
+        in_year_value: {
+          per_click_usa: 0,
+          per_click_international: 0,
+          per_lead_usa: 100,
+          per_lead_international: 0,
+        },
+      };
+
+      const component = shallow(<EditCoursePage
+        {...props}
+        courseInfo={courseInfoInYearValue}
+        courseOptions={courseOptions}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+      });
+      component.instance().getData = jest.fn();
+      component.update();
+
+      const courseDataInYearValue = { ...courseData, in_year_value: inYearValue };
+      component.instance().handleCourseSubmit(courseDataInYearValue);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourseInYearValue,
         expectedSendCourseRuns,
         false,
         false,

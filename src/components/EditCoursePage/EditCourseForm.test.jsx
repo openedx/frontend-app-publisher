@@ -32,6 +32,21 @@ describe('BaseEditCourseForm', () => {
     uuid: '11111111-1111-1111-1111-111111111111',
     editable: true,
     skill_names: [],
+    organization_logo_override: 'http://image.src.small',
+    organization_short_code_override: 'test short code',
+    location_restriction: {
+      restriction_type: 'allowlist',
+      countries: [
+        'AF', 'AX',
+      ],
+      states: ['CO'],
+    },
+    in_year_value: {
+      per_click_usa: 100,
+      per_click_international: 100,
+      per_lead_usa: 100,
+      per_lead_international: 100,
+    },
   };
 
   const courseInfo = {

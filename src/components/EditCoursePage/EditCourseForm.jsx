@@ -16,6 +16,9 @@ import FieldLabel from '../FieldLabel';
 import ImageUpload from '../ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
+// TODO: remove RenderSelectFieldNew when migrating off deprecated Paragon components,
+// i.e. as a part of https://github.com/openedx/frontend-app-publisher/pull/761
+import RenderSelectFieldNew from '../RenderSelectField/updated-paragon-component';
 import RichEditor from '../RichEditor';
 import Pill from '../Pill';
 import Collapsible from '../Collapsible';
@@ -236,6 +239,12 @@ export class BaseEditCourseForm extends React.Component {
       && parseOptions(courseRunOptionsData.content_language.choices));
     const programOptions = (courseRunOptionsData
       && parseOptions(courseRunOptionsData.expected_program_type.choices));
+    const locationCountryOptions = courseOptionsData
+      && parseOptions(courseOptionsData.location_restriction.children.countries.child.choices);
+    const locationRestrictionTypeOptions = courseOptionsData
+      && parseOptions(courseOptionsData.location_restriction.children.restriction_type.choices);
+    const locationStateOptions = courseOptionsData
+      && parseOptions(courseOptionsData.location_restriction.children.states.child.choices);
 
     const {
       data: {
@@ -909,6 +918,115 @@ export class BaseEditCourseForm extends React.Component {
               className="course-skill"
             />
             )}
+            <Field
+              name="organization_short_code_override"
+              component={RenderInputTextField}
+              label={<FieldLabel text="Organization Short Code Override" optional />}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              disabled={disabled}
+              optional
+            />
+            <Field
+              name="organization_logo_override_url"
+              component={ImageUpload}
+              label={(
+                <FieldLabel
+                  id="organization_logo_override.label"
+                  text="Organization Logo Override"
+                />
+              )}
+              extraInput={{ onInvalid: this.openCollapsible }}
+              id="organization-logo-override"
+              className="course-image"
+              maxImageSizeKilo={256}
+              requiredWidth={110}
+              requiredHeight={110}
+              disabled={disabled}
+              optional
+            />
+            {administrator && (
+            <>
+              <FieldLabel text="Location Restriction" className="mb-2" />
+              <Field
+                name="location_restriction.restriction_type"
+                component={RenderSelectField}
+                label={(
+                  <FieldLabel
+                    id="location_restriction.restriction_type.label"
+                    text="Restriction Type"
+                  />
+                  )}
+                extraInput={{ onInvalid: this.openCollapsible }}
+                options={locationRestrictionTypeOptions}
+                required={false}
+                disabled={disabled}
+              />
+              <Field
+                name="location_restriction.countries"
+                component={RenderSelectFieldNew}
+                label={(
+                  <FieldLabel
+                    id="location_restriction.countries.label"
+                    text="Countries"
+                  />
+                  )}
+                extraInput={{ onInvalid: this.openCollapsible, multiple: true }}
+                options={locationCountryOptions}
+                disabled={disabled}
+                required={false}
+              />
+              <Field
+                name="location_restriction.states"
+                component={RenderSelectFieldNew}
+                label={(
+                  <FieldLabel
+                    id="location_restriction.states.label"
+                    text="States"
+                  />
+                  )}
+                extraInput={{ onInvalid: this.openCollapsible, multiple: true }}
+                options={locationStateOptions}
+                disabled={disabled}
+                required={false}
+              />
+            </>
+            )}
+            {administrator && (
+              <>
+                <Field
+                  name="in_year_value.per_lead_usa"
+                  component={RenderInputTextField}
+                  type="number"
+                  label={<FieldLabel text="In-Year U.S. Value Per Lead (USD)" optional />}
+                  disabled={disabled}
+                  optional
+                />
+                <Field
+                  name="in_year_value.per_lead_international"
+                  component={RenderInputTextField}
+                  type="number"
+                  label={<FieldLabel text="In-Year International Value Per Lead (USD)" optional />}
+                  disabled={disabled}
+                  optional
+                />
+                <Field
+                  name="in_year_value.per_click_usa"
+                  component={RenderInputTextField}
+                  type="number"
+                  label={<FieldLabel text="In-Year U.S. Value Per Click (USD)" optional />}
+                  disabled={disabled}
+                  optional
+                />
+                <Field
+                  name="in_year_value.per_click_international"
+                  component={RenderInputTextField}
+                  type="number"
+                  label={<FieldLabel text="In-Year International Value Per Click (USD)" optional />}
+                  disabled={disabled}
+                  optional
+                />
+              </>
+            )}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
             <AdditionalMetadataFields disabled={disabled} />
@@ -997,6 +1115,13 @@ BaseEditCourseForm.propTypes = {
     data: PropTypes.shape({
       skill_names: PropTypes.arrayOf(PropTypes.string),
       course_type: PropTypes.string,
+      organization_logo_override_url: PropTypes.string,
+      organization_short_code_override: PropTypes.string,
+      location_restriction: PropTypes.shape({
+        restriction_type: PropTypes.string,
+        countries: PropTypes.arrayOf(PropTypes.string),
+        states: PropTypes.arrayOf(PropTypes.string),
+      }),
     }),
   }),
   courseSubmitInfo: PropTypes.shape({

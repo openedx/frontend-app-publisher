@@ -31,6 +31,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -46,6 +47,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -113,11 +115,25 @@ exports[`EditCoursePage renders html correctly 1`] = `
           "collaborators": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
+          "organization_logo_override_url": undefined,
+          "organization_short_code_override": undefined,
           "outcome": undefined,
           "prerequisites_raw": undefined,
           "prices": Object {},
@@ -205,6 +221,11 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           }
         }
         courseUuid="00000000-0000-0000-0000-000000000000"
+        draft={
+          Array [
+            "published",
+          ]
+        }
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -220,6 +241,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -283,6 +305,9 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "registration_deadline": "2019-05-10T00:00:00Z",
+              "start_date": "2019-05-10T00:00:00Z",
+              "variant_id": "00000000-0000-0000-0000-000000000000",
             },
             "collaborators": Array [],
             "course_runs": Array [
@@ -359,6 +384,18 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
+            "organization_logo_override_url": "http://image.src.small",
+            "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
             "prerequisites_raw": "<p>prereq</p>",
             "short_description": "<p>short&nbsp;</p>",
@@ -500,6 +537,9 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "registration_deadline": "2019-05-10T00:00:00Z",
+            "start_date": "2019-05-10T00:00:00Z",
+            "variant_id": "00000000-0000-0000-0000-000000000000",
           },
           "collaborators": Array [],
           "course_runs": Array [
@@ -557,11 +597,30 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             },
           ],
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": "",
           "full_description": "<p>long desc</p>",
           "imageSrc": "http://path/to/image/woo.small",
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
+          "organization_logo_override_url": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
           "prerequisites_raw": "<p>prereq</p>",
           "prices": Object {
@@ -631,6 +690,11 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           }
         }
         courseUuid="00000000-0000-0000-0000-000000000000"
+        draft={
+          Array [
+            "published",
+          ]
+        }
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -646,6 +710,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -709,6 +774,9 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "registration_deadline": "2019-05-10T00:00:00Z",
+              "start_date": "2019-05-10T00:00:00Z",
+              "variant_id": "00000000-0000-0000-0000-000000000000",
             },
             "collaborators": Array [],
             "course_runs": Array [
@@ -785,6 +853,18 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
+            "organization_logo_override_url": "http://image.src.small",
+            "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
             "prerequisites_raw": "<p>prereq</p>",
             "short_description": "<p>short&nbsp;</p>",
@@ -844,6 +924,68 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -1209,6 +1351,9 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "registration_deadline": "2019-05-10T00:00:00Z",
+            "start_date": "2019-05-10T00:00:00Z",
+            "variant_id": "00000000-0000-0000-0000-000000000000",
           },
           "collaborators": Array [],
           "course_runs": Array [
@@ -1266,11 +1411,30 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             },
           ],
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": "",
           "full_description": "<p>long desc</p>",
           "imageSrc": "http://path/to/image/woo.small",
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
+          "organization_logo_override_url": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
           "prerequisites_raw": "<p>prereq</p>",
           "prices": Object {
@@ -1340,6 +1504,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -1355,6 +1520,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -1426,11 +1592,25 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           "collaborators": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
+          "organization_logo_override_url": undefined,
+          "organization_short_code_override": undefined,
           "outcome": undefined,
           "prerequisites_raw": undefined,
           "prices": Object {},
@@ -1509,6 +1689,11 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           }
         }
         courseUuid="00000000-0000-0000-0000-000000000000"
+        draft={
+          Array [
+            "published",
+          ]
+        }
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -1524,6 +1709,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -1587,6 +1773,9 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "registration_deadline": "2019-05-10T00:00:00Z",
+              "start_date": "2019-05-10T00:00:00Z",
+              "variant_id": "00000000-0000-0000-0000-000000000000",
             },
             "collaborators": Array [],
             "course_runs": Array [
@@ -1663,6 +1852,18 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
+            "organization_logo_override_url": "http://image.src.small",
+            "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
             "prerequisites_raw": "<p>prereq</p>",
             "short_description": "<p>short&nbsp;</p>",
@@ -1722,6 +1923,68 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -2155,6 +2418,9 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "registration_deadline": "2019-05-10T00:00:00Z",
+            "start_date": "2019-05-10T00:00:00Z",
+            "variant_id": "00000000-0000-0000-0000-000000000000",
           },
           "collaborators": Array [],
           "course_runs": Array [
@@ -2212,11 +2478,30 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             },
           ],
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": "",
           "full_description": "<p>long desc</p>",
           "imageSrc": "http://path/to/image/woo.small",
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
+          "organization_logo_override_url": "http://image.src.small",
+          "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
           "prerequisites_raw": "<p>prereq</p>",
           "prices": Object {
@@ -2286,6 +2571,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -2301,6 +2587,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -2388,11 +2675,25 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "collaborators": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
+          "organization_logo_override_url": undefined,
+          "organization_short_code_override": undefined,
           "outcome": undefined,
           "prerequisites_raw": undefined,
           "prices": Object {},
@@ -2475,6 +2776,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -2490,6 +2792,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -2554,6 +2857,68 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -2840,11 +3205,25 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "collaborators": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
+          "organization_logo_override_url": undefined,
+          "organization_short_code_override": undefined,
           "outcome": undefined,
           "prerequisites_raw": undefined,
           "prices": Object {},
@@ -2908,6 +3287,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -2923,6 +3303,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -2998,11 +3379,25 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           "collaborators": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
+          "organization_logo_override_url": undefined,
+          "organization_short_code_override": undefined,
           "outcome": undefined,
           "prerequisites_raw": undefined,
           "prices": Object {},
@@ -3081,6 +3476,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -3096,6 +3492,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -3231,11 +3628,25 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           "collaborators": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
+          "organization_logo_override_url": undefined,
+          "organization_short_code_override": undefined,
           "outcome": undefined,
           "prerequisites_raw": undefined,
           "prices": Object {},
@@ -3299,6 +3710,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -3314,6 +3726,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
@@ -3389,11 +3802,25 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           "collaborators": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
+          "organization_logo_override_url": undefined,
+          "organization_short_code_override": undefined,
           "outcome": undefined,
           "prerequisites_raw": undefined,
           "prices": Object {},
