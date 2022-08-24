@@ -48,6 +48,7 @@ describe('EditCoursePage', () => {
         }],
         start_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [
         {
@@ -154,6 +155,13 @@ describe('EditCoursePage', () => {
       skill_names: [],
       organization_logo_override_url: 'http://image.src.small',
       organization_short_code_override: 'test short code',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
     },
     showCreateStatusAlert: false,
     isFetching: false,
@@ -349,6 +357,7 @@ describe('EditCoursePage', () => {
         facts_2_blurb: 'facts_2_blurb',
         start_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [unpublishedCourseRun, publishedCourseRun],
       faq: '<p>Help?</p>',
@@ -356,6 +365,13 @@ describe('EditCoursePage', () => {
       imageSrc: 'http://image.jpg',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
       organization_logo_override_url: 'http://image.src.small',
       organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
@@ -384,6 +400,13 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
       organization_logo_override: 'http://image.src.small',
       organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
@@ -897,6 +920,7 @@ describe('EditCoursePage', () => {
         }],
         start_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       draft: false,
       collaborators: undefined,
@@ -906,6 +930,13 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
       organization_logo_override: 'http://image.src.small',
       organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',

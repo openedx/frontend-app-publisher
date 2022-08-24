@@ -44,6 +44,13 @@ function AdditionalMetadataFields(props) {
           disabled={disabled}
           required
         />
+        <Field
+          name="additional_metadata.variant_id"
+          component={RenderInputTextField}
+          label=<FieldLabel id="variant_id.label" text="Course Variant Id" />
+          disabled={disabled}
+          required={false}
+        />
         <FieldLabel text="Fact 1" className="h3 font-weight-normal" />
         <Field
           name="additional_metadata.facts_1_heading"
