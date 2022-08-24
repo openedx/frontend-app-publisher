@@ -47,6 +47,7 @@ describe('EditCoursePage', () => {
         }],
         start_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [
         {
@@ -355,6 +356,7 @@ describe('EditCoursePage', () => {
         facts_2_blurb: 'facts_2_blurb',
         start_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [unpublishedCourseRun, publishedCourseRun],
       faq: '<p>Help?</p>',
@@ -919,6 +921,7 @@ describe('EditCoursePage', () => {
         }],
         start_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       draft: false,
       collaborators: undefined,
