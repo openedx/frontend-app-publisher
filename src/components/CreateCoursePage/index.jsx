@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import CreateCourseForm from './CreateCourseForm';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
-import StatusAlert from '../StatusAlert';
 import ConfirmationModal from '../ConfirmationModal';
 
 import { formatPriceData } from '../../utils';
@@ -94,12 +94,13 @@ class CreateCoursePage extends React.Component {
   render() {
     if (!this.props.publisherUserInfo) {
       return (
-        <StatusAlert
+        <Alert
           id="error"
-          alertType="danger"
-          title="Course Create Form failed to load: "
-          message="User information unavailable"
-        />
+          variant="danger"
+        >
+          <Alert.Heading>Course Create Form failed to load: </Alert.Heading>
+          <p>User information unavailable</p>
+        </Alert>
       );
     }
 
@@ -174,11 +175,12 @@ class CreateCoursePage extends React.Component {
                 courseRunOptions={courseRunOptions}
               />
               {errorArray.length > 1 && (
-                <StatusAlert
+                <Alert
                   id="create-error"
-                  alertType="danger"
-                  message={errorArray}
-                />
+                  variant="danger"
+                >
+                  {errorArray}
+                </Alert>
               ) }
             </div>
           )}

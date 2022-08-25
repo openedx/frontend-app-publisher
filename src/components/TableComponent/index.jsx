@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import { Pagination, DataTable } from '@edx/paragon';
+import { Pagination, DataTable, Alert } from '@edx/paragon';
+import { WarningFilled, Error as ErrorIcon } from '@edx/paragon/icons';
 import 'font-awesome/css/font-awesome.css';
 
 import './TableComponent.scss';
 
 import LoadingSpinner from '../LoadingSpinner';
-import StatusAlert from '../StatusAlert';
 import { getErrorMessages, getPageOptionsFromUrl, updateUrl } from '../../utils';
 
 class TableComponent extends React.Component {
@@ -125,21 +125,23 @@ class TableComponent extends React.Component {
       ? ['You do not yet have access to Publisher. Please contact your project coordinator to get access.']
       : ['Unable to load data: '].concat(getErrorMessages(this.props.error));
     return (
-      <StatusAlert
-        alertType="danger"
-        iconClassNames={['fa', 'fa-times-circle']}
-        message={message}
-      />
+      <Alert
+        variant="danger"
+        icon={ErrorIcon}
+      >
+        {message}
+      </Alert>
     );
   }
 
   renderEmptyDataMessage() {
     return (
-      <StatusAlert
-        alertType="warning"
-        iconClassNames={['fa', 'fa-exclamation-circle']}
-        message="There are no results."
-      />
+      <Alert
+        variant="warning"
+        icon={WarningFilled}
+      >
+        There are no results.
+      </Alert>
     );
   }
 

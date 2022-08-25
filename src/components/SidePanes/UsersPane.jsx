@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon, InputSelect } from '@edx/paragon';
+import { Icon, InputSelect, Alert } from '@edx/paragon';
 
 import Pane from './Pane';
 import User from './User';
 import FieldLabel from '../FieldLabel';
-import StatusAlert from '../StatusAlert';
 
 class UsersPane extends React.Component {
   displayName(user) {
@@ -120,7 +119,7 @@ class UsersPane extends React.Component {
           </div>
           )}
         {!showEditors && Array.isArray(organizationUsers.error) && organizationUsers.error.length
-          && <StatusAlert alertType="warning" message={organizationUsers.error[0]} />}
+          && <Alert variant="warning">{organizationUsers.error[0]}</Alert>}
         {showEditors
           && (
           <div>
