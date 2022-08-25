@@ -24,11 +24,11 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
 
   function disableLink(courseType) {
     const courseTypeFromURL = querystringParams.course_type ? querystringParams.course_type : '';
-    return (courseTypeFromURL === courseType && pathname === '/') ? 'disabled-link' : '';
+    return (courseTypeFromURL === courseType && pathname === '/') ? 'disabled-link text-gray-300' : '';
   }
 
   return (
-    <header className="site-header mb-3 py-3 border-bottom-blue">
+    <header className="site-header mb-3 py-3 border-bottom border-gray-300">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-auto justify-content-start">
