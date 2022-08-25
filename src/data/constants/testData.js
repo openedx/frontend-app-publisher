@@ -225,6 +225,38 @@ const courseOptions = {
             ],
           },
         },
+        location_restriction: {
+          children: {
+            restriction_type: {
+              choices: [
+                'blocklist',
+                'allowlist',
+              ],
+            },
+            countries: {
+              child: {
+                choices: [
+                  { label: 'Afghanistan', value: 'AF' },
+                  { label: 'Åland Islands', value: 'AX' },
+                  { label: 'Algeria', value: 'DZ' },
+                  { label: 'American Samoa', value: 'AS' },
+                  { label: 'Andorra', value: 'AD' },
+                ],
+              },
+            },
+            states: {
+              child: {
+                choices: [
+                  { label: 'Alabama', value: 'AL' },
+                  { label: 'Arizona', value: 'AZ' },
+                  { label: 'Arkansas', value: 'AR' },
+                  { label: 'California', value: 'CA' },
+                  { label: 'Colorado', value: 'CO' },
+                ],
+              },
+            },
+          },
+        },
       },
     },
   },
