@@ -3,9 +3,10 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import Autosuggest from 'react-autosuggest';
 import { push } from 'connected-react-router';
 import PropTypes from 'prop-types';
+import { Alert } from '@edx/paragon';
+
 import store from '../../data/store';
 import sourceInfo from '../../data/actions/sourceInfo';
-import StatusAlert from '../StatusAlert';
 
 class ListField extends React.Component {
   constructor(props) {
@@ -187,10 +188,7 @@ class ListField extends React.Component {
       <div name={name} tabIndex="-1">
         {submitFailed && error
         && (
-          <StatusAlert
-            alertType="danger"
-            message={error}
-          />
+          <Alert variant="danger">{error}</Alert>
         )}
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable droppableId={`${itemType}List`} direction="vertical">

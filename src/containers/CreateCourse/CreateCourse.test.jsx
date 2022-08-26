@@ -77,7 +77,7 @@ describe('Create Course View', () => {
     testState.courseRunOptions.isFetching = false;
     const wrapper = createWrapper(testState).find('CreateCoursePage').dive();
     expect(wrapper.find('#create-error')).toHaveLength(1);
-    expect(wrapper.find('#create-error').props().message).toEqual(errorMessage.concat(<br />));
+    expect(wrapper.find('#create-error').text()).toEqual(errorMessage[0]);
   });
 
   it('Shows confirmation modal on form submission', () => {

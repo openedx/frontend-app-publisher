@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import StafferForm from './StafferForm';
-import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
 
@@ -107,12 +107,15 @@ class StafferPage extends React.Component {
 
     if (!stafferInfo) {
       return (
-        <StatusAlert
+        <Alert
           id="error"
-          alertType="danger"
-          title="Could not load page"
-          message="Could not get instructor information"
-        />
+          variant="danger"
+          title=""
+          message=""
+        >
+          <Alert.Heading>Could not load page</Alert.Heading>
+          <p>Could not get instructor information</p>
+        </Alert>
       );
     }
 
@@ -150,12 +153,14 @@ class StafferPage extends React.Component {
           { showSpinner && <LoadingSpinner /> }
           { referrer
             && (
-            <StatusAlert
+            <Alert
               id="sent-from-edit-course-info"
-              alertType="info"
-              message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+              variant="info"
               dismissible
-            />
+            >
+              The data you entered on the course edit screen is saved. You will return to that
+              page when you have finished updating instructor information.
+            </Alert>
             )}
           { showForm && (
             <div>
@@ -171,11 +176,12 @@ class StafferPage extends React.Component {
                 {...this.props}
               />
               { errorArray.length > 1 && (
-                <StatusAlert
+                <Alert
                   id="create-staffer-error"
-                  alertType="danger"
-                  message={errorArray}
-                />
+                  variant="danger"
+                >
+                  {errorArray}
+                </Alert>
               )}
             </div>
           )}

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, FieldArray } from 'redux-form';
+import { Alert } from '@edx/paragon';
 
 import RenderSelectField from '../RenderSelectField';
 import RemoveButton from '../RemoveButton';
 import FieldLabel from '../FieldLabel';
-import StatusAlert from '../StatusAlert';
 
 class TranscriptLanguage extends React.Component {
   constructor(props) {
@@ -33,10 +33,7 @@ class TranscriptLanguage extends React.Component {
       <div className="transcript-languages mb-3" name={fields.name} tabIndex="-1">
         {submitFailed && error
           && (
-          <StatusAlert
-            alertType="danger"
-            message={error}
-          />
+          <Alert variant="danger">{error}</Alert>
           )}
         <ul className="list-group p-0 m-0 container-fluid">
           {fields.map((language, index) => (

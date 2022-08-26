@@ -13,7 +13,7 @@ import '@edx/tinymce-language-selector';
 import 'tinymce/skins/ui/oxide/skin.css';
 import contentCss from 'tinymce/skins/content/default/content.min.css';
 import contentUiCss from 'tinymce/skins/ui/oxide/content.min.css';
-import StatusAlert from '../StatusAlert';
+import { Alert } from '@edx/paragon';
 
 class RichEditor extends React.Component {
   constructor(props) {
@@ -73,10 +73,7 @@ class RichEditor extends React.Component {
         <div id={id} name={name} tabIndex="-1" className="mb-2">{label}</div>
         {submitFailed && error
           && (
-          <StatusAlert
-            alertType="danger"
-            message={error}
-          />
+          <Alert variant="danger">{error}</Alert>
           )}
         {/*
           We are using aria-labelledby here instead of a <label> tag because the TinyMCE Editor
