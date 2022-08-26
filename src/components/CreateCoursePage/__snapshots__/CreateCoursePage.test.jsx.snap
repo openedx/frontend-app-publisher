@@ -142,21 +142,32 @@ exports[`CreateCoursePage renders page correctly with course create error 1`] = 
         touchOnChange={false}
         updateUnregisteredFields={false}
       />
-      <StatusAlert
-        alertType="danger"
-        className=""
+      <ForwardRef
+        closeLabel="Dismiss"
         dismissible={false}
-        iconClassNames={Array []}
         id="create-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
         onClose={[Function]}
-        title={null}
-      />
+        show={true}
+        stacked={false}
+        transition={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "appear": false,
+              "in": false,
+              "mountOnEnter": false,
+              "timeout": 300,
+              "unmountOnExit": false,
+            },
+            "displayName": "Fade",
+            "render": [Function],
+          }
+        }
+        variant="danger"
+      >
+        Fail
+        <br />
+      </ForwardRef>
     </div>
   </PageContainer>
 </Fragment>
@@ -293,16 +304,45 @@ exports[`CreateCoursePage renders page correctly with course create success 1`] 
 `;
 
 exports[`CreateCoursePage renders page correctly with no publisherUserInfo 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
+  closeLabel="Dismiss"
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="User information unavailable"
   onClose={[Function]}
-  title="Course Create Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Create Form failed to load: 
+  </AlertHeading>
+  <p>
+    User information unavailable
+  </p>
+</ForwardRef>
 `;
 
 exports[`CreateCoursePage renders page correctly with org error 1`] = `
@@ -365,21 +405,32 @@ exports[`CreateCoursePage renders page correctly with org error 1`] = `
         touchOnChange={false}
         updateUnregisteredFields={false}
       />
-      <StatusAlert
-        alertType="danger"
-        className=""
+      <ForwardRef
+        closeLabel="Dismiss"
         dismissible={false}
-        iconClassNames={Array []}
         id="create-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
         onClose={[Function]}
-        title={null}
-      />
+        show={true}
+        stacked={false}
+        transition={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "appear": false,
+              "in": false,
+              "mountOnEnter": false,
+              "timeout": 300,
+              "unmountOnExit": false,
+            },
+            "displayName": "Fade",
+            "render": [Function],
+          }
+        }
+        variant="danger"
+      >
+        Fail
+        <br />
+      </ForwardRef>
     </div>
   </PageContainer>
 </Fragment>

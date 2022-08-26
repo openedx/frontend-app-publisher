@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import CollaboratorForm from './CollaboratorForm';
-import StatusAlert from '../StatusAlert';
 import PageContainer from '../PageContainer';
 
 class CollaboratorPage extends React.Component {
@@ -51,12 +51,13 @@ class CollaboratorPage extends React.Component {
 
     if (!isCreateForm && (!location.state || !location.state.uuid)) {
       return (
-        <StatusAlert
+        <Alert
           id="error"
-          alertType="danger"
-          title="Could not load page: "
-          message="Direct access to collaborators not supported"
-        />
+          variant="danger"
+        >
+          <Alert.Heading>Could not load page: </Alert.Heading>
+          <p>Direct access to collaborators not supported</p>
+        </Alert>
       );
     }
 
@@ -87,12 +88,14 @@ class CollaboratorPage extends React.Component {
         <PageContainer>
           { referrer
           && (
-            <StatusAlert
+            <Alert
               id="sent-from-edit-course-info"
-              alertType="info"
-              message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating collaborator information."
+              variant="info"
               dismissible
-            />
+            >
+              The data you entered on the course edit screen is saved. You will return to that page
+              when you have finished updating collaborator information.
+            </Alert>
           )}
           <div>
             <h2>{titleText}</h2>
@@ -109,11 +112,12 @@ class CollaboratorPage extends React.Component {
               {...this.props}
             />
             { errorArray.length > 0 && (
-              <StatusAlert
+              <Alert
                 id="create-collaborator-error"
-                alertType="danger"
-                message={errorArray}
-              />
+                variant="danger"
+              >
+                {errorArray}
+              </Alert>
             )}
           </div>
         </PageContainer>
