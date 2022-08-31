@@ -27,6 +27,7 @@ class EditCoursePage extends React.Component {
       startedFetching: false,
       submitConfirmVisible: false,
       submitCourseData: {},
+      courseTags: null,
     };
     this.handleCourseSubmit = this.handleCourseSubmit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
@@ -40,6 +41,7 @@ class EditCoursePage extends React.Component {
     this.buildInitialValues = this.buildInitialValues.bind(this);
     this.buildCourseRuns = this.buildCourseRuns.bind(this);
     this.getData = this.getData.bind(this);
+    this.setCourseTags = this.setCourseTags.bind(this);
   }
 
   componentDidMount() {
@@ -56,11 +58,16 @@ class EditCoursePage extends React.Component {
     this.props.fetchCourseOptions();
     this.props.fetchCourseRunOptions();
     this.props.fetchCollaboratorOptions();
+    this.props.fetchCourseTagOptions();
     this.setStartedFetching();
   }
 
   setStartedFetching() {
     this.setState({ startedFetching: true });
+  }
+
+  setCourseTags(tags) {
+    this.setState({ courseTags: [...tags] });
   }
 
   getFormId() {
@@ -77,9 +84,7 @@ class EditCoursePage extends React.Component {
         },
       },
       courseOptions,
-      courseSubmitInfo: {
-        targetRun,
-      },
+      courseSubmitInfo: { targetRun },
     } = this.props;
 
     const sendCourseRuns = [];
@@ -89,7 +94,10 @@ class EditCoursePage extends React.Component {
       type: initialType,
       prices: buildInitialPrices(entitlements, initialCourseRuns),
     };
-    const initialPriceData = formatPriceData(fakeInitialPriceForm, courseOptions);
+    const initialPriceData = formatPriceData(
+      fakeInitialPriceForm,
+      courseOptions,
+    );
 
     const courseTypeChanged = initialType !== courseData.type;
     const coursePriceChanged = !jsonDeepEqual(initialPriceData, priceData);
@@ -97,7 +105,7 @@ class EditCoursePage extends React.Component {
     const modifiedCourseRuns = courseData.course_runs.filter((run, i) => {
       // If we are submitting a run for review or re-publishing a run, it should
       // always get through to the backend
-      if (targetRun && (run.key === targetRun.key)) {
+      if (targetRun && run.key === targetRun.key) {
         return true;
       }
 
@@ -110,13 +118,15 @@ class EditCoursePage extends React.Component {
       // changed and the run is NOT "archived" (we care about the type and
       // price because those are passed down to the course runs' seats)
       const runHasChanges = !jsonDeepEqual(initialCourseRunValues[i], run);
-      return runHasChanges
-        || ((courseTypeChanged || coursePriceChanged) && !courseRunIsArchived(run));
+      return (
+        runHasChanges
+        || ((courseTypeChanged || coursePriceChanged) && !courseRunIsArchived(run))
+      );
     });
 
     modifiedCourseRuns.forEach((courseRun) => {
       let draft = true;
-      const isTargetRun = targetRun && (courseRun.key === targetRun.key);
+      const isTargetRun = targetRun && courseRun.key === targetRun.key;
       if (isTargetRun || courseRun.status === PUBLISHED) {
         // If a course run triggered the submission, mark it as not a draft, or if we are
         // republishing content that has changed.
@@ -127,13 +137,20 @@ class EditCoursePage extends React.Component {
         content_language: courseRun.content_language,
         draft,
         expected_program_type: courseRun.expected_program_type
-          ? courseRun.expected_program_type : null,
+          ? courseRun.expected_program_type
+          : null,
         expected_program_name: courseRun.expected_program_name
-          ? courseRun.expected_program_name : '',
+          ? courseRun.expected_program_name
+          : '',
         external_key: courseRun.external_key ? courseRun.external_key : '',
-        go_live_date: isValidDate(courseRun.go_live_date) ? courseRun.go_live_date : null,
-        upgrade_deadline_override: isValidDate(courseRun.upgrade_deadline_override)
-          ? courseRun.upgrade_deadline_override : null,
+        go_live_date: isValidDate(courseRun.go_live_date)
+          ? courseRun.go_live_date
+          : null,
+        upgrade_deadline_override: isValidDate(
+          courseRun.upgrade_deadline_override,
+        )
+          ? courseRun.upgrade_deadline_override
+          : null,
         key: courseRun.key,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
@@ -141,23 +158,33 @@ class EditCoursePage extends React.Component {
         rerun: courseRun.rerun ? courseRun.rerun : null,
         run_type: courseRun.run_type,
         // Reduce Staff list to just the UUID
-        staff: courseRun.staff ? courseRun.staff.map(staffer => staffer.uuid) : courseRun.staff,
+        staff: courseRun.staff
+          ? courseRun.staff.map((staffer) => staffer.uuid)
+          : courseRun.staff,
         status: courseRun.status,
         transcript_languages: courseRun.transcript_languages,
-        weeks_to_complete: courseRun.weeks_to_complete ? courseRun.weeks_to_complete : null,
+        weeks_to_complete: courseRun.weeks_to_complete
+          ? courseRun.weeks_to_complete
+          : null,
       });
     });
     return sendCourseRuns;
   }
 
   prepareInternalReview(courseData) {
-    const { courseSubmitInfo: { targetRun } } = this.props;
-    const courseRun = courseData.course_runs.find(run => run.key === targetRun.key);
+    const {
+      courseSubmitInfo: { targetRun },
+    } = this.props;
+    const courseRun = courseData.course_runs.find(
+      (run) => run.key === targetRun.key,
+    );
     const editedRun = { key: courseRun.key };
 
     if (targetRun.status === REVIEW_BY_LEGAL) {
       if (courseRun.has_ofac_restrictions) {
-        editedRun.has_ofac_restrictions = JSON.parse(courseRun.has_ofac_restrictions);
+        editedRun.has_ofac_restrictions = JSON.parse(
+          courseRun.has_ofac_restrictions,
+        );
       }
       if (courseRun.ofac_comment) {
         editedRun.ofac_comment = courseRun.ofac_comment;
@@ -175,20 +202,23 @@ class EditCoursePage extends React.Component {
     return {
       external_url: courseData.additional_metadata.external_url,
       external_identifier: courseData.additional_metadata.external_identifier,
-      lead_capture_form_url: courseData.additional_metadata.lead_capture_form_url,
+      lead_capture_form_url:
+        courseData.additional_metadata.lead_capture_form_url,
       organic_url: courseData.additional_metadata.organic_url,
       certificate_info: {
         heading: courseData.additional_metadata.certificate_info_heading,
         blurb: courseData.additional_metadata.certificate_info_blurb,
       },
-      facts: [{
-        heading: courseData.additional_metadata.facts_1_heading,
-        blurb: courseData.additional_metadata.facts_1_blurb,
-      },
-      {
-        heading: courseData.additional_metadata.facts_2_heading,
-        blurb: courseData.additional_metadata.facts_2_blurb,
-      }],
+      facts: [
+        {
+          heading: courseData.additional_metadata.facts_1_heading,
+          blurb: courseData.additional_metadata.facts_1_blurb,
+        },
+        {
+          heading: courseData.additional_metadata.facts_2_heading,
+          blurb: courseData.additional_metadata.facts_2_blurb,
+        },
+      ],
       start_date: courseData.additional_metadata.start_date,
       registration_deadline: courseData.additional_metadata.registration_deadline,
       variant_id: variantId,
@@ -230,20 +260,18 @@ class EditCoursePage extends React.Component {
   prepareSendCourseData(courseData) {
     const {
       courseInfo: {
-        data: {
-          key,
-          uuid,
-        },
+        data: { key, uuid },
       },
       courseOptions,
     } = this.props;
 
+    // const topics = courseData.tags ? courseData.tags.split(',') : [];
     // If we have an existing published course run, we need to also publish the course.
     // We want to use the same indicator of draft = false for consistency.
-    const hasPublishedRun = courseData.course_runs.some(r => r.status === PUBLISHED);
-
+    const hasPublishedRun = courseData.course_runs.some(
+      (r) => r.status === PUBLISHED,
+    );
     const priceData = formatPriceData(courseData, courseOptions);
-
     const formattedCourseData = {
       additional_information: courseData.additional_information,
       draft: !hasPublishedRun,
@@ -255,26 +283,31 @@ class EditCoursePage extends React.Component {
       level_type: courseData.level_type,
       location_restriction: courseData.location_restriction,
       organization_logo_override: courseData.organization_logo_override_url,
-      organization_short_code_override: courseData.organization_short_code_override,
+      organization_short_code_override:
+        courseData.organization_short_code_override,
       outcome: courseData.outcome,
       prerequisites_raw: courseData.prerequisites_raw,
       ...priceData,
       short_description: courseData.short_description,
       // Reduce collaborator list to just the UUID
       collaborators: courseData.collaborators
-        ? courseData.collaborators.map(staffer => staffer.uuid) : courseData.collaborators,
+        ? courseData.collaborators.map((staffer) => staffer.uuid)
+        : courseData.collaborators,
       subjects: [
         courseData.subjectPrimary,
         courseData.subjectSecondary,
         courseData.subjectTertiary,
-      ].filter(subject => !!subject),
+      ].filter((subject) => !!subject),
       syllabus_raw: courseData.syllabus_raw,
       title: courseData.title,
+      topics: this.state.courseTags && this.state.courseTags.length
+        ? [...new Set([...this.state.courseTags])] : [],
       type: courseData.type,
       url_slug: courseData.url_slug,
       uuid,
       video: { src: courseData.videoSrc },
-      enterprise_subscription_inclusion: courseData.enterprise_subscription_inclusion,
+      enterprise_subscription_inclusion:
+        courseData.enterprise_subscription_inclusion,
     };
 
     if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
@@ -290,9 +323,7 @@ class EditCoursePage extends React.Component {
   }
 
   continueSubmit() {
-    const {
-      submitCourseData,
-    } = this.state;
+    const { submitCourseData } = this.state;
 
     this.setState({
       submitCourseData: {},
@@ -303,9 +334,7 @@ class EditCoursePage extends React.Component {
   }
 
   cancelSubmit() {
-    const {
-      clearSubmitStatus,
-    } = this.props;
+    const { clearSubmitStatus } = this.props;
 
     this.setState({
       submitCourseData: {},
@@ -337,14 +366,13 @@ class EditCoursePage extends React.Component {
         5. Setting the uuid so we can create the url to send to course-discovery
     */
     const {
-      courseSubmitInfo: {
-        targetRun,
-      },
+      courseSubmitInfo: { targetRun },
       editCourse,
     } = this.props;
     const isInternalReview = targetRun && IN_REVIEW_STATUS.includes(targetRun.status);
     // Process course run info from courseData
-    const modifiedCourseRuns = isInternalReview ? this.prepareInternalReview(courseData)
+    const modifiedCourseRuns = isInternalReview
+      ? this.prepareInternalReview(courseData)
       : this.prepareSendCourseRunData(courseData);
     // Process courseData to reduced data set
     const courseEditData = this.prepareSendCourseData(courseData);
@@ -359,30 +387,39 @@ class EditCoursePage extends React.Component {
 
   displayReviewStatusAlert(status) {
     const {
-      courseInfo: { data: { course_runs } },
-      courseSubmitInfo: { targetRun: { key } },
+      courseInfo: {
+        data: { course_runs },
+      },
+      courseSubmitInfo: {
+        targetRun: { key },
+      },
     } = this.props;
-    const runFromAPI = course_runs ? course_runs.find(run => run.key === key) : {};
+    const runFromAPI = course_runs
+      ? course_runs.find((run) => run.key === key)
+      : {};
     switch (status) {
       case REVIEW_BY_LEGAL:
         return 'Legal Review Complete. Course Run is now awaiting PC Review.';
       case REVIEW_BY_INTERNAL:
         return 'PC Review Complete.';
       default:
-        if (status === PUBLISHED || (status === REVIEWED && runFromAPI.status === REVIEWED)) {
+        if (
+          status === PUBLISHED
+          || (status === REVIEWED && runFromAPI.status === REVIEWED)
+        ) {
           return 'Course Run Updated.';
         }
-        return 'Course has been submitted for review. The course will be locked for the next two business days. '
-          + 'You will receive an email when the review is complete.';
+        return (
+          'Course has been submitted for review. The course will be locked for the next two business days. '
+          + 'You will receive an email when the review is complete.'
+        );
     }
   }
 
   buildAdditionalMetadata() {
     const {
       courseInfo: {
-        data: {
-          additional_metadata,
-        },
+        data: { additional_metadata },
       },
     } = this.props;
     if (additional_metadata) {
@@ -409,19 +446,19 @@ class EditCoursePage extends React.Component {
   buildCourseRuns() {
     const {
       courseInfo: {
-        data: {
-          course_runs,
-        },
+        data: { course_runs },
       },
     } = this.props;
 
     const getUpgradeDeadlineOverride = (seats) => {
-      const nonAuditSeat = seats.filter(seat => seat.type !== AUDIT_TRACK.key)[0];
+      const nonAuditSeat = seats.filter(
+        (seat) => seat.type !== AUDIT_TRACK.key,
+      )[0];
       return nonAuditSeat ? nonAuditSeat.upgrade_deadline_override : null;
     };
 
-    const buildSeats = (seats) => (
-      seats.length > 0 && seats.map(seat => ({
+    const buildSeats = (seats) => seats.length > 0
+      && seats.map((seat) => ({
         bulk_sku: seat.bulk_sku,
         credit_hours: seat.credit_hours,
         credit_provider: seat.credit_provider,
@@ -429,33 +466,51 @@ class EditCoursePage extends React.Component {
         price: seat.price,
         sku: seat.sku,
         type: seat.type,
+      }));
+
+    return (
+      course_runs
+      && course_runs.map((courseRun) => ({
+        key: courseRun.key,
+        start: courseRun.start,
+        end: courseRun.end,
+        upgrade_deadline_override:
+          courseRun.seats.length > 0
+            ? getUpgradeDeadlineOverride(courseRun.seats)
+            : null,
+        expected_program_type: courseRun.expected_program_type,
+        expected_program_name: courseRun.expected_program_name,
+        external_key: courseRun.external_key,
+        go_live_date: courseRun.go_live_date,
+        min_effort:
+          typeof courseRun.min_effort === 'number'
+            ? String(courseRun.min_effort)
+            : '',
+        max_effort:
+          typeof courseRun.max_effort === 'number'
+            ? String(courseRun.max_effort)
+            : '',
+        pacing_type: courseRun.pacing_type,
+        content_language: courseRun.content_language
+          ? courseRun.content_language
+          : 'en-us',
+        transcript_languages: courseRun.transcript_languages.length
+          ? courseRun.transcript_languages
+          : ['en-us'],
+        weeks_to_complete:
+          typeof courseRun.weeks_to_complete === 'number'
+            ? String(courseRun.weeks_to_complete)
+            : '',
+        staff: courseRun.staff,
+        status: courseRun.status,
+        draft: courseRun.draft,
+        marketing_url: courseRun.marketing_url,
+        has_ofac_restrictions: courseRun.has_ofac_restrictions,
+        ofac_comment: courseRun.ofac_comment,
+        run_type: courseRun.run_type,
+        seats: buildSeats(courseRun.seats),
       }))
     );
-
-    return course_runs && course_runs.map(courseRun => ({
-      key: courseRun.key,
-      start: courseRun.start,
-      end: courseRun.end,
-      upgrade_deadline_override: courseRun.seats.length > 0 ? getUpgradeDeadlineOverride(courseRun.seats) : null,
-      expected_program_type: courseRun.expected_program_type,
-      expected_program_name: courseRun.expected_program_name,
-      external_key: courseRun.external_key,
-      go_live_date: courseRun.go_live_date,
-      min_effort: typeof courseRun.min_effort === 'number' ? String(courseRun.min_effort) : '',
-      max_effort: typeof courseRun.max_effort === 'number' ? String(courseRun.max_effort) : '',
-      pacing_type: courseRun.pacing_type,
-      content_language: courseRun.content_language ? courseRun.content_language : 'en-us',
-      transcript_languages: courseRun.transcript_languages.length ? courseRun.transcript_languages : ['en-us'],
-      weeks_to_complete: typeof courseRun.weeks_to_complete === 'number' ? String(courseRun.weeks_to_complete) : '',
-      staff: courseRun.staff,
-      status: courseRun.status,
-      draft: courseRun.draft,
-      marketing_url: courseRun.marketing_url,
-      has_ofac_restrictions: courseRun.has_ofac_restrictions,
-      ofac_comment: courseRun.ofac_comment,
-      run_type: courseRun.run_type,
-      seats: buildSeats(courseRun.seats),
-    }));
   }
 
   buildInYearValue() {
@@ -487,6 +542,7 @@ class EditCoursePage extends React.Component {
           video,
           entitlements,
           course_type,
+          topics,
           type,
           course_runs,
           skill_names,
@@ -496,7 +552,7 @@ class EditCoursePage extends React.Component {
         },
       },
     } = this.props;
-    const subjectMap = subjects && subjects.map(x => x.slug);
+    const subjectMap = subjects && subjects.map((x) => x.slug);
     const subjectPrimary = subjectMap && subjectMap[0];
     const subjectSecondary = subjectMap && subjectMap[1];
     const subjectTertiary = subjectMap && subjectMap[2];
@@ -522,6 +578,7 @@ class EditCoursePage extends React.Component {
       videoSrc,
       prices,
       course_type,
+      topics,
       type,
       url_slug,
       collaborators,
@@ -539,16 +596,16 @@ class EditCoursePage extends React.Component {
   handleModalForReviewedRun(submitCourseData) {
     const {
       courseSubmitInfo: {
-        targetRun: {
-          key,
-        },
+        targetRun: { key },
       },
       formValues,
     } = this.props;
     const currentValues = formValues(this.getFormId());
     const initialValues = this.buildInitialValues();
-    if (isNonExemptChanged(initialValues, currentValues, key)
-      || isNonExemptChanged(initialValues, currentValues)) {
+    if (
+      isNonExemptChanged(initialValues, currentValues, key)
+      || isNonExemptChanged(initialValues, currentValues)
+    ) {
       this.setState({
         submitCourseData,
         submitConfirmVisible: true, // show modal
@@ -560,14 +617,15 @@ class EditCoursePage extends React.Component {
 
   showModal(submitCourseData) {
     const {
-      courseSubmitInfo: {
-        targetRun,
-      },
+      courseSubmitInfo: { targetRun },
     } = this.props;
     if (targetRun && targetRun.status === REVIEWED) {
       this.handleModalForReviewedRun(submitCourseData);
-    } else if (targetRun && !(targetRun.status === PUBLISHED)
-      && !IN_REVIEW_STATUS.includes(targetRun.status)) {
+    } else if (
+      targetRun
+      && !(targetRun.status === PUBLISHED)
+      && !IN_REVIEW_STATUS.includes(targetRun.status)
+    ) {
       // Submitting Run for review, show modal, and temporarily store form data until
       // we have a response for how to continue.
       store.dispatch(courseRunSubmitting());
@@ -582,7 +640,11 @@ class EditCoursePage extends React.Component {
   }
 
   render() {
-    if (!this.props.courseInfo || !this.props.courseOptions || !this.props.courseRunOptions) {
+    if (
+      !this.props.courseInfo
+      || !this.props.courseOptions
+      || !this.props.courseRunOptions
+    ) {
       return (
         <Alert
           id="error"
@@ -619,32 +681,37 @@ class EditCoursePage extends React.Component {
       courseOptions,
       courseRunOptions,
       formValues,
-      courseSubmitInfo: {
-        showReviewStatusAlert,
-        targetRun,
-      },
+      courseSubmitInfo: { showReviewStatusAlert, targetRun },
     } = this.props;
-    const {
-      startedFetching,
-      submitConfirmVisible,
-    } = this.state;
+    const { startedFetching, submitConfirmVisible } = this.state;
     const currentFormValues = formValues(this.getFormId());
     const courseStatuses = [];
-    const courseInReview = course_runs && course_runs.some(courseRun => IN_REVIEW_STATUS.includes(courseRun.status));
+    const courseInReview = course_runs
+      && course_runs.some((courseRun) => IN_REVIEW_STATUS.includes(courseRun.status));
 
     if (courseInReview) {
       courseStatuses.push(IN_REVIEW_STATUS[0]);
     }
-    if (course_runs && course_runs.some(courseRun => PUBLISHED === courseRun.status)) {
+    if (
+      course_runs
+      && course_runs.some((courseRun) => PUBLISHED === courseRun.status)
+    ) {
       courseStatuses.push(PUBLISHED);
     }
-    if (course_runs && !courseStatuses.includes(PUBLISHED)
-      && course_runs.some(courseRun => REVIEWED === courseRun.status)) {
+    if (
+      course_runs
+      && !courseStatuses.includes(PUBLISHED)
+      && course_runs.some((courseRun) => REVIEWED === courseRun.status)
+    ) {
       courseStatuses.push(REVIEWED);
     }
-    if (course_runs && !courseStatuses.includes(PUBLISHED)
-      && !courseStatuses.includes(IN_REVIEW_STATUS[0]) && !courseStatuses.includes(REVIEWED)
-      && course_runs.some(courseRun => UNPUBLISHED === courseRun.status)) {
+    if (
+      course_runs
+      && !courseStatuses.includes(PUBLISHED)
+      && !courseStatuses.includes(IN_REVIEW_STATUS[0])
+      && !courseStatuses.includes(REVIEWED)
+      && course_runs.some((courseRun) => UNPUBLISHED === courseRun.status)
+    ) {
       courseStatuses.push(UNPUBLISHED);
     }
 
@@ -677,7 +744,9 @@ class EditCoursePage extends React.Component {
         }
       });
     }
-    const showSpinner = !startedFetching || courseInfo.isFetching || courseOptions.isFetching
+    const showSpinner = !startedFetching
+      || courseInfo.isFetching
+      || courseOptions.isFetching
       || courseRunOptions.isFetching;
     const showForm = !showSpinner;
 
@@ -712,32 +781,45 @@ class EditCoursePage extends React.Component {
           </Alert>
           ) }
         </div>
-        { showSpinner && <LoadingSpinner /> }
+        {showSpinner && <LoadingSpinner />}
         <PageContainer
-          sidePanes={showForm && (
-          <SidePanes
-            courseUuid={uuid}
-            draft={courseStatuses}
-            hidden={!showForm}
-            addCourseEditor={editable && this.props.addCourseEditor}
-            courseEditors={this.props.courseEditors}
-            organizations={owners}
-            fetchCourseEditors={this.props.fetchCourseEditors}
-            fetchOrganizationRoles={!owners ? null : role => (
-              this.props.fetchOrganizationRoles(owners.map(owner => owner.uuid), role)
-            )}
-            fetchOrganizationUsers={!owners ? null : () => (
-              this.props.fetchOrganizationUsers(owners.map(owner => owner.uuid))
-            )}
-            organizationRoles={this.props.organizationRoles}
-            organizationUsers={this.props.organizationUsers}
-            removeCourseEditor={editable && this.props.removeCourseEditor}
-            addComment={this.props.addComment}
-            comments={this.props.comments}
-            fetchComments={this.props.fetchComments}
-            enterpriseSubscriptionInclusion={enterprise_subscription_inclusion}
-          />
-          )}
+          sidePanes={
+            showForm && (
+              <SidePanes
+                courseUuid={uuid}
+                draft={courseStatuses}
+                hidden={!showForm}
+                addCourseEditor={editable && this.props.addCourseEditor}
+                courseEditors={this.props.courseEditors}
+                organizations={owners}
+                fetchCourseEditors={this.props.fetchCourseEditors}
+                fetchOrganizationRoles={
+                  !owners
+                    ? null
+                    : (role) => this.props.fetchOrganizationRoles(
+                      owners.map((owner) => owner.uuid),
+                      role,
+                    )
+                }
+                fetchOrganizationUsers={
+                  !owners
+                    ? null
+                    : () => this.props.fetchOrganizationUsers(
+                      owners.map((owner) => owner.uuid),
+                    )
+                }
+                organizationRoles={this.props.organizationRoles}
+                organizationUsers={this.props.organizationUsers}
+                removeCourseEditor={editable && this.props.removeCourseEditor}
+                addComment={this.props.addComment}
+                comments={this.props.comments}
+                fetchComments={this.props.fetchComments}
+                enterpriseSubscriptionInclusion={
+                  enterprise_subscription_inclusion
+                }
+              />
+            )
+          }
         >
           { showForm && !editable && (
           <Alert variant="secondary">
@@ -764,10 +846,14 @@ class EditCoursePage extends React.Component {
                 courseInReview={courseInReview}
                 courseStatuses={courseStatuses}
                 owners={owners}
-                isSubmittingForReview={targetRun && targetRun.status !== PUBLISHED}
+                isSubmittingForReview={
+                  targetRun && targetRun.status !== PUBLISHED
+                }
                 targetRun={targetRun}
                 editable={editable}
                 type={type}
+                setCourseTags={this.setCourseTags}
+                courseTags={this.state.courseTags}
                 {...this.props}
               />
             </>
@@ -808,6 +894,7 @@ EditCoursePage.defaultProps = {
   fetchOrganizationRoles: () => null,
   fetchOrganizationUsers: () => null,
   fetchCollaboratorOptions: () => null,
+  fetchCourseTagOptions: () => null,
   editCourse: () => null,
   clearSubmitStatus: () => {},
   clearCourseReviewAlert: () => {},
@@ -861,6 +948,7 @@ EditCoursePage.propTypes = {
   fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
   fetchCollaboratorOptions: PropTypes.func,
+  fetchCourseTagOptions: PropTypes.func,
   editCourse: PropTypes.func,
   clearSubmitStatus: PropTypes.func,
   clearCourseReviewAlert: PropTypes.func,

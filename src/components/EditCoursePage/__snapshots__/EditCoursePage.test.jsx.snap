@@ -111,6 +111,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -119,6 +120,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -159,6 +161,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -176,6 +179,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -452,6 +456,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -529,6 +534,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -545,6 +551,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -663,6 +670,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": "",
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -681,6 +689,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -936,6 +945,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -1358,6 +1368,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -1374,6 +1385,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -1492,6 +1504,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           "subjectTertiary": undefined,
           "syllabus_raw": "",
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -1510,6 +1523,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -1633,6 +1647,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -1641,6 +1656,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -1681,6 +1697,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -1698,6 +1715,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
@@ -1976,6 +1994,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -2466,6 +2485,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -2482,6 +2502,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -2600,6 +2621,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectTertiary": undefined,
           "syllabus_raw": "",
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -2618,6 +2640,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -2757,6 +2780,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -2765,6 +2789,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -2805,6 +2830,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -2822,6 +2848,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
@@ -3313,6 +3340,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3321,6 +3349,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3361,6 +3390,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3378,6 +3408,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -3502,6 +3533,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3510,6 +3542,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3550,6 +3583,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3567,6 +3601,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
@@ -3777,6 +3812,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3785,6 +3821,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3825,6 +3862,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3842,6 +3880,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -3966,6 +4005,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3974,6 +4014,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -4014,6 +4055,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -4031,6 +4073,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
