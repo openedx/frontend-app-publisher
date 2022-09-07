@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Alert } from '@edx/paragon';
 
 import Comment from './Comment';
 import CommentsPane from './CommentsPane';
-import StatusAlert from '../StatusAlert';
 
 describe('CommentsPane', () => {
   const mockFetch = jest.fn();
@@ -99,7 +99,7 @@ describe('CommentsPane', () => {
     const postCommentButton = wrapper.find('.btn-primary');
     postCommentButton.simulate('click');
 
-    const commentAlert = wrapper.find(StatusAlert);
+    const commentAlert = wrapper.find(Alert);
     expect(commentAlert);
     expect(wrapper.state().showEmptyCommentAlert).toEqual(true);
   });
@@ -112,7 +112,7 @@ describe('CommentsPane', () => {
       fetchComments={mockFetch}
     />);
 
-    const commentAlert = wrapper.find(StatusAlert);
+    const commentAlert = wrapper.find(Alert);
     expect(commentAlert);
   });
 });

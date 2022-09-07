@@ -53,15 +53,30 @@ exports[`EditCoursePage renders html correctly 1`] = `
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -127,11 +142,6 @@ exports[`EditCoursePage renders html correctly 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
-          "location_restriction": Object {
-            "countries": null,
-            "restriction_type": null,
-            "states": null,
-          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -247,15 +257,30 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -384,16 +409,6 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
-            "location_restriction": Object {
-              "countries": Array [
-                "AF",
-                "AX",
-              ],
-              "restriction_type": "allowlist",
-              "states": Array [
-                "AL",
-              ],
-            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -609,16 +624,6 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           },
           "learner_testimonials": null,
           "level_type": "intermediate",
-          "location_restriction": Object {
-            "countries": Array [
-              "AF",
-              "AX",
-            ],
-            "restriction_type": "allowlist",
-            "states": Array [
-              "AL",
-            ],
-          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -716,15 +721,30 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -853,16 +873,6 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
-            "location_restriction": Object {
-              "countries": Array [
-                "AF",
-                "AX",
-              ],
-              "restriction_type": "allowlist",
-              "states": Array [
-                "AL",
-              ],
-            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -924,68 +934,6 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
                       "value": "advanced",
                     },
                   ],
-                },
-                "location_restriction": Object {
-                  "children": Object {
-                    "countries": Object {
-                      "child": Object {
-                        "choices": Array [
-                          Object {
-                            "label": "Afghanistan",
-                            "value": "AF",
-                          },
-                          Object {
-                            "label": "Åland Islands",
-                            "value": "AX",
-                          },
-                          Object {
-                            "label": "Algeria",
-                            "value": "DZ",
-                          },
-                          Object {
-                            "label": "American Samoa",
-                            "value": "AS",
-                          },
-                          Object {
-                            "label": "Andorra",
-                            "value": "AD",
-                          },
-                        ],
-                      },
-                    },
-                    "restriction_type": Object {
-                      "choices": Array [
-                        "blocklist",
-                        "allowlist",
-                      ],
-                    },
-                    "states": Object {
-                      "child": Object {
-                        "choices": Array [
-                          Object {
-                            "label": "Alabama",
-                            "value": "AL",
-                          },
-                          Object {
-                            "label": "Arizona",
-                            "value": "AZ",
-                          },
-                          Object {
-                            "label": "Arkansas",
-                            "value": "AR",
-                          },
-                          Object {
-                            "label": "California",
-                            "value": "CA",
-                          },
-                          Object {
-                            "label": "Colorado",
-                            "value": "CO",
-                          },
-                        ],
-                      },
-                    },
-                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -1423,16 +1371,6 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           },
           "learner_testimonials": null,
           "level_type": "intermediate",
-          "location_restriction": Object {
-            "countries": Array [
-              "AF",
-              "AX",
-            ],
-            "restriction_type": "allowlist",
-            "states": Array [
-              "AL",
-            ],
-          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -1526,15 +1464,30 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -1604,11 +1557,6 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
-          "location_restriction": Object {
-            "countries": null,
-            "restriction_type": null,
-            "states": null,
-          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -1639,21 +1587,32 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
       }
       removeCourseEditor={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Info error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Info error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
@@ -1715,15 +1674,30 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -1852,16 +1826,6 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
-            "location_restriction": Object {
-              "countries": Array [
-                "AF",
-                "AX",
-              ],
-              "restriction_type": "allowlist",
-              "states": Array [
-                "AL",
-              ],
-            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -1923,68 +1887,6 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
                       "value": "advanced",
                     },
                   ],
-                },
-                "location_restriction": Object {
-                  "children": Object {
-                    "countries": Object {
-                      "child": Object {
-                        "choices": Array [
-                          Object {
-                            "label": "Afghanistan",
-                            "value": "AF",
-                          },
-                          Object {
-                            "label": "Åland Islands",
-                            "value": "AX",
-                          },
-                          Object {
-                            "label": "Algeria",
-                            "value": "DZ",
-                          },
-                          Object {
-                            "label": "American Samoa",
-                            "value": "AS",
-                          },
-                          Object {
-                            "label": "Andorra",
-                            "value": "AD",
-                          },
-                        ],
-                      },
-                    },
-                    "restriction_type": Object {
-                      "choices": Array [
-                        "blocklist",
-                        "allowlist",
-                      ],
-                    },
-                    "states": Object {
-                      "child": Object {
-                        "choices": Array [
-                          Object {
-                            "label": "Alabama",
-                            "value": "AL",
-                          },
-                          Object {
-                            "label": "Arizona",
-                            "value": "AZ",
-                          },
-                          Object {
-                            "label": "Arkansas",
-                            "value": "AR",
-                          },
-                          Object {
-                            "label": "California",
-                            "value": "CA",
-                          },
-                          Object {
-                            "label": "Colorado",
-                            "value": "CO",
-                          },
-                        ],
-                      },
-                    },
-                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -2490,16 +2392,6 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           },
           "learner_testimonials": null,
           "level_type": "intermediate",
-          "location_restriction": Object {
-            "countries": Array [
-              "AF",
-              "AX",
-            ],
-            "restriction_type": "allowlist",
-            "states": Array [
-              "AL",
-            ],
-          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -2593,15 +2485,30 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -2687,11 +2594,6 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
-          "location_restriction": Object {
-            "countries": null,
-            "restriction_type": null,
-            "states": null,
-          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -2722,25 +2624,36 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       }
       removeCourseEditor={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Info error.",
-          <br />,
-          "Course Options error.",
-          <br />,
-          "Course Run Options error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Info error.
+      <br />
+      Course Options error.
+      <br />
+      Course Run Options error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
@@ -2798,15 +2711,30 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -2857,68 +2785,6 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
                       "value": "advanced",
                     },
                   ],
-                },
-                "location_restriction": Object {
-                  "children": Object {
-                    "countries": Object {
-                      "child": Object {
-                        "choices": Array [
-                          Object {
-                            "label": "Afghanistan",
-                            "value": "AF",
-                          },
-                          Object {
-                            "label": "Åland Islands",
-                            "value": "AX",
-                          },
-                          Object {
-                            "label": "Algeria",
-                            "value": "DZ",
-                          },
-                          Object {
-                            "label": "American Samoa",
-                            "value": "AS",
-                          },
-                          Object {
-                            "label": "Andorra",
-                            "value": "AD",
-                          },
-                        ],
-                      },
-                    },
-                    "restriction_type": Object {
-                      "choices": Array [
-                        "blocklist",
-                        "allowlist",
-                      ],
-                    },
-                    "states": Object {
-                      "child": Object {
-                        "choices": Array [
-                          Object {
-                            "label": "Alabama",
-                            "value": "AL",
-                          },
-                          Object {
-                            "label": "Arizona",
-                            "value": "AZ",
-                          },
-                          Object {
-                            "label": "Arkansas",
-                            "value": "AR",
-                          },
-                          Object {
-                            "label": "California",
-                            "value": "CA",
-                          },
-                          Object {
-                            "label": "Colorado",
-                            "value": "CO",
-                          },
-                        ],
-                      },
-                    },
-                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -3217,11 +3083,6 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
-          "location_restriction": Object {
-            "countries": null,
-            "restriction_type": null,
-            "states": null,
-          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3309,15 +3170,30 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -3391,11 +3267,6 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
-          "location_restriction": Object {
-            "countries": null,
-            "restriction_type": null,
-            "states": null,
-          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3426,21 +3297,32 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
       }
       removeCourseEditor={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Options error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Options error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
@@ -3498,15 +3380,30 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -3640,11 +3537,6 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
-          "location_restriction": Object {
-            "countries": null,
-            "restriction_type": null,
-            "states": null,
-          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3732,15 +3624,30 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -3814,11 +3721,6 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
-          "location_restriction": Object {
-            "countries": null,
-            "restriction_type": null,
-            "states": null,
-          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3849,60 +3751,164 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
       }
       removeCourseEditor={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
+      closeLabel="Dismiss"
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Run Options error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Run Options error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
 
 exports[`EditCoursePage renders page correctly with no courseInfo 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
+  closeLabel="Dismiss"
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="Course information unavailable. Please try reloading the page and if the error persists, please contact support."
+  message=""
   onClose={[Function]}
-  title="Course Edit Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  title=""
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Edit Form failed to load: 
+  </AlertHeading>
+  <p>
+    Course information unavailable. Please try reloading the page and if the error persists, please contact support.
+  </p>
+</ForwardRef>
 `;
 
 exports[`EditCoursePage renders page correctly with no courseOptions 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
+  closeLabel="Dismiss"
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="Course information unavailable. Please try reloading the page and if the error persists, please contact support."
+  message=""
   onClose={[Function]}
-  title="Course Edit Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  title=""
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Edit Form failed to load: 
+  </AlertHeading>
+  <p>
+    Course information unavailable. Please try reloading the page and if the error persists, please contact support.
+  </p>
+</ForwardRef>
 `;
 
 exports[`EditCoursePage renders page correctly with no courseRunOptions 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
+  closeLabel="Dismiss"
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="Course information unavailable. Please try reloading the page and if the error persists, please contact support."
+  message=""
   onClose={[Function]}
-  title="Course Edit Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  title=""
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Edit Form failed to load: 
+  </AlertHeading>
+  <p>
+    Course information unavailable. Please try reloading the page and if the error persists, please contact support.
+  </p>
+</ForwardRef>
 `;

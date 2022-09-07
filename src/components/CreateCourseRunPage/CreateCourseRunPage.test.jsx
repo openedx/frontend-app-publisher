@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
+import { Alert } from '@edx/paragon';
 
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import CreateCourseRunPage from './index';
-import StatusAlert from '../StatusAlert';
 import { courseOptions } from '../../data/constants/testData';
 
 describe('CreateCourseRunPage', () => {
@@ -91,9 +91,9 @@ describe('CreateCourseRunPage', () => {
     />);
 
     // Confirm message is shown
-    const reviewAlert = component.find(StatusAlert);
+    const reviewAlert = component.find(Alert);
     const reviewMessage = 'Test Course has been submitted for review. No course runs can be added right now.';
-    expect(reviewAlert.props().message).toEqual(reviewMessage);
+    expect(reviewAlert.text()).toEqual(reviewMessage);
 
     // And confirm that we don't show form
     const form = component.find(CreateCourseRunForm);

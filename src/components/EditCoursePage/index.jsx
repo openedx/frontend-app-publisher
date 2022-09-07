@@ -2,10 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';
-import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import {
   buildInitialPrices, courseRunIsArchived, formatPriceData, getCourseNumber, isValidDate,
@@ -266,21 +266,6 @@ class EditCoursePage extends React.Component {
     };
   }
 
-  formatLocationRestrictionFields(courseData) {
-    if (courseData?.location_restriction) {
-      return {
-        restriction_type: courseData.location_restriction.restriction_type,
-        countries: courseData.location_restriction.countries,
-        states: courseData.location_restriction.states,
-      };
-    }
-    return {
-      restriction_type: null,
-      countries: null,
-      states: null,
-    };
-  }
-
   prepareSendCourseData(courseData) {
     const {
       courseInfo: {
@@ -307,7 +292,6 @@ class EditCoursePage extends React.Component {
       key,
       learner_testimonials: courseData.learner_testimonials,
       level_type: courseData.level_type,
-      location_restriction: courseData.location_restriction,
       organization_logo_override: courseData.organization_logo_override_url,
       organization_short_code_override: courseData.organization_short_code_override,
       outcome: courseData.outcome,
@@ -334,12 +318,10 @@ class EditCoursePage extends React.Component {
     if (courseData.course_type === EXECUTIVE_EDUCATION_SLUG) {
       formattedCourseData.additional_metadata = this.formatAdditionalMetadataFields(courseData);
     }
-
     // Check for values to prevent a new entry being created unnecessarily
     if (courseData.in_year_value && Object.values(courseData.in_year_value).some(value => value !== null)) {
       formattedCourseData.in_year_value = this.formatValueFields(courseData);
     }
-
     return formattedCourseData;
   }
 
@@ -484,10 +466,6 @@ class EditCoursePage extends React.Component {
     return this.formatValueFields(this.props.courseInfo.data);
   }
 
-  buildLocationRestriction() {
-    return this.formatLocationRestrictionFields(this.props.courseInfo.data);
-  }
-
   buildInitialValues() {
     const {
       courseInfo: {
@@ -553,7 +531,6 @@ class EditCoursePage extends React.Component {
       enterprise_subscription_inclusion,
       organization_short_code_override,
       organization_logo_override_url,
-      location_restriction: this.buildLocationRestriction(),
       in_year_value: this.buildInYearValue(),
     };
   }
@@ -584,13 +561,18 @@ class EditCoursePage extends React.Component {
   render() {
     if (!this.props.courseInfo || !this.props.courseOptions || !this.props.courseRunOptions) {
       return (
-        <StatusAlert
+        <Alert
           id="error"
-          alertType="danger"
-          title="Course Edit Form failed to load: "
-          message="Course information unavailable. Please try reloading the page and if the error
-           persists, please contact support."
-        />
+          variant="danger"
+          title=""
+          message=""
+        >
+          <Alert.Heading>Course Edit Form failed to load: </Alert.Heading>
+          <p>
+            Course information unavailable. Please try reloading the page and if the error
+            persists, please contact support.
+          </p>
+        </Alert>
       );
     }
 
@@ -688,21 +670,23 @@ class EditCoursePage extends React.Component {
         />
         <div className="container my-3">
           { showReviewStatusAlert && (
-          <StatusAlert
+          <Alert
             onClose={this.dismissReviewStatusAlert}
             dismissible
-            alertType="success"
-            message={targetRun && this.displayReviewStatusAlert(targetRun.status)}
-          />
+            variant="success"
+          >
+            {targetRun && this.displayReviewStatusAlert(targetRun.status)}
+          </Alert>
           ) }
 
           { showCreateStatusAlert && (
-          <StatusAlert
+          <Alert
             onClose={this.dismissCreateStatusAlert}
             dismissible
-            alertType="success"
-            message="Course run has been created in studio. See link below."
-          />
+            variant="success"
+          >
+            Course run has been created in studio. See link below.
+          </Alert>
           ) }
         </div>
         { showSpinner && <LoadingSpinner /> }
@@ -733,10 +717,10 @@ class EditCoursePage extends React.Component {
           )}
         >
           { showForm && !editable && (
-          <StatusAlert
-            alertType="secondary"
-            message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
-          />
+          <Alert variant="secondary">
+            You have permission to view this course, but not edit. If you would like to edit the course, please
+            contact a course editor.
+          </Alert>
           ) }
           { showForm && (
             <>
@@ -766,11 +750,12 @@ class EditCoursePage extends React.Component {
             </>
           )}
           { errorArray.length > 0 && (
-            <StatusAlert
+            <Alert
               id="error"
-              alertType="danger"
-              message={errorArray}
-            />
+              variant="danger"
+            >
+              {errorArray}
+            </Alert>
           )}
         </PageContainer>
       </>

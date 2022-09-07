@@ -35,68 +35,6 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                       },
                     ],
                   },
-                  "location_restriction": Object {
-                    "children": Object {
-                      "countries": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
-                              "label": "Afghanistan",
-                              "value": "AF",
-                            },
-                            Object {
-                              "label": "Åland Islands",
-                              "value": "AX",
-                            },
-                            Object {
-                              "label": "Algeria",
-                              "value": "DZ",
-                            },
-                            Object {
-                              "label": "American Samoa",
-                              "value": "AS",
-                            },
-                            Object {
-                              "label": "Andorra",
-                              "value": "AD",
-                            },
-                          ],
-                        },
-                      },
-                      "restriction_type": Object {
-                        "choices": Array [
-                          "blocklist",
-                          "allowlist",
-                        ],
-                      },
-                      "states": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
-                              "label": "Alabama",
-                              "value": "AL",
-                            },
-                            Object {
-                              "label": "Arizona",
-                              "value": "AZ",
-                            },
-                            Object {
-                              "label": "Arkansas",
-                              "value": "AR",
-                            },
-                            Object {
-                              "label": "California",
-                              "value": "CA",
-                            },
-                            Object {
-                              "label": "Colorado",
-                              "value": "CO",
-                            },
-                          ],
-                        },
-                      },
-                    },
-                  },
                   "subjects": Object {
                     "child": Object {
                       "choices": Array [
@@ -492,21 +430,33 @@ exports[`CreateCourseRunPage renders html correctly when error 1`] = `
         updateUnregisteredFields={false}
         uuid=""
       />
-      <StatusAlert
-        alertType="danger"
+      <ForwardRef
         className="mt-3"
+        closeLabel="Dismiss"
         dismissible={false}
-        iconClassNames={Array []}
         id="create-error"
-        message={
-          Array [
-            "failed",
-            <br />,
-          ]
-        }
         onClose={[Function]}
-        title={null}
-      />
+        show={true}
+        stacked={false}
+        transition={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "appear": false,
+              "in": false,
+              "mountOnEnter": false,
+              "timeout": 300,
+              "unmountOnExit": false,
+            },
+            "displayName": "Fade",
+            "render": [Function],
+          }
+        }
+        variant="danger"
+      >
+        failed
+        <br />
+      </ForwardRef>
     </div>
   </PageContainer>
 </Fragment>
@@ -565,68 +515,6 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                         "value": "advanced",
                       },
                     ],
-                  },
-                  "location_restriction": Object {
-                    "children": Object {
-                      "countries": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
-                              "label": "Afghanistan",
-                              "value": "AF",
-                            },
-                            Object {
-                              "label": "Åland Islands",
-                              "value": "AX",
-                            },
-                            Object {
-                              "label": "Algeria",
-                              "value": "DZ",
-                            },
-                            Object {
-                              "label": "American Samoa",
-                              "value": "AS",
-                            },
-                            Object {
-                              "label": "Andorra",
-                              "value": "AD",
-                            },
-                          ],
-                        },
-                      },
-                      "restriction_type": Object {
-                        "choices": Array [
-                          "blocklist",
-                          "allowlist",
-                        ],
-                      },
-                      "states": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
-                              "label": "Alabama",
-                              "value": "AL",
-                            },
-                            Object {
-                              "label": "Arizona",
-                              "value": "AZ",
-                            },
-                            Object {
-                              "label": "Arkansas",
-                              "value": "AR",
-                            },
-                            Object {
-                              "label": "California",
-                              "value": "CA",
-                            },
-                            Object {
-                              "label": "Colorado",
-                              "value": "CO",
-                            },
-                          ],
-                        },
-                      },
-                    },
                   },
                   "subjects": Object {
                     "child": Object {

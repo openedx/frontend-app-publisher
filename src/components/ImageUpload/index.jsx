@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-import StatusAlert from '../StatusAlert';
+import { Alert } from '@edx/paragon';
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -93,17 +92,15 @@ class ImageUpload extends React.Component {
           <label htmlFor={id} className="w-100 p-0">{label}</label>  {/* eslint-disable-line jsx-a11y/label-has-for */}
           {sizeValidationError
             && (
-            <StatusAlert
-              alertType="warning"
-              message={sizeValidationError}
-            />
+            <Alert variant="warning">
+              {sizeValidationError}
+            </Alert>
             )}
           {submitFailed && error
             && (
-            <StatusAlert
-              alertType="danger"
-              message={error}
-            />
+            <Alert variant="danger">
+              {error}
+            </Alert>
             )}
           <img src={this.state.value} alt="" className="uploaded-image" onLoad={this.sizeValidator} />
           <input
