@@ -7,7 +7,8 @@ import sourceInfo from '../../data/actions/sourceInfo';
 import store from '../../data/store';
 
 // default exported components don't play nicely with React.createElement
-function Collaborator({
+// eslint-disable-next-line import/prefer-default-export
+export function Collaborator({
   item: {
     image_url: imageUrl,
     uuid,
@@ -80,5 +81,3 @@ Collaborator.propTypes = {
 Collaborator.defaultProps = {
   disabled: false,
 };
-
-export default Collaborator;
