@@ -5,7 +5,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 import ListField from './index';
-import { Collaborator } from '../Collaborator';
+import Collaborator from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import renderStaffSuggestion from '../Staffer/renderStaffSuggestion';

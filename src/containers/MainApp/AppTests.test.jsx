@@ -61,7 +61,6 @@ function renderAppWithState(initialRoute) {
         <Provider store={mockStore(initialState)}>
           <AppContext.Provider
             store={mockStore(initialState)}
-            // eslint-disable-next-line react/jsx-no-constructed-context-values
             value={{
               authenticatedUser: {
                 username: 'user9',

@@ -34,7 +34,7 @@ import {
 import store from '../../data/store';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import ListField from '../ListField';
-import { Collaborator } from '../Collaborator';
+import Collaborator from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
