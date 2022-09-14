@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { MemoryRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
@@ -6,21 +7,31 @@ import { AppContext } from '@edx/frontend-platform/react';
 
 import Header from './index';
 
+function HeaderWrapperContext({ props }) {
+  const contextValue = useMemo(() => ({
+    authenticatedUser: {
+      username: 'test-username',
+    },
+  }), []);
+
+  return (
+    <AppContext.Provider
+      value={contextValue}
+    >
+      <MemoryRouter>
+        <Header {...props} />
+      </MemoryRouter>
+    </AppContext.Provider>
+  );
+}
+
+HeaderWrapperContext.propTypes = {
+  props: PropTypes.shape({}).isRequired,
+};
+
 describe('Header', () => {
   const HeaderWrapper = props => (
-    mount(
-      <AppContext.Provider
-        value={{
-          authenticatedUser: {
-            username: 'test-username',
-          },
-        }}
-      >
-        <MemoryRouter>
-          <Header {...props} />
-        </MemoryRouter>
-      </AppContext.Provider>,
-    ).find('header')
+    mount(<HeaderWrapperContext props={props} />).find('header')
   );
 
   it('renders the correct header', () => {
