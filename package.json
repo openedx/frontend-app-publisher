@@ -3,14 +3,11 @@
   "version": "0.1.0",
   "description": "Frontend for the Publisher Application",
   "repository": "https://github.com/openedx/frontend-app-publisher",
-  "browserslist": [
-    "last 2 versions",
-    "ie 11"
-  ],
+  "browserslist": ["extends @edx/browserslist-config"]
+  ,
   "scripts": {
     "build": "fedx-scripts webpack",
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
-    "is-es5": "es-check es5 ./dist/*.js",
     "lint": "fedx-scripts eslint --ext .jsx,.js .",
     "lint-fix": "fedx-scripts eslint --ext .jsx,.js . --fix",
     "prepush": "npm run lint; npm run stylelint",
@@ -64,6 +61,7 @@
     "tinymce": "5.10.5"
   },
   "devDependencies": {
+    "@edx/browserslist-config": "^1.1.0",
     "@edx/frontend-build": "9.2.2",
     "@edx/stylelint-config-edx": "2.2.0",
     "axios": "0.27.2",
@@ -72,7 +70,6 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "enzyme-to-json": "3.6.2",
-    "es-check": "6.2.1",
     "gh-pages": "3.2.3",
     "husky": "7.0.4",
     "is-blob": "2.1.0",
