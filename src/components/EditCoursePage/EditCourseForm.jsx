@@ -1076,7 +1076,7 @@ export class BaseEditCourseForm extends React.Component {
             />
             {administrator && (
             <>
-              <FieldLabel text="Location Restriction" className="mb-2" />
+              <FieldLabel text="Merchandising Location Restriction" className="mb-2" />
               <Field
                 name="location_restriction.restriction_type"
                 component={RenderSelectField}
