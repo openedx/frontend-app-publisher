@@ -1030,7 +1030,7 @@ export class BaseEditCourseForm extends React.Component {
                     helpText={(
                       <div>
                         <p>
-                          edX partners with Emsi, the labor market data company,
+                          edX partners with Lightcast, the labor market data company,
                           to automatically tag your courses with in-demand
                           skills from their library of 30,000 skills based on
                           the content in your about page. If you want to
