@@ -146,6 +146,7 @@ describe('EditCoursePage', () => {
       syllabus_raw: '',
       title: 'Test title',
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+      topics: [],
       uuid: '00000000-0000-0000-0000-000000000000',
       video: {
         src: 'https://www.video.information/watch?v=cVsQLlk-T0s',
@@ -385,6 +386,7 @@ describe('EditCoursePage', () => {
       subjectTertiary: undefined,
       syllabus_raw: null,
       title: 'demo4004',
+      topics: [],
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       url_slug: 'demo4004',
       videoSrc: null,
@@ -402,9 +404,7 @@ describe('EditCoursePage', () => {
       level_type: 'Basic',
       location_restriction: {
         restriction_type: 'allowlist',
-        countries: [
-          'AF', 'AX',
-        ],
+        countries: ['AF', 'AX'],
         states: ['AL'],
       },
       organization_logo_override: 'http://image.src.small',
@@ -418,6 +418,7 @@ describe('EditCoursePage', () => {
       subjects: ['basket-weaving'],
       syllabus_raw: null,
       title: 'demo4004',
+      topics: [],
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       url_slug: 'demo4004',
       uuid: '00000000-0000-0000-0000-000000000000',
@@ -912,14 +913,16 @@ describe('EditCoursePage', () => {
           heading: 'heading',
           blurb: 'blurb',
         },
-        facts: [{
-          heading: 'facts_1_heading',
-          blurb: 'facts_1_blurb',
-        },
-        {
-          heading: 'facts_2_heading',
-          blurb: 'facts_2_blurb',
-        }],
+        facts: [
+          {
+            heading: 'facts_1_heading',
+            blurb: 'facts_1_blurb',
+          },
+          {
+            heading: 'facts_2_heading',
+            blurb: 'facts_2_blurb',
+          },
+        ],
         start_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
         variant_id: '00000000-0000-0000-0000-000000000000',
@@ -934,9 +937,7 @@ describe('EditCoursePage', () => {
       level_type: 'Basic',
       location_restriction: {
         restriction_type: 'allowlist',
-        countries: [
-          'AF', 'AX',
-        ],
+        countries: ['AF', 'AX'],
         states: ['AL'],
       },
       organization_logo_override: 'http://image.src.small',
@@ -950,6 +951,7 @@ describe('EditCoursePage', () => {
       subjects: ['basket-weaving'],
       syllabus_raw: null,
       title: 'demo4004',
+      topics: [],
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       url_slug: 'demo4004',
       uuid: '00000000-0000-0000-0000-000000000000',
