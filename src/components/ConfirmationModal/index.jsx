@@ -3,29 +3,27 @@ import PropTypes from 'prop-types';
 
 import { Modal } from '@edx/paragon';
 
-function ConfirmationModal({
+const ConfirmationModal = ({
   onSubmit,
   title,
   body,
   buttonLabel,
   ...passThroughProps
-}) {
-  return (
-    <Modal
-      {...passThroughProps}
-      title={title}
-      body={body}
-      closeText="Cancel"
-      buttons={[
-        {
-          label: buttonLabel,
-          buttonType: 'primary',
-          onClick: onSubmit,
-        },
-      ]}
-    />
-  );
-}
+}) => (
+  <Modal
+    {...passThroughProps}
+    title={title}
+    body={body}
+    closeText="Cancel"
+    buttons={[
+      {
+        label: buttonLabel,
+        buttonType: 'primary',
+        onClick: onSubmit,
+      },
+    ]}
+  />
+);
 
 ConfirmationModal.propTypes = {
   onSubmit: PropTypes.func.isRequired,

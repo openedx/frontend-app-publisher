@@ -2,7 +2,7 @@ import React from 'react';
 import NewInstructorImage from '../../../assets/new-instructor-80.png';
 import { getStafferName } from './index';
 
-export default function (suggestion) {
+function renderStaffSuggestion(suggestion) {
   return (
     <div className="d-flex flex-row m-1 p-1">
       <div className="m-1 p-1 w-25">
@@ -28,3 +28,5 @@ export default function (suggestion) {
     </div>
   );
 }
+
+export default renderStaffSuggestion;

@@ -6,7 +6,7 @@ import CourseRunSubmitButton from './CourseRunSubmitButton';
 
 import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
 
-function CourseRunButtonToolbar(props) {
+const CourseRunButtonToolbar = (props) => {
   const {
     className,
     disabled,
@@ -44,7 +44,7 @@ function CourseRunButtonToolbar(props) {
       />
     </ButtonToolbar>
   );
-}
+};
 
 CourseRunButtonToolbar.propTypes = {
   className: PropTypes.string,

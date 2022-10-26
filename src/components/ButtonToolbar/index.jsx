@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-function ButtonToolbar(props) {
+const ButtonToolbar = (props) => {
   const { className, leftJustify } = props;
   const fullClassName = classNames(
     `btn-toolbar ${leftJustify ? 'justify-content-start' : 'justify-content-end'}`,
@@ -22,7 +22,7 @@ function ButtonToolbar(props) {
       {buttonList}
     </div>
   );
-}
+};
 
 ButtonToolbar.defaultProps = {
   children: [],

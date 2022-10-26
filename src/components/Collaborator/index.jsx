@@ -8,7 +8,7 @@ import store from '../../data/store';
 
 // default exported components don't play nicely with React.createElement
 // eslint-disable-next-line import/prefer-default-export
-export function Collaborator({
+export const Collaborator = ({
   item: {
     image_url: imageUrl,
     uuid,
@@ -17,26 +17,25 @@ export function Collaborator({
   onRemove,
   disabled,
   referrer,
-}) {
-  return (
-    <>
-      <div className="staffer-image-wrapper overflow-hidden">
-        <img src={imageUrl} className="w-25" alt="" />
-      </div>
-      <div className="staffer-details">
-        <button
-          type="button"
-          className="btn js-delete-btn mr-1 p-0"
-          onClick={() => onRemove(uuid)}
-          disabled={disabled}
-        >
-          <Icon
-            id={`delete-icon-${uuid}`}
-            className="fa fa-trash fa-fw text-danger"
-            screenReaderText={`Remove ${name}`}
-          />
-        </button>
-        { !disabled
+}) => (
+  <>
+    <div className="staffer-image-wrapper overflow-hidden">
+      <img src={imageUrl} className="w-25" alt="" />
+    </div>
+    <div className="staffer-details">
+      <button
+        type="button"
+        className="btn js-delete-btn mr-1 p-0"
+        onClick={() => onRemove(uuid)}
+        disabled={disabled}
+      >
+        <Icon
+          id={`delete-icon-${uuid}`}
+          className="fa fa-trash fa-fw text-danger"
+          screenReaderText={`Remove ${name}`}
+        />
+      </button>
+      { !disabled
         // Don't show the edit link at all if fields should be disabled
         && (
           <Link
@@ -59,13 +58,12 @@ export function Collaborator({
             />
           </Link>
         )}
-        <span className="name font-weight-bold">
-          {name}
-        </span>
-      </div>
-    </>
-  );
-}
+      <span className="name font-weight-bold">
+        {name}
+      </span>
+    </div>
+  </>
+);
 
 Collaborator.propTypes = {
   onRemove: PropTypes.func.isRequired,

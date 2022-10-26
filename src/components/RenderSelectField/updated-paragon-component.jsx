@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form } from '@edx/paragon';
 
-function RenderSelectField({
+const RenderSelectField = ({
   input,
   extraInput,
   name,
@@ -18,33 +18,31 @@ function RenderSelectField({
   required,
   meta: { touched, error },
   options,
-}) {
-  return (
-    <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
-      <Form.Label>
-        {label}
-      </Form.Label>
-      <Form.Control
-        {...input}
-        {...extraInput}
-        as="select"
-        name={name}
-        label={label}
-        disabled={disabled}
-        required={required}
-      >
-        {options.map(option => (
-          <option key={option.value} value={option.value}>{option.label}</option>
-        ))}
-        {touched && error && (
+}) => (
+  <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
+    <Form.Label>
+      {label}
+    </Form.Label>
+    <Form.Control
+      {...input}
+      {...extraInput}
+      as="select"
+      name={name}
+      label={label}
+      disabled={disabled}
+      required={required}
+    >
+      {options.map(option => (
+        <option key={option.value} value={option.value}>{option.label}</option>
+      ))}
+      {touched && error && (
         <Form.Control.Feedback>
           {error}
         </Form.Control.Feedback>
-        )}
-      </Form.Control>
-    </Form.Group>
-  );
-}
+      )}
+    </Form.Control>
+  </Form.Group>
+);
 
 RenderSelectField.defaultProps = {
   extraInput: {},

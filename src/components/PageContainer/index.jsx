@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './PageContainer.scss';
 
-function PageContainer(props) {
+const PageContainer = (props) => {
   const containerClasses = classNames('container my-3 content-container', props.className);
   const colClasses = classNames('col', { 'col-xl-7 col-9': !props.wide });
 
@@ -23,7 +23,7 @@ function PageContainer(props) {
       </div>
     </div>
   );
-}
+};
 
 PageContainer.defaultProps = {
   children: [],

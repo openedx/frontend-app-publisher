@@ -5,39 +5,37 @@ import { Field } from 'redux-form';
 import RenderInputTextField from '../RenderInputTextField';
 import FieldLabel from '../FieldLabel';
 
-function PriceList({
+const PriceList = ({
   disabled,
   extraInput,
   priceLabels,
   required,
-}) {
-  return (
-    <>
-      {Object.keys(priceLabels).map(seatType => (
-        <Field
-          key={seatType}
-          name={`prices.${seatType}`}
-          component={RenderInputTextField}
-          extraInput={{
-            min: 1.00,
-            step: 0.01,
-            max: 10000.00,
-            ...extraInput,
-          }}
-          type="number"
-          label={(
-            <FieldLabel
-              text={`${priceLabels[seatType]} Price (USD)`}
-              required
-            />
+}) => (
+  <>
+    {Object.keys(priceLabels).map(seatType => (
+      <Field
+        key={seatType}
+        name={`prices.${seatType}`}
+        component={RenderInputTextField}
+        extraInput={{
+          min: 1.00,
+          step: 0.01,
+          max: 10000.00,
+          ...extraInput,
+        }}
+        type="number"
+        label={(
+          <FieldLabel
+            text={`${priceLabels[seatType]} Price (USD)`}
+            required
+          />
 )}
-          disabled={disabled}
-          required={required}
-        />
-      ))}
-    </>
-  );
-}
+        disabled={disabled}
+        required={required}
+      />
+    ))}
+  </>
+);
 
 PriceList.propTypes = {
   disabled: PropTypes.bool,

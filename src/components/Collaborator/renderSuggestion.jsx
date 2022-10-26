@@ -1,7 +1,7 @@
 import React from 'react';
 import NewInstructorImage from '../../../assets/new-instructor-80.png';
 
-export default function (suggestion) {
+function renderSuggestion(suggestion) {
   return (
     <div className="d-flex flex-row m-1 p-1">
       <div className="m-1 p-1 w-25">
@@ -15,10 +15,12 @@ export default function (suggestion) {
         <div className="m-1 p-1">{suggestion.name}</div>
         <div className="m-1 p-1">
           {suggestion.item_text && (
-            <span>{suggestion.item_text}</span>
+          <span>{suggestion.item_text}</span>
           )}
         </div>
       </div>
     </div>
   );
 }
+
+export default renderSuggestion;

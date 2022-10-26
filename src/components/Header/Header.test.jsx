@@ -7,7 +7,7 @@ import { AppContext } from '@edx/frontend-platform/react';
 
 import Header from './index';
 
-function HeaderWrapperContext({ props }) {
+const HeaderWrapperContext = ({ props }) => {
   const contextValue = useMemo(() => ({
     authenticatedUser: {
       username: 'test-username',
@@ -23,7 +23,7 @@ function HeaderWrapperContext({ props }) {
       </MemoryRouter>
     </AppContext.Provider>
   );
-}
+};
 
 HeaderWrapperContext.propTypes = {
   props: PropTypes.shape({}).isRequired,

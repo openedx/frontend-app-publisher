@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FieldHelp from '../FieldHelp';
 
-function FieldLabel({
+const FieldLabel = ({
   className,
   extraText,
   helpText,
   id,
   optional,
   text,
-}) {
+}) => {
   let requireText = '';
 
   if (optional) {
@@ -24,7 +24,7 @@ function FieldLabel({
       <div><span className="text-muted">{extraText}</span></div>
     </div>
   );
-}
+};
 
 FieldLabel.defaultProps = {
   className: '',

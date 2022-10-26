@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { InputSelect } from '@edx/paragon';
 
-function RenderSelectField({
+const RenderSelectField = ({
   input,
   extraInput,
   name,
@@ -11,22 +11,20 @@ function RenderSelectField({
   required,
   meta: { touched, error },
   options,
-}) {
-  return (
-    <InputSelect
-      {...input}
-      {...extraInput}
-      name={name}
-      label={label}
-      disabled={disabled}
-      required={required}
-      isValid={!(touched && error)}
-      validationMessage={error}
-      themes={['danger']}
-      options={options}
-    />
-  );
-}
+}) => (
+  <InputSelect
+    {...input}
+    {...extraInput}
+    name={name}
+    label={label}
+    disabled={disabled}
+    required={required}
+    isValid={!(touched && error)}
+    validationMessage={error}
+    themes={['danger']}
+    options={options}
+  />
+);
 
 RenderSelectField.defaultProps = {
   extraInput: {},

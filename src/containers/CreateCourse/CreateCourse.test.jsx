@@ -90,18 +90,16 @@ describe('Create Course View', () => {
     testState.courseRunOptions = courseRunOptions;
 
     store = mockStore(testState);
-    function CourseCreatePageWrapper(props) {
-      return (
-        <MemoryRouter>
-          <Provider store={store}>
-            <CreateCoursePage
-              {...props}
-              initialValues={courseData}
-            />
-          </Provider>
-        </MemoryRouter>
-      );
-    }
+    const CourseCreatePageWrapper = (props) => (
+      <MemoryRouter>
+        <Provider store={store}>
+          <CreateCoursePage
+            {...props}
+            initialValues={courseData}
+          />
+        </Provider>
+      </MemoryRouter>
+    );
 
     const wrapper = mount(<CourseCreatePageWrapper />);
     const instance = (wrapper.find('CreateCoursePage')).instance();
@@ -125,18 +123,16 @@ describe('Create Course View', () => {
     testState.courseRunOptions = courseRunOptions;
 
     store = mockStore(testState);
-    function CourseCreatePageWrapper(props) {
-      return (
-        <MemoryRouter>
-          <Provider store={store}>
-            <CreateCoursePage
-              {...props}
-              initialValues={courseData}
-            />
-          </Provider>
-        </MemoryRouter>
-      );
-    }
+    const CourseCreatePageWrapper = (props) => (
+      <MemoryRouter>
+        <Provider store={store}>
+          <CreateCoursePage
+            {...props}
+            initialValues={courseData}
+          />
+        </Provider>
+      </MemoryRouter>
+    );
 
     const wrapper = mount(<CourseCreatePageWrapper />);
     const instance = (wrapper.find('CreateCoursePage')).instance();

@@ -8,7 +8,7 @@ import {
   Dropdown, Hyperlink, AvatarButton,
 } from '@edx/paragon';
 
-function Header({ darkModeOn, location, toggleDarkMode }) {
+const Header = ({ darkModeOn, location, toggleDarkMode }) => {
   const { authenticatedUser } = useContext(AppContext);
 
   if (darkModeOn) {
@@ -74,7 +74,7 @@ function Header({ darkModeOn, location, toggleDarkMode }) {
       </div>
     </header>
   );
-}
+};
 
 Header.propTypes = {
   darkModeOn: PropTypes.bool,

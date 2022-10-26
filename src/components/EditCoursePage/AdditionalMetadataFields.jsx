@@ -7,7 +7,7 @@ import RichEditor from '../RichEditor';
 import { utcTimeZone } from '../../utils';
 import DateTimeField from '../DateTimeField';
 
-function AdditionalMetadataFields(props) {
+const AdditionalMetadataFields = (props) => {
   const {
     disabled,
   } = props;
@@ -118,7 +118,7 @@ function AdditionalMetadataFields(props) {
       </div>
     </div>
   );
-}
+};
 
 AdditionalMetadataFields.propTypes = {
   disabled: PropTypes.bool,

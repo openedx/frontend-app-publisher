@@ -96,15 +96,17 @@ export class BaseEditCourseForm extends React.Component {
     }
   }
 
-  setCourseRunCollapsibles(initialCourseRuns) {
-    const collapsiblesOpen = initialCourseRuns.map(() => false);
-    this.setState({ collapsiblesOpen });
-  }
-
-  setCollapsible(open) {
-    this.setState({
-      open,
-    });
+  handleCourseTagChange(value, courseTags, setCourseTags) {
+    if (value && value.includes(',') && value.slice(-1) === ',') {
+      const tag = value
+        .split(',')
+        .filter((item) => item !== '')
+        .map((item) => item.toLowerCase().trim());
+      this.setState({ courseTag: '' });
+      setCourseTags([...new Set([...courseTags, ...tag])]);
+    } else {
+      this.setState({ courseTag: value });
+    }
   }
 
   getAddCourseRunButton(disabled, uuid) {
@@ -131,6 +133,17 @@ export class BaseEditCourseForm extends React.Component {
     }
 
     return courseRunButton;
+  }
+
+  setCollapsible(open) {
+    this.setState({
+      open,
+    });
+  }
+
+  setCourseRunCollapsibles(initialCourseRuns) {
+    const collapsiblesOpen = initialCourseRuns.map(() => false);
+    this.setState({ collapsiblesOpen });
   }
 
   getLinkComponent(courseStatuses, courseInfo) {
@@ -193,19 +206,6 @@ export class BaseEditCourseForm extends React.Component {
         </Chip>
       ))
     );
-  }
-
-  handleCourseTagChange(value, courseTags, setCourseTags) {
-    if (value && value.includes(',') && value.slice(-1) === ',') {
-      const tag = value
-        .split(',')
-        .filter((item) => item !== '')
-        .map((item) => item.toLowerCase().trim());
-      this.setState({ courseTag: '' });
-      setCourseTags([...new Set([...courseTags, ...tag])]);
-    } else {
-      this.setState({ courseTag: value });
-    }
   }
 
   toggleCourseRun(index, value) {
