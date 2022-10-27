@@ -1,4 +1,4 @@
-1. New Instructors Organization Association
+2. New Instructors Organization Association
 ----------------------------------------------
 
 Status
