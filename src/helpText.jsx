@@ -1,4 +1,5 @@
 import React from 'react';
+import { getConfig } from '@edx/frontend-platform';
 import { isSafari } from './utils';
 
 /**
@@ -30,7 +31,7 @@ function dateEditHelp(courseRun) {
       </p>
       <p>
         <a
-          href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}#schedule`}
+          href={`${getConfig().STUDIO_BASE_URL}/settings/details/${courseRun.key}#schedule`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -80,7 +81,7 @@ function pacingEditHelp(courseRun) {
       </p>
       <p>
         <a
-          href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}`}
+          href={`${getConfig().STUDIO_BASE_URL}/settings/details/${courseRun.key}`}
           target="_blank"
           rel="noopener noreferrer"
         >
