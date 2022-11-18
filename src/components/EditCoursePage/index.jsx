@@ -199,6 +199,7 @@ class EditCoursePage extends React.Component {
 
   formatAdditionalMetadataFields(courseData) {
     const variantId = courseData.additional_metadata.variant_id || null;
+    const courseTerm = courseData.additional_metadata.course_term_override || null;
     return {
       external_url: courseData.additional_metadata.external_url,
       external_identifier: courseData.additional_metadata.external_identifier,
@@ -222,6 +223,7 @@ class EditCoursePage extends React.Component {
       start_date: courseData.additional_metadata.start_date,
       registration_deadline: courseData.additional_metadata.registration_deadline,
       variant_id: variantId,
+      course_term_override: courseTerm,
     };
   }
 
@@ -438,6 +440,7 @@ class EditCoursePage extends React.Component {
         start_date: additional_metadata.start_date,
         registration_deadline: additional_metadata.registration_deadline,
         variant_id: additional_metadata.variant_id,
+        course_term_override: additional_metadata.course_term_override,
       };
     }
     return {};

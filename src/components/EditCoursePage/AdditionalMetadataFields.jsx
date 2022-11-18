@@ -54,7 +54,23 @@ function AdditionalMetadataFields(props) {
         <Field
           name="additional_metadata.course_term_override"
           component={RenderInputTextField}
-          label=<FieldLabel id="course_term_override.label" text="Override the course term" />
+          label={(
+            <FieldLabel
+              id="course_term_override.label"
+              text="Course Term Override"
+              helpText={(
+                <div>
+                  <dl>
+                    <dt>Course Term</dt>
+                    <dd>
+                      For example, in the UK universities use programme instead of course, so you can define which
+                      term you want to use in course description to keep the consistency.
+                    </dd>
+                  </dl>
+                </div>
+              )}
+            />
+          )}
           disabled={disabled}
           required={false}
         />

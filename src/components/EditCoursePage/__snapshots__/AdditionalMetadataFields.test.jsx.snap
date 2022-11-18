@@ -102,10 +102,21 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
         <FieldLabel
           className=""
           extraText=""
-          helpText=""
+          helpText={
+            <div>
+              <dl>
+                <dt>
+                  Course Term
+                </dt>
+                <dd>
+                  For example, in the UK universities use programme instead of course, so you can define which term you want to use in course description to keep the consistency.
+                </dd>
+              </dl>
+            </div>
+          }
           id="course_term_override.label"
           optional={false}
-          text="Override the course term"
+          text="Course Term Override"
         />
       }
       name="additional_metadata.course_term_override"
