@@ -68,7 +68,7 @@ function AdditionalMetadataFields(props) {
                     </dd>
                   </dl>
                 </div>
-              )} 
+              )}
             />
           )}
           disabled={disabled}
