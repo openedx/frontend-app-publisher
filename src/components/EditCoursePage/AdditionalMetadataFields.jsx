@@ -58,16 +58,16 @@ function AdditionalMetadataFields(props) {
           disabled={disabled}
           required={false}
           helpText={(
-                    <div>
-                      <dl>
-                        <dt>Course Term</dt>
-                        <dd>
-                          For example, in the UK universities use programme instead of course, so you can define which 
-                          term you want to use in course description to keep the consistency.
-                        </dd>
-                      </dl>
-                    </div>
-                  )}
+            <div>
+              <dl>
+                <dt>Course Term</dt>
+                <dd>
+                  For example, in the UK universities use programme instead of course, so you can define which
+                  term you want to use in course description to keep the consistency.
+                </dd>
+              </dl>
+            </div>
+          )}
         />
         <FieldLabel text="Fact 1" className="h3 font-weight-normal" />
         <Field

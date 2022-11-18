@@ -223,7 +223,7 @@ class EditCoursePage extends React.Component {
       start_date: courseData.additional_metadata.start_date,
       registration_deadline: courseData.additional_metadata.registration_deadline,
       variant_id: variantId,
-      course_term_override: courseOverride
+      course_term_override: courseOverride,
     };
   }
 
