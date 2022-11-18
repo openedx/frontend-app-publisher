@@ -55,8 +55,17 @@ function AdditionalMetadataFields(props) {
           name="additional_metadata.course_term_override"
           component={RenderInputTextField}
           label={(
+<<<<<<< HEAD
+<<<<<<< HEAD
             <FieldLabel
               id="course_term_override.label"
+=======
+            <FieldLabel id="course_term_override.label"
+>>>>>>> 1b95d1a (feat: update test cases.)
+=======
+            <FieldLabel
+              id="course_term_override.label"
+>>>>>>> 90e38df (feat: update test cases.)
               text="Course Term Override"
               helpText={(
                 <div>
@@ -68,8 +77,21 @@ function AdditionalMetadataFields(props) {
                     </dd>
                   </dl>
                 </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
               )}
             />
+=======
+            )}/>
+>>>>>>> 1b95d1a (feat: update test cases.)
+=======
+              )} 
+=======
+              )}
+>>>>>>> 3a47233 (feat: update test cases.)
+            />
+>>>>>>> 90e38df (feat: update test cases.)
           )}
           disabled={disabled}
           required={false}
