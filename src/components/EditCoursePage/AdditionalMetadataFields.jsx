@@ -55,7 +55,8 @@ function AdditionalMetadataFields(props) {
           name="additional_metadata.course_term_override"
           component={RenderInputTextField}
           label={(
-            <FieldLabel id="course_term_override.label"
+            <FieldLabel
+              id="course_term_override.label"
               text="Course Term Override"
               helpText={(
                 <div>
@@ -67,7 +68,8 @@ function AdditionalMetadataFields(props) {
                     </dd>
                   </dl>
                 </div>
-            )}/>
+              )} 
+            />
           )}
           disabled={disabled}
           required={false}
