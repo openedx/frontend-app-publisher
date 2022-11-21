@@ -7,6 +7,7 @@ import { AppContext } from '@edx/frontend-platform/react';
 import {
   Dropdown, Hyperlink, AvatarButton,
 } from '@edx/paragon';
+import { getConfig } from '@edx/frontend-platform';
 
 const Header = ({ darkModeOn, location, toggleDarkMode }) => {
   const { authenticatedUser } = useContext(AppContext);
@@ -32,8 +33,8 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-auto justify-content-start">
-            <Hyperlink destination={process.env.BASE_URL}>
-              <img src={process.env.LOGO_URL} alt="edX logo" height="30" width="60" />
+            <Hyperlink destination={getConfig().BASE_URL}>
+              <img src={getConfig().LOGO_URL} alt="edX logo" height="30" />
             </Hyperlink>
           </div>
           <div className="col-auto justify-content-start">
@@ -55,20 +56,22 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
             </div>
             )}
           <div className="col-auto justify-content-end ml-auto">
-            <Dropdown>
-              <Dropdown.Toggle as={AvatarButton}>
-                {authenticatedUser.username}
-              </Dropdown.Toggle>
+            <>
+              <Dropdown>
+                <Dropdown.Toggle as={AvatarButton}>
+                  {authenticatedUser.username}
+                </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item
-                  onClick={() => redirectToLogout(process.env.LMS_BASE_URL)}
-                  key="dropdown-logout"
-                >
-                  Sign Out
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => redirectToLogout(getConfig().LMS_BASE_URL)}
+                    key="dropdown-logout"
+                  >
+                    Sign Out
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </>
           </div>
         </div>
       </div>
