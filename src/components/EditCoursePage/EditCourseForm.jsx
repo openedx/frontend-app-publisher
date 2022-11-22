@@ -6,6 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { getConfig } from '@edx/frontend-platform';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { Icon, Hyperlink, Chip } from '@edx/paragon';
 import { CloseSmall } from '@edx/paragon/icons';
@@ -226,6 +227,10 @@ export class BaseEditCourseForm extends React.Component {
     this.setCollapsible(true);
   }
 
+  filterCourseTypes2U(courseType) {
+    return courseType.label.includes(getConfig().IDENTIFIER_2U);
+  }
+
   render() {
     const {
       handleSubmit,
@@ -306,6 +311,7 @@ export class BaseEditCourseForm extends React.Component {
       priceLabels,
       runTypeModes,
     } = parsedTypeOptions;
+    const courseTypes2U = courseTypeOptions.filter(this.filterCourseTypes2U);
     const disabled = courseInReview || !editable;
     const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type]
       || courseTypes[currentFormValues.type].course_run_types.some((crt) => crt.is_marketable);
@@ -1046,34 +1052,38 @@ export class BaseEditCourseForm extends React.Component {
                 className="course-skill"
               />
             )}
-            <Field
-              name="organization_short_code_override"
-              component={RenderInputTextField}
-              label={
-                <FieldLabel text="Organization Short Code Override" optional />
-              }
-              extraInput={{ onInvalid: this.openCollapsible }}
-              disabled={disabled}
-              optional
-            />
-            <Field
-              name="organization_logo_override_url"
-              component={ImageUpload}
-              label={(
-                <FieldLabel
-                  id="organization_logo_override.label"
-                  text="Organization Logo Override"
+            {courseTypes2U?.length > 0 && (
+              <>
+                <Field
+                  name="organization_short_code_override"
+                  component={RenderInputTextField}
+                  label={
+                    <FieldLabel text="Organization Short Code Override" optional />
+                  }
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  disabled={disabled}
+                  optional
                 />
-              )}
-              extraInput={{ onInvalid: this.openCollapsible }}
-              id="organization-logo-override"
-              className="course-image"
-              maxImageSizeKilo={256}
-              requiredWidth={110}
-              requiredHeight={110}
-              disabled={disabled}
-              optional
-            />
+                <Field
+                  name="organization_logo_override_url"
+                  component={ImageUpload}
+                  label={(
+                    <FieldLabel
+                      id="organization_logo_override.label"
+                      text="Organization Logo Override"
+                    />
+                  )}
+                  extraInput={{ onInvalid: this.openCollapsible }}
+                  id="organization-logo-override"
+                  className="course-image"
+                  maxImageSizeKilo={256}
+                  requiredWidth={110}
+                  requiredHeight={110}
+                  disabled={disabled}
+                  optional
+                />
+              </>
+            )}
             {administrator && (
             <>
               <FieldLabel text="Merchandising Location Restriction" className="mb-2" />
