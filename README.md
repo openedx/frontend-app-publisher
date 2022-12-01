@@ -80,7 +80,7 @@ possibly configure and install it on their own.
 
 This application requires an edx-platform instance for authentication. For local development
    you will need to setup a local instance of the edX Docker Devstack
-    * https://github.com/edx/devstack
+    * https://github.com/openedx/devstack
 
 You should be able to view it in a web browser at `localhost:18400`.
 

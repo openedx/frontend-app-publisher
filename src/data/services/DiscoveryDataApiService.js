@@ -198,6 +198,11 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().get(url);
   }
 
+  static fetchCourseTags() {
+    const url = `${process.env.DISCOVERY_API_BASE_URL}/taggit_autosuggest/list/taggit.tag/`;
+    return getAuthenticatedHttpClient().get(url);
+  }
+
   static editCourse(courseData) {
     const { uuid } = courseData;
     const queryParams = {

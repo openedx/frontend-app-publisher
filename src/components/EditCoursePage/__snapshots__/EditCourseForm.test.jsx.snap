@@ -322,6 +322,34 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
         requiredHeight={675}
         requiredWidth={1134}
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="topic"
+        label={
+          <React.Fragment>
+            <FieldLabel
+              className=""
+              extraText=""
+              helpText={
+                <p>
+                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                </p>
+              }
+              id="tags.label"
+              optional={true}
+              text="Topics"
+            />
+          </React.Fragment>
+        }
+        name="tags"
+        onChange={[Function]}
+        optional={true}
+        renderSuggestion={[Function]}
+        type="text"
+        value=""
+      />
       <hr />
       <Field
         component={[Function]}
@@ -1043,6 +1071,68 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -1449,6 +1539,12 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
       }
       courseSubmitInfo={Object {}}
       courseSubmitting={false}
+      courseTagOptions={
+        Object {
+          "data": Object {},
+        }
+      }
+      courseTags={Array []}
       courseUuid="11111111-1111-1111-1111-111111111111"
       currentFormValues={
         Object {
@@ -1465,6 +1561,16 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -1479,6 +1585,7 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           "subjectTertiary": "security",
           "syllabus_raw": "syllabus",
           "title": "Test Title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
@@ -1579,6 +1686,7 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           ],
         }
       }
+      setCourseTags={[Function]}
       submitting={false}
       title="Test Title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
@@ -1931,6 +2039,34 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
         name="imageSrc"
         requiredHeight={675}
         requiredWidth={1134}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="topic"
+        label={
+          <React.Fragment>
+            <FieldLabel
+              className=""
+              extraText=""
+              helpText={
+                <p>
+                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                </p>
+              }
+              id="tags.label"
+              optional={true}
+              text="Topics"
+            />
+          </React.Fragment>
+        }
+        name="tags"
+        onChange={[Function]}
+        optional={true}
+        renderSuggestion={[Function]}
+        type="text"
+        value=""
       />
       <hr />
       <Field
@@ -2654,6 +2790,68 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
                     },
                   ],
                 },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
                 "subjects": Object {
                   "child": Object {
                     "choices": Array [
@@ -3059,6 +3257,12 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
       }
       courseSubmitInfo={Object {}}
       courseSubmitting={true}
+      courseTagOptions={
+        Object {
+          "data": Object {},
+        }
+      }
+      courseTags={Array []}
       courseUuid="11111111-1111-1111-1111-111111111111"
       currentFormValues={
         Object {
@@ -3075,6 +3279,16 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -3089,6 +3303,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           "subjectTertiary": "security",
           "syllabus_raw": "syllabus",
           "title": "Test Title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
@@ -3118,6 +3333,16 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -3132,6 +3357,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           "subjectTertiary": "security",
           "syllabus_raw": "syllabus",
           "title": "Test Title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
@@ -3216,6 +3442,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           ],
         }
       }
+      setCourseTags={[Function]}
       submitting={true}
       title="Test Title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
@@ -3568,6 +3795,34 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         name="imageSrc"
         requiredHeight={675}
         requiredWidth={1134}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="topic"
+        label={
+          <React.Fragment>
+            <FieldLabel
+              className=""
+              extraText=""
+              helpText={
+                <p>
+                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                </p>
+              }
+              id="tags.label"
+              optional={true}
+              text="Topics"
+            />
+          </React.Fragment>
+        }
+        name="tags"
+        onChange={[Function]}
+        optional={true}
+        renderSuggestion={[Function]}
+        type="text"
+        value=""
       />
       <hr />
       <Field
@@ -4341,6 +4596,139 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         requiredHeight={110}
         requiredWidth={110}
       />
+      <FieldLabel
+        className="mb-2"
+        extraText=""
+        helpText=""
+        id={null}
+        optional={false}
+        text="Merchandising Location Restriction"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.restriction_type.label"
+            optional={false}
+            text="Restriction Type"
+          />
+        }
+        name="location_restriction.restriction_type"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": undefined,
+            },
+            Object {
+              "label": undefined,
+              "value": undefined,
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "multiple": true,
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.countries.label"
+            optional={false}
+            text="Countries"
+          />
+        }
+        name="location_restriction.countries"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": "AF",
+            },
+            Object {
+              "label": undefined,
+              "value": "AX",
+            },
+            Object {
+              "label": undefined,
+              "value": "DZ",
+            },
+            Object {
+              "label": undefined,
+              "value": "AS",
+            },
+            Object {
+              "label": undefined,
+              "value": "AD",
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "multiple": true,
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="location_restriction.states.label"
+            optional={false}
+            text="States"
+          />
+        }
+        name="location_restriction.states"
+        options={
+          Array [
+            Object {
+              "label": undefined,
+              "value": "AL",
+            },
+            Object {
+              "label": undefined,
+              "value": "AZ",
+            },
+            Object {
+              "label": undefined,
+              "value": "AR",
+            },
+            Object {
+              "label": undefined,
+              "value": "CA",
+            },
+            Object {
+              "label": undefined,
+              "value": "CO",
+            },
+          ]
+        }
+        required={false}
+      />
       <Field
         component={[Function]}
         disabled={true}
@@ -4460,6 +4848,68 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -4866,6 +5316,12 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       }
       courseSubmitInfo={Object {}}
       courseSubmitting={false}
+      courseTagOptions={
+        Object {
+          "data": Object {},
+        }
+      }
+      courseTags={Array []}
       courseUuid="11111111-1111-1111-1111-111111111111"
       currentFormValues={
         Object {
@@ -4882,6 +5338,16 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -4896,6 +5362,7 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           "subjectTertiary": "security",
           "syllabus_raw": "syllabus",
           "title": "Test Title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
@@ -4925,6 +5392,16 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -4939,6 +5416,7 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           "subjectTertiary": "security",
           "syllabus_raw": "syllabus",
           "title": "Test Title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
@@ -5023,6 +5501,7 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           ],
         }
       }
+      setCourseTags={[Function]}
       submitting={false}
       title="Test Title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
@@ -5376,6 +5855,34 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
         requiredHeight={675}
         requiredWidth={1134}
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="topic"
+        label={
+          <React.Fragment>
+            <FieldLabel
+              className=""
+              extraText=""
+              helpText={
+                <p>
+                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                </p>
+              }
+              id="tags.label"
+              optional={true}
+              text="Topics"
+            />
+          </React.Fragment>
+        }
+        name="tags"
+        onChange={[Function]}
+        optional={true}
+        renderSuggestion={[Function]}
+        type="text"
+        value=""
+      />
       <hr />
       <Field
         component={[Function]}
@@ -6098,6 +6605,68 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
                     },
                   ],
                 },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
                 "subjects": Object {
                   "child": Object {
                     "choices": Array [
@@ -6503,6 +7072,12 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
       }
       courseSubmitInfo={Object {}}
       courseSubmitting={false}
+      courseTagOptions={
+        Object {
+          "data": Object {},
+        }
+      }
+      courseTags={Array []}
       courseUuid="11111111-1111-1111-1111-111111111111"
       currentFormValues={
         Object {
@@ -6519,6 +7094,16 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -6533,6 +7118,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           "subjectTertiary": "security",
           "syllabus_raw": "syllabus",
           "title": "Test Title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
@@ -6562,6 +7148,16 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           },
           "learner_testimonials": "learner testimonials",
           "level_type": "advanced",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "CO",
+            ],
+          },
           "organization_logo_override": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "learning outcomes",
@@ -6576,6 +7172,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           "subjectTertiary": "security",
           "syllabus_raw": "syllabus",
           "title": "Test Title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
@@ -6660,6 +7257,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           ],
         }
       }
+      setCourseTags={[Function]}
       submitting={false}
       title="Test Title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
@@ -7009,6 +7607,34 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
         requiredHeight={675}
         requiredWidth={1134}
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="topic"
+        label={
+          <React.Fragment>
+            <FieldLabel
+              className=""
+              extraText=""
+              helpText={
+                <p>
+                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                </p>
+              }
+              id="tags.label"
+              optional={true}
+              text="Topics"
+            />
+          </React.Fragment>
+        }
+        name="tags"
+        onChange={[Function]}
+        optional={true}
+        renderSuggestion={[Function]}
+        type="text"
+        value=""
+      />
       <hr />
       <Field
         component={[Function]}
@@ -7731,6 +8357,68 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
                     },
                   ],
                 },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
                 "subjects": Object {
                   "child": Object {
                     "choices": Array [
@@ -8136,6 +8824,12 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
       }
       courseSubmitInfo={Object {}}
       courseSubmitting={false}
+      courseTagOptions={
+        Object {
+          "data": Object {},
+        }
+      }
+      courseTags={Array []}
       courseUuid="11111111-1111-1111-1111-111111111111"
       currentFormValues={Object {}}
       editable={false}
@@ -8231,6 +8925,7 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
           ],
         }
       }
+      setCourseTags={[Function]}
       submitting={false}
       title="Test Title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
@@ -8579,6 +9274,34 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
         name="imageSrc"
         requiredHeight={675}
         requiredWidth={1134}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="topic"
+        label={
+          <React.Fragment>
+            <FieldLabel
+              className=""
+              extraText=""
+              helpText={
+                <p>
+                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                </p>
+              }
+              id="tags.label"
+              optional={true}
+              text="Topics"
+            />
+          </React.Fragment>
+        }
+        name="tags"
+        onChange={[Function]}
+        optional={true}
+        renderSuggestion={[Function]}
+        type="text"
+        value=""
       />
       <hr />
       <Field
@@ -9215,7 +9938,7 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
             helpText={
               <div>
                 <p>
-                  edX partners with Emsi, the labor market data company, to automatically tag your courses with in-demand skills from their library of 30,000 skills based on the content in your about page. If you want to experiment with what skills show up, you can edit and submit changes to your about page description.
+                  edX partners with Lightcast, the labor market data company, to automatically tag your courses with in-demand skills from their library of 30,000 skills based on the content in your about page. If you want to experiment with what skills show up, you can edit and submit changes to your about page description.
                 </p>
               </div>
             }
@@ -9329,6 +10052,68 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -9735,6 +10520,12 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
       }
       courseSubmitInfo={Object {}}
       courseSubmitting={false}
+      courseTagOptions={
+        Object {
+          "data": Object {},
+        }
+      }
+      courseTags={Array []}
       courseUuid="11111111-1111-1111-1111-111111111111"
       currentFormValues={Object {}}
       editable={false}
@@ -9836,6 +10627,7 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
           ],
         }
       }
+      setCourseTags={[Function]}
       submitting={false}
       title="Test Title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"

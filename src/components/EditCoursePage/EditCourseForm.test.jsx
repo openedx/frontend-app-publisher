@@ -29,11 +29,17 @@ describe('BaseEditCourseForm', () => {
       verified: '77',
     },
     type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+    topics: [],
     uuid: '11111111-1111-1111-1111-111111111111',
     editable: true,
     skill_names: [],
     organization_logo_override: 'http://image.src.small',
     organization_short_code_override: 'test short code',
+    location_restriction: {
+      restriction_type: 'allowlist',
+      countries: ['AF', 'AX'],
+      states: ['CO'],
+    },
     in_year_value: {
       per_click_usa: 100,
       per_click_international: 100,
