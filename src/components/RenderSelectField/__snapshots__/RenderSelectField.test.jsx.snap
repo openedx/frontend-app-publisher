@@ -1,30 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RenderSelectField renders html for select field 1`] = `
-<asInput(withDeprecatedProps(InputSelect))
-  dangerIconDescription=""
-  disabled={false}
-  inline={false}
-  isValid={true}
-  label="TestLabel"
-  name="Test"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onKeyPress={[Function]}
-  options={
-    Array [
-      "one",
-      "two",
-      "three",
-    ]
-  }
-  required={false}
-  themes={
-    Array [
-      "danger",
-    ]
-  }
-  validationMessage=""
-  value=""
-/>
+<div
+  className="pgn__form-group"
+>
+  <FormGroupContextProvider
+    controlId="Test-text-label"
+    isInvalid={false}
+    isValid={false}
+  >
+    <FormLabel
+      isInline={false}
+    >
+      TestLabel
+    </FormLabel>
+    <ForwardRef
+      as="select"
+      disabled={false}
+      label="TestLabel"
+      name="Test"
+      plaintext={false}
+      required={false}
+    >
+      <option />
+      <option />
+      <option />
+    </ForwardRef>
+  </FormGroupContextProvider>
+</div>
 `;
