@@ -29,4 +29,4 @@ variables for use throughout the application.
 References
 ----------
 
-* https://github.com/edx/frontend-app-publisher/tree/master/config
+* https://github.com/openedx/frontend-app-publisher/tree/master/config

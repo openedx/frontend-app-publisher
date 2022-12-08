@@ -1,4 +1,4 @@
-1. New Instructors Organization Association
+2. New Instructors Organization Association
 ----------------------------------------------
 
 Status
@@ -29,5 +29,5 @@ organization) and will need to be cleaned up later to prevent data degradation.
 
 References
 ----------
-https://github.com/edx/frontend-app-publisher/tree/master/src/components/StaffList
+https://github.com/openedx/frontend-app-publisher/tree/master/src/components/StaffList
 

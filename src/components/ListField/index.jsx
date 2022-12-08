@@ -235,6 +235,12 @@ class ListField extends React.Component {
             onSuggestionSelected={this.onSuggestionEntered}
             alwaysRenderSuggestions={searchString.length > 2}
             id={`${itemType}-search`}
+            theme={{
+              container: 'react-autosuggest__container position-relative',
+              suggestionsContainerOpen: 'react-autosuggest__suggestions-container--open bg-white border-gray-300 w-100',
+              suggestionsList: 'react-autosuggest__suggestions-list m-0 p-0 list-unstyled overflow-auto',
+              suggestionHighlighted: 'react-autosuggest__suggestion--highlighted bg-gray-300',
+            }}
           />
         </label>
         {/* eslint-enable jsx-a11y/no-noninteractive-element-interactions */}

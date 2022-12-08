@@ -13,6 +13,7 @@ import { fetchOrganizationRoles } from '../../data/actions/organizationRoles';
 import { fetchOrganizationUsers } from '../../data/actions/organizationUsers';
 import { addComment, fetchComments } from '../../data/actions/comments';
 import { fetchCollaboratorOptions } from '../../data/actions/collaboratorOptions';
+import { fetchCourseTagOptions } from '../../data/actions/courseTagOptions';
 
 const mapStateToProps = state => ({
   comments: state.comments,
@@ -22,6 +23,7 @@ const mapStateToProps = state => ({
   courseOptions: state.courseOptions,
   courseRunOptions: state.courseRunOptions,
   courseSubmitInfo: state.courseSubmitInfo,
+  courseTagOptions: state.courseTagOptions,
   organizationRoles: state.organizationRoles,
   organizationUsers: state.organizationUsers,
   sourceInfo: state.sourceInfo,
@@ -47,6 +49,7 @@ const mapDispatchToProps = {
   removeCourseEditor,
   updateFormValuesAfterSave,
   fetchCollaboratorOptions,
+  fetchCourseTagOptions,
 };
 
 const mergeProps = (stateProps, actionProps, { uuid }) => ({

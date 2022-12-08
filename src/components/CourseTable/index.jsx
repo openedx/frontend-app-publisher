@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import qs from 'query-string';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { getConfig } from '@edx/frontend-platform';
 import { SearchField } from '@edx/paragon';
 
 import TableContainer from '../../containers/TableContainer';
@@ -228,7 +229,8 @@ class CourseTable extends React.Component {
     return (
       <PageContainer wide>
         <Helmet>
-          <title>{`Publisher | ${process.env.SITE_NAME}`}</title>
+          <title>{`Publisher | ${getConfig().SITE_NAME}`}</title>
+          <link rel="shortcut icon" href={getConfig().FAVICON_URL} type="image/x-icon" />
         </Helmet>
         {!loading && !error && this.renderTableHeader()}
         <TableContainer

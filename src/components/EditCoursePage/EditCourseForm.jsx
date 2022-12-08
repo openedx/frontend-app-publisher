@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Icon, Hyperlink } from '@edx/paragon';
+import { Icon, Hyperlink, Chip } from '@edx/paragon';
+import { CloseSmall } from '@edx/paragon/icons';
 
 import CollapsibleCourseRuns from './CollapsibleCourseRuns';
 import CourseButtonToolbar from './CourseButtonToolbar';
@@ -16,6 +17,9 @@ import FieldLabel from '../FieldLabel';
 import ImageUpload from '../ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
+// TODO: remove RenderSelectFieldNew when migrating off deprecated Paragon components,
+// i.e. as a part of https://github.com/openedx/frontend-app-publisher/pull/761
+import RenderSelectFieldNew from '../RenderSelectField/updated-paragon-component';
 import RichEditor from '../RichEditor';
 import Pill from '../Pill';
 import Collapsible from '../Collapsible';
@@ -34,6 +38,8 @@ import ListField from '../ListField';
 import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
+import fetchCourseTagSuggestions from '../CourseTags/fetchCourseTagSuggestions';
+import renderCourseTagSuggestion from '../CourseTags/renderCourseTagSuggestion';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
 
 export class BaseEditCourseForm extends React.Component {
@@ -43,6 +49,7 @@ export class BaseEditCourseForm extends React.Component {
     this.state = {
       open: false,
       collapsiblesOpen: [],
+      courseTag: '',
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -50,6 +57,7 @@ export class BaseEditCourseForm extends React.Component {
     this.toggleCourseRun = this.toggleCourseRun.bind(this);
     this.collapseAllCourseRuns = this.collapseAllCourseRuns.bind(this);
     this.setCourseRunCollapsibles = this.setCourseRunCollapsibles.bind(this);
+    this.handleCourseTagChange = this.handleCourseTagChange.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -75,10 +83,10 @@ export class BaseEditCourseForm extends React.Component {
     // finished turning fields into required so that html5 can flag them during validation) open
     // the collapsible if and only if there are course-level errors.
     const stoppingRunReview = prevProps.courseSubmitInfo.isSubmittingRunReview
-                              && !courseSubmitInfo.isSubmittingRunReview;
+      && !courseSubmitInfo.isSubmittingRunReview;
     const hasCourseErrors = courseSubmitInfo.errors
-                            && Object.keys(courseSubmitInfo.errors).length
-                            && Object.keys(courseSubmitInfo.errors) !== ['course_runs'];
+      && Object.keys(courseSubmitInfo.errors).length
+      && Object.keys(courseSubmitInfo.errors) !== ['course_runs'];
     if (stoppingRunReview && hasCourseErrors) {
       this.openCollapsible();
     }
@@ -169,6 +177,37 @@ export class BaseEditCourseForm extends React.Component {
     );
   }
 
+  formatCourseTags(topics, setCourseTags) {
+    return (
+      topics
+      && topics.length
+      && topics.map((topic) => (
+        <Chip
+          variant="dark"
+          iconAfter={CloseSmall}
+          onClick={() => {
+            setCourseTags([...topics.filter((item) => item !== topic)]);
+          }}
+        >
+          {topic}
+        </Chip>
+      ))
+    );
+  }
+
+  handleCourseTagChange(value, courseTags, setCourseTags) {
+    if (value && value.includes(',') && value.slice(-1) === ',') {
+      const tag = value
+        .split(',')
+        .filter((item) => item !== '')
+        .map((item) => item.toLowerCase().trim());
+      this.setState({ courseTag: '' });
+      setCourseTags([...new Set([...courseTags, ...tag])]);
+    } else {
+      this.setState({ courseTag: value });
+    }
+  }
+
   toggleCourseRun(index, value) {
     this.setState(prevState => {
       const collapsiblesOpen = [...prevState.collapsiblesOpen];
@@ -215,6 +254,9 @@ export class BaseEditCourseForm extends React.Component {
       initialValues,
       collaboratorOptions,
       collaboratorInfo,
+      setCourseTags,
+      courseTags,
+      courseTagOptions,
     } = this.props;
     const {
       open,
@@ -236,12 +278,22 @@ export class BaseEditCourseForm extends React.Component {
       && parseOptions(courseRunOptionsData.content_language.choices));
     const programOptions = (courseRunOptionsData
       && parseOptions(courseRunOptionsData.expected_program_type.choices));
+    const locationCountryOptions = courseOptionsData
+      && parseOptions(courseOptionsData.location_restriction.children.countries.child.choices);
+    const locationRestrictionTypeOptions = courseOptionsData
+      && parseOptions(courseOptionsData.location_restriction.children.restriction_type.choices);
+    const locationStateOptions = courseOptionsData
+      && parseOptions(courseOptionsData.location_restriction.children.states.child.choices);
 
     const {
       data: {
         results: allResults,
       },
     } = collaboratorOptions;
+
+    const {
+      data: allCourseTags,
+    } = courseTagOptions;
 
     const allCollaborators = formatCollaboratorOptions(allResults);
 
@@ -256,12 +308,14 @@ export class BaseEditCourseForm extends React.Component {
     } = parsedTypeOptions;
     const disabled = courseInReview || !editable;
     const showMarketingFields = !currentFormValues.type || !courseTypes[currentFormValues.type]
-      || courseTypes[currentFormValues.type].course_run_types.some(crt => crt.is_marketable);
+      || courseTypes[currentFormValues.type].course_run_types.some((crt) => crt.is_marketable);
 
     const courseIsPristine = isPristine(initialValues, currentFormValues);
     const publishedContentChanged = initialValues.course_runs
-      && initialValues.course_runs.some(run => (run.status === PUBLISHED
+      && initialValues.course_runs.some((run) => (run.status === PUBLISHED
         && (!courseIsPristine || !isPristine(initialValues, currentFormValues, run.key))));
+
+    if (!courseTags) { setCourseTags(courseInfo?.data?.topics); }
 
     languageOptions.unshift({ label: '--', value: '' });
     levelTypeOptions.unshift({ label: '--', value: '' });
@@ -341,8 +395,7 @@ export class BaseEditCourseForm extends React.Component {
               text="Collaborators"
               helpText={(
                 <div>
-                  <p>
-                    Course teams are responsible for securing any necessary permissions for use of third-party logos.
+                  <p>Course teams are responsible for securing any necessary permissions for use of third-party logos.
                   </p>
                   <p>
                     To elaborate on the support, please include additional information in the “About this course”
@@ -376,17 +429,20 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={(
                     <div>
                       <p>
-                        An eye-catching, colorful image that captures the essence of your course.
+                        An eye-catching, colorful image that captures the
+                        essence of your course.
                       </p>
                       <ul>
-                        <li>New course images must be 1134×675 pixels in size.</li>
+                        <li>
+                          New course images must be 1134×675 pixels in size.
+                        </li>
                         <li>The image must be a JPEG or PNG file.</li>
                         <li>Each course must have a unique image.</li>
                         <li>The image cannot include text or headlines.</li>
                         <li>
-                          You must have permission to use the image. Possible image sources
-                          include Flickr creative commons, Stock Vault, Stock XCHNG, and iStock
-                          Photo.
+                          You must have permission to use the image. Possible
+                          image sources include Flickr creative commons, Stock
+                          Vault, Stock XCHNG, and iStock Photo.
                         </li>
                       </ul>
                       <p>
@@ -411,8 +467,35 @@ export class BaseEditCourseForm extends React.Component {
               className="course-image"
               disabled={disabled}
             />
-            {showMarketingFields
-            && (
+            <Field
+              name="tags"
+              itemType="topic"
+              component={RenderInputTextField}
+              fetchSuggestions={fetchCourseTagSuggestions(allCourseTags)}
+              renderSuggestion={renderCourseTagSuggestion}
+              type="text"
+              label={(
+                <>
+                  <FieldLabel
+                    id="tags.label"
+                    text="Topics"
+                    helpText={(
+                      <p>
+                        You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                      </p>
+                    )}
+                    optional
+                  />
+                  {courseTags
+                    && courseTags.length ? this.formatCourseTags(courseTags, setCourseTags) : null}
+                </>
+              )}
+              disabled={disabled || !administrator}
+              value={this.state.courseTag}
+              onChange={(e) => this.handleCourseTagChange(e, courseTags, setCourseTags)}
+              optional
+            />
+            {showMarketingFields && (
               <>
                 <hr />
                 <Field
@@ -428,7 +511,9 @@ export class BaseEditCourseForm extends React.Component {
                           <ul>
                             <li>Contains 25–50 words.</li>
                             <li>Functions as a tagline.</li>
-                            <li>Conveys compelling reasons to take the course.</li>
+                            <li>
+                              Conveys compelling reasons to take the course.
+                            </li>
                             <li>Follows SEO guidelines.</li>
                             <li>Targets a global audience.</li>
                           </ul>
@@ -441,15 +526,18 @@ export class BaseEditCourseForm extends React.Component {
                               Learn more.
                             </a>
                           </p>
-                          <p><b>Example:</b></p>
                           <p>
-                            The first MOOC to teach positive psychology. Learn science-based
-                            principles and practices for a happy, meaningful life.
+                            <b>Example:</b>
+                          </p>
+                          <p>
+                            The first MOOC to teach positive psychology. Learn
+                            science-based principles and practices for a happy,
+                            meaningful life.
                           </p>
                         </div>
                       )}
                     />
-                )}
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={500}
                   id="sdesc"
@@ -468,13 +556,17 @@ export class BaseEditCourseForm extends React.Component {
                           <ul>
                             <li>Contains 150–300 words.</li>
                             <li>Is easy to skim.</li>
-                            <li>Uses bullet points instead of dense text paragraphs.</li>
+                            <li>
+                              Uses bullet points instead of dense text
+                              paragraphs.
+                            </li>
                             <li>Follows SEO guidelines.</li>
                             <li>Targets a global audience.</li>
                           </ul>
                           <p>
-                            The first four lines are visible when the About page opens. Learners can
-                            select “See More” to view the full description.
+                            The first four lines are visible when the About page
+                            opens. Learners can select “See More” to view the
+                            full description.
                           </p>
                           <p>
                             <a
@@ -488,7 +580,7 @@ export class BaseEditCourseForm extends React.Component {
                         </div>
                       )}
                     />
-                )}
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={2500}
                   id="ldesc"
@@ -503,12 +595,22 @@ export class BaseEditCourseForm extends React.Component {
                       text="What you will learn"
                       helpText={(
                         <div>
-                          <p>The skills and knowledge learners will acquire in this course.</p>
-                          <p>Format each item as a bullet with four to ten words.</p>
-                          <p><b>Example:</b></p>
+                          <p>
+                            The skills and knowledge learners will acquire in
+                            this course.
+                          </p>
+                          <p>
+                            Format each item as a bullet with four to ten words.
+                          </p>
+                          <p>
+                            <b>Example:</b>
+                          </p>
                           <ul>
                             <li>Basic R Programming</li>
-                            <li>An applied understanding of linear and logistic regression</li>
+                            <li>
+                              An applied understanding of linear and logistic
+                              regression
+                            </li>
                             <li>Application of text analytics</li>
                             <li>Linear and integer optimization</li>
                           </ul>
@@ -522,9 +624,9 @@ export class BaseEditCourseForm extends React.Component {
                             </a>
                           </p>
                         </div>
-                    )}
+                      )}
                     />
-                )}
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={2500}
                   id="outcome"
@@ -540,15 +642,20 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={(
                         <div>
                           <p>
-                            A review of content covered in your course, organized by week or module.
+                            A review of content covered in your course,
+                            organized by week or module.
                           </p>
                           <ul>
                             <li>Focus on topics and content.</li>
                             <li>
-                              Do not include detailed information about course logistics, such as
-                              grading, communication policies, and reading lists.
+                              Do not include detailed information about course
+                              logistics, such as grading, communication
+                              policies, and reading lists.
                             </li>
-                            <li>Format items as either paragraphs or a bulleted list.</li>
+                            <li>
+                              Format items as either paragraphs or a bulleted
+                              list.
+                            </li>
                           </ul>
                           <p>
                             <a
@@ -559,29 +666,33 @@ export class BaseEditCourseForm extends React.Component {
                               Learn more.
                             </a>
                           </p>
-                          <p><b>Example:</b></p>
+                          <p>
+                            <b>Example:</b>
+                          </p>
                           <ul>
                             <li>
                               <p>Week 1: From Calculator to Computer</p>
                               <p>
-                                Introduction to basic programming concepts, such as values and
-                                expressions, as well as making decisions when implementing algorithms
-                                and developing programs.
+                                Introduction to basic programming concepts, such
+                                as values and expressions, as well as making
+                                decisions when implementing algorithms and
+                                developing programs.
                               </p>
                             </li>
                             <li>
                               <p>Week 2: State Transformation</p>
                               <p>
-                                Introduction to state transformation, including representation of data
-                                and programs as well as conditional repetition.
+                                Introduction to state transformation, including
+                                representation of data and programs as well as
+                                conditional repetition.
                               </p>
                             </li>
                           </ul>
                         </div>
-                    )}
+                      )}
                       optional
                     />
-                )}
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={500}
                   id="syllabus"
@@ -597,8 +708,9 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={(
                         <div>
                           <p>
-                            Specific knowledge learners must have to be successful in the course.
-                            If the course has no prerequisites, enter “None”.
+                            Specific knowledge learners must have to be
+                            successful in the course. If the course has no
+                            prerequisites, enter “None”.
                           </p>
                           <p>
                             <a
@@ -609,20 +721,25 @@ export class BaseEditCourseForm extends React.Component {
                               Learn more.
                             </a>
                           </p>
-                          <p><b>Examples:</b></p>
+                          <p>
+                            <b>Examples:</b>
+                          </p>
                           <ul>
                             <li>
-                              Secondary school (high school) algebra;
-                              basic mathematics concepts
+                              Secondary school (high school) algebra; basic
+                              mathematics concepts
                             </li>
-                            <li>Graduate-level understanding of Keynesian economics</li>
+                            <li>
+                              Graduate-level understanding of Keynesian
+                              economics
+                            </li>
                             <li>Basic algebra</li>
                           </ul>
                         </div>
-                    )}
+                      )}
                       optional
                     />
-                )}
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={1000}
                   id="prereq"
@@ -638,8 +755,8 @@ export class BaseEditCourseForm extends React.Component {
                       helpText={(
                         <div>
                           <p>
-                            A quote from a learner in the course, demonstrating the value of taking
-                            the course.
+                            A quote from a learner in the course, demonstrating
+                            the value of taking the course.
                           </p>
                           <p>Should be no more than 25–50 words in length.</p>
                           <p>
@@ -651,17 +768,21 @@ export class BaseEditCourseForm extends React.Component {
                               Learn more.
                             </a>
                           </p>
-                          <p><b>Example:</b></p>
                           <p>
-                            “Brilliant course! It’s definitely the best introduction to electronics
-                            in the world! Interesting material, clean explanations, well prepared
-                            quizzes, challenging homework, and fun labs.” – Previous Student
+                            <b>Example:</b>
+                          </p>
+                          <p>
+                            “Brilliant course! It’s definitely the best
+                            introduction to electronics in the world!
+                            Interesting material, clean explanations, well
+                            prepared quizzes, challenging homework, and fun
+                            labs.” – Previous Student
                           </p>
                         </div>
-                    )}
+                      )}
                       optional
                     />
-                )}
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={500}
                   id="learner-testimonials"
@@ -676,7 +797,10 @@ export class BaseEditCourseForm extends React.Component {
                       text="Frequently asked questions"
                       helpText={(
                         <div>
-                          <p>Any frequently asked questions and the answers to those questions.</p>
+                          <p>
+                            Any frequently asked questions and the answers to
+                            those questions.
+                          </p>
                           <p>
                             <a
                               href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#faq-guidelines"
@@ -686,20 +810,23 @@ export class BaseEditCourseForm extends React.Component {
                               Learn more.
                             </a>
                           </p>
-                          <p><b>Example:</b></p>
-                          <strong>Do I need to know any programming languages before I start?</strong>
                           <p>
-                            No, this course is designed for beginners.
+                            <b>Example:</b>
                           </p>
-                          <strong>What version of Swift will I be learning?</strong>
-                          <p>
-                            Swift version 4.
-                          </p>
+                          <strong>
+                            Do I need to know any programming languages before I
+                            start?
+                          </strong>
+                          <p>No, this course is designed for beginners.</p>
+                          <strong>
+                            What version of Swift will I be learning?
+                          </strong>
+                          <p>Swift version 4.</p>
                         </div>
-                    )}
+                      )}
                       optional
                     />
-                )}
+                  )}
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={2500}
                   id="faq"
@@ -709,89 +836,96 @@ export class BaseEditCourseForm extends React.Component {
                 Do not open up access to additional_information. It is not validated like the other
                 HTML fields and should not be directly edited by course teams.
               */}
-                {administrator
-                && (
-                <Field
-                  name="additional_information"
-                  component={RichEditor}
-                  label={(
-                    <FieldLabel
-                      id="additional-info.label"
-                      text="Additional information"
-                      helpText={(
-                        <div>
-                          <p>Any additional information to be provided to learners.</p>
-                        </div>
-                      )}
-                      optional
-                    />
-                  )}
-                  extraInput={{ onInvalid: this.openCollapsible }}
-                  maxChars={2500}
-                  id="additional-information"
-                  disabled={disabled}
-                />
+                {administrator && (
+                  <Field
+                    name="additional_information"
+                    component={RichEditor}
+                    label={(
+                      <FieldLabel
+                        id="additional-info.label"
+                        text="Additional information"
+                        helpText={(
+                          <div>
+                            <p>
+                              Any additional information to be provided to
+                              learners.
+                            </p>
+                          </div>
+                        )}
+                        optional
+                      />
+                    )}
+                    extraInput={{ onInvalid: this.openCollapsible }}
+                    maxChars={2500}
+                    id="additional-information"
+                    disabled={disabled}
+                  />
                 )}
-                {administrator
-                && (
-                <Field
-                  name="videoSrc"
-                  component={RenderInputTextField}
-                  type="url"
-                  label={(
-                    <FieldLabel
-                      id="video.label"
-                      text="About video link"
-                      helpText={(
-                        <div>
-                          <p>
-                            The About video should excite and entice potential students to take your
-                            course. Think of it as a movie trailer or TV show promotion. The video
-                            should be compelling, and exhibit the instructor’s personality.
-                          </p>
-                          <p>
-                            The ideal length is 30–90 seconds (learners typically watch an average
-                            of 30 seconds).
-                          </p>
-                          <p>
-                            The About video should be produced and edited, using elements such as
-                            graphics and stock footage.
-                          </p>
-                          <p>The About video should answer these key questions.</p>
-                          <ul>
-                            <li>Why should a learner register?</li>
-                            <li>What topics and concepts are covered?</li>
-                            <li>Who is teaching the course?</li>
-                            <li>What institution is delivering the course?</li>
-                          </ul>
-                          <p>
-                            <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Learn more.
-                            </a>
-                          </p>
-                          <p>
-                            <span>Visit</span>
-                            <a
-                              href="www.youtube.com/user/EdXOnline"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              edX’s YouTube channel
-                            </a>
-                            <span>for examples of other About videos.</span>
-                          </p>
-                        </div>
-                      )}
-                      optional
-                    />
-                  )}
-                  extraInput={{ onInvalid: this.openCollapsible }}
-                  disabled={disabled}
-                />
+                {administrator && (
+                  <Field
+                    name="videoSrc"
+                    component={RenderInputTextField}
+                    type="url"
+                    label={(
+                      <FieldLabel
+                        id="video.label"
+                        text="About video link"
+                        helpText={(
+                          <div>
+                            <p>
+                              The About video should excite and entice potential
+                              students to take your course. Think of it as a
+                              movie trailer or TV show promotion. The video
+                              should be compelling, and exhibit the instructor’s
+                              personality.
+                            </p>
+                            <p>
+                              The ideal length is 30–90 seconds (learners
+                              typically watch an average of 30 seconds).
+                            </p>
+                            <p>
+                              The About video should be produced and edited,
+                              using elements such as graphics and stock footage.
+                            </p>
+                            <p>
+                              The About video should answer these key questions.
+                            </p>
+                            <ul>
+                              <li>Why should a learner register?</li>
+                              <li>What topics and concepts are covered?</li>
+                              <li>Who is teaching the course?</li>
+                              <li>
+                                What institution is delivering the course?
+                              </li>
+                            </ul>
+                            <p>
+                              <a
+                                href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Learn more.
+                              </a>
+                            </p>
+                            <p>
+                              <span>Visit</span>
+                              <a
+                                href="www.youtube.com/user/EdXOnline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                edX’s YouTube channel
+                              </a>
+                              <span>for examples of other About videos.</span>
+                            </p>
+                          </div>
+                        )}
+                        optional
+                      />
+                    )}
+                    extraInput={{ onInvalid: this.openCollapsible }}
+                    disabled={disabled}
+                  />
                 )}
               </>
             )}
@@ -810,18 +944,19 @@ export class BaseEditCourseForm extends React.Component {
                       <dl>
                         <dt>Introductory</dt>
                         <dd>
-                          No prerequisites; a learner who has completed some or all secondary
-                          school could complete the course.
+                          No prerequisites; a learner who has completed some or
+                          all secondary school could complete the course.
                         </dd>
                         <dt>Intermediate</dt>
                         <dd>
-                          Basic prerequisites; learners need to complete secondary school or some
-                          university courses.
+                          Basic prerequisites; learners need to complete
+                          secondary school or some university courses.
                         </dd>
                         <dt>Advanced</dt>
                         <dd>
-                          Significant prerequisites; the course is geared to third or fourth year
-                          university students or master’s degree students.
+                          Significant prerequisites; the course is geared to
+                          third or fourth year university students or master’s
+                          degree students.
                         </dd>
                       </dl>
                     </div>
@@ -844,8 +979,9 @@ export class BaseEditCourseForm extends React.Component {
                     <div>
                       <p>The subject of the course.</p>
                       <p>
-                        You can select up to two subjects in addition to the primary subject.
-                        Only the primary subject appears on the About page.
+                        You can select up to two subjects in addition to the
+                        primary subject. Only the primary subject appears on the
+                        About page.
                       </p>
                       <p>
                         <a
@@ -883,36 +1019,39 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
-            {skillNames?.length > 0
-            && (
-            <Field
-              name="skill_names"
-              component={CourseSkills}
-              label={(
-                <FieldLabel
-                  id="skills.label"
-                  text="Skills"
-                  helpText={(
-                    <div>
-                      <p>
-                        edX partners with Emsi, the labor market data company, to automatically tag your courses with
-                        in-demand skills from their library of 30,000 skills based on the content in your about page.
-                        If you want to experiment with what skills show up, you can edit and submit changes to your
-                        about page description.
-                      </p>
-                    </div>
-                  )}
-                />
-              )}
-              disabled
-              id="skills"
-              className="course-skill"
-            />
+            {skillNames?.length > 0 && (
+              <Field
+                name="skill_names"
+                component={CourseSkills}
+                label={(
+                  <FieldLabel
+                    id="skills.label"
+                    text="Skills"
+                    helpText={(
+                      <div>
+                        <p>
+                          edX partners with Lightcast, the labor market data company,
+                          to automatically tag your courses with in-demand
+                          skills from their library of 30,000 skills based on
+                          the content in your about page. If you want to
+                          experiment with what skills show up, you can edit and
+                          submit changes to your about page description.
+                        </p>
+                      </div>
+                    )}
+                  />
+                )}
+                disabled
+                id="skills"
+                className="course-skill"
+              />
             )}
             <Field
               name="organization_short_code_override"
               component={RenderInputTextField}
-              label={<FieldLabel text="Organization Short Code Override" optional />}
+              label={
+                <FieldLabel text="Organization Short Code Override" optional />
+              }
               extraInput={{ onInvalid: this.openCollapsible }}
               disabled={disabled}
               optional
@@ -936,12 +1075,64 @@ export class BaseEditCourseForm extends React.Component {
               optional
             />
             {administrator && (
+            <>
+              <FieldLabel text="Merchandising Location Restriction" className="mb-2" />
+              <Field
+                name="location_restriction.restriction_type"
+                component={RenderSelectField}
+                label={(
+                  <FieldLabel
+                    id="location_restriction.restriction_type.label"
+                    text="Restriction Type"
+                  />
+                  )}
+                extraInput={{ onInvalid: this.openCollapsible }}
+                options={locationRestrictionTypeOptions}
+                required={false}
+                disabled={disabled}
+              />
+              <Field
+                name="location_restriction.countries"
+                component={RenderSelectFieldNew}
+                label={(
+                  <FieldLabel
+                    id="location_restriction.countries.label"
+                    text="Countries"
+                  />
+                  )}
+                extraInput={{ onInvalid: this.openCollapsible, multiple: true }}
+                options={locationCountryOptions}
+                disabled={disabled}
+                required={false}
+              />
+              <Field
+                name="location_restriction.states"
+                component={RenderSelectFieldNew}
+                label={(
+                  <FieldLabel
+                    id="location_restriction.states.label"
+                    text="States"
+                  />
+                  )}
+                extraInput={{ onInvalid: this.openCollapsible, multiple: true }}
+                options={locationStateOptions}
+                disabled={disabled}
+                required={false}
+              />
+            </>
+            )}
+            {administrator && (
               <>
                 <Field
                   name="in_year_value.per_lead_usa"
                   component={RenderInputTextField}
                   type="number"
-                  label={<FieldLabel text="In-Year U.S. Value Per Lead (USD)" optional />}
+                  label={(
+                    <FieldLabel
+                      text="In-Year U.S. Value Per Lead (USD)"
+                      optional
+                    />
+                  )}
                   disabled={disabled}
                   optional
                 />
@@ -949,7 +1140,12 @@ export class BaseEditCourseForm extends React.Component {
                   name="in_year_value.per_lead_international"
                   component={RenderInputTextField}
                   type="number"
-                  label={<FieldLabel text="In-Year International Value Per Lead (USD)" optional />}
+                  label={(
+                    <FieldLabel
+                      text="In-Year International Value Per Lead (USD)"
+                      optional
+                    />
+                  )}
                   disabled={disabled}
                   optional
                 />
@@ -957,7 +1153,12 @@ export class BaseEditCourseForm extends React.Component {
                   name="in_year_value.per_click_usa"
                   component={RenderInputTextField}
                   type="number"
-                  label={<FieldLabel text="In-Year U.S. Value Per Click (USD)" optional />}
+                  label={(
+                    <FieldLabel
+                      text="In-Year U.S. Value Per Click (USD)"
+                      optional
+                    />
+                  )}
                   disabled={disabled}
                   optional
                 />
@@ -965,7 +1166,12 @@ export class BaseEditCourseForm extends React.Component {
                   name="in_year_value.per_click_international"
                   component={RenderInputTextField}
                   type="number"
-                  label={<FieldLabel text="In-Year International Value Per Click (USD)" optional />}
+                  label={(
+                    <FieldLabel
+                      text="In-Year International Value Per Click (USD)"
+                      optional
+                    />
+                  )}
                   disabled={disabled}
                   optional
                 />
@@ -1012,7 +1218,9 @@ export class BaseEditCourseForm extends React.Component {
             }}
             pristine={pristine}
             publishedContentChanged={publishedContentChanged}
-            submitting={submitting || (courseInfo && courseInfo.isSubmittingEdit)}
+            submitting={
+              submitting || (courseInfo && courseInfo.isSubmittingEdit)
+            }
           />
         </form>
       </div>
@@ -1040,6 +1248,10 @@ BaseEditCourseForm.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  courseTagOptions: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
   courseRunOptions: PropTypes.shape({
     data: PropTypes.shape(),
     error: PropTypes.arrayOf(PropTypes.string),
@@ -1061,6 +1273,12 @@ BaseEditCourseForm.propTypes = {
       course_type: PropTypes.string,
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
+      location_restriction: PropTypes.shape({
+        restriction_type: PropTypes.string,
+        countries: PropTypes.arrayOf(PropTypes.string),
+        states: PropTypes.arrayOf(PropTypes.string),
+      }),
+      topics: PropTypes.arrayOf(PropTypes.string),
     }),
   }),
   courseSubmitInfo: PropTypes.shape({
@@ -1071,16 +1289,18 @@ BaseEditCourseForm.propTypes = {
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
     imageSrc: PropTypes.string,
     skill_names: PropTypes.arrayOf(PropTypes.string),
-    collaborators: PropTypes.arrayOf(PropTypes.shape(
-      {
+    collaborators: PropTypes.arrayOf(
+      PropTypes.shape({
         uuid: PropTypes.string.isRequired,
-      },
-    )),
+      }),
+    ),
   }),
   change: PropTypes.func,
   updateFormValuesAfterSave: PropTypes.func,
   reset: PropTypes.func.isRequired,
   type: PropTypes.string,
+  courseTags: PropTypes.arrayOf(PropTypes.string),
+  setCourseTags: PropTypes.func,
   collaboratorInfo: PropTypes.shape({
     returnToEditCourse: PropTypes.bool,
   }),
@@ -1113,6 +1333,11 @@ BaseEditCourseForm.defaultProps = {
     error: [],
     isFetching: false,
   },
+  courseTagOptions: {
+    data: {},
+  },
+  courseTags: [],
+  setCourseTags: () => null,
 };
 
 const EditCourseForm = compose(
