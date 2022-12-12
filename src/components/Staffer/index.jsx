@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '@edx/paragon';
 import { Link } from 'react-router-dom';
+
+import { Edit, Delete } from '@edx/paragon/icons';
 
 import sourceInfo from '../../data/actions/sourceInfo';
 import store from '../../data/store';
@@ -26,9 +27,9 @@ export const Staffer = ({
         onClick={() => onRemove(item.uuid)}
         disabled={disabled}
       >
-        <Icon
+        <Delete
           id={`delete-icon-${item.uuid}`}
-          className="fa fa-trash fa-fw text-danger"
+          className="text-gray-500"
           screenReaderText={`Remove ${getStafferName(item)}`}
         />
       </button>
@@ -40,9 +41,9 @@ export const Staffer = ({
           className="btn mr-1 p-0"
           onClick={() => store.dispatch(sourceInfo(referrer, courseRunKey))}
         >
-          <Icon
+          <Edit
             id={`edit-icon-${item.uuid}`}
-            className="fa fa-edit fa-fw"
+            className="text-gray-500"
             screenReaderText={`Edit ${getStafferName(item)}`}
             title="Edit"
           />

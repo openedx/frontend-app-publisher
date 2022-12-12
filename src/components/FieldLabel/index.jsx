@@ -13,14 +13,14 @@ const FieldLabel = ({
   let requireText = '';
 
   if (optional) {
-    requireText = <span className="text-info" aria-hidden>   Optional</span>;
+    requireText = <span className="text-gray-700" aria-hidden>   (optional)</span>;
   }
 
   return (
     <div id={id} className={className}>
       <strong>{text}</strong>
-      {helpText && id && <FieldHelp id={`${id}-help`} tip={helpText} />}
       {requireText}
+      {helpText && id && <FieldHelp id={`${id}-help`} tip={helpText} optional={optional} />}
       <div><span className="text-muted">{extraText}</span></div>
     </div>
   );

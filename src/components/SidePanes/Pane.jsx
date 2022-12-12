@@ -6,7 +6,7 @@ import { InfoOutline } from '@edx/paragon/icons';
 function Pane(props) {
   return (
     <div className="card mb-3">
-      <div className="card-header bg-primary text-white">
+      <div className="card-header bg-primary-700 text-white">
         {props.title}
         {props.info && (
           <OverlayTrigger
