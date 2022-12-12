@@ -87,9 +87,11 @@ describe('UsersPane', () => {
     />);
     const users = wrapper.find(User);
     expect(users).toHaveLength(3);
-    expect(users.at(0).prop('name')).toEqual('Editor 1 (one@example.com)');
+    expect(users.at(0).prop('name')).toEqual('Editor 1');
+    expect(users.at(0).prop('email')).toEqual('one@example.com');
     expect(users.at(1).prop('name')).toEqual('No Email');
-    expect(users.at(2).prop('name')).toEqual('Editor 3 (three@example.com)');
+    expect(users.at(2).prop('name')).toEqual('Editor 3');
+    expect(users.at(2).prop('email')).toEqual('three@example.com');
   });
 
   it('has label for no editors', () => {
@@ -125,8 +127,10 @@ describe('UsersPane', () => {
     const startAddButton = wrapper.find('.usersPane-startAdd');
     startAddButton.simulate('click');
 
-    const selectOption = wrapper.find('option');
-    expect(selectOption.html()).toEqual('<option value="14">New User (new@example.com)</option>');
+    wrapper.instance().selectRef.current.onMenuOpen();
+    wrapper.update();
+    const selectOption = wrapper.find('.option-14').hostNodes(); // 14 is new editor's user id
+    selectOption.simulate('click');
 
     const addButton = wrapper.find('.usersPane-add');
     addButton.simulate('click');
@@ -140,6 +144,7 @@ describe('UsersPane', () => {
     />);
     const users = wrapper.find(User);
     expect(users).toHaveLength(1);
-    expect(users.at(0).prop('name')).toEqual('PC 1 (pc@example.com)');
+    expect(users.at(0).prop('name')).toEqual('PC 1');
+    expect(users.at(0).prop('email')).toEqual('pc@example.com');
   });
 });

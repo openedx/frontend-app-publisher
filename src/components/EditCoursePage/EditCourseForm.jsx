@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Icon, Hyperlink, Chip } from '@edx/paragon';
-import { CloseSmall } from '@edx/paragon/icons';
+import { Hyperlink, Chip } from '@edx/paragon';
+import { CloseSmall, Add } from '@edx/paragon/icons';
 
 import CollapsibleCourseRuns from './CollapsibleCourseRuns';
 import CourseButtonToolbar from './CourseButtonToolbar';
@@ -114,7 +114,7 @@ export class BaseEditCourseForm extends React.Component {
         className="btn btn-block rounded mt-3 new-run-button"
         disabled={disabled}
       >
-        <Icon className="fa fa-plus" /> Add Course Run
+        <Add /> Add Course Run
       </button>
     );
 
@@ -333,7 +333,7 @@ export class BaseEditCourseForm extends React.Component {
             onToggle={this.setCollapsible}
           >
             <div className="mb-3">
-              <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
+              <span className="text-primary-500" aria-hidden> All fields are required for publication unless otherwise specified.</span>
             </div>
             <Field
               name="title"
