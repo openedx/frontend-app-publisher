@@ -50,7 +50,7 @@ describe('getFieldName', () => {
       ],
       full_description: 'This field is required',
     };
-    expect(getFieldName(errors)).toEqual('course_runs[1].transcript_languages');
+    expect(getFieldName(errors)).toEqual('course_runs[1].transcript_languages._error');
   });
 
   it('returns the first full field name in errors for deeply nested fields', () => {

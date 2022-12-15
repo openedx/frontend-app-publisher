@@ -14,6 +14,7 @@ import PriceList from '../PriceList';
 import {
   DATE_INPUT_PATTERN,
 } from '../../data/constants';
+
 import {
   endDateHelp, runTypeHelp, pacingHelp, startDateHelp, titleHelp, typeHelp, keyHelp,
 } from '../../helpText';
@@ -21,6 +22,10 @@ import DateTimeField from '../DateTimeField';
 import {
   isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions,
 } from '../../utils';
+
+import {
+  handleCourseCreateFail, requiredValidate, dateTimeValidate, courseRunKeyValidate,
+} from '../../utils/validation';
 
 class BaseCreateCourseForm extends React.Component {
   constructor(props) {
@@ -101,17 +106,20 @@ class BaseCreateCourseForm extends React.Component {
       <div className="create-course-form">
         <h2>Create New Course</h2>
         <hr />
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
           <Field
             name="org"
             component={RenderSelectField}
+            props={{ name: 'org' }}
             options={this.processOrganizations(organizations)}
             label={<FieldLabel text="Organization" required />}
             required
+            validate={requiredValidate}
           />
           <Field
             name="title"
             component={RenderInputTextField}
+            props={{ name: 'title' }}
             type="text"
             label={(
               <FieldLabel
@@ -122,10 +130,12 @@ class BaseCreateCourseForm extends React.Component {
               />
             )}
             required
+            validate={requiredValidate}
           />
           <Field
             name="number"
             component={RenderInputTextField}
+            props={{ name: 'number' }}
             type="text"
             label={(
               <FieldLabel
@@ -161,11 +171,12 @@ class BaseCreateCourseForm extends React.Component {
                 )}
               />
             )}
-            required
+            validate={requiredValidate}
           />
           <Field
             name="type"
             component={RenderSelectField}
+            props={{ name: 'type' }}
             options={courseTypeOptions}
             label={(
               <FieldLabel
@@ -175,7 +186,7 @@ class BaseCreateCourseForm extends React.Component {
                 helpText={typeHelp}
               />
             )}
-            required
+            validate={requiredValidate}
           />
           <PriceList
             priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
@@ -188,6 +199,7 @@ class BaseCreateCourseForm extends React.Component {
             <Field
               name="courseRunKey"
               component={RenderInputTextField}
+              props={{ name: 'courseRunKey' }}
               type="text"
               pattern="[a-zA-Z0-9-]+"
               label={(
@@ -198,6 +210,7 @@ class BaseCreateCourseForm extends React.Component {
                   optional
                 />
               )}
+              validate={courseRunKeyValidate}
             />
             )}
           {/* TODO this should be refactored when paragon supports safari */}
@@ -209,6 +222,7 @@ class BaseCreateCourseForm extends React.Component {
                   name="start"
                   type="text"
                   component={DateTimeField}
+                  props={{ name: 'start' }}
                   dateLabel="Start date"
                   timeLabel={`Start time (${localTimeZone})`}
                   helpText={startDateHelp}
@@ -216,11 +230,13 @@ class BaseCreateCourseForm extends React.Component {
                   maxLength="10"
                   pattern={DATE_INPUT_PATTERN}
                   placeholder="yyyy/mm/dd"
+                  validate={[requiredValidate, dateTimeValidate]}
                 />
                 <Field
                   name="end"
                   type="text"
                   component={DateTimeField}
+                  props={{ name: 'end' }}
                   dateLabel="End date"
                   timeLabel={`End time (${localTimeZone})`}
                   helpText={endDateHelp}
@@ -228,6 +244,7 @@ class BaseCreateCourseForm extends React.Component {
                   maxLength="10"
                   pattern={DATE_INPUT_PATTERN}
                   placeholder="yyyy/mm/dd"
+                  validate={[requiredValidate, dateTimeValidate]}
                 />
               </div>
             )
@@ -238,27 +255,32 @@ class BaseCreateCourseForm extends React.Component {
                   name="start"
                   type="date"
                   component={DateTimeField}
+                  props={{ name: 'start' }}
                   dateLabel="Start date"
                   timeLabel={`Start time (${localTimeZone})`}
                   helpText={startDateHelp}
                   required
                   minDate={getDateWithDashes(moment())}
+                  validate={[requiredValidate, dateTimeValidate]}
                 />
                 <Field
                   name="end"
                   type="date"
                   component={DateTimeField}
+                  props={{ name: 'end' }}
                   dateLabel="End date"
                   timeLabel={`End time (${localTimeZone})`}
                   helpText={endDateHelp}
                   required
                   minDate={getDateWithDashes(moment(currentFormValues.start).add(1, 'd') || moment())}
+                  validate={[requiredValidate, dateTimeValidate]}
                 />
               </div>
             )}
           <Field
             name="run_type"
             component={RenderSelectField}
+            props={{ name: 'run_type' }}
             options={currentFormValues.type ? courseRunTypeOptions[currentFormValues.type] : [{ label: 'Select Course enrollment track first', value: '' }]}
             label={(
               <FieldLabel
@@ -269,11 +291,13 @@ class BaseCreateCourseForm extends React.Component {
               />
             )}
             required
+            validate={requiredValidate}
           />
           <Field
             name="pacing_type"
             type="text"
             component={RenderSelectField}
+            props={{ name: 'pacing_type' }}
             options={pacingTypeOptions}
             label={(
               <FieldLabel
@@ -353,5 +377,6 @@ BaseCreateCourseForm.propTypes = {
 
 export default reduxForm({
   form: 'create-course-form',
+  onSubmitFail: handleCourseCreateFail,
 })(BaseCreateCourseForm);
 export { BaseCreateCourseForm };

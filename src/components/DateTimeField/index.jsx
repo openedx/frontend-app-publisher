@@ -35,7 +35,7 @@ class DateTimeField extends React.Component {
   }
 
   concatDateTime(date, time) {
-    let datetime = moment(`${date} ${time}`, 'YYYY/MM/DD HH:mm');
+    let datetime = moment(`${date} ${time}`, ['YYYY/MM/DD HH:mm', 'YYYY-MM-DD HH:mm'], true);
     datetime = this.props.utcTimeZone
       ? datetime.format(DATE_FORMAT)
       : datetime.utc().format(DATE_FORMAT);
@@ -74,6 +74,10 @@ class DateTimeField extends React.Component {
       type,
       pattern,
       placeholder,
+      meta: {
+        touched,
+        error,
+      },
     } = this.props;
 
     const {
@@ -82,9 +86,9 @@ class DateTimeField extends React.Component {
     } = this.state;
 
     return (
-      <div className="row">
+      <div className="row" name={name}>
         <div className="col-6">
-          <Form.Group controlId={`${name}-date-label`}>
+          <Form.Group controlId={`${name}-date-label`} isInvalid={touched && error}>
             <Form.Label>
               <FieldLabel
                 id={`${name}-date-label`}
@@ -107,10 +111,15 @@ class DateTimeField extends React.Component {
               min={minDate}
               onInvalid={onInvalid}
             />
+            {touched && error && (
+            <Form.Control.Feedback hasIcon={this.props.errHasIcon}>
+              {error}
+            </Form.Control.Feedback>
+            )}
           </Form.Group>
         </div>
         <div className="col-6">
-          <Form.Group controlId={`${name}-date-label`}>
+          <Form.Group controlId={`${name}-time-label`}>
             <Form.Label>
               <FieldLabel
                 id={`${name}-time-label`}
@@ -125,7 +134,7 @@ class DateTimeField extends React.Component {
               placeholder="HH:mm"
               required={required}
               disabled={disabled}
-              onChange={event => this.updateDate(event.target.value)}
+              onChange={event => this.updateTime(event.target.value)}
             />
           </Form.Group>
         </div>
@@ -152,6 +161,11 @@ DateTimeField.propTypes = {
   type: PropTypes.string,
   pattern: PropTypes.string,
   placeholder: PropTypes.string,
+  meta: PropTypes.shape({
+    touched: PropTypes.bool,
+    error: PropTypes.string,
+  }).isRequired,
+  errHasIcon: PropTypes.bool,
 };
 
 DateTimeField.defaultProps = {
@@ -164,6 +178,7 @@ DateTimeField.defaultProps = {
   type: '',
   pattern: 'dd/mm/yyyy',
   placeholder: '',
+  errHasIcon: false,
 };
 
 export default DateTimeField;

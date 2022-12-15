@@ -14,6 +14,7 @@ const RenderInputTextField = ({
   placeholder,
   pattern,
   meta: { touched, error },
+  errHasIcon,
 }) => (
   <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
     <Form.Label>
@@ -32,7 +33,7 @@ const RenderInputTextField = ({
       required={required}
     />
     {touched && error && (
-    <Form.Control.Feedback>
+    <Form.Control.Feedback hasIcon={errHasIcon}>
       {error}
     </Form.Control.Feedback>
     )}
@@ -47,6 +48,7 @@ RenderInputTextField.defaultProps = {
   maxLength: '',
   placeholder: '',
   pattern: null,
+  errHasIcon: false,
 };
 
 RenderInputTextField.propTypes = {
@@ -64,6 +66,7 @@ RenderInputTextField.propTypes = {
   maxLength: PropTypes.string,
   placeholder: PropTypes.string,
   pattern: PropTypes.string,
+  errHasIcon: PropTypes.bool,
 };
 
 export default RenderInputTextField;

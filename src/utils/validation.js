@@ -1,9 +1,60 @@
+import moment from 'moment';
+
 import store from '../data/store';
 import { jsonDeepCopy } from '.';
 import { courseSubmittingFailure } from '../data/actions/courseSubmitInfo';
-import { PUBLISHED } from '../data/constants';
+import { PUBLISHED, DATE_FORMAT } from '../data/constants';
 
 const requiredMessage = 'This field is required';
+
+// Dummy Validator: every input is valid
+const noValidate = () => undefined;
+
+// ensure that input is non-empty
+const requiredValidate = (value) => {
+  if (value !== undefined && value !== null && value !== '') {
+    return undefined;
+  }
+  return requiredMessage;
+};
+
+// ensure that the input is a valid datetime string in the format of DATE_FORMAT
+const dateTimeValidate = value => {
+  const dateTime = moment(value, DATE_FORMAT, true);
+  if (dateTime.isValid()) {
+    return undefined;
+  }
+  return 'Please enter a valid date';
+};
+
+const courseRunKeyValidate = value => {
+  const pattern = /^[a-zA-Z0-9-]*$/;
+  if (pattern.test(value)) {
+    return undefined;
+  }
+  return 'Please enter a valid course key';
+};
+
+// validate a course price (price lies from 1 to 1000 and is a valid number of cents)
+const priceValidate = value => {
+  const pattern = /^[0-9]+(\.)?[0-9]{0,2}$/;
+
+  if (!pattern.test(value)) {
+    return 'Please enter a valid price (with at most 2 decimal digits)';
+  }
+
+  const price = parseFloat(value);
+
+  if (Number.isNaN(price)) {
+    return 'Please enter a valid price';
+  }
+
+  if (price < 1 || price > 1000) {
+    return 'Price should be between 1 and 1000 (endpoints inclusive)';
+  }
+
+  return undefined;
+};
 
 // Basic validation that ensures some value was entered
 const basicValidate = value => (value ? undefined : requiredMessage);
@@ -63,6 +114,11 @@ const getFieldName = (errors) => {
     }
   }
 
+  // Handle nested redux-form field names
+  if (otherInfo.constructor === Object) {
+    fieldName = `${fieldName}.${getFieldName(otherInfo)}`;
+  }
+
   return fieldName;
 };
 
@@ -76,6 +132,15 @@ const handleCourseEditFail = (errors) => {
     setTimeout(() => {
       document.getElementsByName(fieldName)[0].focus();
     }, 500);
+  }
+};
+
+const handleCourseCreateFail = (errors) => {
+  const fieldName = getFieldName(errors);
+  if (fieldName) {
+    const node = document.getElementsByName(fieldName)[0];
+
+    if (node) { node.scrollIntoView({ behavior: 'smooth' }); }
   }
 };
 
@@ -149,8 +214,14 @@ const editCourseValidate = (values, props) => {
 export {
   requiredMessage,
   basicValidate,
+  noValidate,
+  requiredValidate,
+  dateTimeValidate,
+  courseRunKeyValidate,
+  priceValidate,
   getFieldName,
   handleCourseEditFail,
+  handleCourseCreateFail,
   editCourseValidate,
   courseTagValidate,
 };

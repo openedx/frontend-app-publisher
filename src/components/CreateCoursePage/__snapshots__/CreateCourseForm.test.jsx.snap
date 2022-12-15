@@ -9,6 +9,7 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
   </h2>
   <hr />
   <form
+    noValidate={true}
     onSubmit={[Function]}
   >
     <Field
@@ -43,7 +44,13 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
           },
         ]
       }
+      props={
+        Object {
+          "name": "org",
+        }
+      }
       required={true}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -96,8 +103,14 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
         />
       }
       name="title"
+      props={
+        Object {
+          "name": "title",
+        }
+      }
       required={true}
       type="text"
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -144,8 +157,13 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
         />
       }
       name="number"
-      required={true}
+      props={
+        Object {
+          "name": "number",
+        }
+      }
       type="text"
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -203,7 +221,12 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
           },
         ]
       }
-      required={true}
+      props={
+        Object {
+          "name": "type",
+        }
+      }
+      validate={[Function]}
     />
     <PriceList
       disabled={false}
@@ -246,9 +269,20 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
         name="start"
         pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
         placeholder="yyyy/mm/dd"
+        props={
+          Object {
+            "name": "start",
+          }
+        }
         required={true}
         timeLabel="Start time (GMT)"
         type="text"
+        validate={
+          Array [
+            [Function],
+            [Function],
+          ]
+        }
       />
       <Field
         component={[Function]}
@@ -267,9 +301,20 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
         name="end"
         pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
         placeholder="yyyy/mm/dd"
+        props={
+          Object {
+            "name": "end",
+          }
+        }
         required={true}
         timeLabel="End time (GMT)"
         type="text"
+        validate={
+          Array [
+            [Function],
+            [Function],
+          ]
+        }
       />
     </div>
     <Field
@@ -317,7 +362,13 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
           },
         ]
       }
+      props={
+        Object {
+          "name": "run_type",
+        }
+      }
       required={true}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -352,6 +403,11 @@ exports[`CreateCourseForm renders html correctly while submitting 1`] = `
             "value": "self_paced",
           },
         ]
+      }
+      props={
+        Object {
+          "name": "pacing_type",
+        }
       }
       type="text"
     />
@@ -396,6 +452,7 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
   </h2>
   <hr />
   <form
+    noValidate={true}
     onSubmit={[Function]}
   >
     <Field
@@ -430,7 +487,13 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
           },
         ]
       }
+      props={
+        Object {
+          "name": "org",
+        }
+      }
       required={true}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -483,8 +546,14 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
         />
       }
       name="title"
+      props={
+        Object {
+          "name": "title",
+        }
+      }
       required={true}
       type="text"
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -531,8 +600,13 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
         />
       }
       name="number"
-      required={true}
+      props={
+        Object {
+          "name": "number",
+        }
+      }
       type="text"
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -590,7 +664,12 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
           },
         ]
       }
-      required={true}
+      props={
+        Object {
+          "name": "type",
+        }
+      }
+      validate={[Function]}
     />
     <PriceList
       disabled={false}
@@ -633,9 +712,20 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
         name="start"
         pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
         placeholder="yyyy/mm/dd"
+        props={
+          Object {
+            "name": "start",
+          }
+        }
         required={true}
         timeLabel="Start time (GMT)"
         type="text"
+        validate={
+          Array [
+            [Function],
+            [Function],
+          ]
+        }
       />
       <Field
         component={[Function]}
@@ -654,9 +744,20 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
         name="end"
         pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
         placeholder="yyyy/mm/dd"
+        props={
+          Object {
+            "name": "end",
+          }
+        }
         required={true}
         timeLabel="End time (GMT)"
         type="text"
+        validate={
+          Array [
+            [Function],
+            [Function],
+          ]
+        }
       />
     </div>
     <Field
@@ -704,7 +805,13 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
           },
         ]
       }
+      props={
+        Object {
+          "name": "run_type",
+        }
+      }
       required={true}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -739,6 +846,11 @@ exports[`CreateCourseForm renders html correctly with data 1`] = `
             "value": "self_paced",
           },
         ]
+      }
+      props={
+        Object {
+          "name": "pacing_type",
+        }
       }
       type="text"
     />
@@ -783,6 +895,7 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
   </h2>
   <hr />
   <form
+    noValidate={true}
     onSubmit={[Function]}
   >
     <Field
@@ -817,7 +930,13 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
           },
         ]
       }
+      props={
+        Object {
+          "name": "org",
+        }
+      }
       required={true}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -870,8 +989,14 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
         />
       }
       name="title"
+      props={
+        Object {
+          "name": "title",
+        }
+      }
       required={true}
       type="text"
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -918,8 +1043,13 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
         />
       }
       name="number"
-      required={true}
+      props={
+        Object {
+          "name": "number",
+        }
+      }
       type="text"
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -977,7 +1107,12 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
           },
         ]
       }
-      required={true}
+      props={
+        Object {
+          "name": "type",
+        }
+      }
+      validate={[Function]}
     />
     <PriceList
       disabled={false}
@@ -1016,9 +1151,20 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
         name="start"
         pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
         placeholder="yyyy/mm/dd"
+        props={
+          Object {
+            "name": "start",
+          }
+        }
         required={true}
         timeLabel="Start time (GMT)"
         type="text"
+        validate={
+          Array [
+            [Function],
+            [Function],
+          ]
+        }
       />
       <Field
         component={[Function]}
@@ -1037,9 +1183,20 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
         name="end"
         pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
         placeholder="yyyy/mm/dd"
+        props={
+          Object {
+            "name": "end",
+          }
+        }
         required={true}
         timeLabel="End time (GMT)"
         type="text"
+        validate={
+          Array [
+            [Function],
+            [Function],
+          ]
+        }
       />
     </div>
     <Field
@@ -1079,7 +1236,13 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
           },
         ]
       }
+      props={
+        Object {
+          "name": "run_type",
+        }
+      }
       required={true}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -1114,6 +1277,11 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
             "value": "self_paced",
           },
         ]
+      }
+      props={
+        Object {
+          "name": "pacing_type",
+        }
       }
       type="text"
     />
