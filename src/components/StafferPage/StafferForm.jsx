@@ -1,17 +1,17 @@
-import React from 'react';
-import { Field, FieldArray, reduxForm } from 'redux-form';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Field, FieldArray, reduxForm } from "redux-form";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-import ActionButton from '../ActionButton';
-import AreasOfExpertise from './AreasOfExpertise';
-import SocialLinks from './SocialLinks';
-import ImageUpload from '../ImageUpload';
-import RenderInputTextField from '../RenderInputTextField';
-import RichEditor from '../RichEditor';
-import FieldLabel from '../FieldLabel';
-import ButtonToolbar from '../ButtonToolbar';
-import { basicValidate } from '../../utils/validation';
+import ActionButton from "../ActionButton";
+import AreasOfExpertise from "./AreasOfExpertise";
+import SocialLinks from "./SocialLinks";
+import ImageUpload from "../ImageUpload";
+import RenderInputTextField from "../RenderInputTextField";
+import RichEditor from "../RichEditor";
+import FieldLabel from "../FieldLabel";
+import ButtonToolbar from "../ButtonToolbar";
+import { basicValidate } from "../../utils/validation";
 
 const BaseStafferForm = ({
   handleSubmit,
@@ -30,11 +30,11 @@ const BaseStafferForm = ({
         <Field
           name="profile_image.medium.url"
           component={ImageUpload}
-          label={(
+          label={
             <FieldLabel
               id="image.label"
               text="Image"
-              helpText={(
+              helpText={
                 <div>
                   <p>Image Requirements:</p>
                   <ul>
@@ -42,10 +42,10 @@ const BaseStafferForm = ({
                     <li>The image size must be less than 256KB.</li>
                   </ul>
                 </div>
-              )}
+              }
               extraText="Image must be 110x110 pixels in size."
             />
-          )}
+          }
           id="profile_image"
           maxImageSizeKilo={256}
           requiredWidth={110}
@@ -71,23 +71,25 @@ const BaseStafferForm = ({
           name="position.title"
           component={RenderInputTextField}
           type="text"
-          label={(
+          label={
             <FieldLabel
               id="title.label"
               text="Title"
-              helpText={(
+              helpText={
                 <div>
                   <p>Instructor&apos;s title at your organization.</p>
-                  <p><b>Examples:</b></p>
+                  <p>
+                    <b>Examples:</b>
+                  </p>
                   <ul>
                     <li>Professor</li>
                     <li>Content Developer</li>
                     <li>Director</li>
                   </ul>
                 </div>
-              )}
+              }
             />
-          )}
+          }
           required
         />
         <Field
@@ -102,7 +104,7 @@ const BaseStafferForm = ({
           name="bio"
           component={RichEditor}
           label={<FieldLabel text="Biography" />}
-          maxChars={250}
+          maxChars={1000}
           validate={basicValidate}
           id="bio"
         />
@@ -114,19 +116,13 @@ const BaseStafferForm = ({
           id="works"
         />
         <FieldLabel text="Social links" className="mb-2" optional />
-        <FieldArray
-          name="urls_detailed"
-          component={SocialLinks}
-        />
+        <FieldArray name="urls_detailed" component={SocialLinks} />
         <FieldLabel text="Areas of expertise" className="mb-2" optional />
-        <FieldArray
-          name="areas_of_expertise"
-          component={AreasOfExpertise}
-        />
+        <FieldArray name="areas_of_expertise" component={AreasOfExpertise} />
         <ButtonToolbar>
           <Link
             className="btn btn-outline-primary form-cancel-btn"
-            to={referrer || '/'}
+            to={referrer || "/"}
             disabled={formControlDisabled}
             onClick={cancelStafferInfo}
           >
@@ -134,14 +130,18 @@ const BaseStafferForm = ({
           </Link>
           <ActionButton
             disabled={formControlDisabled}
-            labels={isCreateForm ? {
-              default: 'Create',
-              pending: 'Creating',
-            } : {
-              default: 'Save',
-              pending: 'Saving',
-            }}
-            state={isSaving ? 'pending' : 'default'}
+            labels={
+              isCreateForm
+                ? {
+                    default: "Create",
+                    pending: "Creating",
+                  }
+                : {
+                    default: "Save",
+                    pending: "Saving",
+                  }
+            }
+            state={isSaving ? "pending" : "default"}
           />
         </ButtonToolbar>
       </form>
@@ -165,10 +165,10 @@ BaseStafferForm.defaultProps = {
   cancelStafferInfo: () => {},
   isSaving: false,
   isCreateForm: false,
-  organizationName: '',
+  organizationName: "",
 };
 
 export default reduxForm({
-  form: 'staffer-form',
+  form: "staffer-form",
 })(BaseStafferForm);
 export { basicValidate, BaseStafferForm };
