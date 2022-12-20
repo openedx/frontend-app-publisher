@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 import { Field, FieldArray } from 'redux-form';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { getConfig } from '@edx/frontend-platform';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import { faCopy as solidCopy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -76,7 +77,7 @@ const formatCourseRunTitle = (courseRun, copied, setCopied) => {
           <>
             Studio URL -&nbsp;
             <Hyperlink
-              destination={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}
+              destination={`${getConfig().STUDIO_BASE_URL}/course/${courseRun.key}`}
               target="_blank"
             >
               {courseRun.key}
