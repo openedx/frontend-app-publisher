@@ -102,7 +102,7 @@ const BaseStafferForm = ({
           name="bio"
           component={RichEditor}
           label={<FieldLabel text="Biography" />}
-          maxChars={250}
+          maxChars={1000}
           validate={basicValidate}
           id="bio"
         />
