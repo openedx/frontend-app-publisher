@@ -9,6 +9,7 @@ import {
 import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 import { ConnectedRouter } from 'connected-react-router';
 import { messages as footerMessages } from '@edx/frontend-component-footer-edx';
+import { messages as paragonMessages } from '@edx/paragon';
 import './sass/App.scss';
 
 import store from './data/store';
@@ -33,6 +34,7 @@ subscribe(APP_INIT_ERROR, (error) => {
 initialize({
   messages: [
     footerMessages,
+    paragonMessages,
   ],
   requireAuthenticatedUser: true,
 });
