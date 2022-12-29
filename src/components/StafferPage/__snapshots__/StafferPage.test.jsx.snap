@@ -66,7 +66,6 @@ exports[`StafferPage renders html correctly when given a referrer 1`] = `
     wide={false}
   >
     <ForwardRef
-      closeLabel="Dismiss"
       dismissible={true}
       id="sent-from-edit-course-info"
       onClose={[Function]}
@@ -211,7 +210,6 @@ exports[`StafferPage renders page correctly while fetching 1`] = `
 
 exports[`StafferPage renders page correctly with no stafferInfo 1`] = `
 <ForwardRef
-  closeLabel="Dismiss"
   dismissible={false}
   id="error"
   message=""
@@ -308,7 +306,6 @@ exports[`StafferPage renders page correctly with staffer info error 1`] = `
         updateUnregisteredFields={false}
       />
       <ForwardRef
-        closeLabel="Dismiss"
         dismissible={false}
         id="create-staffer-error"
         onClose={[Function]}
