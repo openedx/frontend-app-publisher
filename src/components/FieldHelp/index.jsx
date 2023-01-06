@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { InfoOutline } from '@edx/paragon/icons';
 import jsxToString from 'jsx-to-string';
 import ReactTooltip from 'react-tooltip';
 
@@ -48,12 +49,12 @@ class FieldHelp extends React.Component {
       <span id={this.props.id} className={this.props.className}>
         <button
           type="button"
-          className="btn btn-link py-0 px-1 align-baseline"
+          className={`btn btn-link py-0 px-0 mx-1 align-bottom ${this.props.optional ? 'text-gray-700' : ''}`}
           onClick={this.toggleToolTip}
           onBlur={this.closeToolTip}
           aria-describedby={`${this.props.id}-tooltip`}
         >
-          <span className="fa fa-info-circle" />
+          <InfoOutline />
         </button>
         <span
           className="field-help-data"
@@ -76,12 +77,14 @@ class FieldHelp extends React.Component {
 
 FieldHelp.defaultProps = {
   className: '',
+  optional: false,
 };
 
 FieldHelp.propTypes = {
   className: PropTypes.string,
   id: PropTypes.string.isRequired,
   tip: PropTypes.node.isRequired,
+  optional: PropTypes.bool,
 };
 
 export default FieldHelp;

@@ -3,13 +3,12 @@
 exports[`RemoveButton renders correctly 1`] = `
 <button
   aria-label="Test Label"
-  className="close float-none"
+  className="close float-none d-flex justify-content-center align-items-center"
   onClick={[Function]}
   title="Test Label"
   type="button"
 >
-  <withDeprecatedProps(Icon)
-    className="fa fa-close"
+  <SvgClose
     id="remove-field"
   />
 </button>

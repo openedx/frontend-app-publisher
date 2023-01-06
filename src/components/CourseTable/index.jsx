@@ -15,6 +15,8 @@ import { formatDate, getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
 import { PUBLISHED, REVIEWED } from '../../data/constants';
 
+import './CourseTable.scss';
+
 const dot = color => ({
   alignItems: 'center',
   display: 'flex',
@@ -133,14 +135,7 @@ class CourseTable extends React.Component {
     return (
       <>
         <div className="row">
-          <div className="col-2 float-left">
-            <ButtonToolbar className="mb-3" leftJustify>
-              <Link to="/courses/new">
-                <button type="button" className="btn btn-primary">New Course</button>
-              </Link>
-            </ButtonToolbar>
-          </div>
-          <div className="col-5 float-right">
+          <div className="width-percent-44 px-3 float-left">
             <Select
               closeMenuOnSelect={false}
               value={selectedFilters}
@@ -166,7 +161,7 @@ class CourseTable extends React.Component {
               }
             />
           </div>
-          <div className="col-5 float-right">
+          <div className="width-percent-44 px-3 float-left">
             <SearchField
               value={pageOptions.pubq}
               onClear={() => {
@@ -177,6 +172,13 @@ class CourseTable extends React.Component {
               }}
               placeholder="Search"
             />
+          </div>
+          <div className="width-percent-12 px-3 float-right">
+            <ButtonToolbar className="mb-3" rightJustify>
+              <Link to="/courses/new">
+                <button type="button" className="btn btn-primary">New course</button>
+              </Link>
+            </ButtonToolbar>
           </div>
         </div>
       </>
@@ -193,13 +195,13 @@ class CourseTable extends React.Component {
 
     const courseTableColumns = [
       {
-        Header: 'Course Name',
+        Header: 'Course name',
         key: 'title',
         disableSortBy: false,
         accessor: 'title',
       },
       {
-        Header: 'Course Number',
+        Header: 'Course number',
         key: 'number',
         disableSortBy: false,
         accessor: 'number',
@@ -211,7 +213,7 @@ class CourseTable extends React.Component {
         disableSortBy: true,
       },
       {
-        Header: 'Course Editors',
+        Header: 'Course editors',
         key: 'course_editor_names',
         accessor: 'course_editor_names',
         disableSortBy: true,

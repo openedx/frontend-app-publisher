@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Icon } from '@edx/paragon';
+import { Close } from '@edx/paragon/icons';
 
 const RemoveButton = ({
   className,
@@ -12,14 +12,13 @@ const RemoveButton = ({
 }) => (
   <button
     type="button"
-    className={classNames('close float-none', className)}
+    className={classNames('close float-none d-flex justify-content-center align-items-center', className)}
     aria-label={label}
     title={label}
     onClick={() => onRemove(targetFieldNumber)}
   >
-    <Icon
+    <Close
       id="remove-field"
-      className="fa fa-close"
     />
   </button>
 );
