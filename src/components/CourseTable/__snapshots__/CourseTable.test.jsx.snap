@@ -22,26 +22,7 @@ exports[`CourseTable displays table and button when not blacklisted 1`] = `
     className="row"
   >
     <div
-      className="col-2 float-left"
-    >
-      <ButtonToolbar
-        className="mb-3"
-        leftJustify={true}
-      >
-        <Link
-          to="/courses/new"
-        >
-          <button
-            className="btn btn-primary"
-            type="button"
-          >
-            New Course
-          </button>
-        </Link>
-      </ButtonToolbar>
-    </div>
-    <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <StateManager
         closeMenuOnSelect={false}
@@ -92,7 +73,7 @@ exports[`CourseTable displays table and button when not blacklisted 1`] = `
       />
     </div>
     <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <SearchField
         buttonText="search"
@@ -126,19 +107,39 @@ exports[`CourseTable displays table and button when not blacklisted 1`] = `
         variant="light"
       />
     </div>
+    <div
+      className="width-percent-12 px-3 float-right"
+    >
+      <ButtonToolbar
+        className="mb-3"
+        leftJustify={false}
+        rightJustify={true}
+      >
+        <Link
+          to="/courses/new"
+        >
+          <button
+            className="btn btn-primary"
+            type="button"
+          >
+            New course
+          </button>
+        </Link>
+      </ButtonToolbar>
+    </div>
   </div>
   <withRouter(Connect(TableComponent))
     className="courses"
     columns={
       Array [
         Object {
-          "Header": "Course Name",
+          "Header": "Course name",
           "accessor": "title",
           "disableSortBy": false,
           "key": "title",
         },
         Object {
-          "Header": "Course Number",
+          "Header": "Course number",
           "accessor": "number",
           "disableSortBy": false,
           "key": "number",
@@ -150,7 +151,7 @@ exports[`CourseTable displays table and button when not blacklisted 1`] = `
           "key": "course_run_statuses",
         },
         Object {
-          "Header": "Course Editors",
+          "Header": "Course editors",
           "accessor": "course_editor_names",
           "disableSortBy": true,
           "key": "course_editor_names",
@@ -185,26 +186,7 @@ exports[`CourseTable displays table and button when user has no orgs 1`] = `
     className="row"
   >
     <div
-      className="col-2 float-left"
-    >
-      <ButtonToolbar
-        className="mb-3"
-        leftJustify={true}
-      >
-        <Link
-          to="/courses/new"
-        >
-          <button
-            className="btn btn-primary"
-            type="button"
-          >
-            New Course
-          </button>
-        </Link>
-      </ButtonToolbar>
-    </div>
-    <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <StateManager
         closeMenuOnSelect={false}
@@ -255,7 +237,7 @@ exports[`CourseTable displays table and button when user has no orgs 1`] = `
       />
     </div>
     <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <SearchField
         buttonText="search"
@@ -289,19 +271,39 @@ exports[`CourseTable displays table and button when user has no orgs 1`] = `
         variant="light"
       />
     </div>
+    <div
+      className="width-percent-12 px-3 float-right"
+    >
+      <ButtonToolbar
+        className="mb-3"
+        leftJustify={false}
+        rightJustify={true}
+      >
+        <Link
+          to="/courses/new"
+        >
+          <button
+            className="btn btn-primary"
+            type="button"
+          >
+            New course
+          </button>
+        </Link>
+      </ButtonToolbar>
+    </div>
   </div>
   <withRouter(Connect(TableComponent))
     className="courses"
     columns={
       Array [
         Object {
-          "Header": "Course Name",
+          "Header": "Course name",
           "accessor": "title",
           "disableSortBy": false,
           "key": "title",
         },
         Object {
-          "Header": "Course Number",
+          "Header": "Course number",
           "accessor": "number",
           "disableSortBy": false,
           "key": "number",
@@ -313,7 +315,7 @@ exports[`CourseTable displays table and button when user has no orgs 1`] = `
           "key": "course_run_statuses",
         },
         Object {
-          "Header": "Course Editors",
+          "Header": "Course editors",
           "accessor": "course_editor_names",
           "disableSortBy": true,
           "key": "course_editor_names",
@@ -348,26 +350,7 @@ exports[`CourseTable hides table and button when blacklisted 1`] = `
     className="row"
   >
     <div
-      className="col-2 float-left"
-    >
-      <ButtonToolbar
-        className="mb-3"
-        leftJustify={true}
-      >
-        <Link
-          to="/courses/new"
-        >
-          <button
-            className="btn btn-primary"
-            type="button"
-          >
-            New Course
-          </button>
-        </Link>
-      </ButtonToolbar>
-    </div>
-    <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <StateManager
         closeMenuOnSelect={false}
@@ -418,7 +401,7 @@ exports[`CourseTable hides table and button when blacklisted 1`] = `
       />
     </div>
     <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <SearchField
         buttonText="search"
@@ -452,19 +435,39 @@ exports[`CourseTable hides table and button when blacklisted 1`] = `
         variant="light"
       />
     </div>
+    <div
+      className="width-percent-12 px-3 float-right"
+    >
+      <ButtonToolbar
+        className="mb-3"
+        leftJustify={false}
+        rightJustify={true}
+      >
+        <Link
+          to="/courses/new"
+        >
+          <button
+            className="btn btn-primary"
+            type="button"
+          >
+            New course
+          </button>
+        </Link>
+      </ButtonToolbar>
+    </div>
   </div>
   <withRouter(Connect(TableComponent))
     className="courses"
     columns={
       Array [
         Object {
-          "Header": "Course Name",
+          "Header": "Course name",
           "accessor": "title",
           "disableSortBy": false,
           "key": "title",
         },
         Object {
-          "Header": "Course Number",
+          "Header": "Course number",
           "accessor": "number",
           "disableSortBy": false,
           "key": "number",
@@ -476,7 +479,7 @@ exports[`CourseTable hides table and button when blacklisted 1`] = `
           "key": "course_run_statuses",
         },
         Object {
-          "Header": "Course Editors",
+          "Header": "Course editors",
           "accessor": "course_editor_names",
           "disableSortBy": true,
           "key": "course_editor_names",
@@ -511,26 +514,7 @@ exports[`CourseTable shows a table 1`] = `
     className="row"
   >
     <div
-      className="col-2 float-left"
-    >
-      <ButtonToolbar
-        className="mb-3"
-        leftJustify={true}
-      >
-        <Link
-          to="/courses/new"
-        >
-          <button
-            className="btn btn-primary"
-            type="button"
-          >
-            New Course
-          </button>
-        </Link>
-      </ButtonToolbar>
-    </div>
-    <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <StateManager
         closeMenuOnSelect={false}
@@ -581,7 +565,7 @@ exports[`CourseTable shows a table 1`] = `
       />
     </div>
     <div
-      className="col-5 float-right"
+      className="width-percent-44 px-3 float-left"
     >
       <SearchField
         buttonText="search"
@@ -615,19 +599,39 @@ exports[`CourseTable shows a table 1`] = `
         variant="light"
       />
     </div>
+    <div
+      className="width-percent-12 px-3 float-right"
+    >
+      <ButtonToolbar
+        className="mb-3"
+        leftJustify={false}
+        rightJustify={true}
+      >
+        <Link
+          to="/courses/new"
+        >
+          <button
+            className="btn btn-primary"
+            type="button"
+          >
+            New course
+          </button>
+        </Link>
+      </ButtonToolbar>
+    </div>
   </div>
   <withRouter(Connect(TableComponent))
     className="courses"
     columns={
       Array [
         Object {
-          "Header": "Course Name",
+          "Header": "Course name",
           "accessor": "title",
           "disableSortBy": false,
           "key": "title",
         },
         Object {
-          "Header": "Course Number",
+          "Header": "Course number",
           "accessor": "number",
           "disableSortBy": false,
           "key": "number",
@@ -639,7 +643,7 @@ exports[`CourseTable shows a table 1`] = `
           "key": "course_run_statuses",
         },
         Object {
-          "Header": "Course Editors",
+          "Header": "Course editors",
           "accessor": "course_editor_names",
           "disableSortBy": true,
           "key": "course_editor_names",

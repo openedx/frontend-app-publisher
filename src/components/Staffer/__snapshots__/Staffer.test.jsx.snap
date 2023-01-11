@@ -20,8 +20,8 @@ exports[`Staffer renders the staffer 1`] = `
       onClick={[Function]}
       type="button"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-trash fa-fw text-danger"
+      <SvgDelete
+        className="text-gray-500"
         id="delete-icon-2aba6189-ad7e-45a8-b269-bea071b80391"
         screenReaderText="Remove Dave Grohl"
       />
@@ -31,8 +31,8 @@ exports[`Staffer renders the staffer 1`] = `
       onClick={[Function]}
       to="/instructors/2aba6189-ad7e-45a8-b269-bea071b80391"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-edit fa-fw"
+      <SvgEdit
+        className="text-gray-500"
         id="edit-icon-2aba6189-ad7e-45a8-b269-bea071b80391"
         screenReaderText="Edit Dave Grohl"
         title="Edit"

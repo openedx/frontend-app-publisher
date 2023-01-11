@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Icon, Hyperlink, Chip } from '@edx/paragon';
-import { CloseSmall } from '@edx/paragon/icons';
+import { Hyperlink } from '@edx/paragon';
+import { Add } from '@edx/paragon/icons';
+
+import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
 
 import CollapsibleCourseRuns from './CollapsibleCourseRuns';
 import CourseButtonToolbar from './CourseButtonToolbar';
@@ -27,7 +29,7 @@ import PriceList from '../PriceList';
 
 import { PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG } from '../../data/constants';
 import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
-import { handleCourseEditFail, editCourseValidate } from '../../utils/validation';
+import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
   formatCollaboratorOptions,
   getOptionsData, isPristine, parseCourseTypeOptions, parseOptions,
@@ -38,8 +40,6 @@ import ListField from '../ListField';
 import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
-import fetchCourseTagSuggestions from '../CourseTags/fetchCourseTagSuggestions';
-import renderCourseTagSuggestion from '../CourseTags/renderCourseTagSuggestion';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
 
 export class BaseEditCourseForm extends React.Component {
@@ -57,7 +57,6 @@ export class BaseEditCourseForm extends React.Component {
     this.toggleCourseRun = this.toggleCourseRun.bind(this);
     this.collapseAllCourseRuns = this.collapseAllCourseRuns.bind(this);
     this.setCourseRunCollapsibles = this.setCourseRunCollapsibles.bind(this);
-    this.handleCourseTagChange = this.handleCourseTagChange.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -96,17 +95,15 @@ export class BaseEditCourseForm extends React.Component {
     }
   }
 
-  handleCourseTagChange(value, courseTags, setCourseTags) {
-    if (value && value.includes(',') && value.slice(-1) === ',') {
-      const tag = value
-        .split(',')
-        .filter((item) => item !== '')
-        .map((item) => item.toLowerCase().trim());
-      this.setState({ courseTag: '' });
-      setCourseTags([...new Set([...courseTags, ...tag])]);
-    } else {
-      this.setState({ courseTag: value });
-    }
+  setCourseRunCollapsibles(initialCourseRuns) {
+    const collapsiblesOpen = initialCourseRuns.map(() => false);
+    this.setState({ collapsiblesOpen });
+  }
+
+  setCollapsible(open) {
+    this.setState({
+      open,
+    });
   }
 
   getAddCourseRunButton(disabled, uuid) {
@@ -116,7 +113,7 @@ export class BaseEditCourseForm extends React.Component {
         className="btn btn-block rounded mt-3 new-run-button"
         disabled={disabled}
       >
-        <Icon className="fa fa-plus" /> Add Course Run
+        <Add /> Add Course Run
       </button>
     );
 
@@ -133,17 +130,6 @@ export class BaseEditCourseForm extends React.Component {
     }
 
     return courseRunButton;
-  }
-
-  setCollapsible(open) {
-    this.setState({
-      open,
-    });
-  }
-
-  setCourseRunCollapsibles(initialCourseRuns) {
-    const collapsiblesOpen = initialCourseRuns.map(() => false);
-    this.setState({ collapsiblesOpen });
   }
 
   getLinkComponent(courseStatuses, courseInfo) {
@@ -190,22 +176,60 @@ export class BaseEditCourseForm extends React.Component {
     );
   }
 
-  formatCourseTags(topics, setCourseTags) {
-    return (
-      topics
-      && topics.length
-      && topics.map((topic) => (
-        <Chip
-          variant="dark"
-          iconAfter={CloseSmall}
-          onClick={() => {
-            setCourseTags([...topics.filter((item) => item !== topic)]);
-          }}
-        >
-          {topic}
-        </Chip>
-      ))
-    );
+  courseTagObjectsToSelectOptions(allCourseTags) {
+  /*  transform an array of course tag objects e.g
+        [
+          {
+            name: 'mba',
+            value: 'mba'
+          },
+
+          {
+            name: 'mba-gmat',
+            value: 'mba-gmat'
+          }
+        ]
+
+      to a format expected by ReduxFormCreatableSelect i.e
+        [
+          {
+            label: 'mba',
+            value: 'mba'
+          },
+
+          {
+            label: 'mba-gmat',
+            value: 'mba-gmat'
+          }
+        ]
+  */
+
+    return allCourseTags.map(tag => ({
+      label: tag.value,
+      value: tag.value,
+    }));
+  }
+
+  courseTagsToSelectValues(tags) {
+  /*  transform an array of course tags e.g `['mba', 'mba-gmat']` to
+      a format expected by ReduxFormCreatableSelect i.e
+        [
+          {
+            label: 'mba',
+            value: 'mba'
+          },
+
+          {
+            label: 'mba-gmat',
+            value: 'mba-gmat'
+          }
+        ]
+  */
+
+    return tags.map(tag => ({
+      label: tag,
+      value: tag,
+    }));
   }
 
   toggleCourseRun(index, value) {
@@ -333,7 +357,7 @@ export class BaseEditCourseForm extends React.Component {
             onToggle={this.setCollapsible}
           >
             <div className="mb-3">
-              <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
+              <span className="text-primary-500" aria-hidden> All fields are required for publication unless otherwise specified.</span>
             </div>
             <Field
               name="title"
@@ -469,31 +493,34 @@ export class BaseEditCourseForm extends React.Component {
             />
             <Field
               name="tags"
-              itemType="topic"
-              component={RenderInputTextField}
-              fetchSuggestions={fetchCourseTagSuggestions(allCourseTags)}
-              renderSuggestion={renderCourseTagSuggestion}
-              type="text"
+              component={ReduxFormCreatableSelect}
               label={(
-                <>
-                  <FieldLabel
-                    id="tags.label"
-                    text="Topics"
-                    helpText={(
-                      <p>
-                        You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                      </p>
+                <FieldLabel
+                  id="tags.label"
+                  text="Topics"
+                  helpText={(
+                    <p>
+                      You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                    </p>
                     )}
-                    optional
-                  />
-                  {courseTags
-                    && courseTags.length ? this.formatCourseTags(courseTags, setCourseTags) : null}
-                </>
+                  optional
+                />
               )}
               disabled={disabled || !administrator}
               value={this.state.courseTag}
-              onChange={(e) => this.handleCourseTagChange(e, courseTags, setCourseTags)}
               optional
+              currentValue={
+                Array.isArray(courseTags)
+                  ? this.courseTagsToSelectValues(courseTags)
+                  : null
+              }
+              setValue={(newValue) => setCourseTags(newValue)}
+              defaultOptions={
+                Array.isArray(allCourseTags)
+                  ? this.courseTagObjectsToSelectOptions(allCourseTags)
+                  : []
+              }
+              createOptionValidator={courseTagValidate}
             />
             {showMarketingFields && (
               <>

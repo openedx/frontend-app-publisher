@@ -83,7 +83,7 @@ describe('App', () => {
     const screen = renderAppWithState(['/']);
 
     // New Course Button should be present
-    expect(screen.find('div.btn-group a button').text()).toEqual('New Course');
+    expect(screen.find('div.btn-group a button').text()).toEqual('New course');
 
     // Table Should be present at main route with data
     expect(screen.find(TableComponent)).toHaveLength(1);

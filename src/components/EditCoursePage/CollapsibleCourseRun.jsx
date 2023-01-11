@@ -80,6 +80,7 @@ const formatCourseRunTitle = (courseRun, copied, setCopied) => {
             <Hyperlink
               destination={`${getConfig().STUDIO_BASE_URL}/course/${courseRun.key}`}
               target="_blank"
+              isInline
             >
               {courseRun.key}
             </Hyperlink>
@@ -279,7 +280,7 @@ class CollapsibleCourseRun extends React.Component {
         onToggle={onToggle}
       >
         <div className="mb-3">
-          <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
+          <span className="text-primary-500" aria-hidden> All fields are required for publication unless otherwise specified.</span>
         </div>
         {/* TODO this should be refactored when paragon supports safari */}
         {/* text inputs for safari */}
