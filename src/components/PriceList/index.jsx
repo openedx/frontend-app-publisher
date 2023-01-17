@@ -5,6 +5,11 @@ import { Field } from 'redux-form';
 import RenderInputTextField from '../RenderInputTextField';
 import FieldLabel from '../FieldLabel';
 
+import { isSafari } from '../../utils';
+import {
+  requiredValidate, priceValidate, noValidate,
+} from '../../utils/validation';
+
 const PriceList = ({
   disabled,
   extraInput,
@@ -17,13 +22,14 @@ const PriceList = ({
         key={seatType}
         name={`prices.${seatType}`}
         component={RenderInputTextField}
+        props={{ name: `prices.${seatType}` }}
         extraInput={{
           min: 1.00,
           step: 0.01,
           max: 10000.00,
           ...extraInput,
         }}
-        type="number"
+        {...(isSafari ? {} : { type: 'number' })}
         label={(
           <FieldLabel
             text={`${priceLabels[seatType]} Price (USD)`}
@@ -32,6 +38,7 @@ const PriceList = ({
 )}
         disabled={disabled}
         required={required}
+        validate={[required ? requiredValidate : noValidate, priceValidate]}
       />
     ))}
   </>

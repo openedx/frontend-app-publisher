@@ -35,6 +35,13 @@ class CreateCoursePage extends React.Component {
     this.setStartedFetching();
   }
 
+  componentDidUpdate(prevProps) {
+    // check if errors on form submission and scroll to them
+    if (this.props.courseInfo.error && (!prevProps.courseInfo || !prevProps.courseInfo.error)) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   setStartedFetching() {
     this.setState({ startedFetching: true });
   }
@@ -164,6 +171,14 @@ class CreateCoursePage extends React.Component {
           { showForm
           && (
             <div>
+              {errorArray.length > 1 && (
+                <Alert
+                  id="create-error"
+                  variant="danger"
+                >
+                  {errorArray}
+                </Alert>
+              ) }
               <CreateCourseForm
                 id="create-course-form"
                 onSubmit={this.showModal}
@@ -173,15 +188,8 @@ class CreateCoursePage extends React.Component {
                 isCreating={courseInfo.isCreating}
                 courseOptions={courseOptions}
                 courseRunOptions={courseRunOptions}
+                onChange={this.props.clearCourseInfoErrors}
               />
-              {errorArray.length > 1 && (
-                <Alert
-                  id="create-error"
-                  variant="danger"
-                >
-                  {errorArray}
-                </Alert>
-              ) }
             </div>
           )}
         </PageContainer>

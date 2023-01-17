@@ -35,7 +35,9 @@ exports[`CreateCoursePage renders html correctly 1`] = `
         id="create-course-form"
         initialValues={Object {}}
         keepDirtyOnReinitialize={false}
+        onChange={[Function]}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={Array []}
         persistentSubmitErrors={false}
         pure={true}
@@ -105,43 +107,6 @@ exports[`CreateCoursePage renders page correctly with course create error 1`] = 
     wide={false}
   >
     <div>
-      <ReduxForm
-        courseOptions={Object {}}
-        courseRunOptions={Object {}}
-        currentFormValues={Object {}}
-        destroyOnUnmount={true}
-        enableReinitialize={false}
-        forceUnregisterOnUnmount={false}
-        form="create-course-form"
-        getFormState={[Function]}
-        id="create-course-form"
-        initialValues={Object {}}
-        isCreating={false}
-        keepDirtyOnReinitialize={false}
-        onSubmit={[Function]}
-        organizations={
-          Array [
-            Object {
-              "key": "edx",
-              "name": "edX",
-            },
-            Object {
-              "key": "edx2",
-              "name": "edX2",
-            },
-          ]
-        }
-        persistentSubmitErrors={false}
-        pure={true}
-        shouldAsyncValidate={[Function]}
-        shouldError={[Function]}
-        shouldValidate={[Function]}
-        shouldWarn={[Function]}
-        submitAsSideEffect={false}
-        touchOnBlur={true}
-        touchOnChange={false}
-        updateUnregisteredFields={false}
-      />
       <ForwardRef
         dismissible={false}
         id="create-error"
@@ -167,6 +132,45 @@ exports[`CreateCoursePage renders page correctly with course create error 1`] = 
         Fail
         <br />
       </ForwardRef>
+      <ReduxForm
+        courseOptions={Object {}}
+        courseRunOptions={Object {}}
+        currentFormValues={Object {}}
+        destroyOnUnmount={true}
+        enableReinitialize={false}
+        forceUnregisterOnUnmount={false}
+        form="create-course-form"
+        getFormState={[Function]}
+        id="create-course-form"
+        initialValues={Object {}}
+        isCreating={false}
+        keepDirtyOnReinitialize={false}
+        onChange={[Function]}
+        onSubmit={[Function]}
+        onSubmitFail={[Function]}
+        organizations={
+          Array [
+            Object {
+              "key": "edx",
+              "name": "edX",
+            },
+            Object {
+              "key": "edx2",
+              "name": "edX2",
+            },
+          ]
+        }
+        persistentSubmitErrors={false}
+        pure={true}
+        shouldAsyncValidate={[Function]}
+        shouldError={[Function]}
+        shouldValidate={[Function]}
+        shouldWarn={[Function]}
+        submitAsSideEffect={false}
+        touchOnBlur={true}
+        touchOnChange={false}
+        updateUnregisteredFields={false}
+      />
     </div>
   </PageContainer>
 </Fragment>
@@ -208,7 +212,9 @@ exports[`CreateCoursePage renders page correctly with course create in progress 
         initialValues={Object {}}
         isCreating={true}
         keepDirtyOnReinitialize={false}
+        onChange={[Function]}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
@@ -273,7 +279,9 @@ exports[`CreateCoursePage renders page correctly with course create success 1`] 
         initialValues={Object {}}
         isCreating={false}
         keepDirtyOnReinitialize={false}
+        onChange={[Function]}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
@@ -366,43 +374,6 @@ exports[`CreateCoursePage renders page correctly with org error 1`] = `
     wide={false}
   >
     <div>
-      <ReduxForm
-        courseOptions={Object {}}
-        courseRunOptions={Object {}}
-        currentFormValues={Object {}}
-        destroyOnUnmount={true}
-        enableReinitialize={false}
-        forceUnregisterOnUnmount={false}
-        form="create-course-form"
-        getFormState={[Function]}
-        id="create-course-form"
-        initialValues={Object {}}
-        isCreating={false}
-        keepDirtyOnReinitialize={false}
-        onSubmit={[Function]}
-        organizations={
-          Array [
-            Object {
-              "key": "edx",
-              "name": "edX",
-            },
-            Object {
-              "key": "edx2",
-              "name": "edX2",
-            },
-          ]
-        }
-        persistentSubmitErrors={false}
-        pure={true}
-        shouldAsyncValidate={[Function]}
-        shouldError={[Function]}
-        shouldValidate={[Function]}
-        shouldWarn={[Function]}
-        submitAsSideEffect={false}
-        touchOnBlur={true}
-        touchOnChange={false}
-        updateUnregisteredFields={false}
-      />
       <ForwardRef
         dismissible={false}
         id="create-error"
@@ -428,6 +399,45 @@ exports[`CreateCoursePage renders page correctly with org error 1`] = `
         Fail
         <br />
       </ForwardRef>
+      <ReduxForm
+        courseOptions={Object {}}
+        courseRunOptions={Object {}}
+        currentFormValues={Object {}}
+        destroyOnUnmount={true}
+        enableReinitialize={false}
+        forceUnregisterOnUnmount={false}
+        form="create-course-form"
+        getFormState={[Function]}
+        id="create-course-form"
+        initialValues={Object {}}
+        isCreating={false}
+        keepDirtyOnReinitialize={false}
+        onChange={[Function]}
+        onSubmit={[Function]}
+        onSubmitFail={[Function]}
+        organizations={
+          Array [
+            Object {
+              "key": "edx",
+              "name": "edX",
+            },
+            Object {
+              "key": "edx2",
+              "name": "edX2",
+            },
+          ]
+        }
+        persistentSubmitErrors={false}
+        pure={true}
+        shouldAsyncValidate={[Function]}
+        shouldError={[Function]}
+        shouldValidate={[Function]}
+        shouldWarn={[Function]}
+        submitAsSideEffect={false}
+        touchOnBlur={true}
+        touchOnChange={false}
+        updateUnregisteredFields={false}
+      />
     </div>
   </PageContainer>
 </Fragment>
@@ -469,7 +479,9 @@ exports[`CreateCoursePage renders page correctly with organizations 1`] = `
         initialValues={Object {}}
         isCreating={false}
         keepDirtyOnReinitialize={false}
+        onChange={[Function]}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
