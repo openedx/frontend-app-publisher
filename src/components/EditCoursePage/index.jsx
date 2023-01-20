@@ -375,8 +375,7 @@ class EditCoursePage extends React.Component {
       ].filter((subject) => !!subject),
       syllabus_raw: courseData.syllabus_raw,
       title: courseData.title,
-      topics: this.state.courseTags && this.state.courseTags.length
-        ? [...new Set([...this.state.courseTags])] : [],
+      topics: courseData.tags ? courseData.tags.map(tag => tag.value) : [],
       type: courseData.type,
       url_slug: courseData.url_slug,
       uuid,
@@ -641,6 +640,7 @@ class EditCoursePage extends React.Component {
       organization_logo_override_url,
       location_restriction: this.buildLocationRestriction(),
       in_year_value: this.buildInYearValue(),
+      tags: topics?.length ? topics.map(t => ({ label: t, value: t })) : null,
     };
   }
 

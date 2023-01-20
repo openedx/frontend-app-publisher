@@ -8,4 +8,24 @@
       }
     }
   }
+
+  // react-select specific styles
+  .react-select__menu {
+    z-index: 5;
+  }
+
+  .react-select__control {
+    cursor: text;
+  }
+
+  .react-select__control.danger {
+    border-color: red;
+    box-shadow: none;
+  }
+
+  .react-select__control--menu-is-open{
+    .react-select__single-value{
+      color: #D3D3D3
+    }
+  }
 }
