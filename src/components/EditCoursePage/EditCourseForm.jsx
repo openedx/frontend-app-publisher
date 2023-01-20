@@ -41,6 +41,8 @@ import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
+
+import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import GeoLocationFields from './GeoLocationFields';
 
 export class BaseEditCourseForm extends React.Component {
@@ -50,7 +52,6 @@ export class BaseEditCourseForm extends React.Component {
     this.state = {
       open: false,
       collapsiblesOpen: [],
-      courseTag: '',
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -163,6 +164,14 @@ export class BaseEditCourseForm extends React.Component {
     return 'No Preview Link Available';
   }
 
+  loadOptions = (inputValue, callback) => DiscoveryDataApiService.fetchCourseTags(inputValue)
+    .then((response) => {
+      callback(this.courseTagObjectsToSelectOptions(response.data));
+    })
+    .catch(() => {
+      callback(null);
+    });
+
   formatCourseTitle(title, courseStatuses, courseInfo) {
     // TODO: After we have a way of determining if the course has been edited, that should be
     // added into the list of statuses being passed into the Pill component.
@@ -208,29 +217,7 @@ export class BaseEditCourseForm extends React.Component {
     return allCourseTags.map(tag => ({
       label: tag.value,
       value: tag.value,
-    }));
-  }
-
-  courseTagsToSelectValues(tags) {
-  /*  transform an array of course tags e.g `['mba', 'mba-gmat']` to
-      a format expected by ReduxFormCreatableSelect i.e
-        [
-          {
-            label: 'mba',
-            value: 'mba'
-          },
-
-          {
-            label: 'mba-gmat',
-            value: 'mba-gmat'
-          }
-        ]
-  */
-
-    return tags.map(tag => ({
-      label: tag,
-      value: tag,
-    }));
+    })).filter(x => x.value);
   }
 
   toggleCourseRun(index, value) {
@@ -507,21 +494,18 @@ export class BaseEditCourseForm extends React.Component {
                   optional
                 />
               )}
+              isAsync
+              isMulti
               disabled={disabled || !administrator}
-              value={this.state.courseTag}
               optional
-              currentValue={
-                Array.isArray(courseTags)
-                  ? this.courseTagsToSelectValues(courseTags)
-                  : null
-              }
-              setValue={(newValue) => setCourseTags(newValue)}
+              isCreatable
               defaultOptions={
                 Array.isArray(allCourseTags)
                   ? this.courseTagObjectsToSelectOptions(allCourseTags)
                   : []
               }
               createOptionValidator={courseTagValidate}
+              loadOptions={this.loadOptions}
             />
             {showMarketingFields && (
               <>
