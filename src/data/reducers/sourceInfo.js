@@ -5,7 +5,7 @@ const initialState = {
   referringRun: null,
 };
 
-function sourceInfo(state = initialState, action) {
+function sourceInfo(state = initialState, action = {}) {
   switch (action.type) {
     case SEND_FROM_EDIT_PAGE:
       return {

@@ -90,7 +90,7 @@ describe('Create Course View', () => {
     testState.courseRunOptions = courseRunOptions;
 
     store = mockStore(testState);
-    const CourseCreatePageWrapper = props => (
+    const CourseCreatePageWrapper = (props) => (
       <MemoryRouter>
         <Provider store={store}>
           <CreateCoursePage
@@ -123,7 +123,7 @@ describe('Create Course View', () => {
     testState.courseRunOptions = courseRunOptions;
 
     store = mockStore(testState);
-    const CourseCreatePageWrapper = props => (
+    const CourseCreatePageWrapper = (props) => (
       <MemoryRouter>
         <Provider store={store}>
           <CreateCoursePage

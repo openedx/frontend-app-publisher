@@ -6,7 +6,7 @@ import UsersPane from './UsersPane';
 import CommentsPane from './CommentsPane';
 import CatalogInclusionPane from './CatalogInclusionPane';
 
-function SidePanes(props) {
+const SidePanes = (props) => {
   const isEdxStaff = getAuthenticatedUser().administrator;
   let orgInclusionList = false;
 
@@ -43,7 +43,7 @@ function SidePanes(props) {
       />
     </div>
   );
-}
+};
 
 SidePanes.defaultProps = {
   addComment: () => null,

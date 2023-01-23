@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RemoveButton from '../RemoveButton';
 
-function User(props) {
-  return (
-    <div>
-      <div className="d-flex">
-        <span title={props.name} className="text-gray-800 text-truncate">{props.name}</span>
-        {props.onRemove
+const User = (props) => (
+  <div>
+    <div className="d-flex">
+      <span title={props.name} className="text-gray-800 text-truncate">{props.name}</span>
+      {props.onRemove
           && (
           <RemoveButton
             className="align-text-bottom ml-1"
@@ -16,11 +15,10 @@ function User(props) {
             onRemove={props.onRemove}
           />
           )}
-      </div>
-      <p title={props.email} className="text-gray-500 text-truncate h5 font-weight-normal">{props.email}</p>
     </div>
-  );
-}
+    <p title={props.email} className="text-gray-500 text-truncate h5 font-weight-normal">{props.email}</p>
+  </div>
+);
 
 User.defaultProps = {
   onRemove: null,

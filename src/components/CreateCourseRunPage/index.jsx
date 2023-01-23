@@ -54,10 +54,6 @@ class CreateCourseRunPage extends React.Component {
     this.setStartedFetching();
   }
 
-  setStartedFetching() {
-    this.setState({ startedFetching: true });
-  }
-
   handleCourseCreate(options) {
     const {
       courseInfo: {
@@ -83,6 +79,10 @@ class CreateCourseRunPage extends React.Component {
       term: options.courseRunKey,
     };
     return createCourseRun(uuid, courseRunData);
+  }
+
+  setStartedFetching() {
+    this.setState({ startedFetching: true });
   }
 
   parseCourseRunLabels(courseRuns) {

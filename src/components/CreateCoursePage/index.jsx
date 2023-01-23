@@ -35,10 +35,6 @@ class CreateCoursePage extends React.Component {
     this.setStartedFetching();
   }
 
-  setStartedFetching() {
-    this.setState({ startedFetching: true });
-  }
-
   handleCourseCreate(options) {
     const priceData = formatPriceData(options, this.props.courseOptions);
     const courseData = {
@@ -57,6 +53,10 @@ class CreateCoursePage extends React.Component {
       },
     };
     return this.props.createCourse(courseData);
+  }
+
+  setStartedFetching() {
+    this.setState({ startedFetching: true });
   }
 
   showModal(options) {
@@ -219,7 +219,7 @@ CreateCoursePage.propTypes = {
     pacing_type: PropTypes.string,
   }),
   publisherUserInfo: PropTypes.shape({
-    organizations: PropTypes.array,
+    organizations: PropTypes.arrayOf(PropTypes.shape({})),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),

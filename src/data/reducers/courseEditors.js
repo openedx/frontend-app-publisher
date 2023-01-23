@@ -12,7 +12,7 @@ const initialState = {
   isFetching: false,
 };
 
-function courseEditors(state = initialState, action) {
+function courseEditors(state = initialState, action = {}) {
   switch (action.type) {
     case ADD_COURSE_EDITOR_SUCCESS:
       return {

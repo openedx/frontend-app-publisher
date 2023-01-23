@@ -133,19 +133,18 @@ class CourseTable extends React.Component {
     const pageOptions = getPageOptionsFromUrl();
 
     return (
-      <>
-        <div className="row">
-          <div className="width-percent-44 px-3 float-left">
-            <Select
-              closeMenuOnSelect={false}
-              value={selectedFilters}
-              options={filterGroups}
-              onChange={filters => this.updateFilterQueryParamsInUrl(filters === null
-                ? [] : filters)}
-              isMulti
-              maxMenuHeight="30vh"
-              placeholder="Filters..."
-              styles={
+      <div className="row">
+        <div className="width-percent-44 px-3 float-left">
+          <Select
+            closeMenuOnSelect={false}
+            value={selectedFilters}
+            options={filterGroups}
+            onChange={filters => this.updateFilterQueryParamsInUrl(filters === null
+              ? [] : filters)}
+            isMulti
+            maxMenuHeight="30vh"
+            placeholder="Filters..."
+            styles={
                 {
                   option: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
                   multiValue: (styles, { data }) => (
@@ -159,29 +158,28 @@ class CourseTable extends React.Component {
                   ),
                 }
               }
-            />
-          </div>
-          <div className="width-percent-44 px-3 float-left">
-            <SearchField
-              value={pageOptions.pubq}
-              onClear={() => {
-                updateUrl({ filter: null });
-              }}
-              onSubmit={(filter) => {
-                updateUrl({ filter, page: 1 });
-              }}
-              placeholder="Search"
-            />
-          </div>
-          <div className="width-percent-12 px-3 float-right">
-            <ButtonToolbar className="mb-3" rightJustify>
-              <Link to="/courses/new">
-                <button type="button" className="btn btn-primary">New course</button>
-              </Link>
-            </ButtonToolbar>
-          </div>
+          />
         </div>
-      </>
+        <div className="width-percent-44 px-3 float-left">
+          <SearchField
+            value={pageOptions.pubq}
+            onClear={() => {
+              updateUrl({ filter: null });
+            }}
+            onSubmit={(filter) => {
+              updateUrl({ filter, page: 1 });
+            }}
+            placeholder="Search"
+          />
+        </div>
+        <div className="width-percent-12 px-3 float-right">
+          <ButtonToolbar className="mb-3" rightJustify>
+            <Link to="/courses/new">
+              <button type="button" className="btn btn-primary">New course</button>
+            </Link>
+          </ButtonToolbar>
+        </div>
+      </div>
     );
   }
 
@@ -261,7 +259,7 @@ CourseTable.defaultProps = {
 CourseTable.propTypes = {
   fetchOrganizations: PropTypes.func,
   publisherUserInfo: PropTypes.shape({
-    organizations: PropTypes.array,
+    organizations: PropTypes.arrayOf(PropTypes.shape({})),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
