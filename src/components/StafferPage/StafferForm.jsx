@@ -95,7 +95,7 @@ const BaseStafferForm = ({
           component={RenderInputTextField}
           type="text"
           label={<FieldLabel text="Organization" />}
-          extraInput={{ value: organizationName }}
+          extraInput={{ defaultValue: organizationName }}
           required
         />
         <Field

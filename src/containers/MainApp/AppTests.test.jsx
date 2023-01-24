@@ -54,18 +54,19 @@ function renderAppWithState(initialRoute) {
       darkModeOn: false,
     },
   };
+  const contextValue = {
+    authenticatedUser: {
+      username: 'user9',
+    },
+    config: {},
+  };
 
-  const AppWrapper = initialEntries => (
+  const AppWrapper = (initialEntries) => (
     <IntlProvider locale="en">
       <Provider store={mockStore(initialState)}>
         <AppContext.Provider
           store={mockStore(initialState)}
-          value={{
-            authenticatedUser: {
-              username: 'user9',
-            },
-            config: {},
-          }}
+          value={contextValue}
         >
           <MemoryRouter initialEntries={initialEntries}>
             <MainApp />

@@ -25,11 +25,16 @@ class ListField extends React.Component {
     this.getSuggestionValue = this.getSuggestionValue.bind(this);
     this.renderSuggestion = this.props.renderSuggestion.bind(this);
     this.onSuggestionEntered = this.onSuggestionEntered.bind(this);
-    this.fetchSuggestions = this.props.fetchSuggestions.bind(this);
   }
 
   componentDidMount() {
     this.updateList();
+  }
+
+  handleRemove(uuid) {
+    this.setState(prevState => ({
+      currentList: prevState.currentList.filter(item => item.uuid !== uuid),
+    }), () => this.props.input.onChange(this.state.currentList));
   }
 
   onSuggestionsFetchRequested({ value }) {
@@ -150,12 +155,6 @@ class ListField extends React.Component {
     }
   }
 
-  handleRemove(uuid) {
-    this.setState(prevState => ({
-      currentList: prevState.currentList.filter(item => item.uuid !== uuid),
-    }), () => this.props.input.onChange(this.state.currentList));
-  }
-
   render() {
     const {
       disabled,
@@ -268,7 +267,11 @@ ListField.propTypes = {
   renderItemComponent: PropTypes.func.isRequired,
   courseRunKey: PropTypes.string,
   newItemInfo: PropTypes.shape({
-    data: PropTypes.shape({}),
+    data: PropTypes.shape({
+      uuid: PropTypes.string,
+      image_url: PropTypes.string,
+      name: PropTypes.string,
+    }),
   }),
   sourceInfo: PropTypes.shape({
     referringRun: PropTypes.string,

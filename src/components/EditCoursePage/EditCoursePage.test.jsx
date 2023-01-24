@@ -870,7 +870,7 @@ describe('EditCoursePage', () => {
     });
 
     it('submit modal can be cancelled', () => {
-      const EditCoursePageWrapper = props => (
+      const EditCoursePageWrapper = (props) => (
         <MemoryRouter>
           <Provider store={mockStore()}>
             <EditCoursePage

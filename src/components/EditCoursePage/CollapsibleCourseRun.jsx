@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -165,6 +166,7 @@ class CollapsibleCourseRun extends React.Component {
     // We initialize hasExternalKey to null and then the function will reevaluate it into
     // a boolean which will be our exit state
     if (prevState.hasExternalKey === undefined && courseRuns) {
+      // eslint-disable-next-line react/prop-types
       const hasExternalKey = hasMastersTrack(courseRuns[index].run_type, runTypeModes);
       this.setState({ hasExternalKey }); // eslint-disable-line react/no-did-update-set-state
     }
@@ -178,7 +180,7 @@ class CollapsibleCourseRun extends React.Component {
     setTimeout(() => {
       this.setState({ copied: false });
     }, 1800);
-  }
+  };
 
   scrollToStaffPosition(focus) {
     this.setState({

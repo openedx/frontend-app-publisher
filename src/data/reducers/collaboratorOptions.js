@@ -9,7 +9,7 @@ const initialState = {
   isFetching: false,
 };
 
-function CollaboratorOptions(state = initialState, action) {
+function CollaboratorOptions(state = initialState, action = {}) {
   switch (action.type) {
     case REQUEST_COLLABORATOR_OPTIONS:
       return {

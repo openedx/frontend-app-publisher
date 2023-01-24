@@ -260,21 +260,21 @@ UsersPane.defaultProps = {
 UsersPane.propTypes = {
   addCourseEditor: PropTypes.func,
   courseEditors: PropTypes.shape({
-    data: PropTypes.array,
-    error: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   fetchCourseEditors: PropTypes.func,
   fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
   organizationRoles: PropTypes.shape({
-    data: PropTypes.array,
-    error: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   organizationUsers: PropTypes.shape({
-    data: PropTypes.array,
-    error: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   removeCourseEditor: PropTypes.func,

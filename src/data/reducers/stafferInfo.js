@@ -20,7 +20,7 @@ const initialState = {
   returnToEditCourse: false,
 };
 
-function stafferInfo(state = initialState, action) {
+function stafferInfo(state = initialState, action = {}) {
   switch (action.type) {
     case REQUEST_STAFFER_INFO:
       return {

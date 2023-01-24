@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-function courseRunOptions(state = initialState, action) {
+function courseRunOptions(state = initialState, action = {}) {
   switch (action.type) {
     case REQUEST_COURSE_RUN_OPTIONS_FAIL:
       return {

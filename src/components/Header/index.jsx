@@ -56,22 +56,20 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
             </div>
             )}
           <div className="col-auto justify-content-end ml-auto">
-            <>
-              <Dropdown>
-                <Dropdown.Toggle as={AvatarButton}>
-                  {authenticatedUser.username}
-                </Dropdown.Toggle>
+            <Dropdown>
+              <Dropdown.Toggle as={AvatarButton}>
+                {authenticatedUser.username}
+              </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => redirectToLogout(getConfig().LMS_BASE_URL)}
-                    key="dropdown-logout"
-                  >
-                    Sign Out
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </>
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => redirectToLogout(getConfig().LMS_BASE_URL)}
+                  key="dropdown-logout"
+                >
+                  Sign Out
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
 import { Pagination, DataTable, Alert } from '@edx/paragon';
-import { WarningFilled, Error as ErrorIcon } from '@edx/paragon/icons';
+import { Error as ErrorIcon } from '@edx/paragon/icons';
 import 'font-awesome/css/font-awesome.css';
 
 import './TableComponent.scss';
@@ -130,17 +130,6 @@ class TableComponent extends React.Component {
         icon={ErrorIcon}
       >
         {message}
-      </Alert>
-    );
-  }
-
-  renderEmptyDataMessage() {
-    return (
-      <Alert
-        variant="warning"
-        icon={WarningFilled}
-      >
-        There are no results.
       </Alert>
     );
   }

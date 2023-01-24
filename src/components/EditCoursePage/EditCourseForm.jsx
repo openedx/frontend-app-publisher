@@ -495,18 +495,16 @@ export class BaseEditCourseForm extends React.Component {
               name="tags"
               component={ReduxFormCreatableSelect}
               label={(
-                <>
-                  <FieldLabel
-                    id="tags.label"
-                    text="Topics"
-                    helpText={(
-                      <p>
-                        You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                      </p>
+                <FieldLabel
+                  id="tags.label"
+                  text="Topics"
+                  helpText={(
+                    <p>
+                      You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+                    </p>
                     )}
-                    optional
-                  />
-                </>
+                  optional
+                />
               )}
               disabled={disabled || !administrator}
               value={this.state.courseTag}
