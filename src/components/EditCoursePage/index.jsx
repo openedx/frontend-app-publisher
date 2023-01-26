@@ -312,6 +312,21 @@ class EditCoursePage extends React.Component {
     };
   }
 
+  formatGeoLocationFields(courseData) {
+    if (courseData?.geolocation) {
+      return {
+        location_name: courseData.geolocation.location_name,
+        lng: courseData.geolocation.lng,
+        lat: courseData.geolocation.lat,
+      };
+    }
+    return {
+      location_name: null,
+      lng: null,
+      lat: null,
+    };
+  }
+
   prepareSendCourseData(courseData) {
     const {
       courseInfo: {
@@ -337,6 +352,7 @@ class EditCoursePage extends React.Component {
       learner_testimonials: courseData.learner_testimonials,
       level_type: courseData.level_type,
       location_restriction: courseData.location_restriction,
+      geolocation: courseData.geolocation,
       organization_logo_override: courseData.organization_logo_override_url,
       organization_short_code_override:
         courseData.organization_short_code_override,
@@ -546,6 +562,10 @@ class EditCoursePage extends React.Component {
     return this.formatLocationRestrictionFields(this.props.courseInfo.data);
   }
 
+  buildGeoLocation() {
+    return this.formatGeoLocationFields(this.props.courseInfo.data);
+  }
+
   buildInitialValues() {
     const {
       courseInfo: {
@@ -614,6 +634,7 @@ class EditCoursePage extends React.Component {
       organization_short_code_override,
       organization_logo_override_url,
       location_restriction: this.buildLocationRestriction(),
+      geolocation: this.buildGeoLocation(),
       in_year_value: this.buildInYearValue(),
     };
   }
