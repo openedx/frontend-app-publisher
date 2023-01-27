@@ -27,6 +27,9 @@ const GeoLocationFields = (props) => {
         <Field
           name="geolocation.location_name"
           component={RenderInputTextField}
+          props={{
+            name: 'geolocation.location_name',
+          }}
           label={(
             <FieldLabel
               id="geolocation.location_name.label"
@@ -45,9 +48,12 @@ const GeoLocationFields = (props) => {
         />
 
         <Field
-          name="geolocation.lng"
-          type="number"
           component={RenderInputTextField}
+          name="geolocation.lng"
+          props={{
+            name: 'geolocation.lng',
+          }}
+          type="number"
           label={(
             <FieldLabel
               id="geolocation.longitude.label"
@@ -70,9 +76,12 @@ const GeoLocationFields = (props) => {
         />
 
         <Field
-          name="geolocation.lat"
-          type="number"
           component={RenderInputTextField}
+          name="geolocation.lat"
+          props={{
+            name: 'geolocation.lat',
+          }}
+          type="number"
           label={(
             <FieldLabel
               id="geolocation.latitude.label"

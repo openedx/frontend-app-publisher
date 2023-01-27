@@ -85,7 +85,6 @@ const editCourseValidate = (values, props) => {
   if (!targetRun || targetRun.status === PUBLISHED) {
     return {};
   }
-
   let hasError = false;
   const errors = {};
 
@@ -98,6 +97,19 @@ const editCourseValidate = (values, props) => {
       errors[fieldName] = requiredMessage;
     }
   });
+
+  // Validate that either all or none of the geolocation fields are provided
+  const geoLocationFields = ['location_name', 'lat', 'lng'];
+  const geolocationDataCount = Object.values(values.geolocation).filter(i => i != null).length;
+  if (geolocationDataCount > 0 && geolocationDataCount < 3) {
+    geoLocationFields.forEach((fieldName) => {
+      const value = values.geolocation[fieldName];
+      if (!value) {
+        hasError = true;
+        errors[`geolocation.${fieldName}`] = requiredMessage;
+      }
+    });
+  }
 
   // Validate all the fields required for submission in the submitting course run
   errors.course_runs = [];
