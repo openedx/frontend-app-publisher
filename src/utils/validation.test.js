@@ -278,4 +278,27 @@ describe('editCourseValidate', () => {
       },
     })).toEqual({});
   });
+
+  test.each([
+    [{ geoLocationName: 'location name' }, { geoLocationLat: requiredMessage, geoLocationLng: requiredMessage }],
+    [{ geoLocationLat: '45.0' }, { geoLocationName: requiredMessage, geoLocationLng: requiredMessage }],
+    [{ geoLocationLng: '55.0' }, { geoLocationLat: requiredMessage, geoLocationName: requiredMessage }],
+    [{ geoLocationLng: '55.0', geoLocationLat: '45.0' }, { geoLocationName: requiredMessage }],
+  ])('Geolocation validation is raised if not all geolocation fields are provided', (providedGeoLocValue, expectedError) => {
+    const values = {
+      short_description: 'Short',
+      full_description: 'Full',
+      outcome: 'Outcome',
+      imageSrc: 'base64;encodedimage',
+      ...providedGeoLocValue,
+      course_runs: [
+        {
+          key: 'NonSubmittingTestRun',
+        },
+      ],
+    };
+    expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual(
+      { ...expectedError, course_runs: [null] },
+    );
+  });
 });
