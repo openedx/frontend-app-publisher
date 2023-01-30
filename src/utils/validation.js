@@ -86,6 +86,7 @@ const editCourseValidate = (values, props) => {
     return {};
   }
   let hasError = false;
+  let geoLocationDataCount = 0;
   const errors = {};
 
   // Validate all the fields required for submission at the top level of the form
@@ -98,15 +99,22 @@ const editCourseValidate = (values, props) => {
     }
   });
 
-  // Validate that either all or none of the geolocation fields are provided
-  const geoLocationFields = ['location_name', 'lat', 'lng'];
-  const geolocationDataCount = Object.values(values.geolocation).filter(i => i != null).length;
-  if (geolocationDataCount > 0 && geolocationDataCount < 3) {
+  // Validate that either all or none of the geolocation fields are provided.
+  // The double parsing is done to first get count of how many geoLocaton fields
+  // actually have values in them.
+  const geoLocationFields = ['geoLocationName', 'geoLocationLng', 'geoLocationLat'];
+  geoLocationFields.forEach((fieldName) => {
+    if (!values[fieldName]) {
+      geoLocationDataCount += 1;
+    }
+  });
+
+  if (geoLocationDataCount > 0 && geoLocationDataCount < 3) {
     geoLocationFields.forEach((fieldName) => {
-      const value = values.geolocation[fieldName];
+      const value = values[fieldName];
       if (!value) {
         hasError = true;
-        errors[`geolocation.${fieldName}`] = requiredMessage;
+        errors[fieldName] = requiredMessage;
       }
     });
   }

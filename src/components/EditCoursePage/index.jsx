@@ -315,15 +315,15 @@ class EditCoursePage extends React.Component {
   formatGeoLocationFields(courseData) {
     if (courseData?.geolocation) {
       return {
-        location_name: courseData.geolocation.location_name,
-        lng: courseData.geolocation.lng,
-        lat: courseData.geolocation.lat,
+        geoLocationName: courseData.geolocation.location_name,
+        geoLocationLng: courseData.geolocation.lng,
+        geoLocationLat: courseData.geolocation.lat,
       };
     }
     return {
-      location_name: null,
-      lng: null,
-      lat: null,
+      geoLocationName: null,
+      geoLocationLng: null,
+      geoLocationLat: null,
     };
   }
 
@@ -352,7 +352,11 @@ class EditCoursePage extends React.Component {
       learner_testimonials: courseData.learner_testimonials,
       level_type: courseData.level_type,
       location_restriction: courseData.location_restriction,
-      geolocation: courseData.geolocation,
+      geolocation: {
+        location_name: courseData.geoLocationName,
+        lng: courseData.geoLocationLng,
+        lat: courseData.geoLocationLat,
+      },
       organization_logo_override: courseData.organization_logo_override_url,
       organization_short_code_override:
         courseData.organization_short_code_override,
@@ -604,6 +608,7 @@ class EditCoursePage extends React.Component {
     const imageSrc = image && image.src;
     const videoSrc = video && video.src;
     const prices = buildInitialPrices(entitlements, course_runs);
+    const geolocation = this.buildGeoLocation();
 
     return {
       title,
@@ -627,6 +632,7 @@ class EditCoursePage extends React.Component {
       type,
       url_slug,
       collaborators,
+      ...geolocation,
       course_runs: this.buildCourseRuns(),
       skill_names,
       additional_metadata: this.buildAdditionalMetadata(),
@@ -634,7 +640,6 @@ class EditCoursePage extends React.Component {
       organization_short_code_override,
       organization_logo_override_url,
       location_restriction: this.buildLocationRestriction(),
-      geolocation: this.buildGeoLocation(),
       in_year_value: this.buildInYearValue(),
     };
   }

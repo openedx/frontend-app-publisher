@@ -25,14 +25,15 @@ const GeoLocationFields = (props) => {
             )}
         />
         <Field
-          name="geolocation.location_name"
+          name="geoLocationName"
           component={RenderInputTextField}
+          type="text"
           props={{
-            name: 'geolocation.location_name',
+            name: 'geoLocationName',
           }}
           label={(
             <FieldLabel
-              id="geolocation.location_name.label"
+              id="geoLocationName.label"
               text="Location Name"
               helpText={(
                 <div>
@@ -44,19 +45,19 @@ const GeoLocationFields = (props) => {
             />
                 )}
           disabled={disabled}
-          required={false}
+          optional
         />
 
         <Field
           component={RenderInputTextField}
-          name="geolocation.lng"
+          name="geoLocationLng"
           props={{
-            name: 'geolocation.lng',
+            name: 'geoLocationLng',
           }}
-          type="number"
+          type="text"
           label={(
             <FieldLabel
-              id="geolocation.longitude.label"
+              id="geoLocationLng.label"
               text="Longitude"
               helpText={(
                 <div>
@@ -72,19 +73,19 @@ const GeoLocationFields = (props) => {
             max: 180,
           }}
           disabled={disabled}
-          required={false}
+          optional
         />
 
         <Field
           component={RenderInputTextField}
-          name="geolocation.lat"
+          name="geoLocationLat"
           props={{
-            name: 'geolocation.lat',
+            name: 'geoLocationLat',
           }}
-          type="number"
+          type="text"
           label={(
             <FieldLabel
-              id="geolocation.latitude.label"
+              id="geoLocationLat.label"
               text="Latitude"
               helpText={(
                 <div>
@@ -100,7 +101,7 @@ const GeoLocationFields = (props) => {
             max: 90,
           }}
           disabled={disabled}
-          required={false}
+          optional
         />
 
       </div>
