@@ -312,6 +312,21 @@ class EditCoursePage extends React.Component {
     };
   }
 
+  formatGeoLocationFields(courseData) {
+    if (courseData?.geolocation) {
+      return {
+        geoLocationName: courseData.geolocation.location_name,
+        geoLocationLng: courseData.geolocation.lng,
+        geoLocationLat: courseData.geolocation.lat,
+      };
+    }
+    return {
+      geoLocationName: null,
+      geoLocationLng: null,
+      geoLocationLat: null,
+    };
+  }
+
   prepareSendCourseData(courseData) {
     const {
       courseInfo: {
@@ -337,6 +352,11 @@ class EditCoursePage extends React.Component {
       learner_testimonials: courseData.learner_testimonials,
       level_type: courseData.level_type,
       location_restriction: courseData.location_restriction,
+      geolocation: {
+        location_name: courseData.geoLocationName,
+        lng: courseData.geoLocationLng,
+        lat: courseData.geoLocationLat,
+      },
       organization_logo_override: courseData.organization_logo_override_url,
       organization_short_code_override:
         courseData.organization_short_code_override,
@@ -546,6 +566,10 @@ class EditCoursePage extends React.Component {
     return this.formatLocationRestrictionFields(this.props.courseInfo.data);
   }
 
+  buildGeoLocation() {
+    return this.formatGeoLocationFields(this.props.courseInfo.data);
+  }
+
   buildInitialValues() {
     const {
       courseInfo: {
@@ -584,6 +608,7 @@ class EditCoursePage extends React.Component {
     const imageSrc = image && image.src;
     const videoSrc = video && video.src;
     const prices = buildInitialPrices(entitlements, course_runs);
+    const geolocation = this.buildGeoLocation();
 
     return {
       title,
@@ -607,6 +632,7 @@ class EditCoursePage extends React.Component {
       type,
       url_slug,
       collaborators,
+      ...geolocation,
       course_runs: this.buildCourseRuns(),
       skill_names,
       additional_metadata: this.buildAdditionalMetadata(),
