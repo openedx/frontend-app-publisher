@@ -14,6 +14,10 @@ class SocialLinks extends React.Component {
     this.handleRemove = this.handleRemove.bind(this);
   }
 
+  handleRemove(index) {
+    this.props.fields.remove(index);
+  }
+
   getSocialOptions() {
     return [
       { label: 'Please select a type', value: '' },
@@ -22,10 +26,6 @@ class SocialLinks extends React.Component {
       { label: 'Blog', value: 'blog' },
       { label: 'Other', value: 'others' },
     ];
-  }
-
-  handleRemove(index) {
-    this.props.fields.remove(index);
   }
 
   render() {

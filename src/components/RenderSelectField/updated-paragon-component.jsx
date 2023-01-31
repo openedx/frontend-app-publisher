@@ -36,9 +36,9 @@ const RenderSelectField = ({
         <option key={option.value} value={option.value}>{option.label}</option>
       ))}
       {touched && error && (
-      <Form.Control.Feedback>
-        {error}
-      </Form.Control.Feedback>
+        <Form.Control.Feedback>
+          {error}
+        </Form.Control.Feedback>
       )}
     </Form.Control>
   </Form.Group>

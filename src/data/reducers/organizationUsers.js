@@ -10,7 +10,7 @@ const initialState = {
   isFetching: false,
 };
 
-function organizationUsers(state = initialState, action) {
+function organizationUsers(state = initialState, action = {}) {
   switch (action.type) {
     case REQUEST_ORGANIZATION_USERS:
       return {

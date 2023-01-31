@@ -8,6 +8,13 @@ const requiredMessage = 'This field is required';
 // Basic validation that ensures some value was entered
 const basicValidate = value => (value ? undefined : requiredMessage);
 
+function courseTagValidate(tagValue, selectValue, options) {
+  // tagValue should only contain alphabets, numbers, hyphen and underscore
+  if (!/^[a-zA-Z0-9_-]+$/.test(tagValue)) { return false; }
+  // disallow tags that have already been selected or are present in options(dropdown)
+  return ![...selectValue, ...options].some(x => x.label.toLowerCase() === tagValue.toLowerCase());
+}
+
 /**
  * Iterates through errors on a form and returns the first field name with an error.
  *
@@ -145,4 +152,5 @@ export {
   getFieldName,
   handleCourseEditFail,
   editCourseValidate,
+  courseTagValidate,
 };

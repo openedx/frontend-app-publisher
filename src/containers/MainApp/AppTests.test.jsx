@@ -54,18 +54,19 @@ function renderAppWithState(initialRoute) {
       darkModeOn: false,
     },
   };
+  const contextValue = {
+    authenticatedUser: {
+      username: 'user9',
+    },
+    config: {},
+  };
 
-  const AppWrapper = initialEntries => (
+  const AppWrapper = (initialEntries) => (
     <IntlProvider locale="en">
       <Provider store={mockStore(initialState)}>
         <AppContext.Provider
           store={mockStore(initialState)}
-          value={{
-            authenticatedUser: {
-              username: 'user9',
-            },
-            config: {},
-          }}
+          value={contextValue}
         >
           <MemoryRouter initialEntries={initialEntries}>
             <MainApp />
@@ -82,7 +83,7 @@ describe('App', () => {
     const screen = renderAppWithState(['/']);
 
     // New Course Button should be present
-    expect(screen.find('div.btn-group a button').text()).toEqual('New Course');
+    expect(screen.find('div.btn-group a button').text()).toEqual('New course');
 
     // Table Should be present at main route with data
     expect(screen.find(TableComponent)).toHaveLength(1);

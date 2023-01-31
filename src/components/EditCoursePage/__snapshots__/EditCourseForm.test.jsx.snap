@@ -43,7 +43,7 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
       >
         <span
           aria-hidden={true}
-          className="text-info"
+          className="text-primary-500"
         >
            All fields are required for publication unless otherwise specified.
         </span>
@@ -324,30 +324,27 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
       />
       <Field
         component={[Function]}
+        createOptionValidator={[Function]}
+        currentValue={Array []}
+        defaultOptions={Array []}
         disabled={true}
-        fetchSuggestions={[Function]}
-        itemType="topic"
         label={
-          <React.Fragment>
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <p>
-                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                </p>
-              }
-              id="tags.label"
-              optional={true}
-              text="Topics"
-            />
-          </React.Fragment>
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+              </p>
+            }
+            id="tags.label"
+            optional={true}
+            text="Topics"
+          />
         }
         name="tags"
-        onChange={[Function]}
         optional={true}
-        renderSuggestion={[Function]}
-        type="text"
+        setValue={[Function]}
         value=""
       />
       <hr />
@@ -1699,9 +1696,7 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
       disabled={true}
       type="button"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-plus"
-      />
+      <SvgAdd />
        Add Course Run
     </button>
     <CourseButtonToolbar
@@ -1761,7 +1756,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
       >
         <span
           aria-hidden={true}
-          className="text-info"
+          className="text-primary-500"
         >
            All fields are required for publication unless otherwise specified.
         </span>
@@ -2042,30 +2037,27 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
       />
       <Field
         component={[Function]}
+        createOptionValidator={[Function]}
+        currentValue={Array []}
+        defaultOptions={Array []}
         disabled={true}
-        fetchSuggestions={[Function]}
-        itemType="topic"
         label={
-          <React.Fragment>
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <p>
-                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                </p>
-              }
-              id="tags.label"
-              optional={true}
-              text="Topics"
-            />
-          </React.Fragment>
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+              </p>
+            }
+            id="tags.label"
+            optional={true}
+            text="Topics"
+          />
         }
         name="tags"
-        onChange={[Function]}
         optional={true}
-        renderSuggestion={[Function]}
-        type="text"
+        setValue={[Function]}
         value=""
       />
       <hr />
@@ -3455,9 +3447,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
       disabled={true}
       type="button"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-plus"
-      />
+      <SvgAdd />
        Add Course Run
     </button>
     <CourseButtonToolbar
@@ -3517,7 +3507,7 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       >
         <span
           aria-hidden={true}
-          className="text-info"
+          className="text-primary-500"
         >
            All fields are required for publication unless otherwise specified.
         </span>
@@ -3798,30 +3788,27 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       />
       <Field
         component={[Function]}
+        createOptionValidator={[Function]}
+        currentValue={Array []}
+        defaultOptions={Array []}
         disabled={true}
-        fetchSuggestions={[Function]}
-        itemType="topic"
         label={
-          <React.Fragment>
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <p>
-                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                </p>
-              }
-              id="tags.label"
-              optional={true}
-              text="Topics"
-            />
-          </React.Fragment>
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+              </p>
+            }
+            id="tags.label"
+            optional={true}
+            text="Topics"
+          />
         }
         name="tags"
-        onChange={[Function]}
         optional={true}
-        renderSuggestion={[Function]}
-        type="text"
+        setValue={[Function]}
         value=""
       />
       <hr />
@@ -5514,9 +5501,7 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       disabled={true}
       type="button"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-plus"
-      />
+      <SvgAdd />
        Add Course Run
     </button>
     <CourseButtonToolbar
@@ -5576,7 +5561,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
       >
         <span
           aria-hidden={true}
-          className="text-info"
+          className="text-primary-500"
         >
            All fields are required for publication unless otherwise specified.
         </span>
@@ -5857,30 +5842,27 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
       />
       <Field
         component={[Function]}
+        createOptionValidator={[Function]}
+        currentValue={Array []}
+        defaultOptions={Array []}
         disabled={true}
-        fetchSuggestions={[Function]}
-        itemType="topic"
         label={
-          <React.Fragment>
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <p>
-                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                </p>
-              }
-              id="tags.label"
-              optional={true}
-              text="Topics"
-            />
-          </React.Fragment>
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+              </p>
+            }
+            id="tags.label"
+            optional={true}
+            text="Topics"
+          />
         }
         name="tags"
-        onChange={[Function]}
         optional={true}
-        renderSuggestion={[Function]}
-        type="text"
+        setValue={[Function]}
         value=""
       />
       <hr />
@@ -7270,9 +7252,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
       disabled={true}
       type="button"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-plus"
-      />
+      <SvgAdd />
        Add Course Run
     </button>
     <CourseButtonToolbar
@@ -7332,7 +7312,7 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
       >
         <span
           aria-hidden={true}
-          className="text-info"
+          className="text-primary-500"
         >
            All fields are required for publication unless otherwise specified.
         </span>
@@ -7609,30 +7589,27 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
       />
       <Field
         component={[Function]}
+        createOptionValidator={[Function]}
+        currentValue={Array []}
+        defaultOptions={Array []}
         disabled={true}
-        fetchSuggestions={[Function]}
-        itemType="topic"
         label={
-          <React.Fragment>
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <p>
-                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                </p>
-              }
-              id="tags.label"
-              optional={true}
-              text="Topics"
-            />
-          </React.Fragment>
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+              </p>
+            }
+            id="tags.label"
+            optional={true}
+            text="Topics"
+          />
         }
         name="tags"
-        onChange={[Function]}
         optional={true}
-        renderSuggestion={[Function]}
-        type="text"
+        setValue={[Function]}
         value=""
       />
       <hr />
@@ -8938,9 +8915,7 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
       disabled={true}
       type="button"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-plus"
-      />
+      <SvgAdd />
        Add Course Run
     </button>
     <CourseButtonToolbar
@@ -9000,7 +8975,7 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
       >
         <span
           aria-hidden={true}
-          className="text-info"
+          className="text-primary-500"
         >
            All fields are required for publication unless otherwise specified.
         </span>
@@ -9277,30 +9252,27 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
       />
       <Field
         component={[Function]}
+        createOptionValidator={[Function]}
+        currentValue={Array []}
+        defaultOptions={Array []}
         disabled={true}
-        fetchSuggestions={[Function]}
-        itemType="topic"
         label={
-          <React.Fragment>
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText={
-                <p>
-                  You can add comma separated tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
-                </p>
-              }
-              id="tags.label"
-              optional={true}
-              text="Topics"
-            />
-          </React.Fragment>
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+              </p>
+            }
+            id="tags.label"
+            optional={true}
+            text="Topics"
+          />
         }
         name="tags"
-        onChange={[Function]}
         optional={true}
-        renderSuggestion={[Function]}
-        type="text"
+        setValue={[Function]}
         value=""
       />
       <hr />
@@ -10640,9 +10612,7 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
       disabled={true}
       type="button"
     >
-      <withDeprecatedProps(Icon)
-        className="fa fa-plus"
-      />
+      <SvgAdd />
        Add Course Run
     </button>
     <CourseButtonToolbar

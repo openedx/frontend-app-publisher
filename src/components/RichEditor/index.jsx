@@ -95,6 +95,7 @@ class RichEditor extends React.Component {
               extended_valid_elements: 'span[lang|id] -span',
               content_css: false,
               content_style: contentStyle,
+              default_link_target: '_blank',
             }}
             onChange={this.updateCharCount}
             onKeyUp={this.updateCharCount}

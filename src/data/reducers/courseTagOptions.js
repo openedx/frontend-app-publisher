@@ -9,7 +9,7 @@ const initialState = {
   isFetching: false,
 };
 
-function CourseTagOptions(state = initialState, action) {
+function CourseTagOptions(state = initialState, action = {}) {
   switch (action.type) {
     case REQUEST_COURSE_TAG_OPTIONS:
       return {

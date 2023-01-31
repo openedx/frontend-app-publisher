@@ -4,7 +4,7 @@ import React from 'react';
 import ActionButton from '../ActionButton';
 import ButtonToolbar from '../ButtonToolbar';
 
-function CourseButtonToolbar(props) {
+const CourseButtonToolbar = (props) => {
   const {
     className,
     disabled,
@@ -55,7 +55,7 @@ function CourseButtonToolbar(props) {
       />
     </ButtonToolbar>
   );
-}
+};
 
 CourseButtonToolbar.propTypes = {
   className: PropTypes.string,

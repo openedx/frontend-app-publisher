@@ -125,7 +125,7 @@ class DateTimeField extends React.Component {
               placeholder="HH:mm"
               required={required}
               disabled={disabled}
-              onChange={event => this.updateDate(event.target.value)}
+              onChange={event => this.updateTime(event.target.value)}
             />
           </Form.Group>
         </div>

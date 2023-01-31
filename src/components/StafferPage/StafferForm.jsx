@@ -95,14 +95,14 @@ const BaseStafferForm = ({
           component={RenderInputTextField}
           type="text"
           label={<FieldLabel text="Organization" />}
-          extraInput={{ value: organizationName }}
+          extraInput={{ defaultValue: organizationName }}
           required
         />
         <Field
           name="bio"
           component={RichEditor}
           label={<FieldLabel text="Biography" />}
-          maxChars={250}
+          maxChars={1000}
           validate={basicValidate}
           id="bio"
         />
