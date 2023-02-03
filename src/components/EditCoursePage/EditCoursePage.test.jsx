@@ -388,6 +388,9 @@ describe('EditCoursePage', () => {
       title: 'demo4004',
       topics: [],
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+      geoLocationName: null,
+      geoLocationLat: null,
+      geoLocationLng: null,
       url_slug: 'demo4004',
       videoSrc: null,
       editable: true,
@@ -406,6 +409,11 @@ describe('EditCoursePage', () => {
         restriction_type: 'allowlist',
         countries: ['AF', 'AX'],
         states: ['AL'],
+      },
+      geolocation: {
+        lat: null,
+        lng: null,
+        location_name: null,
       },
       organization_logo_override: 'http://image.src.small',
       organization_short_code_override: 'test short code',
@@ -956,6 +964,11 @@ describe('EditCoursePage', () => {
       url_slug: 'demo4004',
       uuid: '00000000-0000-0000-0000-000000000000',
       video: { src: null },
+      geolocation: {
+        lat: null,
+        lng: null,
+        location_name: null,
+      },
     };
 
     it('handleCourseSubmit properly for executive education courses, will add additional metadata fields', () => {

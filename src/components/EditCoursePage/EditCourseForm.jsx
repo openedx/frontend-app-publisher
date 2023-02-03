@@ -41,6 +41,7 @@ import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
+import GeoLocationFields from './GeoLocationFields';
 
 export class BaseEditCourseForm extends React.Component {
   constructor(props) {
@@ -1204,6 +1205,8 @@ export class BaseEditCourseForm extends React.Component {
                 />
               </>
             )}
+
+            {administrator && (<GeoLocationFields disabled={disabled} />)}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
             <AdditionalMetadataFields disabled={disabled} />
