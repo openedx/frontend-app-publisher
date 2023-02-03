@@ -1,33 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Modal } from '@edx/paragon';
+import { ActionRow, Button, ModalDialog } from '@edx/paragon';
 
 const ConfirmationModal = ({
   onSubmit,
   title,
   body,
   buttonLabel,
+  open,
   ...passThroughProps
 }) => (
-  <Modal
+  <ModalDialog
+    isOpen={open}
     {...passThroughProps}
-    title={title}
-    body={body}
-    closeText="Cancel"
-    buttons={[
-      {
-        label: buttonLabel,
-        buttonType: 'primary',
-        onClick: onSubmit,
-      },
-    ]}
-  />
+    hasCloseButton
+  >
+    <ModalDialog.Header>
+      <ModalDialog.Title>
+        {title}
+      </ModalDialog.Title>
+    </ModalDialog.Header>
+    <ModalDialog.Body>
+      <div className="p-1">
+        {body}
+      </div>
+    </ModalDialog.Body>
+    <ModalDialog.Footer>
+      <ActionRow>
+        <ModalDialog.CloseButton variant="link">
+          Cancel
+        </ModalDialog.CloseButton>
+        <Button
+          variant="primary"
+          onClick={onSubmit}
+        >
+          {buttonLabel}
+        </Button>
+      </ActionRow>
+    </ModalDialog.Footer>
+
+  </ModalDialog>
 );
 
 ConfirmationModal.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
+  open: PropTypes.bool.isRequired,
   body: PropTypes.string.isRequired,
   buttonLabel: PropTypes.string.isRequired,
 };
