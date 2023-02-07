@@ -100,11 +100,17 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
   */
   return (dispatch) => {
     const {
+      geoLocationLng,
+      geoLocationLat,
       imageSrc: initialImageSrc,
       course_runs: initialCourseRuns,
     } = initialValues;
-    // This emits a redux action called CHANGE that will update currentFormValues.imageSrc
+    // This emits a redux action called CHANGE that will update currentFormValues.imageSrc,
+    // currentFormValues.geoLocationLat, and currentFormValues.geoLocationLng. Geolocation values
+    // get converted into 7 digit number on the backend and the sync is needed to get the form in clean state.
     change('imageSrc', initialImageSrc);
+    change('geoLocationLat', geoLocationLat);
+    change('geoLocationLng', geoLocationLng);
     for (let i = 0; i < initialCourseRuns.length; i += 1) {
       change(`course_runs[${i}].status`, initialCourseRuns[i].status);
     }
