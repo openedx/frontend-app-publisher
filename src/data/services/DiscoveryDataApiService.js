@@ -220,6 +220,11 @@ class DiscoveryDataApiService {
     });
   }
 
+  static fetchProductSources() {
+    const url = `${discoveryBaseUrl}/sources/`;
+    return getAuthenticatedHttpClient().get(url);
+  }
+
   static createStaffer(data) {
     const url = `${discoveryBaseUrl}/people/`;
     // POST to People endpoint to create

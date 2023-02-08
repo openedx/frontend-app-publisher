@@ -9,7 +9,7 @@ import { isSafari } from './utils';
 
 const publishDateHelp = (
   <div>
-    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
+    {isSafari && <p>Required Format: yyyy/mm/dd</p>}
     <p>The scheduled date for when the course run will be live and published.</p>
     <p>
       To publish as soon as possible, set the publish date to today.
@@ -44,7 +44,7 @@ function dateEditHelp(courseRun) {
 
 const endDateHelp = (
   <div>
-    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
+    {isSafari && <p>Required Format: yyyy/mm/dd</p>}
     <p>
       If you are unsure of the exact date, specify a day that is close to the
       estimated end date. For example, if your course will end near the end
@@ -125,7 +125,7 @@ const pacingHelp = (
 
 const startDateHelp = (
   <div>
-    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
+    {isSafari && <p>Required Format: yyyy/mm/dd</p>}
     <p>Start on a Tuesday, Wednesday, or Thursday.</p>
     <p>Avoid major holidays.</p>
     <p>
@@ -177,6 +177,14 @@ const typeHelp = (
   </div>
 );
 
+const productSourceHelp = (
+  <div>
+    <p>The External Product source is a key that identifies where the course originates.</p>
+    <p><b>Example:</b></p>
+    <p>If the course originates from the edX platform, the External Product source is edX.</p>
+  </div>
+);
+
 const urlSlugHelp = (
   <div>
     <p>
@@ -210,6 +218,7 @@ export {
   publishDateHelp,
   titleHelp,
   typeHelp,
+  productSourceHelp,
   urlSlugHelp,
   keyHelp,
 };
