@@ -93,7 +93,7 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
         />
       }
       name="additional_metadata.variant_id"
-      required={false}
+      required={true}
     />
     <Field
       component={[Function]}
@@ -120,7 +120,7 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
         />
       }
       name="additional_metadata.course_term_override"
-      required={false}
+      required={true}
     />
     <FieldLabel
       className="h3 font-weight-normal"
@@ -257,6 +257,7 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
       dateLabel="Registration Deadline Date"
       disabled={false}
       name="additional_metadata.registration_deadline"
+      required={true}
       timeLabel="Registration Deadline Time (UTC)"
       type="date"
       utcTimeZone={true}
