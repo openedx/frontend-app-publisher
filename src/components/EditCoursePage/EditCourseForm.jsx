@@ -1193,7 +1193,7 @@ export class BaseEditCourseForm extends React.Component {
             {administrator && (<GeoLocationFields disabled={disabled} />)}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
-            <AdditionalMetadataFields disabled={disabled} />
+            <AdditionalMetadataFields disabled={disabled} sourceInfo={courseInfo?.data?.product_source} />
           )}
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
@@ -1291,6 +1291,9 @@ BaseEditCourseForm.propTypes = {
         restriction_type: PropTypes.string,
         countries: PropTypes.arrayOf(PropTypes.string),
         states: PropTypes.arrayOf(PropTypes.string),
+      }),
+      product_source: PropTypes.shape({
+        slug: PropTypes.string,
       }),
       topics: PropTypes.arrayOf(PropTypes.string),
     }),
