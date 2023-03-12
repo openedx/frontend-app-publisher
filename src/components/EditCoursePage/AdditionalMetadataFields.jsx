@@ -160,7 +160,9 @@ const AdditionalMetadataFields = (props) => {
 AdditionalMetadataFields.propTypes = {
   disabled: PropTypes.bool,
   sourceInfo: PropTypes.shape({
+    name: PropTypes.string,
     slug: PropTypes.string,
+    description: PropTypes.string,
   }),
 };
 

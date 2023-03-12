@@ -7,24 +7,25 @@ import {
 import DiscoveryDataApiService from '../services/DiscoveryDataApiService';
 import { getErrorMessages } from '../../utils';
 
-export function requestProductSourceOptions(data) {
-  return { type: REQUEST_PRODUCT_SOURCE_OPTIONS, data };
+function requestProductSourceOptions() {
+  return { type: REQUEST_PRODUCT_SOURCE_OPTIONS };
 }
 
-export function requestProductSourceOptionsSuccess(data) {
+function requestProductSourceOptionsSuccess(data) {
   return { type: REQUEST_PRODUCT_SOURCE_OPTIONS_SUCCESS, data };
 }
 
-export function requestProductSourceOptionsFail(error) {
+function requestProductSourceOptionsFail(error) {
   return { type: REQUEST_PRODUCT_SOURCE_OPTIONS_FAIL, error };
 }
 
-export function fetchProductSourcesOptions() {
+function fetchProductSourceOptions() {
   return (dispatch) => {
-    dispatch(requestProductSourceOptions({}));
+    dispatch(requestProductSourceOptions());
     return DiscoveryDataApiService.fetchProductSources()
       .then((response) => {
-        dispatch(requestProductSourceOptionsSuccess(response.data));
+        const productSources = response.data.results;
+        dispatch(requestProductSourceOptionsSuccess(productSources));
       })
       .catch((error) => {
         dispatch(requestProductSourceOptionsFail(
@@ -35,3 +36,10 @@ export function fetchProductSourcesOptions() {
       });
   };
 }
+
+export {
+  requestProductSourceOptions,
+  requestProductSourceOptionsSuccess,
+  requestProductSourceOptionsFail,
+  fetchProductSourceOptions,
+};

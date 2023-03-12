@@ -5,26 +5,31 @@ import {
 } from '../constants/productSourceOptions';
 
 const initialState = {
-  data: {},
-  isFetching: false,
+  productSources: [],
+  isFetching: true,
+  error: null,
 };
 
-function productSourceOptions(action, state = initialState) {
-  switch (action?.type) {
+function productSourceOptions(state = initialState, action = {}) {
+  switch (action.type) {
     case REQUEST_PRODUCT_SOURCE_OPTIONS:
       return {
         ...state,
+        productSources: [],
         isFetching: false,
+        error: null,
       };
     case REQUEST_PRODUCT_SOURCE_OPTIONS_SUCCESS:
       return {
         ...state,
-        data: action.data,
+        productSources: action.data,
         isFetching: false,
+        error: null,
       };
     case REQUEST_PRODUCT_SOURCE_OPTIONS_FAIL:
       return {
         ...state,
+        productSources: [],
         error: action.error,
         isFetching: false,
       };
