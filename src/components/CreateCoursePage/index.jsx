@@ -9,6 +9,7 @@ import PageContainer from '../PageContainer';
 import ConfirmationModal from '../ConfirmationModal';
 
 import { formatPriceData } from '../../utils';
+import { DEFAULT_PRODUCT_SOURCE } from '../../data/constants/productSourceOptions';
 
 class CreateCoursePage extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class CreateCoursePage extends React.Component {
     const courseData = {
       ...priceData,
       org: options.org,
-      product_source: options.source,
+      product_source: options.product_source || DEFAULT_PRODUCT_SOURCE,
       title: options.title,
       number: options.number,
       type: options.type,
