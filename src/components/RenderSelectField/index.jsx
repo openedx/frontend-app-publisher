@@ -63,6 +63,8 @@ RenderSelectField.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.object),
   ]).isRequired,
+  hidden: PropTypes.bool,
+  defaultValue: PropTypes.string,
 };
 
 export default RenderSelectField;

@@ -79,7 +79,7 @@ class BaseCreateCourseForm extends React.Component {
     let sourceSelectList = [{ label: 'Select product source', value: '' }];
     if (sources) {
       const newSources = sources.map(source => (
-        { label: source.name, value: source.slug} 
+        { label: source.name, value: source.slug }
       ));
       sourceSelectList = sourceSelectList.concat(newSources);
     }
@@ -126,7 +126,7 @@ class BaseCreateCourseForm extends React.Component {
             options={this.processSources(sources)}
             label={<FieldLabel text="Source" required />}
             defaultValue={DEFAULT_PRODUCT_SOURCE}
-            hidden={true}  
+            hidden
             // hiding this field as publisher is currently only used for creating Edx courses and it causes confusion
             // among the partners when they see this field. We will unhide this field once we start supporting other
             // products as well in publisher.
