@@ -9,13 +9,18 @@ import DateTimeField from '../DateTimeField';
 
 const AdditionalMetadataFields = (props) => {
   const {
-    disabled, sourceInfo,
+    disabled, sourceInfo, externalCourseMarketingType,
   } = props;
   const sourceSlug = sourceInfo?.slug;
 
   const SOURCE_SLUG_REQUIRED_FIELDS = JSON.parse(process.env.ADDITIONAL_METADATA_REQUIRED_FIELDS);
 
   function isRequiredField(fieldName) {
+    if (['certificate_info_heading', 'certificate_info_blurb'].includes(fieldName)) {
+      if (externalCourseMarketingType === 'sprint') {
+        return false;
+      }
+    }
     if (sourceSlug === undefined || !(sourceSlug in SOURCE_SLUG_REQUIRED_FIELDS)) {
       return true;
     }
@@ -162,11 +167,13 @@ AdditionalMetadataFields.propTypes = {
   sourceInfo: PropTypes.shape({
     slug: PropTypes.string,
   }),
+  externalCourseMarketingType: PropTypes.string,
 };
 
 AdditionalMetadataFields.defaultProps = {
   disabled: false,
   sourceInfo: {},
+  externalCourseMarketingType: null,
 };
 
 export default AdditionalMetadataFields;

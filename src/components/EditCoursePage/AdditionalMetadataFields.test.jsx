@@ -9,4 +9,9 @@ describe('AdditionalMetadata Fields', () => {
     const component = shallow(<AdditionalMetadataFields />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('Display required fields on the basis of external course marketing type', () => {
+    const component = shallow(<AdditionalMetadataFields externalCourseMarketingType="sprint" />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
 });
