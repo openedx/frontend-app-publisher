@@ -9,6 +9,10 @@ const organizations = [
   { name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' },
 ];
 
+const sources = [
+  { name: 'souce1', slug: 'source1' }, { name: 'source2', slug: 'source2' },
+];
+
 Date.now = jest.fn(() => new Date(Date.UTC(2001, 0, 1)).valueOf());
 
 describe('CreateCourseForm', () => {
@@ -27,6 +31,19 @@ describe('CreateCourseForm', () => {
       handleSubmit={() => {}}
       initialValues={{}}
       organizations={organizations}
+      sources={sources}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+    />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('renders html correctly with no sources', () => {
+    const component = shallow(<BaseCreateCourseForm
+      handleSubmit={() => {}}
+      initialValues={{}}
+      organizations={organizations}
+      sources={[]}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
     />);
@@ -39,6 +56,7 @@ describe('CreateCourseForm', () => {
       initialValues={initialValues}
       currentFormValues={initialValues}
       organizations={organizations}
+      sources={sources}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
     />);
@@ -54,6 +72,7 @@ describe('CreateCourseForm', () => {
       initialValues={{}}
       currentFormValues={initialValues}
       organizations={organizations}
+      sources={sources}
       courseOptions={courseOptions}
       courseRunOptions={courseRunOptions}
     />);
