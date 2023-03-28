@@ -28,7 +28,9 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import { PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG } from '../../data/constants';
-import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
+import {
+  titleHelp, typeHelp, urlSlugHelp, productSourceHelp,
+} from '../../helpText';
 import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
   formatCollaboratorOptions,
@@ -258,6 +260,7 @@ export class BaseEditCourseForm extends React.Component {
         data: {
           skill_names: skillNames,
           course_type: courseType,
+          product_source: productSource,
         },
       },
       reset,
@@ -327,6 +330,8 @@ export class BaseEditCourseForm extends React.Component {
       && initialValues.course_runs.some((run) => (run.status === PUBLISHED
         && (!courseIsPristine || !isPristine(initialValues, currentFormValues, run.key))));
 
+    const parsedProductSource = productSource && productSource.name ? productSource.name : 'N/A';
+
     if (!courseTags) { setCourseTags(courseInfo?.data?.topics); }
 
     languageOptions.unshift({ label: '--', value: '' });
@@ -377,6 +382,10 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled || !administrator}
               optional
             />
+            <div>
+              <FieldLabel helpText={productSourceHelp} id="productSource" text="Product Source" className="mb-2" />
+              <div className="mb-3">{parsedProductSource}</div>
+            </div>
             <div>
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
@@ -1195,7 +1204,7 @@ export class BaseEditCourseForm extends React.Component {
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
             <AdditionalMetadataFields
               disabled={disabled}
-              sourceInfo={courseInfo?.data?.product_source}
+              sourceInfo={productSource}
               externalCourseMarketingType={courseInfo?.data?.additional_metadata?.external_course_marketing_type}
             />
           )}
@@ -1291,18 +1300,18 @@ BaseEditCourseForm.propTypes = {
       course_type: PropTypes.string,
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
+      product_source: PropTypes.shape({
+        name: PropTypes.string,
+        slug: PropTypes.string,
+        description: PropTypes.string,
+      }),
       location_restriction: PropTypes.shape({
         restriction_type: PropTypes.string,
         countries: PropTypes.arrayOf(PropTypes.string),
         states: PropTypes.arrayOf(PropTypes.string),
       }),
-      additional_metadata: PropTypes.shape(
-        {
-          external_course_marketing_type: PropTypes.string,
-        },
-      ),
-      product_source: PropTypes.shape({
-        slug: PropTypes.string,
+      additional_metadata: PropTypes.shape({
+        external_course_marketing_type: PropTypes.string,
       }),
       topics: PropTypes.arrayOf(PropTypes.string),
     }),

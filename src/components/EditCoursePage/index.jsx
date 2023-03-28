@@ -335,7 +335,6 @@ class EditCoursePage extends React.Component {
       courseOptions,
     } = this.props;
 
-    // const topics = courseData.tags ? courseData.tags.split(',') : [];
     // If we have an existing published course run, we need to also publish the course.
     // We want to use the same indicator of draft = false for consistency.
     const hasPublishedRun = courseData.course_runs.some(
