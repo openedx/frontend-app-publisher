@@ -21,7 +21,6 @@ import DateTimeField from '../DateTimeField';
 import {
   isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions,
 } from '../../utils';
-import { DEFAULT_PRODUCT_SOURCE } from '../../data/constants/productSourceOptions';
 
 class BaseCreateCourseForm extends React.Component {
   constructor(props) {
@@ -75,23 +74,23 @@ class BaseCreateCourseForm extends React.Component {
     return orgSelectList;
   }
 
-  processSources(sources) {
-    let sourceSelectList = [{ label: 'Select product source', value: '' }];
-    if (sources) {
-      const newSources = sources.map(source => (
-        { label: source.name, value: source.slug }
-      ));
-      sourceSelectList = sourceSelectList.concat(newSources);
-    }
-    return sourceSelectList;
-  }
+  // TODO: Removing this for now, as we hide the source field for now and it's not being used.
+  //   processSources(sources) {
+  //     let sourceSelectList = [{ label: 'Select product source', value: '' }];
+  //     if (sources) {
+  //       const newSources = sources.map(source => (
+  //         { label: source.name, value: source.slug }
+  //       ));
+  //       sourceSelectList = sourceSelectList.concat(newSources);
+  //     }
+  //     return sourceSelectList;
+  //   }
 
   render() {
     const {
       currentFormValues,
       handleSubmit,
       organizations,
-      sources,
       pristine,
       isCreating,
       courseOptions,
@@ -120,17 +119,17 @@ class BaseCreateCourseForm extends React.Component {
             label={<FieldLabel text="Organization" required />}
             required
           />
-          <Field
+          {/* TODO: Removing this field because publisher is currently only used for creating Edx courses.
+            We will unhide this field once we start supporting other products as well in publisher. */}
+          {/* <Field
             name="source"
             component={RenderSelectField}
             options={this.processSources(sources)}
             label={<FieldLabel text="Source" required />}
             defaultValue={DEFAULT_PRODUCT_SOURCE}
             hidden
-            // TODO: hiding this field because publisher is currently only used for creating Edx courses.
-            // We will unhide this field once we start supporting other products as well in publisher.
             required
-          />
+          /> */}
           <Field
             name="title"
             component={RenderInputTextField}
@@ -357,10 +356,6 @@ BaseCreateCourseForm.propTypes = {
     start: PropTypes.string,
   }),
   organizations: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    key: PropTypes.string.isRequired,
-  })).isRequired,
-  sources: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,
   })).isRequired,
