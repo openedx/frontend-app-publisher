@@ -9,7 +9,6 @@ const RenderSelectField = ({
   label,
   disabled,
   hidden,
-  defaultValue,
   required,
   meta: { touched, error },
   options,
@@ -25,7 +24,6 @@ const RenderSelectField = ({
       disabled={disabled}
       hidden={hidden}
       required={required}
-      value={defaultValue}
     >
       {options.map(option => (
         <option key={option.value} value={option.value}>{option.label}</option>
@@ -45,7 +43,6 @@ RenderSelectField.defaultProps = {
   disabled: false,
   required: false,
   hidden: false,
-  defaultValue: null,
 };
 
 RenderSelectField.propTypes = {
@@ -64,7 +61,6 @@ RenderSelectField.propTypes = {
     PropTypes.arrayOf(PropTypes.object),
   ]).isRequired,
   hidden: PropTypes.bool,
-  defaultValue: PropTypes.string,
 };
 
 export default RenderSelectField;
