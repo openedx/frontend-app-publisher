@@ -34,7 +34,7 @@ import {
 import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
   formatCollaboratorOptions,
-  getOptionsData, isPristine, parseCourseTypeOptions, parseOptions,
+  getOptionsData, isPristine, parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions,
 } from '../../utils';
 import store from '../../data/store';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
@@ -43,8 +43,6 @@ import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
-
-import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import GeoLocationFields from './GeoLocationFields';
 
 export class BaseEditCourseForm extends React.Component {
@@ -166,14 +164,6 @@ export class BaseEditCourseForm extends React.Component {
     return 'No Preview Link Available';
   }
 
-  loadOptions = (inputValue, callback) => DiscoveryDataApiService.fetchCourseTags(inputValue)
-    .then((response) => {
-      callback(this.courseTagObjectsToSelectOptions(response.data));
-    })
-    .catch(() => {
-      callback(null);
-    });
-
   formatCourseTitle(title, courseStatuses, courseInfo) {
     // TODO: After we have a way of determining if the course has been edited, that should be
     // added into the list of statuses being passed into the Pill component.
@@ -186,40 +176,6 @@ export class BaseEditCourseForm extends React.Component {
         </div>
       </>
     );
-  }
-
-  courseTagObjectsToSelectOptions(allCourseTags) {
-  /*  transform an array of course tag objects e.g
-        [
-          {
-            name: 'mba',
-            value: 'mba'
-          },
-
-          {
-            name: 'mba-gmat',
-            value: 'mba-gmat'
-          }
-        ]
-
-      to a format expected by ReduxFormCreatableSelect i.e
-        [
-          {
-            label: 'mba',
-            value: 'mba'
-          },
-
-          {
-            label: 'mba-gmat',
-            value: 'mba-gmat'
-          }
-        ]
-  */
-
-    return allCourseTags.map(tag => ({
-      label: tag.value,
-      value: tag.value,
-    })).filter(x => x.value);
   }
 
   toggleCourseRun(index, value) {
@@ -299,6 +255,10 @@ export class BaseEditCourseForm extends React.Component {
       && parseOptions(courseOptionsData.location_restriction.children.restriction_type.choices);
     const locationStateOptions = courseOptionsData
       && parseOptions(courseOptionsData.location_restriction.children.states.child.choices);
+    const productStatusOptions = courseOptionsData
+      && parseOptions(courseOptionsData.additional_metadata.children.product_status.choices);
+    const externalCourseMarketingTypeOptions = courseOptionsData
+      && parseOptions(courseOptionsData.additional_metadata.children.external_course_marketing_type.choices);
 
     const {
       data: {
@@ -510,11 +470,11 @@ export class BaseEditCourseForm extends React.Component {
               isCreatable
               defaultOptions={
                 Array.isArray(allCourseTags)
-                  ? this.courseTagObjectsToSelectOptions(allCourseTags)
+                  ? courseTagObjectsToSelectOptions(allCourseTags)
                   : []
               }
               createOptionValidator={courseTagValidate}
-              loadOptions={this.loadOptions}
+              loadOptions={loadOptions}
             />
             {showMarketingFields && (
               <>
@@ -1206,6 +1166,8 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               sourceInfo={productSource}
               externalCourseMarketingType={courseInfo?.data?.additional_metadata?.external_course_marketing_type}
+              productStatusOptions={productStatusOptions}
+              externalCourseMarketingTypeOptions={externalCourseMarketingTypeOptions}
             />
           )}
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
