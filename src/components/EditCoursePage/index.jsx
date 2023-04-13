@@ -335,7 +335,6 @@ class EditCoursePage extends React.Component {
       courseOptions,
     } = this.props;
 
-    // const topics = courseData.tags ? courseData.tags.split(',') : [];
     // If we have an existing published course run, we need to also publish the course.
     // We want to use the same indicator of draft = false for consistency.
     const hasPublishedRun = courseData.course_runs.some(
@@ -375,8 +374,7 @@ class EditCoursePage extends React.Component {
       ].filter((subject) => !!subject),
       syllabus_raw: courseData.syllabus_raw,
       title: courseData.title,
-      topics: this.state.courseTags && this.state.courseTags.length
-        ? [...new Set([...this.state.courseTags])] : [],
+      topics: courseData.tags ? courseData.tags.map(tag => tag.value) : [],
       type: courseData.type,
       url_slug: courseData.url_slug,
       uuid,
@@ -483,6 +481,7 @@ class EditCoursePage extends React.Component {
         registration_deadline: additional_metadata.registration_deadline,
         variant_id: additional_metadata.variant_id,
         course_term_override: additional_metadata.course_term_override,
+        external_course_marketing_type: additional_metadata.external_course_marketing_type,
       };
     }
     return {};
@@ -641,6 +640,7 @@ class EditCoursePage extends React.Component {
       organization_logo_override_url,
       location_restriction: this.buildLocationRestriction(),
       in_year_value: this.buildInYearValue(),
+      tags: topics?.length ? topics.map(t => ({ label: t, value: t })) : null,
     };
   }
 

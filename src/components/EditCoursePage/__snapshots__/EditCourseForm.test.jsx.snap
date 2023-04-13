@@ -148,6 +148,35 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -325,9 +354,11 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -342,10 +373,9 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -1861,6 +1891,35 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -2038,9 +2097,11 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -2055,10 +2116,9 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -3612,6 +3672,35 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -3789,9 +3878,11 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -3806,10 +3897,9 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -5669,6 +5759,35 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -5846,9 +5965,11 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -5863,10 +5984,9 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -7420,6 +7540,35 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -7593,9 +7742,11 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -7610,10 +7761,9 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -9083,6 +9233,35 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -9256,9 +9435,11 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -9273,10 +9454,9 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field

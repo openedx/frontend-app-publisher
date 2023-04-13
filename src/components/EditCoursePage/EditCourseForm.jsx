@@ -28,7 +28,9 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import { PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG } from '../../data/constants';
-import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
+import {
+  titleHelp, typeHelp, urlSlugHelp, productSourceHelp,
+} from '../../helpText';
 import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
   formatCollaboratorOptions,
@@ -41,6 +43,8 @@ import { Collaborator } from '../Collaborator';
 import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
+
+import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import GeoLocationFields from './GeoLocationFields';
 
 export class BaseEditCourseForm extends React.Component {
@@ -50,7 +54,6 @@ export class BaseEditCourseForm extends React.Component {
     this.state = {
       open: false,
       collapsiblesOpen: [],
-      courseTag: '',
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -163,6 +166,14 @@ export class BaseEditCourseForm extends React.Component {
     return 'No Preview Link Available';
   }
 
+  loadOptions = (inputValue, callback) => DiscoveryDataApiService.fetchCourseTags(inputValue)
+    .then((response) => {
+      callback(this.courseTagObjectsToSelectOptions(response.data));
+    })
+    .catch(() => {
+      callback(null);
+    });
+
   formatCourseTitle(title, courseStatuses, courseInfo) {
     // TODO: After we have a way of determining if the course has been edited, that should be
     // added into the list of statuses being passed into the Pill component.
@@ -208,29 +219,7 @@ export class BaseEditCourseForm extends React.Component {
     return allCourseTags.map(tag => ({
       label: tag.value,
       value: tag.value,
-    }));
-  }
-
-  courseTagsToSelectValues(tags) {
-  /*  transform an array of course tags e.g `['mba', 'mba-gmat']` to
-      a format expected by ReduxFormCreatableSelect i.e
-        [
-          {
-            label: 'mba',
-            value: 'mba'
-          },
-
-          {
-            label: 'mba-gmat',
-            value: 'mba-gmat'
-          }
-        ]
-  */
-
-    return tags.map(tag => ({
-      label: tag,
-      value: tag,
-    }));
+    })).filter(x => x.value);
   }
 
   toggleCourseRun(index, value) {
@@ -271,6 +260,7 @@ export class BaseEditCourseForm extends React.Component {
         data: {
           skill_names: skillNames,
           course_type: courseType,
+          product_source: productSource,
         },
       },
       reset,
@@ -340,6 +330,8 @@ export class BaseEditCourseForm extends React.Component {
       && initialValues.course_runs.some((run) => (run.status === PUBLISHED
         && (!courseIsPristine || !isPristine(initialValues, currentFormValues, run.key))));
 
+    const parsedProductSource = productSource && productSource.name ? productSource.name : 'N/A';
+
     if (!courseTags) { setCourseTags(courseInfo?.data?.topics); }
 
     languageOptions.unshift({ label: '--', value: '' });
@@ -390,6 +382,10 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled || !administrator}
               optional
             />
+            <div>
+              <FieldLabel helpText={productSourceHelp} id="productSource" text="Product Source" className="mb-2" />
+              <div className="mb-3">{parsedProductSource}</div>
+            </div>
             <div>
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
@@ -507,21 +503,18 @@ export class BaseEditCourseForm extends React.Component {
                   optional
                 />
               )}
+              isAsync
+              isMulti
               disabled={disabled || !administrator}
-              value={this.state.courseTag}
               optional
-              currentValue={
-                Array.isArray(courseTags)
-                  ? this.courseTagsToSelectValues(courseTags)
-                  : null
-              }
-              setValue={(newValue) => setCourseTags(newValue)}
+              isCreatable
               defaultOptions={
                 Array.isArray(allCourseTags)
                   ? this.courseTagObjectsToSelectOptions(allCourseTags)
                   : []
               }
               createOptionValidator={courseTagValidate}
+              loadOptions={this.loadOptions}
             />
             {showMarketingFields && (
               <>
@@ -1209,7 +1202,11 @@ export class BaseEditCourseForm extends React.Component {
             {administrator && (<GeoLocationFields disabled={disabled} />)}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
-            <AdditionalMetadataFields disabled={disabled} />
+            <AdditionalMetadataFields
+              disabled={disabled}
+              sourceInfo={productSource}
+              externalCourseMarketingType={courseInfo?.data?.additional_metadata?.external_course_marketing_type}
+            />
           )}
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
@@ -1303,10 +1300,18 @@ BaseEditCourseForm.propTypes = {
       course_type: PropTypes.string,
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
+      product_source: PropTypes.shape({
+        name: PropTypes.string,
+        slug: PropTypes.string,
+        description: PropTypes.string,
+      }),
       location_restriction: PropTypes.shape({
         restriction_type: PropTypes.string,
         countries: PropTypes.arrayOf(PropTypes.string),
         states: PropTypes.arrayOf(PropTypes.string),
+      }),
+      additional_metadata: PropTypes.shape({
+        external_course_marketing_type: PropTypes.string,
       }),
       topics: PropTypes.arrayOf(PropTypes.string),
     }),

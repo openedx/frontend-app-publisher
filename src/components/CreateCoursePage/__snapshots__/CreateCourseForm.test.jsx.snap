@@ -1148,3 +1148,378 @@ exports[`CreateCourseForm renders html correctly with no orgs 1`] = `
   </form>
 </div>
 `;
+
+exports[`CreateCourseForm renders html correctly with no sources 1`] = `
+<div
+  className="create-course-form"
+>
+  <h2>
+    Create New Course
+  </h2>
+  <hr />
+  <form
+    onSubmit={[Function]}
+  >
+    <Field
+      component={[Function]}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id={null}
+          optional={false}
+          required={true}
+          text="Organization"
+        />
+      }
+      name="org"
+      options={
+        Array [
+          Object {
+            "label": "Select organization",
+            "value": "",
+          },
+          Object {
+            "autoGenerateKey": undefined,
+            "label": "edX",
+            "value": "edx",
+          },
+          Object {
+            "autoGenerateKey": undefined,
+            "label": "edX2",
+            "value": "edx2",
+          },
+        ]
+      }
+      required={true}
+    />
+    <Field
+      component={[Function]}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText={
+            <div>
+              <p>
+                Maximum 70 characters. Recommended 50 or fewer characters.
+              </p>
+              <p>
+                An effective course title:
+              </p>
+              <ul>
+                <li>
+                  Clearly indicates the course subject matter.
+                </li>
+                <li>
+                  Follows search engine optimization (SEO) guidelines.
+                </li>
+                <li>
+                  Targets a global audience.
+                </li>
+              </ul>
+              <p>
+                <a
+                  href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Learn more.
+                </a>
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                English Grammar and Essay Writing
+              </p>
+            </div>
+          }
+          id="title-label"
+          optional={false}
+          required={true}
+          text="Title"
+        />
+      }
+      name="title"
+      required={true}
+      type="text"
+    />
+    <Field
+      component={[Function]}
+      label={
+        <FieldLabel
+          className=""
+          extraText="Cannot edit after submission"
+          helpText={
+            <div>
+              <p>
+                Maximum 10 characters. Characters can be letters, numbers, periods, underscores, or hyphens.
+              </p>
+              <p>
+                If a course consists of several modules, the course number can have an ending such as .1x or .2x.
+              </p>
+              <p>
+                <a
+                  href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Learn more.
+                </a>
+              </p>
+              <p>
+                <b>
+                  Examples:
+                </b>
+              </p>
+              <ol>
+                <li>
+                  CS002x
+                </li>
+                <li>
+                  BIO1.1x, BIO1.2x
+                </li>
+              </ol>
+            </div>
+          }
+          id="number-label"
+          optional={false}
+          required={true}
+          text="Number"
+        />
+      }
+      name="number"
+      required={true}
+      type="text"
+    />
+    <Field
+      component={[Function]}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText={
+            <div>
+              <p>
+                The Course enrollment track determines what enrollment tracks are eligible for the course runs.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                The Verified and Audit selection will allow course runs to either be Verified and Audit or Audit only.
+              </p>
+            </div>
+          }
+          id="course-type-label"
+          optional={false}
+          required={true}
+          text="Course enrollment track"
+        />
+      }
+      name="type"
+      options={
+        Array [
+          Object {
+            "label": "Select enrollment track",
+            "value": "",
+          },
+          Object {
+            "label": "Credit",
+            "value": "9521aa7d-801b-4a67-92c3-716ea30f5086",
+          },
+          Object {
+            "label": "Masters Only",
+            "value": "7b41992e-f268-4331-8ba9-72acb0880454",
+          },
+          Object {
+            "label": "Verified and Audit",
+            "value": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
+          },
+          Object {
+            "label": "Professional Only",
+            "value": "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e",
+          },
+          Object {
+            "label": "Audit Only",
+            "value": "03e09c15-4127-4031-bc02-e20fcbdf09f0",
+          },
+        ]
+      }
+      required={true}
+    />
+    <PriceList
+      disabled={false}
+      extraInput={Object {}}
+      priceLabels={Object {}}
+      required={true}
+    />
+    <h2>
+      First run of your Course
+    </h2>
+    <hr />
+    <div>
+      <Field
+        component={[Function]}
+        dateLabel="Start date"
+        helpText={
+          <div>
+            <p>
+              Required Format: yyyy/mm/dd
+            </p>
+            <p>
+              Start on a Tuesday, Wednesday, or Thursday.
+            </p>
+            <p>
+              Avoid major holidays.
+            </p>
+            <p>
+              Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+            </p>
+            <p>
+              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+            </p>
+          </div>
+        }
+        maxLength="10"
+        name="start"
+        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+        placeholder="yyyy/mm/dd"
+        required={true}
+        timeLabel="Start time (GMT)"
+        type="text"
+      />
+      <Field
+        component={[Function]}
+        dateLabel="End date"
+        helpText={
+          <div>
+            <p>
+              Required Format: yyyy/mm/dd
+            </p>
+            <p>
+              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+            </p>
+          </div>
+        }
+        maxLength="10"
+        name="end"
+        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+        placeholder="yyyy/mm/dd"
+        required={true}
+        timeLabel="End time (GMT)"
+        type="text"
+      />
+    </div>
+    <Field
+      component={[Function]}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText={
+            <div>
+              <p>
+                The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+              </p>
+              <p>
+                <a
+                  href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Learn more.
+                </a>
+              </p>
+            </div>
+          }
+          id="course-run-type-label"
+          optional={false}
+          required={true}
+          text="Course run enrollment track"
+        />
+      }
+      name="run_type"
+      options={
+        Array [
+          Object {
+            "label": "Select Course enrollment track first",
+            "value": "",
+          },
+        ]
+      }
+      required={true}
+    />
+    <Field
+      component={[Function]}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText={
+            <div>
+              <p>
+                Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+              </p>
+              <p>
+                Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+              </p>
+            </div>
+          }
+          id="pacing_type.label"
+          optional={false}
+          text="Course pacing"
+        />
+      }
+      name="pacing_type"
+      options={
+        Array [
+          Object {
+            "label": "Instructor-paced",
+            "value": "instructor_paced",
+          },
+          Object {
+            "label": "Self-paced",
+            "value": "self_paced",
+          },
+        ]
+      }
+      type="text"
+    />
+    <ButtonToolbar
+      className=""
+      leftJustify={false}
+    >
+      <Link
+        to="/"
+      >
+        <button
+          className="btn btn-outline-primary"
+          disabled={false}
+          type="button"
+        >
+          Cancel
+        </button>
+      </Link>
+      <ActionButton
+        className=""
+        disabled={true}
+        labels={
+          Object {
+            "default": "Create",
+            "pending": "Creating",
+          }
+        }
+        primary={true}
+        state="default"
+      />
+    </ButtonToolbar>
+  </form>
+</div>
+`;

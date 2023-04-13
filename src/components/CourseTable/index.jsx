@@ -13,7 +13,7 @@ import ButtonToolbar from '../ButtonToolbar';
 import PageContainer from '../PageContainer';
 import { formatDate, getPageOptionsFromUrl, updateUrl } from '../../utils';
 import Pill from '../Pill';
-import { PUBLISHED, REVIEWED } from '../../data/constants';
+import { PUBLISHED, REVIEWED, ARCHIVED } from '../../data/constants';
 
 import './CourseTable.scss';
 
@@ -44,6 +44,7 @@ class CourseTable extends React.Component {
             { value: PUBLISHED, label: 'Published', color: '#008100' },
             { value: REVIEWED, label: 'Scheduled', color: '#0075b4' },
             { value: 'unsubmitted', label: 'Unsubmitted', color: '#E2C018' },
+            { value: ARCHIVED, label: 'Archived', color: '#454545' },
           ],
         },
       ],

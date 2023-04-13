@@ -21,6 +21,7 @@ class StafferPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchStafferInfo();
+    this.props.fetchOrganizations();
     this.setStartedFetching();
   }
 
@@ -85,7 +86,7 @@ class StafferPage extends React.Component {
     return {
       title: position.title,
       organization: orgId,
-      organization_override: position.organization_override,
+      organization_override: position.organization_override.value,
     };
   }
 
@@ -103,6 +104,7 @@ class StafferPage extends React.Component {
     const {
       stafferInfo,
       sourceInfo,
+      publisherUserInfo,
     } = this.props;
 
     if (!stafferInfo) {
@@ -130,6 +132,10 @@ class StafferPage extends React.Component {
       : this.handleStafferEdit);
 
     const { data, isSaving } = stafferInfo;
+    const orgOverrideString = data?.position?.organization_override;
+    const orgOverrideSelectValue = orgOverrideString
+      ? { label: orgOverrideString, value: orgOverrideString }
+      : null;
 
     const errorArray = [];
 
@@ -171,8 +177,14 @@ class StafferPage extends React.Component {
                 onSubmit={handleSubmit}
                 isSaving={isSaving}
                 isCreateForm={isCreateForm}
-                initialValues={data}
+                initialValues={{
+                  ...data,
+                  position: {
+                    ...data?.position, organization_override: orgOverrideSelectValue,
+                  },
+                }}
                 organizationName={organizationName}
+                publisherOrganizations={publisherUserInfo.organizations}
                 {...this.props}
               />
               { errorArray.length > 1 && (
@@ -195,6 +207,10 @@ StafferPage.defaultProps = {
   createStaffer: () => {},
   editStaffer: null,
   fetchStafferInfo: () => null,
+  fetchOrganizations: () => null,
+  publisherUserInfo: {
+    organizations: [],
+  },
   stafferInfo: null,
   sourceInfo: {},
 };
@@ -203,6 +219,12 @@ StafferPage.propTypes = {
   createStaffer: PropTypes.func,
   editStaffer: PropTypes.func,
   fetchStafferInfo: PropTypes.func,
+  fetchOrganizations: PropTypes.func,
+  publisherUserInfo: PropTypes.shape({
+    organizations: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
   stafferInfo: PropTypes.shape({
     isFetching: PropTypes.bool,
     isSaving: PropTypes.bool,

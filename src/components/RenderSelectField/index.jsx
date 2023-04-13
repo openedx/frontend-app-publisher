@@ -8,14 +8,13 @@ const RenderSelectField = ({
   name,
   label,
   disabled,
+  hidden,
   required,
   meta: { touched, error },
   options,
 }) => (
   <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
-    <Form.Label>
-      {label}
-    </Form.Label>
+    {hidden ? null : <Form.Label>{label}</Form.Label>}
     <Form.Control
       {...input}
       {...extraInput}
@@ -23,6 +22,7 @@ const RenderSelectField = ({
       name={name}
       label={label}
       disabled={disabled}
+      hidden={hidden}
       required={required}
     >
       {options.map(option => (
@@ -42,6 +42,7 @@ RenderSelectField.defaultProps = {
   name: '',
   disabled: false,
   required: false,
+  hidden: false,
 };
 
 RenderSelectField.propTypes = {
@@ -59,6 +60,7 @@ RenderSelectField.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.object),
   ]).isRequired,
+  hidden: PropTypes.bool,
 };
 
 export default RenderSelectField;
