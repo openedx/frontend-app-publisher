@@ -253,6 +253,8 @@ class EditCoursePage extends React.Component {
   formatAdditionalMetadataFields(courseData) {
     const variantId = courseData.additional_metadata.variant_id || null;
     const courseTerm = courseData.additional_metadata.course_term_override || null;
+    const productMeta = courseData.additional_metadata.product_meta_title || null;
+
     return {
       external_url: courseData.additional_metadata.external_url,
       external_identifier: courseData.additional_metadata.external_identifier,
@@ -274,6 +276,15 @@ class EditCoursePage extends React.Component {
         },
       ],
       start_date: courseData.additional_metadata.start_date,
+      end_date: courseData.additional_metadata.end_date,
+      product_status: courseData.additional_metadata.product_status,
+      external_course_marketing_type: courseData.additional_metadata.external_course_marketing_type,
+      product_meta: productMeta ? {
+        title: courseData.additional_metadata.product_meta_title,
+        description: courseData.additional_metadata.product_meta_description,
+        keywords: courseData.additional_metadata.product_meta_keywords
+          ? courseData.additional_metadata.product_meta_keywords.map((keyword) => keyword.value) : [],
+      } : null,
       registration_deadline: courseData.additional_metadata.registration_deadline,
       variant_id: variantId,
       course_term_override: courseTerm,
@@ -478,10 +489,16 @@ class EditCoursePage extends React.Component {
         facts_2_heading: additional_metadata.facts[1]?.heading,
         facts_2_blurb: additional_metadata.facts[1]?.blurb,
         start_date: additional_metadata.start_date,
+        end_date: additional_metadata.end_date,
+        external_course_marketing_type: additional_metadata.external_course_marketing_type,
+        product_status: additional_metadata.product_status,
+        product_meta_title: additional_metadata.product_meta?.title,
+        product_meta_description: additional_metadata.product_meta?.description,
+        product_meta_keywords: additional_metadata.product_meta && additional_metadata.product_meta.keywords
+          ? additional_metadata.product_meta.keywords.map(keyword => ({ value: keyword, label: keyword })) : null,
         registration_deadline: additional_metadata.registration_deadline,
         variant_id: additional_metadata.variant_id,
         course_term_override: additional_metadata.course_term_override,
-        external_course_marketing_type: additional_metadata.external_course_marketing_type,
       };
     }
     return {};

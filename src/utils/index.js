@@ -5,6 +5,7 @@ import qs from 'query-string';
 
 import history from '../data/history';
 import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
+import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
 
 const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : '');
@@ -198,6 +199,45 @@ const formatCollaboratorOptions = (options) => (
   options.map(({ name = '', uuid, image: { original: { url } = { url: '' } } }) => ({ name, uuid, image_url: url }))
 );
 
+function courseTagObjectsToSelectOptions(allCourseTags) {
+  /*  transform an array of course tag objects e.g
+    [
+      {
+        name: 'mba',
+        value: 'mba'
+      },
+      {
+        name: 'mba-gmat',
+        value: 'mba-gmat'
+      },
+    ]
+    to a format expected by ReduxFormCreatableSelect i.e
+    [
+      {
+        label: 'mba',
+        value: 'mba'
+      },
+      {
+        label: 'mba-gmat',
+        value: 'mba-gmat'
+      }
+    ]
+  */
+
+  return allCourseTags.map(tag => ({
+    label: tag.value,
+    value: tag.value,
+  })).filter(x => x.value);
+}
+
+const loadOptions = (inputValue, callback) => DiscoveryDataApiService.fetchCourseTags(inputValue)
+  .then((response) => {
+    callback(courseTagObjectsToSelectOptions(response.data));
+  })
+  .catch(() => {
+    callback(null);
+  });
+
 const parseCourseTypeOptions = (typeOptions) => {
   const courseTypes = {};
   const courseRunTypeOptions = {};
@@ -309,4 +349,6 @@ export {
   buildInitialPrices,
   hasMastersTrack,
   formatCollaboratorOptions,
+  loadOptions,
+  courseTagObjectsToSelectOptions,
 };

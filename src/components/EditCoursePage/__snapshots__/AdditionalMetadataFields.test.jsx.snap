@@ -254,6 +254,16 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
     />
     <Field
       component={[Function]}
+      dateLabel="End Date"
+      disabled={false}
+      name="additional_metadata.end_date"
+      required={true}
+      timeLabel="End Time (UTC)"
+      type="date"
+      utcTimeZone={true}
+    />
+    <Field
+      component={[Function]}
       dateLabel="Registration Deadline Date"
       disabled={false}
       name="additional_metadata.registration_deadline"
@@ -261,6 +271,145 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
       timeLabel="Registration Deadline Time (UTC)"
       type="date"
       utcTimeZone={true}
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="product_status.label"
+          optional={false}
+          text="Product Status"
+        />
+      }
+      name="additional_metadata.product_status"
+      options={
+        Array [
+          Object {
+            "label": "Select a product status",
+            "value": "",
+          },
+          Object {
+            "label": "Published",
+            "value": "published",
+          },
+          Object {
+            "label": "Archived",
+            "value": "Archived",
+          },
+        ]
+      }
+      required={true}
+      value="additional_metadata.product_status"
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="external_course_marketing_type.label"
+          optional={false}
+          text="External Product Marketing Type"
+        />
+      }
+      name="additional_metadata.external_course_marketing_type"
+      options={
+        Array [
+          Object {
+            "label": "Select a marketing type",
+            "value": "",
+          },
+          Object {
+            "label": "Sprint",
+            "value": "sprint",
+          },
+          Object {
+            "label": "Short Course",
+            "value": "short_course",
+          },
+        ]
+      }
+      required={true}
+      value="additional_metadata.external_course_marketing_type"
+    />
+    <FieldLabel
+      className="h3 font-weight-normal"
+      extraText=""
+      helpText=""
+      id={null}
+      optional={false}
+      text="Product Meta"
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="product_meta.title"
+          optional={false}
+          text="Title"
+        />
+      }
+      name="additional_metadata.product_meta_title"
+      required={true}
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="product_meta.description"
+          optional={true}
+          text="Description"
+        />
+      }
+      name="additional_metadata.product_meta_description"
+      optional={true}
+    />
+    <Field
+      component={[Function]}
+      createOptionValidator={[Function]}
+      defaultValue={Array []}
+      disabled={false}
+      isAsync={true}
+      isCreatable={true}
+      isMulti={true}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText={
+            <div>
+              <dl>
+                <dt>
+                  Keywords
+                </dt>
+                <dd>
+                  Enter SEO Meta tags for Products. Separate keywords with spaces.
+                </dd>
+              </dl>
+            </div>
+          }
+          id="additional_metadata.product_meta_keywords"
+          optional={true}
+          text="Keywords"
+        />
+      }
+      loadOptions={[Function]}
+      name="additional_metadata.product_meta_keywords"
+      optional={true}
     />
   </div>
 </div>
@@ -520,6 +669,16 @@ exports[`AdditionalMetadata Fields Display required fields on the basis of exter
     />
     <Field
       component={[Function]}
+      dateLabel="End Date"
+      disabled={false}
+      name="additional_metadata.end_date"
+      required={true}
+      timeLabel="End Time (UTC)"
+      type="date"
+      utcTimeZone={true}
+    />
+    <Field
+      component={[Function]}
       dateLabel="Registration Deadline Date"
       disabled={false}
       name="additional_metadata.registration_deadline"
@@ -527,6 +686,153 @@ exports[`AdditionalMetadata Fields Display required fields on the basis of exter
       timeLabel="Registration Deadline Time (UTC)"
       type="date"
       utcTimeZone={true}
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="product_status.label"
+          optional={false}
+          text="Product Status"
+        />
+      }
+      name="additional_metadata.product_status"
+      options={
+        Array [
+          Object {
+            "label": "Select a product status",
+            "value": "",
+          },
+          Object {
+            "label": "Select a product status",
+            "value": "",
+          },
+          Object {
+            "label": "Published",
+            "value": "published",
+          },
+          Object {
+            "label": "Archived",
+            "value": "Archived",
+          },
+        ]
+      }
+      required={true}
+      value="additional_metadata.product_status"
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="external_course_marketing_type.label"
+          optional={false}
+          text="External Product Marketing Type"
+        />
+      }
+      name="additional_metadata.external_course_marketing_type"
+      options={
+        Array [
+          Object {
+            "label": "Select a marketing type",
+            "value": "",
+          },
+          Object {
+            "label": "Select a marketing type",
+            "value": "",
+          },
+          Object {
+            "label": "Sprint",
+            "value": "sprint",
+          },
+          Object {
+            "label": "Short Course",
+            "value": "short_course",
+          },
+        ]
+      }
+      required={true}
+      value="additional_metadata.external_course_marketing_type"
+    />
+    <FieldLabel
+      className="h3 font-weight-normal"
+      extraText=""
+      helpText=""
+      id={null}
+      optional={false}
+      text="Product Meta"
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="product_meta.title"
+          optional={false}
+          text="Title"
+        />
+      }
+      name="additional_metadata.product_meta_title"
+      required={true}
+    />
+    <Field
+      component={[Function]}
+      disabled={false}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText=""
+          id="product_meta.description"
+          optional={true}
+          text="Description"
+        />
+      }
+      name="additional_metadata.product_meta_description"
+      optional={true}
+    />
+    <Field
+      component={[Function]}
+      createOptionValidator={[Function]}
+      defaultValue={Array []}
+      disabled={false}
+      isAsync={true}
+      isCreatable={true}
+      isMulti={true}
+      label={
+        <FieldLabel
+          className=""
+          extraText=""
+          helpText={
+            <div>
+              <dl>
+                <dt>
+                  Keywords
+                </dt>
+                <dd>
+                  Enter SEO Meta tags for Products. Separate keywords with spaces.
+                </dd>
+              </dl>
+            </div>
+          }
+          id="additional_metadata.product_meta_keywords"
+          optional={true}
+          text="Keywords"
+        />
+      }
+      loadOptions={[Function]}
+      name="additional_metadata.product_meta_keywords"
+      optional={true}
     />
   </div>
 </div>
