@@ -33,8 +33,8 @@ import {
 } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
-  formatCollaboratorOptions,
-  getOptionsData, isPristine, parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions,
+  formatCollaboratorOptions, getDateWithSlashes, getFormattedUTCTimeString, getOptionsData, isPristine,
+  parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions,
 } from '../../utils';
 import store from '../../data/store';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
@@ -206,6 +206,7 @@ export class BaseEditCourseForm extends React.Component {
       title,
       pristine,
       uuid,
+      modified,
       courseInReview,
       courseStatuses,
       id,
@@ -349,6 +350,13 @@ export class BaseEditCourseForm extends React.Component {
             <div>
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
+            </div>
+            <div>
+              <FieldLabel id="modified" text="Last Modified Timestamp" className="mb-0" />
+              <div className="p-3 d-flex flex-wrap justify-content-between">
+                <div> <b>Date: </b> {getDateWithSlashes(modified)} </div>
+                <div><b>Time (UTC): </b> {getFormattedUTCTimeString(modified)}</div>
+              </div>
             </div>
             <Field
               name="type"
@@ -813,6 +821,7 @@ export class BaseEditCourseForm extends React.Component {
                   id="faq"
                   disabled={disabled}
                 />
+
                 {/*
                 Do not open up access to additional_information. It is not validated like the other
                 HTML fields and should not be directly edited by course teams.
@@ -1158,7 +1167,6 @@ export class BaseEditCourseForm extends React.Component {
                 />
               </>
             )}
-
             {administrator && (<GeoLocationFields disabled={disabled} />)}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
@@ -1237,6 +1245,7 @@ BaseEditCourseForm.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  modified: PropTypes.string, // last modified date (UTC formatted string)
   courseTagOptions: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
@@ -1306,6 +1315,7 @@ BaseEditCourseForm.propTypes = {
 BaseEditCourseForm.defaultProps = {
   currentFormValues: {},
   entitlement: { sku: null },
+  modified: null,
   submitting: false,
   pristine: true,
   courseInReview: false,
