@@ -4,7 +4,9 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
-import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
+import {
+  COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK, LTR_CHARS_REGEX, RTL_CHARS_REGEX,
+} from '../data/constants';
 import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
 
@@ -27,6 +29,20 @@ const isValidDate = (dateStr) => {
   const date = moment(dateStr);
   return moment(dateStr) && date.isValid();
 };
+
+function isRtl(text) {
+  const rtlChars = RTL_CHARS_REGEX;
+  const ltrChars = LTR_CHARS_REGEX;
+
+  return rtlChars.test(text) && !ltrChars.test(text);
+}
+
+function removeHtmlTags(htmlText) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlText, 'text/html');
+  const plainText = doc.body.textContent || '';
+  return plainText;
+}
 
 const updateUrl = (queryOptions) => {
   if (!queryOptions) {
@@ -342,11 +358,13 @@ export {
   localTimeZone,
   utcTimeZone,
   isSafari,
+  isRtl,
   isNonExemptChanged,
   isPristine,
   parseOptions,
   getOptionsData,
   parseCourseTypeOptions,
+  removeHtmlTags,
   formatPriceData,
   buildInitialPrices,
   hasMastersTrack,

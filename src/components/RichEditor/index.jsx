@@ -16,6 +16,8 @@ import contentCss from 'tinymce/skins/content/default/content.min.css';
 import contentUiCss from 'tinymce/skins/ui/oxide/content.min.css';
 import { Alert } from '@edx/paragon';
 
+import { isRtl, removeHtmlTags } from '../../utils';
+
 class RichEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -93,7 +95,7 @@ class RichEditor extends React.Component {
               plugins: 'legacyoutput link lists language directionality',
               statusbar: false,
               toolbar: 'undo redo | bold italic underline | bullist numlist | link | language | ltr rtl',
-              directionality: 'ltr',
+              directionality: isRtl(removeHtmlTags(value)) ? 'rtl' : 'ltr',
               entity_encoding: 'raw',
               extended_valid_elements: 'span[lang|id] -span',
               content_css: false,
