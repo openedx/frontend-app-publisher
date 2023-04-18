@@ -6,6 +6,7 @@ const RenderInputTextField = ({
   input,
   extraInput,
   name,
+  dir,
   label,
   type,
   disabled,
@@ -28,6 +29,7 @@ const RenderInputTextField = ({
       pattern={pattern}
       name={name}
       type={type}
+      dir={dir}
       disabled={disabled}
       required={required}
     />
@@ -47,6 +49,7 @@ RenderInputTextField.defaultProps = {
   maxLength: '',
   placeholder: '',
   pattern: null,
+  dir: 'ltr',
 };
 
 RenderInputTextField.propTypes = {
@@ -64,6 +67,7 @@ RenderInputTextField.propTypes = {
   maxLength: PropTypes.string,
   placeholder: PropTypes.string,
   pattern: PropTypes.string,
+  dir: PropTypes.string,
 };
 
 export default RenderInputTextField;
