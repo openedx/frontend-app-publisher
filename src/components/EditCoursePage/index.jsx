@@ -614,6 +614,7 @@ class EditCoursePage extends React.Component {
           enterprise_subscription_inclusion,
           organization_short_code_override,
           organization_logo_override_url,
+          modified,
         },
       },
     } = this.props;
@@ -658,6 +659,7 @@ class EditCoursePage extends React.Component {
       location_restriction: this.buildLocationRestriction(),
       in_year_value: this.buildInYearValue(),
       tags: topics?.length ? topics.map(t => ({ label: t, value: t })) : null,
+      modified,
     };
   }
 
@@ -721,6 +723,7 @@ class EditCoursePage extends React.Component {
           editable,
           type,
           enterprise_subscription_inclusion,
+          modified,
         },
         showCreateStatusAlert,
       },
@@ -764,6 +767,7 @@ class EditCoursePage extends React.Component {
     const numberKey = key_for_reruns || key;
     const number = numberKey && getCourseNumber(numberKey);
     const entitlement = entitlements && entitlements[0];
+    const last_modified = modified;
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -885,6 +889,7 @@ class EditCoursePage extends React.Component {
                 number={number}
                 entitlement={entitlement || {}}
                 title={title}
+                modified={last_modified}
                 courseRuns={this.buildCourseRuns()}
                 uuid={uuid}
                 currentFormValues={currentFormValues}

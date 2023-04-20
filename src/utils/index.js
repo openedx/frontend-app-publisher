@@ -13,6 +13,7 @@ const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '
 const getTimeString = date => (date ? moment(date).format('HH:mm') : '');
 const getDateWithDashesUTC = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 const getTimeStringUTC = date => (date ? moment.utc(date).format('HH:mm') : '');
+const getFormattedUTCTimeString = date => (date ? moment.utc(date).format('h:mm A') : '');
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
 const utcTimeZone = moment.utc().zoneAbbr();
 const formatDate = date => (date ? moment(date).format('MMM DD, YYYY') : '');
@@ -329,6 +330,7 @@ export {
   getTimeString,
   getDateWithDashesUTC,
   getTimeStringUTC,
+  getFormattedUTCTimeString,
   formatDate,
   updateUrl,
   getPageOptionsFromUrl,
