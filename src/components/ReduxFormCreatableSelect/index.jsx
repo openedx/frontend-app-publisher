@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Select from 'react-select';
 import AsyncCreatableSelect from 'react-select/async-creatable';
 import CreatableSelect from 'react-select/creatable';
 
@@ -13,26 +14,68 @@ const ReduxFormCreatableSelect = props => {
     meta: {
       touched, error,
     },
-    defaultOptions, loadOptions, label, isMulti, isAsync,
+    defaultOptions, loadOptions, label, isCreatable, isMulti, isAsync,
     createOptionValidator, disabled, isSearchable, options, formatCreateLabel,
     placeholder,
   } = props;
 
-  const selectProps = {
+  const creatableOnlyProps = {
     isMulti,
     isValidNewOption: createOptionValidator,
+    formatCreateLabel,
+  };
+
+  const commonProps = {
     isSearchable,
     value,
     isDisabled: disabled,
     placeholder,
-    formatCreateLabel,
     onChange: val => onChange(val),
     onBlur: () => onBlur(value),
-
   };
 
+  const FormCreatableSelect = isAsync
+    ? (
+      <AsyncCreatableSelect
+        className="select-container"
+        classNamePrefix="react-select-async"
+        defaultOptions={defaultOptions}
+        isValidNewOption={createOptionValidator}
+        cacheOptions
+        loadOptions={loadOptions}
+        {...commonProps}
+        {...creatableOnlyProps}
+      />
+    )
+    : (
+      <CreatableSelect
+        className="select-container"
+        classNamePrefix={`${touched && error ? 'danger' : ''} react-select`}
+        placeholder={placeholder}
+        components={{
+          IndicatorSeparator: () => null,
+        }}
+        options={options}
+        {...commonProps}
+        {...creatableOnlyProps}
+      />
+    );
+
+  const FormSimpleSelect = (
+    <Select
+      className="select-container"
+      classNamePrefix={`${touched && error ? 'danger' : ''} react-select`}
+      placeholder={placeholder}
+      components={{
+        IndicatorSeparator: () => null,
+      }}
+      options={options}
+      {...commonProps}
+    />
+  );
+
   return (
-    <div className="mb-3" name={name}>
+    <div className="mb-3 mr-2" name={name}>
       <div className="mb-2.5">
         {label}
       </div>
@@ -40,32 +83,10 @@ const ReduxFormCreatableSelect = props => {
             && (
             <Alert variant="danger" className="mb-2.5">{error}</Alert>
             )}
-      {isAsync
-        ? (
-          <AsyncCreatableSelect
-            className="select-container"
-            classNamePrefix="react-select-async"
-            defaultOptions={defaultOptions}
-            isValidNewOption={createOptionValidator}
-            cacheOptions
-            loadOptions={loadOptions}
-            {...selectProps}
-          />
-        )
-        : (
-          <CreatableSelect
-            className="select-container"
-            classNamePrefix={`${touched && error ? 'danger' : ''} react-select`}
-            placeholder={placeholder}
-            components={{
-              IndicatorSeparator: () => null,
-            }}
-            options={options}
-            onChange={val => onChange(val)}
-            onBlur={() => onBlur(value)}
-            {...selectProps}
-          />
-        )}
+      {/* if isCreatable prop is set, render a creatable select else render a simple one */}
+      {isCreatable
+        ? FormCreatableSelect
+        : FormSimpleSelect}
     </div>
   );
 };
@@ -73,6 +94,7 @@ const ReduxFormCreatableSelect = props => {
 ReduxFormCreatableSelect.defaultProps = {
   disabled: false,
   loadOptions: () => null,
+  isCreatable: false,
   isMulti: false,
   isAsync: false,
   isSearchable: true,
@@ -106,11 +128,11 @@ ReduxFormCreatableSelect.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   })).isRequired,
-
   formatCreateLabel: PropTypes.func,
   createOptionValidator: PropTypes.func,
   disabled: PropTypes.bool,
   loadOptions: PropTypes.func,
+  isCreatable: PropTypes.bool,
   isMulti: PropTypes.bool,
   isAsync: PropTypes.bool,
   isSearchable: PropTypes.bool,

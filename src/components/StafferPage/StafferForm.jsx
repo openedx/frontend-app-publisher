@@ -12,7 +12,7 @@ import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
 import RichEditor from '../RichEditor';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
-import { basicValidate, handleStafferFormFail } from '../../utils/validation';
+import { basicValidate, handleStafferOrCreateFormFail } from '../../utils/validation';
 
 const BaseStafferForm = ({
   handleSubmit,
@@ -108,6 +108,7 @@ const BaseStafferForm = ({
               value: org,
             }))
           }
+          isCreatable
           formatCreateLabel={(label) => label}
           validate={basicValidate}
           placeholder="Organization..."
@@ -188,6 +189,6 @@ BaseStafferForm.defaultProps = {
 
 export default reduxForm({
   form: 'staffer-form',
-  onSubmitFail: handleStafferFormFail,
+  onSubmitFail: handleStafferOrCreateFormFail,
 })(BaseStafferForm);
 export { basicValidate, BaseStafferForm };
