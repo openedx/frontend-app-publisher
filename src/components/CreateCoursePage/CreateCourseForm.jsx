@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
 import RenderInputTextField from '../RenderInputTextField';
 import RenderSelectField from '../RenderSelectField';
 import ActionButton from '../ActionButton';
@@ -21,6 +22,9 @@ import DateTimeField from '../DateTimeField';
 import {
   isSafari, localTimeZone, getDateWithDashes, getOptionsData, parseCourseTypeOptions, parseOptions,
 } from '../../utils';
+import { basicValidate, handleStafferOrCreateFormFail } from '../../utils/validation';
+
+import './CreateCourseForm.scss';
 
 class BaseCreateCourseForm extends React.Component {
   constructor(props) {
@@ -64,11 +68,12 @@ class BaseCreateCourseForm extends React.Component {
   }
 
   processOrganizations(organizations) {
-    let orgSelectList = [{ label: 'Select organization', value: '' }];
+    let orgSelectList = [];
     if (organizations) {
       const newOrgs = organizations.map(org => (
         { label: org.name, value: org.key, autoGenerateKey: org.auto_generate_course_run_keys }
       ));
+      newOrgs.sort((a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: 'base' }));
       orgSelectList = orgSelectList.concat(newOrgs);
     }
     return orgSelectList;
@@ -114,10 +119,11 @@ class BaseCreateCourseForm extends React.Component {
         <form onSubmit={handleSubmit}>
           <Field
             name="org"
-            component={RenderSelectField}
+            component={ReduxFormCreatableSelect}
+            label={<FieldLabel text="Organization" />}
             options={this.processOrganizations(organizations)}
-            label={<FieldLabel text="Organization" required />}
-            required
+            validate={basicValidate}
+            placeholder="Organization..."
           />
           {/* TODO: Removing this field because publisher is currently only used for creating Edx courses.
             We will unhide this field once we start supporting other products as well in publisher. */}
@@ -375,5 +381,6 @@ BaseCreateCourseForm.propTypes = {
 
 export default reduxForm({
   form: 'create-course-form',
+  onSubmitFail: handleStafferOrCreateFormFail,
 })(BaseCreateCourseForm);
 export { BaseCreateCourseForm };

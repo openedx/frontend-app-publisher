@@ -41,7 +41,7 @@ class CreateCoursePage extends React.Component {
     const priceData = formatPriceData(options, this.props.courseOptions);
     const courseData = {
       ...priceData,
-      org: options.org,
+      org: options.org.value,
       product_source: options.source || DEFAULT_PRODUCT_SOURCE,
       title: options.title,
       number: options.number,
@@ -122,7 +122,12 @@ class CreateCoursePage extends React.Component {
     } = this.state;
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
-    if (organizations.length === 1) { initialValues.org = organizations[0].key; }
+    if (organizations.length === 1) {
+      initialValues.org = {
+        label: organizations[0].name,
+        value: organizations[0].key,
+      };
+    }
 
     const sources = productSourceOptions.productSources ? productSourceOptions.productSources : [];
     if (sources.length === 1) { initialValues.source = sources[0].slug; }

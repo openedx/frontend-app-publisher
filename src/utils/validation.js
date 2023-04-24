@@ -66,23 +66,23 @@ const getFieldName = (errors) => {
   return fieldName;
 };
 
-const stafferFormErrorField = (errors) => {
+const stafferOrCreateFormErrorField = (errors) => {
   let fieldName = Object.entries(errors)[0][0];
   const otherInfo = Object.entries(errors)[0][1];
 
   if (otherInfo.constructor === Object) {
-    fieldName = `${fieldName}.${stafferFormErrorField(otherInfo)}`;
+    fieldName = `${fieldName}.${stafferOrCreateFormErrorField(otherInfo)}`;
   }
 
   return fieldName;
 };
 
-const handleStafferFormFail = (errors, _, submitError) => {
+const handleStafferOrCreateFormFail = (errors, _, submitError) => {
   if (!errors) {
     throw submitError;
   }
 
-  const fieldName = stafferFormErrorField(errors);
+  const fieldName = stafferOrCreateFormErrorField(errors);
   if (fieldName) {
     setTimeout(() => {
       document.getElementsByName(fieldName)[0].scrollIntoView();
@@ -195,7 +195,7 @@ export {
   basicValidate,
   getFieldName,
   handleCourseEditFail,
-  handleStafferFormFail,
+  handleStafferOrCreateFormFail,
   editCourseValidate,
   courseTagValidate,
 };
