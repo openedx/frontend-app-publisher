@@ -21,12 +21,6 @@ const FORMAT_DATE_MATCHER = /20\d{2}-(0\d{1}|1[0-2])-([0-2]\d{1}|3[0-1])/;
 const NORMALIZE_DATE_MATCHER = /20\d{2}\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])/;
 
 const EXECUTIVE_EDUCATION_SLUG = 'executive-education-2u';
-const DEFAULT_FIELDS_DIRECTION = 'ltr';
-
-// regex matching RTL characters (Hebrew, Arabic, etc.)
-const RTL_CHARS_REGEX = /[\u0590-\u08FF\uFB1D-\uFDFD\uFE70-\uFEFC]/;
-// regex matching LTR characters
-const LTR_CHARS_REGEX = /[A-Za-z\u00C0-\u024F\u1E00-\u1EFF]/;
 
 export {
   VERIFIED_TRACK,
@@ -49,7 +43,4 @@ export {
   COURSE_EXEMPT_FIELDS,
   COURSE_RUN_NON_EXEMPT_FIELDS,
   EXECUTIVE_EDUCATION_SLUG,
-  DEFAULT_FIELDS_DIRECTION,
-  LTR_CHARS_REGEX,
-  RTL_CHARS_REGEX,
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form } from '@edx/paragon';
-import { isRtl } from '../../utils';
 
 const RenderInputTextField = ({
   input,
@@ -29,7 +28,6 @@ const RenderInputTextField = ({
       pattern={pattern}
       name={name}
       type={type}
-      dir={isRtl(input.value) ? 'rtl' : 'ltr'}
       disabled={disabled}
       required={required}
     />
@@ -52,9 +50,7 @@ RenderInputTextField.defaultProps = {
 };
 
 RenderInputTextField.propTypes = {
-  input: PropTypes.shape({
-    value: PropTypes.string,
-  }).isRequired,
+  input: PropTypes.shape({}).isRequired,
   extraInput: PropTypes.shape({}),
   name: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
