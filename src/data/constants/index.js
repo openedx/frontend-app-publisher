@@ -21,6 +21,7 @@ const FORMAT_DATE_MATCHER = /20\d{2}-(0\d{1}|1[0-2])-([0-2]\d{1}|3[0-1])/;
 const NORMALIZE_DATE_MATCHER = /20\d{2}\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])/;
 
 const EXECUTIVE_EDUCATION_SLUG = 'executive-education-2u';
+const DEFAULT_FIELDS_DIRECTION = 'ltr';
 
 export {
   VERIFIED_TRACK,
@@ -43,4 +44,5 @@ export {
   COURSE_EXEMPT_FIELDS,
   COURSE_RUN_NON_EXEMPT_FIELDS,
   EXECUTIVE_EDUCATION_SLUG,
+  DEFAULT_FIELDS_DIRECTION,
 };

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Hyperlink } from '@edx/paragon';
+import { Hyperlink, Form } from '@edx/paragon';
 import { Add } from '@edx/paragon/icons';
 
 import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
@@ -28,7 +28,7 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import {
-  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG,
+  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, DEFAULT_FIELDS_DIRECTION,
 } from '../../data/constants';
 import {
   titleHelp, typeHelp, urlSlugHelp, productSourceHelp,
@@ -54,6 +54,7 @@ export class BaseEditCourseForm extends React.Component {
     this.state = {
       open: false,
       collapsiblesOpen: [],
+      direction: DEFAULT_FIELDS_DIRECTION,
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -302,6 +303,12 @@ export class BaseEditCourseForm extends React.Component {
     subjectOptions.unshift({ label: '--', value: '' });
     programOptions.unshift({ label: '--', value: '' });
 
+    const toggleDirectionChange = () => {
+      this.setState(prevState => ({
+        direction: prevState.direction === 'rtl' ? 'ltr' : 'rtl',
+      }));
+    };
+
     return (
       <div className="edit-course-form">
         <form id={id} onSubmit={handleSubmit}>
@@ -315,6 +322,27 @@ export class BaseEditCourseForm extends React.Component {
             <div className="mb-3">
               <span className="text-primary-500" aria-hidden> All fields are required for publication unless otherwise specified.</span>
             </div>
+
+            <Form className="mt-4">
+              <div className="d-flex align-items-center">
+                <Form.Label>
+                  Fields Direction:
+                </Form.Label>
+                <div className="ml-5 mt-1">
+                  Left to Right
+                  <Form.Switch
+                    name="direction"
+                    value={this.state.direction === 'rtl'}
+                    className="ml-2"
+                    onChange={toggleDirectionChange}
+                    helperText="Determines the direction of the fields"
+                  >
+                    Right to left
+                  </Form.Switch>
+                </div>
+              </div>
+            </Form>
+
             <Field
               name="title"
               component={RenderInputTextField}
@@ -326,6 +354,7 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={titleHelp}
                 />
               )}
+              dir={this.state.direction}
               extraInput={{ onInvalid: this.openCollapsible }}
               required
               disabled={disabled}
@@ -342,6 +371,7 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={urlSlugHelp}
                 />
               )}
+              dir={this.state.direction}
               disabled={disabled || !administrator}
               optional
             />
