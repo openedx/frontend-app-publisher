@@ -188,6 +188,12 @@ const productSourceHelp = (
 const urlSlugHelp = (
   <div>
     <p>
+      <b>
+        Note: Course editors cannot edit the URL slug.
+        Please reach out to your project coordinator or edX support to edit this field.
+      </b>
+    </p>
+    <p>
       This field is optional. If left blank, edX will automatically
       create a URL slug based on the course title.
     </p>
