@@ -21,10 +21,33 @@ class RichEditor extends React.Component {
     super(props);
     this.state = {
       charCount: 0,
+      direction: props.direction,
     };
+    this.editorRef = React.createRef();
     this.initCharCount = this.initCharCount.bind(this);
     this.updateCharCount = this.updateCharCount.bind(this);
   }
+
+  componentDidUpdate(prevProps) {
+        const {
+        direction,
+        } = this.props;
+        if (direction !== prevProps.direction) {
+            this.setState({
+                direction,
+            });
+        const editor = this.editorRef.current.editor;
+        console.log('mera editor', editor);
+        // set the direction
+        editor.getBody().dir = direction;
+        // set the direction of the toolbar
+        // editor.getContainer().dir = direction;
+        }
+        // get the editor instance
+        
+        // // set the direction of the statusbar
+        // editor.theme.panel.find('#' + editor.id + '-statusbar').attr('dir', direction);
+    }
 
   initCharCount(event, editor) {
     const content = editor.getContent({ format: 'text' });
@@ -56,6 +79,7 @@ class RichEditor extends React.Component {
         error,
       },
       disabled,
+      direction,
     } = this.props;
     const remainingChars = maxChars - this.state.charCount;
     const characterLimitMessage = `Recommended character limit (including spaces) is
@@ -68,6 +92,10 @@ class RichEditor extends React.Component {
     } catch (err) {
       contentStyle = '';
     }
+
+    const editorDirection = direction === 'rtl' ? 'rtl' : 'ltr';
+    // const editorDirection = 'rtl';
+    // console.log('editorDirection', editorDirection, name, direction);
 
     return (
       <div className="form-group">
@@ -86,14 +114,15 @@ class RichEditor extends React.Component {
         <div aria-labelledby={id} className={classNames({ 'disabled-rich-text': disabled })}>
           <Editor
             initialValue={value}
+            ref={this.editorRef}
             init={{
               branding: false,
               menubar: false,
               selector: 'textarea',
               plugins: 'legacyoutput link lists language directionality',
               statusbar: false,
-              toolbar: 'undo redo | bold italic underline | bullist numlist | link | language | ltr rtl',
-              directionality: 'ltr',
+              toolbar: 'undo redo | bold italic underline | bullist numlist | link | language| ltr rtl',
+              directionality: editorDirection,
               entity_encoding: 'raw',
               extended_valid_elements: 'span[lang|id] -span',
               content_css: false,
@@ -115,6 +144,7 @@ class RichEditor extends React.Component {
 RichEditor.defaultProps = {
   maxChars: null,
   disabled: false,
+  direction: 'ltr',
 };
 
 RichEditor.propTypes = {
@@ -132,6 +162,7 @@ RichEditor.propTypes = {
     error: PropTypes.string,
   }).isRequired,
   disabled: PropTypes.bool,
+  direction: PropTypes.string,
 };
 
 export default RichEditor;

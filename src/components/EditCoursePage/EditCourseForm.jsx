@@ -562,6 +562,7 @@ export class BaseEditCourseForm extends React.Component {
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={500}
                   id="sdesc"
+                  direction={this.state.direction}
                   disabled={disabled}
                 />
                 <Field
