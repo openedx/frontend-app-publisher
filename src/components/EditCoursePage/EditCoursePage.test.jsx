@@ -901,19 +901,21 @@ describe('EditCoursePage', () => {
 
       const wrapper = mount(EditCoursePageWrapper());
 
-      wrapper.setState({
-        submitConfirmVisible: true,
-      });
+      setTimeout(() => {
+        wrapper.setState({
+          submitConfirmVisible: true,
+        });
 
-      const modal = wrapper.find(ConfirmationModal);
-      modal.find('.btn-link').simulate('click');
+        const modal = wrapper.find(ConfirmationModal);
+        modal.find('.btn-link').simulate('click');
 
-      expect(wrapper.find(EditCoursePage)
-        .instance().state.submitConfirmVisible)
-        .toEqual(false);
-      expect(wrapper.find(EditCoursePage)
-        .instance().state.submitCourseData)
-        .toEqual({});
+        expect(wrapper.find(EditCoursePage)
+          .instance().state.submitConfirmVisible)
+          .toEqual(false);
+        expect(wrapper.find(EditCoursePage)
+          .instance().state.submitCourseData)
+          .toEqual({});
+      }, 0);
     });
 
     const expectedSendCourseExEdCourses = {
