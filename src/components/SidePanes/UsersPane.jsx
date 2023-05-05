@@ -10,6 +10,8 @@ import { Add } from '@edx/paragon/icons';
 import Pane from './Pane';
 import User from './User';
 
+import './UsersPane.scss';
+
 // customize react-select dropdown options to show tooltips
 const Option = (props) => (
   <div className={`tooltip-${props.data.value}`} data-tip data-for={`tooltip-${props.data.value}`}>
@@ -165,31 +167,13 @@ class UsersPane extends React.Component {
                 <div className="font-weight-bold text-dark-700 mb-2">Select an editor:</div>
                 <Select
                   name="add_editor"
+                  className="select-container"
+                  classNamePrefix="react-select-pane"
                   placeholder="Search..."
                   ref={this.selectRef}
                   components={{
                     IndicatorSeparator: () => null,
                     Option,
-                  }}
-                  styles={{
-                    control: base => ({
-                      ...base,
-                      marginBottom: 16,
-                      cursor: 'text',
-
-                    }),
-                    option: base => ({
-                      ...base,
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-
-                    }),
-                    singleValue: (base, state) => ({
-                      ...base,
-                      color: state.selectProps.menuIsOpen ? '#D3D3D3' : base.color,
-                    }),
-
                   }}
                   options={
                     editorChoices.map(user => ({

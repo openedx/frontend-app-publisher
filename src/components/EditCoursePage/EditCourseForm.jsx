@@ -28,11 +28,13 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import { PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG } from '../../data/constants';
-import { titleHelp, typeHelp, urlSlugHelp } from '../../helpText';
+import {
+  titleHelp, typeHelp, urlSlugHelp, productSourceHelp,
+} from '../../helpText';
 import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
-  formatCollaboratorOptions,
-  getOptionsData, isPristine, parseCourseTypeOptions, parseOptions,
+  formatCollaboratorOptions, getDateWithSlashes, getFormattedUTCTimeString, getOptionsData, isPristine,
+  parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions,
 } from '../../utils';
 import store from '../../data/store';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
@@ -50,7 +52,6 @@ export class BaseEditCourseForm extends React.Component {
     this.state = {
       open: false,
       collapsiblesOpen: [],
-      courseTag: '',
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -177,62 +178,6 @@ export class BaseEditCourseForm extends React.Component {
     );
   }
 
-  courseTagObjectsToSelectOptions(allCourseTags) {
-  /*  transform an array of course tag objects e.g
-        [
-          {
-            name: 'mba',
-            value: 'mba'
-          },
-
-          {
-            name: 'mba-gmat',
-            value: 'mba-gmat'
-          }
-        ]
-
-      to a format expected by ReduxFormCreatableSelect i.e
-        [
-          {
-            label: 'mba',
-            value: 'mba'
-          },
-
-          {
-            label: 'mba-gmat',
-            value: 'mba-gmat'
-          }
-        ]
-  */
-
-    return allCourseTags.map(tag => ({
-      label: tag.value,
-      value: tag.value,
-    }));
-  }
-
-  courseTagsToSelectValues(tags) {
-  /*  transform an array of course tags e.g `['mba', 'mba-gmat']` to
-      a format expected by ReduxFormCreatableSelect i.e
-        [
-          {
-            label: 'mba',
-            value: 'mba'
-          },
-
-          {
-            label: 'mba-gmat',
-            value: 'mba-gmat'
-          }
-        ]
-  */
-
-    return tags.map(tag => ({
-      label: tag,
-      value: tag,
-    }));
-  }
-
   toggleCourseRun(index, value) {
     this.setState(prevState => {
       const collapsiblesOpen = [...prevState.collapsiblesOpen];
@@ -261,6 +206,7 @@ export class BaseEditCourseForm extends React.Component {
       title,
       pristine,
       uuid,
+      modified,
       courseInReview,
       courseStatuses,
       id,
@@ -271,6 +217,7 @@ export class BaseEditCourseForm extends React.Component {
         data: {
           skill_names: skillNames,
           course_type: courseType,
+          product_source: productSource,
         },
       },
       reset,
@@ -309,6 +256,10 @@ export class BaseEditCourseForm extends React.Component {
       && parseOptions(courseOptionsData.location_restriction.children.restriction_type.choices);
     const locationStateOptions = courseOptionsData
       && parseOptions(courseOptionsData.location_restriction.children.states.child.choices);
+    const productStatusOptions = courseOptionsData
+      && parseOptions(courseOptionsData.additional_metadata.children.product_status.choices);
+    const externalCourseMarketingTypeOptions = courseOptionsData
+      && parseOptions(courseOptionsData.additional_metadata.children.external_course_marketing_type.choices);
 
     const {
       data: {
@@ -339,6 +290,8 @@ export class BaseEditCourseForm extends React.Component {
     const publishedContentChanged = initialValues.course_runs
       && initialValues.course_runs.some((run) => (run.status === PUBLISHED
         && (!courseIsPristine || !isPristine(initialValues, currentFormValues, run.key))));
+
+    const parsedProductSource = productSource && productSource.name ? productSource.name : 'N/A';
 
     if (!courseTags) { setCourseTags(courseInfo?.data?.topics); }
 
@@ -391,8 +344,19 @@ export class BaseEditCourseForm extends React.Component {
               optional
             />
             <div>
+              <FieldLabel helpText={productSourceHelp} id="productSource" text="Product Source" className="mb-2" />
+              <div className="mb-3">{parsedProductSource}</div>
+            </div>
+            <div>
               <FieldLabel id="number" text="Number" className="mb-2" />
               <div className="mb-3">{number}</div>
+            </div>
+            <div>
+              <FieldLabel id="modified" text="Last Modified Timestamp" className="mb-0" />
+              <div className="p-3 d-flex flex-wrap justify-content-between">
+                <div> <b>Date: </b> {getDateWithSlashes(modified)} </div>
+                <div><b>Time (UTC): </b> {getFormattedUTCTimeString(modified)}</div>
+              </div>
             </div>
             <Field
               name="type"
@@ -507,21 +471,18 @@ export class BaseEditCourseForm extends React.Component {
                   optional
                 />
               )}
+              isAsync
+              isMulti
               disabled={disabled || !administrator}
-              value={this.state.courseTag}
               optional
-              currentValue={
-                Array.isArray(courseTags)
-                  ? this.courseTagsToSelectValues(courseTags)
-                  : null
-              }
-              setValue={(newValue) => setCourseTags(newValue)}
+              isCreatable
               defaultOptions={
                 Array.isArray(allCourseTags)
-                  ? this.courseTagObjectsToSelectOptions(allCourseTags)
+                  ? courseTagObjectsToSelectOptions(allCourseTags)
                   : []
               }
               createOptionValidator={courseTagValidate}
+              loadOptions={loadOptions}
             />
             {showMarketingFields && (
               <>
@@ -860,6 +821,7 @@ export class BaseEditCourseForm extends React.Component {
                   id="faq"
                   disabled={disabled}
                 />
+
                 {/*
                 Do not open up access to additional_information. It is not validated like the other
                 HTML fields and should not be directly edited by course teams.
@@ -1205,11 +1167,16 @@ export class BaseEditCourseForm extends React.Component {
                 />
               </>
             )}
-
             {administrator && (<GeoLocationFields disabled={disabled} />)}
           </Collapsible>
           {open && courseType && courseType === EXECUTIVE_EDUCATION_SLUG && (
-            <AdditionalMetadataFields disabled={disabled} />
+            <AdditionalMetadataFields
+              disabled={disabled}
+              sourceInfo={productSource}
+              externalCourseMarketingType={courseInfo?.data?.additional_metadata?.external_course_marketing_type}
+              productStatusOptions={productStatusOptions}
+              externalCourseMarketingTypeOptions={externalCourseMarketingTypeOptions}
+            />
           )}
           <FieldLabel text="Course runs" className="mt-4 mb-2 h2" />
           <FieldArray
@@ -1278,6 +1245,7 @@ BaseEditCourseForm.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  modified: PropTypes.string, // last modified date (UTC formatted string)
   courseTagOptions: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
@@ -1303,10 +1271,18 @@ BaseEditCourseForm.propTypes = {
       course_type: PropTypes.string,
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
+      product_source: PropTypes.shape({
+        name: PropTypes.string,
+        slug: PropTypes.string,
+        description: PropTypes.string,
+      }),
       location_restriction: PropTypes.shape({
         restriction_type: PropTypes.string,
         countries: PropTypes.arrayOf(PropTypes.string),
         states: PropTypes.arrayOf(PropTypes.string),
+      }),
+      additional_metadata: PropTypes.shape({
+        external_course_marketing_type: PropTypes.string,
       }),
       topics: PropTypes.arrayOf(PropTypes.string),
     }),
@@ -1339,6 +1315,7 @@ BaseEditCourseForm.propTypes = {
 BaseEditCourseForm.defaultProps = {
   currentFormValues: {},
   entitlement: { sku: null },
+  modified: null,
   submitting: false,
   pristine: true,
   courseInReview: false,

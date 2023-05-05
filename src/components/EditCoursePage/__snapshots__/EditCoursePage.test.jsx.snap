@@ -151,6 +151,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
             "restriction_type": null,
             "states": null,
           },
+          "modified": undefined,
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -162,6 +163,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
           "topics": undefined,
           "type": undefined,
@@ -326,6 +328,8 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
                 "blurb": "blurb",
                 "heading": "heading",
               },
+              "end_date": "2019-05-10T00:00:00Z",
+              "external_course_marketing_type": "short_course",
               "external_identifier": "2U_external_identifier",
               "external_url": "https://www.external_url.com",
               "facts": Array [
@@ -340,6 +344,8 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "product_meta": null,
+              "product_status": "published",
               "registration_deadline": "2019-05-10T00:00:00Z",
               "start_date": "2019-05-10T00:00:00Z",
               "variant_id": "00000000-0000-0000-0000-000000000000",
@@ -568,6 +574,8 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "certificate_info_blurb": "blurb",
             "certificate_info_heading": "heading",
             "course_term_override": undefined,
+            "end_date": "2019-05-10T00:00:00Z",
+            "external_course_marketing_type": "short_course",
             "external_identifier": "2U_external_identifier",
             "external_url": "https://www.external_url.com",
             "facts_1_blurb": "facts_1_blurb",
@@ -576,6 +584,10 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "product_meta_description": undefined,
+            "product_meta_keywords": null,
+            "product_meta_title": undefined,
+            "product_status": "published",
             "registration_deadline": "2019-05-10T00:00:00Z",
             "start_date": "2019-05-10T00:00:00Z",
             "variant_id": "00000000-0000-0000-0000-000000000000",
@@ -661,6 +673,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
               "AL",
             ],
           },
+          "modified": undefined,
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -674,6 +687,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           "subjectSecondary": "chemistry",
           "subjectTertiary": undefined,
           "syllabus_raw": "",
+          "tags": null,
           "title": "Test title",
           "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
@@ -818,6 +832,8 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
                 "blurb": "blurb",
                 "heading": "heading",
               },
+              "end_date": "2019-05-10T00:00:00Z",
+              "external_course_marketing_type": "short_course",
               "external_identifier": "2U_external_identifier",
               "external_url": "https://www.external_url.com",
               "facts": Array [
@@ -832,6 +848,8 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "product_meta": null,
+              "product_status": "published",
               "registration_deadline": "2019-05-10T00:00:00Z",
               "start_date": "2019-05-10T00:00:00Z",
               "variant_id": "00000000-0000-0000-0000-000000000000",
@@ -968,6 +986,34 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -1405,6 +1451,8 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "certificate_info_blurb": "blurb",
             "certificate_info_heading": "heading",
             "course_term_override": undefined,
+            "end_date": "2019-05-10T00:00:00Z",
+            "external_course_marketing_type": "short_course",
             "external_identifier": "2U_external_identifier",
             "external_url": "https://www.external_url.com",
             "facts_1_blurb": "facts_1_blurb",
@@ -1413,6 +1461,10 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "product_meta_description": undefined,
+            "product_meta_keywords": null,
+            "product_meta_title": undefined,
+            "product_status": "published",
             "registration_deadline": "2019-05-10T00:00:00Z",
             "start_date": "2019-05-10T00:00:00Z",
             "variant_id": "00000000-0000-0000-0000-000000000000",
@@ -1498,6 +1550,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
               "AL",
             ],
           },
+          "modified": undefined,
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -1511,6 +1564,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           "subjectSecondary": "chemistry",
           "subjectTertiary": undefined,
           "syllabus_raw": "",
+          "tags": null,
           "title": "Test title",
           "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
@@ -1695,6 +1749,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
             "restriction_type": null,
             "states": null,
           },
+          "modified": undefined,
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -1706,6 +1761,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
           "topics": undefined,
           "type": undefined,
@@ -1871,6 +1927,8 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
                 "blurb": "blurb",
                 "heading": "heading",
               },
+              "end_date": "2019-05-10T00:00:00Z",
+              "external_course_marketing_type": "short_course",
               "external_identifier": "2U_external_identifier",
               "external_url": "https://www.external_url.com",
               "facts": Array [
@@ -1885,6 +1943,8 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "product_meta": null,
+              "product_status": "published",
               "registration_deadline": "2019-05-10T00:00:00Z",
               "start_date": "2019-05-10T00:00:00Z",
               "variant_id": "00000000-0000-0000-0000-000000000000",
@@ -2021,6 +2081,34 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -2526,6 +2614,8 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "certificate_info_blurb": "blurb",
             "certificate_info_heading": "heading",
             "course_term_override": undefined,
+            "end_date": "2019-05-10T00:00:00Z",
+            "external_course_marketing_type": "short_course",
             "external_identifier": "2U_external_identifier",
             "external_url": "https://www.external_url.com",
             "facts_1_blurb": "facts_1_blurb",
@@ -2534,6 +2624,10 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "product_meta_description": undefined,
+            "product_meta_keywords": null,
+            "product_meta_title": undefined,
+            "product_status": "published",
             "registration_deadline": "2019-05-10T00:00:00Z",
             "start_date": "2019-05-10T00:00:00Z",
             "variant_id": "00000000-0000-0000-0000-000000000000",
@@ -2619,6 +2713,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
               "AL",
             ],
           },
+          "modified": undefined,
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -2632,6 +2727,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectSecondary": "chemistry",
           "subjectTertiary": undefined,
           "syllabus_raw": "",
+          "tags": null,
           "title": "Test title",
           "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
@@ -2832,6 +2928,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "restriction_type": null,
             "states": null,
           },
+          "modified": undefined,
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -2843,6 +2940,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
           "topics": undefined,
           "type": undefined,
@@ -3008,6 +3106,34 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -3393,6 +3519,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
             "restriction_type": null,
             "states": null,
           },
+          "modified": undefined,
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3404,6 +3531,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
           "topics": undefined,
           "type": undefined,
@@ -3588,6 +3716,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
             "restriction_type": null,
             "states": null,
           },
+          "modified": undefined,
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3599,6 +3728,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
           "topics": undefined,
           "type": undefined,
@@ -3868,6 +3998,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
             "restriction_type": null,
             "states": null,
           },
+          "modified": undefined,
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3879,6 +4010,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
           "topics": undefined,
           "type": undefined,
@@ -4063,6 +4195,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
             "restriction_type": null,
             "states": null,
           },
+          "modified": undefined,
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -4074,6 +4207,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
           "topics": undefined,
           "type": undefined,

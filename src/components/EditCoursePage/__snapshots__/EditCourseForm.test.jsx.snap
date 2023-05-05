@@ -117,6 +117,11 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
             helpText={
               <div>
                 <p>
+                  <b>
+                    Note: Course editors cannot edit the URL slug. Please reach out to your project coordinator or edX support to edit this field.
+                  </b>
+                </p>
+                <p>
                   This field is optional. If left blank, edX will automatically create a URL slug based on the course title.
                 </p>
                 <p>
@@ -148,6 +153,35 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -157,6 +191,34 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           className="mb-3"
         >
           Test101x
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-0"
+          extraText=""
+          helpText=""
+          id="modified"
+          optional={false}
+          text="Last Modified Timestamp"
+        />
+        <div
+          className="p-3 d-flex flex-wrap justify-content-between"
+        >
+          <div>
+             
+            <b>
+              Date: 
+            </b>
+             
+             
+          </div>
+          <div>
+            <b>
+              Time (UTC): 
+            </b>
+             
+          </div>
         </div>
       </div>
       <Field
@@ -325,9 +387,11 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -342,10 +406,9 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -1053,6 +1116,34 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -1621,6 +1712,7 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           },
         ]
       }
+      modified={null}
       name="course_runs"
       number="Test101x"
       onToggle={[Function]}
@@ -1830,6 +1922,11 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
             helpText={
               <div>
                 <p>
+                  <b>
+                    Note: Course editors cannot edit the URL slug. Please reach out to your project coordinator or edX support to edit this field.
+                  </b>
+                </p>
+                <p>
                   This field is optional. If left blank, edX will automatically create a URL slug based on the course title.
                 </p>
                 <p>
@@ -1861,6 +1958,35 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -1870,6 +1996,34 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           className="mb-3"
         >
           Test103x
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-0"
+          extraText=""
+          helpText=""
+          id="modified"
+          optional={false}
+          text="Last Modified Timestamp"
+        />
+        <div
+          className="p-3 d-flex flex-wrap justify-content-between"
+        >
+          <div>
+             
+            <b>
+              Date: 
+            </b>
+             
+             
+          </div>
+          <div>
+            <b>
+              Time (UTC): 
+            </b>
+             
+          </div>
         </div>
       </div>
       <Field
@@ -2038,9 +2192,11 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -2055,10 +2211,9 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -2766,6 +2921,34 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -3372,6 +3555,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           },
         ]
       }
+      modified={null}
       name="course_runs"
       number="Test103x"
       onToggle={[Function]}
@@ -3581,6 +3765,11 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
             helpText={
               <div>
                 <p>
+                  <b>
+                    Note: Course editors cannot edit the URL slug. Please reach out to your project coordinator or edX support to edit this field.
+                  </b>
+                </p>
+                <p>
                   This field is optional. If left blank, edX will automatically create a URL slug based on the course title.
                 </p>
                 <p>
@@ -3612,6 +3801,35 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -3621,6 +3839,34 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           className="mb-3"
         >
           Test102x
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-0"
+          extraText=""
+          helpText=""
+          id="modified"
+          optional={false}
+          text="Last Modified Timestamp"
+        />
+        <div
+          className="p-3 d-flex flex-wrap justify-content-between"
+        >
+          <div>
+             
+            <b>
+              Date: 
+            </b>
+             
+             
+          </div>
+          <div>
+            <b>
+              Time (UTC): 
+            </b>
+             
+          </div>
         </div>
       </div>
       <Field
@@ -3789,9 +4035,11 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -3806,10 +4054,9 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -4823,6 +5070,34 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -5429,6 +5704,7 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           },
         ]
       }
+      modified={null}
       name="course_runs"
       number="Test102x"
       onToggle={[Function]}
@@ -5638,6 +5914,11 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
             helpText={
               <div>
                 <p>
+                  <b>
+                    Note: Course editors cannot edit the URL slug. Please reach out to your project coordinator or edX support to edit this field.
+                  </b>
+                </p>
+                <p>
                   This field is optional. If left blank, edX will automatically create a URL slug based on the course title.
                 </p>
                 <p>
@@ -5669,6 +5950,35 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -5678,6 +5988,34 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           className="mb-3"
         >
           Test102x
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-0"
+          extraText=""
+          helpText=""
+          id="modified"
+          optional={false}
+          text="Last Modified Timestamp"
+        />
+        <div
+          className="p-3 d-flex flex-wrap justify-content-between"
+        >
+          <div>
+             
+            <b>
+              Date: 
+            </b>
+             
+             
+          </div>
+          <div>
+            <b>
+              Time (UTC): 
+            </b>
+             
+          </div>
         </div>
       </div>
       <Field
@@ -5846,9 +6184,11 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -5863,10 +6203,9 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -6574,6 +6913,34 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -7180,6 +7547,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           },
         ]
       }
+      modified={null}
       name="course_runs"
       number="Test102x"
       onToggle={[Function]}
@@ -7389,6 +7757,11 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
             helpText={
               <div>
                 <p>
+                  <b>
+                    Note: Course editors cannot edit the URL slug. Please reach out to your project coordinator or edX support to edit this field.
+                  </b>
+                </p>
+                <p>
                   This field is optional. If left blank, edX will automatically create a URL slug based on the course title.
                 </p>
                 <p>
@@ -7420,6 +7793,35 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -7429,6 +7831,34 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
           className="mb-3"
         >
           Test101x
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-0"
+          extraText=""
+          helpText=""
+          id="modified"
+          optional={false}
+          text="Last Modified Timestamp"
+        />
+        <div
+          className="p-3 d-flex flex-wrap justify-content-between"
+        >
+          <div>
+             
+            <b>
+              Date: 
+            </b>
+             
+             
+          </div>
+          <div>
+            <b>
+              Time (UTC): 
+            </b>
+             
+          </div>
         </div>
       </div>
       <Field
@@ -7593,9 +8023,11 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -7610,10 +8042,9 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -8321,6 +8752,34 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -8843,6 +9302,7 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
           },
         ]
       }
+      modified={null}
       name="course_runs"
       number="Test101x"
       onToggle={[Function]}
@@ -9052,6 +9512,11 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
             helpText={
               <div>
                 <p>
+                  <b>
+                    Note: Course editors cannot edit the URL slug. Please reach out to your project coordinator or edX support to edit this field.
+                  </b>
+                </p>
+                <p>
                   This field is optional. If left blank, edX will automatically create a URL slug based on the course title.
                 </p>
                 <p>
@@ -9083,6 +9548,35 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
         <FieldLabel
           className="mb-2"
           extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
           helpText=""
           id="number"
           optional={false}
@@ -9092,6 +9586,34 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
           className="mb-3"
         >
           Test101x
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-0"
+          extraText=""
+          helpText=""
+          id="modified"
+          optional={false}
+          text="Last Modified Timestamp"
+        />
+        <div
+          className="p-3 d-flex flex-wrap justify-content-between"
+        >
+          <div>
+             
+            <b>
+              Date: 
+            </b>
+             
+             
+          </div>
+          <div>
+            <b>
+              Time (UTC): 
+            </b>
+             
+          </div>
         </div>
       </div>
       <Field
@@ -9256,9 +9778,11 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
       <Field
         component={[Function]}
         createOptionValidator={[Function]}
-        currentValue={Array []}
         defaultOptions={Array []}
         disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
         label={
           <FieldLabel
             className=""
@@ -9273,10 +9797,9 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
             text="Topics"
           />
         }
+        loadOptions={[Function]}
         name="tags"
         optional={true}
-        setValue={[Function]}
-        value=""
       />
       <hr />
       <Field
@@ -10012,6 +10535,34 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -10540,6 +11091,7 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
           },
         ]
       }
+      modified={null}
       name="course_runs"
       number="Test101x"
       onToggle={[Function]}

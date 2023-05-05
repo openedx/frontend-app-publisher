@@ -8,10 +8,11 @@ import AreasOfExpertise from './AreasOfExpertise';
 import SocialLinks from './SocialLinks';
 import ImageUpload from '../ImageUpload';
 import RenderInputTextField from '../RenderInputTextField';
+import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
 import RichEditor from '../RichEditor';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
-import { basicValidate } from '../../utils/validation';
+import { basicValidate, handleStafferOrCreateFormFail } from '../../utils/validation';
 
 const BaseStafferForm = ({
   handleSubmit,
@@ -21,8 +22,13 @@ const BaseStafferForm = ({
   sourceInfo: { referrer },
   cancelStafferInfo,
   organizationName,
+  publisherOrganizations,
 }) => {
   const formControlDisabled = pristine || isSaving;
+  const allOrganizations = organizationName
+    ? [...publisherOrganizations.map(org => org.name), organizationName]
+    : [...publisherOrganizations.map(org => org.name)];
+  const allUniqueOrganizations = [...new Set(allOrganizations)];
 
   return (
     <div className="create-staffer-form">
@@ -52,6 +58,7 @@ const BaseStafferForm = ({
           requiredHeight={110}
           className="staffer-image"
           required={isCreateForm}
+          validate={basicValidate}
         />
         <Field
           name="given_name"
@@ -92,11 +99,19 @@ const BaseStafferForm = ({
         />
         <Field
           name="position.organization_override"
-          component={RenderInputTextField}
-          type="text"
+          component={ReduxFormCreatableSelect}
           label={<FieldLabel text="Organization" />}
-          extraInput={{ defaultValue: organizationName }}
-          required
+          currentValue={organizationName}
+          options={
+            allUniqueOrganizations.map(org => ({
+              label: org,
+              value: org,
+            }))
+          }
+          isCreatable
+          formatCreateLabel={(label) => label}
+          validate={basicValidate}
+          placeholder="Organization..."
         />
         <Field
           name="bio"
@@ -159,6 +174,9 @@ BaseStafferForm.propTypes = {
   sourceInfo: PropTypes.shape({
     referrer: PropTypes.string,
   }).isRequired,
+  publisherOrganizations: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  })),
 };
 
 BaseStafferForm.defaultProps = {
@@ -166,9 +184,11 @@ BaseStafferForm.defaultProps = {
   isSaving: false,
   isCreateForm: false,
   organizationName: '',
+  publisherOrganizations: [],
 };
 
 export default reduxForm({
   form: 'staffer-form',
+  onSubmitFail: handleStafferOrCreateFormFail,
 })(BaseStafferForm);
 export { basicValidate, BaseStafferForm };

@@ -9,6 +9,7 @@ import PageContainer from '../PageContainer';
 import ConfirmationModal from '../ConfirmationModal';
 
 import { formatPriceData } from '../../utils';
+import { DEFAULT_PRODUCT_SOURCE } from '../../data/constants/productSourceOptions';
 
 class CreateCoursePage extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class CreateCoursePage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchProductSourceOptions();
     this.props.fetchOrganizations();
     this.props.fetchCourseOptions();
     this.props.fetchCourseRunOptions();
@@ -39,7 +41,8 @@ class CreateCoursePage extends React.Component {
     const priceData = formatPriceData(options, this.props.courseOptions);
     const courseData = {
       ...priceData,
-      org: options.org,
+      org: options.org.value,
+      product_source: options.source || DEFAULT_PRODUCT_SOURCE,
       title: options.title,
       number: options.number,
       type: options.type,
@@ -111,6 +114,7 @@ class CreateCoursePage extends React.Component {
       formValues,
       courseOptions,
       courseRunOptions,
+      productSourceOptions,
     } = this.props;
     const {
       startedFetching,
@@ -118,7 +122,15 @@ class CreateCoursePage extends React.Component {
     } = this.state;
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
-    if (organizations.length === 1) { initialValues.org = organizations[0].key; }
+    if (organizations.length === 1) {
+      initialValues.org = {
+        label: organizations[0].name,
+        value: organizations[0].key,
+      };
+    }
+
+    const sources = productSourceOptions.productSources ? productSourceOptions.productSources : [];
+    if (sources.length === 1) { initialValues.source = sources[0].slug; }
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -134,6 +146,15 @@ class CreateCoursePage extends React.Component {
       publisherUserInfo.error.forEach((error, index) => {
         errorArray.push(error);
         if (index < publisherUserInfo.error.length) {
+          errorArray.push(<br />);
+        }
+      });
+    }
+
+    if (productSourceOptions.error) {
+      productSourceOptions.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < productSourceOptions.error.length) {
           errorArray.push(<br />);
         }
       });
@@ -170,6 +191,7 @@ class CreateCoursePage extends React.Component {
                 initialValues={initialValues}
                 currentFormValues={formValues}
                 organizations={organizations}
+                sources={sources}
                 isCreating={courseInfo.isCreating}
                 courseOptions={courseOptions}
                 courseRunOptions={courseRunOptions}
@@ -195,7 +217,11 @@ CreateCoursePage.defaultProps = {
   publisherUserInfo: {
     organizations: [],
   },
+  productSourceOptions: {
+    productSources: [],
+  },
   fetchOrganizations: () => {},
+  fetchProductSourceOptions: () => {},
   fetchCourseOptions: () => {},
   fetchCourseRunOptions: () => {},
   courseOptions: {},
@@ -210,6 +236,7 @@ CreateCoursePage.defaultProps = {
 CreateCoursePage.propTypes = {
   initialValues: PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
     org: PropTypes.string,
+    source: PropTypes.string,
     title: PropTypes.string,
     number: PropTypes.string,
     type: PropTypes.string,
@@ -223,6 +250,11 @@ CreateCoursePage.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
+  productSourceOptions: PropTypes.shape({
+    productSources: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
   courseInfo: PropTypes.shape({
     error: PropTypes.arrayOf(PropTypes.string),
     data: PropTypes.shape({
@@ -230,6 +262,7 @@ CreateCoursePage.propTypes = {
     }),
     isCreating: PropTypes.bool,
   }),
+  fetchProductSourceOptions: PropTypes.func,
   fetchOrganizations: PropTypes.func,
   fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,

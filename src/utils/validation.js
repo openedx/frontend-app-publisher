@@ -66,6 +66,30 @@ const getFieldName = (errors) => {
   return fieldName;
 };
 
+const stafferOrCreateFormErrorField = (errors) => {
+  let fieldName = Object.entries(errors)[0][0];
+  const otherInfo = Object.entries(errors)[0][1];
+
+  if (otherInfo.constructor === Object) {
+    fieldName = `${fieldName}.${stafferOrCreateFormErrorField(otherInfo)}`;
+  }
+
+  return fieldName;
+};
+
+const handleStafferOrCreateFormFail = (errors, _, submitError) => {
+  if (!errors) {
+    throw submitError;
+  }
+
+  const fieldName = stafferOrCreateFormErrorField(errors);
+  if (fieldName) {
+    setTimeout(() => {
+      document.getElementsByName(fieldName)[0].scrollIntoView();
+    }, 500);
+  }
+};
+
 // Focus on the first element that has validation errors
 const handleCourseEditFail = (errors) => {
   const fieldName = getFieldName(errors);
@@ -171,6 +195,7 @@ export {
   basicValidate,
   getFieldName,
   handleCourseEditFail,
+  handleStafferOrCreateFormFail,
   editCourseValidate,
   courseTagValidate,
 };

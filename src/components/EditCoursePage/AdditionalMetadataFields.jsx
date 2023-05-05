@@ -4,13 +4,38 @@ import PropTypes from 'prop-types';
 import RenderInputTextField from '../RenderInputTextField';
 import FieldLabel from '../FieldLabel';
 import RichEditor from '../RichEditor';
-import { utcTimeZone } from '../../utils';
+import { loadOptions, utcTimeZone } from '../../utils';
 import DateTimeField from '../DateTimeField';
+import RenderSelectField from '../RenderSelectField';
+import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
+import { courseTagValidate } from '../../utils/validation';
 
 const AdditionalMetadataFields = (props) => {
   const {
-    disabled,
+    disabled, sourceInfo, externalCourseMarketingType, productStatusOptions, externalCourseMarketingTypeOptions,
   } = props;
+  const sourceSlug = sourceInfo?.slug;
+
+  productStatusOptions.unshift({ value: '', label: 'Select a product status' });
+
+  externalCourseMarketingTypeOptions.unshift({ value: '', label: 'Select a marketing type' });
+
+  const SOURCE_SLUG_REQUIRED_FIELDS = JSON.parse(process.env.ADDITIONAL_METADATA_REQUIRED_FIELDS);
+
+  function isRequiredField(fieldName) {
+    if (['certificate_info_heading', 'certificate_info_blurb'].includes(fieldName)) {
+      if (externalCourseMarketingType === 'sprint') {
+        return false;
+      }
+    }
+    if (sourceSlug === undefined || !(sourceSlug in SOURCE_SLUG_REQUIRED_FIELDS)) {
+      return true;
+    }
+    if (SOURCE_SLUG_REQUIRED_FIELDS[sourceSlug].includes(fieldName)) {
+      return true;
+    }
+    return false;
+  }
 
   return (
     <div className="collapsible-card pgn_collapsible mt-4">
@@ -21,35 +46,35 @@ const AdditionalMetadataFields = (props) => {
           component={RenderInputTextField}
           label=<FieldLabel id="external_url.label" text="External landing page URL" />
           disabled={disabled}
-          required
+          required={isRequiredField('external_url')}
         />
         <Field
           name="additional_metadata.external_identifier"
           component={RenderInputTextField}
           label=<FieldLabel id="external_identifier.label" text="2U system identifier" />
           disabled={disabled}
-          required
+          required={isRequiredField('external_identifier')}
         />
         <Field
           name="additional_metadata.lead_capture_form_url"
           component={RenderInputTextField}
           label=<FieldLabel id="lead_capture_form_url.label" text="Lead capture form url" />
           disabled={disabled}
-          required
+          required={isRequiredField('lead_capture_form_url')}
         />
         <Field
           name="additional_metadata.organic_url"
           component={RenderInputTextField}
           label=<FieldLabel id="organic_url.label" text="Organic URL" />
           disabled={disabled}
-          required
+          required={isRequiredField('organic_url')}
         />
         <Field
           name="additional_metadata.variant_id"
           component={RenderInputTextField}
           label=<FieldLabel id="variant_id.label" text="Course Variant Id" />
           disabled={disabled}
-          required={false}
+          required={isRequiredField('variant_id')}
         />
         <Field
           name="additional_metadata.course_term_override"
@@ -72,7 +97,7 @@ const AdditionalMetadataFields = (props) => {
             />
           )}
           disabled={disabled}
-          required={false}
+          required={isRequiredField('course_term_override')}
         />
         <FieldLabel text="Fact 1" className="h3 font-weight-normal" />
         <Field
@@ -80,14 +105,14 @@ const AdditionalMetadataFields = (props) => {
           component={RenderInputTextField}
           label=<FieldLabel id="facts.heading" text="Heading" />
           disabled={disabled}
-          required
+          required={isRequiredField('facts_1_heading')}
         />
         <Field
           name="additional_metadata.facts_1_blurb"
           component={RichEditor}
           label=<FieldLabel id="facts.blurb" text="Description" />
           disabled={disabled}
-          required
+          required={isRequiredField('facts_1_blurb')}
         />
         <FieldLabel text="Fact 2" className="h3 font-weight-normal" />
         <Field
@@ -95,14 +120,14 @@ const AdditionalMetadataFields = (props) => {
           component={RenderInputTextField}
           label=<FieldLabel id="facts.heading" text="Heading" />
           disabled={disabled}
-          required
+          required={isRequiredField('facts_2_heading')}
         />
         <Field
           name="additional_metadata.facts_2_blurb"
           component={RichEditor}
           label=<FieldLabel id="facts.blurb" text="Description" />
           disabled={disabled}
-          required
+          required={isRequiredField('facts_2_blurb')}
         />
         <FieldLabel text="Certificate Information" className="h3 font-weight-normal" />
         <Field
@@ -110,14 +135,14 @@ const AdditionalMetadataFields = (props) => {
           component={RenderInputTextField}
           label=<FieldLabel id="certificate-info.heading" text="Heading" />
           disabled={disabled}
-          required
+          required={isRequiredField('certificate_info_heading')}
         />
         <Field
           name="additional_metadata.certificate_info_blurb"
           component={RichEditor}
           label=<FieldLabel id="certificate-info.blurb" text="Description" />
           disabled={disabled}
-          required
+          required={isRequiredField('certificate_info_blurb')}
         />
         <Field
           name="additional_metadata.start_date"
@@ -127,7 +152,17 @@ const AdditionalMetadataFields = (props) => {
           timeLabel={`Start Time (${utcTimeZone})`}
           utcTimeZone
           disabled={disabled}
-          required
+          required={isRequiredField('start_date')}
+        />
+        <Field
+          name="additional_metadata.end_date"
+          type="date"
+          component={DateTimeField}
+          dateLabel="End Date"
+          timeLabel={`End Time (${utcTimeZone})`}
+          utcTimeZone
+          disabled={disabled}
+          required={isRequiredField('end_date')}
         />
         <Field
           name="additional_metadata.registration_deadline"
@@ -137,6 +172,69 @@ const AdditionalMetadataFields = (props) => {
           timeLabel={`Registration Deadline Time (${utcTimeZone})`}
           utcTimeZone
           disabled={disabled}
+          required={isRequiredField('registration_deadline')}
+        />
+        <Field
+          name="additional_metadata.product_status"
+          component={RenderSelectField}
+          label=<FieldLabel id="product_status.label" text="Product Status" />
+          options={productStatusOptions}
+          value="additional_metadata.product_status"
+          disabled={disabled}
+          required={isRequiredField('product_status')}
+        />
+        <Field
+          name="additional_metadata.external_course_marketing_type"
+          component={RenderSelectField}
+          label=<FieldLabel id="external_course_marketing_type.label" text="External Product Marketing Type" />
+          options={externalCourseMarketingTypeOptions}
+          value="additional_metadata.external_course_marketing_type"
+          disabled={disabled}
+          required={isRequiredField('external_course_marketing_type')}
+        />
+        <FieldLabel text="Product Meta" className="h3 font-weight-normal" />
+        <Field
+          name="additional_metadata.product_meta_title"
+          component={RenderInputTextField}
+          label=<FieldLabel id="product_meta.title" text="Title" />
+          disabled={disabled}
+          required={isRequiredField('product_meta')}
+        />
+        <Field
+          name="additional_metadata.product_meta_description"
+          component={RenderInputTextField}
+          label=<FieldLabel id="product_meta.description" text="Description" optional />
+          disabled={disabled}
+          optional
+        />
+        <Field
+          name="additional_metadata.product_meta_keywords"
+          component={ReduxFormCreatableSelect}
+          label={(
+            <FieldLabel
+              id="additional_metadata.product_meta_keywords"
+              text="Keywords"
+              helpText={(
+                <div>
+                  <dl>
+                    <dt>Keywords</dt>
+                    <dd>
+                      Enter SEO Meta tags for Products. Separate keywords with spaces.
+                    </dd>
+                  </dl>
+                </div>
+              )}
+              optional
+            />
+          )}
+          defaultValue={[]}
+          isAsync
+          isMulti
+          disabled={disabled}
+          optional
+          isCreatable
+          createOptionValidator={courseTagValidate}
+          loadOptions={loadOptions}
         />
       </div>
     </div>
@@ -145,10 +243,28 @@ const AdditionalMetadataFields = (props) => {
 
 AdditionalMetadataFields.propTypes = {
   disabled: PropTypes.bool,
+  sourceInfo: PropTypes.shape({
+    name: PropTypes.string,
+    slug: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  externalCourseMarketingType: PropTypes.string,
+  productStatusOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  })),
+  externalCourseMarketingTypeOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  })),
 };
 
 AdditionalMetadataFields.defaultProps = {
   disabled: false,
+  sourceInfo: {},
+  externalCourseMarketingType: null,
+  productStatusOptions: [],
+  externalCourseMarketingTypeOptions: [],
 };
 
 export default AdditionalMetadataFields;

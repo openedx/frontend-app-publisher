@@ -253,6 +253,8 @@ class EditCoursePage extends React.Component {
   formatAdditionalMetadataFields(courseData) {
     const variantId = courseData.additional_metadata.variant_id || null;
     const courseTerm = courseData.additional_metadata.course_term_override || null;
+    const productMeta = courseData.additional_metadata.product_meta_title || null;
+
     return {
       external_url: courseData.additional_metadata.external_url,
       external_identifier: courseData.additional_metadata.external_identifier,
@@ -274,6 +276,15 @@ class EditCoursePage extends React.Component {
         },
       ],
       start_date: courseData.additional_metadata.start_date,
+      end_date: courseData.additional_metadata.end_date,
+      product_status: courseData.additional_metadata.product_status,
+      external_course_marketing_type: courseData.additional_metadata.external_course_marketing_type,
+      product_meta: productMeta ? {
+        title: courseData.additional_metadata.product_meta_title,
+        description: courseData.additional_metadata.product_meta_description,
+        keywords: courseData.additional_metadata.product_meta_keywords
+          ? courseData.additional_metadata.product_meta_keywords.map((keyword) => keyword.value) : [],
+      } : null,
       registration_deadline: courseData.additional_metadata.registration_deadline,
       variant_id: variantId,
       course_term_override: courseTerm,
@@ -335,7 +346,6 @@ class EditCoursePage extends React.Component {
       courseOptions,
     } = this.props;
 
-    // const topics = courseData.tags ? courseData.tags.split(',') : [];
     // If we have an existing published course run, we need to also publish the course.
     // We want to use the same indicator of draft = false for consistency.
     const hasPublishedRun = courseData.course_runs.some(
@@ -375,8 +385,7 @@ class EditCoursePage extends React.Component {
       ].filter((subject) => !!subject),
       syllabus_raw: courseData.syllabus_raw,
       title: courseData.title,
-      topics: this.state.courseTags && this.state.courseTags.length
-        ? [...new Set([...this.state.courseTags])] : [],
+      topics: courseData.tags ? courseData.tags.map(tag => tag.value) : [],
       type: courseData.type,
       url_slug: courseData.url_slug,
       uuid,
@@ -480,6 +489,13 @@ class EditCoursePage extends React.Component {
         facts_2_heading: additional_metadata.facts[1]?.heading,
         facts_2_blurb: additional_metadata.facts[1]?.blurb,
         start_date: additional_metadata.start_date,
+        end_date: additional_metadata.end_date,
+        external_course_marketing_type: additional_metadata.external_course_marketing_type,
+        product_status: additional_metadata.product_status,
+        product_meta_title: additional_metadata.product_meta?.title,
+        product_meta_description: additional_metadata.product_meta?.description,
+        product_meta_keywords: additional_metadata.product_meta && additional_metadata.product_meta.keywords
+          ? additional_metadata.product_meta.keywords.map(keyword => ({ value: keyword, label: keyword })) : null,
         registration_deadline: additional_metadata.registration_deadline,
         variant_id: additional_metadata.variant_id,
         course_term_override: additional_metadata.course_term_override,
@@ -598,6 +614,7 @@ class EditCoursePage extends React.Component {
           enterprise_subscription_inclusion,
           organization_short_code_override,
           organization_logo_override_url,
+          modified,
         },
       },
     } = this.props;
@@ -641,6 +658,8 @@ class EditCoursePage extends React.Component {
       organization_logo_override_url,
       location_restriction: this.buildLocationRestriction(),
       in_year_value: this.buildInYearValue(),
+      tags: topics?.length ? topics.map(t => ({ label: t, value: t })) : null,
+      modified,
     };
   }
 
@@ -704,6 +723,7 @@ class EditCoursePage extends React.Component {
           editable,
           type,
           enterprise_subscription_inclusion,
+          modified,
         },
         showCreateStatusAlert,
       },
@@ -747,6 +767,7 @@ class EditCoursePage extends React.Component {
     const numberKey = key_for_reruns || key;
     const number = numberKey && getCourseNumber(numberKey);
     const entitlement = entitlements && entitlements[0];
+    const last_modified = modified;
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -868,6 +889,7 @@ class EditCoursePage extends React.Component {
                 number={number}
                 entitlement={entitlement || {}}
                 title={title}
+                modified={last_modified}
                 courseRuns={this.buildCourseRuns()}
                 uuid={uuid}
                 currentFormValues={currentFormValues}
