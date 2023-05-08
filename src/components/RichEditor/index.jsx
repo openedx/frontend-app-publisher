@@ -29,25 +29,18 @@ class RichEditor extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-        const {
+    const {
+      direction,
+    } = this.props;
+    if (direction !== prevProps.direction) {
+      this.setState({
         direction,
-        } = this.props;
-        if (direction !== prevProps.direction) {
-            this.setState({
-                direction,
-            });
-        const editor = this.editorRef.current.editor;
-        console.log('mera editor', editor);
-        // set the direction
-        editor.getBody().dir = direction;
-        // set the direction of the toolbar
-        // editor.getContainer().dir = direction;
-        }
-        // get the editor instance
-        
-        // // set the direction of the statusbar
-        // editor.theme.panel.find('#' + editor.id + '-statusbar').attr('dir', direction);
+      });
+      const editor = this.editorRef.current.editor;
+      // set the direction
+      editor.getBody().dir = direction;
     }
+  }
 
   initCharCount(event, editor) {
     const content = editor.getContent({ format: 'text' });
@@ -94,8 +87,6 @@ class RichEditor extends React.Component {
     }
 
     const editorDirection = direction === 'rtl' ? 'rtl' : 'ltr';
-    // const editorDirection = 'rtl';
-    // console.log('editorDirection', editorDirection, name, direction);
 
     return (
       <div className="form-group">

@@ -14,7 +14,7 @@ import {
 import { courseRunSubmitting } from '../../data/actions/courseSubmitInfo';
 import {
   IN_REVIEW_STATUS, PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, REVIEWED,
-  UNPUBLISHED, AUDIT_TRACK, EXECUTIVE_EDUCATION_SLUG,
+  UNPUBLISHED, AUDIT_TRACK, EXECUTIVE_EDUCATION_SLUG, DEFAULT_FIELDS_DIRECTION,
 } from '../../data/constants';
 import store from '../../data/store';
 import ConfirmationModal from '../ConfirmationModal';
@@ -28,6 +28,7 @@ class EditCoursePage extends React.Component {
       submitConfirmVisible: false,
       submitCourseData: {},
       courseTags: null,
+      direction: DEFAULT_FIELDS_DIRECTION,
     };
     this.handleCourseSubmit = this.handleCourseSubmit.bind(this);
     this.setStartedFetching = this.setStartedFetching.bind(this);
@@ -800,6 +801,13 @@ class EditCoursePage extends React.Component {
       || courseRunOptions.isFetching;
     const showForm = !showSpinner;
 
+    const getFieldDirections = (data) => {
+        console.log(data);
+        this.setState(prevState => ({
+            direction: data
+        }));
+    }     
+
     return (
       <>
         <ConfirmationModal
@@ -851,6 +859,7 @@ class EditCoursePage extends React.Component {
                       role,
                     )
                 }
+                getFieldDirections={getFieldDirections}
                 fetchOrganizationUsers={
                   !owners
                     ? null
@@ -890,6 +899,7 @@ class EditCoursePage extends React.Component {
                 entitlement={entitlement || {}}
                 title={title}
                 modified={last_modified}
+                direction={this.state.direction}
                 courseRuns={this.buildCourseRuns()}
                 uuid={uuid}
                 currentFormValues={currentFormValues}

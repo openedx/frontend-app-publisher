@@ -54,7 +54,6 @@ export class BaseEditCourseForm extends React.Component {
     this.state = {
       open: false,
       collapsiblesOpen: [],
-      direction: DEFAULT_FIELDS_DIRECTION,
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -216,6 +215,7 @@ export class BaseEditCourseForm extends React.Component {
       isSubmittingForReview,
       editable,
       courseInfo,
+      direction,
       courseInfo: {
         data: {
           skill_names: skillNames,
@@ -303,11 +303,7 @@ export class BaseEditCourseForm extends React.Component {
     subjectOptions.unshift({ label: '--', value: '' });
     programOptions.unshift({ label: '--', value: '' });
 
-    const toggleDirectionChange = () => {
-      this.setState(prevState => ({
-        direction: prevState.direction === 'rtl' ? 'ltr' : 'rtl',
-      }));
-    };
+    const fieldsDirection = direction;
 
     return (
       <div className="edit-course-form">
@@ -323,26 +319,6 @@ export class BaseEditCourseForm extends React.Component {
               <span className="text-primary-500" aria-hidden> All fields are required for publication unless otherwise specified.</span>
             </div>
 
-            <Form className="mt-4">
-              <div className="d-flex align-items-center">
-                <Form.Label>
-                  Fields Direction:
-                </Form.Label>
-                <div className="ml-5 mt-1">
-                  Left to Right
-                  <Form.Switch
-                    name="direction"
-                    value={this.state.direction === 'rtl'}
-                    className="ml-2"
-                    onChange={toggleDirectionChange}
-                    helperText="Determines the direction of the fields"
-                  >
-                    Right to left
-                  </Form.Switch>
-                </div>
-              </div>
-            </Form>
-
             <Field
               name="title"
               component={RenderInputTextField}
@@ -354,7 +330,7 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={titleHelp}
                 />
               )}
-              dir={this.state.direction}
+              dir={fieldsDirection}
               extraInput={{ onInvalid: this.openCollapsible }}
               required
               disabled={disabled}
@@ -371,7 +347,7 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={urlSlugHelp}
                 />
               )}
-              dir={this.state.direction}
+              dir={fieldsDirection}
               disabled={disabled || !administrator}
               optional
             />
@@ -562,7 +538,6 @@ export class BaseEditCourseForm extends React.Component {
                   extraInput={{ onInvalid: this.openCollapsible }}
                   maxChars={500}
                   id="sdesc"
-                  direction={this.state.direction}
                   disabled={disabled}
                 />
                 <Field
@@ -1279,6 +1254,7 @@ BaseEditCourseForm.propTypes = {
     isFetching: PropTypes.bool,
   }),
   modified: PropTypes.string, // last modified date (UTC formatted string)
+  direction: PropTypes.string, // determines the direction of certain fields (e.g. LTR for English, RTL for Arabic)
   courseTagOptions: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,

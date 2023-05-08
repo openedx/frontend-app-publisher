@@ -5,6 +5,7 @@ import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import UsersPane from './UsersPane';
 import CommentsPane from './CommentsPane';
 import CatalogInclusionPane from './CatalogInclusionPane';
+import LanguageConfigPane from './LanguageConfigPane';
 
 const SidePanes = (props) => {
   const isEdxStaff = getAuthenticatedUser().administrator;
@@ -14,6 +15,10 @@ const SidePanes = (props) => {
     const incList = props.organizations.map(element => element.enterprise_subscription_inclusion);
     orgInclusionList = incList.every(orgInclusion => orgInclusion === true);
   }
+
+  const getLanguageConfig = (data) => {
+    props.getFieldDirections(data);
+  };
 
   return (
     <div className={props.className} hidden={props.hidden}>
@@ -26,6 +31,9 @@ const SidePanes = (props) => {
         organizationRoles={props.organizationRoles}
         organizationUsers={props.organizationUsers}
         removeCourseEditor={props.removeCourseEditor}
+      />
+      <LanguageConfigPane
+        getLanguageConfig={getLanguageConfig}
       />
       { isEdxStaff && (
       <CatalogInclusionPane
@@ -61,6 +69,7 @@ SidePanes.defaultProps = {
   organizationRoles: {},
   organizationUsers: {},
   removeCourseEditor: () => null,
+  getFieldDirections: () => null,
 };
 
 SidePanes.propTypes = {
@@ -76,6 +85,7 @@ SidePanes.propTypes = {
   fetchCourseEditors: PropTypes.func,
   fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
+  getFieldDirections: PropTypes.func,
   hidden: PropTypes.bool,
   organizations: PropTypes.arrayOf(PropTypes.string),
   organizationRoles: PropTypes.shape(),
