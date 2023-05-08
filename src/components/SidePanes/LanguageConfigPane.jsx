@@ -50,4 +50,8 @@ LanguageConfigPane.propTypes = {
   getLanguageConfig: PropTypes.func,
 };
 
+LanguageConfigPane.defaultProps = {
+    getLanguageConfig: () => {},
+};
+
 export default LanguageConfigPane;

@@ -806,7 +806,7 @@ class EditCoursePage extends React.Component {
       this.setState(prevState => ({
         direction: data,
       }));
-    };    
+    };
 
     return (
       <>

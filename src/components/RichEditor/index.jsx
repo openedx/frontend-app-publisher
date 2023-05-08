@@ -36,7 +36,7 @@ class RichEditor extends React.Component {
       this.setState({
         direction,
       });
-      /* eslint prefer-destructuring: ["error", {VariableDeclarator: {object: true}}] */
+      /* eslint-disable-next-line prefer-destructuring */
       const editor = this.editorRef.current.editor;
       // set the direction
       editor.getBody().dir = direction;
@@ -73,7 +73,6 @@ class RichEditor extends React.Component {
         error,
       },
       disabled,
-      direction,
     } = this.props;
     const remainingChars = maxChars - this.state.charCount;
     const characterLimitMessage = `Recommended character limit (including spaces) is
