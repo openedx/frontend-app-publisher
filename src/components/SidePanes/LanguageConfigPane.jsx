@@ -4,7 +4,7 @@ import { Form, Spinner } from '@edx/paragon';
 
 import Pane from './Pane';
 
-const LanguageConfigPane = ({ 
+const LanguageConfigPane = ({
   getLanguageConfig,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +20,7 @@ const LanguageConfigPane = ({
 
   useEffect(() => {
     getLanguageConfig(languageConfig ? 'rtl' : 'ltr');
-  }, [languageConfig]);
+  }, [languageConfig, getLanguageConfig]);
 
   return (
     <Pane className="mt-1" title="Language Configuration" info="Select the language configuration for the course.">

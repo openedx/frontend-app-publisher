@@ -802,11 +802,11 @@ class EditCoursePage extends React.Component {
     const showForm = !showSpinner;
 
     const getFieldDirections = (data) => {
-        console.log(data);
-        this.setState(prevState => ({
-            direction: data
-        }));
-    }     
+      /* eslint-disable no-unused-vars */
+      this.setState(prevState => ({
+        direction: data,
+      }));
+    };    
 
     return (
       <>

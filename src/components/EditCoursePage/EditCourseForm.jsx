@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Hyperlink, Form } from '@edx/paragon';
+import { Hyperlink } from '@edx/paragon';
 import { Add } from '@edx/paragon/icons';
 
 import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
@@ -28,7 +28,7 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import {
-  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, DEFAULT_FIELDS_DIRECTION,
+  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG,
 } from '../../data/constants';
 import {
   titleHelp, typeHelp, urlSlugHelp, productSourceHelp,
@@ -1325,6 +1325,7 @@ BaseEditCourseForm.defaultProps = {
   currentFormValues: {},
   entitlement: { sku: null },
   modified: null,
+  direction: 'ltr',
   submitting: false,
   pristine: true,
   courseInReview: false,

@@ -36,6 +36,7 @@ class RichEditor extends React.Component {
       this.setState({
         direction,
       });
+      /* eslint prefer-destructuring: ["error", {VariableDeclarator: {object: true}}] */
       const editor = this.editorRef.current.editor;
       // set the direction
       editor.getBody().dir = direction;
@@ -86,8 +87,6 @@ class RichEditor extends React.Component {
       contentStyle = '';
     }
 
-    const editorDirection = direction === 'rtl' ? 'rtl' : 'ltr';
-
     return (
       <div className="form-group">
         <div id={id} name={name} tabIndex="-1" className="mb-2">{label}</div>
@@ -113,7 +112,7 @@ class RichEditor extends React.Component {
               plugins: 'legacyoutput link lists language directionality',
               statusbar: false,
               toolbar: 'undo redo | bold italic underline | bullist numlist | link | language| ltr rtl',
-              directionality: editorDirection,
+              directionality: this.state.direction,
               entity_encoding: 'raw',
               extended_valid_elements: 'span[lang|id] -span',
               content_css: false,
