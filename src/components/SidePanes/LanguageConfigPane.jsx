@@ -20,7 +20,8 @@ const LanguageConfigPane = ({
 
   useEffect(() => {
     getLanguageConfig(languageConfig ? 'rtl' : 'ltr');
-  }, [languageConfig, getLanguageConfig]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [languageConfig]);
 
   return (
     <Pane className="mt-1" title="Language Configuration" info="Select the language configuration for the course.">
