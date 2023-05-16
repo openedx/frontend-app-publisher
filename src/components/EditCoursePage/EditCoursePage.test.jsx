@@ -5,6 +5,7 @@ import { mount, shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import { Alert } from '@edx/paragon';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 
 import EditCoursePage from './index';
 
@@ -889,12 +890,14 @@ describe('EditCoursePage', () => {
       const EditCoursePageWrapper = (props) => (
         <MemoryRouter>
           <Provider store={mockStore()}>
-            <EditCoursePage
-              {...props}
-              courseInfo={courseInfo}
-              courseOptions={courseOptions}
-              courseRunOptions={courseRunOptions}
-            />
+            <IntlProvider locale="en">
+              <EditCoursePage
+                {...props}
+                courseInfo={courseInfo}
+                courseOptions={courseOptions}
+                courseRunOptions={courseRunOptions}
+              />
+            </IntlProvider>
           </Provider>
         </MemoryRouter>
       );

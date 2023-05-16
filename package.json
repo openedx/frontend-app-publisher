@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "description": "Frontend for the Publisher Application",
   "repository": "https://github.com/openedx/frontend-app-publisher",
-  "browserslist": ["extends @edx/browserslist-config"],
+  "browserslist": [
+    "extends @edx/browserslist-config"
+  ],
   "scripts": {
     "build": "fedx-scripts webpack",
+    "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
     "lint": "fedx-scripts eslint --ext .jsx,.js .",
     "lint-fix": "fedx-scripts eslint --ext .jsx,.js . --fix",
@@ -20,8 +23,8 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "@edx/brand": "npm:@edx/brand-openedx@1.2.0",
-    "@edx/frontend-component-footer-edx": "^6.0.0",
-    "@edx/frontend-platform": "^4.0.1",
+    "@edx/frontend-component-footer": "npm:@edx/frontend-component-footer-edx@^6.0.0",
+    "@edx/frontend-platform": "^4.2.0",
     "@edx/paragon": "^20.20.0",
     "@edx/tinymce-language-selector": "1.1.0",
     "@fortawesome/free-regular-svg-icons": "6.1.1",

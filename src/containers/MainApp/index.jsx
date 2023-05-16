@@ -2,7 +2,7 @@ import 'core-js';
 import 'regenerator-runtime/runtime';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Footer from '@edx/frontend-component-footer-edx';
+import Footer from '@edx/frontend-component-footer';
 
 import '../../sass/App.scss';
 import Header from '../Header';
