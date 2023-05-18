@@ -8,6 +8,7 @@ import 'tinymce/icons/default';
 import 'tinymce/plugins/legacyoutput';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
+import 'tinymce/plugins/directionality';
 import 'tinymce/themes/silver/theme';
 import '@edx/tinymce-language-selector';
 import 'tinymce/skins/ui/oxide/skin.css';
@@ -88,9 +89,10 @@ class RichEditor extends React.Component {
             init={{
               branding: false,
               menubar: false,
-              plugins: 'legacyoutput link lists language',
+              plugins: 'legacyoutput link lists language directionality',
               statusbar: false,
-              toolbar: 'undo redo | bold italic underline | bullist numlist | link | language',
+              selector: `#${id}`,
+              toolbar: 'undo redo | bold italic underline | bullist numlist | link | language | ltr rtl',
               entity_encoding: 'raw',
               extended_valid_elements: 'span[lang|id] -span',
               content_css: false,
