@@ -225,6 +225,22 @@ const courseOptions = {
             ],
           },
         },
+        additional_metadata: {
+          children: {
+            product_status: {
+              choices: [
+                { display_name: 'Published', value: 'published' },
+                { display_name: 'Archived', value: 'archived' },
+              ],
+            },
+            external_course_marketing_type: {
+              choices: [
+                { display_name: 'Short Course', value: 'short_course' },
+                { display_name: 'Sprint', value: 'sprint' },
+              ],
+            },
+          },
+        },
         location_restriction: {
           children: {
             restriction_type: {

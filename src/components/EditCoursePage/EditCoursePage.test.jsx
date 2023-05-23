@@ -47,6 +47,10 @@ describe('EditCoursePage', () => {
           blurb: 'facts_2_blurb',
         }],
         start_date: '2019-05-10T00:00:00Z',
+        end_date: '2019-05-10T00:00:00Z',
+        product_status: 'published',
+        external_course_marketing_type: 'short_course',
+        product_meta: null,
         registration_deadline: '2019-05-10T00:00:00Z',
         variant_id: '00000000-0000-0000-0000-000000000000',
       },
@@ -357,6 +361,10 @@ describe('EditCoursePage', () => {
         facts_2_heading: 'facts_2_heading',
         facts_2_blurb: 'facts_2_blurb',
         start_date: '2019-05-10T00:00:00Z',
+        end_date: '2019-05-10T00:00:00Z',
+        product_status: 'published',
+        external_course_marketing_type: 'short_course',
+        product_meta: null,
         registration_deadline: '2019-05-10T00:00:00Z',
         variant_id: '00000000-0000-0000-0000-000000000000',
       },
@@ -893,19 +901,21 @@ describe('EditCoursePage', () => {
 
       const wrapper = mount(EditCoursePageWrapper());
 
-      wrapper.setState({
-        submitConfirmVisible: true,
-      });
+      setTimeout(() => {
+        wrapper.setState({
+          submitConfirmVisible: true,
+        });
 
-      const modal = wrapper.find(ConfirmationModal);
-      modal.find('.btn-link').simulate('click');
+        const modal = wrapper.find(ConfirmationModal);
+        modal.find('.btn-link').simulate('click');
 
-      expect(wrapper.find(EditCoursePage)
-        .instance().state.submitConfirmVisible)
-        .toEqual(false);
-      expect(wrapper.find(EditCoursePage)
-        .instance().state.submitCourseData)
-        .toEqual({});
+        expect(wrapper.find(EditCoursePage)
+          .instance().state.submitConfirmVisible)
+          .toEqual(false);
+        expect(wrapper.find(EditCoursePage)
+          .instance().state.submitCourseData)
+          .toEqual({});
+      }, 0);
     });
 
     const expectedSendCourseExEdCourses = {
@@ -930,7 +940,11 @@ describe('EditCoursePage', () => {
           },
         ],
         start_date: '2019-05-10T00:00:00Z',
+        end_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        product_status: 'published',
+        external_course_marketing_type: 'short_course',
+        product_meta: null,
         variant_id: '00000000-0000-0000-0000-000000000000',
         course_term_override: null,
       },

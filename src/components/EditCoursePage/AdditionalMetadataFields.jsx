@@ -4,14 +4,21 @@ import PropTypes from 'prop-types';
 import RenderInputTextField from '../RenderInputTextField';
 import FieldLabel from '../FieldLabel';
 import RichEditor from '../RichEditor';
-import { utcTimeZone } from '../../utils';
+import { loadOptions, utcTimeZone } from '../../utils';
 import DateTimeField from '../DateTimeField';
+import RenderSelectField from '../RenderSelectField';
+import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
+import { courseTagValidate } from '../../utils/validation';
 
 const AdditionalMetadataFields = (props) => {
   const {
-    disabled, sourceInfo, externalCourseMarketingType,
+    disabled, sourceInfo, externalCourseMarketingType, productStatusOptions, externalCourseMarketingTypeOptions,
   } = props;
   const sourceSlug = sourceInfo?.slug;
+
+  productStatusOptions.unshift({ value: '', label: 'Select a product status' });
+
+  externalCourseMarketingTypeOptions.unshift({ value: '', label: 'Select a marketing type' });
 
   const SOURCE_SLUG_REQUIRED_FIELDS = JSON.parse(process.env.ADDITIONAL_METADATA_REQUIRED_FIELDS);
 
@@ -148,6 +155,16 @@ const AdditionalMetadataFields = (props) => {
           required={isRequiredField('start_date')}
         />
         <Field
+          name="additional_metadata.end_date"
+          type="date"
+          component={DateTimeField}
+          dateLabel="End Date"
+          timeLabel={`End Time (${utcTimeZone})`}
+          utcTimeZone
+          disabled={disabled}
+          required={isRequiredField('end_date')}
+        />
+        <Field
           name="additional_metadata.registration_deadline"
           type="date"
           component={DateTimeField}
@@ -156,6 +173,68 @@ const AdditionalMetadataFields = (props) => {
           utcTimeZone
           disabled={disabled}
           required={isRequiredField('registration_deadline')}
+        />
+        <Field
+          name="additional_metadata.product_status"
+          component={RenderSelectField}
+          label=<FieldLabel id="product_status.label" text="Product Status" />
+          options={productStatusOptions}
+          value="additional_metadata.product_status"
+          disabled={disabled}
+          required={isRequiredField('product_status')}
+        />
+        <Field
+          name="additional_metadata.external_course_marketing_type"
+          component={RenderSelectField}
+          label=<FieldLabel id="external_course_marketing_type.label" text="External Product Marketing Type" />
+          options={externalCourseMarketingTypeOptions}
+          value="additional_metadata.external_course_marketing_type"
+          disabled={disabled}
+          required={isRequiredField('external_course_marketing_type')}
+        />
+        <FieldLabel text="Product Meta" className="h3 font-weight-normal" />
+        <Field
+          name="additional_metadata.product_meta_title"
+          component={RenderInputTextField}
+          label=<FieldLabel id="product_meta.title" text="Title" />
+          disabled={disabled}
+          required={isRequiredField('product_meta')}
+        />
+        <Field
+          name="additional_metadata.product_meta_description"
+          component={RenderInputTextField}
+          label=<FieldLabel id="product_meta.description" text="Description" optional />
+          disabled={disabled}
+          optional
+        />
+        <Field
+          name="additional_metadata.product_meta_keywords"
+          component={ReduxFormCreatableSelect}
+          label={(
+            <FieldLabel
+              id="additional_metadata.product_meta_keywords"
+              text="Keywords"
+              helpText={(
+                <div>
+                  <dl>
+                    <dt>Keywords</dt>
+                    <dd>
+                      Enter SEO Meta tags for Products. Separate keywords with spaces.
+                    </dd>
+                  </dl>
+                </div>
+              )}
+              optional
+            />
+          )}
+          defaultValue={[]}
+          isAsync
+          isMulti
+          disabled={disabled}
+          optional
+          isCreatable
+          createOptionValidator={courseTagValidate}
+          loadOptions={loadOptions}
         />
       </div>
     </div>
@@ -170,12 +249,22 @@ AdditionalMetadataFields.propTypes = {
     description: PropTypes.string,
   }),
   externalCourseMarketingType: PropTypes.string,
+  productStatusOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  })),
+  externalCourseMarketingTypeOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  })),
 };
 
 AdditionalMetadataFields.defaultProps = {
   disabled: false,
   sourceInfo: {},
   externalCourseMarketingType: null,
+  productStatusOptions: [],
+  externalCourseMarketingTypeOptions: [],
 };
 
 export default AdditionalMetadataFields;
