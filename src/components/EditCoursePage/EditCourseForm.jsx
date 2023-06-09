@@ -206,7 +206,6 @@ export class BaseEditCourseForm extends React.Component {
       title,
       pristine,
       uuid,
-      modified,
       courseInReview,
       courseStatuses,
       id,
@@ -360,10 +359,10 @@ export class BaseEditCourseForm extends React.Component {
               <div className="mb-3">{number}</div>
             </div>
             <div>
-              <FieldLabel id="modified" text="Last Modified Timestamp" className="mb-0" />
+              <FieldLabel id="data_modified_timestamp" text="Last Modified Timestamp" className="mb-0" />
               <div className="p-3 d-flex flex-wrap justify-content-between">
-                <div> <b>Date: </b> {getDateWithSlashes(modified)} </div>
-                <div><b>Time (UTC): </b> {getFormattedUTCTimeString(modified)}</div>
+                <div> <b>Date: </b> {getDateWithSlashes(courseInfo?.data?.data_modified_timestamp) || 'N/A'} </div>
+                <div><b>Time (UTC): </b> {getFormattedUTCTimeString(courseInfo?.data?.data_modified_timestamp) || 'N/A'}</div>
               </div>
             </div>
             <Field
@@ -1253,7 +1252,6 @@ BaseEditCourseForm.propTypes = {
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
-  modified: PropTypes.string, // last modified date (UTC formatted string)
   courseTagOptions: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
@@ -1279,6 +1277,7 @@ BaseEditCourseForm.propTypes = {
       course_type: PropTypes.string,
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
+      data_modified_timestamp: PropTypes.string,
       product_source: PropTypes.shape({
         name: PropTypes.string,
         slug: PropTypes.string,
@@ -1323,7 +1322,6 @@ BaseEditCourseForm.propTypes = {
 BaseEditCourseForm.defaultProps = {
   currentFormValues: {},
   entitlement: { sku: null },
-  modified: null,
   submitting: false,
   pristine: true,
   courseInReview: false,
