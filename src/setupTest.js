@@ -36,5 +36,5 @@ window['__react-beautiful-dnd-disable-dev-warnings'] = true;
 
 // Upgrading to Node16 shows unhandledPromiseRejection warnings as errors so adding a handler
 process.on('unhandledRejection', (reason, p) => {
-  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason.stack);
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason.stack); // eslint-disable-line no-console
 });
