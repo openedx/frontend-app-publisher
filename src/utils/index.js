@@ -4,9 +4,13 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
-import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
+import {
+  COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN,
+  COURSE_URL_SLUG_PATTERN_OLD, MASTERS_TRACK, POST_REVIEW_STATUSES, IN_REVIEW_STATUS,
+} from '../data/constants';
 import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
+import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '');
@@ -26,6 +30,18 @@ const isSafari = /constructor/i.test(window.HTMLElement)
 const isValidDate = (dateStr) => {
   const date = moment(dateStr);
   return moment(dateStr) && date.isValid();
+};
+
+const getCourseUrlSlugPattern = (updatedSlugFlag, courseRunStatuses, productSource) => {
+  /**
+  * This function returns the course url slug pattern based on the new slug enabled flag and courseRunStatuses
+  */
+  if (updatedSlugFlag && productSource === DEFAULT_PRODUCT_SOURCE && courseRunStatuses.some((status) =>
+    // eslint-disable-next-line implicit-arrow-linebreak
+    (IN_REVIEW_STATUS.includes(status) || POST_REVIEW_STATUSES.includes(status)))) {
+    return COURSE_URL_SLUG_PATTERN;
+  }
+  return updatedSlugFlag ? '' : COURSE_URL_SLUG_PATTERN_OLD;
 };
 
 const updateUrl = (queryOptions) => {
@@ -353,4 +369,5 @@ export {
   formatCollaboratorOptions,
   loadOptions,
   courseTagObjectsToSelectOptions,
+  getCourseUrlSlugPattern,
 };
