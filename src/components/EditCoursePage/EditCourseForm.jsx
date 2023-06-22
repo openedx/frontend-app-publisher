@@ -27,14 +27,16 @@ import Pill from '../Pill';
 import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
-import { PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG } from '../../data/constants';
+import {
+  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, COURSE_URL_SLUG_VALIDATION_MESSAGE,
+} from '../../data/constants';
 import {
   titleHelp, typeHelp, urlSlugHelp, productSourceHelp,
 } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
   formatCollaboratorOptions, getDateWithSlashes, getFormattedUTCTimeString, getOptionsData, isPristine,
-  parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions,
+  parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions, getCourseUrlSlugPattern,
 } from '../../utils';
 import store from '../../data/store';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
@@ -307,6 +309,10 @@ export class BaseEditCourseForm extends React.Component {
     subjectOptions.unshift({ label: '--', value: '' });
     programOptions.unshift({ label: '--', value: '' });
 
+    const IS_NEW_SLUG_FORMAT_ENABLED = Boolean(process.env.IS_NEW_SLUG_FORMAT_ENABLED === 'true');
+    // eslint-disable-next-line max-len
+    const COURSE_URL_SLUG_PATTERN = getCourseUrlSlugPattern(IS_NEW_SLUG_FORMAT_ENABLED, courseInfo.data.course_run_statuses, productSource?.slug);
+
     return (
       <div className="edit-course-form">
         <form id={id} onSubmit={handleSubmit}>
@@ -347,6 +353,18 @@ export class BaseEditCourseForm extends React.Component {
                   helpText={urlSlugHelp}
                 />
               )}
+              extraInput={{
+                onInvalid: (e) => {
+                  this.openCollapsible();
+                  e.target.setCustomValidity(
+                    `Please enter a valid URL slug. ${COURSE_URL_SLUG_VALIDATION_MESSAGE[COURSE_URL_SLUG_PATTERN] || ''}`,
+                  );
+                },
+                onInput: (e) => {
+                  e.target.setCustomValidity('');
+                },
+              }}
+              pattern={COURSE_URL_SLUG_PATTERN}
               disabled={disabled || !administrator}
               optional
             />
@@ -1275,6 +1293,7 @@ BaseEditCourseForm.propTypes = {
     data: PropTypes.shape({
       skill_names: PropTypes.arrayOf(PropTypes.string),
       course_type: PropTypes.string,
+      course_run_statuses: PropTypes.arrayOf(PropTypes.string),
       organization_logo_override_url: PropTypes.string,
       organization_short_code_override: PropTypes.string,
       data_modified_timestamp: PropTypes.string,

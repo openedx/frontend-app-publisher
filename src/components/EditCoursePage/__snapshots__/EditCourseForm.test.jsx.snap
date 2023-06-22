@@ -110,6 +110,12 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
       <Field
         component={[Function]}
         disabled={true}
+        extraInput={
+          Object {
+            "onInput": [Function],
+            "onInvalid": [Function],
+          }
+        }
         label={
           <FieldLabel
             className=""
@@ -147,6 +153,7 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
         }
         name="url_slug"
         optional={true}
+        pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
         type="text"
       />
       <div>
@@ -1916,6 +1923,12 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
       <Field
         component={[Function]}
         disabled={true}
+        extraInput={
+          Object {
+            "onInput": [Function],
+            "onInvalid": [Function],
+          }
+        }
         label={
           <FieldLabel
             className=""
@@ -1953,6 +1966,7 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
         }
         name="url_slug"
         optional={true}
+        pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
         type="text"
       />
       <div>
@@ -3760,6 +3774,12 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
       <Field
         component={[Function]}
         disabled={true}
+        extraInput={
+          Object {
+            "onInput": [Function],
+            "onInvalid": [Function],
+          }
+        }
         label={
           <FieldLabel
             className=""
@@ -3797,6 +3817,7 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         }
         name="url_slug"
         optional={true}
+        pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
         type="text"
       />
       <div>
@@ -5910,6 +5931,12 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
       <Field
         component={[Function]}
         disabled={true}
+        extraInput={
+          Object {
+            "onInput": [Function],
+            "onInvalid": [Function],
+          }
+        }
         label={
           <FieldLabel
             className=""
@@ -5947,6 +5974,7 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
         }
         name="url_slug"
         optional={true}
+        pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
         type="text"
       />
       <div>
@@ -7754,6 +7782,12 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
       <Field
         component={[Function]}
         disabled={true}
+        extraInput={
+          Object {
+            "onInput": [Function],
+            "onInvalid": [Function],
+          }
+        }
         label={
           <FieldLabel
             className=""
@@ -7791,6 +7825,7 @@ exports[`BaseEditCourseForm renders html correctly with minimal data 1`] = `
         }
         name="url_slug"
         optional={true}
+        pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
         type="text"
       />
       <div>
@@ -9105,6 +9140,12 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
       <Field
         component={[Function]}
         disabled={true}
+        extraInput={
+          Object {
+            "onInput": [Function],
+            "onInvalid": [Function],
+          }
+        }
         label={
           <FieldLabel
             className=""
@@ -9142,6 +9183,7 @@ exports[`BaseEditCourseForm renders html correctly with skills data when skills 
         }
         name="url_slug"
         optional={true}
+        pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
         type="text"
       />
       <div>

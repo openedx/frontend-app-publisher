@@ -1,4 +1,6 @@
 import * as utils from '.';
+import { COURSE_URL_SLUG_PATTERN, COURSE_URL_SLUG_PATTERN_OLD } from '../data/constants';
+import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const initialRuns = [
   {
@@ -51,6 +53,47 @@ describe('getCourseNumber', () => {
     const expected = 'Test101x';
     expect(utils.getCourseNumber(courseKeyFragment)).toEqual(expected);
     expect(utils.getCourseNumber(courseKeyFragmentOld)).toEqual(expected);
+  });
+});
+
+describe('getCourseUrlSlugPattern', () => {
+  it(
+    'returns the new course url slug pattern when updatedSlugFlag is true and courseRunStatuses are in review',
+    () => {
+      const updatedSlugFlag = true;
+      const courseRunStatuses = ['review_by_legal', 'review_by_internal'];
+      expect(
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
+      ).toEqual(COURSE_URL_SLUG_PATTERN);
+    },
+  );
+
+  it(
+    'returns the new course url slug pattern when updatedSlugFlag is true and courseRunStatuses are post review',
+    () => {
+      const updatedSlugFlag = true;
+      const courseRunStatuses = ['published', 'reviewed'];
+      expect(
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
+      ).toEqual(COURSE_URL_SLUG_PATTERN);
+    },
+  );
+
+  it(
+    'returns the empty pattern when updatedSlugFlag is true and courseRunStatuses are not in review or post review',
+    () => {
+      const updatedSlugFlag = true;
+      const courseRunStatuses = ['archived'];
+      expect(utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE)).toEqual('');
+    },
+  );
+
+  it('returns the old course url slug pattern when updatedSlugFlag is false', () => {
+    const updatedSlugFlag = false;
+    const courseRunStatuses = ['archived'];
+    expect(
+      utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
+    ).toEqual(COURSE_URL_SLUG_PATTERN_OLD);
   });
 });
 

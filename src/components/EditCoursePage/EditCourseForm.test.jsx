@@ -5,7 +5,9 @@ import { Field } from 'redux-form';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import { BaseEditCourseForm } from './EditCourseForm';
-import { REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED } from '../../data/constants';
+import {
+  REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
+} from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 describe('BaseEditCourseForm', () => {
@@ -242,6 +244,49 @@ describe('BaseEditCourseForm', () => {
 
     const disabledFields = component.find({ name: 'type', disabled: true });
     expect(disabledFields).toHaveLength(1);
+  });
+
+  it('check for customValidity working correctly for url_slug in EditCourseForm', () => {
+    const setCustomValidityMock = jest.fn();
+    const courseInfoWithUrlSlug = {
+      data: {
+        url_slug: 'test-url-slug/',
+      },
+    };
+    const initialValuesWithUrlSlug = {
+      ...initialValuesFull,
+      course_runs: [],
+    };
+    const component = shallow(
+      <BaseEditCourseForm
+        handleSubmit={() => null}
+        title={initialValuesWithUrlSlug.title}
+        initialValues={initialValuesWithUrlSlug}
+        currentFormValues={initialValuesWithUrlSlug}
+        number="Test101x"
+        entitlement={{ sku: 'ABC1234' }}
+        courseStatuses={[PUBLISHED]}
+        courseInfo={courseInfoWithUrlSlug}
+        courseOptions={courseOptions}
+        courseRunOptions={courseRunOptions}
+        uuid={initialValuesWithUrlSlug.uuid}
+        type={initialValuesWithUrlSlug.type}
+        id="edit-course-form"
+      />,
+    );
+
+    const urlSlugField = component.find({ name: 'url_slug' });
+
+    const invalidInput = 'Invalid-URL-Slug123/';
+    urlSlugField.prop('extraInput').onInvalid({ target: { setCustomValidity: setCustomValidityMock } });
+    urlSlugField.simulate('input', { target: { value: invalidInput } });
+    expect(setCustomValidityMock).toHaveBeenCalledWith(
+      'Please enter a valid URL slug. Course URL slug contains only lowercase letters, numbers, underscores, and dashes only.',
+    );
+
+    // check that it will clear onInput after invalid input
+    urlSlugField.prop('extraInput').onInput({ target: { setCustomValidity: setCustomValidityMock } });
+    expect(setCustomValidityMock).toHaveBeenCalledWith('');
   });
 
   it('no marketing fields if course type is not marketable', () => {
