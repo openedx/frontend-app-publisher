@@ -22,8 +22,8 @@ const NORMALIZE_DATE_MATCHER = /20\d{2}\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])/;
 
 const EXECUTIVE_EDUCATION_SLUG = 'executive-education-2u';
 
-const COURSE_URL_SLUG_PATTERN_OLD = '^[a-z0-9_]+(?:-[a-z0-9_]+)*$';
-const COURSE_URL_SLUG_PATTERN_NEW = '^learn/[a-zA-z0-9_]+/[a-zA-z0-9_]+$';
+const COURSE_URL_SLUG_PATTERN_OLD = '^[a-z0-9-_]+(?:-[a-z0-9-_]+)*$';
+const COURSE_URL_SLUG_PATTERN_NEW = '^learn/[a-zA-z0-9-_]+/[a-zA-z0-9-_]+$';
 const COURSE_URL_SLUG_PATTERN = `${COURSE_URL_SLUG_PATTERN_OLD}|${COURSE_URL_SLUG_PATTERN_NEW}`;
 
 const COURSE_URL_SLUG_VALIDATION_MESSAGE = {
