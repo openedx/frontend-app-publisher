@@ -141,7 +141,8 @@ export class BaseEditCourseForm extends React.Component {
       return (
         <>
           <Hyperlink
-            destination={`https://www.edx.org/preview/course/${courseInfo.data.url_slug}`}
+            name="preview-url"
+            destination={`${process.env.MARKETING_SITE_PREVIEW_URL_ROOT}/${courseInfo?.data?.url_slug.includes('/') ? '' : 'course/'}${courseInfo.data.url_slug}`}
             target="_blank"
           >
             View Preview Page
