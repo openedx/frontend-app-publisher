@@ -1,5 +1,5 @@
 import * as utils from '.';
-import { COURSE_URL_SLUG_PATTERN, COURSE_URL_SLUG_PATTERN_OLD } from '../data/constants';
+import { COURSE_URL_SLUG_PATTERN, COURSE_URL_SLUG_PATTERN_NEW, COURSE_URL_SLUG_PATTERN_OLD } from '../data/constants';
 import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const initialRuns = [
@@ -64,7 +64,7 @@ describe('getCourseUrlSlugPattern', () => {
       const courseRunStatuses = ['review_by_legal', 'review_by_internal'];
       expect(
         utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+      ).toEqual(COURSE_URL_SLUG_PATTERN_NEW);
     },
   );
 
@@ -75,16 +75,18 @@ describe('getCourseUrlSlugPattern', () => {
       const courseRunStatuses = ['published', 'reviewed'];
       expect(
         utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+      ).toEqual(COURSE_URL_SLUG_PATTERN_NEW);
     },
   );
 
   it(
-    'returns the empty pattern when updatedSlugFlag is true and courseRunStatuses are not in review or post review',
+    'returns the both old & new pattern when updatedSlugFlag is true and courseRunStatuses are not in review or post review',
     () => {
       const updatedSlugFlag = true;
       const courseRunStatuses = ['archived'];
-      expect(utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE)).toEqual('');
+      expect(
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
+      ).toEqual(COURSE_URL_SLUG_PATTERN);
     },
   );
 

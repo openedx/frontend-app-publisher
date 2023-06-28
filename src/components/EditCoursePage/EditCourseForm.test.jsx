@@ -282,7 +282,7 @@ describe('BaseEditCourseForm', () => {
     urlSlugField.prop('extraInput').onInvalid({ target: { setCustomValidity: setCustomValidityMock } });
     urlSlugField.simulate('input', { target: { value: invalidInput } });
     expect(setCustomValidityMock).toHaveBeenCalledWith(
-      'Please enter a valid URL slug. Course URL slug contains only lowercase letters, numbers, underscores, and dashes only.',
+      'Please enter a valid URL slug. Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
     );
 
     // check that it will clear onInput after invalid input
