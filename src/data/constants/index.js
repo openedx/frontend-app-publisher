@@ -28,8 +28,8 @@ const COURSE_URL_SLUG_PATTERN = `${COURSE_URL_SLUG_PATTERN_NEW}|${COURSE_URL_SLU
 
 const COURSE_URL_SLUG_VALIDATION_MESSAGE = {
   [COURSE_URL_SLUG_PATTERN_OLD]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
-  [COURSE_URL_SLUG_PATTERN_NEW]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must in the format learn/<primary_subject>/<org-slug>-<course_slug>',
-  [COURSE_URL_SLUG_PATTERN]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must in the format learn/<primary_subject>/<org-slug>-<course_slug> or learn/<some-custom-slug>.',
+  [COURSE_URL_SLUG_PATTERN_NEW]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format learn/<primary_subject>/<org-slug>-<course_slug>',
+  [COURSE_URL_SLUG_PATTERN]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must in the format <custom-url-slug> or learn/<primary_subject>/<org-slug>-<course_slug>.',
 };
 
 export {

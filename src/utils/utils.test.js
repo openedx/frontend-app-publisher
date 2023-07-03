@@ -1,5 +1,5 @@
 import * as utils from '.';
-import { COURSE_URL_SLUG_PATTERN, COURSE_URL_SLUG_PATTERN_NEW, COURSE_URL_SLUG_PATTERN_OLD } from '../data/constants';
+import { COURSE_URL_SLUG_PATTERN, COURSE_URL_SLUG_PATTERN_OLD } from '../data/constants';
 import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const initialRuns = [
@@ -64,7 +64,7 @@ describe('getCourseUrlSlugPattern', () => {
       const courseRunStatuses = ['review_by_legal', 'review_by_internal'];
       expect(
         utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN_NEW);
+      ).toEqual(COURSE_URL_SLUG_PATTERN);
     },
   );
 
@@ -75,7 +75,7 @@ describe('getCourseUrlSlugPattern', () => {
       const courseRunStatuses = ['published', 'reviewed'];
       expect(
         utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN_NEW);
+      ).toEqual(COURSE_URL_SLUG_PATTERN);
     },
   );
 
