@@ -31,7 +31,7 @@ import {
   PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, COURSE_URL_SLUG_VALIDATION_MESSAGE,
 } from '../../data/constants';
 import {
-  titleHelp, typeHelp, urlSlugHelp, productSourceHelp,
+  titleHelp, typeHelp, getUrlSlugHelp, productSourceHelp,
 } from '../../helpText';
 import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
 import {
@@ -313,6 +313,7 @@ export class BaseEditCourseForm extends React.Component {
     const IS_NEW_SLUG_FORMAT_ENABLED = Boolean(process.env.IS_NEW_SLUG_FORMAT_ENABLED === 'true');
     // eslint-disable-next-line max-len
     const COURSE_URL_SLUG_PATTERN = getCourseUrlSlugPattern(IS_NEW_SLUG_FORMAT_ENABLED, courseInfo.data.course_run_statuses, productSource?.slug);
+    const urlSlugHelp = getUrlSlugHelp(process.env.IS_NEW_SLUG_FORMAT_ENABLED);
 
     return (
       <div className="edit-course-form">
