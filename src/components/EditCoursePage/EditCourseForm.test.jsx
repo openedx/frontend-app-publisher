@@ -12,6 +12,8 @@ import {
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 describe('BaseEditCourseForm', () => {
+  const env = { ...process.env };
+
   const initialValuesFull = {
     title: 'Test Title',
     short_description: 'short desc',
@@ -58,7 +60,13 @@ describe('BaseEditCourseForm', () => {
   };
 
   beforeEach(() => {
+    jest.resetModules();
+    process.env = { ...env };
     getAuthenticatedUser.mockReturnValue({ administrator: false });
+  });
+
+  afterEach(() => {
+    process.env = env;
   });
 
   it('renders html correctly with minimal data', () => {
@@ -166,6 +174,26 @@ describe('BaseEditCourseForm', () => {
   });
 
   it('renders correctly when submitting for review', () => {
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      currentFormValues={initialValuesFull}
+      number="Test101x"
+      courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      isSubmittingForReview
+      id="edit-course-form"
+    />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('override slug format when IS_NEW_SLUG_FORMAT_ENABLED is true to check help text for url slug field', () => {
+    process.env.IS_NEW_SLUG_FORMAT_ENABLED = 'true';
+
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}

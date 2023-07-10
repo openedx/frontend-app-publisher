@@ -185,7 +185,21 @@ const productSourceHelp = (
   </div>
 );
 
-const urlSlugHelp = (
+const oldUrlSlugExample = (
+  <span>
+    www.edx.org/course/math-101, the URL slug is “math-101”
+  </span>
+);
+
+const subdirectoryUrlSlugExample = (
+  <span>
+    www.edx.org/learn/math/harvardx-math-for-beginners, the URL slug is “learn/math/harvardx-math-for-beginners” where
+    “learn” is keyword, “math” is primary subject and “harvardx” is the organization name and “math-for-beginners” is
+    the course title.
+  </span>
+);
+
+const getUrlSlugHelp = (isSubdirectoryFlagEnabled) => (
   <div>
     <p>
       <b>
@@ -207,10 +221,20 @@ const urlSlugHelp = (
     </p>
     <p><b>What is a URL slug?</b></p>
     <p>
-      In the example URL www.edx.org/course/math-101, the URL slug is “math-101.”
+      In the following example URLs:
+    </p>
+    {isSubdirectoryFlagEnabled === 'false' && (
+      <p>{oldUrlSlugExample}</p>
+    )}
+    {isSubdirectoryFlagEnabled === 'true' && (
+      <p>
+        {oldUrlSlugExample} <br /> {subdirectoryUrlSlugExample}
+      </p>
+    )}
+    <span>
       Using URL slugs that are short and easily understandable helps learners find and
       remember course pages, and also drives higher rankings in search engine results.
-    </p>
+    </span>
   </div>
 );
 
@@ -225,6 +249,8 @@ export {
   titleHelp,
   typeHelp,
   productSourceHelp,
-  urlSlugHelp,
+  getUrlSlugHelp,
+  oldUrlSlugExample,
+  subdirectoryUrlSlugExample,
   keyHelp,
 };
