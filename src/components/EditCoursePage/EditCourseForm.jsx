@@ -1095,19 +1095,20 @@ export class BaseEditCourseForm extends React.Component {
               <Field
                 name="watchers"
                 component={RenderInputTextField}
-                label={
+                label={(
                   <FieldLabel
                     text="Watchers"
                     optional
                     helpText={(
                       <div>
                         <p>
-                          A comma-separated list of email addresses that will be notified if the any of the course run of the course is published or scheduled.
+                          A comma-separated list of email addresses that will be notified if the any of the course run
+                          of the course is published or scheduled.
                         </p>
                       </div>
                     )}
                   />
-                }
+                )}
                 extraInput={{ onInvalid: this.openCollapsible }}
                 disabled={disabled}
                 optional
