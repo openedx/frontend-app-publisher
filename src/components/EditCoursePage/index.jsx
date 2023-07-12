@@ -370,6 +370,7 @@ class EditCoursePage extends React.Component {
       organization_logo_override: courseData.organization_logo_override_url,
       organization_short_code_override:
         courseData.organization_short_code_override,
+      watchers: courseData.watchers ? courseData.watchers.split(',') : [],
       outcome: courseData.outcome,
       prerequisites_raw: courseData.prerequisites_raw,
       ...priceData,
@@ -615,6 +616,7 @@ class EditCoursePage extends React.Component {
           enterprise_subscription_inclusion,
           organization_short_code_override,
           organization_logo_override_url,
+          watchers,
         },
       },
     } = this.props;
@@ -657,6 +659,7 @@ class EditCoursePage extends React.Component {
       enterprise_subscription_inclusion,
       organization_short_code_override,
       organization_logo_override_url,
+      watchers,
       location_restriction: this.buildLocationRestriction(),
       in_year_value: this.buildInYearValue(),
       tags: topics?.length ? topics.map(t => ({ label: t, value: t })) : null,

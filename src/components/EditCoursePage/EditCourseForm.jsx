@@ -1092,6 +1092,28 @@ export class BaseEditCourseForm extends React.Component {
               optional
             />
             {administrator && (
+              <Field
+                name="watchers"
+                component={RenderInputTextField}
+                label={
+                  <FieldLabel
+                    text="Watchers"
+                    optional
+                    helpText={(
+                      <div>
+                        <p>
+                          A comma-separated list of email addresses that will be notified if the any of the course run of the course is published or scheduled.
+                        </p>
+                      </div>
+                    )}
+                  />
+                }
+                extraInput={{ onInvalid: this.openCollapsible }}
+                disabled={disabled}
+                optional
+              />
+            )}
+            {administrator && (
             <>
               <FieldLabel text="Merchandising Location Restriction" className="mb-2" />
               <Field
@@ -1313,6 +1335,7 @@ BaseEditCourseForm.propTypes = {
         external_course_marketing_type: PropTypes.string,
       }),
       topics: PropTypes.arrayOf(PropTypes.string),
+      watchers: PropTypes.arrayOf(PropTypes.string),
     }),
   }),
   courseSubmitInfo: PropTypes.shape({

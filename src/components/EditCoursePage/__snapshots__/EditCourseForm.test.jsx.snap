@@ -6706,6 +6706,33 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         requiredHeight={110}
         requiredWidth={110}
       />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          Object {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <div>
+                <p>
+                  A comma-separated list of email addresses that will be notified if the any of the course run of the course is published or scheduled.
+                </p>
+              </div>
+            }
+            id={null}
+            optional={true}
+            text="Watchers"
+          />
+        }
+        name="watchers"
+        optional={true}
+      />
       <FieldLabel
         className="mb-2"
         extraText=""
