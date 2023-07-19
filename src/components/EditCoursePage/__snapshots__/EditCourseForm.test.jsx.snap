@@ -1700,6 +1700,9 @@ exports[`BaseEditCourseForm override slug format when IS_NEW_SLUG_FORMAT_ENABLED
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       editable={false}
@@ -3521,6 +3524,9 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       editable={false}
@@ -5342,6 +5348,9 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       editable={false}
@@ -5396,6 +5405,9 @@ exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       isSubmittingForReview={false}
@@ -5670,6 +5682,29 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
         optional={true}
         pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
         type="text"
+      />
+      <Field
+        component={[Function]}
+        createOptionValidator={[Function]}
+        disabled={true}
+        isCreatable={true}
+        isMulti={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                A list of email addresses that will receive notifications when the course run of the course is published or reviewed.
+              </p>
+            }
+            id="watchers.label"
+            optional={true}
+            text="Watchers"
+          />
+        }
+        name="watchers_list"
+        optional={true}
       />
       <div>
         <FieldLabel
@@ -7507,6 +7542,9 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       editable={false}
@@ -7561,6 +7599,9 @@ exports[`BaseEditCourseForm renders html correctly with administrator being true
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       isSubmittingForReview={false}
@@ -9366,6 +9407,9 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       editable={false}
@@ -9420,6 +9464,9 @@ exports[`BaseEditCourseForm renders html correctly with all data present 1`] = `
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "uuid": "11111111-1111-1111-1111-111111111111",
           "videoSrc": "https://www.video.src/watch?v=fdsafd",
+          "watchers": Array [
+            "test@test.com",
+          ],
         }
       }
       isSubmittingForReview={false}

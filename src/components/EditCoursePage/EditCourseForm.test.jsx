@@ -40,6 +40,7 @@ describe('BaseEditCourseForm', () => {
     skill_names: [],
     organization_logo_override: 'http://image.src.small',
     organization_short_code_override: 'test short code',
+    watchers: ['test@test.com'],
     location_restriction: {
       restriction_type: 'allowlist',
       countries: ['AF', 'AX'],

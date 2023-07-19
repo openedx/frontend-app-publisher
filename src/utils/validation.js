@@ -15,6 +15,13 @@ function courseTagValidate(tagValue, selectValue, options) {
   return ![...selectValue, ...options].some(x => x.label.toLowerCase() === tagValue.toLowerCase());
 }
 
+function emailValidate(emailValue, selectValue, options) {
+  // emailValue should only contain alphabets, numbers, hyphen, underscore, dot and @
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(emailValue)) { return false; }
+  // disallow emails that have already been selected or are present in options(dropdown)
+  return ![...selectValue, ...options].some(x => x.label.toLowerCase() === emailValue.toLowerCase());
+}
+
 /**
  * Iterates through errors on a form and returns the first field name with an error.
  *
@@ -198,4 +205,5 @@ export {
   handleStafferOrCreateFormFail,
   editCourseValidate,
   courseTagValidate,
+  emailValidate,
 };
