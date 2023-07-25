@@ -301,7 +301,14 @@ const formatPriceData = (formData, courseOptions) => {
     return priceData;
   }
   const parsedTypeOptions = parseCourseTypeOptions(courseOptionsData.type.type_options);
-  const priceLabels = parsedTypeOptions.priceLabels[formData.type];
+
+  /*
+    Since parsedTypeOptions.priceLabels do not contain information corresponding
+    to the empty CourseType, parsedTypeOptions.priceLabels[formData.type] evaluates
+    to undefined if formData.type is the empty CourseType. Add `|| {}` at the end to
+    ensure that a valid object is returned in that case
+  */
+  const priceLabels = parsedTypeOptions.priceLabels[formData.type] || {};
 
   // formData is going to potentially have more seat types than we need, so we pare down here
   Object.keys(priceLabels).forEach((seatType) => {
