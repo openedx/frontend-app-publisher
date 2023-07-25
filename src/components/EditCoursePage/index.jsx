@@ -277,7 +277,8 @@ class EditCoursePage extends React.Component {
       ],
       start_date: courseData.additional_metadata.start_date,
       end_date: courseData.additional_metadata.end_date,
-      display_on_org_page: courseData.additional_metadata.display_on_org_page,
+      // eslint-disable-next-line max-len
+      display_on_org_page: courseData.additional_metadata.display_on_org_page !== undefined ? courseData.additional_metadata.display_on_org_page : true,
       product_status: courseData.additional_metadata.product_status,
       external_course_marketing_type: courseData.additional_metadata.external_course_marketing_type,
       product_meta: productMeta ? {
