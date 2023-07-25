@@ -15,6 +15,28 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
       optional={false}
       text="Additional Metadata Details"
     />
+    <div
+      className="mb-3 mt-1"
+    >
+      <Field
+        className="float-left mt-1 ml-1"
+        component="input"
+        disabled={false}
+        label="additional_metadata.display_on_org_page"
+        name="additional_metadata.display_on_org_page"
+        required={true}
+        type="checkbox"
+      />
+      <FieldLabel
+        className="font-weight-normal ml-2 float-left"
+        extraText=""
+        helpText=""
+        id={null}
+        optional={false}
+        text="Display on Organization Page"
+      />
+      <br />
+    </div>
     <Field
       component={[Function]}
       disabled={false}
@@ -41,7 +63,7 @@ exports[`AdditionalMetadata Fields Display all fields 1`] = `
           helpText=""
           id="external_identifier.label"
           optional={false}
-          text="2U system identifier"
+          text="External system identifier"
         />
       }
       name="additional_metadata.external_identifier"
@@ -430,6 +452,28 @@ exports[`AdditionalMetadata Fields Display required fields on the basis of exter
       optional={false}
       text="Additional Metadata Details"
     />
+    <div
+      className="mb-3 mt-1"
+    >
+      <Field
+        className="float-left mt-1 ml-1"
+        component="input"
+        disabled={false}
+        label="additional_metadata.display_on_org_page"
+        name="additional_metadata.display_on_org_page"
+        required={true}
+        type="checkbox"
+      />
+      <FieldLabel
+        className="font-weight-normal ml-2 float-left"
+        extraText=""
+        helpText=""
+        id={null}
+        optional={false}
+        text="Display on Organization Page"
+      />
+      <br />
+    </div>
     <Field
       component={[Function]}
       disabled={false}
@@ -456,7 +500,7 @@ exports[`AdditionalMetadata Fields Display required fields on the basis of exter
           helpText=""
           id="external_identifier.label"
           optional={false}
-          text="2U system identifier"
+          text="External system identifier"
         />
       }
       name="additional_metadata.external_identifier"

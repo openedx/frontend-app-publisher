@@ -41,6 +41,19 @@ const AdditionalMetadataFields = (props) => {
     <div className="collapsible-card pgn_collapsible mt-4">
       <div className="collapsible-body">
         <FieldLabel text="Additional Metadata Details" className="h3 font-weight-normal mb-3" />
+        <div className="mb-3 mt-1">
+          <Field
+            name="additional_metadata.display_on_org_page"
+            type="checkbox"
+            label="additional_metadata.display_on_org_page"
+            disabled={disabled}
+            component="input"
+            required={isRequiredField('display_on_org_page')}
+            className="float-left mt-1 ml-1"
+          />
+          <FieldLabel text="Display on Organization Page" className="font-weight-normal ml-2 float-left" />
+          <br />
+        </div>
         <Field
           name="additional_metadata.external_url"
           component={RenderInputTextField}
@@ -51,7 +64,7 @@ const AdditionalMetadataFields = (props) => {
         <Field
           name="additional_metadata.external_identifier"
           component={RenderInputTextField}
-          label=<FieldLabel id="external_identifier.label" text="2U system identifier" />
+          label=<FieldLabel id="external_identifier.label" text="External system identifier" />
           disabled={disabled}
           required={isRequiredField('external_identifier')}
         />

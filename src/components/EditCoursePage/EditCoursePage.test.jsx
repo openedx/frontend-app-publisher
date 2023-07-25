@@ -928,6 +928,7 @@ describe('EditCoursePage', () => {
         external_identifier: '2U_external_identifier',
         lead_capture_form_url: 'https://www.lead_capture_url.com',
         organic_url: 'https://www.organic_url.com',
+        display_on_org_page: true,
         certificate_info: {
           heading: 'heading',
           blurb: 'blurb',
