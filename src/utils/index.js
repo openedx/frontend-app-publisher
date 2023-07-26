@@ -5,12 +5,11 @@ import qs from 'query-string';
 
 import history from '../data/history';
 import {
-  COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN,
-  COURSE_URL_SLUG_PATTERN_OLD, MASTERS_TRACK, POST_REVIEW_STATUSES, IN_REVIEW_STATUS,
+  COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN_OLD,
+  MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE,
 } from '../data/constants';
 import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
-import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '');
@@ -32,18 +31,27 @@ const isValidDate = (dateStr) => {
   return moment(dateStr) && date.isValid();
 };
 
-const getCourseUrlSlugPattern = (updatedSlugFlag, courseRunStatuses, productSource) => {
+const getCourseUrlSlugPattern = (updatedSlugFlag, productSource, courseType) => {
   /**
-  * This function returns the course url slug pattern based on the new slug enabled flag and courseRunStatuses
+  * This function returns the course url slug pattern based on the subidrectly slug
+  * format flag, product source and course type.
   */
-  if (updatedSlugFlag && productSource === DEFAULT_PRODUCT_SOURCE && courseRunStatuses.some((status) =>
-    // eslint-disable-next-line implicit-arrow-linebreak
-    (IN_REVIEW_STATUS.includes(status) || POST_REVIEW_STATUSES.includes(status)))) {
-    // change to COURSE_URL_SLUG_PATTERN_NEW when rollout is complete
-    return COURSE_URL_SLUG_PATTERN;
+  const COURSE_URL_SLUGS_PATTERN = JSON.parse(process.env.COURSE_URL_SLUGS_PATTERN || '{}');
+
+  let slugPattern = null;
+  const DEFAULT_SLUG_PATTERN = {
+    slug_format: COURSE_URL_SLUG_PATTERN_OLD,
+    error_msg: COURSE_URL_SLUG_VALIDATION_MESSAGE[COURSE_URL_SLUG_PATTERN_OLD],
+  };
+
+  if (updatedSlugFlag) {
+    const urlSlugsDictWrtProductSource = COURSE_URL_SLUGS_PATTERN[productSource] || {};
+    slugPattern = urlSlugsDictWrtProductSource[courseType]
+    || urlSlugsDictWrtProductSource.default || DEFAULT_SLUG_PATTERN;
+  } else {
+    slugPattern = DEFAULT_SLUG_PATTERN;
   }
-  // eslint-disable-next-line max-len
-  return updatedSlugFlag && productSource === DEFAULT_PRODUCT_SOURCE ? COURSE_URL_SLUG_PATTERN : COURSE_URL_SLUG_PATTERN_OLD;
+  return slugPattern;
 };
 
 const updateUrl = (queryOptions) => {

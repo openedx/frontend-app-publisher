@@ -12,6 +12,25 @@ jest.mock('@edx/frontend-platform/auth');
 getAuthenticatedHttpClient.mockReturnValue(axios);
 getAuthenticatedUser.mockReturnValue({ administrator: false });
 
+process.env.COURSE_URL_SLUGS_PATTERN = `{
+    "edx": {
+        "default": {
+            "slug_format": "^learn/[a-z0-9_]+(?:-?[a-z0-9_]+)*/[a-z0-9_]+(?:-?[a-z0-9_]+)*$|^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
+            "error_msg": "Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format <custom-url-slug> or learn/<primary_subject>/<org-slug>-<course_slug>."
+        }
+    },
+    "external-source": {
+        "default": {
+            "slug_format": "^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
+            "error_msg": "Course URL slug contains lowercase letters, numbers, underscores, and dashes only."
+        },
+        "executive-education-2u": {
+            "slug_format": "^executive-education/[a-z0-9_]+(?:-?[a-z0-9_]+)*$|^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
+            "error_msg": "Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format <custom-url-slug> or executive-education/<org-slug>-<course_slug>."
+        }
+    }
+}`;
+
 // We need this here because tinymce uses a method(s) which JSDOM has not
 // implemented yet. To fix this, the following mocks matchMedia so that all tests
 // execute properly. More info here:
