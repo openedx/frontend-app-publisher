@@ -26,6 +26,7 @@ describe('EditCoursePage', () => {
   const defaultPrice = '77';
   const defaultEnd = '2019-08-14T00:00:00Z';
   const defaultUpgradeDeadlineOverride = '2019-09-14T00:00:00Z';
+  const watchers = ['test@test.com'];
 
   const courseInfo = {
     data: {
@@ -161,6 +162,8 @@ describe('EditCoursePage', () => {
       skill_names: [],
       organization_logo_override_url: 'http://image.src.small',
       organization_short_code_override: 'test short code',
+      watchers,
+      watchers_list: watchers?.length ? watchers.map(w => ({ label: w, value: w })) : null,
       location_restriction: {
         restriction_type: 'allowlist',
         countries: [
@@ -384,6 +387,8 @@ describe('EditCoursePage', () => {
       },
       organization_logo_override_url: 'http://image.src.small',
       organization_short_code_override: 'test short code',
+      watchers,
+      watchers_list: watchers?.length ? watchers.map(w => ({ label: w, value: w })) : null,
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
@@ -426,6 +431,7 @@ describe('EditCoursePage', () => {
       },
       organization_logo_override: 'http://image.src.small',
       organization_short_code_override: 'test short code',
+      watchers,
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {
@@ -968,6 +974,7 @@ describe('EditCoursePage', () => {
       },
       organization_logo_override: 'http://image.src.small',
       organization_short_code_override: 'test short code',
+      watchers,
       outcome: '<p>Stuff</p>',
       prerequisites_raw: '',
       prices: {

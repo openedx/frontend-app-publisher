@@ -28,12 +28,14 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import {
-  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, COURSE_URL_SLUG_VALIDATION_MESSAGE,
+  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, COURSE_URL_SLUG_VALIDATION_MESSAGE, REVIEW_BY_INTERNAL,
 } from '../../data/constants';
 import {
   titleHelp, typeHelp, getUrlSlugHelp, productSourceHelp,
 } from '../../helpText';
-import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
+import {
+  handleCourseEditFail, editCourseValidate, courseTagValidate, emailValidate,
+} from '../../utils/validation';
 import {
   formatCollaboratorOptions, getDateWithSlashes, getFormattedUTCTimeString, getOptionsData, isPristine,
   parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions, getCourseUrlSlugPattern,
@@ -370,6 +372,30 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled || !administrator}
               optional
             />
+            {administrator && (
+              <Field
+                name="watchers_list"
+                component={ReduxFormCreatableSelect}
+                label={(
+                  <FieldLabel
+                    id="watchers.label"
+                    text="Watchers"
+                    helpText={(
+                      <p>
+                        A list of email addresses that will receive
+                        notifications when the course run of the course is published or reviewed.
+                      </p>
+                    )}
+                    optional
+                  />
+                )}
+                isMulti
+                disabled={!(courseInfo?.data?.course_run_statuses?.includes(REVIEW_BY_INTERNAL) && administrator)}
+                optional
+                isCreatable
+                createOptionValidator={emailValidate}
+              />
+            )}
             <div>
               <FieldLabel helpText={productSourceHelp} id="productSource" text="Product Source" className="mb-2" />
               <div className="mb-3">{parsedProductSource}</div>
@@ -1091,6 +1117,7 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
+
             {administrator && (
             <>
               <FieldLabel text="Merchandising Location Restriction" className="mb-2" />

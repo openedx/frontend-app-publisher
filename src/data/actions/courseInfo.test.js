@@ -196,6 +196,7 @@ describe('courseInfo edit course actions', () => {
       geoLocationLng: '45.0000',
       geoLocationLat: '50.0000',
       url_slug: 'test_slug',
+      watchers: ['test@test.com'],
       tags: ['tag1', 'tag2'],
       in_year_value: {
         per_lead_usa: 10,
@@ -218,12 +219,13 @@ describe('courseInfo edit course actions', () => {
     expect(changeMock).toHaveBeenNthCalledWith(3, 'geoLocationLng', '45.0000');
     expect(changeMock).toHaveBeenNthCalledWith(4, 'tags', ['tag1', 'tag2']);
     expect(changeMock).toHaveBeenNthCalledWith(5, 'url_slug', 'test_slug');
-    expect(changeMock).toHaveBeenNthCalledWith(6, 'in_year_value.per_lead_usa', 10);
-    expect(changeMock).toHaveBeenNthCalledWith(7, 'in_year_value.per_lead_international', 20);
-    expect(changeMock).toHaveBeenNthCalledWith(8, 'in_year_value.per_click_usa', 25);
-    expect(changeMock).toHaveBeenNthCalledWith(9, 'in_year_value.per_click_international', 30);
-    expect(changeMock).toHaveBeenNthCalledWith(10, 'course_runs[0].status', 'published');
-    expect(changeMock).toHaveBeenNthCalledWith(11, 'course_runs[0].transcript_languages', ['en-us']);
+    expect(changeMock).toHaveBeenNthCalledWith(6, 'watchers', ['test@test.com']);
+    expect(changeMock).toHaveBeenNthCalledWith(7, 'in_year_value.per_lead_usa', 10);
+    expect(changeMock).toHaveBeenNthCalledWith(8, 'in_year_value.per_lead_international', 20);
+    expect(changeMock).toHaveBeenNthCalledWith(9, 'in_year_value.per_click_usa', 25);
+    expect(changeMock).toHaveBeenNthCalledWith(10, 'in_year_value.per_click_international', 30);
+    expect(changeMock).toHaveBeenNthCalledWith(11, 'course_runs[0].status', 'published');
+    expect(changeMock).toHaveBeenNthCalledWith(12, 'course_runs[0].transcript_languages', ['en-us']);
   });
 });
 

@@ -112,6 +112,7 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
       tags,
       url_slug: urlSlug,
       imageSrc: initialImageSrc,
+      watchers: courseWatchers,
       course_runs: initialCourseRuns,
       in_year_value: {
         per_lead_usa: perLeadUSA,
@@ -127,6 +128,7 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
     change('geoLocationLng', geoLocationLng);
     change('tags', tags);
     change('url_slug', urlSlug);
+    change('watchers', courseWatchers);
     change('in_year_value.per_lead_usa', perLeadUSA);
     change('in_year_value.per_lead_international', perLeadInternational);
     change('in_year_value.per_click_usa', perClickUSA);
