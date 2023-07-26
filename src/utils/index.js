@@ -4,14 +4,20 @@ import 'moment-timezone';
 import qs from 'query-string';
 
 import history from '../data/history';
-import { COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, MASTERS_TRACK } from '../data/constants';
+import {
+  COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN,
+  COURSE_URL_SLUG_PATTERN_OLD, MASTERS_TRACK, POST_REVIEW_STATUSES, IN_REVIEW_STATUS,
+} from '../data/constants';
+import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
+import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '');
 const getTimeString = date => (date ? moment(date).format('HH:mm') : '');
 const getDateWithDashesUTC = date => (date ? moment.utc(date).format('YYYY-MM-DD') : '');
 const getTimeStringUTC = date => (date ? moment.utc(date).format('HH:mm') : '');
+const getFormattedUTCTimeString = date => (date ? moment.utc(date).format('h:mm A') : '');
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
 const utcTimeZone = moment.utc().zoneAbbr();
 const formatDate = date => (date ? moment(date).format('MMM DD, YYYY') : '');
@@ -24,6 +30,20 @@ const isSafari = /constructor/i.test(window.HTMLElement)
 const isValidDate = (dateStr) => {
   const date = moment(dateStr);
   return moment(dateStr) && date.isValid();
+};
+
+const getCourseUrlSlugPattern = (updatedSlugFlag, courseRunStatuses, productSource) => {
+  /**
+  * This function returns the course url slug pattern based on the new slug enabled flag and courseRunStatuses
+  */
+  if (updatedSlugFlag && productSource === DEFAULT_PRODUCT_SOURCE && courseRunStatuses.some((status) =>
+    // eslint-disable-next-line implicit-arrow-linebreak
+    (IN_REVIEW_STATUS.includes(status) || POST_REVIEW_STATUSES.includes(status)))) {
+    // change to COURSE_URL_SLUG_PATTERN_NEW when rollout is complete
+    return COURSE_URL_SLUG_PATTERN;
+  }
+  // eslint-disable-next-line max-len
+  return updatedSlugFlag && productSource === DEFAULT_PRODUCT_SOURCE ? COURSE_URL_SLUG_PATTERN : COURSE_URL_SLUG_PATTERN_OLD;
 };
 
 const updateUrl = (queryOptions) => {
@@ -198,6 +218,45 @@ const formatCollaboratorOptions = (options) => (
   options.map(({ name = '', uuid, image: { original: { url } = { url: '' } } }) => ({ name, uuid, image_url: url }))
 );
 
+function courseTagObjectsToSelectOptions(allCourseTags) {
+  /*  transform an array of course tag objects e.g
+    [
+      {
+        name: 'mba',
+        value: 'mba'
+      },
+      {
+        name: 'mba-gmat',
+        value: 'mba-gmat'
+      },
+    ]
+    to a format expected by ReduxFormCreatableSelect i.e
+    [
+      {
+        label: 'mba',
+        value: 'mba'
+      },
+      {
+        label: 'mba-gmat',
+        value: 'mba-gmat'
+      }
+    ]
+  */
+
+  return allCourseTags.map(tag => ({
+    label: tag.value,
+    value: tag.value,
+  })).filter(x => x.value);
+}
+
+const loadOptions = (inputValue, callback) => DiscoveryDataApiService.fetchCourseTags(inputValue)
+  .then((response) => {
+    callback(courseTagObjectsToSelectOptions(response.data));
+  })
+  .catch(() => {
+    callback(null);
+  });
+
 const parseCourseTypeOptions = (typeOptions) => {
   const courseTypes = {};
   const courseRunTypeOptions = {};
@@ -242,7 +301,14 @@ const formatPriceData = (formData, courseOptions) => {
     return priceData;
   }
   const parsedTypeOptions = parseCourseTypeOptions(courseOptionsData.type.type_options);
-  const priceLabels = parsedTypeOptions.priceLabels[formData.type];
+
+  /*
+    Since parsedTypeOptions.priceLabels do not contain information corresponding
+    to the empty CourseType, parsedTypeOptions.priceLabels[formData.type] evaluates
+    to undefined if formData.type is the empty CourseType. Add `|| {}` at the end to
+    ensure that a valid object is returned in that case
+  */
+  const priceLabels = parsedTypeOptions.priceLabels[formData.type] || {};
 
   // formData is going to potentially have more seat types than we need, so we pare down here
   Object.keys(priceLabels).forEach((seatType) => {
@@ -289,6 +355,7 @@ export {
   getTimeString,
   getDateWithDashesUTC,
   getTimeStringUTC,
+  getFormattedUTCTimeString,
   formatDate,
   updateUrl,
   getPageOptionsFromUrl,
@@ -309,4 +376,7 @@ export {
   buildInitialPrices,
   hasMastersTrack,
   formatCollaboratorOptions,
+  loadOptions,
+  courseTagObjectsToSelectOptions,
+  getCourseUrlSlugPattern,
 };

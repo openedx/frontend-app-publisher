@@ -40,6 +40,7 @@ exports[`StafferForm renders correctly when sent from the edit course page 1`] =
       required={false}
       requiredHeight={110}
       requiredWidth={110}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -113,11 +114,9 @@ exports[`StafferForm renders correctly when sent from the edit course page 1`] =
     />
     <Field
       component={[Function]}
-      extraInput={
-        Object {
-          "value": "",
-        }
-      }
+      currentValue=""
+      formatCreateLabel={[Function]}
+      isCreatable={true}
       label={
         <FieldLabel
           className=""
@@ -129,8 +128,9 @@ exports[`StafferForm renders correctly when sent from the edit course page 1`] =
         />
       }
       name="position.organization_override"
-      required={true}
-      type="text"
+      options={Array []}
+      placeholder="Organization..."
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -145,7 +145,7 @@ exports[`StafferForm renders correctly when sent from the edit course page 1`] =
           text="Biography"
         />
       }
-      maxChars={250}
+      maxChars={1000}
       name="bio"
       validate={[Function]}
     />
@@ -258,6 +258,7 @@ exports[`StafferForm renders correctly with staffer info 1`] = `
       required={false}
       requiredHeight={110}
       requiredWidth={110}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -331,11 +332,9 @@ exports[`StafferForm renders correctly with staffer info 1`] = `
     />
     <Field
       component={[Function]}
-      extraInput={
-        Object {
-          "value": "",
-        }
-      }
+      currentValue=""
+      formatCreateLabel={[Function]}
+      isCreatable={true}
       label={
         <FieldLabel
           className=""
@@ -347,8 +346,9 @@ exports[`StafferForm renders correctly with staffer info 1`] = `
         />
       }
       name="position.organization_override"
-      required={true}
-      type="text"
+      options={Array []}
+      placeholder="Organization..."
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -363,7 +363,7 @@ exports[`StafferForm renders correctly with staffer info 1`] = `
           text="Biography"
         />
       }
-      maxChars={250}
+      maxChars={1000}
       name="bio"
       validate={[Function]}
     />
@@ -476,6 +476,7 @@ exports[`StafferForm renders html correctly 1`] = `
       required={false}
       requiredHeight={110}
       requiredWidth={110}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -549,11 +550,9 @@ exports[`StafferForm renders html correctly 1`] = `
     />
     <Field
       component={[Function]}
-      extraInput={
-        Object {
-          "value": "",
-        }
-      }
+      currentValue=""
+      formatCreateLabel={[Function]}
+      isCreatable={true}
       label={
         <FieldLabel
           className=""
@@ -565,8 +564,9 @@ exports[`StafferForm renders html correctly 1`] = `
         />
       }
       name="position.organization_override"
-      required={true}
-      type="text"
+      options={Array []}
+      placeholder="Organization..."
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -581,7 +581,7 @@ exports[`StafferForm renders html correctly 1`] = `
           text="Biography"
         />
       }
-      maxChars={250}
+      maxChars={1000}
       name="bio"
       validate={[Function]}
     />
@@ -694,6 +694,7 @@ exports[`StafferForm renders html correctly when creating 1`] = `
       required={false}
       requiredHeight={110}
       requiredWidth={110}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -767,11 +768,9 @@ exports[`StafferForm renders html correctly when creating 1`] = `
     />
     <Field
       component={[Function]}
-      extraInput={
-        Object {
-          "value": "",
-        }
-      }
+      currentValue=""
+      formatCreateLabel={[Function]}
+      isCreatable={true}
       label={
         <FieldLabel
           className=""
@@ -783,8 +782,9 @@ exports[`StafferForm renders html correctly when creating 1`] = `
         />
       }
       name="position.organization_override"
-      required={true}
-      type="text"
+      options={Array []}
+      placeholder="Organization..."
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -799,7 +799,7 @@ exports[`StafferForm renders html correctly when creating 1`] = `
           text="Biography"
         />
       }
-      maxChars={250}
+      maxChars={1000}
       name="bio"
       validate={[Function]}
     />
@@ -912,6 +912,7 @@ exports[`StafferForm renders html correctly when submitting 1`] = `
       required={false}
       requiredHeight={110}
       requiredWidth={110}
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -985,11 +986,9 @@ exports[`StafferForm renders html correctly when submitting 1`] = `
     />
     <Field
       component={[Function]}
-      extraInput={
-        Object {
-          "value": "",
-        }
-      }
+      currentValue=""
+      formatCreateLabel={[Function]}
+      isCreatable={true}
       label={
         <FieldLabel
           className=""
@@ -1001,8 +1000,9 @@ exports[`StafferForm renders html correctly when submitting 1`] = `
         />
       }
       name="position.organization_override"
-      required={true}
-      type="text"
+      options={Array []}
+      placeholder="Organization..."
+      validate={[Function]}
     />
     <Field
       component={[Function]}
@@ -1017,7 +1017,7 @@ exports[`StafferForm renders html correctly when submitting 1`] = `
           text="Biography"
         />
       }
-      maxChars={250}
+      maxChars={1000}
       name="bio"
       validate={[Function]}
     />

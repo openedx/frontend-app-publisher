@@ -43,7 +43,7 @@ const stafferInfo = {
         title: 'Github',
         type: 'others',
         id: 10,
-        url: 'https://github.com/edx',
+        url: 'https://github.com/openedx',
         display_title: 'Github',
       },
     ],

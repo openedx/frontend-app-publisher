@@ -36,28 +36,28 @@ export const Collaborator = ({
         />
       </button>
       { !disabled
-      // Don't show the edit link at all if fields should be disabled
-      && (
-        <Link
-          to={{
-            pathname: `/collaborators/${uuid}`,
-            state: {
-              name,
-              imageUrl,
-              uuid,
-            },
-          }}
-          className="btn mr-1 p-0"
-          onClick={() => store.dispatch(sourceInfo(referrer))}
-        >
-          <Icon
-            id={`edit-icon-${uuid}`}
-            className="fa fa-edit fa-fw"
-            screenReaderText={`Edit ${name}`}
-            title="Edit"
-          />
-        </Link>
-      )}
+        // Don't show the edit link at all if fields should be disabled
+        && (
+          <Link
+            to={{
+              pathname: `/collaborators/${uuid}`,
+              state: {
+                name,
+                imageUrl,
+                uuid,
+              },
+            }}
+            className="btn mr-1 p-0"
+            onClick={() => store.dispatch(sourceInfo(referrer))}
+          >
+            <Icon
+              id={`edit-icon-${uuid}`}
+              className="fa fa-edit fa-fw"
+              screenReaderText={`Edit ${name}`}
+              title="Edit"
+            />
+          </Link>
+        )}
       <span className="name font-weight-bold">
         {name}
       </span>

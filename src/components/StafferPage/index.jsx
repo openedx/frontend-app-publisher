@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import StafferForm from './StafferForm';
-import StatusAlert from '../StatusAlert';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
 
@@ -21,7 +21,32 @@ class StafferPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchStafferInfo();
+    this.props.fetchOrganizations();
     this.setStartedFetching();
+  }
+
+  handleStafferCreate(fieldValues) {
+    const {
+      createStaffer,
+      sourceInfo: { referrer },
+    } = this.props;
+
+    const stafferData = this.prepareStafferData(fieldValues);
+    createStaffer(stafferData, referrer);
+  }
+
+  handleStafferEdit(fieldValues) {
+    const {
+      editStaffer,
+      sourceInfo: { referrer },
+    } = this.props;
+
+    const stafferData = this.prepareStafferData(fieldValues);
+    if (!stafferData.profile_image.startsWith('data:')) {
+      // Only send profile_image if a new one is being uploaded
+      delete stafferData.profile_image;
+    }
+    editStaffer(stafferData, referrer);
   }
 
   setStartedFetching() {
@@ -61,7 +86,7 @@ class StafferPage extends React.Component {
     return {
       title: position.title,
       organization: orgId,
-      organization_override: position.organization_override,
+      organization_override: position.organization_override.value,
     };
   }
 
@@ -75,44 +100,24 @@ class StafferPage extends React.Component {
     };
   }
 
-  handleStafferCreate(fieldValues) {
-    const {
-      createStaffer,
-      sourceInfo: { referrer },
-    } = this.props;
-
-    const stafferData = this.prepareStafferData(fieldValues);
-    createStaffer(stafferData, referrer);
-  }
-
-  handleStafferEdit(fieldValues) {
-    const {
-      editStaffer,
-      sourceInfo: { referrer },
-    } = this.props;
-
-    const stafferData = this.prepareStafferData(fieldValues);
-    if (!stafferData.profile_image.startsWith('data:')) {
-      // Only send profile_image if a new one is being uploaded
-      delete stafferData.profile_image;
-    }
-    editStaffer(stafferData, referrer);
-  }
-
   render() {
     const {
       stafferInfo,
       sourceInfo,
+      publisherUserInfo,
     } = this.props;
 
     if (!stafferInfo) {
       return (
-        <StatusAlert
+        <Alert
           id="error"
-          alertType="danger"
-          title="Could not load page"
-          message="Could not get instructor information"
-        />
+          variant="danger"
+          title=""
+          message=""
+        >
+          <Alert.Heading>Could not load page</Alert.Heading>
+          <p>Could not get instructor information</p>
+        </Alert>
       );
     }
 
@@ -127,6 +132,10 @@ class StafferPage extends React.Component {
       : this.handleStafferEdit);
 
     const { data, isSaving } = stafferInfo;
+    const orgOverrideString = data?.position?.organization_override;
+    const orgOverrideSelectValue = orgOverrideString
+      ? { label: orgOverrideString, value: orgOverrideString }
+      : null;
 
     const errorArray = [];
 
@@ -150,12 +159,14 @@ class StafferPage extends React.Component {
           { showSpinner && <LoadingSpinner /> }
           { referrer
             && (
-            <StatusAlert
+            <Alert
               id="sent-from-edit-course-info"
-              alertType="info"
-              message="The data you entered on the course edit screen is saved. You will return to that page when you have finished updating instructor information."
+              variant="info"
               dismissible
-            />
+            >
+              The data you entered on the course edit screen is saved. You will return to that
+              page when you have finished updating instructor information.
+            </Alert>
             )}
           { showForm && (
             <div>
@@ -166,16 +177,23 @@ class StafferPage extends React.Component {
                 onSubmit={handleSubmit}
                 isSaving={isSaving}
                 isCreateForm={isCreateForm}
-                initialValues={data}
+                initialValues={{
+                  ...data,
+                  position: {
+                    ...data?.position, organization_override: orgOverrideSelectValue,
+                  },
+                }}
                 organizationName={organizationName}
+                publisherOrganizations={publisherUserInfo.organizations}
                 {...this.props}
               />
               { errorArray.length > 1 && (
-                <StatusAlert
+                <Alert
                   id="create-staffer-error"
-                  alertType="danger"
-                  message={errorArray}
-                />
+                  variant="danger"
+                >
+                  {errorArray}
+                </Alert>
               )}
             </div>
           )}
@@ -189,6 +207,10 @@ StafferPage.defaultProps = {
   createStaffer: () => {},
   editStaffer: null,
   fetchStafferInfo: () => null,
+  fetchOrganizations: () => null,
+  publisherUserInfo: {
+    organizations: [],
+  },
   stafferInfo: null,
   sourceInfo: {},
 };
@@ -197,6 +219,12 @@ StafferPage.propTypes = {
   createStaffer: PropTypes.func,
   editStaffer: PropTypes.func,
   fetchStafferInfo: PropTypes.func,
+  fetchOrganizations: PropTypes.func,
+  publisherUserInfo: PropTypes.shape({
+    organizations: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
   stafferInfo: PropTypes.shape({
     isFetching: PropTypes.bool,
     isSaving: PropTypes.bool,

@@ -5,6 +5,7 @@ import { shallowToJson } from 'enzyme-to-json';
 import CreateCoursePage from './index';
 
 const organizations = [{ name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' }];
+const sources = [{ name: 'souce1', slug: 'source1' }, { name: 'source2', slug: 'source2' }];
 
 describe('CreateCoursePage', () => {
   it('renders html correctly', () => {
@@ -16,6 +17,11 @@ describe('CreateCoursePage', () => {
       fetchOrganizations={() => null}
       publisherUserInfo={{
         organizations: [],
+        error: null,
+        isFetching: true,
+      }}
+      productSourceOptions={{
+        productSources: [],
         error: null,
         isFetching: true,
       }}
@@ -34,6 +40,11 @@ describe('CreateCoursePage', () => {
       fetchOrganizations={() => null}
       publisherUserInfo={{
         organizations,
+        error: null,
+        isFetching: false,
+      }}
+      productSourceOptions={{
+        productSources: sources,
         error: null,
         isFetching: false,
       }}

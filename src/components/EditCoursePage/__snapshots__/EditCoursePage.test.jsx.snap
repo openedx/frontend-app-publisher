@@ -31,6 +31,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -46,20 +47,35 @@ exports[`EditCoursePage renders html correctly 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -94,6 +110,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -102,6 +119,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -111,13 +129,29 @@ exports[`EditCoursePage renders html correctly 1`] = `
           "additional_information": undefined,
           "additional_metadata": Object {},
           "collaborators": undefined,
+          "course_run_statuses": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -129,7 +163,9 @@ exports[`EditCoursePage renders html correctly 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -147,6 +183,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -207,6 +244,11 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           }
         }
         courseUuid="00000000-0000-0000-0000-000000000000"
+        draft={
+          Array [
+            "published",
+          ]
+        }
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -222,20 +264,35 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -271,6 +328,8 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
                 "blurb": "blurb",
                 "heading": "heading",
               },
+              "end_date": "2019-05-10T00:00:00Z",
+              "external_course_marketing_type": "short_course",
               "external_identifier": "2U_external_identifier",
               "external_url": "https://www.external_url.com",
               "facts": Array [
@@ -285,8 +344,11 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "product_meta": null,
+              "product_status": "published",
               "registration_deadline": "2019-05-10T00:00:00Z",
               "start_date": "2019-05-10T00:00:00Z",
+              "variant_id": "00000000-0000-0000-0000-000000000000",
             },
             "collaborators": Array [],
             "course_runs": Array [
@@ -363,6 +425,16 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -391,6 +463,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -468,6 +541,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -484,6 +558,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -498,6 +573,10 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             },
             "certificate_info_blurb": "blurb",
             "certificate_info_heading": "heading",
+            "course_term_override": undefined,
+            "display_on_org_page": undefined,
+            "end_date": "2019-05-10T00:00:00Z",
+            "external_course_marketing_type": "short_course",
             "external_identifier": "2U_external_identifier",
             "external_url": "https://www.external_url.com",
             "facts_1_blurb": "facts_1_blurb",
@@ -506,10 +585,16 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "product_meta_description": undefined,
+            "product_meta_keywords": null,
+            "product_meta_title": undefined,
+            "product_status": "published",
             "registration_deadline": "2019-05-10T00:00:00Z",
             "start_date": "2019-05-10T00:00:00Z",
+            "variant_id": "00000000-0000-0000-0000-000000000000",
           },
           "collaborators": Array [],
+          "course_run_statuses": undefined,
           "course_runs": Array [
             Object {
               "content_language": "en-us",
@@ -565,11 +650,31 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             },
           ],
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": "",
           "full_description": "<p>long desc</p>",
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": "http://path/to/image/woo.small",
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -583,7 +688,9 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           "subjectSecondary": "chemistry",
           "subjectTertiary": undefined,
           "syllabus_raw": "",
+          "tags": null,
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -602,6 +709,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -641,6 +749,11 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           }
         }
         courseUuid="00000000-0000-0000-0000-000000000000"
+        draft={
+          Array [
+            "published",
+          ]
+        }
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -656,20 +769,35 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -705,6 +833,8 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
                 "blurb": "blurb",
                 "heading": "heading",
               },
+              "end_date": "2019-05-10T00:00:00Z",
+              "external_course_marketing_type": "short_course",
               "external_identifier": "2U_external_identifier",
               "external_url": "https://www.external_url.com",
               "facts": Array [
@@ -719,8 +849,11 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "product_meta": null,
+              "product_status": "published",
               "registration_deadline": "2019-05-10T00:00:00Z",
               "start_date": "2019-05-10T00:00:00Z",
+              "variant_id": "00000000-0000-0000-0000-000000000000",
             },
             "collaborators": Array [],
             "course_runs": Array [
@@ -797,6 +930,16 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -825,6 +968,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -843,6 +987,34 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -858,6 +1030,68 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -1185,6 +1419,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -1201,6 +1436,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -1215,6 +1451,10 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             },
             "certificate_info_blurb": "blurb",
             "certificate_info_heading": "heading",
+            "course_term_override": undefined,
+            "display_on_org_page": undefined,
+            "end_date": "2019-05-10T00:00:00Z",
+            "external_course_marketing_type": "short_course",
             "external_identifier": "2U_external_identifier",
             "external_url": "https://www.external_url.com",
             "facts_1_blurb": "facts_1_blurb",
@@ -1223,10 +1463,16 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "product_meta_description": undefined,
+            "product_meta_keywords": null,
+            "product_meta_title": undefined,
+            "product_status": "published",
             "registration_deadline": "2019-05-10T00:00:00Z",
             "start_date": "2019-05-10T00:00:00Z",
+            "variant_id": "00000000-0000-0000-0000-000000000000",
           },
           "collaborators": Array [],
+          "course_run_statuses": undefined,
           "course_runs": Array [
             Object {
               "content_language": "en-us",
@@ -1282,11 +1528,31 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             },
           ],
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": "",
           "full_description": "<p>long desc</p>",
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": "http://path/to/image/woo.small",
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -1300,7 +1566,9 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           "subjectSecondary": "chemistry",
           "subjectTertiary": undefined,
           "syllabus_raw": "",
+          "tags": null,
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -1319,6 +1587,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -1358,6 +1627,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -1373,20 +1643,35 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -1425,6 +1710,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -1433,6 +1719,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -1442,13 +1729,29 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           "additional_information": undefined,
           "additional_metadata": Object {},
           "collaborators": undefined,
+          "course_run_statuses": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -1460,7 +1763,9 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -1478,22 +1783,33 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Info error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Info error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
@@ -1529,6 +1845,11 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           }
         }
         courseUuid="00000000-0000-0000-0000-000000000000"
+        draft={
+          Array [
+            "published",
+          ]
+        }
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -1544,20 +1865,35 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -1593,6 +1929,8 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
                 "blurb": "blurb",
                 "heading": "heading",
               },
+              "end_date": "2019-05-10T00:00:00Z",
+              "external_course_marketing_type": "short_course",
               "external_identifier": "2U_external_identifier",
               "external_url": "https://www.external_url.com",
               "facts": Array [
@@ -1607,8 +1945,11 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
               ],
               "lead_capture_form_url": "https://www.lead_capture_url.com",
               "organic_url": "https://www.organic_url.com",
+              "product_meta": null,
+              "product_status": "published",
               "registration_deadline": "2019-05-10T00:00:00Z",
               "start_date": "2019-05-10T00:00:00Z",
+              "variant_id": "00000000-0000-0000-0000-000000000000",
             },
             "collaborators": Array [],
             "course_runs": Array [
@@ -1685,6 +2026,16 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -1713,6 +2064,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -1731,6 +2083,34 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -1746,6 +2126,68 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -2141,6 +2583,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -2157,6 +2600,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -2171,6 +2615,10 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             },
             "certificate_info_blurb": "blurb",
             "certificate_info_heading": "heading",
+            "course_term_override": undefined,
+            "display_on_org_page": undefined,
+            "end_date": "2019-05-10T00:00:00Z",
+            "external_course_marketing_type": "short_course",
             "external_identifier": "2U_external_identifier",
             "external_url": "https://www.external_url.com",
             "facts_1_blurb": "facts_1_blurb",
@@ -2179,10 +2627,16 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "facts_2_heading": "facts_2_heading",
             "lead_capture_form_url": "https://www.lead_capture_url.com",
             "organic_url": "https://www.organic_url.com",
+            "product_meta_description": undefined,
+            "product_meta_keywords": null,
+            "product_meta_title": undefined,
+            "product_status": "published",
             "registration_deadline": "2019-05-10T00:00:00Z",
             "start_date": "2019-05-10T00:00:00Z",
+            "variant_id": "00000000-0000-0000-0000-000000000000",
           },
           "collaborators": Array [],
+          "course_run_statuses": undefined,
           "course_runs": Array [
             Object {
               "content_language": "en-us",
@@ -2238,11 +2692,31 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             },
           ],
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": "",
           "full_description": "<p>long desc</p>",
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": "http://path/to/image/woo.small",
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -2256,7 +2730,9 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectSecondary": "chemistry",
           "subjectTertiary": undefined,
           "syllabus_raw": "",
+          "tags": null,
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -2275,6 +2751,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -2314,6 +2791,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -2329,20 +2807,35 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -2397,6 +2890,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -2405,6 +2899,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -2414,13 +2909,29 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "additional_information": undefined,
           "additional_metadata": Object {},
           "collaborators": undefined,
+          "course_run_statuses": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -2432,7 +2943,9 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -2450,26 +2963,37 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Info error.",
-          <br />,
-          "Course Options error.",
-          <br />,
-          "Course Run Options error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Info error.
+      <br />
+      Course Options error.
+      <br />
+      Course Run Options error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
@@ -2505,6 +3029,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -2520,20 +3045,35 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -2569,6 +3109,34 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "data": Object {
             "actions": Object {
               "POST": Object {
+                "additional_metadata": Object {
+                  "children": Object {
+                    "external_course_marketing_type": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        Object {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": Object {
+                      "choices": Array [
+                        Object {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        Object {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
                 "level_type": Object {
                   "choices": Array [
                     Object {
@@ -2584,6 +3152,68 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -2851,6 +3481,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -2859,6 +3490,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -2868,13 +3500,29 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "additional_information": undefined,
           "additional_metadata": Object {},
           "collaborators": undefined,
+          "course_run_statuses": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -2886,7 +3534,9 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -2904,6 +3554,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -2940,6 +3591,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -2955,20 +3607,35 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -3011,6 +3678,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3019,6 +3687,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3028,13 +3697,29 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           "additional_information": undefined,
           "additional_metadata": Object {},
           "collaborators": undefined,
+          "course_run_statuses": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3046,7 +3731,9 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3064,22 +3751,33 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Options error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Options error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
@@ -3115,6 +3813,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -3130,20 +3829,35 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -3246,6 +3960,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3254,6 +3969,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3263,13 +3979,29 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           "additional_information": undefined,
           "additional_metadata": Object {},
           "collaborators": undefined,
+          "course_run_statuses": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3281,7 +4013,9 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3299,6 +4033,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -3335,6 +4070,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           }
         }
         courseUuid=""
+        draft={Array []}
         fetchComments={[Function]}
         fetchCourseEditors={[Function]}
         fetchOrganizationRoles={null}
@@ -3350,20 +4086,35 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
             "data": Array [],
           }
         }
+        organizations={Object {}}
         removeCourseEditor={[Function]}
       />
     }
     wide={false}
   >
-    <StatusAlert
-      alertType="secondary"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
-      message="You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor."
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="secondary"
+    >
+      You have permission to view this course, but not edit. If you would like to edit the course, please contact a course editor.
+    </ForwardRef>
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
@@ -3406,6 +4157,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3414,6 +4166,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3423,13 +4176,29 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           "additional_information": undefined,
           "additional_metadata": Object {},
           "collaborators": undefined,
+          "course_run_statuses": undefined,
           "course_runs": undefined,
           "course_type": undefined,
+          "enterprise_subscription_inclusion": undefined,
           "faq": undefined,
           "full_description": undefined,
+          "geoLocationLat": null,
+          "geoLocationLng": null,
+          "geoLocationName": null,
           "imageSrc": undefined,
+          "in_year_value": Object {
+            "per_click_international": null,
+            "per_click_usa": null,
+            "per_lead_international": null,
+            "per_lead_usa": null,
+          },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3441,7 +4210,9 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           "subjectSecondary": undefined,
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
+          "tags": null,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3459,61 +4230,162 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
-    <StatusAlert
-      alertType="danger"
-      className=""
+    <ForwardRef
       dismissible={false}
-      iconClassNames={Array []}
       id="error"
-      message={
-        Array [
-          "Course Run Options error.",
-          <br />,
-        ]
-      }
       onClose={[Function]}
-      title={null}
-    />
+      show={true}
+      stacked={false}
+      transition={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "defaultProps": Object {
+            "appear": false,
+            "in": false,
+            "mountOnEnter": false,
+            "timeout": 300,
+            "unmountOnExit": false,
+          },
+          "displayName": "Fade",
+          "render": [Function],
+        }
+      }
+      variant="danger"
+    >
+      Course Run Options error.
+      <br />
+    </ForwardRef>
   </PageContainer>
 </Fragment>
 `;
 
 exports[`EditCoursePage renders page correctly with no courseInfo 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="Course information unavailable. Please try reloading the page and if the error persists, please contact support."
+  message=""
   onClose={[Function]}
-  title="Course Edit Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  title=""
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Edit Form failed to load: 
+  </AlertHeading>
+  <p>
+    Course information unavailable. Please try reloading the page and if the error persists, please contact support.
+  </p>
+</ForwardRef>
 `;
 
 exports[`EditCoursePage renders page correctly with no courseOptions 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="Course information unavailable. Please try reloading the page and if the error persists, please contact support."
+  message=""
   onClose={[Function]}
-  title="Course Edit Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  title=""
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Edit Form failed to load: 
+  </AlertHeading>
+  <p>
+    Course information unavailable. Please try reloading the page and if the error persists, please contact support.
+  </p>
+</ForwardRef>
 `;
 
 exports[`EditCoursePage renders page correctly with no courseRunOptions 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="Course information unavailable. Please try reloading the page and if the error persists, please contact support."
+  message=""
   onClose={[Function]}
-  title="Course Edit Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  title=""
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Edit Form failed to load: 
+  </AlertHeading>
+  <p>
+    Course information unavailable. Please try reloading the page and if the error persists, please contact support.
+  </p>
+</ForwardRef>
 `;

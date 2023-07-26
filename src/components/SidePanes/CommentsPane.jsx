@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon, TextArea } from '@edx/paragon';
+import { Icon, TextArea, Alert } from '@edx/paragon';
 import { formatDate } from '../../utils/index';
 
 import Comment from './Comment';
 import FieldLabel from '../FieldLabel';
 import Pane from './Pane';
-import StatusAlert from '../StatusAlert';
 
 class CommentsPane extends React.Component {
   constructor(props) {
@@ -39,15 +38,6 @@ class CommentsPane extends React.Component {
     }
   }
 
-  dismissEmptyCommentAlert() {
-    this.setState({ showEmptyCommentAlert: false });
-  }
-
-  scrollToBottom() {
-    const element = document.getElementById('endOfCommentThread');
-    element.scrollIntoView({ behavior: 'auto', block: 'end' });
-  }
-
   handleUpdateCommentBody(value) {
     this.setState({ newCommentBody: value });
   }
@@ -67,6 +57,15 @@ class CommentsPane extends React.Component {
       this.props.addComment(newComment);
       this.setState({ newCommentBody: '', showEmptyCommentAlert: false });
     }
+  }
+
+  scrollToBottom() {
+    const element = document.getElementById('endOfCommentThread');
+    element.scrollIntoView({ behavior: 'auto', block: 'end' });
+  }
+
+  dismissEmptyCommentAlert() {
+    this.setState({ showEmptyCommentAlert: false });
   }
 
   parseComments(comments) {
@@ -105,11 +104,12 @@ class CommentsPane extends React.Component {
           {!hasComments && !showSpinner && <div className="text-muted">No comments</div>}
           {showComments && commentThread}
           {!!comments.error && (
-          <StatusAlert
-            alertType="danger"
-            message={comments.error}
+          <Alert
+            variant="danger"
             dismissible
-          />
+          >
+            {comments.error}
+          </Alert>
           )}
           <div
             id="endOfCommentThread"
@@ -143,12 +143,13 @@ class CommentsPane extends React.Component {
           {showEmptyCommentAlert
           && (
           <div className="mt-3">
-            <StatusAlert
-              alertType="danger"
+            <Alert
+              variant="danger"
               onClose={this.dismissEmptyCommentAlert}
               dismissible
-              message="Comment cannot be blank."
-            />
+            >
+              Comment cannot be blank.
+            </Alert>
           </div>
           )}
         </div>

@@ -8,6 +8,13 @@ const requiredMessage = 'This field is required';
 // Basic validation that ensures some value was entered
 const basicValidate = value => (value ? undefined : requiredMessage);
 
+function courseTagValidate(tagValue, selectValue, options) {
+  // tagValue should only contain alphabets, numbers, hyphen and underscore
+  if (!/^[a-zA-Z0-9_-]+$/.test(tagValue)) { return false; }
+  // disallow tags that have already been selected or are present in options(dropdown)
+  return ![...selectValue, ...options].some(x => x.label.toLowerCase() === tagValue.toLowerCase());
+}
+
 /**
  * Iterates through errors on a form and returns the first field name with an error.
  *
@@ -59,6 +66,30 @@ const getFieldName = (errors) => {
   return fieldName;
 };
 
+const stafferOrCreateFormErrorField = (errors) => {
+  let fieldName = Object.entries(errors)[0][0];
+  const otherInfo = Object.entries(errors)[0][1];
+
+  if (otherInfo.constructor === Object) {
+    fieldName = `${fieldName}.${stafferOrCreateFormErrorField(otherInfo)}`;
+  }
+
+  return fieldName;
+};
+
+const handleStafferOrCreateFormFail = (errors, _, submitError) => {
+  if (!errors) {
+    throw submitError;
+  }
+
+  const fieldName = stafferOrCreateFormErrorField(errors);
+  if (fieldName) {
+    setTimeout(() => {
+      document.getElementsByName(fieldName)[0].scrollIntoView();
+    }, 500);
+  }
+};
+
 // Focus on the first element that has validation errors
 const handleCourseEditFail = (errors) => {
   const fieldName = getFieldName(errors);
@@ -78,8 +109,8 @@ const editCourseValidate = (values, props) => {
   if (!targetRun || targetRun.status === PUBLISHED) {
     return {};
   }
-
   let hasError = false;
+  let geoLocationDataCount = 0;
   const errors = {};
 
   // Validate all the fields required for submission at the top level of the form
@@ -91,6 +122,26 @@ const editCourseValidate = (values, props) => {
       errors[fieldName] = requiredMessage;
     }
   });
+
+  // Validate that either all or none of the geolocation fields are provided.
+  // The double parsing is done to first get count of how many geoLocaton fields
+  // actually have values in them.
+  const geoLocationFields = ['geoLocationName', 'geoLocationLng', 'geoLocationLat'];
+  geoLocationFields.forEach((fieldName) => {
+    if (!values[fieldName]) {
+      geoLocationDataCount += 1;
+    }
+  });
+
+  if (geoLocationDataCount > 0 && geoLocationDataCount < 3) {
+    geoLocationFields.forEach((fieldName) => {
+      const value = values[fieldName];
+      if (!value) {
+        hasError = true;
+        errors[fieldName] = requiredMessage;
+      }
+    });
+  }
 
   // Validate all the fields required for submission in the submitting course run
   errors.course_runs = [];
@@ -144,5 +195,7 @@ export {
   basicValidate,
   getFieldName,
   handleCourseEditFail,
+  handleStafferOrCreateFormFail,
   editCourseValidate,
+  courseTagValidate,
 };

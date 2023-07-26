@@ -3,9 +3,10 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import Autosuggest from 'react-autosuggest';
 import { push } from 'connected-react-router';
 import PropTypes from 'prop-types';
+import { Alert } from '@edx/paragon';
+
 import store from '../../data/store';
 import sourceInfo from '../../data/actions/sourceInfo';
-import StatusAlert from '../StatusAlert';
 
 class ListField extends React.Component {
   constructor(props) {
@@ -24,11 +25,16 @@ class ListField extends React.Component {
     this.getSuggestionValue = this.getSuggestionValue.bind(this);
     this.renderSuggestion = this.props.renderSuggestion.bind(this);
     this.onSuggestionEntered = this.onSuggestionEntered.bind(this);
-    this.fetchSuggestions = this.props.fetchSuggestions.bind(this);
   }
 
   componentDidMount() {
     this.updateList();
+  }
+
+  handleRemove(uuid) {
+    this.setState(prevState => ({
+      currentList: prevState.currentList.filter(item => item.uuid !== uuid),
+    }), () => this.props.input.onChange(this.state.currentList));
   }
 
   onSuggestionsFetchRequested({ value }) {
@@ -149,12 +155,6 @@ class ListField extends React.Component {
     }
   }
 
-  handleRemove(uuid) {
-    this.setState(prevState => ({
-      currentList: prevState.currentList.filter(item => item.uuid !== uuid),
-    }), () => this.props.input.onChange(this.state.currentList));
-  }
-
   render() {
     const {
       disabled,
@@ -187,10 +187,7 @@ class ListField extends React.Component {
       <div name={name} tabIndex="-1">
         {submitFailed && error
         && (
-          <StatusAlert
-            alertType="danger"
-            message={error}
-          />
+          <Alert variant="danger">{error}</Alert>
         )}
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Droppable droppableId={`${itemType}List`} direction="vertical">
@@ -237,6 +234,12 @@ class ListField extends React.Component {
             onSuggestionSelected={this.onSuggestionEntered}
             alwaysRenderSuggestions={searchString.length > 2}
             id={`${itemType}-search`}
+            theme={{
+              container: 'react-autosuggest__container position-relative',
+              suggestionsContainerOpen: 'react-autosuggest__suggestions-container--open bg-white border-gray-300 w-100',
+              suggestionsList: 'react-autosuggest__suggestions-list m-0 p-0 list-unstyled overflow-auto',
+              suggestionHighlighted: 'react-autosuggest__suggestion--highlighted bg-gray-300',
+            }}
           />
         </label>
         {/* eslint-enable jsx-a11y/no-noninteractive-element-interactions */}
@@ -264,7 +267,11 @@ ListField.propTypes = {
   renderItemComponent: PropTypes.func.isRequired,
   courseRunKey: PropTypes.string,
   newItemInfo: PropTypes.shape({
-    data: PropTypes.shape({}),
+    data: PropTypes.shape({
+      uuid: PropTypes.string,
+      image_url: PropTypes.string,
+      name: PropTypes.string,
+    }),
   }),
   sourceInfo: PropTypes.shape({
     referringRun: PropTypes.string,

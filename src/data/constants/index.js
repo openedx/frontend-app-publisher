@@ -22,6 +22,16 @@ const NORMALIZE_DATE_MATCHER = /20\d{2}\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])/;
 
 const EXECUTIVE_EDUCATION_SLUG = 'executive-education-2u';
 
+const COURSE_URL_SLUG_PATTERN_OLD = '^[a-z0-9_]+(?:-[a-z0-9_]+)*$';
+const COURSE_URL_SLUG_PATTERN_NEW = '^learn/[a-z0-9_]+(?:-?[a-z0-9_]+)*/[a-z0-9_]+(?:-?[a-z0-9_]+)*$';
+const COURSE_URL_SLUG_PATTERN = `${COURSE_URL_SLUG_PATTERN_NEW}|${COURSE_URL_SLUG_PATTERN_OLD}`;
+
+const COURSE_URL_SLUG_VALIDATION_MESSAGE = {
+  [COURSE_URL_SLUG_PATTERN_OLD]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
+  [COURSE_URL_SLUG_PATTERN_NEW]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format learn/<primary_subject>/<org-slug>-<course_slug>',
+  [COURSE_URL_SLUG_PATTERN]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must in the format <custom-url-slug> or learn/<primary_subject>/<org-slug>-<course_slug>.',
+};
+
 export {
   VERIFIED_TRACK,
   AUDIT_TRACK,
@@ -43,4 +53,8 @@ export {
   COURSE_EXEMPT_FIELDS,
   COURSE_RUN_NON_EXEMPT_FIELDS,
   EXECUTIVE_EDUCATION_SLUG,
+  COURSE_URL_SLUG_PATTERN,
+  COURSE_URL_SLUG_PATTERN_NEW,
+  COURSE_URL_SLUG_PATTERN_OLD,
+  COURSE_URL_SLUG_VALIDATION_MESSAGE,
 };

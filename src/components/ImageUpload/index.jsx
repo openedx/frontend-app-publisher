@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-import StatusAlert from '../StatusAlert';
+import { Alert } from '@edx/paragon';
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -14,11 +13,6 @@ class ImageUpload extends React.Component {
 
     this.handleFilePicked = this.handleFilePicked.bind(this);
     this.sizeValidator = this.sizeValidator.bind(this);
-  }
-
-  updateValue(value) {
-    this.setState({ value });
-    this.props.input.onChange(value);
   }
 
   handleFilePicked(event) {
@@ -47,6 +41,11 @@ class ImageUpload extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     }
+  }
+
+  updateValue(value) {
+    this.setState({ value });
+    this.props.input.onChange(value);
   }
 
   sizeValidator(event) {
@@ -93,17 +92,15 @@ class ImageUpload extends React.Component {
           <label htmlFor={id} className="w-100 p-0">{label}</label>  {/* eslint-disable-line jsx-a11y/label-has-for */}
           {sizeValidationError
             && (
-            <StatusAlert
-              alertType="warning"
-              message={sizeValidationError}
-            />
+            <Alert variant="warning">
+              {sizeValidationError}
+            </Alert>
             )}
           {submitFailed && error
             && (
-            <StatusAlert
-              alertType="danger"
-              message={error}
-            />
+            <Alert variant="danger">
+              {error}
+            </Alert>
             )}
           <img src={this.state.value} alt="" className="uploaded-image" onLoad={this.sizeValidator} />
           <input

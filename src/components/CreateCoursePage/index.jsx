@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import CreateCourseForm from './CreateCourseForm';
 import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
-import StatusAlert from '../StatusAlert';
 import ConfirmationModal from '../ConfirmationModal';
 
 import { formatPriceData } from '../../utils';
+import { DEFAULT_PRODUCT_SOURCE } from '../../data/constants/productSourceOptions';
 
 class CreateCoursePage extends React.Component {
   constructor(props) {
@@ -29,21 +30,19 @@ class CreateCoursePage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchProductSourceOptions();
     this.props.fetchOrganizations();
     this.props.fetchCourseOptions();
     this.props.fetchCourseRunOptions();
     this.setStartedFetching();
   }
 
-  setStartedFetching() {
-    this.setState({ startedFetching: true });
-  }
-
   handleCourseCreate(options) {
     const priceData = formatPriceData(options, this.props.courseOptions);
     const courseData = {
       ...priceData,
-      org: options.org,
+      org: options.org.value,
+      product_source: options.source || DEFAULT_PRODUCT_SOURCE,
       title: options.title,
       number: options.number,
       type: options.type,
@@ -57,6 +56,10 @@ class CreateCoursePage extends React.Component {
       },
     };
     return this.props.createCourse(courseData);
+  }
+
+  setStartedFetching() {
+    this.setState({ startedFetching: true });
   }
 
   showModal(options) {
@@ -94,12 +97,13 @@ class CreateCoursePage extends React.Component {
   render() {
     if (!this.props.publisherUserInfo) {
       return (
-        <StatusAlert
+        <Alert
           id="error"
-          alertType="danger"
-          title="Course Create Form failed to load: "
-          message="User information unavailable"
-        />
+          variant="danger"
+        >
+          <Alert.Heading>Course Create Form failed to load: </Alert.Heading>
+          <p>User information unavailable</p>
+        </Alert>
       );
     }
 
@@ -110,6 +114,7 @@ class CreateCoursePage extends React.Component {
       formValues,
       courseOptions,
       courseRunOptions,
+      productSourceOptions,
     } = this.props;
     const {
       startedFetching,
@@ -117,7 +122,15 @@ class CreateCoursePage extends React.Component {
     } = this.state;
 
     const organizations = publisherUserInfo.organizations ? publisherUserInfo.organizations : [];
-    if (organizations.length === 1) { initialValues.org = organizations[0].key; }
+    if (organizations.length === 1) {
+      initialValues.org = {
+        label: organizations[0].name,
+        value: organizations[0].key,
+      };
+    }
+
+    const sources = productSourceOptions.productSources ? productSourceOptions.productSources : [];
+    if (sources.length === 1) { initialValues.source = sources[0].slug; }
 
     const errorArray = [];
     if (courseInfo.error) {
@@ -133,6 +146,15 @@ class CreateCoursePage extends React.Component {
       publisherUserInfo.error.forEach((error, index) => {
         errorArray.push(error);
         if (index < publisherUserInfo.error.length) {
+          errorArray.push(<br />);
+        }
+      });
+    }
+
+    if (productSourceOptions.error) {
+      productSourceOptions.error.forEach((error, index) => {
+        errorArray.push(error);
+        if (index < productSourceOptions.error.length) {
           errorArray.push(<br />);
         }
       });
@@ -169,16 +191,18 @@ class CreateCoursePage extends React.Component {
                 initialValues={initialValues}
                 currentFormValues={formValues}
                 organizations={organizations}
+                sources={sources}
                 isCreating={courseInfo.isCreating}
                 courseOptions={courseOptions}
                 courseRunOptions={courseRunOptions}
               />
               {errorArray.length > 1 && (
-                <StatusAlert
+                <Alert
                   id="create-error"
-                  alertType="danger"
-                  message={errorArray}
-                />
+                  variant="danger"
+                >
+                  {errorArray}
+                </Alert>
               ) }
             </div>
           )}
@@ -193,7 +217,11 @@ CreateCoursePage.defaultProps = {
   publisherUserInfo: {
     organizations: [],
   },
+  productSourceOptions: {
+    productSources: [],
+  },
   fetchOrganizations: () => {},
+  fetchProductSourceOptions: () => {},
   fetchCourseOptions: () => {},
   fetchCourseRunOptions: () => {},
   courseOptions: {},
@@ -208,6 +236,7 @@ CreateCoursePage.defaultProps = {
 CreateCoursePage.propTypes = {
   initialValues: PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
     org: PropTypes.string,
+    source: PropTypes.string,
     title: PropTypes.string,
     number: PropTypes.string,
     type: PropTypes.string,
@@ -217,7 +246,12 @@ CreateCoursePage.propTypes = {
     pacing_type: PropTypes.string,
   }),
   publisherUserInfo: PropTypes.shape({
-    organizations: PropTypes.array,
+    organizations: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
+    isFetching: PropTypes.bool,
+  }),
+  productSourceOptions: PropTypes.shape({
+    productSources: PropTypes.arrayOf(PropTypes.shape({})),
     error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
@@ -228,6 +262,7 @@ CreateCoursePage.propTypes = {
     }),
     isCreating: PropTypes.bool,
   }),
+  fetchProductSourceOptions: PropTypes.func,
   fetchOrganizations: PropTypes.func,
   fetchCourseOptions: PropTypes.func,
   fetchCourseRunOptions: PropTypes.func,

@@ -225,6 +225,54 @@ const courseOptions = {
             ],
           },
         },
+        additional_metadata: {
+          children: {
+            product_status: {
+              choices: [
+                { display_name: 'Published', value: 'published' },
+                { display_name: 'Archived', value: 'archived' },
+              ],
+            },
+            external_course_marketing_type: {
+              choices: [
+                { display_name: 'Short Course', value: 'short_course' },
+                { display_name: 'Sprint', value: 'sprint' },
+              ],
+            },
+          },
+        },
+        location_restriction: {
+          children: {
+            restriction_type: {
+              choices: [
+                'blocklist',
+                'allowlist',
+              ],
+            },
+            countries: {
+              child: {
+                choices: [
+                  { label: 'Afghanistan', value: 'AF' },
+                  { label: 'Åland Islands', value: 'AX' },
+                  { label: 'Algeria', value: 'DZ' },
+                  { label: 'American Samoa', value: 'AS' },
+                  { label: 'Andorra', value: 'AD' },
+                ],
+              },
+            },
+            states: {
+              child: {
+                choices: [
+                  { label: 'Alabama', value: 'AL' },
+                  { label: 'Arizona', value: 'AZ' },
+                  { label: 'Arkansas', value: 'AR' },
+                  { label: 'California', value: 'CA' },
+                  { label: 'Colorado', value: 'CO' },
+                ],
+              },
+            },
+          },
+        },
       },
     },
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InputSelect } from '@edx/paragon';
+import { Form } from '@edx/paragon';
 
 const RenderSelectField = ({
   input,
@@ -8,22 +8,33 @@ const RenderSelectField = ({
   name,
   label,
   disabled,
+  hidden,
   required,
   meta: { touched, error },
   options,
 }) => (
-  <InputSelect
-    {...input}
-    {...extraInput}
-    name={name}
-    label={label}
-    disabled={disabled}
-    required={required}
-    isValid={!(touched && error)}
-    validationMessage={error}
-    themes={['danger']}
-    options={options}
-  />
+  <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
+    {hidden ? null : <Form.Label>{label}</Form.Label>}
+    <Form.Control
+      {...input}
+      {...extraInput}
+      as="select"
+      name={name}
+      label={label}
+      disabled={disabled}
+      hidden={hidden}
+      required={required}
+    >
+      {options.map(option => (
+        <option key={option.value} value={option.value}>{option.label}</option>
+      ))}
+      {touched && error && (
+      <Form.Control.Feedback>
+        {error}
+      </Form.Control.Feedback>
+      )}
+    </Form.Control>
+  </Form.Group>
 );
 
 RenderSelectField.defaultProps = {
@@ -31,6 +42,7 @@ RenderSelectField.defaultProps = {
   name: '',
   disabled: false,
   required: false,
+  hidden: false,
 };
 
 RenderSelectField.propTypes = {
@@ -48,6 +60,7 @@ RenderSelectField.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.object),
   ]).isRequired,
+  hidden: PropTypes.bool,
 };
 
 export default RenderSelectField;

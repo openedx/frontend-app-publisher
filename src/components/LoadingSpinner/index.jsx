@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from '@edx/paragon';
 import PropTypes from 'prop-types';
 
-const LoadingSpinner = props => (
+const LoadingSpinner = (props) => (
   <div className="mx-auto text-center">
     <div>
       { props.message }

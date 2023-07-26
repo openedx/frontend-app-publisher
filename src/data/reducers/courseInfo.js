@@ -28,7 +28,7 @@ const initialState = {
   courseSaved: false,
 };
 
-function courseInfo(state = initialState, action) {
+function courseInfo(state = initialState, action = {}) {
   switch (action.type) {
     case REQUEST_COURSE_INFO_FAIL:
       return {

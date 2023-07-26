@@ -36,6 +36,7 @@ exports[`CreateCoursePage renders html correctly 1`] = `
         initialValues={Object {}}
         keepDirtyOnReinitialize={false}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={Array []}
         persistentSubmitErrors={false}
         pure={true}
@@ -43,6 +44,7 @@ exports[`CreateCoursePage renders html correctly 1`] = `
         shouldError={[Function]}
         shouldValidate={[Function]}
         shouldWarn={[Function]}
+        sources={Array []}
         submitAsSideEffect={false}
         touchOnBlur={true}
         touchOnChange={false}
@@ -119,6 +121,7 @@ exports[`CreateCoursePage renders page correctly with course create error 1`] = 
         isCreating={false}
         keepDirtyOnReinitialize={false}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
@@ -137,26 +140,37 @@ exports[`CreateCoursePage renders page correctly with course create error 1`] = 
         shouldError={[Function]}
         shouldValidate={[Function]}
         shouldWarn={[Function]}
+        sources={Array []}
         submitAsSideEffect={false}
         touchOnBlur={true}
         touchOnChange={false}
         updateUnregisteredFields={false}
       />
-      <StatusAlert
-        alertType="danger"
-        className=""
+      <ForwardRef
         dismissible={false}
-        iconClassNames={Array []}
         id="create-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
         onClose={[Function]}
-        title={null}
-      />
+        show={true}
+        stacked={false}
+        transition={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "appear": false,
+              "in": false,
+              "mountOnEnter": false,
+              "timeout": 300,
+              "unmountOnExit": false,
+            },
+            "displayName": "Fade",
+            "render": [Function],
+          }
+        }
+        variant="danger"
+      >
+        Fail
+        <br />
+      </ForwardRef>
     </div>
   </PageContainer>
 </Fragment>
@@ -199,6 +213,7 @@ exports[`CreateCoursePage renders page correctly with course create in progress 
         isCreating={true}
         keepDirtyOnReinitialize={false}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
@@ -217,6 +232,7 @@ exports[`CreateCoursePage renders page correctly with course create in progress 
         shouldError={[Function]}
         shouldValidate={[Function]}
         shouldWarn={[Function]}
+        sources={Array []}
         submitAsSideEffect={false}
         touchOnBlur={true}
         touchOnChange={false}
@@ -264,6 +280,7 @@ exports[`CreateCoursePage renders page correctly with course create success 1`] 
         isCreating={false}
         keepDirtyOnReinitialize={false}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
@@ -282,6 +299,7 @@ exports[`CreateCoursePage renders page correctly with course create success 1`] 
         shouldError={[Function]}
         shouldValidate={[Function]}
         shouldWarn={[Function]}
+        sources={Array []}
         submitAsSideEffect={false}
         touchOnBlur={true}
         touchOnChange={false}
@@ -293,16 +311,44 @@ exports[`CreateCoursePage renders page correctly with course create success 1`] 
 `;
 
 exports[`CreateCoursePage renders page correctly with no publisherUserInfo 1`] = `
-<StatusAlert
-  alertType="danger"
-  className=""
+<ForwardRef
   dismissible={false}
-  iconClassNames={Array []}
   id="error"
-  message="User information unavailable"
   onClose={[Function]}
-  title="Course Create Form failed to load: "
-/>
+  show={true}
+  stacked={false}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="danger"
+>
+  <AlertHeading
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "DivStyledAsH4",
+        "render": [Function],
+      }
+    }
+    bsPrefix="alert-heading"
+  >
+    Course Create Form failed to load: 
+  </AlertHeading>
+  <p>
+    User information unavailable
+  </p>
+</ForwardRef>
 `;
 
 exports[`CreateCoursePage renders page correctly with org error 1`] = `
@@ -342,6 +388,7 @@ exports[`CreateCoursePage renders page correctly with org error 1`] = `
         isCreating={false}
         keepDirtyOnReinitialize={false}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
@@ -360,26 +407,37 @@ exports[`CreateCoursePage renders page correctly with org error 1`] = `
         shouldError={[Function]}
         shouldValidate={[Function]}
         shouldWarn={[Function]}
+        sources={Array []}
         submitAsSideEffect={false}
         touchOnBlur={true}
         touchOnChange={false}
         updateUnregisteredFields={false}
       />
-      <StatusAlert
-        alertType="danger"
-        className=""
+      <ForwardRef
         dismissible={false}
-        iconClassNames={Array []}
         id="create-error"
-        message={
-          Array [
-            "Fail",
-            <br />,
-          ]
-        }
         onClose={[Function]}
-        title={null}
-      />
+        show={true}
+        stacked={false}
+        transition={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "appear": false,
+              "in": false,
+              "mountOnEnter": false,
+              "timeout": 300,
+              "unmountOnExit": false,
+            },
+            "displayName": "Fade",
+            "render": [Function],
+          }
+        }
+        variant="danger"
+      >
+        Fail
+        <br />
+      </ForwardRef>
     </div>
   </PageContainer>
 </Fragment>
@@ -422,6 +480,7 @@ exports[`CreateCoursePage renders page correctly with organizations 1`] = `
         isCreating={false}
         keepDirtyOnReinitialize={false}
         onSubmit={[Function]}
+        onSubmitFail={[Function]}
         organizations={
           Array [
             Object {
@@ -440,6 +499,18 @@ exports[`CreateCoursePage renders page correctly with organizations 1`] = `
         shouldError={[Function]}
         shouldValidate={[Function]}
         shouldWarn={[Function]}
+        sources={
+          Array [
+            Object {
+              "name": "souce1",
+              "slug": "source1",
+            },
+            Object {
+              "name": "source2",
+              "slug": "source2",
+            },
+          ]
+        }
         submitAsSideEffect={false}
         touchOnBlur={true}
         touchOnChange={false}

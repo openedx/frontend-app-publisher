@@ -55,6 +55,7 @@ exports[`CourseTable shows a populated table 1`] = `
         defaultColumnValues={Object {}}
         defaultSortDirection="asc"
         defaultSortedColumn="key"
+        disableElevation={false}
         fetchData={null}
         initialState={Object {}}
         initialTableOptions={Object {}}
@@ -132,6 +133,7 @@ exports[`CourseTable shows a populated table after a component update for orderi
         defaultColumnValues={Object {}}
         defaultSortDirection="desc"
         defaultSortedColumn="key"
+        disableElevation={false}
         fetchData={null}
         initialState={Object {}}
         initialTableOptions={Object {}}
@@ -209,6 +211,7 @@ exports[`CourseTable shows a populated table after a component update for page 1
         defaultColumnValues={Object {}}
         defaultSortDirection="asc"
         defaultSortedColumn="key"
+        disableElevation={false}
         fetchData={null}
         initialState={Object {}}
         initialTableOptions={Object {}}
@@ -277,6 +280,7 @@ exports[`CourseTable shows an empty table 1`] = `
         defaultColumnValues={Object {}}
         defaultSortDirection="asc"
         defaultSortedColumn="key"
+        disableElevation={false}
         fetchData={null}
         initialState={Object {}}
         initialTableOptions={Object {}}
@@ -300,25 +304,31 @@ exports[`CourseTable shows an empty table 1`] = `
 
 exports[`CourseTable shows an error 1`] = `
 <Fragment>
-  <StatusAlert
-    alertType="danger"
-    className=""
+  <ForwardRef
     dismissible={false}
-    iconClassNames={
-      Array [
-        "fa",
-        "fa-times-circle",
-      ]
-    }
-    message={
-      Array [
-        "Unable to load data: ",
-        "Test error.",
-      ]
-    }
+    icon={[Function]}
     onClose={[Function]}
-    title={null}
-  />
+    show={true}
+    stacked={false}
+    transition={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "defaultProps": Object {
+          "appear": false,
+          "in": false,
+          "mountOnEnter": false,
+          "timeout": 300,
+          "unmountOnExit": false,
+        },
+        "displayName": "Fade",
+        "render": [Function],
+      }
+    }
+    variant="danger"
+  >
+    Unable to load data: 
+    Test error.
+  </ForwardRef>
 </Fragment>
 `;
 

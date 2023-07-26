@@ -2,13 +2,18 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { Field } from 'redux-form';
+import { Hyperlink } from '@edx/paragon';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import { BaseEditCourseForm } from './EditCourseForm';
-import { REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED } from '../../data/constants';
+import {
+  REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
+} from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 describe('BaseEditCourseForm', () => {
+  const env = { ...process.env };
+
   const initialValuesFull = {
     title: 'Test Title',
     short_description: 'short desc',
@@ -29,11 +34,23 @@ describe('BaseEditCourseForm', () => {
       verified: '77',
     },
     type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+    topics: [],
     uuid: '11111111-1111-1111-1111-111111111111',
     editable: true,
     skill_names: [],
     organization_logo_override: 'http://image.src.small',
     organization_short_code_override: 'test short code',
+    location_restriction: {
+      restriction_type: 'allowlist',
+      countries: ['AF', 'AX'],
+      states: ['CO'],
+    },
+    in_year_value: {
+      per_click_usa: 100,
+      per_click_international: 100,
+      per_lead_usa: 100,
+      per_lead_international: 100,
+    },
   };
 
   const courseInfo = {
@@ -43,7 +60,13 @@ describe('BaseEditCourseForm', () => {
   };
 
   beforeEach(() => {
+    jest.resetModules();
+    process.env = { ...env };
     getAuthenticatedUser.mockReturnValue({ administrator: false });
+  });
+
+  afterEach(() => {
+    process.env = env;
   });
 
   it('renders html correctly with minimal data', () => {
@@ -168,6 +191,26 @@ describe('BaseEditCourseForm', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
+  it('override slug format when IS_NEW_SLUG_FORMAT_ENABLED is true to check help text for url slug field', () => {
+    process.env.IS_NEW_SLUG_FORMAT_ENABLED = 'true';
+
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      currentFormValues={initialValuesFull}
+      number="Test101x"
+      courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      isSubmittingForReview
+      id="edit-course-form"
+    />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
   it('renders with disabled fields if course is in review', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
@@ -230,6 +273,115 @@ describe('BaseEditCourseForm', () => {
 
     const disabledFields = component.find({ name: 'type', disabled: true });
     expect(disabledFields).toHaveLength(1);
+  });
+
+  it('check for customValidity working correctly for url_slug in EditCourseForm', () => {
+    const setCustomValidityMock = jest.fn();
+    const courseInfoWithUrlSlug = {
+      data: {
+        url_slug: 'test-url-slug/',
+      },
+    };
+    const initialValuesWithUrlSlug = {
+      ...initialValuesFull,
+      course_runs: [],
+    };
+    const component = shallow(
+      <BaseEditCourseForm
+        handleSubmit={() => null}
+        title={initialValuesWithUrlSlug.title}
+        initialValues={initialValuesWithUrlSlug}
+        currentFormValues={initialValuesWithUrlSlug}
+        number="Test101x"
+        entitlement={{ sku: 'ABC1234' }}
+        courseStatuses={[PUBLISHED]}
+        courseInfo={courseInfoWithUrlSlug}
+        courseOptions={courseOptions}
+        courseRunOptions={courseRunOptions}
+        uuid={initialValuesWithUrlSlug.uuid}
+        type={initialValuesWithUrlSlug.type}
+        id="edit-course-form"
+      />,
+    );
+
+    const urlSlugField = component.find({ name: 'url_slug' });
+
+    const invalidInput = 'Invalid-URL-Slug123/';
+    urlSlugField.prop('extraInput').onInvalid({ target: { setCustomValidity: setCustomValidityMock } });
+    urlSlugField.simulate('input', { target: { value: invalidInput } });
+    expect(setCustomValidityMock).toHaveBeenCalledWith(
+      'Please enter a valid URL slug. Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
+    );
+
+    // check that it will clear onInput after invalid input
+    urlSlugField.prop('extraInput').onInput({ target: { setCustomValidity: setCustomValidityMock } });
+    expect(setCustomValidityMock).toHaveBeenCalledWith('');
+  });
+
+  it('checks preview url renders correctly for old url slug format', () => {
+    const urlSlug = 'test-url-slug';
+    const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
+    const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
+    const wrapper = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      initialValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
+      number="Test101x"
+      entitlement={{ sku: 'ABC1234' }}
+      courseStatuses={[REVIEWED]}
+      courseInfo={courseInfoWithUrlSlug}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      id="edit-course-form"
+    />);
+    expect(wrapper.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
+      <>
+        <Hyperlink
+          name="preview-url"
+          destination={`${MARKETING_SITE_PREVIEW_URL_ROOT}/course/${urlSlug}`}
+          target="_blank"
+        >
+          View Preview Page
+        </Hyperlink>
+        <span className="d-block">Any changes will go live when the website next builds</span>
+      </>,
+    );
+  });
+
+  it('checks preview url renders correctly for new slug format', () => {
+    const urlSlug = 'learn/test-url-slug/test';
+    const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
+    const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
+    const wrapper = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      initialValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
+      number="Test101x"
+      entitlement={{ sku: 'ABC1234' }}
+      courseStatuses={[REVIEWED]}
+      courseInfo={courseInfoWithUrlSlug}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      id="edit-course-form"
+    />);
+    expect(wrapper.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
+      <>
+        <Hyperlink
+          name="preview-url"
+          destination={`${MARKETING_SITE_PREVIEW_URL_ROOT}/${urlSlug}`}
+          target="_blank"
+        >
+          View Preview Page
+        </Hyperlink>
+        <span className="d-block">Any changes will go live when the website next builds</span>
+      </>,
+    );
   });
 
   it('no marketing fields if course type is not marketable', () => {

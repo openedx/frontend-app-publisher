@@ -2,7 +2,7 @@
 
 exports[`Header renders the correct header 1`] = `
 <header
-  className="site-header mb-3 py-3 border-bottom-blue"
+  className="site-header mb-3 py-3 border-bottom border-gray-300"
 >
   <div
     className="container"
@@ -32,7 +32,6 @@ exports[`Header renders the correct header 1`] = `
                 alt="edX logo"
                 height="30"
                 src="https://edx-cdn.org/v3/default/logo.svg"
-                width="60"
               />
             </a>
           </ForwardRef>
@@ -107,42 +106,29 @@ exports[`Header renders the correct header 1`] = `
       <div
         className="col-auto justify-content-end ml-auto"
       >
-        <Dropdown
-          navbar={false}
+        <ForwardRef(Dropdown)
+          autoClose={true}
+          className=""
+          show={false}
+          variant="light"
         >
-          <ReactOverlaysDropdown
-            itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
+          <Dropdown
+            className="pgn__dropdown pgn__dropdown-light"
+            data-testid="dropdown"
+            navbar={false}
             onToggle={[Function]}
+            show={false}
           >
-            <div
-              className="dropdown"
+            <ReactOverlaysDropdown
+              itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
+              onToggle={[Function]}
+              show={false}
             >
-              <ForwardRef
-                as={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "defaultProps": Object {
-                      "children": undefined,
-                      "className": undefined,
-                      "showLabel": true,
-                      "size": "md",
-                      "src": undefined,
-                      "variant": "tertiary",
-                    },
-                    "propTypes": Object {
-                      "children": [Function],
-                      "className": [Function],
-                      "showLabel": [Function],
-                      "size": [Function],
-                      "src": [Function],
-                      "variant": [Function],
-                    },
-                    "render": [Function],
-                  }
-                }
-                bsPrefix="dropdown-toggle"
+              <div
+                className="pgn__dropdown pgn__dropdown-light dropdown"
+                data-testid="dropdown"
               >
-                <DropdownToggle
+                <ForwardRef(DropdownToggle)
                   as={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -167,26 +153,41 @@ exports[`Header renders the correct header 1`] = `
                   }
                   bsPrefix="dropdown-toggle"
                 >
-                  <ForwardRef
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    className="dropdown-toggle"
-                    onClick={[Function]}
-                    showLabel={true}
-                    size="md"
-                    variant="tertiary"
+                  <DropdownToggle
+                    as={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "defaultProps": Object {
+                          "children": undefined,
+                          "className": undefined,
+                          "showLabel": true,
+                          "size": "md",
+                          "src": undefined,
+                          "variant": "tertiary",
+                        },
+                        "propTypes": Object {
+                          "children": [Function],
+                          "className": [Function],
+                          "showLabel": [Function],
+                          "size": [Function],
+                          "src": [Function],
+                          "variant": [Function],
+                        },
+                        "render": [Function],
+                      }
+                    }
+                    bsPrefix="dropdown-toggle"
                   >
                     <ForwardRef
-                      active={false}
                       aria-expanded={false}
                       aria-haspopup={true}
-                      className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                      disabled={false}
+                      className="dropdown-toggle"
                       onClick={[Function]}
+                      showLabel={true}
                       size="md"
                       variant="tertiary"
                     >
-                      <Button
+                      <ForwardRef
                         active={false}
                         aria-expanded={false}
                         aria-haspopup={true}
@@ -196,39 +197,50 @@ exports[`Header renders the correct header 1`] = `
                         size="md"
                         variant="tertiary"
                       >
-                        <button
+                        <Button
+                          active={false}
                           aria-expanded={false}
                           aria-haspopup={true}
-                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
                           disabled={false}
                           onClick={[Function]}
-                          type="button"
+                          size="md"
+                          variant="tertiary"
                         >
-                          <Avatar
-                            alt=""
-                            size="sm"
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
                           >
-                            <img
+                            <Avatar
                               alt=""
-                              className="pgn__avatar pgn__avatar-sm"
-                              src="icon/mock/path"
-                            />
-                          </Avatar>
-                          test-username
-                        </button>
-                      </Button>
+                              size="sm"
+                            >
+                              <img
+                                alt=""
+                                className="pgn__avatar pgn__avatar-sm"
+                                src="icon/mock/path"
+                              />
+                            </Avatar>
+                            test-username
+                          </button>
+                        </Button>
+                      </ForwardRef>
                     </ForwardRef>
-                  </ForwardRef>
-                </DropdownToggle>
-              </ForwardRef>
-              <DropdownMenu
-                align="left"
-                alignRight={false}
-                flip={true}
-              />
-            </div>
-          </ReactOverlaysDropdown>
-        </Dropdown>
+                  </DropdownToggle>
+                </ForwardRef(DropdownToggle)>
+                <DropdownMenu
+                  align="left"
+                  alignRight={false}
+                  flip={true}
+                />
+              </div>
+            </ReactOverlaysDropdown>
+          </Dropdown>
+        </ForwardRef(Dropdown)>
       </div>
     </div>
   </div>
@@ -237,7 +249,7 @@ exports[`Header renders the correct header 1`] = `
 
 exports[`Header renders the header correctly when toggling is allowed, and dark mode is on 1`] = `
 <header
-  className="site-header mb-3 py-3 border-bottom-blue"
+  className="site-header mb-3 py-3 border-bottom border-gray-300"
 >
   <div
     className="container"
@@ -267,7 +279,6 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
                 alt="edX logo"
                 height="30"
                 src="https://edx-cdn.org/v3/default/logo.svg"
-                width="60"
               />
             </a>
           </ForwardRef>
@@ -354,42 +365,29 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
       <div
         className="col-auto justify-content-end ml-auto"
       >
-        <Dropdown
-          navbar={false}
+        <ForwardRef(Dropdown)
+          autoClose={true}
+          className=""
+          show={false}
+          variant="light"
         >
-          <ReactOverlaysDropdown
-            itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
+          <Dropdown
+            className="pgn__dropdown pgn__dropdown-light"
+            data-testid="dropdown"
+            navbar={false}
             onToggle={[Function]}
+            show={false}
           >
-            <div
-              className="dropdown"
+            <ReactOverlaysDropdown
+              itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
+              onToggle={[Function]}
+              show={false}
             >
-              <ForwardRef
-                as={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "defaultProps": Object {
-                      "children": undefined,
-                      "className": undefined,
-                      "showLabel": true,
-                      "size": "md",
-                      "src": undefined,
-                      "variant": "tertiary",
-                    },
-                    "propTypes": Object {
-                      "children": [Function],
-                      "className": [Function],
-                      "showLabel": [Function],
-                      "size": [Function],
-                      "src": [Function],
-                      "variant": [Function],
-                    },
-                    "render": [Function],
-                  }
-                }
-                bsPrefix="dropdown-toggle"
+              <div
+                className="pgn__dropdown pgn__dropdown-light dropdown"
+                data-testid="dropdown"
               >
-                <DropdownToggle
+                <ForwardRef(DropdownToggle)
                   as={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -414,26 +412,41 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
                   }
                   bsPrefix="dropdown-toggle"
                 >
-                  <ForwardRef
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    className="dropdown-toggle"
-                    onClick={[Function]}
-                    showLabel={true}
-                    size="md"
-                    variant="tertiary"
+                  <DropdownToggle
+                    as={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "defaultProps": Object {
+                          "children": undefined,
+                          "className": undefined,
+                          "showLabel": true,
+                          "size": "md",
+                          "src": undefined,
+                          "variant": "tertiary",
+                        },
+                        "propTypes": Object {
+                          "children": [Function],
+                          "className": [Function],
+                          "showLabel": [Function],
+                          "size": [Function],
+                          "src": [Function],
+                          "variant": [Function],
+                        },
+                        "render": [Function],
+                      }
+                    }
+                    bsPrefix="dropdown-toggle"
                   >
                     <ForwardRef
-                      active={false}
                       aria-expanded={false}
                       aria-haspopup={true}
-                      className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                      disabled={false}
+                      className="dropdown-toggle"
                       onClick={[Function]}
+                      showLabel={true}
                       size="md"
                       variant="tertiary"
                     >
-                      <Button
+                      <ForwardRef
                         active={false}
                         aria-expanded={false}
                         aria-haspopup={true}
@@ -443,39 +456,50 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
                         size="md"
                         variant="tertiary"
                       >
-                        <button
+                        <Button
+                          active={false}
                           aria-expanded={false}
                           aria-haspopup={true}
-                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
                           disabled={false}
                           onClick={[Function]}
-                          type="button"
+                          size="md"
+                          variant="tertiary"
                         >
-                          <Avatar
-                            alt=""
-                            size="sm"
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
                           >
-                            <img
+                            <Avatar
                               alt=""
-                              className="pgn__avatar pgn__avatar-sm"
-                              src="icon/mock/path"
-                            />
-                          </Avatar>
-                          test-username
-                        </button>
-                      </Button>
+                              size="sm"
+                            >
+                              <img
+                                alt=""
+                                className="pgn__avatar pgn__avatar-sm"
+                                src="icon/mock/path"
+                              />
+                            </Avatar>
+                            test-username
+                          </button>
+                        </Button>
+                      </ForwardRef>
                     </ForwardRef>
-                  </ForwardRef>
-                </DropdownToggle>
-              </ForwardRef>
-              <DropdownMenu
-                align="left"
-                alignRight={false}
-                flip={true}
-              />
-            </div>
-          </ReactOverlaysDropdown>
-        </Dropdown>
+                  </DropdownToggle>
+                </ForwardRef(DropdownToggle)>
+                <DropdownMenu
+                  align="left"
+                  alignRight={false}
+                  flip={true}
+                />
+              </div>
+            </ReactOverlaysDropdown>
+          </Dropdown>
+        </ForwardRef(Dropdown)>
       </div>
     </div>
   </div>
@@ -484,7 +508,7 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
 
 exports[`Header renders the header correctly when users pass a querystring param to allow dark mode toggling 1`] = `
 <header
-  className="site-header mb-3 py-3 border-bottom-blue"
+  className="site-header mb-3 py-3 border-bottom border-gray-300"
 >
   <div
     className="container"
@@ -514,7 +538,6 @@ exports[`Header renders the header correctly when users pass a querystring param
                 alt="edX logo"
                 height="30"
                 src="https://edx-cdn.org/v3/default/logo.svg"
-                width="60"
               />
             </a>
           </ForwardRef>
@@ -601,42 +624,29 @@ exports[`Header renders the header correctly when users pass a querystring param
       <div
         className="col-auto justify-content-end ml-auto"
       >
-        <Dropdown
-          navbar={false}
+        <ForwardRef(Dropdown)
+          autoClose={true}
+          className=""
+          show={false}
+          variant="light"
         >
-          <ReactOverlaysDropdown
-            itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
+          <Dropdown
+            className="pgn__dropdown pgn__dropdown-light"
+            data-testid="dropdown"
+            navbar={false}
             onToggle={[Function]}
+            show={false}
           >
-            <div
-              className="dropdown"
+            <ReactOverlaysDropdown
+              itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
+              onToggle={[Function]}
+              show={false}
             >
-              <ForwardRef
-                as={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "defaultProps": Object {
-                      "children": undefined,
-                      "className": undefined,
-                      "showLabel": true,
-                      "size": "md",
-                      "src": undefined,
-                      "variant": "tertiary",
-                    },
-                    "propTypes": Object {
-                      "children": [Function],
-                      "className": [Function],
-                      "showLabel": [Function],
-                      "size": [Function],
-                      "src": [Function],
-                      "variant": [Function],
-                    },
-                    "render": [Function],
-                  }
-                }
-                bsPrefix="dropdown-toggle"
+              <div
+                className="pgn__dropdown pgn__dropdown-light dropdown"
+                data-testid="dropdown"
               >
-                <DropdownToggle
+                <ForwardRef(DropdownToggle)
                   as={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -661,26 +671,41 @@ exports[`Header renders the header correctly when users pass a querystring param
                   }
                   bsPrefix="dropdown-toggle"
                 >
-                  <ForwardRef
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    className="dropdown-toggle"
-                    onClick={[Function]}
-                    showLabel={true}
-                    size="md"
-                    variant="tertiary"
+                  <DropdownToggle
+                    as={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "defaultProps": Object {
+                          "children": undefined,
+                          "className": undefined,
+                          "showLabel": true,
+                          "size": "md",
+                          "src": undefined,
+                          "variant": "tertiary",
+                        },
+                        "propTypes": Object {
+                          "children": [Function],
+                          "className": [Function],
+                          "showLabel": [Function],
+                          "size": [Function],
+                          "src": [Function],
+                          "variant": [Function],
+                        },
+                        "render": [Function],
+                      }
+                    }
+                    bsPrefix="dropdown-toggle"
                   >
                     <ForwardRef
-                      active={false}
                       aria-expanded={false}
                       aria-haspopup={true}
-                      className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                      disabled={false}
+                      className="dropdown-toggle"
                       onClick={[Function]}
+                      showLabel={true}
                       size="md"
                       variant="tertiary"
                     >
-                      <Button
+                      <ForwardRef
                         active={false}
                         aria-expanded={false}
                         aria-haspopup={true}
@@ -690,39 +715,50 @@ exports[`Header renders the header correctly when users pass a querystring param
                         size="md"
                         variant="tertiary"
                       >
-                        <button
+                        <Button
+                          active={false}
                           aria-expanded={false}
                           aria-haspopup={true}
-                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
                           disabled={false}
                           onClick={[Function]}
-                          type="button"
+                          size="md"
+                          variant="tertiary"
                         >
-                          <Avatar
-                            alt=""
-                            size="sm"
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
                           >
-                            <img
+                            <Avatar
                               alt=""
-                              className="pgn__avatar pgn__avatar-sm"
-                              src="icon/mock/path"
-                            />
-                          </Avatar>
-                          test-username
-                        </button>
-                      </Button>
+                              size="sm"
+                            >
+                              <img
+                                alt=""
+                                className="pgn__avatar pgn__avatar-sm"
+                                src="icon/mock/path"
+                              />
+                            </Avatar>
+                            test-username
+                          </button>
+                        </Button>
+                      </ForwardRef>
                     </ForwardRef>
-                  </ForwardRef>
-                </DropdownToggle>
-              </ForwardRef>
-              <DropdownMenu
-                align="left"
-                alignRight={false}
-                flip={true}
-              />
-            </div>
-          </ReactOverlaysDropdown>
-        </Dropdown>
+                  </DropdownToggle>
+                </ForwardRef(DropdownToggle)>
+                <DropdownMenu
+                  align="left"
+                  alignRight={false}
+                  flip={true}
+                />
+              </div>
+            </ReactOverlaysDropdown>
+          </Dropdown>
+        </ForwardRef(Dropdown)>
       </div>
     </div>
   </div>

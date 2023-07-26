@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -6,6 +7,7 @@ import PropTypes from 'prop-types';
 
 import { Field, FieldArray } from 'redux-form';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { getConfig } from '@edx/frontend-platform';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import { faCopy as solidCopy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -76,8 +78,9 @@ const formatCourseRunTitle = (courseRun, copied, setCopied) => {
           <>
             Studio URL -&nbsp;
             <Hyperlink
-              destination={`${process.env.STUDIO_BASE_URL}/course/${courseRun.key}`}
+              destination={`${getConfig().STUDIO_BASE_URL}/course/${courseRun.key}`}
               target="_blank"
+              isInline
             >
               {courseRun.key}
             </Hyperlink>
@@ -163,6 +166,7 @@ class CollapsibleCourseRun extends React.Component {
     // We initialize hasExternalKey to null and then the function will reevaluate it into
     // a boolean which will be our exit state
     if (prevState.hasExternalKey === undefined && courseRuns) {
+      // eslint-disable-next-line react/prop-types
       const hasExternalKey = hasMastersTrack(courseRuns[index].run_type, runTypeModes);
       this.setState({ hasExternalKey }); // eslint-disable-line react/no-did-update-set-state
     }
@@ -176,7 +180,7 @@ class CollapsibleCourseRun extends React.Component {
     setTimeout(() => {
       this.setState({ copied: false });
     }, 1800);
-  }
+  };
 
   scrollToStaffPosition(focus) {
     this.setState({
@@ -276,7 +280,7 @@ class CollapsibleCourseRun extends React.Component {
         onToggle={onToggle}
       >
         <div className="mb-3">
-          <span className="text-info" aria-hidden> All fields are required for publication unless otherwise specified.</span>
+          <span className="text-primary-500" aria-hidden> All fields are required for publication unless otherwise specified.</span>
         </div>
         {/* TODO this should be refactored when paragon supports safari */}
         {/* text inputs for safari */}

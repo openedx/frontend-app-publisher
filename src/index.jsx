@@ -8,7 +8,7 @@ import {
 } from '@edx/frontend-platform';
 import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 import { ConnectedRouter } from 'connected-react-router';
-import { messages as footerMessages } from '@edx/frontend-component-footer-edx';
+import messages from './i18n';
 import './sass/App.scss';
 
 import store from './data/store';
@@ -31,8 +31,6 @@ subscribe(APP_INIT_ERROR, (error) => {
 });
 
 initialize({
-  messages: [
-    footerMessages,
-  ],
+  messages,
   requireAuthenticatedUser: true,
 });

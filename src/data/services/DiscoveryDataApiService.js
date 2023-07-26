@@ -129,15 +129,17 @@ class DiscoveryDataApiService {
 
   static fetchOrganizationUsers(id) {
     const url = `${publisherBaseUrl}/admins/organizations/${id}/users/`;
-    return new Promise((resolve, reject) => getAuthenticatedHttpClient().get(url)
-      .then(response => resolve(response))
-      .catch((error) => {
-        if (error.response.status === 404) {
-          resolve(null);
-        } else {
-          reject(error);
-        }
-      }));
+    return new Promise((resolve, reject) => {
+      getAuthenticatedHttpClient().get(url)
+        .then(response => resolve(response))
+        .catch((error) => {
+          if (error.response.status === 404) {
+            resolve(null);
+          } else {
+            reject(error);
+          }
+        });
+    });
   }
 
   static editCourseRuns(courseRunsData) {
@@ -198,6 +200,15 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().get(url);
   }
 
+  static fetchCourseTags(q = '', limit = 20) {
+    const url = `${process.env.DISCOVERY_API_BASE_URL}/taggit_autosuggest/list/taggit.tag/`;
+    const queryParams = {
+      limit,
+      q,
+    };
+    return getAuthenticatedHttpClient().get(url, { params: queryParams });
+  }
+
   static editCourse(courseData) {
     const { uuid } = courseData;
     const queryParams = {
@@ -207,6 +218,11 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().patch(url, courseData, {
       params: queryParams,
     });
+  }
+
+  static fetchProductSources() {
+    const url = `${discoveryBaseUrl}/sources/`;
+    return getAuthenticatedHttpClient().get(url);
   }
 
   static createStaffer(data) {

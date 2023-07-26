@@ -1,4 +1,5 @@
 import React from 'react';
+import { getConfig } from '@edx/frontend-platform';
 import { isSafari } from './utils';
 
 /**
@@ -8,7 +9,7 @@ import { isSafari } from './utils';
 
 const publishDateHelp = (
   <div>
-    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
+    {isSafari && <p>Required Format: yyyy/mm/dd</p>}
     <p>The scheduled date for when the course run will be live and published.</p>
     <p>
       To publish as soon as possible, set the publish date to today.
@@ -30,7 +31,7 @@ function dateEditHelp(courseRun) {
       </p>
       <p>
         <a
-          href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}#schedule`}
+          href={`${getConfig().STUDIO_BASE_URL}/settings/details/${courseRun.key}#schedule`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -43,7 +44,7 @@ function dateEditHelp(courseRun) {
 
 const endDateHelp = (
   <div>
-    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
+    {isSafari && <p>Required Format: yyyy/mm/dd</p>}
     <p>
       If you are unsure of the exact date, specify a day that is close to the
       estimated end date. For example, if your course will end near the end
@@ -80,7 +81,7 @@ function pacingEditHelp(courseRun) {
       </p>
       <p>
         <a
-          href={`${process.env.STUDIO_BASE_URL}/settings/details/${courseRun.key}`}
+          href={`${getConfig().STUDIO_BASE_URL}/settings/details/${courseRun.key}`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -124,7 +125,7 @@ const pacingHelp = (
 
 const startDateHelp = (
   <div>
-    { isSafari && <p>Required Format: yyyy/mm/dd</p> }
+    {isSafari && <p>Required Format: yyyy/mm/dd</p>}
     <p>Start on a Tuesday, Wednesday, or Thursday.</p>
     <p>Avoid major holidays.</p>
     <p>
@@ -176,8 +177,36 @@ const typeHelp = (
   </div>
 );
 
-const urlSlugHelp = (
+const productSourceHelp = (
   <div>
+    <p>The Product source is a key that identifies where the course originates.</p>
+    <p><b>Example:</b></p>
+    <p>If the course originates from the edX platform, the Product source is edX.</p>
+  </div>
+);
+
+const oldUrlSlugExample = (
+  <span>
+    www.edx.org/course/math-101, the URL slug is “math-101”
+  </span>
+);
+
+const subdirectoryUrlSlugExample = (
+  <span>
+    www.edx.org/learn/math/harvardx-math-for-beginners, the URL slug is “learn/math/harvardx-math-for-beginners” where
+    “learn” is keyword, “math” is primary subject and “harvardx” is the organization name and “math-for-beginners” is
+    the course title.
+  </span>
+);
+
+const getUrlSlugHelp = (isSubdirectoryFlagEnabled) => (
+  <div>
+    <p>
+      <b>
+        Note: Course editors cannot edit the URL slug.
+        Please reach out to your project coordinator or edX support to edit this field.
+      </b>
+    </p>
     <p>
       This field is optional. If left blank, edX will automatically
       create a URL slug based on the course title.
@@ -192,10 +221,20 @@ const urlSlugHelp = (
     </p>
     <p><b>What is a URL slug?</b></p>
     <p>
-      In the example URL www.edx.org/course/math-101, the URL slug is “math-101.”
+      In the following example URLs:
+    </p>
+    {isSubdirectoryFlagEnabled === 'false' && (
+      <p>{oldUrlSlugExample}</p>
+    )}
+    {isSubdirectoryFlagEnabled === 'true' && (
+      <p>
+        {oldUrlSlugExample} <br /> {subdirectoryUrlSlugExample}
+      </p>
+    )}
+    <span>
       Using URL slugs that are short and easily understandable helps learners find and
       remember course pages, and also drives higher rankings in search engine results.
-    </p>
+    </span>
   </div>
 );
 
@@ -209,6 +248,9 @@ export {
   publishDateHelp,
   titleHelp,
   typeHelp,
-  urlSlugHelp,
+  productSourceHelp,
+  getUrlSlugHelp,
+  oldUrlSlugExample,
+  subdirectoryUrlSlugExample,
   keyHelp,
 };

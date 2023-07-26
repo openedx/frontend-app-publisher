@@ -3,11 +3,12 @@ import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { Alert } from '@edx/paragon';
 
 import { IN_REVIEW_STATUS } from '../../data/constants';
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import LoadingSpinner from '../LoadingSpinner';
-import StatusAlert from '../StatusAlert';
+
 import PageContainer from '../PageContainer';
 import {
   buildInitialPrices, formatDate, getOptionsData, parseCourseTypeOptions,
@@ -53,10 +54,6 @@ class CreateCourseRunPage extends React.Component {
     this.setStartedFetching();
   }
 
-  setStartedFetching() {
-    this.setState({ startedFetching: true });
-  }
-
   handleCourseCreate(options) {
     const {
       courseInfo: {
@@ -82,6 +79,10 @@ class CreateCourseRunPage extends React.Component {
       term: options.courseRunKey,
     };
     return createCourseRun(uuid, courseRunData);
+  }
+
+  setStartedFetching() {
+    this.setState({ startedFetching: true });
   }
 
   parseCourseRunLabels(courseRuns) {
@@ -151,10 +152,9 @@ class CreateCourseRunPage extends React.Component {
           { showSpinner && <LoadingSpinner /> }
           { courseInReview
             && (
-            <StatusAlert
-              alertType="warning"
-              message={`${title} has been submitted for review. No course runs can be added right now.`}
-            />
+            <Alert variant="warning">
+              {`${title} has been submitted for review. No course runs can be added right now.`}
+            </Alert>
             )}
           { showForm
           && (
@@ -177,12 +177,13 @@ class CreateCourseRunPage extends React.Component {
                 canSetRunKey={canSetRunKey}
               />
               {errorArray.length > 1 && (
-                <StatusAlert
+                <Alert
                   id="create-error"
-                  alertType="danger"
+                  variant="danger"
                   className="mt-3"
-                  message={errorArray}
-                />
+                >
+                  {errorArray}
+                </Alert>
               ) }
             </div>
           )}

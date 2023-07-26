@@ -4,10 +4,12 @@ import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
+import { Alert } from '@edx/paragon';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
+
 import EditCoursePage from './index';
 
 import ConfirmationModal from '../ConfirmationModal';
-import StatusAlert from '../StatusAlert';
 
 import {
   PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED, EXECUTIVE_EDUCATION_SLUG,
@@ -46,7 +48,12 @@ describe('EditCoursePage', () => {
           blurb: 'facts_2_blurb',
         }],
         start_date: '2019-05-10T00:00:00Z',
+        end_date: '2019-05-10T00:00:00Z',
+        product_status: 'published',
+        external_course_marketing_type: 'short_course',
+        product_meta: null,
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [
         {
@@ -144,6 +151,7 @@ describe('EditCoursePage', () => {
       syllabus_raw: '',
       title: 'Test title',
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+      topics: [],
       uuid: '00000000-0000-0000-0000-000000000000',
       video: {
         src: 'https://www.video.information/watch?v=cVsQLlk-T0s',
@@ -153,6 +161,13 @@ describe('EditCoursePage', () => {
       skill_names: [],
       organization_logo_override_url: 'http://image.src.small',
       organization_short_code_override: 'test short code',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
     },
     showCreateStatusAlert: false,
     isFetching: false,
@@ -347,7 +362,12 @@ describe('EditCoursePage', () => {
         facts_2_heading: 'facts_2_heading',
         facts_2_blurb: 'facts_2_blurb',
         start_date: '2019-05-10T00:00:00Z',
+        end_date: '2019-05-10T00:00:00Z',
+        product_status: 'published',
+        external_course_marketing_type: 'short_course',
+        product_meta: null,
         registration_deadline: '2019-05-10T00:00:00Z',
+        variant_id: '00000000-0000-0000-0000-000000000000',
       },
       course_runs: [unpublishedCourseRun, publishedCourseRun],
       faq: '<p>Help?</p>',
@@ -355,6 +375,13 @@ describe('EditCoursePage', () => {
       imageSrc: 'http://image.jpg',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: [
+          'AF', 'AX',
+        ],
+        states: ['AL'],
+      },
       organization_logo_override_url: 'http://image.src.small',
       organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
@@ -368,7 +395,11 @@ describe('EditCoursePage', () => {
       subjectTertiary: undefined,
       syllabus_raw: null,
       title: 'demo4004',
+      topics: [],
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+      geoLocationName: null,
+      geoLocationLat: null,
+      geoLocationLng: null,
       url_slug: 'demo4004',
       videoSrc: null,
       editable: true,
@@ -383,6 +414,16 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: ['AF', 'AX'],
+        states: ['AL'],
+      },
+      geolocation: {
+        lat: null,
+        lng: null,
+        location_name: null,
+      },
       organization_logo_override: 'http://image.src.small',
       organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
@@ -394,6 +435,7 @@ describe('EditCoursePage', () => {
       subjects: ['basket-weaving'],
       syllabus_raw: null,
       title: 'demo4004',
+      topics: [],
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       url_slug: 'demo4004',
       uuid: '00000000-0000-0000-0000-000000000000',
@@ -563,9 +605,9 @@ describe('EditCoursePage', () => {
           targetRun: unpublishedCourseRun,
         }}
       />);
-      const reviewAlert = component.find(StatusAlert);
+      const reviewAlert = component.find(Alert);
       const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
-      expect(reviewAlert.props().message).toEqual(reviewMessage);
+      expect(reviewAlert.text()).toEqual(reviewMessage);
     });
 
     it('upon legal review submission, StatusAlert is set to appear', () => {
@@ -576,9 +618,9 @@ describe('EditCoursePage', () => {
           targetRun: { status: REVIEW_BY_LEGAL },
         }}
       />);
-      const reviewAlert = component.find(StatusAlert);
+      const reviewAlert = component.find(Alert);
       const reviewMessage = 'Legal Review Complete. Course Run is now awaiting PC Review.';
-      expect(reviewAlert.props().message).toEqual(reviewMessage);
+      expect(reviewAlert.text()).toEqual(reviewMessage);
     });
 
     it('upon internal review submission, StatusAlert is set to appear', () => {
@@ -589,18 +631,18 @@ describe('EditCoursePage', () => {
           targetRun: { status: REVIEW_BY_INTERNAL },
         }}
       />);
-      const reviewAlert = component.find(StatusAlert);
+      const reviewAlert = component.find(Alert);
       const reviewMessage = 'PC Review Complete.';
-      expect(reviewAlert.props().message).toEqual(reviewMessage);
+      expect(reviewAlert.text()).toEqual(reviewMessage);
     });
 
     it('upon course run creation, StatusAlert is set to appear', () => {
       const component = shallow(<EditCoursePage
         courseInfo={{ data: { title: 'TestCourse101', editable: true }, showCreateStatusAlert: true }}
       />);
-      const createAlert = component.find(StatusAlert);
+      const createAlert = component.find(Alert);
       const createMessage = 'Course run has been created in studio. See link below.';
-      expect(createAlert.props().message).toEqual(createMessage);
+      expect(createAlert.text()).toEqual(createMessage);
     });
 
     it('handleCourseSubmit properly prepares course data for Save Edits case with no changes', () => {
@@ -845,34 +887,38 @@ describe('EditCoursePage', () => {
     });
 
     it('submit modal can be cancelled', () => {
-      const EditCoursePageWrapper = props => (
+      const EditCoursePageWrapper = (props) => (
         <MemoryRouter>
           <Provider store={mockStore()}>
-            <EditCoursePage
-              {...props}
-              courseInfo={courseInfo}
-              courseOptions={courseOptions}
-              courseRunOptions={courseRunOptions}
-            />
+            <IntlProvider locale="en">
+              <EditCoursePage
+                {...props}
+                courseInfo={courseInfo}
+                courseOptions={courseOptions}
+                courseRunOptions={courseRunOptions}
+              />
+            </IntlProvider>
           </Provider>
         </MemoryRouter>
       );
 
       const wrapper = mount(EditCoursePageWrapper());
 
-      wrapper.setState({
-        submitConfirmVisible: true,
-      });
+      setTimeout(() => {
+        wrapper.setState({
+          submitConfirmVisible: true,
+        });
 
-      const modal = wrapper.find(ConfirmationModal);
-      modal.find('.btn-link').simulate('click');
+        const modal = wrapper.find(ConfirmationModal);
+        modal.find('.btn-link').simulate('click');
 
-      expect(wrapper.find(EditCoursePage)
-        .instance().state.submitConfirmVisible)
-        .toEqual(false);
-      expect(wrapper.find(EditCoursePage)
-        .instance().state.submitCourseData)
-        .toEqual({});
+        expect(wrapper.find(EditCoursePage)
+          .instance().state.submitConfirmVisible)
+          .toEqual(false);
+        expect(wrapper.find(EditCoursePage)
+          .instance().state.submitCourseData)
+          .toEqual({});
+      }, 0);
     });
 
     const expectedSendCourseExEdCourses = {
@@ -882,22 +928,32 @@ describe('EditCoursePage', () => {
         external_identifier: '2U_external_identifier',
         lead_capture_form_url: 'https://www.lead_capture_url.com',
         organic_url: 'https://www.organic_url.com',
+        display_on_org_page: true,
         certificate_info: {
           heading: 'heading',
           blurb: 'blurb',
         },
-        facts: [{
-          heading: 'facts_1_heading',
-          blurb: 'facts_1_blurb',
-        },
-        {
-          heading: 'facts_2_heading',
-          blurb: 'facts_2_blurb',
-        }],
+        facts: [
+          {
+            heading: 'facts_1_heading',
+            blurb: 'facts_1_blurb',
+          },
+          {
+            heading: 'facts_2_heading',
+            blurb: 'facts_2_blurb',
+          },
+        ],
         start_date: '2019-05-10T00:00:00Z',
+        end_date: '2019-05-10T00:00:00Z',
         registration_deadline: '2019-05-10T00:00:00Z',
+        product_status: 'published',
+        external_course_marketing_type: 'short_course',
+        product_meta: null,
+        variant_id: '00000000-0000-0000-0000-000000000000',
+        course_term_override: null,
       },
       draft: false,
+      enterprise_subscription_inclusion: undefined,
       collaborators: undefined,
       faq: '<p>Help?</p>',
       full_description: '<p>Long</p>',
@@ -905,6 +961,11 @@ describe('EditCoursePage', () => {
       key: 'edX+Test101x',
       learner_testimonials: '<p>I learned stuff!</p>',
       level_type: 'Basic',
+      location_restriction: {
+        restriction_type: 'allowlist',
+        countries: ['AF', 'AX'],
+        states: ['AL'],
+      },
       organization_logo_override: 'http://image.src.small',
       organization_short_code_override: 'test short code',
       outcome: '<p>Stuff</p>',
@@ -916,10 +977,16 @@ describe('EditCoursePage', () => {
       subjects: ['basket-weaving'],
       syllabus_raw: null,
       title: 'demo4004',
+      topics: [],
       type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
       url_slug: 'demo4004',
       uuid: '00000000-0000-0000-0000-000000000000',
       video: { src: null },
+      geolocation: {
+        lat: null,
+        lng: null,
+        location_name: null,
+      },
     };
 
     it('handleCourseSubmit properly for executive education courses, will add additional metadata fields', () => {
@@ -938,10 +1005,57 @@ describe('EditCoursePage', () => {
       });
       component.instance().getData = jest.fn();
       component.update();
-      courseData.course_type = EXECUTIVE_EDUCATION_SLUG;
-      component.instance().handleCourseSubmit(courseData);
+
+      const execEdCourseData = { ...courseData, course_type: EXECUTIVE_EDUCATION_SLUG };
+      component.instance().handleCourseSubmit(execEdCourseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourseExEdCourses,
+        expectedSendCourseRuns,
+        false,
+        false,
+        component.instance().getData,
+      );
+    });
+
+    it('sends in_year_value when at least one value is present', () => {
+      const mockEditCourse = jest.fn();
+      const props = { editCourse: mockEditCourse };
+
+      const inYearValue = {
+        per_click_usa: null,
+        per_click_international: null,
+        per_lead_usa: '100',
+        per_lead_international: null,
+      };
+      const courseInfoInYearValue = { ...courseInfo, in_year_value: inYearValue };
+
+      // Values are converted to integers before sending
+      const expectedSendCourseInYearValue = {
+        ...expectedSendCourse,
+        in_year_value: {
+          per_click_usa: 0,
+          per_click_international: 0,
+          per_lead_usa: 100,
+          per_lead_international: 0,
+        },
+      };
+
+      const component = shallow(<EditCoursePage
+        {...props}
+        courseInfo={courseInfoInYearValue}
+        courseOptions={courseOptions}
+      />);
+
+      component.setState({
+        submitConfirmVisible: true,
+      });
+      component.instance().getData = jest.fn();
+      component.update();
+
+      const courseDataInYearValue = { ...courseData, in_year_value: inYearValue };
+      component.instance().handleCourseSubmit(courseDataInYearValue);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourseInYearValue,
         expectedSendCourseRuns,
         false,
         false,

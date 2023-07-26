@@ -1,12 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon, InputSelect } from '@edx/paragon';
+import Select, { components } from 'react-select';
+import ReactTooltip from 'react-tooltip';
+
+import { Icon, Alert } from '@edx/paragon';
+import { Add } from '@edx/paragon/icons';
 
 import Pane from './Pane';
 import User from './User';
-import FieldLabel from '../FieldLabel';
-import StatusAlert from '../StatusAlert';
+
+import './UsersPane.scss';
+
+// customize react-select dropdown options to show tooltips
+const Option = (props) => (
+  <div className={`tooltip-${props.data.value}`} data-tip data-for={`tooltip-${props.data.value}`}>
+    <components.Option {...props} className={`option-${props.data.value}`} />
+    <ReactTooltip id={`tooltip-${props.data.value}`}>
+      <span>{props.data.label}</span>
+    </ReactTooltip>
+  </div>
+);
 
 class UsersPane extends React.Component {
   displayName(user) {
@@ -22,6 +36,7 @@ class UsersPane extends React.Component {
       addingUser: false,
       newEditorChoice: 0,
     };
+    this.selectRef = React.createRef();
 
     this.addUser = this.addUser.bind(this);
     this.resetEditorChoice = this.resetEditorChoice.bind(this);
@@ -49,8 +64,10 @@ class UsersPane extends React.Component {
   }
 
   addUser() {
-    this.props.addCourseEditor(this.state.newEditorChoice);
-    this.resetEditorChoice();
+    if (this.selectRef.current.state.value) {
+      this.props.addCourseEditor(this.state.newEditorChoice);
+      this.resetEditorChoice();
+    }
   }
 
   resetEditorChoice() {
@@ -76,9 +93,9 @@ class UsersPane extends React.Component {
     return organizationUsers.data.filter(user => !editorIds.has(user.id));
   }
 
-  editorChoiceChanged(value) {
+  editorChoiceChanged(e) {
     this.setState({
-      newEditorChoice: value,
+      newEditorChoice: e.value,
     });
   }
 
@@ -109,27 +126,29 @@ class UsersPane extends React.Component {
         {showPCs
           && (
           <div className="mb-2">
-            <div className="font-weight-bold">Project Coordinators</div>
+            <div className="font-weight-bold text-dark-700 mb-2">Project coordinators</div>
             {organizationRoles.data.map(role => (
               <User
                 key={role.id}
                 userId={role.id}
-                name={this.displayName(role.user)}
+                name={role.user.full_name}
+                email={role.user.email}
               />
             ))}
           </div>
           )}
         {!showEditors && Array.isArray(organizationUsers.error) && organizationUsers.error.length
-          && <StatusAlert alertType="warning" message={organizationUsers.error[0]} />}
+          && <Alert variant="warning">{organizationUsers.error[0]}</Alert>}
         {showEditors
           && (
           <div>
-            <div className="font-weight-bold">Course Editors</div>
+            <div className="font-weight-bold text-dark-700 mb-2">Course editors</div>
             {courseEditors.data.map(editor => (
               <User
                 key={editor.id}
                 userId={editor.id}
-                name={this.displayName(editor.user)}
+                name={editor.user.full_name}
+                email={editor.user.email}
                 onRemove={removeCourseEditor}
               />
             ))}
@@ -137,24 +156,30 @@ class UsersPane extends React.Component {
               || <div>All team members</div>}
             {showAddButton
               && (
-              <button type="button" className="btn btn-link p-0 usersPane-startAdd" onClick={this.startAddingUser}>
-                <Icon className="fa fa-plus" /> {hasEditor ? 'Add editor' : 'Set editor'}
+              <button type="button" className="btn btn-link text-dark-900 p-0 usersPane-startAdd" onClick={this.startAddingUser}>
+                <Add /> {hasEditor ? 'Add editor' : 'Set editor'}
               </button>
               )}
             {addingUser
               && (
               <div className="mt-2">
                 <hr />
-                <InputSelect
+                <div className="font-weight-bold text-dark-700 mb-2">Select an editor:</div>
+                <Select
                   name="add_editor"
-                  label={(
-                    <FieldLabel
-                      id="add_editor.label"
-                      text="Select an editor:"
-                    />
-                  )}
+                  className="select-container"
+                  classNamePrefix="react-select-pane"
+                  placeholder="Search..."
+                  ref={this.selectRef}
+                  components={{
+                    IndicatorSeparator: () => null,
+                    Option,
+                  }}
                   options={
-                    editorChoices.map(user => ({ label: this.displayName(user), value: user.id }))
+                    editorChoices.map(user => ({
+                      label: this.displayName(user),
+                      value: user.id,
+                    }))
                   }
                   onChange={this.editorChoiceChanged}
                 />
@@ -180,6 +205,18 @@ class UsersPane extends React.Component {
     );
   }
 }
+
+Option.defaultProps = {
+  className: '',
+};
+
+Option.propTypes = {
+  data: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+  }).isRequired,
+  className: PropTypes.string,
+};
 
 UsersPane.defaultProps = {
   addCourseEditor: null,
@@ -207,21 +244,21 @@ UsersPane.defaultProps = {
 UsersPane.propTypes = {
   addCourseEditor: PropTypes.func,
   courseEditors: PropTypes.shape({
-    data: PropTypes.array,
-    error: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   fetchCourseEditors: PropTypes.func,
   fetchOrganizationRoles: PropTypes.func,
   fetchOrganizationUsers: PropTypes.func,
   organizationRoles: PropTypes.shape({
-    data: PropTypes.array,
-    error: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   organizationUsers: PropTypes.shape({
-    data: PropTypes.array,
-    error: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    error: PropTypes.arrayOf(PropTypes.string),
     isFetching: PropTypes.bool,
   }),
   removeCourseEditor: PropTypes.func,
