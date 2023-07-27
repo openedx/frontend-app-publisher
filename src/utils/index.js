@@ -158,6 +158,12 @@ const isNonExemptChanged = (initialValues, currentFormValues, runKey) => {
     const { course_runs: currentRuns } = currentFormValues;
     if (currentRuns) {
       const index = currentRuns.findIndex(run => run.key === runKey);
+      // When a new run is created, the form does not contain the new run form immediately.
+      // The new run form is accessible only when the form renders after creation of course run
+      // or when the course page is reloaded.
+      if (index === -1) {
+        return false;
+      }
       return COURSE_RUN_NON_EXEMPT_FIELDS.some(field => (
         initialRuns[index][field] !== currentRuns[index][field]
       ));
