@@ -161,6 +161,18 @@ describe('isNonExemptChanged', () => {
   it('returns false when no non exempt course run fields are changed', () => {
     expect(utils.isNonExemptChanged(initialValues, currentValues, 'key-1')).toEqual(false);
   });
+
+  it('returns false when the course run key is not present in the current form values', () => {
+    const newInitialValues = {
+      title: initialValues.title,
+      course_runs: [...initialRuns, {
+        key: 'key-3',
+        expected_program_name: 'program-name',
+        expected_program_type: 'program-type',
+      }],
+    };
+    expect(utils.isNonExemptChanged(newInitialValues, currentValues, 'key-3')).toEqual(false);
+  });
 });
 
 describe('isPristine', () => {
