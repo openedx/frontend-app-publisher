@@ -1,5 +1,5 @@
 import * as utils from '.';
-import { COURSE_URL_SLUG_PATTERN, COURSE_URL_SLUG_PATTERN_OLD } from '../data/constants';
+import { COURSE_URL_SLUG_PATTERN_OLD, EXECUTIVE_EDUCATION_SLUG } from '../data/constants';
 import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const initialRuns = [
@@ -57,14 +57,17 @@ describe('getCourseNumber', () => {
 });
 
 describe('getCourseUrlSlugPattern', () => {
+  const { COURSE_URL_SLUGS_PATTERN } = process.env;
   it(
     'returns the new course url slug pattern when updatedSlugFlag is true and courseRunStatuses are in review',
     () => {
       const updatedSlugFlag = true;
-      const courseRunStatuses = ['review_by_legal', 'review_by_internal'];
+      const courseType = 'audit';
       expect(
-        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+      ).toEqual(
+        JSON.parse(COURSE_URL_SLUGS_PATTERN)[DEFAULT_PRODUCT_SOURCE].default,
+      );
     },
   );
 
@@ -72,10 +75,10 @@ describe('getCourseUrlSlugPattern', () => {
     'returns the new course url slug pattern when updatedSlugFlag is true and courseRunStatuses are post review',
     () => {
       const updatedSlugFlag = true;
-      const courseRunStatuses = ['published', 'reviewed'];
+      const courseType = 'audit';
       expect(
-        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)[DEFAULT_PRODUCT_SOURCE].default);
     },
   );
 
@@ -83,20 +86,49 @@ describe('getCourseUrlSlugPattern', () => {
     'returns the both old & new pattern when updatedSlugFlag is true and courseRunStatuses are not in review or post review',
     () => {
       const updatedSlugFlag = true;
-      const courseRunStatuses = ['archived'];
+      const courseType = 'audit';
       expect(
-        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)[DEFAULT_PRODUCT_SOURCE].default);
     },
   );
 
   it('returns the old course url slug pattern when updatedSlugFlag is false', () => {
     const updatedSlugFlag = false;
-    const courseRunStatuses = ['archived'];
+    const courseType = 'audit';
     expect(
-      utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-    ).toEqual(COURSE_URL_SLUG_PATTERN_OLD);
+      utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+    ).toEqual({
+      slug_format: COURSE_URL_SLUG_PATTERN_OLD,
+      error_msg: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
+    });
   });
+
+  it(
+    'returns the exec_ed subdirectory slug pattern when courseType is executive education and updatedSlugFlag is true',
+    () => {
+      const updatedSlugFlag = true;
+      const courseType = EXECUTIVE_EDUCATION_SLUG;
+      expect(
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, 'external-source', courseType),
+      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)['external-source'][EXECUTIVE_EDUCATION_SLUG]);
+    },
+  );
+
+  it(
+    'returns the old course url slug pattern when courseType is executive education and updatedSlugFlag is false',
+    () => {
+      const updatedSlugFlag = false;
+      const courseType = EXECUTIVE_EDUCATION_SLUG;
+
+      expect(
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, 'external-source', courseType),
+      ).toEqual({
+        slug_format: COURSE_URL_SLUG_PATTERN_OLD,
+        error_msg: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
+      });
+    },
+  );
 });
 
 describe('getCourseError', () => {
