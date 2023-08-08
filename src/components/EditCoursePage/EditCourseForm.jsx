@@ -28,12 +28,14 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import {
-  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, COURSE_URL_SLUG_VALIDATION_MESSAGE,
+  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, REVIEW_BY_INTERNAL,
 } from '../../data/constants';
 import {
   titleHelp, typeHelp, getUrlSlugHelp, productSourceHelp,
 } from '../../helpText';
-import { handleCourseEditFail, editCourseValidate, courseTagValidate } from '../../utils/validation';
+import {
+  handleCourseEditFail, editCourseValidate, courseTagValidate, emailValidate,
+} from '../../utils/validation';
 import {
   formatCollaboratorOptions, getDateWithSlashes, getFormattedUTCTimeString, getOptionsData, isPristine,
   parseCourseTypeOptions, parseOptions, loadOptions, courseTagObjectsToSelectOptions, getCourseUrlSlugPattern,
@@ -312,7 +314,7 @@ export class BaseEditCourseForm extends React.Component {
 
     const IS_NEW_SLUG_FORMAT_ENABLED = Boolean(process.env.IS_NEW_SLUG_FORMAT_ENABLED === 'true');
     // eslint-disable-next-line max-len
-    const COURSE_URL_SLUG_PATTERN = getCourseUrlSlugPattern(IS_NEW_SLUG_FORMAT_ENABLED, courseInfo.data.course_run_statuses, productSource?.slug);
+    const COURSE_URL_SLUG_PATTERN = getCourseUrlSlugPattern(IS_NEW_SLUG_FORMAT_ENABLED, productSource?.slug, courseInfo.data.course_type);
     const urlSlugHelp = getUrlSlugHelp(process.env.IS_NEW_SLUG_FORMAT_ENABLED);
 
     return (
@@ -359,17 +361,41 @@ export class BaseEditCourseForm extends React.Component {
                 onInvalid: (e) => {
                   this.openCollapsible();
                   e.target.setCustomValidity(
-                    `Please enter a valid URL slug. ${COURSE_URL_SLUG_VALIDATION_MESSAGE[COURSE_URL_SLUG_PATTERN] || ''}`,
+                    `Please enter a valid URL slug. ${COURSE_URL_SLUG_PATTERN.error_msg || ''}`,
                   );
                 },
                 onInput: (e) => {
                   e.target.setCustomValidity('');
                 },
               }}
-              pattern={COURSE_URL_SLUG_PATTERN}
+              pattern={COURSE_URL_SLUG_PATTERN.slug_format}
               disabled={disabled || !administrator}
               optional
             />
+            {administrator && (
+              <Field
+                name="watchers_list"
+                component={ReduxFormCreatableSelect}
+                label={(
+                  <FieldLabel
+                    id="watchers.label"
+                    text="Watchers"
+                    helpText={(
+                      <p>
+                        A list of email addresses that will receive
+                        notifications when the course run of the course is published or reviewed.
+                      </p>
+                    )}
+                    optional
+                  />
+                )}
+                isMulti
+                disabled={!(courseInfo?.data?.course_run_statuses?.includes(REVIEW_BY_INTERNAL) && administrator)}
+                optional
+                isCreatable
+                createOptionValidator={emailValidate}
+              />
+            )}
             <div>
               <FieldLabel helpText={productSourceHelp} id="productSource" text="Product Source" className="mb-2" />
               <div className="mb-3">{parsedProductSource}</div>
@@ -1091,6 +1117,7 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled}
               optional
             />
+
             {administrator && (
             <>
               <FieldLabel text="Merchandising Location Restriction" className="mb-2" />

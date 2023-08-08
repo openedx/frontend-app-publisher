@@ -372,6 +372,7 @@ class EditCoursePage extends React.Component {
       organization_logo_override: courseData.organization_logo_override_url,
       organization_short_code_override:
         courseData.organization_short_code_override,
+      watchers: courseData.watchers_list ? courseData.watchers_list.map((watcher) => watcher.value) : [],
       outcome: courseData.outcome,
       prerequisites_raw: courseData.prerequisites_raw,
       ...priceData,
@@ -618,6 +619,7 @@ class EditCoursePage extends React.Component {
           enterprise_subscription_inclusion,
           organization_short_code_override,
           organization_logo_override_url,
+          watchers,
         },
       },
     } = this.props;
@@ -660,9 +662,12 @@ class EditCoursePage extends React.Component {
       enterprise_subscription_inclusion,
       organization_short_code_override,
       organization_logo_override_url,
+      // Adding watchers to initialValues so that it can be used in the form to show and update state of watchers_list
+      watchers,
       location_restriction: this.buildLocationRestriction(),
       in_year_value: this.buildInYearValue(),
       tags: topics?.length ? topics.map(t => ({ label: t, value: t })) : null,
+      watchers_list: watchers?.length ? watchers.map(w => ({ label: w, value: w })) : null,
     };
   }
 

@@ -1,5 +1,5 @@
 import * as utils from '.';
-import { COURSE_URL_SLUG_PATTERN, COURSE_URL_SLUG_PATTERN_OLD } from '../data/constants';
+import { COURSE_URL_SLUG_PATTERN_OLD, EXECUTIVE_EDUCATION_SLUG } from '../data/constants';
 import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const initialRuns = [
@@ -57,14 +57,17 @@ describe('getCourseNumber', () => {
 });
 
 describe('getCourseUrlSlugPattern', () => {
+  const { COURSE_URL_SLUGS_PATTERN } = process.env;
   it(
     'returns the new course url slug pattern when updatedSlugFlag is true and courseRunStatuses are in review',
     () => {
       const updatedSlugFlag = true;
-      const courseRunStatuses = ['review_by_legal', 'review_by_internal'];
+      const courseType = 'audit';
       expect(
-        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+      ).toEqual(
+        JSON.parse(COURSE_URL_SLUGS_PATTERN)[DEFAULT_PRODUCT_SOURCE].default,
+      );
     },
   );
 
@@ -72,10 +75,10 @@ describe('getCourseUrlSlugPattern', () => {
     'returns the new course url slug pattern when updatedSlugFlag is true and courseRunStatuses are post review',
     () => {
       const updatedSlugFlag = true;
-      const courseRunStatuses = ['published', 'reviewed'];
+      const courseType = 'audit';
       expect(
-        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)[DEFAULT_PRODUCT_SOURCE].default);
     },
   );
 
@@ -83,20 +86,49 @@ describe('getCourseUrlSlugPattern', () => {
     'returns the both old & new pattern when updatedSlugFlag is true and courseRunStatuses are not in review or post review',
     () => {
       const updatedSlugFlag = true;
-      const courseRunStatuses = ['archived'];
+      const courseType = 'audit';
       expect(
-        utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-      ).toEqual(COURSE_URL_SLUG_PATTERN);
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)[DEFAULT_PRODUCT_SOURCE].default);
     },
   );
 
   it('returns the old course url slug pattern when updatedSlugFlag is false', () => {
     const updatedSlugFlag = false;
-    const courseRunStatuses = ['archived'];
+    const courseType = 'audit';
     expect(
-      utils.getCourseUrlSlugPattern(updatedSlugFlag, courseRunStatuses, DEFAULT_PRODUCT_SOURCE),
-    ).toEqual(COURSE_URL_SLUG_PATTERN_OLD);
+      utils.getCourseUrlSlugPattern(updatedSlugFlag, DEFAULT_PRODUCT_SOURCE, courseType),
+    ).toEqual({
+      slug_format: COURSE_URL_SLUG_PATTERN_OLD,
+      error_msg: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
+    });
   });
+
+  it(
+    'returns the exec_ed subdirectory slug pattern when courseType is executive education and updatedSlugFlag is true',
+    () => {
+      const updatedSlugFlag = true;
+      const courseType = EXECUTIVE_EDUCATION_SLUG;
+      expect(
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, 'external-source', courseType),
+      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)['external-source'][EXECUTIVE_EDUCATION_SLUG]);
+    },
+  );
+
+  it(
+    'returns the old course url slug pattern when courseType is executive education and updatedSlugFlag is false',
+    () => {
+      const updatedSlugFlag = false;
+      const courseType = EXECUTIVE_EDUCATION_SLUG;
+
+      expect(
+        utils.getCourseUrlSlugPattern(updatedSlugFlag, 'external-source', courseType),
+      ).toEqual({
+        slug_format: COURSE_URL_SLUG_PATTERN_OLD,
+        error_msg: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
+      });
+    },
+  );
 });
 
 describe('getCourseError', () => {
@@ -160,6 +192,18 @@ describe('isNonExemptChanged', () => {
 
   it('returns false when no non exempt course run fields are changed', () => {
     expect(utils.isNonExemptChanged(initialValues, currentValues, 'key-1')).toEqual(false);
+  });
+
+  it('returns false when the course run key is not present in the current form values', () => {
+    const newInitialValues = {
+      title: initialValues.title,
+      course_runs: [...initialRuns, {
+        key: 'key-3',
+        expected_program_name: 'program-name',
+        expected_program_type: 'program-type',
+      }],
+    };
+    expect(utils.isNonExemptChanged(newInitialValues, currentValues, 'key-3')).toEqual(false);
   });
 });
 

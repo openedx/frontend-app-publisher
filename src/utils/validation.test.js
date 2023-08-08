@@ -3,6 +3,7 @@ import {
   basicValidate,
   getFieldName,
   editCourseValidate,
+  emailValidate,
 } from './validation';
 import { PUBLISHED, UNPUBLISHED } from '../data/constants';
 
@@ -300,5 +301,46 @@ describe('editCourseValidate', () => {
     expect(editCourseValidate(values, { targetRun: unpublishedTargetRun })).toEqual(
       { ...expectedError, course_runs: [null] },
     );
+  });
+
+  describe('emailValidate function', () => {
+    const selectValue = [];
+    const options = [{ label: 'john@example.com' }, { label: 'jane@example.com' }];
+
+    it('should return true for a valid email that is not present in selectValue or options', () => {
+      const emailValue = 'newuser@example.com';
+      const isValid = emailValidate(emailValue, selectValue, options);
+      expect(isValid).toBe(true);
+    });
+
+    it('should return false for a valid email that is already present in selectValue', () => {
+      const emailValue = 'john@example.com';
+      const isValid = emailValidate(emailValue, selectValue, options);
+      expect(isValid).toBe(false);
+    });
+
+    it('should return false for a valid email that is already present in options', () => {
+      const emailValue = 'jane@example.com';
+      const isValid = emailValidate(emailValue, selectValue, options);
+      expect(isValid).toBe(false);
+    });
+
+    it('should return false for an invalid email format', () => {
+      const emailValue = 'invalidemailformat';
+      const isValid = emailValidate(emailValue, selectValue, options);
+      expect(isValid).toBe(false);
+    });
+
+    it('should return false for a valid email format with invalid characters', () => {
+      const emailValue = 'user$example.com';
+      const isValid = emailValidate(emailValue, selectValue, options);
+      expect(isValid).toBe(false);
+    });
+
+    it('should return false for an empty email value', () => {
+      const emailValue = '';
+      const isValid = emailValidate(emailValue, selectValue, options);
+      expect(isValid).toBe(false);
+    });
   });
 });
