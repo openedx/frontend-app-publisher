@@ -28,7 +28,7 @@ import Collapsible from '../Collapsible';
 import PriceList from '../PriceList';
 
 import {
-  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, REVIEW_BY_INTERNAL,
+  PUBLISHED, REVIEWED, EXECUTIVE_EDUCATION_SLUG, UNPUBLISHED, IN_REVIEW_STATUS,
 } from '../../data/constants';
 import {
   titleHelp, typeHelp, getUrlSlugHelp, productSourceHelp,
@@ -372,30 +372,31 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled || !administrator}
               optional
             />
-            {administrator && (
-              <Field
-                name="watchers_list"
-                component={ReduxFormCreatableSelect}
-                label={(
-                  <FieldLabel
-                    id="watchers.label"
-                    text="Watchers"
-                    helpText={(
-                      <p>
-                        A list of email addresses that will receive
-                        notifications when the course run of the course is published or reviewed.
-                      </p>
-                    )}
-                    optional
-                  />
-                )}
-                isMulti
-                disabled={!(courseInfo?.data?.course_run_statuses?.includes(REVIEW_BY_INTERNAL) && administrator)}
-                optional
-                isCreatable
-                createOptionValidator={emailValidate}
-              />
-            )}
+            <Field
+              name="watchers_list"
+              component={ReduxFormCreatableSelect}
+              label={(
+                <FieldLabel
+                  id="watchers.label"
+                  text="Watchers"
+                  helpText={(
+                    <p>
+                      A list of email addresses that will receive
+                      notifications when the course run of the course is published or reviewed.
+                    </p>
+                  )}
+                  optional
+                />
+              )}
+              isMulti
+              disabled={
+                !(courseInfo?.data?.course_run_statuses?.some(status => IN_REVIEW_STATUS.includes(status)
+                || status === UNPUBLISHED))
+              }
+              optional
+              isCreatable
+              createOptionValidator={emailValidate}
+            />
             <div>
               <FieldLabel helpText={productSourceHelp} id="productSource" text="Product Source" className="mb-2" />
               <div className="mb-3">{parsedProductSource}</div>

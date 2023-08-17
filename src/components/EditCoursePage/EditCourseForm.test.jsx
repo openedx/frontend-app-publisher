@@ -255,6 +255,62 @@ describe('BaseEditCourseForm', () => {
     expect(disabledFields).toHaveLength(1);
   });
 
+  it('Check if watchers field is disabled after being reviewed', () => {
+    const courseInfoWithCourseRunStatuses = {
+      ...courseInfo,
+      data: {
+        ...courseInfo.data,
+        course_run_statuses: [REVIEWED],
+      },
+    };
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      initialValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
+      number="Test101x"
+      entitlement={{ sku: 'ABC1234' }}
+      courseStatuses={[REVIEWED]}
+      courseInfo={courseInfoWithCourseRunStatuses}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      id="edit-course-form"
+    />);
+
+    const watchersField = component.find({ name: 'watchers_list', disabled: true });
+    expect(watchersField).toHaveLength(1);
+  });
+
+  it('Check if watchers field is enabled when any of the course run is in pre-reviewed status', () => {
+    const courseInfoWithCourseRunStatuses = {
+      ...courseInfo,
+      data: {
+        ...courseInfo.data,
+        course_run_statuses: [REVIEW_BY_LEGAL, UNPUBLISHED],
+      },
+    };
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title={initialValuesFull.title}
+      initialValues={initialValuesFull}
+      currentFormValues={initialValuesFull}
+      number="Test101x"
+      entitlement={{ sku: 'ABC1234' }}
+      courseStatuses={[REVIEW_BY_LEGAL, UNPUBLISHED]}
+      courseInfo={courseInfoWithCourseRunStatuses}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      id="edit-course-form"
+    />);
+
+    const watchersField = component.find({ name: 'watchers_list', disabled: false });
+    expect(watchersField).toHaveLength(1);
+  });
+
   it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
     const component = shallow(<BaseEditCourseForm
       handleSubmit={() => null}
