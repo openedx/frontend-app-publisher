@@ -440,6 +440,7 @@ class CollapsibleCourseRun extends React.Component {
               </p>
             </div>
           )}
+          optional
         />
         <Field
           name={`${courseId}.staff`}

@@ -3,7 +3,7 @@
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
 import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { getAuthenticatedHttpClient, getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 Enzyme.configure({ adapter: new Adapter() });

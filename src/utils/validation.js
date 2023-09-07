@@ -111,7 +111,7 @@ const handleCourseEditFail = (errors) => {
 };
 
 const editCourseValidate = (values, props) => {
-  const { targetRun, registeredFields } = props;
+  const { targetRun } = props;
 
   if (!targetRun || targetRun.status === PUBLISHED) {
     return {};
@@ -156,17 +156,7 @@ const editCourseValidate = (values, props) => {
     const { key: targetKey } = targetRun;
     const isSubmittingRun = run.key === targetKey;
     if (isSubmittingRun) {
-      // naive check to deteremine if track is executive education or not
-      const isExecutiveEducation = registeredFields
-        && registeredFields['prices.paid-executive-education']
-        && registeredFields['prices.paid-executive-education'].count;
-
-      // naive check to deteremine if track is bootcamp or not
-      const isBootcamp = registeredFields
-        && registeredFields['prices.paid-bootcamp']
-        && registeredFields['prices.paid-bootcamp'].count;
-
-      const runRequiredFields = (isExecutiveEducation || isBootcamp) ? ['transcript_languages'] : ['transcript_languages', 'staff'];
+      const runRequiredFields = ['transcript_languages'];
       const runErrors = {};
       runRequiredFields.forEach((fieldName) => {
         const value = run[fieldName];
