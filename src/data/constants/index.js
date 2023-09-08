@@ -21,6 +21,7 @@ const FORMAT_DATE_MATCHER = /20\d{2}-(0\d{1}|1[0-2])-([0-2]\d{1}|3[0-1])/;
 const NORMALIZE_DATE_MATCHER = /20\d{2}\/(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])/;
 
 const EXECUTIVE_EDUCATION_SLUG = 'executive-education-2u';
+const BOOTCAMP_SLUG = 'bootcamp-2u';
 
 const COURSE_URL_SLUG_PATTERN_OLD = '^[a-z0-9_]+(?:-[a-z0-9_]+)*$';
 const COURSE_URL_SLUG_PATTERN_NEW = '^learn/[a-z0-9_]+(?:-?[a-z0-9_]+)*/[a-z0-9_]+(?:-?[a-z0-9_]+)*$';
@@ -53,6 +54,7 @@ export {
   COURSE_EXEMPT_FIELDS,
   COURSE_RUN_NON_EXEMPT_FIELDS,
   EXECUTIVE_EDUCATION_SLUG,
+  BOOTCAMP_SLUG,
   COURSE_URL_SLUG_PATTERN,
   COURSE_URL_SLUG_PATTERN_NEW,
   COURSE_URL_SLUG_PATTERN_OLD,
