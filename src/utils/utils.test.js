@@ -1,5 +1,5 @@
 import * as utils from '.';
-import { COURSE_URL_SLUG_PATTERN_OLD, EXECUTIVE_EDUCATION_SLUG } from '../data/constants';
+import { BOOTCAMP_SLUG, COURSE_URL_SLUG_PATTERN_OLD, EXECUTIVE_EDUCATION_SLUG } from '../data/constants';
 import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const initialRuns = [
@@ -127,6 +127,27 @@ describe('getCourseUrlSlugPattern', () => {
         slug_format: COURSE_URL_SLUG_PATTERN_OLD,
         error_msg: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
       });
+    },
+  );
+
+  it(
+    'returns the old course url slug pattern when courseType is bootcamp and updatedSlugFlag is false',
+    () => {
+      expect(
+        utils.getCourseUrlSlugPattern(false, 'external-source', BOOTCAMP_SLUG),
+      ).toEqual({
+        slug_format: COURSE_URL_SLUG_PATTERN_OLD,
+        error_msg: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
+      });
+    },
+  );
+
+  it(
+    'returns the bootcamp subdirectory slug pattern when courseType is bootcamp and updatedSlugFlag is true',
+    () => {
+      expect(
+        utils.getCourseUrlSlugPattern(true, 'external-source', BOOTCAMP_SLUG),
+      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)['external-source'][BOOTCAMP_SLUG]);
     },
   );
 });

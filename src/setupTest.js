@@ -17,6 +17,10 @@ process.env.COURSE_URL_SLUGS_PATTERN = `{
         "default": {
             "slug_format": "^learn/[a-z0-9_]+(?:-?[a-z0-9_]+)*/[a-z0-9_]+(?:-?[a-z0-9_]+)*$|^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
             "error_msg": "Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format <custom-url-slug> or learn/<primary_subject>/<org-slug>-<course_slug>."
+        },
+        "bootcamp-2u": {
+            "slug_format": "^boot-camps/[a-z0-9_]+(?:-?[a-z0-9_]+)*/[a-z0-9_]+(?:-?[a-z0-9_]+)*$|^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
+            "error_msg": "Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format <custom-url-slug> or boot-camps/<primary_subject>/<org-slug>-<course_slug>."
         }
     },
     "external-source": {
@@ -27,6 +31,10 @@ process.env.COURSE_URL_SLUGS_PATTERN = `{
         "executive-education-2u": {
             "slug_format": "^executive-education/[a-z0-9_]+(?:-?[a-z0-9_]+)*$|^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
             "error_msg": "Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format <custom-url-slug> or executive-education/<org-slug>-<course_slug>."
+        },
+        "bootcamp-2u": {
+            "slug_format": "^boot-camps/[a-z0-9_]+(?:-?[a-z0-9_]+)*/[a-z0-9_]+(?:-?[a-z0-9_]+)*$|^[a-z0-9_]+(?:-[a-z0-9_]+)*$",
+            "error_msg": "Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format <custom-url-slug> or boot-camps/<primary_subject>/<org-slug>-<course_slug>."
         }
     }
 }`;
