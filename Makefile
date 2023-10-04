@@ -15,7 +15,7 @@ requirements:
 	npm ci
 
 npm-install-%: ## install specified % npm package on the cookie-cutter container
-	npm ci $* --save-dev
+	npm install $* --save-dev
 	git add package.json
 
 validate-no-uncommitted-package-lock-changes:
