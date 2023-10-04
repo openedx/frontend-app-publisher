@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "fedx-scripts webpack",
-    "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
+    "i18n_extract": "fedx-scripts formatjs extract",
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
     "lint": "fedx-scripts eslint --ext .jsx,.js .",
     "lint-fix": "fedx-scripts eslint --ext .jsx,.js . --fix",
@@ -23,7 +23,7 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "@edx/brand": "npm:@edx/brand-openedx@1.2.0",
-    "@edx/frontend-component-footer": "npm:@edx/frontend-component-footer-edx@^6.2.0", 
+    "@edx/frontend-component-footer": "npm:@edx/frontend-component-footer-edx@^6.2.0",
     "@edx/frontend-platform": "^4.6.0",
     "@edx/paragon": "^20.44.0",
     "@edx/tinymce-language-selector": "1.1.0",
@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@edx/browserslist-config": "^1.2.0",
-    "@edx/frontend-build": "^12.7.0",
+    "@edx/frontend-build": "13.0.0",
     "@edx/stylelint-config-edx": "^2.3.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0",
     "axios": "0.27.2",
