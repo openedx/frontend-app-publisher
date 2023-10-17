@@ -18,7 +18,7 @@ class CollaboratorPage extends React.Component {
       createCollaborator,
       sourceInfo: { referrer },
     } = this.props;
-    createCollaborator(fieldValues, referrer);
+    createCollaborator(fieldValues, referrer, 'sample');
   }
 
   handleCollaboratorEdit(fieldValues) {
