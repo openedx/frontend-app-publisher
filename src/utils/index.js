@@ -3,7 +3,6 @@ import moment from 'moment';
 import 'moment-timezone';
 import qs from 'query-string';
 
-import history from '../data/history';
 import {
   COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN_OLD,
   MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE,
@@ -54,7 +53,7 @@ const getCourseUrlSlugPattern = (updatedSlugFlag, productSource, courseType) => 
   return slugPattern;
 };
 
-const updateUrl = (queryOptions) => {
+const updateUrl = (queryOptions, navigate, location) => {
   if (!queryOptions) {
     return;
   }
@@ -75,7 +74,10 @@ const updateUrl = (queryOptions) => {
 
   const newQueryString = `?${qs.stringify(newQuery)}`;
   if (newQueryString !== window.location.search) {
-    history.push(newQueryString);
+    navigate({
+      pathname: location.pathname,
+      search: newQueryString,
+    });
   }
 };
 

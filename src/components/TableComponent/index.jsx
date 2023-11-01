@@ -66,6 +66,7 @@ class TableComponent extends React.Component {
       formatData,
       loading,
       location,
+      navigate,
     } = this.props;
 
     const columnConfig = this.props.columns.map(column => ({
@@ -73,7 +74,7 @@ class TableComponent extends React.Component {
       onSort: !column.columnSortable ? direction => updateUrl({
         page: 1,
         ordering: direction === 'desc' ? `-${column.key}` : column.key,
-      }) : null,
+      }, navigate, location) : null,
     }));
     let sortDirection;
     let sortColumn;
@@ -106,7 +107,7 @@ class TableComponent extends React.Component {
             <Pagination
               pageCount={pageCount}
               currentPage={paginationOptions.page}
-              onPageSelect={page => updateUrl({ page })}
+              onPageSelect={page => updateUrl({ page }, navigate, location)}
             />
           </div>
           )}
@@ -169,9 +170,11 @@ TableComponent.propTypes = {
   filterTable: PropTypes.func.isRequired,
   clearTable: PropTypes.func.isRequired,
   location: PropTypes.shape({
+    pathname: PropTypes.string,
     search: PropTypes.string,
   }).isRequired,
   fetchEditorFilterOptions: PropTypes.func.isRequired,
+  navigate: PropTypes.func.isRequired,
 };
 
 TableComponent.defaultProps = {

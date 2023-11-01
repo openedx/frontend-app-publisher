@@ -7,6 +7,14 @@ import { AppContext } from '@edx/frontend-platform/react';
 
 import Header from './index';
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: () => ({
+    pathname: '/',
+    search: '?bananas=1',
+  }),
+}));
+
 const HeaderWrapperContext = ({ props }) => {
   const contextValue = useMemo(() => ({
     authenticatedUser: {
@@ -40,12 +48,12 @@ describe('Header', () => {
   });
 
   it('renders the header correctly when users pass a querystring param to allow dark mode toggling', () => {
-    const component = HeaderWrapper({ location: { search: '?bananas=1' } });
+    const component = HeaderWrapper({});
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('renders the header correctly when toggling is allowed, and dark mode is on', () => {
-    const component = HeaderWrapper({ darkModeOn: true, location: { search: '?bananas=1' } });
+    const component = HeaderWrapper({ darkModeOn: true });
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

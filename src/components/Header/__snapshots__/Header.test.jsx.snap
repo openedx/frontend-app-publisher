@@ -41,22 +41,16 @@ exports[`Header renders the correct header 1`] = `
         className="col-auto justify-content-start"
       >
         <Link
-          className=""
+          className="disabled-link text-gray-300"
           to="/"
         >
-          <LinkAnchor
-            className=""
+          <a
+            className="disabled-link text-gray-300"
             href="/"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/"
-              onClick={[Function]}
-            >
-              Open Courses
-            </a>
-          </LinkAnchor>
+            Open Courses
+          </a>
         </Link>
       </div>
       <div
@@ -66,19 +60,13 @@ exports[`Header renders the correct header 1`] = `
           className=""
           to="/?course_type=executive-education-2u"
         >
-          <LinkAnchor
+          <a
             className=""
             href="/?course_type=executive-education-2u"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/?course_type=executive-education-2u"
-              onClick={[Function]}
-            >
-              Executive Education
-            </a>
-          </LinkAnchor>
+            Executive Education
+          </a>
         </Link>
       </div>
       <div
@@ -88,20 +76,26 @@ exports[`Header renders the correct header 1`] = `
           className=""
           to="/?course_type=bootcamp-2u"
         >
-          <LinkAnchor
+          <a
             className=""
             href="/?course_type=bootcamp-2u"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/?course_type=bootcamp-2u"
-              onClick={[Function]}
-            >
-              Bootcamps
-            </a>
-          </LinkAnchor>
+            Bootcamps
+          </a>
         </Link>
+      </div>
+      <div
+        className="col-auto justify-content-end"
+      >
+        <button
+          className="btn btn-primary"
+          onClick={[Function]}
+          type="button"
+        >
+          Switch to 
+          dark mode
+        </button>
       </div>
       <div
         className="col-auto justify-content-end ml-auto"
@@ -287,22 +281,16 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
         className="col-auto justify-content-start"
       >
         <Link
-          className=""
+          className="disabled-link text-gray-300"
           to="/"
         >
-          <LinkAnchor
-            className=""
+          <a
+            className="disabled-link text-gray-300"
             href="/"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/"
-              onClick={[Function]}
-            >
-              Open Courses
-            </a>
-          </LinkAnchor>
+            Open Courses
+          </a>
         </Link>
       </div>
       <div
@@ -312,19 +300,13 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
           className=""
           to="/?course_type=executive-education-2u"
         >
-          <LinkAnchor
+          <a
             className=""
             href="/?course_type=executive-education-2u"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/?course_type=executive-education-2u"
-              onClick={[Function]}
-            >
-              Executive Education
-            </a>
-          </LinkAnchor>
+            Executive Education
+          </a>
         </Link>
       </div>
       <div
@@ -334,19 +316,13 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
           className=""
           to="/?course_type=bootcamp-2u"
         >
-          <LinkAnchor
+          <a
             className=""
             href="/?course_type=bootcamp-2u"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/?course_type=bootcamp-2u"
-              onClick={[Function]}
-            >
-              Bootcamps
-            </a>
-          </LinkAnchor>
+            Bootcamps
+          </a>
         </Link>
       </div>
       <div
@@ -545,22 +521,16 @@ exports[`Header renders the header correctly when users pass a querystring param
         className="col-auto justify-content-start"
       >
         <Link
-          className=""
+          className="disabled-link text-gray-300"
           to="/"
         >
-          <LinkAnchor
-            className=""
+          <a
+            className="disabled-link text-gray-300"
             href="/"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/"
-              onClick={[Function]}
-            >
-              Open Courses
-            </a>
-          </LinkAnchor>
+            Open Courses
+          </a>
         </Link>
       </div>
       <div
@@ -570,19 +540,13 @@ exports[`Header renders the header correctly when users pass a querystring param
           className=""
           to="/?course_type=executive-education-2u"
         >
-          <LinkAnchor
+          <a
             className=""
             href="/?course_type=executive-education-2u"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/?course_type=executive-education-2u"
-              onClick={[Function]}
-            >
-              Executive Education
-            </a>
-          </LinkAnchor>
+            Executive Education
+          </a>
         </Link>
       </div>
       <div
@@ -592,19 +556,13 @@ exports[`Header renders the header correctly when users pass a querystring param
           className=""
           to="/?course_type=bootcamp-2u"
         >
-          <LinkAnchor
+          <a
             className=""
             href="/?course_type=bootcamp-2u"
-            navigate={[Function]}
+            onClick={[Function]}
           >
-            <a
-              className=""
-              href="/?course_type=bootcamp-2u"
-              onClick={[Function]}
-            >
-              Bootcamps
-            </a>
-          </LinkAnchor>
+            Bootcamps
+          </a>
         </Link>
       </div>
       <div

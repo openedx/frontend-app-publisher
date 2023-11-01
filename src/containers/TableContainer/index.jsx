@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 
 import TableComponent from '../../components/TableComponent';
 import {
   paginateTable, sortTable, fetchEditorFilterOptions, filterTable, clearTable,
 } from '../../data/actions/table';
 import { PAGE_SIZE } from '../../data/constants/table';
+import { withLocation, withNavigate } from '../../utils/hoc';
 
 const mapStateToProps = (state) => {
   const tableState = state.table || {};
@@ -45,6 +45,6 @@ const TableContainer = connect(
   mapDispatchToProps,
   null,
   { forwardRef: true },
-)(TableComponent);
+)(withLocation(withNavigate(TableComponent)));
 
-export default withRouter(TableContainer);
+export default TableContainer;

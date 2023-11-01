@@ -119,6 +119,7 @@ class CourseTable extends React.Component {
   }
 
   updateFilterQueryParamsInUrl(selectedFilters) {
+    const { location, navigate } = this.props;
     const courseRunStatusParams = selectedFilters.filter(filter => !Number.isInteger(filter.value));
     const editorParams = selectedFilters.filter(filter => Number.isInteger(filter.value));
     const params = {
@@ -126,10 +127,11 @@ class CourseTable extends React.Component {
         ? courseRunStatusParams.map(filter => filter.value).toString() : null,
       editors: editorParams.length ? editorParams.map(filter => filter.value).toString() : null,
     };
-    updateUrl({ ...params, page: 1 });
+    updateUrl({ ...params, page: 1 }, navigate, location);
   }
 
   renderTableHeader() {
+    const { location, navigate } = this.props;
     const { selectedFilters, filterGroups } = this.state;
     const pageOptions = getPageOptionsFromUrl();
 
@@ -165,10 +167,10 @@ class CourseTable extends React.Component {
           <SearchField
             value={pageOptions.pubq}
             onClear={() => {
-              updateUrl({ filter: null });
+              updateUrl({ filter: null }, navigate, location);
             }}
             onSubmit={(filter) => {
-              updateUrl({ filter, page: 1 });
+              updateUrl({ filter, page: 1 }, navigate, location);
             }}
             placeholder="Search"
           />
@@ -265,6 +267,7 @@ CourseTable.propTypes = {
     isFetching: PropTypes.bool,
   }),
   location: PropTypes.shape({
+    pathname: PropTypes.string,
     search: PropTypes.string,
   }).isRequired,
   table: PropTypes.shape({
@@ -275,6 +278,7 @@ CourseTable.propTypes = {
       full_name: PropTypes.string,
     })),
   }),
+  navigate: PropTypes.func.isRequired,
 };
 
 export default CourseTable;

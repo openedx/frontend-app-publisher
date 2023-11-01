@@ -1,5 +1,3 @@
-import { push } from 'connected-react-router';
-
 import {
   CREATE_STAFFER,
   CREATE_STAFFER_SUCCESS,
@@ -28,7 +26,7 @@ export function stafferCreateFail(error) {
   return { type: CREATE_STAFFER_FAIL, error };
 }
 
-export function createStaffer(stafferData, referrer = null) {
+export function createStaffer(stafferData, navigate, referrer = null) {
   return (dispatch) => {
     dispatch(createNewStaffer(stafferData));
     // Send create staffer POST
@@ -39,7 +37,7 @@ export function createStaffer(stafferData, referrer = null) {
 
         // Redirect to referring page after a successful create
         if (referrer) {
-          dispatch(push(referrer));
+          navigate(referrer);
         }
       })
       .catch((error) => {
@@ -93,7 +91,7 @@ export function editStafferInfo(data) {
   return { type: EDIT_STAFFER_INFO, data };
 }
 
-export function editStaffer(stafferData, referrer = null) {
+export function editStaffer(stafferData, navigate, referrer = null) {
   return (dispatch) => {
     dispatch(editStafferInfo(stafferData));
     // Send edit course PATCH
@@ -104,7 +102,7 @@ export function editStaffer(stafferData, referrer = null) {
 
         // Redirect to referring page after a successful edit
         if (referrer) {
-          dispatch(push(referrer));
+          navigate(referrer);
         }
       })
       .catch((error) => {

@@ -29,16 +29,18 @@ class StafferPage extends React.Component {
     const {
       createStaffer,
       sourceInfo: { referrer },
+      navigate,
     } = this.props;
 
     const stafferData = this.prepareStafferData(fieldValues);
-    createStaffer(stafferData, referrer);
+    createStaffer(stafferData, navigate, referrer);
   }
 
   handleStafferEdit(fieldValues) {
     const {
       editStaffer,
       sourceInfo: { referrer },
+      navigate,
     } = this.props;
 
     const stafferData = this.prepareStafferData(fieldValues);
@@ -46,7 +48,7 @@ class StafferPage extends React.Component {
       // Only send profile_image if a new one is being uploaded
       delete stafferData.profile_image;
     }
-    editStaffer(stafferData, referrer);
+    editStaffer(stafferData, navigate, referrer);
   }
 
   setStartedFetching() {
@@ -234,6 +236,7 @@ StafferPage.propTypes = {
   sourceInfo: PropTypes.shape({
     referrer: PropTypes.string,
   }),
+  navigate: PropTypes.func.isRequired,
 };
 
 export default StafferPage;

@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { connectRouter } from 'connected-react-router';
 import { reducer as formReducer } from 'redux-form';
 
 import comments from './comments';
@@ -20,8 +19,7 @@ import collaboratorOptions from './collaboratorOptions';
 import courseTagOptions from './courseTagOptions';
 import productSourceOptions from './productSourceOptions';
 
-export default history => combineReducers({
-  router: connectRouter(history),
+export default () => combineReducers({
   comments,
   courseEditors,
   courseInfo,

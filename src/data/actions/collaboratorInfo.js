@@ -1,5 +1,3 @@
-import { push } from 'connected-react-router';
-
 import {
   CREATE_COLLABORATOR,
   CREATE_COLLABORATOR_SUCCESS,
@@ -38,7 +36,7 @@ export function editCollaboratorInfo(data) {
   return { type: EDIT_COLLABORATOR_INFO, data };
 }
 
-export function createCollaborator(collaboratorData, referrer = null) {
+export function createCollaborator(collaboratorData, navigate, referrer = null) {
   return (dispatch) => {
     dispatch(createNewCollaborator(collaboratorData));
     return DiscoveryDataApiService.createCollaborator(collaboratorData)
@@ -47,7 +45,7 @@ export function createCollaborator(collaboratorData, referrer = null) {
         dispatch(collaboratorCreateSuccess(collaborator));
 
         if (referrer) {
-          dispatch(push(referrer));
+          navigate(referrer);
         }
       })
       .catch((error) => {
@@ -56,7 +54,7 @@ export function createCollaborator(collaboratorData, referrer = null) {
   };
 }
 
-export function editCollaborator(collaboratorData, referrer = null) {
+export function editCollaborator(collaboratorData, navigate, referrer = null) {
   return (dispatch) => {
     dispatch(editCollaboratorInfo(collaboratorData));
     // Send edit course PATCH
@@ -67,7 +65,7 @@ export function editCollaborator(collaboratorData, referrer = null) {
 
         // Redirect to referring page after a successful edit
         if (referrer) {
-          dispatch(push(referrer));
+          navigate(referrer);
         }
       })
       .catch((error) => {
