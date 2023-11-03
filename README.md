@@ -82,7 +82,28 @@ This application requires an edx-platform instance for authentication. For local
    you will need to setup a local instance of the edX Docker Devstack
     * https://github.com/openedx/devstack
 
-You should be able to view it in a web browser at `localhost:18400`.
+ You should be able to view it in a web browser at `localhost:18400`.
+
+## Installation 
+
+  1. Clone your new repo:
+
+    ``git clone https://github.com/openedx/frontend-app-publisher.git``
+
+  2. Use node v18.x.
+
+    The current version of the micro-frontend build scripts support node 18.
+    Using other major versions of node *may* work, but this is unsupported.  For
+    convenience, this repository includes an .nvmrc file to help in setting the
+    correct node version via `nvm <https://github.com/nvm-sh/nvm>`_.
+
+  3. Install npm dependencies:
+
+    ``cd frontend-app-publisher && npm ci``
+
+  4. Start the dev server:
+
+    ``npm start``
 
 ## Running Tests
 
@@ -121,3 +142,59 @@ To lint your javascript and sass run:
     ```
     make lint
     ```
+  License
+ =======
+
+The code in this repository is licensed under the AGPLv3 unless otherwise
+noted.
+
+Please see `LICENSE <LICENSE>`_ for details.
+
+Contributing
+============
+
+Contributions are very welcome.  Please read `How To Contribute`_ for details.
+
+.. _How To Contribute: https://openedx.org/r/how-to-contribute
+
+This project is currently accepting all types of contributions, bug fixes,
+security fixes, maintenance work, or new features.  However, please make sure
+to have a discussion about your new feature idea with the maintainers prior to
+beginning development to maximize the chances of your change being accepted.
+You can start a conversation by creating a new issue on this repo summarizing
+your idea.
+
+Getting Help
+===========
+
+If you're having trouble, we have discussion forums at
+https://discuss.openedx.org where you can connect with others in the community.
+
+Our real-time conversations are on Slack. You can request a `Slack
+invitation`_, then join our `community Slack workspace`_.  Because this is a
+frontend repository, the best place to discuss it would be in the `#wg-frontend
+channel`_.
+
+For anything non-trivial, the best path is to open an issue in this repository
+with as many details about the issue you are facing as you can provide.
+
+https://github.com/openedx/frontend-app-publisher/issues
+
+For more information about these options, see the `Getting Help`_ page.
+
+.. _Slack invitation: https://openedx.org/slack
+.. _community Slack workspace: https://openedx.slack.com/
+.. _#wg-frontend channel: https://openedx.slack.com/archives/C04BM6YC7A6
+.. _Getting Help: https://openedx.org/community/connect
+
+ The Open edX Code of Conduct
+============================
+
+All community members are expected to follow the `Open edX Code of Conduct`_.
+
+.. _Open edX Code of Conduct: https://openedx.org/code-of-conduct/
+
+Reporting Security Issues
+=========================
+
+Please do not report security issues in public. Please email security@openedx.org.
