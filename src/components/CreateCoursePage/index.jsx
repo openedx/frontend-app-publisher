@@ -55,7 +55,7 @@ class CreateCoursePage extends React.Component {
         term: options.courseRunKey,
       },
     };
-    return this.props.createCourse(courseData);
+    return this.props.createCourse(courseData, this.props.navigate);
   }
 
   setStartedFetching() {
@@ -280,6 +280,7 @@ CreateCoursePage.propTypes = {
   formValues: PropTypes.shape({}),
   clearCourseInfoErrors: PropTypes.func,
   clearCreateCourseStatus: PropTypes.func,
+  navigate: PropTypes.func.isRequired,
 };
 
 export default CreateCoursePage;

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import CourseTable from '../../components/CourseTable';
 import { fetchOrganizations } from '../../data/actions/publisherUserInfo';
+import { withLocation, withNavigate } from '../../utils/hoc';
 
 const mapStateToProps = state => ({
   publisherUserInfo: state.publisherUserInfo,
@@ -15,6 +16,6 @@ const mapDispatchToProps = {
 const CourseDashboard = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(CourseTable);
+)(withLocation(withNavigate(CourseTable)));
 
 export default CourseDashboard;

@@ -1,6 +1,6 @@
 import configureStore from 'redux-mock-store';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
@@ -48,24 +48,27 @@ const initialState = {
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
-let mockOnSubmit;
 let store;
 
 const createWrapper = (state) => {
   store = mockStore(state);
-  mockOnSubmit = jest.fn();
-  return shallow(<CreateCoursePage
-    store={store}
-    createCourse={mockOnSubmit}
-  />);
+
+  return mount((
+    <MemoryRouter>
+      <Provider store={store}>
+        <CreateCoursePage />
+      </Provider>
+    </MemoryRouter>
+  ));
 };
 
 describe('Create Course View', () => {
   it('shows spinner while loading', () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = true;
-    const wrapper = createWrapper(testState).find('CreateCoursePage').dive();
-    expect(wrapper.find('LoadingSpinner').dive()).toHaveLength(1);
+
+    const wrapper = createWrapper(testState).find('CreateCoursePage');
+    expect(wrapper.find('LoadingSpinner')).toHaveLength(1);
   });
 
   it('shows error when fails to retrieve organizations', () => {
@@ -74,10 +77,14 @@ describe('Create Course View', () => {
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = errorMessage;
     testState.courseOptions.isFetching = false;
+    testState.courseOptions = courseOptions;
     testState.courseRunOptions.isFetching = false;
-    const wrapper = createWrapper(testState).find('CreateCoursePage').dive();
-    expect(wrapper.find('#create-error')).toHaveLength(1);
-    expect(wrapper.find('#create-error').text()).toEqual(errorMessage[0]);
+    testState.courseRunOptions = courseRunOptions;
+
+    const wrapper = createWrapper(testState);
+
+    expect(wrapper.find('#create-error').exists()).toBe(true);
+    expect(wrapper.find('#create-error').at(0).text()).toEqual(errorMessage[0]);
   });
 
   it('Shows confirmation modal on form submission', () => {

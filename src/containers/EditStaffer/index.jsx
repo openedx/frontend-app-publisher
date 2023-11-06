@@ -4,6 +4,7 @@ import StafferPage from '../../components/StafferPage';
 import { fetchStafferInfo, editStaffer, cancelStafferInfo } from '../../data/actions/stafferInfo';
 
 import { fetchOrganizations } from '../../data/actions/publisherUserInfo';
+import { withNavigate, withParams } from '../../utils/hoc';
 
 const mapStateToProps = state => ({
   stafferInfo: state.stafferInfo,
@@ -26,8 +27,8 @@ const mapDispatchToProps = {
   fetchOrganizations,
 };
 
-export default connect(
+export default withParams(connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps,
-)(StafferPage);
+)(withNavigate(StafferPage)));

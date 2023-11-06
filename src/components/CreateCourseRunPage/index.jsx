@@ -65,6 +65,7 @@ class CreateCourseRunPage extends React.Component {
         },
       },
       createCourseRun,
+      navigate,
     } = this.props;
 
     const prices = buildInitialPrices(entitlements, course_runs);
@@ -78,7 +79,7 @@ class CreateCourseRunPage extends React.Component {
       run_type: options.run_type,
       term: options.courseRunKey,
     };
-    return createCourseRun(uuid, courseRunData);
+    return createCourseRun(uuid, courseRunData, navigate);
   }
 
   setStartedFetching() {
@@ -234,6 +235,7 @@ CreateCourseRunPage.propTypes = {
   createCourseRun: PropTypes.func,
   clearCourseInfoErrors: PropTypes.func,
   formValues: PropTypes.shape({}),
+  navigate: PropTypes.func.isRequired,
 };
 
 export default CreateCourseRunPage;

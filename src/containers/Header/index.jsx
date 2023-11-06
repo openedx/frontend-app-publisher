@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 
 import Header from '../../components/Header';
 import toggleDarkMode from '../../data/actions/darkMode';
@@ -12,5 +11,4 @@ const mapDispatchToProps = {
   toggleDarkMode,
 };
 
-const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header);
-export default withRouter(HeaderContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

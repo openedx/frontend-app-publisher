@@ -1,5 +1,3 @@
-import { push } from 'connected-react-router';
-
 import { getErrorMessages } from '../../utils';
 
 import {
@@ -168,7 +166,7 @@ function fetchCourseInfo(id) {
   };
 }
 
-function createCourseRun(courseUuid, courseRunData) {
+function createCourseRun(courseUuid, courseRunData, navigate) {
   return (dispatch) => {
     dispatch(createNewCourseRun(courseRunData));
     if (!courseRunData.course) {
@@ -180,7 +178,7 @@ function createCourseRun(courseUuid, courseRunData) {
       .then((response) => {
         const courseRun = response.data;
         dispatch(createCourseRunSuccess(courseRun));
-        return dispatch(push(`/courses/${courseUuid}`));
+        return navigate(`/courses/${courseUuid}`);
       })
       .catch((error) => {
         let errorList;
@@ -198,7 +196,7 @@ function createCourseRun(courseUuid, courseRunData) {
   };
 }
 
-function createCourse(courseData) {
+function createCourse(courseData, navigate) {
   return (dispatch) => {
     dispatch(createNewCourse(courseData));
     dispatch(createNewCourseRun(courseData.course_run));
@@ -209,7 +207,7 @@ function createCourse(courseData) {
         dispatch(createCourseSuccess(course));
         const courseRun = course.course_runs[0];
         dispatch(createCourseRunSuccess(courseRun));
-        return dispatch(push(`/courses/${course.uuid}`));
+        return navigate(`/courses/${course.uuid}`);
       })
       .catch((error) => {
         dispatch(createCourseFail(['Creation failed, please try again or contact support.'].concat(getErrorMessages(error))));

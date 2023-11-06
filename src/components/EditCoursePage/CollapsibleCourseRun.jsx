@@ -40,6 +40,7 @@ import ListField from '../ListField';
 import { Staffer } from '../Staffer';
 import renderStaffSuggestion from '../Staffer/renderStaffSuggestion';
 import fetchStaffSuggestions from '../Staffer/fetchStaffSuggestions';
+import { withNavigate } from '../../utils/hoc';
 
 const determineStatus = run => (courseRunIsArchived(run) ? ARCHIVED : run.status);
 
@@ -444,7 +445,7 @@ class CollapsibleCourseRun extends React.Component {
         />
         <Field
           name={`${courseId}.staff`}
-          component={ListField}
+          component={withNavigate(ListField)}
           fetchSuggestions={fetchStaffSuggestions(owners)}
           renderSuggestion={renderStaffSuggestion}
           createNewUrl="/instructors/new"

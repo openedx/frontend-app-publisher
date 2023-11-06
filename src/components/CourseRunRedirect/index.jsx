@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Navigate } from 'react-router-dom';
 
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import LoadingSpinner from '../LoadingSpinner';
+import { withParams } from '../../utils/hoc';
 
 class CourseRunRedirectComponent extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class CourseRunRedirectComponent extends React.Component {
   }
 
   render() {
-    return this.state.path ? <Redirect to={this.state.path} /> : <LoadingSpinner />;
+    return this.state.path ? <Navigate to={this.state.path} replace /> : <LoadingSpinner />;
   }
 }
 
@@ -31,4 +32,4 @@ CourseRunRedirectComponent.propTypes = {
   courseRunKey: PropTypes.string.isRequired,
 };
 
-export default CourseRunRedirectComponent;
+export default withParams(CourseRunRedirectComponent);

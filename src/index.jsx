@@ -7,20 +7,16 @@ import {
   APP_INIT_ERROR, APP_READY, subscribe, initialize,
 } from '@edx/frontend-platform';
 import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
-import { ConnectedRouter } from 'connected-react-router';
 import messages from './i18n';
 import './sass/App.scss';
 
 import store from './data/store';
 import MainApp from './containers/MainApp';
-import history from './data/history';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={store}>
-      <ConnectedRouter history={history}>
-        <MainApp />
-      </ConnectedRouter>
+      <MainApp />
     </AppProvider>,
     document.getElementById('root'),
   );

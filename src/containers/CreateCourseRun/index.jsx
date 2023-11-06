@@ -9,6 +9,7 @@ import {
 } from '../../data/actions/courseInfo';
 import { fetchCourseOptions } from '../../data/actions/courseOptions';
 import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
+import { withNavigate, withParams } from '../../utils/hoc';
 
 const mapStateToProps = state => ({
   courseInfo: state.courseInfo,
@@ -28,4 +29,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(CreateCourseRunPage);
+)(withParams(withNavigate(CreateCourseRunPage)));

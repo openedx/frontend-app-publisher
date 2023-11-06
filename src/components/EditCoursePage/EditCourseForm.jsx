@@ -48,6 +48,7 @@ import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
 import GeoLocationFields from './GeoLocationFields';
+import { withNavigate } from '../../utils/hoc';
 
 export class BaseEditCourseForm extends React.Component {
   constructor(props) {
@@ -451,7 +452,7 @@ export class BaseEditCourseForm extends React.Component {
             />
             <Field
               name="collaborators"
-              component={ListField}
+              component={withNavigate(ListField)}
               fetchSuggestions={fetchCollabSuggestions(allCollaborators)}
               createNewUrl="/collaborators/new"
               referrer={`/courses/${uuid}`}
