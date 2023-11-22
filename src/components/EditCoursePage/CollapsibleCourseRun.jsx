@@ -18,7 +18,7 @@ import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import FieldLabel from '../FieldLabel';
 import {
   courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
-  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual, utcTimeZone,
+  getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual, utcTimeZone, isExternalCourse,
 } from '../../utils';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
@@ -33,7 +33,7 @@ import {
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
 import {
-  dateEditHelp, runTypeHelp, pacingEditHelp, publishDateHelp,
+  dateEditHelp, runTypeHelp, pacingEditHelp, publishDateHelp, courseRunVariantIdHelp,
 } from '../../helpText';
 import RichEditor from '../RichEditor';
 import ListField from '../ListField';
@@ -248,6 +248,7 @@ class CollapsibleCourseRun extends React.Component {
       isOpen,
       onToggle,
       courseRunTypeOptions,
+      courseInfo,
     } = this.props;
     const { copied, hasExternalKey } = this.state;
     const { administrator } = getAuthenticatedUser();
@@ -273,6 +274,8 @@ class CollapsibleCourseRun extends React.Component {
 
     const pristine = initialValues && isPristine(initialValues, currentFormValues)
       && isPristine(initialValues, currentFormValues, courseRun.key);
+    const productSource = courseInfo?.data?.product_source?.slug;
+    const courseType = courseInfo?.data?.course_type;
 
     return (
       <Collapsible
@@ -283,6 +286,21 @@ class CollapsibleCourseRun extends React.Component {
         <div className="mb-3">
           <span className="text-primary-500" aria-hidden> All fields are required for publication unless otherwise specified.</span>
         </div>
+        {isExternalCourse(productSource, courseType) && (
+          <Field
+            name={`${courseId}.variant_id`}
+            component={RenderInputTextField}
+            label={(
+              <FieldLabel
+                id={`${courseId}.variant_id.label`}
+                text="Variant Id"
+                helpText={courseRunVariantIdHelp}
+              />
+            )}
+            disabled={disabled}
+            optional
+          />
+        )}
         {/* TODO this should be refactored when paragon supports safari */}
         {/* text inputs for safari */}
         {isSafari
@@ -765,6 +783,16 @@ CollapsibleCourseRun.propTypes = {
   initialValues: PropTypes.shape({
     course_runs: PropTypes.arrayOf(PropTypes.shape({})),
   }).isRequired,
+  courseInfo: PropTypes.shape({
+    data: PropTypes.shape({
+      product_source: PropTypes.shape({
+        slug: PropTypes.string,
+        name: PropTypes.string,
+        description: PropTypes.string,
+      }),
+      course_type: PropTypes.string,
+    }),
+  }),
 };
 
 CollapsibleCourseRun.defaultProps = {
@@ -774,6 +802,7 @@ CollapsibleCourseRun.defaultProps = {
     isSubmittingRunReview: false,
   },
   courseRunTypeOptions: {},
+  courseInfo: {},
   runTypeModes: {},
   editable: false,
   isSubmittingForReview: false,

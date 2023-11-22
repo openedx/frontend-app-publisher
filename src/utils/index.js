@@ -5,10 +5,11 @@ import qs from 'query-string';
 
 import {
   COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN_OLD,
-  MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE,
+  MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE, EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG,
 } from '../data/constants';
 import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
+import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '');
@@ -217,6 +218,10 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
   });
 };
 
+const isExternalCourse = (productSource, courseType) => (
+  productSource !== DEFAULT_PRODUCT_SOURCE && [EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG].includes(courseType)
+);
+
 const parseOptions = inChoices => inChoices.map(choice => ({ label: choice.display_name, value: choice.value }));
 
 const getOptionsData = (options) => {
@@ -385,6 +390,7 @@ export {
   isSafari,
   isNonExemptChanged,
   isPristine,
+  isExternalCourse,
   parseOptions,
   getOptionsData,
   parseCourseTypeOptions,

@@ -4,7 +4,9 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import CollapsibleCourseRun from './CollapsibleCourseRun';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
-import { AUDIT_TRACK, MASTERS_TRACK, VERIFIED_TRACK } from '../../data/constants';
+import {
+  AUDIT_TRACK, EXECUTIVE_EDUCATION_SLUG, MASTERS_TRACK, VERIFIED_TRACK,
+} from '../../data/constants';
 
 import store from '../../data/store';
 
@@ -106,6 +108,34 @@ describe('Collapsible Course Run', () => {
       courseRunTypeOptions={courseRunTypeOptions}
       index={1}
     />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('renders correctly variant_id field for external course\'s course run', () => {
+    const courseInfo = {
+      data: {
+        product_source: {
+          slug: 'test-source',
+          name: 'Test Source',
+          description: 'Test Source Description',
+        },
+        course_type: EXECUTIVE_EDUCATION_SLUG,
+      },
+    };
+    const component = shallow(<CollapsibleCourseRun
+      languageOptions={languageOptions}
+      pacingTypeOptions={pacingTypeOptions}
+      courseRun={unpublishedCourseRun}
+      courseId="test-course"
+      courseUuid="11111111-1111-1111-1111-111111111111"
+      type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+      currentFormValues={currentFormValues}
+      courseRunTypeOptions={courseRunTypeOptions}
+      index={1}
+      courseInfo={courseInfo}
+    />);
+    const variantIdField = component.find('Field[name="test-course.variant_id"]');
+    expect(variantIdField.exists()).toBe(true);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 

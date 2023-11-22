@@ -26,6 +26,7 @@ describe('EditCoursePage', () => {
   const defaultPrice = '77';
   const defaultEnd = '2019-08-14T00:00:00Z';
   const defaultUpgradeDeadlineOverride = '2019-09-14T00:00:00Z';
+  const variantId = '00000000-0000-0000-0000-000000000000';
   const watchers = ['test@test.com'];
 
   const courseInfo = {
@@ -62,6 +63,7 @@ describe('EditCoursePage', () => {
           start: '2019-05-14T00:00:00Z',
           end: defaultEnd,
           upgrade_deadline_override: '2019-05-10T00:00:00Z',
+          variant_id: null,
           expected_program_type: 'micromasters',
           expected_program_name: 'Test Program Name',
           go_live_date: '2019-05-06T00:00:00Z',
@@ -86,6 +88,7 @@ describe('EditCoursePage', () => {
           start: '2019-05-14T00:00:00Z',
           end: defaultEnd,
           upgrade_deadline_override: '2019-05-10T00:00:00Z',
+          variant_id: null,
           expected_program_type: null,
           expected_program_name: '',
           go_live_date: '2019-05-06T00:00:00Z',
@@ -322,6 +325,7 @@ describe('EditCoursePage', () => {
       start: '2019-05-14T00:00:00Z',
       end: defaultEnd,
       upgrade_deadline_override: defaultUpgradeDeadlineOverride,
+      variant_id: variantId,
       expected_program_type: null,
       expected_program_name: '',
       go_live_date: '2019-05-06T00:00:00Z',
@@ -469,6 +473,7 @@ describe('EditCoursePage', () => {
         transcript_languages: ['en-us'],
         weeks_to_complete: '100',
         upgrade_deadline_override: defaultUpgradeDeadlineOverride,
+        variant_id: variantId,
       },
       {
         content_language: 'en-us',
@@ -490,6 +495,7 @@ describe('EditCoursePage', () => {
         transcript_languages: ['en-us'],
         weeks_to_complete: '100',
         upgrade_deadline_override: defaultUpgradeDeadlineOverride,
+        variant_id: variantId,
       },
     ];
 
@@ -501,6 +507,7 @@ describe('EditCoursePage', () => {
       courseData.course_runs[0].end = defaultEnd;
       courseData.course_runs[0].status = UNPUBLISHED;
       courseData.course_runs[0].upgrade_deadline_override = defaultUpgradeDeadlineOverride;
+      courseData.course_runs[0].variant_id = variantId;
       courseData.prices = {
         verified: defaultPrice,
       };
