@@ -205,6 +205,7 @@ class EditCoursePage extends React.Component {
           ? courseRun.upgrade_deadline_override
           : null,
         key: courseRun.key,
+        variant_id: courseRun.variant_id ? courseRun.variant_id : null,
         max_effort: courseRun.max_effort ? courseRun.max_effort : null,
         min_effort: courseRun.min_effort ? courseRun.min_effort : null,
         ...priceData,
@@ -539,6 +540,7 @@ class EditCoursePage extends React.Component {
         key: courseRun.key,
         start: courseRun.start,
         end: courseRun.end,
+        variant_id: courseRun.variant_id,
         upgrade_deadline_override:
           courseRun.seats.length > 0
             ? getUpgradeDeadlineOverride(courseRun.seats)
