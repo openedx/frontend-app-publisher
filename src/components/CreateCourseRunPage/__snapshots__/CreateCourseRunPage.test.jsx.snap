@@ -15,31 +15,31 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
     <div>
       <ReduxForm
         courseOptions={
-          Object {
-            "data": Object {
-              "actions": Object {
-                "POST": Object {
-                  "additional_metadata": Object {
-                    "children": Object {
-                      "external_course_marketing_type": Object {
-                        "choices": Array [
-                          Object {
+          {
+            "data": {
+              "actions": {
+                "POST": {
+                  "additional_metadata": {
+                    "children": {
+                      "external_course_marketing_type": {
+                        "choices": [
+                          {
                             "display_name": "Short Course",
                             "value": "short_course",
                           },
-                          Object {
+                          {
                             "display_name": "Sprint",
                             "value": "sprint",
                           },
                         ],
                       },
-                      "product_status": Object {
-                        "choices": Array [
-                          Object {
+                      "product_status": {
+                        "choices": [
+                          {
                             "display_name": "Published",
                             "value": "published",
                           },
-                          Object {
+                          {
                             "display_name": "Archived",
                             "value": "archived",
                           },
@@ -47,76 +47,76 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                       },
                     },
                   },
-                  "level_type": Object {
-                    "choices": Array [
-                      Object {
+                  "level_type": {
+                    "choices": [
+                      {
                         "display_name": "Beginner",
                         "value": "beginner",
                       },
-                      Object {
+                      {
                         "display_name": "Intermediate",
                         "value": "intermediate",
                       },
-                      Object {
+                      {
                         "display_name": "Advanced",
                         "value": "advanced",
                       },
                     ],
                   },
-                  "location_restriction": Object {
-                    "children": Object {
-                      "countries": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
+                  "location_restriction": {
+                    "children": {
+                      "countries": {
+                        "child": {
+                          "choices": [
+                            {
                               "label": "Afghanistan",
                               "value": "AF",
                             },
-                            Object {
+                            {
                               "label": "Åland Islands",
                               "value": "AX",
                             },
-                            Object {
+                            {
                               "label": "Algeria",
                               "value": "DZ",
                             },
-                            Object {
+                            {
                               "label": "American Samoa",
                               "value": "AS",
                             },
-                            Object {
+                            {
                               "label": "Andorra",
                               "value": "AD",
                             },
                           ],
                         },
                       },
-                      "restriction_type": Object {
-                        "choices": Array [
+                      "restriction_type": {
+                        "choices": [
                           "blocklist",
                           "allowlist",
                         ],
                       },
-                      "states": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
+                      "states": {
+                        "child": {
+                          "choices": [
+                            {
                               "label": "Alabama",
                               "value": "AL",
                             },
-                            Object {
+                            {
                               "label": "Arizona",
                               "value": "AZ",
                             },
-                            Object {
+                            {
                               "label": "Arkansas",
                               "value": "AR",
                             },
-                            Object {
+                            {
                               "label": "California",
                               "value": "CA",
                             },
-                            Object {
+                            {
                               "label": "Colorado",
                               "value": "CO",
                             },
@@ -125,35 +125,35 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                       },
                     },
                   },
-                  "subjects": Object {
-                    "child": Object {
-                      "choices": Array [
-                        Object {
+                  "subjects": {
+                    "child": {
+                      "choices": [
+                        {
                           "display_name": "Business",
                           "value": "business",
                         },
-                        Object {
+                        {
                           "display_name": "Chemistry",
                           "value": "chemistry",
                         },
-                        Object {
+                        {
                           "display_name": "English",
                           "value": "english",
                         },
-                        Object {
+                        {
                           "display_name": "Security",
                           "value": "security",
                         },
                       ],
                     },
                   },
-                  "type": Object {
-                    "type_options": Array [
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                  "type": {
+                    "type_options": [
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "credit",
                               "verified",
                               "audit",
@@ -161,31 +161,31 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                             "name": "Credit",
                             "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                           },
-                          Object {
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "verified",
                               "audit",
                             ],
                             "name": "Verified and Audit",
                             "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                           },
-                          Object {
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "audit",
                             ],
                             "name": "Audit Only",
                             "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "verified",
                         ],
                         "name": "Credit",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "credit",
                               "is_credit_eligible": true,
                               "is_id_verified": true,
@@ -193,13 +193,13 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                               "payee": "platform",
                               "slug": "credit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Credit",
                               "slug": "credit",
                             },
                           },
-                          Object {
-                            "mode": Object {
+                          {
+                            "mode": {
                               "certificate_type": "verified",
                               "is_credit_eligible": false,
                               "is_id_verified": true,
@@ -207,13 +207,13 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                               "payee": "platform",
                               "slug": "verified",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Verified",
                               "slug": "verified",
                             },
                           },
-                          Object {
-                            "mode": Object {
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -221,7 +221,7 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                               "payee": "",
                               "slug": "audit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Audit",
                               "slug": "audit",
                             },
@@ -229,22 +229,22 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                         ],
                         "uuid": "9521aa7d-801b-4a67-92c3-716ea30f5086",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": false,
-                            "modes": Array [
+                            "modes": [
                               "masters",
                             ],
                             "name": "Masters Only",
                             "uuid": "f394732f-ba43-4260-8ada-06a9f18e7160",
                           },
                         ],
-                        "entitlement_types": Array [],
+                        "entitlement_types": [],
                         "name": "Masters Only",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -257,33 +257,33 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                         ],
                         "uuid": "7b41992e-f268-4331-8ba9-72acb0880454",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "verified",
                               "audit",
                             ],
                             "name": "Verified and Audit",
                             "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                           },
-                          Object {
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "audit",
                             ],
                             "name": "Audit Only",
                             "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "verified",
                         ],
                         "name": "Verified and Audit",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "verified",
                               "is_credit_eligible": false,
                               "is_id_verified": true,
@@ -291,13 +291,13 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                               "payee": "platform",
                               "slug": "verified",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Verified",
                               "slug": "verified",
                             },
                           },
-                          Object {
-                            "mode": Object {
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -305,7 +305,7 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                               "payee": "",
                               "slug": "audit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Audit",
                               "slug": "audit",
                             },
@@ -313,24 +313,24 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                         ],
                         "uuid": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "professional",
                             ],
                             "name": "Professional Only",
                             "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "professional",
                         ],
                         "name": "Professional Only",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "professional",
                               "is_credit_eligible": false,
                               "is_id_verified": true,
@@ -338,7 +338,7 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                               "payee": "platform",
                               "slug": "professional",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Professional",
                               "slug": "professional",
                             },
@@ -346,24 +346,24 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                         ],
                         "uuid": "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "audit",
                             ],
                             "name": "Audit Only",
                             "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "audit",
                         ],
                         "name": "Audit Only",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -371,7 +371,7 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
                               "payee": "",
                               "slug": "audit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Audit",
                               "slug": "audit",
                             },
@@ -388,16 +388,16 @@ exports[`CreateCourseRunPage renders html correctly 1`] = `
             "isFetching": false,
           }
         }
-        courseRunLabels={Array []}
-        courseRunOptions={Object {}}
-        currentFormValues={Object {}}
+        courseRunLabels={[]}
+        courseRunOptions={{}}
+        currentFormValues={{}}
         destroyOnUnmount={true}
         enableReinitialize={false}
         forceUnregisterOnUnmount={false}
         form="create-course-run-form"
         getFormState={[Function]}
         initialValues={
-          Object {
+          {
             "rerun": "",
             "run_type": undefined,
           }
@@ -437,18 +437,18 @@ exports[`CreateCourseRunPage renders html correctly when creating 1`] = `
   >
     <div>
       <ReduxForm
-        courseOptions={Object {}}
-        courseRunLabels={Array []}
-        courseRunOptions={Object {}}
-        courseRunTypeOptions={Array []}
-        currentFormValues={Object {}}
+        courseOptions={{}}
+        courseRunLabels={[]}
+        courseRunOptions={{}}
+        courseRunTypeOptions={[]}
+        currentFormValues={{}}
         destroyOnUnmount={true}
         enableReinitialize={false}
         forceUnregisterOnUnmount={false}
         form="create-course-run-form"
         getFormState={[Function]}
         initialValues={
-          Object {
+          {
             "rerun": "",
             "run_type": undefined,
           }
@@ -488,18 +488,18 @@ exports[`CreateCourseRunPage renders html correctly when error 1`] = `
   >
     <div>
       <ReduxForm
-        courseOptions={Object {}}
-        courseRunLabels={Array []}
-        courseRunOptions={Object {}}
-        courseRunTypeOptions={Array []}
-        currentFormValues={Object {}}
+        courseOptions={{}}
+        courseRunLabels={[]}
+        courseRunOptions={{}}
+        courseRunTypeOptions={[]}
+        currentFormValues={{}}
         destroyOnUnmount={true}
         enableReinitialize={false}
         forceUnregisterOnUnmount={false}
         form="create-course-run-form"
         getFormState={[Function]}
         initialValues={
-          Object {
+          {
             "rerun": "",
             "run_type": undefined,
           }
@@ -528,9 +528,9 @@ exports[`CreateCourseRunPage renders html correctly when error 1`] = `
         show={true}
         stacked={false}
         transition={
-          Object {
+          {
             "$$typeof": Symbol(react.forward_ref),
-            "defaultProps": Object {
+            "defaultProps": {
               "appear": false,
               "in": false,
               "mountOnEnter": false,
@@ -584,31 +584,31 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
     <div>
       <ReduxForm
         courseOptions={
-          Object {
-            "data": Object {
-              "actions": Object {
-                "POST": Object {
-                  "additional_metadata": Object {
-                    "children": Object {
-                      "external_course_marketing_type": Object {
-                        "choices": Array [
-                          Object {
+          {
+            "data": {
+              "actions": {
+                "POST": {
+                  "additional_metadata": {
+                    "children": {
+                      "external_course_marketing_type": {
+                        "choices": [
+                          {
                             "display_name": "Short Course",
                             "value": "short_course",
                           },
-                          Object {
+                          {
                             "display_name": "Sprint",
                             "value": "sprint",
                           },
                         ],
                       },
-                      "product_status": Object {
-                        "choices": Array [
-                          Object {
+                      "product_status": {
+                        "choices": [
+                          {
                             "display_name": "Published",
                             "value": "published",
                           },
-                          Object {
+                          {
                             "display_name": "Archived",
                             "value": "archived",
                           },
@@ -616,76 +616,76 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                       },
                     },
                   },
-                  "level_type": Object {
-                    "choices": Array [
-                      Object {
+                  "level_type": {
+                    "choices": [
+                      {
                         "display_name": "Beginner",
                         "value": "beginner",
                       },
-                      Object {
+                      {
                         "display_name": "Intermediate",
                         "value": "intermediate",
                       },
-                      Object {
+                      {
                         "display_name": "Advanced",
                         "value": "advanced",
                       },
                     ],
                   },
-                  "location_restriction": Object {
-                    "children": Object {
-                      "countries": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
+                  "location_restriction": {
+                    "children": {
+                      "countries": {
+                        "child": {
+                          "choices": [
+                            {
                               "label": "Afghanistan",
                               "value": "AF",
                             },
-                            Object {
+                            {
                               "label": "Åland Islands",
                               "value": "AX",
                             },
-                            Object {
+                            {
                               "label": "Algeria",
                               "value": "DZ",
                             },
-                            Object {
+                            {
                               "label": "American Samoa",
                               "value": "AS",
                             },
-                            Object {
+                            {
                               "label": "Andorra",
                               "value": "AD",
                             },
                           ],
                         },
                       },
-                      "restriction_type": Object {
-                        "choices": Array [
+                      "restriction_type": {
+                        "choices": [
                           "blocklist",
                           "allowlist",
                         ],
                       },
-                      "states": Object {
-                        "child": Object {
-                          "choices": Array [
-                            Object {
+                      "states": {
+                        "child": {
+                          "choices": [
+                            {
                               "label": "Alabama",
                               "value": "AL",
                             },
-                            Object {
+                            {
                               "label": "Arizona",
                               "value": "AZ",
                             },
-                            Object {
+                            {
                               "label": "Arkansas",
                               "value": "AR",
                             },
-                            Object {
+                            {
                               "label": "California",
                               "value": "CA",
                             },
-                            Object {
+                            {
                               "label": "Colorado",
                               "value": "CO",
                             },
@@ -694,35 +694,35 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                       },
                     },
                   },
-                  "subjects": Object {
-                    "child": Object {
-                      "choices": Array [
-                        Object {
+                  "subjects": {
+                    "child": {
+                      "choices": [
+                        {
                           "display_name": "Business",
                           "value": "business",
                         },
-                        Object {
+                        {
                           "display_name": "Chemistry",
                           "value": "chemistry",
                         },
-                        Object {
+                        {
                           "display_name": "English",
                           "value": "english",
                         },
-                        Object {
+                        {
                           "display_name": "Security",
                           "value": "security",
                         },
                       ],
                     },
                   },
-                  "type": Object {
-                    "type_options": Array [
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                  "type": {
+                    "type_options": [
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "credit",
                               "verified",
                               "audit",
@@ -730,31 +730,31 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                             "name": "Credit",
                             "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
                           },
-                          Object {
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "verified",
                               "audit",
                             ],
                             "name": "Verified and Audit",
                             "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                           },
-                          Object {
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "audit",
                             ],
                             "name": "Audit Only",
                             "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "verified",
                         ],
                         "name": "Credit",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "credit",
                               "is_credit_eligible": true,
                               "is_id_verified": true,
@@ -762,13 +762,13 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                               "payee": "platform",
                               "slug": "credit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Credit",
                               "slug": "credit",
                             },
                           },
-                          Object {
-                            "mode": Object {
+                          {
+                            "mode": {
                               "certificate_type": "verified",
                               "is_credit_eligible": false,
                               "is_id_verified": true,
@@ -776,13 +776,13 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                               "payee": "platform",
                               "slug": "verified",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Verified",
                               "slug": "verified",
                             },
                           },
-                          Object {
-                            "mode": Object {
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -790,7 +790,7 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                               "payee": "",
                               "slug": "audit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Audit",
                               "slug": "audit",
                             },
@@ -798,22 +798,22 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                         ],
                         "uuid": "9521aa7d-801b-4a67-92c3-716ea30f5086",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": false,
-                            "modes": Array [
+                            "modes": [
                               "masters",
                             ],
                             "name": "Masters Only",
                             "uuid": "f394732f-ba43-4260-8ada-06a9f18e7160",
                           },
                         ],
-                        "entitlement_types": Array [],
+                        "entitlement_types": [],
                         "name": "Masters Only",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -826,33 +826,33 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                         ],
                         "uuid": "7b41992e-f268-4331-8ba9-72acb0880454",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "verified",
                               "audit",
                             ],
                             "name": "Verified and Audit",
                             "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
                           },
-                          Object {
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "audit",
                             ],
                             "name": "Audit Only",
                             "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "verified",
                         ],
                         "name": "Verified and Audit",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "verified",
                               "is_credit_eligible": false,
                               "is_id_verified": true,
@@ -860,13 +860,13 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                               "payee": "platform",
                               "slug": "verified",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Verified",
                               "slug": "verified",
                             },
                           },
-                          Object {
-                            "mode": Object {
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -874,7 +874,7 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                               "payee": "",
                               "slug": "audit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Audit",
                               "slug": "audit",
                             },
@@ -882,24 +882,24 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                         ],
                         "uuid": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "professional",
                             ],
                             "name": "Professional Only",
                             "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "professional",
                         ],
                         "name": "Professional Only",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "professional",
                               "is_credit_eligible": false,
                               "is_id_verified": true,
@@ -907,7 +907,7 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                               "payee": "platform",
                               "slug": "professional",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Professional",
                               "slug": "professional",
                             },
@@ -915,24 +915,24 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                         ],
                         "uuid": "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e",
                       },
-                      Object {
-                        "course_run_types": Array [
-                          Object {
+                      {
+                        "course_run_types": [
+                          {
                             "is_marketable": true,
-                            "modes": Array [
+                            "modes": [
                               "audit",
                             ],
                             "name": "Audit Only",
                             "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
                           },
                         ],
-                        "entitlement_types": Array [
+                        "entitlement_types": [
                           "audit",
                         ],
                         "name": "Audit Only",
-                        "tracks": Array [
-                          Object {
-                            "mode": Object {
+                        "tracks": [
+                          {
+                            "mode": {
                               "certificate_type": "",
                               "is_credit_eligible": false,
                               "is_id_verified": false,
@@ -940,7 +940,7 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
                               "payee": "",
                               "slug": "audit",
                             },
-                            "seat_type": Object {
+                            "seat_type": {
                               "name": "Audit",
                               "slug": "audit",
                             },
@@ -957,33 +957,33 @@ exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
             "isFetching": false,
           }
         }
-        courseRunLabels={Array []}
-        courseRunOptions={Object {}}
+        courseRunLabels={[]}
+        courseRunOptions={{}}
         courseRunTypeOptions={
-          Array [
-            Object {
+          [
+            {
               "label": "Select enrollment track",
               "value": "",
             },
-            Object {
+            {
               "label": "Verified and Audit",
               "value": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
             },
-            Object {
+            {
               "label": "Audit Only",
               "value": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
             },
           ]
         }
         courseTypeUuid="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-        currentFormValues={Object {}}
+        currentFormValues={{}}
         destroyOnUnmount={true}
         enableReinitialize={false}
         forceUnregisterOnUnmount={false}
         form="create-course-run-form"
         getFormState={[Function]}
         initialValues={
-          Object {
+          {
             "rerun": "",
             "run_type": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
           }
