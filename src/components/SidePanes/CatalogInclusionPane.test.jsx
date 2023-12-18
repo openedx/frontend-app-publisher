@@ -22,6 +22,21 @@ describe('CatalogInclusionPane', () => {
     expect(toggle.props().checked).toBe(false);
   });
 
+  it('allow course runs who have been reviewed', () => {
+    const wrapper = mount(<CatalogInclusionPane
+      courseUuid={mockUuid}
+      subInclusion={mockInclusion}
+      draftStatuses={['reviewed']}
+      orgInclusion
+    />);
+    wrapper.find(CatalogInclusionPane);
+    const title = wrapper.find('Enterprise Subscriptions');
+    expect(title);
+    const toggle = wrapper.find('.pgn__form-switch-input');
+    toggle.simulate('change', { target: { checked: false } });
+    expect(toggle.props().checked).toBe(false);
+  });
+
   it('toggle disabled when org is false', () => {
     const wrapper = mount(<CatalogInclusionPane
       courseUuid={mockUuid}

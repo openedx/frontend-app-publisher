@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Spinner } from '@edx/paragon';
-import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
+import { PUBLISHED, REVIEWED, UNPUBLISHED } from '../../data/constants';
 
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import Pane from './Pane';
@@ -24,7 +24,7 @@ const CatalogInclusionPane = ({
     e.preventDefault();
     setIsLoading(true);
     let draft = null;
-    if (draftStatuses.includes(PUBLISHED)) {
+    if (draftStatuses.includes(PUBLISHED) || draftStatuses.includes(REVIEWED)) {
       draft = false;
     } else if (draftStatuses.includes(UNPUBLISHED)) {
       draft = true;
@@ -47,7 +47,7 @@ const CatalogInclusionPane = ({
         setError(null);
         setIsLoading(false);
       } catch (err) {
-        const errorText = `Unable to toggle attribute, recieved error: ${err.response.status} ${err.response.statusText}`;
+        const errorText = `Unable to toggle attribute, received error: ${err.response.status} ${err.response.statusText}`;
         setIsLoading(false);
         setError(errorText);
       }
