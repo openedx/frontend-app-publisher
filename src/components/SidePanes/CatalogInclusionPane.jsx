@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Spinner } from '@edx/paragon';
+import { Form, Spinner } from '@openedx/paragon';
 import { PUBLISHED, UNPUBLISHED } from '../../data/constants';
 
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';

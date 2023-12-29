@@ -2,7 +2,7 @@ import React from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import Autosuggest from 'react-autosuggest';
 import PropTypes from 'prop-types';
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 
 import store from '../../data/store';
 import sourceInfo from '../../data/actions/sourceInfo';

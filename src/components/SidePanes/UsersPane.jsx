@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import Select, { components } from 'react-select';
 import ReactTooltip from 'react-tooltip';
 
-import { Icon, Alert } from '@edx/paragon';
-import { Add } from '@edx/paragon/icons';
+import { Icon, Alert } from '@openedx/paragon';
+import { Add } from '@openedx/paragon/icons';
 
 import Pane from './Pane';
 import User from './User';
