@@ -989,19 +989,15 @@ export class BaseEditCourseForm extends React.Component {
                       <dl>
                         <dt>Introductory</dt>
                         <dd>
-                          No prerequisites; a learner who has completed some or
-                          all secondary school could complete the course.
+                          No prerequisites
                         </dd>
                         <dt>Intermediate</dt>
                         <dd>
-                          Basic prerequisites; learners need to complete
-                          secondary school or some university courses.
+                          Basic prerequisites
                         </dd>
                         <dt>Advanced</dt>
                         <dd>
-                          Significant prerequisites; the course is geared to
-                          third or fourth year university students or master’s
-                          degree students.
+                          Significant prerequisites
                         </dd>
                       </dl>
                     </div>
