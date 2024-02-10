@@ -19,6 +19,9 @@ const Header = ({ darkModeOn, toggleDarkMode }) => {
     document.body.classList.remove('dark-mode');
   }
 
+  // Check whether we want to show username in the header
+  const showUsername = process.env.HIDE_USERNAME_FROM_HEADER === 'false';
+
   // Allow users to toggle dark mode on if they put in a querystring like ?bananas=1
   const querystringParams = qs.parse(location.search);
   const { pathname } = location;
@@ -59,7 +62,7 @@ const Header = ({ darkModeOn, toggleDarkMode }) => {
           <div className="col-auto justify-content-end ml-auto">
             <Dropdown>
               <Dropdown.Toggle as={AvatarButton}>
-                {authenticatedUser.username}
+                {showUsername && authenticatedUser.username}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
