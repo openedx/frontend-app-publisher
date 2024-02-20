@@ -4,7 +4,7 @@ import Select from 'react-select';
 import AsyncCreatableSelect from 'react-select/async-creatable';
 import CreatableSelect from 'react-select/creatable';
 
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 
 const ReduxFormCreatableSelect = props => {
   const {

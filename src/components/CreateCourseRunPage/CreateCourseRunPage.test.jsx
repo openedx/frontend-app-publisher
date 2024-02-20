@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 
 import { CreateCourseRunForm } from './CreateCourseRunForm';
 import CreateCourseRunPage from './index';
