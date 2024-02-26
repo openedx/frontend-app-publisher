@@ -14,6 +14,7 @@ import { fetchOrganizationUsers } from '../../data/actions/organizationUsers';
 import { addComment, fetchComments } from '../../data/actions/comments';
 import { fetchCollaboratorOptions } from '../../data/actions/collaboratorOptions';
 import { fetchCourseTagOptions } from '../../data/actions/courseTagOptions';
+import { withParams } from '../../utils/hoc';
 
 const mapStateToProps = state => ({
   comments: state.comments,
@@ -62,8 +63,8 @@ const mergeProps = (stateProps, actionProps, { uuid }) => ({
   fetchComments: () => actionProps.fetchComments(uuid),
 });
 
-export default connect(
+export default withParams(connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps,
-)(EditCoursePage);
+)(EditCoursePage));

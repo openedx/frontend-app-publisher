@@ -48,6 +48,7 @@ import renderSuggestion from '../Collaborator/renderSuggestion';
 import fetchCollabSuggestions from '../Collaborator/fetchCollabSuggestions';
 import AdditionalMetadataFields from './AdditionalMetadataFields';
 import GeoLocationFields from './GeoLocationFields';
+import { withNavigate } from '../../utils/hoc';
 
 export class BaseEditCourseForm extends React.Component {
   constructor(props) {
@@ -451,7 +452,7 @@ export class BaseEditCourseForm extends React.Component {
             />
             <Field
               name="collaborators"
-              component={ListField}
+              component={withNavigate(ListField)}
               fetchSuggestions={fetchCollabSuggestions(allCollaborators)}
               createNewUrl="/collaborators/new"
               referrer={`/courses/${uuid}`}
@@ -988,19 +989,15 @@ export class BaseEditCourseForm extends React.Component {
                       <dl>
                         <dt>Introductory</dt>
                         <dd>
-                          No prerequisites; a learner who has completed some or
-                          all secondary school could complete the course.
+                          No prerequisites
                         </dd>
                         <dt>Intermediate</dt>
                         <dd>
-                          Basic prerequisites; learners need to complete
-                          secondary school or some university courses.
+                          Basic prerequisites
                         </dd>
                         <dt>Advanced</dt>
                         <dd>
-                          Significant prerequisites; the course is geared to
-                          third or fourth year university students or master’s
-                          degree students.
+                          Significant prerequisites
                         </dd>
                       </dl>
                     </div>

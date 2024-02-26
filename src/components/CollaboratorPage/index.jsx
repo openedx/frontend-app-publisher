@@ -17,8 +17,9 @@ class CollaboratorPage extends React.Component {
     const {
       createCollaborator,
       sourceInfo: { referrer },
+      navigate,
     } = this.props;
-    createCollaborator(fieldValues, referrer);
+    createCollaborator(fieldValues, navigate, referrer);
   }
 
   handleCollaboratorEdit(fieldValues) {
@@ -30,6 +31,7 @@ class CollaboratorPage extends React.Component {
           uuid,
         },
       },
+      navigate,
     } = this.props;
 
     const collaboratorData = { ...fieldValues, uuid };
@@ -37,7 +39,7 @@ class CollaboratorPage extends React.Component {
       // Only send image if a new one is being uploaded
       delete collaboratorData.image;
     }
-    editCollaborator(collaboratorData, referrer);
+    editCollaborator(collaboratorData, navigate, referrer);
   }
 
   render() {
@@ -163,6 +165,7 @@ CollaboratorPage.propTypes = {
       uuid: PropTypes.string.isRequired,
     }),
   }),
+  navigate: PropTypes.func.isRequired,
 };
 
 export default CollaboratorPage;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import Autosuggest from 'react-autosuggest';
-import { push } from 'connected-react-router';
 import PropTypes from 'prop-types';
 import { Alert } from '@edx/paragon';
 
@@ -106,7 +105,7 @@ class ListField extends React.Component {
       } else {
         store.dispatch(sourceInfo(referrer));
       }
-      store.dispatch(push(createNewUrl));
+      this.props.navigate(createNewUrl);
       return;
     }
 
@@ -281,6 +280,7 @@ ListField.propTypes = {
     error: PropTypes.string,
   }).isRequired,
   newItemText: PropTypes.string.isRequired,
+  navigate: PropTypes.func.isRequired,
 };
 
 ListField.defaultProps = {

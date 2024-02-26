@@ -152,6 +152,24 @@ describe('getCourseUrlSlugPattern', () => {
   );
 });
 
+describe('isExternalCourse', () => {
+  const EXTERNAL_COURSE_TYPES = [EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG];
+  it('returns true if the product source is other than edx and course type is in EXTERNAL_COURSE_TYPES', () => {
+    expect(utils.isExternalCourse('external-source', EXTERNAL_COURSE_TYPES[0])).toBe(true);
+    expect(utils.isExternalCourse('external-source', EXTERNAL_COURSE_TYPES[1])).toBe(true);
+  });
+  it('returns false if the product source has a default value', () => {
+    expect(utils.isExternalCourse(DEFAULT_PRODUCT_SOURCE, EXTERNAL_COURSE_TYPES[0])).toBe(false);
+    expect(utils.isExternalCourse(DEFAULT_PRODUCT_SOURCE, EXTERNAL_COURSE_TYPES[1])).toBe(false);
+  });
+  it(
+    'returns false if the product source does not have a default value and course type is not in EXTERNAL_COURSE_TYPES',
+    () => {
+      expect(utils.isExternalCourse('external-source', 'audit')).toBe(false);
+    },
+  );
+});
+
 describe('getCourseError', () => {
   it('returns a string from a string', () => {
     const testError = 'Test error message';

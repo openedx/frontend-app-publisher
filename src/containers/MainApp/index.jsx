@@ -1,7 +1,7 @@
 import 'core-js';
 import 'regenerator-runtime/runtime';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Footer from '@edx/frontend-component-footer';
 
 import '../../sass/App.scss';
@@ -20,61 +20,32 @@ const MainApp = () => (
   <div>
     <Header />
     <main>
-      <Switch>
-        <Route
-          path="/course-runs/:key"
-          exact
-          render={({ match: { params: { key } } }) => (
-            <CourseRunRedirectComponent courseRunKey={key} />
-          )}
-        />
+      <Routes>
+        <Route path="/course-runs/:courseRunKey" element={<CourseRunRedirectComponent />} />
         <Route
           path="/courses/new"
-          exact
-          component={CreateCourse}
+          element={<CreateCourse />}
         />
-        <Route
-          path="/courses/:uuid/rerun"
-          exact
-          render={({ match }) => (
-            <CreateCourseRun uuid={match.params.uuid} />
-          )}
-        />
+        <Route path="/courses/:uuid/rerun" element={<CreateCourseRun />} />
         <Route
           path="/instructors/new"
-          exact
-          component={CreateStaffer}
+          element={<CreateStaffer />}
         />
-        <Route
-          path="/instructors/:uuid"
-          exact
-          render={({ match }) => (
-            <EditStaffer uuid={match.params.uuid} />
-          )}
-        />
+        <Route path="/instructors/:uuid" element={<EditStaffer />} />
         <Route
           path="/collaborators/new"
-          exact
-          component={CreateCollaborator}
+          element={<CreateCollaborator />}
         />
         <Route
           path="/collaborators/:uuid"
-          exact
-          component={EditCollaborator}
+          element={<EditCollaborator />}
         />
-        <Route
-          path="/courses/:uuid"
-          exact
-          render={({ match }) => (
-            <EditCourse uuid={match.params.uuid} />
-          )}
-        />
+        <Route path="/courses/:uuid" element={<EditCourse />} />
         <Route
           path="/"
-          exact
-          component={CourseDashboard}
+          element={<CourseDashboard />}
         />
-      </Switch>
+      </Routes>
     </main>
     <Footer />
   </div>

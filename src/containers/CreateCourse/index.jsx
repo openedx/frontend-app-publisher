@@ -7,6 +7,7 @@ import { fetchProductSourceOptions } from '../../data/actions/productSourceOptio
 import { createCourse, clearCourseInfoErrors, clearCreateCourseStatus } from '../../data/actions/courseInfo';
 import { fetchCourseOptions } from '../../data/actions/courseOptions';
 import { fetchCourseRunOptions } from '../../data/actions/courseRunOptions';
+import { withNavigate } from '../../utils/hoc';
 
 const mapStateToProps = (state, props) => ({
   publisherUserInfo: state.publisherUserInfo,
@@ -32,4 +33,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(CreateCoursePage);
+)(withNavigate(CreateCoursePage));

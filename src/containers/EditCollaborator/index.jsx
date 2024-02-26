@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import CollaboratorPage from '../../components/CollaboratorPage';
 
 import { editCollaborator, cancelCollaboratorInfo } from '../../data/actions/collaboratorInfo';
+import { withLocation, withNavigate } from '../../utils/hoc';
 
 const mapStateToProps = state => ({
   collaboratorInfo: state.collaboratorInfo,
@@ -25,4 +26,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps,
-)(CollaboratorPage);
+)(withLocation(withNavigate(CollaboratorPage)));

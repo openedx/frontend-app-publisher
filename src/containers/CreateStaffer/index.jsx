@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import StafferPage from '../../components/StafferPage';
 import { createStaffer, resetStafferInfo, cancelStafferInfo } from '../../data/actions/stafferInfo';
 import { fetchOrganizations } from '../../data/actions/publisherUserInfo';
+import { withNavigate } from '../../utils/hoc';
 
 const mapStateToProps = state => ({
   stafferInfo: state.stafferInfo,
@@ -20,4 +21,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(StafferPage);
+)(withNavigate(StafferPage));

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { redirectToLogout } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
 import {
@@ -9,8 +9,9 @@ import {
 } from '@edx/paragon';
 import { getConfig } from '@edx/frontend-platform';
 
-const Header = ({ darkModeOn, location, toggleDarkMode }) => {
+const Header = ({ darkModeOn, toggleDarkMode }) => {
   const { authenticatedUser } = useContext(AppContext);
+  const location = useLocation();
 
   if (darkModeOn) {
     document.body.classList.add('dark-mode');
@@ -79,16 +80,11 @@ const Header = ({ darkModeOn, location, toggleDarkMode }) => {
 
 Header.propTypes = {
   darkModeOn: PropTypes.bool,
-  location: PropTypes.shape({
-    search: PropTypes.string,
-    pathname: PropTypes.string,
-  }),
   toggleDarkMode: PropTypes.func,
 };
 
 Header.defaultProps = {
   darkModeOn: false,
-  location: {},
   toggleDarkMode: () => {},
 };
 

@@ -3,13 +3,13 @@ import moment from 'moment';
 import 'moment-timezone';
 import qs from 'query-string';
 
-import history from '../data/history';
 import {
   COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN_OLD,
-  MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE,
+  MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE, EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG,
 } from '../data/constants';
 import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
+import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const getDateWithDashes = date => (date ? moment(date).format('YYYY-MM-DD') : '');
 const getDateWithSlashes = date => (date ? moment(date).format('YYYY/MM/DD') : '');
@@ -54,7 +54,7 @@ const getCourseUrlSlugPattern = (updatedSlugFlag, productSource, courseType) => 
   return slugPattern;
 };
 
-const updateUrl = (queryOptions) => {
+const updateUrl = (queryOptions, navigate, location) => {
   if (!queryOptions) {
     return;
   }
@@ -75,7 +75,10 @@ const updateUrl = (queryOptions) => {
 
   const newQueryString = `?${qs.stringify(newQuery)}`;
   if (newQueryString !== window.location.search) {
-    history.push(newQueryString);
+    navigate({
+      pathname: location.pathname,
+      search: newQueryString,
+    });
   }
 };
 
@@ -214,6 +217,10 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
     return true;
   });
 };
+
+const isExternalCourse = (productSource, courseType) => (
+  productSource !== DEFAULT_PRODUCT_SOURCE && [EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG].includes(courseType)
+);
 
 const parseOptions = inChoices => inChoices.map(choice => ({ label: choice.display_name, value: choice.value }));
 
@@ -383,6 +390,7 @@ export {
   isSafari,
   isNonExemptChanged,
   isPristine,
+  isExternalCourse,
   parseOptions,
   getOptionsData,
   parseCourseTypeOptions,

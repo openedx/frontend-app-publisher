@@ -21,6 +21,15 @@ const publishDateHelp = (
   </div>
 );
 
+const courseRunVariantIdHelp = (
+  <div>
+    <p>
+      The identifier for a product variant. This is used to link a course run to a product variant for external LOBs
+      (i.e; ExecEd & Bootcamps).
+    </p>
+  </div>
+);
+
 function dateEditHelp(courseRun) {
   return (
     <div>
@@ -252,5 +261,6 @@ export {
   getUrlSlugHelp,
   oldUrlSlugExample,
   subdirectoryUrlSlugExample,
+  courseRunVariantIdHelp,
   keyHelp,
 };
