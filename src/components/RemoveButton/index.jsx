@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { Close } from '@edx/paragon/icons';
+import { Close } from '@openedx/paragon/icons';
 
 const RemoveButton = ({
   className,

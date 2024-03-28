@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { Hyperlink } from '@edx/paragon';
-import { Add } from '@edx/paragon/icons';
+import { Hyperlink } from '@openedx/paragon';
+import { Add } from '@openedx/paragon/icons';
 
 import ReduxFormCreatableSelect from '../ReduxFormCreatableSelect';
 

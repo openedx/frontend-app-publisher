@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { StatefulButton } from '@edx/paragon';
+import { StatefulButton } from '@openedx/paragon';
 
 // Just a tiny wrapper around StatefulButton to provide some good defaults
 const ActionButton = ({ className, primary, ...passThroughProps }) => (

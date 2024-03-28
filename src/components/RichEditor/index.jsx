@@ -14,7 +14,7 @@ import '@edx/tinymce-language-selector';
 import 'tinymce/skins/ui/oxide/skin.css';
 import contentCss from 'tinymce/skins/content/default/content.min.css';
 import contentUiCss from 'tinymce/skins/ui/oxide/content.min.css';
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 
 class RichEditor extends React.Component {
   constructor(props) {

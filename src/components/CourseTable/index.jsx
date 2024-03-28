@@ -6,7 +6,7 @@ import Select from 'react-select';
 import qs from 'query-string';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { getConfig } from '@edx/frontend-platform';
-import { SearchField } from '@edx/paragon';
+import { SearchField } from '@openedx/paragon';
 
 import TableContainer from '../../containers/TableContainer';
 import ButtonToolbar from '../ButtonToolbar';

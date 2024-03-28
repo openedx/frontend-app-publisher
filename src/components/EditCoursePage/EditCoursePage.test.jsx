@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 
 import EditCoursePage from './index';
