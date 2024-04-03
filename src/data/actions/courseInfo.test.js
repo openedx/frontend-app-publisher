@@ -204,6 +204,12 @@ describe('courseInfo edit course actions', () => {
         per_click_usa: 25,
         per_click_international: 30,
       },
+      additional_metadata: {
+        certificate_info: {
+          heading: 'Test Certificate',
+          blurb: 'test blurb',
+        },
+      },
       imageSrc: 'http://updated.image.src/woo.small',
       course_runs: [
         {
@@ -224,8 +230,10 @@ describe('courseInfo edit course actions', () => {
     expect(changeMock).toHaveBeenNthCalledWith(8, 'in_year_value.per_lead_international', 20);
     expect(changeMock).toHaveBeenNthCalledWith(9, 'in_year_value.per_click_usa', 25);
     expect(changeMock).toHaveBeenNthCalledWith(10, 'in_year_value.per_click_international', 30);
-    expect(changeMock).toHaveBeenNthCalledWith(11, 'course_runs[0].status', 'published');
-    expect(changeMock).toHaveBeenNthCalledWith(12, 'course_runs[0].transcript_languages', ['en-us']);
+    expect(changeMock).toHaveBeenNthCalledWith(11, 'additional_metadata.certificate_info.heading', 'Test Certificate');
+    expect(changeMock).toHaveBeenNthCalledWith(12, 'additional_metadata.certificate_info.blurb', 'test blurb');
+    expect(changeMock).toHaveBeenNthCalledWith(13, 'course_runs[0].status', 'published');
+    expect(changeMock).toHaveBeenNthCalledWith(14, 'course_runs[0].transcript_languages', ['en-us']);
   });
 });
 

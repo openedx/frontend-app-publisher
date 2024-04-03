@@ -102,6 +102,7 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
     4. url_slug: Auto-generated on backend if not provided
     5. tags: To maintain ordering returned by the backend
     6. in_year_value: each dict key has default backend value which is not read by form unless changed.
+    7. additional_metadata.certificate_info: exec-ed courses needs it and is not read by form unless changed.
   */
   return (dispatch) => {
     const {
@@ -118,6 +119,12 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
         per_click_usa: perClickUSA,
         per_click_international: perClicknternational,
       },
+      additional_metadata: {
+        certificate_info: {
+          heading,
+          blurb,
+        },
+      },
     } = initialValues;
 
     // This emits a redux action called CHANGE that will update:
@@ -131,6 +138,8 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
     change('in_year_value.per_lead_international', perLeadInternational);
     change('in_year_value.per_click_usa', perClickUSA);
     change('in_year_value.per_click_international', perClicknternational);
+    change('additional_metadata.certificate_info.heading', heading);
+    change('additional_metadata.certificate_info.blurb', blurb);
     for (let i = 0; i < initialCourseRuns.length; i += 1) {
       change(`course_runs[${i}].status`, initialCourseRuns[i].status);
       change(`course_runs[${i}].transcript_languages`, initialCourseRuns[i].transcript_languages);
