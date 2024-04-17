@@ -117,15 +117,17 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
         per_lead_usa: perLeadUSA,
         per_lead_international: perLeadInternational,
         per_click_usa: perClickUSA,
-        per_click_international: perClicknternational,
+        per_click_international: perClickInternational,
       },
-      additional_metadata: {
-        certificate_info: {
-          heading,
-          blurb,
-        },
-      },
+      additional_metadata: additionalMetadata,
     } = initialValues;
+
+    const {
+      certificate_info: {
+        heading,
+        blurb,
+      } = {},
+    } = additionalMetadata || {};
 
     // This emits a redux action called CHANGE that will update:
     change('imageSrc', initialImageSrc);
@@ -137,7 +139,7 @@ function updateFormValuesAfterSave(change, currentFormValues, initialValues) {
     change('in_year_value.per_lead_usa', perLeadUSA);
     change('in_year_value.per_lead_international', perLeadInternational);
     change('in_year_value.per_click_usa', perClickUSA);
-    change('in_year_value.per_click_international', perClicknternational);
+    change('in_year_value.per_click_international', perClickInternational);
     change('additional_metadata.certificate_info.heading', heading);
     change('additional_metadata.certificate_info.blurb', blurb);
     for (let i = 0; i < initialCourseRuns.length; i += 1) {
