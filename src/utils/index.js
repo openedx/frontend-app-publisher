@@ -369,6 +369,12 @@ const buildInitialPrices = (entitlements, courseRuns) => {
 const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid
   && !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
 
+const restrictionTypeOptions = [
+  { value: '', label: '--------' },
+  { value: 'custom-b2b-enterprise', label: 'Custom Enterprise' },
+  { value: 'custom-b2c', label: 'Custom B2C' },
+];
+
 export {
   courseRunIsArchived,
   getDateWithDashes,
@@ -401,4 +407,5 @@ export {
   loadOptions,
   courseTagObjectsToSelectOptions,
   getCourseUrlSlugPattern,
+  restrictionTypeOptions,
 };
