@@ -138,6 +138,36 @@ describe('Collapsible Course Run', () => {
     expect(variantIdField.exists()).toBe(true);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+  it.each(['custom-b2c', ''])('renders correctly restriction type field for external course\'s course run', (restrictionType) => {
+    const courseInfo = {
+      data: {
+        product_source: {
+          slug: 'test-source',
+          name: 'Test Source',
+          description: 'Test Source Description',
+        },
+        course_type: EXECUTIVE_EDUCATION_SLUG,
+      },
+    };
+    const courseRun = { ...unpublishedCourseRun, restriction_type: restrictionType };
+    const component = shallow(
+      <CollapsibleCourseRun
+        languageOptions={languageOptions}
+        pacingTypeOptions={pacingTypeOptions}
+        courseRun={courseRun}
+        courseId="test-course"
+        courseUuid="11111111-1111-1111-1111-111111111111"
+        type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+        currentFormValues={currentFormValues}
+        courseRunTypeOptions={courseRunTypeOptions}
+        index={1}
+        courseInfo={courseInfo}
+      />,
+    );
+    const restrictionTypeField = component.find('Field[name="test-course.restriction_type"]');
+    expect(restrictionTypeField.exists()).toBe(true);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
 
   it('renders correctly with external key field enabled', () => {
     const runTypeModes = {

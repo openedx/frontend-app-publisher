@@ -19,6 +19,7 @@ import FieldLabel from '../FieldLabel';
 import {
   courseRunIsArchived, localTimeZone, formatDate, isSafari, getDateWithDashes,
   getDateWithSlashes, isNonExemptChanged, isPristine, hasMastersTrack, jsonDeepEqual, utcTimeZone, isExternalCourse,
+  restrictionTypeOptions,
 } from '../../utils';
 import Pill from '../Pill';
 import RenderInputTextField from '../RenderInputTextField';
@@ -33,7 +34,7 @@ import {
   PUBLISHED, DATE_INPUT_PATTERN, FORMAT_DATE_MATCHER, NORMALIZE_DATE_MATCHER, REVIEWED,
 } from '../../data/constants';
 import {
-  dateEditHelp, runTypeHelp, pacingEditHelp, publishDateHelp, courseRunVariantIdHelp,
+  dateEditHelp, runTypeHelp, pacingEditHelp, publishDateHelp, courseRunVariantIdHelp, courseRunRestrictionTypeHelp,
 } from '../../helpText';
 import RichEditor from '../RichEditor';
 import ListField from '../ListField';
@@ -300,6 +301,16 @@ class CollapsibleCourseRun extends React.Component {
             disabled={disabled}
             optional
           />
+        )}
+        {isExternalCourse(productSource, courseType) && (
+        <Field
+          name={`${courseId}.restriction_type`}
+          component={RenderSelectField}
+          options={restrictionTypeOptions}
+          label={<FieldLabel text="Restriction Type" helpText={courseRunRestrictionTypeHelp} />}
+          disabled={disabled}
+          props={{ name: `${courseId}.restriction_type` }}
+        />
         )}
         {/* TODO this should be refactored when paragon supports safari */}
         {/* text inputs for safari */}

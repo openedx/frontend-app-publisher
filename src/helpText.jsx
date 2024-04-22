@@ -30,6 +30,15 @@ const courseRunVariantIdHelp = (
   </div>
 );
 
+const courseRunRestrictionTypeHelp = (
+  <div>
+    <p>
+      The restriction type for custom runs. These runs are only exposed in APIs if
+      the associated restriction type is passed in as a query param
+    </p>
+  </div>
+);
+
 function dateEditHelp(courseRun) {
   return (
     <div>
@@ -262,5 +271,6 @@ export {
   oldUrlSlugExample,
   subdirectoryUrlSlugExample,
   courseRunVariantIdHelp,
+  courseRunRestrictionTypeHelp,
   keyHelp,
 };
