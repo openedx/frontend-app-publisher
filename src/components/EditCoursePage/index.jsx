@@ -220,6 +220,7 @@ class EditCoursePage extends React.Component {
         weeks_to_complete: courseRun.weeks_to_complete
           ? courseRun.weeks_to_complete
           : null,
+        restriction_type: courseRun.restriction_type,
       });
     });
     return sendCourseRuns;
@@ -541,6 +542,7 @@ class EditCoursePage extends React.Component {
         start: courseRun.start,
         end: courseRun.end,
         variant_id: courseRun.variant_id,
+        restriction_type: courseRun.restriction_type ?? '',
         upgrade_deadline_override:
           courseRun.seats.length > 0
             ? getUpgradeDeadlineOverride(courseRun.seats)
