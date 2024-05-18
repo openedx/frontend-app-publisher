@@ -252,6 +252,30 @@ class EditCoursePage extends React.Component {
     return editedRun;
   }
 
+  formatFacts(addMeta) {
+    const fact_1 = {
+      heading: addMeta.facts_1_heading,
+      blurb: addMeta.facts_1_blurb,
+    };
+    const fact_2 = {
+      heading: addMeta.facts_2_heading,
+      blurb: addMeta.facts_2_blurb,
+    };
+
+    if (fact_1.heading && fact_2.heading) {
+      return [
+        fact_1, fact_2,
+      ];
+    }
+    if (fact_1.heading) {
+      return [fact_1];
+    }
+    if (fact_2.heading) {
+      return [fact_2];
+    }
+    return [];
+  }
+
   formatAdditionalMetadataFields(courseData) {
     const variantId = courseData.additional_metadata.variant_id || null;
     const courseTerm = courseData.additional_metadata.course_term_override || null;
@@ -263,20 +287,11 @@ class EditCoursePage extends React.Component {
       lead_capture_form_url:
         courseData.additional_metadata.lead_capture_form_url,
       organic_url: courseData.additional_metadata.organic_url,
-      certificate_info: {
+      certificate_info: courseData.additional_metadata.certificate_info_heading ? ({
         heading: courseData.additional_metadata.certificate_info_heading,
         blurb: courseData.additional_metadata.certificate_info_blurb,
-      },
-      facts: [
-        {
-          heading: courseData.additional_metadata.facts_1_heading,
-          blurb: courseData.additional_metadata.facts_1_blurb,
-        },
-        {
-          heading: courseData.additional_metadata.facts_2_heading,
-          blurb: courseData.additional_metadata.facts_2_blurb,
-        },
-      ],
+      }) : null,
+      facts: this.formatFacts(courseData.additional_metadata),
       start_date: courseData.additional_metadata.start_date,
       end_date: courseData.additional_metadata.end_date,
       // eslint-disable-next-line max-len
@@ -313,32 +328,18 @@ class EditCoursePage extends React.Component {
   }
 
   formatLocationRestrictionFields(courseData) {
-    if (courseData?.location_restriction) {
-      return {
-        restriction_type: courseData.location_restriction.restriction_type,
-        countries: courseData.location_restriction.countries,
-        states: courseData.location_restriction.states,
-      };
-    }
     return {
-      restriction_type: null,
-      countries: null,
-      states: null,
+      restriction_type: courseData.location_restriction?.restriction_type || null,
+      countries: courseData.location_restriction?.countries || [],
+      states: courseData.location_restriction?.states || [],
     };
   }
 
   formatGeoLocationFields(courseData) {
-    if (courseData?.geolocation) {
-      return {
-        geoLocationName: courseData.geolocation.location_name,
-        geoLocationLng: courseData.geolocation.lng,
-        geoLocationLat: courseData.geolocation.lat,
-      };
-    }
     return {
-      geoLocationName: null,
-      geoLocationLng: null,
-      geoLocationLat: null,
+      geoLocationName: courseData.geolocation?.location_name || '',
+      geoLocationLng: courseData.geolocation?.lng || null,
+      geoLocationLat: courseData.geolocation?.lat || null,
     };
   }
 
