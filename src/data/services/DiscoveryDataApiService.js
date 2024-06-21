@@ -1,6 +1,7 @@
 import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 import { PAGE_SIZE } from '../constants/table';
+import { RESTRICTION_TYPE_VALUES as restrictionTypeValues } from '../constants';
 
 const discoveryBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/api/v1`;
 const publisherBaseUrl = `${process.env.DISCOVERY_API_BASE_URL}/publisher/api`;
@@ -10,6 +11,7 @@ class DiscoveryDataApiService {
     const queryParams = {
       editable: 1,
       exclude_utm: 1,
+      include_restricted: restrictionTypeValues,
     };
     const url = `${discoveryBaseUrl}/courses/${uuid}/`;
     return getAuthenticatedHttpClient().get(url, {
@@ -21,6 +23,7 @@ class DiscoveryDataApiService {
     const queryParams = {
       editable: 1,
       exclude_utm: 1,
+      include_restricted: restrictionTypeValues,
       ...params,
     };
     const url = `${discoveryBaseUrl}/course_runs/${key}`;
@@ -45,6 +48,7 @@ class DiscoveryDataApiService {
       fields: fields.join(),
       editable: 1,
       exclude_utm: 1,
+      include_restricted: restrictionTypeValues,
       ...options,
     };
     const url = `${discoveryBaseUrl}/courses/`;
@@ -145,6 +149,7 @@ class DiscoveryDataApiService {
   static editCourseRuns(courseRunsData) {
     const queryParams = {
       exclude_utm: 1,
+      include_restricted: restrictionTypeValues,
     };
     // Create a promises array to handle all of the new/modified course runs
     const promises = courseRunsData.map((courseRun) => {
@@ -213,6 +218,7 @@ class DiscoveryDataApiService {
     const { uuid } = courseData;
     const queryParams = {
       exclude_utm: 1,
+      include_restricted: restrictionTypeValues,
     };
     const url = `${discoveryBaseUrl}/courses/${uuid}/`;
     return getAuthenticatedHttpClient().patch(url, courseData, {
