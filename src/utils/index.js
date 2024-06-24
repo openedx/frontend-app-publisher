@@ -370,7 +370,6 @@ const buildInitialPrices = (entitlements, courseRuns) => {
 const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid
   && !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
 
-
 export {
   courseRunIsArchived,
   getDateWithDashes,

@@ -39,7 +39,7 @@ const RESTRICTION_TYPE_OPTIONS = [
   { value: 'custom-b2c', label: 'Custom B2C' },
 ];
 
-const RESTRICTION_TYPE_VALUES = RESTRICTION_TYPE_OPTIONS.map(opt=>opt.value).filter(Boolean).join(',')
+const RESTRICTION_TYPE_VALUES = RESTRICTION_TYPE_OPTIONS.map(opt => opt.value).filter(Boolean).join(',');
 
 export {
   VERIFIED_TRACK,
