@@ -11,7 +11,7 @@ import { getConfig } from '@edx/frontend-platform';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import { faCopy as solidCopy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Hyperlink, Tooltip, OverlayTrigger } from '@edx/paragon';
+import { Hyperlink, Tooltip, OverlayTrigger } from '@openedx/paragon';
 
 import CourseRunButtonToolbar from './CourseRunButtonToolbar';
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';

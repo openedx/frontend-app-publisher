@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ActionRow, Button, ModalDialog } from '@edx/paragon';
+import { ActionRow, Button, ModalDialog } from '@openedx/paragon';
 
 const ConfirmationModal = ({
   onSubmit,

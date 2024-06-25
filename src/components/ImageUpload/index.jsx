@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 
 class ImageUpload extends React.Component {
   constructor(props) {

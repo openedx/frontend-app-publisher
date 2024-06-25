@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 
 import EditCourseForm from './EditCourseForm';
 import PageContainer from '../PageContainer';

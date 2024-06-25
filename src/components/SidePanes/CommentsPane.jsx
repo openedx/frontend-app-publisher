@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon, TextArea, Alert } from '@edx/paragon';
+import { Icon, TextArea, Alert } from '@openedx/paragon';
 import { formatDate } from '../../utils/index';
 
 import Comment from './Comment';

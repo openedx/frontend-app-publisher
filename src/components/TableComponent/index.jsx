@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import { Pagination, DataTable, Alert } from '@edx/paragon';
-import { Error as ErrorIcon } from '@edx/paragon/icons';
+import { Pagination, DataTable, Alert } from '@openedx/paragon';
+import { Error as ErrorIcon } from '@openedx/paragon/icons';
 import 'font-awesome/css/font-awesome.css';
 
 import './TableComponent.scss';

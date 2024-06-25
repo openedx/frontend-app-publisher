@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { Edit, Delete } from '@edx/paragon/icons';
+import { Edit, Delete } from '@openedx/paragon/icons';
 
 import sourceInfo from '../../data/actions/sourceInfo';
 import store from '../../data/store';

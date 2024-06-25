@@ -6,7 +6,7 @@ import { redirectToLogout } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
 import {
   Dropdown, Hyperlink, AvatarButton,
-} from '@edx/paragon';
+} from '@openedx/paragon';
 import { getConfig } from '@edx/frontend-platform';
 
 const Header = ({ darkModeOn, toggleDarkMode }) => {
