@@ -6,6 +6,7 @@ import qs from 'query-string';
 import {
   COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN_OLD,
   MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE, EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG,
+  RESTRICTION_TYPE_OPTIONS as restrictionTypeOptions,
 } from '../data/constants';
 import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
 import { PAGE_SIZE } from '../data/constants/table';
@@ -368,12 +369,6 @@ const buildInitialPrices = (entitlements, courseRuns) => {
 
 const hasMastersTrack = (runTypeUuid, runTypeModes) => (!!runTypeUuid
   && !!runTypeModes[runTypeUuid] && runTypeModes[runTypeUuid].includes(MASTERS_TRACK.key));
-
-const restrictionTypeOptions = [
-  { value: '', label: '--------' },
-  { value: 'custom-b2b-enterprise', label: 'Custom Enterprise' },
-  { value: 'custom-b2c', label: 'Custom B2C' },
-];
 
 export {
   courseRunIsArchived,
