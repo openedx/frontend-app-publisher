@@ -33,6 +33,14 @@ const COURSE_URL_SLUG_VALIDATION_MESSAGE = {
   [COURSE_URL_SLUG_PATTERN]: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only and must be in the format <custom-url-slug> or learn/<primary_subject>/<org-slug>-<course_slug>.',
 };
 
+const RESTRICTION_TYPE_OPTIONS = [
+  { value: '', label: '--------' },
+  { value: 'custom-b2b-enterprise', label: 'Custom Enterprise' },
+  { value: 'custom-b2c', label: 'Custom B2C' },
+];
+
+const RESTRICTION_TYPE_VALUES = RESTRICTION_TYPE_OPTIONS.map(opt => opt.value).filter(Boolean).join(',');
+
 export {
   VERIFIED_TRACK,
   AUDIT_TRACK,
@@ -59,4 +67,6 @@ export {
   COURSE_URL_SLUG_PATTERN_NEW,
   COURSE_URL_SLUG_PATTERN_OLD,
   COURSE_URL_SLUG_VALIDATION_MESSAGE,
+  RESTRICTION_TYPE_OPTIONS,
+  RESTRICTION_TYPE_VALUES,
 };

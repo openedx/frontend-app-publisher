@@ -6,7 +6,7 @@ import { shallowToJson } from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import { Alert } from '@edx/paragon';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
-
+import { createStore } from 'redux';
 import EditCoursePage from './index';
 
 import ConfirmationModal from '../ConfirmationModal';
@@ -15,6 +15,7 @@ import {
   PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED, EXECUTIVE_EDUCATION_SLUG,
 } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
+import createRootReducer from '../../data/reducers';
 import { jsonDeepCopy } from '../../utils';
 
 // Need to mock the Editor as we don't want to test TinyMCE
@@ -27,6 +28,7 @@ describe('EditCoursePage', () => {
   const defaultEnd = '2019-08-14T00:00:00Z';
   const defaultUpgradeDeadlineOverride = '2019-09-14T00:00:00Z';
   const variantId = '00000000-0000-0000-0000-000000000000';
+  const restrictionType = 'custom-b2b-enterprise';
   const watchers = ['test@test.com'];
 
   const courseInfo = {
@@ -64,6 +66,7 @@ describe('EditCoursePage', () => {
           end: defaultEnd,
           upgrade_deadline_override: '2019-05-10T00:00:00Z',
           variant_id: null,
+          restriction_type: restrictionType,
           expected_program_type: 'micromasters',
           expected_program_name: 'Test Program Name',
           go_live_date: '2019-05-06T00:00:00Z',
@@ -89,6 +92,7 @@ describe('EditCoursePage', () => {
           end: defaultEnd,
           upgrade_deadline_override: '2019-05-10T00:00:00Z',
           variant_id: null,
+          restriction_type: null,
           expected_program_type: null,
           expected_program_name: '',
           go_live_date: '2019-05-06T00:00:00Z',
@@ -213,6 +217,42 @@ describe('EditCoursePage', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
+  it('renders course run restriction_type correctly for executive education course', () => {
+    const store = createStore(createRootReducer());
+    const courseInfoExecEd = {
+      ...courseInfo,
+      data: {
+        ...courseInfo.data,
+        product_source: {
+          slug: 'test-source',
+          name: 'Test Source',
+          description: 'Test Source Description',
+        },
+        course_type: EXECUTIVE_EDUCATION_SLUG,
+      },
+    };
+    const EditCoursePageWrapper = (props) => (
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <EditCoursePage
+              {...props}
+              courseInfo={courseInfoExecEd}
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>
+    );
+
+    const wrapper = mount(EditCoursePageWrapper());
+    const firstSelect = wrapper.find('select[name="course_runs[0].restriction_type"]');
+    expect(firstSelect.props().value).toBe('custom-b2b-enterprise');
+    const secondSelect = wrapper.find('select[name="course_runs[1].restriction_type"]');
+    expect(secondSelect.props().value).toBe('');
+  });
+
   it('renders page correctly with courseInfo error', () => {
     const component = shallow(<EditCoursePage
       courseInfo={{
@@ -326,6 +366,7 @@ describe('EditCoursePage', () => {
       end: defaultEnd,
       upgrade_deadline_override: defaultUpgradeDeadlineOverride,
       variant_id: variantId,
+      restriction_type: restrictionType,
       expected_program_type: null,
       expected_program_name: '',
       go_live_date: '2019-05-06T00:00:00Z',
@@ -474,6 +515,7 @@ describe('EditCoursePage', () => {
         weeks_to_complete: '100',
         upgrade_deadline_override: defaultUpgradeDeadlineOverride,
         variant_id: variantId,
+        restriction_type: restrictionType,
       },
       {
         content_language: 'en-us',
@@ -496,6 +538,7 @@ describe('EditCoursePage', () => {
         weeks_to_complete: '100',
         upgrade_deadline_override: defaultUpgradeDeadlineOverride,
         variant_id: variantId,
+        restriction_type: restrictionType,
       },
     ];
 
@@ -933,7 +976,6 @@ describe('EditCoursePage', () => {
           .toEqual({});
       }, 0);
     });
-
     const expectedSendCourseExEdCourses = {
       additional_information: '<p>Stuff</p>',
       additional_metadata: {
