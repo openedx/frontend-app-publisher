@@ -1,0 +1,18 @@
+# This file records information about this repo. Its use is described in OEP-55:
+# https://open-edx-proposals.readthedocs.io/en/latest/processes/oep-0055-proc-project-maintainers.html
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: 'frontend-app-publisher'
+  description: 'The Microfrontend for the course publisher facilitates the creation and curation of marketing content.'
+  links:
+    - url: 'https://github.com/openedx/frontend-app-publisher'
+      title: 'frontend-app-publisher GitHub Repository'
+      icon: 'Web'
+spec:
+  owner: group:2u-phoenix
+  type: 'service'
+  lifecycle: 'production'
+  dependsOn:
+  - course-discovery
