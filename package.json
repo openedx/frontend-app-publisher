@@ -16,7 +16,7 @@
     "prepublishOnly": "npm run build",
     "start": "fedx-scripts webpack-dev-server --progress",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --coverage --runInBand",
-    "test": "TZ=GMT fedx-scripts jest --coverage --runInBand",
+    "test": "TZ=GMT fedx-scripts jest --coverage --maxWorkers=2",
     "snapshot": "TZ=GMT fedx-scripts jest --updateSnapshot",
     "stylelint": "stylelint '**/*.scss'"
   },
