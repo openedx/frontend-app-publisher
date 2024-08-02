@@ -268,7 +268,7 @@ export class BaseEditCourseForm extends React.Component {
 
     const {
       data: {
-        results: allResults,
+        results: allResults = [],
       },
     } = collaboratorOptions;
 
