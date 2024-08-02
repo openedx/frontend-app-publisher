@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Form } from '@edx/paragon';
+import { Form } from '@openedx/paragon';
 import {
   getDateWithDashes,
   getDateWithSlashes,
