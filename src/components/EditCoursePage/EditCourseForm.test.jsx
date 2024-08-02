@@ -490,7 +490,7 @@ describe('BaseEditCourseForm', () => {
       uuid={initialValuesFull.uuid}
       type={initialValuesFull.type}
       id="edit-course-form"
-      collaboratorOptions={{data: {}}}
+      collaboratorOptions={ {data: {}} }
     />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
