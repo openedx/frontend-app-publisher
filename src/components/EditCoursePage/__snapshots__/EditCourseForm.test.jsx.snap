@@ -3700,6 +3700,1391 @@ exports[`BaseEditCourseForm renders correctly when submitting for review 1`] = `
 </div>
 `;
 
+exports[`BaseEditCourseForm renders html correctly while fetching collaborator options 1`] = `
+<div
+  className="edit-course-form"
+>
+  <form
+    id="edit-course-form"
+    onSubmit={[Function]}
+  >
+    <FieldLabel
+      className="mb-2 h2"
+      extraText=""
+      helpText=""
+      id={null}
+      optional={false}
+      text="Test Title"
+    />
+    <CustomCollapsible
+      key="Test Key"
+      onToggle={[Function]}
+      open={false}
+      title={
+        <React.Fragment>
+          Course: Test Title
+          <Pill
+            statuses={
+              [
+                "unpublished",
+              ]
+            }
+          />
+          <div
+            className="course-preview-url"
+          >
+            No Preview Link Available
+          </div>
+        </React.Fragment>
+      }
+    >
+      <div
+        className="mb-3"
+      >
+        <span
+          aria-hidden={true}
+          className="text-primary-500"
+        >
+           All fields are required for publication unless otherwise specified.
+        </span>
+      </div>
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <div>
+                <p>
+                  Maximum 70 characters. Recommended 50 or fewer characters.
+                </p>
+                <p>
+                  An effective course title:
+                </p>
+                <ul>
+                  <li>
+                    Clearly indicates the course subject matter.
+                  </li>
+                  <li>
+                    Follows search engine optimization (SEO) guidelines.
+                  </li>
+                  <li>
+                    Targets a global audience.
+                  </li>
+                </ul>
+                <p>
+                  <a
+                    href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Learn more.
+                  </a>
+                </p>
+                <p>
+                  <b>
+                    Example:
+                  </b>
+                </p>
+                <p>
+                  English Grammar and Essay Writing
+                </p>
+              </div>
+            }
+            id="title.label"
+            optional={false}
+            text="Title"
+          />
+        }
+        name="title"
+        required={true}
+        type="text"
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInput": [Function],
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <div>
+                <p>
+                  <b>
+                    Note: Course editors cannot edit the URL slug. Please reach out to your project coordinator or edX support to edit this field.
+                  </b>
+                </p>
+                <p>
+                  This field is optional. If left blank, edX will automatically create a URL slug based on the course title.
+                </p>
+                <p>
+                  If you find that a given URL slug is already in use, we recommend adding your school or institution name to the slug to ensure uniqueness.
+                </p>
+                <p>
+                  This URL slug can be changed, and learners who visit an older URL will be redirected to the current URL.
+                </p>
+                <p>
+                  <b>
+                    What is a URL slug?
+                  </b>
+                </p>
+                <p>
+                  In the following example URLs:
+                </p>
+                <p>
+                  <span>
+                    www.edx.org/course/math-101, the URL slug is “math-101”
+                  </span>
+                </p>
+                <span>
+                  Using URL slugs that are short and easily understandable helps learners find and remember course pages, and also drives higher rankings in search engine results.
+                </span>
+              </div>
+            }
+            id="slug.label"
+            optional={true}
+            text="URL slug"
+          />
+        }
+        name="url_slug"
+        optional={true}
+        pattern="^[a-z0-9_]+(?:-[a-z0-9_]+)*$"
+        type="text"
+      />
+      <Field
+        component={[Function]}
+        createOptionValidator={[Function]}
+        disabled={true}
+        isCreatable={true}
+        isMulti={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                A list of email addresses that will receive notifications when the course run of the course is published or reviewed.
+              </p>
+            }
+            id="watchers.label"
+            optional={true}
+            text="Watchers"
+          />
+        }
+        name="watchers_list"
+        optional={true}
+      />
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
+          helpText={
+            <div>
+              <p>
+                The Product source is a key that identifies where the course originates.
+              </p>
+              <p>
+                <b>
+                  Example:
+                </b>
+              </p>
+              <p>
+                If the course originates from the edX platform, the Product source is edX.
+              </p>
+            </div>
+          }
+          id="productSource"
+          optional={false}
+          text="Product Source"
+        />
+        <div
+          className="mb-3"
+        >
+          N/A
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-2"
+          extraText=""
+          helpText=""
+          id="number"
+          optional={false}
+          text="Number"
+        />
+        <div
+          className="mb-3"
+        >
+          Test101x
+        </div>
+      </div>
+      <div>
+        <FieldLabel
+          className="mb-0"
+          extraText=""
+          helpText=""
+          id="data_modified_timestamp"
+          optional={false}
+          text="Last Modified Timestamp"
+        />
+        <div
+          className="p-3 d-flex flex-wrap justify-content-between"
+        >
+          <div>
+             
+            <b>
+              Date: 
+            </b>
+             
+            N/A
+             
+          </div>
+          <div>
+            <b>
+              Time (UTC): 
+            </b>
+             
+            N/A
+          </div>
+        </div>
+      </div>
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText="Cannot edit after submission"
+            helpText={
+              <div>
+                <p>
+                  The Course enrollment track determines what enrollment tracks are eligible for the course runs.
+                </p>
+                <p>
+                  <b>
+                    Example:
+                  </b>
+                </p>
+                <p>
+                  The Verified and Audit selection will allow course runs to either be Verified and Audit or Audit only.
+                </p>
+              </div>
+            }
+            id="type.label"
+            optional={false}
+            text="Course enrollment track"
+          />
+        }
+        name="type"
+        options={
+          [
+            {
+              "label": "Select enrollment track",
+              "value": "",
+            },
+            {
+              "label": "Credit",
+              "value": "9521aa7d-801b-4a67-92c3-716ea30f5086",
+            },
+            {
+              "label": "Masters Only",
+              "value": "7b41992e-f268-4331-8ba9-72acb0880454",
+            },
+            {
+              "label": "Verified and Audit",
+              "value": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
+            },
+            {
+              "label": "Professional Only",
+              "value": "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e",
+            },
+            {
+              "label": "Audit Only",
+              "value": "03e09c15-4127-4031-bc02-e20fcbdf09f0",
+            },
+          ]
+        }
+      />
+      <PriceList
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        priceLabels={{}}
+        required={false}
+      />
+      <FieldLabel
+        className=""
+        extraText=""
+        helpText={
+          <div>
+            <p>
+              Course teams are responsible for securing any necessary permissions for use of third-party logos.
+            </p>
+            <p>
+              To elaborate on the support, please include additional information in the “About this course” section. Please avoid including statements that the course is jointly offered or that the 3rd party is collaborating or partnering with edX.
+            </p>
+          </div>
+        }
+        id="collaborators.label"
+        optional={true}
+        text="Collaborators"
+      />
+      <Field
+        component={[Function]}
+        createNewUrl="/collaborators/new"
+        disabled={true}
+        fetchSuggestions={[Function]}
+        itemType="collaborator"
+        name="collaborators"
+        newItemInfo={{}}
+        newItemText="Add New Collaborator"
+        referrer="/courses/11111111-1111-1111-1111-111111111111"
+        renderItemComponent={[Function]}
+        renderSuggestion={[Function]}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        id="image"
+        label={
+          <FieldLabel
+            className=""
+            extraText="Image must be 1134x675 pixels in size."
+            helpText={
+              <div>
+                <p>
+                  An eye-catching, colorful image that captures the essence of your course.
+                </p>
+                <ul>
+                  <li>
+                    New course images must be 1134×675 pixels in size.
+                  </li>
+                  <li>
+                    The image must be a JPEG or PNG file.
+                  </li>
+                  <li>
+                    Each course must have a unique image.
+                  </li>
+                  <li>
+                    The image cannot include text or headlines.
+                  </li>
+                  <li>
+                    You must have permission to use the image. Possible image sources include Flickr creative commons, Stock Vault, Stock XCHNG, and iStock Photo.
+                  </li>
+                </ul>
+                <p>
+                  <a
+                    href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#representative-image-guidelines"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Learn more.
+                  </a>
+                </p>
+              </div>
+            }
+            id="image.label"
+            optional={false}
+            text="Image"
+          />
+        }
+        maxImageSizeKilo={1000}
+        name="imageSrc"
+        requiredHeight={675}
+        requiredWidth={1134}
+      />
+      <Field
+        component={[Function]}
+        createOptionValidator={[Function]}
+        defaultOptions={[]}
+        disabled={true}
+        isAsync={true}
+        isCreatable={true}
+        isMulti={true}
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <p>
+                You can add tags in the format mba-no-gmat,mba,mba_4_modules,mba_NY
+              </p>
+            }
+            id="tags.label"
+            optional={true}
+            text="Topics"
+          />
+        }
+        loadOptions={[Function]}
+        name="tags"
+        optional={true}
+      />
+      <hr />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <div>
+                <dl>
+                  <dt>
+                    Introductory
+                  </dt>
+                  <dd>
+                    No prerequisites
+                  </dd>
+                  <dt>
+                    Intermediate
+                  </dt>
+                  <dd>
+                    Basic prerequisites
+                  </dd>
+                  <dt>
+                    Advanced
+                  </dt>
+                  <dd>
+                    Significant prerequisites
+                  </dd>
+                </dl>
+              </div>
+            }
+            id="level.label"
+            optional={false}
+            text="Course level"
+          />
+        }
+        name="level_type"
+        options={
+          [
+            {
+              "label": "--",
+              "value": "",
+            },
+            {
+              "label": "Beginner",
+              "value": "beginner",
+            },
+            {
+              "label": "Intermediate",
+              "value": "intermediate",
+            },
+            {
+              "label": "Advanced",
+              "value": "advanced",
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText={
+              <div>
+                <p>
+                  The subject of the course.
+                </p>
+                <p>
+                  You can select up to two subjects in addition to the primary subject. Only the primary subject appears on the About page.
+                </p>
+                <p>
+                  <a
+                    href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#subject-guidelines"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Learn more.
+                  </a>
+                </p>
+              </div>
+            }
+            id="subject1.label"
+            optional={false}
+            text="Primary subject"
+          />
+        }
+        name="subjectPrimary"
+        options={
+          [
+            {
+              "label": "--",
+              "value": "",
+            },
+            {
+              "label": "Business",
+              "value": "business",
+            },
+            {
+              "label": "Chemistry",
+              "value": "chemistry",
+            },
+            {
+              "label": "English",
+              "value": "english",
+            },
+            {
+              "label": "Security",
+              "value": "security",
+            },
+          ]
+        }
+        required={false}
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Secondary subject"
+          />
+        }
+        name="subjectSecondary"
+        optional={true}
+        options={
+          [
+            {
+              "label": "--",
+              "value": "",
+            },
+            {
+              "label": "Business",
+              "value": "business",
+            },
+            {
+              "label": "Chemistry",
+              "value": "chemistry",
+            },
+            {
+              "label": "English",
+              "value": "english",
+            },
+            {
+              "label": "Security",
+              "value": "security",
+            },
+          ]
+        }
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Tertiary subject"
+          />
+        }
+        name="subjectTertiary"
+        optional={true}
+        options={
+          [
+            {
+              "label": "--",
+              "value": "",
+            },
+            {
+              "label": "Business",
+              "value": "business",
+            },
+            {
+              "label": "Chemistry",
+              "value": "chemistry",
+            },
+            {
+              "label": "English",
+              "value": "english",
+            },
+            {
+              "label": "Security",
+              "value": "security",
+            },
+          ]
+        }
+      />
+      <Field
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id={null}
+            optional={true}
+            text="Organization Short Code Override"
+          />
+        }
+        name="organization_short_code_override"
+        optional={true}
+      />
+      <Field
+        className="course-image"
+        component={[Function]}
+        disabled={true}
+        extraInput={
+          {
+            "onInvalid": [Function],
+          }
+        }
+        id="organization-logo-override"
+        label={
+          <FieldLabel
+            className=""
+            extraText=""
+            helpText=""
+            id="organization_logo_override.label"
+            optional={false}
+            text="Organization Logo Override"
+          />
+        }
+        maxImageSizeKilo={256}
+        name="organization_logo_override_url"
+        optional={true}
+        requiredHeight={110}
+        requiredWidth={110}
+      />
+    </CustomCollapsible>
+    <FieldLabel
+      className="mt-4 mb-2 h2"
+      extraText=""
+      helpText=""
+      id={null}
+      optional={false}
+      text="Course runs"
+    />
+    <FieldArray
+      change={[Function]}
+      collaboratorInfo={{}}
+      collaboratorOptions={
+        {
+          "data": {},
+        }
+      }
+      collapsiblesOpen={[]}
+      component={[Function]}
+      courseInReview={false}
+      courseInfo={
+        {
+          "data": {
+            "skill_names": [],
+          },
+        }
+      }
+      courseOptions={
+        {
+          "data": {
+            "actions": {
+              "POST": {
+                "additional_metadata": {
+                  "children": {
+                    "external_course_marketing_type": {
+                      "choices": [
+                        {
+                          "display_name": "Short Course",
+                          "value": "short_course",
+                        },
+                        {
+                          "display_name": "Sprint",
+                          "value": "sprint",
+                        },
+                      ],
+                    },
+                    "product_status": {
+                      "choices": [
+                        {
+                          "display_name": "Published",
+                          "value": "published",
+                        },
+                        {
+                          "display_name": "Archived",
+                          "value": "archived",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "level_type": {
+                  "choices": [
+                    {
+                      "display_name": "Beginner",
+                      "value": "beginner",
+                    },
+                    {
+                      "display_name": "Intermediate",
+                      "value": "intermediate",
+                    },
+                    {
+                      "display_name": "Advanced",
+                      "value": "advanced",
+                    },
+                  ],
+                },
+                "location_restriction": {
+                  "children": {
+                    "countries": {
+                      "child": {
+                        "choices": [
+                          {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": {
+                      "choices": [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": {
+                      "child": {
+                        "choices": [
+                          {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                },
+                "subjects": {
+                  "child": {
+                    "choices": [
+                      {
+                        "display_name": "Business",
+                        "value": "business",
+                      },
+                      {
+                        "display_name": "Chemistry",
+                        "value": "chemistry",
+                      },
+                      {
+                        "display_name": "English",
+                        "value": "english",
+                      },
+                      {
+                        "display_name": "Security",
+                        "value": "security",
+                      },
+                    ],
+                  },
+                },
+                "type": {
+                  "type_options": [
+                    {
+                      "course_run_types": [
+                        {
+                          "is_marketable": true,
+                          "modes": [
+                            "credit",
+                            "verified",
+                            "audit",
+                          ],
+                          "name": "Credit",
+                          "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
+                        },
+                        {
+                          "is_marketable": true,
+                          "modes": [
+                            "verified",
+                            "audit",
+                          ],
+                          "name": "Verified and Audit",
+                          "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
+                        },
+                        {
+                          "is_marketable": true,
+                          "modes": [
+                            "audit",
+                          ],
+                          "name": "Audit Only",
+                          "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
+                        },
+                      ],
+                      "entitlement_types": [
+                        "verified",
+                      ],
+                      "name": "Credit",
+                      "tracks": [
+                        {
+                          "mode": {
+                            "certificate_type": "credit",
+                            "is_credit_eligible": true,
+                            "is_id_verified": true,
+                            "name": "Credit",
+                            "payee": "platform",
+                            "slug": "credit",
+                          },
+                          "seat_type": {
+                            "name": "Credit",
+                            "slug": "credit",
+                          },
+                        },
+                        {
+                          "mode": {
+                            "certificate_type": "verified",
+                            "is_credit_eligible": false,
+                            "is_id_verified": true,
+                            "name": "Verified",
+                            "payee": "platform",
+                            "slug": "verified",
+                          },
+                          "seat_type": {
+                            "name": "Verified",
+                            "slug": "verified",
+                          },
+                        },
+                        {
+                          "mode": {
+                            "certificate_type": "",
+                            "is_credit_eligible": false,
+                            "is_id_verified": false,
+                            "name": "Audit",
+                            "payee": "",
+                            "slug": "audit",
+                          },
+                          "seat_type": {
+                            "name": "Audit",
+                            "slug": "audit",
+                          },
+                        },
+                      ],
+                      "uuid": "9521aa7d-801b-4a67-92c3-716ea30f5086",
+                    },
+                    {
+                      "course_run_types": [
+                        {
+                          "is_marketable": false,
+                          "modes": [
+                            "masters",
+                          ],
+                          "name": "Masters Only",
+                          "uuid": "f394732f-ba43-4260-8ada-06a9f18e7160",
+                        },
+                      ],
+                      "entitlement_types": [],
+                      "name": "Masters Only",
+                      "tracks": [
+                        {
+                          "mode": {
+                            "certificate_type": "",
+                            "is_credit_eligible": false,
+                            "is_id_verified": false,
+                            "name": "Masters",
+                            "payee": "organization",
+                            "slug": "masters",
+                          },
+                          "seat_type": null,
+                        },
+                      ],
+                      "uuid": "7b41992e-f268-4331-8ba9-72acb0880454",
+                    },
+                    {
+                      "course_run_types": [
+                        {
+                          "is_marketable": true,
+                          "modes": [
+                            "verified",
+                            "audit",
+                          ],
+                          "name": "Verified and Audit",
+                          "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
+                        },
+                        {
+                          "is_marketable": true,
+                          "modes": [
+                            "audit",
+                          ],
+                          "name": "Audit Only",
+                          "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
+                        },
+                      ],
+                      "entitlement_types": [
+                        "verified",
+                      ],
+                      "name": "Verified and Audit",
+                      "tracks": [
+                        {
+                          "mode": {
+                            "certificate_type": "verified",
+                            "is_credit_eligible": false,
+                            "is_id_verified": true,
+                            "name": "Verified",
+                            "payee": "platform",
+                            "slug": "verified",
+                          },
+                          "seat_type": {
+                            "name": "Verified",
+                            "slug": "verified",
+                          },
+                        },
+                        {
+                          "mode": {
+                            "certificate_type": "",
+                            "is_credit_eligible": false,
+                            "is_id_verified": false,
+                            "name": "Audit",
+                            "payee": "",
+                            "slug": "audit",
+                          },
+                          "seat_type": {
+                            "name": "Audit",
+                            "slug": "audit",
+                          },
+                        },
+                      ],
+                      "uuid": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
+                    },
+                    {
+                      "course_run_types": [
+                        {
+                          "is_marketable": true,
+                          "modes": [
+                            "professional",
+                          ],
+                          "name": "Professional Only",
+                          "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
+                        },
+                      ],
+                      "entitlement_types": [
+                        "professional",
+                      ],
+                      "name": "Professional Only",
+                      "tracks": [
+                        {
+                          "mode": {
+                            "certificate_type": "professional",
+                            "is_credit_eligible": false,
+                            "is_id_verified": true,
+                            "name": "Professional",
+                            "payee": "platform",
+                            "slug": "professional",
+                          },
+                          "seat_type": {
+                            "name": "Professional",
+                            "slug": "professional",
+                          },
+                        },
+                      ],
+                      "uuid": "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e",
+                    },
+                    {
+                      "course_run_types": [
+                        {
+                          "is_marketable": true,
+                          "modes": [
+                            "audit",
+                          ],
+                          "name": "Audit Only",
+                          "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
+                        },
+                      ],
+                      "entitlement_types": [
+                        "audit",
+                      ],
+                      "name": "Audit Only",
+                      "tracks": [
+                        {
+                          "mode": {
+                            "certificate_type": "",
+                            "is_credit_eligible": false,
+                            "is_id_verified": false,
+                            "name": "Audit",
+                            "payee": "",
+                            "slug": "audit",
+                          },
+                          "seat_type": {
+                            "name": "Audit",
+                            "slug": "audit",
+                          },
+                        },
+                      ],
+                      "uuid": "03e09c15-4127-4031-bc02-e20fcbdf09f0",
+                    },
+                  ],
+                },
+              },
+            },
+          },
+          "error": null,
+          "isFetching": false,
+        }
+      }
+      courseRunOptions={
+        {
+          "data": {
+            "actions": {
+              "POST": {
+                "content_language": {
+                  "choices": [
+                    {
+                      "display_name": "Afrikaans",
+                      "value": "af",
+                    },
+                    {
+                      "display_name": "Arabic - United Arab Emirates",
+                      "value": "ar-ae",
+                    },
+                  ],
+                  "help_text": "Language in which the course is administered",
+                  "label": "Content language",
+                  "read_only": false,
+                  "required": false,
+                  "type": "field",
+                },
+                "expected_program_type": {
+                  "choices": [
+                    {
+                      "display_name": "Professional Certificate",
+                      "value": "professional-certificate",
+                    },
+                    {
+                      "display_name": "MicroMasters",
+                      "value": "micromasters",
+                    },
+                    {
+                      "display_name": "XSeries",
+                      "value": "xseries",
+                    },
+                    {
+                      "display_name": "Masters",
+                      "value": "masters",
+                    },
+                  ],
+                  "label": "Expected Program Type",
+                  "read_only": false,
+                  "required": false,
+                  "type": "field",
+                },
+                "pacing_type": {
+                  "choices": [
+                    {
+                      "display_name": "Instructor-paced",
+                      "value": "instructor_paced",
+                    },
+                    {
+                      "display_name": "Self-paced",
+                      "value": "self_paced",
+                    },
+                  ],
+                  "label": "Pacing type",
+                  "read_only": false,
+                  "required": false,
+                  "type": "choice",
+                },
+              },
+            },
+          },
+          "error": null,
+          "isFetching": false,
+        }
+      }
+      courseRunTypeOptions={
+        {
+          "03e09c15-4127-4031-bc02-e20fcbdf09f0": [
+            {
+              "label": "Select enrollment track",
+              "value": "",
+            },
+            {
+              "label": "Audit Only",
+              "value": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
+            },
+          ],
+          "7b41992e-f268-4331-8ba9-72acb0880454": [
+            {
+              "label": "Select enrollment track",
+              "value": "",
+            },
+            {
+              "label": "Masters Only",
+              "value": "f394732f-ba43-4260-8ada-06a9f18e7160",
+            },
+          ],
+          "8a8f30e1-23ce-4ed3-a361-1325c656b67b": [
+            {
+              "label": "Select enrollment track",
+              "value": "",
+            },
+            {
+              "label": "Verified and Audit",
+              "value": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
+            },
+            {
+              "label": "Audit Only",
+              "value": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
+            },
+          ],
+          "9521aa7d-801b-4a67-92c3-716ea30f5086": [
+            {
+              "label": "Select enrollment track",
+              "value": "",
+            },
+            {
+              "label": "Credit",
+              "value": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
+            },
+            {
+              "label": "Verified and Audit",
+              "value": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
+            },
+            {
+              "label": "Audit Only",
+              "value": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
+            },
+          ],
+          "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e": [
+            {
+              "label": "Select enrollment track",
+              "value": "",
+            },
+            {
+              "label": "Professional Only",
+              "value": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
+            },
+          ],
+        }
+      }
+      courseStatuses={
+        [
+          "unpublished",
+        ]
+      }
+      courseSubmitInfo={{}}
+      courseSubmitting={false}
+      courseTagOptions={
+        {
+          "data": {},
+        }
+      }
+      courseTags={[]}
+      courseUuid="11111111-1111-1111-1111-111111111111"
+      currentFormValues={{}}
+      editable={false}
+      entitlement={
+        {
+          "sku": null,
+        }
+      }
+      formId="edit-course-form"
+      handleSubmit={[Function]}
+      id="edit-course-form"
+      initialValues={
+        {
+          "title": "Test Title",
+        }
+      }
+      isSubmittingForReview={false}
+      languageOptions={
+        [
+          {
+            "label": "--",
+            "value": "",
+          },
+          {
+            "label": "Afrikaans",
+            "value": "af",
+          },
+          {
+            "label": "Arabic - United Arab Emirates",
+            "value": "ar-ae",
+          },
+        ]
+      }
+      name="course_runs"
+      number="Test101x"
+      onToggle={[Function]}
+      pacingTypeOptions={
+        [
+          {
+            "label": "Instructor-paced",
+            "value": "instructor_paced",
+          },
+          {
+            "label": "Self-paced",
+            "value": "self_paced",
+          },
+        ]
+      }
+      pristine={true}
+      programOptions={
+        [
+          {
+            "label": "--",
+            "value": "",
+          },
+          {
+            "label": "Professional Certificate",
+            "value": "professional-certificate",
+          },
+          {
+            "label": "MicroMasters",
+            "value": "micromasters",
+          },
+          {
+            "label": "XSeries",
+            "value": "xseries",
+          },
+          {
+            "label": "Masters",
+            "value": "masters",
+          },
+        ]
+      }
+      runTypeModes={
+        {
+          "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c": [
+            "verified",
+            "audit",
+          ],
+          "6cebfc50-abca-4674-b4c7-249b31af6ddb": [
+            "professional",
+          ],
+          "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d": [
+            "audit",
+          ],
+          "f17e29d6-4648-4bb5-a199-97dc40f904aa": [
+            "credit",
+            "verified",
+            "audit",
+          ],
+          "f394732f-ba43-4260-8ada-06a9f18e7160": [
+            "masters",
+          ],
+        }
+      }
+      setCourseTags={[Function]}
+      submitting={false}
+      title="Test Title"
+      type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+      updateFormValuesAfterSave={[Function]}
+      uuid="11111111-1111-1111-1111-111111111111"
+      validate={[Function]}
+    />
+    <button
+      className="btn btn-block rounded mt-3 new-run-button"
+      disabled={true}
+      type="button"
+    >
+      <SvgAdd />
+       Add Course Run
+    </button>
+    <CourseButtonToolbar
+      className="mt-3"
+      disabled={true}
+      editable={false}
+      onClear={[Function]}
+      onSave={[Function]}
+      pristine={true}
+      publishedContentChanged={false}
+      submitting={false}
+    />
+  </form>
+</div>
+`;
+
 exports[`BaseEditCourseForm renders html correctly while submitting 1`] = `
 <div
   className="edit-course-form"
