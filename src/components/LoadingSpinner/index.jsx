@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from '@edx/paragon';
+import { Spinner } from '@openedx/paragon';
 import PropTypes from 'prop-types';
 
 const LoadingSpinner = (props) => (

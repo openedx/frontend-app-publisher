@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { Field } from 'redux-form';
-import { Hyperlink } from '@edx/paragon';
+import { Hyperlink } from '@openedx/paragon';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import { BaseEditCourseForm } from './EditCourseForm';
@@ -473,5 +473,25 @@ describe('BaseEditCourseForm', () => {
     // Just sanity check that a field we still want there is there:
     const fields = component.find({ name: 'imageSrc' });
     expect(fields).toHaveLength(1);
+  });
+
+  it('renders html correctly while fetching collaborator options', () => {
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      initialValues={{
+        title: initialValuesFull.title,
+      }}
+      title={initialValuesFull.title}
+      number="Test101x"
+      courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesFull.uuid}
+      type={initialValuesFull.type}
+      id="edit-course-form"
+      collaboratorOptions={{ data: {} }}
+    />);
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, FieldArray } from 'redux-form';
-import { Alert } from '@edx/paragon';
+import { Alert } from '@openedx/paragon';
 
 import RenderSelectField from '../RenderSelectField';
 import RemoveButton from '../RemoveButton';

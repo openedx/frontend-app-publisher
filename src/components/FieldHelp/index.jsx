@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { InfoOutline } from '@edx/paragon/icons';
+import { InfoOutline } from '@openedx/paragon/icons';
 import jsxToString from 'jsx-to-string';
 import ReactTooltip from 'react-tooltip';
 
