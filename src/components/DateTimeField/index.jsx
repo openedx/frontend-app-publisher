@@ -21,7 +21,7 @@ class DateTimeField extends React.Component {
         : getDateWithDashes(this.props.input.value),
       time: (this.props.utcTimeZone
         ? getTimeStringUTC(this.props.input.value)
-        : getTimeString(this.props.input.value)) || '12:00',
+        : getTimeString(this.props.input.value)) || '00:00',
     };
     this.concatDateTime = this.concatDateTime.bind(this);
     this.updateDate = this.updateDate.bind(this);
@@ -121,7 +121,7 @@ class DateTimeField extends React.Component {
             <Form.Control
               name={`${name}Time`}
               type="time"
-              value={time || '12:00'}
+              value={time || '00:00'}
               placeholder="HH:mm"
               required={required}
               disabled={disabled}
