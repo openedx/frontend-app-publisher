@@ -279,10 +279,10 @@ class CollapsibleCourseRun extends React.Component {
     const productSource = courseInfo?.data?.product_source?.slug;
     const courseType = courseInfo?.data?.course_type;
 
-    if (courseInReview !== isCourseRunInReview) {
+    if (IN_REVIEW_STATUS.includes(courseRun.status) !== isCourseRunInReview) {
         setTimeout(() => {
             this.setState({ isCourseRunInReview: IN_REVIEW_STATUS.includes(courseRun.status) });
-        }, 500);
+        }, 100);
     }
 
     return (
