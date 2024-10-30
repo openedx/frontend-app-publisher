@@ -52,6 +52,7 @@ const publishedCourseRun = {
 };
 
 const unpublishedCourseRun = { ...publishedCourseRun, status: 'unpublished' };
+const inReviewCourseRun = { ...publishedCourseRun, status: 'review_by_internal' };
 
 const currentFormValues = {
   course_runs: [publishedCourseRun, unpublishedCourseRun],
@@ -92,6 +93,18 @@ describe('Collapsible Course Run', () => {
       courseId="test-course"
       courseUuid="11111111-1111-1111-1111-111111111111"
       index={1}
+    />);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('renders correctly when given a course run in review', () => {
+    const component = shallow(<CollapsibleCourseRun
+      languageOptions={languageOptions}
+      pacingTypeOptions={pacingTypeOptions}
+      courseRun={inReviewCourseRun}
+      courseId="test-course"
+      courseUuid="11111111-1111-1111-1111-111111111111"
+      index={2}
     />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
