@@ -4,7 +4,6 @@ import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { debounce } from 'lodash';
 
 import { Field, FieldArray } from 'redux-form';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
