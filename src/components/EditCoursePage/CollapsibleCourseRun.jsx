@@ -118,6 +118,7 @@ class CollapsibleCourseRun extends React.Component {
       copied: false,
       returnFromStaffPage: false,
       hasExternalKey: undefined,
+      isCourseRunInReview: false,
     };
 
     this.openCollapsible = this.openCollapsible.bind(this);
@@ -251,7 +252,7 @@ class CollapsibleCourseRun extends React.Component {
       courseRunTypeOptions,
       courseInfo,
     } = this.props;
-    const { copied, hasExternalKey } = this.state;
+    const { copied, hasExternalKey, isCourseRunInReview } = this.state;
     const { administrator } = getAuthenticatedUser();
 
     const courseRunInReview = IN_REVIEW_STATUS.includes(courseRun.status);
@@ -277,6 +278,12 @@ class CollapsibleCourseRun extends React.Component {
       && isPristine(initialValues, currentFormValues, courseRun.key);
     const productSource = courseInfo?.data?.product_source?.slug;
     const courseType = courseInfo?.data?.course_type;
+
+    if (IN_REVIEW_STATUS.includes(courseRun.status) !== isCourseRunInReview) {
+      setTimeout(() => {
+        this.setState({ isCourseRunInReview: IN_REVIEW_STATUS.includes(courseRun.status) });
+      }, 100);
+    }
 
     return (
       <Collapsible
@@ -678,7 +685,7 @@ class CollapsibleCourseRun extends React.Component {
             </div>
           </div>
           )}
-        {administrator && IN_REVIEW_STATUS.includes(courseRun.status)
+        {administrator && isCourseRunInReview
           && (
           <div>
             Status: {courseRun.status === REVIEW_BY_LEGAL ? 'Legal Review' : 'PC Review'}
