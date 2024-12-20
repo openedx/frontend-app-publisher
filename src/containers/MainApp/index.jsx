@@ -15,10 +15,18 @@ import EditStaffer from '../EditStaffer';
 import CreateCollaborator from '../CreateCollaborator';
 import EditCollaborator from '../EditCollaborator';
 import EditCourse from '../EditCourse';
+import SitewideBanner from '../../components/SitewideBanner';
 
 const MainApp = () => (
   <div>
     <Header />
+    <SitewideBanner
+      message={process.env.SITEWIDE_BANNER_CONTENT || ''}
+      type="warning"
+      dismissible
+      cookieName="publisherSiteWideBannerDismissed"
+      cookieExpiryDays={30}
+    />
     <main>
       <Routes>
         <Route path="/course-runs/:courseRunKey" element={<CourseRunRedirectComponent />} />
