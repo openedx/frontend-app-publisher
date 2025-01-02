@@ -429,11 +429,9 @@ export class BaseEditCourseForm extends React.Component {
               disabled={disabled || !!entitlement.sku}
             />
             <PriceList
-              name="course_price_list"
               priceLabels={currentFormValues.type ? priceLabels[currentFormValues.type] : {}}
               extraInput={{ onInvalid: this.openCollapsible }}
-              // temp: Disable price updates if one of runs is published.
-              disabled={courseStatuses.includes(PUBLISHED) || disabled}
+              disabled={disabled}
               required={isSubmittingForReview}
             />
             <FieldLabel

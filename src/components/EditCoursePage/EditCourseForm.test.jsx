@@ -255,27 +255,6 @@ describe('BaseEditCourseForm', () => {
     expect(disabledFields).toHaveLength(1);
   });
 
-  it('renders with price disabled if course has Published status among status list', () => {
-    const component = shallow(<BaseEditCourseForm
-      handleSubmit={() => null}
-      title={initialValuesFull.title}
-      initialValues={initialValuesFull}
-      currentFormValues={initialValuesFull}
-      number="Test101x"
-      entitlement={{ sku: 'ABC1234' }}
-      courseStatuses={[REVIEWED, PUBLISHED]}
-      courseInfo={courseInfo}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      uuid={initialValuesFull.uuid}
-      type={initialValuesFull.type}
-      id="edit-course-form"
-    />);
-
-    const disabledFields = component.find({ name: 'course_price_list', disabled: true });
-    expect(disabledFields).toHaveLength(1);
-  });
-
   it('Check if watchers field is disabled after being reviewed', () => {
     const courseInfoWithCourseRunStatuses = {
       ...courseInfo,
