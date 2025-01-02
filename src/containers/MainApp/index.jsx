@@ -20,13 +20,15 @@ import SitewideBanner from '../../components/SitewideBanner';
 const MainApp = () => (
   <div>
     <Header />
+    {/* Only display the banner if there is content to display. */}
+    {process.env.SITEWIDE_BANNER_CONTENT && (
     <SitewideBanner
-      message={process.env.SITEWIDE_BANNER_CONTENT || ''}
+      message={process.env.SITEWIDE_BANNER_CONTENT}
       type="warning"
       dismissible
       cookieName="publisherSiteWideBannerDismissed"
       cookieExpiryDays={30}
-    />
+    />)}
     <main>
       <Routes>
         <Route path="/course-runs/:courseRunKey" element={<CourseRunRedirectComponent />} />
