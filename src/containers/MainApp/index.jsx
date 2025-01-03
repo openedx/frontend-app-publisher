@@ -22,13 +22,14 @@ const MainApp = () => (
     <Header />
     {/* Only display the banner if there is content to display. */}
     {process.env.SITEWIDE_BANNER_CONTENT && (
-    <SitewideBanner
-      message={process.env.SITEWIDE_BANNER_CONTENT}
-      type="warning"
-      dismissible
-      cookieName="publisherSiteWideBannerDismissed"
-      cookieExpiryDays={30}
-    />)}
+      <SitewideBanner
+        message={process.env.SITEWIDE_BANNER_CONTENT}
+        type="warning"
+        dismissible
+        cookieName="publisherSiteWideBannerDismissed"
+        cookieExpiryDays={30}
+      />
+    )}
     <main>
       <Routes>
         <Route path="/course-runs/:courseRunKey" element={<CourseRunRedirectComponent />} />
