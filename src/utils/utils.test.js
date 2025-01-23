@@ -1,5 +1,5 @@
 import * as utils from '.';
-import { BOOTCAMP_SLUG, COURSE_URL_SLUG_PATTERN_OLD, EXECUTIVE_EDUCATION_SLUG } from '../data/constants';
+import { COURSE_URL_SLUG_PATTERN_OLD, EXECUTIVE_EDUCATION_SLUG } from '../data/constants';
 import { DEFAULT_PRODUCT_SOURCE } from '../data/constants/productSourceOptions';
 
 const initialRuns = [
@@ -129,38 +129,15 @@ describe('getCourseUrlSlugPattern', () => {
       });
     },
   );
-
-  it(
-    'returns the old course url slug pattern when courseType is bootcamp and updatedSlugFlag is false',
-    () => {
-      expect(
-        utils.getCourseUrlSlugPattern(false, 'external-source', BOOTCAMP_SLUG),
-      ).toEqual({
-        slug_format: COURSE_URL_SLUG_PATTERN_OLD,
-        error_msg: 'Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
-      });
-    },
-  );
-
-  it(
-    'returns the bootcamp subdirectory slug pattern when courseType is bootcamp and updatedSlugFlag is true',
-    () => {
-      expect(
-        utils.getCourseUrlSlugPattern(true, 'external-source', BOOTCAMP_SLUG),
-      ).toEqual(JSON.parse(COURSE_URL_SLUGS_PATTERN)['external-source'][BOOTCAMP_SLUG]);
-    },
-  );
 });
 
 describe('isExternalCourse', () => {
-  const EXTERNAL_COURSE_TYPES = [EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG];
+  const EXTERNAL_COURSE_TYPES = [EXECUTIVE_EDUCATION_SLUG];
   it('returns true if the product source is other than edx and course type is in EXTERNAL_COURSE_TYPES', () => {
     expect(utils.isExternalCourse('external-source', EXTERNAL_COURSE_TYPES[0])).toBe(true);
-    expect(utils.isExternalCourse('external-source', EXTERNAL_COURSE_TYPES[1])).toBe(true);
   });
   it('returns false if the product source has a default value', () => {
     expect(utils.isExternalCourse(DEFAULT_PRODUCT_SOURCE, EXTERNAL_COURSE_TYPES[0])).toBe(false);
-    expect(utils.isExternalCourse(DEFAULT_PRODUCT_SOURCE, EXTERNAL_COURSE_TYPES[1])).toBe(false);
   });
   it(
     'returns false if the product source does not have a default value and course type is not in EXTERNAL_COURSE_TYPES',

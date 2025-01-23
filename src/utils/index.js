@@ -5,7 +5,7 @@ import qs from 'query-string';
 
 import {
   COURSE_EXEMPT_FIELDS, COURSE_RUN_NON_EXEMPT_FIELDS, COURSE_URL_SLUG_PATTERN_OLD,
-  MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE, EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG,
+  MASTERS_TRACK, COURSE_URL_SLUG_VALIDATION_MESSAGE, EXECUTIVE_EDUCATION_SLUG,
   RESTRICTION_TYPE_OPTIONS as restrictionTypeOptions,
 } from '../data/constants';
 import DiscoveryDataApiService from '../data/services/DiscoveryDataApiService';
@@ -220,7 +220,7 @@ const isPristine = (initialValues, currentFormValues, runKey) => {
 };
 
 const isExternalCourse = (productSource, courseType) => (
-  productSource !== DEFAULT_PRODUCT_SOURCE && [EXECUTIVE_EDUCATION_SLUG, BOOTCAMP_SLUG].includes(courseType)
+  productSource !== DEFAULT_PRODUCT_SOURCE && [EXECUTIVE_EDUCATION_SLUG].includes(courseType)
 );
 
 const parseOptions = inChoices => inChoices.map(choice => ({ label: choice.display_name, value: choice.value }));

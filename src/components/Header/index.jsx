@@ -44,9 +44,6 @@ const Header = ({ darkModeOn, toggleDarkMode }) => {
           <div className="col-auto justify-content-start">
             <Link to="/?course_type=executive-education-2u" className={disableLink('executive-education-2u')}>Executive Education</Link>
           </div>
-          <div className="col-auto justify-content-start">
-            <Link to="/?course_type=bootcamp-2u" className={disableLink('bootcamp-2u')}>Bootcamps</Link>
-          </div>
 
           {allowDarkModeToggle
             && (
