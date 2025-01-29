@@ -164,6 +164,9 @@ const BaseCreateCourseRunForm = ({
               helpText={pacingHelp}
             />
           )}
+          props = {{
+            name: 'pacing_type'
+          }}
         />
         <ButtonToolbar>
           <Link to={`/courses/${uuid}`}>
