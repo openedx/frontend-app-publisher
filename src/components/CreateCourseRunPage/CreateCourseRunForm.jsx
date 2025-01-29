@@ -164,8 +164,8 @@ const BaseCreateCourseRunForm = ({
               helpText={pacingHelp}
             />
           )}
-          props = {{
-            name: 'pacing_type'
+          props={{
+            name: 'pacing_type',
           }}
         />
         <ButtonToolbar>

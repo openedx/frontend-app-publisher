@@ -118,7 +118,7 @@ describe('CreateCourseRunPage', () => {
                   course_runs: [{
                     status: 'unpublished',
                     key: 'course-v1:edX+cs101+2T2019',
-                    pacing_type: pacing
+                    pacing_type: pacing,
                   }],
                   title: 'Test Course',
                 },
@@ -126,19 +126,19 @@ describe('CreateCourseRunPage', () => {
                 isCreating: false,
                 error: null,
               }}
-              courseRunOptions = {{
+              courseRunOptions={{
                 data: {
                   actions: {
                     POST: {
                       pacing_type: {
                         choices: [
-                          {value: 'instructor_paced', display_name: 'Instructor-paced'},
-                          {value: 'self_paced', display_name: 'Self-paced'}
-                        ]
-                      }
-                    }
-                  }
-                }
+                          { value: 'instructor_paced', display_name: 'Instructor-paced' },
+                          { value: 'self_paced', display_name: 'Self-paced' },
+                        ],
+                      },
+                    },
+                  },
+                },
               }}
             />
           </IntlProvider>
@@ -148,7 +148,7 @@ describe('CreateCourseRunPage', () => {
 
     const component = mount(CreateCourseRunPageWrapper());
 
-    const pacingSelect = component.find({name: 'pacing_type'}).hostNodes().find('select')
-    expect(pacingSelect.props().value).toEqual(pacing)
+    const pacingSelect = component.find({ name: 'pacing_type' }).hostNodes().find('select');
+    expect(pacingSelect.props().value).toEqual(pacing);
   });
 });
