@@ -142,6 +142,7 @@ class CreateCourseRunPage extends React.Component {
     const courseRunTypeOptions = parsedTypeOptions && parsedTypeOptions.courseRunTypeOptions;
     const defaultRunType = courseRunTypeOptions && courseRunTypeOptions[type]
       && courseRunTypeOptions[type][1] && courseRunTypeOptions[type][1].value;
+    const defaultPacingType = course_runs && defaultRun && course_runs.find(run => run.key === defaultRun).pacing_type;
 
     return (
       <>
@@ -173,6 +174,7 @@ class CreateCourseRunPage extends React.Component {
                 initialValues={{
                   rerun: defaultRun,
                   run_type: defaultRunType,
+                  pacing_type: defaultPacingType,
                 }}
                 courseTypeUuid={type}
                 canSetRunKey={canSetRunKey}
