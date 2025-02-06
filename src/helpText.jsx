@@ -25,7 +25,7 @@ const courseRunVariantIdHelp = (
   <div>
     <p>
       The identifier for a product variant. This is used to link a course run to a product variant for external LOBs
-      (i.e; ExecEd & Bootcamps).
+      (e.g; ExecEd).
     </p>
   </div>
 );
