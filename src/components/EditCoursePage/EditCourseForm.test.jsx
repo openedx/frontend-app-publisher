@@ -494,4 +494,33 @@ describe('BaseEditCourseForm', () => {
     />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('does not add required prop for level_type and subjectPrimary fields when not submitting for review', () => {
+    const initialValuesWithMasters = {
+      ...initialValuesFull,
+      type: '7b41992e-f268-4331-8ba9-72acb0880454',
+    };
+
+    const component = shallow(<BaseEditCourseForm
+      handleSubmit={() => null}
+      title="Test Course"
+      initialValues={{ title: initialValuesFull.title }}
+      currentFormValues={initialValuesWithMasters}
+      number="Test101x"
+      courseStatuses={[UNPUBLISHED]}
+      courseInfo={courseInfo}
+      courseOptions={courseOptions}
+      courseRunOptions={courseRunOptions}
+      uuid={initialValuesWithMasters.uuid}
+      type={initialValuesWithMasters.type}
+      isSubmittingForReview={false}
+      id="edit-course-form"
+    />);
+
+    const levelTypeField = component.find(Field).filterWhere(n => n.prop('name') === 'level_type');
+    const subjectPrimaryField = component.find(Field).filterWhere(n => n.prop('name') === 'subjectPrimary');
+
+    expect(levelTypeField.prop('required')).toBe(false);
+    expect(subjectPrimaryField.prop('required')).toBe(false);
+  });
 });
