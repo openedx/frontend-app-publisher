@@ -1007,7 +1007,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               options={levelTypeOptions}
               disabled={disabled}
-              required={isSubmittingForReview}
+              required={showMarketingFields && isSubmittingForReview}
             />
             <Field
               name="subjectPrimary"
@@ -1040,7 +1040,7 @@ export class BaseEditCourseForm extends React.Component {
               extraInput={{ onInvalid: this.openCollapsible }}
               options={subjectOptions}
               disabled={disabled}
-              required={isSubmittingForReview}
+              required={showMarketingFields && isSubmittingForReview}
             />
             <Field
               name="subjectSecondary"
