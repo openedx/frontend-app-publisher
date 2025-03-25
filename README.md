@@ -65,7 +65,7 @@ Publisher is most useful for organizations that:
 
 If your organization doesn't fall into one of the above categories, Publisher can still be useful
 but will likely not be considered mission-critical.  For a detailed feature-by-feature guide, refer
-to the [Introduction to Publisher](https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/pub_create_ann_course/pub_introduction.html)
+to the [Introduction to Publisher (edx.org-specific resource)](https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/pub_create_ann_course/pub_introduction.html)
 chapter of the courseware development documentation.
 
 # Important Note
