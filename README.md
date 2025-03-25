@@ -79,8 +79,13 @@ possibly configure and install it on their own.
 ## Getting Started
 
 This application requires an edx-platform instance for authentication. For local development
-   you will need to setup a local instance of the edX Docker Devstack
-    * https://github.com/openedx/devstack
+you should use [Tutor](https://docs.tutor.edly.io/), the community-supported Open edX development environment.
+
+See the [instructions on using the Tutor MFE plugin here](https://github.com/overhangio/tutor-mfe?tab=readme-ov-file#mfe-development).
+
+
+The edX Docker Devstack is now deprecated.
+    * https://github.com/openedx-unsupported/devstack
 
  You should be able to view it in a web browser at `localhost:18400`.
 
@@ -90,9 +95,8 @@ This application requires an edx-platform instance for authentication. For local
 
     ``git clone https://github.com/openedx/frontend-app-publisher.git``
 
-  2. Use node v18.x.
+  2. Use the version of Node specified in ``.nvmrc``
 
-    The current version of the micro-frontend build scripts support node 18.
     Using other major versions of node *may* work, but this is unsupported.  For
     convenience, this repository includes an .nvmrc file to help in setting the
     correct node version via `nvm <https://github.com/nvm-sh/nvm>`_.
