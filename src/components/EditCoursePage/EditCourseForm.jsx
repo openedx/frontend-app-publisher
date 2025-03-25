@@ -491,7 +491,7 @@ export class BaseEditCourseForm extends React.Component {
                       </ul>
                       <p>
                         <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#representative-image-guidelines"
+                          href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#images-and-videos-for-a-course-or-program"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -563,7 +563,7 @@ export class BaseEditCourseForm extends React.Component {
                           </ul>
                           <p>
                             <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-short-description-guidelines"
+                              href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#course-short-description-guidelines"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -614,7 +614,7 @@ export class BaseEditCourseForm extends React.Component {
                           </p>
                           <p>
                             <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#course-long-description-guidelines"
+                              href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#course-long-description-guidelines"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -660,7 +660,7 @@ export class BaseEditCourseForm extends React.Component {
                           </ul>
                           <p>
                             <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#what-you-will-learn-guidelines"
+                              href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#what-you-will-learn-guidelines"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -703,7 +703,7 @@ export class BaseEditCourseForm extends React.Component {
                           </ul>
                           <p>
                             <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#id3"
+                              href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#syllabus-guidelines"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -758,7 +758,7 @@ export class BaseEditCourseForm extends React.Component {
                           </p>
                           <p>
                             <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#skill-and-knowledge-prerequisites"
+                              href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#skill-and-knowledge-prerequisites"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -805,7 +805,7 @@ export class BaseEditCourseForm extends React.Component {
                           <p>Should be no more than 25–50 words in length.</p>
                           <p>
                             <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#learner-testimonial-guidelines"
+                              href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#learner-testimonial-guidelines"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -847,7 +847,7 @@ export class BaseEditCourseForm extends React.Component {
                           </p>
                           <p>
                             <a
-                              href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/additional_course_information.html#faq-guidelines"
+                              href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#faq-guidelines"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -945,7 +945,7 @@ export class BaseEditCourseForm extends React.Component {
                             </ul>
                             <p>
                               <a
-                                href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/image_guidelines.html#id2"
+                                href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#course-about-video-guidelines"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -1026,7 +1026,7 @@ export class BaseEditCourseForm extends React.Component {
                       </p>
                       <p>
                         <a
-                          href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/description_guidelines.html#subject-guidelines"
+                          href="https://docs.openedx.org/en/latest/educators/references/course_development/about_page.html#subject-guidelines"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
