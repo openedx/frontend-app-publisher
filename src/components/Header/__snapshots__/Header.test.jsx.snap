@@ -13,29 +13,24 @@ exports[`Header renders the correct header 1`] = `
       <div
         className="col-auto justify-content-start"
       >
-        <withDeprecatedProps(Hyperlink)>
-          <ForwardRef
-            externalLinkAlternativeText="in a new tab"
-            externalLinkTitle="Opens in a new tab"
-            isInline={false}
-            onClick={[Function]}
-            showLaunchIcon={true}
+        <Hyperlink
+          as="a"
+          isInline={false}
+          showLaunchIcon={true}
+          target="_self"
+          variant="default"
+        >
+          <a
+            className="pgn__hyperlink default-link standalone-link"
             target="_self"
-            variant="default"
           >
-            <a
-              className="pgn__hyperlink default-link standalone-link"
-              onClick={[Function]}
-              target="_self"
-            >
-              <img
-                alt="edX logo"
-                height="30"
-                src="https://edx-cdn.org/v3/default/logo.svg"
-              />
-            </a>
-          </ForwardRef>
-        </withDeprecatedProps(Hyperlink)>
+            <img
+              alt="edX logo"
+              height="30"
+              src="https://edx-cdn.org/v3/default/logo.svg"
+            />
+          </a>
+        </Hyperlink>
       </div>
       <div
         className="col-auto justify-content-start"
@@ -237,29 +232,24 @@ exports[`Header renders the header correctly when toggling is allowed, and dark 
       <div
         className="col-auto justify-content-start"
       >
-        <withDeprecatedProps(Hyperlink)>
-          <ForwardRef
-            externalLinkAlternativeText="in a new tab"
-            externalLinkTitle="Opens in a new tab"
-            isInline={false}
-            onClick={[Function]}
-            showLaunchIcon={true}
+        <Hyperlink
+          as="a"
+          isInline={false}
+          showLaunchIcon={true}
+          target="_self"
+          variant="default"
+        >
+          <a
+            className="pgn__hyperlink default-link standalone-link"
             target="_self"
-            variant="default"
           >
-            <a
-              className="pgn__hyperlink default-link standalone-link"
-              onClick={[Function]}
-              target="_self"
-            >
-              <img
-                alt="edX logo"
-                height="30"
-                src="https://edx-cdn.org/v3/default/logo.svg"
-              />
-            </a>
-          </ForwardRef>
-        </withDeprecatedProps(Hyperlink)>
+            <img
+              alt="edX logo"
+              height="30"
+              src="https://edx-cdn.org/v3/default/logo.svg"
+            />
+          </a>
+        </Hyperlink>
       </div>
       <div
         className="col-auto justify-content-start"
@@ -461,29 +451,24 @@ exports[`Header renders the header correctly when users pass a querystring param
       <div
         className="col-auto justify-content-start"
       >
-        <withDeprecatedProps(Hyperlink)>
-          <ForwardRef
-            externalLinkAlternativeText="in a new tab"
-            externalLinkTitle="Opens in a new tab"
-            isInline={false}
-            onClick={[Function]}
-            showLaunchIcon={true}
+        <Hyperlink
+          as="a"
+          isInline={false}
+          showLaunchIcon={true}
+          target="_self"
+          variant="default"
+        >
+          <a
+            className="pgn__hyperlink default-link standalone-link"
             target="_self"
-            variant="default"
           >
-            <a
-              className="pgn__hyperlink default-link standalone-link"
-              onClick={[Function]}
-              target="_self"
-            >
-              <img
-                alt="edX logo"
-                height="30"
-                src="https://edx-cdn.org/v3/default/logo.svg"
-              />
-            </a>
-          </ForwardRef>
-        </withDeprecatedProps(Hyperlink)>
+            <img
+              alt="edX logo"
+              height="30"
+              src="https://edx-cdn.org/v3/default/logo.svg"
+            />
+          </a>
+        </Hyperlink>
       </div>
       <div
         className="col-auto justify-content-start"
