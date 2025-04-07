@@ -79,7 +79,7 @@ const runTypeHelp = (
     </p>
     <p>
       <a
-        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/glossary.html#enrollment-track-g"
+        href="https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -169,7 +169,7 @@ const titleHelp = (
     </ul>
     <p>
       <a
-        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-title-guidelines"
+        href="https://docs.openedx.org/en/latest/educators/references/course_development/basic_course_details.html#course-title-guidelines"
         target="_blank"
         rel="noopener noreferrer"
       >

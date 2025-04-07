@@ -172,7 +172,7 @@ class BaseCreateCourseForm extends React.Component {
                     </p>
                     <p>
                       <a
-                        href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/set_up_course/planning_course_information/title_number_guidelines.html#course-number-guidelines"
+                        href="https://docs.openedx.org/en/latest/educators/references/course_development/basic_course_details.html#course-number-guidelines"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
