@@ -1,7 +1,5 @@
-import 'core-js';
-import 'regenerator-runtime/runtime';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
 import {
   APP_INIT_ERROR, APP_READY, subscribe, initialize,
@@ -13,17 +11,19 @@ import './sass/App.scss';
 import store from './data/store';
 import MainApp from './containers/MainApp';
 
+const rootNode = createRoot(document.getElementById('root'));
 subscribe(APP_READY, () => {
-  ReactDOM.render(
-    <AppProvider store={store}>
-      <MainApp />
-    </AppProvider>,
-    document.getElementById('root'),
+  rootNode.render(
+    <StrictMode>
+      <AppProvider store={store}>
+        <MainApp />
+      </AppProvider>
+    </StrictMode>,
   );
 });
 
 subscribe(APP_INIT_ERROR, (error) => {
-  ReactDOM.render(<ErrorPage message={error.message} />, document.getElementById('root'));
+  rootNode.render(<ErrorPage message={error.message} />);
 });
 
 initialize({

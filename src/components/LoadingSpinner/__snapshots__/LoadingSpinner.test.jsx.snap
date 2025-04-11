@@ -1,16 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoadingSpinner shows a loading spinner 1`] = `
-<div
-  className="mx-auto text-center"
->
-  <div>
-    Loading…
+<div>
+  <div
+    class="mx-auto text-center"
+  >
+    <div>
+      Loading…
+    </div>
+    <div
+      class="pgn__spinner mie-3 spinner-border"
+      role="status"
+    >
+      <span
+        class="sr-only"
+      >
+        loading
+      </span>
+    </div>
   </div>
-  <ForwardRef
-    animation="border"
-    className="mie-3"
-    screenReaderText="loading"
-  />
 </div>
 `;

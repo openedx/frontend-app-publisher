@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, waitFor } from '@testing-library/react';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import CourseRunSubmitButton from './CourseRunSubmitButton';
@@ -12,39 +11,39 @@ describe('Course Run Submit Button', () => {
   });
 
   it('default parameters', () => {
-    const component = shallow(<CourseRunSubmitButton />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunSubmitButton />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('disabled', () => {
-    const component = shallow(<CourseRunSubmitButton disabled />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunSubmitButton disabled />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('submitting', () => {
-    const component = shallow(<CourseRunSubmitButton submitting />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunSubmitButton submitting />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('reviewed with exempt changes', () => {
-    const component = shallow(<CourseRunSubmitButton status={REVIEWED} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunSubmitButton status={REVIEWED} />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('reviewed without exempt changes', () => {
-    const component = shallow(<CourseRunSubmitButton status={REVIEWED} hasNonExemptChanges />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunSubmitButton status={REVIEWED} hasNonExemptChanges />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('legal review', () => {
     getAuthenticatedUser.mockReturnValue({ administrator: true });
-    const component = shallow(<CourseRunSubmitButton status={REVIEW_BY_LEGAL} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunSubmitButton status={REVIEW_BY_LEGAL} />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('internal review', () => {
     getAuthenticatedUser.mockReturnValue({ administrator: true });
-    const component = shallow(<CourseRunSubmitButton status={REVIEW_BY_INTERNAL} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunSubmitButton status={REVIEW_BY_INTERNAL} />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 });

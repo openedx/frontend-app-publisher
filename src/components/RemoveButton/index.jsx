@@ -11,6 +11,7 @@ const RemoveButton = ({
   targetFieldNumber,
 }) => (
   <button
+    data-testid="id-remove-btn"
     type="button"
     className={classNames('close float-none d-flex justify-content-center align-items-center', className)}
     aria-label={label}

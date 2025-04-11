@@ -56,32 +56,37 @@ exports[`CreateCoursePage renders html correctly 1`] = `
 `;
 
 exports[`CreateCoursePage renders page correctly while fetching 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
+<div>
+  <div
+    class="container my-3 content-container"
   >
-    <title>
-      Create a New Course
-    </title>
-  </HelmetWrapper>
-  <ConfirmationModal
-    body="This will create a new course in studio. Confirm that your course number is correct, as it cannot be changed later."
-    buttonLabel="Create"
-    onClose={[Function]}
-    onSubmit={[Function]}
-    open={false}
-    title="Create a New Course?"
-  />
-  <PageContainer
-    className=""
-    wide={false}
-  >
-    <LoadingSpinner
-      message="Loading…"
-    />
-  </PageContainer>
-</Fragment>
+    <div
+      class="row justify-content-md-center"
+    >
+      <div
+        class="col col-xl-7 col-9"
+      >
+        <div
+          class="mx-auto text-center"
+        >
+          <div>
+            Loading…
+          </div>
+          <div
+            class="pgn__spinner mie-3 spinner-border"
+            role="status"
+          >
+            <span
+              class="sr-only"
+            >
+              loading
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`CreateCoursePage renders page correctly with course create error 1`] = `
@@ -310,42 +315,30 @@ exports[`CreateCoursePage renders page correctly with course create success 1`] 
 `;
 
 exports[`CreateCoursePage renders page correctly with no publisherUserInfo 1`] = `
-<ForwardRef
-  dismissible={false}
-  id="error"
-  onClose={[Function]}
-  show={true}
-  stacked={false}
-  transition={
-    {
-      "$$typeof": Symbol(react.forward_ref),
-      "defaultProps": {
-        "appear": false,
-        "in": false,
-        "mountOnEnter": false,
-        "timeout": 300,
-        "unmountOnExit": false,
-      },
-      "render": [Function],
-    }
-  }
-  variant="danger"
->
-  <AlertHeading
-    as={
-      {
-        "$$typeof": Symbol(react.forward_ref),
-        "render": [Function],
-      }
-    }
-    bsPrefix="alert-heading"
+<div>
+  <div
+    class="fade alert-content alert alert-danger show"
+    id="error"
+    role="alert"
   >
-    Course Create Form failed to load: 
-  </AlertHeading>
-  <p>
-    User information unavailable
-  </p>
-</ForwardRef>
+    <div
+      class="pgn__alert-message-wrapper"
+    >
+      <div
+        class="alert-message-content"
+      >
+        <div
+          class="alert-heading h4"
+        >
+          Course Create Form failed to load: 
+        </div>
+        <p>
+          User information unavailable
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`CreateCoursePage renders page correctly with org error 1`] = `

@@ -1,6 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import {
+  fireEvent, render, screen, waitFor,
+} from '@testing-library/react';
+import { reduxForm } from 'redux-form';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
 
 import TranscriptLanguage from './TranscriptLanguage';
 
@@ -13,6 +17,10 @@ import TranscriptLanguage from './TranscriptLanguage';
 *  writing functionality.'
 */
 jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn());
+const mockStore = configureStore();
+const store = mockStore({});
+
+const WrappedTranscriptLanguage = reduxForm({ form: 'testForm' })(TranscriptLanguage);
 
 const languageOptions = [{
   label: 'Arabic - United Arab Emirates',
@@ -31,42 +39,54 @@ const metaFailed = {
 
 describe('Transcript Language', () => {
   it('renders correctly with no fields', () => {
-    const component = shallow(<TranscriptLanguage
+    const { container } = render(<TranscriptLanguage
       fields={[]}
       languageOptions={languageOptions}
       meta={meta}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly when given fields', () => {
-    const component = shallow(<TranscriptLanguage
-      fields={[{}]}
-      languageOptions={languageOptions}
-      meta={meta}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <Provider store={store}>
+        <WrappedTranscriptLanguage
+          fields={[{}]}
+          languageOptions={languageOptions}
+          meta={meta}
+        />
+      </Provider>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly with an error after failed submission', () => {
-    const component = shallow(<TranscriptLanguage
-      fields={[{}]}
-      languageOptions={languageOptions}
-      meta={metaFailed}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <Provider store={store}>
+        <WrappedTranscriptLanguage
+          fields={[{}]}
+          languageOptions={languageOptions}
+          meta={metaFailed}
+        />
+      </Provider>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('adds fields when the add button is pushed', () => {
+  it('adds fields when the add button is pushed', async () => {
     const fields = [{}];
-    const component = shallow(<TranscriptLanguage
-      fields={fields}
-      languageOptions={languageOptions}
-      meta={meta}
-    />);
-    expect(fields.length).toEqual(1);
-
-    component.find('.js-add-button').simulate('click');
+    render(
+      <Provider store={store}>
+        <WrappedTranscriptLanguage
+          fields={fields}
+          languageOptions={languageOptions}
+          meta={meta}
+        />
+      </Provider>,
+    );
+    waitFor(() => expect(fields.length).toEqual(1));
+    const addBtn = await screen.findByTestId('test-js-add-btn');
+    fireEvent.click(addBtn);
     expect(fields.length).toEqual(2);
   });
 });

@@ -115,7 +115,7 @@ Note: The assumption behind running any of these commands is that the user is
 already shelled into the container using the `make frontend-app-publisher-shell`
 command in devstack.
 
-Currently we are using Jest and Enzyme for our testing
+Currently we are using Jest and @testing-library/react for our testing
 
 1. The following command will run the tests using npm. Output will show up in your terminal.
 

@@ -1,113 +1,158 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Course Run Submit Button default parameters 1`] = `
-<ActionButton
-  className=""
-  disabled={false}
-  labels={
-    {
-      "default": "Submit Run for Review",
-      "pending": "Submitting Run for Review",
-    }
-  }
-  onClick={[Function]}
-  primary={true}
-  state="default"
-/>
+<div>
+  <button
+    aria-disabled="false"
+    aria-live="assertive"
+    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+    type="submit"
+  >
+    <span
+      class="d-flex align-items-center justify-content-center"
+    >
+      <span>
+        Submit Run for Review
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`Course Run Submit Button disabled 1`] = `
-<ActionButton
-  className=""
-  disabled={true}
-  labels={
-    {
-      "default": "Submit Run for Review",
-      "pending": "Submitting Run for Review",
-    }
-  }
-  onClick={[Function]}
-  primary={true}
-  state="default"
-/>
+<div>
+  <button
+    aria-disabled="false"
+    aria-live="assertive"
+    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+    disabled=""
+    type="submit"
+  >
+    <span
+      class="d-flex align-items-center justify-content-center"
+    >
+      <span>
+        Submit Run for Review
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`Course Run Submit Button internal review 1`] = `
-<ActionButton
-  className=""
-  disabled={false}
-  labels={
-    {
-      "default": "PC Review Complete",
-      "pending": "Submitting Run for Review",
-    }
-  }
-  onClick={[Function]}
-  primary={true}
-  state="default"
-/>
+<div>
+  <button
+    aria-disabled="false"
+    aria-live="assertive"
+    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+    type="submit"
+  >
+    <span
+      class="d-flex align-items-center justify-content-center"
+    >
+      <span>
+        PC Review Complete
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`Course Run Submit Button legal review 1`] = `
-<ActionButton
-  className=""
-  disabled={false}
-  labels={
-    {
-      "default": "Save & Send to PC Review",
-      "pending": "Submitting Run for Review",
-    }
-  }
-  onClick={[Function]}
-  primary={true}
-  state="default"
-/>
+<div>
+  <button
+    aria-disabled="false"
+    aria-live="assertive"
+    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+    type="submit"
+  >
+    <span
+      class="d-flex align-items-center justify-content-center"
+    >
+      <span>
+        Save & Send to PC Review
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`Course Run Submit Button reviewed with exempt changes 1`] = `
-<ActionButton
-  className=""
-  disabled={false}
-  labels={
-    {
-      "default": "Update Run",
-      "pending": "Submitting Run for Review",
-    }
-  }
-  onClick={[Function]}
-  primary={true}
-  state="default"
-/>
+<div>
+  <button
+    aria-disabled="false"
+    aria-live="assertive"
+    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+    type="submit"
+  >
+    <span
+      class="d-flex align-items-center justify-content-center"
+    >
+      <span>
+        Update Run
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`Course Run Submit Button reviewed without exempt changes 1`] = `
-<ActionButton
-  className=""
-  disabled={false}
-  labels={
-    {
-      "default": "Re-Submit Run for Review",
-      "pending": "Submitting Run for Review",
-    }
-  }
-  onClick={[Function]}
-  primary={true}
-  state="default"
-/>
+<div>
+  <button
+    aria-disabled="false"
+    aria-live="assertive"
+    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+    type="submit"
+  >
+    <span
+      class="d-flex align-items-center justify-content-center"
+    >
+      <span>
+        Re-Submit Run for Review
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`Course Run Submit Button submitting 1`] = `
-<ActionButton
-  className=""
-  disabled={false}
-  labels={
-    {
-      "default": "Submit Run for Review",
-      "pending": "Submitting Run for Review",
-    }
-  }
-  onClick={[Function]}
-  primary={true}
-  state="pending"
-/>
+<div>
+  <button
+    aria-disabled="true"
+    aria-live="assertive"
+    class="pgn__stateful-btn pgn__stateful-btn-state-pending btn form-submit-btn disabled btn btn-primary"
+    type="submit"
+  >
+    <span
+      class="d-flex align-items-center justify-content-center"
+    >
+      <span
+        class="pgn__stateful-btn-icon"
+      >
+        <span
+          class="pgn__icon icon-spin"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 12A10 10 0 1 1 6.122 3.91l1.176 1.618A8 8 0 1 0 20 12h2Z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </span>
+      <span>
+        Submitting Run for Review
+      </span>
+    </span>
+  </button>
+</div>
 `;

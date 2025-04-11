@@ -1,1014 +1,4779 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateCourseRunPage renders html correctly 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
+<div>
+  <div
+    class="container my-3 content-container"
   >
-    Create Course Run
-  </HelmetWrapper>
-  <PageContainer
-    className=""
-    wide={false}
-  >
-    <div>
-      <ReduxForm
-        courseOptions={
-          {
-            "data": {
-              "actions": {
-                "POST": {
-                  "additional_metadata": {
-                    "children": {
-                      "external_course_marketing_type": {
-                        "choices": [
-                          {
-                            "display_name": "Short Course",
-                            "value": "short_course",
-                          },
-                          {
-                            "display_name": "Sprint",
-                            "value": "sprint",
-                          },
-                        ],
-                      },
-                      "product_status": {
-                        "choices": [
-                          {
-                            "display_name": "Published",
-                            "value": "published",
-                          },
-                          {
-                            "display_name": "Archived",
-                            "value": "archived",
-                          },
-                        ],
-                      },
-                    },
-                  },
-                  "level_type": {
-                    "choices": [
-                      {
-                        "display_name": "Beginner",
-                        "value": "beginner",
-                      },
-                      {
-                        "display_name": "Intermediate",
-                        "value": "intermediate",
-                      },
-                      {
-                        "display_name": "Advanced",
-                        "value": "advanced",
-                      },
-                    ],
-                  },
-                  "location_restriction": {
-                    "children": {
-                      "countries": {
-                        "child": {
-                          "choices": [
-                            {
-                              "label": "Afghanistan",
-                              "value": "AF",
-                            },
-                            {
-                              "label": "Åland Islands",
-                              "value": "AX",
-                            },
-                            {
-                              "label": "Algeria",
-                              "value": "DZ",
-                            },
-                            {
-                              "label": "American Samoa",
-                              "value": "AS",
-                            },
-                            {
-                              "label": "Andorra",
-                              "value": "AD",
-                            },
-                          ],
-                        },
-                      },
-                      "restriction_type": {
-                        "choices": [
-                          "blocklist",
-                          "allowlist",
-                        ],
-                      },
-                      "states": {
-                        "child": {
-                          "choices": [
-                            {
-                              "label": "Alabama",
-                              "value": "AL",
-                            },
-                            {
-                              "label": "Arizona",
-                              "value": "AZ",
-                            },
-                            {
-                              "label": "Arkansas",
-                              "value": "AR",
-                            },
-                            {
-                              "label": "California",
-                              "value": "CA",
-                            },
-                            {
-                              "label": "Colorado",
-                              "value": "CO",
-                            },
-                          ],
-                        },
-                      },
-                    },
-                  },
-                  "subjects": {
-                    "child": {
-                      "choices": [
-                        {
-                          "display_name": "Business",
-                          "value": "business",
-                        },
-                        {
-                          "display_name": "Chemistry",
-                          "value": "chemistry",
-                        },
-                        {
-                          "display_name": "English",
-                          "value": "english",
-                        },
-                        {
-                          "display_name": "Security",
-                          "value": "security",
-                        },
-                      ],
-                    },
-                  },
-                  "type": {
-                    "type_options": [
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "credit",
-                              "verified",
-                              "audit",
-                            ],
-                            "name": "Credit",
-                            "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
-                          },
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "verified",
-                              "audit",
-                            ],
-                            "name": "Verified and Audit",
-                            "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
-                          },
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "audit",
-                            ],
-                            "name": "Audit Only",
-                            "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "verified",
-                        ],
-                        "name": "Credit",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "credit",
-                              "is_credit_eligible": true,
-                              "is_id_verified": true,
-                              "name": "Credit",
-                              "payee": "platform",
-                              "slug": "credit",
-                            },
-                            "seat_type": {
-                              "name": "Credit",
-                              "slug": "credit",
-                            },
-                          },
-                          {
-                            "mode": {
-                              "certificate_type": "verified",
-                              "is_credit_eligible": false,
-                              "is_id_verified": true,
-                              "name": "Verified",
-                              "payee": "platform",
-                              "slug": "verified",
-                            },
-                            "seat_type": {
-                              "name": "Verified",
-                              "slug": "verified",
-                            },
-                          },
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Audit",
-                              "payee": "",
-                              "slug": "audit",
-                            },
-                            "seat_type": {
-                              "name": "Audit",
-                              "slug": "audit",
-                            },
-                          },
-                        ],
-                        "uuid": "9521aa7d-801b-4a67-92c3-716ea30f5086",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": false,
-                            "modes": [
-                              "masters",
-                            ],
-                            "name": "Masters Only",
-                            "uuid": "f394732f-ba43-4260-8ada-06a9f18e7160",
-                          },
-                        ],
-                        "entitlement_types": [],
-                        "name": "Masters Only",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Masters",
-                              "payee": "organization",
-                              "slug": "masters",
-                            },
-                            "seat_type": null,
-                          },
-                        ],
-                        "uuid": "7b41992e-f268-4331-8ba9-72acb0880454",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "verified",
-                              "audit",
-                            ],
-                            "name": "Verified and Audit",
-                            "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
-                          },
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "audit",
-                            ],
-                            "name": "Audit Only",
-                            "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "verified",
-                        ],
-                        "name": "Verified and Audit",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "verified",
-                              "is_credit_eligible": false,
-                              "is_id_verified": true,
-                              "name": "Verified",
-                              "payee": "platform",
-                              "slug": "verified",
-                            },
-                            "seat_type": {
-                              "name": "Verified",
-                              "slug": "verified",
-                            },
-                          },
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Audit",
-                              "payee": "",
-                              "slug": "audit",
-                            },
-                            "seat_type": {
-                              "name": "Audit",
-                              "slug": "audit",
-                            },
-                          },
-                        ],
-                        "uuid": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "professional",
-                            ],
-                            "name": "Professional Only",
-                            "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "professional",
-                        ],
-                        "name": "Professional Only",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "professional",
-                              "is_credit_eligible": false,
-                              "is_id_verified": true,
-                              "name": "Professional",
-                              "payee": "platform",
-                              "slug": "professional",
-                            },
-                            "seat_type": {
-                              "name": "Professional",
-                              "slug": "professional",
-                            },
-                          },
-                        ],
-                        "uuid": "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "audit",
-                            ],
-                            "name": "Audit Only",
-                            "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "audit",
-                        ],
-                        "name": "Audit Only",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Audit",
-                              "payee": "",
-                              "slug": "audit",
-                            },
-                            "seat_type": {
-                              "name": "Audit",
-                              "slug": "audit",
-                            },
-                          },
-                        ],
-                        "uuid": "03e09c15-4127-4031-bc02-e20fcbdf09f0",
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-            "error": null,
-            "isFetching": false,
-          }
-        }
-        courseRunLabels={[]}
-        courseRunOptions={{}}
-        currentFormValues={{}}
-        destroyOnUnmount={true}
-        enableReinitialize={false}
-        forceUnregisterOnUnmount={false}
-        form="create-course-run-form"
-        getFormState={[Function]}
-        initialValues={
-          {
-            "pacing_type": undefined,
-            "rerun": "",
-            "run_type": undefined,
-          }
-        }
-        isCreating={false}
-        keepDirtyOnReinitialize={false}
-        onSubmit={[Function]}
-        persistentSubmitErrors={false}
-        pure={true}
-        shouldAsyncValidate={[Function]}
-        shouldError={[Function]}
-        shouldValidate={[Function]}
-        shouldWarn={[Function]}
-        submitAsSideEffect={false}
-        title=""
-        touchOnBlur={true}
-        touchOnChange={false}
-        updateUnregisteredFields={false}
-        uuid=""
-      />
+    <div
+      class="row justify-content-md-center"
+    >
+      <div
+        class="col col-xl-7 col-9"
+      >
+        <div>
+          <div
+            class="create-course-run-form"
+          >
+            <h2>
+              Create a new course run
+            </h2>
+            <hr />
+            <div
+              class="mb-2"
+            >
+              <strong>
+                Course
+              </strong>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+            <div
+              class="mb-3"
+            >
+              <a
+                href="/courses/"
+              />
+            </div>
+            <form>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="rerun.label"
+                  >
+                    <strong>
+                      Select a run to copy
+                    </strong>
+                    <span
+                      class=""
+                      id="rerun.label-help"
+                    >
+                      <button
+                        aria-describedby="rerun.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="rerun.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t6bea3c43-658b-4273-97ce-2cbfcedc5a2d place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="rerun.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t6bea3c43-658b-4273-97ce-2cbfcedc5a2d {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-top {
+        margin-top: -10px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-bottom {
+        margin-top: 10px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-left {
+        margin-left: -10px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-right {
+        margin-left: 10px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t6bea3c43-658b-4273-97ce-2cbfcedc5a2d.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                  />
+                </div>
+              </div>
+              <div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-date-label"
+                        >
+                          <strong>
+                            Start date
+                          </strong>
+                          <span
+                            class=""
+                            id="start-date-label-help"
+                          >
+                            <button
+                              aria-describedby="start-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="start-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    Start on a Tuesday, Wednesday, or Thursday.
+  </p>
+  <p>
+    Avoid major holidays.
+  </p>
+  <p>
+    Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip t06784f10-b134-4c21-b741-307fea756e83 place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="start-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.t06784f10-b134-4c21-b741-307fea756e83 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t06784f10-b134-4c21-b741-307fea756e83.place-top {
+        margin-top: -10px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t06784f10-b134-4c21-b741-307fea756e83.place-bottom {
+        margin-top: 10px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t06784f10-b134-4c21-b741-307fea756e83.place-left {
+        margin-left: -10px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t06784f10-b134-4c21-b741-307fea756e83.place-right {
+        margin-left: 10px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t06784f10-b134-4c21-b741-307fea756e83.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="start-date-label"
+                          maxlength="10"
+                          min=""
+                          name="startDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-time-label"
+                        >
+                          <strong>
+                            Start time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="start-date-label"
+                          name="startTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-date-label"
+                        >
+                          <strong>
+                            End date
+                          </strong>
+                          <span
+                            class=""
+                            id="end-date-label-help"
+                          >
+                            <button
+                              aria-describedby="end-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="end-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7 place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="end-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-top {
+        margin-top: -10px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-bottom {
+        margin-top: 10px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-left {
+        margin-left: -10px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-right {
+        margin-left: 10px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t7f04af3c-a2e5-4e8f-83f1-2d4bb12d3ea7.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="end-date-label"
+                          maxlength="10"
+                          min=""
+                          name="endDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-time-label"
+                        >
+                          <strong>
+                            End time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="end-date-label"
+                          name="endTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="run_type.label"
+                  >
+                    <strong>
+                      Course run enrollment track
+                    </strong>
+                    <span
+                      class=""
+                      id="run_type.label-help"
+                    >
+                      <button
+                        aria-describedby="run_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="run_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip tea4a8415-7e4b-4173-b86a-765f727b222f place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="run_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.tea4a8415-7e4b-4173-b86a-765f727b222f {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.tea4a8415-7e4b-4173-b86a-765f727b222f.place-top {
+        margin-top: -10px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-bottom {
+        margin-top: 10px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-left {
+        margin-left: -10px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-right {
+        margin-left: 10px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tea4a8415-7e4b-4173-b86a-765f727b222f.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                    required=""
+                  />
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="pacing_type-text-label"
+                >
+                  <div
+                    class=""
+                    id="pacing_type.label"
+                  >
+                    <strong>
+                      Course pacing
+                    </strong>
+                    <span
+                      class=""
+                      id="pacing_type.label-help"
+                    >
+                      <button
+                        aria-describedby="pacing_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="pacing_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+  </p>
+  <p>
+    Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t61398223-7add-43ad-b5cb-9b4f3ead8696 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="pacing_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t61398223-7add-43ad-b5cb-9b4f3ead8696 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t61398223-7add-43ad-b5cb-9b4f3ead8696.place-top {
+        margin-top: -10px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-bottom {
+        margin-top: 10px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-left {
+        margin-left: -10px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-right {
+        margin-left: 10px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t61398223-7add-43ad-b5cb-9b4f3ead8696.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="pacing_type-text-label"
+                    label="[object Object]"
+                    name="pacing_type"
+                  />
+                </div>
+              </div>
+              <div
+                class="btn-toolbar justify-content-end"
+                role="toolbar"
+              >
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <a
+                    href="/courses/"
+                  >
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                  </a>
+                </div>
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <button
+                    aria-disabled="false"
+                    aria-live="assertive"
+                    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+                    disabled=""
+                    type="submit"
+                  >
+                    <span
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <span>
+                        Create
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </PageContainer>
-</Fragment>
+  </div>
+</div>
 `;
 
 exports[`CreateCourseRunPage renders html correctly when creating 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
+<div>
+  <div
+    class="container my-3 content-container"
   >
-    Create Course Run
-  </HelmetWrapper>
-  <PageContainer
-    className=""
-    wide={false}
-  >
-    <div>
-      <ReduxForm
-        courseOptions={{}}
-        courseRunLabels={[]}
-        courseRunOptions={{}}
-        courseRunTypeOptions={[]}
-        currentFormValues={{}}
-        destroyOnUnmount={true}
-        enableReinitialize={false}
-        forceUnregisterOnUnmount={false}
-        form="create-course-run-form"
-        getFormState={[Function]}
-        initialValues={
-          {
-            "pacing_type": undefined,
-            "rerun": "",
-            "run_type": undefined,
-          }
-        }
-        isCreating={true}
-        keepDirtyOnReinitialize={false}
-        onSubmit={[Function]}
-        persistentSubmitErrors={false}
-        pure={true}
-        shouldAsyncValidate={[Function]}
-        shouldError={[Function]}
-        shouldValidate={[Function]}
-        shouldWarn={[Function]}
-        submitAsSideEffect={false}
-        title=""
-        touchOnBlur={true}
-        touchOnChange={false}
-        updateUnregisteredFields={false}
-        uuid=""
-      />
+    <div
+      class="row justify-content-md-center"
+    >
+      <div
+        class="col col-xl-7 col-9"
+      >
+        <div>
+          <div
+            class="create-course-run-form"
+          >
+            <h2>
+              Create a new course run
+            </h2>
+            <hr />
+            <div
+              class="mb-2"
+            >
+              <strong>
+                Course
+              </strong>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+            <div
+              class="mb-3"
+            >
+              <a
+                href="/courses/"
+              />
+            </div>
+            <form>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="rerun.label"
+                  >
+                    <strong>
+                      Select a run to copy
+                    </strong>
+                    <span
+                      class=""
+                      id="rerun.label-help"
+                    >
+                      <button
+                        aria-describedby="rerun.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="rerun.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="rerun.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-top {
+        margin-top: -10px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-bottom {
+        margin-top: 10px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-left {
+        margin-left: -10px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-right {
+        margin-left: 10px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t29a3d110-f87c-4b28-bbe8-e7db3a5b3a0e.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                  />
+                </div>
+              </div>
+              <div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-date-label"
+                        >
+                          <strong>
+                            Start date
+                          </strong>
+                          <span
+                            class=""
+                            id="start-date-label-help"
+                          >
+                            <button
+                              aria-describedby="start-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="start-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    Start on a Tuesday, Wednesday, or Thursday.
+  </p>
+  <p>
+    Avoid major holidays.
+  </p>
+  <p>
+    Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip tbf29e51d-1a50-4d0d-a79f-022eb0cea275 place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="start-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.tbf29e51d-1a50-4d0d-a79f-022eb0cea275 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-top {
+        margin-top: -10px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-bottom {
+        margin-top: 10px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-left {
+        margin-left: -10px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-right {
+        margin-left: 10px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tbf29e51d-1a50-4d0d-a79f-022eb0cea275.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="start-date-label"
+                          maxlength="10"
+                          min=""
+                          name="startDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-time-label"
+                        >
+                          <strong>
+                            Start time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="start-date-label"
+                          name="startTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-date-label"
+                        >
+                          <strong>
+                            End date
+                          </strong>
+                          <span
+                            class=""
+                            id="end-date-label-help"
+                          >
+                            <button
+                              aria-describedby="end-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="end-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="end-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-top {
+        margin-top: -10px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-bottom {
+        margin-top: 10px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-left {
+        margin-left: -10px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-right {
+        margin-left: 10px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tf5177b8f-f7ba-4d14-bc4d-06d730a05fcb.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="end-date-label"
+                          maxlength="10"
+                          min=""
+                          name="endDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-time-label"
+                        >
+                          <strong>
+                            End time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="end-date-label"
+                          name="endTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="run_type.label"
+                  >
+                    <strong>
+                      Course run enrollment track
+                    </strong>
+                    <span
+                      class=""
+                      id="run_type.label-help"
+                    >
+                      <button
+                        aria-describedby="run_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="run_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="run_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-top {
+        margin-top: -10px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-bottom {
+        margin-top: 10px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-left {
+        margin-left: -10px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-right {
+        margin-left: 10px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t1e44d4bc-4ac5-48fe-aaf7-ecd7190cf5cc.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                    required=""
+                  />
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="pacing_type-text-label"
+                >
+                  <div
+                    class=""
+                    id="pacing_type.label"
+                  >
+                    <strong>
+                      Course pacing
+                    </strong>
+                    <span
+                      class=""
+                      id="pacing_type.label-help"
+                    >
+                      <button
+                        aria-describedby="pacing_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="pacing_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+  </p>
+  <p>
+    Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t913c4f21-cf16-4347-82e8-a6d115389fd1 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="pacing_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t913c4f21-cf16-4347-82e8-a6d115389fd1 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t913c4f21-cf16-4347-82e8-a6d115389fd1.place-top {
+        margin-top: -10px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-bottom {
+        margin-top: 10px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-left {
+        margin-left: -10px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-right {
+        margin-left: 10px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t913c4f21-cf16-4347-82e8-a6d115389fd1.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="pacing_type-text-label"
+                    label="[object Object]"
+                    name="pacing_type"
+                  />
+                </div>
+              </div>
+              <div
+                class="btn-toolbar justify-content-end"
+                role="toolbar"
+              >
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <a
+                    href="/courses/"
+                  >
+                    <button
+                      class="btn btn-outline-primary"
+                      disabled=""
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                  </a>
+                </div>
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <button
+                    aria-disabled="true"
+                    aria-live="assertive"
+                    class="pgn__stateful-btn pgn__stateful-btn-state-pending btn form-submit-btn disabled btn btn-primary"
+                    disabled=""
+                    type="submit"
+                  >
+                    <span
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <span
+                        class="pgn__stateful-btn-icon"
+                      >
+                        <span
+                          class="pgn__icon icon-spin"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M22 12A10 10 0 1 1 6.122 3.91l1.176 1.618A8 8 0 1 0 20 12h2Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span>
+                        Creating
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </PageContainer>
-</Fragment>
+  </div>
+</div>
 `;
 
 exports[`CreateCourseRunPage renders html correctly when error 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
+<div>
+  <div
+    class="container my-3 content-container"
   >
-    Create Course Run
-  </HelmetWrapper>
-  <PageContainer
-    className=""
-    wide={false}
-  >
-    <div>
-      <ReduxForm
-        courseOptions={{}}
-        courseRunLabels={[]}
-        courseRunOptions={{}}
-        courseRunTypeOptions={[]}
-        currentFormValues={{}}
-        destroyOnUnmount={true}
-        enableReinitialize={false}
-        forceUnregisterOnUnmount={false}
-        form="create-course-run-form"
-        getFormState={[Function]}
-        initialValues={
-          {
-            "pacing_type": undefined,
-            "rerun": "",
-            "run_type": undefined,
-          }
-        }
-        isCreating={false}
-        keepDirtyOnReinitialize={false}
-        onSubmit={[Function]}
-        persistentSubmitErrors={false}
-        pure={true}
-        shouldAsyncValidate={[Function]}
-        shouldError={[Function]}
-        shouldValidate={[Function]}
-        shouldWarn={[Function]}
-        submitAsSideEffect={false}
-        title=""
-        touchOnBlur={true}
-        touchOnChange={false}
-        updateUnregisteredFields={false}
-        uuid=""
-      />
-      <ForwardRef
-        className="mt-3"
-        dismissible={false}
-        id="create-error"
-        onClose={[Function]}
-        show={true}
-        stacked={false}
-        transition={
-          {
-            "$$typeof": Symbol(react.forward_ref),
-            "defaultProps": {
-              "appear": false,
-              "in": false,
-              "mountOnEnter": false,
-              "timeout": 300,
-              "unmountOnExit": false,
-            },
-            "render": [Function],
-          }
-        }
-        variant="danger"
+    <div
+      class="row justify-content-md-center"
+    >
+      <div
+        class="col col-xl-7 col-9"
       >
-        failed
-        <br />
-      </ForwardRef>
+        <div>
+          <div
+            class="create-course-run-form"
+          >
+            <h2>
+              Create a new course run
+            </h2>
+            <hr />
+            <div
+              class="mb-2"
+            >
+              <strong>
+                Course
+              </strong>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+            <div
+              class="mb-3"
+            >
+              <a
+                href="/courses/"
+              />
+            </div>
+            <form>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="rerun.label"
+                  >
+                    <strong>
+                      Select a run to copy
+                    </strong>
+                    <span
+                      class=""
+                      id="rerun.label-help"
+                    >
+                      <button
+                        aria-describedby="rerun.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="rerun.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip tb886505e-b66c-4319-a731-3050e7943983 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="rerun.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.tb886505e-b66c-4319-a731-3050e7943983 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.tb886505e-b66c-4319-a731-3050e7943983.place-top {
+        margin-top: -10px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .tb886505e-b66c-4319-a731-3050e7943983.place-bottom {
+        margin-top: 10px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tb886505e-b66c-4319-a731-3050e7943983.place-left {
+        margin-left: -10px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tb886505e-b66c-4319-a731-3050e7943983.place-right {
+        margin-left: 10px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tb886505e-b66c-4319-a731-3050e7943983.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                  />
+                </div>
+              </div>
+              <div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-date-label"
+                        >
+                          <strong>
+                            Start date
+                          </strong>
+                          <span
+                            class=""
+                            id="start-date-label-help"
+                          >
+                            <button
+                              aria-describedby="start-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="start-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    Start on a Tuesday, Wednesday, or Thursday.
+  </p>
+  <p>
+    Avoid major holidays.
+  </p>
+  <p>
+    Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip t99b5f205-d27e-45cf-9df4-db0fa922dba7 place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="start-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.t99b5f205-d27e-45cf-9df4-db0fa922dba7 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-top {
+        margin-top: -10px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-bottom {
+        margin-top: 10px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-left {
+        margin-left: -10px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-right {
+        margin-left: 10px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t99b5f205-d27e-45cf-9df4-db0fa922dba7.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="start-date-label"
+                          maxlength="10"
+                          min=""
+                          name="startDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-time-label"
+                        >
+                          <strong>
+                            Start time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="start-date-label"
+                          name="startTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-date-label"
+                        >
+                          <strong>
+                            End date
+                          </strong>
+                          <span
+                            class=""
+                            id="end-date-label-help"
+                          >
+                            <button
+                              aria-describedby="end-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="end-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip t15fa5c4a-98b3-4416-9515-38d8a17f97e1 place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="end-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.t15fa5c4a-98b3-4416-9515-38d8a17f97e1 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-top {
+        margin-top: -10px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-bottom {
+        margin-top: 10px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-left {
+        margin-left: -10px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-right {
+        margin-left: 10px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t15fa5c4a-98b3-4416-9515-38d8a17f97e1.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="end-date-label"
+                          maxlength="10"
+                          min=""
+                          name="endDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-time-label"
+                        >
+                          <strong>
+                            End time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="end-date-label"
+                          name="endTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="run_type.label"
+                  >
+                    <strong>
+                      Course run enrollment track
+                    </strong>
+                    <span
+                      class=""
+                      id="run_type.label-help"
+                    >
+                      <button
+                        aria-describedby="run_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="run_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t23df43a9-6297-4542-b4ad-d116d799c0e6 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="run_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t23df43a9-6297-4542-b4ad-d116d799c0e6 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t23df43a9-6297-4542-b4ad-d116d799c0e6.place-top {
+        margin-top: -10px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-bottom {
+        margin-top: 10px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-left {
+        margin-left: -10px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-right {
+        margin-left: 10px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t23df43a9-6297-4542-b4ad-d116d799c0e6.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                    required=""
+                  />
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="pacing_type-text-label"
+                >
+                  <div
+                    class=""
+                    id="pacing_type.label"
+                  >
+                    <strong>
+                      Course pacing
+                    </strong>
+                    <span
+                      class=""
+                      id="pacing_type.label-help"
+                    >
+                      <button
+                        aria-describedby="pacing_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="pacing_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+  </p>
+  <p>
+    Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t549bdeca-53ef-4a17-98c3-cba54334a60e place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="pacing_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t549bdeca-53ef-4a17-98c3-cba54334a60e {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t549bdeca-53ef-4a17-98c3-cba54334a60e.place-top {
+        margin-top: -10px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-bottom {
+        margin-top: 10px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-left {
+        margin-left: -10px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-right {
+        margin-left: 10px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t549bdeca-53ef-4a17-98c3-cba54334a60e.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="pacing_type-text-label"
+                    label="[object Object]"
+                    name="pacing_type"
+                  />
+                </div>
+              </div>
+              <div
+                class="btn-toolbar justify-content-end"
+                role="toolbar"
+              >
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <a
+                    href="/courses/"
+                  >
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                  </a>
+                </div>
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <button
+                    aria-disabled="false"
+                    aria-live="assertive"
+                    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+                    disabled=""
+                    type="submit"
+                  >
+                    <span
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <span>
+                        Create
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            class="fade alert-content mt-3 alert alert-danger show"
+            id="create-error"
+            role="alert"
+          >
+            <div
+              class="pgn__alert-message-wrapper"
+            >
+              <div
+                class="alert-message-content"
+              >
+                failed
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </PageContainer>
-</Fragment>
+  </div>
+</div>
 `;
 
 exports[`CreateCourseRunPage renders html correctly when fetching 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
+<div>
+  <div
+    class="container my-3 content-container"
   >
-    Create Course Run
-  </HelmetWrapper>
-  <PageContainer
-    className=""
-    wide={false}
-  >
-    <LoadingSpinner
-      message="Loading…"
-    />
-  </PageContainer>
-</Fragment>
+    <div
+      class="row justify-content-md-center"
+    >
+      <div
+        class="col col-xl-7 col-9"
+      >
+        <div
+          class="mx-auto text-center"
+        >
+          <div>
+            Loading…
+          </div>
+          <div
+            class="pgn__spinner mie-3 spinner-border"
+            role="status"
+          >
+            <span
+              class="sr-only"
+            >
+              loading
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`CreateCourseRunPage renders html correctly with Course Type 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
+<div>
+  <div
+    class="container my-3 content-container"
   >
-    Create Course Run
-  </HelmetWrapper>
-  <PageContainer
-    className=""
-    wide={false}
-  >
-    <div>
-      <ReduxForm
-        courseOptions={
-          {
-            "data": {
-              "actions": {
-                "POST": {
-                  "additional_metadata": {
-                    "children": {
-                      "external_course_marketing_type": {
-                        "choices": [
-                          {
-                            "display_name": "Short Course",
-                            "value": "short_course",
-                          },
-                          {
-                            "display_name": "Sprint",
-                            "value": "sprint",
-                          },
-                        ],
-                      },
-                      "product_status": {
-                        "choices": [
-                          {
-                            "display_name": "Published",
-                            "value": "published",
-                          },
-                          {
-                            "display_name": "Archived",
-                            "value": "archived",
-                          },
-                        ],
-                      },
-                    },
-                  },
-                  "level_type": {
-                    "choices": [
-                      {
-                        "display_name": "Beginner",
-                        "value": "beginner",
-                      },
-                      {
-                        "display_name": "Intermediate",
-                        "value": "intermediate",
-                      },
-                      {
-                        "display_name": "Advanced",
-                        "value": "advanced",
-                      },
-                    ],
-                  },
-                  "location_restriction": {
-                    "children": {
-                      "countries": {
-                        "child": {
-                          "choices": [
-                            {
-                              "label": "Afghanistan",
-                              "value": "AF",
-                            },
-                            {
-                              "label": "Åland Islands",
-                              "value": "AX",
-                            },
-                            {
-                              "label": "Algeria",
-                              "value": "DZ",
-                            },
-                            {
-                              "label": "American Samoa",
-                              "value": "AS",
-                            },
-                            {
-                              "label": "Andorra",
-                              "value": "AD",
-                            },
-                          ],
-                        },
-                      },
-                      "restriction_type": {
-                        "choices": [
-                          "blocklist",
-                          "allowlist",
-                        ],
-                      },
-                      "states": {
-                        "child": {
-                          "choices": [
-                            {
-                              "label": "Alabama",
-                              "value": "AL",
-                            },
-                            {
-                              "label": "Arizona",
-                              "value": "AZ",
-                            },
-                            {
-                              "label": "Arkansas",
-                              "value": "AR",
-                            },
-                            {
-                              "label": "California",
-                              "value": "CA",
-                            },
-                            {
-                              "label": "Colorado",
-                              "value": "CO",
-                            },
-                          ],
-                        },
-                      },
-                    },
-                  },
-                  "subjects": {
-                    "child": {
-                      "choices": [
-                        {
-                          "display_name": "Business",
-                          "value": "business",
-                        },
-                        {
-                          "display_name": "Chemistry",
-                          "value": "chemistry",
-                        },
-                        {
-                          "display_name": "English",
-                          "value": "english",
-                        },
-                        {
-                          "display_name": "Security",
-                          "value": "security",
-                        },
-                      ],
-                    },
-                  },
-                  "type": {
-                    "type_options": [
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "credit",
-                              "verified",
-                              "audit",
-                            ],
-                            "name": "Credit",
-                            "uuid": "f17e29d6-4648-4bb5-a199-97dc40f904aa",
-                          },
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "verified",
-                              "audit",
-                            ],
-                            "name": "Verified and Audit",
-                            "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
-                          },
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "audit",
-                            ],
-                            "name": "Audit Only",
-                            "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "verified",
-                        ],
-                        "name": "Credit",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "credit",
-                              "is_credit_eligible": true,
-                              "is_id_verified": true,
-                              "name": "Credit",
-                              "payee": "platform",
-                              "slug": "credit",
-                            },
-                            "seat_type": {
-                              "name": "Credit",
-                              "slug": "credit",
-                            },
-                          },
-                          {
-                            "mode": {
-                              "certificate_type": "verified",
-                              "is_credit_eligible": false,
-                              "is_id_verified": true,
-                              "name": "Verified",
-                              "payee": "platform",
-                              "slug": "verified",
-                            },
-                            "seat_type": {
-                              "name": "Verified",
-                              "slug": "verified",
-                            },
-                          },
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Audit",
-                              "payee": "",
-                              "slug": "audit",
-                            },
-                            "seat_type": {
-                              "name": "Audit",
-                              "slug": "audit",
-                            },
-                          },
-                        ],
-                        "uuid": "9521aa7d-801b-4a67-92c3-716ea30f5086",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": false,
-                            "modes": [
-                              "masters",
-                            ],
-                            "name": "Masters Only",
-                            "uuid": "f394732f-ba43-4260-8ada-06a9f18e7160",
-                          },
-                        ],
-                        "entitlement_types": [],
-                        "name": "Masters Only",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Masters",
-                              "payee": "organization",
-                              "slug": "masters",
-                            },
-                            "seat_type": null,
-                          },
-                        ],
-                        "uuid": "7b41992e-f268-4331-8ba9-72acb0880454",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "verified",
-                              "audit",
-                            ],
-                            "name": "Verified and Audit",
-                            "uuid": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
-                          },
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "audit",
-                            ],
-                            "name": "Audit Only",
-                            "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "verified",
-                        ],
-                        "name": "Verified and Audit",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "verified",
-                              "is_credit_eligible": false,
-                              "is_id_verified": true,
-                              "name": "Verified",
-                              "payee": "platform",
-                              "slug": "verified",
-                            },
-                            "seat_type": {
-                              "name": "Verified",
-                              "slug": "verified",
-                            },
-                          },
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Audit",
-                              "payee": "",
-                              "slug": "audit",
-                            },
-                            "seat_type": {
-                              "name": "Audit",
-                              "slug": "audit",
-                            },
-                          },
-                        ],
-                        "uuid": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "professional",
-                            ],
-                            "name": "Professional Only",
-                            "uuid": "6cebfc50-abca-4674-b4c7-249b31af6ddb",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "professional",
-                        ],
-                        "name": "Professional Only",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "professional",
-                              "is_credit_eligible": false,
-                              "is_id_verified": true,
-                              "name": "Professional",
-                              "payee": "platform",
-                              "slug": "professional",
-                            },
-                            "seat_type": {
-                              "name": "Professional",
-                              "slug": "professional",
-                            },
-                          },
-                        ],
-                        "uuid": "fdde7d04-7ce0-4ff7-ac90-7f518e90ac1e",
-                      },
-                      {
-                        "course_run_types": [
-                          {
-                            "is_marketable": true,
-                            "modes": [
-                              "audit",
-                            ],
-                            "name": "Audit Only",
-                            "uuid": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-                          },
-                        ],
-                        "entitlement_types": [
-                          "audit",
-                        ],
-                        "name": "Audit Only",
-                        "tracks": [
-                          {
-                            "mode": {
-                              "certificate_type": "",
-                              "is_credit_eligible": false,
-                              "is_id_verified": false,
-                              "name": "Audit",
-                              "payee": "",
-                              "slug": "audit",
-                            },
-                            "seat_type": {
-                              "name": "Audit",
-                              "slug": "audit",
-                            },
-                          },
-                        ],
-                        "uuid": "03e09c15-4127-4031-bc02-e20fcbdf09f0",
-                      },
-                    ],
-                  },
-                },
-              },
-            },
-            "error": null,
-            "isFetching": false,
-          }
-        }
-        courseRunLabels={[]}
-        courseRunOptions={{}}
-        courseRunTypeOptions={
-          [
-            {
-              "label": "Select enrollment track",
-              "value": "",
-            },
-            {
-              "label": "Verified and Audit",
-              "value": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
-            },
-            {
-              "label": "Audit Only",
-              "value": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-            },
-          ]
-        }
-        courseTypeUuid="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-        currentFormValues={{}}
-        destroyOnUnmount={true}
-        enableReinitialize={false}
-        forceUnregisterOnUnmount={false}
-        form="create-course-run-form"
-        getFormState={[Function]}
-        initialValues={
-          {
-            "pacing_type": undefined,
-            "rerun": "",
-            "run_type": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
-          }
-        }
-        isCreating={false}
-        keepDirtyOnReinitialize={false}
-        onSubmit={[Function]}
-        persistentSubmitErrors={false}
-        pure={true}
-        shouldAsyncValidate={[Function]}
-        shouldError={[Function]}
-        shouldValidate={[Function]}
-        shouldWarn={[Function]}
-        submitAsSideEffect={false}
-        title=""
-        touchOnBlur={true}
-        touchOnChange={false}
-        updateUnregisteredFields={false}
-        uuid=""
-      />
+    <div
+      class="row justify-content-md-center"
+    >
+      <div
+        class="col col-xl-7 col-9"
+      >
+        <div>
+          <div
+            class="create-course-run-form"
+          >
+            <h2>
+              Create a new course run
+            </h2>
+            <hr />
+            <div
+              class="mb-2"
+            >
+              <strong>
+                Course
+              </strong>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+            <div
+              class="mb-3"
+            >
+              <a
+                href="/courses/"
+              />
+            </div>
+            <form>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="rerun.label"
+                  >
+                    <strong>
+                      Select a run to copy
+                    </strong>
+                    <span
+                      class=""
+                      id="rerun.label-help"
+                    >
+                      <button
+                        aria-describedby="rerun.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="rerun.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t9265668e-c5d6-44fa-906c-50fc775f082c place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="rerun.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t9265668e-c5d6-44fa-906c-50fc775f082c {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t9265668e-c5d6-44fa-906c-50fc775f082c.place-top {
+        margin-top: -10px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-bottom {
+        margin-top: 10px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-left {
+        margin-left: -10px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-right {
+        margin-left: 10px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t9265668e-c5d6-44fa-906c-50fc775f082c.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                  />
+                </div>
+              </div>
+              <div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-date-label"
+                        >
+                          <strong>
+                            Start date
+                          </strong>
+                          <span
+                            class=""
+                            id="start-date-label-help"
+                          >
+                            <button
+                              aria-describedby="start-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="start-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    Start on a Tuesday, Wednesday, or Thursday.
+  </p>
+  <p>
+    Avoid major holidays.
+  </p>
+  <p>
+    Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip tdca14373-c0c6-4a35-8f37-3255442de596 place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="start-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.tdca14373-c0c6-4a35-8f37-3255442de596 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.tdca14373-c0c6-4a35-8f37-3255442de596.place-top {
+        margin-top: -10px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-bottom {
+        margin-top: 10px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-left {
+        margin-left: -10px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-right {
+        margin-left: 10px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .tdca14373-c0c6-4a35-8f37-3255442de596.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="start-date-label"
+                          maxlength="10"
+                          min=""
+                          name="startDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="start-date-label"
+                      >
+                        <div
+                          class=""
+                          id="start-time-label"
+                        >
+                          <strong>
+                            Start time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="start-date-label"
+                          name="startTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-date-label"
+                        >
+                          <strong>
+                            End date
+                          </strong>
+                          <span
+                            class=""
+                            id="end-date-label-help"
+                          >
+                            <button
+                              aria-describedby="end-date-label-help-tooltip"
+                              class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                              type="button"
+                            >
+                              <svg
+                                fill="none"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </button>
+                            <span
+                              class="field-help-data"
+                              currentitem="false"
+                              data-for="end-date-label-help-tooltip"
+                              data-html="true"
+                              data-testid="field-help-data"
+                              data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+  </p>
+</div>"
+                            />
+                            <div
+                              class="__react_component_tooltip t1023a384-db43-4afa-8e5c-0c19c474c0fd place-right type-dark allow_click"
+                              data-id="tooltip"
+                              id="end-date-label-help-tooltip"
+                            >
+                              <style
+                                aria-hidden="true"
+                              >
+                                
+  	.t1023a384-db43-4afa-8e5c-0c19c474c0fd {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-top {
+        margin-top: -10px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-bottom {
+        margin-top: 10px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-left {
+        margin-left: -10px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-right {
+        margin-left: 10px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t1023a384-db43-4afa-8e5c-0c19c474c0fd.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                              </style>
+                            </div>
+                          </span>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="form-control"
+                          id="end-date-label"
+                          maxlength="10"
+                          min=""
+                          name="endDate"
+                          pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                          placeholder="yyyy/mm/dd"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-6"
+                  >
+                    <div
+                      class="pgn__form-group"
+                    >
+                      <label
+                        class="pgn__form-label"
+                        for="end-date-label"
+                      >
+                        <div
+                          class=""
+                          id="end-time-label"
+                        >
+                          <strong>
+                            End time (GMT)
+                          </strong>
+                          <div>
+                            <span
+                              class="text-muted"
+                            />
+                          </div>
+                        </div>
+                      </label>
+                      <div
+                        class="pgn__form-control-decorator-group"
+                      >
+                        <input
+                          class="has-value form-control"
+                          id="end-date-label"
+                          name="endTime"
+                          placeholder="HH:mm"
+                          required=""
+                          type="time"
+                          value="00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="-text-label"
+                >
+                  <div
+                    class=""
+                    id="run_type.label"
+                  >
+                    <strong>
+                      Course run enrollment track
+                    </strong>
+                    <span
+                      class=""
+                      id="run_type.label-help"
+                    >
+                      <button
+                        aria-describedby="run_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="run_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t849b00a0-4969-488b-af8a-074bf7eb3afd place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="run_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t849b00a0-4969-488b-af8a-074bf7eb3afd {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t849b00a0-4969-488b-af8a-074bf7eb3afd.place-top {
+        margin-top: -10px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-bottom {
+        margin-top: 10px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-left {
+        margin-left: -10px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-right {
+        margin-left: 10px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t849b00a0-4969-488b-af8a-074bf7eb3afd.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="-text-label"
+                    label="[object Object]"
+                    name=""
+                    required=""
+                  >
+                    <option
+                      value=""
+                    >
+                      Select enrollment track
+                    </option>
+                    <option
+                      value="4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c"
+                    >
+                      Verified and Audit
+                    </option>
+                    <option
+                      value="cfacfc62-54bd-4e1b-939a-5a94f12fbd8d"
+                    >
+                      Audit Only
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="pacing_type-text-label"
+                >
+                  <div
+                    class=""
+                    id="pacing_type.label"
+                  >
+                    <strong>
+                      Course pacing
+                    </strong>
+                    <span
+                      class=""
+                      id="pacing_type.label-help"
+                    >
+                      <button
+                        aria-describedby="pacing_type.label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="pacing_type.label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+  </p>
+  <p>
+    Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t96544cab-58d7-4afc-b0b7-4a28ea5f0316 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="pacing_type.label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t96544cab-58d7-4afc-b0b7-4a28ea5f0316 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-top {
+        margin-top: -10px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-bottom {
+        margin-top: 10px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-left {
+        margin-left: -10px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-right {
+        margin-left: 10px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t96544cab-58d7-4afc-b0b7-4a28ea5f0316.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <select
+                    class="form-control"
+                    id="pacing_type-text-label"
+                    label="[object Object]"
+                    name="pacing_type"
+                  />
+                </div>
+              </div>
+              <div
+                class="btn-toolbar justify-content-end"
+                role="toolbar"
+              >
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <a
+                    href="/courses/"
+                  >
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                  </a>
+                </div>
+                <div
+                  class="btn-group ml-2"
+                  role="group"
+                >
+                  <button
+                    aria-disabled="false"
+                    aria-live="assertive"
+                    class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+                    disabled=""
+                    type="submit"
+                  >
+                    <span
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <span>
+                        Create
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </PageContainer>
-</Fragment>
+  </div>
+</div>
 `;

@@ -843,6 +843,7 @@ class EditCoursePage extends React.Component {
         </div>
         {showSpinner && <LoadingSpinner />}
         <PageContainer
+          dataTestId="edit-course-page"
           sidePanes={
             showForm && (
               <SidePanes

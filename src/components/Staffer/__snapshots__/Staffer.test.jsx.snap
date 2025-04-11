@@ -1,48 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Staffer renders the staffer 1`] = `
-<Fragment>
+<div>
   <div
-    className="staffer-image-wrapper overflow-hidden"
+    class="staffer-image-wrapper overflow-hidden"
   >
     <img
       alt=""
-      className="rounded-circle w-25"
+      class="rounded-circle w-25"
       src="/media/people/profile_images/2aba6189-ad7e-45a8-b269-bea071b80391-11df6812f839.png"
     />
   </div>
   <div
-    className="staffer-details"
+    class="staffer-details"
   >
     <button
-      className="btn js-delete-btn mr-1 p-0"
-      disabled={false}
-      onClick={[Function]}
+      class="btn js-delete-btn mr-1 p-0"
       type="button"
     >
-      <SvgDelete
-        className="text-gray-500"
+      <svg
+        class="text-gray-500"
+        fill="none"
+        height="24"
         id="delete-icon-2aba6189-ad7e-45a8-b269-bea071b80391"
         screenReaderText="Remove Dave Grohl"
-      />
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 21h12V7H6v14ZM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4Z"
+          fill="currentColor"
+        />
+      </svg>
     </button>
-    <Link
-      className="btn mr-1 p-0"
-      onClick={[Function]}
-      to="/instructors/2aba6189-ad7e-45a8-b269-bea071b80391"
+    <a
+      class="btn mr-1 p-0"
+      href="/instructors/2aba6189-ad7e-45a8-b269-bea071b80391"
     >
-      <SvgEdit
-        className="text-gray-500"
+      <svg
+        class="text-gray-500"
+        fill="none"
+        height="24"
         id="edit-icon-2aba6189-ad7e-45a8-b269-bea071b80391"
         screenReaderText="Edit Dave Grohl"
         title="Edit"
-      />
-    </Link>
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25ZM21.41 6.34l-3.75-3.75-2.53 2.54 3.75 3.75 2.53-2.54Z"
+          fill="currentColor"
+        />
+      </svg>
+    </a>
     <span
-      className="name font-weight-bold"
+      class="name font-weight-bold"
     >
       Dave Grohl
     </span>
   </div>
-</Fragment>
+</div>
 `;

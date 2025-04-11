@@ -375,6 +375,7 @@ export class BaseEditCourseForm extends React.Component {
             />
             <Field
               name="watchers_list"
+              data-testid="watchers-list"
               component={ReduxFormCreatableSelect}
               label={(
                 <FieldLabel

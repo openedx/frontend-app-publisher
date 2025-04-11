@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, waitFor } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -175,13 +174,13 @@ describe('ListField - Collaborators', () => {
   });
 
   it('renders a list of item members and an autocomplete input', () => {
-    const component = shallow(<ListField {...collaboratorDefaultProps} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<ListField {...collaboratorDefaultProps} />);
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with referred props', () => {
-    const component = shallow(<ListField {...collaboratorReferredProps} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<ListField {...collaboratorReferredProps} />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly with an error after failed submission', () => {
@@ -193,12 +192,12 @@ describe('ListField - Collaborators', () => {
         error: 'This field is required',
       },
     };
-    const component = shallow(<ListField {...metaFailedProps} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<ListField {...metaFailedProps} />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('gets/clears suggestions for autocomplete', (done) => {
-    const component = mount(<ListField {...collaboratorDefaultProps} owners={owners} />);
+    const component = render(<ListField {...collaboratorDefaultProps} owners={owners} />);
     component.instance().onSuggestionsFetchRequested({ value: 'mit' }).then(() => {
       let { suggestions } = component.state();
       // check that we get the expected response from the API
