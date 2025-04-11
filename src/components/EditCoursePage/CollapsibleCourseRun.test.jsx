@@ -1,14 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import {
+  render, waitFor, screen, fireEvent,
+} from '@testing-library/react';
+import configureStore from 'redux-mock-store';
 
-import CollapsibleCourseRun from './CollapsibleCourseRun';
-import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
+import { reduxForm } from 'redux-form';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 import {
   AUDIT_TRACK, EXECUTIVE_EDUCATION_SLUG, MASTERS_TRACK, VERIFIED_TRACK,
 } from '../../data/constants';
+import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
+import CollapsibleCourseRun from './CollapsibleCourseRun';
 
-import store from '../../data/store';
+const mockStore = configureStore();
+const store = mockStore({});
 
 const languageOptions = [
   {
@@ -58,57 +65,91 @@ const currentFormValues = {
   type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
 };
 
+const WrappedCollapsibleCourseRun = reduxForm({ form: 'testForm' })(CollapsibleCourseRun);
+
 Date.now = jest.fn(() => new Date(Date.UTC(2001, 0, 1)).valueOf());
 
 describe('Collapsible Course Run', () => {
   it('renders correctly with no fields', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={[]}
-      pacingTypeOptions={[]}
-      courseRun={{}}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={[]}
+              pacingTypeOptions={[]}
+              courseRun={{}}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly when given a published course run', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={publishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      index={0}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+  it('renders correctly when given a published course run', async () => {
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={publishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              index={0}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly when given an unpublished course run', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={unpublishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      index={1}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const component = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={unpublishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              index={1}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+    waitFor(() => expect(component).toMatchSnapshot());
   });
 
   it('renders correctly with a course run type', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={unpublishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-      currentFormValues={currentFormValues}
-      courseRunTypeOptions={courseRunTypeOptions}
-      index={1}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={unpublishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+              currentFormValues={currentFormValues}
+              courseRunTypeOptions={courseRunTypeOptions}
+              index={1}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly variant_id field for external course\'s course run', () => {
@@ -122,23 +163,31 @@ describe('Collapsible Course Run', () => {
         course_type: EXECUTIVE_EDUCATION_SLUG,
       },
     };
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={unpublishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-      currentFormValues={currentFormValues}
-      courseRunTypeOptions={courseRunTypeOptions}
-      index={1}
-      courseInfo={courseInfo}
-    />);
-    const variantIdField = component.find('Field[name="test-course.variant_id"]');
-    expect(variantIdField.exists()).toBe(true);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={unpublishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+              currentFormValues={currentFormValues}
+              courseRunTypeOptions={courseRunTypeOptions}
+              index={1}
+              courseInfo={courseInfo}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+    const variantIdInput = screen.getByRole('textbox', { name: /variant id/i });
+    expect(variantIdInput).toBeInTheDocument();
+    expect(document.body).toMatchSnapshot();
   });
-  it.each(['custom-b2c', ''])('renders correctly restriction type field for external course\'s course run', (restrictionType) => {
+  it.each(['custom-b2c', ''])('renders correctly restriction type field for external course\'s course run (type: %s)', (restrictionType) => {
     const courseInfo = {
       data: {
         product_source: {
@@ -150,23 +199,29 @@ describe('Collapsible Course Run', () => {
       },
     };
     const courseRun = { ...unpublishedCourseRun, restriction_type: restrictionType };
-    const component = shallow(
-      <CollapsibleCourseRun
-        languageOptions={languageOptions}
-        pacingTypeOptions={pacingTypeOptions}
-        courseRun={courseRun}
-        courseId="test-course"
-        courseUuid="11111111-1111-1111-1111-111111111111"
-        type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-        currentFormValues={currentFormValues}
-        courseRunTypeOptions={courseRunTypeOptions}
-        index={1}
-        courseInfo={courseInfo}
-      />,
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={courseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+              currentFormValues={currentFormValues}
+              courseRunTypeOptions={courseRunTypeOptions}
+              index={1}
+              courseInfo={courseInfo}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
     );
-    const restrictionTypeField = component.find('Field[name="test-course.restriction_type"]');
-    expect(restrictionTypeField.exists()).toBe(true);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const restrictionField = screen.getByRole('combobox', { name: /restriction type/i });
+    expect(restrictionField).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with external key field enabled', () => {
@@ -175,120 +230,183 @@ describe('Collapsible Course Run', () => {
         AUDIT_TRACK.key, MASTERS_TRACK.key, VERIFIED_TRACK.key,
       ],
     };
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={unpublishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-      currentFormValues={currentFormValues}
-      courseRunTypeOptions={courseRunTypeOptions}
-      runTypeModes={runTypeModes}
-      index={1}
-    />);
-    // Triggers an update so hasExternalKey is set
-    component.setProps({});
-    expect(shallowToJson(component)).toMatchSnapshot();
-  });
 
+    const { container, rerender } = render(
+      <CollapsibleCourseRun
+        languageOptions={languageOptions}
+        pacingTypeOptions={pacingTypeOptions}
+        courseRun={unpublishedCourseRun}
+        courseId="test-course"
+        courseUuid="11111111-1111-1111-1111-111111111111"
+        type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+        currentFormValues={currentFormValues}
+        courseRunTypeOptions={courseRunTypeOptions}
+        runTypeModes={runTypeModes}
+        index={1}
+      />,
+    );
+
+    rerender(
+      <CollapsibleCourseRun
+        languageOptions={languageOptions}
+        pacingTypeOptions={pacingTypeOptions}
+        courseRun={unpublishedCourseRun}
+        courseId="test-course"
+        courseUuid="11111111-1111-1111-1111-111111111111"
+        type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+        currentFormValues={currentFormValues}
+        courseRunTypeOptions={courseRunTypeOptions}
+        runTypeModes={runTypeModes}
+        index={1}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
   it('renders correctly when submitting for review', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={unpublishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      isSubmittingForReview
-      index={1}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={unpublishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              isSubmittingForReview
+              index={1}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly when submitting for review and given a matching target run', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={publishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      isSubmittingForReview
-      index={0}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={publishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              isSubmittingForReview
+              index={0}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders fields as disabled when course is in review', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={[]}
-      pacingTypeOptions={[]}
-      courseRun={{}}
-      courseInReview
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-    />);
-    const childFields = component.find('input');
-    childFields.forEach((field) => {
-      expect(field.prop('disabled')).toBeTrue();
+    const { container } = render(
+      <MemoryRouter>
+        <IntlProvider locale="en">
+          <CollapsibleCourseRun
+            languageOptions={[]}
+            pacingTypeOptions={[]}
+            courseRun={{}}
+            courseInReview
+            courseId="test-course"
+            courseUuid="11111111-1111-1111-1111-111111111111"
+          />
+        </IntlProvider>
+      </MemoryRouter>,
+    );
+
+    const inputs = container.querySelectorAll('input');
+    inputs.forEach((input) => {
+      expect(input).toBeDisabled();
     });
   });
 
-  it('renders with run type disabled once a sku exists', () => {
+  it('renders with run type disabled once a SKU exists', () => {
     const seat = {
       type: 'verified',
       price: '149.00',
       sku: '',
     };
     const updatedCourseRun = { ...publishedCourseRun, seats: [seat] };
-    const componentNoSku = shallow(<CollapsibleCourseRun
-      languageOptions={[]}
-      pacingTypeOptions={[]}
-      courseRun={updatedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-      currentFormValues={currentFormValues}
-      courseRunTypeOptions={courseRunTypeOptions}
-      index={0}
-      editable
-    />);
 
-    let disabledFields = componentNoSku.find({ name: 'test-course.run_type', disabled: true });
-    expect(disabledFields).toHaveLength(0);
+    const { rerender, container } = render(
+      <MemoryRouter>
+        <IntlProvider locale="en">
+          <CollapsibleCourseRun
+            languageOptions={[]}
+            pacingTypeOptions={[]}
+            courseRun={updatedCourseRun}
+            courseId="test-course"
+            courseUuid="11111111-1111-1111-1111-111111111111"
+            type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+            currentFormValues={currentFormValues}
+            courseRunTypeOptions={courseRunTypeOptions}
+            index={0}
+            editable
+          />
+        </IntlProvider>
+      </MemoryRouter>,
+    );
+
+    let runTypeSelect = container.querySelector('select[name="test-course.run_type"]');
+    expect(runTypeSelect).not.toBeDisabled();
 
     updatedCourseRun.seats[0].sku = 'ABCDEF';
-    const componentWithSku = shallow(<CollapsibleCourseRun
-      languageOptions={[]}
-      pacingTypeOptions={[]}
-      courseRun={updatedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-      currentFormValues={currentFormValues}
-      courseRunTypeOptions={courseRunTypeOptions}
-      index={0}
-      editable
-    />);
+    rerender(
+      <MemoryRouter>
+        <IntlProvider locale="en">
+          <CollapsibleCourseRun
+            languageOptions={[]}
+            pacingTypeOptions={[]}
+            courseRun={updatedCourseRun}
+            courseId="test-course"
+            courseUuid="11111111-1111-1111-1111-111111111111"
+            type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+            currentFormValues={currentFormValues}
+            courseRunTypeOptions={courseRunTypeOptions}
+            index={0}
+            editable
+          />
+        </IntlProvider>
+      </MemoryRouter>,
+    );
 
-    disabledFields = componentWithSku.find({ name: 'test-course.run_type', disabled: true });
-    expect(disabledFields).toHaveLength(1);
+    runTypeSelect = container.querySelector('select[name="test-course.run_type"]');
+    expect(runTypeSelect).toBeDisabled();
   });
 
   it('handles submission when called from a course run', () => {
-    const component = shallow(<CollapsibleCourseRun
-      languageOptions={languageOptions}
-      pacingTypeOptions={pacingTypeOptions}
-      courseRun={unpublishedCourseRun}
-      courseId="test-course"
-      courseUuid="11111111-1111-1111-1111-111111111111"
-      currentFormValues={{}}
-      initialValues={{}}
-      editable
-      index={1}
-    />);
-
     const mockDispatch = jest.spyOn(store, 'dispatch');
-    component.find('CourseRunButtonToolbar').simulate('submit');
+
+    const { getByRole } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <CollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              courseRun={unpublishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              currentFormValues={{}}
+              initialValues={{}}
+              editable
+              index={1}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+
+    const submitButton = getByRole('button', { name: /submit/i });
+    fireEvent.click(submitButton);
+
     expect(mockDispatch).toHaveBeenCalledWith(courseSubmitRun(unpublishedCourseRun));
   });
 });

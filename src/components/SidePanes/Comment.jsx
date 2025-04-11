@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Comment = (props) => (
-  <div className="card overflow-auto m-0 border-0">
+  <div data-testid="comment-card" className="card overflow-auto m-0 border-0">
     <div className="card-body p-2 mb-0">
       <div className="card-title comment-info mb-0 font-weight-bold">{props.user} <small className="text-muted"> {props.timestamp}</small></div>
       <small className="text-muted">{props.courseRunKey ? `${props.courseRunKey}` : null}</small>

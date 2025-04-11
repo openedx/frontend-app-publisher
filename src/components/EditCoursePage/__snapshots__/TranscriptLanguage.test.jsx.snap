@@ -1,176 +1,211 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Transcript Language renders correctly when given fields 1`] = `
-<div
-  className="transcript-languages mb-3"
-  tabIndex="-1"
->
-  <ul
-    className="list-group p-0 m-0 container-fluid"
+<div>
+  <div
+    class="transcript-languages mb-3"
+    tabindex="-1"
   >
-    <li
-      className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
-      key="[object Object]"
+    <ul
+      class="list-group p-0 m-0 container-fluid"
     >
-      <div
-        className="col-11"
+      <li
+        class="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
       >
-        <Field
-          component={[Function]}
-          disabled={false}
-          extraInput={
-            {
-              "onInvalid": undefined,
-            }
-          }
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="Transcript language"
+        <div
+          class="col-11"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="-text-label"
+            >
+              <div
+                class=""
+              >
+                <strong>
+                  Transcript language
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <select
+                class="form-control"
+                id="-text-label"
+                label="[object Object]"
+                name=""
+                required=""
+              >
+                <option
+                  value="ar-ae"
+                >
+                  Arabic - United Arab Emirates
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button
+          aria-label="Remove language"
+          class="close float-none d-flex justify-content-center align-items-center col-1"
+          data-testid="id-remove-btn"
+          title="Remove language"
+          type="button"
+        >
+          <svg
+            fill="none"
+            height="24"
+            id="remove-field"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"
+              fill="currentColor"
             />
-          }
-          name="[object Object]"
-          options={
-            [
-              {
-                "label": "Arabic - United Arab Emirates",
-                "value": "ar-ae",
-              },
-            ]
-          }
-          required={true}
-          type="text"
-        />
-      </div>
-      <RemoveButton
-        className="col-1"
-        disabled={false}
-        label="Remove language"
-        onRemove={[Function]}
-        targetFieldNumber={0}
-      />
-    </li>
-  </ul>
-  <button
-    className="btn btn-outline-primary js-add-button mt-2"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    Add language
-  </button>
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <button
+      class="btn btn-outline-primary js-add-button mt-2"
+      data-testid="test-js-add-btn"
+      type="button"
+    >
+      Add language
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Transcript Language renders correctly with an error after failed submission 1`] = `
-<div
-  className="transcript-languages mb-3"
-  tabIndex="-1"
->
-  <ForwardRef
-    dismissible={false}
-    onClose={[Function]}
-    show={true}
-    stacked={false}
-    transition={
-      {
-        "$$typeof": Symbol(react.forward_ref),
-        "defaultProps": {
-          "appear": false,
-          "in": false,
-          "mountOnEnter": false,
-          "timeout": 300,
-          "unmountOnExit": false,
-        },
-        "render": [Function],
-      }
-    }
-    variant="danger"
+<div>
+  <div
+    class="transcript-languages mb-3"
+    tabindex="-1"
   >
-    This field is required
-  </ForwardRef>
-  <ul
-    className="list-group p-0 m-0 container-fluid"
-  >
-    <li
-      className="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
-      key="[object Object]"
+    <div
+      class="fade alert-content alert alert-danger show"
+      role="alert"
     >
       <div
-        className="col-11"
+        class="pgn__alert-message-wrapper"
       >
-        <Field
-          component={[Function]}
-          disabled={false}
-          extraInput={
-            {
-              "onInvalid": undefined,
-            }
-          }
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="Transcript language"
-            />
-          }
-          name="[object Object]"
-          options={
-            [
-              {
-                "label": "Arabic - United Arab Emirates",
-                "value": "ar-ae",
-              },
-            ]
-          }
-          required={true}
-          type="text"
-        />
+        <div
+          class="alert-message-content"
+        >
+          This field is required
+        </div>
       </div>
-      <RemoveButton
-        className="col-1"
-        disabled={false}
-        label="Remove language"
-        onRemove={[Function]}
-        targetFieldNumber={0}
-      />
-    </li>
-  </ul>
-  <button
-    className="btn btn-outline-primary js-add-button mt-2"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    Add language
-  </button>
+    </div>
+    <ul
+      class="list-group p-0 m-0 container-fluid"
+    >
+      <li
+        class="transcript-language list-group-item row d-flex align-items-center px-0 mx-0"
+      >
+        <div
+          class="col-11"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="-text-label"
+            >
+              <div
+                class=""
+              >
+                <strong>
+                  Transcript language
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <select
+                class="form-control"
+                id="-text-label"
+                label="[object Object]"
+                name=""
+                required=""
+              >
+                <option
+                  value="ar-ae"
+                >
+                  Arabic - United Arab Emirates
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button
+          aria-label="Remove language"
+          class="close float-none d-flex justify-content-center align-items-center col-1"
+          data-testid="id-remove-btn"
+          title="Remove language"
+          type="button"
+        >
+          <svg
+            fill="none"
+            height="24"
+            id="remove-field"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <button
+      class="btn btn-outline-primary js-add-button mt-2"
+      data-testid="test-js-add-btn"
+      type="button"
+    >
+      Add language
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Transcript Language renders correctly with no fields 1`] = `
-<div
-  className="transcript-languages mb-3"
-  tabIndex="-1"
->
-  <ul
-    className="list-group p-0 m-0 container-fluid"
-  />
-  <button
-    className="btn btn-outline-primary js-add-button mt-2"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
+<div>
+  <div
+    class="transcript-languages mb-3"
+    tabindex="-1"
   >
-    Add language
-  </button>
+    <ul
+      class="list-group p-0 m-0 container-fluid"
+    />
+    <button
+      class="btn btn-outline-primary js-add-button mt-2"
+      data-testid="test-js-add-btn"
+      type="button"
+    >
+      Add language
+    </button>
+  </div>
 </div>
 `;

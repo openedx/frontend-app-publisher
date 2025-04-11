@@ -49,6 +49,7 @@ class AreasOfExpertise extends React.Component {
         </ul>
         <button
           type="button"
+          data-testid={"js-add-button"}
           className="btn btn-outline-primary js-add-button mt-2"
           onClick={() => fields.push({})}
         >

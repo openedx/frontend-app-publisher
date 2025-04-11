@@ -1,121 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageUpload shows an image upload and an error 1`] = `
-<div
-  className="form-group"
->
+<div>
   <div
-    name="imageSrc"
-    tabIndex={-1}
+    class="form-group"
   >
-    <label
-      className="w-100 p-0"
-      htmlFor="image-with-error"
+    <div
+      name="imageSrc"
+      tabindex="-1"
     >
-      Image Error Test
-    </label>
-      
-    <ForwardRef
-      dismissible={false}
-      onClose={[Function]}
-      show={true}
-      stacked={false}
-      transition={
-        {
-          "$$typeof": Symbol(react.forward_ref),
-          "defaultProps": {
-            "appear": false,
-            "in": false,
-            "mountOnEnter": false,
-            "timeout": 300,
-            "unmountOnExit": false,
-          },
-          "render": [Function],
-        }
-      }
-      variant="danger"
-    >
-      Required
-    </ForwardRef>
-    <img
-      alt=""
-      className="uploaded-image"
-      onLoad={[Function]}
-      src={null}
-    />
-    <input
-      accept="image/jpeg, image/png"
-      disabled={false}
-      id="image-with-error"
-      onChange={[Function]}
-      type="file"
-    />
+      <label
+        class="w-100 p-0"
+        for="image-with-error"
+      >
+        Image Error Test
+      </label>
+        
+      <div
+        class="fade alert-content alert alert-danger show"
+        role="alert"
+      >
+        <div
+          class="pgn__alert-message-wrapper"
+        >
+          <div
+            class="alert-message-content"
+          >
+            Required
+          </div>
+        </div>
+      </div>
+      <img
+        alt=""
+        class="uploaded-image"
+      />
+      <input
+        accept="image/jpeg, image/png"
+        id="image-with-error"
+        type="file"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`ImageUpload shows an image upload with no prior image 1`] = `
-<div
-  className="form-group"
->
+<div>
   <div
-    name="imageSrc"
-    tabIndex={-1}
+    class="form-group"
   >
-    <label
-      className="w-100 p-0"
-      htmlFor="image-no-prior"
+    <div
+      name="imageSrc"
+      tabindex="-1"
     >
-      Course Image: *
-    </label>
-      
-    <img
-      alt=""
-      className="uploaded-image"
-      onLoad={[Function]}
-      src={null}
-    />
-    <input
-      accept="image/jpeg, image/png"
-      disabled={false}
-      id="image-no-prior"
-      onChange={[Function]}
-      type="file"
-    />
+      <label
+        class="w-100 p-0"
+        for="image-no-prior"
+      >
+        Course Image: *
+      </label>
+        
+      <img
+        alt=""
+        class="uploaded-image"
+      />
+      <input
+        accept="image/jpeg, image/png"
+        id="image-no-prior"
+        type="file"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`ImageUpload shows an image upload with prior image 1`] = `
-<div
-  className="form-group"
->
+<div>
   <div
-    name="imageSrc"
-    tabIndex={-1}
+    class="form-group"
   >
-    <label
-      className="w-100 p-0"
-      htmlFor="image-with-prior"
+    <div
+      name="imageSrc"
+      tabindex="-1"
     >
-      <strong>
-        Course Image: *
-      </strong>
-    </label>
-      
-    <img
-      alt=""
-      className="uploaded-image"
-      onLoad={[Function]}
-      src="http://www.image.uploaded.source/view/image"
-    />
-    <input
-      accept="image/jpeg, image/png"
-      disabled={false}
-      id="image-with-prior"
-      onChange={[Function]}
-      type="file"
-    />
+      <label
+        class="w-100 p-0"
+        for="image-with-prior"
+      >
+        <strong>
+          Course Image: *
+        </strong>
+      </label>
+        
+      <img
+        alt=""
+        class="uploaded-image"
+        src="http://www.image.uploaded.source/view/image"
+      />
+      <input
+        accept="image/jpeg, image/png"
+        id="image-with-prior"
+        type="file"
+      />
+    </div>
   </div>
 </div>
 `;

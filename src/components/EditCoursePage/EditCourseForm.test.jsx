@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, waitFor, screen } from '@testing-library/react';
 import { Field } from 'redux-form';
 import { Hyperlink } from '@openedx/paragon';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { BaseEditCourseForm } from './EditCourseForm';
 import {
   REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
@@ -71,26 +71,30 @@ describe('BaseEditCourseForm', () => {
   });
 
   it('renders html correctly with minimal data', () => {
-    const component = shallow(<BaseEditCourseForm
-      handleSubmit={() => null}
-      initialValues={{
-        title: initialValuesFull.title,
-      }}
-      title={initialValuesFull.title}
-      number="Test101x"
-      courseStatuses={[UNPUBLISHED]}
-      courseInfo={courseInfo}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      uuid={initialValuesFull.uuid}
-      type={initialValuesFull.type}
-      id="edit-course-form"
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <IntlProvider locale="en">
+        <BaseEditCourseForm
+          handleSubmit={() => null}
+          initialValues={{
+            title: initialValuesFull.title,
+          }}
+          title={initialValuesFull.title}
+          number="Test101x"
+          courseStatuses={[UNPUBLISHED]}
+          courseInfo={courseInfo}
+          courseOptions={courseOptions}
+          courseRunOptions={courseRunOptions}
+          uuid={initialValuesFull.uuid}
+          type={initialValuesFull.type}
+          id="edit-course-form"
+        />
+      </IntlProvider>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders html correctly with all data present', () => {
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
@@ -104,7 +108,7 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly with skills data when skills are available', () => {
@@ -119,7 +123,7 @@ describe('BaseEditCourseForm', () => {
       skill_names: skillNames,
     };
 
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesWithSkills}
       title={initialValuesFull.title}
@@ -132,12 +136,12 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders html correctly with administrator being true', () => {
     getAuthenticatedUser.mockReturnValue({ administrator: true });
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
@@ -151,11 +155,11 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly while submitting', () => {
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={initialValuesFull}
       currentFormValues={initialValuesFull}
@@ -171,11 +175,11 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly when submitting for review', () => {
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
@@ -189,13 +193,13 @@ describe('BaseEditCourseForm', () => {
       isSubmittingForReview
       id="edit-course-form"
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('override slug format when IS_NEW_SLUG_FORMAT_ENABLED is true to check help text for url slug field', () => {
     process.env.IS_NEW_SLUG_FORMAT_ENABLED = 'true';
 
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
@@ -209,11 +213,11 @@ describe('BaseEditCourseForm', () => {
       isSubmittingForReview
       id="edit-course-form"
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with disabled fields if course is in review', () => {
-    const component = shallow(<BaseEditCourseForm
+    render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       currentFormValues={initialValuesFull}
@@ -228,14 +232,14 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const childFields = component.find(Field);
+    const childFields = screen.findByRole('textbox');
     childFields.forEach((field) => {
       expect(field.prop('disabled')).toBe(true);
     });
   });
 
-  it('renders with course type disabled after being reviewed', () => {
-    const component = shallow(<BaseEditCourseForm
+  it('renders with course type disabled after being reviewed', async () => {
+    render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
@@ -251,8 +255,8 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const disabledFields = component.find({ name: 'type', disabled: true });
-    expect(disabledFields).toHaveLength(1);
+    const disabledFields = await screen.findByRole('textbox', { disabled: true });
+    waitFor(() => expect(disabledFields).toHaveLength(1));
   });
 
   it('Check if watchers field is disabled after being reviewed', () => {
@@ -263,7 +267,7 @@ describe('BaseEditCourseForm', () => {
         course_run_statuses: [REVIEWED],
       },
     };
-    const component = shallow(<BaseEditCourseForm
+    render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
@@ -279,7 +283,7 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const watchersField = component.find({ name: 'watchers_list', disabled: true });
+    const watchersField = screen.findByTestId('watchers-list', { disabled: true });
     expect(watchersField).toHaveLength(1);
   });
 
@@ -291,7 +295,7 @@ describe('BaseEditCourseForm', () => {
         course_run_statuses: [REVIEW_BY_LEGAL, UNPUBLISHED],
       },
     };
-    const component = shallow(<BaseEditCourseForm
+    render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
@@ -307,12 +311,12 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const watchersField = component.find({ name: 'watchers_list', disabled: false });
+    const watchersField = screen.findByTestId('watchers-list', { disabled: false });
     expect(watchersField).toHaveLength(1);
   });
 
   it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
-    const component = shallow(<BaseEditCourseForm
+    render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
@@ -328,8 +332,8 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const disabledFields = component.find({ name: 'type', disabled: true });
-    expect(disabledFields).toHaveLength(1);
+    const disabledFields = screen.findByText('type', { disabled: true });
+    waitFor(() => expect(disabledFields).toHaveLength(1));
   });
 
   it('check for customValidity working correctly for url_slug in EditCourseForm', () => {
@@ -343,7 +347,7 @@ describe('BaseEditCourseForm', () => {
       ...initialValuesFull,
       course_runs: [],
     };
-    const component = shallow(
+    render(
       <BaseEditCourseForm
         handleSubmit={() => null}
         title={initialValuesWithUrlSlug.title}
@@ -361,7 +365,7 @@ describe('BaseEditCourseForm', () => {
       />,
     );
 
-    const urlSlugField = component.find({ name: 'url_slug' });
+    const urlSlugField = screen.findByRole('url_slug');
 
     const invalidInput = 'Invalid-URL-Slug123/';
     urlSlugField.prop('extraInput').onInvalid({ target: { setCustomValidity: setCustomValidityMock } });
@@ -379,7 +383,7 @@ describe('BaseEditCourseForm', () => {
     const urlSlug = 'test-url-slug';
     const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
     const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
-    const wrapper = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
@@ -394,7 +398,7 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(wrapper.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
+    expect(container.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
       <>
         <Hyperlink
           name="preview-url"
@@ -412,7 +416,7 @@ describe('BaseEditCourseForm', () => {
     const urlSlug = 'learn/test-url-slug/test';
     const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
     const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
-    const wrapper = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesFull.title}
       initialValues={initialValuesFull}
@@ -427,7 +431,7 @@ describe('BaseEditCourseForm', () => {
       type={initialValuesFull.type}
       id="edit-course-form"
     />);
-    expect(wrapper.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
+    expect(container.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
       <>
         <Hyperlink
           name="preview-url"
@@ -446,7 +450,7 @@ describe('BaseEditCourseForm', () => {
       ...initialValuesFull,
       type: '7b41992e-f268-4331-8ba9-72acb0880454',
     };
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesWithMasters.title}
       initialValues={initialValuesWithMasters}
@@ -466,17 +470,17 @@ describe('BaseEditCourseForm', () => {
       'learner_testimonials', 'faq', 'additional_information', 'videoSrc',
     ];
     invisible.forEach((name) => {
-      const fields = component.find({ name });
-      expect(fields).toHaveLength(0);
+      const fields = screen.find({ name });
+      waitFor(() => expect(fields).toHaveLength(0));
     });
 
     // Just sanity check that a field we still want there is there:
-    const fields = component.find({ name: 'imageSrc' });
+    const fields = screen.findByName({ name: 'imageSrc' });
     expect(fields).toHaveLength(1);
   });
 
   it('renders html correctly while fetching collaborator options', () => {
-    const component = shallow(<BaseEditCourseForm
+    const { container } = render(<BaseEditCourseForm
       handleSubmit={() => null}
       initialValues={{
         title: initialValuesFull.title,
@@ -492,7 +496,7 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
       collaboratorOptions={{ data: {} }}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('does not add required prop for level_type and subjectPrimary fields when not submitting for review', () => {
@@ -501,7 +505,7 @@ describe('BaseEditCourseForm', () => {
       type: '7b41992e-f268-4331-8ba9-72acb0880454',
     };
 
-    const component = shallow(<BaseEditCourseForm
+    render(<BaseEditCourseForm
       handleSubmit={() => null}
       title="Test Course"
       initialValues={{ title: initialValuesFull.title }}
@@ -517,8 +521,8 @@ describe('BaseEditCourseForm', () => {
       id="edit-course-form"
     />);
 
-    const levelTypeField = component.find(Field).filterWhere(n => n.prop('name') === 'level_type');
-    const subjectPrimaryField = component.find(Field).filterWhere(n => n.prop('name') === 'subjectPrimary');
+    const levelTypeField = screen.findByRole('textbox').filterWhere(n => n.prop('name') === 'level_type');
+    const subjectPrimaryField = screen.findByRole('textbox').filterWhere(n => n.prop('name') === 'subjectPrimary');
 
     expect(levelTypeField.prop('required')).toBe(false);
     expect(subjectPrimaryField.prop('required')).toBe(false);

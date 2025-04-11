@@ -55,7 +55,7 @@ const CatalogInclusionPane = ({
   };
 
   return (
-    <Pane className="mt-1" title="Enterprise Subscriptions" info={message}>
+    <Pane dataTestId="catalog-inclusion-pane" className="mt-1" title="Enterprise Subscriptions" info={message}>
       <div className="font-weight-bold">Course Inclusion Status</div>
       <Form className="mt-4">
         <Form.Switch

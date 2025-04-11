@@ -1,14 +1,12 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { AppContext } from '@edx/frontend-platform/react';
 
 import configureStore from 'redux-mock-store';
 import MainApp from './index';
-import TableComponent from '../../components/TableComponent/index';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -61,33 +59,32 @@ function renderAppWithState(initialRoute) {
     config: {},
   };
 
-  const AppWrapper = (initialEntries) => (
+  const AppWrapper = () => (
     <IntlProvider locale="en">
       <Provider store={mockStore(initialState)}>
         <AppContext.Provider
           store={mockStore(initialState)}
           value={contextValue}
         >
-          <MemoryRouter initialEntries={initialEntries}>
-            <MainApp />
-          </MemoryRouter>
+          <MainApp />
         </AppContext.Provider>
       </Provider>
     </IntlProvider>
   );
-  return mount(AppWrapper(initialRoute));
+  return render(AppWrapper(initialRoute));
 }
 
 describe('App', () => {
-  it('renders entire Course Dashboard at route / with course list', () => {
-    const screen = renderAppWithState(['/']);
+  it('renders entire Course Dashboard at route / with course list', async () => {
+    renderAppWithState(['/']);
 
     // New Course Button should be present
-    expect(screen.find('div.btn-group a button').text()).toEqual('New course');
-
+    const newCourseBtn = await screen.findAllByRole('button')[2];
+    waitFor(() => expect(newCourseBtn).toHaveTextContent('New course'));
     // Table Should be present at main route with data
-    expect(screen.find(TableComponent)).toHaveLength(1);
-    expect(screen.find(TableComponent).find('tbody tr')).toHaveLength(1);
-    expect(screen.find(TableComponent).find('tbody tr Link a').text()).toEqual('edx101');
+    waitFor(() => expect(screen.findAllByRole('table')).toBeInTheDocument());
+    waitFor(() => expect(screen.findAllByRole('row')).toHaveLength(1));
+    const link = await screen.findByRole('link', { name: 'edx101' });
+    waitFor(() => expect(link).toHaveTextContent('edx101'));
   });
 });

@@ -1,63 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RenderInputTextField renders html for number type 1`] = `
-<div
-  className="pgn__form-group"
->
-  <FormGroupContextProvider
-    controlId="Test-text-label"
-    isInvalid={false}
-    isValid={false}
+<div>
+  <div
+    class="pgn__form-group"
   >
-    <FormLabel
-      isInline={false}
+    <label
+      class="pgn__form-label"
+      for="Test-text-label"
     >
       TestLabel
-    </FormLabel>
-    <ForwardRef
-      as="input"
-      autoResize={false}
-      disabled={false}
-      id="Test-text-label"
-      maxLength=""
-      name="Test"
-      pattern={null}
-      placeholder=""
-      plaintext={false}
-      required={false}
-      type="number"
-    />
-  </FormGroupContextProvider>
+    </label>
+    <div
+      class="pgn__form-control-decorator-group"
+    >
+      <input
+        class="form-control"
+        id="Test-text-label"
+        maxlength=""
+        name="Test"
+        placeholder=""
+        type="number"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`RenderInputTextField renders html for text 1`] = `
-<div
-  className="pgn__form-group"
->
-  <FormGroupContextProvider
-    controlId="Test-text-label"
-    isInvalid={false}
-    isValid={false}
+<div>
+  <div
+    class="pgn__form-group"
   >
-    <FormLabel
-      isInline={false}
+    <label
+      class="pgn__form-label"
+      for="Test-text-label"
     >
       TestLabel
-    </FormLabel>
-    <ForwardRef
-      as="input"
-      autoResize={false}
-      disabled={false}
-      id="Test-text-label"
-      maxLength=""
-      name="Test"
-      pattern={null}
-      placeholder=""
-      plaintext={false}
-      required={false}
-      type="text"
-    />
-  </FormGroupContextProvider>
+    </label>
+    <div
+      class="pgn__form-control-decorator-group"
+    >
+      <input
+        class="form-control"
+        id="Test-text-label"
+        maxlength=""
+        name="Test"
+        placeholder=""
+        type="text"
+      />
+    </div>
+  </div>
 </div>
 `;
