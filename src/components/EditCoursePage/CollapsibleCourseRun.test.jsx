@@ -388,10 +388,11 @@ describe('Collapsible Course Run', () => {
       <MemoryRouter>
         <Provider store={store}>
           <IntlProvider locale="en">
-            <CollapsibleCourseRun
+            <WrappedCollapsibleCourseRun
               languageOptions={languageOptions}
               pacingTypeOptions={pacingTypeOptions}
               courseRun={unpublishedCourseRun}
+              courseRunTypeOptions={courseRunTypeOptions}
               courseId="test-course"
               courseUuid="11111111-1111-1111-1111-111111111111"
               currentFormValues={{}}

@@ -1,15 +1,22 @@
 import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
-import { Field } from 'redux-form';
 import { Hyperlink } from '@openedx/paragon';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
+import { reduxForm } from 'redux-form';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import { MemoryRouter } from 'react-router-dom';
 import { BaseEditCourseForm } from './EditCourseForm';
 import {
   REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
 } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
+
+const WrappedEditCourseForm = reduxForm({ form: 'testForm' })(BaseEditCourseForm);
+const mockStore = configureStore();
+const store = mockStore({});
 
 describe('BaseEditCourseForm', () => {
   const env = { ...process.env };
@@ -450,7 +457,7 @@ describe('BaseEditCourseForm', () => {
       ...initialValuesFull,
       type: '7b41992e-f268-4331-8ba9-72acb0880454',
     };
-    const { container } = render(<BaseEditCourseForm
+    render(<BaseEditCourseForm
       handleSubmit={() => null}
       title={initialValuesWithMasters.title}
       initialValues={initialValuesWithMasters}
@@ -499,30 +506,38 @@ describe('BaseEditCourseForm', () => {
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('does not add required prop for level_type and subjectPrimary fields when not submitting for review', () => {
+  it('does not add required prop for level_type and subjectPrimary fields when not submitting for review', async () => {
     const initialValuesWithMasters = {
       ...initialValuesFull,
       type: '7b41992e-f268-4331-8ba9-72acb0880454',
     };
 
-    render(<BaseEditCourseForm
-      handleSubmit={() => null}
-      title="Test Course"
-      initialValues={{ title: initialValuesFull.title }}
-      currentFormValues={initialValuesWithMasters}
-      number="Test101x"
-      courseStatuses={[UNPUBLISHED]}
-      courseInfo={courseInfo}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-      uuid={initialValuesWithMasters.uuid}
-      type={initialValuesWithMasters.type}
-      isSubmittingForReview={false}
-      id="edit-course-form"
-    />);
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <IntlProvider locale="en">
+            <WrappedEditCourseForm
+              handleSubmit={() => null}
+              title="Test Course"
+              initialValues={{ title: initialValuesFull.title }}
+              currentFormValues={initialValuesWithMasters}
+              number="Test101x"
+              courseStatuses={[UNPUBLISHED]}
+              courseInfo={courseInfo}
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              uuid={initialValuesWithMasters.uuid}
+              type={initialValuesWithMasters.type}
+              isSubmittingForReview={false}
+              id="edit-course-form"
+            />
+          </IntlProvider>
+        </MemoryRouter>
+      </Provider>,
+    );
 
-    const levelTypeField = screen.findByRole('textbox').filterWhere(n => n.prop('name') === 'level_type');
-    const subjectPrimaryField = screen.findByRole('textbox').filterWhere(n => n.prop('name') === 'subjectPrimary');
+    const levelTypeField = await screen.findByRole('textbox', { name: 'level_type' });
+    const subjectPrimaryField = screen.getByRole('textbox', { name: 'subjectPrimary' });
 
     expect(levelTypeField.prop('required')).toBe(false);
     expect(subjectPrimaryField.prop('required')).toBe(false);
