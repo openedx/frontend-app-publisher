@@ -3,7 +3,6 @@ import {
   screen, render, fireEvent, waitFor,
 } from '@testing-library/react';
 
-import User from './User';
 import UsersPane from './UsersPane';
 
 describe('UsersPane', () => {
