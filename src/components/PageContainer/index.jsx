@@ -37,6 +37,7 @@ PageContainer.propTypes = {
   className: PropTypes.string,
   sidePanes: PropTypes.node,
   wide: PropTypes.bool,
+  dataTestId: PropTypes.string,
 };
 
 export default PageContainer;
