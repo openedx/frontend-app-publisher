@@ -41,38 +41,38 @@ const courseRunTypeOptions = {
 };
 
 const programOptions = [
-    {
-      "label": "--",
-      "value": "",
-    },
-    {
-      "label": "Professional Certificate",
-      "value": "professional-certificate",
-    },
-    {
-      "label": "MicroMasters",
-      "value": "micromasters",
-    },
-    {
-      "label": "XSeries",
-      "value": "xseries",
-    },
-    {
-      "label": "Masters",
-      "value": "masters",
-    },
+  {
+    label: '--',
+    value: '',
+  },
+  {
+    label: 'Professional Certificate',
+    value: 'professional-certificate',
+  },
+  {
+    label: 'MicroMasters',
+    value: 'micromasters',
+  },
+  {
+    label: 'XSeries',
+    value: 'xseries',
+  },
+  {
+    label: 'Masters',
+    value: 'masters',
+  },
 ];
 
 const ofacRestrictionOptions = [
   {
-    "label": "Restricted",
-    "value": "true",
+    label: 'Restricted',
+    value: 'true',
   },
   {
-    "label": "Unrestricted",
-    "value": "false",
+    label: 'Unrestricted',
+    value: 'false',
   },
-]
+];
 
 const publishedCourseRun = {
   start: '2000-01-01T12:00:00Z', // Different format to be transformed
@@ -278,30 +278,7 @@ describe('Collapsible Course Run', () => {
     };
 
     const { container, rerender } = render(
-      <MemoryRouter> 
-        <Provider store={store}>
-          <IntlProvider locale="en">
-            <WrappedCollapsibleCourseRun
-            languageOptions={languageOptions}
-            pacingTypeOptions={pacingTypeOptions}
-            programOptions={programOptions}
-            ofacRestrictionOptions={ofacRestrictionOptions}
-            courseRun={unpublishedCourseRun}
-            courseId="test-course"
-            courseUuid="11111111-1111-1111-1111-111111111111"
-            type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-            currentFormValues={currentFormValues}
-            courseRunTypeOptions={courseRunTypeOptions}
-            runTypeModes={runTypeModes}
-            index={1}
-          />,
-      </IntlProvider>
-</Provider>
-</MemoryRouter>
-    );
-
-    rerender(
-      <MemoryRouter> 
+      <MemoryRouter>
         <Provider store={store}>
           <IntlProvider locale="en">
             <WrappedCollapsibleCourseRun
@@ -317,11 +294,34 @@ describe('Collapsible Course Run', () => {
               courseRunTypeOptions={courseRunTypeOptions}
               runTypeModes={runTypeModes}
               index={1}
-      />,
-      </IntlProvider>
-      </Provider>
-    </MemoryRouter>
-);
+            />,
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+
+    rerender(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={languageOptions}
+              pacingTypeOptions={pacingTypeOptions}
+              programOptions={programOptions}
+              ofacRestrictionOptions={ofacRestrictionOptions}
+              courseRun={unpublishedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+              currentFormValues={currentFormValues}
+              courseRunTypeOptions={courseRunTypeOptions}
+              runTypeModes={runTypeModes}
+              index={1}
+            />,
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
 
     expect(container).toMatchSnapshot();
   });
@@ -375,18 +375,18 @@ describe('Collapsible Course Run', () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
-        <IntlProvider locale="en">
-          <WrappedCollapsibleCourseRun
-            languageOptions={[]}
-            pacingTypeOptions={[]}
-            programOptions={[]}
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={[]}
+              pacingTypeOptions={[]}
+              programOptions={[]}
               ofacRestrictionOptions={[]}
-            courseRun={{}}
-            courseInReview
-            courseId="test-course"
-            courseUuid="11111111-1111-1111-1111-111111111111"
-          />
-        </IntlProvider>
+              courseRun={{}}
+              courseInReview
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+            />
+          </IntlProvider>
         </Provider>
       </MemoryRouter>,
     );
@@ -408,22 +408,22 @@ describe('Collapsible Course Run', () => {
     const { rerender, container } = render(
       <MemoryRouter>
         <Provider store={store}>
-        <IntlProvider locale="en">
-          <WrappedCollapsibleCourseRun
-            languageOptions={[]}
-            pacingTypeOptions={[]}
-            programOptions={[]}
-            ofacRestrictionOptions={[]}
-            courseRun={updatedCourseRun}
-            courseId="test-course"
-            courseUuid="11111111-1111-1111-1111-111111111111"
-            type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-            currentFormValues={currentFormValues}
-            courseRunTypeOptions={courseRunTypeOptions}
-            index={0}
-            editable
-          />
-        </IntlProvider>
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={[]}
+              pacingTypeOptions={[]}
+              programOptions={[]}
+              ofacRestrictionOptions={[]}
+              courseRun={updatedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+              currentFormValues={currentFormValues}
+              courseRunTypeOptions={courseRunTypeOptions}
+              index={0}
+              editable
+            />
+          </IntlProvider>
         </Provider>
       </MemoryRouter>,
     );
@@ -435,22 +435,22 @@ describe('Collapsible Course Run', () => {
     rerender(
       <MemoryRouter>
         <Provider store={store}>
-        <IntlProvider locale="en">
-          <WrappedCollapsibleCourseRun
-            languageOptions={[]}
-            pacingTypeOptions={[]}
-            programOptions={[]}
+          <IntlProvider locale="en">
+            <WrappedCollapsibleCourseRun
+              languageOptions={[]}
+              pacingTypeOptions={[]}
+              programOptions={[]}
               ofacRestrictionOptions={[]}
-            courseRun={updatedCourseRun}
-            courseId="test-course"
-            courseUuid="11111111-1111-1111-1111-111111111111"
-            type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-            currentFormValues={currentFormValues}
-            courseRunTypeOptions={courseRunTypeOptions}
-            index={0}
-            editable
-          />
-        </IntlProvider>
+              courseRun={updatedCourseRun}
+              courseId="test-course"
+              courseUuid="11111111-1111-1111-1111-111111111111"
+              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
+              currentFormValues={currentFormValues}
+              courseRunTypeOptions={courseRunTypeOptions}
+              index={0}
+              editable
+            />
+          </IntlProvider>
         </Provider>
       </MemoryRouter>,
     );
