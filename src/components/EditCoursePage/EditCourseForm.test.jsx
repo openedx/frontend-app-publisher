@@ -4,19 +4,20 @@ import { Hyperlink } from '@openedx/paragon';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
-import { reduxForm } from 'redux-form';
+import { reduxForm, reducer as formReducer } from 'redux-form';
 import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
+// import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
-import { BaseEditCourseForm } from './EditCourseForm';
+import { createStore, combineReducers, configureStore } from 'redux';
+import EditCourseForm, { BaseEditCourseForm } from './EditCourseForm';
 import {
   REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
 } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 const WrappedEditCourseForm = reduxForm({ form: 'testForm' })(BaseEditCourseForm);
-const mockStore = configureStore();
-const store = mockStore({});
+// const mockStore = configureStore();
+const store = {};
 
 describe('BaseEditCourseForm', () => {
   const env = { ...process.env };
@@ -59,6 +60,25 @@ describe('BaseEditCourseForm', () => {
       per_lead_usa: 100,
       per_lead_international: 100,
     },
+    course_runs: [
+      {
+        start: '2000-01-01T12:00:00Z', // Different format to be transformed
+        end: '2010-01-01T00:00:00Z',
+        external_key: null,
+        go_live_date: '1999-12-31T00:00:00Z',
+        pacing_type: 'self_paced',
+        min_effort: 1,
+        max_effort: 1,
+        content_language: 'English',
+        transcript_languages: ['English'],
+        weeks_to_complete: 1,
+        status: 'published',
+        key: 'edX101+DemoX',
+        has_ofac_restrictions: false,
+        seats: [],
+        run_type: '00000000-0000-4000-0000-000000000000',
+      },
+    ],
   };
 
   const courseInfo = {
@@ -77,25 +97,39 @@ describe('BaseEditCourseForm', () => {
     process.env = env;
   });
 
-  it('renders html correctly with minimal data', () => {
+  it.only('renders html correctly with minimal data', () => {
+    const newStore = createStore(
+      combineReducers({ form: formReducer }),
+      {
+        form: {
+          testForm: {
+            values: {
+              course_runs: { ...initialValuesFull.course_runs },
+            },
+          },
+        },
+      },
+    );
     const { container } = render(
-      <IntlProvider locale="en">
-        <BaseEditCourseForm
-          handleSubmit={() => null}
-          initialValues={{
-            title: initialValuesFull.title,
-          }}
-          title={initialValuesFull.title}
-          number="Test101x"
-          courseStatuses={[UNPUBLISHED]}
-          courseInfo={courseInfo}
-          courseOptions={courseOptions}
-          courseRunOptions={courseRunOptions}
-          uuid={initialValuesFull.uuid}
-          type={initialValuesFull.type}
-          id="edit-course-form"
-        />
-      </IntlProvider>,
+      <Provider store={newStore}>
+        <MemoryRouter>
+          <IntlProvider locale="en">
+            <EditCourseForm
+              handleSubmit={() => null}
+              initialValues={initialValuesFull}
+              title={initialValuesFull.title}
+              number="Test101x"
+              courseStatuses={[UNPUBLISHED]}
+              courseInfo={courseInfo}
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              uuid={initialValuesFull.uuid}
+              type={initialValuesFull.type}
+              id="edit-course-form"
+            />
+          </IntlProvider>
+        </MemoryRouter>
+      </Provider>,
     );
     waitFor(() => expect(container).toMatchSnapshot());
   });
