@@ -28,6 +28,18 @@ class RichEditor extends React.Component {
     this.handleOnChange = this.handleOnChange.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    const {
+      input: {
+        value,
+      },
+    } = this.props;
+
+    if (value !== prevProps.input.value) {
+      this.setState({ value });
+    }
+  }
+
   handleEditorChange(newValue, editor) {
     this.updateCharCount(editor);
   }
