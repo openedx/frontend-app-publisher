@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import { Editor } from '@tinymce/tinymce-react';
 import 'tinymce/tinymce.min';
 import 'tinymce/icons/default';
@@ -21,9 +20,32 @@ class RichEditor extends React.Component {
     super(props);
     this.state = {
       charCount: 0,
+      value: props.input.value,
     };
     this.initCharCount = this.initCharCount.bind(this);
     this.updateCharCount = this.updateCharCount.bind(this);
+    this.handleEditorChange = this.handleEditorChange.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      input: {
+        value,
+      },
+    } = this.props;
+
+    if (value !== prevProps.input.value) {
+      this.setState({ value });
+    }
+  }
+
+  handleEditorChange(newValue, editor) {
+    this.updateCharCount(editor);
+  }
+
+  handleOnChange(event, editor) {
+    this.updateCharCount(editor);
   }
 
   initCharCount(event, editor) {
@@ -33,12 +55,16 @@ class RichEditor extends React.Component {
     });
   }
 
-  updateCharCount(event, editor) {
+  updateCharCount(editor) {
     const content = editor.getContent({ format: 'text' });
+    const htmlContent = editor.getContent();
+
     this.setState({
       charCount: content.length,
+      value: htmlContent,
     });
-    const htmlContent = editor.getContent();
+
+    // propagate the changes to redux form field
     this.props.input.onChange(htmlContent);
   }
 
@@ -48,7 +74,6 @@ class RichEditor extends React.Component {
       id,
       label,
       input: {
-        value,
         name,
       },
       meta: {
@@ -85,7 +110,7 @@ class RichEditor extends React.Component {
         */}
         <div aria-labelledby={id} className={classNames({ 'disabled-rich-text': disabled })}>
           <Editor
-            initialValue={value}
+            value={this.state.value}
             init={{
               branding: false,
               menubar: false,
@@ -103,8 +128,9 @@ class RichEditor extends React.Component {
               content_style: contentStyle,
               default_link_target: '_blank',
             }}
-            onChange={this.updateCharCount}
-            onKeyUp={this.updateCharCount}
+            onChange={this.handleOnChange}
+            onEditorChange={this.handleEditorChange}
+            onKeyUp={this.handleOnChange}
             onInit={this.initCharCount}
             disabled={disabled}
           />

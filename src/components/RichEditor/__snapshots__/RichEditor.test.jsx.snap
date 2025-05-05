@@ -16,7 +16,7 @@ exports[`RichEditor shows a rich text editor and an error 1`] = `
     className=""
   >
     <Editor
-      cloudChannel="5"
+      cloudChannel="7"
       disabled={false}
       init={
         {
@@ -37,10 +37,11 @@ exports[`RichEditor shows a rich text editor and an error 1`] = `
           "toolbar": "undo redo | bold italic underline | bullist numlist | link | language | ltr rtl",
         }
       }
-      initialValue={null}
       onChange={[Function]}
+      onEditorChange={[Function]}
       onInit={[Function]}
       onKeyUp={[Function]}
+      value={null}
     />
     <span>
       Recommended character limit (including spaces) is
@@ -68,7 +69,7 @@ exports[`RichEditor shows a rich text editor with default text value 1`] = `
     className=""
   >
     <Editor
-      cloudChannel="5"
+      cloudChannel="7"
       disabled={false}
       init={
         {
@@ -89,10 +90,11 @@ exports[`RichEditor shows a rich text editor with default text value 1`] = `
           "toolbar": "undo redo | bold italic underline | bullist numlist | link | language | ltr rtl",
         }
       }
-      initialValue="<p>Prior text<p>"
       onChange={[Function]}
+      onEditorChange={[Function]}
       onInit={[Function]}
       onKeyUp={[Function]}
+      value="<p>Prior text<p>"
     />
     <span>
       Recommended character limit (including spaces) is
@@ -118,7 +120,7 @@ exports[`RichEditor shows a rich text editor with no default text value 1`] = `
     className=""
   >
     <Editor
-      cloudChannel="5"
+      cloudChannel="7"
       disabled={false}
       init={
         {
@@ -139,10 +141,11 @@ exports[`RichEditor shows a rich text editor with no default text value 1`] = `
           "toolbar": "undo redo | bold italic underline | bullist numlist | link | language | ltr rtl",
         }
       }
-      initialValue={null}
       onChange={[Function]}
+      onEditorChange={[Function]}
       onInit={[Function]}
       onKeyUp={[Function]}
+      value={null}
     />
     <span>
       Recommended character limit (including spaces) is
@@ -170,7 +173,7 @@ exports[`RichEditor shows a rich text editor with no maxChars 1`] = `
     className=""
   >
     <Editor
-      cloudChannel="5"
+      cloudChannel="7"
       disabled={false}
       init={
         {
@@ -191,10 +194,11 @@ exports[`RichEditor shows a rich text editor with no maxChars 1`] = `
           "toolbar": "undo redo | bold italic underline | bullist numlist | link | language | ltr rtl",
         }
       }
-      initialValue="<p>Prior text<p>"
       onChange={[Function]}
+      onEditorChange={[Function]}
       onInit={[Function]}
       onKeyUp={[Function]}
+      value="<p>Prior text<p>"
     />
   </div>
 </div>
