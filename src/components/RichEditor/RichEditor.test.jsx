@@ -59,4 +59,53 @@ describe('RichEditor', () => {
     />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('change handlers are called', () => {
+    const onChange = jest.fn();
+    const mockEditor = {
+      getContent: jest.fn().mockImplementation(() => 'Hello, text'),
+    };
+
+    const component = shallow(<RichEditor
+      label="Rich Text Editor Test"
+      id="rich-text-editor-test"
+      input={{
+        value: null,
+        onChange,
+      }}
+      maxChars={500}
+      meta={{ touched: true, error: 'Required' }}
+    />);
+    const instance = component.instance();
+
+    expect(instance.state.charCount).toEqual(0);
+    expect(instance.state.value).toBeNull();
+
+    const editorComponent = component.find('Editor');
+
+    expect(editorComponent.exists()).toBe(true);
+    editorComponent.prop('onEditorChange')('Hello, text', mockEditor);
+
+    expect(onChange).toHaveBeenCalledWith('Hello, text');
+    expect(mockEditor.getContent).toHaveBeenCalledTimes(2);
+    // 'Hello, text' length
+    expect(instance.state.charCount).toEqual(11);
+    expect(instance.state.value).toEqual('Hello, text');
+  });
+
+  it('componentDidUpdate updates state', () => {
+    const component = shallow(<RichEditor
+      label="Rich Text Editor Test"
+      id="rich-text-editor-test"
+      input={{
+        value: null,
+        onChange: () => null,
+      }}
+      maxChars={500}
+      meta={{ touched: true, error: 'Required' }}
+    />);
+
+    component.setProps({ input: { value: 'New Value' } });
+    expect(component.instance().state.value).toEqual('New Value');
+  });
 });
