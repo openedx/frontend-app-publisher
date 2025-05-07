@@ -252,7 +252,7 @@ describe('EditCoursePage', () => {
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it.only('renders course run restriction_type correctly for executive education course', async () => {
+  it('renders course run restriction_type correctly for executive education course', async () => {
     const EditCoursePageWrapper = (props) => (
       <MemoryRouter>
         <Provider store={store}>

@@ -397,7 +397,7 @@ describe('Collapsible Course Run', () => {
     });
   });
 
-  it.only('renders with run type disabled once a SKU exists', () => {
+  it('renders with run type disabled once a SKU exists', () => {
     const seat = {
       type: 'verified',
       price: '149.00',

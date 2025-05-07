@@ -97,7 +97,7 @@ describe('BaseEditCourseForm', () => {
     process.env = env;
   });
 
-  it.only('renders html correctly with minimal data', () => {
+  it('renders html correctly with minimal data', () => {
     const newStore = createStore(
       combineReducers({ form: formReducer }),
       {
