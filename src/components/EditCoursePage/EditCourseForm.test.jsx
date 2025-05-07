@@ -6,9 +6,9 @@ import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { Provider } from 'react-redux';
-// import configureStore from 'redux-mock-store';
+import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
-import { createStore, combineReducers, configureStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import EditCourseForm, { BaseEditCourseForm } from './EditCourseForm';
 import {
   REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
@@ -16,8 +16,8 @@ import {
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 const WrappedEditCourseForm = reduxForm({ form: 'testForm' })(BaseEditCourseForm);
-// const mockStore = configureStore();
-const store = {};
+const mockStore = configureStore();
+const store = mockStore({});
 
 describe('BaseEditCourseForm', () => {
   const env = { ...process.env };

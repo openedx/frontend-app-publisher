@@ -64,7 +64,7 @@ describe('RichEditor', () => {
       getContent: jest.fn().mockImplementation(() => 'Hello, text'),
     };
 
-    const component = shallow(<RichEditor
+    const component = render(<RichEditor
       label="Rich Text Editor Test"
       id="rich-text-editor-test"
       input={{
@@ -92,7 +92,7 @@ describe('RichEditor', () => {
   });
 
   it('componentDidUpdate updates state', () => {
-    const component = shallow(<RichEditor
+    const component = render(<RichEditor
       label="Rich Text Editor Test"
       id="rich-text-editor-test"
       input={{

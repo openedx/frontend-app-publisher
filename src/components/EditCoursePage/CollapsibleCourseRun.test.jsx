@@ -429,7 +429,7 @@ describe('Collapsible Course Run', () => {
     );
     screen.debug();
     // let runTypeSelect = screen.getByRole('combobox', { name: /test-course.run_type/i });
-    // let runTypeSelect = container.querySelector('div[id="test-course.run_type"]').querySelector('select');
+    let runTypeSelect = container.querySelector('div[id="test-course.run_type"]').querySelector('select');
     expect(runTypeSelect).not.toBeDisabled();
 
     updatedCourseRun.seats[0].sku = 'ABCDEF';

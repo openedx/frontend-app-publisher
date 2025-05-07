@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import {
   render, screen, waitFor,
 } from '@testing-library/react';
-import { reduxForm } from 'redux-form';
 import configureStore from 'redux-mock-store';
 import { Alert } from '@openedx/paragon';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
@@ -486,7 +485,7 @@ describe('EditCoursePage', () => {
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  describe.skip('EditCoursePage submission handling', () => {
+  describe('EditCoursePage submission handling', () => {
     const publishedCourseRun = {
       key: 'edX101+DemoX+T1',
       start: '2019-05-14T00:00:00Z',
