@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { AppContext } from '@edx/frontend-platform/react';
 
@@ -62,12 +63,14 @@ function renderAppWithState(initialRoute) {
   const AppWrapper = () => (
     <IntlProvider locale="en">
       <Provider store={mockStore(initialState)}>
-        <AppContext.Provider
-          store={mockStore(initialState)}
-          value={contextValue}
-        >
-          <MainApp />
-        </AppContext.Provider>
+        <MemoryRouter>
+          <AppContext.Provider
+            store={mockStore(initialState)}
+            value={contextValue}
+          >
+            <MainApp />
+          </AppContext.Provider>
+        </MemoryRouter>
       </Provider>
     </IntlProvider>
   );
