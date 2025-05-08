@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import {
   render, screen, waitFor,
 } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 import { Alert } from '@openedx/paragon';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
@@ -253,7 +254,7 @@ describe('EditCoursePage', () => {
   });
 
   it.skip('renders course run restriction_type correctly for executive education course', async () => {
-    // TODO: To be fixed
+    // TODO: To be fixed as course run element is not rendering
     const EditCoursePageWrapper = (props) => (
       <MemoryRouter>
         <Provider store={store}>
@@ -270,9 +271,8 @@ describe('EditCoursePage', () => {
     );
 
     const wrapper = render(<EditCoursePageWrapper />);
-    await waitFor(() => screen.getByRole('select', { name: /course_runs[0].restriction_type/i, hidden: true }));
-    const firstSelect = screen.getByRole('select', { name: /course_runs[0].restriction_type/i, hidden: true });
-    // const firstSelect = wrapper.find('select[name="course_runs[0].restriction_type"]');
+    await waitFor(() => screen.getByRole('combobox', { name: /course_runs[0].restriction_type/i, hidden: true }));
+    const firstSelect = screen.getByRole('combobox', { name: /course_runs[0].restriction_type/i, hidden: true });
     expect(firstSelect).toHaveTextContent('custom-b2b-enterprise');
     const secondSelect = wrapper.find('select[name="course_runs[1].restriction_type"]');
     expect(secondSelect.props().value).toBe('');
@@ -486,7 +486,7 @@ describe('EditCoursePage', () => {
   });
 
   describe.skip('EditCoursePage submission handling', () => {
-     // TODO: To be fixed/moved to RTL
+    // TODO: To be fixed/moved to RTL
     const publishedCourseRun = {
       key: 'edX101+DemoX+T1',
       start: '2019-05-14T00:00:00Z',

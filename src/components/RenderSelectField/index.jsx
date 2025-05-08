@@ -16,11 +16,11 @@ const RenderSelectField = ({
   <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
     {hidden ? null : <Form.Label>{label}</Form.Label>}
     <Form.Control
+      name={name}
+      label={label}
       {...input}
       {...extraInput}
       as="select"
-      name={name}
-      label={label}
       disabled={disabled}
       hidden={hidden}
       required={required}
