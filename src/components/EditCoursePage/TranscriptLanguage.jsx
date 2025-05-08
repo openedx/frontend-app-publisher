@@ -62,6 +62,7 @@ class TranscriptLanguage extends React.Component {
         </ul>
         <button
           type="button"
+          data-testid="test-js-add-btn"
           className="btn btn-outline-primary js-add-button mt-2"
           onClick={() => fields.push({})}
           disabled={disabled}

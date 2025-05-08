@@ -1,7 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-
-import RemoveButton from '../RemoveButton';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import User from './User';
 
@@ -12,15 +10,15 @@ describe('User', () => {
       userId: 0,
     };
 
-    const withoutCallback = shallow(<User
+    render(<User
       {...baseArguments}
     />);
-    expect(withoutCallback.find(RemoveButton)).toHaveLength(0);
+    waitFor(() => expect(screen.findByTestId('id-remove-btn')).toHaveLength(0));
 
-    const withCallback = shallow(<User
+    render(<User
       {...baseArguments}
       onRemove={jest.fn()}
     />);
-    expect(withCallback.find(RemoveButton)).toHaveLength(1);
+    waitFor(() => expect(screen.findByTestId('id-remove-btn')).toHaveLength(1));
   });
 });

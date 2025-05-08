@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import RemoveButton from '../RemoveButton';
 
 const User = (props) => (
-  <div>
+  <div data-testid="test-id-user">
     <div className="d-flex">
       <span title={props.name} className="text-gray-800 text-truncate">{props.name}</span>
       {props.onRemove

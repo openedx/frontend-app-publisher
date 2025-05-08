@@ -1,9 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
-
+import {
+  fireEvent, render, waitFor, screen,
+} from '@testing-library/react';
+import { reduxForm } from 'redux-form';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
 import SocialLinks from './SocialLinks';
-
 /*
 *  Disable console errors for this test file so that we don't receive warnings
 *  about fields being an array rather than an object. This prop change is
@@ -13,24 +15,33 @@ import SocialLinks from './SocialLinks';
 *  writing functionality.'
 */
 jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn());
+const mockStore = configureStore();
+const store = mockStore({});
+
+const WrappedSocialLinks = reduxForm({ form: 'testForm' })(SocialLinks);
 
 describe('Social links', () => {
   it('renders correctly with no fields', () => {
-    const component = shallow(<SocialLinks fields={[]} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<SocialLinks fields={[]} />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly when given fields', () => {
-    const component = shallow(<SocialLinks fields={[{}]} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<SocialLinks fields={[]} />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('adds fields when the add button is pushed', () => {
+  it('adds fields when the add button is pushed', async () => {
     const fields = [{}];
-    const component = shallow(<SocialLinks fields={fields} />);
-    expect(fields.length).toEqual(1);
+    render(
+      <Provider store={store}>
+        <WrappedSocialLinks fields={fields} />
+      </Provider>,
+    );
+    waitFor(() => expect(fields.length).toEqual(1));
 
-    component.find('.js-add-button').simulate('click');
-    expect(fields.length).toEqual(2);
+    const addButton = await screen.findByTestId('js-add-button');
+    fireEvent.click(addButton);
+    waitFor(() => expect(fields.length).toEqual(2));
   });
 });

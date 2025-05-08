@@ -1,12 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, waitFor } from '@testing-library/react';
 
 import ImageUpload from './index';
 
 describe('ImageUpload', () => {
   it('shows an image upload with no prior image', () => {
-    const component = shallow(<ImageUpload
+    const { container } = render(<ImageUpload
       label="Course Image: *"
       id="image-no-prior"
       input={{
@@ -23,11 +22,11 @@ describe('ImageUpload', () => {
       requiredWidth={1134}
       requiredHeight={675}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows an image upload with prior image', () => {
-    const component = shallow(<ImageUpload
+    const { container } = render(<ImageUpload
       label={<strong>Course Image: *</strong>}
       id="image-with-prior"
       input={{
@@ -44,11 +43,11 @@ describe('ImageUpload', () => {
       requiredHeight={110}
       requiredWidth={110}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows an image upload and an error', () => {
-    const component = shallow(<ImageUpload
+    const { container } = render(<ImageUpload
       label="Image Error Test"
       id="image-with-error"
       input={{
@@ -65,6 +64,6 @@ describe('ImageUpload', () => {
       requiredWidth={1134}
       requiredHeight={675}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 });

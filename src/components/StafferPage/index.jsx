@@ -153,7 +153,7 @@ class StafferPage extends React.Component {
     const organizationName = (data && data.position && data.position.organization_name) || '';
 
     return (
-      <>
+      <div data-testid="test-id-staffer-page">
         <Helmet>
           <title>{titleText}</title>
         </Helmet>
@@ -200,7 +200,7 @@ class StafferPage extends React.Component {
             </div>
           )}
         </PageContainer>
-      </>
+      </div>
     );
   }
 }

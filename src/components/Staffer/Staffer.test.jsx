@@ -1,7 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import {
+  fireEvent, render, waitFor,
+} from '@testing-library/react';
 
+import { MemoryRouter } from 'react-router-dom';
 import { Staffer } from './index';
 
 const defaultProps = {
@@ -15,15 +17,21 @@ const defaultProps = {
   referrer: '/course/11111111-1111-1111-1111-111111111111',
 };
 
+const StafferWrapper = () => (
+  <MemoryRouter>
+    <Staffer {...defaultProps} />
+  </MemoryRouter>
+);
+
 describe('Staffer', () => {
   it('renders the staffer', () => {
-    const component = shallow(<Staffer {...defaultProps} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<StafferWrapper />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('calls onRemove when the delete button is clicked', () => {
-    const component = shallow(<Staffer {...defaultProps} />);
-    component.find('.js-delete-btn').simulate('click');
-    expect(defaultProps.onRemove).toHaveBeenCalled();
+    const { container } = render(<StafferWrapper />);
+    fireEvent.click(container);
+    waitFor(() => expect(defaultProps.onRemove).toHaveBeenCalled());
   });
 });

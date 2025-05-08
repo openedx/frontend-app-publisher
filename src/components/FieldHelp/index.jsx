@@ -58,6 +58,7 @@ class FieldHelp extends React.Component {
         </button>
         <span
           className="field-help-data"
+          data-testid="field-help-data"
           ref={this.setTip}
           data-tip={jsxToString(this.props.tip)}
           data-html

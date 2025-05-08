@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, waitFor } from '@testing-library/react';
 
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 import TableComponent from './index';
 
 describe('CourseTable', () => {
@@ -13,11 +13,13 @@ describe('CourseTable', () => {
       label: 'Col 1',
       key: 'col1',
       columnSortable: true,
+      accessor: 'col1',
     },
     {
       label: 'Col 2',
       key: 'col2',
       columnSortable: false,
+      accessor: 'col2',
     },
   ];
   const mockFetch = () => [
@@ -32,7 +34,7 @@ describe('CourseTable', () => {
   ];
 
   it('shows a table', () => {
-    const component = shallow(<TableComponent
+    const { container } = render(<TableComponent
       id="test"
       className="test"
       fetchMethod={mockFetch}
@@ -47,11 +49,11 @@ describe('CourseTable', () => {
       location={{ search: '?page=1&ordering=key' }}
       fetchEditorFilterOptions={() => true}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows an error', () => {
-    const component = shallow(<TableComponent
+    const { container } = render(<TableComponent
       id="test"
       className="test"
       fetchMethod={mockFetch}
@@ -66,11 +68,11 @@ describe('CourseTable', () => {
       location={{ search: '?page=1&ordering=key' }}
       fetchEditorFilterOptions={() => true}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows loading', () => {
-    const component = shallow(<TableComponent
+    const { container } = render(<TableComponent
       id="test"
       className="test"
       fetchMethod={mockFetch}
@@ -85,95 +87,111 @@ describe('CourseTable', () => {
       loading
       fetchEditorFilterOptions={() => true}
     />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows an empty table', () => {
-    const component = shallow(<TableComponent
-      id="test"
-      className="test"
-      fetchMethod={mockFetch}
-      columns={mockColumns}
-      formatData={mockFormat}
-      tableSortable
-      pageCount={1}
-      paginateTable={() => true}
-      sortTable={() => true}
-      clearTable={() => true}
-      location={{ search: '?page=1&ordering=key' }}
-      data={[]}
-      fetchEditorFilterOptions={() => true}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <IntlProvider locale="en">
+        <TableComponent
+          id="test"
+          className="test"
+          fetchMethod={mockFetch}
+          columns={mockColumns}
+          formatData={mockFormat}
+          tableSortable
+          pageCount={1}
+          paginateTable={() => true}
+          sortTable={() => true}
+          clearTable={() => true}
+          location={{ search: '?page=1&ordering=key' }}
+          data={[]}
+          fetchEditorFilterOptions={() => true}
+        />
+      </IntlProvider>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows a populated table', () => {
-    const component = shallow(<TableComponent
-      id="test"
-      className="test"
-      fetchMethod={mockFetch}
-      columns={mockColumns}
-      formatData={mockFormat}
-      tableSortable
-      pageCount={1}
-      itemCount={2}
-      paginateTable={() => true}
-      sortTable={() => true}
-      clearTable={() => true}
-      location={{ search: '?page=1&ordering=key' }}
-      data={mockFetch()}
-      fetchEditorFilterOptions={() => true}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <IntlProvider locale="en">
+        <TableComponent
+          id="test"
+          className="test"
+          fetchMethod={mockFetch}
+          columns={mockColumns}
+          formatData={mockFormat}
+          tableSortable
+          pageCount={1}
+          itemCount={2}
+          paginateTable={() => true}
+          sortTable={() => true}
+          clearTable={() => true}
+          location={{ search: '?page=1&ordering=key' }}
+          data={mockFetch()}
+          fetchEditorFilterOptions={() => true}
+        />
+      </IntlProvider>,
+    );
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows a populated table after a component update for page', () => {
-    const component = shallow(<TableComponent
-      id="test"
-      className="test"
-      fetchMethod={mockFetch}
-      columns={mockColumns}
-      formatData={mockFormat}
-      tableSortable
-      pageCount={1}
-      itemCount={2}
-      paginateTable={() => true}
-      sortTable={() => true}
-      clearTable={() => true}
-      location={{ search: '?page=1&ordering=key' }}
-      data={mockFetch()}
-      fetchEditorFilterOptions={() => true}
-    />);
-    component.setProps({
-      location: {
-        search: '?page=2&ordering=key',
-      },
-    });
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const defaultProps = {
+      id: 'test',
+      className: 'test',
+      fetchMethod: mockFetch,
+      columns: mockColumns,
+      formatData: mockFormat,
+      tableSortable: true,
+      pageCount: 1,
+      itemCount: 2,
+      paginateTable: () => true,
+      sortTable: () => true,
+      clearTable: () => true,
+      location: { search: '?page=1&ordering=key' },
+      data: mockFetch(),
+      fetchEditorFilterOptions: () => true,
+    };
+    const { rerender, container } = render(
+      <IntlProvider locale="en">
+        <TableComponent
+          {...defaultProps}
+        />
+      </IntlProvider>,
+    );
+    const updatedProps = { ...defaultProps, location: { search: '?page=2&ordering=key' } };
+    rerender(<IntlProvider locale="en"><TableComponent {...updatedProps} /></IntlProvider>);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('shows a populated table after a component update for ordering', () => {
-    const component = shallow(<TableComponent
-      id="test"
-      className="test"
-      fetchMethod={mockFetch}
-      columns={mockColumns}
-      formatData={mockFormat}
-      tableSortable
-      pageCount={1}
-      itemCount={2}
-      paginateTable={() => true}
-      sortTable={() => true}
-      clearTable={() => true}
-      location={{ search: '?page=1&ordering=key' }}
-      data={mockFetch()}
-      fetchEditorFilterOptions={() => true}
-    />);
-    component.setProps({
-      location: {
-        search: '?page=1&ordering=-key',
-      },
-    });
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const defaultProps = {
+      id: 'test',
+      className: 'test',
+      fetchMethod: mockFetch,
+      columns: mockColumns,
+      formatData: mockFormat,
+      tableSortable: true,
+      pageCount: 1,
+      itemCount: 2,
+      paginateTable: () => true,
+      sortTable: () => true,
+      clearTable: () => true,
+      location: { search: '?page=1&ordering=key' },
+      data: mockFetch(),
+      fetchEditorFilterOptions: () => true,
+    };
+    const { rerender, container } = render(
+      <IntlProvider locale="en">
+        <TableComponent
+          {...defaultProps}
+        />
+      </IntlProvider>,
+    );
+    const updatedProps = { ...defaultProps, location: { search: '?page=1&ordering=-key' } };
+    rerender(<IntlProvider locale="en"><TableComponent {...updatedProps} /></IntlProvider>);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 });

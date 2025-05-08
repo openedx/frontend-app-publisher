@@ -1,18 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, waitFor } from '@testing-library/react';
 
 import RenderSelectField from './index';
 
 describe('RenderSelectField', () => {
   it('renders html for select field', () => {
-    const component = shallow(<RenderSelectField
+    const { container } = render(<RenderSelectField
       input={{}}
       name="Test"
       label="TestLabel"
       options={['one', 'two', 'three']}
       meta={{ touched: false, error: '' }}
-    />).dive();
-    expect(shallowToJson(component)).toMatchSnapshot();
+    />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 });

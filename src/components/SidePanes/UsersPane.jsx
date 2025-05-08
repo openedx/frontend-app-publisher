@@ -14,7 +14,7 @@ import './UsersPane.scss';
 
 // customize react-select dropdown options to show tooltips
 const Option = (props) => (
-  <div className={`tooltip-${props.data.value}`} data-tip data-for={`tooltip-${props.data.value}`}>
+  <div data-testid={`option-${props.data.value}`} className={`tooltip-${props.data.value}`} data-tip data-for={`tooltip-${props.data.value}`}>
     <components.Option {...props} className={`option-${props.data.value}`} />
     <ReactTooltip id={`tooltip-${props.data.value}`}>
       <span>{props.data.label}</span>
@@ -156,7 +156,7 @@ class UsersPane extends React.Component {
               || <div>All team members</div>}
             {showAddButton
               && (
-              <button type="button" className="btn btn-link text-dark-900 p-0 usersPane-startAdd" onClick={this.startAddingUser}>
+              <button data-testid="usersPane-startAdd" type="button" className="btn btn-link text-dark-900 p-0 usersPane-startAdd" onClick={this.startAddingUser}>
                 <Add /> {hasEditor ? 'Add editor' : 'Set editor'}
               </button>
               )}
@@ -184,6 +184,7 @@ class UsersPane extends React.Component {
                   onChange={this.editorChoiceChanged}
                 />
                 <button
+                  data-testid="usersPane-add"
                   type="button"
                   className="btn btn-primary btn-sm align-baseline ml-1 usersPane-add"
                   onClick={this.addUser}
