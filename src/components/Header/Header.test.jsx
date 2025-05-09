@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { MemoryRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { AppContext } from '@edx/frontend-platform/react';
 
 import Header from './index';
@@ -23,13 +24,15 @@ const HeaderWrapperContext = ({ props }) => {
   }), []);
 
   return (
-    <AppContext.Provider
-      value={contextValue}
-    >
-      <MemoryRouter>
-        <Header {...props} />
-      </MemoryRouter>
-    </AppContext.Provider>
+    <IntlProvider locale="en">
+      <AppContext.Provider
+        value={contextValue}
+      >
+        <MemoryRouter>
+          <Header {...props} />
+        </MemoryRouter>
+      </AppContext.Provider>
+    </IntlProvider>
   );
 };
 
