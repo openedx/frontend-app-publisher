@@ -1,0 +1,27 @@
+.min-vh-65 {
+    min-height: 65vh;
+}
+
+.data-container-excel {
+    $cell-widths: 225px;
+    .pgn__data-table-layout-wrapper {
+        display: block;
+        overflow-y: visible;
+        overflow-x: visible;
+    }
+
+    tr {
+        th {
+            border: 1px solid black;
+            min-width: $cell-widths;
+            max-width: $cell-widths;
+        }
+        td {
+            border: 1px solid black;
+            min-width: $cell-widths;
+            max-width: $cell-widths;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
