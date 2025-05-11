@@ -10,6 +10,7 @@ import CourseDashboard from '../CourseDashboard';
 import CourseRunRedirectComponent from '../../components/CourseRunRedirect';
 import CreateCourse from '../CreateCourse';
 import CreateCourseRun from '../CreateCourseRun';
+import BulkOperations from '../BulkOperations'
 import CreateStaffer from '../CreateStaffer';
 import EditStaffer from '../EditStaffer';
 import CreateCollaborator from '../CreateCollaborator';
@@ -32,6 +33,7 @@ const MainApp = () => (
     )}
     <main>
       <Routes>
+        <Route path="/bulk-ops" element={<BulkOperations/>} />
         <Route path="/course-runs/:courseRunKey" element={<CourseRunRedirectComponent />} />
         <Route
           path="/courses/new"
