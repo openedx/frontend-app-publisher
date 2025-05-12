@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import moment from "moment";
+import './styles.scss';
 import "moment-timezone";
 import {
   Button,
   DataTable,
   useToggle,
   StandardModal,
+  Stack,
 } from "@openedx/paragon";
 
 export default function BulkOperationDetails({ task }) {
@@ -39,19 +41,19 @@ export default function BulkOperationDetails({ task }) {
   };
 
   return (
-    <div className="container mt-4">
-      <h2>Task Details</h2>
+    <div className="container mt-2">
+      <h2 className="mb-4">Task Details</h2>
       <p>
-        <strong>Uploaded by:</strong> {task.uploaded_by}
+        <strong>Task ID:</strong> {task.task_id}
       </p>
       <p>
         <strong>Task type:</strong> {task.task_type}
       </p>
       <p>
-        <strong>Status:</strong> {task.status}
+        <strong>Uploaded by:</strong> {task.uploaded_by}
       </p>
       <p>
-        <strong>Task ID:</strong> {task.task_id}
+        <strong>Status:</strong> {task.status}
       </p>
       <p>
         <strong>Created:</strong>{" "}
@@ -64,7 +66,7 @@ export default function BulkOperationDetails({ task }) {
           .tz(task.modified, 'UTC').format("MMM DD, YYYY, hh:mm:ss A")}
       </p>
 
-      <div className="mb-3">
+      <Stack direction="horizontal" gap={3} className="mb-4 mt-4">
         <a
           href={task.csv_file}
           className="btn btn-outline-primary me-2"
@@ -73,8 +75,8 @@ export default function BulkOperationDetails({ task }) {
         >
           Download CSV
         </a>
-        <>
           <Button
+          className="ms-2"
             variant="primary"
             onClick={() => {
               handlePreviewCSV();
@@ -85,11 +87,14 @@ export default function BulkOperationDetails({ task }) {
           </Button>
           <StandardModal
             title="CSV Preview"
+            className={"csv-preview-modal"}
             isOpen={isOpen}
             onClose={close}
+            size="xl"
             isOverflowVisible={false}
           >
             <DataTable
+              className="bulk-op-table"
               columns={csvHeaders.map((header) => ({
                 Header: header,
                 accessor: header,
@@ -104,8 +109,7 @@ export default function BulkOperationDetails({ task }) {
               showPagination={false}
             />
           </StandardModal>
-        </>
-      </div>
+        </Stack>
 
       {task.task_summary && (
         <div className="bg-light p-3 rounded">

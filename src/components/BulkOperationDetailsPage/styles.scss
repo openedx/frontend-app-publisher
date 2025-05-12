@@ -1,0 +1,18 @@
+.pgn__data-table {
+    $cell-widths: 225px;
+
+    tr {
+        th {
+            border: 1px solid black;
+            min-width: $cell-widths;
+            max-width: $cell-widths;
+        }
+        td {
+            border: 1px solid black;
+            min-width: $cell-widths;
+            max-width: $cell-widths;
+            text-overflow: ellipsis !important;
+            white-space: nowrap;
+        }
+    }
+}
