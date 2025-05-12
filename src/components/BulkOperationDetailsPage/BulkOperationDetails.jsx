@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./styles.scss";
 import moment from "moment";
 import "moment-timezone";
 import {
