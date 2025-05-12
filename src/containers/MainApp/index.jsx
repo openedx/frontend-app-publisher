@@ -65,7 +65,7 @@ const MainApp = () => (
           element={<EditCollaborator />}
         />
         <Route path="/courses/:uuid" element={<EditCourse />} />
-        <Route path="/bulk-operation-tasks/:taskId" element={<BulkOperationDetailsPage task={task} />} />
+        <Route path="/bulk-operation-tasks/:taskId" element={<BulkOperationDetailsPage />} />
         <Route 
           path="/"
           element={<CourseDashboard />}

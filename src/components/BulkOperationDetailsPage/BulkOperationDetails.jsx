@@ -9,7 +9,7 @@ import {
   StandardModal,
 } from "@openedx/paragon";
 
-export default function BulkOperationDetailsPage({ task }) {
+export default function BulkOperationDetails({ task }) {
   const [csvRows, setCsvRows] = useState([]);
   const [csvHeaders, setCsvHeaders] = useState([]);
   const [isOpen, open, close] = useToggle(false);
@@ -56,13 +56,13 @@ export default function BulkOperationDetailsPage({ task }) {
       </p>
       <p>
         <strong>Created:</strong>{" "}
-        {moment
-          .tz(task.created).format("MMM DD, YYYY, hh:mm:ss A")}
+        {moment.tz(task.created, 'UTC')
+          .format("MMM DD, YYYY, hh:mm:ss A")}
       </p>
       <p>
         <strong>Modified:</strong>{" "}
         {moment
-          .tz(task.modified).format("MMM DD, YYYY, hh:mm:ss A")}
+          .tz(task.modified, 'UTC').format("MMM DD, YYYY, hh:mm:ss A")}
       </p>
 
       <div className="mb-3">
