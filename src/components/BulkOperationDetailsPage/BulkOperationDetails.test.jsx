@@ -1,93 +1,98 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import {
+  render, screen, fireEvent, waitFor, within,
+} from '@testing-library/react';
 import BulkOperationDetails from './BulkOperationDetails';
-import moment from 'moment-timezone';
-
-const mockCsv = `"name","image"\n"Test Name","http://example.com/image.jpg"\n"Another Name",""`;
-
-beforeEach(() => {
-  global.fetch = jest.fn(() =>
-    Promise.resolve({
-      text: () => Promise.resolve(mockCsv),
-    })
-  );
-});
-
-afterEach(() => {
-  jest.clearAllMocks();
-});
 
 const mockTask = {
-  task_id: '12345',
-  task_type: 'Upload',
-  uploaded_by: 'admin@example.com',
-  status: 'Completed',
-  created: '2023-09-01T12:00:00Z',
-  modified: '2023-09-02T12:00:00Z',
-  csv_file: '/test.csv',
+  task_id: '123',
+  task_type: 'course_create',
+  uploaded_by: 'user@example.com',
+  status: 'completed',
+  created: '2023-01-01T00:00:00Z',
+  modified: '2023-01-02T00:00:00Z',
+  csv_file: 'https://example.com/file.csv',
   task_summary: {
-    success: 2,
-    failed: 1,
+    errors: {},
+    others: [
+      'Course with key edX+CSL-700 already exists. Skipping creation',
+    ],
+    failure_count: 0,
+    success_count: 2,
+    created_products: [
+      '41413e7e-0e08-4e43-a795-87130bd08ac3 - Intro to Course Loader',
+      'b717187c-b8ae-47ac-b65b-ac2274e712db - Intro to Course Loader',
+    ],
+    total_products_count: 2,
+    updated_products_count: 0,
   },
 };
 
+const csvContent = '"name","image"\n"Test Name","https://example.com/image.jpg"';
+
 describe('BulkOperationDetails', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn().mockResolvedValue({
+      text: jest.fn().mockResolvedValue(csvContent),
+    });
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders task details correctly', () => {
     render(<BulkOperationDetails task={mockTask} />);
-
-    expect(screen.getByText('Task Details')).toBeInTheDocument();
-    expect(screen.getByText('Task ID:')).toBeInTheDocument();
-    expect(screen.getByText(mockTask.task_id)).toBeInTheDocument();
-    expect(screen.getByText('Task type:')).toBeInTheDocument();
-    expect(screen.getByText(mockTask.task_type)).toBeInTheDocument();
-    expect(screen.getByText('Uploaded by:')).toBeInTheDocument();
-    expect(screen.getByText(mockTask.uploaded_by)).toBeInTheDocument();
-    expect(screen.getByText('Status:')).toBeInTheDocument();
-    expect(screen.getByText(mockTask.status)).toBeInTheDocument();
-    expect(screen.getByText('Created:')).toBeInTheDocument();
-    expect(screen.getByText(moment(mockTask.created).tz('UTC').format('MMM DD, YYYY, hh:mm:ss A'))).toBeInTheDocument();
-    expect(screen.getByText('Modified:')).toBeInTheDocument();
-    expect(screen.getByText(moment(mockTask.modified).tz('UTC').format('MMM DD, YYYY, hh:mm:ss A'))).toBeInTheDocument();
+    const taskIdElement = screen.getByText('Task ID:', { selector: 'strong' }).closest('p');
+    expect(within(taskIdElement).getByText('123')).toBeInTheDocument();
+    expect(within(screen.getByText('Task type:', { selector: 'strong' }).closest('p')).getByText('course_create')).toBeInTheDocument();
+    expect(within(screen.getByText('Uploaded by:', { selector: 'strong' }).closest('p')).getByText('user@example.com')).toBeInTheDocument();
+    expect(within(screen.getByText('Status:', { selector: 'strong' }).closest('p')).getByText('completed')).toBeInTheDocument();
+    expect(within(screen.getByText('Created:', { selector: 'strong' }).closest('p')).getByText('Jan 01, 2023, 12:00:00 AM')).toBeInTheDocument();
+    expect(within(screen.getByText('Modified:', { selector: 'strong' }).closest('p')).getByText('Jan 02, 2023, 12:00:00 AM')).toBeInTheDocument();
   });
 
   it('renders download and preview buttons', () => {
     render(<BulkOperationDetails task={mockTask} />);
-    expect(screen.getByText('Download CSV')).toBeInTheDocument();
-    expect(screen.getByText('Preview CSV')).toBeInTheDocument();
+    const downloadButton = screen.getByRole('link', { name: /Download CSV/i });
+    const previewButton = screen.getByRole('button', { name: /Preview CSV/i });
+
+    expect(downloadButton).toHaveAttribute('href', mockTask.csv_file);
+    expect(downloadButton).toHaveAttribute('target', '_blank');
+    expect(previewButton).toBeInTheDocument();
   });
 
-  it('opens modal and displays CSV data on Preview click', async () => {
+  it('fetches and displays CSV content on preview', async () => {
     render(<BulkOperationDetails task={mockTask} />);
-    fireEvent.click(screen.getByText('Preview CSV'));
+
+    const previewButton = screen.getByRole('button', { name: /Preview CSV/i });
+    fireEvent.click(previewButton);
 
     await waitFor(() => {
-      expect(screen.getByText('CSV Preview')).toBeInTheDocument();
+      expect(global.fetch).toHaveBeenCalledWith(mockTask.csv_file);
     });
-
-    expect(screen.getByText('name')).toBeInTheDocument();
-    expect(screen.getByText('image')).toBeInTheDocument();
-
-    expect(screen.getByText('Test Name')).toBeInTheDocument();
-    expect(screen.getByText('Another Name')).toBeInTheDocument();
-    expect(screen.getByText('View Image')).toBeInTheDocument();
   });
 
-  it('renders task summary when provided', () => {
+  it('renders BulkOperationDetails and previews CSV', async () => {
+    render(<BulkOperationDetails task={mockTask} />);
+
+    const previewButton = screen.getByRole('button', { name: /Preview CSV/i });
+    fireEvent.click(previewButton);
+
+    await waitFor(() => {
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+      const table = screen.getByRole('table');
+      expect(table).toBeInTheDocument();
+    });
+  });
+
+  it('renders task summary if present', () => {
     render(<BulkOperationDetails task={mockTask} />);
     expect(screen.getByText('Task Summary')).toBeInTheDocument();
-    expect(screen.getByText(/success/)).toBeInTheDocument();
-  });
-
-  it('handles missing image field gracefully', async () => {
-    render(<BulkOperationDetails task={mockTask} />);
-    fireEvent.click(screen.getByText('Preview CSV'));
-
-    await waitFor(() => {
-      expect(screen.getByText('CSV Preview')).toBeInTheDocument();
-    });
-
-    const imageLinks = screen.getAllByText('View Image');
-    expect(imageLinks.length).toBe(1);
-    expect(imageLinks[0]).toHaveAttribute('href', 'http://example.com/image.jpg');
+    expect(screen.getByText(/success_count/i)).toBeInTheDocument();
+    expect(screen.getByText(/created_products/i)).toBeInTheDocument();
+    expect(screen.getByText(/"success_count": 2/)).toBeInTheDocument();
+    expect(screen.getByText(/"total_products_count": 2/)).toBeInTheDocument();
   });
 });

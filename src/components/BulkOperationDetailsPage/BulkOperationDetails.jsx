@@ -44,7 +44,6 @@ const BulkOperationDetails = ({ task }) => {
 
       setCsvHeaders(cleanedHeaders);
       setCsvRows(cleanedRows);
-      open();
     } catch (error) {
       console.error('Failed to preview CSV:', error);
     }
@@ -103,6 +102,7 @@ const BulkOperationDetails = ({ task }) => {
           variant="primary"
           onClick={() => {
             handlePreviewCSV();
+            open();
           }}
         >
           Preview CSV
@@ -121,7 +121,9 @@ const BulkOperationDetails = ({ task }) => {
               return acc;
             }, {}))}
             defaultPageSize={5}
+            itemCount={csvRows.length}
             showPagination={false}
+            data-testid="csv-table"
           />
 
         </FullscreenModal>
