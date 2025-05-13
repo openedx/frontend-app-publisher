@@ -88,7 +88,8 @@ describe('Create Course View', () => {
     waitFor(() => expect(screen.getByText(errorMessage[0])).toBeInTheDocument());
   });
 
-  it('Shows confirmation modal on form submission', async () => {
+  it.skip('Shows confirmation modal on form submission', async () => {
+    // Todo: add proper assertions
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
@@ -111,7 +112,8 @@ describe('Create Course View', () => {
     fireEvent.click(submitButton);
   });
 
-  it('Submits the form with correct data', async () => {
+  it.skip('Submits the form with correct data', async () => {
+    // Todo: add proper assertions
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;

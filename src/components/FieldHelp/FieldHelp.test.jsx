@@ -12,10 +12,9 @@ describe('FieldHelp', () => {
     const { container } = render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
 
     expect(ReactTooltip.show).not.toHaveBeenCalled();
-    expect(ReactTooltip.show).not.toHaveBeenCalled();
+    expect(ReactTooltip.hide).not.toHaveBeenCalled();
 
     fireEvent.click(container);
-    // wrapper.find('button').simulate('click');
     waitFor(() => expect(ReactTooltip.show).toHaveBeenCalledTimes(1));
 
     const button = await screen.findByRole('button');

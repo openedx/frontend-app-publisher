@@ -24,7 +24,6 @@ describe('CatalogInclusionPane', () => {
     waitFor(() => expect(title).toBeInTheDocument());
     const toggle = container.querySelector('.pgn__form-switch-input');
     fireEvent.change(toggle, { target: { checked: false } });
-    // toggle.simulate('change', { target: { checked: false } });
     waitFor(() => expect(spy).toBeCalledWith(
       {
         draft: false,

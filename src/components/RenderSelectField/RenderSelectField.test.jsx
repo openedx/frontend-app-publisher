@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import RenderSelectField from './index';
 
@@ -12,6 +12,6 @@ describe('RenderSelectField', () => {
       options={['one', 'two', 'three']}
       meta={{ touched: false, error: '' }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

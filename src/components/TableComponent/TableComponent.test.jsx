@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import TableComponent from './index';
@@ -49,7 +49,7 @@ describe('CourseTable', () => {
       location={{ search: '?page=1&ordering=key' }}
       fetchEditorFilterOptions={() => true}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows an error', () => {
@@ -68,7 +68,7 @@ describe('CourseTable', () => {
       location={{ search: '?page=1&ordering=key' }}
       fetchEditorFilterOptions={() => true}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows loading', () => {
@@ -87,7 +87,7 @@ describe('CourseTable', () => {
       loading
       fetchEditorFilterOptions={() => true}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows an empty table', () => {
@@ -110,7 +110,7 @@ describe('CourseTable', () => {
         />
       </IntlProvider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows a populated table', () => {
@@ -134,7 +134,7 @@ describe('CourseTable', () => {
         />
       </IntlProvider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows a populated table after a component update for page', () => {
@@ -163,7 +163,7 @@ describe('CourseTable', () => {
     );
     const updatedProps = { ...defaultProps, location: { search: '?page=2&ordering=key' } };
     rerender(<IntlProvider locale="en"><TableComponent {...updatedProps} /></IntlProvider>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows a populated table after a component update for ordering', () => {
@@ -192,6 +192,6 @@ describe('CourseTable', () => {
     );
     const updatedProps = { ...defaultProps, location: { search: '?page=1&ordering=-key' } };
     rerender(<IntlProvider locale="en"><TableComponent {...updatedProps} /></IntlProvider>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { reduxForm } from 'redux-form';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
@@ -30,7 +30,7 @@ describe('AdditionalMetadata Fields', () => {
         />
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('Display required fields on the basis of external course marketing type', () => {
@@ -43,6 +43,6 @@ describe('AdditionalMetadata Fields', () => {
         />
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

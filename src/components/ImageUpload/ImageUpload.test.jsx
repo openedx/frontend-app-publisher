@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import ImageUpload from './index';
 
@@ -22,7 +22,7 @@ describe('ImageUpload', () => {
       requiredWidth={1134}
       requiredHeight={675}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows an image upload with prior image', () => {
@@ -43,7 +43,7 @@ describe('ImageUpload', () => {
       requiredHeight={110}
       requiredWidth={110}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows an image upload and an error', () => {
@@ -64,6 +64,6 @@ describe('ImageUpload', () => {
       requiredWidth={1134}
       requiredHeight={675}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

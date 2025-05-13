@@ -48,7 +48,6 @@ describe('CommentsPane', () => {
       fetchComments={mockFetch}
     />);
     const comments = await screen.findAllByTestId('comment-card');
-    console.log(comments);
     expect(comments).toHaveLength(2);
     waitFor(() => expect(comments[0]).toHaveTextContent('Billy Bob'));
   });
@@ -71,7 +70,7 @@ describe('CommentsPane', () => {
     waitFor(() => expect(screen.getByText('No comments')).toHaveClass('text-muted'));
   });
 
-  it('allows adding a comment', () => {
+  it('allows adding a comment', async () => {
     const mockCallback = jest.fn();
     render(<CommentsPane
       addComment={mockCallback}
@@ -80,14 +79,11 @@ describe('CommentsPane', () => {
     />);
     const input = screen.getByLabelText(/Post a comment/i);
     fireEvent.change(input, { target: { value: 'Test comment' } });
-    waitFor(() => fireEvent.click(screen.getByRole('button', { name: /post/i })));
-
-    // eslint-disable-next-line
-    expect(mockCallback).toHaveBeenCalledWith({"comment": "Test comment", "course_uuid": ""});
-    // not sure what else to test here
+    fireEvent.click(screen.getByRole('button', { name: /post/i }));
+    expect(mockCallback).toHaveBeenCalledWith({ comment: 'Test comment', course_uuid: '' });
   });
 
-  it('displays status alert on empty comment body', () => {
+  it('displays status alert on empty comment body', async () => {
     const mockAdd = jest.fn();
     render(
       <IntlProvider locale="en">
@@ -103,7 +99,7 @@ describe('CommentsPane', () => {
     waitFor(() => expect(screen.getByRole('alert')).toBeInTheDocument());
   });
 
-  it('displays status alert on error response', () => {
+  it('displays status alert on error response', async () => {
     const errorCommentThread = { ...emptyCommentThread, error: 'TestErrorMessage' };
 
     render(

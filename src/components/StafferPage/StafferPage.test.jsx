@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import configureStore from 'redux-mock-store';
@@ -19,7 +19,7 @@ describe('StafferPage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly when given a referrer', () => {
@@ -37,7 +37,7 @@ describe('StafferPage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly with staffer info error', () => {
@@ -54,14 +54,14 @@ describe('StafferPage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly with no stafferInfo', () => {
     const { container } = render(<StafferPage
       createStaffer={() => null}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly while fetching', () => {
@@ -73,7 +73,7 @@ describe('StafferPage', () => {
         isFetching: true,
       }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly while creating', () => {
@@ -90,6 +90,6 @@ describe('StafferPage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

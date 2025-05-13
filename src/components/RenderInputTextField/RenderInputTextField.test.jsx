@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import RenderInputTextField from './index';
 
@@ -12,7 +12,7 @@ describe('RenderInputTextField', () => {
       label="TestLabel"
       meta={{ touched: false, error: '' }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders html for number type', () => {
     const { container } = render(<RenderInputTextField
@@ -22,6 +22,6 @@ describe('RenderInputTextField', () => {
       label="TestLabel"
       meta={{ touched: false, error: '' }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

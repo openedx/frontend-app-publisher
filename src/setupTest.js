@@ -12,7 +12,10 @@ getAuthenticatedUser.mockReturnValue({ administrator: false });
 jest.mock('react-tooltip/node_modules/uuid', () => ({
   v4: () => '00000000-0000-0000-0000-000000000000',
 }));
-// Related issue: https://github.com/jpuri/react-draft-wysiwyg/issues/780
+
+// uuid is used to generate id for editor. During tests, if not mocked, every new run will have
+// different uuid and thus, snapsots will change.
+// This mocking is inspired from https://github.com/jpuri/react-draft-wysiwyg/issues/780
 // TODO: Since uuid is used for id, it might not be a good idea to hardcode same id on same page.
 jest.mock('@tinymce/tinymce-react/lib/cjs/main/ts/Utils', () => ({
   ...jest.requireActual('@tinymce/tinymce-react/lib/cjs/main/ts/Utils'),

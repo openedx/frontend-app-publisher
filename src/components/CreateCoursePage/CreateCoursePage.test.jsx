@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
@@ -20,7 +20,7 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly while fetching', () => {
@@ -51,7 +51,7 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly with organizations', () => {
@@ -82,7 +82,7 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly with org error', () => {
@@ -108,7 +108,7 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders page correctly with no publisherUserInfo', () => {
     const { container } = render(
@@ -154,7 +154,7 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders page correctly with course create success', () => {
     const { container } = render(
@@ -181,7 +181,7 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders page correctly with course create in progress', () => {
     const { container } = render(
@@ -208,6 +208,6 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

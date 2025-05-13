@@ -6509,155 +6509,372 @@ exports[`Collapsible Course Run renders correctly restriction type field for ext
 `;
 
 exports[`Collapsible Course Run renders correctly variant_id field for external course's course run 1`] = `
-<body>
+<div>
   <div
-    aria-atomic="true"
-    aria-live="assertive"
-    id="rbd-announcement-0"
-    style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"
-  />
-  <div
-    aria-atomic="true"
-    aria-live="assertive"
-    id="rbd-announcement-1"
-    style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"
-  />
-  <div
-    aria-atomic="true"
-    aria-live="assertive"
-    id="rbd-announcement-2"
-    style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"
-  />
-  <div
-    aria-atomic="true"
-    aria-live="assertive"
-    id="rbd-announcement-3"
-    style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"
-  />
-  <div>
+    class="pgn_collapsible collapsible-card"
+  >
     <div
-      class="pgn_collapsible collapsible-card"
+      aria-expanded="false"
+      class="collapsible-trigger d-flex"
+      role="button"
+      tabindex="0"
     >
-      <div
-        aria-expanded="false"
-        class="collapsible-trigger d-flex"
-        role="button"
-        tabindex="0"
+      <span
+        class="flex-grow-1"
       >
-        <span
-          class="flex-grow-1"
+        <div
+          class="course-run-label"
         >
+          <span>
+            Course run starting on Jan 01, 2000 - Self Paced
+          </span>
+          <span
+            class="ml-2 badge badge-warning"
+          >
+            Unsubmitted
+          </span>
           <div
             class="course-run-label"
           >
             <span>
-              Course run starting on Jan 01, 2000 - Self Paced
+              Publish date is Dec 31, 1999
             </span>
-            <span
-              class="ml-2 badge badge-warning"
+          </div>
+          <div
+            class="course-run-studio-url"
+          >
+            Studio URL - 
+            <a
+              class="pgn__hyperlink default-link inline-link"
+              href="http://localhost:18010/course/edX101+DemoX"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              Unsubmitted
-            </span>
-            <div
-              class="course-run-label"
-            >
-              <span>
-                Publish date is Dec 31, 1999
-              </span>
-            </div>
-            <div
-              class="course-run-studio-url"
-            >
-              Studio URL - 
-              <a
-                class="pgn__hyperlink default-link inline-link"
-                href="http://localhost:18010/course/edX101+DemoX"
-                rel="noopener noreferrer"
-                target="_blank"
+              edX101+DemoX
+              <span
+                class="pgn__hyperlink__external-icon"
+                title="Opens in a new tab"
               >
-                edX101+DemoX
                 <span
-                  class="pgn__hyperlink__external-icon"
-                  title="Opens in a new tab"
+                  class="pgn__icon"
+                  data-testid="hyperlink-icon"
+                  style="height: 1em; width: 1em;"
                 >
-                  <span
-                    class="pgn__icon"
-                    data-testid="hyperlink-icon"
-                    style="height: 1em; width: 1em;"
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="none"
-                      focusable="false"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M19 19H5V5h7V3H3v18h18v-9h-2v7ZM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <span
-                      class="sr-only"
-                    >
-                      in a new tab
-                    </span>
+                    <path
+                      d="M19 19H5V5h7V3H3v18h18v-9h-2v7ZM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span
+                    class="sr-only"
+                  >
+                    in a new tab
                   </span>
                 </span>
-              </a>
-              <svg
-                aria-hidden="true"
-                class="svg-inline--fa fa-copy text-primary ml-2"
-                data-icon="copy"
-                data-prefix="far"
-                focusable="false"
-                role="img"
-                viewBox="0 0 448 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
+              </span>
+            </a>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-copy text-primary ml-2"
+              data-icon="copy"
+              data-prefix="far"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"
+                fill="currentColor"
+              />
+            </svg>
           </div>
-        </span>
-        <svg
-          aria-hidden="true"
-          class="svg-inline--fa fa-plus "
-          data-icon="plus"
-          data-prefix="fas"
-          focusable="false"
-          role="img"
-          viewBox="0 0 448 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
+        </div>
+      </span>
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-plus "
+        data-icon="plus"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+    <div
+      style="overflow: hidden; height: 0px;"
+    >
       <div
-        style="overflow: hidden; height: 0px;"
+        class="collapsible-body"
       >
         <div
-          class="collapsible-body"
+          class="mb-3"
         >
-          <div
-            class="mb-3"
+          <span
+            aria-hidden="true"
+            class="text-primary-500"
           >
-            <span
-              aria-hidden="true"
-              class="text-primary-500"
+             All fields are required for publication unless otherwise specified.
+          </span>
+        </div>
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="-text-label"
+          >
+            <div
+              class=""
+              id="test-course.variant_id.label"
             >
-               All fields are required for publication unless otherwise specified.
-            </span>
+              <strong>
+                Variant Id
+              </strong>
+              <span
+                class=""
+                id="test-course.variant_id.label-help"
+              >
+                <button
+                  aria-describedby="test-course.variant_id.label-help-tooltip"
+                  class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                  type="button"
+                >
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <span
+                  class="field-help-data"
+                  currentitem="false"
+                  data-for="test-course.variant_id.label-help-tooltip"
+                  data-html="true"
+                  data-testid="field-help-data"
+                  data-tip="<div>
+  <p>
+    The identifier for a product variant. This is used to link a course run to a product variant for external LOBs (e.g; ExecEd).
+  </p>
+</div>"
+                />
+                <div
+                  class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                  data-id="tooltip"
+                  id="test-course.variant_id.label-help-tooltip"
+                >
+                  <style
+                    aria-hidden="true"
+                  >
+                    
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                  </style>
+                </div>
+              </span>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <input
+              class="form-control"
+              disabled=""
+              id="-text-label"
+              maxlength=""
+              name=""
+              placeholder=""
+              value=""
+            />
           </div>
+        </div>
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="test-course.restriction_type-text-label"
+          >
+            <div
+              class=""
+            >
+              <strong>
+                Restriction Type
+              </strong>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <select
+              class="form-control"
+              disabled=""
+              id="test-course.restriction_type-text-label"
+              label="[object Object]"
+              name="test-course.restriction_type"
+            >
+              <option
+                value=""
+              >
+                --------
+              </option>
+              <option
+                value="custom-b2b-enterprise"
+              >
+                Custom Enterprise
+              </option>
+              <option
+                value="custom-b2c"
+              >
+                Custom B2C
+              </option>
+            </select>
+          </div>
+        </div>
+        <div>
           <div
             class="pgn__form-group"
           >
@@ -6667,17 +6884,17 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
             >
               <div
                 class=""
-                id="test-course.variant_id.label"
+                id="test-course.go_live_date.label"
               >
                 <strong>
-                  Variant Id
+                  Publish date
                 </strong>
                 <span
                   class=""
-                  id="test-course.variant_id.label-help"
+                  id="test-course.go_live_date.label-help"
                 >
                   <button
-                    aria-describedby="test-course.variant_id.label-help-tooltip"
+                    aria-describedby="test-course.go_live_date.label-help-tooltip"
                     class="btn btn-link py-0 px-0 mx-1 align-bottom "
                     type="button"
                   >
@@ -6697,19 +6914,28 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
                   <span
                     class="field-help-data"
                     currentitem="false"
-                    data-for="test-course.variant_id.label-help-tooltip"
+                    data-for="test-course.go_live_date.label-help-tooltip"
                     data-html="true"
                     data-testid="field-help-data"
                     data-tip="<div>
   <p>
-    The identifier for a product variant. This is used to link a course run to a product variant for external LOBs (e.g; ExecEd).
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    The scheduled date for when the course run will be live and published.
+  </p>
+  <p>
+    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
+  </p>
+  <p>
+    If you don’t have a publish date yet, set to 1 year in the future.
   </p>
 </div>"
                   />
                   <div
                     class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
                     data-id="tooltip"
-                    id="test-course.variant_id.label-help-tooltip"
+                    id="test-course.go_live_date.label-help-tooltip"
                   >
                     <style
                       aria-hidden="true"
@@ -6844,62 +7070,1432 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
                 class="form-control"
                 disabled=""
                 id="-text-label"
-                maxlength=""
+                maxlength="10"
                 name=""
-                placeholder=""
+                pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                placeholder="yyyy/mm/dd"
+                type="text"
                 value=""
               />
             </div>
           </div>
           <div
-            class="pgn__form-group"
+            class="row"
           >
-            <label
-              class="pgn__form-label"
-              for="test-course.restriction_type-text-label"
+            <div
+              class="col-6"
             >
               <div
-                class=""
+                class="pgn__form-group"
               >
-                <strong>
-                  Restriction Type
-                </strong>
-                <div>
-                  <span
-                    class="text-muted"
+                <label
+                  class="pgn__form-label"
+                  for="test-course.start-date-label"
+                >
+                  <div
+                    class=""
+                    id="test-course.start-date-label"
+                  >
+                    <strong>
+                      Start date
+                    </strong>
+                    <span
+                      class=""
+                      id="test-course.start-date-label-help"
+                    >
+                      <button
+                        aria-describedby="test-course.start-date-label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="test-course.start-date-label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Course run dates are editable in Studio.
+  </p>
+  <p>
+    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
+  </p>
+  <p>
+    <a href='http://localhost:18010/settings/details/edX101+DemoX#schedule'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Edit dates.
+    </a>
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="test-course.start-date-label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <input
+                    class="form-control"
+                    disabled=""
+                    id="test-course.start-date-label"
+                    maxlength=""
+                    min=""
+                    name="test-course.startDate"
+                    pattern="dd/mm/yyyy"
+                    placeholder=""
+                    type="text"
+                    value=""
                   />
                 </div>
               </div>
-            </label>
+            </div>
             <div
-              class="pgn__form-control-decorator-group"
+              class="col-6"
             >
-              <select
-                class="form-control"
-                disabled=""
-                id="test-course.restriction_type-text-label"
-                label="[object Object]"
-                name="test-course.restriction_type"
+              <div
+                class="pgn__form-group"
               >
-                <option
-                  value=""
+                <label
+                  class="pgn__form-label"
+                  for="test-course.start-date-label"
                 >
-                  --------
-                </option>
-                <option
-                  value="custom-b2b-enterprise"
+                  <div
+                    class=""
+                    id="test-course.start-time-label"
+                  >
+                    <strong>
+                      Start time (GMT)
+                    </strong>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
                 >
-                  Custom Enterprise
-                </option>
-                <option
-                  value="custom-b2c"
-                >
-                  Custom B2C
-                </option>
-              </select>
+                  <input
+                    class="has-value form-control"
+                    disabled=""
+                    id="test-course.start-date-label"
+                    name="test-course.startTime"
+                    placeholder="HH:mm"
+                    type="time"
+                    value="00:00"
+                  />
+                </div>
+              </div>
             </div>
           </div>
+          <div
+            class="row"
+          >
+            <div
+              class="col-6"
+            >
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="test-course.end-date-label"
+                >
+                  <div
+                    class=""
+                    id="test-course.end-date-label"
+                  >
+                    <strong>
+                      End date
+                    </strong>
+                    <span
+                      class=""
+                      id="test-course.end-date-label-help"
+                    >
+                      <button
+                        aria-describedby="test-course.end-date-label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="test-course.end-date-label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Course run dates are editable in Studio.
+  </p>
+  <p>
+    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
+  </p>
+  <p>
+    <a href='http://localhost:18010/settings/details/edX101+DemoX#schedule'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Edit dates.
+    </a>
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="test-course.end-date-label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <input
+                    class="form-control"
+                    disabled=""
+                    id="test-course.end-date-label"
+                    maxlength=""
+                    min=""
+                    name="test-course.endDate"
+                    pattern="dd/mm/yyyy"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-6"
+            >
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="test-course.end-date-label"
+                >
+                  <div
+                    class=""
+                    id="test-course.end-time-label"
+                  >
+                    <strong>
+                      End time (GMT)
+                    </strong>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <input
+                    class="has-value form-control"
+                    disabled=""
+                    id="test-course.end-date-label"
+                    name="test-course.endTime"
+                    placeholder="HH:mm"
+                    type="time"
+                    value="00:00"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <div
+              class="col-6"
+            >
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="test-course.upgrade_deadline_override-date-label"
+                >
+                  <div
+                    class=""
+                    id="test-course.upgrade_deadline_override-date-label"
+                  >
+                    <strong>
+                      Upgrade deadline override date
+                    </strong>
+                    <span
+                      class=""
+                      id="test-course.upgrade_deadline_override-date-label-help"
+                    >
+                      <button
+                        aria-describedby="test-course.upgrade_deadline_override-date-label-help-tooltip"
+                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="field-help-data"
+                        currentitem="false"
+                        data-for="test-course.upgrade_deadline_override-date-label-help-tooltip"
+                        data-html="true"
+                        data-testid="field-help-data"
+                        data-tip="<div>
+  <p>
+    Course run dates are editable in Studio.
+  </p>
+  <p>
+    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
+  </p>
+  <p>
+    <a href='http://localhost:18010/settings/details/edX101+DemoX#schedule'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Edit dates.
+    </a>
+  </p>
+</div>"
+                      />
+                      <div
+                        class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                        data-id="tooltip"
+                        id="test-course.upgrade_deadline_override-date-label-help-tooltip"
+                      >
+                        <style
+                          aria-hidden="true"
+                        >
+                          
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                        </style>
+                      </div>
+                    </span>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <input
+                    class="form-control"
+                    disabled=""
+                    id="test-course.upgrade_deadline_override-date-label"
+                    maxlength=""
+                    min=""
+                    name="test-course.upgrade_deadline_overrideDate"
+                    pattern="dd/mm/yyyy"
+                    placeholder=""
+                    type="date"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-6"
+            >
+              <div
+                class="pgn__form-group"
+              >
+                <label
+                  class="pgn__form-label"
+                  for="test-course.upgrade_deadline_override-date-label"
+                >
+                  <div
+                    class=""
+                    id="test-course.upgrade_deadline_override-time-label"
+                  >
+                    <strong>
+                      Upgrade deadline override time (UTC)
+                    </strong>
+                    <div>
+                      <span
+                        class="text-muted"
+                      />
+                    </div>
+                  </div>
+                </label>
+                <div
+                  class="pgn__form-control-decorator-group"
+                >
+                  <input
+                    class="has-value form-control"
+                    disabled=""
+                    id="test-course.upgrade_deadline_override-date-label"
+                    name="test-course.upgrade_deadline_overrideTime"
+                    placeholder="HH:mm"
+                    type="time"
+                    value="00:00"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="-text-label"
+          >
+            <div
+              class=""
+              id="test-course.run_type.label"
+            >
+              <strong>
+                Course run enrollment track
+              </strong>
+              <span
+                class=""
+                id="test-course.run_type.label-help"
+              >
+                <button
+                  aria-describedby="test-course.run_type.label-help-tooltip"
+                  class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                  type="button"
+                >
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <span
+                  class="field-help-data"
+                  currentitem="false"
+                  data-for="test-course.run_type.label-help-tooltip"
+                  data-html="true"
+                  data-testid="field-help-data"
+                  data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+                />
+                <div
+                  class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                  data-id="tooltip"
+                  id="test-course.run_type.label-help-tooltip"
+                >
+                  <style
+                    aria-hidden="true"
+                  >
+                    
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                  </style>
+                </div>
+              </span>
+              <div>
+                <span
+                  class="text-muted"
+                >
+                  Cannot edit after submission
+                </span>
+              </div>
+            </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <select
+              class="form-control"
+              disabled=""
+              id="-text-label"
+              label="[object Object]"
+              name="test-course.run_type"
+              required=""
+            >
+              <option
+                value=""
+              >
+                Select enrollment track
+              </option>
+              <option
+                value="4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c"
+              >
+                Verified and Audit
+              </option>
+              <option
+                value="cfacfc62-54bd-4e1b-939a-5a94f12fbd8d"
+              >
+                Audit Only
+              </option>
+              <option
+                value="00000000-0000-4000-0000-000000000000"
+              >
+                Masters, Verified, and Audit
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="-text-label"
+          >
+            <div
+              class=""
+              id="test-course.pacing_type.label"
+            >
+              <strong>
+                Course pacing
+              </strong>
+              <span
+                class=""
+                id="test-course.pacing_type.label-help"
+              >
+                <button
+                  aria-describedby="test-course.pacing_type.label-help-tooltip"
+                  class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                  type="button"
+                >
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <span
+                  class="field-help-data"
+                  currentitem="false"
+                  data-for="test-course.pacing_type.label-help-tooltip"
+                  data-html="true"
+                  data-testid="field-help-data"
+                  data-tip="<div>
+  <p>
+    Course pacing is editable in Studio.
+  </p>
+  <p>
+    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
+  </p>
+  <p>
+    <a href='http://localhost:18010/settings/details/edX101+DemoX'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Edit course pacing.
+    </a>
+  </p>
+</div>"
+                />
+                <div
+                  class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                  data-id="tooltip"
+                  id="test-course.pacing_type.label-help-tooltip"
+                >
+                  <style
+                    aria-hidden="true"
+                  >
+                    
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                  </style>
+                </div>
+              </span>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <select
+              class="form-control"
+              disabled=""
+              id="-text-label"
+              label="[object Object]"
+              name="test-course.pacing_type"
+            >
+              <option
+                value="self_paced"
+              >
+                Self-paced
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="mb-2"
+          id="test-course.staff.label"
+        >
+          <strong>
+            Staff
+          </strong>
+          <span
+            aria-hidden="true"
+            class="text-gray-700"
+          >
+               (optional)
+          </span>
+          <span
+            class=""
+            id="test-course.staff.label-help"
+          >
+            <button
+              aria-describedby="test-course.staff.label-help-tooltip"
+              class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+            <span
+              class="field-help-data"
+              currentitem="false"
+              data-for="test-course.staff.label-help-tooltip"
+              data-html="true"
+              data-testid="field-help-data"
+              data-tip="<div>
+  <p>
+    The primary instructor or instructors for the course.
+  </p>
+  <p>
+    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+  </p>
+</div>"
+            />
+            <div
+              class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+              data-id="tooltip"
+              id="test-course.staff.label-help-tooltip"
+            >
+              <style
+                aria-hidden="true"
+              >
+                
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+              </style>
+            </div>
+          </span>
           <div>
+            <span
+              class="text-muted"
+            />
+          </div>
+        </div>
+        <div
+          name="test-course.staff"
+          tabindex="-1"
+        >
+          <div
+            class="staff-list container"
+            data-rbd-droppable-context-id="4"
+            data-rbd-droppable-id="staffList"
+          />
+          <label
+            class="w-100"
+            for="staff-search"
+            id="label-staff-search"
+          >
+            <strong>
+              Search or add new staff:
+            </strong>
+            <div
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-owns="react-autowhatever-staff-search"
+              class="react-autosuggest__container position-relative"
+              role="combobox"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="react-autowhatever-staff-search"
+                autocomplete="off"
+                class="form-control"
+                disabled=""
+                placeholder=""
+                type="text"
+                value=""
+              />
+              <div
+                id="react-autowhatever-staff-search"
+                role="listbox"
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-6"
+          >
             <div
               class="pgn__form-group"
             >
@@ -6909,17 +8505,17 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
               >
                 <div
                   class=""
-                  id="test-course.go_live_date.label"
+                  id="test-course.min_effort.label"
                 >
                   <strong>
-                    Publish date
+                    Minimum effort
                   </strong>
                   <span
                     class=""
-                    id="test-course.go_live_date.label-help"
+                    id="test-course.min_effort.label-help"
                   >
                     <button
-                      aria-describedby="test-course.go_live_date.label-help-tooltip"
+                      aria-describedby="test-course.min_effort.label-help-tooltip"
                       class="btn btn-link py-0 px-0 mx-1 align-bottom "
                       type="button"
                     >
@@ -6939,28 +8535,19 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
                     <span
                       class="field-help-data"
                       currentitem="false"
-                      data-for="test-course.go_live_date.label-help-tooltip"
+                      data-for="test-course.min_effort.label-help-tooltip"
                       data-html="true"
                       data-testid="field-help-data"
                       data-tip="<div>
   <p>
-    Required Format: yyyy/mm/dd
-  </p>
-  <p>
-    The scheduled date for when the course run will be live and published.
-  </p>
-  <p>
-    To publish as soon as possible, set the publish date to today. Please note that changes may take 48 hours to go live.
-  </p>
-  <p>
-    If you don’t have a publish date yet, set to 1 year in the future.
+    The minimum number of hours per week the learner should expect to spend on the course.
   </p>
 </div>"
                     />
                     <div
                       class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
                       data-id="tooltip"
-                      id="test-course.go_live_date.label-help-tooltip"
+                      id="test-course.min_effort.label-help-tooltip"
                     >
                       <style
                         aria-hidden="true"
@@ -7095,840 +8682,77 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
                   class="form-control"
                   disabled=""
                   id="-text-label"
-                  maxlength="10"
+                  max="168"
+                  maxlength=""
+                  min="0"
                   name=""
-                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
-                  placeholder="yyyy/mm/dd"
-                  type="text"
+                  placeholder=""
+                  type="number"
                   value=""
                 />
               </div>
             </div>
-            <div
-              class="row"
-            >
-              <div
-                class="col-6"
-              >
-                <div
-                  class="pgn__form-group"
-                >
-                  <label
-                    class="pgn__form-label"
-                    for="test-course.start-date-label"
-                  >
-                    <div
-                      class=""
-                      id="test-course.start-date-label"
-                    >
-                      <strong>
-                        Start date
-                      </strong>
-                      <span
-                        class=""
-                        id="test-course.start-date-label-help"
-                      >
-                        <button
-                          aria-describedby="test-course.start-date-label-help-tooltip"
-                          class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                          type="button"
-                        >
-                          <svg
-                            fill="none"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </button>
-                        <span
-                          class="field-help-data"
-                          currentitem="false"
-                          data-for="test-course.start-date-label-help-tooltip"
-                          data-html="true"
-                          data-testid="field-help-data"
-                          data-tip="<div>
-  <p>
-    Course run dates are editable in Studio.
-  </p>
-  <p>
-    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
-  </p>
-  <p>
-    <a href='http://localhost:18010/settings/details/edX101+DemoX#schedule'
-      target='_blank'
-      rel='noopener noreferrer'>
-      Edit dates.
-    </a>
-  </p>
-</div>"
-                        />
-                        <div
-                          class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                          data-id="tooltip"
-                          id="test-course.start-date-label-help-tooltip"
-                        >
-                          <style
-                            aria-hidden="true"
-                          >
-                            
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                          </style>
-                        </div>
-                      </span>
-                      <div>
-                        <span
-                          class="text-muted"
-                        />
-                      </div>
-                    </div>
-                  </label>
-                  <div
-                    class="pgn__form-control-decorator-group"
-                  >
-                    <input
-                      class="form-control"
-                      disabled=""
-                      id="test-course.start-date-label"
-                      maxlength=""
-                      min=""
-                      name="test-course.startDate"
-                      pattern="dd/mm/yyyy"
-                      placeholder=""
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-6"
-              >
-                <div
-                  class="pgn__form-group"
-                >
-                  <label
-                    class="pgn__form-label"
-                    for="test-course.start-date-label"
-                  >
-                    <div
-                      class=""
-                      id="test-course.start-time-label"
-                    >
-                      <strong>
-                        Start time (GMT)
-                      </strong>
-                      <div>
-                        <span
-                          class="text-muted"
-                        />
-                      </div>
-                    </div>
-                  </label>
-                  <div
-                    class="pgn__form-control-decorator-group"
-                  >
-                    <input
-                      class="has-value form-control"
-                      disabled=""
-                      id="test-course.start-date-label"
-                      name="test-course.startTime"
-                      placeholder="HH:mm"
-                      type="time"
-                      value="00:00"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="row"
-            >
-              <div
-                class="col-6"
-              >
-                <div
-                  class="pgn__form-group"
-                >
-                  <label
-                    class="pgn__form-label"
-                    for="test-course.end-date-label"
-                  >
-                    <div
-                      class=""
-                      id="test-course.end-date-label"
-                    >
-                      <strong>
-                        End date
-                      </strong>
-                      <span
-                        class=""
-                        id="test-course.end-date-label-help"
-                      >
-                        <button
-                          aria-describedby="test-course.end-date-label-help-tooltip"
-                          class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                          type="button"
-                        >
-                          <svg
-                            fill="none"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </button>
-                        <span
-                          class="field-help-data"
-                          currentitem="false"
-                          data-for="test-course.end-date-label-help-tooltip"
-                          data-html="true"
-                          data-testid="field-help-data"
-                          data-tip="<div>
-  <p>
-    Course run dates are editable in Studio.
-  </p>
-  <p>
-    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
-  </p>
-  <p>
-    <a href='http://localhost:18010/settings/details/edX101+DemoX#schedule'
-      target='_blank'
-      rel='noopener noreferrer'>
-      Edit dates.
-    </a>
-  </p>
-</div>"
-                        />
-                        <div
-                          class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                          data-id="tooltip"
-                          id="test-course.end-date-label-help-tooltip"
-                        >
-                          <style
-                            aria-hidden="true"
-                          >
-                            
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                          </style>
-                        </div>
-                      </span>
-                      <div>
-                        <span
-                          class="text-muted"
-                        />
-                      </div>
-                    </div>
-                  </label>
-                  <div
-                    class="pgn__form-control-decorator-group"
-                  >
-                    <input
-                      class="form-control"
-                      disabled=""
-                      id="test-course.end-date-label"
-                      maxlength=""
-                      min=""
-                      name="test-course.endDate"
-                      pattern="dd/mm/yyyy"
-                      placeholder=""
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-6"
-              >
-                <div
-                  class="pgn__form-group"
-                >
-                  <label
-                    class="pgn__form-label"
-                    for="test-course.end-date-label"
-                  >
-                    <div
-                      class=""
-                      id="test-course.end-time-label"
-                    >
-                      <strong>
-                        End time (GMT)
-                      </strong>
-                      <div>
-                        <span
-                          class="text-muted"
-                        />
-                      </div>
-                    </div>
-                  </label>
-                  <div
-                    class="pgn__form-control-decorator-group"
-                  >
-                    <input
-                      class="has-value form-control"
-                      disabled=""
-                      id="test-course.end-date-label"
-                      name="test-course.endTime"
-                      placeholder="HH:mm"
-                      type="time"
-                      value="00:00"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="row"
-            >
-              <div
-                class="col-6"
-              >
-                <div
-                  class="pgn__form-group"
-                >
-                  <label
-                    class="pgn__form-label"
-                    for="test-course.upgrade_deadline_override-date-label"
-                  >
-                    <div
-                      class=""
-                      id="test-course.upgrade_deadline_override-date-label"
-                    >
-                      <strong>
-                        Upgrade deadline override date
-                      </strong>
-                      <span
-                        class=""
-                        id="test-course.upgrade_deadline_override-date-label-help"
-                      >
-                        <button
-                          aria-describedby="test-course.upgrade_deadline_override-date-label-help-tooltip"
-                          class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                          type="button"
-                        >
-                          <svg
-                            fill="none"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </button>
-                        <span
-                          class="field-help-data"
-                          currentitem="false"
-                          data-for="test-course.upgrade_deadline_override-date-label-help-tooltip"
-                          data-html="true"
-                          data-testid="field-help-data"
-                          data-tip="<div>
-  <p>
-    Course run dates are editable in Studio.
-  </p>
-  <p>
-    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
-  </p>
-  <p>
-    <a href='http://localhost:18010/settings/details/edX101+DemoX#schedule'
-      target='_blank'
-      rel='noopener noreferrer'>
-      Edit dates.
-    </a>
-  </p>
-</div>"
-                        />
-                        <div
-                          class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                          data-id="tooltip"
-                          id="test-course.upgrade_deadline_override-date-label-help-tooltip"
-                        >
-                          <style
-                            aria-hidden="true"
-                          >
-                            
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                          </style>
-                        </div>
-                      </span>
-                      <div>
-                        <span
-                          class="text-muted"
-                        />
-                      </div>
-                    </div>
-                  </label>
-                  <div
-                    class="pgn__form-control-decorator-group"
-                  >
-                    <input
-                      class="form-control"
-                      disabled=""
-                      id="test-course.upgrade_deadline_override-date-label"
-                      maxlength=""
-                      min=""
-                      name="test-course.upgrade_deadline_overrideDate"
-                      pattern="dd/mm/yyyy"
-                      placeholder=""
-                      type="date"
-                      value=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-6"
-              >
-                <div
-                  class="pgn__form-group"
-                >
-                  <label
-                    class="pgn__form-label"
-                    for="test-course.upgrade_deadline_override-date-label"
-                  >
-                    <div
-                      class=""
-                      id="test-course.upgrade_deadline_override-time-label"
-                    >
-                      <strong>
-                        Upgrade deadline override time (UTC)
-                      </strong>
-                      <div>
-                        <span
-                          class="text-muted"
-                        />
-                      </div>
-                    </div>
-                  </label>
-                  <div
-                    class="pgn__form-control-decorator-group"
-                  >
-                    <input
-                      class="has-value form-control"
-                      disabled=""
-                      id="test-course.upgrade_deadline_override-date-label"
-                      name="test-course.upgrade_deadline_overrideTime"
-                      placeholder="HH:mm"
-                      type="time"
-                      value="00:00"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-          <hr />
           <div
-            class="pgn__form-group"
+            class="col-6"
           >
-            <label
-              class="pgn__form-label"
-              for="-text-label"
+            <div
+              class="pgn__form-group"
             >
-              <div
-                class=""
-                id="test-course.run_type.label"
+              <label
+                class="pgn__form-label"
+                for="-text-label"
               >
-                <strong>
-                  Course run enrollment track
-                </strong>
-                <span
+                <div
                   class=""
-                  id="test-course.run_type.label-help"
+                  id="test-course.max_effort.label"
                 >
-                  <button
-                    aria-describedby="test-course.run_type.label-help-tooltip"
-                    class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                    type="button"
-                  >
-                    <svg
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
+                  <strong>
+                    Maximum effort
+                  </strong>
                   <span
-                    class="field-help-data"
-                    currentitem="false"
-                    data-for="test-course.run_type.label-help-tooltip"
-                    data-html="true"
-                    data-testid="field-help-data"
-                    data-tip="<div>
+                    class=""
+                    id="test-course.max_effort.label-help"
+                  >
+                    <button
+                      aria-describedby="test-course.max_effort.label-help-tooltip"
+                      class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span
+                      class="field-help-data"
+                      currentitem="false"
+                      data-for="test-course.max_effort.label-help-tooltip"
+                      data-html="true"
+                      data-testid="field-help-data"
+                      data-tip="<div>
   <p>
-    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
-  </p>
-  <p>
-    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
-      target='_blank'
-      rel='noopener noreferrer'>
-      Learn more.
-    </a>
+    The maximum number of hours per week the learner should expect to spend on the course.
   </p>
 </div>"
-                  />
-                  <div
-                    class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                    data-id="tooltip"
-                    id="test-course.run_type.label-help-tooltip"
-                  >
-                    <style
-                      aria-hidden="true"
+                    />
+                    <div
+                      class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                      data-id="tooltip"
+                      id="test-course.max_effort.label-help-tooltip"
                     >
-                      
+                      <style
+                        aria-hidden="true"
+                      >
+                        
   	.t00000000-0000-0000-0000-000000000000 {
 	    color: #fff;
 	    background: #222;
@@ -8041,119 +8865,92 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
         transform: rotate(-135deg);
     }
   
-                    </style>
-                  </div>
-                </span>
-                <div>
-                  <span
-                    class="text-muted"
-                  >
-                    Cannot edit after submission
+                      </style>
+                    </div>
                   </span>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
                 </div>
-              </div>
-            </label>
-            <div
-              class="pgn__form-control-decorator-group"
-            >
-              <select
-                class="form-control"
-                disabled=""
-                id="-text-label"
-                label="[object Object]"
-                name="test-course.run_type"
-                required=""
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
               >
-                <option
+                <input
+                  class="form-control"
+                  disabled=""
+                  id="-text-label"
+                  max="168"
+                  maxlength=""
+                  min="1"
+                  name=""
+                  placeholder=""
+                  type="number"
                   value=""
-                >
-                  Select enrollment track
-                </option>
-                <option
-                  value="4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c"
-                >
-                  Verified and Audit
-                </option>
-                <option
-                  value="cfacfc62-54bd-4e1b-939a-5a94f12fbd8d"
-                >
-                  Audit Only
-                </option>
-                <option
-                  value="00000000-0000-4000-0000-000000000000"
-                >
-                  Masters, Verified, and Audit
-                </option>
-              </select>
+                />
+              </div>
             </div>
           </div>
-          <div
-            class="pgn__form-group"
+        </div>
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="-text-label"
           >
-            <label
-              class="pgn__form-label"
-              for="-text-label"
+            <div
+              class=""
+              id="test-course.weeks_to_complete.label"
             >
-              <div
+              <strong>
+                Length
+              </strong>
+              <span
                 class=""
-                id="test-course.pacing_type.label"
+                id="test-course.weeks_to_complete.label-help"
               >
-                <strong>
-                  Course pacing
-                </strong>
-                <span
-                  class=""
-                  id="test-course.pacing_type.label-help"
+                <button
+                  aria-describedby="test-course.weeks_to_complete.label-help-tooltip"
+                  class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                  type="button"
                 >
-                  <button
-                    aria-describedby="test-course.pacing_type.label-help-tooltip"
-                    class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                    type="button"
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                  <span
-                    class="field-help-data"
-                    currentitem="false"
-                    data-for="test-course.pacing_type.label-help-tooltip"
-                    data-html="true"
-                    data-testid="field-help-data"
-                    data-tip="<div>
+                    <path
+                      d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <span
+                  class="field-help-data"
+                  currentitem="false"
+                  data-for="test-course.weeks_to_complete.label-help-tooltip"
+                  data-html="true"
+                  data-testid="field-help-data"
+                  data-tip="<div>
   <p>
-    Course pacing is editable in Studio.
-  </p>
-  <p>
-    Please note that changes in Studio may take up to a business day to be reflected here. For questions, contact your project coordinator.
-  </p>
-  <p>
-    <a href='http://localhost:18010/settings/details/edX101+DemoX'
-      target='_blank'
-      rel='noopener noreferrer'>
-      Edit course pacing.
-    </a>
+    The estimated number of weeks the learner should expect to spend on the course, rounded to the nearest whole number.
   </p>
 </div>"
-                  />
-                  <div
-                    class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                    data-id="tooltip"
-                    id="test-course.pacing_type.label-help-tooltip"
+                />
+                <div
+                  class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                  data-id="tooltip"
+                  id="test-course.weeks_to_complete.label-help-tooltip"
+                >
+                  <style
+                    aria-hidden="true"
                   >
-                    <style
-                      aria-hidden="true"
-                    >
-                      
+                    
   	.t00000000-0000-0000-0000-000000000000 {
 	    color: #fff;
 	    background: #222;
@@ -8266,54 +9063,536 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
         transform: rotate(-135deg);
     }
   
-                    </style>
-                  </div>
-                </span>
-                <div>
-                  <span
-                    class="text-muted"
-                  />
+                  </style>
                 </div>
+              </span>
+              <div>
+                <span
+                  class="text-muted"
+                />
               </div>
-            </label>
-            <div
-              class="pgn__form-control-decorator-group"
-            >
-              <select
-                class="form-control"
-                disabled=""
-                id="-text-label"
-                label="[object Object]"
-                name="test-course.pacing_type"
-              >
-                <option
-                  value="self_paced"
-                >
-                  Self-paced
-                </option>
-              </select>
             </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <input
+              class="form-control"
+              disabled=""
+              id="-text-label"
+              maxlength=""
+              name=""
+              placeholder=""
+              type="number"
+              value=""
+            />
           </div>
+        </div>
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="-text-label"
+          >
+            <div
+              class=""
+            >
+              <strong>
+                Content language
+              </strong>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <select
+              class="form-control"
+              disabled=""
+              id="-text-label"
+              label="[object Object]"
+              name="test-course.content_language"
+            >
+              <option
+                value="ar-ae"
+              >
+                Arabic - United Arab Emirates
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="mb-2"
+        >
+          <strong>
+            Transcript languages
+          </strong>
+          <div>
+            <span
+              class="text-muted"
+            />
+          </div>
+        </div>
+        <div
+          class="transcript-languages mb-3"
+          name="test-course.transcript_languages"
+          tabindex="-1"
+        >
+          <ul
+            class="list-group p-0 m-0 container-fluid"
+          />
+          <button
+            class="btn btn-outline-primary js-add-button mt-2"
+            data-testid="test-js-add-btn"
+            disabled=""
+            type="button"
+          >
+            Add language
+          </button>
+        </div>
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="-text-label"
+          >
+            <div
+              class=""
+              id="test-course.expected_program_type.label"
+            >
+              <strong>
+                Expected Program Type
+              </strong>
+              <span
+                aria-hidden="true"
+                class="text-gray-700"
+              >
+                   (optional)
+              </span>
+              <span
+                class=""
+                id="test-course.expected_program_type.label-help"
+              >
+                <button
+                  aria-describedby="test-course.expected_program_type.label-help-tooltip"
+                  class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
+                  type="button"
+                >
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <span
+                  class="field-help-data"
+                  currentitem="false"
+                  data-for="test-course.expected_program_type.label-help-tooltip"
+                  data-html="true"
+                  data-testid="field-help-data"
+                  data-tip="<div>
+  <p>
+    If this Course Run will potentially be part of a Program, please set the expected program type here.
+  </p>
+</div>"
+                />
+                <div
+                  class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                  data-id="tooltip"
+                  id="test-course.expected_program_type.label-help-tooltip"
+                >
+                  <style
+                    aria-hidden="true"
+                  >
+                    
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                  </style>
+                </div>
+              </span>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <select
+              class="form-control"
+              disabled=""
+              id="-text-label"
+              label="[object Object]"
+              name="test-course.expected_program_type"
+            >
+              <option
+                value=""
+              >
+                --
+              </option>
+              <option
+                value="professional-certificate"
+              >
+                Professional Certificate
+              </option>
+              <option
+                value="micromasters"
+              >
+                MicroMasters
+              </option>
+              <option
+                value="xseries"
+              >
+                XSeries
+              </option>
+              <option
+                value="masters"
+              >
+                Masters
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="pgn__form-group"
+        >
+          <label
+            class="pgn__form-label"
+            for="-text-label"
+          >
+            <div
+              class=""
+              id="test-course.expected_program_name.label"
+            >
+              <strong>
+                Expected Program Name
+              </strong>
+              <span
+                aria-hidden="true"
+                class="text-gray-700"
+              >
+                   (optional)
+              </span>
+              <span
+                class=""
+                id="test-course.expected_program_name.label-help"
+              >
+                <button
+                  aria-describedby="test-course.expected_program_name.label-help-tooltip"
+                  class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
+                  type="button"
+                >
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <span
+                  class="field-help-data"
+                  currentitem="false"
+                  data-for="test-course.expected_program_name.label-help-tooltip"
+                  data-html="true"
+                  data-testid="field-help-data"
+                  data-tip="<div>
+  <p>
+    If this Course Run will potentially be part of a Program, please set the expected program name here.
+  </p>
+</div>"
+                />
+                <div
+                  class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                  data-id="tooltip"
+                  id="test-course.expected_program_name.label-help-tooltip"
+                >
+                  <style
+                    aria-hidden="true"
+                  >
+                    
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                  </style>
+                </div>
+              </span>
+              <div>
+                <span
+                  class="text-muted"
+                />
+              </div>
+            </div>
+          </label>
+          <div
+            class="pgn__form-control-decorator-group"
+          >
+            <input
+              class="form-control"
+              disabled=""
+              id="-text-label"
+              maxlength=""
+              name=""
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div>
           <div
             class="mb-2"
-            id="test-course.staff.label"
+            id="ofac-notice-label"
           >
             <strong>
-              Staff
+              Course Embargo (OFAC) Restriction text added to the FAQ section
             </strong>
             <span
-              aria-hidden="true"
-              class="text-gray-700"
-            >
-                 (optional)
-            </span>
-            <span
               class=""
-              id="test-course.staff.label-help"
+              id="ofac-notice-label-help"
             >
               <button
-                aria-describedby="test-course.staff.label-help-tooltip"
-                class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
+                aria-describedby="ofac-notice-label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
                 type="button"
               >
                 <svg
@@ -8332,22 +9611,19 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
               <span
                 class="field-help-data"
                 currentitem="false"
-                data-for="test-course.staff.label-help-tooltip"
+                data-for="ofac-notice-label-help-tooltip"
                 data-html="true"
                 data-testid="field-help-data"
                 data-tip="<div>
   <p>
-    The primary instructor or instructors for the course.
-  </p>
-  <p>
-    The order that instructors are listed here is the same order they will be displayed on course pages. You can drag and drop to reorder instructors.
+    Course embargo status for OFAC is managed internally, please contact support with questions.
   </p>
 </div>"
               />
               <div
                 class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
                 data-id="tooltip"
-                id="test-course.staff.label-help-tooltip"
+                id="ofac-notice-label-help-tooltip"
               >
                 <style
                   aria-hidden="true"
@@ -8475,1333 +9751,15 @@ exports[`Collapsible Course Run renders correctly variant_id field for external 
             </div>
           </div>
           <div
-            name="test-course.staff"
-            tabindex="-1"
+            class="mb-3"
           >
-            <div
-              class="staff-list container"
-              data-rbd-droppable-context-id="4"
-              data-rbd-droppable-id="staffList"
-            />
-            <label
-              class="w-100"
-              for="staff-search"
-              id="label-staff-search"
-            >
-              <strong>
-                Search or add new staff:
-              </strong>
-              <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="react-autowhatever-staff-search"
-                class="react-autosuggest__container position-relative"
-                role="combobox"
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-autowhatever-staff-search"
-                  autocomplete="off"
-                  class="form-control"
-                  disabled=""
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
-                <div
-                  id="react-autowhatever-staff-search"
-                  role="listbox"
-                />
-              </div>
-            </label>
-          </div>
-          <div
-            class="row"
-          >
-            <div
-              class="col-6"
-            >
-              <div
-                class="pgn__form-group"
-              >
-                <label
-                  class="pgn__form-label"
-                  for="-text-label"
-                >
-                  <div
-                    class=""
-                    id="test-course.min_effort.label"
-                  >
-                    <strong>
-                      Minimum effort
-                    </strong>
-                    <span
-                      class=""
-                      id="test-course.min_effort.label-help"
-                    >
-                      <button
-                        aria-describedby="test-course.min_effort.label-help-tooltip"
-                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                        type="button"
-                      >
-                        <svg
-                          fill="none"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </button>
-                      <span
-                        class="field-help-data"
-                        currentitem="false"
-                        data-for="test-course.min_effort.label-help-tooltip"
-                        data-html="true"
-                        data-testid="field-help-data"
-                        data-tip="<div>
-  <p>
-    The minimum number of hours per week the learner should expect to spend on the course.
-  </p>
-</div>"
-                      />
-                      <div
-                        class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                        data-id="tooltip"
-                        id="test-course.min_effort.label-help-tooltip"
-                      >
-                        <style
-                          aria-hidden="true"
-                        >
-                          
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                        </style>
-                      </div>
-                    </span>
-                    <div>
-                      <span
-                        class="text-muted"
-                      />
-                    </div>
-                  </div>
-                </label>
-                <div
-                  class="pgn__form-control-decorator-group"
-                >
-                  <input
-                    class="form-control"
-                    disabled=""
-                    id="-text-label"
-                    max="168"
-                    maxlength=""
-                    min="0"
-                    name=""
-                    placeholder=""
-                    type="number"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-6"
-            >
-              <div
-                class="pgn__form-group"
-              >
-                <label
-                  class="pgn__form-label"
-                  for="-text-label"
-                >
-                  <div
-                    class=""
-                    id="test-course.max_effort.label"
-                  >
-                    <strong>
-                      Maximum effort
-                    </strong>
-                    <span
-                      class=""
-                      id="test-course.max_effort.label-help"
-                    >
-                      <button
-                        aria-describedby="test-course.max_effort.label-help-tooltip"
-                        class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                        type="button"
-                      >
-                        <svg
-                          fill="none"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </button>
-                      <span
-                        class="field-help-data"
-                        currentitem="false"
-                        data-for="test-course.max_effort.label-help-tooltip"
-                        data-html="true"
-                        data-testid="field-help-data"
-                        data-tip="<div>
-  <p>
-    The maximum number of hours per week the learner should expect to spend on the course.
-  </p>
-</div>"
-                      />
-                      <div
-                        class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                        data-id="tooltip"
-                        id="test-course.max_effort.label-help-tooltip"
-                      >
-                        <style
-                          aria-hidden="true"
-                        >
-                          
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                        </style>
-                      </div>
-                    </span>
-                    <div>
-                      <span
-                        class="text-muted"
-                      />
-                    </div>
-                  </div>
-                </label>
-                <div
-                  class="pgn__form-control-decorator-group"
-                >
-                  <input
-                    class="form-control"
-                    disabled=""
-                    id="-text-label"
-                    max="168"
-                    maxlength=""
-                    min="1"
-                    name=""
-                    placeholder=""
-                    type="number"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="pgn__form-group"
-          >
-            <label
-              class="pgn__form-label"
-              for="-text-label"
-            >
-              <div
-                class=""
-                id="test-course.weeks_to_complete.label"
-              >
-                <strong>
-                  Length
-                </strong>
-                <span
-                  class=""
-                  id="test-course.weeks_to_complete.label-help"
-                >
-                  <button
-                    aria-describedby="test-course.weeks_to_complete.label-help-tooltip"
-                    class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                    type="button"
-                  >
-                    <svg
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                  <span
-                    class="field-help-data"
-                    currentitem="false"
-                    data-for="test-course.weeks_to_complete.label-help-tooltip"
-                    data-html="true"
-                    data-testid="field-help-data"
-                    data-tip="<div>
-  <p>
-    The estimated number of weeks the learner should expect to spend on the course, rounded to the nearest whole number.
-  </p>
-</div>"
-                  />
-                  <div
-                    class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                    data-id="tooltip"
-                    id="test-course.weeks_to_complete.label-help-tooltip"
-                  >
-                    <style
-                      aria-hidden="true"
-                    >
-                      
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                    </style>
-                  </div>
-                </span>
-                <div>
-                  <span
-                    class="text-muted"
-                  />
-                </div>
-              </div>
-            </label>
-            <div
-              class="pgn__form-control-decorator-group"
-            >
-              <input
-                class="form-control"
-                disabled=""
-                id="-text-label"
-                maxlength=""
-                name=""
-                placeholder=""
-                type="number"
-                value=""
-              />
-            </div>
-          </div>
-          <div
-            class="pgn__form-group"
-          >
-            <label
-              class="pgn__form-label"
-              for="-text-label"
-            >
-              <div
-                class=""
-              >
-                <strong>
-                  Content language
-                </strong>
-                <div>
-                  <span
-                    class="text-muted"
-                  />
-                </div>
-              </div>
-            </label>
-            <div
-              class="pgn__form-control-decorator-group"
-            >
-              <select
-                class="form-control"
-                disabled=""
-                id="-text-label"
-                label="[object Object]"
-                name="test-course.content_language"
-              >
-                <option
-                  value="ar-ae"
-                >
-                  Arabic - United Arab Emirates
-                </option>
-              </select>
-            </div>
-          </div>
-          <div
-            class="mb-2"
-          >
-            <strong>
-              Transcript languages
-            </strong>
-            <div>
-              <span
-                class="text-muted"
-              />
-            </div>
-          </div>
-          <div
-            class="transcript-languages mb-3"
-            name="test-course.transcript_languages"
-            tabindex="-1"
-          >
-            <ul
-              class="list-group p-0 m-0 container-fluid"
-            />
-            <button
-              class="btn btn-outline-primary js-add-button mt-2"
-              data-testid="test-js-add-btn"
-              disabled=""
-              type="button"
-            >
-              Add language
-            </button>
-          </div>
-          <div
-            class="pgn__form-group"
-          >
-            <label
-              class="pgn__form-label"
-              for="-text-label"
-            >
-              <div
-                class=""
-                id="test-course.expected_program_type.label"
-              >
-                <strong>
-                  Expected Program Type
-                </strong>
-                <span
-                  aria-hidden="true"
-                  class="text-gray-700"
-                >
-                     (optional)
-                </span>
-                <span
-                  class=""
-                  id="test-course.expected_program_type.label-help"
-                >
-                  <button
-                    aria-describedby="test-course.expected_program_type.label-help-tooltip"
-                    class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
-                    type="button"
-                  >
-                    <svg
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                  <span
-                    class="field-help-data"
-                    currentitem="false"
-                    data-for="test-course.expected_program_type.label-help-tooltip"
-                    data-html="true"
-                    data-testid="field-help-data"
-                    data-tip="<div>
-  <p>
-    If this Course Run will potentially be part of a Program, please set the expected program type here.
-  </p>
-</div>"
-                  />
-                  <div
-                    class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                    data-id="tooltip"
-                    id="test-course.expected_program_type.label-help-tooltip"
-                  >
-                    <style
-                      aria-hidden="true"
-                    >
-                      
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                    </style>
-                  </div>
-                </span>
-                <div>
-                  <span
-                    class="text-muted"
-                  />
-                </div>
-              </div>
-            </label>
-            <div
-              class="pgn__form-control-decorator-group"
-            >
-              <select
-                class="form-control"
-                disabled=""
-                id="-text-label"
-                label="[object Object]"
-                name="test-course.expected_program_type"
-              >
-                <option
-                  value=""
-                >
-                  --
-                </option>
-                <option
-                  value="professional-certificate"
-                >
-                  Professional Certificate
-                </option>
-                <option
-                  value="micromasters"
-                >
-                  MicroMasters
-                </option>
-                <option
-                  value="xseries"
-                >
-                  XSeries
-                </option>
-                <option
-                  value="masters"
-                >
-                  Masters
-                </option>
-              </select>
-            </div>
-          </div>
-          <div
-            class="pgn__form-group"
-          >
-            <label
-              class="pgn__form-label"
-              for="-text-label"
-            >
-              <div
-                class=""
-                id="test-course.expected_program_name.label"
-              >
-                <strong>
-                  Expected Program Name
-                </strong>
-                <span
-                  aria-hidden="true"
-                  class="text-gray-700"
-                >
-                     (optional)
-                </span>
-                <span
-                  class=""
-                  id="test-course.expected_program_name.label-help"
-                >
-                  <button
-                    aria-describedby="test-course.expected_program_name.label-help-tooltip"
-                    class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
-                    type="button"
-                  >
-                    <svg
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                  <span
-                    class="field-help-data"
-                    currentitem="false"
-                    data-for="test-course.expected_program_name.label-help-tooltip"
-                    data-html="true"
-                    data-testid="field-help-data"
-                    data-tip="<div>
-  <p>
-    If this Course Run will potentially be part of a Program, please set the expected program name here.
-  </p>
-</div>"
-                  />
-                  <div
-                    class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                    data-id="tooltip"
-                    id="test-course.expected_program_name.label-help-tooltip"
-                  >
-                    <style
-                      aria-hidden="true"
-                    >
-                      
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                    </style>
-                  </div>
-                </span>
-                <div>
-                  <span
-                    class="text-muted"
-                  />
-                </div>
-              </div>
-            </label>
-            <div
-              class="pgn__form-control-decorator-group"
-            >
-              <input
-                class="form-control"
-                disabled=""
-                id="-text-label"
-                maxlength=""
-                name=""
-                placeholder=""
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-          <div>
-            <div
-              class="mb-2"
-              id="ofac-notice-label"
-            >
-              <strong>
-                Course Embargo (OFAC) Restriction text added to the FAQ section
-              </strong>
-              <span
-                class=""
-                id="ofac-notice-label-help"
-              >
-                <button
-                  aria-describedby="ofac-notice-label-help-tooltip"
-                  class="btn btn-link py-0 px-0 mx-1 align-bottom "
-                  type="button"
-                >
-                  <svg
-                    fill="none"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
-                <span
-                  class="field-help-data"
-                  currentitem="false"
-                  data-for="ofac-notice-label-help-tooltip"
-                  data-html="true"
-                  data-testid="field-help-data"
-                  data-tip="<div>
-  <p>
-    Course embargo status for OFAC is managed internally, please contact support with questions.
-  </p>
-</div>"
-                />
-                <div
-                  class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
-                  data-id="tooltip"
-                  id="ofac-notice-label-help-tooltip"
-                >
-                  <style
-                    aria-hidden="true"
-                  >
-                    
-  	.t00000000-0000-0000-0000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-	    border-radius: undefinedpx;
-	    padding: 8px 21px;
-  	}
-
-  	.t00000000-0000-0000-0000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: 2;
-        width: 20px;
-        height: 12px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-top::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(135deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 18px;
-        height: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        top: -6px;
-        left: 50%;
-        margin-left: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-left::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        right: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(45deg);
-    }
-
-    .t00000000-0000-0000-0000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::before {
-        content: "";
-        background-color: inherit;
-        position: absolute;
-        z-index: -1;
-        width: 10px;
-        height: 18px;
-    }
-    .t00000000-0000-0000-0000-000000000000.place-right::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top-right-radius: undefinedpx;
-        border: 1px solid transparent;
-        background-color: #222;
-        z-index: -2;
-        left: -6px;
-        top: 50%;
-        margin-top: -6px;
-        transform: rotate(-135deg);
-    }
-  
-                  </style>
-                </div>
-              </span>
-              <div>
-                <span
-                  class="text-muted"
-                />
-              </div>
-            </div>
-            <div
-              class="mb-3"
-            >
-              No
-            </div>
+            No
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div
-    aria-atomic="true"
-    aria-live="assertive"
-    id="rbd-announcement-4"
-    style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"
-  />
-  <div
-    id="rbd-hidden-text-4-hidden-text-8"
-    style="display: none;"
-  >
-    
-  Press space bar to start a drag.
-  When dragging you can use the arrow keys to move the item around and escape to cancel.
-  Some screen readers may require you to be in focus mode or to use your pass through key
-
-  </div>
-</body>
+</div>
 `;
 
 exports[`Collapsible Course Run renders correctly when given a published course run 1`] = `

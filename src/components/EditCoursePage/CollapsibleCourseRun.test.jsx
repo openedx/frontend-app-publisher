@@ -206,7 +206,7 @@ describe('Collapsible Course Run', () => {
         course_type: EXECUTIVE_EDUCATION_SLUG,
       },
     };
-    render(
+    const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
           <IntlProvider locale="en">
@@ -230,7 +230,7 @@ describe('Collapsible Course Run', () => {
     );
     const variantIdInput = screen.getByRole('textbox', { name: /variant id/i });
     expect(variantIdInput).toBeInTheDocument();
-    expect(document.body).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
   it.each(['custom-b2c', ''])('renders correctly restriction type field for external course\'s course run (type: %s)', (restrictionType) => {
     const courseInfo = {
@@ -278,30 +278,7 @@ describe('Collapsible Course Run', () => {
       ],
     };
 
-    const { container, rerender } = render(
-      <MemoryRouter>
-        <Provider store={store}>
-          <IntlProvider locale="en">
-            <WrappedCollapsibleCourseRun
-              languageOptions={languageOptions}
-              pacingTypeOptions={pacingTypeOptions}
-              programOptions={programOptions}
-              ofacRestrictionOptions={ofacRestrictionOptions}
-              courseRun={unpublishedCourseRun}
-              courseId="test-course"
-              courseUuid="11111111-1111-1111-1111-111111111111"
-              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-              currentFormValues={currentFormValues}
-              courseRunTypeOptions={courseRunTypeOptions}
-              runTypeModes={runTypeModes}
-              index={1}
-            />,
-          </IntlProvider>
-        </Provider>
-      </MemoryRouter>,
-    );
-
-    rerender(
+    const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
           <IntlProvider locale="en">

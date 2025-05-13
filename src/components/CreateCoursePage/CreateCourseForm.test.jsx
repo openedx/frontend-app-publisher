@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { reduxForm } from 'redux-form';
 import configureStore from 'redux-mock-store';
@@ -48,7 +48,7 @@ describe('CreateCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly with no sources', () => {
@@ -66,7 +66,7 @@ describe('CreateCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly with data', () => {
@@ -85,7 +85,7 @@ describe('CreateCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly while submitting', () => {
@@ -107,6 +107,6 @@ describe('CreateCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

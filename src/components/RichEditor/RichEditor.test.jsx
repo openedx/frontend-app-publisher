@@ -1,5 +1,5 @@
 import React from 'react';
-import { waitFor, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import RichEditor from './index';
 
 describe('RichEditor', () => {
@@ -14,7 +14,7 @@ describe('RichEditor', () => {
       maxChars={500}
       meta={{ touched: false, error: '' }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows a rich text editor with default text value', () => {
@@ -28,7 +28,7 @@ describe('RichEditor', () => {
       maxChars={2500}
       meta={{ touched: false, error: '' }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows a rich text editor with no maxChars', () => {
@@ -41,7 +41,7 @@ describe('RichEditor', () => {
       }}
       meta={{ touched: false, error: '' }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('shows a rich text editor and an error', () => {
@@ -55,7 +55,7 @@ describe('RichEditor', () => {
       maxChars={500}
       meta={{ touched: true, error: 'Required' }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it.skip('change handlers are called', () => {

@@ -9,6 +9,17 @@ import { courseOptions } from '../../data/constants/testData';
 
 const mockStore = configureStore();
 const store = mockStore({});
+const courseRunOptions = {
+  data: {
+    actions: {
+      POST: {
+        pacing_type: {
+          choices: [],
+        },
+      },
+    },
+  },
+};
 
 describe('CreateCourseRunPage', () => {
   it('renders html correctly', () => {
@@ -23,23 +34,13 @@ describe('CreateCourseRunPage', () => {
               isCreating: false,
               error: null,
             }}
-            courseRunOptions={{
-              data: {
-                actions: {
-                  POST: {
-                    pacing_type: {
-                      choices: [],
-                    },
-                  },
-                },
-              },
-            }}
+            courseRunOptions={courseRunOptions}
             courseOptions={courseOptions}
           />
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders html correctly with Course Type', () => {
     const { container } = render(
@@ -55,23 +56,13 @@ describe('CreateCourseRunPage', () => {
               isCreating: false,
               error: null,
             }}
-            courseRunOptions={{
-              data: {
-                actions: {
-                  POST: {
-                    pacing_type: {
-                      choices: [],
-                    },
-                  },
-                },
-              },
-            }}
+            courseRunOptions={courseRunOptions}
             courseOptions={courseOptions}
           />
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders html correctly when fetching', () => {
     const { container } = render(<CreateCourseRunPage
@@ -83,7 +74,7 @@ describe('CreateCourseRunPage', () => {
         error: null,
       }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders html correctly when creating', () => {
     const { container } = render(
@@ -97,22 +88,12 @@ describe('CreateCourseRunPage', () => {
               isCreating: true,
               error: null,
             }}
-            courseRunOptions={{
-              data: {
-                actions: {
-                  POST: {
-                    pacing_type: {
-                      choices: [],
-                    },
-                  },
-                },
-              },
-            }}
+            courseRunOptions={courseRunOptions}
           />
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
   it('renders html correctly when error', () => {
     const { container } = render(
@@ -126,22 +107,12 @@ describe('CreateCourseRunPage', () => {
               isCreating: false,
               error: ['failed'],
             }}
-            courseRunOptions={{
-              data: {
-                actions: {
-                  POST: {
-                    pacing_type: {
-                      choices: [],
-                    },
-                  },
-                },
-              },
-            }}
+            courseRunOptions={courseRunOptions}
           />
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('refuses access to form when course is under review', () => {
@@ -165,7 +136,9 @@ describe('CreateCourseRunPage', () => {
       </IntlProvider>,
     );
 
-    waitFor(() => expect(screen.getByText(/Test Course has been submitted for review/i)).toBeInTheDocument());
+    waitFor(() => expect(
+      screen.getByText(/Test Course has been submitted for review. No course runs can be added right now'/i),
+    ).toBeInTheDocument());
 
     waitFor(() => expect(screen.queryByTestId('create-course-run-form')).not.toBeInTheDocument());
   });

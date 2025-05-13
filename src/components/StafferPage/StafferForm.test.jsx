@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { reduxForm } from 'redux-form';
 import configureStore from 'redux-mock-store';
@@ -88,7 +88,7 @@ describe('StafferForm', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly when submitting', () => {
@@ -105,7 +105,7 @@ describe('StafferForm', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly when creating', () => {
@@ -122,7 +122,7 @@ describe('StafferForm', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with staffer info', () => {
@@ -140,7 +140,7 @@ describe('StafferForm', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly when sent from the edit course page', () => {
@@ -157,6 +157,6 @@ describe('StafferForm', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 });

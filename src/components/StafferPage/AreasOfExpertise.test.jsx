@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  render, waitFor, screen, fireEvent,
+  render, screen, fireEvent,
 } from '@testing-library/react';
 
 import configureStore from 'redux-mock-store';
@@ -27,21 +27,21 @@ jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn());
 describe('Areas Of Expertise', () => {
   it('renders correctly with no fields', () => {
     const { container } = render(<Provider store={store}><AreaOfExpertiseWrapper fields={[]} /></Provider>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly when given fields', () => {
     const { container } = render(<Provider store={store}><AreaOfExpertiseWrapper fields={[{}]} /></Provider>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('adds fields when the add button is pushed', async () => {
     const fields = [{}];
     render(<Provider store={store}><AreaOfExpertiseWrapper fields={fields} /></Provider>);
-    waitFor(() => expect(fields.length).toEqual(1));
+    expect(fields.length).toEqual(1);
 
     const addButton = await screen.findByTestId('js-add-button');
     fireEvent.click(addButton);
-    waitFor(() => expect(fields.length).toEqual(2));
+    expect(fields.length).toEqual(2);
   });
 });

@@ -307,20 +307,6 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    // const { container } = render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesFull.title}
-    //   currentFormValues={initialValuesFull}
-    //   number="Test101x"
-    //   courseStatuses={[UNPUBLISHED]}
-    //   courseInfo={courseInfo}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   isSubmittingForReview
-    //   id="edit-course-form"
-    // />);
     expect(container).toMatchSnapshot();
   });
 
@@ -348,21 +334,6 @@ describe('BaseEditCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-
-    // render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesFull.title}
-    //   currentFormValues={initialValuesFull}
-    //   number="Test101x"
-    //   courseStatuses={[REVIEW_BY_LEGAL]}
-    //   courseInfo={courseInfo}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   courseInReview
-    //   id="edit-course-form"
-    // />);
 
     const childFields = screen.getAllByRole('textbox');
     childFields.forEach((field) => {
@@ -395,22 +366,6 @@ describe('BaseEditCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-
-    // render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesFull.title}
-    //   initialValues={initialValuesFull}
-    //   currentFormValues={initialValuesFull}
-    //   number="Test101x"
-    //   entitlement={{ sku: 'ABC1234' }}
-    //   courseStatuses={[REVIEWED]}
-    //   courseInfo={courseInfo}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   id="edit-course-form"
-    // />);
 
     const disabledFields = await screen.findByRole('textbox', { disabled: true });
     waitFor(() => expect(disabledFields).toHaveLength(1));
@@ -449,22 +404,6 @@ describe('BaseEditCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-
-    // render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesFull.title}
-    //   initialValues={initialValuesFull}
-    //   currentFormValues={initialValuesFull}
-    //   number="Test101x"
-    //   entitlement={{ sku: 'ABC1234' }}
-    //   courseStatuses={[REVIEWED]}
-    //   courseInfo={courseInfoWithCourseRunStatuses}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   id="edit-course-form"
-    // />);
 
     const watchersField = screen.findByTestId('watchers-list', { disabled: true });
     expect(watchersField).toHaveLength(1);

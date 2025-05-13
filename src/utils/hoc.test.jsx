@@ -27,7 +27,7 @@ test('Provides Navigation to Component', () => {
   render(<WrappedComponent />);
   const btn = screen.getByTestId('btn');
 
-  fireEvent.click(btn); // ✅ Replaces `simulate('click')`
+  fireEvent.click(btn);
   expect(mockedNavigator).toHaveBeenCalledWith('/some-route');
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  fireEvent, render, waitFor, screen,
+  fireEvent, render, screen,
 } from '@testing-library/react';
 import { reduxForm } from 'redux-form';
 import configureStore from 'redux-mock-store';
@@ -23,12 +23,12 @@ const WrappedSocialLinks = reduxForm({ form: 'testForm' })(SocialLinks);
 describe('Social links', () => {
   it('renders correctly with no fields', () => {
     const { container } = render(<SocialLinks fields={[]} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly when given fields', () => {
     const { container } = render(<SocialLinks fields={[]} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('adds fields when the add button is pushed', async () => {
@@ -38,10 +38,10 @@ describe('Social links', () => {
         <WrappedSocialLinks fields={fields} />
       </Provider>,
     );
-    waitFor(() => expect(fields.length).toEqual(1));
+    expect(fields.length).toEqual(1);
 
     const addButton = await screen.findByTestId('js-add-button');
     fireEvent.click(addButton);
-    waitFor(() => expect(fields.length).toEqual(2));
+    expect(fields.length).toEqual(2);
   });
 });
