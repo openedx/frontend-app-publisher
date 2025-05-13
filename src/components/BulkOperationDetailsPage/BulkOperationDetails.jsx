@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import moment from "moment";
-import './styles.scss';
+import "./styles.scss";
 import "moment-timezone";
 import {
   Button,
   DataTable,
   useToggle,
   StandardModal,
+  FullscreenModal,
   Stack,
+  ActionRow,
+    Container,
 } from "@openedx/paragon";
 
 export default function BulkOperationDetails({ task }) {
@@ -22,15 +25,15 @@ export default function BulkOperationDetails({ task }) {
       const lines = text.trim().split("\n");
 
       const headers = lines[0].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-        const cleanedHeaders = headers.map((header) =>
-            header.replace(/(^"|"$)/g, "")
-        );
+      const cleanedHeaders = headers.map((header) =>
+        header.replace(/(^"|"$)/g, "")
+      );
       const rows = lines
         .slice(1)
         .map((line) => line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/));
-        const cleanedRows = rows.map((row) =>
-            row.map((cell) => cell.replace(/(^"|"$)/g, ""))
-        );
+      const cleanedRows = rows.map((row) =>
+        row.map((cell) => cell.replace(/(^"|"$)/g, ""))
+      );
 
       setCsvHeaders(cleanedHeaders);
       setCsvRows(cleanedRows);
@@ -57,13 +60,11 @@ export default function BulkOperationDetails({ task }) {
       </p>
       <p>
         <strong>Created:</strong>{" "}
-        {moment.tz(task.created, 'UTC')
-          .format("MMM DD, YYYY, hh:mm:ss A")}
+        {moment.tz(task.created, "UTC").format("MMM DD, YYYY, hh:mm:ss A")}
       </p>
       <p>
         <strong>Modified:</strong>{" "}
-        {moment
-          .tz(task.modified, 'UTC').format("MMM DD, YYYY, hh:mm:ss A")}
+        {moment.tz(task.modified, "UTC").format("MMM DD, YYYY, hh:mm:ss A")}
       </p>
 
       <Stack direction="horizontal" gap={3} className="mb-4 mt-4">
@@ -75,41 +76,104 @@ export default function BulkOperationDetails({ task }) {
         >
           Download CSV
         </a>
-          <Button
+        <Button
           className="ms-2"
-            variant="primary"
-            onClick={() => {
-              handlePreviewCSV();
-              open();
-            }}
-          >
-            Preview CSV
-          </Button>
-          <StandardModal
-            title="CSV Preview"
-            className={"csv-preview-modal"}
-            isOpen={isOpen}
-            onClose={close}
-            size="xl"
-            isOverflowVisible={false}
-          >
+          variant="primary"
+          onClick={() => {
+            handlePreviewCSV();
+            open();
+          }}
+        >
+          Preview CSV
+        </Button>
+        <FullscreenModal
+        title="CSV Preview"
+        // className={"csv-preview-modal"}
+        isOpen={isOpen}
+        onClose={close}
+        footerNode={(
+            <ActionRow>
+              <ActionRow.Spacer />
+              <Button variant="tertiary" onClick={close}>Cancel</Button>
+              <Button>Submit</Button>
+            </ActionRow>
+          )}
+          isOverflowVisible={false}
+        >
             <DataTable
-              className="bulk-op-table"
-              columns={csvHeaders.map((header) => ({
+            className="bulk-op-table"
+            columns={csvHeaders.map((header) => {
+              const isImageColumn = header.toLowerCase() === "image";
+
+              return {
                 Header: header,
                 accessor: header,
-              }))}
-              data={csvRows.map((row) =>
-                row.reduce((acc, value, index) => {
-                  acc[csvHeaders[index]] = value;
-                  return acc;
-                }, {})
-              )}
-              defaultPageSize={5}
-              showPagination={false}
-            />
-          </StandardModal>
-        </Stack>
+                ...(isImageColumn && {
+                  Cell: (cell) =>
+                    cell.value ? (
+                      <a
+                        href={cell.value}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Image
+                      </a>
+                    ) : null,
+                }),
+              };
+            })}
+            data={csvRows.map((row) =>
+              row.reduce((acc, value, index) => {
+                acc[csvHeaders[index]] = value;
+                return acc;
+              }, {})
+            )}
+            defaultPageSize={5}
+            showPagination={false}
+          />
+
+        </FullscreenModal>
+        {/* <StandardModal
+          title="CSV Preview"
+          className={"csv-preview-modal"}
+          isOpen={isOpen}
+          onClose={close}
+          size="xl"
+          isOverflowVisible={false}
+        >
+          <DataTable
+            className="bulk-op-table"
+            columns={csvHeaders.map((header) => {
+              const isImageColumn = header.toLowerCase() === "image";
+
+              return {
+                Header: header,
+                accessor: header,
+                ...(isImageColumn && {
+                  Cell: (cell) =>
+                    cell.value ? (
+                      <a
+                        href={cell.value}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Image
+                      </a>
+                    ) : null,
+                }),
+              };
+            })}
+            data={csvRows.map((row) =>
+              row.reduce((acc, value, index) => {
+                acc[csvHeaders[index]] = value;
+                return acc;
+              }, {})
+            )}
+            defaultPageSize={5}
+            showPagination={false}
+          />
+        </StandardModal> */}
+      </Stack>
 
       {task.task_summary && (
         <div className="bg-light p-3 rounded">
