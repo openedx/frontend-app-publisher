@@ -54,7 +54,7 @@ const MainApp = () => (
         />
         <Route path="/courses/:uuid" element={<EditCourse />} />
         <Route path="/bulk-operation-tasks/:taskId" element={<BulkOperationDetailsPage />} />
-        <Route 
+        <Route
           path="/"
           element={<CourseDashboard />}
         />

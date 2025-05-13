@@ -6,7 +6,6 @@ import courseEditors from './courseEditors';
 import courseInfo from './courseInfo';
 import organizationRoles from './organizationRoles';
 import organizationUsers from './organizationUsers';
-import bulkOperationTask from './bulkOperationTasks';
 import table from './table';
 import publisherUserInfo from './publisherUserInfo';
 import courseOptions from './courseOptions';
@@ -39,5 +38,4 @@ export default () => combineReducers({
   collaboratorOptions,
   courseTagOptions,
   productSourceOptions,
-  bulkOperationTask,
 });
