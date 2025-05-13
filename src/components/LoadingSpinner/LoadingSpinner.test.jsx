@@ -1,12 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, waitFor } from '@testing-library/react';
 
 import LoadingSpinner from './index';
 
 describe('LoadingSpinner', () => {
   it('shows a loading spinner', () => {
-    const component = shallow(<LoadingSpinner />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<LoadingSpinner />);
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 });

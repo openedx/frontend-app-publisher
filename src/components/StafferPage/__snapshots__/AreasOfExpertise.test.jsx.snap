@@ -1,72 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Areas Of Expertise renders correctly when given fields 1`] = `
-<div
-  className="areas-of-expertise mb-3"
->
-  <ul
-    className="list-group p-0 m-0 container-fluid"
+<div>
+  <div
+    class="areas-of-expertise mb-3"
   >
-    <li
-      className="area-of-expertise list-group-item row d-flex align-items-center px-0 mx-0"
-      key="[object Object]"
+    <ul
+      class="list-group p-0 m-0 container-fluid"
     >
-      <div
-        className="col-11"
+      <li
+        class="area-of-expertise list-group-item row d-flex align-items-center px-0 mx-0"
       >
-        <Field
-          component={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="Area of expertise"
-            />
-          }
-          name="[object Object].value"
-          required={true}
-          type="text"
+        <div
+          class="col-11"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="-text-label"
+            >
+              <div
+                class=""
+              >
+                <strong>
+                  Area of expertise
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="form-control"
+                id="-text-label"
+                maxlength=""
+                name=""
+                placeholder=""
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <input
+          name="[object Object].id"
+          type="hidden"
         />
-      </div>
-      <input
-        name="[object Object].id"
-        type="hidden"
-      />
-      <RemoveButton
-        className="col-1"
-        label="Remove area of expertise"
-        onRemove={[Function]}
-        targetFieldNumber={0}
-      />
-    </li>
-  </ul>
-  <button
-    className="btn btn-outline-primary js-add-button mt-2"
-    onClick={[Function]}
-    type="button"
-  >
-    Add area of expertise
-  </button>
+        <button
+          aria-label="Remove area of expertise"
+          class="close float-none d-flex justify-content-center align-items-center col-1"
+          data-testid="id-remove-btn"
+          title="Remove area of expertise"
+          type="button"
+        >
+          <svg
+            fill="none"
+            height="24"
+            id="remove-field"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <button
+      class="btn btn-outline-primary js-add-button mt-2"
+      data-testid="js-add-button"
+      type="button"
+    >
+      Add area of expertise
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Areas Of Expertise renders correctly with no fields 1`] = `
-<div
-  className="areas-of-expertise mb-3"
->
-  <ul
-    className="list-group p-0 m-0 container-fluid"
-  />
-  <button
-    className="btn btn-outline-primary js-add-button mt-2"
-    onClick={[Function]}
-    type="button"
+<div>
+  <div
+    class="areas-of-expertise mb-3"
   >
-    Add area of expertise
-  </button>
+    <ul
+      class="list-group p-0 m-0 container-fluid"
+    />
+    <button
+      class="btn btn-outline-primary js-add-button mt-2"
+      data-testid="js-add-button"
+      type="button"
+    >
+      Add area of expertise
+    </button>
+  </div>
 </div>
 `;

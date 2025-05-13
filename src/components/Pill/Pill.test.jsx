@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from 'enzyme';
-import { renderToJson } from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 
 import Pill from './index';
@@ -13,25 +12,25 @@ const PillWrapper = (props) => (
 
 describe('Pill', () => {
   it('renders without any statuses', () => {
-    const component = render(<PillWrapper statuses={[]} />);
-    expect(renderToJson(component)).toMatchSnapshot();
+    const { container } = render(<PillWrapper statuses={[]} />);
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with invalid statuses', () => {
     const statuses = [undefined, null, 'fnjdsahf'];
-    const component = render(<PillWrapper statuses={statuses} />);
-    expect(renderToJson(component)).toMatchSnapshot();
+    const { container } = render(<PillWrapper statuses={statuses} />);
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with a single status', () => {
     const statuses = ['review_by_legal'];
-    const component = render(<PillWrapper statuses={statuses} />);
-    expect(renderToJson(component)).toMatchSnapshot();
+    const { container } = render(<PillWrapper statuses={statuses} />);
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with multiple statuses', () => {
     const statuses = ['review_by_internal', 'published'];
-    const component = render(<PillWrapper statuses={statuses} />);
-    expect(renderToJson(component)).toMatchSnapshot();
+    const { container } = render(<PillWrapper statuses={statuses} />);
+    expect(container).toMatchSnapshot();
   });
 });

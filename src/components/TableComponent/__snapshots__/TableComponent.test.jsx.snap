@@ -1,340 +1,765 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CourseTable shows a populated table 1`] = `
-<Fragment>
+<div>
   <div
-    className="test"
+    class="test"
   >
     <div
-      className="table-responsive"
+      class="table-responsive"
     >
-      <DataTable
-        EmptyTableComponent={[Function]}
-        FilterStatusComponent={[Function]}
-        RowStatusComponent={[Function]}
-        SelectionStatusComponent={[Function]}
-        additionalColumns={[]}
-        bulkActions={[]}
-        className="table-sm table-striped"
-        columns={
-          [
-            {
-              "columnSortable": true,
-              "key": "col1",
-              "label": "Col 1",
-              "onSort": null,
-            },
-            {
-              "columnSortable": false,
-              "key": "col2",
-              "label": "Col 2",
-              "onSort": [Function],
-            },
-          ]
-        }
-        data={
-          [
-            {
-              "col1": "Test11",
-              "col2": "Test12",
-            },
-            {
-              "col1": "Test21",
-              "col2": "Test22",
-            },
-          ]
-        }
-        dataViewToggleOptions={
-          {
-            "defaultActiveStateValue": "card",
-            "isDataViewToggleEnabled": false,
-            "onDataViewToggle": [Function],
-            "togglePlacement": "left",
-          }
-        }
-        defaultColumnValues={{}}
-        defaultSortDirection="asc"
-        defaultSortedColumn="key"
-        disableElevation={false}
-        fetchData={null}
-        initialState={{}}
-        initialTableOptions={{}}
-        isExpandable={false}
-        isFilterable={false}
-        isLoading={false}
-        isPaginated={false}
-        isSelectable={false}
-        isSortable={true}
-        itemCount={2}
-        manualFilters={false}
-        manualPagination={false}
-        manualSortBy={false}
-        numBreakoutFilters={1}
-        showFiltersInSidebar={false}
-        tableActions={[]}
-      />
+      <div
+        class="pgn__data-table-layout-wrapper"
+      >
+        <div
+          class="pgn__data-table-layout-main"
+        >
+          <div
+            class="pgn__data-table-wrapper"
+          >
+            <div
+              class="pgn__data-table-status-bar"
+              data-testid="table-control-bar"
+            >
+              <div
+                class="pgn__data-table-status"
+              >
+                <div
+                  class="pgn__data-table-status-left"
+                >
+                  <div
+                    class="pgn__smart-status"
+                    data-testid="row-status"
+                  >
+                    Showing 1 - 2 of 2.
+                  </div>
+                </div>
+                <div
+                  class="pgn__data-table-actions-right"
+                >
+                  <div
+                    class="pgn__data-table-toggle"
+                  />
+                  <div />
+                </div>
+              </div>
+            </div>
+            <div
+              class="pgn__data-table-container"
+              data-testid="data-table-container"
+            >
+              <table
+                class="pgn__data-table is-striped"
+                role="table"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="pgn__data-table-row"
+                    role="row"
+                  >
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test11
+                    </td>
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test12
+                    </td>
+                  </tr>
+                  <tr
+                    class="pgn__data-table-row"
+                    role="row"
+                  >
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test21
+                    </td>
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test22
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="pgn__data-table-footer"
+              data-testid="table-footer"
+            >
+              <div
+                data-testid="row-status"
+              >
+                Showing 1 - 2 of 2.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</Fragment>
+</div>
 `;
 
 exports[`CourseTable shows a populated table after a component update for ordering 1`] = `
-<Fragment>
+<div>
   <div
-    className="test"
+    class="test"
   >
     <div
-      className="table-responsive"
+      class="table-responsive"
     >
-      <DataTable
-        EmptyTableComponent={[Function]}
-        FilterStatusComponent={[Function]}
-        RowStatusComponent={[Function]}
-        SelectionStatusComponent={[Function]}
-        additionalColumns={[]}
-        bulkActions={[]}
-        className="table-sm table-striped"
-        columns={
-          [
-            {
-              "columnSortable": true,
-              "key": "col1",
-              "label": "Col 1",
-              "onSort": null,
-            },
-            {
-              "columnSortable": false,
-              "key": "col2",
-              "label": "Col 2",
-              "onSort": [Function],
-            },
-          ]
-        }
-        data={
-          [
-            {
-              "col1": "Test11",
-              "col2": "Test12",
-            },
-            {
-              "col1": "Test21",
-              "col2": "Test22",
-            },
-          ]
-        }
-        dataViewToggleOptions={
-          {
-            "defaultActiveStateValue": "card",
-            "isDataViewToggleEnabled": false,
-            "onDataViewToggle": [Function],
-            "togglePlacement": "left",
-          }
-        }
-        defaultColumnValues={{}}
-        defaultSortDirection="desc"
-        defaultSortedColumn="key"
-        disableElevation={false}
-        fetchData={null}
-        initialState={{}}
-        initialTableOptions={{}}
-        isExpandable={false}
-        isFilterable={false}
-        isLoading={false}
-        isPaginated={false}
-        isSelectable={false}
-        isSortable={true}
-        itemCount={2}
-        manualFilters={false}
-        manualPagination={false}
-        manualSortBy={false}
-        numBreakoutFilters={1}
-        showFiltersInSidebar={false}
-        tableActions={[]}
-      />
+      <div
+        class="pgn__data-table-layout-wrapper"
+      >
+        <div
+          class="pgn__data-table-layout-main"
+        >
+          <div
+            class="pgn__data-table-wrapper"
+          >
+            <div
+              class="pgn__data-table-status-bar"
+              data-testid="table-control-bar"
+            >
+              <div
+                class="pgn__data-table-status"
+              >
+                <div
+                  class="pgn__data-table-status-left"
+                >
+                  <div
+                    class="pgn__smart-status"
+                    data-testid="row-status"
+                  >
+                    Showing 1 - 2 of 2.
+                  </div>
+                </div>
+                <div
+                  class="pgn__data-table-actions-right"
+                >
+                  <div
+                    class="pgn__data-table-toggle"
+                  />
+                  <div />
+                </div>
+              </div>
+            </div>
+            <div
+              class="pgn__data-table-container"
+              data-testid="data-table-container"
+            >
+              <table
+                class="pgn__data-table is-striped"
+                role="table"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="pgn__data-table-row"
+                    role="row"
+                  >
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test11
+                    </td>
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test12
+                    </td>
+                  </tr>
+                  <tr
+                    class="pgn__data-table-row"
+                    role="row"
+                  >
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test21
+                    </td>
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test22
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="pgn__data-table-footer"
+              data-testid="table-footer"
+            >
+              <div
+                data-testid="row-status"
+              >
+                Showing 1 - 2 of 2.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</Fragment>
+</div>
 `;
 
 exports[`CourseTable shows a populated table after a component update for page 1`] = `
-<Fragment>
+<div>
   <div
-    className="test"
+    class="test"
   >
     <div
-      className="table-responsive"
+      class="table-responsive"
     >
-      <DataTable
-        EmptyTableComponent={[Function]}
-        FilterStatusComponent={[Function]}
-        RowStatusComponent={[Function]}
-        SelectionStatusComponent={[Function]}
-        additionalColumns={[]}
-        bulkActions={[]}
-        className="table-sm table-striped"
-        columns={
-          [
-            {
-              "columnSortable": true,
-              "key": "col1",
-              "label": "Col 1",
-              "onSort": null,
-            },
-            {
-              "columnSortable": false,
-              "key": "col2",
-              "label": "Col 2",
-              "onSort": [Function],
-            },
-          ]
-        }
-        data={
-          [
-            {
-              "col1": "Test11",
-              "col2": "Test12",
-            },
-            {
-              "col1": "Test21",
-              "col2": "Test22",
-            },
-          ]
-        }
-        dataViewToggleOptions={
-          {
-            "defaultActiveStateValue": "card",
-            "isDataViewToggleEnabled": false,
-            "onDataViewToggle": [Function],
-            "togglePlacement": "left",
-          }
-        }
-        defaultColumnValues={{}}
-        defaultSortDirection="asc"
-        defaultSortedColumn="key"
-        disableElevation={false}
-        fetchData={null}
-        initialState={{}}
-        initialTableOptions={{}}
-        isExpandable={false}
-        isFilterable={false}
-        isLoading={false}
-        isPaginated={false}
-        isSelectable={false}
-        isSortable={true}
-        itemCount={2}
-        manualFilters={false}
-        manualPagination={false}
-        manualSortBy={false}
-        numBreakoutFilters={1}
-        showFiltersInSidebar={false}
-        tableActions={[]}
-      />
+      <div
+        class="pgn__data-table-layout-wrapper"
+      >
+        <div
+          class="pgn__data-table-layout-main"
+        >
+          <div
+            class="pgn__data-table-wrapper"
+          >
+            <div
+              class="pgn__data-table-status-bar"
+              data-testid="table-control-bar"
+            >
+              <div
+                class="pgn__data-table-status"
+              >
+                <div
+                  class="pgn__data-table-status-left"
+                >
+                  <div
+                    class="pgn__smart-status"
+                    data-testid="row-status"
+                  >
+                    Showing 1 - 2 of 2.
+                  </div>
+                </div>
+                <div
+                  class="pgn__data-table-actions-right"
+                >
+                  <div
+                    class="pgn__data-table-toggle"
+                  />
+                  <div />
+                </div>
+              </div>
+            </div>
+            <div
+              class="pgn__data-table-container"
+              data-testid="data-table-container"
+            >
+              <table
+                class="pgn__data-table is-striped"
+                role="table"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="pgn__data-table-row"
+                    role="row"
+                  >
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test11
+                    </td>
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test12
+                    </td>
+                  </tr>
+                  <tr
+                    class="pgn__data-table-row"
+                    role="row"
+                  >
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test21
+                    </td>
+                    <td
+                      class="pgn__data-table-cell-wrap"
+                      role="cell"
+                    >
+                      Test22
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="pgn__data-table-footer"
+              data-testid="table-footer"
+            >
+              <div
+                data-testid="row-status"
+              >
+                Showing 1 - 2 of 2.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</Fragment>
+</div>
 `;
 
-exports[`CourseTable shows a table 1`] = `<Fragment />`;
+exports[`CourseTable shows a table 1`] = `<div />`;
 
 exports[`CourseTable shows an empty table 1`] = `
-<Fragment>
+<div>
   <div
-    className="test"
+    class="test"
   >
     <div
-      className="table-responsive"
+      class="table-responsive"
     >
-      <DataTable
-        EmptyTableComponent={[Function]}
-        FilterStatusComponent={[Function]}
-        RowStatusComponent={[Function]}
-        SelectionStatusComponent={[Function]}
-        additionalColumns={[]}
-        bulkActions={[]}
-        className="table-sm table-striped"
-        columns={
-          [
-            {
-              "columnSortable": true,
-              "key": "col1",
-              "label": "Col 1",
-              "onSort": null,
-            },
-            {
-              "columnSortable": false,
-              "key": "col2",
-              "label": "Col 2",
-              "onSort": [Function],
-            },
-          ]
-        }
-        data={[]}
-        dataViewToggleOptions={
-          {
-            "defaultActiveStateValue": "card",
-            "isDataViewToggleEnabled": false,
-            "onDataViewToggle": [Function],
-            "togglePlacement": "left",
-          }
-        }
-        defaultColumnValues={{}}
-        defaultSortDirection="asc"
-        defaultSortedColumn="key"
-        disableElevation={false}
-        fetchData={null}
-        initialState={{}}
-        initialTableOptions={{}}
-        isExpandable={false}
-        isFilterable={false}
-        isLoading={false}
-        isPaginated={false}
-        isSelectable={false}
-        isSortable={true}
-        manualFilters={false}
-        manualPagination={false}
-        manualSortBy={false}
-        numBreakoutFilters={1}
-        showFiltersInSidebar={false}
-        tableActions={[]}
-      />
+      <div
+        class="pgn__data-table-layout-wrapper"
+      >
+        <div
+          class="pgn__data-table-layout-main"
+        >
+          <div
+            class="pgn__data-table-wrapper"
+          >
+            <div
+              class="pgn__data-table-status-bar"
+              data-testid="table-control-bar"
+            >
+              <div
+                class="pgn__data-table-status"
+              >
+                <div
+                  class="pgn__data-table-status-left"
+                />
+                <div
+                  class="pgn__data-table-actions-right"
+                >
+                  <div
+                    class="pgn__data-table-toggle"
+                  />
+                  <div />
+                </div>
+              </div>
+            </div>
+            <div
+              class="pgn__data-table-container"
+              data-testid="data-table-container"
+            >
+              <table
+                class="pgn__data-table is-striped"
+                role="table"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <span
+                        class="d-flex align-items-center"
+                      >
+                        <span>
+                           
+                        </span>
+                        <span
+                          class="pgn__icon"
+                          data-testid="arrow-drop-up-down"
+                          style="opacity: 0.5;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="none"
+                            focusable="false"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 10 5-5 5 5H7ZM7 14l5 5 5-5H7Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                />
+              </table>
+            </div>
+            <div
+              class="pgn__data-table-empty"
+            >
+              No results found
+            </div>
+            <div
+              class="pgn__data-table-footer"
+              data-testid="table-footer"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</Fragment>
+</div>
 `;
 
 exports[`CourseTable shows an error 1`] = `
-<Fragment>
-  <ForwardRef
-    dismissible={false}
-    icon={[Function]}
-    onClose={[Function]}
-    show={true}
-    stacked={false}
-    transition={
-      {
-        "$$typeof": Symbol(react.forward_ref),
-        "defaultProps": {
-          "appear": false,
-          "in": false,
-          "mountOnEnter": false,
-          "timeout": 300,
-          "unmountOnExit": false,
-        },
-        "render": [Function],
-      }
-    }
-    variant="danger"
+<div>
+  <div
+    class="fade alert-content alert alert-danger show"
+    role="alert"
   >
-    Unable to load data: 
-    Test error.
-  </ForwardRef>
-</Fragment>
+    <span
+      class="pgn__icon alert-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="none"
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <div
+      class="pgn__alert-message-wrapper"
+    >
+      <div
+        class="alert-message-content"
+      >
+        Unable to load data: 
+        Test error.
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`CourseTable shows loading 1`] = `
-<Fragment>
-  <LoadingSpinner
-    message="Loading…"
-  />
-</Fragment>
+<div>
+  <div
+    class="mx-auto text-center"
+  >
+    <div>
+      Loading…
+    </div>
+    <div
+      class="pgn__spinner mie-3 spinner-border"
+      role="status"
+    >
+      <span
+        class="sr-only"
+      >
+        loading
+      </span>
+    </div>
+  </div>
+</div>
 `;

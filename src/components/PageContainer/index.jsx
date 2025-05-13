@@ -8,7 +8,7 @@ const PageContainer = (props) => {
   const colClasses = classNames('col', { 'col-xl-7 col-9': !props.wide });
 
   return (
-    <div className={containerClasses}>
+    <div data-testid={props.dataTestId} className={containerClasses}>
       <div className="row justify-content-md-center">
         <div className={colClasses}>
           {props.children}
@@ -37,6 +37,7 @@ PageContainer.propTypes = {
   className: PropTypes.string,
   sidePanes: PropTypes.node,
   wide: PropTypes.bool,
+  dataTestId: PropTypes.string,
 };
 
 export default PageContainer;

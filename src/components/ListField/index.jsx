@@ -201,6 +201,7 @@ class ListField extends React.Component {
                   >
                     {draggableProvided => (
                       <div
+                        data-testid="draggable-list-item"
                         className="staffer-wrapper col-12 my-2"
                         ref={draggableProvided.innerRef}
                         {...draggableProvided.dragHandleProps}

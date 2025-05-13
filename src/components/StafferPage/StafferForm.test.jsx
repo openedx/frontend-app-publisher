@@ -1,8 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
+import { reduxForm } from 'redux-form';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 import { BaseStafferForm } from './StafferForm';
+
+const mockStore = configureStore();
+const store = mockStore({});
 
 const stafferInfo = {
   data: {
@@ -65,60 +71,92 @@ const sourceInfo = {
   referrer: 'courses/00000000-0000-0000-0000-000000000000',
 };
 
+const WrappedStafferForm = reduxForm({ form: 'testForm' })(BaseStafferForm);
+
 describe('StafferForm', () => {
   it('renders html correctly', () => {
-    const component = shallow(<BaseStafferForm
-      pristine
-      submitting={false}
-      isSaving={false}
-      handleSubmit={() => {}}
-      sourceInfo={noReferrerSourceInfo}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <WrappedStafferForm
+            pristine
+            submitting={false}
+            isSaving={false}
+            handleSubmit={() => {}}
+            sourceInfo={noReferrerSourceInfo}
+          />
+        </Provider>
+      </MemoryRouter>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly when submitting', () => {
-    const component = shallow(<BaseStafferForm
-      pristine={false}
-      submitting
-      isSaving={false}
-      handleSubmit={() => {}}
-      sourceInfo={noReferrerSourceInfo}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <WrappedStafferForm
+            pristine={false}
+            submitting
+            isSaving={false}
+            handleSubmit={() => {}}
+            sourceInfo={noReferrerSourceInfo}
+          />
+        </Provider>
+      </MemoryRouter>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly when creating', () => {
-    const component = shallow(<BaseStafferForm
-      pristine={false}
-      submitting={false}
-      isSaving
-      handleSubmit={() => {}}
-      sourceInfo={noReferrerSourceInfo}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <WrappedStafferForm
+            pristine={false}
+            submitting={false}
+            isSaving
+            handleSubmit={() => {}}
+            sourceInfo={noReferrerSourceInfo}
+          />
+        </Provider>
+      </MemoryRouter>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with staffer info', () => {
-    const component = shallow(<BaseStafferForm
-      pristine
-      submitting={false}
-      isSaving={false}
-      stafferInfo={stafferInfo}
-      handleSubmit={() => {}}
-      sourceInfo={noReferrerSourceInfo}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <WrappedStafferForm
+            pristine
+            submitting={false}
+            isSaving={false}
+            stafferInfo={stafferInfo}
+            handleSubmit={() => {}}
+            sourceInfo={noReferrerSourceInfo}
+          />
+        </Provider>
+      </MemoryRouter>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly when sent from the edit course page', () => {
-    const component = shallow(<BaseStafferForm
-      pristine
-      submitting={false}
-      isSaving={false}
-      handleSubmit={() => {}}
-      sourceInfo={sourceInfo}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <WrappedStafferForm
+            pristine
+            submitting={false}
+            isSaving={false}
+            handleSubmit={() => {}}
+            sourceInfo={sourceInfo}
+          />
+        </Provider>
+      </MemoryRouter>,
+    );
+    expect(container).toMatchSnapshot();
   });
 });

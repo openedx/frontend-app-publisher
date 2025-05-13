@@ -1,8 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { Alert } from '@openedx/paragon';
+import {
+  render, screen, waitFor, fireEvent,
+} from '@testing-library/react';
 
-import Comment from './Comment';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 import CommentsPane from './CommentsPane';
 
 describe('CommentsPane', () => {
@@ -41,78 +42,74 @@ describe('CommentsPane', () => {
     isFetching: false,
   };
 
-  it('displays first and last name of user when available', () => {
-    const wrapper = shallow(<CommentsPane
+  it('displays first and last name of user when available', async () => {
+    render(<CommentsPane
       comments={basicCommentThread}
       fetchComments={mockFetch}
     />);
-    const comments = wrapper.find(Comment);
+    const comments = await screen.findAllByTestId('comment-card');
     expect(comments).toHaveLength(2);
-    expect(comments.at(0).prop('user')).toEqual('Billy Bob');
+    waitFor(() => expect(comments[0]).toHaveTextContent('Billy Bob'));
   });
 
-  it('displays username if first and last name is not available', () => {
-    const wrapper = shallow(<CommentsPane
+  it('displays username if first and last name is not available', async () => {
+    render(<CommentsPane
       comments={basicCommentThread}
       fetchComments={mockFetch}
     />);
-    const comments = wrapper.find(Comment);
+    const comments = await screen.findAllByTestId('comment-card');
     expect(comments).toHaveLength(2);
-    expect(comments.at(1).prop('user')).toEqual('edx@example.com');
+    waitFor(() => expect(comments[1]).toHaveTextContent('edx@example.com'));
   });
 
-  it('has label for no comments', () => {
-    const wrapper = shallow(<CommentsPane
+  it('has label for no comments', async () => {
+    render(<CommentsPane
       comments={emptyCommentThread}
       fetchComments={mockFetch}
     />);
-    const comments = wrapper.find(Comment);
-    expect(comments).toHaveLength(0);
-    expect(wrapper.contains(<div className="text-muted">No comments</div>)).toEqual(true);
+    waitFor(() => expect(screen.getByText('No comments')).toHaveClass('text-muted'));
   });
 
-  it('allows adding a comment', () => {
+  it('allows adding a comment', async () => {
     const mockCallback = jest.fn();
-    const wrapper = shallow(<CommentsPane
+    render(<CommentsPane
       addComment={mockCallback}
       comments={emptyCommentThread}
       fetchComments={mockFetch}
     />);
-    wrapper.setState({ newCommentBody: 'Test comment' });
-
-    const postCommentButton = wrapper.find('.btn-primary');
-    postCommentButton.simulate('click');
-
-    expect(wrapper.state().showEmptyCommentAlert).toEqual(false);
-    // not sure what else to test here
+    const input = screen.getByLabelText(/Post a comment/i);
+    fireEvent.change(input, { target: { value: 'Test comment' } });
+    fireEvent.click(screen.getByRole('button', { name: /post/i }));
+    expect(mockCallback).toHaveBeenCalledWith({ comment: 'Test comment', course_uuid: '' });
   });
 
-  it('displays status alert on empty comment body', () => {
+  it('displays status alert on empty comment body', async () => {
     const mockAdd = jest.fn();
-    const wrapper = shallow(<CommentsPane
-      addComment={mockAdd}
-      comments={emptyCommentThread}
-      fetchComments={mockFetch}
-    />);
-    wrapper.setState({ newCommentBody: '' });
-
-    const postCommentButton = wrapper.find('.btn-primary');
-    postCommentButton.simulate('click');
-
-    const commentAlert = wrapper.find(Alert);
-    expect(commentAlert);
-    expect(wrapper.state().showEmptyCommentAlert).toEqual(true);
+    render(
+      <IntlProvider locale="en">
+        <CommentsPane
+          addComment={mockAdd}
+          comments={emptyCommentThread}
+          fetchComments={mockFetch}
+        />
+      </IntlProvider>,
+    );
+    const postCommentButton = screen.getByRole('button', { name: /post/i });
+    fireEvent.click(postCommentButton);
+    waitFor(() => expect(screen.getByRole('alert')).toBeInTheDocument());
   });
 
-  it('displays status alert on error response', () => {
-    const errorCommentThread = Object.assign(emptyCommentThread, { error: 'TestErrorMessage' });
+  it('displays status alert on error response', async () => {
+    const errorCommentThread = { ...emptyCommentThread, error: 'TestErrorMessage' };
 
-    const wrapper = shallow(<CommentsPane
-      comments={errorCommentThread}
-      fetchComments={mockFetch}
-    />);
-
-    const commentAlert = wrapper.find(Alert);
-    expect(commentAlert);
+    render(
+      <IntlProvider locale="en">
+        <CommentsPane
+          comments={errorCommentThread}
+          fetchComments={mockFetch}
+        />
+      </IntlProvider>,
+    );
+    waitFor(() => expect(screen.getByText('TestErrorMessage')).toBeInTheDocument());
   });
 });

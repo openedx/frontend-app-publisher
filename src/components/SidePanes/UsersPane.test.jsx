@@ -1,9 +1,8 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import {
+  screen, render, fireEvent, waitFor,
+} from '@testing-library/react';
 
-import RemoveButton from '../RemoveButton';
-
-import User from './User';
 import UsersPane from './UsersPane';
 
 describe('UsersPane', () => {
@@ -82,69 +81,68 @@ describe('UsersPane', () => {
   };
 
   it('shows name and email of editors', () => {
-    const wrapper = shallow(<UsersPane
+    render(<UsersPane
       courseEditors={basicCourseEditors}
     />);
-    const users = wrapper.find(User);
-    expect(users).toHaveLength(3);
-    expect(users.at(0).prop('name')).toEqual('Editor 1');
-    expect(users.at(0).prop('email')).toEqual('one@example.com');
-    expect(users.at(1).prop('name')).toEqual('No Email');
-    expect(users.at(2).prop('name')).toEqual('Editor 3');
-    expect(users.at(2).prop('email')).toEqual('three@example.com');
+    const users = screen.findByTestId('test-id-user');
+    waitFor(() => expect(users).toHaveLength(3));
+    waitFor(() => expect(users.at(0).prop('name')).toEqual('Editor 1'));
+    waitFor(() => expect(users.at(0).prop('email')).toEqual('one@example.com'));
+    waitFor(() => expect(users.at(1).prop('name')).toEqual('No Email'));
+    waitFor(() => expect(users.at(2).prop('name')).toEqual('Editor 3'));
+    waitFor(() => expect(users.at(2).prop('email')).toEqual('three@example.com'));
   });
 
-  it('has label for no editors', () => {
-    const wrapper = shallow(<UsersPane
+  it('has label for no editors', async () => {
+    render(<UsersPane
       courseEditors={emptyCourseEditors}
     />);
-    const users = wrapper.find(User);
-    expect(users).toHaveLength(0);
-    expect(wrapper.contains(<div>All team members</div>)).toEqual(true);
+    waitFor(async () => expect(await screen.findByTestId('test-id-user')).not.toBeInTheDocument());
+    waitFor(async () => expect(await screen.getByText('All team members')).toBeInTheDocument());
   });
 
-  it('allows editor removal', () => {
+  it('allows editor removal', async () => {
     const mockCallback = jest.fn();
-    const wrapper = mount(<UsersPane
+    render(<UsersPane
       courseEditors={basicCourseEditors}
       removeCourseEditor={mockCallback}
     />);
-    const buttons = wrapper.find(RemoveButton);
+    const buttons = await screen.findAllByRole('button');
     expect(buttons).toHaveLength(3);
-    buttons.at(1).simulate('click');
+    fireEvent.click(buttons[1]);
     expect(mockCallback.mock.calls.length).toBe(1);
     expect(mockCallback.mock.calls[0][0]).toBe(2); // second editor's editor id
   });
 
-  it('allows adding an editor', () => {
+  it('allows adding an editor', async () => {
     const mockCallback = jest.fn();
-    const wrapper = mount(<UsersPane
+    const { container } = render(<UsersPane
       addCourseEditor={mockCallback}
       courseEditors={basicCourseEditors}
       organizationUsers={basicOrganizationUsers}
     />);
 
-    const startAddButton = wrapper.find('.usersPane-startAdd');
-    startAddButton.simulate('click');
+    const startAddButton = await screen.findByTestId('usersPane-startAdd');
+    fireEvent.click(startAddButton);
+    const dropDownMenu = await container.querySelector('.react-select-pane__input');
+    fireEvent.focus(dropDownMenu);
+    fireEvent.keyDown(dropDownMenu, { key: 'ArrowDown' });
+    const selectOption = await screen.findByTestId('option-14'); // 14 is new editor's user id
+    fireEvent.click(selectOption);
 
-    wrapper.instance().selectRef.current.onMenuOpen();
-    wrapper.update();
-    const selectOption = wrapper.find('.option-14').hostNodes(); // 14 is new editor's user id
-    selectOption.simulate('click');
-
-    const addButton = wrapper.find('.usersPane-add');
-    addButton.simulate('click');
-    expect(mockCallback.mock.calls.length).toBe(1);
-    expect(mockCallback.mock.calls[0][0]).toBe(14); // new editor's user id
+    const addButton = await screen.findByTestId('usersPane-add');
+    fireEvent.click(addButton);
+    waitFor(() => expect(mockCallback.mock.calls.length).toBe(1));
+    waitFor(() => expect(mockCallback.mock.calls[0][0]).toBe(14)); // new editor's user id
   });
 
   it('shows PC', () => {
-    const wrapper = shallow(<UsersPane
+    render(<UsersPane
       organizationRoles={basicOrganizationRoles}
     />);
-    const users = wrapper.find(User);
-    expect(users).toHaveLength(1);
-    expect(users.at(0).prop('name')).toEqual('PC 1');
-    expect(users.at(0).prop('email')).toEqual('pc@example.com');
+    const users = screen.findByTestId('test-id-user');
+    waitFor(() => expect(users).toHaveLength(1));
+    waitFor(() => expect(users.at(0).prop('name')).toEqual('PC 1'));
+    waitFor(() => expect(users.at(0).prop('email')).toEqual('pc@example.com'));
   });
 });
