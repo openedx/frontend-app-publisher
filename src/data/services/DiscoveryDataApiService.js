@@ -255,8 +255,8 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().get(url);
   }
 
-   static fetchBulkOperationTask(task_id) {
-    const url = `${discoveryBaseUrl}/bulk_operation_tasks/${task_id}/`;
+  static fetchBulkOperationTask(taskId) {
+    const url = `${discoveryBaseUrl}/bulk_operation_tasks/${taskId}/`;
     return getAuthenticatedHttpClient().get(url);
   }
 }
