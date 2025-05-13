@@ -87,18 +87,15 @@ export default function BulkOperationDetails({ task }) {
           Preview CSV
         </Button>
         <FullscreenModal
-        title="CSV Preview"
-        // className={"csv-preview-modal"}
-        isOpen={isOpen}
-        onClose={close}
-        footerNode={(
-            <ActionRow>
-              <ActionRow.Spacer />
-              <Button variant="tertiary" onClick={close}>Cancel</Button>
-              <Button>Submit</Button>
-            </ActionRow>
-          )}
-          isOverflowVisible={false}
+            title="CSV Preview"
+            isOpen={isOpen}
+            onClose={close}
+            footerNode={(
+                <ActionRow>
+                <ActionRow.Spacer />
+                </ActionRow>
+            )}
+            isOverflowVisible={false}
         >
             <DataTable
             className="bulk-op-table"
