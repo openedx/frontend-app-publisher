@@ -90,11 +90,6 @@ export default function BulkOperationDetails({ task }) {
             title="CSV Preview"
             isOpen={isOpen}
             onClose={close}
-            footerNode={(
-                <ActionRow>
-                <ActionRow.Spacer />
-                </ActionRow>
-            )}
             isOverflowVisible={false}
         >
             <DataTable
