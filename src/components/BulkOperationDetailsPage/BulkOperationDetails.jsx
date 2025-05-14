@@ -43,6 +43,10 @@ const BulkOperationDetails = ({ task }) => {
   const [isOpen, open, close] = useToggle(false);
   const DEFAULT_CSV_PREVIEW_PAGE_SIZE = 5;
 
+  if (!task || Object.keys(task).length === 0) {
+    return <p className="text-info"> No BulkOperationTask found against the given ID. Please check the ID and try again.</p>;
+  }
+
   const handlePreviewCSV = async () => {
     try {
       const { headers, rows } = await parseCSV(task.csv_file);
@@ -69,7 +73,6 @@ const BulkOperationDetails = ({ task }) => {
   });
 
   return (
-
     <div className="container mt-2">
       <h2 className="mb-4">Task Details</h2>
       <p><strong>Task ID:</strong> {task.task_id}</p>
