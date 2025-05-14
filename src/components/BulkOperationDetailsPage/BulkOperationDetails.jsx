@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import moment from 'moment';
 import 'moment-timezone';
 import PropTypes from 'prop-types';
 import {
   Button, DataTable, useToggle, FullscreenModal, Stack,
 } from '@openedx/paragon';
 
+import { formatDateTime } from '../../utils';
 import './styles.scss';
 
 const ImageCell = ({ value }) => (
@@ -24,26 +24,30 @@ ImageCell.defaultProps = {
   value: null,
 };
 
+const parseCSV = async (url) => {
+  const response = await fetch(url);
+  const text = await response.text();
+  const lines = text.trim().split('\n');
+
+  const headers = lines[0].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+  const cleanedHeaders = headers.map((h) => h.replace(/(^"|"$)/g, ''));
+
+  const rows = lines.slice(1).map((line) => line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map((cell) => cell.replace(/(^"|"$)/g, '')));
+
+  return { headers: cleanedHeaders, rows };
+};
+
 const BulkOperationDetails = ({ task }) => {
   const [csvRows, setCsvRows] = useState([]);
   const [csvHeaders, setCsvHeaders] = useState([]);
   const [isOpen, open, close] = useToggle(false);
+  const DEFAULT_CSV_PREVIEW_PAGE_SIZE = 5;
 
   const handlePreviewCSV = async () => {
     try {
-      const response = await fetch(task.csv_file);
-      const text = await response.text();
-      const lines = text.trim().split('\n');
-
-      const headers = lines[0].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-      const cleanedHeaders = headers.map((header) => header.replace(/(^"|"$)/g, ''));
-      const rows = lines
-        .slice(1)
-        .map((line) => line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/));
-      const cleanedRows = rows.map((row) => row.map((cell) => cell.replace(/(^"|"$)/g, '')));
-
-      setCsvHeaders(cleanedHeaders);
-      setCsvRows(cleanedRows);
+      const { headers, rows } = await parseCSV(task.csv_file);
+      setCsvHeaders(headers);
+      setCsvRows(rows);
     } catch (error) {
       console.error('Failed to preview CSV:', error);
     }
@@ -65,28 +69,15 @@ const BulkOperationDetails = ({ task }) => {
   });
 
   return (
+
     <div className="container mt-2">
       <h2 className="mb-4">Task Details</h2>
-      <p>
-        <strong>Task ID:</strong> {task.task_id}
-      </p>
-      <p>
-        <strong>Task type:</strong> {task.task_type}
-      </p>
-      <p>
-        <strong>Uploaded by:</strong> {task.uploaded_by}
-      </p>
-      <p>
-        <strong>Status:</strong> {task.status}
-      </p>
-      <p>
-        <strong>Created:</strong>{' '}
-        {moment.tz(task.created, 'UTC').format('MMM DD, YYYY, hh:mm:ss A')}
-      </p>
-      <p>
-        <strong>Modified:</strong>{' '}
-        {moment.tz(task.modified, 'UTC').format('MMM DD, YYYY, hh:mm:ss A')}
-      </p>
+      <p><strong>Task ID:</strong> {task.task_id}</p>
+      <p><strong>Task type:</strong> {task.task_type}</p>
+      <p><strong>Uploaded by:</strong> {task.uploaded_by}</p>
+      <p><strong>Status:</strong> {task.status}</p>
+      <p><strong>Created:</strong> {task && formatDateTime(task.created)}</p>
+      <p><strong>Modified:</strong> {task && formatDateTime(task.modified)}</p>
 
       <Stack direction="horizontal" gap={3} className="mb-4 mt-4">
         <a
@@ -120,7 +111,7 @@ const BulkOperationDetails = ({ task }) => {
               acc[csvHeaders[index]] = value;
               return acc;
             }, {}))}
-            defaultPageSize={5}
+            defaultPageSize={DEFAULT_CSV_PREVIEW_PAGE_SIZE}
             itemCount={csvRows.length}
             showPagination={false}
             data-testid="csv-table"

@@ -5,14 +5,14 @@ import { Container } from '@openedx/paragon';
 import BulkOperationDetails from './BulkOperationDetails';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 
-const BulkOperationDetailsPage = () => {
+const BulkOperationTaskDetailsPage = () => {
   const { taskId } = useParams();
-  const [bulkOperationDetails, setBulkOperationDetails] = React.useState({});
+  const [task, setTask] = React.useState({});
 
   useEffect(() => {
     DiscoveryDataApiService.fetchBulkOperationTask(taskId)
       .then((response) => {
-        setBulkOperationDetails(response.data);
+        setTask(response.data);
       })
       .catch((error) => {
         console.error('Error fetching bulk operation details:', error);
@@ -21,9 +21,13 @@ const BulkOperationDetailsPage = () => {
 
   return (
     <Container className="py-3" size="lg">
-      <BulkOperationDetails task={bulkOperationDetails} />
+      {task ? (<BulkOperationDetails task={task} />) : (
+        <div className="text-center">
+          <p>Loading...</p>
+        </div>
+      )}
     </Container>
   );
 };
 
-export default BulkOperationDetailsPage;
+export default BulkOperationTaskDetailsPage;
