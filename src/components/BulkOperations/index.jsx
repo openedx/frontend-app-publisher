@@ -1,60 +1,46 @@
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Select from 'react-select';
-import qs from 'query-string';
-import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { getConfig } from '@edx/frontend-platform';
-import { SearchField } from '@openedx/paragon';
-import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
+import  { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import Papa from 'papaparse';
 
-import LoadingSpinner from '../LoadingSpinner';
-import TableContainer from '../../containers/TableContainer';
-import ButtonToolbar from '../ButtonToolbar';
-import PageContainer from '../PageContainer';
-import { formatDate, getPageOptionsFromUrl, updateUrl } from '../../utils';
-import Pill from '../Pill';
-import { PUBLISHED, REVIEWED, ARCHIVED } from '../../data/constants';
-
 import { SelectMenu, MenuItem, Dropzone, DataTable, Alert} from '@openedx/paragon';
-
-import classNames from 'classnames';
 import Collapsible from '../Collapsible'
-import RenderSelectField from '../RenderSelectField';
+import LoadingSpinner from '../LoadingSpinner';
+import { formatDate } from '../../utils';
+import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
+
 import './BulkOperations.scss';
+
+const availableOperations = {
+    "course_create": "Bulk Create",
+    "course_partial_update": "Bulk Course Update",
+    "course_run_partial_update": "Bulk CourseRun Update",
+    "course_rerun": "Bulk Rerun"
+}
 
 
 function BulkOperations(){
-
-    const availableOperations = {
-        "course_create": "Bulk Create",
-        "course_partial_update": "Bulk Course Update",
-        "course_run_partial_update": "Bulk CourseRun Update",
-        "course_rerun": "Bulk Rerun"
-    }
-
-    const [bulkOperationId, setBulkOperationId] = React.useState(null);
-
+    const [bulkOperationId, setBulkOperationId] = useState(null);
     const [fileContent, setFileContent] = useState(null);
-    const [fileName, setFileName] = useState(null);
-    const [fileSize, setFileSize] = useState(null);
     const [file, setFile] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [submitSuccess, setSubmitSuccess] = useState(null);
     const [historicalRecords, setHistoricalRecords] = useState(null);
 
+    function filteredHistoricalRecords() {
+        if (historicalRecords == null){
+            return []
+        }
+        return historicalRecords.filter(rec => !bulkOperationId || rec.task_type === bulkOperationId)
+    }
+
     function handleUploadNew(){
         setFileContent(null);
-        setFileName(null);
-        setFileSize(null);
         setFile(null);
     }
 
     function handleFileUpload({fileData}){
         let file = fileData.get('file');
-        file.text().then(content => {setFile(file); setFileContent(content); setFileName(file.name); setFileSize(file.size)});
+        file.text().then(content => {setFile(file); setFileContent(content);});
     }
 
     async function handleSubmit(){
@@ -70,84 +56,20 @@ function BulkOperations(){
         setIsLoading(false);
     }
 
-    function getDropZone(){
-        return <Dropzone
-            onProcessUpload={handleFileUpload}
-            onUploadProgress={(percent) => console.log(percent)}
-        />
-
-    }
-
-    function getTable(){        
-        let parsed = Papa.parse(fileContent, {
-            header: true,
-            skipEmptyLines: true,
-        });
-
-        console.log(parsed, 'WOOHOO')
-        let columns= parsed.meta.fields.map(fieldName => ({Header: fieldName, accessor: fieldName, width: 400, size:400}))
-        
-        
-        return ( 
-        <>
-        <div data-testid="file-preview" className='data-container-excel'>
-            <div class="row justify-content-between border-bottom">
-                <div class="col-auto">
-                    <span className='font-weight-bold'>{fileName}</span><br/>
-                    {parsed.data.length} rows - {fileSize} B
-                </div>
-                <div class="col-auto">
-                <button data-testid="process-file" className="btn btn-outline-primary mr-2" onClick={handleSubmit}>
-                    Process File
-                </button>
-                <button data-testid="upload-new" className="btn btn-outline-primary" onClick={handleUploadNew}>
-                    Upload New File
-                </button>
-
-                </div>
-            </div>
-            
-            <div className='mt-3'>
-            <DataTable
-                isPaginated
-                initialState={{
-                pageSize: 2,
-                }}
-                // defaultColumnValues={{ Filter: TextFilter }}
-                itemCount={parsed.data.length}
-                data={parsed.data}
-                columns={columns}
-            >
-                {/* <DataTable.TableControlBar /> */}
-                <DataTable.Table />
-                <DataTable.EmptyTable content="No results found" />
-                <DataTable.TableFooter />
-            </DataTable>
-            </div>
-        </div>
-        </>
-        )
-    }
-
     async function fetchBulkOpTasks(){
         const response = await DiscoveryDataApiService.fetchBulkOperations();
         setHistoricalRecords(response.data.results);
     }
 
+    function getDropZone(){
+        return <Dropzone
+            onProcessUpload={handleFileUpload}
+        />
+    }
+
     function getCollapsibleTitle() {
         return <span className='font-weight-bold'>Processing History</span>
     }
-
-    function filteredHistoricalRecords() {
-        if (historicalRecords == null){
-            return []
-        }
-        return historicalRecords.filter(rec => !bulkOperationId || rec.task_type == bulkOperationId)
-    }
-
-    useEffect(() => {
-        fetchBulkOpTasks().then(() => setIsLoading(false));
-    }, [])
 
     function getAlert() {
         let variant, message;
@@ -166,6 +88,56 @@ function BulkOperations(){
 
         return <Alert variant={variant} dismissible onClick={() => {setSubmitSuccess(null)}}>{message}</Alert>
     }
+
+    function getTable(){        
+        let parsed = Papa.parse(fileContent, {
+            header: true,
+            skipEmptyLines: true,
+        });
+        let columns= parsed.meta.fields.map(fieldName => ({Header: fieldName, accessor: fieldName, width: 400, size:400}))
+
+        return ( 
+        <>
+        <div data-testid="file-preview" className='data-container-excel'>
+            <div class="row justify-content-between border-bottom">
+                <div class="col-auto">
+                    <span className='font-weight-bold'>{file.name}</span><br/>
+                    {parsed.data.length} rows - {file.size} B
+                </div>
+                <div class="col-auto">
+                <button data-testid="process-file" className="btn btn-outline-primary mr-2" onClick={handleSubmit}>
+                    Process File
+                </button>
+                <button data-testid="upload-new" className="btn btn-outline-primary" onClick={handleUploadNew}>
+                    Upload New File
+                </button>
+                </div>
+            </div>
+            
+            <div className='mt-3'>
+            <DataTable
+                isPaginated
+                initialState={{
+                pageSize: 10,
+                }}
+                itemCount={parsed.data.length}
+                data={parsed.data}
+                columns={columns}
+            >
+                <DataTable.Table />
+                <DataTable.EmptyTable content="No results found" />
+                <DataTable.TableFooter />
+            </DataTable>
+            </div>
+        </div>
+        </>
+        )
+    }
+
+    useEffect(() => {
+        fetchBulkOpTasks().then(() => setIsLoading(false));
+    }, [])
+
 
     if (isLoading){
         return <div className='bulk-operations-spinner'>
@@ -211,14 +183,11 @@ function BulkOperations(){
                 })}
             </Collapsible>
             
-            
             <div className='my-3 py-3 px-3 border'> 
                 {
                     fileContent ? getTable() : getDropZone()
                 }
             </div>
-            
-
         </div>
 }
 

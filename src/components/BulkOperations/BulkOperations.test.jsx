@@ -1,11 +1,9 @@
 import React from 'react';
-import '@testing-library/jest-dom';
 import {
   render, screen, fireEvent, within
 } from '@testing-library/react';
-import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import BulkOperations from './index';
-
+import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 
 const mockedHistoricalTasks = [
     {
@@ -36,19 +34,18 @@ const createdTask = {
 }
 
 describe('BulkOperationsPage', () => {
-  beforeEach(() => {
+  beforeAll(() => {
     const get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations')
     const post = jest.spyOn(DiscoveryDataApiService, 'createBulkOperation')
     get.mockResolvedValue({ data: { results: mockedHistoricalTasks} });
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
+  afterAll(() => {
+    jest.restoreAllMocks();
   });
 
   it('initial render', async () => {
     render(<BulkOperations />);
-
     const collapsible = screen.getByText('Processing History')
     expect(collapsible).toBeInTheDocument()
     fireEvent.click(collapsible)
@@ -61,7 +58,6 @@ describe('BulkOperationsPage', () => {
 
   it('filters history based on chosen operation', async () => {
     render(<BulkOperations />);
-
     const button = screen.getByRole('button', {name: /Choose a Bulk Operation/i})
     fireEvent.click(button)
     const createButton = screen.getByRole('button', {name: 'Bulk Create'})
@@ -74,9 +70,7 @@ describe('BulkOperationsPage', () => {
 
   it('file upload', async () => {
     render(<BulkOperations />);
-    
     const dropZone = screen.getByTestId('dropzone-container')
-
     fireEvent.drop(dropZone, {
         dataTransfer: {
           files: [new File(['abc\n123\n456\n789'], 'hello.csv', {type: 'text/csv'})],
@@ -88,10 +82,8 @@ describe('BulkOperationsPage', () => {
     expect(screen.getByText('hello.csv')).toBeInTheDocument()
     expect(screen.getByText('3 rows')).toBeInTheDocument()
 
-
     const uploadNewFile = screen.getByTestId('upload-new')
     fireEvent.click(uploadNewFile)
-
     expect(screen.queryByTestId('dropzone-container')).toBeInTheDocument()
     expect(screen.queryByTestId('file-preview')).not.toBeInTheDocument()
 
@@ -110,14 +102,12 @@ describe('BulkOperationsPage', () => {
     }
 
     render(<BulkOperations />);
-
     const button = screen.getByRole('button', {name: /Choose a Bulk Operation/i})
     fireEvent.click(button)
     const createButton = screen.getByRole('button', {name: 'Bulk Create'})
     fireEvent.click(createButton)
 
     const dropZone = screen.getByTestId('dropzone-container')
-
     fireEvent.drop(dropZone, {
         dataTransfer: {
           files: [new File(['abc\n123\n456\n789'], 'hello.csv', {type: 'text/csv'})],
@@ -128,7 +118,6 @@ describe('BulkOperationsPage', () => {
     fireEvent.click(processButton);
 
     const alert = screen.getByRole('alert')
-
     expect(within(alert).getByText(message)).toBeInTheDocument()
 
     // Success: the filename is on the csv preview as well as the historical records section
