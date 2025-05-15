@@ -26,12 +26,19 @@ const mockedHistoricalTasks = [
     }
 ];
 
+const createdTask = {
+    ...mockedHistoricalTasks[0],
+    id: 3,
+    status: 'pending',
+    csv_file: 'https://foo.com/hello.csv'
+}
 
 describe('BulkOperationsPage', () => {
   beforeEach(() => {
     const get = jest.spyOn(axios, 'get')
     const post = jest.spyOn(axios, 'post')
     const user = userEvent.setup()
+    get.mockResolvedValue({ data: mockedHistoricalTasks });
   });
 
   afterEach(() => {
@@ -89,7 +96,18 @@ describe('BulkOperationsPage', () => {
 
   });
 
-  it('submission success', async () => {
+  it.each([
+    ['Successfully submitted task for bulk operation', 2, true],
+    ['Failed to submit task for processing', 1, false]
+  ])('submission', async (message, fileNameInstances, isSuccess) => {
+
+    if (isSuccess){
+        post.mockResolvedValue({ response: { status: 201, data: createdTask } });
+    }
+    else {
+        post.mockRejectedValue({response: {status: 500}});
+    }
+
     render(<BulkOperations />);
     
     const dropZone = screen.getByTestId('dropzone-container')
@@ -105,30 +123,11 @@ describe('BulkOperationsPage', () => {
 
     const alert = screen.getByRole('alert')
 
-    expect(within(alert).getByText('Successfully submitted task for bulk operation')).toBeInTheDocument()
-    expect(screen.getAllByText('hello.csv')).toHaveLength(2)
+    expect(within(alert).getByText(message)).toBeInTheDocument()
 
-
-  });
-
-  it('submission failure', async () => {
-    render(<BulkOperations />);
-    
-    const dropZone = screen.getByTestId('dropzone-container')
-
-    fireEvent.drop(dropZone, {
-        dataTransfer: {
-          files: [new File(['abc\n123\n456\n789'], 'hello.csv', {type: 'text/csv'})],
-        },
-    })
-
-    const processButton = screen.getByTestId('process-file')
-    await user.click(processButton);
-
-    const alert = screen.getByRole('alert')
-
-    expect(within(alert).getByText('Failed to submit task for processing')).toBeInTheDocument()
-    expect(screen.getAllByText('hello.csv')).toHaveLength(1)
+    // Success: the filename is on the csv preview as well as the historical records section
+    // Failure: the filename is only on the csv preview section 
+    expect(screen.getAllByText('hello.csv')).toHaveLength(fileNameInstances)
 
   });
 
