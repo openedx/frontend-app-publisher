@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import {
-  render, screen, fireEvent, waitFor, within, userEvent
+  render, screen, fireEvent, within
 } from '@testing-library/react';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import BulkOperations from './index';
@@ -39,7 +39,6 @@ describe('BulkOperationsPage', () => {
   beforeEach(() => {
     const get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations')
     const post = jest.spyOn(DiscoveryDataApiService, 'createBulkOperation')
-    const user = userEvent.setup()
     get.mockResolvedValue({ data: { results: mockedHistoricalTasks} });
   });
 
@@ -52,7 +51,7 @@ describe('BulkOperationsPage', () => {
 
     const collapsible = screen.getByText('Processing History')
     expect(collapsible).toBeInTheDocument()
-    await user.click(collapsible)
+    fireEvent.click(collapsible)
 
     expect(screen.getByText('bar.csv')).toBeInTheDocument()
     expect(screen.getByText('baz.csv')).toBeInTheDocument()
@@ -64,9 +63,9 @@ describe('BulkOperationsPage', () => {
     render(<BulkOperations />);
 
     const button = screen.getByRole('button', {name: /Choose a Bulk Operation/i})
-    await user.click(button)
+    fireEvent.click(button)
     const createButton = screen.getByRole('button', {name: 'Bulk Create'})
-    await user.click(createButton)
+    fireEvent.click(createButton)
 
     expect(screen.queryByText('bar.csv')).toBeInTheDocument()
     expect(screen.queryByText('baz.csv')).not.toBeInTheDocument()
@@ -91,7 +90,7 @@ describe('BulkOperationsPage', () => {
 
 
     const uploadNewFile = screen.getByTestId('upload-new')
-    await user.click(uploadNewFile)
+    fireEvent.click(uploadNewFile)
 
     expect(screen.queryByTestId('dropzone-container')).toBeInTheDocument()
     expect(screen.queryByTestId('file-preview')).not.toBeInTheDocument()
@@ -113,9 +112,9 @@ describe('BulkOperationsPage', () => {
     render(<BulkOperations />);
 
     const button = screen.getByRole('button', {name: /Choose a Bulk Operation/i})
-    await user.click(button)
+    fireEvent.click(button)
     const createButton = screen.getByRole('button', {name: 'Bulk Create'})
-    await user.click(createButton)
+    fireEvent.click(createButton)
 
     const dropZone = screen.getByTestId('dropzone-container')
 
@@ -126,7 +125,7 @@ describe('BulkOperationsPage', () => {
     })
 
     const processButton = screen.getByTestId('process-file')
-    await user.click(processButton);
+    fireEvent.click(processButton);
 
     const alert = screen.getByRole('alert')
 
