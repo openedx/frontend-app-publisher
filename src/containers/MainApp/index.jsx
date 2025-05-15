@@ -6,11 +6,11 @@ import Footer from '@edx/frontend-component-footer';
 
 import '../../sass/App.scss';
 import Header from '../Header';
+import BulkOperations from '../../components/BulkOperations';
 import CourseDashboard from '../CourseDashboard';
 import CourseRunRedirectComponent from '../../components/CourseRunRedirect';
 import CreateCourse from '../CreateCourse';
 import CreateCourseRun from '../CreateCourseRun';
-import BulkOperations from '../BulkOperations'
 import CreateStaffer from '../CreateStaffer';
 import EditStaffer from '../EditStaffer';
 import CreateCollaborator from '../CreateCollaborator';

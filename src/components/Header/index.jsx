@@ -23,10 +23,11 @@ const Header = ({ darkModeOn, toggleDarkMode }) => {
   const querystringParams = qs.parse(location.search);
   const { pathname } = location;
   const allowDarkModeToggle = querystringParams.bananas;
+  const disabledLinkClass = 'disabled-link text-gray-300';
 
   function disableLink(courseType) {
     const courseTypeFromURL = querystringParams.course_type ? querystringParams.course_type : '';
-    return (courseTypeFromURL === courseType && pathname === '/') ? 'disabled-link text-gray-300' : '';
+    return (courseTypeFromURL === courseType && pathname === '/') ? disabledLinkClass : '';
   }
 
   return (
@@ -45,7 +46,7 @@ const Header = ({ darkModeOn, toggleDarkMode }) => {
             <Link to="/?course_type=executive-education-2u" className={disableLink('executive-education-2u')}>Executive Education</Link>
           </div>
           <div className="col-auto justify-content-start">
-            <Link to="/bulk-ops" className={disableLink('bulk-ops')}>Bulk Operations</Link>
+            <Link to="/bulk-ops" className={pathname === `/bulk-ops` ? disabledLinkClass: ''}>Bulk Operations</Link>
           </div>
 
           {allowDarkModeToggle

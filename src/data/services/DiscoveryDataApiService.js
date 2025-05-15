@@ -212,11 +212,8 @@ class DiscoveryDataApiService {
 
   static createBulkOperation(file, task_type) {
     const url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
-
     const formData = new FormData();
     formData.append('csv_file', file);
-
-    // Hard-code for testign
     formData.append('task_type', task_type);
     
     return getAuthenticatedHttpClient().post(url, formData, {

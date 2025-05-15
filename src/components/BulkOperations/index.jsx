@@ -168,7 +168,7 @@ function BulkOperations(){
     }
 
     if (isLoading){
-        return <div className='spinner'>
+        return <div className='bulk-operations-spinner'>
             <LoadingSpinner/>
         </div> 
     }
