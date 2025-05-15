@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'moment-timezone';
 import PropTypes from 'prop-types';
 import {
@@ -41,10 +41,30 @@ const BulkOperationDetails = ({ task }) => {
   const [csvRows, setCsvRows] = useState([]);
   const [csvHeaders, setCsvHeaders] = useState([]);
   const [isOpen, open, close] = useToggle(false);
+  const [showNotFound, setShowNotFound] = useState(false);
+  const [csvPreviewError, setCsvPreviewError] = useState(null);
   const DEFAULT_CSV_PREVIEW_PAGE_SIZE = 5;
 
-  if (!task || Object.keys(task).length === 0) {
-    return <p className="text-info"> No BulkOperationTask found against the given ID. Please check the ID and try again.</p>;
+  useEffect(() => {
+    const debounceDelay = 500;
+
+    const timeout = setTimeout(() => {
+      if (!task || Object.keys(task).length === 0) {
+        setShowNotFound(true);
+      } else {
+        setShowNotFound(false);
+      }
+    }, debounceDelay);
+
+    return () => clearTimeout(timeout);
+  }, [task]);
+
+  if (showNotFound) {
+    return (
+      <p className="text-info">
+        No BulkOperationTask found against the given ID. Please check the ID and try again.
+      </p>
+    );
   }
 
   const handlePreviewCSV = async () => {
@@ -54,6 +74,7 @@ const BulkOperationDetails = ({ task }) => {
       setCsvRows(rows);
     } catch (error) {
       console.error('Failed to preview CSV:', error);
+      setCsvPreviewError(`Failed to preview CSV: ${error.message}`);
     }
   };
 
@@ -107,19 +128,25 @@ const BulkOperationDetails = ({ task }) => {
           onClose={close}
           isOverflowVisible={false}
         >
-          <DataTable
-            className="bulk-op-table"
-            columns={getDataTableColumns(csvHeaders)}
-            data={csvRows.map((row) => row.reduce((acc, value, index) => {
-              acc[csvHeaders[index]] = value;
-              return acc;
-            }, {}))}
-            defaultPageSize={DEFAULT_CSV_PREVIEW_PAGE_SIZE}
-            itemCount={csvRows.length}
-            showPagination={false}
-            data-testid="csv-table"
-          />
-
+          <div className="csv-preview-modal">
+            {csvPreviewError && (
+              <div className="alert alert-danger" role="alert">
+                {csvPreviewError}
+              </div>
+            )}
+            <DataTable
+              className="bulk-op-table"
+              columns={getDataTableColumns(csvHeaders)}
+              data={csvRows.map((row) => row.reduce((accumulator, value, index) => {
+                accumulator[csvHeaders[index]] = value;
+                return accumulator;
+              }, {}))}
+              defaultPageSize={DEFAULT_CSV_PREVIEW_PAGE_SIZE}
+              itemCount={csvRows.length}
+              showPagination={false}
+              data-testid="csv-table"
+            />
+          </div>
         </FullscreenModal>
       </Stack>
 
