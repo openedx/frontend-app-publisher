@@ -1,8 +1,14 @@
+.spinner {
+    min-height: 65vh;
+}
+
 .data-container-excel {
 
     $cell-widths: 225px;
     .pgn__data-table-layout-wrapper {
         display: block;
+        overflow-y: visible;
+        overflow-x: visible;
     }
 
     tr {
@@ -19,4 +25,5 @@
             white-space: nowrap;
         }
     }
+
 }

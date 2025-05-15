@@ -217,7 +217,7 @@ class DiscoveryDataApiService {
     formData.append('csv_file', file);
 
     // Hard-code for testign
-    formData.append('task_type', 'course_create');
+    formData.append('task_type', task_type);
     
     return getAuthenticatedHttpClient().post(url, formData, {
       headers: {
