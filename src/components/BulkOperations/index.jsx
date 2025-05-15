@@ -62,6 +62,7 @@ function BulkOperations(){
         try {
             const res = await DiscoveryDataApiService.createBulkOperation(file, bulkOperationId);
             setSubmitSuccess(true);
+            setHistoricalRecords([res.data,...historicalRecords])
         }
         catch (e) {
             setSubmitSuccess(false);
@@ -89,17 +90,17 @@ function BulkOperations(){
         
         return ( 
         <>
-        <div className='data-container-excel'>
+        <div data-testid="file-preview" className='data-container-excel'>
             <div class="row justify-content-between border-bottom">
                 <div class="col-auto">
                     <span className='font-weight-bold'>{fileName}</span><br/>
                     {parsed.data.length} rows - {fileSize} B
                 </div>
                 <div class="col-auto">
-                <button className="btn btn-outline-primary mr-2" onClick={handleSubmit}>
+                <button data-testid="process-file" className="btn btn-outline-primary mr-2" onClick={handleSubmit}>
                     Process File
                 </button>
-                <button className="btn btn-outline-primary" onClick={handleUploadNew}>
+                <button data-testid="upload-new" className="btn btn-outline-primary" onClick={handleUploadNew}>
                     Upload New File
                 </button>
 
@@ -177,7 +178,7 @@ function BulkOperations(){
             <SelectMenu className="mb-3" defaultMessage="Choose a Bulk Operation">
                 {
                     Object.entries(availableOperations).map(([slug, title]) => (
-                        <MenuItem actionid={slug} onClick={e => setBulkOperationId(e.currentTarget.getAttribute("actionid"))}>
+                        <MenuItem actionid={slug} defaultSelected={slug === bulkOperationId} onClick={e => setBulkOperationId(e.currentTarget.getAttribute("actionid"))}>
                             {title}
                         </MenuItem>
                     ))
