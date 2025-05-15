@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import qs from 'query-string';
@@ -8,6 +8,7 @@ import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { getConfig } from '@edx/frontend-platform';
 import { SearchField } from '@openedx/paragon';
 
+import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import Papa from 'papaparse';
 
 import TableContainer from '../../containers/TableContainer';
@@ -33,21 +34,25 @@ function BulkOperations(){
     const [fileContent, setFileContent] = useState(null);
     const [fileName, setFileName] = useState(null);
     const [fileSize, setFileSize] = useState(null);
+    const [file, setFile] = useState(null);
 
-    const dummyRecords = [
-        {success: 123, total: 500, status: 'Success', fileName: 'foo.csv', date: '2022/04/03'},
-        {success: 123, total: 500, status: 'Failure', fileName: 'bar.csv', date: '2022/04/03'}
-    ]
+    const [historicalRecords, setHistoricalRecords] = useState(null);
 
     function handleUploadNew(){
         setFileContent(null);
         setFileName(null);
         setFileSize(null);
+        setFile(null);
     }
 
     function handleFileUpload({fileData}){
         let file = fileData.get('file');
-        file.text().then(content => {setFileContent(content); setFileName(file.name); setFileSize(file.size)});
+        file.text().then(content => {setFile(file); setFileContent(content); setFileName(file.name); setFileSize(file.size)});
+    }
+
+    async function handleSubmit(){
+        const res = await DiscoveryDataApiService.createBulkOperation(file, bulkOperationId);
+        // debugger;
     }
 
     function getDropZone(){
@@ -77,7 +82,7 @@ function BulkOperations(){
                     {parsed.data.length} rows - {fileSize} Bytes
                 </div>
                 <div class="col-auto">
-                <button className="btn btn-outline-primary">
+                <button className="btn btn-outline-primary" onClick={handleSubmit}>
                     Process File
                 </button>
                 <button className="btn btn-outline-primary" onClick={handleUploadNew}>
@@ -106,7 +111,14 @@ function BulkOperations(){
         )
     }
 
+    async function fetchBulkOpTasks(){
+        const response = await DiscoveryDataApiService.fetchBulkOperations();
+        setHistoricalRecords(response.data.results);
+    }
 
+    useEffect(() => {
+        fetchBulkOpTasks();
+    }, [])
 
     return <>
             <SelectMenu defaultMessage="Choose a Bulk Operation">
@@ -124,20 +136,20 @@ function BulkOperations(){
             </h3>
 
             <Collapsible title="Show historical records">
-                {dummyRecords.map(rec => {
+                {historicalRecords && historicalRecords.map(rec => {
                     return (
                     <>
                     <div class="row justify-content-between">
                         <div class="col-auto">
-                            {rec.fileName} (details)<br/>
-                            {rec.date}
+                            {rec.csv_file} (details)<br/>
+                            {rec.created}
                         </div>
                         <div class="col-auto">
                             <span className={classNames(
                                 {'badge': true, 'badge-danger': rec.status=='Failure', 'badge-success': rec.status == 'Success'})}>
                                     {rec.status}
                             </span><br/>
-                            {rec.total} / {rec.success} records
+                            {45} / {134} records
                         </div>
                     </div>
                     <hr/>

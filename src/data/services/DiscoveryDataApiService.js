@@ -205,6 +205,27 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().get(url);
   }
 
+  static fetchBulkOperations() {
+    const url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
+    return getAuthenticatedHttpClient().get(url);
+  }
+
+  static createBulkOperation(file, task_type) {
+    const url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
+
+    const formData = new FormData();
+    formData.append('csv_file', file);
+
+    // Hard-code for testign
+    formData.append('task_type', 'course_create');
+    
+    return getAuthenticatedHttpClient().post(url, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })    
+  }
+
   static fetchCourseTags(q = '', limit = 20) {
     const url = `${process.env.DISCOVERY_API_BASE_URL}/taggit_autosuggest/list/taggit.tag/`;
     const queryParams = {

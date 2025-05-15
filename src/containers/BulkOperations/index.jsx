@@ -19,3 +19,4 @@ import BulkOperations from '../../components/BulkOperations';
 // )(withLocation(withNavigate(CourseTable)));
 
 export default BulkOperations;
+ 
