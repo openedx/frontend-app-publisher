@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import 'moment-timezone';
 import PropTypes from 'prop-types';
 import {
@@ -93,6 +93,23 @@ const BulkOperationDetails = ({ task }) => {
     return column;
   });
 
+  const columns = useMemo(() => { // eslint-disable-line react-hooks/rules-of-hooks
+    if (!csvHeaders || csvHeaders.length === 0) {
+      return [];
+    }
+    return getDataTableColumns(csvHeaders);
+  }, [csvHeaders]);
+
+  const data = useMemo(() => { // eslint-disable-line react-hooks/rules-of-hooks
+    if (!csvHeaders || csvHeaders.length === 0 || !csvRows || csvRows.length === 0) {
+      return [];
+    }
+    return csvRows.map((row) => row.reduce((accumulator, value, index) => {
+      accumulator[csvHeaders[index]] = value;
+      return accumulator;
+    }, {}));
+  }, [csvRows, csvHeaders]);
+
   return (
     <div className="container mt-2">
       <h2 className="mb-4">Task Details</h2>
@@ -136,11 +153,8 @@ const BulkOperationDetails = ({ task }) => {
             )}
             <DataTable
               className="bulk-op-table"
-              columns={getDataTableColumns(csvHeaders)}
-              data={csvRows.map((row) => row.reduce((accumulator, value, index) => {
-                accumulator[csvHeaders[index]] = value;
-                return accumulator;
-              }, {}))}
+              columns={columns}
+              data={data}
               defaultPageSize={DEFAULT_CSV_PREVIEW_PAGE_SIZE}
               itemCount={csvRows.length}
               showPagination={false}

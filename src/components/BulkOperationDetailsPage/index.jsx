@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container } from '@openedx/paragon';
 
 import BulkOperationDetails from './BulkOperationDetails';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
+import LoadingSpinner from '../LoadingSpinner';
 
 const BulkOperationTaskDetailsPage = () => {
   const { taskId } = useParams();
-  const [task, setTask] = React.useState({});
+  const [task, setTask] = useState(null);
 
   useEffect(() => {
     DiscoveryDataApiService.fetchBulkOperationTask(taskId)
@@ -22,8 +23,12 @@ const BulkOperationTaskDetailsPage = () => {
   return (
     <Container className="py-3" size="lg">
       {task ? (<BulkOperationDetails task={task} />) : (
-        <div className="text-center">
-          <p>Loading...</p>
+        <div>
+          <LoadingSpinner
+            className="text-center"
+            size="lg"
+            style={{ marginTop: '20px' }}
+          />
         </div>
       )}
     </Container>

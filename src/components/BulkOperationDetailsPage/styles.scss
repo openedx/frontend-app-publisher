@@ -1,6 +1,9 @@
-bulk-op-table {
-  .pgn__data-table {
-    $cell-widths: 200px;
+.csv-preview-modal {
+
+    $cell-widths: 220px;
+    .pgn__data-table-layout-wrapper {
+        display: block;
+    }
 
     tr {
         th {
@@ -12,11 +15,10 @@ bulk-op-table {
             border: 1px solid black;
             min-width: $cell-widths;
             max-width: $cell-widths;
-            text-overflow: ellipsis !important;
+            text-overflow: ellipsis;
             white-space: nowrap;
         }
     }
-  }
 }
 
 .pgn__modal-header {
