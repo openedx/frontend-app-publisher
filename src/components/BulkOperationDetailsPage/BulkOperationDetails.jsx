@@ -45,6 +45,20 @@ const BulkOperationDetails = ({ task }) => {
   const [csvPreviewError, setCsvPreviewError] = useState(null);
   const DEFAULT_CSV_PREVIEW_PAGE_SIZE = 5;
 
+  const taskInfoRows = [
+    { key: 'Task ID', value: task.task_id },
+    { key: 'Task type', value: task.task_type },
+    { key: 'Uploaded by', value: task.uploaded_by },
+    { key: 'Status', value: task.status },
+    { key: 'Created', value: formatDateTime(task.created) },
+    { key: 'Modified', value: formatDateTime(task.modified) },
+  ];
+
+  const taskInfoColumns = [
+    { Header: 'Field', accessor: 'key' },
+    { Header: 'Value', accessor: 'value' },
+  ];
+
   useEffect(() => {
     const debounceDelay = 500;
 
@@ -113,12 +127,19 @@ const BulkOperationDetails = ({ task }) => {
   return (
     <div className="container mt-2">
       <h2 className="mb-4">Task Details</h2>
-      <p><strong>Task ID:</strong> {task.task_id}</p>
+      <div className="bulk-op-details-table-container">
+        <DataTable
+          columns={taskInfoColumns}
+          data={taskInfoRows}
+          showPagination={false}
+        />
+      </div>
+      {/* <p><strong>Task ID:</strong> {task.task_id}</p>
       <p><strong>Task type:</strong> {task.task_type}</p>
       <p><strong>Uploaded by:</strong> {task.uploaded_by}</p>
       <p><strong>Status:</strong> {task.status}</p>
       <p><strong>Created:</strong> {task && formatDateTime(task.created)}</p>
-      <p><strong>Modified:</strong> {task && formatDateTime(task.modified)}</p>
+      <p><strong>Modified:</strong> {task && formatDateTime(task.modified)}</p> */}
 
       <Stack direction="horizontal" gap={3} className="mb-4 mt-4">
         <a

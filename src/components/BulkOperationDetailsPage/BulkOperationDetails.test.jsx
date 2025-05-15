@@ -1,8 +1,10 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import {
-  render, screen, fireEvent, waitFor, within,
+  render, screen, fireEvent, waitFor,
 } from '@testing-library/react';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
+
 import BulkOperationDetails from './BulkOperationDetails';
 
 const mockTask = {
@@ -43,18 +45,39 @@ describe('BulkOperationDetails', () => {
   });
 
   it('renders task details correctly', () => {
-    render(<BulkOperationDetails task={mockTask} />);
-    const taskIdElement = screen.getByText('Task ID:', { selector: 'strong' }).closest('p');
-    expect(within(taskIdElement).getByText('123')).toBeInTheDocument();
-    expect(within(screen.getByText('Task type:', { selector: 'strong' }).closest('p')).getByText('course_create')).toBeInTheDocument();
-    expect(within(screen.getByText('Uploaded by:', { selector: 'strong' }).closest('p')).getByText('user@example.com')).toBeInTheDocument();
-    expect(within(screen.getByText('Status:', { selector: 'strong' }).closest('p')).getByText('completed')).toBeInTheDocument();
-    expect(within(screen.getByText('Created:', { selector: 'strong' }).closest('p')).getByText('Jan 01, 2023, 12:00:00 AM')).toBeInTheDocument();
-    expect(within(screen.getByText('Modified:', { selector: 'strong' }).closest('p')).getByText('Jan 02, 2023, 12:00:00 AM')).toBeInTheDocument();
+    render(
+      <IntlProvider locale="en">
+        <BulkOperationDetails task={mockTask} />
+      </IntlProvider>,
+    );
+    expect(screen.getByRole('columnheader', { name: 'Field' })).toBeInTheDocument();
+    expect(screen.getByRole('columnheader', { name: 'Value' })).toBeInTheDocument();
+
+    expect(screen.getByRole('cell', { name: 'Task ID' })).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: '123' })).toBeInTheDocument();
+
+    expect(screen.getByRole('cell', { name: 'Task type' })).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: 'course_create' })).toBeInTheDocument();
+
+    expect(screen.getByRole('cell', { name: 'Uploaded by' })).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: 'user@example.com' })).toBeInTheDocument();
+
+    expect(screen.getByRole('cell', { name: 'Status' })).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: 'completed' })).toBeInTheDocument();
+
+    expect(screen.getByRole('cell', { name: 'Created' })).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: 'Jan 01, 2023, 12:00:00 AM' })).toBeInTheDocument();
+
+    expect(screen.getByRole('cell', { name: 'Modified' })).toBeInTheDocument();
+    expect(screen.getByRole('cell', { name: 'Jan 02, 2023, 12:00:00 AM' })).toBeInTheDocument();
   });
 
   it('renders download and preview buttons', () => {
-    render(<BulkOperationDetails task={mockTask} />);
+    render(
+      <IntlProvider locale="en">
+        <BulkOperationDetails task={mockTask} />
+      </IntlProvider>,
+    );
     const downloadButton = screen.getByRole('link', { name: /Download CSV/i });
     const previewButton = screen.getByRole('button', { name: /Preview CSV/i });
 
@@ -64,8 +87,11 @@ describe('BulkOperationDetails', () => {
   });
 
   it('fetches and displays CSV content on preview', async () => {
-    render(<BulkOperationDetails task={mockTask} />);
-
+    render(
+      <IntlProvider locale="en">
+        <BulkOperationDetails task={mockTask} />
+      </IntlProvider>,
+    );
     const previewButton = screen.getByRole('button', { name: /Preview CSV/i });
     fireEvent.click(previewButton);
 
@@ -75,8 +101,11 @@ describe('BulkOperationDetails', () => {
   });
 
   it('renders BulkOperationDetails and previews CSV', async () => {
-    render(<BulkOperationDetails task={mockTask} />);
-
+    render(
+      <IntlProvider locale="en">
+        <BulkOperationDetails task={mockTask} />
+      </IntlProvider>,
+    );
     const previewButton = screen.getByRole('button', { name: /Preview CSV/i });
     fireEvent.click(previewButton);
 
@@ -88,7 +117,11 @@ describe('BulkOperationDetails', () => {
   });
 
   it('renders task summary if present', () => {
-    render(<BulkOperationDetails task={mockTask} />);
+    render(
+      <IntlProvider locale="en">
+        <BulkOperationDetails task={mockTask} />
+      </IntlProvider>,
+    );
     expect(screen.getByText('Task Summary')).toBeInTheDocument();
     expect(screen.getByText(/success_count/i)).toBeInTheDocument();
     expect(screen.getByText(/created_products/i)).toBeInTheDocument();
