@@ -3,7 +3,9 @@ import '@testing-library/jest-dom';
 import {
   render, screen, fireEvent, waitFor, within, userEvent
 } from '@testing-library/react';
+import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import BulkOperations from './index';
+
 
 const mockedHistoricalTasks = [
     {
@@ -35,10 +37,10 @@ const createdTask = {
 
 describe('BulkOperationsPage', () => {
   beforeEach(() => {
-    const get = jest.spyOn(axios, 'get')
-    const post = jest.spyOn(axios, 'post')
+    const get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations')
+    const post = jest.spyOn(DiscoveryDataApiService, 'createBulkOperation')
     const user = userEvent.setup()
-    get.mockResolvedValue({ data: mockedHistoricalTasks });
+    get.mockResolvedValue({ data: { results: mockedHistoricalTasks} });
   });
 
   afterEach(() => {
@@ -102,14 +104,19 @@ describe('BulkOperationsPage', () => {
   ])('submission', async (message, fileNameInstances, isSuccess) => {
 
     if (isSuccess){
-        post.mockResolvedValue({ response: { status: 201, data: createdTask } });
+        post.mockResolvedValue({ data: createdTask});
     }
     else {
         post.mockRejectedValue({response: {status: 500}});
     }
 
     render(<BulkOperations />);
-    
+
+    const button = screen.getByRole('button', {name: /Choose a Bulk Operation/i})
+    await user.click(button)
+    const createButton = screen.getByRole('button', {name: 'Bulk Create'})
+    await user.click(createButton)
+
     const dropZone = screen.getByTestId('dropzone-container')
 
     fireEvent.drop(dropZone, {
@@ -130,6 +137,4 @@ describe('BulkOperationsPage', () => {
     expect(screen.getAllByText('hello.csv')).toHaveLength(fileNameInstances)
 
   });
-
-
 });
