@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import 'moment-timezone';
 import PropTypes from 'prop-types';
+import Papa from 'papaparse';
 import {
   Button, DataTable, useToggle, FullscreenModal, Stack,
 } from '@openedx/paragon';
@@ -27,14 +28,21 @@ ImageCell.defaultProps = {
 const parseCSV = async (url) => {
   const response = await fetch(url);
   const text = await response.text();
-  const lines = text.trim().split('\n');
 
-  const headers = lines[0].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-  const cleanedHeaders = headers.map((h) => h.replace(/(^"|"$)/g, ''));
-
-  const rows = lines.slice(1).map((line) => line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map((cell) => cell.replace(/(^"|"$)/g, '')));
-
-  return { headers: cleanedHeaders, rows };
+  return new Promise((resolve, reject) => {
+    Papa.parse(text, {
+      header: true,
+      skipEmptyLines: true,
+      complete: (results) => {
+        const { data, meta } = results;
+        const headers = meta.fields;
+        resolve({ headers, rows: data });
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
+  });
 };
 
 const BulkOperationDetails = ({ task }) => {
@@ -43,7 +51,7 @@ const BulkOperationDetails = ({ task }) => {
   const [isOpen, open, close] = useToggle(false);
   const [showNotFound, setShowNotFound] = useState(false);
   const [csvPreviewError, setCsvPreviewError] = useState(null);
-  const DEFAULT_CSV_PREVIEW_PAGE_SIZE = 5;
+  const DEFAULT_CSV_PREVIEW_PAGE_SIZE = 10;
 
   const taskInfoRows = [
     { key: 'Task ID', value: task.task_id },
@@ -118,10 +126,7 @@ const BulkOperationDetails = ({ task }) => {
     if (!csvHeaders || csvHeaders.length === 0 || !csvRows || csvRows.length === 0) {
       return [];
     }
-    return csvRows.map((row) => row.reduce((accumulator, value, index) => {
-      accumulator[csvHeaders[index]] = value;
-      return accumulator;
-    }, {}));
+    return csvRows;
   }, [csvRows, csvHeaders]);
 
   return (
@@ -134,12 +139,6 @@ const BulkOperationDetails = ({ task }) => {
           showPagination={false}
         />
       </div>
-      {/* <p><strong>Task ID:</strong> {task.task_id}</p>
-      <p><strong>Task type:</strong> {task.task_type}</p>
-      <p><strong>Uploaded by:</strong> {task.uploaded_by}</p>
-      <p><strong>Status:</strong> {task.status}</p>
-      <p><strong>Created:</strong> {task && formatDateTime(task.created)}</p>
-      <p><strong>Modified:</strong> {task && formatDateTime(task.modified)}</p> */}
 
       <Stack direction="horizontal" gap={3} className="mb-4 mt-4">
         <a
@@ -176,11 +175,15 @@ const BulkOperationDetails = ({ task }) => {
               className="bulk-op-table"
               columns={columns}
               data={data}
-              defaultPageSize={DEFAULT_CSV_PREVIEW_PAGE_SIZE}
+              isPaginated
+              initialState={{
+                pageSize: DEFAULT_CSV_PREVIEW_PAGE_SIZE,
+              }}
               itemCount={csvRows.length}
-              showPagination={false}
               data-testid="csv-table"
             />
+            <DataTable.EmptyTable content="No results found" />
+            <DataTable.TableFooter />
           </div>
         </FullscreenModal>
       </Stack>

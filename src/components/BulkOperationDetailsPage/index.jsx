@@ -9,6 +9,7 @@ import LoadingSpinner from '../LoadingSpinner';
 const BulkOperationTaskDetailsPage = () => {
   const { taskId } = useParams();
   const [task, setTask] = useState(null);
+  const [errorMessage, setError] = useState(null);
 
   useEffect(() => {
     DiscoveryDataApiService.fetchBulkOperationTask(taskId)
@@ -17,6 +18,7 @@ const BulkOperationTaskDetailsPage = () => {
       })
       .catch((error) => {
         console.error('Error fetching bulk operation details:', error);
+        setError(error.message);
       });
   }, [taskId]);
 
@@ -24,11 +26,19 @@ const BulkOperationTaskDetailsPage = () => {
     <Container className="py-3" size="lg">
       {task ? (<BulkOperationDetails task={task} />) : (
         <div>
-          <LoadingSpinner
-            className="text-center"
-            size="lg"
-            style={{ marginTop: '20px' }}
-          />
+          {errorMessage ? (
+            <div className="alert alert-danger">
+              <strong>Error:</strong> {errorMessage}
+            </div>
+          ) : (
+            <div>
+              <LoadingSpinner
+                className="text-center"
+                size="lg"
+                style={{ marginTop: '20px' }}
+              />
+            </div>
+          )}
         </div>
       )}
     </Container>
