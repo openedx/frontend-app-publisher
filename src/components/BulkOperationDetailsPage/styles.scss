@@ -1,0 +1,37 @@
+.csv-preview-modal {
+
+    $cell-widths: 220px;
+    .pgn__data-table-layout-wrapper {
+        display: block;
+    }
+
+    tr {
+        th {
+            border: 1px solid black;
+            min-width: $cell-widths;
+            max-width: $cell-widths;
+        }
+        td {
+            border: 1px solid black;
+            min-width: $cell-widths;
+            max-width: $cell-widths;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
+
+.pgn__modal-header {
+    background-color: #0A3055 !important;
+    color: white;
+}
+
+.bulk-op-details-table-container {
+  .pgn__data-table-status-bar {
+    display: none;
+  }
+
+  .pgn__data-table-footer {
+    display: none;
+   }
+}
