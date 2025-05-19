@@ -1,673 +1,253 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders the correct header 1`] = `
-<header
-  className="site-header mb-3 py-3 border-bottom border-gray-300"
->
-  <div
-    className="container"
+<div>
+  <header
+    class="site-header mb-3 py-3 border-bottom border-gray-300"
   >
     <div
-      className="row align-items-center"
+      class="container"
     >
       <div
-        className="col-auto justify-content-start"
+        class="row align-items-center"
       >
-        <withDeprecatedProps(Hyperlink)>
-          <ForwardRef
-            externalLinkAlternativeText="in a new tab"
-            externalLinkTitle="Opens in a new tab"
-            isInline={false}
-            onClick={[Function]}
-            showLaunchIcon={true}
-            target="_self"
-            variant="default"
-          >
-            <a
-              className="pgn__hyperlink default-link standalone-link"
-              onClick={[Function]}
-              target="_self"
-            >
-              <img
-                alt="edX logo"
-                height="30"
-                src="https://edx-cdn.org/v3/default/logo.svg"
-              />
-            </a>
-          </ForwardRef>
-        </withDeprecatedProps(Hyperlink)>
-      </div>
-      <div
-        className="col-auto justify-content-start"
-      >
-        <Link
-          className="disabled-link text-gray-300"
-          to="/"
+        <div
+          class="col-auto justify-content-start"
         >
           <a
-            className="disabled-link text-gray-300"
+            class="pgn__hyperlink default-link standalone-link"
+            target="_self"
+          >
+            <img
+              alt="edX logo"
+              height="30"
+              src="https://edx-cdn.org/v3/default/logo.svg"
+            />
+          </a>
+        </div>
+        <div
+          class="col-auto justify-content-start"
+        >
+          <a
+            class="disabled-link text-gray-300"
             href="/"
-            onClick={[Function]}
           >
             Open Courses
           </a>
-        </Link>
-      </div>
-      <div
-        className="col-auto justify-content-start"
-      >
-        <Link
-          className=""
-          to="/?course_type=executive-education-2u"
+        </div>
+        <div
+          class="col-auto justify-content-start"
         >
           <a
-            className=""
+            class=""
             href="/?course_type=executive-education-2u"
-            onClick={[Function]}
           >
             Executive Education
           </a>
-        </Link>
-      </div>
-      <div
-        className="col-auto justify-content-end"
-      >
-        <button
-          className="btn btn-primary"
-          onClick={[Function]}
-          type="button"
+        </div>
+        <div
+          class="col-auto justify-content-end"
         >
-          Switch to 
-          dark mode
-        </button>
-      </div>
-      <div
-        className="col-auto justify-content-end ml-auto"
-      >
-        <ForwardRef(Dropdown)
-          autoClose={true}
-          className=""
-          show={false}
-          variant="light"
-        >
-          <Dropdown
-            className="pgn__dropdown pgn__dropdown-light"
-            data-testid="dropdown"
-            navbar={false}
-            onToggle={[Function]}
-            show={false}
+          <button
+            class="btn btn-primary"
+            type="button"
           >
-            <ReactOverlaysDropdown
-              itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
-              onToggle={[Function]}
-              show={false}
+            Switch to 
+            dark mode
+          </button>
+        </div>
+        <div
+          class="col-auto justify-content-end ml-auto"
+        >
+          <div
+            class="pgn__dropdown pgn__dropdown-light dropdown"
+            data-testid="dropdown"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+              type="button"
             >
-              <div
-                className="pgn__dropdown pgn__dropdown-light dropdown"
-                data-testid="dropdown"
-              >
-                <ForwardRef(DropdownToggle)
-                  as={
-                    {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "defaultProps": {
-                        "children": undefined,
-                        "className": undefined,
-                        "showLabel": true,
-                        "size": "md",
-                        "src": undefined,
-                        "variant": "tertiary",
-                      },
-                      "propTypes": {
-                        "children": [Function],
-                        "className": [Function],
-                        "showLabel": [Function],
-                        "size": [Function],
-                        "src": [Function],
-                        "variant": [Function],
-                      },
-                      "render": [Function],
-                    }
-                  }
-                  bsPrefix="dropdown-toggle"
-                >
-                  <DropdownToggle
-                    as={
-                      {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "defaultProps": {
-                          "children": undefined,
-                          "className": undefined,
-                          "showLabel": true,
-                          "size": "md",
-                          "src": undefined,
-                          "variant": "tertiary",
-                        },
-                        "propTypes": {
-                          "children": [Function],
-                          "className": [Function],
-                          "showLabel": [Function],
-                          "size": [Function],
-                          "src": [Function],
-                          "variant": [Function],
-                        },
-                        "render": [Function],
-                      }
-                    }
-                    bsPrefix="dropdown-toggle"
-                  >
-                    <ForwardRef
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      className="dropdown-toggle"
-                      onClick={[Function]}
-                      showLabel={true}
-                      size="md"
-                      variant="tertiary"
-                    >
-                      <ForwardRef
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                        disabled={false}
-                        onClick={[Function]}
-                        size="md"
-                        variant="tertiary"
-                      >
-                        <Button
-                          active={false}
-                          aria-expanded={false}
-                          aria-haspopup={true}
-                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                          disabled={false}
-                          onClick={[Function]}
-                          size="md"
-                          variant="tertiary"
-                        >
-                          <button
-                            aria-expanded={false}
-                            aria-haspopup={true}
-                            className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
-                          >
-                            <Avatar
-                              alt=""
-                              size="sm"
-                            >
-                              <img
-                                alt=""
-                                className="pgn__avatar pgn__avatar-sm"
-                                src="icon/mock/path"
-                              />
-                            </Avatar>
-                            test-username
-                          </button>
-                        </Button>
-                      </ForwardRef>
-                    </ForwardRef>
-                  </DropdownToggle>
-                </ForwardRef(DropdownToggle)>
-                <DropdownMenu
-                  align="left"
-                  alignRight={false}
-                  flip={true}
-                />
-              </div>
-            </ReactOverlaysDropdown>
-          </Dropdown>
-        </ForwardRef(Dropdown)>
+              <img
+                alt=""
+                class="pgn__avatar pgn__avatar-sm"
+                src="icon/mock/path"
+              />
+              test-username
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+</div>
 `;
 
 exports[`Header renders the header correctly when toggling is allowed, and dark mode is on 1`] = `
-<header
-  className="site-header mb-3 py-3 border-bottom border-gray-300"
->
-  <div
-    className="container"
+<div>
+  <header
+    class="site-header mb-3 py-3 border-bottom border-gray-300"
   >
     <div
-      className="row align-items-center"
+      class="container"
     >
       <div
-        className="col-auto justify-content-start"
+        class="row align-items-center"
       >
-        <withDeprecatedProps(Hyperlink)>
-          <ForwardRef
-            externalLinkAlternativeText="in a new tab"
-            externalLinkTitle="Opens in a new tab"
-            isInline={false}
-            onClick={[Function]}
-            showLaunchIcon={true}
-            target="_self"
-            variant="default"
-          >
-            <a
-              className="pgn__hyperlink default-link standalone-link"
-              onClick={[Function]}
-              target="_self"
-            >
-              <img
-                alt="edX logo"
-                height="30"
-                src="https://edx-cdn.org/v3/default/logo.svg"
-              />
-            </a>
-          </ForwardRef>
-        </withDeprecatedProps(Hyperlink)>
-      </div>
-      <div
-        className="col-auto justify-content-start"
-      >
-        <Link
-          className="disabled-link text-gray-300"
-          to="/"
+        <div
+          class="col-auto justify-content-start"
         >
           <a
-            className="disabled-link text-gray-300"
+            class="pgn__hyperlink default-link standalone-link"
+            target="_self"
+          >
+            <img
+              alt="edX logo"
+              height="30"
+              src="https://edx-cdn.org/v3/default/logo.svg"
+            />
+          </a>
+        </div>
+        <div
+          class="col-auto justify-content-start"
+        >
+          <a
+            class="disabled-link text-gray-300"
             href="/"
-            onClick={[Function]}
           >
             Open Courses
           </a>
-        </Link>
-      </div>
-      <div
-        className="col-auto justify-content-start"
-      >
-        <Link
-          className=""
-          to="/?course_type=executive-education-2u"
+        </div>
+        <div
+          class="col-auto justify-content-start"
         >
           <a
-            className=""
+            class=""
             href="/?course_type=executive-education-2u"
-            onClick={[Function]}
           >
             Executive Education
           </a>
-        </Link>
-      </div>
-      <div
-        className="col-auto justify-content-end"
-      >
-        <button
-          className="btn btn-primary"
-          onClick={[Function]}
-          type="button"
+        </div>
+        <div
+          class="col-auto justify-content-end"
         >
-          Switch to 
-          light mode
-        </button>
-      </div>
-      <div
-        className="col-auto justify-content-end ml-auto"
-      >
-        <ForwardRef(Dropdown)
-          autoClose={true}
-          className=""
-          show={false}
-          variant="light"
-        >
-          <Dropdown
-            className="pgn__dropdown pgn__dropdown-light"
-            data-testid="dropdown"
-            navbar={false}
-            onToggle={[Function]}
-            show={false}
+          <button
+            class="btn btn-primary"
+            type="button"
           >
-            <ReactOverlaysDropdown
-              itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
-              onToggle={[Function]}
-              show={false}
+            Switch to 
+            light mode
+          </button>
+        </div>
+        <div
+          class="col-auto justify-content-end ml-auto"
+        >
+          <div
+            class="pgn__dropdown pgn__dropdown-light dropdown"
+            data-testid="dropdown"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+              type="button"
             >
-              <div
-                className="pgn__dropdown pgn__dropdown-light dropdown"
-                data-testid="dropdown"
-              >
-                <ForwardRef(DropdownToggle)
-                  as={
-                    {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "defaultProps": {
-                        "children": undefined,
-                        "className": undefined,
-                        "showLabel": true,
-                        "size": "md",
-                        "src": undefined,
-                        "variant": "tertiary",
-                      },
-                      "propTypes": {
-                        "children": [Function],
-                        "className": [Function],
-                        "showLabel": [Function],
-                        "size": [Function],
-                        "src": [Function],
-                        "variant": [Function],
-                      },
-                      "render": [Function],
-                    }
-                  }
-                  bsPrefix="dropdown-toggle"
-                >
-                  <DropdownToggle
-                    as={
-                      {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "defaultProps": {
-                          "children": undefined,
-                          "className": undefined,
-                          "showLabel": true,
-                          "size": "md",
-                          "src": undefined,
-                          "variant": "tertiary",
-                        },
-                        "propTypes": {
-                          "children": [Function],
-                          "className": [Function],
-                          "showLabel": [Function],
-                          "size": [Function],
-                          "src": [Function],
-                          "variant": [Function],
-                        },
-                        "render": [Function],
-                      }
-                    }
-                    bsPrefix="dropdown-toggle"
-                  >
-                    <ForwardRef
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      className="dropdown-toggle"
-                      onClick={[Function]}
-                      showLabel={true}
-                      size="md"
-                      variant="tertiary"
-                    >
-                      <ForwardRef
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                        disabled={false}
-                        onClick={[Function]}
-                        size="md"
-                        variant="tertiary"
-                      >
-                        <Button
-                          active={false}
-                          aria-expanded={false}
-                          aria-haspopup={true}
-                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                          disabled={false}
-                          onClick={[Function]}
-                          size="md"
-                          variant="tertiary"
-                        >
-                          <button
-                            aria-expanded={false}
-                            aria-haspopup={true}
-                            className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
-                          >
-                            <Avatar
-                              alt=""
-                              size="sm"
-                            >
-                              <img
-                                alt=""
-                                className="pgn__avatar pgn__avatar-sm"
-                                src="icon/mock/path"
-                              />
-                            </Avatar>
-                            test-username
-                          </button>
-                        </Button>
-                      </ForwardRef>
-                    </ForwardRef>
-                  </DropdownToggle>
-                </ForwardRef(DropdownToggle)>
-                <DropdownMenu
-                  align="left"
-                  alignRight={false}
-                  flip={true}
-                />
-              </div>
-            </ReactOverlaysDropdown>
-          </Dropdown>
-        </ForwardRef(Dropdown)>
+              <img
+                alt=""
+                class="pgn__avatar pgn__avatar-sm"
+                src="icon/mock/path"
+              />
+              test-username
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+</div>
 `;
 
 exports[`Header renders the header correctly when users pass a querystring param to allow dark mode toggling 1`] = `
-<header
-  className="site-header mb-3 py-3 border-bottom border-gray-300"
->
-  <div
-    className="container"
+<div>
+  <header
+    class="site-header mb-3 py-3 border-bottom border-gray-300"
   >
     <div
-      className="row align-items-center"
+      class="container"
     >
       <div
-        className="col-auto justify-content-start"
+        class="row align-items-center"
       >
-        <withDeprecatedProps(Hyperlink)>
-          <ForwardRef
-            externalLinkAlternativeText="in a new tab"
-            externalLinkTitle="Opens in a new tab"
-            isInline={false}
-            onClick={[Function]}
-            showLaunchIcon={true}
-            target="_self"
-            variant="default"
-          >
-            <a
-              className="pgn__hyperlink default-link standalone-link"
-              onClick={[Function]}
-              target="_self"
-            >
-              <img
-                alt="edX logo"
-                height="30"
-                src="https://edx-cdn.org/v3/default/logo.svg"
-              />
-            </a>
-          </ForwardRef>
-        </withDeprecatedProps(Hyperlink)>
-      </div>
-      <div
-        className="col-auto justify-content-start"
-      >
-        <Link
-          className="disabled-link text-gray-300"
-          to="/"
+        <div
+          class="col-auto justify-content-start"
         >
           <a
-            className="disabled-link text-gray-300"
+            class="pgn__hyperlink default-link standalone-link"
+            target="_self"
+          >
+            <img
+              alt="edX logo"
+              height="30"
+              src="https://edx-cdn.org/v3/default/logo.svg"
+            />
+          </a>
+        </div>
+        <div
+          class="col-auto justify-content-start"
+        >
+          <a
+            class="disabled-link text-gray-300"
             href="/"
-            onClick={[Function]}
           >
             Open Courses
           </a>
-        </Link>
-      </div>
-      <div
-        className="col-auto justify-content-start"
-      >
-        <Link
-          className=""
-          to="/?course_type=executive-education-2u"
+        </div>
+        <div
+          class="col-auto justify-content-start"
         >
           <a
-            className=""
+            class=""
             href="/?course_type=executive-education-2u"
-            onClick={[Function]}
           >
             Executive Education
           </a>
-        </Link>
-      </div>
-      <div
-        className="col-auto justify-content-end"
-      >
-        <button
-          className="btn btn-primary"
-          onClick={[Function]}
-          type="button"
+        </div>
+        <div
+          class="col-auto justify-content-end"
         >
-          Switch to 
-          dark mode
-        </button>
-      </div>
-      <div
-        className="col-auto justify-content-end ml-auto"
-      >
-        <ForwardRef(Dropdown)
-          autoClose={true}
-          className=""
-          show={false}
-          variant="light"
-        >
-          <Dropdown
-            className="pgn__dropdown pgn__dropdown-light"
-            data-testid="dropdown"
-            navbar={false}
-            onToggle={[Function]}
-            show={false}
+          <button
+            class="btn btn-primary"
+            type="button"
           >
-            <ReactOverlaysDropdown
-              itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
-              onToggle={[Function]}
-              show={false}
+            Switch to 
+            dark mode
+          </button>
+        </div>
+        <div
+          class="col-auto justify-content-end ml-auto"
+        >
+          <div
+            class="pgn__dropdown pgn__dropdown-light dropdown"
+            data-testid="dropdown"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
+              type="button"
             >
-              <div
-                className="pgn__dropdown pgn__dropdown-light dropdown"
-                data-testid="dropdown"
-              >
-                <ForwardRef(DropdownToggle)
-                  as={
-                    {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "defaultProps": {
-                        "children": undefined,
-                        "className": undefined,
-                        "showLabel": true,
-                        "size": "md",
-                        "src": undefined,
-                        "variant": "tertiary",
-                      },
-                      "propTypes": {
-                        "children": [Function],
-                        "className": [Function],
-                        "showLabel": [Function],
-                        "size": [Function],
-                        "src": [Function],
-                        "variant": [Function],
-                      },
-                      "render": [Function],
-                    }
-                  }
-                  bsPrefix="dropdown-toggle"
-                >
-                  <DropdownToggle
-                    as={
-                      {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "defaultProps": {
-                          "children": undefined,
-                          "className": undefined,
-                          "showLabel": true,
-                          "size": "md",
-                          "src": undefined,
-                          "variant": "tertiary",
-                        },
-                        "propTypes": {
-                          "children": [Function],
-                          "className": [Function],
-                          "showLabel": [Function],
-                          "size": [Function],
-                          "src": [Function],
-                          "variant": [Function],
-                        },
-                        "render": [Function],
-                      }
-                    }
-                    bsPrefix="dropdown-toggle"
-                  >
-                    <ForwardRef
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      className="dropdown-toggle"
-                      onClick={[Function]}
-                      showLabel={true}
-                      size="md"
-                      variant="tertiary"
-                    >
-                      <ForwardRef
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                        disabled={false}
-                        onClick={[Function]}
-                        size="md"
-                        variant="tertiary"
-                      >
-                        <Button
-                          active={false}
-                          aria-expanded={false}
-                          aria-haspopup={true}
-                          className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle"
-                          disabled={false}
-                          onClick={[Function]}
-                          size="md"
-                          variant="tertiary"
-                        >
-                          <button
-                            aria-expanded={false}
-                            aria-haspopup={true}
-                            className="btn-avatar pgn__avatar-button-avatar pgn__avatar-button-avatar-md dropdown-toggle btn btn-tertiary btn-md"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
-                          >
-                            <Avatar
-                              alt=""
-                              size="sm"
-                            >
-                              <img
-                                alt=""
-                                className="pgn__avatar pgn__avatar-sm"
-                                src="icon/mock/path"
-                              />
-                            </Avatar>
-                            test-username
-                          </button>
-                        </Button>
-                      </ForwardRef>
-                    </ForwardRef>
-                  </DropdownToggle>
-                </ForwardRef(DropdownToggle)>
-                <DropdownMenu
-                  align="left"
-                  alignRight={false}
-                  flip={true}
-                />
-              </div>
-            </ReactOverlaysDropdown>
-          </Dropdown>
-        </ForwardRef(Dropdown)>
+              <img
+                alt=""
+                class="pgn__avatar pgn__avatar-sm"
+                src="icon/mock/path"
+              />
+              test-username
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+</div>
 `;

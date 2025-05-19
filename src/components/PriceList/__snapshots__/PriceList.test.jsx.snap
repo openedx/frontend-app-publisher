@@ -1,60 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PriceList renders with price labels 1`] = `
-<Fragment>
-  <Field
-    component={[Function]}
-    disabled={false}
-    extraInput={
-      {
-        "max": 10000,
-        "min": 1,
-        "step": 0.01,
-      }
-    }
-    key="a"
-    label={
-      <FieldLabel
-        className=""
-        extraText=""
-        helpText=""
-        id={null}
-        optional={false}
-        required={true}
-        text="A Price (USD)"
+<div>
+  <div
+    class="pgn__form-group"
+  >
+    <label
+      class="pgn__form-label"
+      for="-text-label"
+    >
+      <div
+        class=""
+      >
+        <strong>
+          A Price (USD)
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+    </label>
+    <div
+      class="pgn__form-control-decorator-group"
+    >
+      <input
+        class="form-control"
+        id="-text-label"
+        max="10000"
+        maxlength=""
+        min="1"
+        name=""
+        placeholder=""
+        step="0.01"
+        type="number"
+        value=""
       />
-    }
-    name="prices.a"
-    required={false}
-    type="number"
-  />
-  <Field
-    component={[Function]}
-    disabled={false}
-    extraInput={
-      {
-        "max": 10000,
-        "min": 1,
-        "step": 0.01,
-      }
-    }
-    key="b"
-    label={
-      <FieldLabel
-        className=""
-        extraText=""
-        helpText=""
-        id={null}
-        optional={false}
-        required={true}
-        text="B Price (USD)"
+    </div>
+  </div>
+  <div
+    class="pgn__form-group"
+  >
+    <label
+      class="pgn__form-label"
+      for="-text-label"
+    >
+      <div
+        class=""
+      >
+        <strong>
+          B Price (USD)
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+    </label>
+    <div
+      class="pgn__form-control-decorator-group"
+    >
+      <input
+        class="form-control"
+        id="-text-label"
+        max="10000"
+        maxlength=""
+        min="1"
+        name=""
+        placeholder=""
+        step="0.01"
+        type="number"
+        value=""
       />
-    }
-    name="prices.b"
-    required={false}
-    type="number"
-  />
-</Fragment>
+    </div>
+  </div>
+</div>
 `;
 
-exports[`PriceList renders without any price labels 1`] = `<Fragment />`;
+exports[`PriceList renders without any price labels 1`] = `<div />`;

@@ -1,135 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Social links renders correctly when given fields 1`] = `
-<div
-  className="social-links mb-3"
->
-  <ul
-    className="list-group p-0 m-0 container-fluid"
+<div>
+  <div
+    class="social-links mb-3"
   >
-    <li
-      className="social-link list-group-item row d-flex align-items-center px-0 mx-0"
-      key="[object Object]"
+    <ul
+      class="list-group p-0 m-0 container-fluid"
+    />
+    <button
+      class="btn btn-outline-primary js-add-button mt-2"
+      data-testid="js-add-button"
+      type="button"
     >
-      <div
-        className="col-4"
-      >
-        <Field
-          component={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="Type"
-            />
-          }
-          name="[object Object].type"
-          options={
-            [
-              {
-                "label": "Please select a type",
-                "value": "",
-              },
-              {
-                "label": "Facebook",
-                "value": "facebook",
-              },
-              {
-                "label": "Twitter",
-                "value": "twitter",
-              },
-              {
-                "label": "Blog",
-                "value": "blog",
-              },
-              {
-                "label": "Other",
-                "value": "others",
-              },
-            ]
-          }
-          required={true}
-        />
-      </div>
-      <div
-        className="col-3"
-      >
-        <Field
-          component={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              text="Link Text"
-            />
-          }
-          name="[object Object].title"
-          type="text"
-        />
-      </div>
-      <div
-        className="col-4"
-      >
-        <Field
-          component={[Function]}
-          label={
-            <FieldLabel
-              className=""
-              extraText=""
-              helpText=""
-              id={null}
-              optional={false}
-              required={true}
-              text="URL"
-            />
-          }
-          name="[object Object].url"
-          required={true}
-          type="url"
-        />
-      </div>
-      <input
-        name="[object Object].id"
-        type="hidden"
-      />
-      <RemoveButton
-        className="col-1 m-auto"
-        label="Remove social link"
-        onRemove={[Function]}
-        targetFieldNumber={0}
-      />
-    </li>
-  </ul>
-  <button
-    className="btn btn-outline-primary js-add-button mt-2"
-    onClick={[Function]}
-    type="button"
-  >
-    Add social link
-  </button>
+      Add social link
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Social links renders correctly with no fields 1`] = `
-<div
-  className="social-links mb-3"
->
-  <ul
-    className="list-group p-0 m-0 container-fluid"
-  />
-  <button
-    className="btn btn-outline-primary js-add-button mt-2"
-    onClick={[Function]}
-    type="button"
+<div>
+  <div
+    class="social-links mb-3"
   >
-    Add social link
-  </button>
+    <ul
+      class="list-group p-0 m-0 container-fluid"
+    />
+    <button
+      class="btn btn-outline-primary js-add-button mt-2"
+      data-testid="js-add-button"
+      type="button"
+    >
+      Add social link
+    </button>
+  </div>
 </div>
 `;

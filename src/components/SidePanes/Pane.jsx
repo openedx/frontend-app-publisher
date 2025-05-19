@@ -4,7 +4,7 @@ import { OverlayTrigger, Tooltip } from '@openedx/paragon';
 import { InfoOutline } from '@openedx/paragon/icons';
 
 const Pane = (props) => (
-  <div className="card mb-3">
+  <div data-testid={props.dataTestId} className="card mb-3">
     <div className="card-header bg-primary-700 text-white">
       {props.title}
       {props.info && (
@@ -36,6 +36,7 @@ Pane.propTypes = {
   children: PropTypes.node,
   info: PropTypes.string,
   title: PropTypes.string.isRequired,
+  dataTestId: PropTypes.string,
 };
 
 export default Pane;

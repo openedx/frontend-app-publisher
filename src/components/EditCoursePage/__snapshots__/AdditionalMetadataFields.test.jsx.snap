@@ -1,883 +1,3512 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AdditionalMetadata Fields Display all fields 1`] = `
-<div
-  className="collapsible-card pgn_collapsible mt-4"
->
+<div>
   <div
-    className="collapsible-body"
+    class="collapsible-card pgn_collapsible mt-4"
   >
-    <FieldLabel
-      className="h3 font-weight-normal mb-3"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Additional Metadata Details"
-    />
     <div
-      className="mb-3 mt-1"
+      class="collapsible-body"
     >
-      <Field
-        className="float-left mt-1 ml-1"
-        component="input"
-        disabled={false}
-        label="additional_metadata.display_on_org_page"
-        name="additional_metadata.display_on_org_page"
-        required={true}
-        type="checkbox"
-      />
-      <FieldLabel
-        className="font-weight-normal ml-2 float-left"
-        extraText=""
-        helpText=""
-        id={null}
-        optional={false}
-        text="Display on Organization Page"
-      />
-      <br />
+      <div
+        class="h3 font-weight-normal mb-3"
+      >
+        <strong>
+          Additional Metadata Details
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="mb-3 mt-1"
+      >
+        <input
+          class="float-left mt-1 ml-1"
+          label="additional_metadata.display_on_org_page"
+          name="additional_metadata.display_on_org_page"
+          required=""
+          type="checkbox"
+          value=""
+        />
+        <div
+          class="font-weight-normal ml-2 float-left"
+        >
+          <strong>
+            Display on Organization Page
+          </strong>
+          <div>
+            <span
+              class="text-muted"
+            />
+          </div>
+        </div>
+        <br />
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="external_url.label"
+          >
+            <strong>
+              External landing page URL
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="external_identifier.label"
+          >
+            <strong>
+              External system identifier
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="lead_capture_form_url.label"
+          >
+            <strong>
+              Lead capture form url
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="organic_url.label"
+          >
+            <strong>
+              Organic URL
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="variant_id.label"
+          >
+            <strong>
+              Course Variant Id
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="course_term_override.label"
+          >
+            <strong>
+              Course Term Override
+            </strong>
+            <span
+              class=""
+              id="course_term_override.label-help"
+            >
+              <button
+                aria-describedby="course_term_override.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="course_term_override.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <dl>
+    <dt>
+      Course Term
+    </dt>
+    <dd>
+      For example, in the UK universities use programme instead of course, so you can define which term you want to use in course description to keep the consistency.
+    </dd>
+  </dl>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="course_term_override.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Fact 1
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="facts.heading"
+          >
+            <strong>
+              Heading
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="mb-2"
+          name="additional_metadata.facts_1_blurb"
+          tabindex="-1"
+        >
+          <div
+            class=""
+            id="facts.blurb"
+          >
+            <strong>
+              Description
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <textarea
+            aria-hidden="true"
+            id="00000000-0000-0000-0000-000000000000"
+            style="display: none;"
+          />
+          <div
+            aria-disabled="false"
+            class="tox tox-tinymce"
+            role="application"
+            style="visibility: hidden; height: 200px;"
+          >
+            <div
+              class="tox-editor-container"
+            >
+              <div
+                class="tox-editor-header"
+                data-alloy-vertical-dir="toptobottom"
+              >
+                <div
+                  aria-disabled="false"
+                  class="tox-toolbar-overlord"
+                  role="group"
+                >
+                  <div
+                    class="tox-toolbar__primary"
+                    role="group"
+                  >
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="true"
+                        aria-label="Undo"
+                        class="tox-tbtn tox-tbtn--disabled"
+                        tabindex="-1"
+                        title="Undo"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M6.4 8H12c3.7 0 6.2 2 6.8 5.1.6 2.7-.4 5.6-2.3 6.8a1 1 0 01-1-1.8c1.1-.6 1.8-2.7 1.4-4.6-.5-2.1-2.1-3.5-4.9-3.5H6.4l3.3 3.3a1 1 0 11-1.4 1.4l-5-5a1 1 0 010-1.4l5-5a1 1 0 011.4 1.4L6.4 8z"
+                              fill-rule="nonzero"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="true"
+                        aria-label="Redo"
+                        class="tox-tbtn tox-tbtn--disabled"
+                        tabindex="-1"
+                        title="Redo"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M17.6 10H12c-2.8 0-4.4 1.4-4.9 3.5-.4 2 .3 4 1.4 4.6a1 1 0 11-1 1.8c-2-1.2-2.9-4.1-2.3-6.8.6-3 3-5.1 6.8-5.1h5.6l-3.3-3.3a1 1 0 111.4-1.4l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4l3.3-3.3z"
+                              fill-rule="nonzero"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Bold"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Bold"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M7.8 19c-.3 0-.5 0-.6-.2l-.2-.5V5.7c0-.2 0-.4.2-.5l.6-.2h5c1.5 0 2.7.3 3.5 1 .7.6 1.1 1.4 1.1 2.5a3 3 0 01-.6 1.9c-.4.6-1 1-1.6 1.2.4.1.9.3 1.3.6s.8.7 1 1.2c.4.4.5 1 .5 1.6 0 1.3-.4 2.3-1.3 3-.8.7-2.1 1-3.8 1H7.8zm5-8.3c.6 0 1.2-.1 1.6-.5.4-.3.6-.7.6-1.3 0-1.1-.8-1.7-2.3-1.7H9.3v3.5h3.4zm.5 6c.7 0 1.3-.1 1.7-.4.4-.4.6-.9.6-1.5s-.2-1-.7-1.4c-.4-.3-1-.4-2-.4H9.4v3.8h4z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Italic"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Italic"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M16.7 4.7l-.1.9h-.3c-.6 0-1 0-1.4.3-.3.3-.4.6-.5 1.1l-2.1 9.8v.6c0 .5.4.8 1.4.8h.2l-.2.8H8l.2-.8h.2c1.1 0 1.8-.5 2-1.5l2-9.8.1-.5c0-.6-.4-.8-1.4-.8h-.3l.2-.9h5.8z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Underline"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Underline"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M16 5c.6 0 1 .4 1 1v5.5a4 4 0 01-.4 1.8l-1 1.4a5.3 5.3 0 01-5.5 1 5 5 0 01-1.6-1c-.5-.4-.8-.9-1.1-1.4a4 4 0 01-.4-1.8V6c0-.6.4-1 1-1s1 .4 1 1v5.5c0 .3 0 .6.2 1l.6.7a3.3 3.3 0 002.2.8 3.4 3.4 0 002.2-.8c.3-.2.4-.5.6-.8l.2-.9V6c0-.6.4-1 1-1zM8 17h8c.6 0 1 .4 1 1s-.4 1-1 1H8a1 1 0 010-2z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Bullet list"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Bullet list"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M11 5h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zM4.5 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Numbered list"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Numbered list"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M10 17h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 110-2zM6 4v3.5c0 .3-.2.5-.5.5a.5.5 0 01-.5-.5V5h-.5a.5.5 0 010-1H6zm-1 8.8l.2.2h1.3c.3 0 .5.2.5.5s-.2.5-.5.5H4.9a1 1 0 01-.9-1V13c0-.4.3-.8.6-1l1.2-.4.2-.3a.2.2 0 00-.2-.2H4.5a.5.5 0 01-.5-.5c0-.3.2-.5.5-.5h1.6c.5 0 .9.4.9 1v.1c0 .4-.3.8-.6 1l-1.2.4-.2.3zM7 17v2c0 .6-.4 1-1 1H4.5a.5.5 0 010-1h1.2c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.4a.4.4 0 110-.8h1.3c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.5a.5.5 0 110-1H6c.6 0 1 .4 1 1z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Insert/edit link"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Insert/edit link"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M6.2 12.3a1 1 0 011.4 1.4l-2.1 2a2 2 0 102.7 2.8l4.8-4.8a1 1 0 000-1.4 1 1 0 111.4-1.3 2.9 2.9 0 010 4L9.6 20a3.9 3.9 0 01-5.5-5.5l2-2zm11.6-.6a1 1 0 01-1.4-1.4l2-2a2 2 0 10-2.6-2.8L11 10.3a1 1 0 000 1.4A1 1 0 119.6 13a2.9 2.9 0 010-4L14.4 4a3.9 3.9 0 015.5 5.5l-2 2z"
+                              fill-rule="nonzero"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-pressed="false"
+                        class="tox-tbtn tox-tbtn--select"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          class="tox-tbtn__select-label"
+                        >
+                          Browser default language
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Left to right"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Left to right"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M11 5h7a1 1 0 010 2h-1v11a1 1 0 01-2 0V7h-2v11a1 1 0 01-2 0v-6c-.5 0-1 0-1.4-.3A3.4 3.4 0 017.8 10a3.3 3.3 0 010-2.8 3.4 3.4 0 011.8-1.8L11 5zM4.4 16.2L6.2 15l-1.8-1.2a1 1 0 011.2-1.6l3 2a1 1 0 010 1.6l-3 2a1 1 0 11-1.2-1.6z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Right to left"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Right to left"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M8 5h8v2h-2v12h-2V7h-2v12H8v-7c-.5 0-1 0-1.4-.3A3.4 3.4 0 014.8 10a3.3 3.3 0 010-2.8 3.4 3.4 0 011.8-1.8L8 5zm12 11.2a1 1 0 11-1 1.6l-3-2a1 1 0 010-1.6l3-2a1 1 0 111 1.6L18.4 15l1.8 1.2z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tox-anchorbar"
+                />
+              </div>
+              <div
+                class="tox-sidebar-wrap"
+              >
+                <div
+                  class="tox-edit-area"
+                >
+                  <iframe
+                    allowtransparency="true"
+                    class="tox-edit-area__iframe"
+                    frameborder="0"
+                    id="00000000-0000-0000-0000-000000000000_ifr"
+                    title="Rich Text Area"
+                  />
+                </div>
+                <div
+                  class="tox-sidebar"
+                  role="complementary"
+                >
+                  <div
+                    class="tox-sidebar__slider tox-sidebar--sliding-closed"
+                    data-alloy-tabstop="true"
+                    style="width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="tox-sidebar__pane-container"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tox-statusbar"
+            >
+              <div
+                class="tox-statusbar__resize-handle"
+                data-alloy-tabstop="true"
+                tabindex="-1"
+                title="Resize"
+              >
+                <svg
+                  focusable="false"
+                  height="10"
+                  width="10"
+                >
+                  <g
+                    fill-rule="nonzero"
+                  >
+                    <path
+                      d="M8.1 1.1A.5.5 0 119 2l-7 7A.5.5 0 111 8l7-7zM8.1 5.1A.5.5 0 119 6l-3 3A.5.5 0 115 8l3-3z"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              class="tox-throbber"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Fact 2
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="facts.heading"
+          >
+            <strong>
+              Heading
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="mb-2"
+          name="additional_metadata.facts_2_blurb"
+          tabindex="-1"
+        >
+          <div
+            class=""
+            id="facts.blurb"
+          >
+            <strong>
+              Description
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <textarea
+            id="00000000-0000-0000-0000-000000000000"
+            style=""
+          />
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Certificate Information
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="certificate-info.heading"
+          >
+            <strong>
+              Heading
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="mb-2"
+          name="additional_metadata.certificate_info_blurb"
+          tabindex="-1"
+        >
+          <div
+            class=""
+            id="certificate-info.blurb"
+          >
+            <strong>
+              Description
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <textarea
+            id="00000000-0000-0000-0000-000000000000"
+            style=""
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.start_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.start_date-date-label"
+              >
+                <strong>
+                  Start Date
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="form-control"
+                id="additional_metadata.start_date-date-label"
+                maxlength=""
+                min=""
+                name="additional_metadata.start_dateDate"
+                pattern="dd/mm/yyyy"
+                placeholder=""
+                required=""
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.start_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.start_date-time-label"
+              >
+                <strong>
+                  Start Time (UTC)
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="has-value form-control"
+                id="additional_metadata.start_date-date-label"
+                name="additional_metadata.start_dateTime"
+                placeholder="HH:mm"
+                required=""
+                type="time"
+                value="00:00"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.end_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.end_date-date-label"
+              >
+                <strong>
+                  End Date
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="form-control"
+                id="additional_metadata.end_date-date-label"
+                maxlength=""
+                min=""
+                name="additional_metadata.end_dateDate"
+                pattern="dd/mm/yyyy"
+                placeholder=""
+                required=""
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.end_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.end_date-time-label"
+              >
+                <strong>
+                  End Time (UTC)
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="has-value form-control"
+                id="additional_metadata.end_date-date-label"
+                name="additional_metadata.end_dateTime"
+                placeholder="HH:mm"
+                required=""
+                type="time"
+                value="00:00"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.registration_deadline-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.registration_deadline-date-label"
+              >
+                <strong>
+                  Registration Deadline Date
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="form-control"
+                id="additional_metadata.registration_deadline-date-label"
+                maxlength=""
+                min=""
+                name="additional_metadata.registration_deadlineDate"
+                pattern="dd/mm/yyyy"
+                placeholder=""
+                required=""
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.registration_deadline-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.registration_deadline-time-label"
+              >
+                <strong>
+                  Registration Deadline Time (UTC)
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="has-value form-control"
+                id="additional_metadata.registration_deadline-date-label"
+                name="additional_metadata.registration_deadlineTime"
+                placeholder="HH:mm"
+                required=""
+                type="time"
+                value="00:00"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="product_status.label"
+          >
+            <strong>
+              Product Status
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="additional_metadata.product_status"
+            required=""
+          >
+            <option
+              value=""
+            >
+              Select a product status
+            </option>
+            <option
+              value="published"
+            >
+              Published
+            </option>
+            <option
+              value="Archived"
+            >
+              Archived
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="external_course_marketing_type.label"
+          >
+            <strong>
+              External Product Marketing Type
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="additional_metadata.external_course_marketing_type"
+            required=""
+          >
+            <option
+              value=""
+            >
+              Select a marketing type
+            </option>
+            <option
+              value="sprint"
+            >
+              Sprint
+            </option>
+            <option
+              value="short_course"
+            >
+              Short Course
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Product Meta
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="product_meta.title"
+          >
+            <strong>
+              Title
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="product_meta.description"
+          >
+            <strong>
+              Description
+            </strong>
+            <span
+              aria-hidden="true"
+              class="text-gray-700"
+            >
+                 (optional)
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="mb-3 mr-2"
+        name="additional_metadata.product_meta_keywords"
+      >
+        <div
+          class="mb-2.5"
+        >
+          <div
+            class=""
+            id="additional_metadata.product_meta_keywords"
+          >
+            <strong>
+              Keywords
+            </strong>
+            <span
+              aria-hidden="true"
+              class="text-gray-700"
+            >
+                 (optional)
+            </span>
+            <span
+              class=""
+              id="additional_metadata.product_meta_keywords-help"
+            >
+              <button
+                aria-describedby="additional_metadata.product_meta_keywords-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="additional_metadata.product_meta_keywords-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <dl>
+    <dt>
+      Keywords
+    </dt>
+    <dd>
+      Enter SEO Meta tags for Products. Separate keywords with spaces.
+    </dd>
+  </dl>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="additional_metadata.product_meta_keywords-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-container css-b62m3t-container"
+        >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-2-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
+          <div
+            class="react-select-async__control css-13cymwt-control"
+          >
+            <div
+              class="react-select-async__value-container react-select-async__value-container--is-multi css-hlgwow"
+            >
+              <div
+                class="react-select-async__placeholder css-1jqq78o-placeholder"
+                id="react-select-2-placeholder"
+              />
+              <div
+                class="react-select-async__input-container css-19bb58m"
+                data-value=""
+              >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-2-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="react-select-async__input"
+                  id="react-select-2-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="react-select-async__indicators css-1wy0on6"
+            >
+              <span
+                class="react-select-async__indicator-separator css-1u9des2-indicatorSeparator"
+              />
+              <div
+                aria-hidden="true"
+                class="react-select-async__indicator react-select-async__dropdown-indicator css-1xc3v61-indicatorContainer"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="css-tj5bde-Svg"
+                  focusable="false"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="external_url.label"
-          optional={false}
-          text="External landing page URL"
-        />
-      }
-      name="additional_metadata.external_url"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="external_identifier.label"
-          optional={false}
-          text="External system identifier"
-        />
-      }
-      name="additional_metadata.external_identifier"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="lead_capture_form_url.label"
-          optional={false}
-          text="Lead capture form url"
-        />
-      }
-      name="additional_metadata.lead_capture_form_url"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="organic_url.label"
-          optional={false}
-          text="Organic URL"
-        />
-      }
-      name="additional_metadata.organic_url"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="variant_id.label"
-          optional={false}
-          text="Course Variant Id"
-        />
-      }
-      name="additional_metadata.variant_id"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <dl>
-                <dt>
-                  Course Term
-                </dt>
-                <dd>
-                  For example, in the UK universities use programme instead of course, so you can define which term you want to use in course description to keep the consistency.
-                </dd>
-              </dl>
-            </div>
-          }
-          id="course_term_override.label"
-          optional={false}
-          text="Course Term Override"
-        />
-      }
-      name="additional_metadata.course_term_override"
-      required={true}
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Fact 1"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.heading"
-          optional={false}
-          text="Heading"
-        />
-      }
-      name="additional_metadata.facts_1_heading"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.blurb"
-          optional={false}
-          text="Description"
-        />
-      }
-      name="additional_metadata.facts_1_blurb"
-      required={true}
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Fact 2"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.heading"
-          optional={false}
-          text="Heading"
-        />
-      }
-      name="additional_metadata.facts_2_heading"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.blurb"
-          optional={false}
-          text="Description"
-        />
-      }
-      name="additional_metadata.facts_2_blurb"
-      required={true}
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Certificate Information"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="certificate-info.heading"
-          optional={false}
-          text="Heading"
-        />
-      }
-      name="additional_metadata.certificate_info_heading"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="certificate-info.blurb"
-          optional={false}
-          text="Description"
-        />
-      }
-      name="additional_metadata.certificate_info_blurb"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      dateLabel="Start Date"
-      disabled={false}
-      name="additional_metadata.start_date"
-      required={true}
-      timeLabel="Start Time (UTC)"
-      type="date"
-      utcTimeZone={true}
-    />
-    <Field
-      component={[Function]}
-      dateLabel="End Date"
-      disabled={false}
-      name="additional_metadata.end_date"
-      required={true}
-      timeLabel="End Time (UTC)"
-      type="date"
-      utcTimeZone={true}
-    />
-    <Field
-      component={[Function]}
-      dateLabel="Registration Deadline Date"
-      disabled={false}
-      name="additional_metadata.registration_deadline"
-      required={true}
-      timeLabel="Registration Deadline Time (UTC)"
-      type="date"
-      utcTimeZone={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="product_status.label"
-          optional={false}
-          text="Product Status"
-        />
-      }
-      name="additional_metadata.product_status"
-      options={
-        [
-          {
-            "label": "Select a product status",
-            "value": "",
-          },
-          {
-            "label": "Published",
-            "value": "published",
-          },
-          {
-            "label": "Archived",
-            "value": "Archived",
-          },
-        ]
-      }
-      required={true}
-      value="additional_metadata.product_status"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="external_course_marketing_type.label"
-          optional={false}
-          text="External Product Marketing Type"
-        />
-      }
-      name="additional_metadata.external_course_marketing_type"
-      options={
-        [
-          {
-            "label": "Select a marketing type",
-            "value": "",
-          },
-          {
-            "label": "Sprint",
-            "value": "sprint",
-          },
-          {
-            "label": "Short Course",
-            "value": "short_course",
-          },
-        ]
-      }
-      required={true}
-      value="additional_metadata.external_course_marketing_type"
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Product Meta"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="product_meta.title"
-          optional={false}
-          text="Title"
-        />
-      }
-      name="additional_metadata.product_meta_title"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="product_meta.description"
-          optional={true}
-          text="Description"
-        />
-      }
-      name="additional_metadata.product_meta_description"
-      optional={true}
-    />
-    <Field
-      component={[Function]}
-      createOptionValidator={[Function]}
-      defaultValue={[]}
-      disabled={false}
-      isAsync={true}
-      isCreatable={true}
-      isMulti={true}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <dl>
-                <dt>
-                  Keywords
-                </dt>
-                <dd>
-                  Enter SEO Meta tags for Products. Separate keywords with spaces.
-                </dd>
-              </dl>
-            </div>
-          }
-          id="additional_metadata.product_meta_keywords"
-          optional={true}
-          text="Keywords"
-        />
-      }
-      loadOptions={[Function]}
-      name="additional_metadata.product_meta_keywords"
-      optional={true}
-    />
   </div>
 </div>
 `;
 
 exports[`AdditionalMetadata Fields Display required fields on the basis of external course marketing type 1`] = `
-<div
-  className="collapsible-card pgn_collapsible mt-4"
->
+<div>
   <div
-    className="collapsible-body"
+    class="collapsible-card pgn_collapsible mt-4"
   >
-    <FieldLabel
-      className="h3 font-weight-normal mb-3"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Additional Metadata Details"
-    />
     <div
-      className="mb-3 mt-1"
+      class="collapsible-body"
     >
-      <Field
-        className="float-left mt-1 ml-1"
-        component="input"
-        disabled={false}
-        label="additional_metadata.display_on_org_page"
-        name="additional_metadata.display_on_org_page"
-        required={true}
-        type="checkbox"
-      />
-      <FieldLabel
-        className="font-weight-normal ml-2 float-left"
-        extraText=""
-        helpText=""
-        id={null}
-        optional={false}
-        text="Display on Organization Page"
-      />
-      <br />
+      <div
+        class="h3 font-weight-normal mb-3"
+      >
+        <strong>
+          Additional Metadata Details
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="mb-3 mt-1"
+      >
+        <input
+          class="float-left mt-1 ml-1"
+          label="additional_metadata.display_on_org_page"
+          name="additional_metadata.display_on_org_page"
+          required=""
+          type="checkbox"
+          value=""
+        />
+        <div
+          class="font-weight-normal ml-2 float-left"
+        >
+          <strong>
+            Display on Organization Page
+          </strong>
+          <div>
+            <span
+              class="text-muted"
+            />
+          </div>
+        </div>
+        <br />
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="external_url.label"
+          >
+            <strong>
+              External landing page URL
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="external_identifier.label"
+          >
+            <strong>
+              External system identifier
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="lead_capture_form_url.label"
+          >
+            <strong>
+              Lead capture form url
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="organic_url.label"
+          >
+            <strong>
+              Organic URL
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="variant_id.label"
+          >
+            <strong>
+              Course Variant Id
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="course_term_override.label"
+          >
+            <strong>
+              Course Term Override
+            </strong>
+            <span
+              class=""
+              id="course_term_override.label-help"
+            >
+              <button
+                aria-describedby="course_term_override.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="course_term_override.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <dl>
+    <dt>
+      Course Term
+    </dt>
+    <dd>
+      For example, in the UK universities use programme instead of course, so you can define which term you want to use in course description to keep the consistency.
+    </dd>
+  </dl>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="course_term_override.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Fact 1
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="facts.heading"
+          >
+            <strong>
+              Heading
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="mb-2"
+          name="additional_metadata.facts_1_blurb"
+          tabindex="-1"
+        >
+          <div
+            class=""
+            id="facts.blurb"
+          >
+            <strong>
+              Description
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <textarea
+            aria-hidden="true"
+            id="00000000-0000-0000-0000-000000000000"
+            style="display: none;"
+          />
+          <div
+            aria-disabled="false"
+            class="tox tox-tinymce"
+            role="application"
+            style="visibility: hidden; height: 200px;"
+          >
+            <div
+              class="tox-editor-container"
+            >
+              <div
+                class="tox-editor-header"
+                data-alloy-vertical-dir="toptobottom"
+              >
+                <div
+                  aria-disabled="false"
+                  class="tox-toolbar-overlord"
+                  role="group"
+                >
+                  <div
+                    class="tox-toolbar__primary"
+                    role="group"
+                  >
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="true"
+                        aria-label="Undo"
+                        class="tox-tbtn tox-tbtn--disabled"
+                        tabindex="-1"
+                        title="Undo"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M6.4 8H12c3.7 0 6.2 2 6.8 5.1.6 2.7-.4 5.6-2.3 6.8a1 1 0 01-1-1.8c1.1-.6 1.8-2.7 1.4-4.6-.5-2.1-2.1-3.5-4.9-3.5H6.4l3.3 3.3a1 1 0 11-1.4 1.4l-5-5a1 1 0 010-1.4l5-5a1 1 0 011.4 1.4L6.4 8z"
+                              fill-rule="nonzero"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="true"
+                        aria-label="Redo"
+                        class="tox-tbtn tox-tbtn--disabled"
+                        tabindex="-1"
+                        title="Redo"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M17.6 10H12c-2.8 0-4.4 1.4-4.9 3.5-.4 2 .3 4 1.4 4.6a1 1 0 11-1 1.8c-2-1.2-2.9-4.1-2.3-6.8.6-3 3-5.1 6.8-5.1h5.6l-3.3-3.3a1 1 0 111.4-1.4l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4l3.3-3.3z"
+                              fill-rule="nonzero"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Bold"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Bold"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M7.8 19c-.3 0-.5 0-.6-.2l-.2-.5V5.7c0-.2 0-.4.2-.5l.6-.2h5c1.5 0 2.7.3 3.5 1 .7.6 1.1 1.4 1.1 2.5a3 3 0 01-.6 1.9c-.4.6-1 1-1.6 1.2.4.1.9.3 1.3.6s.8.7 1 1.2c.4.4.5 1 .5 1.6 0 1.3-.4 2.3-1.3 3-.8.7-2.1 1-3.8 1H7.8zm5-8.3c.6 0 1.2-.1 1.6-.5.4-.3.6-.7.6-1.3 0-1.1-.8-1.7-2.3-1.7H9.3v3.5h3.4zm.5 6c.7 0 1.3-.1 1.7-.4.4-.4.6-.9.6-1.5s-.2-1-.7-1.4c-.4-.3-1-.4-2-.4H9.4v3.8h4z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Italic"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Italic"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M16.7 4.7l-.1.9h-.3c-.6 0-1 0-1.4.3-.3.3-.4.6-.5 1.1l-2.1 9.8v.6c0 .5.4.8 1.4.8h.2l-.2.8H8l.2-.8h.2c1.1 0 1.8-.5 2-1.5l2-9.8.1-.5c0-.6-.4-.8-1.4-.8h-.3l.2-.9h5.8z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Underline"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Underline"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M16 5c.6 0 1 .4 1 1v5.5a4 4 0 01-.4 1.8l-1 1.4a5.3 5.3 0 01-5.5 1 5 5 0 01-1.6-1c-.5-.4-.8-.9-1.1-1.4a4 4 0 01-.4-1.8V6c0-.6.4-1 1-1s1 .4 1 1v5.5c0 .3 0 .6.2 1l.6.7a3.3 3.3 0 002.2.8 3.4 3.4 0 002.2-.8c.3-.2.4-.5.6-.8l.2-.9V6c0-.6.4-1 1-1zM8 17h8c.6 0 1 .4 1 1s-.4 1-1 1H8a1 1 0 010-2z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Bullet list"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Bullet list"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M11 5h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zM4.5 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Numbered list"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Numbered list"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M10 17h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 110-2zM6 4v3.5c0 .3-.2.5-.5.5a.5.5 0 01-.5-.5V5h-.5a.5.5 0 010-1H6zm-1 8.8l.2.2h1.3c.3 0 .5.2.5.5s-.2.5-.5.5H4.9a1 1 0 01-.9-1V13c0-.4.3-.8.6-1l1.2-.4.2-.3a.2.2 0 00-.2-.2H4.5a.5.5 0 01-.5-.5c0-.3.2-.5.5-.5h1.6c.5 0 .9.4.9 1v.1c0 .4-.3.8-.6 1l-1.2.4-.2.3zM7 17v2c0 .6-.4 1-1 1H4.5a.5.5 0 010-1h1.2c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.4a.4.4 0 110-.8h1.3c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.5a.5.5 0 110-1H6c.6 0 1 .4 1 1z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Insert/edit link"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Insert/edit link"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M6.2 12.3a1 1 0 011.4 1.4l-2.1 2a2 2 0 102.7 2.8l4.8-4.8a1 1 0 000-1.4 1 1 0 111.4-1.3 2.9 2.9 0 010 4L9.6 20a3.9 3.9 0 01-5.5-5.5l2-2zm11.6-.6a1 1 0 01-1.4-1.4l2-2a2 2 0 10-2.6-2.8L11 10.3a1 1 0 000 1.4A1 1 0 119.6 13a2.9 2.9 0 010-4L14.4 4a3.9 3.9 0 015.5 5.5l-2 2z"
+                              fill-rule="nonzero"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-pressed="false"
+                        class="tox-tbtn tox-tbtn--select"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          class="tox-tbtn__select-label"
+                        >
+                          Browser default language
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="tox-toolbar__group"
+                      data-alloy-tabstop="true"
+                      role="toolbar"
+                      tabindex="-1"
+                      title=""
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="Left to right"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Left to right"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M11 5h7a1 1 0 010 2h-1v11a1 1 0 01-2 0V7h-2v11a1 1 0 01-2 0v-6c-.5 0-1 0-1.4-.3A3.4 3.4 0 017.8 10a3.3 3.3 0 010-2.8 3.4 3.4 0 011.8-1.8L11 5zM4.4 16.2L6.2 15l-1.8-1.2a1 1 0 011.2-1.6l3 2a1 1 0 010 1.6l-3 2a1 1 0 11-1.2-1.6z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button
+                        aria-disabled="false"
+                        aria-label="Right to left"
+                        aria-pressed="false"
+                        class="tox-tbtn"
+                        tabindex="-1"
+                        title="Right to left"
+                        type="button"
+                      >
+                        <span
+                          class="tox-icon tox-tbtn__icon-wrap"
+                        >
+                          <svg
+                            focusable="false"
+                            height="24"
+                            width="24"
+                          >
+                            <path
+                              d="M8 5h8v2h-2v12h-2V7h-2v12H8v-7c-.5 0-1 0-1.4-.3A3.4 3.4 0 014.8 10a3.3 3.3 0 010-2.8 3.4 3.4 0 011.8-1.8L8 5zm12 11.2a1 1 0 11-1 1.6l-3-2a1 1 0 010-1.6l3-2a1 1 0 111 1.6L18.4 15l1.8 1.2z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tox-anchorbar"
+                />
+              </div>
+              <div
+                class="tox-sidebar-wrap"
+              >
+                <div
+                  class="tox-edit-area"
+                >
+                  <iframe
+                    allowtransparency="true"
+                    class="tox-edit-area__iframe"
+                    frameborder="0"
+                    id="00000000-0000-0000-0000-000000000000_ifr"
+                    title="Rich Text Area"
+                  />
+                </div>
+                <div
+                  class="tox-sidebar"
+                  role="complementary"
+                >
+                  <div
+                    class="tox-sidebar__slider tox-sidebar--sliding-closed"
+                    data-alloy-tabstop="true"
+                    style="width: 0px;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="tox-sidebar__pane-container"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tox-statusbar"
+            >
+              <div
+                class="tox-statusbar__resize-handle"
+                data-alloy-tabstop="true"
+                tabindex="-1"
+                title="Resize"
+              >
+                <svg
+                  focusable="false"
+                  height="10"
+                  width="10"
+                >
+                  <g
+                    fill-rule="nonzero"
+                  >
+                    <path
+                      d="M8.1 1.1A.5.5 0 119 2l-7 7A.5.5 0 111 8l7-7zM8.1 5.1A.5.5 0 119 6l-3 3A.5.5 0 115 8l3-3z"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              class="tox-throbber"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Fact 2
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="facts.heading"
+          >
+            <strong>
+              Heading
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="mb-2"
+          name="additional_metadata.facts_2_blurb"
+          tabindex="-1"
+        >
+          <div
+            class=""
+            id="facts.blurb"
+          >
+            <strong>
+              Description
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <textarea
+            id="00000000-0000-0000-0000-000000000000"
+            style=""
+          />
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Certificate Information
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="certificate-info.heading"
+          >
+            <strong>
+              Heading
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="mb-2"
+          name="additional_metadata.certificate_info_blurb"
+          tabindex="-1"
+        >
+          <div
+            class=""
+            id="certificate-info.blurb"
+          >
+            <strong>
+              Description
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <textarea
+            id="00000000-0000-0000-0000-000000000000"
+            style=""
+          />
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.start_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.start_date-date-label"
+              >
+                <strong>
+                  Start Date
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="form-control"
+                id="additional_metadata.start_date-date-label"
+                maxlength=""
+                min=""
+                name="additional_metadata.start_dateDate"
+                pattern="dd/mm/yyyy"
+                placeholder=""
+                required=""
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.start_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.start_date-time-label"
+              >
+                <strong>
+                  Start Time (UTC)
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="has-value form-control"
+                id="additional_metadata.start_date-date-label"
+                name="additional_metadata.start_dateTime"
+                placeholder="HH:mm"
+                required=""
+                type="time"
+                value="00:00"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.end_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.end_date-date-label"
+              >
+                <strong>
+                  End Date
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="form-control"
+                id="additional_metadata.end_date-date-label"
+                maxlength=""
+                min=""
+                name="additional_metadata.end_dateDate"
+                pattern="dd/mm/yyyy"
+                placeholder=""
+                required=""
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.end_date-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.end_date-time-label"
+              >
+                <strong>
+                  End Time (UTC)
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="has-value form-control"
+                id="additional_metadata.end_date-date-label"
+                name="additional_metadata.end_dateTime"
+                placeholder="HH:mm"
+                required=""
+                type="time"
+                value="00:00"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.registration_deadline-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.registration_deadline-date-label"
+              >
+                <strong>
+                  Registration Deadline Date
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="form-control"
+                id="additional_metadata.registration_deadline-date-label"
+                maxlength=""
+                min=""
+                name="additional_metadata.registration_deadlineDate"
+                pattern="dd/mm/yyyy"
+                placeholder=""
+                required=""
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-6"
+        >
+          <div
+            class="pgn__form-group"
+          >
+            <label
+              class="pgn__form-label"
+              for="additional_metadata.registration_deadline-date-label"
+            >
+              <div
+                class=""
+                id="additional_metadata.registration_deadline-time-label"
+              >
+                <strong>
+                  Registration Deadline Time (UTC)
+                </strong>
+                <div>
+                  <span
+                    class="text-muted"
+                  />
+                </div>
+              </div>
+            </label>
+            <div
+              class="pgn__form-control-decorator-group"
+            >
+              <input
+                class="has-value form-control"
+                id="additional_metadata.registration_deadline-date-label"
+                name="additional_metadata.registration_deadlineTime"
+                placeholder="HH:mm"
+                required=""
+                type="time"
+                value="00:00"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="product_status.label"
+          >
+            <strong>
+              Product Status
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="additional_metadata.product_status"
+            required=""
+          >
+            <option
+              value=""
+            >
+              Select a product status
+            </option>
+            <option
+              value=""
+            >
+              Select a product status
+            </option>
+            <option
+              value="published"
+            >
+              Published
+            </option>
+            <option
+              value="Archived"
+            >
+              Archived
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="external_course_marketing_type.label"
+          >
+            <strong>
+              External Product Marketing Type
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="additional_metadata.external_course_marketing_type"
+            required=""
+          >
+            <option
+              value=""
+            >
+              Select a marketing type
+            </option>
+            <option
+              value=""
+            >
+              Select a marketing type
+            </option>
+            <option
+              value="sprint"
+            >
+              Sprint
+            </option>
+            <option
+              value="short_course"
+            >
+              Short Course
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="h3 font-weight-normal"
+      >
+        <strong>
+          Product Meta
+        </strong>
+        <div>
+          <span
+            class="text-muted"
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="product_meta.title"
+          >
+            <strong>
+              Title
+            </strong>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            required=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="product_meta.description"
+          >
+            <strong>
+              Description
+            </strong>
+            <span
+              aria-hidden="true"
+              class="text-gray-700"
+            >
+                 (optional)
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <input
+            class="form-control"
+            id="-text-label"
+            maxlength=""
+            name=""
+            placeholder=""
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="mb-3 mr-2"
+        name="additional_metadata.product_meta_keywords"
+      >
+        <div
+          class="mb-2.5"
+        >
+          <div
+            class=""
+            id="additional_metadata.product_meta_keywords"
+          >
+            <strong>
+              Keywords
+            </strong>
+            <span
+              aria-hidden="true"
+              class="text-gray-700"
+            >
+                 (optional)
+            </span>
+            <span
+              class=""
+              id="additional_metadata.product_meta_keywords-help"
+            >
+              <button
+                aria-describedby="additional_metadata.product_meta_keywords-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom text-gray-700"
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="additional_metadata.product_meta_keywords-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <dl>
+    <dt>
+      Keywords
+    </dt>
+    <dd>
+      Enter SEO Meta tags for Products. Separate keywords with spaces.
+    </dd>
+  </dl>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="additional_metadata.product_meta_keywords-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-container css-b62m3t-container"
+        >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-3-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
+          <div
+            class="react-select-async__control css-13cymwt-control"
+          >
+            <div
+              class="react-select-async__value-container react-select-async__value-container--is-multi css-hlgwow"
+            >
+              <div
+                class="react-select-async__placeholder css-1jqq78o-placeholder"
+                id="react-select-3-placeholder"
+              />
+              <div
+                class="react-select-async__input-container css-19bb58m"
+                data-value=""
+              >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-3-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="react-select-async__input"
+                  id="react-select-3-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="react-select-async__indicators css-1wy0on6"
+            >
+              <span
+                class="react-select-async__indicator-separator css-1u9des2-indicatorSeparator"
+              />
+              <div
+                aria-hidden="true"
+                class="react-select-async__indicator react-select-async__dropdown-indicator css-1xc3v61-indicatorContainer"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="css-tj5bde-Svg"
+                  focusable="false"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="external_url.label"
-          optional={false}
-          text="External landing page URL"
-        />
-      }
-      name="additional_metadata.external_url"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="external_identifier.label"
-          optional={false}
-          text="External system identifier"
-        />
-      }
-      name="additional_metadata.external_identifier"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="lead_capture_form_url.label"
-          optional={false}
-          text="Lead capture form url"
-        />
-      }
-      name="additional_metadata.lead_capture_form_url"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="organic_url.label"
-          optional={false}
-          text="Organic URL"
-        />
-      }
-      name="additional_metadata.organic_url"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="variant_id.label"
-          optional={false}
-          text="Course Variant Id"
-        />
-      }
-      name="additional_metadata.variant_id"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <dl>
-                <dt>
-                  Course Term
-                </dt>
-                <dd>
-                  For example, in the UK universities use programme instead of course, so you can define which term you want to use in course description to keep the consistency.
-                </dd>
-              </dl>
-            </div>
-          }
-          id="course_term_override.label"
-          optional={false}
-          text="Course Term Override"
-        />
-      }
-      name="additional_metadata.course_term_override"
-      required={true}
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Fact 1"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.heading"
-          optional={false}
-          text="Heading"
-        />
-      }
-      name="additional_metadata.facts_1_heading"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.blurb"
-          optional={false}
-          text="Description"
-        />
-      }
-      name="additional_metadata.facts_1_blurb"
-      required={true}
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Fact 2"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.heading"
-          optional={false}
-          text="Heading"
-        />
-      }
-      name="additional_metadata.facts_2_heading"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="facts.blurb"
-          optional={false}
-          text="Description"
-        />
-      }
-      name="additional_metadata.facts_2_blurb"
-      required={true}
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Certificate Information"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="certificate-info.heading"
-          optional={false}
-          text="Heading"
-        />
-      }
-      name="additional_metadata.certificate_info_heading"
-      required={false}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="certificate-info.blurb"
-          optional={false}
-          text="Description"
-        />
-      }
-      name="additional_metadata.certificate_info_blurb"
-      required={false}
-    />
-    <Field
-      component={[Function]}
-      dateLabel="Start Date"
-      disabled={false}
-      name="additional_metadata.start_date"
-      required={true}
-      timeLabel="Start Time (UTC)"
-      type="date"
-      utcTimeZone={true}
-    />
-    <Field
-      component={[Function]}
-      dateLabel="End Date"
-      disabled={false}
-      name="additional_metadata.end_date"
-      required={true}
-      timeLabel="End Time (UTC)"
-      type="date"
-      utcTimeZone={true}
-    />
-    <Field
-      component={[Function]}
-      dateLabel="Registration Deadline Date"
-      disabled={false}
-      name="additional_metadata.registration_deadline"
-      required={true}
-      timeLabel="Registration Deadline Time (UTC)"
-      type="date"
-      utcTimeZone={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="product_status.label"
-          optional={false}
-          text="Product Status"
-        />
-      }
-      name="additional_metadata.product_status"
-      options={
-        [
-          {
-            "label": "Select a product status",
-            "value": "",
-          },
-          {
-            "label": "Select a product status",
-            "value": "",
-          },
-          {
-            "label": "Published",
-            "value": "published",
-          },
-          {
-            "label": "Archived",
-            "value": "Archived",
-          },
-        ]
-      }
-      required={true}
-      value="additional_metadata.product_status"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="external_course_marketing_type.label"
-          optional={false}
-          text="External Product Marketing Type"
-        />
-      }
-      name="additional_metadata.external_course_marketing_type"
-      options={
-        [
-          {
-            "label": "Select a marketing type",
-            "value": "",
-          },
-          {
-            "label": "Select a marketing type",
-            "value": "",
-          },
-          {
-            "label": "Sprint",
-            "value": "sprint",
-          },
-          {
-            "label": "Short Course",
-            "value": "short_course",
-          },
-        ]
-      }
-      required={true}
-      value="additional_metadata.external_course_marketing_type"
-    />
-    <FieldLabel
-      className="h3 font-weight-normal"
-      extraText=""
-      helpText=""
-      id={null}
-      optional={false}
-      text="Product Meta"
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="product_meta.title"
-          optional={false}
-          text="Title"
-        />
-      }
-      name="additional_metadata.product_meta_title"
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      disabled={false}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText=""
-          id="product_meta.description"
-          optional={true}
-          text="Description"
-        />
-      }
-      name="additional_metadata.product_meta_description"
-      optional={true}
-    />
-    <Field
-      component={[Function]}
-      createOptionValidator={[Function]}
-      defaultValue={[]}
-      disabled={false}
-      isAsync={true}
-      isCreatable={true}
-      isMulti={true}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <dl>
-                <dt>
-                  Keywords
-                </dt>
-                <dd>
-                  Enter SEO Meta tags for Products. Separate keywords with spaces.
-                </dd>
-              </dl>
-            </div>
-          }
-          id="additional_metadata.product_meta_keywords"
-          optional={true}
-          text="Keywords"
-        />
-      }
-      loadOptions={[Function]}
-      name="additional_metadata.product_meta_keywords"
-      optional={true}
-    />
   </div>
 </div>
 `;

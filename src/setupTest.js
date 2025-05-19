@@ -2,15 +2,25 @@
 
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
-import Enzyme from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { getAuthenticatedHttpClient, getAuthenticatedUser } from '@edx/frontend-platform/auth';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock('@edx/frontend-platform/auth');
 getAuthenticatedHttpClient.mockReturnValue(axios);
 getAuthenticatedUser.mockReturnValue({ administrator: false });
+
+// https://github.com/wwayne/react-tooltip/issues/595#issuecomment-638438372
+jest.mock('react-tooltip/node_modules/uuid', () => ({
+  v4: () => '00000000-0000-0000-0000-000000000000',
+}));
+
+// uuid is used to generate id for editor. During tests, if not mocked, every new run will have
+// different uuid and thus, snapsots will change.
+// This mocking is inspired from https://github.com/jpuri/react-draft-wysiwyg/issues/780
+// TODO: Since uuid is used for id, it might not be a good idea to hardcode same id on same page.
+jest.mock('@tinymce/tinymce-react/lib/cjs/main/ts/Utils', () => ({
+  ...jest.requireActual('@tinymce/tinymce-react/lib/cjs/main/ts/Utils'),
+  uuid: () => '00000000-0000-0000-0000-000000000000',
+}));
 
 process.env.COURSE_URL_SLUGS_PATTERN = `{
     "edx": {

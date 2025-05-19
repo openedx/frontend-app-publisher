@@ -1,28 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Course Run Button Toolbar default parameters 1`] = `""`;
+exports[`Course Run Button Toolbar default parameters 1`] = `<div />`;
 
 exports[`Course Run Button Toolbar editable 1`] = `
-<ButtonToolbar
-  className=""
-  leftJustify={false}
->
-  <CourseRunSubmitButton
-    disabled={false}
-    hasNonExemptChanges={false}
-    onSubmit={[Function]}
-    status="unpublished"
-    submitting={false}
-  />
-</ButtonToolbar>
+<div>
+  <div
+    class="btn-toolbar justify-content-end"
+    role="toolbar"
+  >
+    <div
+      class="btn-group ml-2"
+      role="group"
+    >
+      <button
+        aria-disabled="false"
+        aria-live="assertive"
+        class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+        type="submit"
+      >
+        <span
+          class="d-flex align-items-center justify-content-center"
+        >
+          <span>
+            Submit Run for Review
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
 `;
 
-exports[`Course Run Button Toolbar published pristine 1`] = `""`;
+exports[`Course Run Button Toolbar published pristine 1`] = `<div />`;
 
 exports[`Course Run Button Toolbar published with changes 1`] = `
-<div
-  className="font-italic text-center"
->
-  To publish changes, click ‘Save & Re-Publish’ below.
+<div>
+  <div
+    class="font-italic text-center"
+  >
+    To publish changes, click ‘Save & Re-Publish’ below.
+  </div>
 </div>
 `;

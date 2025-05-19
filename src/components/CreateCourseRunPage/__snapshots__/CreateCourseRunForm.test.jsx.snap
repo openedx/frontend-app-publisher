@@ -1,640 +1,3554 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateCourseRunForm renders html correctly 1`] = `
-<div
-  className="create-course-run-form"
->
-  <h2>
-    Create a new course run
-  </h2>
-  <hr />
-  <FieldLabel
-    className="mb-2"
-    extraText=""
-    helpText=""
-    id={null}
-    optional={false}
-    text="Course"
-  />
+<div>
   <div
-    className="mb-3"
+    class="create-course-run-form"
   >
-    <Link
-      to="/courses/00000000-0000-0000-0000-000000000001"
+    <h2>
+      Create a new course run
+    </h2>
+    <hr />
+    <div
+      class="mb-2"
     >
-      Test Course
-    </Link>
-  </div>
-  <form
-    onSubmit={[Function]}
-  >
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
-              </p>
-            </div>
-          }
-          id="rerun.label"
-          optional={false}
-          text="Select a run to copy"
+      <strong>
+        Course
+      </strong>
+      <div>
+        <span
+          class="text-muted"
         />
-      }
-      name="rerun"
-      options={[]}
-      type="text"
-    />
-    <div>
-      <Field
-        component={[Function]}
-        dateLabel="Start date"
-        helpText={
-          <div>
-            <p>
-              Required Format: yyyy/mm/dd
-            </p>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>
-        }
-        maxLength="10"
-        name="start"
-        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
-        placeholder="yyyy/mm/dd"
-        required={true}
-        timeLabel="Start time (GMT)"
-        type="text"
-      />
-      <Field
-        component={[Function]}
-        dateLabel="End date"
-        helpText={
-          <div>
-            <p>
-              Required Format: yyyy/mm/dd
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>
-        }
-        maxLength="10"
-        name="end"
-        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
-        placeholder="yyyy/mm/dd"
-        required={true}
-        timeLabel="End time (GMT)"
-        type="text"
-      />
+      </div>
     </div>
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
-              </p>
-              <p>
-                <a
-                  href="https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Learn more.
-                </a>
-              </p>
-            </div>
-          }
-          id="run_type.label"
-          optional={false}
-          required={true}
-          text="Course run enrollment track"
-        />
-      }
-      name="run_type"
-      options={[]}
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                Instructor-paced courses include individual assignments that have specific due dates before the course end date.
-              </p>
-              <p>
-                Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
-              </p>
-            </div>
-          }
-          id="pacing_type.label"
-          optional={false}
-          text="Course pacing"
-        />
-      }
-      name="pacing_type"
-      options={
-        [
-          {
-            "label": "Instructor-paced",
-            "value": "instructor_paced",
-          },
-          {
-            "label": "Self-paced",
-            "value": "self_paced",
-          },
-        ]
-      }
-      props={
-        {
-          "name": "pacing_type",
-        }
-      }
-      type="text"
-    />
-    <ButtonToolbar
-      className=""
-      leftJustify={false}
+    <div
+      class="mb-3"
     >
-      <Link
-        to="/courses/00000000-0000-0000-0000-000000000001"
+      <a
+        href="/courses/00000000-0000-0000-0000-000000000001"
       >
-        <button
-          className="btn btn-outline-primary"
-          disabled={false}
-          type="button"
+        Test Course
+      </a>
+    </div>
+    <form>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
         >
-          Cancel
-        </button>
-      </Link>
-      <ActionButton
-        className=""
-        disabled={true}
-        labels={
-          {
-            "default": "Create",
-            "pending": "Creating",
-          }
-        }
-        primary={true}
-        state="default"
-      />
-    </ButtonToolbar>
-  </form>
+          <div
+            class=""
+            id="rerun.label"
+          >
+            <strong>
+              Select a run to copy
+            </strong>
+            <span
+              class=""
+              id="rerun.label-help"
+            >
+              <button
+                aria-describedby="rerun.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="rerun.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="rerun.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="rerun"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="start-date-label"
+              >
+                <div
+                  class=""
+                  id="start-date-label"
+                >
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    class=""
+                    id="start-date-label-help"
+                  >
+                    <button
+                      aria-describedby="start-date-label-help-tooltip"
+                      class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span
+                      class="field-help-data"
+                      currentitem="false"
+                      data-for="start-date-label-help-tooltip"
+                      data-html="true"
+                      data-testid="field-help-data"
+                      data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    Start on a Tuesday, Wednesday, or Thursday.
+  </p>
+  <p>
+    Avoid major holidays.
+  </p>
+  <p>
+    Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+  </p>
+</div>"
+                    />
+                    <div
+                      class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                      data-id="tooltip"
+                      id="start-date-label-help-tooltip"
+                    >
+                      <style
+                        aria-hidden="true"
+                      >
+                        
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                      </style>
+                    </div>
+                  </span>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="form-control"
+                  id="start-date-label"
+                  maxlength="10"
+                  min=""
+                  name="startDate"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="start-date-label"
+              >
+                <div
+                  class=""
+                  id="start-time-label"
+                >
+                  <strong>
+                    Start time (GMT)
+                  </strong>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="has-value form-control"
+                  id="start-date-label"
+                  name="startTime"
+                  placeholder="HH:mm"
+                  required=""
+                  type="time"
+                  value="00:00"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="end-date-label"
+              >
+                <div
+                  class=""
+                  id="end-date-label"
+                >
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    class=""
+                    id="end-date-label-help"
+                  >
+                    <button
+                      aria-describedby="end-date-label-help-tooltip"
+                      class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span
+                      class="field-help-data"
+                      currentitem="false"
+                      data-for="end-date-label-help-tooltip"
+                      data-html="true"
+                      data-testid="field-help-data"
+                      data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+  </p>
+</div>"
+                    />
+                    <div
+                      class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                      data-id="tooltip"
+                      id="end-date-label-help-tooltip"
+                    >
+                      <style
+                        aria-hidden="true"
+                      >
+                        
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                      </style>
+                    </div>
+                  </span>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="form-control"
+                  id="end-date-label"
+                  maxlength="10"
+                  min=""
+                  name="endDate"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="end-date-label"
+              >
+                <div
+                  class=""
+                  id="end-time-label"
+                >
+                  <strong>
+                    End time (GMT)
+                  </strong>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="has-value form-control"
+                  id="end-date-label"
+                  name="endTime"
+                  placeholder="HH:mm"
+                  required=""
+                  type="time"
+                  value="00:00"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="run_type.label"
+          >
+            <strong>
+              Course run enrollment track
+            </strong>
+            <span
+              class=""
+              id="run_type.label-help"
+            >
+              <button
+                aria-describedby="run_type.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="run_type.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="run_type.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="run_type"
+            required=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="pacing_type-text-label"
+        >
+          <div
+            class=""
+            id="pacing_type.label"
+          >
+            <strong>
+              Course pacing
+            </strong>
+            <span
+              class=""
+              id="pacing_type.label-help"
+            >
+              <button
+                aria-describedby="pacing_type.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="pacing_type.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+  </p>
+  <p>
+    Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="pacing_type.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="pacing_type-text-label"
+            label="[object Object]"
+            name="pacing_type"
+          >
+            <option
+              value="instructor_paced"
+            >
+              Instructor-paced
+            </option>
+            <option
+              value="self_paced"
+            >
+              Self-paced
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="btn-toolbar justify-content-end"
+        role="toolbar"
+      >
+        <div
+          class="btn-group ml-2"
+          role="group"
+        >
+          <a
+            href="/courses/00000000-0000-0000-0000-000000000001"
+          >
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+            >
+              Cancel
+            </button>
+          </a>
+        </div>
+        <div
+          class="btn-group ml-2"
+          role="group"
+        >
+          <button
+            aria-disabled="false"
+            aria-live="assertive"
+            class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+            disabled=""
+            type="submit"
+          >
+            <span
+              class="d-flex align-items-center justify-content-center"
+            >
+              <span>
+                Create
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 `;
 
 exports[`CreateCourseRunForm renders html correctly when creating 1`] = `
-<div
-  className="create-course-run-form"
->
-  <h2>
-    Create a new course run
-  </h2>
-  <hr />
-  <FieldLabel
-    className="mb-2"
-    extraText=""
-    helpText=""
-    id={null}
-    optional={false}
-    text="Course"
-  />
+<div>
   <div
-    className="mb-3"
+    class="create-course-run-form"
   >
-    <Link
-      to="/courses/00000000-0000-0000-0000-000000000001"
+    <h2>
+      Create a new course run
+    </h2>
+    <hr />
+    <div
+      class="mb-2"
     >
-      Test Course
-    </Link>
-  </div>
-  <form
-    onSubmit={[Function]}
-  >
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
-              </p>
-            </div>
-          }
-          id="rerun.label"
-          optional={false}
-          text="Select a run to copy"
+      <strong>
+        Course
+      </strong>
+      <div>
+        <span
+          class="text-muted"
         />
-      }
-      name="rerun"
-      options={[]}
-      type="text"
-    />
-    <div>
-      <Field
-        component={[Function]}
-        dateLabel="Start date"
-        helpText={
-          <div>
-            <p>
-              Required Format: yyyy/mm/dd
-            </p>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>
-        }
-        maxLength="10"
-        name="start"
-        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
-        placeholder="yyyy/mm/dd"
-        required={true}
-        timeLabel="Start time (GMT)"
-        type="text"
-      />
-      <Field
-        component={[Function]}
-        dateLabel="End date"
-        helpText={
-          <div>
-            <p>
-              Required Format: yyyy/mm/dd
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>
-        }
-        maxLength="10"
-        name="end"
-        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
-        placeholder="yyyy/mm/dd"
-        required={true}
-        timeLabel="End time (GMT)"
-        type="text"
-      />
+      </div>
     </div>
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
-              </p>
-              <p>
-                <a
-                  href="https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Learn more.
-                </a>
-              </p>
-            </div>
-          }
-          id="run_type.label"
-          optional={false}
-          required={true}
-          text="Course run enrollment track"
-        />
-      }
-      name="run_type"
-      options={[]}
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                Instructor-paced courses include individual assignments that have specific due dates before the course end date.
-              </p>
-              <p>
-                Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
-              </p>
-            </div>
-          }
-          id="pacing_type.label"
-          optional={false}
-          text="Course pacing"
-        />
-      }
-      name="pacing_type"
-      options={
-        [
-          {
-            "label": "Instructor-paced",
-            "value": "instructor_paced",
-          },
-          {
-            "label": "Self-paced",
-            "value": "self_paced",
-          },
-        ]
-      }
-      props={
-        {
-          "name": "pacing_type",
-        }
-      }
-      type="text"
-    />
-    <ButtonToolbar
-      className=""
-      leftJustify={false}
+    <div
+      class="mb-3"
     >
-      <Link
-        to="/courses/00000000-0000-0000-0000-000000000001"
+      <a
+        href="/courses/00000000-0000-0000-0000-000000000001"
       >
-        <button
-          className="btn btn-outline-primary"
-          disabled={true}
-          type="button"
+        Test Course
+      </a>
+    </div>
+    <form>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
         >
-          Cancel
-        </button>
-      </Link>
-      <ActionButton
-        className=""
-        disabled={false}
-        labels={
-          {
-            "default": "Create",
-            "pending": "Creating",
-          }
-        }
-        primary={true}
-        state="pending"
-      />
-    </ButtonToolbar>
-  </form>
+          <div
+            class=""
+            id="rerun.label"
+          >
+            <strong>
+              Select a run to copy
+            </strong>
+            <span
+              class=""
+              id="rerun.label-help"
+            >
+              <button
+                aria-describedby="rerun.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="rerun.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="rerun.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="rerun"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="start-date-label"
+              >
+                <div
+                  class=""
+                  id="start-date-label"
+                >
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    class=""
+                    id="start-date-label-help"
+                  >
+                    <button
+                      aria-describedby="start-date-label-help-tooltip"
+                      class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span
+                      class="field-help-data"
+                      currentitem="false"
+                      data-for="start-date-label-help-tooltip"
+                      data-html="true"
+                      data-testid="field-help-data"
+                      data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    Start on a Tuesday, Wednesday, or Thursday.
+  </p>
+  <p>
+    Avoid major holidays.
+  </p>
+  <p>
+    Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+  </p>
+</div>"
+                    />
+                    <div
+                      class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                      data-id="tooltip"
+                      id="start-date-label-help-tooltip"
+                    >
+                      <style
+                        aria-hidden="true"
+                      >
+                        
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                      </style>
+                    </div>
+                  </span>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="form-control"
+                  id="start-date-label"
+                  maxlength="10"
+                  min=""
+                  name="startDate"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="start-date-label"
+              >
+                <div
+                  class=""
+                  id="start-time-label"
+                >
+                  <strong>
+                    Start time (GMT)
+                  </strong>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="has-value form-control"
+                  id="start-date-label"
+                  name="startTime"
+                  placeholder="HH:mm"
+                  required=""
+                  type="time"
+                  value="00:00"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="end-date-label"
+              >
+                <div
+                  class=""
+                  id="end-date-label"
+                >
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    class=""
+                    id="end-date-label-help"
+                  >
+                    <button
+                      aria-describedby="end-date-label-help-tooltip"
+                      class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span
+                      class="field-help-data"
+                      currentitem="false"
+                      data-for="end-date-label-help-tooltip"
+                      data-html="true"
+                      data-testid="field-help-data"
+                      data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+  </p>
+</div>"
+                    />
+                    <div
+                      class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                      data-id="tooltip"
+                      id="end-date-label-help-tooltip"
+                    >
+                      <style
+                        aria-hidden="true"
+                      >
+                        
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                      </style>
+                    </div>
+                  </span>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="form-control"
+                  id="end-date-label"
+                  maxlength="10"
+                  min=""
+                  name="endDate"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="end-date-label"
+              >
+                <div
+                  class=""
+                  id="end-time-label"
+                >
+                  <strong>
+                    End time (GMT)
+                  </strong>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="has-value form-control"
+                  id="end-date-label"
+                  name="endTime"
+                  placeholder="HH:mm"
+                  required=""
+                  type="time"
+                  value="00:00"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="run_type.label"
+          >
+            <strong>
+              Course run enrollment track
+            </strong>
+            <span
+              class=""
+              id="run_type.label-help"
+            >
+              <button
+                aria-describedby="run_type.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="run_type.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="run_type.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="run_type"
+            required=""
+          />
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="pacing_type-text-label"
+        >
+          <div
+            class=""
+            id="pacing_type.label"
+          >
+            <strong>
+              Course pacing
+            </strong>
+            <span
+              class=""
+              id="pacing_type.label-help"
+            >
+              <button
+                aria-describedby="pacing_type.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="pacing_type.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+  </p>
+  <p>
+    Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="pacing_type.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="pacing_type-text-label"
+            label="[object Object]"
+            name="pacing_type"
+          >
+            <option
+              value="instructor_paced"
+            >
+              Instructor-paced
+            </option>
+            <option
+              value="self_paced"
+            >
+              Self-paced
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="btn-toolbar justify-content-end"
+        role="toolbar"
+      >
+        <div
+          class="btn-group ml-2"
+          role="group"
+        >
+          <a
+            href="/courses/00000000-0000-0000-0000-000000000001"
+          >
+            <button
+              class="btn btn-outline-primary"
+              disabled=""
+              type="button"
+            >
+              Cancel
+            </button>
+          </a>
+        </div>
+        <div
+          class="btn-group ml-2"
+          role="group"
+        >
+          <button
+            aria-disabled="true"
+            aria-live="assertive"
+            class="pgn__stateful-btn pgn__stateful-btn-state-pending btn form-submit-btn disabled btn btn-primary"
+            disabled=""
+            type="submit"
+          >
+            <span
+              class="d-flex align-items-center justify-content-center"
+            >
+              <span
+                class="pgn__stateful-btn-icon"
+              >
+                <span
+                  class="pgn__icon icon-spin"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 12A10 10 0 1 1 6.122 3.91l1.176 1.618A8 8 0 1 0 20 12h2Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span>
+                Creating
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 `;
 
 exports[`CreateCourseRunForm renders html correctly with Course Type 1`] = `
-<div
-  className="create-course-run-form"
->
-  <h2>
-    Create a new course run
-  </h2>
-  <hr />
-  <FieldLabel
-    className="mb-2"
-    extraText=""
-    helpText=""
-    id={null}
-    optional={false}
-    text="Course"
-  />
+<div>
   <div
-    className="mb-3"
+    class="create-course-run-form"
   >
-    <Link
-      to="/courses/00000000-0000-0000-0000-000000000001"
+    <h2>
+      Create a new course run
+    </h2>
+    <hr />
+    <div
+      class="mb-2"
     >
-      Test Course
-    </Link>
-  </div>
-  <form
-    onSubmit={[Function]}
-  >
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
-              </p>
-            </div>
-          }
-          id="rerun.label"
-          optional={false}
-          text="Select a run to copy"
+      <strong>
+        Course
+      </strong>
+      <div>
+        <span
+          class="text-muted"
         />
-      }
-      name="rerun"
-      options={[]}
-      type="text"
-    />
-    <div>
-      <Field
-        component={[Function]}
-        dateLabel="Start date"
-        helpText={
-          <div>
-            <p>
-              Required Format: yyyy/mm/dd
-            </p>
-            <p>
-              Start on a Tuesday, Wednesday, or Thursday.
-            </p>
-            <p>
-              Avoid major holidays.
-            </p>
-            <p>
-              Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
-            </p>
-          </div>
-        }
-        maxLength="10"
-        name="start"
-        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
-        placeholder="yyyy/mm/dd"
-        required={true}
-        timeLabel="Start time (GMT)"
-        type="text"
-      />
-      <Field
-        component={[Function]}
-        dateLabel="End date"
-        helpText={
-          <div>
-            <p>
-              Required Format: yyyy/mm/dd
-            </p>
-            <p>
-              If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
-            </p>
-          </div>
-        }
-        maxLength="10"
-        name="end"
-        pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
-        placeholder="yyyy/mm/dd"
-        required={true}
-        timeLabel="End time (GMT)"
-        type="text"
-      />
+      </div>
     </div>
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
-              </p>
-              <p>
-                <a
-                  href="https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Learn more.
-                </a>
-              </p>
-            </div>
-          }
-          id="run_type.label"
-          optional={false}
-          required={true}
-          text="Course run enrollment track"
-        />
-      }
-      name="run_type"
-      options={
-        [
-          {
-            "label": "Select enrollment track",
-            "value": "",
-          },
-          {
-            "label": "Verified and Audit",
-            "value": "4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c",
-          },
-          {
-            "label": "Audit Only",
-            "value": "cfacfc62-54bd-4e1b-939a-5a94f12fbd8d",
-          },
-        ]
-      }
-      required={true}
-    />
-    <Field
-      component={[Function]}
-      label={
-        <FieldLabel
-          className=""
-          extraText=""
-          helpText={
-            <div>
-              <p>
-                Instructor-paced courses include individual assignments that have specific due dates before the course end date.
-              </p>
-              <p>
-                Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
-              </p>
-            </div>
-          }
-          id="pacing_type.label"
-          optional={false}
-          text="Course pacing"
-        />
-      }
-      name="pacing_type"
-      options={
-        [
-          {
-            "label": "Instructor-paced",
-            "value": "instructor_paced",
-          },
-          {
-            "label": "Self-paced",
-            "value": "self_paced",
-          },
-        ]
-      }
-      props={
-        {
-          "name": "pacing_type",
-        }
-      }
-      type="text"
-    />
-    <ButtonToolbar
-      className=""
-      leftJustify={false}
+    <div
+      class="mb-3"
     >
-      <Link
-        to="/courses/00000000-0000-0000-0000-000000000001"
+      <a
+        href="/courses/00000000-0000-0000-0000-000000000001"
       >
-        <button
-          className="btn btn-outline-primary"
-          disabled={false}
-          type="button"
+        Test Course
+      </a>
+    </div>
+    <form>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
         >
-          Cancel
-        </button>
-      </Link>
-      <ActionButton
-        className=""
-        disabled={true}
-        labels={
-          {
-            "default": "Create",
-            "pending": "Creating",
-          }
-        }
-        primary={true}
-        state="default"
-      />
-    </ButtonToolbar>
-  </form>
+          <div
+            class=""
+            id="rerun.label"
+          >
+            <strong>
+              Select a run to copy
+            </strong>
+            <span
+              class=""
+              id="rerun.label-help"
+            >
+              <button
+                aria-describedby="rerun.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="rerun.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    Select a run to copy as the starting point for your new studio instance. The newest run is listed first.
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="rerun.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="rerun"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="start-date-label"
+              >
+                <div
+                  class=""
+                  id="start-date-label"
+                >
+                  <strong>
+                    Start date
+                  </strong>
+                  <span
+                    class=""
+                    id="start-date-label-help"
+                  >
+                    <button
+                      aria-describedby="start-date-label-help-tooltip"
+                      class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span
+                      class="field-help-data"
+                      currentitem="false"
+                      data-for="start-date-label-help-tooltip"
+                      data-html="true"
+                      data-testid="field-help-data"
+                      data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    Start on a Tuesday, Wednesday, or Thursday.
+  </p>
+  <p>
+    Avoid major holidays.
+  </p>
+  <p>
+    Dates are editable in Studio after the course is created, rounded to the nearest term. If your courses start on January - May 2020, the URL will end in 1T2020.
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated start date. For example, if your course will start near the end of March, specify March 31.
+  </p>
+</div>"
+                    />
+                    <div
+                      class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                      data-id="tooltip"
+                      id="start-date-label-help-tooltip"
+                    >
+                      <style
+                        aria-hidden="true"
+                      >
+                        
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                      </style>
+                    </div>
+                  </span>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="form-control"
+                  id="start-date-label"
+                  maxlength="10"
+                  min=""
+                  name="startDate"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="start-date-label"
+              >
+                <div
+                  class=""
+                  id="start-time-label"
+                >
+                  <strong>
+                    Start time (GMT)
+                  </strong>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="has-value form-control"
+                  id="start-date-label"
+                  name="startTime"
+                  placeholder="HH:mm"
+                  required=""
+                  type="time"
+                  value="00:00"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="end-date-label"
+              >
+                <div
+                  class=""
+                  id="end-date-label"
+                >
+                  <strong>
+                    End date
+                  </strong>
+                  <span
+                    class=""
+                    id="end-date-label-help"
+                  >
+                    <button
+                      aria-describedby="end-date-label-help-tooltip"
+                      class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                      type="button"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span
+                      class="field-help-data"
+                      currentitem="false"
+                      data-for="end-date-label-help-tooltip"
+                      data-html="true"
+                      data-testid="field-help-data"
+                      data-tip="<div>
+  <p>
+    Required Format: yyyy/mm/dd
+  </p>
+  <p>
+    If you are unsure of the exact date, specify a day that is close to the estimated end date. For example, if your course will end near the end of March, specify March 31.
+  </p>
+</div>"
+                    />
+                    <div
+                      class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                      data-id="tooltip"
+                      id="end-date-label-help-tooltip"
+                    >
+                      <style
+                        aria-hidden="true"
+                      >
+                        
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                      </style>
+                    </div>
+                  </span>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="form-control"
+                  id="end-date-label"
+                  maxlength="10"
+                  min=""
+                  name="endDate"
+                  pattern="20[1-9][0-9]/(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])"
+                  placeholder="yyyy/mm/dd"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6"
+          >
+            <div
+              class="pgn__form-group"
+            >
+              <label
+                class="pgn__form-label"
+                for="end-date-label"
+              >
+                <div
+                  class=""
+                  id="end-time-label"
+                >
+                  <strong>
+                    End time (GMT)
+                  </strong>
+                  <div>
+                    <span
+                      class="text-muted"
+                    />
+                  </div>
+                </div>
+              </label>
+              <div
+                class="pgn__form-control-decorator-group"
+              >
+                <input
+                  class="has-value form-control"
+                  id="end-date-label"
+                  name="endTime"
+                  placeholder="HH:mm"
+                  required=""
+                  type="time"
+                  value="00:00"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="-text-label"
+        >
+          <div
+            class=""
+            id="run_type.label"
+          >
+            <strong>
+              Course run enrollment track
+            </strong>
+            <span
+              class=""
+              id="run_type.label-help"
+            >
+              <button
+                aria-describedby="run_type.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="run_type.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    The enrollment track determines whether a course run offers a paid certificate and what sort of verification is required.
+  </p>
+  <p>
+    <a href='https://docs.openedx.org/en/latest/glossary.html#term-Enrollment-Track'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Learn more.
+    </a>
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="run_type.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="-text-label"
+            label="[object Object]"
+            name="run_type"
+            required=""
+          >
+            <option
+              value=""
+            >
+              Select enrollment track
+            </option>
+            <option
+              value="4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c"
+            >
+              Verified and Audit
+            </option>
+            <option
+              value="cfacfc62-54bd-4e1b-939a-5a94f12fbd8d"
+            >
+              Audit Only
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="pgn__form-group"
+      >
+        <label
+          class="pgn__form-label"
+          for="pacing_type-text-label"
+        >
+          <div
+            class=""
+            id="pacing_type.label"
+          >
+            <strong>
+              Course pacing
+            </strong>
+            <span
+              class=""
+              id="pacing_type.label-help"
+            >
+              <button
+                aria-describedby="pacing_type.label-help-tooltip"
+                class="btn btn-link py-0 px-0 mx-1 align-bottom "
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <span
+                class="field-help-data"
+                currentitem="false"
+                data-for="pacing_type.label-help-tooltip"
+                data-html="true"
+                data-testid="field-help-data"
+                data-tip="<div>
+  <p>
+    Instructor-paced courses include individual assignments that have specific due dates before the course end date.
+  </p>
+  <p>
+    Self-paced courses do not have individual assignments that have specific due dates before the course end date. All assignments are due on the course end date.
+  </p>
+</div>"
+              />
+              <div
+                class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-right type-dark allow_click"
+                data-id="tooltip"
+                id="pacing_type.label-help-tooltip"
+              >
+                <style
+                  aria-hidden="true"
+                >
+                  
+  	.t00000000-0000-0000-0000-000000000000 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+	    border-radius: undefinedpx;
+	    padding: 8px 21px;
+  	}
+
+  	.t00000000-0000-0000-0000-000000000000.place-top {
+        margin-top: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 12px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-top::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(135deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-bottom {
+        margin-top: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 18px;
+        height: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-bottom::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-left {
+        margin-left: -10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-left::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        right: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(45deg);
+    }
+
+    .t00000000-0000-0000-0000-000000000000.place-right {
+        margin-left: 10px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::before {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        z-index: -1;
+        width: 10px;
+        height: 18px;
+    }
+    .t00000000-0000-0000-0000-000000000000.place-right::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: undefinedpx;
+        border: 1px solid transparent;
+        background-color: #222;
+        z-index: -2;
+        left: -6px;
+        top: 50%;
+        margin-top: -6px;
+        transform: rotate(-135deg);
+    }
+  
+                </style>
+              </div>
+            </span>
+            <div>
+              <span
+                class="text-muted"
+              />
+            </div>
+          </div>
+        </label>
+        <div
+          class="pgn__form-control-decorator-group"
+        >
+          <select
+            class="form-control"
+            id="pacing_type-text-label"
+            label="[object Object]"
+            name="pacing_type"
+          >
+            <option
+              value="instructor_paced"
+            >
+              Instructor-paced
+            </option>
+            <option
+              value="self_paced"
+            >
+              Self-paced
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="btn-toolbar justify-content-end"
+        role="toolbar"
+      >
+        <div
+          class="btn-group ml-2"
+          role="group"
+        >
+          <a
+            href="/courses/00000000-0000-0000-0000-000000000001"
+          >
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+            >
+              Cancel
+            </button>
+          </a>
+        </div>
+        <div
+          class="btn-group ml-2"
+          role="group"
+        >
+          <button
+            aria-disabled="false"
+            aria-live="assertive"
+            class="pgn__stateful-btn pgn__stateful-btn-state-default btn form-submit-btn btn btn-primary"
+            disabled=""
+            type="submit"
+          >
+            <span
+              class="d-flex align-items-center justify-content-center"
+            >
+              <span>
+                Create
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 `;

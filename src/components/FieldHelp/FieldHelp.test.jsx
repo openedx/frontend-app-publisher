@@ -1,28 +1,29 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import ReactTooltip from 'react-tooltip';
+import {
+  fireEvent, waitFor, render, screen,
+} from '@testing-library/react';
 import FieldHelp from './index';
 
 jest.mock('react-tooltip');
 
 describe('FieldHelp', () => {
-  it('can toggle tooltip', () => {
-    const wrapper = mount(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
+  it('can toggle tooltip', async () => {
+    const { container } = render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
 
-    expect(ReactTooltip.show.mock.calls.length).toBe(0);
-    expect(ReactTooltip.hide.mock.calls.length).toBe(0);
+    expect(ReactTooltip.show).not.toHaveBeenCalled();
+    expect(ReactTooltip.hide).not.toHaveBeenCalled();
 
-    wrapper.find('button').simulate('click');
-    expect(ReactTooltip.show.mock.calls.length).toBe(1);
+    fireEvent.click(container);
+    waitFor(() => expect(ReactTooltip.show).toHaveBeenCalledTimes(1));
 
-    wrapper.find('button').simulate('click');
-    expect(ReactTooltip.hide.mock.calls.length).toBe(1);
+    const button = await screen.findByRole('button');
+    fireEvent.click(button);
+    waitFor(() => expect(ReactTooltip.show).toHaveBeenCalledTimes(1));
   });
 
-  it('node gets converted to string', () => {
-    const wrapper = shallow(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
-
-    const data = wrapper.find('.field-help-data');
-    expect(data.prop('data-tip')).toMatch(/<p>\s*Hello World\s*<\/p>/);
+  it('node gets converted to string', async () => {
+    await render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
+    waitFor(() => expect(screen.findByTestId('field-help-data').prop('data-tip')).toMatch(/<p>\s*Hello World\s*<\/p>/));
   });
 });

@@ -1,9 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
+import { reduxForm } from 'redux-form';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 import { BaseCreateCourseForm } from './CreateCourseForm';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
+
+const mockStore = configureStore();
+const store = mockStore({});
 
 const organizations = [
   { name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' },
@@ -14,6 +20,7 @@ const sources = [
 ];
 
 Date.now = jest.fn(() => new Date(Date.UTC(2001, 0, 1)).valueOf());
+const WrappedCreateCourseForm = reduxForm({ form: 'testForm' })(BaseCreateCourseForm);
 
 describe('CreateCourseForm', () => {
   const initialValues = {
@@ -27,55 +34,79 @@ describe('CreateCourseForm', () => {
   };
 
   it('renders html correctly with no orgs', () => {
-    const component = shallow(<BaseCreateCourseForm
-      handleSubmit={() => {}}
-      initialValues={{}}
-      organizations={organizations}
-      sources={sources}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <WrappedCreateCourseForm
+            handleSubmit={() => {}}
+            initialValues={{}}
+            organizations={organizations}
+            sources={sources}
+            courseOptions={courseOptions}
+            courseRunOptions={courseRunOptions}
+          />
+        </MemoryRouter>
+      </Provider>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly with no sources', () => {
-    const component = shallow(<BaseCreateCourseForm
-      handleSubmit={() => {}}
-      initialValues={{}}
-      organizations={organizations}
-      sources={[]}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <WrappedCreateCourseForm
+            handleSubmit={() => {}}
+            initialValues={{}}
+            organizations={organizations}
+            sources={[]}
+            courseOptions={courseOptions}
+            courseRunOptions={courseRunOptions}
+          />
+        </MemoryRouter>
+      </Provider>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly with data', () => {
-    const component = shallow(<BaseCreateCourseForm
-      handleSubmit={() => {}}
-      initialValues={initialValues}
-      currentFormValues={initialValues}
-      organizations={organizations}
-      sources={sources}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <WrappedCreateCourseForm
+            handleSubmit={() => {}}
+            initialValues={initialValues}
+            currentFormValues={initialValues}
+            organizations={organizations}
+            sources={sources}
+            courseOptions={courseOptions}
+            courseRunOptions={courseRunOptions}
+          />
+        </MemoryRouter>
+      </Provider>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly while submitting', () => {
-    const component = shallow(<BaseCreateCourseForm
-      submitting
-      isCreating
-      pristine={false}
-      handleSubmit={() => {}}
-      initialValues={{}}
-      currentFormValues={initialValues}
-      organizations={organizations}
-      sources={sources}
-      courseOptions={courseOptions}
-      courseRunOptions={courseRunOptions}
-    />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <WrappedCreateCourseForm
+            submitting
+            isCreating
+            pristine={false}
+            handleSubmit={() => {}}
+            initialValues={{}}
+            currentFormValues={initialValues}
+            organizations={organizations}
+            sources={sources}
+            courseOptions={courseOptions}
+            courseRunOptions={courseRunOptions}
+          />
+        </MemoryRouter>
+      </Provider>,
+    );
+    expect(container).toMatchSnapshot();
   });
 });

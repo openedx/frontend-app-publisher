@@ -1,28 +1,27 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import CourseRunButtonToolbar from './CourseRunButtonToolbar';
 import { PUBLISHED } from '../../data/constants';
 
 describe('Course Run Button Toolbar', () => {
   it('default parameters', () => {
-    const component = shallow(<CourseRunButtonToolbar />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunButtonToolbar />);
+    expect(container).toMatchSnapshot();
   });
 
   it('editable', () => {
-    const component = shallow(<CourseRunButtonToolbar editable />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunButtonToolbar editable />);
+    expect(container).toMatchSnapshot();
   });
 
   it('published pristine', () => {
-    const component = shallow(<CourseRunButtonToolbar editable pristine status={PUBLISHED} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunButtonToolbar editable pristine status={PUBLISHED} />);
+    expect(container).toMatchSnapshot();
   });
 
   it('published with changes', () => {
-    const component = shallow(<CourseRunButtonToolbar editable status={PUBLISHED} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<CourseRunButtonToolbar editable status={PUBLISHED} />);
+    expect(container).toMatchSnapshot();
   });
 });

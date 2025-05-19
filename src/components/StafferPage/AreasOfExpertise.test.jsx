@@ -1,8 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import {
+  render, screen, fireEvent,
+} from '@testing-library/react';
 
+import configureStore from 'redux-mock-store';
+import { reduxForm } from 'redux-form';
+import { Provider } from 'react-redux';
 import AreasOfExpertise from './AreasOfExpertise';
+
+const mockStore = configureStore();
+const store = mockStore({});
 
 /*
 *  Disable console errors for this test file so that we don't receive warnings
@@ -12,25 +19,29 @@ import AreasOfExpertise from './AreasOfExpertise';
 *  properties and methods as a javascript Array, providing both reading and
 *  writing functionality.'
 */
+
+const AreaOfExpertiseWrapper = reduxForm({ form: 'testForm' })(AreasOfExpertise);
+
 jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn());
 
 describe('Areas Of Expertise', () => {
   it('renders correctly with no fields', () => {
-    const component = shallow(<AreasOfExpertise fields={[]} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<Provider store={store}><AreaOfExpertiseWrapper fields={[]} /></Provider>);
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly when given fields', () => {
-    const component = shallow(<AreasOfExpertise fields={[{}]} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    const { container } = render(<Provider store={store}><AreaOfExpertiseWrapper fields={[{}]} /></Provider>);
+    expect(container).toMatchSnapshot();
   });
 
-  it('adds fields when the add button is pushed', () => {
+  it('adds fields when the add button is pushed', async () => {
     const fields = [{}];
-    const component = shallow(<AreasOfExpertise fields={fields} />);
+    render(<Provider store={store}><AreaOfExpertiseWrapper fields={fields} /></Provider>);
     expect(fields.length).toEqual(1);
 
-    component.find('.js-add-button').simulate('click');
+    const addButton = await screen.findByTestId('js-add-button');
+    fireEvent.click(addButton);
     expect(fields.length).toEqual(2);
   });
 });
