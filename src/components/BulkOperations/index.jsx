@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom'
 import classNames from 'classnames';
 import Papa from 'papaparse';
 import {
@@ -187,7 +188,7 @@ const BulkOperations = () => {
                 >
                   {rec.status}
                 </span>
-                <a href={`/bulk-operation-tasks/${rec.id}`}>details</a>
+                <Link to={`/bulk-operation-tasks/${rec.id}`}>details</Link>
               </div>
             </div>
             <hr />

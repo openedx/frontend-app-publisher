@@ -54,7 +54,6 @@ describe('BulkOperationsPage', () => {
       </IntlProvider>,
     );
     const collapsible = await screen.findByText('Processing History');
-    screen.debug();
     expect(collapsible).toBeInTheDocument();
     fireEvent.click(collapsible);
 
