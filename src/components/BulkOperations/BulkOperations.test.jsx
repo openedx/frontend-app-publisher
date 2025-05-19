@@ -1,43 +1,46 @@
 import React from 'react';
 import {
-  render, screen, fireEvent, within
+  render, screen, fireEvent, within, waitFor,
 } from '@testing-library/react';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 import BulkOperations from './index';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
+import '@testing-library/jest-dom';
 
 const mockedHistoricalTasks = [
-    {
-        id: 1,
-        uploaded_by: 'edx',
-        task_type: 'course_create',
-        status: 'completed',
-        created: '2025-05-05T00:00:00Z',
-        modified: '2025-05-05T00:00:00Z',
-        csv_file: 'https://foo.com/bar.csv',
-    },
-    {
-        id: 2,
-        uploaded_by: 'edx',
-        task_type: 'course_rerun',
-        status: 'failed',
-        created: '2025-05-05T00:00:00Z',
-        modified: '2025-05-05T00:00:00Z',
-        csv_file: 'https://foo.com/baz.csv',
-    }
+  {
+    id: 1,
+    uploaded_by: 'edx',
+    task_type: 'course_create',
+    status: 'completed',
+    created: '2025-05-05T00:00:00Z',
+    modified: '2025-05-05T00:00:00Z',
+    csv_file: 'https://foo.com/bar.csv',
+  },
+  {
+    id: 2,
+    uploaded_by: 'edx',
+    task_type: 'course_rerun',
+    status: 'failed',
+    created: '2025-05-05T00:00:00Z',
+    modified: '2025-05-05T00:00:00Z',
+    csv_file: 'https://foo.com/baz.csv',
+  },
 ];
 
 const createdTask = {
-    ...mockedHistoricalTasks[0],
-    id: 3,
-    status: 'pending',
-    csv_file: 'https://foo.com/hello.csv'
-}
+  ...mockedHistoricalTasks[0],
+  id: 3,
+  status: 'pending',
+  csv_file: 'https://foo.com/hello.csv',
+};
 
 describe('BulkOperationsPage', () => {
+  let post;
   beforeAll(() => {
-    const get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations')
-    const post = jest.spyOn(DiscoveryDataApiService, 'createBulkOperation')
-    get.mockResolvedValue({ data: { results: mockedHistoricalTasks} });
+    const get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations');
+    post = jest.spyOn(DiscoveryDataApiService, 'createBulkOperation');
+    get.mockResolvedValue({ data: { results: mockedHistoricalTasks } });
   });
 
   afterAll(() => {
@@ -45,84 +48,97 @@ describe('BulkOperationsPage', () => {
   });
 
   it('initial render', async () => {
-    render(<BulkOperations />);
-    const collapsible = screen.getByText('Processing History')
-    expect(collapsible).toBeInTheDocument()
-    fireEvent.click(collapsible)
+    render(
+      <IntlProvider locale="en">
+        <BulkOperations />
+      </IntlProvider>,
+    );
+    const collapsible = await screen.findByText('Processing History');
+    screen.debug();
+    expect(collapsible).toBeInTheDocument();
+    fireEvent.click(collapsible);
 
-    expect(screen.getByText('bar.csv')).toBeInTheDocument()
-    expect(screen.getByText('baz.csv')).toBeInTheDocument()
-    expect(screen.getByTestId('dropzone-container')).toBeInTheDocument()
-
+    expect(screen.getByText('bar.csv')).toBeInTheDocument();
+    expect(screen.getByText('baz.csv')).toBeInTheDocument();
+    expect(screen.getByTestId('dropzone-container')).toBeInTheDocument();
   });
 
   it('filters history based on chosen operation', async () => {
-    render(<BulkOperations />);
-    const button = screen.getByRole('button', {name: /Choose a Bulk Operation/i})
-    fireEvent.click(button)
-    const createButton = screen.getByRole('button', {name: 'Bulk Create'})
-    fireEvent.click(createButton)
+    render(
+      <IntlProvider locale="en">
+        <BulkOperations />
+      </IntlProvider>,
+    );
+    const button = await screen.findByRole('button', { name: /Choose a Bulk Operation/i });
+    fireEvent.click(button);
+    const createButton = screen.getByRole('link', { name: 'Bulk Create' });
+    fireEvent.click(createButton);
 
-    expect(screen.queryByText('bar.csv')).toBeInTheDocument()
-    expect(screen.queryByText('baz.csv')).not.toBeInTheDocument()
-
+    expect(screen.queryByText('bar.csv')).toBeInTheDocument();
+    expect(screen.queryByText('baz.csv')).not.toBeInTheDocument();
   });
 
   it('file upload', async () => {
-    render(<BulkOperations />);
-    const dropZone = screen.getByTestId('dropzone-container')
+    render(
+      <IntlProvider locale="en">
+        <BulkOperations />
+      </IntlProvider>,
+    );
+    const dropZone = await screen.findByTestId('dropzone-container');
     fireEvent.drop(dropZone, {
-        dataTransfer: {
-          files: [new File(['abc\n123\n456\n789'], 'hello.csv', {type: 'text/csv'})],
-        },
-    })
+      dataTransfer: {
+        files: [new File(['abc\n123\n456\n789'], 'hello.csv', { type: 'text/csv' })],
+        types: ['Files'],
+      },
+    });
 
-    expect(screen.queryByTestId('dropzone-container')).not.toBeInTheDocument()
-    expect(screen.queryByTestId('file-preview')).toBeInTheDocument()
-    expect(screen.getByText('hello.csv')).toBeInTheDocument()
-    expect(screen.getByText('3 rows')).toBeInTheDocument()
+    await waitFor(() => expect(screen.queryByTestId('dropzone-container')).not.toBeInTheDocument());
+    expect(screen.queryByTestId('file-preview')).toBeInTheDocument();
+    expect(screen.getByText('hello.csv')).toBeInTheDocument();
+    expect(screen.getByText('3 rows - 15 B')).toBeInTheDocument();
 
-    const uploadNewFile = screen.getByTestId('upload-new')
-    fireEvent.click(uploadNewFile)
-    expect(screen.queryByTestId('dropzone-container')).toBeInTheDocument()
-    expect(screen.queryByTestId('file-preview')).not.toBeInTheDocument()
-
+    const uploadNewFile = screen.getByTestId('upload-new');
+    fireEvent.click(uploadNewFile);
+    expect(screen.queryByTestId('dropzone-container')).toBeInTheDocument();
+    expect(screen.queryByTestId('file-preview')).not.toBeInTheDocument();
   });
 
   it.each([
     ['Successfully submitted task for bulk operation', 2, true],
-    ['Failed to submit task for processing', 1, false]
+    ['Failed to submit task for processing', 1, false],
   ])('submission', async (message, fileNameInstances, isSuccess) => {
-
-    if (isSuccess){
-        post.mockResolvedValue({ data: createdTask});
-    }
-    else {
-        post.mockRejectedValue({response: {status: 500}});
+    if (isSuccess) {
+      post.mockResolvedValue({ data: createdTask });
+    } else {
+      post.mockRejectedValue({ response: { status: 500 } });
     }
 
-    render(<BulkOperations />);
-    const button = screen.getByRole('button', {name: /Choose a Bulk Operation/i})
-    fireEvent.click(button)
-    const createButton = screen.getByRole('button', {name: 'Bulk Create'})
-    fireEvent.click(createButton)
+    render(
+      <IntlProvider locale="en">
+        <BulkOperations />
+      </IntlProvider>,
+    );
+    const button = await screen.findByRole('button', { name: /Choose a Bulk Operation/i });
+    fireEvent.click(button);
+    const createButton = screen.getByRole('link', { name: 'Bulk Create' });
+    fireEvent.click(createButton);
 
-    const dropZone = screen.getByTestId('dropzone-container')
+    const dropZone = screen.getByTestId('dropzone-container');
     fireEvent.drop(dropZone, {
-        dataTransfer: {
-          files: [new File(['abc\n123\n456\n789'], 'hello.csv', {type: 'text/csv'})],
-        },
-    })
+      dataTransfer: {
+        files: [new File(['abc\n123\n456\n789'], 'hello.csv', { type: 'text/csv' })],
+        types: ['Files'],
+      },
+    });
 
-    const processButton = screen.getByTestId('process-file')
+    const processButton = await screen.findByTestId('process-file');
     fireEvent.click(processButton);
 
-    const alert = screen.getByRole('alert')
-    expect(within(alert).getByText(message)).toBeInTheDocument()
+    const alert = await screen.findByRole('alert');
+    expect(within(alert).getByText(message)).toBeInTheDocument();
 
     // Success: the filename is on the csv preview as well as the historical records section
-    // Failure: the filename is only on the csv preview section 
-    expect(screen.getAllByText('hello.csv')).toHaveLength(fileNameInstances)
-
+    // Failure: the filename is only on the csv preview section
+    expect(screen.getAllByText('hello.csv')).toHaveLength(fileNameInstances);
   });
 });

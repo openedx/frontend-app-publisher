@@ -46,7 +46,7 @@ const Header = ({ darkModeOn, toggleDarkMode }) => {
             <Link to="/?course_type=executive-education-2u" className={disableLink('executive-education-2u')}>Executive Education</Link>
           </div>
           <div className="col-auto justify-content-start">
-            <Link to="/bulk-ops" className={pathname === `/bulk-ops` ? disabledLinkClass: ''}>Bulk Operations</Link>
+            <Link to="/bulk-operation-tasks" className={pathname === '/bulk-operation-tasks' ? disabledLinkClass : ''}>Bulk Operations</Link>
           </div>
 
           {allowDarkModeToggle

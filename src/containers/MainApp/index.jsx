@@ -33,7 +33,7 @@ const MainApp = () => (
     )}
     <main>
       <Routes>
-        <Route path="/bulk-ops" element={<BulkOperations/>} />
+        <Route path="/bulk-operation-tasks" element={<BulkOperations />} />
         <Route path="/course-runs/:courseRunKey" element={<CourseRunRedirectComponent />} />
         <Route
           path="/courses/new"

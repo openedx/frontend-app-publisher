@@ -215,12 +215,12 @@ class DiscoveryDataApiService {
     const formData = new FormData();
     formData.append('csv_file', file);
     formData.append('task_type', task_type);
-    
+
     return getAuthenticatedHttpClient().post(url, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
-    })    
+    });
   }
 
   static fetchCourseTags(q = '', limit = 20) {
