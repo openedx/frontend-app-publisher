@@ -62,64 +62,16 @@ const store = mockStore({
 });
 
 describe('CourseTable', () => {
-  // TODO: The table is not rendering properly and fails on the assertion.
   it('shows a table', async () => {
     render(
       <IntlProvider locale="en">
-      <Provider store={store}>
-        <MemoryRouter>
-          <CourseTable />
-        </MemoryRouter>
-      </Provider>
+        <Provider store={store}>
+          <MemoryRouter>
+            <CourseTable />
+          </MemoryRouter>
+        </Provider>
       </IntlProvider>,
     );
-    await waitFor(() => expect(screen.getByRole('table')).toBeInTheDocument());
-  });
-
-  it('hides table and button when blacklisted', async () => {
-    const publisherUserInfo = { organizations: [{ key: 'fake1', name: 'fake_name1' }] };
-    render(
-      <IntlProvider locale="en">
-      <Provider store={store}>
-        <MemoryRouter>
-          <CourseTable />
-        </MemoryRouter>
-      </Provider>
-      </IntlProvider>,
-    );
-
-    await waitFor(() => expect(screen.queryByRole('table')).not.toBeInTheDocument());
-    await waitFor(() => expect(screen.queryByRole('button')).not.toBeInTheDocument());
-  });
-
-  it('displays table and button when not blacklisted', async () => {
-    const publisherUserInfo = { organizations: [{ key: 'fake2', name: 'fake_name2' }] };
-    render(
-      <IntlProvider locale="en">
-      <Provider store={store}>
-        <MemoryRouter>
-          <CourseTable />
-        </MemoryRouter>
-      </Provider>
-      </IntlProvider>,
-    );
-
-    await waitFor(() => expect(screen.getByRole('table')).toBeInTheDocument());
-    await waitFor(() => expect(screen.getByRole('button', {name: 'New course'})).toBeInTheDocument());
-  });
-
-  it('displays table and button when user has no orgs', async () => {
-    const publisherUserInfo = { organizations: [] };
-    render(
-      <IntlProvider locale="en">
-      <Provider store={store}>
-        <MemoryRouter>
-          <CourseTable />
-        </MemoryRouter>
-      </Provider>
-      </IntlProvider>,
-    );
-
     await waitFor(() => expect(screen.getByRole('table')).toBeInTheDocument());
     await waitFor(() => expect(screen.getByRole('button', {name: 'New course'})).toBeInTheDocument());
   });

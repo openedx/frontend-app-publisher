@@ -374,15 +374,15 @@ describe('Collapsible Course Run', () => {
     });
   });
 
-  it('renders with run type disabled once a SKU exists', () => {
+  it.each([true, false])('renders with run type disabled if SKU exists', (skuExists) => {
     const seat = {
       type: 'verified',
       price: '149.00',
-      sku: '',
+      sku: skuExists? 'ABCDEF': '',
     };
     const updatedCourseRun = { ...publishedCourseRun, seats: [seat] };
 
-    const { rerender, container } = render(
+    const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
           <IntlProvider locale="en">
@@ -405,36 +405,13 @@ describe('Collapsible Course Run', () => {
       </MemoryRouter>,
     );
 
-    // let runTypeSelect = screen.getByRole('combobox', { name: /wth/i });
-    let runTypeSelect = container.querySelector('select[name="test-course.run_type"]');
-    expect(runTypeSelect).not.toBeDisabled();
-
-    updatedCourseRun.seats[0].sku = 'ABCDEF';
-    rerender(
-      <MemoryRouter key="13">
-        <Provider store={store}>
-          <IntlProvider locale="en">
-            <WrappedCollapsibleCourseRun
-              languageOptions={[]}
-              pacingTypeOptions={[]}
-              programOptions={[]}
-              ofacRestrictionOptions={[]}
-              courseRun={updatedCourseRun}
-              courseId="test-course"
-              courseUuid="11111111-1111-1111-1111-111111111111"
-              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-              currentFormValues={currentFormValues}
-              courseRunTypeOptions={courseRunTypeOptions}
-              index={0}
-              editable
-            />
-          </IntlProvider>
-        </Provider>
-      </MemoryRouter>,
-    );
-
-    runTypeSelect = container.querySelector('select[name="test-course.run_type"]');
-    expect(runTypeSelect).toBeDisabled();
+    let runTypeSelect = screen.getByRole('combobox', { name: /Course run enrollment track Cannot edit after submission/i });
+    if (skuExists){
+      expect(runTypeSelect).toBeDisabled();
+    }
+    else{
+      expect(runTypeSelect).not.toBeDisabled();
+    }
   });
 
   it('handles submission when called from a course run', () => {
