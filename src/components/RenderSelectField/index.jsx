@@ -22,6 +22,7 @@ const RenderSelectField = ({
       {...extraInput}
       as="select"
       disabled={disabled}
+      aria-label={"wth"}
       hidden={hidden}
       required={required}
     >

@@ -15,8 +15,7 @@ import {
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import CollapsibleCourseRun from './CollapsibleCourseRun';
 
-const mockStore = configureStore();
-const store = mockStore({});
+import store from '../../data/store';
 
 const languageOptions = [
   {
@@ -375,8 +374,7 @@ describe('Collapsible Course Run', () => {
     });
   });
 
-  it.skip('renders with run type disabled once a SKU exists', () => {
-    // TODO: combobox element is not being found, despite the correct name.
+  it('renders with run type disabled once a SKU exists', () => {
     const seat = {
       type: 'verified',
       price: '149.00',
@@ -407,12 +405,13 @@ describe('Collapsible Course Run', () => {
       </MemoryRouter>,
     );
 
-    let runTypeSelect = screen.getByRole('combobox', { name: /test-course.run_type/i });
+    // let runTypeSelect = screen.getByRole('combobox', { name: /wth/i });
+    let runTypeSelect = container.querySelector('select[name="test-course.run_type"]');
     expect(runTypeSelect).not.toBeDisabled();
 
     updatedCourseRun.seats[0].sku = 'ABCDEF';
     rerender(
-      <MemoryRouter>
+      <MemoryRouter key="13">
         <Provider store={store}>
           <IntlProvider locale="en">
             <WrappedCollapsibleCourseRun
@@ -438,8 +437,7 @@ describe('Collapsible Course Run', () => {
     expect(runTypeSelect).toBeDisabled();
   });
 
-  it.skip('handles submission when called from a course run', () => {
-    // TODO: store dispatch expectations are not correct
+  it('handles submission when called from a course run', () => {
     const mockDispatch = jest.spyOn(store, 'dispatch');
 
     render(
@@ -465,10 +463,10 @@ describe('Collapsible Course Run', () => {
       </MemoryRouter>,
     );
 
-    const submitButton = screen.getAllByRole('button', { name: /submit/i })[1];
+    const submitButton = screen.getByRole('button', { name: /Submit Run for Review/i });
     fireEvent.click(submitButton);
 
-    expect(mockDispatch).toHaveBeenLastCalledWith(courseSubmitRun(unpublishedCourseRun));
+    expect(mockDispatch).toHaveBeenCalledWith(courseSubmitRun(unpublishedCourseRun));
     mockDispatch.mockClear();
   });
 });
