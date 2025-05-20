@@ -3,7 +3,6 @@ import {
   render, waitFor, screen, fireEvent,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import configureStore from 'redux-mock-store';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { reduxForm } from 'redux-form';
@@ -378,11 +377,11 @@ describe('Collapsible Course Run', () => {
     const seat = {
       type: 'verified',
       price: '149.00',
-      sku: skuExists? 'ABCDEF': '',
+      sku: skuExists ? 'ABCDEF' : '',
     };
     const updatedCourseRun = { ...publishedCourseRun, seats: [seat] };
 
-    const { container } = render(
+    render(
       <MemoryRouter>
         <Provider store={store}>
           <IntlProvider locale="en">
@@ -405,11 +404,10 @@ describe('Collapsible Course Run', () => {
       </MemoryRouter>,
     );
 
-    let runTypeSelect = screen.getByRole('combobox', { name: /Course run enrollment track Cannot edit after submission/i });
-    if (skuExists){
+    const runTypeSelect = screen.getByRole('combobox', { name: /Course run enrollment track Cannot edit after submission/i });
+    if (skuExists) {
       expect(runTypeSelect).toBeDisabled();
-    }
-    else{
+    } else {
       expect(runTypeSelect).not.toBeDisabled();
     }
   });
