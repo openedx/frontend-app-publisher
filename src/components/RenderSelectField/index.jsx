@@ -13,7 +13,7 @@ const RenderSelectField = ({
   meta: { touched, error },
   options,
 }) => (
-  <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
+  <Form.Group controlId={`${input.name}-text-label`} isInvalid={touched && error}>
     {hidden ? null : <Form.Label>{label}</Form.Label>}
     <Form.Control
       name={name}
@@ -22,7 +22,6 @@ const RenderSelectField = ({
       {...extraInput}
       as="select"
       disabled={disabled}
-      aria-label={"wth"}
       hidden={hidden}
       required={required}
     >
