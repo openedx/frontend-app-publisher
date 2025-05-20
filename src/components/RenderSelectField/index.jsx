@@ -46,7 +46,7 @@ RenderSelectField.defaultProps = {
 };
 
 RenderSelectField.propTypes = {
-  input: PropTypes.shape({}).isRequired,
+  input: PropTypes.shape({ name: PropTypes.string }).isRequired,
   extraInput: PropTypes.shape({}),
   name: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
