@@ -40,6 +40,14 @@ const RESTRICTION_TYPE_OPTIONS = [
 
 const RESTRICTION_TYPE_VALUES = RESTRICTION_TYPE_OPTIONS.map(opt => opt.value).filter(Boolean).join(',');
 
+const AVAILABLE_BULK_OPERATIONS = {
+  course_create: 'Bulk Create',
+  course_partial_update: 'Bulk Course Update',
+  course_run_partial_update: 'Bulk CourseRun Update',
+  course_rerun: 'Bulk Rerun',
+};
+
+
 export {
   VERIFIED_TRACK,
   AUDIT_TRACK,
@@ -67,4 +75,5 @@ export {
   COURSE_URL_SLUG_VALIDATION_MESSAGE,
   RESTRICTION_TYPE_OPTIONS,
   RESTRICTION_TYPE_VALUES,
+  AVAILABLE_BULK_OPERATIONS
 };

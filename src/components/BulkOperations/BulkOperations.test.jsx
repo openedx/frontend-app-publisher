@@ -47,12 +47,15 @@ describe('BulkOperationsPage', () => {
     jest.restoreAllMocks();
   });
 
-  it('initial render', async () => {
+  beforeEach(() => {
     render(
       <IntlProvider locale="en">
         <BulkOperations />
       </IntlProvider>,
     );
+  })
+
+  it('initial render', async () => {
     const collapsible = await screen.findByText('Processing History');
     expect(collapsible).toBeInTheDocument();
     fireEvent.click(collapsible);
@@ -63,11 +66,6 @@ describe('BulkOperationsPage', () => {
   });
 
   it('filters history based on chosen operation', async () => {
-    render(
-      <IntlProvider locale="en">
-        <BulkOperations />
-      </IntlProvider>,
-    );
     const button = await screen.findByRole('button', { name: /Choose a Bulk Operation/i });
     fireEvent.click(button);
     const createButton = screen.getByRole('link', { name: 'Bulk Create' });
@@ -78,11 +76,6 @@ describe('BulkOperationsPage', () => {
   });
 
   it('file upload', async () => {
-    render(
-      <IntlProvider locale="en">
-        <BulkOperations />
-      </IntlProvider>,
-    );
     const dropZone = await screen.findByTestId('dropzone-container');
     fireEvent.drop(dropZone, {
       dataTransfer: {
@@ -112,11 +105,6 @@ describe('BulkOperationsPage', () => {
       post.mockRejectedValue({ response: { status: 500 } });
     }
 
-    render(
-      <IntlProvider locale="en">
-        <BulkOperations />
-      </IntlProvider>,
-    );
     const button = await screen.findByRole('button', { name: /Choose a Bulk Operation/i });
     fireEvent.click(button);
     const createButton = screen.getByRole('link', { name: 'Bulk Create' });

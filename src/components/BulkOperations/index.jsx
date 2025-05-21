@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import Papa from 'papaparse';
 import {
-  SelectMenu, MenuItem, Dropzone, DataTable, Alert,
+  SelectMenu, MenuItem, Dropzone, DataTable, Alert, Container
 } from '@openedx/paragon';
 
 import Collapsible from '../Collapsible';
@@ -11,13 +11,7 @@ import LoadingSpinner from '../LoadingSpinner';
 import { formatDate } from '../../utils';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import './BulkOperations.scss';
-
-const availableOperations = {
-  course_create: 'Bulk Create',
-  course_partial_update: 'Bulk Course Update',
-  course_run_partial_update: 'Bulk CourseRun Update',
-  course_rerun: 'Bulk Rerun',
-};
+import { AVAILABLE_BULK_OPERATIONS as availableOperations } from '../../data/constants';
 
 const BulkOperations = () => {
   const [bulkOperationId, setBulkOperationId] = useState(null);
@@ -26,6 +20,7 @@ const BulkOperations = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [submitSuccess, setSubmitSuccess] = useState(null);
   const [historicalRecords, setHistoricalRecords] = useState(null);
+  const [isError, setIsError] = useState(false);
 
   function filteredHistoricalRecords() {
     if (historicalRecords == null) {
@@ -34,7 +29,7 @@ const BulkOperations = () => {
     return historicalRecords.filter(rec => !bulkOperationId || rec.task_type === bulkOperationId);
   }
 
-  function handleUploadNew() {
+  function clearDropzone() {
     setFileContent(null);
     setFile(null);
   }
@@ -42,8 +37,8 @@ const BulkOperations = () => {
   function handleFileUpload({ fileData }) {
     const file = fileData.get('file');
     const reader = new FileReader();
-    reader.onload = (e) => {
-      const text = e.target.result;
+    reader.onload = () => {
+      const text = reader.result;
       setFile(file);
       setFileContent(text);
     };
@@ -53,18 +48,28 @@ const BulkOperations = () => {
   async function handleSubmit() {
     setIsLoading(true);
     try {
-      const res = await DiscoveryDataApiService.createBulkOperation(file, bulkOperationId);
+      const response = await DiscoveryDataApiService.createBulkOperation(file, bulkOperationId);
       setSubmitSuccess(true);
-      setHistoricalRecords([res.data, ...historicalRecords]);
-    } catch (e) {
+      setHistoricalRecords([response.data, ...historicalRecords]);
+      clearDropzone();
+    } catch (error) {
       setSubmitSuccess(false);
     }
     setIsLoading(false);
   }
 
   async function fetchBulkOpTasks() {
-    const response = await DiscoveryDataApiService.fetchBulkOperations();
-    setHistoricalRecords(response.data.results);
+    try {
+      const response = await DiscoveryDataApiService.fetchBulkOperations();
+      setHistoricalRecords(response.data.results);
+    }
+    catch (error) {
+      setIsLoading(false);
+      setIsError(true);
+    }
+    finally {
+      setIsLoading(false);
+    }
   }
 
   function getDropZone() {
@@ -80,8 +85,7 @@ const BulkOperations = () => {
   }
 
   function getAlert() {
-    let variant; let
-      message;
+    let variant, message;
     if (submitSuccess == null) {
       return null;
     }
@@ -117,7 +121,7 @@ const BulkOperations = () => {
             <button data-testid="process-file" className="btn btn-outline-primary mr-2" onClick={handleSubmit}>
               Process File
             </button>
-            <button data-testid="upload-new" className="btn btn-outline-primary" onClick={handleUploadNew}>
+            <button data-testid="upload-new" className="btn btn-outline-primary" onClick={clearDropzone}>
               Upload New File
             </button>
           </div>
@@ -143,14 +147,22 @@ const BulkOperations = () => {
   }
 
   useEffect(() => {
-    fetchBulkOpTasks().then(() => setIsLoading(false));
+    fetchBulkOpTasks();
   }, []);
+
+  if (isError) {
+    return (
+        <div className="min-vh-65">
+          <Alert variant="danger">Failed to fetch historical tasks. Please try reloading the page</Alert>;
+        </div>
+    )
+  }
 
   if (isLoading) {
     return (
-      <div className="bulk-operations-spinner">
-        <LoadingSpinner />
-      </div>
+        <div className="min-vh-65">
+          <LoadingSpinner />
+        </div>
     );
   }
 
@@ -159,12 +171,12 @@ const BulkOperations = () => {
       {getAlert()}
       <SelectMenu className="mb-3" defaultMessage="Choose a Bulk Operation">
         {
-                    Object.entries(availableOperations).map(([slug, title]) => (
-                      <MenuItem actionid={slug} defaultSelected={slug === bulkOperationId} onClick={e => setBulkOperationId(e.currentTarget.getAttribute('actionid'))}>
-                        {title}
-                      </MenuItem>
-                    ))
-                }
+          Object.entries(availableOperations).map(([id, title]) => (
+            <MenuItem actionid={id} defaultSelected={id === bulkOperationId} onClick={e => setBulkOperationId(e.currentTarget.getAttribute('actionid'))}>
+              {title}
+            </MenuItem>
+          ))
+        }
       </SelectMenu>
 
       <Collapsible title={getCollapsibleTitle()}>
@@ -172,13 +184,14 @@ const BulkOperations = () => {
           <>
             <div className="row justify-content-between">
               <div className="col-auto">
-                <a href={rec.csv_file}>{rec.csv_file.split('/').pop()}</a><br />
+                <Link to={`/bulk-operation-tasks/${rec.id}`}>{rec.csv_file.split('/').pop()}</Link><br/>
                 <span className="small">{formatDate(rec.created)}</span>
               </div>
               <div className="col-auto d-flex flex-column align-items-end">
                 <span className={classNames(
                   {
                     badge: true,
+                    'text-capitalize': true,
                     'badge-danger': rec.status == 'failed',
                     'badge-success': rec.status == 'completed',
                     'badge-warning': rec.status == 'processing',
@@ -198,11 +211,19 @@ const BulkOperations = () => {
 
       <div className="my-3 py-3 px-3 border">
         {
-                    fileContent ? getTable() : getDropZone()
-                }
+          fileContent ? getTable() : getDropZone()
+        }
       </div>
     </div>
   );
 };
 
-export default BulkOperations;
+const ContainerizedBulkOperations = () => {
+  return (
+    <Container size="lg">
+      <BulkOperations/>
+    </Container>
+  )
+}
+
+export default ContainerizedBulkOperations;
