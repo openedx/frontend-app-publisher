@@ -254,6 +254,11 @@ class DiscoveryDataApiService {
     const url = `${discoveryBaseUrl}/search/person_typeahead/${queryString.join('&org=')}`;
     return getAuthenticatedHttpClient().get(url);
   }
+
+  static fetchBulkOperationTask(taskId) {
+    const url = `${discoveryBaseUrl}/bulk_operation_tasks/${taskId}/`;
+    return getAuthenticatedHttpClient().get(url);
+  }
 }
 
 export default DiscoveryDataApiService;

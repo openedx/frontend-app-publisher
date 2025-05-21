@@ -241,3 +241,22 @@ describe('isPristine', () => {
     expect(utils.isPristine(initialValues, currentValues, 'key-2')).toEqual(false);
   });
 });
+
+describe('formatDateTime', () => {
+  it('formats a valid UTC datetime string', () => {
+    const input = '2025-05-20T14:30:00Z';
+    const expected = 'May 20, 2025, 02:30:00 PM';
+    expect(utils.formatDateTime(input)).toBe(expected);
+  });
+
+  it('returns an empty string for null input', () => {
+    expect(utils.formatDateTime(null)).toBe('');
+  });
+
+  it('handles invalid date string gracefully', () => {
+    const input = 'not-a-date';
+    const result = utils.formatDateTime(input);
+    expect(typeof result).toBe('string');
+    expect(result).not.toBe('');
+  });
+});

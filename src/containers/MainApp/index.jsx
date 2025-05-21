@@ -16,6 +16,7 @@ import CreateCollaborator from '../CreateCollaborator';
 import EditCollaborator from '../EditCollaborator';
 import EditCourse from '../EditCourse';
 import SitewideBanner from '../../components/SitewideBanner';
+import BulkOperationTaskDetailsPage from '../../components/BulkOperationDetailsPage';
 
 const MainApp = () => (
   <div>
@@ -52,6 +53,7 @@ const MainApp = () => (
           element={<EditCollaborator />}
         />
         <Route path="/courses/:uuid" element={<EditCourse />} />
+        <Route path="/bulk-operation-tasks/:taskId" element={<BulkOperationTaskDetailsPage />} />
         <Route
           path="/"
           element={<CourseDashboard />}
