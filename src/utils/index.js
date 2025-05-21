@@ -21,6 +21,7 @@ const getFormattedUTCTimeString = date => (date ? moment.utc(date).format('h:mm 
 const localTimeZone = moment.tz(moment.tz.guess()).zoneAbbr();
 const utcTimeZone = moment.utc().zoneAbbr();
 const formatDate = date => (date ? moment(date).format('MMM DD, YYYY') : '');
+const formatDateTime = (dateStr) => (dateStr ? moment.tz(dateStr, 'UTC').format('MMM DD, YYYY, hh:mm:ss A') : '');
 const courseRunIsArchived = run => run.status === 'unpublished' && moment().isAfter(run.end);
 
 const isSafari = /constructor/i.test(window.HTMLElement)
@@ -379,6 +380,7 @@ export {
   getTimeStringUTC,
   getFormattedUTCTimeString,
   formatDate,
+  formatDateTime,
   updateUrl,
   getPageOptionsFromUrl,
   jsonDeepCopy,
