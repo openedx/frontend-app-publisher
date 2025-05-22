@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon, TextArea, Alert } from '@openedx/paragon';
+import { Icon, Form, Alert } from '@openedx/paragon';
 import { formatDate } from '../../utils/index';
 
 import Comment from './Comment';
@@ -120,12 +120,15 @@ class CommentsPane extends React.Component {
         <div className="leave-comment m-0">
           <div className="row">
             <div className="col align-center">
-              <TextArea
-                name="leave-comment"
-                label={<FieldLabel text="Post a comment" />}
-                value={this.state.newCommentBody}
-                onChange={v => this.handleUpdateCommentBody(v)}
-              />
+              <Form.Group>
+                <Form.Label><FieldLabel text="Post a comment" /></Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="leave-comment"
+                  value={this.state.newCommentBody}
+                  onChange={v => this.handleUpdateCommentBody(v.target.value)}
+                />
+              </Form.Group>
             </div>
           </div>
           <div className="row">
