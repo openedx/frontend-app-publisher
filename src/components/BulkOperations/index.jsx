@@ -21,12 +21,13 @@ const BulkOperations = () => {
   const [submitSuccess, setSubmitSuccess] = useState(null);
   const [historicalRecords, setHistoricalRecords] = useState(null);
   const [isError, setIsError] = useState(false);
+  const CSV_ROWS_PER_PAGE = 10;
 
   function filteredHistoricalRecords() {
     if (historicalRecords == null) {
       return [];
     }
-    return historicalRecords.filter(rec => !bulkOperationId || rec.task_type === bulkOperationId);
+    return historicalRecords.filter(record => !bulkOperationId || record.task_type === bulkOperationId);
   }
 
   function clearDropzone() {
@@ -107,7 +108,7 @@ const BulkOperations = () => {
       skipEmptyLines: true,
     });
     const columns = parsed.meta.fields.map(fieldName => ({
-      Header: fieldName, accessor: fieldName, width: 400, size: 400,
+      Header: fieldName, accessor: fieldName
     }));
 
     return (
@@ -115,7 +116,7 @@ const BulkOperations = () => {
         <div className="row justify-content-between border-bottom">
           <div className="col-auto">
             <span className="font-weight-bold">{file.name}</span><br />
-            {parsed.data.length} rows - {file.size} B
+            {parsed.data.length} rows
           </div>
           <div className="col-auto">
             <button data-testid="process-file" className="btn btn-outline-primary mr-2" onClick={handleSubmit}>
@@ -131,7 +132,7 @@ const BulkOperations = () => {
           <DataTable
             isPaginated
             initialState={{
-              pageSize: 2,
+              pageSize: CSV_ROWS_PER_PAGE,
             }}
             itemCount={parsed.data.length}
             data={parsed.data}
@@ -180,28 +181,28 @@ const BulkOperations = () => {
       </SelectMenu>
 
       <Collapsible title={getCollapsibleTitle()}>
-        {filteredHistoricalRecords().map(rec => (
+        {filteredHistoricalRecords().map(record => (
           <>
             <div className="row justify-content-between">
               <div className="col-auto">
-                <Link to={`/bulk-operation-tasks/${rec.id}`}>{rec.csv_file.split('/').pop()}</Link><br/>
-                <span className="small">{formatDate(rec.created)}</span>
+                <Link to={`/bulk-operation-tasks/${record.id}`}>{record.csv_file.split('/').pop()}</Link><br/>
+                <span className="small">{formatDate(record.created)}</span>
               </div>
               <div className="col-auto d-flex flex-column align-items-end">
                 <span className={classNames(
                   {
                     badge: true,
                     'text-capitalize': true,
-                    'badge-danger': rec.status == 'failed',
-                    'badge-success': rec.status == 'completed',
-                    'badge-warning': rec.status == 'processing',
-                    'badge-info': rec.status == 'pending',
+                    'badge-danger': record.status == 'failed',
+                    'badge-success': record.status == 'completed',
+                    'badge-warning': record.status == 'processing',
+                    'badge-info': record.status == 'pending',
                   },
                 )}
                 >
-                  {rec.status}
+                  {record.status}
                 </span>
-                <Link to={`/bulk-operation-tasks/${rec.id}`}>details</Link>
+                <Link to={`/bulk-operation-tasks/${record.id}`}>details</Link>
               </div>
             </div>
             <hr />
