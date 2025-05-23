@@ -62,3 +62,15 @@ Object.defineProperty(window, 'matchMedia', {
 // Disable all react-beautiful-dnd development warnings.
 // See https://github.com/atlassian/react-beautiful-dnd/issues/1593
 window['__react-beautiful-dnd-disable-dev-warnings'] = true;
+
+
+// Range.prototype.getClientRects = () => ({
+//   item: () => null,
+//   length: 0,
+//   [Symbol.iterator]: jest.fn(),
+// });
+// HTMLElement.prototype.getClientRects = () => ({
+//   item: () => null,
+//   length: 0,
+//   [Symbol.iterator]: jest.fn(),
+// });
