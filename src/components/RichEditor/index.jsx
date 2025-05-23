@@ -56,6 +56,7 @@ class RichEditor extends React.Component {
   }
 
   updateCharCount(editor) {
+    debugger;
     const content = editor.getContent({ format: 'text' });
     const htmlContent = editor.getContent();
 
@@ -116,6 +117,8 @@ class RichEditor extends React.Component {
               menubar: false,
               plugins: 'legacyoutput link lists language directionality',
               statusbar: true,
+              skin: false,
+              theme: false,
               elementpath: false,
               resize: 'vertical',
               selector: `#${id}`,
