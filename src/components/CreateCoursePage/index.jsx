@@ -8,7 +8,6 @@ import LoadingSpinner from '../LoadingSpinner';
 import PageContainer from '../PageContainer';
 import ConfirmationModal from '../ConfirmationModal';
 
-import RichEditor from '../RichEditor';
 import { formatPriceData } from '../../utils';
 import { DEFAULT_PRODUCT_SOURCE } from '../../data/constants/productSourceOptions';
 
@@ -96,32 +95,6 @@ class CreateCoursePage extends React.Component {
   }
 
   render() {
-
-    // return (
-    //   <iframe
-    //     src="https://example.org"
-    //     title="iframe Example 1"
-    //     width="400"
-    //     height="300">
-    //       Wow
-    //   </iframe>
-
-    // )
-
-    // return <iframe><head></head><body>Wow</body></iframe>
-
-
-    return <RichEditor
-          label="Rich Text Editor Test"
-          id="rich-text-editor-test"
-          input={{
-            value: "This is amazing",
-            onChange: () => null,
-          }}
-          maxChars={500}
-          meta={{ touched: true, error: 'Required' }}
-        />;
-
     if (!this.props.publisherUserInfo) {
       return (
         <Alert

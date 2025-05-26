@@ -81,7 +81,7 @@ describe('RichEditor', () => {
     await waitFor(() => expect(container.querySelector('iframe').contentDocument.querySelector('#tinymce')).toBeInTheDocument());
     
     // Assert 0 and null
-    expect(screen.getByText('Recommended character limit (including spaces) is 500. 498 characters remaining.')).toBeInTheDocument();
+    expect(await screen.findByText('Recommended character limit (including spaces) is 500. 498 characters remaining.')).toBeInTheDocument();
     await waitFor(() => expect(container.querySelector('iframe').contentDocument.querySelector('#tinymce').querySelector('p').textContent).toBe('St'));
 
 
@@ -100,11 +100,11 @@ describe('RichEditor', () => {
 
     await new Promise(res => setTimeout(res, 3000));
 
-    container.querySelector('iframe').contentWindow.Range.prototype.getClientRects = () => ({
-      item: () => null,
-      length: 0,
-      [Symbol.iterator]: jest.fn(),
-    });
+    // container.querySelector('iframe').contentWindow.Range.prototype.getClientRects = () => ({
+    //   item: () => null,
+    //   length: 0,
+    //   [Symbol.iterator]: jest.fn(),
+    // });
     // container.querySelector('iframe').contentWindow.HTMLElement.prototype.getClientRects = () => ({
     //   item: () => null,
     //   length: 0,

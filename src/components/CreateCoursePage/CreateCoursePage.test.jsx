@@ -1,19 +1,18 @@
 import React from 'react';
-import { render, waitFor, screen, within } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
 import CreateCoursePage from './index';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
-import "@testing-library/jest-dom"
 
 const organizations = [{ name: 'edX', key: 'edx' }, { name: 'edX2', key: 'edx2' }];
 const sources = [{ name: 'souce1', slug: 'source1' }, { name: 'source2', slug: 'source2' }];
 const mockStore = configureStore();
 const store = mockStore({});
 
-describe('CreateCoursePage',  () => {
-  it('renders html correctly', async () => {
+describe('CreateCoursePage', () => {
+  it('renders html correctly', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -22,27 +21,7 @@ describe('CreateCoursePage',  () => {
       </Provider>,
     );
 
-    await waitFor(() => expect(container.querySelector('iframe')).toBeInTheDocument());
-
-    const iframe = container.querySelector('iframe');
-
-    console.error(iframe, 'MYINE', iframe.src == "", iframe.contentDocument);
-    
-
-
-    await new Promise(res => setTimeout(res, 4000));
-
-    let p = iframe.contentDocument.querySelector('p')
-
-    console.error(p, 'PARA', p.textContent);
-
-
-
-    // console.error(iframe.contentWindow.document.querySelector('p'), iframe, 'NOOO');
-    // await waitFor(() => expect(iframe.querySelector('p')).toBeInTheDocument())
-    // await waitFor(() => expect(container.querySelector('iframe')).toBeInTheDocument());
-
-    // expect(container).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders page correctly while fetching', () => {
