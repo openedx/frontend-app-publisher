@@ -20,7 +20,6 @@ describe('CreateCoursePage', () => {
         </MemoryRouter>
       </Provider>,
     );
-
     expect(container).toMatchSnapshot();
   });
 
