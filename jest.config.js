@@ -4,7 +4,7 @@ const config = createConfig('jest', {
   setupFiles: [
     '<rootDir>/src/setupTest.js',
   ],
-  "testEnvironmentOptions": { "resources": "usable" },
+  testEnvironmentOptions: { resources: 'usable' },
 });
 
 module.exports = config;
