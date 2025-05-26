@@ -121,7 +121,7 @@ describe('Create Course View', () => {
   });
 
   it('Submits the form with correct data', async () => {
-    const spy = jest.spyOn(CreateCoursePageComponent.prototype, 'handleCourseCreate');
+    const handleCourseCreateSpy = jest.spyOn(CreateCoursePageComponent.prototype, 'handleCourseCreate');
 
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
@@ -144,10 +144,10 @@ describe('Create Course View', () => {
     const confirmButton = screen.getByText('Create');
     fireEvent.click(confirmButton);
     const finalConfirmModal = screen.getByRole('dialog');
-    expect(spy).toBeCalledTimes(0);
+    expect(handleCourseCreateSpy).toBeCalledTimes(0);
 
     const finalSubmitButton = within(finalConfirmModal).getByText('Create');
     fireEvent.click(finalSubmitButton);
-    expect(spy).toBeCalledTimes(1);
+    expect(handleCourseCreateSpy).toBeCalledTimes(1);
   });
 });
