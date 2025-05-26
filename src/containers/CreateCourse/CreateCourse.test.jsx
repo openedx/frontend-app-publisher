@@ -27,7 +27,6 @@ const courseData = {
   run_type: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c'
 };
 
-
 const initialState = {
   courseInfo: {},
   publisherUserInfo: {
@@ -117,7 +116,6 @@ describe('Create Course View', () => {
 
     const submitButton = screen.getByText('Create');
     fireEvent.click(submitButton);
-
     submitText = await screen.queryByText('Create a New Course?')
     expect(submitText).toBeInTheDocument()
 
@@ -146,15 +144,11 @@ describe('Create Course View', () => {
 
     const confirmButton = screen.getByText('Create');
     fireEvent.click(confirmButton);
-    
     const finalConfirmModal = screen.getByRole('dialog');
     expect(spy).toBeCalledTimes(0);
 
     const finalSubmitButton = within(finalConfirmModal).getByText('Create')
     fireEvent.click(finalSubmitButton);
-
-
     expect(spy).toBeCalledTimes(1);
-
   });
 });

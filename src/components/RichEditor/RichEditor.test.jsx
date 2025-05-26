@@ -100,16 +100,11 @@ describe('RichEditor', () => {
 
     await new Promise(res => setTimeout(res, 3000));
 
-    // container.querySelector('iframe').contentWindow.Range.prototype.getClientRects = () => ({
-    //   item: () => null,
-    //   length: 0,
-    //   [Symbol.iterator]: jest.fn(),
-    // });
-    // container.querySelector('iframe').contentWindow.HTMLElement.prototype.getClientRects = () => ({
-    //   item: () => null,
-    //   length: 0,
-    //   [Symbol.iterator]: jest.fn(),
-    // });
+    container.querySelector('iframe').contentWindow.Range.prototype.getClientRects = () => ({
+      item: () => null,
+      length: 0,
+      [Symbol.iterator]: jest.fn(),
+    });
 
     container.querySelector('iframe').contentWindow.Range.prototype.getBoundingClientRect = () => ({
       top: 54,
