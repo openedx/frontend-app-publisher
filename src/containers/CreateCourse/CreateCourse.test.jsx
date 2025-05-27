@@ -1,18 +1,20 @@
 import configureStore from 'redux-mock-store';
 import React from 'react';
 import {
-  render, screen, fireEvent, waitFor,
+  render, screen, fireEvent, waitFor, within,
 } from '@testing-library/react';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 
+import '@testing-library/jest-dom';
 import CreateCoursePage from './index';
+import CreateCoursePageComponent from '../../components/CreateCoursePage';
 import { jsonDeepCopy } from '../../utils';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 const courseData = {
-  org: 'edx',
+  org: { label: 'edx', value: 'edx' },
   title: 'Test Course',
   number: 'test101',
   type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
@@ -22,6 +24,7 @@ const courseData = {
   start: '2019-03-04',
   end: '2020-03-04',
   pacing_type: 'instructor_paced',
+  run_type: '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c',
 };
 
 const initialState = {
@@ -44,6 +47,7 @@ const initialState = {
   form: {
     'create-course-form': {
       initial: { courseData },
+      values: courseData,
     },
   },
 };
@@ -88,8 +92,7 @@ describe('Create Course View', () => {
     waitFor(() => expect(screen.getByText(errorMessage[0])).toBeInTheDocument());
   });
 
-  it.skip('Shows confirmation modal on form submission', async () => {
-    // Todo: add proper assertions
+  it('Shows confirmation modal on form submission', async () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
@@ -108,12 +111,18 @@ describe('Create Course View', () => {
       </MemoryRouter>,
     );
 
+    let submitText = await screen.queryByText('Create a New Course?');
+    expect(submitText).not.toBeInTheDocument();
+
     const submitButton = screen.getByText('Create');
     fireEvent.click(submitButton);
+    submitText = await screen.queryByText('Create a New Course?');
+    expect(submitText).toBeInTheDocument();
   });
 
-  it.skip('Submits the form with correct data', async () => {
-    // Todo: add proper assertions
+  it('Submits the form with correct data', async () => {
+    const handleCourseCreateSpy = jest.spyOn(CreateCoursePageComponent.prototype, 'handleCourseCreate');
+
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = false;
     testState.publisherUserInfo.error = null;
@@ -134,5 +143,11 @@ describe('Create Course View', () => {
 
     const confirmButton = screen.getByText('Create');
     fireEvent.click(confirmButton);
+    const finalConfirmModal = screen.getByRole('dialog');
+    expect(handleCourseCreateSpy).toBeCalledTimes(0);
+
+    const finalSubmitButton = within(finalConfirmModal).getByText('Create');
+    fireEvent.click(finalSubmitButton);
+    expect(handleCourseCreateSpy).toBeCalledTimes(1);
   });
 });
