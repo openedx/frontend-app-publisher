@@ -167,14 +167,21 @@ describe('ListField - Collaborators', () => {
     mockClient.reset();
   });
 
-  it('renders a list of item members and an autocomplete input', () => {
+  it('renders a list of item members and an autocomplete input', async () => {
     const { container } = render(<MemoryRouter><ListField {...collaboratorDefaultProps} /></MemoryRouter>);
     expect(container).toMatchSnapshot();
+
+    const currentList = screen.getAllByTestId('draggable-list-item');
+    await waitFor(() => expect(currentList).toHaveLength(3));
+    const input = screen.getByRole('textbox');
+    await waitFor(() => expect(input).toBeInTheDocument());
+    await userEvent.type(input, 'mit');
+    await waitFor(() => expect(screen.getByText('MIT')).toBeInTheDocument());
   });
 
-  it('renders correctly with referred props', async () => {
+  it('renders correctly with referred props', () => {
     const { container } = render(<MemoryRouter><ListField {...collaboratorReferredProps} /></MemoryRouter>);
-    await waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with an error after failed submission', () => {
@@ -187,7 +194,7 @@ describe('ListField - Collaborators', () => {
     };
 
     const { container } = render(<MemoryRouter><ListField {...metaFailedProps} /></MemoryRouter>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('gets/clears suggestions for autocomplete', async () => {
@@ -209,14 +216,14 @@ describe('ListField - Collaborators', () => {
     const currentList = await screen.getAllByTestId('draggable-list-item');
 
     // we start with 3 members
-    waitFor(() => expect(currentList).toHaveLength(3));
+    await waitFor(() => expect(currentList).toHaveLength(3));
     const input = await screen.getByRole('textbox');
     // open the suggestion list
     await userEvent.type(input, 'mit');
     // confirm that entering a member not in the list adds it
     fireEvent.click(await screen.getByText('MIT'));
     const updatedList = await screen.getAllByTestId('draggable-list-item');
-    waitFor(() => expect(updatedList).toHaveLength(4));
+    await waitFor(() => expect(updatedList).toHaveLength(4));
   });
 
   it('adds the referred item to state when one is given', async () => {
@@ -263,12 +270,12 @@ describe('ListField - Staffers', () => {
 
   it('renders a list of staff members and an autocomplete input', () => {
     const { container } = render(<MemoryRouter><ListField {...staffDefaultProps} /></MemoryRouter>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with referred props', () => {
     const { container } = render(<MemoryRouter><ListField {...staffReferredProps} /></MemoryRouter>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with an error after failed submission', () => {
@@ -281,7 +288,7 @@ describe('ListField - Staffers', () => {
       },
     };
     const { container } = render(<MemoryRouter><ListField {...metaFailedProps} /></MemoryRouter>);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('gets/clears suggestions for autocomplete', async () => {
@@ -312,7 +319,7 @@ describe('ListField - Staffers', () => {
     const input = await screen.findByRole('textbox');
     fireEvent.change(input, { target: { value: 'lo' } });
     // check that we get no suggestions for a query that is too short
-    waitFor(() => expect(screen.getByText('Longstocking')).not.toBeInTheDocument());
+    waitFor(async () => expect(await screen.getByText('Longstocking')).not.toBeInTheDocument());
   });
 
   it('updates selected staff on form', async () => {
