@@ -159,13 +159,6 @@ const staffReferredProps = {
   },
 };
 
-// jest.mock('../Staffer', () => ({
-//   Staffer: () => <div className="mock-staffer" />,
-//   // mock a generic name function so that drag and drop works
-//   getStafferName: staffer => staffer.given_name,
-//   fetchStaffSuggestions: jest.fn(),
-// }));
-
 describe('ListField - Collaborators', () => {
   afterEach(() => {
     // Clear onChange's call count after each test
@@ -173,89 +166,90 @@ describe('ListField - Collaborators', () => {
     // reset api client response
     mockClient.reset();
   });
-  
-    it('renders a list of item members and an autocomplete input', () => {
-      const { container } = render(<MemoryRouter><ListField {...collaboratorDefaultProps} /></MemoryRouter>);
-      expect(container).toMatchSnapshot();
-    });
 
-    it('renders correctly with referred props', async () => {
-        const { container } = render(<MemoryRouter><ListField {...collaboratorReferredProps} /></MemoryRouter>);
-        await waitFor(() => expect(container).toMatchSnapshot());
-      });
-    
-       it('renders correctly with an error after failed submission', () => {
-          const metaFailedProps = {
-      
-            ...collaboratorDefaultProps,
-            meta: {
-              submitFailed: true,
-              error: 'This field is required',
-            },
-          };
-          const { container } = render(<MemoryRouter><ListField {...metaFailedProps} /></MemoryRouter>);
-          waitFor(() => expect(container).toMatchSnapshot());
-        });
+  it('renders a list of item members and an autocomplete input', () => {
+    const { container } = render(<MemoryRouter><ListField {...collaboratorDefaultProps} /></MemoryRouter>);
+    expect(container).toMatchSnapshot();
+  });
 
-          it('gets/clears suggestions for autocomplete', async () => {
-            render(<MemoryRouter><ListField {...collaboratorDefaultProps} owners={owners} /></MemoryRouter>);
-            const input = screen.getByRole('textbox');
-            await userEvent.type(input, 'mit');
-            const suggestionsList = await screen.findAllByTestId('list-field-suggestion');
-            waitFor(() => expect(suggestionsList[0]).toHaveAttribute('name', 'MIT'));
-            waitFor(() => expect(suggestionsList[0]).toHaveAttribute('uuid', 'a7d0e2c0-9a02-421b-93bf-d081339090cc'));
-            waitFor(() => expect(suggestionsList[0]).toHaveAttribute('item_text', 'Add New Collaborator'));
-            waitFor(() => expect(suggestionsList[0].url).not.toBeNull());
-            // check that clearing suggestions...clears suggestions
-            fireEvent.change(input, { target: { value: '' } });
-            waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
-          });
-    
-      it('updates selected item on form', async () => {
-        render(<MemoryRouter><ListField {...collaboratorDefaultProps} /></MemoryRouter>);
-        const currentList = await screen.getAllByTestId('draggable-list-item');
-    
-        // we start with 3 members
-        waitFor(() => expect(currentList).toHaveLength(3));
-        const input = await screen.getByRole('textbox');
-        // open the suggestion list
-        await userEvent.type(input, 'mit');
-        // confirm that entering a member not in the list adds it
-        fireEvent.click(await screen.getByText('MIT'));
-        let updatedList = await screen.getAllByTestId('draggable-list-item');
-        waitFor(() => expect(updatedList).toHaveLength(4));
-      });
-    
-       it('adds the referred item to state when one is given', async () => {
-          render(<MemoryRouter><ListField {...collaboratorReferredProps} /></MemoryRouter>);
-            const listItems = await screen.findAllByTestId('draggable-list-item');
-  const lastItem = listItems[listItems.length - 1];
-  expect(lastItem).toHaveTextContent('I am a school');
-        });
+  it('renders correctly with referred props', async () => {
+    const { container } = render(<MemoryRouter><ListField {...collaboratorReferredProps} /></MemoryRouter>);
+    await waitFor(() => expect(container).toMatchSnapshot());
+  });
 
-   it('gets no suggestions for short autocomplete', async () => {
-      render(<MemoryRouter><ListField {...collaboratorDefaultProps}  /></MemoryRouter>);
-      const input = await screen.getByRole('textbox');
-      await userEvent.type(input, 'mi');
-      // check that we get no suggestions for a query that is too short
-      waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
-    });
+  it('renders correctly with an error after failed submission', () => {
+    const metaFailedProps = {
+      ...collaboratorDefaultProps,
+      meta: {
+        submitFailed: true,
+        error: 'This field is required',
+      },
+    };
+
+    const { container } = render(<MemoryRouter><ListField {...metaFailedProps} /></MemoryRouter>);
+    waitFor(() => expect(container).toMatchSnapshot());
+  });
+
+  it('gets/clears suggestions for autocomplete', async () => {
+    render(<MemoryRouter><ListField {...collaboratorDefaultProps} owners={owners} /></MemoryRouter>);
+    const input = screen.getByRole('textbox');
+    await userEvent.type(input, 'mit');
+    const suggestionsList = await screen.findAllByTestId('list-field-suggestion');
+    waitFor(() => expect(suggestionsList[0]).toHaveAttribute('name', 'MIT'));
+    waitFor(() => expect(suggestionsList[0]).toHaveAttribute('uuid', 'a7d0e2c0-9a02-421b-93bf-d081339090cc'));
+    waitFor(() => expect(suggestionsList[0]).toHaveAttribute('item_text', 'Add New Collaborator'));
+    waitFor(() => expect(suggestionsList[0].url).not.toBeNull());
+    // check that clearing suggestions...clears suggestions
+    fireEvent.change(input, { target: { value: '' } });
+    waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
+  });
+
+  it('updates selected item on form', async () => {
+    render(<MemoryRouter><ListField {...collaboratorDefaultProps} /></MemoryRouter>);
+    const currentList = await screen.getAllByTestId('draggable-list-item');
+
+    // we start with 3 members
+    waitFor(() => expect(currentList).toHaveLength(3));
+    const input = await screen.getByRole('textbox');
+    // open the suggestion list
+    await userEvent.type(input, 'mit');
+    // confirm that entering a member not in the list adds it
+    fireEvent.click(await screen.getByText('MIT'));
+    const updatedList = await screen.getAllByTestId('draggable-list-item');
+    waitFor(() => expect(updatedList).toHaveLength(4));
+  });
+
+  it('adds the referred item to state when one is given', async () => {
+    render(<MemoryRouter><ListField {...collaboratorReferredProps} /></MemoryRouter>);
+    const listItems = await screen.findAllByTestId('draggable-list-item');
+    const lastItem = listItems[listItems.length - 1];
+    expect(lastItem).toHaveTextContent('I am a school');
+  });
+
+  it('gets no suggestions for short autocomplete', async () => {
+    render(<MemoryRouter><ListField {...collaboratorDefaultProps} /></MemoryRouter>);
+    const input = await screen.getByRole('textbox');
+    await userEvent.type(input, 'mi');
+    // check that we get no suggestions for a query that is too short
+    waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
+  });
+
   it('correctly handles removing members of the item', async () => {
-    jest.resetModules(); // clear previous mock state
-    jest.unmock('../Collaborator'); // ensure real module is used
+    jest.resetModules();
+    jest.unmock('../Collaborator');
     render(
-    <MemoryRouter>
+      <MemoryRouter>
         <ListField {...collaboratorDefaultProps} />
-    </MemoryRouter>
-);
-const wasedaCollaboratorSection = screen.getByText('Waseda').closest('.staffer-details');
-expect(wasedaCollaboratorSection).toBeInTheDocument();
-const deleteButton = within(wasedaCollaboratorSection).getByRole('button', {
-  name: /remove waseda/i,
-});
+      </MemoryRouter>,
+    );
+    const wasedaCollaboratorSection = screen.getByText('Waseda').closest('.staffer-details');
+    expect(wasedaCollaboratorSection).toBeInTheDocument();
+    const deleteButton = within(wasedaCollaboratorSection).getByRole('button', {
+      name: /remove waseda/i,
+    });
 
-await userEvent.click(deleteButton);
-expect(screen.queryByText('Waseda')).not.toBeInTheDocument();
+    await userEvent.click(deleteButton);
+    expect(screen.queryByText('Waseda')).not.toBeInTheDocument();
   });
 });
 
@@ -268,18 +262,12 @@ describe('ListField - Staffers', () => {
   });
 
   it('renders a list of staff members and an autocomplete input', () => {
-    const { container } = render(
-        <MemoryRouter>
-    <ListField {...staffDefaultProps} />
-    </MemoryRouter>);
+    const { container } = render(<MemoryRouter><ListField {...staffDefaultProps} /></MemoryRouter>);
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly with referred props', () => {
-    const { container } = render(
-    <MemoryRouter>
-    <ListField {...staffReferredProps} />
-    </MemoryRouter>);
+    const { container } = render(<MemoryRouter><ListField {...staffReferredProps} /></MemoryRouter>);
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
@@ -292,10 +280,7 @@ describe('ListField - Staffers', () => {
         error: 'This field is required',
       },
     };
-    const { container } = render(
-    <MemoryRouter>
-    <ListField {...metaFailedProps}/>
-    </MemoryRouter>);
+    const { container } = render(<MemoryRouter><ListField {...metaFailedProps} /></MemoryRouter>);
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
@@ -331,13 +316,14 @@ describe('ListField - Staffers', () => {
   });
 
   it('updates selected staff on form', async () => {
-  mockClient.onGet('http://localhost:18381/api/v1/search/person_typeahead/?q=long&org=MITx')
+    mockClient.onGet('http://localhost:18381/api/v1/search/person_typeahead/?q=long&org=MITx')
       .replyOnce(200, JSON.stringify(mockAutoCompletePersonResponses.long));
 
     render(<MemoryRouter><ListField {...staffDefaultProps} owners={owners} /></MemoryRouter>);
     const currentList = await screen.getAllByTestId('draggable-list-item');
     waitFor(() => expect(currentList).toHaveLength(3));
     const input = await screen.findByRole('textbox');
+    const comboBox = await screen.findByRole('combobox');
     fireEvent.change(input, { target: { value: 'long' } });
     waitFor(() => expect(comboBox.getAttribute('aria-expanded')).toBe('true'));
     waitFor(() => expect(screen.getByText('Pippi Longstocking')).toBeInTheDocument());
@@ -352,25 +338,24 @@ describe('ListField - Staffers', () => {
     render(
       <MemoryRouter>
         <ListField {...staffDefaultProps} owners={owners} />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     const staffListItem = screen.getByText('Dave Grohl').closest('.staffer-details');
     expect(staffListItem).toBeInTheDocument();
-    
+
     const deleteIcon = staffListItem.querySelector('#delete-icon-2aba6189-ad7e-45a8-b269-bea071b80391');
     const deleteButton = deleteIcon.closest('button');
     await userEvent.click(deleteButton);
     expect(screen.queryByText('Dave Grohl')).not.toBeInTheDocument();
-});
-
+  });
 
   it('adds the referred staffer to state when one is given', async () => {
-   render(<MemoryRouter><ListField {...staffReferredProps} /></MemoryRouter>);
+    render(<MemoryRouter><ListField {...staffReferredProps} /></MemoryRouter>);
 
-  const listItems = await screen.findAllByTestId('draggable-list-item');
-  // Check that the last list item includes the referred staffer's name
-  const lastItem = listItems[listItems.length - 1];
-  expect(lastItem).toHaveTextContent('Person McPerson');
+    const listItems = await screen.findAllByTestId('draggable-list-item');
+    // Check that the last list item includes the referred staffer's name
+    const lastItem = listItems[listItems.length - 1];
+    expect(lastItem).toHaveTextContent('Person McPerson');
   });
 });
