@@ -250,27 +250,17 @@ describe('ListField - Collaborators', () => {
     waitFor(() => expect(newItem).toHaveAttribute('name', 'I am a school'));
   });
 
-  it.skip('correctly handles removing members of the item', () => {
+  it.skip('correctly handles removing members of the item', async () => {
     // TODO: convert to RTL
-    const component = render(<ListField {...collaboratorDefaultProps} />);
-    let collaborators = component.find('.mock-collaborator');
-    expect(collaborators).toHaveLength(collaboratorInput.value.length);
-
-    const firstCollaborator = component.state().currentList[0];
-    // Petend we deleted the first collaborator
-    const firstUuid = collaboratorInput.value[0].uuid;
-    component.instance().handleRemove(firstUuid);
-
-    // Verify that the onChange method has been called
-    expect(collaboratorInput.onChange).toBeCalled();
-
-    // Verify that the first collaborator has been removed
-    component.update();
-    collaborators = component.find('.mock-collaborator');
-    expect(collaborators).toHaveLength(collaboratorInput.value.length - 1);
-
-    const newFirstCollaborator = component.state().currentList[0];
-    expect(firstCollaborator).not.toEqual(newFirstCollaborator);
+    jest.resetModules(); // clear previous mock state
+    jest.unmock('../Collaborator'); // ensure real module is used
+    render(<ListField {...collaboratorDefaultProps} />);
+     const currentList = await screen.getAllByTestId('draggable-list-item');
+    waitFor(() => expect(currentList).toHaveLength(3));
+    const removeButtons = screen.getAllByLabelText(/remove/i); // or query by testid
+    await userEvent.click(removeButtons[0]);
+    const updatedItems = await screen.findAllByTestId('draggable-list-item');
+    expect(updatedItems).toHaveLength(2);
   });
 
   it.skip('correctly handles reordering members', () => {
