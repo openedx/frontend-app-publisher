@@ -12,7 +12,7 @@ describe('CatalogInclusionPane', () => {
   const mockOrgInclusion = true;
   const spy = jest.spyOn(DiscoveryDataApiService, 'editCourse');
 
-  it('correct toggle behavior', () => {
+  it('correct toggle behavior', async () => {
     const { container } = render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
@@ -21,10 +21,10 @@ describe('CatalogInclusionPane', () => {
     />);
     screen.findByTestId('catalog-inclusion-pane');
     const title = screen.findByText('Enterprise Subscriptions');
-    waitFor(() => expect(title).toBeInTheDocument());
+    await waitFor(() => expect(title).toBeInTheDocument());
     const toggle = container.querySelector('.pgn__form-switch-input');
     fireEvent.change(toggle, { target: { checked: false } });
-    waitFor(() => expect(spy).toBeCalledWith(
+    await waitFor(() => expect(spy).toBeCalledWith(
       {
         draft: false,
         enterprise_subscription_inclusion: !mockSubInclusion,
@@ -33,7 +33,7 @@ describe('CatalogInclusionPane', () => {
     ));
   });
 
-  it('allow course runs who have been reviewed', () => {
+  it('allow course runs who have been reviewed', async () => {
     const { container } = render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
@@ -42,10 +42,10 @@ describe('CatalogInclusionPane', () => {
     />);
     screen.findByTestId('catalog-inclusion-pane');
     const title = screen.findByText('Enterprise Subscriptions');
-    waitFor(() => expect(title).toBeInTheDocument());
+    await waitFor(() => expect(title).toBeInTheDocument());
     const toggle = container.querySelector('.pgn__form-switch-input');
     fireEvent.change(toggle, { target: { checked: false } });
-    waitFor(() => expect(spy).toBeCalledWith(
+    await waitFor(() => expect(spy).toBeCalledWith(
       {
         draft: false,
         enterprise_subscription_inclusion: !mockSubInclusion,
@@ -53,7 +53,8 @@ describe('CatalogInclusionPane', () => {
       },
     ));
   });
-  it('toggle disabled when org is false', () => {
+
+  it('toggle disabled when org is false', async () => {
     const { container } = render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
@@ -62,9 +63,10 @@ describe('CatalogInclusionPane', () => {
     />);
     // org not included helper text
     const helperText = container.querySelector('.text-gray-300');
-    waitFor(() => expect(helperText).toHaveLength(1));
+    await waitFor(() => expect(helperText).toHaveLength(1));
   });
-  it('toggle blocked in review status', () => {
+
+  it('toggle blocked in review status', async () => {
     const { container } = render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
@@ -74,6 +76,6 @@ describe('CatalogInclusionPane', () => {
     const toggle = container.querySelector('.pgn__form-switch-input');
     fireEvent.change(toggle, { target: { checked: false } });
     // blocked error helper text
-    waitFor(() => expect(container.querySelector('.pgn__form-switch-helper-text')).toHaveLength(1));
+    await waitFor(() => expect(container.querySelector('.pgn__form-switch-helper-text')).toHaveLength(1));
   });
 });

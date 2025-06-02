@@ -83,11 +83,11 @@ describe('App', () => {
 
     // New Course Button should be present
     const newCourseBtn = await screen.findAllByRole('button')[2];
-    waitFor(() => expect(newCourseBtn).toHaveTextContent('New course'));
+    await waitFor(() => expect(newCourseBtn).toHaveTextContent('New course'));
     // Table Should be present at main route with data
-    waitFor(() => expect(screen.findAllByRole('table')).toBeInTheDocument());
-    waitFor(() => expect(screen.findAllByRole('row')).toHaveLength(1));
+    await waitFor(() => expect(screen.findAllByRole('table')).toBeInTheDocument());
+    await waitFor(() => expect(screen.findAllByRole('row')).toHaveLength(1));
     const link = await screen.findByRole('link', { name: 'edx101' });
-    waitFor(() => expect(link).toHaveTextContent('edx101'));
+    await waitFor(() => expect(link).toHaveTextContent('edx101'));
   });
 });

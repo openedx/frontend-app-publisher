@@ -186,7 +186,7 @@ describe('ListField - Collaborators', () => {
     await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly with an error after failed submission', () => {
+  it('renders correctly with an error after failed submission', async () => {
     const metaFailedProps = {
 
       ...collaboratorDefaultProps,
@@ -196,7 +196,7 @@ describe('ListField - Collaborators', () => {
       },
     };
     const { container } = render(<ListField {...metaFailedProps} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('gets/clears suggestions for autocomplete', async () => {
@@ -204,13 +204,13 @@ describe('ListField - Collaborators', () => {
     const input = screen.getByRole('textbox');
     await userEvent.type(input, 'mit');
     const suggestionsList = await screen.findAllByTestId('list-field-suggestion');
-    waitFor(() => expect(suggestionsList[0]).toHaveAttribute('name', 'MIT'));
-    waitFor(() => expect(suggestionsList[0]).toHaveAttribute('uuid', 'a7d0e2c0-9a02-421b-93bf-d081339090cc'));
-    waitFor(() => expect(suggestionsList[0]).toHaveAttribute('item_text', 'Add New Collaborator'));
-    waitFor(() => expect(suggestionsList[0].url).not.toBeNull());
+    await waitFor(() => expect(suggestionsList[0]).toHaveAttribute('name', 'MIT'));
+    await waitFor(() => expect(suggestionsList[0]).toHaveAttribute('uuid', 'a7d0e2c0-9a02-421b-93bf-d081339090cc'));
+    await waitFor(() => expect(suggestionsList[0]).toHaveAttribute('item_text', 'Add New Collaborator'));
+    await waitFor(() => expect(suggestionsList[0].url).not.toBeNull());
     // check that clearing suggestions...clears suggestions
     fireEvent.change(input, { target: { value: '' } });
-    waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
+    await waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
   });
 
   it('gets no suggestions for short autocomplete', async () => {
@@ -218,7 +218,7 @@ describe('ListField - Collaborators', () => {
     const input = await screen.getByRole('textbox');
     await userEvent.type(input, 'mi');
     // check that we get no suggestions for a query that is too short
-    waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
+    await waitFor(async () => expect(await screen.findAllByTestId('list-field-suggestion')).not.toBeInTheDocument());
   });
 
   it('updates selected item on form', async () => {
@@ -226,28 +226,28 @@ describe('ListField - Collaborators', () => {
     const currentList = await screen.getAllByTestId('draggable-list-item');
 
     // we start with 3 members
-    waitFor(() => expect(currentList).toHaveLength(3));
+    await waitFor(() => expect(currentList).toHaveLength(3));
     const input = await screen.getByRole('textbox');
     // open the suggestion list
     await userEvent.type(input, 'mit');
     // confirm that entering a member not in the list adds it
     fireEvent.click(await screen.getByText('MIT'));
     let updatedList = await screen.getAllByTestId('draggable-list-item');
-    waitFor(() => expect(updatedList).toHaveLength(4));
+    await waitFor(() => expect(updatedList).toHaveLength(4));
     // confirm that entering a member already in the list does NOT add it
     await userEvent.type(input, 'mit');
     // confirm that entering a member not in the list adds it
     fireEvent.click(await screen.getByText('MIT'));
     updatedList = await screen.getAllByTestId('draggable-list-item');
-    waitFor(() => expect(updatedList).toHaveLength(4));
+    await waitFor(() => expect(updatedList).toHaveLength(4));
   });
 
-  it('adds the referred item to state when one is given', () => {
+  it('adds the referred item to state when one is given', async () => {
     render(<ListField {...collaboratorReferredProps} />);
 
     const currentList = screen.getAllByTestId('mock-collaborator');
     const newItem = currentList[currentList.length - 1];
-    waitFor(() => expect(newItem).toHaveAttribute('name', 'I am a school'));
+    await waitFor(() => expect(newItem).toHaveAttribute('name', 'I am a school'));
   });
 
   it.skip('correctly handles removing members of the item', () => {
@@ -347,17 +347,17 @@ describe.skip('ListField - Staffers', () => {
     mockClient.reset();
   });
 
-  it('renders a list of staff members and an autocomplete input', () => {
+  it('renders a list of staff members and an autocomplete input', async () => {
     const { container } = render(<ListField {...staffDefaultProps} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly with referred props', () => {
+  it('renders correctly with referred props', async () => {
     const { container } = render(<ListField {...staffReferredProps} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly with an error after failed submission', () => {
+  it('renders correctly with an error after failed submission', async () => {
     const metaFailedProps = {
 
       ...staffDefaultProps,
@@ -367,7 +367,7 @@ describe.skip('ListField - Staffers', () => {
       },
     };
     const { container } = render(<ListField {...metaFailedProps} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('gets/clears suggestions for autocomplete', async () => {
@@ -379,11 +379,11 @@ describe.skip('ListField - Staffers', () => {
     fireEvent.change(input, { target: { value: 'long' } });
     // TODO: Verify uuid rendering
     // expect(suggestions[0].uuid).toEqual('a7d0e2c0-9a02-421b-93bf-d081339090cc');
-    waitFor(() => expect(screen.getByText('Longstocking')).toBeInTheDocument());
-    waitFor(() => expect(screen.getByText('Add New Instructor')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Longstocking')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Add New Instructor')).toBeInTheDocument());
     fireEvent.blur(input);
-    waitFor(() => expect(screen.queryByText('Longstocking')).not.toBeInTheDocument());
-    waitFor(() => expect(screen.queryByText('Add New Instructor')).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByText('Longstocking')).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByText('Add New Instructor')).not.toBeInTheDocument());
 
     // TODO: Add clearing of suggestions
     // // check that clearing suggestions...clears suggestions
@@ -403,7 +403,7 @@ describe.skip('ListField - Staffers', () => {
     const input = await screen.findByRole('textbox');
     fireEvent.change(input, { target: { value: 'lo' } });
     // check that we get no suggestions for a query that is too short
-    waitFor(() => expect(screen.getByText('Longstocking')).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Longstocking')).not.toBeInTheDocument());
   });
 
   it.skip('updates selected staff on form', async () => {

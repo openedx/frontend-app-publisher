@@ -4,8 +4,8 @@ import { render, waitFor } from '@testing-library/react';
 import LoadingSpinner from './index';
 
 describe('LoadingSpinner', () => {
-  it('shows a loading spinner', () => {
+  it('shows a loading spinner', async () => {
     const { container } = render(<LoadingSpinner />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 });

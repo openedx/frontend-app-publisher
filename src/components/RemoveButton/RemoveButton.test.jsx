@@ -14,9 +14,9 @@ const defaultProps = {
 };
 
 describe('RemoveButton', () => {
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     const { container } = render(<RemoveButton {...defaultProps} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('calls the `onRemove` function with the target field number when the button is clicked', async () => {
