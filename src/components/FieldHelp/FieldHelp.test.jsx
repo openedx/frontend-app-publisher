@@ -24,6 +24,6 @@ describe('FieldHelp', () => {
 
   it('node gets converted to string', async () => {
     await render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
-    await waitFor(() => expect(screen.findByTestId('field-help-data').prop('data-tip')).toMatch(/<p>\s*Hello World\s*<\/p>/));
+    await waitFor(async () => expect(await screen.findByTestId('field-help-data').prop('data-tip')).toMatch(/<p>\s*Hello World\s*<\/p>/));
   });
 });

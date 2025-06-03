@@ -84,7 +84,7 @@ describe('UsersPane', () => {
     render(<UsersPane
       courseEditors={basicCourseEditors}
     />);
-    const users = screen.findByTestId('test-id-user');
+    const users = await screen.findByTestId('test-id-user');
     await waitFor(() => expect(users).toHaveLength(3));
     await waitFor(() => expect(users.at(0).prop('name')).toEqual('Editor 1'));
     await waitFor(() => expect(users.at(0).prop('email')).toEqual('one@example.com'));
@@ -140,7 +140,7 @@ describe('UsersPane', () => {
     render(<UsersPane
       organizationRoles={basicOrganizationRoles}
     />);
-    const users = screen.findByTestId('test-id-user');
+    const users = await screen.findByTestId('test-id-user');
     await waitFor(() => expect(users).toHaveLength(1));
     await waitFor(() => expect(users.at(0).prop('name')).toEqual('PC 1'));
     await waitFor(() => expect(users.at(0).prop('email')).toEqual('pc@example.com'));

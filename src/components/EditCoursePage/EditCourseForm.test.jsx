@@ -371,7 +371,7 @@ describe('BaseEditCourseForm', () => {
     await waitFor(() => expect(disabledFields).toHaveLength(1));
   });
 
-  it.skip('Check if watchers field is disabled after being reviewed', () => {
+  it.skip('Check if watchers field is disabled after being reviewed', async () => {
     // TODO: data-testid element not found
     const courseInfoWithCourseRunStatuses = {
       ...courseInfo,
@@ -405,7 +405,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const watchersField = screen.findByTestId('watchers-list', { disabled: true });
+    const watchersField = await screen.findByTestId('watchers-list', { disabled: true });
     expect(watchersField).toHaveLength(1);
   });
 
@@ -488,11 +488,11 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const disabledFields = screen.findByText('type', { disabled: true });
+    const disabledFields = await screen.findByText('type', { disabled: true });
     await waitFor(() => expect(disabledFields).toHaveLength(1));
   });
 
-  it.skip('check for customValidity working correctly for url_slug in EditCourseForm', () => {
+  it.skip('check for customValidity working correctly for url_slug in EditCourseForm', async () => {
     // TODO: to be converted to RTL after render call
     const setCustomValidityMock = jest.fn();
     const courseInfoWithUrlSlug = {
@@ -547,7 +547,7 @@ describe('BaseEditCourseForm', () => {
     //   />,
     // );
 
-    const urlSlugField = screen.findByRole('url_slug');
+    const urlSlugField = await screen.findByRole('url_slug');
 
     const invalidInput = 'Invalid-URL-Slug123/';
     urlSlugField.prop('extraInput').onInvalid({ target: { setCustomValidity: setCustomValidityMock } });
@@ -729,13 +729,13 @@ describe('BaseEditCourseForm', () => {
     ];
     await Promise.all(
       invisible.map(async (name) => {
-        const fields = screen.findByName({ name });
+        const fields = await screen.findByName({ name });
         await waitFor(() => expect(fields).toHaveLength(0));
       }),
     );
 
     // Just sanity check that a field we still want there is there:
-    const fields = screen.findByName({ name: 'imageSrc' });
+    const fields = await screen.findByName({ name: 'imageSrc' });
     expect(fields).toHaveLength(1);
   });
 

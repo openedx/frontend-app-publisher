@@ -13,12 +13,12 @@ describe('User', () => {
     render(<User
       {...baseArguments}
     />);
-    await waitFor(() => expect(screen.findByTestId('id-remove-btn')).toHaveLength(0));
+    await waitFor(async () => expect(await screen.findByTestId('id-remove-btn')).toHaveLength(0));
 
     render(<User
       {...baseArguments}
       onRemove={jest.fn()}
     />);
-    await waitFor(() => expect(screen.findByTestId('id-remove-btn')).toHaveLength(1));
+    await waitFor(async () => expect(await screen.findByTestId('id-remove-btn')).toHaveLength(1));
   });
 });

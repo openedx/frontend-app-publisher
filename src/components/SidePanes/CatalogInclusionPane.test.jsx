@@ -19,8 +19,8 @@ describe('CatalogInclusionPane', () => {
       draftStatuses={['published']}
       orgInclusion={mockOrgInclusion}
     />);
-    screen.findByTestId('catalog-inclusion-pane');
-    const title = screen.findByText('Enterprise Subscriptions');
+    await screen.findByTestId('catalog-inclusion-pane');
+    const title = await screen.findByText('Enterprise Subscriptions');
     await waitFor(() => expect(title).toBeInTheDocument());
     const toggle = container.querySelector('.pgn__form-switch-input');
     fireEvent.change(toggle, { target: { checked: false } });
@@ -40,8 +40,8 @@ describe('CatalogInclusionPane', () => {
       draftStatuses={['reviewed']}
       orgInclusion={mockOrgInclusion}
     />);
-    screen.findByTestId('catalog-inclusion-pane');
-    const title = screen.findByText('Enterprise Subscriptions');
+    await screen.findByTestId('catalog-inclusion-pane');
+    const title = await screen.findByText('Enterprise Subscriptions');
     await waitFor(() => expect(title).toBeInTheDocument());
     const toggle = container.querySelector('.pgn__form-switch-input');
     fireEvent.change(toggle, { target: { checked: false } });
