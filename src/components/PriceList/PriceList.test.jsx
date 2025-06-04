@@ -10,18 +10,18 @@ const mockStore = configureStore();
 const store = mockStore({});
 
 describe('PriceList', () => {
-  it('renders without any price labels', () => {
+  it('renders without any price labels', async () => {
     const { container } = render(<PriceList priceLabels={{}} />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders with price labels', () => {
+  it('renders with price labels', async () => {
     const priceLabels = { a: 'A', b: 'B' };
     const { container } = render(
       <Provider store={store}>
         <WrappedPriceList priceLabels={priceLabels} />
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 });

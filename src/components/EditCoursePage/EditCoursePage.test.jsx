@@ -198,7 +198,7 @@ describe('EditCoursePage', () => {
     },
   };
 
-  it('renders html correctly', () => {
+  it('renders html correctly', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -212,10 +212,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly while fetching', () => {
+  it('renders page correctly while fetching', async () => {
     const { container } = render(<EditCoursePage
       courseInfo={{
         data: {},
@@ -233,10 +233,10 @@ describe('EditCoursePage', () => {
         error: null,
       }}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with courseInfo', () => {
+  it('renders page correctly with courseInfo', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -250,7 +250,7 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it.skip('renders course run restriction_type correctly for executive education course', async () => {
@@ -278,7 +278,7 @@ describe('EditCoursePage', () => {
     expect(secondSelect.props().value).toBe('');
   });
 
-  it('renders page correctly with courseInfo error', () => {
+  it('renders page correctly with courseInfo error', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -296,10 +296,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with no courseInfo', () => {
+  it('renders page correctly with no courseInfo', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -313,10 +313,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with courseOptions', () => {
+  it('renders page correctly with courseOptions', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -330,10 +330,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with courseOptions error', () => {
+  it('renders page correctly with courseOptions error', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -347,10 +347,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with no courseOptions', () => {
+  it('renders page correctly with no courseOptions', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -364,10 +364,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with courseInfo and courseOptions', () => {
+  it('renders page correctly with courseInfo and courseOptions', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -381,10 +381,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with courseRunOptions', () => {
+  it('renders page correctly with courseRunOptions', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -398,10 +398,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with no courseRunOptions', () => {
+  it('renders page correctly with no courseRunOptions', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -415,10 +415,10 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders page correctly with courseRunOptions error', () => {
+  it('renders page correctly with courseRunOptions error', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -436,7 +436,7 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders page correctly with courseInfo, courseOptions, and courseRunOptions', () => {
@@ -456,7 +456,7 @@ describe('EditCoursePage', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders page correctly with courseInfo, courseOptions, and courseRunOptions errors', () => {
+  it('renders page correctly with courseInfo, courseOptions, and courseRunOptions errors', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -482,7 +482,7 @@ describe('EditCoursePage', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   describe.skip('EditCoursePage submission handling', () => {
