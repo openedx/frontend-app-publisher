@@ -95,8 +95,7 @@ describe('BaseEditCourseForm', () => {
     process.env = env;
   });
 
-  it.skip('renders html correctly with minimal data', () => {
-    // TODO: course run toolbar does not render
+  it('renders html correctly with minimal data', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -147,7 +146,7 @@ describe('BaseEditCourseForm', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it.skip('renders html correctly with skills data when skills are available', () => {
+  it('renders html correctly with skills data when skills are available', () => {
     // TODO: redux form/prop issue as the form is not rendering
     const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
     const courseInfoWithSkills = {
@@ -180,20 +179,6 @@ describe('BaseEditCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-
-    // const { container } = render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   initialValues={initialValuesWithSkills}
-    //   title={initialValuesFull.title}
-    //   number="Test101x"
-    //   courseStatuses={[UNPUBLISHED]}
-    //   courseInfo={courseInfoWithSkills}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   id="edit-course-form"
-    // />);
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
@@ -342,7 +327,7 @@ describe('BaseEditCourseForm', () => {
   });
 
   it.skip('renders with course type disabled after being reviewed', async () => {
-  // TODO: multiple elements returned
+    // TODO: multiple elements returned
     render(
       <Provider store={store}>
         <MemoryRouter>
