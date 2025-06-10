@@ -64,7 +64,7 @@ class UsersPane extends React.Component {
   }
 
   addUser() {
-    if (this.selectRef.current.state.value) {
+    if (this.state.newEditorChoice) {
       this.props.addCourseEditor(this.state.newEditorChoice);
       this.resetEditorChoice();
     }
