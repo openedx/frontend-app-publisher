@@ -138,12 +138,12 @@ const BulkOperations = () => {
             ))
           }
         </SelectMenu>
-        <HistoricalRecords />
         <div className="my-3 py-3 px-3 border">
           {
             fileContent ? getTable() : getDropZone()
           }
         </div>
+        <HistoricalRecords />
       </div>
     )}
 
