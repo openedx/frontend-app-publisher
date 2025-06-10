@@ -1,34 +1,23 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
+import { useState } from 'react';
 import Papa from 'papaparse';
 import {
-  SelectMenu, MenuItem, Dropzone, DataTable, Alert, Container,
+  SelectMenu, MenuItem, Dropzone, DataTable, Alert, Container, DropdownFilter
 } from '@openedx/paragon';
 
-import Collapsible from '../Collapsible';
 import LoadingSpinner from '../LoadingSpinner';
-import { formatDate } from '../../utils';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import './BulkOperations.scss';
 import { AVAILABLE_BULK_OPERATIONS as availableOperations } from '../../data/constants';
+import HistoricalRecords from './HistoricalRecords';
 
 const BulkOperations = () => {
   const [bulkOperationId, setBulkOperationId] = useState(null);
   const [fileContent, setFileContent] = useState(null);
   const [file, setFile] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(null);
-  const [historicalRecords, setHistoricalRecords] = useState(null);
-  const [isError, setIsError] = useState(false);
-  const CSV_ROWS_PER_PAGE = 10;
 
-  function filteredHistoricalRecords() {
-    if (historicalRecords == null) {
-      return [];
-    }
-    return historicalRecords.filter(record => !bulkOperationId || record.task_type === bulkOperationId);
-  }
+  const CSV_ROWS_PER_PAGE = 10;
 
   function clearDropzone() {
     setFileContent(null);
@@ -51,24 +40,11 @@ const BulkOperations = () => {
     try {
       const response = await DiscoveryDataApiService.createBulkOperation(file, bulkOperationId);
       setSubmitSuccess(true);
-      setHistoricalRecords([response.data, ...historicalRecords]);
       clearDropzone();
     } catch (error) {
       setSubmitSuccess(false);
     }
     setIsLoading(false);
-  }
-
-  async function fetchBulkOpTasks() {
-    try {
-      const response = await DiscoveryDataApiService.fetchBulkOperations();
-      setHistoricalRecords(response.data.results);
-    } catch (error) {
-      setIsLoading(false);
-      setIsError(true);
-    } finally {
-      setIsLoading(false);
-    }
   }
 
   function getDropZone() {
@@ -78,10 +54,6 @@ const BulkOperations = () => {
         onProcessUpload={handleFileUpload}
       />
     );
-  }
-
-  function getCollapsibleTitle() {
-    return <span className="font-weight-bold">Processing History</span>;
   }
 
   function getAlert() {
@@ -147,75 +119,35 @@ const BulkOperations = () => {
     );
   }
 
-  useEffect(() => {
-    fetchBulkOpTasks();
-  }, []);
-
-  if (isError) {
-    return (
-      <div className="min-vh-65">
-        <Alert variant="danger">Failed to fetch historical tasks. Please try reloading the page</Alert>;
-      </div>
-    );
-  }
-
-  if (isLoading) {
-    return (
+  return (
+    <>
+    {isLoading && (
       <div className="min-vh-65">
         <LoadingSpinner />
       </div>
-    );
-  }
-
-  return (
-    <div className="mx-5 my-5">
-      {getAlert()}
-      <SelectMenu className="mb-3" defaultMessage="Choose a Bulk Operation">
-        {
-          Object.entries(availableOperations).map(([id, title]) => (
-            <MenuItem actionid={id} defaultSelected={id === bulkOperationId} onClick={e => setBulkOperationId(e.currentTarget.getAttribute('actionid'))}>
-              {title}
-            </MenuItem>
-          ))
-        }
-      </SelectMenu>
-
-      <Collapsible title={getCollapsibleTitle()}>
-        {filteredHistoricalRecords().map(record => (
-          <>
-            <div className="row justify-content-between">
-              <div className="col-auto">
-                <Link to={`/bulk-operation-tasks/${record.id}`}>{record.csv_file.split('/').pop()}</Link><br />
-                <span className="small">{formatDate(record.created)}</span>
-              </div>
-              <div className="col-auto d-flex flex-column align-items-end">
-                <span className={classNames(
-                  {
-                    badge: true,
-                    'text-capitalize': true,
-                    'badge-danger': record.status === 'failed',
-                    'badge-success': record.status === 'completed',
-                    'badge-warning': record.status === 'processing',
-                    'badge-info': record.status === 'pending',
-                  },
-                )}
-                >
-                  {record.status}
-                </span>
-                <Link to={`/bulk-operation-tasks/${record.id}`}>details</Link>
-              </div>
-            </div>
-            <hr />
-          </>
-        ))}
-      </Collapsible>
-
-      <div className="my-3 py-3 px-3 border">
-        {
-          fileContent ? getTable() : getDropZone()
-        }
+    )}
+    {!isLoading && (
+      <div className="mx-5 my-5">
+        {getAlert()}
+        <SelectMenu className="mb-3" defaultMessage="Choose a Bulk Operation">
+          {
+            Object.entries(availableOperations).map(([id, title]) => (
+              <MenuItem actionid={id} key={id} defaultSelected={id === bulkOperationId} onClick={e => setBulkOperationId(e.currentTarget.getAttribute('actionid'))}>
+                {title}
+              </MenuItem>
+            ))
+          }
+        </SelectMenu>
+        <HistoricalRecords />
+        <div className="my-3 py-3 px-3 border">
+          {
+            fileContent ? getTable() : getDropZone()
+          }
+        </div>
       </div>
-    </div>
+    )}
+
+    </>
   );
 };
 
