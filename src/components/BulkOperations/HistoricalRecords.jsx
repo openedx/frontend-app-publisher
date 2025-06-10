@@ -10,6 +10,8 @@ import { formatDate } from '../../utils';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import './BulkOperations.scss';
 
+const RECORDS_PER_PAGE = 10;
+
 const HistoricalRecords = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,8 +22,6 @@ const HistoricalRecords = () => {
   const [isError, setIsError] = useState(false);
 
   const prevStatus = useRef();
-
-  const RECORDS_PER_PAGE = 10;
 
   const fetchData = useCallback((params) => {
     let statusFilter = params.filters.find(f => f.id === 'status')?.value;
@@ -39,6 +39,7 @@ const HistoricalRecords = () => {
     setIsLoading(true);
     try {
       const response = await DiscoveryDataApiService.fetchBulkOperations(pageNum, pageSize, statusFilter);
+      console.log(response, response.data, 'DEBBBB')
       setHistoricalRecords(response.data.results);
       setTotalItems(response.data.count);
       setTotalPages(Math.ceil(response.data.count / pageSize))
