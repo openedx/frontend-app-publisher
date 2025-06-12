@@ -16,6 +16,22 @@ describe('HistoricalRecords', () => {
     get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations');
   });
 
+  beforeEach(() => {
+    const firstPageResults = Array(5).fill(mockedHistoricalTasks).flat();
+    const secondPageResults = Array(10).fill({ ...mockedHistoricalTasks[0], status: 'pending', csv_file: 'https://foo.com/empty.csv' });
+
+    get.mockImplementation((page, size, status) => {
+      if (status === 'failed') {
+        return Promise.resolve({ data: { results: firstPageResults.filter(res => res.status === status), count: 5 } });
+      }
+      if (page === 0) {
+        return Promise.resolve({ data: { results: firstPageResults, count: 20 } });
+      }
+
+      return Promise.resolve({ data: { results: secondPageResults, count: 20 } });
+    });
+  });
+
   afterAll(() => {
     jest.restoreAllMocks();
   });
@@ -36,21 +52,7 @@ describe('HistoricalRecords', () => {
     );
   });
 
-  it('history section pagination and filtering', async () => {
-    const firstPageResults = Array(5).fill(mockedHistoricalTasks).flat();
-    const secondPageResults = Array(10).fill({ ...mockedHistoricalTasks[0], status: 'pending', csv_file: 'https://foo.com/empty.csv' });
-
-    get.mockImplementation((page, size, status) => {
-      if (status === 'failed') {
-        return Promise.resolve({ data: { results: firstPageResults.filter(res => res.status === status), count: 5 } });
-      }
-      if (page === 0) {
-        return Promise.resolve({ data: { results: firstPageResults, count: 20 } });
-      }
-
-      return Promise.resolve({ data: { results: secondPageResults, count: 20 } });
-    });
-
+  it('history section pagination', async () => {
     render(
       <MemoryRouter>
         <IntlProvider locale="en">
@@ -85,6 +87,16 @@ describe('HistoricalRecords', () => {
 
     const footer = screen.getByTestId('table-footer');
     expect(within(footer).getByTestId('row-status')).toHaveTextContent('Showing 11 - 20 of 20.');
+  });
+
+  it('history section filtering', async () => {
+    render(
+      <MemoryRouter>
+        <IntlProvider locale="en">
+          <HistoricalRecords />
+        </IntlProvider>
+      </MemoryRouter>,
+    );
 
     // Filtering by Status
     const select = screen.getByLabelText('Status');
@@ -99,7 +111,7 @@ describe('HistoricalRecords', () => {
       expect(screen.queryByText(text)).not.toBeInTheDocument();
     }
     /* eslint-enable no-await-in-loop */
-
+    const footer = screen.getByTestId('table-footer');
     expect(within(footer).getByTestId('row-status')).toHaveTextContent('Showing 1 - 5 of 5.');
   });
 });
