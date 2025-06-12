@@ -205,9 +205,9 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().get(url);
   }
 
-  static fetchBulkOperations(pageNum, pageSize, statusFilter) {
+  static fetchBulkOperations(pageIndex, pageSize, statusFilter) {
     const params = {
-      page: pageNum + 1,
+      page: pageIndex + 1,
       page_size: pageSize,
     };
     if (statusFilter) {

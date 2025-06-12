@@ -8,7 +8,7 @@ import BulkOperations from './index';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import '@testing-library/jest-dom';
 
-const mockedHistoricalTasks = [
+export const mockedHistoricalTasks = [
   {
     id: 1,
     uploaded_by: 'edx',
