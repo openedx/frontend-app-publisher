@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Papa from 'papaparse';
 import {
-  SelectMenu, MenuItem, Dropzone, DataTable, Alert, Container, DropdownFilter
+  SelectMenu, MenuItem, Dropzone, DataTable, Alert, Container,
 } from '@openedx/paragon';
 
 import LoadingSpinner from '../LoadingSpinner';
@@ -38,7 +38,7 @@ const BulkOperations = () => {
   async function handleSubmit() {
     setIsLoading(true);
     try {
-      const response = await DiscoveryDataApiService.createBulkOperation(file, bulkOperationId);
+      await DiscoveryDataApiService.createBulkOperation(file, bulkOperationId);
       setSubmitSuccess(true);
       clearDropzone();
     } catch (error) {
@@ -121,12 +121,12 @@ const BulkOperations = () => {
 
   return (
     <>
-    {isLoading && (
+      {isLoading && (
       <div className="min-vh-65">
         <LoadingSpinner />
       </div>
-    )}
-    {!isLoading && (
+      )}
+      {!isLoading && (
       <div className="mx-5 my-5">
         {getAlert()}
         <SelectMenu className="mb-3" defaultMessage="Choose a Bulk Operation">
@@ -145,7 +145,7 @@ const BulkOperations = () => {
         </div>
         <HistoricalRecords />
       </div>
-    )}
+      )}
 
     </>
   );

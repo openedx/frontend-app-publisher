@@ -214,8 +214,8 @@ class DiscoveryDataApiService {
       params.status = statusFilter;
     }
 
-    let url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
-    return getAuthenticatedHttpClient().get(url, {params});
+    const url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
+    return getAuthenticatedHttpClient().get(url, { params });
   }
 
   static createBulkOperation(file, taskType) {
