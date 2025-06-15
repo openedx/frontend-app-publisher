@@ -1,24 +1,22 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 
 import User from './User';
 
 describe('User', () => {
-  it('shows a remove button iff onRemove is set', () => {
-    const baseArguments = {
-      name: 'User',
-      userId: 0,
-    };
+  const baseArguments = {
+    name: 'User',
+    userId: 0,
+  };
 
-    render(<User
-      {...baseArguments}
-    />);
-    waitFor(() => expect(screen.findByTestId('id-remove-btn')).toHaveLength(0));
+  it('shows a remove button if onRemove is set', () => {
+    render(<User {...baseArguments} onRemove={jest.fn()} />);
+    expect(screen.getByTestId('id-remove-btn')).toBeInTheDocument();
+  });
 
-    render(<User
-      {...baseArguments}
-      onRemove={jest.fn()}
-    />);
-    waitFor(() => expect(screen.findByTestId('id-remove-btn')).toHaveLength(1));
+  it('does not show a remove button if onRemove is not set', () => {
+    render(<User {...baseArguments} />);
+    expect(screen.queryByTestId('id-remove-btn')).not.toBeInTheDocument();
   });
 });

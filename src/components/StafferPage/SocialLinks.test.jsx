@@ -40,7 +40,7 @@ describe('Social links', () => {
     );
     expect(fields.length).toEqual(1);
 
-    const addButton = await screen.findByTestId('js-add-button');
+    const addButton = screen.getByTestId('js-add-button');
     fireEvent.click(addButton);
     expect(fields.length).toEqual(2);
   });

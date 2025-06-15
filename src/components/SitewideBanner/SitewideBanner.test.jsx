@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import {
   render, screen, waitFor, fireEvent,
 } from '@testing-library/react';
@@ -17,12 +18,15 @@ describe('SitewideBanner', () => {
       />,
     );
 
-    waitFor(() => expect(screen.getByRole('alert')).toHaveClass('alert-success'));
-    waitFor(() => expect(screen.getByRole('alert')).toHaveAttribute('data-dismissible', 'true'));
-    waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Dummy Message'));
+    const alert = screen.getByRole('alert');
+    expect(alert).toHaveClass('alert-success');
+    expect(alert).toHaveTextContent('Dummy Message');
+
+    const closeButton = screen.getByRole('button', { name: /close/i });
+    expect(closeButton).toBeInTheDocument();
   });
 
-  it('calls handleDismiss and sets cookie when dismissed', () => {
+  it('calls handleDismiss and sets cookie when dismissed', async () => {
     const setCookieMock = jest.spyOn(Cookies, 'set');
     render(
       <SitewideBanner
@@ -35,8 +39,8 @@ describe('SitewideBanner', () => {
     );
     const closeButton = screen.getByRole('button', { name: /close/i });
     fireEvent.click(closeButton);
-    waitFor(() => expect(screen.queryByText(/this is a test message/i)).not.toBeInTheDocument());
-    waitFor(() => expect(setCookieMock).toHaveBeenCalledWith('bannerCookie', 'true', { expires: 7 }));
+    await waitFor(() => expect(screen.queryByText(/this is a test message/i)).not.toBeInTheDocument());
+    await waitFor(() => expect(setCookieMock).toHaveBeenCalledWith('bannerCookie', 'true', { expires: 7 }));
     setCookieMock.mockRestore();
   });
 
@@ -44,6 +48,6 @@ describe('SitewideBanner', () => {
     render(
       <SitewideBanner message="Non-dismissible message" dismissible={false} />,
     );
-    waitFor(() => expect(screen.getByRole('alert')).not.toHaveAttribute('data-dismissible', 'true'));
+    expect(screen.queryByRole('button', { name: /close/i })).not.toBeInTheDocument();
   });
 });

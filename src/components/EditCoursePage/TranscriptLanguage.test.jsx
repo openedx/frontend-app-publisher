@@ -38,16 +38,16 @@ const metaFailed = {
 };
 
 describe('Transcript Language', () => {
-  it('renders correctly with no fields', () => {
+  it('renders correctly with no fields', async () => {
     const { container } = render(<TranscriptLanguage
       fields={[]}
       languageOptions={languageOptions}
       meta={meta}
     />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly when given fields', () => {
+  it('renders correctly when given fields', async () => {
     const { container } = render(
       <Provider store={store}>
         <WrappedTranscriptLanguage
@@ -57,10 +57,10 @@ describe('Transcript Language', () => {
         />
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly with an error after failed submission', () => {
+  it('renders correctly with an error after failed submission', async () => {
     const { container } = render(
       <Provider store={store}>
         <WrappedTranscriptLanguage
@@ -70,7 +70,7 @@ describe('Transcript Language', () => {
         />
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('adds fields when the add button is pushed', async () => {
@@ -84,7 +84,7 @@ describe('Transcript Language', () => {
         />
       </Provider>,
     );
-    waitFor(() => expect(fields.length).toEqual(1));
+    await waitFor(() => expect(fields.length).toEqual(1));
     const addBtn = await screen.findByTestId('test-js-add-btn');
     fireEvent.click(addBtn);
     expect(fields.length).toEqual(2);

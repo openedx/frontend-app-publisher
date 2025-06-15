@@ -31,12 +31,12 @@ test('Provides Navigation to Component', () => {
   expect(mockedNavigator).toHaveBeenCalledWith('/some-route');
 });
 
-test('Provides Location object to Component', () => {
+test('Provides Location object to Component', async () => {
   render(<WrappedComponent />);
-  waitFor(() => expect(screen.getByTestId('btn')).toHaveTextContent('/current-location'));
+  await waitFor(() => expect(screen.getByTestId('btn')).toHaveTextContent('/current-location'));
 });
 
-test('Provides Params object to Component', () => {
+test('Provides Params object to Component', async () => {
   render(<WrappedComponent />);
-  waitFor(() => expect(screen.getByTestId('btn')).toHaveTextContent('some-parameter'));
+  await waitFor(() => expect(screen.getByTestId('btn')).toHaveTextContent('some-parameter'));
 });

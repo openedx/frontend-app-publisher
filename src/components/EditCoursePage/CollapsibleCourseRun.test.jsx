@@ -103,7 +103,7 @@ const WrappedCollapsibleCourseRun = reduxForm({ form: 'testForm' })(CollapsibleC
 Date.now = jest.fn(() => new Date(Date.UTC(2001, 0, 1)).valueOf());
 
 describe('Collapsible Course Run', () => {
-  it('renders correctly with no fields', () => {
+  it('renders correctly with no fields', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -121,7 +121,7 @@ describe('Collapsible Course Run', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly when given a published course run', async () => {
@@ -143,10 +143,10 @@ describe('Collapsible Course Run', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly when given an unpublished course run', () => {
+  it('renders correctly when given an unpublished course run', async () => {
     const component = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -165,10 +165,10 @@ describe('Collapsible Course Run', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(component).toMatchSnapshot());
+    await waitFor(() => expect(component).toMatchSnapshot());
   });
 
-  it('renders correctly with a course run type', () => {
+  it('renders correctly with a course run type', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -190,7 +190,7 @@ describe('Collapsible Course Run', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders correctly variant_id field for external course\'s course run', () => {
@@ -230,6 +230,7 @@ describe('Collapsible Course Run', () => {
     expect(variantIdInput).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
+
   it.each(['custom-b2c', ''])('renders correctly restriction type field for external course\'s course run (type: %s)', (restrictionType) => {
     const courseInfo = {
       data: {
@@ -301,7 +302,8 @@ describe('Collapsible Course Run', () => {
 
     expect(container).toMatchSnapshot();
   });
-  it('renders correctly when submitting for review', () => {
+
+  it('renders correctly when submitting for review', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -321,10 +323,10 @@ describe('Collapsible Course Run', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly when submitting for review and given a matching target run', () => {
+  it('renders correctly when submitting for review and given a matching target run', async () => {
     const { container } = render(
       <MemoryRouter>
         <Provider store={store}>
@@ -344,7 +346,7 @@ describe('Collapsible Course Run', () => {
         </Provider>
       </MemoryRouter>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders fields as disabled when course is in review', () => {
