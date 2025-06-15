@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import {
   render, screen, waitFor, fireEvent,
 } from '@testing-library/react';
@@ -6,7 +7,7 @@ import Cookies from 'js-cookie';
 import SitewideBanner from './index';
 
 describe('SitewideBanner', () => {
-  it('renders correctly when visible', async () => {
+  it('renders correctly when visible', () => {
     render(
       <SitewideBanner
         message="Dummy Message"
@@ -17,9 +18,12 @@ describe('SitewideBanner', () => {
       />,
     );
 
-    await waitFor(() => expect(screen.getByRole('alert')).toHaveClass('alert-success'));
-    await waitFor(() => expect(screen.getByRole('alert')).toHaveAttribute('data-dismissible', 'true'));
-    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Dummy Message'));
+    const alert = screen.getByRole('alert');
+    expect(alert).toHaveClass('alert-success');
+    expect(alert).toHaveTextContent('Dummy Message');
+
+    const closeButton = screen.getByRole('button', { name: /close/i });
+    expect(closeButton).toBeInTheDocument();
   });
 
   it('calls handleDismiss and sets cookie when dismissed', async () => {
@@ -40,10 +44,10 @@ describe('SitewideBanner', () => {
     setCookieMock.mockRestore();
   });
 
-  it('handles non-dismissible banner correctly', async () => {
+  it('handles non-dismissible banner correctly', () => {
     render(
       <SitewideBanner message="Non-dismissible message" dismissible={false} />,
     );
-    await waitFor(() => expect(screen.getByRole('alert')).not.toHaveAttribute('data-dismissible', 'true'));
+    expect(screen.queryByRole('button')).toBeNull();
   });
 });

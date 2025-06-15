@@ -184,7 +184,7 @@ describe('ListField - Collaborators', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly with an error after failed submission', async () => {
+  it('renders correctly with an error after failed submission', () => {
     const metaFailedProps = {
       ...collaboratorDefaultProps,
       meta: {
@@ -279,7 +279,7 @@ describe('ListField - Staffers', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly with an error after failed submission', async () => {
+  it('renders correctly with an error after failed submission', () => {
     const metaFailedProps = {
 
       ...staffDefaultProps,

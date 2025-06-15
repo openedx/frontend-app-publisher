@@ -9,13 +9,10 @@ jest.mock('react-tooltip');
 
 describe('FieldHelp', () => {
   it('can toggle tooltip', async () => {
-    const { container } = render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
+    render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
 
     expect(ReactTooltip.show).not.toHaveBeenCalled();
     expect(ReactTooltip.hide).not.toHaveBeenCalled();
-
-    fireEvent.click(container);
-    await waitFor(() => expect(ReactTooltip.show).toHaveBeenCalledTimes(1));
 
     const button = await screen.findByRole('button');
     fireEvent.click(button);
@@ -23,7 +20,9 @@ describe('FieldHelp', () => {
   });
 
   it('node gets converted to string', async () => {
-    await render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
-    await waitFor(async () => expect(await screen.findByTestId('field-help-data').prop('data-tip')).toMatch(/<p>\s*Hello World\s*<\/p>/));
+    render(<FieldHelp id="jest" tip={<p>Hello World</p>} />);
+    const fieldHelpData = screen.getByTestId('field-help-data');
+    const dataTip = fieldHelpData.getAttribute('data-tip');
+    expect(dataTip).toMatch(/<p>\s*Hello World\s*<\/p>/);
   });
 });

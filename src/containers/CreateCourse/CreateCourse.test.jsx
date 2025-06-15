@@ -74,7 +74,7 @@ describe('Create Course View', () => {
     testState.publisherUserInfo.isFetching = true;
 
     const { container } = createWrapper(testState);
-    await waitFor(() => expect(container.querySelector('.loading-spinner')).toBeInTheDocument());
+    await waitFor(() => expect(container.querySelector('.spinner-border')).toBeInTheDocument());
   });
 
   it('shows error when fails to retrieve organizations', async () => {

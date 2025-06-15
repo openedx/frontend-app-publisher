@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  screen, render, fireEvent, waitFor,
-} from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { screen, render, fireEvent } from "@testing-library/react";
 
 import UsersPane from './UsersPane';
 
@@ -80,25 +79,33 @@ describe('UsersPane', () => {
     isFetching: false,
   };
 
-  it('shows name and email of editors', async () => {
+  it('shows name and email of editors', () => {
     render(<UsersPane
       courseEditors={basicCourseEditors}
     />);
-    const users = await screen.findByTestId('test-id-user');
-    await waitFor(() => expect(users).toHaveLength(3));
-    await waitFor(() => expect(users.at(0).prop('name')).toEqual('Editor 1'));
-    await waitFor(() => expect(users.at(0).prop('email')).toEqual('one@example.com'));
-    await waitFor(() => expect(users.at(1).prop('name')).toEqual('No Email'));
-    await waitFor(() => expect(users.at(2).prop('name')).toEqual('Editor 3'));
-    await waitFor(() => expect(users.at(2).prop('email')).toEqual('three@example.com'));
+    const users = screen.getAllByTestId('test-id-user');
+    expect(users).toHaveLength(3);
+
+    expect(users[0].getAttribute('data-name')).toEqual('Editor 1');
+    expect(users[0].getAttribute('data-email')).toEqual('one@example.com');
+    expect(users[0].getAttribute('data-user-id')).toEqual('1');
+
+    expect(users[1].getAttribute('data-name')).toEqual('No Email');
+    expect(users[1].getAttribute('data-email')).toBeNull();
+    expect(users[1].getAttribute('data-user-id')).toEqual('2');
+
+    expect(users[2].getAttribute('data-name')).toEqual('Editor 3');
+    expect(users[2].getAttribute('data-email')).toEqual('three@example.com');
+    expect(users[2].getAttribute('data-user-id')).toEqual('3');
   });
 
-  it('has label for no editors', async () => {
+  it('has label for no editors', () => {
     render(<UsersPane
       courseEditors={emptyCourseEditors}
     />);
-    await waitFor(async () => expect(await screen.findByTestId('test-id-user')).not.toBeInTheDocument());
-    await waitFor(async () => expect(await screen.getByText('All team members')).toBeInTheDocument());
+
+    expect(screen.queryByTestId('test-id-user')).not.toBeInTheDocument();
+    expect(screen.getByText('All team members')).toBeInTheDocument();
   });
 
   it('allows editor removal', async () => {
@@ -122,27 +129,30 @@ describe('UsersPane', () => {
       organizationUsers={basicOrganizationUsers}
     />);
 
-    const startAddButton = await screen.findByTestId('usersPane-startAdd');
+    const startAddButton = screen.getByTestId('usersPane-startAdd');
     fireEvent.click(startAddButton);
-    const dropDownMenu = await container.querySelector('.react-select-pane__input');
+
+    const dropDownMenu = container.querySelector('.react-select-pane__input');
     fireEvent.focus(dropDownMenu);
     fireEvent.keyDown(dropDownMenu, { key: 'ArrowDown' });
-    const selectOption = await screen.findByTestId('option-14'); // 14 is new editor's user id
+
+    const selectOption = screen.getByTestId('option-14'); // 14 is new editor's user id
     fireEvent.click(selectOption);
 
-    const addButton = await screen.findByTestId('usersPane-add');
+    const addButton = screen.getByTestId('usersPane-add');
     fireEvent.click(addButton);
-    await waitFor(() => expect(mockCallback.mock.calls.length).toBe(1));
-    await waitFor(() => expect(mockCallback.mock.calls[0][0]).toBe(14)); // new editor's user id
+
+    expect(mockCallback).toHaveBeenCalledTimes(1);
+    expect(mockCallback).toHaveBeenCalledWith(14); // new editor's user id
   });
 
-  it('shows PC', async () => {
+  it('shows PC', () => {
     render(<UsersPane
       organizationRoles={basicOrganizationRoles}
     />);
-    const users = await screen.findByTestId('test-id-user');
-    await waitFor(() => expect(users).toHaveLength(1));
-    await waitFor(() => expect(users.at(0).prop('name')).toEqual('PC 1'));
-    await waitFor(() => expect(users.at(0).prop('email')).toEqual('pc@example.com'));
+    const users = screen.getAllByTestId('test-id-user');
+    expect(users).toHaveLength(1);
+    expect(users[0].getAttribute('data-name')).toEqual('PC 1');
+    expect(users[0].getAttribute('data-email')).toEqual('pc@example.com');
   });
 });

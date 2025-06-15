@@ -31,7 +31,10 @@ describe('Staffer', () => {
 
   it('calls onRemove when the delete button is clicked', async () => {
     const { container } = render(<StafferWrapper />);
-    fireEvent.click(container);
+
+    const deleteButton = container.querySelector('.js-delete-btn');
+    fireEvent.click(deleteButton);
+
     await waitFor(() => expect(defaultProps.onRemove).toHaveBeenCalled());
   });
 });
