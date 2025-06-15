@@ -3,7 +3,6 @@ import {
   render, waitFor, screen, fireEvent,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import configureStore from 'redux-mock-store';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { reduxForm } from 'redux-form';
@@ -15,8 +14,7 @@ import {
 import { courseSubmitRun } from '../../data/actions/courseSubmitInfo';
 import CollapsibleCourseRun from './CollapsibleCourseRun';
 
-const mockStore = configureStore();
-const store = mockStore({});
+import store from '../../data/store';
 
 const languageOptions = [
   {
@@ -375,16 +373,15 @@ describe('Collapsible Course Run', () => {
     });
   });
 
-  it.skip('renders with run type disabled once a SKU exists', () => {
-    // TODO: combobox element is not being found, despite the correct name.
+  it.each([true, false])('renders with run type disabled if SKU exists', (skuExists) => {
     const seat = {
       type: 'verified',
       price: '149.00',
-      sku: '',
+      sku: skuExists ? 'ABCDEF' : '',
     };
     const updatedCourseRun = { ...publishedCourseRun, seats: [seat] };
 
-    const { rerender, container } = render(
+    render(
       <MemoryRouter>
         <Provider store={store}>
           <IntlProvider locale="en">
@@ -407,39 +404,15 @@ describe('Collapsible Course Run', () => {
       </MemoryRouter>,
     );
 
-    let runTypeSelect = screen.getByRole('combobox', { name: /test-course.run_type/i });
-    expect(runTypeSelect).not.toBeDisabled();
-
-    updatedCourseRun.seats[0].sku = 'ABCDEF';
-    rerender(
-      <MemoryRouter>
-        <Provider store={store}>
-          <IntlProvider locale="en">
-            <WrappedCollapsibleCourseRun
-              languageOptions={[]}
-              pacingTypeOptions={[]}
-              programOptions={[]}
-              ofacRestrictionOptions={[]}
-              courseRun={updatedCourseRun}
-              courseId="test-course"
-              courseUuid="11111111-1111-1111-1111-111111111111"
-              type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
-              currentFormValues={currentFormValues}
-              courseRunTypeOptions={courseRunTypeOptions}
-              index={0}
-              editable
-            />
-          </IntlProvider>
-        </Provider>
-      </MemoryRouter>,
-    );
-
-    runTypeSelect = container.querySelector('select[name="test-course.run_type"]');
-    expect(runTypeSelect).toBeDisabled();
+    const runTypeSelect = screen.getByRole('combobox', { name: /Course run enrollment track Cannot edit after submission/i });
+    if (skuExists) {
+      expect(runTypeSelect).toBeDisabled();
+    } else {
+      expect(runTypeSelect).not.toBeDisabled();
+    }
   });
 
-  it.skip('handles submission when called from a course run', () => {
-    // TODO: store dispatch expectations are not correct
+  it('handles submission when called from a course run', () => {
     const mockDispatch = jest.spyOn(store, 'dispatch');
 
     render(
@@ -465,10 +438,10 @@ describe('Collapsible Course Run', () => {
       </MemoryRouter>,
     );
 
-    const submitButton = screen.getAllByRole('button', { name: /submit/i })[1];
+    const submitButton = screen.getByRole('button', { name: /Submit Run for Review/i });
     fireEvent.click(submitButton);
 
-    expect(mockDispatch).toHaveBeenLastCalledWith(courseSubmitRun(unpublishedCourseRun));
+    expect(mockDispatch).toHaveBeenCalledWith(courseSubmitRun(unpublishedCourseRun));
     mockDispatch.mockClear();
   });
 });

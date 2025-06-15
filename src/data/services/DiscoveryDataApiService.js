@@ -205,6 +205,32 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().get(url);
   }
 
+  static fetchBulkOperations(pageIndex, pageSize, statusFilter) {
+    const params = {
+      page: pageIndex + 1,
+      page_size: pageSize,
+    };
+    if (statusFilter) {
+      params.status = statusFilter;
+    }
+
+    const url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
+    return getAuthenticatedHttpClient().get(url, { params });
+  }
+
+  static createBulkOperation(file, taskType) {
+    const url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
+    const formData = new FormData();
+    formData.append('csv_file', file);
+    formData.append('task_type', taskType);
+
+    return getAuthenticatedHttpClient().post(url, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  }
+
   static fetchCourseTags(q = '', limit = 20) {
     const url = `${process.env.DISCOVERY_API_BASE_URL}/taggit_autosuggest/list/taggit.tag/`;
     const queryParams = {

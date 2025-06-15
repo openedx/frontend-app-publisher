@@ -13,7 +13,7 @@ const RenderSelectField = ({
   meta: { touched, error },
   options,
 }) => (
-  <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
+  <Form.Group controlId={`${input.name}-text-label`} isInvalid={touched && error}>
     {hidden ? null : <Form.Label>{label}</Form.Label>}
     <Form.Control
       name={name}
@@ -46,7 +46,7 @@ RenderSelectField.defaultProps = {
 };
 
 RenderSelectField.propTypes = {
-  input: PropTypes.shape({}).isRequired,
+  input: PropTypes.shape({ name: PropTypes.string }).isRequired,
   extraInput: PropTypes.shape({}),
   name: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
