@@ -6,6 +6,7 @@ import Footer from '@edx/frontend-component-footer';
 
 import '../../sass/App.scss';
 import Header from '../Header';
+import BulkOperations from '../../components/BulkOperations';
 import CourseDashboard from '../CourseDashboard';
 import CourseRunRedirectComponent from '../../components/CourseRunRedirect';
 import CreateCourse from '../CreateCourse';
@@ -33,6 +34,7 @@ const MainApp = () => (
     )}
     <main>
       <Routes>
+        <Route path="/bulk-operation-tasks" element={<BulkOperations />} />
         <Route path="/course-runs/:courseRunKey" element={<CourseRunRedirectComponent />} />
         <Route
           path="/courses/new"

@@ -41,7 +41,11 @@ class RichEditor extends React.Component {
   }
 
   handleEditorChange(newValue, editor) {
-    this.updateCharCount(editor);
+    // Only update if the editor is actually dirty (user made changes)
+    // This prevents Redux Form from being marked dirty due to TinyMCE normalization
+    if (editor.isDirty()) {
+      this.updateCharCount(editor);
+    }
   }
 
   handleOnChange(event, editor) {

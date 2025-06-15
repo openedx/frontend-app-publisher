@@ -128,6 +128,7 @@ const BulkOperationDetails = ({ task }) => {
           Preview CSV
         </Button>
         <FullscreenModal
+          className="csv-preview-fs-modal"
           title="CSV Preview"
           isOpen={isOpen}
           onClose={close}
