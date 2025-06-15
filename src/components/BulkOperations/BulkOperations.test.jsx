@@ -8,7 +8,7 @@ import BulkOperations from './index';
 import DiscoveryDataApiService from '../../data/services/DiscoveryDataApiService';
 import '@testing-library/jest-dom';
 
-const mockedHistoricalTasks = [
+export const mockedHistoricalTasks = [
   {
     id: 1,
     uploaded_by: 'edx',
@@ -38,8 +38,9 @@ const createdTask = {
 
 describe('BulkOperationsPage', () => {
   let post;
+  let get;
   beforeAll(() => {
-    const get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations');
+    get = jest.spyOn(DiscoveryDataApiService, 'fetchBulkOperations');
     post = jest.spyOn(DiscoveryDataApiService, 'createBulkOperation');
     get.mockResolvedValue({ data: { results: mockedHistoricalTasks } });
   });
@@ -48,7 +49,7 @@ describe('BulkOperationsPage', () => {
     jest.restoreAllMocks();
   });
 
-  beforeEach(() => {
+  it('initial render', async () => {
     render(
       <MemoryRouter>
         <IntlProvider locale="en">
@@ -56,9 +57,6 @@ describe('BulkOperationsPage', () => {
         </IntlProvider>
       </MemoryRouter>,
     );
-  });
-
-  it('initial render', async () => {
     const collapsible = await screen.findByText('Processing History');
     expect(collapsible).toBeInTheDocument();
     fireEvent.click(collapsible);
@@ -68,17 +66,15 @@ describe('BulkOperationsPage', () => {
     expect(screen.getByTestId('dropzone-container')).toBeInTheDocument();
   });
 
-  it('filters history based on chosen operation', async () => {
-    const button = await screen.findByRole('button', { name: /Choose a Bulk Operation/i });
-    fireEvent.click(button);
-    const createButton = screen.getByRole('link', { name: 'Bulk Create' });
-    fireEvent.click(createButton);
-
-    expect(screen.queryByText('bar.csv')).toBeInTheDocument();
-    expect(screen.queryByText('baz.csv')).not.toBeInTheDocument();
-  });
-
   it('file upload', async () => {
+    render(
+      <MemoryRouter>
+        <IntlProvider locale="en">
+          <BulkOperations />
+        </IntlProvider>
+      </MemoryRouter>,
+    );
+
     const dropZone = await screen.findByTestId('dropzone-container');
     fireEvent.drop(dropZone, {
       dataTransfer: {
@@ -102,6 +98,14 @@ describe('BulkOperationsPage', () => {
     ['Successfully submitted task for bulk operation', true],
     ['Failed to submit task for processing', false],
   ])('submission', async (message, isSuccess) => {
+    render(
+      <MemoryRouter>
+        <IntlProvider locale="en">
+          <BulkOperations />
+        </IntlProvider>
+      </MemoryRouter>,
+    );
+
     if (isSuccess) {
       post.mockResolvedValue({ data: createdTask });
     } else {

@@ -205,9 +205,17 @@ class DiscoveryDataApiService {
     return getAuthenticatedHttpClient().get(url);
   }
 
-  static fetchBulkOperations() {
+  static fetchBulkOperations(pageIndex, pageSize, statusFilter) {
+    const params = {
+      page: pageIndex + 1,
+      page_size: pageSize,
+    };
+    if (statusFilter) {
+      params.status = statusFilter;
+    }
+
     const url = `${discoveryBaseUrl}/bulk_operation_tasks/`;
-    return getAuthenticatedHttpClient().get(url);
+    return getAuthenticatedHttpClient().get(url, { params });
   }
 
   static createBulkOperation(file, taskType) {

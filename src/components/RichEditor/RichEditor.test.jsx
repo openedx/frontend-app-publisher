@@ -135,4 +135,70 @@ describe('RichEditor', () => {
     const tinymceContent = within(iframe.contentDocument.querySelector('p')).getByText('New Value');
     expect(tinymceContent).toBeInTheDocument();
   });
+
+  it('does not call updateCharCount when editor is not dirty', async () => {
+    const onChange = jest.fn();
+    const mockHandleEditorChange = jest.spyOn(RichEditor.prototype, 'handleEditorChange');
+    const mockUpdateCharCount = jest.spyOn(RichEditor.prototype, 'updateCharCount');
+
+    const { container } = render(<RichEditor
+      label="Rich Text Editor Test"
+      id="rich-text-editor-test"
+      input={{
+        value: '<p> Hello World!</p>',
+        onChange,
+      }}
+      maxChars={500}
+      meta={{ touched: true, error: 'Required' }}
+    />);
+
+    await waitFor(() => expect(container.querySelector('iframe').contentDocument.querySelector('#tinymce')).toBeInTheDocument());
+    await waitFor(() => expect(container.querySelector('iframe').contentDocument.querySelector('#tinymce').querySelector('p').textContent).toBe('Hello World!'));
+
+    expect(mockHandleEditorChange).toHaveBeenLastCalledWith('<p>Hello World!</p>', expect.anything());
+    expect(mockUpdateCharCount).not.toHaveBeenCalled();
+  });
+
+  it('calls updateCharCount when editor is dirty', async () => {
+    const onChange = jest.fn();
+    const mockUpdateCharCount = jest.spyOn(RichEditor.prototype, 'updateCharCount');
+
+    const componentRef = React.createRef();
+
+    const TestComponent = () => (
+      <RichEditor
+        ref={componentRef}
+        label="Rich Text Editor Test"
+        id="rich-text-editor-test"
+        input={{
+          value: '<p> Hello World!</p>',
+          onChange,
+        }}
+        maxChars={500}
+        meta={{ touched: true, error: 'Required' }}
+      />
+    );
+
+    const { container } = render(<TestComponent />);
+
+    await waitFor(() => expect(container.querySelector('iframe').contentDocument.querySelector('#tinymce')).toBeInTheDocument());
+    await waitFor(() => expect(container.querySelector('iframe').contentDocument.querySelector('#tinymce').querySelector('p').textContent).toBe('Hello World!'));
+
+    const mockEditor = {
+      isDirty: jest.fn().mockReturnValue(true),
+      getContent: jest.fn()
+        .mockReturnValueOnce('Hello World!')
+        .mockReturnValueOnce('<p>Hello World!'),
+    };
+
+    mockUpdateCharCount.mockClear();
+    onChange.mockClear();
+
+    componentRef.current.handleEditorChange('<p>Hello World!</p>', mockEditor);
+
+    expect(mockUpdateCharCount).toHaveBeenCalled();
+
+    expect(mockEditor.isDirty).toHaveBeenCalled();
+    expect(mockEditor.getContent).toHaveBeenCalledTimes(2);
+  });
 });
