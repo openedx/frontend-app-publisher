@@ -48,6 +48,6 @@ describe('SitewideBanner', () => {
     render(
       <SitewideBanner message="Non-dismissible message" dismissible={false} />,
     );
-    expect(screen.queryByRole('button')).toBeNull();
+    expect(screen.queryByRole('button', { name: /close/i })).not.toBeInTheDocument();
   });
 });

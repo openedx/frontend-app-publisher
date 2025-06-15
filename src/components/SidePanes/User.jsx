@@ -9,6 +9,7 @@ const User = (props) => (
       {props.onRemove
           && (
           <RemoveButton
+            data-testid="id-remove-btn"
             className="align-text-bottom ml-1"
             label="Remove"
             targetFieldNumber={props.userId}

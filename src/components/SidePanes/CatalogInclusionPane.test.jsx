@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import {
   fireEvent, render, screen, waitFor,
 } from '@testing-library/react';
@@ -13,17 +14,18 @@ describe('CatalogInclusionPane', () => {
   const spy = jest.spyOn(DiscoveryDataApiService, 'editCourse');
 
   it('correct toggle behavior', async () => {
-    const { container } = render(<CatalogInclusionPane
+    render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
       draftStatuses={['published']}
       orgInclusion={mockOrgInclusion}
     />);
-    await screen.findByTestId('catalog-inclusion-pane');
-    const title = await screen.findByText('Enterprise Subscriptions');
+
+    const title = screen.getByText('Enterprise Subscriptions');
     await waitFor(() => expect(title).toBeInTheDocument());
-    const toggle = container.querySelector('.pgn__form-switch-input');
-    fireEvent.change(toggle, { target: { checked: false } });
+    const toggle = screen.getByRole('switch', { name: /included/i });
+    expect(toggle).not.toBeChecked();
+    fireEvent.click(toggle);
     await waitFor(() => expect(spy).toBeCalledWith(
       {
         draft: false,
@@ -34,17 +36,16 @@ describe('CatalogInclusionPane', () => {
   });
 
   it('allow course runs who have been reviewed', async () => {
-    const { container } = render(<CatalogInclusionPane
+    render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
       draftStatuses={['reviewed']}
       orgInclusion={mockOrgInclusion}
     />);
-    await screen.findByTestId('catalog-inclusion-pane');
-    const title = await screen.findByText('Enterprise Subscriptions');
+    const title = screen.getByText('Enterprise Subscriptions');
     await waitFor(() => expect(title).toBeInTheDocument());
-    const toggle = container.querySelector('.pgn__form-switch-input');
-    fireEvent.change(toggle, { target: { checked: false } });
+    const toggle = screen.getByRole('switch', { name: /included/i });
+    fireEvent.click(toggle);
     await waitFor(() => expect(spy).toBeCalledWith(
       {
         draft: false,
@@ -55,27 +56,30 @@ describe('CatalogInclusionPane', () => {
   });
 
   it('toggle disabled when org is false', async () => {
-    const { container } = render(<CatalogInclusionPane
+    render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
       draftStatuses={['published']}
       orgInclusion={false}
     />);
     // org not included helper text
-    const helperText = container.querySelector('.text-gray-300');
-    await waitFor(() => expect(helperText).toHaveLength(1));
+    const helperText = screen.getByText('Organization is not currently a participating partner in the subscription catalog.');
+    expect(helperText).toBeInTheDocument();
+    const toggle = screen.getByRole('switch', { name: /included/i });
+    expect(toggle).toBeDisabled();
   });
 
   it('toggle blocked in review status', async () => {
-    const { container } = render(<CatalogInclusionPane
+    render(<CatalogInclusionPane
       courseUuid={mockUuid}
       subInclusion={mockSubInclusion}
       draftStatuses={['review_by_internal']}
       orgInclusion={mockOrgInclusion}
     />);
-    const toggle = container.querySelector('.pgn__form-switch-input');
-    fireEvent.change(toggle, { target: { checked: false } });
+    const toggle = screen.getByRole('switch', { name: /included/i });
+    fireEvent.click(toggle);
     // blocked error helper text
-    await waitFor(() => expect(container.querySelector('.pgn__form-switch-helper-text')).toHaveLength(1));
+    const errorText = screen.getByText('Edits are not allowed while all course runs are in review.');
+    expect(errorText).toBeInTheDocument();
   });
 });
