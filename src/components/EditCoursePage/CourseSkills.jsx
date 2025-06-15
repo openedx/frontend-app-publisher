@@ -6,7 +6,7 @@ class CourseSkills extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      skillNames: props.input.value,
+      skillNames: Array.isArray(props.input?.value) ? props.input.value : [],
     };
   }
 
@@ -14,14 +14,12 @@ class CourseSkills extends React.Component {
     const {
       className,
       id,
-      input: {
-        name,
-      },
+      input: { name },
       label,
     } = this.props;
-    const {
-      skillNames,
-    } = this.state;
+
+    const { skillNames } = this.state;
+
     return (
       <div className="form-group mb-2">
         <div id={id} name={name} tabIndex="-1">{label}</div>
@@ -31,7 +29,7 @@ class CourseSkills extends React.Component {
             className={className}
             variant="light"
           >
-            { skill }
+            {skill}
           </Badge>
         ))}
       </div>
@@ -43,7 +41,7 @@ CourseSkills.propTypes = {
   className: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   input: PropTypes.shape({
-    value: PropTypes.arrayOf(PropTypes.string).isRequired,
+    value: PropTypes.arrayOf(PropTypes.string),
     name: PropTypes.string.isRequired,
   }).isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
