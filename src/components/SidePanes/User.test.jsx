@@ -6,12 +6,12 @@ import User from './User';
 
 describe('User', () => {
   const baseArguments = {
-      name: 'User',
-      userId: 0,
-    };
+    name: 'User',
+    userId: 0,
+  };
 
   it('shows a remove button if onRemove is set', () => {
-    render(<User {...baseArguments} onRemove={jest.fn()}/>);
+    render(<User {...baseArguments} onRemove={jest.fn()} />);
     expect(screen.getByTestId('id-remove-btn')).toBeInTheDocument();
   });
 
