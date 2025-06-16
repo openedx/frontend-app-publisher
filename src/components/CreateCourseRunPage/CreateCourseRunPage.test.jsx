@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render, waitFor, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -141,7 +142,7 @@ describe('CreateCourseRunPage', () => {
     );
 
     await waitFor(() => expect(
-      screen.getByText(/Test Course has been submitted for review. No course runs can be added right now'/i),
+      screen.getByText(/Test Course has been submitted for review. No course runs can be added right now./i),
     ).toBeInTheDocument());
 
     await waitFor(() => expect(screen.queryByTestId('create-course-run-form')).not.toBeInTheDocument());
