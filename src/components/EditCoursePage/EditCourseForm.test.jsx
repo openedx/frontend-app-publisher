@@ -95,7 +95,7 @@ describe('BaseEditCourseForm', () => {
     process.env = env;
   });
 
-  it.skip('renders html correctly with minimal data', async () => {
+  it.skip('renders html correctly with minimal data', () => {
     // TODO: course run toolbar does not render
     const { container } = render(
       <Provider store={store}>
@@ -118,7 +118,7 @@ describe('BaseEditCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-    await waitFor(() => expect(container).toMatchSnapshot());
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders html correctly with all data present', () => {
@@ -147,7 +147,7 @@ describe('BaseEditCourseForm', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it.skip('renders html correctly with skills data when skills are available', async () => {
+  it.skip('renders html correctly with skills data when skills are available', () => {
     // TODO: redux form/prop issue as the form is not rendering
     const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
     const courseInfoWithSkills = {
@@ -194,7 +194,7 @@ describe('BaseEditCourseForm', () => {
     //   type={initialValuesFull.type}
     //   id="edit-course-form"
     // />);
-    await waitFor(() => expect(container).toMatchSnapshot());
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('renders html correctly with administrator being true', () => {
@@ -225,7 +225,7 @@ describe('BaseEditCourseForm', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders html correctly while submitting', async () => {
+  it('renders html correctly while submitting', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -251,10 +251,10 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    await waitFor(() => expect(container).toMatchSnapshot());
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('renders correctly when submitting for review', async () => {
+  it('renders correctly when submitting for review', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -278,7 +278,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    await waitFor(() => expect(container).toMatchSnapshot());
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it('override slug format when IS_NEW_SLUG_FORMAT_ENABLED is true to check help text for url slug field', () => {
@@ -368,10 +368,10 @@ describe('BaseEditCourseForm', () => {
     );
 
     const disabledFields = await screen.findByRole('textbox', { disabled: true });
-    await waitFor(() => expect(disabledFields).toHaveLength(1));
+    waitFor(() => expect(disabledFields).toHaveLength(1));
   });
 
-  it.skip('Check if watchers field is disabled after being reviewed', async () => {
+  it.skip('Check if watchers field is disabled after being reviewed', () => {
     // TODO: data-testid element not found
     const courseInfoWithCourseRunStatuses = {
       ...courseInfo,
@@ -405,7 +405,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const watchersField = await screen.findByTestId('watchers-list', { disabled: true });
+    const watchersField = screen.findByTestId('watchers-list', { disabled: true });
     expect(watchersField).toHaveLength(1);
   });
 
@@ -463,7 +463,7 @@ describe('BaseEditCourseForm', () => {
     expect(watchersField).toHaveLength(1);
   });
 
-  it('renders with course type disabled once a sku exists, even if course is unpublished', async () => {
+  it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -488,11 +488,11 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const disabledFields = await screen.findByText('type', { disabled: true });
-    await waitFor(() => expect(disabledFields).toHaveLength(1));
+    const disabledFields = screen.findByText('type', { disabled: true });
+    waitFor(() => expect(disabledFields).toHaveLength(1));
   });
 
-  it.skip('check for customValidity working correctly for url_slug in EditCourseForm', async () => {
+  it.skip('check for customValidity working correctly for url_slug in EditCourseForm', () => {
     // TODO: to be converted to RTL after render call
     const setCustomValidityMock = jest.fn();
     const courseInfoWithUrlSlug = {
@@ -547,7 +547,7 @@ describe('BaseEditCourseForm', () => {
     //   />,
     // );
 
-    const urlSlugField = await screen.findByRole('url_slug');
+    const urlSlugField = screen.findByRole('url_slug');
 
     const invalidInput = 'Invalid-URL-Slug123/';
     urlSlugField.prop('extraInput').onInvalid({ target: { setCustomValidity: setCustomValidityMock } });
@@ -678,7 +678,7 @@ describe('BaseEditCourseForm', () => {
     );
   });
 
-  it.skip('no marketing fields if course type is not marketable', async () => {
+  it.skip('no marketing fields if course type is not marketable', () => {
     // TODO: findByName is not a valid function in RTL, a different mechanism is needed to get the fields
     const initialValuesWithMasters = {
       ...initialValuesFull,
@@ -727,19 +727,17 @@ describe('BaseEditCourseForm', () => {
       'short_description', 'full_description', 'outcome', 'syllabus_raw', 'prerequisites_raw',
       'learner_testimonials', 'faq', 'additional_information', 'videoSrc',
     ];
-    await Promise.all(
-      invisible.map(async (name) => {
-        const fields = await screen.findByName({ name });
-        await waitFor(() => expect(fields).toHaveLength(0));
-      }),
-    );
+    invisible.forEach((name) => {
+      const fields = screen.findByName({ name });
+      waitFor(() => expect(fields).toHaveLength(0));
+    });
 
     // Just sanity check that a field we still want there is there:
-    const fields = await screen.findByName({ name: 'imageSrc' });
+    const fields = screen.findByName({ name: 'imageSrc' });
     expect(fields).toHaveLength(1);
   });
 
-  it('renders html correctly while fetching collaborator options', async () => {
+  it('renders html correctly while fetching collaborator options', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -781,7 +779,7 @@ describe('BaseEditCourseForm', () => {
     //   id="edit-course-form"
     //   collaboratorOptions={{ data: {} }}
     // />);
-    await waitFor(() => expect(container).toMatchSnapshot());
+    waitFor(() => expect(container).toMatchSnapshot());
   });
 
   it.skip('does not add required prop for level_type and subjectPrimary fields when not submitting for review', async () => {
