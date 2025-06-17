@@ -44,6 +44,7 @@ const AVAILABLE_BULK_OPERATIONS = {
   course_create: 'Bulk Create',
   course_rerun: 'Bulk Rerun',
   partial_updates: 'Bulk Update',
+  editor_updates: 'Bulk Course Editor Updates',
 };
 
 export {
