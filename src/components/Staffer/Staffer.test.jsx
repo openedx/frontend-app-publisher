@@ -24,14 +24,17 @@ const StafferWrapper = () => (
 );
 
 describe('Staffer', () => {
-  it('renders the staffer', () => {
+  it('renders the staffer', async () => {
     const { container } = render(<StafferWrapper />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it('calls onRemove when the delete button is clicked', () => {
+  it('calls onRemove when the delete button is clicked', async () => {
     const { container } = render(<StafferWrapper />);
-    fireEvent.click(container);
-    waitFor(() => expect(defaultProps.onRemove).toHaveBeenCalled());
+
+    const deleteButton = container.querySelector('.js-delete-btn');
+    fireEvent.click(deleteButton);
+
+    await waitFor(() => expect(defaultProps.onRemove).toHaveBeenCalled());
   });
 });

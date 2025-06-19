@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render, waitFor, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -44,6 +45,7 @@ describe('CreateCourseRunPage', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
   it('renders html correctly with Course Type', () => {
     const { container } = render(
       <MemoryRouter>
@@ -66,6 +68,7 @@ describe('CreateCourseRunPage', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
   it('renders html correctly when fetching', () => {
     const { container } = render(<CreateCourseRunPage
       id="00000000-0000-0000-0000-000000000001"
@@ -78,6 +81,7 @@ describe('CreateCourseRunPage', () => {
     />);
     expect(container).toMatchSnapshot();
   });
+
   it('renders html correctly when creating', () => {
     const { container } = render(
       <MemoryRouter>
@@ -97,6 +101,7 @@ describe('CreateCourseRunPage', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
   it('renders html correctly when error', () => {
     const { container } = render(
       <Provider store={store}>
@@ -117,7 +122,7 @@ describe('CreateCourseRunPage', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('refuses access to form when course is under review', () => {
+  it('refuses access to form when course is under review', async () => {
     render(
       <IntlProvider locale="en">
         <CreateCourseRunPage
@@ -138,11 +143,11 @@ describe('CreateCourseRunPage', () => {
       </IntlProvider>,
     );
 
-    waitFor(() => expect(
-      screen.getByText(/Test Course has been submitted for review. No course runs can be added right now'/i),
+    await waitFor(() => expect(
+      screen.getByText(/Test Course has been submitted for review. No course runs can be added right now./i),
     ).toBeInTheDocument());
 
-    waitFor(() => expect(screen.queryByTestId('create-course-run-form')).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByTestId('create-course-run-form')).not.toBeInTheDocument());
   });
 
   it.each(['instructor_paced', 'self_paced'])('default pacing options match last run: %s', async (pacing) => {

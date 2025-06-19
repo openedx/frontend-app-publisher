@@ -69,15 +69,15 @@ const createWrapper = (state) => {
 };
 
 describe('Create Course View', () => {
-  it('shows spinner while loading', () => {
+  it('shows spinner while loading', async () => {
     const testState = jsonDeepCopy(initialState);
     testState.publisherUserInfo.isFetching = true;
 
     const { container } = createWrapper(testState);
-    waitFor(() => expect(container.querySelector('.loading-spinner')).toBeInTheDocument());
+    await waitFor(() => expect(container.querySelector('.spinner-border')).toBeInTheDocument());
   });
 
-  it('shows error when fails to retrieve organizations', () => {
+  it('shows error when fails to retrieve organizations', async () => {
     const testState = jsonDeepCopy(initialState);
     const errorMessage = ['organization failure'];
     testState.publisherUserInfo.isFetching = false;
@@ -89,7 +89,7 @@ describe('Create Course View', () => {
 
     createWrapper(testState);
 
-    waitFor(() => expect(screen.getByText(errorMessage[0])).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(errorMessage[0])).toBeInTheDocument());
   });
 
   it('Shows confirmation modal on form submission', async () => {
