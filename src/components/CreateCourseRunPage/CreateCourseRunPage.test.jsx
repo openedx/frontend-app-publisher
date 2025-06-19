@@ -4,8 +4,10 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import configureStore from 'redux-mock-store';
+import { createStore } from 'redux';
 import CreateCourseRunPage from './index';
 import { courseOptions } from '../../data/constants/testData';
+import createRootReducer from '../../data/reducers';
 
 const mockStore = configureStore();
 const store = mockStore({});
@@ -143,10 +145,11 @@ describe('CreateCourseRunPage', () => {
     waitFor(() => expect(screen.queryByTestId('create-course-run-form')).not.toBeInTheDocument());
   });
 
-  it.each(['instructor_paced', 'self_paced'])('default pacing options match last run: %s', (pacing) => {
+  it.each(['instructor_paced', 'self_paced'])('default pacing options match last run: %s', async (pacing) => {
+    const realStore = createStore(createRootReducer());
     render(
       <MemoryRouter>
-        <Provider store={store}>
+        <Provider store={realStore}>
           <IntlProvider locale="en">
             <CreateCourseRunPage
               id="00000000-0000-0000-0000-000000000001"
@@ -184,6 +187,6 @@ describe('CreateCourseRunPage', () => {
     );
 
     const pacingSelect = screen.getByRole('combobox', { name: /pacing/i });
-    waitFor(() => expect(pacingSelect.value).toBe(pacing));
+    await waitFor(() => expect(pacingSelect.value).toBe(pacing));
   });
 });
