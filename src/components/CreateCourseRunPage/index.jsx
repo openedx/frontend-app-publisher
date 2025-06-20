@@ -162,6 +162,7 @@ class CreateCourseRunPage extends React.Component {
           && (
             <div>
               <CreateCourseRunForm
+                id={`create-course-run-form-${uuid}`}
                 onSubmit={this.handleCourseCreate}
                 title={title}
                 uuid={uuid}

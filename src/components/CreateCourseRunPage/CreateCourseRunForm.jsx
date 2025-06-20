@@ -3,6 +3,8 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 import ButtonToolbar from '../ButtonToolbar';
 import FieldLabel from '../FieldLabel';
@@ -218,7 +220,14 @@ BaseCreateCourseRunForm.propTypes = {
   canSetRunKey: PropTypes.bool.isRequired,
 };
 
-const CreateCourseRunForm = reduxForm({
-  form: 'create-course-run-form',
-})(BaseCreateCourseRunForm);
+const CreateCourseRunForm = compose(
+  connect((state, props) => ({
+    // Give form a unique id so that values from one course form don't overwrite others
+    form: props.id,
+  })),
+  reduxForm({
+    destroyOnUnmount: false,
+    enableReinitialize: true,
+  })
+)(BaseCreateCourseRunForm);
 export { BaseCreateCourseRunForm, CreateCourseRunForm };
