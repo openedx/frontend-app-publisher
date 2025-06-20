@@ -222,12 +222,12 @@ BaseCreateCourseRunForm.propTypes = {
 
 const CreateCourseRunForm = compose(
   connect((state, props) => ({
-    // Give form a unique id so that values from one course form don't overwrite others
+    // Give form a unique id so that values from one form don't overwrite others
     form: props.id,
   })),
   reduxForm({
     destroyOnUnmount: false,
     enableReinitialize: true,
-  })
+  }),
 )(BaseCreateCourseRunForm);
 export { BaseCreateCourseRunForm, CreateCourseRunForm };
