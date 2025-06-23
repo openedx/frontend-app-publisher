@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
@@ -82,12 +83,13 @@ describe('App', () => {
     renderAppWithState(['/']);
 
     // New Course Button should be present
-    const newCourseBtn = await screen.findAllByRole('button')[2];
-    waitFor(() => expect(newCourseBtn).toHaveTextContent('New course'));
+    const newCourseBtn = await screen.findByRole('button', { name: /New course/i });
+    expect(newCourseBtn).toBeInTheDocument();
+
     // Table Should be present at main route with data
-    waitFor(() => expect(screen.findAllByRole('table')).toBeInTheDocument());
-    waitFor(() => expect(screen.findAllByRole('row')).toHaveLength(1));
+    await waitFor(async () => expect(await screen.findByRole('table')).toBeInTheDocument());
+    await waitFor(async () => expect(await screen.findAllByRole('row')).toHaveLength(2)); // 1 header row + 1 data row
     const link = await screen.findByRole('link', { name: 'edx101' });
-    waitFor(() => expect(link).toHaveTextContent('edx101'));
+    await waitFor(() => expect(link).toHaveTextContent('edx101'));
   });
 });

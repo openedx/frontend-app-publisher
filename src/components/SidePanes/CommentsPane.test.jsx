@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import {
   render, screen, waitFor, fireEvent,
 } from '@testing-library/react';
@@ -49,7 +50,7 @@ describe('CommentsPane', () => {
     />);
     const comments = await screen.findAllByTestId('comment-card');
     expect(comments).toHaveLength(2);
-    waitFor(() => expect(comments[0]).toHaveTextContent('Billy Bob'));
+    await waitFor(() => expect(comments[0]).toHaveTextContent('Billy Bob'));
   });
 
   it('displays username if first and last name is not available', async () => {
@@ -59,7 +60,7 @@ describe('CommentsPane', () => {
     />);
     const comments = await screen.findAllByTestId('comment-card');
     expect(comments).toHaveLength(2);
-    waitFor(() => expect(comments[1]).toHaveTextContent('edx@example.com'));
+    await waitFor(() => expect(comments[1]).toHaveTextContent('edx@example.com'));
   });
 
   it('has label for no comments', async () => {
@@ -67,7 +68,7 @@ describe('CommentsPane', () => {
       comments={emptyCommentThread}
       fetchComments={mockFetch}
     />);
-    waitFor(() => expect(screen.getByText('No comments')).toHaveClass('text-muted'));
+    await waitFor(() => expect(screen.getByText('No comments')).toHaveClass('text-muted'));
   });
 
   it('allows adding a comment', async () => {
@@ -96,7 +97,7 @@ describe('CommentsPane', () => {
     );
     const postCommentButton = screen.getByRole('button', { name: /post/i });
     fireEvent.click(postCommentButton);
-    waitFor(() => expect(screen.getByRole('alert')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByRole('alert')).toBeInTheDocument());
   });
 
   it('displays status alert on error response', async () => {
@@ -110,6 +111,6 @@ describe('CommentsPane', () => {
         />
       </IntlProvider>,
     );
-    waitFor(() => expect(screen.getByText('TestErrorMessage')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('TestErrorMessage')).toBeInTheDocument());
   });
 });
