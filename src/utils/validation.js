@@ -99,6 +99,7 @@ const handleStafferOrCreateFormFail = (errors, _, submitError) => {
 
 // Focus on the first element that has validation errors
 const handleCourseEditFail = (errors) => {
+  debugger;
   const fieldName = getFieldName(errors);
   if (fieldName) {
     // We use setTimeout here to avoid a race condition between React and HTML. See DISCO-992.

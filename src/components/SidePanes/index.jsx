@@ -7,11 +7,11 @@ import CommentsPane from './CommentsPane';
 import CatalogInclusionPane from './CatalogInclusionPane';
 
 const SidePanes = (props) => {
-  const isEdxStaff = getAuthenticatedUser().administrator;
+  const isEdxStaff = getAuthenticatedUser().administrators;
   let orgInclusionList = false;
 
   if (isEdxStaff) {
-    const incList = props.organizations.map(element => element.enterprise_subscription_inclusion);
+    const incList = (props.organizations || []).map(element => element.enterprise_subscription_inclusion);
     orgInclusionList = incList.every(orgInclusion => orgInclusion === true);
   }
 
