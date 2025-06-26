@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, waitFor, screen, fireEvent, within } from '@testing-library/react';
-import { Hyperlink } from '@openedx/paragon';
+import { render, waitFor, screen, fireEvent } from '@testing-library/react';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import '@testing-library/jest-dom';
-import userEvent from '@testing-library/user-event';
 import { createStore } from 'redux';
 import createRootReducer from '../../data/reducers';
 
@@ -18,11 +16,7 @@ import {
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
 const mockStore = configureStore();
-const store = mockStore({form: {"edit-course-form": {
-        values: {skill_names: ["HASTA", "BASTA"]},
-        initial: {skill_names: ["HASTA", "BASTA"]},
-        registeredFields: {skill_names: {count: 1, type: "Field", name: "skill_names"}}
-      }}});
+const store = mockStore({});
 
 export const initialValuesFull = {
   title: 'Test Title',
@@ -155,6 +149,11 @@ describe('BaseEditCourseForm', () => {
 
   it('renders html correctly with skills data when skills are available', () => {
     const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
+    const storeWithSkills = mockStore({
+      form: {"edit-course-form": {
+        values: {skill_names: skillNames},
+      }}
+    })
     const courseInfoWithSkills = {
       data: {
         skill_names: skillNames,
@@ -165,7 +164,7 @@ describe('BaseEditCourseForm', () => {
       skill_names: skillNames,
     };
     const { container } = render(
-      <Provider store={store}>
+      <Provider store={storeWithSkills}>
         <MemoryRouter>
           <IntlProvider locale="en">
             <EditCourseForm
@@ -502,7 +501,6 @@ describe('BaseEditCourseForm', () => {
     );
 
     const urlSlugField = screen.getByRole('textbox', {name: 'URL slug'});
-
     const invalidInput = 'Invalid-URL-Slug123/mah';
     fireEvent.input(urlSlugField, {target: {value: invalidInput}})
     const submitButton = screen.getByRole('button', {name: 
@@ -548,7 +546,6 @@ describe('BaseEditCourseForm', () => {
 
     const link = screen.getByRole('link', { name: /View Preview Page/i })
     expect(link).toHaveAttribute('href', `${MARKETING_SITE_PREVIEW_URL_ROOT}/course/${urlSlug}`);
-
   });
 
   it('checks preview url renders correctly for new slug format', () => {
@@ -612,8 +609,6 @@ describe('BaseEditCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-
-    screen.debug()
 
     const invisible = [
       'Short description', 'Long description', 'What you will learn', 'Syllabus', 'Prerequisites',
