@@ -64,15 +64,10 @@ class EditCoursePage extends React.Component {
         4. Renaming the image and video fields to correspond to what course-discovery is expecting
         5. Setting the uuid so we can create the url to send to course-discovery
     */
-
-    
-    
     const {
       courseSubmitInfo: { targetRun },
       editCourse,
     } = this.props;
-
-    debugger;
     const isInternalReview = targetRun && IN_REVIEW_STATUS.includes(targetRun.status);
     // Process course run info from courseData
     const modifiedCourseRuns = isInternalReview
@@ -161,7 +156,6 @@ class EditCoursePage extends React.Component {
     const coursePriceChanged = !jsonDeepEqual(initialPriceData, priceData);
 
     const modifiedCourseRuns = courseData.course_runs.filter((run, i) => {
-      debugger;
       // If we are submitting a run for review or re-publishing a run, it should
       // always get through to the backend
       if (targetRun && run.key === targetRun.key) {
