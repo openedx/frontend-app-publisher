@@ -436,7 +436,7 @@ describe('BaseEditCourseForm', () => {
     expect(screen.getByLabelText('watchers-list')).not.toBeDisabled();
   });
 
-  it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
+  it('renders with course type disabled once a sku exists, even if course is unpublished', async () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -446,6 +446,7 @@ describe('BaseEditCourseForm', () => {
               title={initialValuesFull.title}
               initialValues={initialValuesFull}
               currentFormValues={initialValuesFull}
+              courseRuns={initialValuesFull['course_runs']}
               number="Test101x"
               entitlement={{ sku: 'ABC1234' }}
               courseStatuses={[UNPUBLISHED]}
@@ -461,8 +462,8 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const disabledFields = screen.findByText('type', { disabled: true });
-    waitFor(() => expect(disabledFields).toHaveLength(1));
+    const typeField = screen.getByRole('combobox', { name: 'Course enrollment track Cannot edit after submission' });
+    expect(typeField).toBeDisabled();
   });
 
   it('check for customValidity working correctly for url_slug in EditCourseForm', async () => {
