@@ -3,24 +3,22 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {
   fireEvent,
-  render, screen, waitFor, within
+  render, screen, waitFor, within,
 } from '@testing-library/react';
 import { createStore } from 'redux';
-import createRootReducer from '../../data/reducers';
 
 import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import EditCoursePage from './index';
-import { initialValuesFull as formInitialValues} from './EditCourseForm.test';
+import { initialValuesFull as formInitialValues } from './EditCourseForm.test';
 
 import {
   PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED, EXECUTIVE_EDUCATION_SLUG,
 } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
+import createRootReducer from '../../data/reducers';
 import { jsonDeepCopy } from '../../utils';
-import courseSubmitInfo from '../../data/reducers/courseSubmitInfo';
-import { editCourse } from '../../data/actions/courseInfo';
 
 // Need to mock the Editor as we don't want to test TinyMCE
 jest.mock('@tinymce/tinymce-react');
@@ -316,8 +314,8 @@ describe('EditCoursePage', () => {
       </MemoryRouter>
     );
 
-    const wrapper = render(<EditCoursePageWrapper />);
-    const restrictionFields = screen.getAllByLabelText('Restriction Type')
+    render(<EditCoursePageWrapper />);
+    const restrictionFields = screen.getAllByLabelText('Restriction Type');
     expect(restrictionFields[0].value).toBe('custom-b2b-enterprise');
     expect(restrictionFields[1].value).toBe('');
   });
@@ -810,12 +808,12 @@ describe('EditCoursePage', () => {
 
     afterEach(() => {
       mockHandleCourseSubmit.mockRestore();
-    })
+    });
 
-    function renderEditCoursePage(store, addProps={}){
+    function renderEditCoursePage(reduxStore, addProps = {}) {
       render(
         <MemoryRouter>
-          <Provider store={store}>
+          <Provider store={reduxStore}>
             <IntlProvider locale="en">
               <EditCoursePage
                 courseInfo={courseInfo}
@@ -832,49 +830,47 @@ describe('EditCoursePage', () => {
 
     it('sets state correctly and does not show modal with no target run', async () => {
       const realStore = createStore(createRootReducer());
-      renderEditCoursePage(realStore)
+      renderEditCoursePage(realStore);
 
-      const levelType = screen.getByRole('combobox', {name: 'Course level'})
-      fireEvent.change(levelType, {target: {value: "beginner"}})
-      const saveCourseButton = screen.getByRole('button', {name: 'Save & Re-Publish'})
+      const levelType = screen.getByRole('combobox', { name: 'Course level' });
+      fireEvent.change(levelType, { target: { value: 'beginner' } });
+      const saveCourseButton = screen.getByRole('button', { name: 'Save & Re-Publish' });
       fireEvent.click(saveCourseButton);
 
       expect(mockHandleCourseSubmit).toHaveBeenCalled();
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     });
 
     it('sets state correctly and does not show modal with PUBLISHED target run', () => {
       const realStore = createStore(createRootReducer());
-      renderEditCoursePage(realStore, {courseSubmitInfo: {targetRun: publishedCourseRun}})
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: publishedCourseRun } });
 
-      const reviewRunButton = screen.getByRole('button', {name: 'Submit Run for Review'})
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
       fireEvent.click(reviewRunButton);
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       expect(mockHandleCourseSubmit).toHaveBeenCalled();
     });
 
     it('sets state correctly and shows modal with UNPUBLISHED target run', async () => {
       const realStore = createStore(createRootReducer());
-      renderEditCoursePage(realStore, {courseSubmitInfo: {targetRun: unpublishedCourseRun}})
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: unpublishedCourseRun } });
 
-
-      const reviewRunButton = screen.getByRole('button', {name: 'Submit Run for Review'})
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
       fireEvent.click(reviewRunButton);
-      debugger;
-      expect(screen.queryByRole('dialog').textContent).toContain('Submit for Review?')
+      expect(screen.queryByRole('dialog').textContent).toContain('Submit for Review?');
       expect(mockHandleCourseSubmit).not.toHaveBeenCalled();
     });
 
     it('sets state correctly when modal shown and continue submit called', () => {
       const realStore = createStore(createRootReducer());
-      let mockContinueSubmit = jest.spyOn(EditCoursePage.prototype, 'continueSubmit');
-      renderEditCoursePage(realStore, {courseSubmitInfo: {targetRun: unpublishedCourseRun}})
+      const mockContinueSubmit = jest.spyOn(EditCoursePage.prototype, 'continueSubmit');
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: unpublishedCourseRun } });
 
-      const reviewRunButton = screen.getByRole('button', {name: 'Submit Run for Review'})
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
       fireEvent.click(reviewRunButton);
       expect(screen.queryByRole('dialog')).toBeInTheDocument();
-      const modalSubmitBtn = screen.getByRole('button', {name: 'Submit'})
-      fireEvent.click(modalSubmitBtn)
+      const modalSubmitBtn = screen.getByRole('button', { name: 'Submit' });
+      fireEvent.click(modalSubmitBtn);
 
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       expect(mockContinueSubmit).toHaveBeenCalled();
@@ -886,10 +882,10 @@ describe('EditCoursePage', () => {
       const realStore = createStore(createRootReducer());
       renderEditCoursePage(
         realStore,
-        {courseSubmitInfo: {targetRun: unpublishedCourseRun, showReviewStatusAlert: true}}
-      )
+        { courseSubmitInfo: { targetRun: unpublishedCourseRun, showReviewStatusAlert: true } },
+      );
 
-      const alert = screen.getByRole('alert')
+      const alert = screen.getByRole('alert');
       const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
       expect(within(alert).getByText(reviewMessage)).toBeInTheDocument();
     });
@@ -900,12 +896,12 @@ describe('EditCoursePage', () => {
         realStore,
         {
           courseSubmitInfo: {
-            targetRun: {...unpublishedCourseRun, status: REVIEW_BY_LEGAL}, showReviewStatusAlert: true
-          }
-        }
-      )
+            targetRun: { ...unpublishedCourseRun, status: REVIEW_BY_LEGAL }, showReviewStatusAlert: true,
+          },
+        },
+      );
 
-      const alert = screen.getByRole('alert')
+      const alert = screen.getByRole('alert');
       const reviewMessage = 'Legal Review Complete. Course Run is now awaiting PC Review.';
       expect(within(alert).getByText(reviewMessage)).toBeInTheDocument();
     });
@@ -916,12 +912,12 @@ describe('EditCoursePage', () => {
         realStore,
         {
           courseSubmitInfo: {
-            targetRun: {...unpublishedCourseRun, status: REVIEW_BY_INTERNAL}, showReviewStatusAlert: true
-          }
-        }
-      )
+            targetRun: { ...unpublishedCourseRun, status: REVIEW_BY_INTERNAL }, showReviewStatusAlert: true,
+          },
+        },
+      );
 
-      const alert = screen.getByRole('alert')
+      const alert = screen.getByRole('alert');
       const reviewMessage = 'PC Review Complete.';
       expect(within(alert).getByText(reviewMessage)).toBeInTheDocument();
     });
@@ -932,12 +928,12 @@ describe('EditCoursePage', () => {
         realStore,
         {
           courseInfo: {
-            data: {...courseInfo.data}, showCreateStatusAlert: true
-          }
-        }
-      )
+            data: { ...courseInfo.data }, showCreateStatusAlert: true,
+          },
+        },
+      );
 
-      const alert = screen.getByRole('alert')
+      const alert = screen.getByRole('alert');
       const createMessage = 'Course run has been created in studio. See link below.';
       expect(within(alert).getByText(createMessage)).toBeInTheDocument();
     });
@@ -945,7 +941,7 @@ describe('EditCoursePage', () => {
     it('handleCourseSubmit properly prepares course data for Save Edits case with no changes', async () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      renderEditCoursePage(store, {editCourse: mockEditCourse, ref})
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref });
 
       ref.current.handleCourseSubmit(courseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
@@ -953,14 +949,14 @@ describe('EditCoursePage', () => {
         expectedSendCourseRuns,
         false,
         false,
-        expect.anything()
+        expect.anything(),
       );
     });
 
     it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (no archived run)', () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      renderEditCoursePage(store, {editCourse: mockEditCourse, ref})
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref });
 
       courseData.prices.verified = '500.00';
       courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
@@ -982,7 +978,7 @@ describe('EditCoursePage', () => {
     it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (archived run)', () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      renderEditCoursePage(store, {editCourse: mockEditCourse, ref})
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref });
 
       courseData.prices.verified = '500.00';
       expectedSendCourse.prices.verified = '500';
@@ -995,7 +991,7 @@ describe('EditCoursePage', () => {
         expectedSendCourseRuns,
         false,
         false,
-        expect.anything()
+        expect.anything(),
       );
     });
 
@@ -1009,7 +1005,7 @@ describe('EditCoursePage', () => {
       myCourseInfo.data.course_runs[0].type = 'f17e29d6-4648-4bb5-a199-97dc40f904aa'; // credit
       myCourseInfo.data.course_runs[1].type = '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c'; // verified
 
-      renderEditCoursePage(store, {editCourse: mockEditCourse, ref, courseInfo: myCourseInfo})
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref, courseInfo: myCourseInfo });
 
       const myCourseData = jsonDeepCopy(courseData);
       delete myCourseData.price;
@@ -1035,14 +1031,17 @@ describe('EditCoursePage', () => {
         [myExpectedCourseRun0, myExpectedCourseRun1],
         false,
         false,
-        expect.anything()
+        expect.anything(),
       );
     });
 
     it('handleCourseSubmit properly prepares course data for Published run Submit case', () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      renderEditCoursePage(store, {editCourse: mockEditCourse, ref, courseSubmitInfo: {targetRun: publishedCourseRun}})
+      renderEditCoursePage(
+        store,
+        { editCourse: mockEditCourse, ref, courseSubmitInfo: { targetRun: publishedCourseRun } },
+      );
 
       expectedSendCourseRuns[1].draft = false;
 
@@ -1059,8 +1058,11 @@ describe('EditCoursePage', () => {
     it('handleCourseSubmit properly prepares course data for Unpublished run Submit case', () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      const realStore = createStore(createRootReducer())
-      renderEditCoursePage(realStore, {editCourse: mockEditCourse, ref, courseSubmitInfo: {targetRun: unpublishedCourseRun}})
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(
+        realStore,
+        { editCourse: mockEditCourse, ref, courseSubmitInfo: { targetRun: unpublishedCourseRun } },
+      );
 
       expectedSendCourseRuns[0].draft = false;
       ref.current.handleCourseSubmit(courseData);
@@ -1076,8 +1078,8 @@ describe('EditCoursePage', () => {
     it('handleCourseSubmit properly prepares course data for Save Edits case with run in review', () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      const realStore = createStore(createRootReducer())
-      renderEditCoursePage(realStore, {editCourse: mockEditCourse, ref})
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore, { editCourse: mockEditCourse, ref });
 
       // Course changed so it should send saves for all non-archived runs, but this run is
       // in review so it won't be sent.
@@ -1094,28 +1096,28 @@ describe('EditCoursePage', () => {
         [expectedSendCourseRuns[1]],
         false,
         false,
-        expect.anything()
+        expect.anything(),
       );
     });
 
     it('submit modal can be cancelled', () => {
       const realStore = createStore(createRootReducer());
-      renderEditCoursePage(realStore, {courseSubmitInfo: {targetRun: unpublishedCourseRun}})
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: unpublishedCourseRun } });
 
-      const reviewRunButton = screen.getByRole('button', {name: 'Submit Run for Review'})
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
       fireEvent.click(reviewRunButton);
-      expect(screen.queryByRole('dialog')).toBeInTheDocument()
+      expect(screen.queryByRole('dialog')).toBeInTheDocument();
 
-      const cancelButton = screen.getByRole('button', {name: 'Cancel'})
+      const cancelButton = screen.getByRole('button', { name: 'Cancel' });
       fireEvent.click(cancelButton);
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     });
 
     it('handleCourseSubmit properly for executive education courses, will add additional metadata fields', () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      const realStore = createStore(createRootReducer())
-      renderEditCoursePage(realStore, {editCourse: mockEditCourse, ref})
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore, { editCourse: mockEditCourse, ref });
 
       const execEdCourseData = { ...courseData, course_type: EXECUTIVE_EDUCATION_SLUG };
       ref.current.handleCourseSubmit(execEdCourseData);
@@ -1131,7 +1133,7 @@ describe('EditCoursePage', () => {
     it('sends in_year_value when at least one value is present', () => {
       const mockEditCourse = jest.fn();
       const ref = React.createRef();
-      const realStore = createStore(createRootReducer())
+      const realStore = createStore(createRootReducer());
 
       const inYearValue = {
         per_click_usa: null,
@@ -1152,7 +1154,7 @@ describe('EditCoursePage', () => {
         },
       };
 
-      renderEditCoursePage(realStore, {editCourse: mockEditCourse, ref, courseInfo: courseInfoInYearValue})
+      renderEditCoursePage(realStore, { editCourse: mockEditCourse, ref, courseInfo: courseInfoInYearValue });
 
       const courseDataInYearValue = { ...courseData, in_year_value: inYearValue };
       ref.current.handleCourseSubmit(courseDataInYearValue);

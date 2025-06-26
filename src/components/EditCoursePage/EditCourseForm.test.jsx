@@ -1,14 +1,16 @@
 import React from 'react';
-import { render, waitFor, screen, fireEvent } from '@testing-library/react';
+import {
+  render, waitFor, screen, fireEvent,
+} from '@testing-library/react';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import '@testing-library/jest-dom';
 import { createStore } from 'redux';
-import createRootReducer from '../../data/reducers';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
+import createRootReducer from '../../data/reducers';
 import EditCourseForm from './EditCourseForm';
 import {
   REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
@@ -150,10 +152,12 @@ describe('BaseEditCourseForm', () => {
   it('renders html correctly with skills data when skills are available', () => {
     const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
     const storeWithSkills = mockStore({
-      form: {"edit-course-form": {
-        values: {skill_names: skillNames},
-      }}
-    })
+      form: {
+        'edit-course-form': {
+          values: { skill_names: skillNames },
+        },
+      },
+    });
     const courseInfoWithSkills = {
       data: {
         skill_names: skillNames,
@@ -356,9 +360,8 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    
     const typeField = screen.getByRole('combobox', { name: 'Course enrollment track Cannot edit after submission' });
-    expect(typeField).toBeDisabled()
+    expect(typeField).toBeDisabled();
   });
 
   it('Check if watchers field is disabled after being reviewed', () => {
@@ -394,7 +397,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    expect(screen.getByLabelText('watchers-list')).toBeDisabled()
+    expect(screen.getByLabelText('watchers-list')).toBeDisabled();
   });
 
   it('Check if watchers field is enabled when any of the course run is in pre-reviewed status', async () => {
@@ -406,7 +409,7 @@ describe('BaseEditCourseForm', () => {
       },
     };
 
-    const {container} = render(
+    render(
       <Provider store={store}>
         <MemoryRouter>
           <IntlProvider locale="en">
@@ -430,7 +433,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    expect(screen.getByLabelText('watchers-list')).not.toBeDisabled()
+    expect(screen.getByLabelText('watchers-list')).not.toBeDisabled();
   });
 
   it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
@@ -500,19 +503,20 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const urlSlugField = screen.getByRole('textbox', {name: 'URL slug'});
+    const urlSlugField = screen.getByRole('textbox', { name: 'URL slug' });
     const invalidInput = 'Invalid-URL-Slug123/mah';
-    fireEvent.input(urlSlugField, {target: {value: invalidInput}})
-    const submitButton = screen.getByRole('button', {name: 
-      'Save & Continue Editing'
-    })
+    fireEvent.input(urlSlugField, { target: { value: invalidInput } });
+    const submitButton = screen.getByRole('button', {
+      name:
+      'Save & Continue Editing',
+    });
     fireEvent.click(submitButton);
     expect(urlSlugField.validationMessage).toBe(
       'Please enter a valid URL slug. Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
     );
 
     // check validation message after valid input
-    fireEvent.input(urlSlugField, {target: {value: ""}})
+    fireEvent.input(urlSlugField, { target: { value: '' } });
     expect(urlSlugField.validationMessage).toBe('');
   });
 
@@ -520,7 +524,7 @@ describe('BaseEditCourseForm', () => {
     const urlSlug = 'test-url-slug';
     const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
     const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
-    const { container } = render(
+    render(
       <Provider store={store}>
         <MemoryRouter>
           <IntlProvider locale="en">
@@ -544,7 +548,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const link = screen.getByRole('link', { name: /View Preview Page/i })
+    const link = screen.getByRole('link', { name: /View Preview Page/i });
     expect(link).toHaveAttribute('href', `${MARKETING_SITE_PREVIEW_URL_ROOT}/course/${urlSlug}`);
   });
 
@@ -553,7 +557,7 @@ describe('BaseEditCourseForm', () => {
     const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
     const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
 
-    const { container } = render(
+    render(
       <Provider store={store}>
         <MemoryRouter>
           <IntlProvider locale="en">
@@ -577,7 +581,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const link = screen.getByRole('link', { name: /View Preview Page/i })
+    const link = screen.getByRole('link', { name: /View Preview Page/i });
     expect(link).toHaveAttribute('href', `${MARKETING_SITE_PREVIEW_URL_ROOT}/${urlSlug}`);
   });
 
