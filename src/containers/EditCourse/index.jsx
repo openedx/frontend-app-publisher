@@ -63,8 +63,6 @@ const mergeProps = (stateProps, actionProps, { uuid }) => ({
   fetchComments: () => actionProps.fetchComments(uuid),
 });
 
-
-
 export default withParams(connect(
   mapStateToProps,
   mapDispatchToProps,
