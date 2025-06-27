@@ -2,20 +2,22 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {
-  render, screen, waitFor,
+  fireEvent,
+  render, screen, waitFor, within,
 } from '@testing-library/react';
+import { createStore } from 'redux';
+
 import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
-import { Alert } from '@openedx/paragon';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import EditCoursePage from './index';
-
-import ConfirmationModal from '../ConfirmationModal';
+import { initialValuesFull as formInitialValues } from './EditCourseForm.test';
 
 import {
   PUBLISHED, REVIEW_BY_INTERNAL, REVIEW_BY_LEGAL, UNPUBLISHED, EXECUTIVE_EDUCATION_SLUG,
 } from '../../data/constants';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
+import createRootReducer from '../../data/reducers';
 import { jsonDeepCopy } from '../../utils';
 
 // Need to mock the Editor as we don't want to test TinyMCE
@@ -32,8 +34,49 @@ describe('EditCoursePage', () => {
   const restrictionType = 'custom-b2b-enterprise';
   const watchers = ['test@test.com'];
 
+  const initialValuesFull = {
+    ...formInitialValues,
+    course_runs: [
+      {
+        start: '2000-01-01T12:00:00Z', // Different format to be transformed
+        end: '2010-01-01T00:00:00Z',
+        external_key: null,
+        go_live_date: '1999-12-31T00:00:00Z',
+        pacing_type: 'self_paced',
+        min_effort: 1,
+        max_effort: 1,
+        content_language: 'English',
+        transcript_languages: ['English'],
+        weeks_to_complete: 1,
+        status: 'published',
+        key: 'edX101+DemoX',
+        has_ofac_restrictions: false,
+        seats: [],
+        run_type: '00000000-0000-4000-0000-000000000000',
+      },
+      {
+        start: '2000-01-01T12:00:00Z', // Different format to be transformed
+        end: '2010-01-01T00:00:00Z',
+        external_key: null,
+        go_live_date: '1999-12-31T00:00:00Z',
+        pacing_type: 'self_paced',
+        min_effort: 1,
+        max_effort: 1,
+        content_language: 'English',
+        transcript_languages: ['English'],
+        weeks_to_complete: 1,
+        status: 'published',
+        key: 'edX101+DemoX',
+        has_ofac_restrictions: false,
+        seats: [],
+        run_type: '00000000-0000-4000-0000-000000000000',
+      },
+    ],
+  };
+
   const courseInfo = {
     data: {
+      editable: true,
       additional_information: '',
       additional_metadata: {
         external_url: 'https://www.external_url.com',
@@ -74,8 +117,8 @@ describe('EditCoursePage', () => {
           min_effort: 10,
           max_effort: 123,
           pacing_type: 'instructor_paced',
-          content_language: 'en-us',
-          transcript_languages: ['en-us'],
+          content_language: 'ar-ae',
+          transcript_languages: ['ar-ae'],
           weeks_to_complete: 100,
           seats: [],
           staff: [],
@@ -100,8 +143,8 @@ describe('EditCoursePage', () => {
           min_effort: 10,
           max_effort: 123,
           pacing_type: 'instructor_paced',
-          content_language: 'en-us',
-          transcript_languages: ['en-us'],
+          content_language: 'ar-ae',
+          transcript_languages: ['ar-ae'],
           weeks_to_complete: 100,
           seats: [],
           staff: [],
@@ -253,11 +296,12 @@ describe('EditCoursePage', () => {
     await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it.skip('renders course run restriction_type correctly for executive education course', async () => {
-    // TODO: To be fixed as course run element is not rendering
+  it('renders course run restriction_type correctly for executive education course', async () => {
+    const realStore = createStore(createRootReducer());
+
     const EditCoursePageWrapper = (props) => (
       <MemoryRouter>
-        <Provider store={store}>
+        <Provider store={realStore}>
           <IntlProvider locale="en">
             <EditCoursePage
               {...props}
@@ -270,12 +314,10 @@ describe('EditCoursePage', () => {
       </MemoryRouter>
     );
 
-    const wrapper = render(<EditCoursePageWrapper />);
-    await waitFor(() => screen.getByRole('combobox', { name: /course_runs[0].restriction_type/i, hidden: true }));
-    const firstSelect = screen.getByRole('combobox', { name: /course_runs[0].restriction_type/i, hidden: true });
-    expect(firstSelect).toHaveTextContent('custom-b2b-enterprise');
-    const secondSelect = wrapper.find('select[name="course_runs[1].restriction_type"]');
-    expect(secondSelect.props().value).toBe('');
+    render(<EditCoursePageWrapper />);
+    const restrictionFields = screen.getAllByLabelText('Restriction Type');
+    expect(restrictionFields[0].value).toBe('custom-b2b-enterprise');
+    expect(restrictionFields[1].value).toBe('');
   });
 
   it('renders page correctly with courseInfo error', async () => {
@@ -485,8 +527,7 @@ describe('EditCoursePage', () => {
     await waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  describe.skip('EditCoursePage submission handling', () => {
-    // TODO: To be fixed/moved to RTL
+  describe('EditCoursePage submission handling', () => {
     const publishedCourseRun = {
       key: 'edX101+DemoX+T1',
       start: '2019-05-14T00:00:00Z',
@@ -515,7 +556,6 @@ describe('EditCoursePage', () => {
     };
 
     const unpublishedCourseRun = {
-
       ...publishedCourseRun,
       key: 'edX101+DemoX+T2',
       status: UNPUBLISHED,
@@ -669,451 +709,6 @@ describe('EditCoursePage', () => {
       },
     ];
 
-    const mockHandleCourseSubmit = jest.fn();
-
-    beforeEach(() => {
-      mockHandleCourseSubmit.mockClear();
-
-      courseData.course_runs[0].end = defaultEnd;
-      courseData.course_runs[0].status = UNPUBLISHED;
-      courseData.course_runs[0].upgrade_deadline_override = defaultUpgradeDeadlineOverride;
-      courseData.course_runs[0].variant_id = variantId;
-      courseData.prices = {
-        verified: defaultPrice,
-      };
-
-      expectedSendCourseRuns[0].draft = true;
-      expectedSendCourseRuns[0].upgrade_deadline_override = defaultUpgradeDeadlineOverride;
-      expectedSendCourseRuns[0].prices = {
-        verified: defaultPrice,
-      };
-      expectedSendCourseRuns[1].draft = false;
-      expectedSendCourseRuns[1].prices = {
-        verified: defaultPrice,
-      };
-      expectedSendCourse.draft = false;
-      expectedSendCourse.prices = {
-        verified: defaultPrice,
-      };
-    });
-
-    it('sets state correctly and does not show modal with no target run', async () => {
-      render(
-        <MemoryRouter>
-          <Provider store={store}>
-            <IntlProvider locale="en">
-              <EditCoursePage
-                courseInfo={courseInfo}
-                courseOptions={courseOptions}
-                courseRunOptions={courseRunOptions}
-              />
-            </IntlProvider>
-          </Provider>
-        </MemoryRouter>,
-      );
-
-      const instance = await screen.getByTestId('edit-course-page');
-      instance.setState({
-        submitConfirmVisible: false,
-      });
-
-      // component.instance().handleCourseSubmit = mockHandleCourseSubmit;
-      // component.update();
-      //
-      // component.instance().showModal(courseData);
-      // expect(component.state().submitConfirmVisible).toEqual(false);
-      // expect(mockHandleCourseSubmit).toHaveBeenCalled();
-    });
-
-    it('sets state correctly and does not show modal with PUBLISHED target run', () => {
-      const component = render(<EditCoursePage
-        courseInfo={courseInfo}
-        courseSubmitInfo={{
-          targetRun: publishedCourseRun,
-        }}
-      />);
-
-      component.setState({
-        submitConfirmVisible: false,
-      });
-
-      component.instance().handleCourseSubmit = mockHandleCourseSubmit;
-      component.update();
-
-      component.instance().showModal(courseData);
-      expect(component.state().submitConfirmVisible).toEqual(false);
-      expect(mockHandleCourseSubmit).toHaveBeenCalled();
-    });
-
-    it('sets state correctly and shows modal with UNPUBLISHED target run', () => {
-      const component = render(<EditCoursePage
-        courseInfo={courseInfo}
-        courseSubmitInfo={{
-          targetRun: unpublishedCourseRun,
-        }}
-      />);
-
-      component.setState({
-        submitConfirmVisible: false,
-      });
-
-      component.instance().handleCourseSubmit = mockHandleCourseSubmit;
-      component.update();
-
-      component.instance().showModal(courseData);
-      expect(component.state().submitConfirmVisible).toEqual(true);
-      expect(component.state().submitCourseData).toEqual(courseData);
-      expect(mockHandleCourseSubmit).not.toHaveBeenCalled();
-    });
-
-    it('sets state correctly when modal shown and continue submit called', () => {
-      const component = render(<EditCoursePage
-        courseInfo={courseInfo}
-        courseSubmitInfo={{
-          targetRun: unpublishedCourseRun,
-        }}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-
-      component.instance().handleCourseSubmit = mockHandleCourseSubmit;
-      component.update();
-
-      component.instance().showModal(courseData);
-      expect(component.state().submitConfirmVisible).toEqual(true);
-      expect(component.state().submitCourseData).toEqual(courseData);
-
-      component.instance().continueSubmit(courseData);
-      expect(component.state().submitConfirmVisible).toEqual(false);
-      expect(component.state().submitCourseData).toEqual({});
-      expect(mockHandleCourseSubmit).toHaveBeenCalled();
-    });
-
-    it('upon course submission, StatusAlert is set to appear', () => {
-      const component = render(<EditCoursePage
-        courseInfo={{ data: { editable: true } }}
-        courseSubmitInfo={{
-          showReviewStatusAlert: true,
-          targetRun: unpublishedCourseRun,
-        }}
-      />);
-      const reviewAlert = component.find(Alert);
-      const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
-      expect(reviewAlert.text()).toEqual(reviewMessage);
-    });
-
-    it('upon legal review submission, StatusAlert is set to appear', () => {
-      const component = render(<EditCoursePage
-        courseInfo={{ data: { editable: true } }}
-        courseSubmitInfo={{
-          showReviewStatusAlert: true,
-          targetRun: { status: REVIEW_BY_LEGAL },
-        }}
-      />);
-      const reviewAlert = component.find(Alert);
-      const reviewMessage = 'Legal Review Complete. Course Run is now awaiting PC Review.';
-      expect(reviewAlert.text()).toEqual(reviewMessage);
-    });
-
-    it('upon internal review submission, StatusAlert is set to appear', () => {
-      const component = render(<EditCoursePage
-        courseInfo={{ data: { editable: true } }}
-        courseSubmitInfo={{
-          showReviewStatusAlert: true,
-          targetRun: { status: REVIEW_BY_INTERNAL },
-        }}
-      />);
-      const reviewAlert = component.find(Alert);
-      const reviewMessage = 'PC Review Complete.';
-      expect(reviewAlert.text()).toEqual(reviewMessage);
-    });
-
-    it('upon course run creation, StatusAlert is set to appear', () => {
-      const component = render(<EditCoursePage
-        courseInfo={{ data: { title: 'TestCourse101', editable: true }, showCreateStatusAlert: true }}
-      />);
-      const createAlert = component.find(Alert);
-      const createMessage = 'Course run has been created in studio. See link below.';
-      expect(createAlert.text()).toEqual(createMessage);
-    });
-
-    it('handleCourseSubmit properly prepares course data for Save Edits case with no changes', () => {
-      const mockEditCourse = jest.fn();
-      const props = {
-        editCourse: mockEditCourse,
-      };
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfo}
-        courseOptions={courseOptions}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
-
-      component.instance().handleCourseSubmit(courseData);
-      expect(mockEditCourse).toHaveBeenCalledWith(
-        expectedSendCourse,
-        expectedSendCourseRuns,
-        false,
-        false,
-        component.instance().getData,
-      );
-    });
-
-    it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (no archived run)', () => {
-      const mockEditCourse = jest.fn();
-      const props = {
-        editCourse: mockEditCourse,
-      };
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfo}
-        courseOptions={courseOptions}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
-
-      courseData.prices.verified = '500.00';
-      courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
-
-      expectedSendCourse.prices.verified = '500';
-      expectedSendCourseRuns[0].prices = expectedSendCourse.prices;
-      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
-
-      component.instance().handleCourseSubmit(courseData);
-      expect(mockEditCourse).toHaveBeenCalledWith(
-        expectedSendCourse,
-        expectedSendCourseRuns,
-        false,
-        false,
-        component.instance().getData,
-      );
-    });
-
-    it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (archived run)', () => {
-      const mockEditCourse = jest.fn();
-      const props = {
-        editCourse: mockEditCourse,
-      };
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfo}
-        courseOptions={courseOptions}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
-
-      courseData.prices.verified = '500.00';
-      expectedSendCourse.prices.verified = '500';
-      expectedSendCourseRuns[0].prices = expectedSendCourse.prices;
-      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
-
-      component.instance().handleCourseSubmit(courseData);
-      expect(mockEditCourse).toHaveBeenCalledWith(
-        expectedSendCourse,
-        expectedSendCourseRuns,
-        false,
-        false,
-        component.instance().getData,
-      );
-    });
-
-    it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (with type)', () => {
-      const mockEditCourse = jest.fn();
-
-      const myCourseInfo = jsonDeepCopy(courseInfo);
-      myCourseInfo.data.type = '9521aa7d-801b-4a67-92c3-716ea30f5086'; // credit
-      myCourseInfo.data.course_runs[0].end = '5000-08-12T12:34:56Z'; // make this active
-      myCourseInfo.data.course_runs[0].type = 'f17e29d6-4648-4bb5-a199-97dc40f904aa'; // credit
-      myCourseInfo.data.course_runs[1].type = '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c'; // verified
-
-      const component = render(<EditCoursePage
-        courseInfo={myCourseInfo}
-        courseOptions={courseOptions}
-        editCourse={mockEditCourse}
-      />);
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
-
-      const myCourseData = jsonDeepCopy(courseData);
-      delete myCourseData.price;
-      myCourseData.type = myCourseInfo.data.type;
-      myCourseData.prices = {};
-      myCourseData.prices.credit = '500';
-      myCourseData.prices.verified = '10';
-
-      const myExpectedSendCourse = jsonDeepCopy(expectedSendCourse);
-      myExpectedSendCourse.type = myCourseData.type;
-      myExpectedSendCourse.prices = {
-        credit: '500',
-        verified: '10',
-      };
-      const myExpectedCourseRun0 = jsonDeepCopy(expectedSendCourseRuns[0]);
-      myExpectedCourseRun0.prices = myExpectedSendCourse.prices;
-      const myExpectedCourseRun1 = jsonDeepCopy(expectedSendCourseRuns[1]);
-      myExpectedCourseRun1.prices = myExpectedSendCourse.prices;
-
-      component.instance().handleCourseSubmit(myCourseData);
-      expect(mockEditCourse).toHaveBeenCalledWith(
-        myExpectedSendCourse,
-        [myExpectedCourseRun0, myExpectedCourseRun1],
-        false,
-        false,
-        component.instance().getData,
-      );
-    });
-
-    it('handleCourseSubmit properly prepares course data for Published run Submit case', () => {
-      const mockEditCourse = jest.fn();
-      const props = {
-        editCourse: mockEditCourse,
-      };
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfo}
-        courseOptions={courseOptions}
-        courseSubmitInfo={{
-          targetRun: publishedCourseRun,
-        }}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
-
-      expectedSendCourseRuns[1].draft = false;
-
-      component.instance().handleCourseSubmit(courseData);
-      expect(mockEditCourse).toHaveBeenCalledWith(
-        expectedSendCourse,
-        expectedSendCourseRuns,
-        true,
-        false,
-        component.instance().getData,
-      );
-    });
-
-    it('handleCourseSubmit properly prepares course data for Unpublished run Submit case', () => {
-      const mockEditCourse = jest.fn();
-      const props = {
-        editCourse: mockEditCourse,
-      };
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfo}
-        courseOptions={courseOptions}
-        courseSubmitInfo={{
-          targetRun: unpublishedCourseRun,
-        }}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
-
-      expectedSendCourseRuns[0].draft = false;
-
-      component.instance().handleCourseSubmit(courseData);
-      expect(mockEditCourse).toHaveBeenCalledWith(
-        expectedSendCourse,
-        expectedSendCourseRuns,
-        true,
-        false,
-        component.instance().getData,
-      );
-    });
-
-    it('handleCourseSubmit properly prepares course data for Save Edits case with run in review', () => {
-      const mockEditCourse = jest.fn();
-      const props = {
-        editCourse: mockEditCourse,
-      };
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfo}
-        courseOptions={courseOptions}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
-
-      // Course changed so it should send saves for all non-archived runs, but this run is
-      // in review so it won't be sent.
-      courseData.prices.verified = '500.00';
-      courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
-      courseData.course_runs[0].status = REVIEW_BY_INTERNAL;
-
-      expectedSendCourse.prices.verified = '500';
-      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
-
-      component.instance().handleCourseSubmit(courseData);
-      expect(mockEditCourse).toHaveBeenCalledWith(
-        expectedSendCourse,
-        [expectedSendCourseRuns[1]],
-        false,
-        false,
-        component.instance().getData,
-      );
-    });
-
-    it('submit modal can be cancelled', () => {
-      const EditCoursePageWrapper = (props) => (
-        <MemoryRouter>
-          <Provider store={mockStore()}>
-            <IntlProvider locale="en">
-              <EditCoursePage
-                {...props}
-                courseInfo={courseInfo}
-                courseOptions={courseOptions}
-                courseRunOptions={courseRunOptions}
-              />
-            </IntlProvider>
-          </Provider>
-        </MemoryRouter>
-      );
-
-      const wrapper = render(EditCoursePageWrapper());
-
-      setTimeout(() => {
-        wrapper.setState({
-          submitConfirmVisible: true,
-        });
-
-        const modal = wrapper.find(ConfirmationModal);
-        modal.find('.btn-link').simulate('click');
-
-        expect(wrapper.find(EditCoursePage)
-          .instance().state.submitConfirmVisible)
-          .toEqual(false);
-        expect(wrapper.find(EditCoursePage)
-          .instance().state.submitCourseData)
-          .toEqual({});
-      }, 0);
-    });
     const expectedSendCourseExEdCourses = {
       additional_information: '<p>Stuff</p>',
       additional_metadata: {
@@ -1183,37 +778,362 @@ describe('EditCoursePage', () => {
       },
     };
 
+    let mockHandleCourseSubmit;
+
+    beforeEach(() => {
+      mockHandleCourseSubmit = jest.spyOn(EditCoursePage.prototype, 'handleCourseSubmit');
+
+      courseData.course_runs[0].end = defaultEnd;
+      courseData.course_runs[0].status = UNPUBLISHED;
+      courseData.course_runs[0].upgrade_deadline_override = defaultUpgradeDeadlineOverride;
+      courseData.course_runs[0].variant_id = variantId;
+      courseData.prices = {
+        verified: defaultPrice,
+      };
+
+      expectedSendCourseRuns[0].draft = true;
+      expectedSendCourseRuns[0].upgrade_deadline_override = defaultUpgradeDeadlineOverride;
+      expectedSendCourseRuns[0].prices = {
+        verified: defaultPrice,
+      };
+      expectedSendCourseRuns[1].draft = false;
+      expectedSendCourseRuns[1].prices = {
+        verified: defaultPrice,
+      };
+      expectedSendCourse.draft = false;
+      expectedSendCourse.prices = {
+        verified: defaultPrice,
+      };
+    });
+
+    afterEach(() => {
+      mockHandleCourseSubmit.mockRestore();
+    });
+
+    function renderEditCoursePage(reduxStore, addProps = {}) {
+      render(
+        <MemoryRouter>
+          <Provider store={reduxStore}>
+            <IntlProvider locale="en">
+              <EditCoursePage
+                courseInfo={courseInfo}
+                courseOptions={courseOptions}
+                courseRunOptions={courseRunOptions}
+                currentFormValues={initialValuesFull}
+                {...addProps}
+              />
+            </IntlProvider>
+          </Provider>
+        </MemoryRouter>,
+      );
+    }
+
+    it('sets state correctly and does not show modal with no target run', async () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore);
+
+      const levelType = screen.getByRole('combobox', { name: 'Course level' });
+      fireEvent.change(levelType, { target: { value: 'beginner' } });
+      const saveCourseButton = screen.getByRole('button', { name: 'Save & Re-Publish' });
+      fireEvent.click(saveCourseButton);
+
+      expect(mockHandleCourseSubmit).toHaveBeenCalled();
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
+    it('sets state correctly and does not show modal with PUBLISHED target run', () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: publishedCourseRun } });
+
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
+      fireEvent.click(reviewRunButton);
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(mockHandleCourseSubmit).toHaveBeenCalled();
+    });
+
+    it('sets state correctly and shows modal with UNPUBLISHED target run', async () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: unpublishedCourseRun } });
+
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
+      fireEvent.click(reviewRunButton);
+      expect(screen.queryByRole('dialog').textContent).toContain('Submit for Review?');
+      expect(mockHandleCourseSubmit).not.toHaveBeenCalled();
+    });
+
+    it('sets state correctly when modal shown and continue submit called', () => {
+      const realStore = createStore(createRootReducer());
+      const mockContinueSubmit = jest.spyOn(EditCoursePage.prototype, 'continueSubmit');
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: unpublishedCourseRun } });
+
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
+      fireEvent.click(reviewRunButton);
+      expect(screen.queryByRole('dialog')).toBeInTheDocument();
+      const modalSubmitBtn = screen.getByRole('button', { name: 'Submit' });
+      fireEvent.click(modalSubmitBtn);
+
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(mockContinueSubmit).toHaveBeenCalled();
+      expect(mockHandleCourseSubmit).toHaveBeenCalled();
+      mockContinueSubmit.mockRestore();
+    });
+
+    it('upon course submission, StatusAlert is set to appear', () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(
+        realStore,
+        { courseSubmitInfo: { targetRun: unpublishedCourseRun, showReviewStatusAlert: true } },
+      );
+
+      const alert = screen.getByRole('alert');
+      const reviewMessage = 'Course has been submitted for review. The course will be locked for the next two business days. You will receive an email when the review is complete.';
+      expect(within(alert).getByText(reviewMessage)).toBeInTheDocument();
+    });
+
+    it('upon legal review submission, StatusAlert is set to appear', () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(
+        realStore,
+        {
+          courseSubmitInfo: {
+            targetRun: { ...unpublishedCourseRun, status: REVIEW_BY_LEGAL }, showReviewStatusAlert: true,
+          },
+        },
+      );
+
+      const alert = screen.getByRole('alert');
+      const reviewMessage = 'Legal Review Complete. Course Run is now awaiting PC Review.';
+      expect(within(alert).getByText(reviewMessage)).toBeInTheDocument();
+    });
+
+    it('upon internal review submission, StatusAlert is set to appear', () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(
+        realStore,
+        {
+          courseSubmitInfo: {
+            targetRun: { ...unpublishedCourseRun, status: REVIEW_BY_INTERNAL }, showReviewStatusAlert: true,
+          },
+        },
+      );
+
+      const alert = screen.getByRole('alert');
+      const reviewMessage = 'PC Review Complete.';
+      expect(within(alert).getByText(reviewMessage)).toBeInTheDocument();
+    });
+
+    it('upon course run creation, StatusAlert is set to appear', () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(
+        realStore,
+        {
+          courseInfo: {
+            data: { ...courseInfo.data }, showCreateStatusAlert: true,
+          },
+        },
+      );
+
+      const alert = screen.getByRole('alert');
+      const createMessage = 'Course run has been created in studio. See link below.';
+      expect(within(alert).getByText(createMessage)).toBeInTheDocument();
+    });
+
+    it('handleCourseSubmit properly prepares course data for Save Edits case with no changes', async () => {
+      const mockEditCourse = jest.fn();
+      const ref = React.createRef();
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref });
+
+      ref.current.handleCourseSubmit(courseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        false,
+        false,
+        expect.anything(),
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (no archived run)', () => {
+      const mockEditCourse = jest.fn();
+      const ref = React.createRef();
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref });
+
+      courseData.prices.verified = '500.00';
+      courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
+
+      expectedSendCourse.prices.verified = '500';
+      expectedSendCourseRuns[0].prices = expectedSendCourse.prices;
+      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
+
+      ref.current.handleCourseSubmit(courseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        false,
+        false,
+        expect.anything(),
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (archived run)', () => {
+      const mockEditCourse = jest.fn();
+      const ref = React.createRef();
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref });
+
+      courseData.prices.verified = '500.00';
+      expectedSendCourse.prices.verified = '500';
+      expectedSendCourseRuns[0].prices = expectedSendCourse.prices;
+      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
+
+      ref.current.handleCourseSubmit(courseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        false,
+        false,
+        expect.anything(),
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Save Edits case with course changes (with type)', () => {
+      const mockEditCourse = jest.fn();
+      const ref = React.createRef();
+
+      const myCourseInfo = jsonDeepCopy(courseInfo);
+      myCourseInfo.data.type = '9521aa7d-801b-4a67-92c3-716ea30f5086'; // credit
+      myCourseInfo.data.course_runs[0].end = '5000-08-12T12:34:56Z'; // make this active
+      myCourseInfo.data.course_runs[0].type = 'f17e29d6-4648-4bb5-a199-97dc40f904aa'; // credit
+      myCourseInfo.data.course_runs[1].type = '4e260c57-24ef-46c1-9a0d-5ec3a30f6b0c'; // verified
+
+      renderEditCoursePage(store, { editCourse: mockEditCourse, ref, courseInfo: myCourseInfo });
+
+      const myCourseData = jsonDeepCopy(courseData);
+      delete myCourseData.price;
+      myCourseData.type = myCourseInfo.data.type;
+      myCourseData.prices = {};
+      myCourseData.prices.credit = '500';
+      myCourseData.prices.verified = '10';
+
+      const myExpectedSendCourse = jsonDeepCopy(expectedSendCourse);
+      myExpectedSendCourse.type = myCourseData.type;
+      myExpectedSendCourse.prices = {
+        credit: '500',
+        verified: '10',
+      };
+      const myExpectedCourseRun0 = jsonDeepCopy(expectedSendCourseRuns[0]);
+      myExpectedCourseRun0.prices = myExpectedSendCourse.prices;
+      const myExpectedCourseRun1 = jsonDeepCopy(expectedSendCourseRuns[1]);
+      myExpectedCourseRun1.prices = myExpectedSendCourse.prices;
+
+      ref.current.handleCourseSubmit(myCourseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        myExpectedSendCourse,
+        [myExpectedCourseRun0, myExpectedCourseRun1],
+        false,
+        false,
+        expect.anything(),
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Published run Submit case', () => {
+      const mockEditCourse = jest.fn();
+      const ref = React.createRef();
+      renderEditCoursePage(
+        store,
+        { editCourse: mockEditCourse, ref, courseSubmitInfo: { targetRun: publishedCourseRun } },
+      );
+
+      expectedSendCourseRuns[1].draft = false;
+
+      ref.current.handleCourseSubmit(courseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        true,
+        false,
+        expect.anything(),
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Unpublished run Submit case', () => {
+      const mockEditCourse = jest.fn();
+      const ref = React.createRef();
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(
+        realStore,
+        { editCourse: mockEditCourse, ref, courseSubmitInfo: { targetRun: unpublishedCourseRun } },
+      );
+
+      expectedSendCourseRuns[0].draft = false;
+      ref.current.handleCourseSubmit(courseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        expectedSendCourseRuns,
+        true,
+        false,
+        expect.anything(),
+      );
+    });
+
+    it('handleCourseSubmit properly prepares course data for Save Edits case with run in review', () => {
+      const mockEditCourse = jest.fn();
+      const ref = React.createRef();
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore, { editCourse: mockEditCourse, ref });
+
+      // Course changed so it should send saves for all non-archived runs, but this run is
+      // in review so it won't be sent.
+      courseData.prices.verified = '500.00';
+      courseData.course_runs[0].end = '5000-08-12T12:34:56Z';
+      courseData.course_runs[0].status = REVIEW_BY_INTERNAL;
+
+      expectedSendCourse.prices.verified = '500';
+      expectedSendCourseRuns[1].prices = expectedSendCourse.prices;
+
+      ref.current.handleCourseSubmit(courseData);
+      expect(mockEditCourse).toHaveBeenCalledWith(
+        expectedSendCourse,
+        [expectedSendCourseRuns[1]],
+        false,
+        false,
+        expect.anything(),
+      );
+    });
+
+    it('submit modal can be cancelled', () => {
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore, { courseSubmitInfo: { targetRun: unpublishedCourseRun } });
+
+      const reviewRunButton = screen.getByRole('button', { name: 'Submit Run for Review' });
+      fireEvent.click(reviewRunButton);
+      expect(screen.queryByRole('dialog')).toBeInTheDocument();
+
+      const cancelButton = screen.getByRole('button', { name: 'Cancel' });
+      fireEvent.click(cancelButton);
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
     it('handleCourseSubmit properly for executive education courses, will add additional metadata fields', () => {
       const mockEditCourse = jest.fn();
-      const props = {
-        editCourse: mockEditCourse,
-      };
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfo}
-        courseOptions={courseOptions}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
+      const ref = React.createRef();
+      const realStore = createStore(createRootReducer());
+      renderEditCoursePage(realStore, { editCourse: mockEditCourse, ref });
 
       const execEdCourseData = { ...courseData, course_type: EXECUTIVE_EDUCATION_SLUG };
-      component.instance().handleCourseSubmit(execEdCourseData);
+      ref.current.handleCourseSubmit(execEdCourseData);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourseExEdCourses,
         expectedSendCourseRuns,
         false,
         false,
-        component.instance().getData,
+        expect.anything(),
       );
     });
 
     it('sends in_year_value when at least one value is present', () => {
       const mockEditCourse = jest.fn();
-      const props = { editCourse: mockEditCourse };
+      const ref = React.createRef();
+      const realStore = createStore(createRootReducer());
 
       const inYearValue = {
         per_click_usa: null,
@@ -1234,26 +1154,16 @@ describe('EditCoursePage', () => {
         },
       };
 
-      const component = render(<EditCoursePage
-        {...props}
-        courseInfo={courseInfoInYearValue}
-        courseOptions={courseOptions}
-      />);
-
-      component.setState({
-        submitConfirmVisible: true,
-      });
-      component.instance().getData = jest.fn();
-      component.update();
+      renderEditCoursePage(realStore, { editCourse: mockEditCourse, ref, courseInfo: courseInfoInYearValue });
 
       const courseDataInYearValue = { ...courseData, in_year_value: inYearValue };
-      component.instance().handleCourseSubmit(courseDataInYearValue);
+      ref.current.handleCourseSubmit(courseDataInYearValue);
       expect(mockEditCourse).toHaveBeenCalledWith(
         expectedSendCourseInYearValue,
         expectedSendCourseRuns,
         false,
         false,
-        component.instance().getData,
+        expect.anything(),
       );
     });
   });

@@ -15,7 +15,7 @@ const RenderInputTextField = ({
   pattern,
   meta: { touched, error },
 }) => (
-  <Form.Group controlId={`${name}-text-label`} isInvalid={touched && error}>
+  <Form.Group controlId={`${input.name || name}-text-label`} isInvalid={touched && error}>
     <Form.Label>
       {label}
     </Form.Label>
@@ -50,7 +50,9 @@ RenderInputTextField.defaultProps = {
 };
 
 RenderInputTextField.propTypes = {
-  input: PropTypes.shape({}).isRequired,
+  input: PropTypes.shape({
+    name: PropTypes.string,
+  }).isRequired,
   extraInput: PropTypes.shape({}),
   name: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,

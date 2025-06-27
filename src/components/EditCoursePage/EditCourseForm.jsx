@@ -320,7 +320,7 @@ export class BaseEditCourseForm extends React.Component {
 
     return (
       <div className="edit-course-form">
-        <form id={id} onSubmit={handleSubmit}>
+        <form id={id} onSubmit={handleSubmit} data-testid="edit-course-form">
           <FieldLabel text={title} className="mb-2 h2" />
           <Collapsible
             title={this.formatCourseTitle(title, courseStatuses, courseInfo)}
@@ -375,7 +375,7 @@ export class BaseEditCourseForm extends React.Component {
             />
             <Field
               name="watchers_list"
-              data-testid="watchers-list"
+              ariaLabel="watchers-list"
               component={ReduxFormCreatableSelect}
               label={(
                 <FieldLabel

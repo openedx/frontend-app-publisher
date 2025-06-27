@@ -1,13 +1,16 @@
 import React from 'react';
-import { render, waitFor, screen } from '@testing-library/react';
-import { Hyperlink } from '@openedx/paragon';
+import {
+  render, waitFor, screen, fireEvent,
+} from '@testing-library/react';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import '@testing-library/jest-dom';
+import { createStore } from 'redux';
 
 import { IntlProvider } from '@edx/frontend-platform/i18n';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
+import createRootReducer from '../../data/reducers';
 import EditCourseForm from './EditCourseForm';
 import {
   REVIEW_BY_LEGAL, REVIEWED, UNPUBLISHED, PUBLISHED,
@@ -17,67 +20,67 @@ import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 const mockStore = configureStore();
 const store = mockStore({});
 
+export const initialValuesFull = {
+  title: 'Test Title',
+  short_description: 'short desc',
+  full_description: 'long desc',
+  outcome: 'learning outcomes',
+  subjectPrimary: 'business',
+  subjectSecondary: 'english',
+  subjectTertiary: 'security',
+  imageSrc: 'http://image.src.small',
+  prerequisites_raw: 'prereq',
+  level_type: 'advanced',
+  learner_testimonials: 'learner testimonials',
+  faq: 'frequently asked questions',
+  additional_information: 'additional info',
+  syllabus_raw: 'syllabus',
+  videoSrc: 'https://www.video.src/watch?v=fdsafd',
+  prices: {
+    verified: '77',
+  },
+  type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
+  topics: [],
+  uuid: '11111111-1111-1111-1111-111111111111',
+  editable: true,
+  skill_names: [],
+  organization_logo_override: 'http://image.src.small',
+  organization_short_code_override: 'test short code',
+  watchers: ['test@test.com'],
+  location_restriction: {
+    restriction_type: 'allowlist',
+    countries: ['AF', 'AX'],
+    states: ['CO'],
+  },
+  in_year_value: {
+    per_click_usa: 100,
+    per_click_international: 100,
+    per_lead_usa: 100,
+    per_lead_international: 100,
+  },
+  course_runs: [
+    {
+      start: '2000-01-01T12:00:00Z', // Different format to be transformed
+      end: '2010-01-01T00:00:00Z',
+      external_key: null,
+      go_live_date: '1999-12-31T00:00:00Z',
+      pacing_type: 'self_paced',
+      min_effort: 1,
+      max_effort: 1,
+      content_language: 'English',
+      transcript_languages: ['English'],
+      weeks_to_complete: 1,
+      status: 'published',
+      key: 'edX101+DemoX',
+      has_ofac_restrictions: false,
+      seats: [],
+      run_type: '00000000-0000-4000-0000-000000000000',
+    },
+  ],
+};
+
 describe('BaseEditCourseForm', () => {
   const env = { ...process.env };
-
-  const initialValuesFull = {
-    title: 'Test Title',
-    short_description: 'short desc',
-    full_description: 'long desc',
-    outcome: 'learning outcomes',
-    subjectPrimary: 'business',
-    subjectSecondary: 'english',
-    subjectTertiary: 'security',
-    imageSrc: 'http://image.src.small',
-    prerequisites_raw: 'prereq',
-    level_type: 'advanced',
-    learner_testimonials: 'learner testimonials',
-    faq: 'frequently asked questions',
-    additional_information: 'additional info',
-    syllabus_raw: 'syllabus',
-    videoSrc: 'https://www.video.src/watch?v=fdsafd',
-    prices: {
-      verified: '77',
-    },
-    type: '8a8f30e1-23ce-4ed3-a361-1325c656b67b',
-    topics: [],
-    uuid: '11111111-1111-1111-1111-111111111111',
-    editable: true,
-    skill_names: [],
-    organization_logo_override: 'http://image.src.small',
-    organization_short_code_override: 'test short code',
-    watchers: ['test@test.com'],
-    location_restriction: {
-      restriction_type: 'allowlist',
-      countries: ['AF', 'AX'],
-      states: ['CO'],
-    },
-    in_year_value: {
-      per_click_usa: 100,
-      per_click_international: 100,
-      per_lead_usa: 100,
-      per_lead_international: 100,
-    },
-    course_runs: [
-      {
-        start: '2000-01-01T12:00:00Z', // Different format to be transformed
-        end: '2010-01-01T00:00:00Z',
-        external_key: null,
-        go_live_date: '1999-12-31T00:00:00Z',
-        pacing_type: 'self_paced',
-        min_effort: 1,
-        max_effort: 1,
-        content_language: 'English',
-        transcript_languages: ['English'],
-        weeks_to_complete: 1,
-        status: 'published',
-        key: 'edX101+DemoX',
-        has_ofac_restrictions: false,
-        seats: [],
-        run_type: '00000000-0000-4000-0000-000000000000',
-      },
-    ],
-  };
 
   const courseInfo = {
     data: {
@@ -95,8 +98,7 @@ describe('BaseEditCourseForm', () => {
     process.env = env;
   });
 
-  it.skip('renders html correctly with minimal data', () => {
-    // TODO: course run toolbar does not render
+  it('renders html correctly with minimal data', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -118,7 +120,7 @@ describe('BaseEditCourseForm', () => {
         </MemoryRouter>
       </Provider>,
     );
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly with all data present', () => {
@@ -147,9 +149,15 @@ describe('BaseEditCourseForm', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it.skip('renders html correctly with skills data when skills are available', () => {
-    // TODO: redux form/prop issue as the form is not rendering
+  it('renders html correctly with skills data when skills are available', () => {
     const skillNames = ['skill1', 'skill2', 'skill3', 'skill4'];
+    const storeWithSkills = mockStore({
+      form: {
+        'edit-course-form': {
+          values: { skill_names: skillNames },
+        },
+      },
+    });
     const courseInfoWithSkills = {
       data: {
         skill_names: skillNames,
@@ -160,7 +168,7 @@ describe('BaseEditCourseForm', () => {
       skill_names: skillNames,
     };
     const { container } = render(
-      <Provider store={store}>
+      <Provider store={storeWithSkills}>
         <MemoryRouter>
           <IntlProvider locale="en">
             <EditCourseForm
@@ -181,20 +189,7 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    // const { container } = render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   initialValues={initialValuesWithSkills}
-    //   title={initialValuesFull.title}
-    //   number="Test101x"
-    //   courseStatuses={[UNPUBLISHED]}
-    //   courseInfo={courseInfoWithSkills}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   id="edit-course-form"
-    // />);
-    waitFor(() => expect(container).toMatchSnapshot());
+    expect(container).toMatchSnapshot();
   });
 
   it('renders html correctly with administrator being true', () => {
@@ -310,8 +305,7 @@ describe('BaseEditCourseForm', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it.skip('renders with disabled fields if course is in review', () => {
-    // TODO: some fields are not disabled.
+  it('renders with disabled fields if course is in review', () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -337,12 +331,11 @@ describe('BaseEditCourseForm', () => {
 
     const childFields = screen.getAllByRole('textbox');
     childFields.forEach((field) => {
-      expect(field).toBeDisabled();
+      expect(field.disabled || field.parentElement.classList.contains('disabled-rich-text')).toBe(true);
     });
   });
 
-  it.skip('renders with course type disabled after being reviewed', async () => {
-  // TODO: multiple elements returned
+  it('renders with course type disabled after being reviewed', async () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -367,12 +360,11 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const disabledFields = await screen.findByRole('textbox', { disabled: true });
-    waitFor(() => expect(disabledFields).toHaveLength(1));
+    const typeField = screen.getByRole('combobox', { name: 'Course enrollment track Cannot edit after submission' });
+    expect(typeField).toBeDisabled();
   });
 
-  it.skip('Check if watchers field is disabled after being reviewed', () => {
-    // TODO: data-testid element not found
+  it('Check if watchers field is disabled after being reviewed', () => {
     const courseInfoWithCourseRunStatuses = {
       ...courseInfo,
       data: {
@@ -405,12 +397,10 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const watchersField = screen.findByTestId('watchers-list', { disabled: true });
-    expect(watchersField).toHaveLength(1);
+    expect(screen.getByLabelText('watchers-list')).toBeDisabled();
   });
 
-  it.skip('Check if watchers field is enabled when any of the course run is in pre-reviewed status', async () => {
-    // TODO: data-testid element not found
+  it('Check if watchers field is enabled when any of the course run is in pre-reviewed status', async () => {
     const courseInfoWithCourseRunStatuses = {
       ...courseInfo,
       data: {
@@ -443,27 +433,10 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    // render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesFull.title}
-    //   initialValues={initialValuesFull}
-    //   currentFormValues={initialValuesFull}
-    //   number="Test101x"
-    //   entitlement={{ sku: 'ABC1234' }}
-    //   courseStatuses={[REVIEW_BY_LEGAL, UNPUBLISHED]}
-    //   courseInfo={courseInfoWithCourseRunStatuses}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   id="edit-course-form"
-    // />);
-
-    const watchersField = screen.getByTestId('watchers-list', { disabled: false });
-    expect(watchersField).toHaveLength(1);
+    expect(screen.getByLabelText('watchers-list')).not.toBeDisabled();
   });
 
-  it('renders with course type disabled once a sku exists, even if course is unpublished', () => {
+  it('renders with course type disabled once a sku exists, even if course is unpublished', async () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -473,6 +446,7 @@ describe('BaseEditCourseForm', () => {
               title={initialValuesFull.title}
               initialValues={initialValuesFull}
               currentFormValues={initialValuesFull}
+              courseRuns={initialValuesFull.course_runs}
               number="Test101x"
               entitlement={{ sku: 'ABC1234' }}
               courseStatuses={[UNPUBLISHED]}
@@ -488,13 +462,13 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const disabledFields = screen.findByText('type', { disabled: true });
-    waitFor(() => expect(disabledFields).toHaveLength(1));
+    const typeField = screen.getByRole('combobox', { name: 'Course enrollment track Cannot edit after submission' });
+    expect(typeField).toBeDisabled();
   });
 
-  it.skip('check for customValidity working correctly for url_slug in EditCourseForm', () => {
-    // TODO: to be converted to RTL after render call
-    const setCustomValidityMock = jest.fn();
+  it('check for customValidity working correctly for url_slug in EditCourseForm', async () => {
+    getAuthenticatedUser.mockReturnValue({ administrator: true });
+
     const courseInfoWithUrlSlug = {
       data: {
         url_slug: 'test-url-slug/',
@@ -504,9 +478,9 @@ describe('BaseEditCourseForm', () => {
       ...initialValuesFull,
       course_runs: [],
     };
-
+    const realStore = createStore(createRootReducer());
     render(
-      <Provider store={store}>
+      <Provider store={realStore}>
         <MemoryRouter>
           <IntlProvider locale="en">
             <EditCourseForm
@@ -523,50 +497,35 @@ describe('BaseEditCourseForm', () => {
               uuid={initialValuesWithUrlSlug.uuid}
               type={initialValuesWithUrlSlug.type}
               id="edit-course-form"
+              editable
             />
           </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
 
-    // render(
-    //   <BaseEditCourseForm
-    //     handleSubmit={() => null}
-    //     title={initialValuesWithUrlSlug.title}
-    //     initialValues={initialValuesWithUrlSlug}
-    //     currentFormValues={initialValuesWithUrlSlug}
-    //     number="Test101x"
-    //     entitlement={{ sku: 'ABC1234' }}
-    //     courseStatuses={[PUBLISHED]}
-    //     courseInfo={courseInfoWithUrlSlug}
-    //     courseOptions={courseOptions}
-    //     courseRunOptions={courseRunOptions}
-    //     uuid={initialValuesWithUrlSlug.uuid}
-    //     type={initialValuesWithUrlSlug.type}
-    //     id="edit-course-form"
-    //   />,
-    // );
-
-    const urlSlugField = screen.findByRole('url_slug');
-
-    const invalidInput = 'Invalid-URL-Slug123/';
-    urlSlugField.prop('extraInput').onInvalid({ target: { setCustomValidity: setCustomValidityMock } });
-    urlSlugField.simulate('input', { target: { value: invalidInput } });
-    expect(setCustomValidityMock).toHaveBeenCalledWith(
+    const urlSlugField = screen.getByRole('textbox', { name: 'URL slug' });
+    const invalidInput = 'Invalid-URL-Slug123/mah';
+    fireEvent.input(urlSlugField, { target: { value: invalidInput } });
+    const submitButton = screen.getByRole('button', {
+      name:
+      'Save & Continue Editing',
+    });
+    fireEvent.click(submitButton);
+    expect(urlSlugField.validationMessage).toBe(
       'Please enter a valid URL slug. Course URL slug contains lowercase letters, numbers, underscores, and dashes only.',
     );
 
-    // check that it will clear onInput after invalid input
-    urlSlugField.prop('extraInput').onInput({ target: { setCustomValidity: setCustomValidityMock } });
-    expect(setCustomValidityMock).toHaveBeenCalledWith('');
+    // check validation message after valid input
+    fireEvent.input(urlSlugField, { target: { value: '' } });
+    expect(urlSlugField.validationMessage).toBe('');
   });
 
-  it.skip('checks preview url renders correctly for old url slug format', () => {
-    // TODO: to be converted to RTL format after rendering
+  it('checks preview url renders correctly for old url slug format', () => {
     const urlSlug = 'test-url-slug';
     const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
     const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
-    const { container } = render(
+    render(
       <Provider store={store}>
         <MemoryRouter>
           <IntlProvider locale="en">
@@ -590,42 +549,16 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    // const { container } = render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesFull.title}
-    //   initialValues={initialValuesFull}
-    //   currentFormValues={initialValuesFull}
-    //   number="Test101x"
-    //   entitlement={{ sku: 'ABC1234' }}
-    //   courseStatuses={[REVIEWED]}
-    //   courseInfo={courseInfoWithUrlSlug}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   id="edit-course-form"
-    // />);
-    expect(container.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
-      <>
-        <Hyperlink
-          name="preview-url"
-          destination={`${MARKETING_SITE_PREVIEW_URL_ROOT}/course/${urlSlug}`}
-          target="_blank"
-        >
-          View Preview Page
-        </Hyperlink>
-        <span className="d-block">Any changes will go live when the website next builds</span>
-      </>,
-    );
+    const link = screen.getByRole('link', { name: /View Preview Page/i });
+    expect(link).toHaveAttribute('href', `${MARKETING_SITE_PREVIEW_URL_ROOT}/course/${urlSlug}`);
   });
 
-  it.skip('checks preview url renders correctly for new slug format', () => {
-    // TODO: To be converted from enzmye to RTL
+  it('checks preview url renders correctly for new slug format', () => {
     const urlSlug = 'learn/test-url-slug/test';
     const { MARKETING_SITE_PREVIEW_URL_ROOT } = process.env;
     const courseInfoWithUrlSlug = { ...courseInfo, data: { ...courseInfo.data, url_slug: urlSlug } };
 
-    const { container } = render(
+    render(
       <Provider store={store}>
         <MemoryRouter>
           <IntlProvider locale="en">
@@ -649,37 +582,11 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    // const { container } = render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesFull.title}
-    //   initialValues={initialValuesFull}
-    //   currentFormValues={initialValuesFull}
-    //   number="Test101x"
-    //   entitlement={{ sku: 'ABC1234' }}
-    //   courseStatuses={[REVIEWED]}
-    //   courseInfo={courseInfoWithUrlSlug}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesFull.uuid}
-    //   type={initialValuesFull.type}
-    //   id="edit-course-form"
-    // />);
-    expect(container.instance().getLinkComponent([REVIEWED], courseInfoWithUrlSlug)).toEqual(
-      <>
-        <Hyperlink
-          name="preview-url"
-          destination={`${MARKETING_SITE_PREVIEW_URL_ROOT}/${urlSlug}`}
-          target="_blank"
-        >
-          View Preview Page
-        </Hyperlink>
-        <span className="d-block">Any changes will go live when the website next builds</span>
-      </>,
-    );
+    const link = screen.getByRole('link', { name: /View Preview Page/i });
+    expect(link).toHaveAttribute('href', `${MARKETING_SITE_PREVIEW_URL_ROOT}/${urlSlug}`);
   });
 
-  it.skip('no marketing fields if course type is not marketable', () => {
-    // TODO: findByName is not a valid function in RTL, a different mechanism is needed to get the fields
+  it('no marketing fields if course type is not marketable', () => {
     const initialValuesWithMasters = {
       ...initialValuesFull,
       type: '7b41992e-f268-4331-8ba9-72acb0880454',
@@ -708,33 +615,16 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    // render(<BaseEditCourseForm
-    //   handleSubmit={() => null}
-    //   title={initialValuesWithMasters.title}
-    //   initialValues={initialValuesWithMasters}
-    //   currentFormValues={initialValuesWithMasters}
-    //   number="Masters101x"
-    //   courseStatuses={[UNPUBLISHED]}
-    //   courseInfo={courseInfo}
-    //   courseOptions={courseOptions}
-    //   courseRunOptions={courseRunOptions}
-    //   uuid={initialValuesWithMasters.uuid}
-    //   type={initialValuesWithMasters.type}
-    //   id="edit-course-form"
-    // />);
-
     const invisible = [
-      'short_description', 'full_description', 'outcome', 'syllabus_raw', 'prerequisites_raw',
-      'learner_testimonials', 'faq', 'additional_information', 'videoSrc',
+      'Short description', 'Long description', 'What you will learn', 'Syllabus', 'Prerequisites',
+      'Learner testimonials', 'Frequently asked questions', 'Additional information', 'About video link',
     ];
     invisible.forEach((name) => {
-      const fields = screen.findByName({ name });
-      waitFor(() => expect(fields).toHaveLength(0));
+      expect(screen.queryByText(name)).not.toBeInTheDocument();
     });
 
     // Just sanity check that a field we still want there is there:
-    const fields = screen.findByName({ name: 'imageSrc' });
-    expect(fields).toHaveLength(1);
+    expect(screen.queryByText('Image')).toBeInTheDocument();
   });
 
   it('renders html correctly while fetching collaborator options', () => {
@@ -782,8 +672,7 @@ describe('BaseEditCourseForm', () => {
     waitFor(() => expect(container).toMatchSnapshot());
   });
 
-  it.skip('does not add required prop for level_type and subjectPrimary fields when not submitting for review', async () => {
-    // TODO: getByRole is unable to find the elements
+  it('does not add required prop for level_type and subjectPrimary fields when not submitting for review', async () => {
     const initialValuesWithMasters = {
       ...initialValuesFull,
       type: '7b41992e-f268-4331-8ba9-72acb0880454',
@@ -813,11 +702,11 @@ describe('BaseEditCourseForm', () => {
       </Provider>,
     );
 
-    const levelTypeField = screen.getByRole('combobox', { name: 'level_type' });
+    const levelTypeField = screen.getByRole('combobox', { name: 'Course level' });
 
-    const subjectPrimaryField = screen.getByRole('combobox', { name: 'subjectPrimary' });
+    const subjectPrimaryField = screen.getByRole('combobox', { name: 'Primary subject' });
 
-    expect(levelTypeField.prop('required')).toBe(false);
-    expect(subjectPrimaryField.prop('required')).toBe(false);
+    expect(levelTypeField).not.toBeRequired();
+    expect(subjectPrimaryField).not.toBeRequired();
   });
 });

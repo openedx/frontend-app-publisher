@@ -34,6 +34,10 @@ const ReduxFormCreatableSelect = props => {
     onBlur: () => onBlur(value),
   };
 
+  if (props.ariaLabel) {
+    commonProps['aria-label'] = props.ariaLabel;
+  }
+
   const FormCreatableSelect = isAsync
     ? (
       <AsyncCreatableSelect
@@ -137,7 +141,7 @@ ReduxFormCreatableSelect.propTypes = {
   isAsync: PropTypes.bool,
   isSearchable: PropTypes.bool,
   placeholder: PropTypes.string,
-
+  ariaLabel: PropTypes.string,
 };
 
 export default ReduxFormCreatableSelect;
