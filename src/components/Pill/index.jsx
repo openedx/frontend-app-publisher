@@ -24,26 +24,26 @@ const Pill = ({ statuses }) => {
       case ARCHIVED:
         pills.push({
           text: formatMessage(messages.statusArchived),
-          className: 'badge badge-secondary',
+          className: 'badge badge-secondary custom-pill',
         });
         break;
       case UNPUBLISHED:
         pills.push({
           text: formatMessage(messages.statusUnsubmitted),
-          className: 'badge badge-warning',
+          className: 'badge badge-warning custom-pill',
         });
         break;
       case REVIEWED:
         pills.push({
           text: formatMessage(messages.statusScheduled),
-          className: 'badge badge-primary',
+          className: 'badge badge-primary custom-pill',
         });
         break;
       case REVIEW_BY_LEGAL:
       case REVIEW_BY_INTERNAL:
         pills.push({
           text: formatMessage(messages.statusInReview),
-          className: 'badge badge-light',
+          className: 'badge badge-light custom-pill',
         });
         pills.push({
           text: <i className="fa fa-lock" />,
@@ -52,7 +52,7 @@ const Pill = ({ statuses }) => {
       case PUBLISHED:
         pills.push({
           text: formatMessage(messages.statusPublished),
-          className: 'badge badge-success',
+          className: 'badge badge-success custom-pill',
         });
         break;
       default:

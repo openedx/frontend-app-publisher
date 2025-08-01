@@ -13,6 +13,7 @@ import RichEditor from '../RichEditor';
 import FieldLabel from '../FieldLabel';
 import ButtonToolbar from '../ButtonToolbar';
 import { basicValidate, handleStafferOrCreateFormFail } from '../../utils/validation';
+import './StafferForm.scss';
 
 const BaseStafferForm = ({
   handleSubmit,
@@ -138,9 +139,9 @@ const BaseStafferForm = ({
           name="areas_of_expertise"
           component={AreasOfExpertise}
         />
-        <ButtonToolbar>
+        <ButtonToolbar className="button-toolbar">
           <Link
-            className="btn btn-outline-primary form-cancel-btn"
+            className="btn form-cancel-btn cancel_button"
             to={referrer || '/'}
             disabled={formControlDisabled}
             onClick={cancelStafferInfo}
@@ -149,6 +150,7 @@ const BaseStafferForm = ({
           </Link>
           <ActionButton
             disabled={formControlDisabled}
+            className="create_button"
             labels={isCreateForm ? {
               default: 'Create',
               pending: 'Creating',
