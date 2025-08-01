@@ -5,7 +5,7 @@ import { InfoOutline } from '@openedx/paragon/icons';
 
 const Pane = (props) => (
   <div data-testid={props.dataTestId} className="card mb-3">
-    <div className="card-header bg-primary-700 text-white">
+    <div className="card-header bg-primary-700 text-white p-3">
       {props.title}
       {props.info && (
       <OverlayTrigger
