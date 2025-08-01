@@ -78,7 +78,7 @@ class SocialLinks extends React.Component {
         <button
           type="button"
           data-testid="js-add-button"
-          className="btn btn-outline-primary js-add-button mt-2"
+          className="btn js-add-button mt-2 social_area"
           onClick={() => fields.push({})}
         >
           Add social link

@@ -17,7 +17,6 @@ const BulkOperationTaskDetailsPage = () => {
         setTask(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching bulk operation details:', error);
         setError(error.message);
       });
   }, [taskId]);

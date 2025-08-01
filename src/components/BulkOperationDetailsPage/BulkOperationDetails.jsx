@@ -64,7 +64,6 @@ const BulkOperationDetails = ({ task }) => {
       setCsvHeaders(headers);
       setCsvRows(rows);
     } catch (error) {
-      console.error('Failed to preview CSV:', error);
       setCsvPreviewError(`Failed to preview CSV: ${error.message}`);
     }
   };
@@ -100,7 +99,7 @@ const BulkOperationDetails = ({ task }) => {
 
   return (
     <div className="container mt-2">
-      <h2 className="mb-4">Task Details</h2>
+      <h2 className="mb-2">Task Details</h2>
       <div className="bulk-op-details-table-container">
         <DataTable
           columns={taskInfoColumns}
@@ -112,7 +111,7 @@ const BulkOperationDetails = ({ task }) => {
       <Stack direction="horizontal" gap={3} className="mb-4 mt-4">
         <a
           href={task.csv_file}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-primary download"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -120,6 +119,7 @@ const BulkOperationDetails = ({ task }) => {
         </a>
         <Button
           variant="primary"
+          className="PreviewCSV"
           onClick={() => {
             handlePreviewCSV();
             open();

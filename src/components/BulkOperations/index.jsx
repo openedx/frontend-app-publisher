@@ -129,7 +129,7 @@ const BulkOperations = () => {
       {!isLoading && (
       <div className="mx-5 my-5">
         {getAlert()}
-        <SelectMenu className="mb-3" defaultMessage="Choose a Bulk Operation">
+        <SelectMenu className="mb-3 custom-selectmenu" defaultMessage="Choose a Bulk Operation">
           {
             Object.entries(availableOperations).map(([id, title]) => (
               <MenuItem actionid={id} key={id} defaultSelected={id === bulkOperationId} onClick={e => setBulkOperationId(e.currentTarget.getAttribute('actionid'))}>
