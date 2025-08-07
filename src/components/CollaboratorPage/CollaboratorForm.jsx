@@ -58,8 +58,7 @@ const BaseCollaboratorForm = ({
         />
         <ButtonToolbar>
           <Link
-            className="btn btn-outline-primary form-cancel-btn"
-            style={{fontWeight:'550',fontSize:'16px',color:'#001747',borderRadius:'0'}}
+            className="btn btn-outline-primary form-cancel-btn collaborator-form"
             to={referrer || '/'}
             disabled={formControlDisabled}
             onClick={cancelCollaboratorInfo}
@@ -68,7 +67,7 @@ const BaseCollaboratorForm = ({
           </Link>
           <ActionButton
             disabled={formControlDisabled}
-            style={{fontWeight:'550',fontSize:'16px',borderRadius:'0'}}
+            className="collaborator-form"
             labels={isCreateForm ? {
               default: 'Create',
               pending: 'Creating',
@@ -106,4 +105,3 @@ export default reduxForm({
   form: 'collaborator-form',
 })(BaseCollaboratorForm);
 export { basicValidate, BaseCollaboratorForm };
-

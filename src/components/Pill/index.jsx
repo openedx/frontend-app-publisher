@@ -24,8 +24,7 @@ const Pill = ({ statuses }) => {
       case ARCHIVED:
         pills.push({
           text: formatMessage(messages.statusArchived),
-          className: 'badge badge-secondary custom-pill',
-           
+          className: 'badge badge-secondary custom-pill',           
         });
         break;
       case UNPUBLISHED:

@@ -112,8 +112,7 @@ const BulkOperationDetails = ({ task }) => {
       <Stack direction="horizontal" gap={3} className="mb-4 mt-4">
         <a
           href={task.csv_file}
-          className="btn btn-outline-primary"
-          style={{borderRadius:'0',fontWeight:'bold',border:'1px solid #ddd',fontSize:'16px'}}
+          className="btn btn-outline-primary download"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -121,7 +120,7 @@ const BulkOperationDetails = ({ task }) => {
         </a>
         <Button
           variant="primary"
-          style={{borderRadius:'0',fontWeight:'550',fontSize:'16px'}}
+          className = "PreviewCSV"
           onClick={() => {
             handlePreviewCSV();
             open();

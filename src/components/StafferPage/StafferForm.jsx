@@ -142,8 +142,7 @@ const BaseStafferForm = ({
         />
         <ButtonToolbar className="button-toolbar">
           <Link
-            className="btn form-cancel-btn" 
-            style={{border:'1px solid #ddd',fontWeight:'550',fontSize:'16px',color:'#001747',borderRadius:'0'}}
+            className="btn form-cancel-btn cancelbutton" 
             to={referrer || '/'}
             disabled={formControlDisabled}
             onClick={cancelStafferInfo}
@@ -152,7 +151,7 @@ const BaseStafferForm = ({
           </Link>
           <ActionButton
             disabled={formControlDisabled}
-            style={{backgroundColor:"#7C7E83",fontWeight:'bold',borderRadius:'0'}}
+            className = "createbutton"
             labels={isCreateForm ? {
               default: 'Create',
               pending: 'Creating',

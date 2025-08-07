@@ -50,8 +50,7 @@ class AreasOfExpertise extends React.Component {
         <button
           type="button"
           data-testid="js-add-button"
-          className="btn js-add-button mt-2"
-          style={{border:'1px solid #ddd',fontWeight:'550',fontSize:'16px',color:'#001747'}}
+          className="btn js-add-button mt-2 SocialArea"
           onClick={() => fields.push({})}
         >
           Add area of expertise
