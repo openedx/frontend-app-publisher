@@ -58,7 +58,7 @@ const BaseCollaboratorForm = ({
         />
         <ButtonToolbar>
           <Link
-            className="btn btn-outline-primary form-cancel-btn"
+            className="btn btn-outline-primary form-cancel-btn collaborator-form"
             to={referrer || '/'}
             disabled={formControlDisabled}
             onClick={cancelCollaboratorInfo}
@@ -67,6 +67,7 @@ const BaseCollaboratorForm = ({
           </Link>
           <ActionButton
             disabled={formControlDisabled}
+            className="collaborator-form"
             labels={isCreateForm ? {
               default: 'Create',
               pending: 'Creating',
