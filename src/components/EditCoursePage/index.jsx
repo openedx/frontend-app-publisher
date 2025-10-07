@@ -186,7 +186,7 @@ class EditCoursePage extends React.Component {
         draft = false;
       }
 
-      sendCourseRuns.push({
+      const runPayload = {
         content_language: courseRun.content_language,
         draft,
         expected_program_type: courseRun.expected_program_type
@@ -221,7 +221,28 @@ class EditCoursePage extends React.Component {
           ? courseRun.weeks_to_complete
           : null,
         restriction_type: courseRun.restriction_type,
-      });
+      };
+
+      if (courseRun.credit_provider && courseRun.credit_provider.trim() !== '') {
+        runPayload.credit_provider = courseRun.credit_provider.trim();
+      }
+
+      if (
+        courseRun.credit_hours !== undefined
+        && courseRun.credit_hours !== null
+        && courseRun.credit_hours !== ''
+      ) {
+        const parsed = Number(courseRun.credit_hours);
+        if (!Number.isNaN(parsed)) {
+          runPayload.credit_hours = parsed;
+        }
+      }
+
+      if (isValidDate(courseRun.upgrade_deadline)) {
+        runPayload.upgrade_deadline = courseRun.upgrade_deadline;
+      }
+
+      sendCourseRuns.push(runPayload);
     });
     return sendCourseRuns;
   }
@@ -529,6 +550,7 @@ class EditCoursePage extends React.Component {
         bulk_sku: seat.bulk_sku,
         credit_hours: seat.credit_hours,
         credit_provider: seat.credit_provider,
+        upgrade_deadline: seat.upgrade_deadline,
         currency: seat.currency,
         price: seat.price,
         sku: seat.sku,
@@ -1020,6 +1042,9 @@ EditCoursePage.propTypes = {
       key: PropTypes.string,
       uuid: PropTypes.string,
       status: PropTypes.string,
+      credit_provider: PropTypes.string,
+      credit_hours: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      upgrade_deadline: PropTypes.string,
     }),
   }),
   formValues: PropTypes.func,
