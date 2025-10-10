@@ -527,6 +527,61 @@ describe('EditCoursePage', () => {
     await waitFor(() => expect(container).toMatchSnapshot());
   });
 
+  it('initializes credit seat metadata correctly in course run data', async () => {
+    const creditCourseInfo = {
+      ...courseInfo,
+      data: {
+        ...courseInfo.data,
+        editable: true,
+        course_runs: [
+          {
+            key: 'course-v1:edX+BIO101+2025_T1',
+            title: 'Credit Enabled Run',
+            type: 'credit',
+            credit_provider: 'ASU',
+            credit_hours: 3,
+            upgrade_deadline: '2035-12-01',
+            transcript_languages: ['en-us'],
+            content_language: 'en-us',
+            seats: [
+              {
+                type: 'credit',
+                price: '0.00',
+                sku: 'ASU-2025',
+              },
+            ],
+            status: 'unpublished',
+          },
+        ],
+      },
+    };
+
+    render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <IntlProvider locale="en">
+            <EditCoursePage
+              courseInfo={creditCourseInfo}
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+            />
+          </IntlProvider>
+        </Provider>
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      const page = screen.getByTestId('edit-course-page');
+      expect(page).toBeInTheDocument();
+
+      const runData = creditCourseInfo.data.course_runs[0];
+      expect(runData.type).toBe('credit');
+      expect(runData.credit_provider).toBe('ASU');
+      expect(runData.credit_hours).toBe(3);
+      expect(runData.upgrade_deadline).toBe('2035-12-01');
+    });
+  });
+
   describe('EditCoursePage submission handling', () => {
     const publishedCourseRun = {
       key: 'edX101+DemoX+T1',
