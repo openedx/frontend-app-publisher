@@ -12,7 +12,7 @@
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
     "lint": "fedx-scripts eslint --ext .jsx,.js .",
     "lint-fix": "fedx-scripts eslint --ext .jsx,.js . --fix",
-    "prepush": "npm run lint; npm run stylelint",
+    "prepush": "npm run lint && npm run stylelint",
     "prepublishOnly": "npm run build",
     "start": "fedx-scripts webpack-dev-server --progress",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --coverage --runInBand",
