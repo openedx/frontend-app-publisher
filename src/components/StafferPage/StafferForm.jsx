@@ -141,7 +141,7 @@ const BaseStafferForm = ({
         />
         <ButtonToolbar className="button-toolbar">
           <Link
-            className="btn form-cancel-btn cancel_button"
+            className="btn btn-outline-primary form-cancel-btn cancel_button"
             to={referrer || '/'}
             disabled={formControlDisabled}
             onClick={cancelStafferInfo}

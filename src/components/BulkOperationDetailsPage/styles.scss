@@ -58,15 +58,27 @@ $cell-widths: 220px;
    }
 }
 
-.download {
-  border-radius: 0;
+.btn.download,
+button.preview_csv,
+.pgn__button.preview_csv {
+  border-radius: 0 !important;
   font-weight: bold;
   border: 1px solid #ddd;
   font-size: 16px;
-}
+  transition: none !important;
 
-.preview_csv {
-  border-radius: 0;
-  font-weight: 550;
-  font-size: 16px;
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  &::before,
+  &::after {
+    border-radius: 0 !important;
+  }
 }
