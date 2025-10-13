@@ -259,23 +259,27 @@ describe('EditCoursePage', () => {
   });
 
   it('renders page correctly while fetching', async () => {
-    const { container } = render(<EditCoursePage
-      courseInfo={{
-        data: {},
-        isFetching: true,
-        error: null,
-      }}
-      courseOptions={{
-        data: {},
-        isFetching: true,
-        error: null,
-      }}
-      courseRunOptions={{
-        data: {},
-        isFetching: true,
-        error: null,
-      }}
-    />);
+    const { container } = render(
+      <IntlProvider locale="en">
+        <EditCoursePage
+          courseInfo={{
+            data: {},
+            isFetching: true,
+            error: null,
+          }}
+          courseOptions={{
+            data: {},
+            isFetching: true,
+            error: null,
+          }}
+          courseRunOptions={{
+            data: {},
+            isFetching: true,
+            error: null,
+          }}
+        />
+      </IntlProvider>,
+    );
     await waitFor(() => expect(container).toMatchSnapshot());
   });
 

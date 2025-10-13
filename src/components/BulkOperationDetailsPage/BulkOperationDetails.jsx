@@ -119,7 +119,7 @@ const BulkOperationDetails = ({ task }) => {
         </a>
         <Button
           variant="primary"
-          className="PreviewCSV"
+          className="preview_csv"
           onClick={() => {
             handlePreviewCSV();
             open();

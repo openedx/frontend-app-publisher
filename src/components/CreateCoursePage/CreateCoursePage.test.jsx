@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 import CreateCoursePage from './index';
 import { courseOptions, courseRunOptions } from '../../data/constants/testData';
 
@@ -16,7 +17,9 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage courseOptions={courseOptions} courseRunOptions={courseRunOptions} />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage courseOptions={courseOptions} courseRunOptions={courseRunOptions} />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
@@ -27,27 +30,29 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage
-            courseOptions={courseOptions}
-            courseRunOptions={courseRunOptions}
-            fetchOrganizations={() => null}
-            publisherUserInfo={{
-              organizations: [],
-              error: null,
-              isFetching: true,
-            }}
-            productSourceOptions={{
-              productSources: [],
-              error: null,
-              isFetching: true,
-            }}
-            courseInfo={{
-              error: null,
-              isCreating: false,
-              data: {},
-            }}
-            createCourse={() => null}
-          />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              fetchOrganizations={() => null}
+              publisherUserInfo={{
+                organizations: [],
+                error: null,
+                isFetching: true,
+              }}
+              productSourceOptions={{
+                productSources: [],
+                error: null,
+                isFetching: true,
+              }}
+              courseInfo={{
+                error: null,
+                isCreating: false,
+                data: {},
+              }}
+              createCourse={() => null}
+            />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
@@ -58,27 +63,29 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage
-            courseOptions={courseOptions}
-            courseRunOptions={courseRunOptions}
-            fetchOrganizations={() => null}
-            publisherUserInfo={{
-              organizations,
-              error: null,
-              isFetching: false,
-            }}
-            productSourceOptions={{
-              productSources: sources,
-              error: null,
-              isFetching: false,
-            }}
-            courseInfo={{
-              error: null,
-              isCreating: false,
-              data: {},
-            }}
-            createCourse={() => null}
-          />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              fetchOrganizations={() => null}
+              publisherUserInfo={{
+                organizations,
+                error: null,
+                isFetching: false,
+              }}
+              productSourceOptions={{
+                productSources: sources,
+                error: null,
+                isFetching: false,
+              }}
+              courseInfo={{
+                error: null,
+                isCreating: false,
+                data: {},
+              }}
+              createCourse={() => null}
+            />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
@@ -89,22 +96,24 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage
-            courseOptions={courseOptions}
-            courseRunOptions={courseRunOptions}
-            fetchOrganizations={() => null}
-            publisherUserInfo={{
-              organizations,
-              error: ['Fail'],
-              isFetching: false,
-            }}
-            courseInfo={{
-              error: null,
-              isCreating: false,
-              data: {},
-            }}
-            createCourse={() => null}
-          />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              fetchOrganizations={() => null}
+              publisherUserInfo={{
+                organizations,
+                error: ['Fail'],
+                isFetching: false,
+              }}
+              courseInfo={{
+                error: null,
+                isCreating: false,
+                data: {},
+              }}
+              createCourse={() => null}
+            />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
@@ -114,18 +123,20 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage
-            courseOptions={courseOptions}
-            courseRunOptions={courseRunOptions}
-            fetchOrganizations={() => null}
-            courseInfo={{
-              error: null,
-              isCreating: false,
-              data: {},
-            }}
-            createCourse={() => null}
-            publisherUserInfo={null}
-          />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              fetchOrganizations={() => null}
+              courseInfo={{
+                error: null,
+                isCreating: false,
+                data: {},
+              }}
+              createCourse={() => null}
+              publisherUserInfo={null}
+            />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
@@ -135,22 +146,24 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage
-            courseOptions={courseOptions}
-            courseRunOptions={courseRunOptions}
-            fetchOrganizations={() => null}
-            publisherUserInfo={{
-              organizations,
-              error: null,
-              isFetching: false,
-            }}
-            courseInfo={{
-              error: ['Fail'],
-              isCreating: false,
-              data: {},
-            }}
-            createCourse={() => null}
-          />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              fetchOrganizations={() => null}
+              publisherUserInfo={{
+                organizations,
+                error: null,
+                isFetching: false,
+              }}
+              courseInfo={{
+                error: ['Fail'],
+                isCreating: false,
+                data: {},
+              }}
+              createCourse={() => null}
+            />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
@@ -160,24 +173,26 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage
-            courseOptions={courseOptions}
-            courseRunOptions={courseRunOptions}
-            fetchOrganizations={() => null}
-            publisherUserInfo={{
-              organizations,
-              error: null,
-              isFetching: false,
-            }}
-            courseInfo={{
-              error: null,
-              isCreating: false,
-              data: {
-                uuid: '11111111-1111-1111-1111-111111111111',
-              },
-            }}
-            createCourse={() => null}
-          />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              fetchOrganizations={() => null}
+              publisherUserInfo={{
+                organizations,
+                error: null,
+                isFetching: false,
+              }}
+              courseInfo={{
+                error: null,
+                isCreating: false,
+                data: {
+                  uuid: '11111111-1111-1111-1111-111111111111',
+                },
+              }}
+              createCourse={() => null}
+            />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );
@@ -187,24 +202,26 @@ describe('CreateCoursePage', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CreateCoursePage
-            courseOptions={courseOptions}
-            courseRunOptions={courseRunOptions}
-            fetchOrganizations={() => null}
-            publisherUserInfo={{
-              organizations,
-              error: null,
-              isFetching: false,
-            }}
-            courseInfo={{
-              error: null,
-              isCreating: true,
-              data: {
-                uuid: '11111111-1111-1111-1111-111111111111',
-              },
-            }}
-            createCourse={() => null}
-          />
+          <IntlProvider locale="en" messages={{}}>
+            <CreateCoursePage
+              courseOptions={courseOptions}
+              courseRunOptions={courseRunOptions}
+              fetchOrganizations={() => null}
+              publisherUserInfo={{
+                organizations,
+                error: null,
+                isFetching: false,
+              }}
+              courseInfo={{
+                error: null,
+                isCreating: true,
+                data: {
+                  uuid: '11111111-1111-1111-1111-111111111111',
+                },
+              }}
+              createCourse={() => null}
+            />
+          </IntlProvider>
         </MemoryRouter>
       </Provider>,
     );

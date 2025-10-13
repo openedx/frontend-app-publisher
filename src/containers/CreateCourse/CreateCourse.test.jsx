@@ -1,4 +1,5 @@
 import configureStore from 'redux-mock-store';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 import React from 'react';
 import {
   render, screen, fireEvent, waitFor, within,
@@ -62,7 +63,9 @@ const createWrapper = (state) => {
   return render(
     <MemoryRouter>
       <Provider store={store}>
-        <CreateCoursePage />
+        <IntlProvider locale="en">
+          <CreateCoursePage />
+        </IntlProvider>
       </Provider>
     </MemoryRouter>,
   );
@@ -106,7 +109,9 @@ describe('Create Course View', () => {
     render(
       <MemoryRouter>
         <Provider store={store}>
-          <CreateCoursePage initialValues={courseData} />
+          <IntlProvider locale="en">
+            <CreateCoursePage initialValues={courseData} />
+          </IntlProvider>
         </Provider>
       </MemoryRouter>,
     );
@@ -136,7 +141,9 @@ describe('Create Course View', () => {
     render(
       <MemoryRouter>
         <Provider store={store}>
-          <CreateCoursePage initialValues={courseData} />
+          <IntlProvider locale="en">
+            <CreateCoursePage initialValues={courseData} />
+          </IntlProvider>
         </Provider>
       </MemoryRouter>,
     );
